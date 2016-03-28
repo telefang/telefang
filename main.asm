@@ -64,3 +64,8 @@ SECTION "bank 1", ROMX[$4000], BANK[$1]
 SECTION "font", ROMX[$5229], BANK[$B]
 Font:
     INCBIN "gfx/font.1bpp"
+
+SECTION "gfx/denjuu_stages.2bpp", ROMX[$5180], BANK[$7d]
+DenjuuStageGfx:
+	INCBIN "gfx/denjuu_stages.2bpp"
+
