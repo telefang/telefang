@@ -70,3 +70,20 @@ SECTION "gfx/denjuu_stages.2bpp", ROMX[$5180], BANK[$7d]
 DenjuuStageGfx:
 	INCBIN "gfx/denjuu_stages.2bpp"
 
+SECTION "Phone keypad graphics", ROMX[$4000], BANK[$79]
+phone_keypad_gfx: MACRO
+	INCBIN "gfx/phones/\1/numbers.2bpp"
+	INCBIN "gfx/phones/\1/menus.2bpp"
+	INCBIN "gfx/phones/\1/letters1.2bpp"
+	INCBIN "gfx/phones/\1/menus.2bpp"
+	INCBIN "gfx/phones/\1/letters2.2bpp"
+	INCBIN "gfx/phones/\1/menus.2bpp"
+	INCBIN "gfx/phones/\1/solfege.2bpp"
+	INCBIN "gfx/phones/\1/menus.2bpp"
+ENDM
+
+PhoneKeypadGfx:
+    phone_keypad_gfx 0
+    phone_keypad_gfx 1
+    phone_keypad_gfx 2
+
