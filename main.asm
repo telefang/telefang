@@ -62,11 +62,9 @@ SECTION "bank 1", ROMX[$4000], BANK[$1]
     ds $4000 ; bank 1 is empty
 
 SECTION "font", ROMX[$5229], BANK[$B]
+NUM_CHARACTERS EQU $d3
 Font:
-rept 8 ; space
-    db 0
-endr
-    INCBIN "gfx/font.1bpp"
+    INCBIN "gfx/font.1bpp", 0, NUM_CHARACTERS * 8
 
 SECTION "gfx/denjuu_stages.2bpp", ROMX[$5180], BANK[$7d]
 DenjuuStageGfx:
