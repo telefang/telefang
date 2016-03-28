@@ -59,4 +59,4 @@ SECTION "start", ROM0[$100]
     jp $150
 
 SECTION "bank 1", ROMX[$4000], BANK[$1]
-    ds $4000 ; bank 1 is empty
+    ; bank 1 contains patch changes
