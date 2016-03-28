@@ -60,3 +60,7 @@ SECTION "start", ROM0[$100]
 
 SECTION "bank 1", ROMX[$4000], BANK[$1]
     ds $4000 ; bank 1 is empty
+
+SECTION "font", ROMX[$5229], BANK[$B]
+Font:
+    INCBIN "gfx/font.1bpp"
