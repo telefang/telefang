@@ -18,7 +18,7 @@ $(foreach obj, $(OBJS), \
 )
 
 # Link objects together to build a rom.
-all: $(ROMS) compare
+all: $(ROMS)
 
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
