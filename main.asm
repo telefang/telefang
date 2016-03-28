@@ -66,6 +66,10 @@ NUM_CHARACTERS EQU $d3
 Font:
     INCBIN "gfx/font.1bpp", 0, NUM_CHARACTERS * 8
 
+SECTION "gfx/diploma.2bpp", ROMX[$44eb], BANK[$3f]
+DiplomaGfx:
+	INCBIN "gfx/diploma.2bpp"
+
 SECTION "gfx/denjuu_stages.2bpp", ROMX[$5180], BANK[$7d]
 DenjuuStageGfx:
 	INCBIN "gfx/denjuu_stages.2bpp"
