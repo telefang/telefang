@@ -1,3 +1,5 @@
+INCLUDE "macros.asm"
+
 SECTION "rst $0", ROM0[$0]
 JumpAAtHL:
     pop hl
@@ -116,3 +118,4 @@ PhoneKeypadGfx:
 	INCBIN "gfx/phones/2/solfege.2bpp"
 	INCBIN "gfx/phones/2/menus.2bpp"
 
+INCLUDE "data/compressed_gfx.asm"
