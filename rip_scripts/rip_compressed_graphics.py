@@ -3,6 +3,8 @@ import sys
 import struct
 import os
 
+class InvalidGraphicsError(Exception): pass
+
 def readshort():
     return struct.unpack("<H", rom.read(2))[0]
 
@@ -18,10 +20,11 @@ def abspointer(bank, offset):
 def decompress(offset):
     rom.seek(offset)
     
+    #try:
+    compressed = readbyte()
+    data = bytearray() 
+    total = readshort()
     try:
-        compressed = readbyte()
-        data = bytearray() 
-        total = readshort()
         if total > 0:
             if compressed == 0x00:
                 for i in range(total):
@@ -48,7 +51,7 @@ def decompress(offset):
                         else:
                             data.append(readbyte())
     except (InvalidGraphicsError, struct.error):
-        return None, None
+        return None, compressed
                 
     return data[:total], compressed
 
@@ -67,7 +70,8 @@ for i in range(NUMGFX):
                    'target':target,
                    'filename': None,
                    'title': None,
-                   'label': None,}
+                   'label': None,
+                   'corrupted': False,}
     rom.read(1)
 
 rom.seek(0x1DE1)
@@ -82,11 +86,15 @@ for i in range(NUMGFX):
         rom.seek(g['bank']*0x4000 + g['pointer'] % 0x4000)
         startpos = rom.tell()
         g['decompressed_data'], g['is_compressed'] = decompress(g['bank']*0x4000 + g['pointer'] % 0x4000)
-        g['size'] = rom.tell() - startpos
-        g['decompressed_size'] = len(g['decompressed_data'])
-        rom.seek(startpos)
-        rom.read(1)
-        g['data'] = rom.read(g['size']-1)
+        if not g['decompressed_data']:
+            sys.stderr.write("Error: 0x{:02x} has corrupted data\n".format(i))
+            g['corrupted'] = True
+        else:
+            g['size'] = rom.tell() - startpos
+            g['decompressed_size'] = len(g['decompressed_data'])
+            rom.seek(startpos)
+            rom.read(1)
+            g['data'] = rom.read(g['size']-1)
 
 
 i = 0
@@ -126,21 +134,24 @@ for i in range(NUMGFX):
     g = graphics[i]
     if g['label']:
         print
-        if i != 0 and graphics[i-1]['bank'] == g['bank'] and graphics[i-1]['pointer'] + graphics[i-1]['size'] == g['pointer']:
+        if i != 0 and graphics[i-1]['bank'] == g['bank'] and graphics[i-1]['pointer'] + graphics[i-1]['size'] == g['pointer'] and not graphics[i-1]['corrupted']:
             pass
         else:
             print 'SECTION "{}", ROMX[${:04x}], BANK[${:02x}]'.format(g['title'], g['pointer'], g['bank'])
         print "{}:".format(g['label'])
-        if g['is_compressed']:
-            print '\tdb COMPRESSED'
+        if g['corrupted']:
+            print '\t; corrupted'
         else:
-            print '\tdbw NOT_COMPRESSED, {}End - {} - 3'.format(g['label'], g['label'])
-        print '\tINCBIN "gfx/{}.{}"'.format(g['filename'], ['2bpp', 'malias'][g['is_compressed']])
-        print "{}End".format(g['label'])
+            if g['is_compressed']:
+                print '\tdb COMPRESSED'
+            else:
+                print '\tdbw NOT_COMPRESSED, {}End - {} - 3'.format(g['label'], g['label'])
+            print '\tINCBIN "gfx/{}.{}"'.format(g['filename'], ['2bpp', 'malias'][g['is_compressed']])
+            print "{}End".format(g['label'])
 
 for i in range(NUMGFX):
     g = graphics[i]
-    if g['filename']:
+    if g['filename'] and not g['corrupted']:
         path = 'gfx/{}'.format('/'.join(g['filename'].split('/')[:-1]))
         if not os.path.isdir(path):
             os.mkdir(path)
