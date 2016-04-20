@@ -1,3 +1,6 @@
 ;Prevent sharing ROMs accidentally.
 *.gb
 *.gbc
+
+;Prevent committing compiled object code
+*.o
