@@ -1,3 +1,10 @@
+;Malias compression is the compression used in numerous Natsume games, namely,
+;at least Telefang and Medarot. It is a modified implementation of the LZ77
+;algorithm, which works by referencing previously decompressed data using
+;length-distance pairs.
+
+;http://wiki.telefang.net/Wikifang:Telefang_1_Translation_Patch/Malias_compression
+
 INCLUDE "components/MaliasCompression/malias.inc"
 INCLUDE "registers.inc"
 
@@ -49,11 +56,11 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      l, a            ; HL = Decompression Head
                 ld      a, [de]         ; DE = Compression Head
                 inc     de
-                jp      _maliasDecomp   ; useless jmp
+                jp      .maliasDecomp   ; useless jmp
 
 .maliasDecomp:
                 cp      0
-                jp      z, _decompressedOutput
+                jp      z, .decompressedOutput
                 ld      a, h
                 ld      [Malias_DecompressionHead], a
                 ld      a, l
@@ -68,7 +75,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
 .beginBundle:                           ; CODE XREF: MaliasDecompress+59.j
                 ld      a, b
                 or      c
-                jp      z, _exit
+                jp      z, .exit
                 ld      a, [de]
                 ld      [Malias_CurBundleBits1], a
                 inc     de
@@ -82,10 +89,10 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                                         ; MaliasDecompress+E8.j
                 ld      a, b
                 or      c
-                jp      z, _exit
+                jp      z, .exit
                 ld      a, [Malias_BundleBitsCount]
                 dec     a
-                jp      z, _beginBundle
+                jp      z, .beginBundle
                 ld      [Malias_BundleBitsCount], a
                 push    de
                 ld      a, [Malias_CurBundleBits]
@@ -98,7 +105,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 rr      e
                 ld      a, e
                 ld      [Malias_CurBundleBits1], a
-                jp      c, _copyFromHistory ; Mode 1
+                jp      c, .copyFromHistory ; Mode 1
                 pop     de              ; Mode 0
                 ld      a, [Malias_DecompressionHead]
                 ld      h, a
@@ -116,7 +123,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      [Malias_DecompressionHead1], a
                 dec     bc
                 inc     de
-                jp      _decodeBundleCommand
+                jp      .decodeBundleCommand
 ; ---------------------------------------------------------------------------
 
 .copyFromHistory:                       ; CODE XREF: MaliasDecompress+74j
@@ -165,7 +172,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      a, [Malias_CopyHistoryLength]
                 dec     a
                 ld      [Malias_CopyHistoryLength], a
-                jp      nz, _copyByteToHead
+                jp      nz, .copyByteToHead
                 ld      a, h
                 ld      [Malias_DecompressionHead], a
                 ld      a, l
@@ -173,7 +180,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 pop     de
                 inc     de
                 inc     de
-                jp      _decodeBundleCommand
+                jp      .decodeBundleCommand
 ; ---------------------------------------------------------------------------
 
 .decompressedOutput:                    ; CODE XREF: MaliasDecompress+2Bj
@@ -187,7 +194,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
 .decompressedByteCopy:                  ; CODE XREF: MaliasDecompress+102.j
                 ld      a, b
                 or      c
-                jp      z, _exit
+                jp      z, .exit
                 di
                 call    YetAnotherWFB
                 ld      a, [de]
@@ -196,7 +203,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ei
                 inc     de
                 dec     bc
-                jp      _decompressedByteCopy
+                jp      .decompressedByteCopy
 ; ---------------------------------------------------------------------------
 
 .exit:                                  ; CODE XREF: MaliasDecompress+3Ej
