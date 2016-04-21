@@ -1,4 +1,5 @@
 INCLUDE "macros.asm"
+INCLUDE "components/LCDC/lcdc.inc"
 
 SECTION "rst $0", ROM0[$0]
 JumpAAtHL:
@@ -42,10 +43,10 @@ SnapHL: ; http://www.catb.org/jargon/html/S/snap.html
     ret
 
 SECTION "vblank interrupt", ROM0[$40]
-    jp $02e7
+    jp VBlankingIRQ
 
 SECTION "lcd interrupt", ROM0[$48]
-    jp $0324
+    jp LCDCIRQ
 
 SECTION "timer interrupt", ROM0[$50]
     reti

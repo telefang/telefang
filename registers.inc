@@ -4,6 +4,12 @@
 
 REG_IF              EQU $FF0F
 REG_STAT            EQU $FF41
+REG_SCY             EQU $FF42
+REG_SCX             EQU $FF43
+REG_LY              EQU $FF44
+REG_LYC             EQU $FF45
+REG_WY              EQU $FF4A
+REG_WX              EQU $FF4B
 REG_KEY1            EQU $FF4D
 REG_VBK             EQU $FF4F
 REG_RP              EQU $FF56
