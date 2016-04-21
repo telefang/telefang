@@ -7,7 +7,7 @@
 # Build Telefang.
 ROMS := telefang.gbc
 BASEROM := baserom.gbc
-OBJS := main.o wram.o versions/power/header.o
+OBJS := main.o wram.o versions/power/header.o components/MaliasCompression/malias.o
 
 # If your default python is 3, you may want to change this to python27.
 PYTHON := python
