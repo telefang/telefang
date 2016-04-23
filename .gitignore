@@ -4,3 +4,8 @@
 
 ;Prevent committing compiled object code
 *.o
+*.2bpp
+*.1bpp
+*.pcm
+*.map
+*.sym
