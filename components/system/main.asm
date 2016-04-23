@@ -1,0 +1,159 @@
+INCLUDE "registers.inc"
+INCLUDE "components/lcdc/vblank_irq.inc"
+
+;The main gameloop is stored here.
+;It's a giant nested state machine with a few common functions as well.
+
+;These are dummy labels for functions not yet imported into the disassembly.
+;We should do those soon.
+LoadSpritesForDMA EQU $0824
+GameStateMachine EQU $1BE2
+LoadScheduledPalette EQU $3869
+CommitGBCPalettes EQU $106A
+SIOActivityCheck EQU $0234
+ResetSIO EQU $1D23
+ResetSIO_B2 EQU $1D46
+SoftResetCheck EQU $02D0
+InitializeSGB EQU $4000 ;Bank 3, flat address 0xC000
+SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
+StagePaletteSetDD10 EQU $109D
+StagePaletteSetDD50 EQU $1145
+ClearDMGPaletteShadow EQU $1043
+InitializeSoundEngine EQU $0439
+ClearWRAMVariables EQU $097C
+ClearTilePatternTables EQU $0968
+ClearGBCTileMap0 EQU $09BF
+ClearGBCTileMap1 EQU $09E5
+ClearTilemap0 EQU $0807
+DisableLCD EQU $07DF
+SamplePlayerInput EQU $0766
+
+;WRAM locations we haven't properly labeled yet
+W_SGBDetectSuccess EQU $C40A
+W_PaletteStagedBGP EQU $DD00
+W_PaletteStagedOBP EQU $DD03
+
+;This stores the bootrom argument to determine what GB model we're on.
+SECTION "System WRAM", WRAM0[$C3E8]
+W_GameboyType:: ds 1
+
+SECTION "System Gameloop WRAM", WRAM0[$C3C0]
+W_FrameCounter:: ds 1
+W_FrameCompleted:: ds 1
+
+SECTION "SystemStateMachine WRAM", WRAM0[$C3E0]
+W_SystemState:: ds 1
+W_SystemSubState:: ds 1
+W_SystemSubSubState:: ds 1
+
+;Much of this corresponds with code that hasn't been imported into this
+;project yet, so we're using EQUates for everything that's still missing
+SECTION "EntryPoint", ROM0[$0150]
+Main::
+	ld [W_GameboyType], a
+	di
+	call DisableLCD
+	xor a
+	ld [REG_IF], a
+	ld [REG_IE], a ;Turn off all the interrupts
+	ld sp, $DFFF
+	ld a, $A
+	ld [REG_MBC3_SRAMENABLE], a
+	ld a, 3
+	ld [REG_MBC3_ROMBANK], a
+	ld a, 0
+	ld [REG_MBC3_ROMBANK], a ; WTF, setting ROMBANK twice?
+	ld a, 0
+	ld [REG_MBC3_SRAMBANK], a
+	call ClearTilemap0
+	call ClearTilePatternTables
+	call ClearShadowOAM
+	xor a
+	ld [REG_VBK], a
+	ld [REG_SVBK], a
+	ld [REG_RP], a
+	ld hl, $FE00
+	ld c, 0
+.clearOAMLoop
+	ld [hli], a
+	dec c
+	jr nz, .clearOAMLoop	; WTF, let's clear longer than the actual length of OAM
+	ld hl, $FF80
+	ld c, $7F
+.clearHRAMLoop
+	ld [hli], a
+	dec c
+	jr nz, .clearHRAMLoop
+	ld a, [W_GameboyType]
+	push af
+	call ClearWRAMVariables
+	pop af
+	ld [W_GameboyType], a ;Seems completely unnecessary, but it actually isn't
+	call InstallODMADriver
+	call InitializeSoundEngine
+	ld a, 1
+	ld [$C430], a
+	call ClearDMGPaletteShadow
+	ld a, $83
+	ld [W_ShadowREG_LCDC], a
+	ld [REG_LCDC], a ;Enable LCD display, OBJ, and BG layers.
+	ei
+	call ResetSIO
+	ld a, $40
+	ld [REG_STAT], a
+	xor a
+	ld [REG_IF], a
+	ld a, $B
+	ld [REG_IE], a ;Only accept VBlank, LCD, and SIO interrupts
+	xor a
+	ld [$CB3F], a
+	ld a, 1
+	ld [W_PaletteStagedBGP], a
+	ld [W_PaletteStagedOBP], a
+	xor a
+	call StagePaletteSetDD10
+	call StagePaletteSetDD50
+	ld a, 3
+	rst $10
+	xor a
+	ld [W_SGBDetectSuccess], a
+	call SGBDetect
+	jp nc, .noSGBDetected
+	ld a, 1
+	ld [W_SGBDetectSuccess], a
+	call InitializeSGB ;Bank 3, 0x4000
+.noSGBDetected
+	xor a
+	ld [W_SystemState], a
+	ld [W_SystemSubState], a
+	ld a, 3
+	rst $10
+.gameLoop
+	ld a, [W_FrameCounter]
+	inc a
+	ld [W_FrameCounter], a
+	call SoftResetCheck
+	ld a, [$CB3F] ; MAYBE a check if another GB is connected? Or that flashy thing
+	or a
+	jr z, .dontResetSIO
+	call $1DBC
+	call $1D66
+	call ResetSIO_B2
+.dontResetSIO
+	call SIOActivityCheck
+	call CommitGBCPalettes
+	call LoadScheduledPalette
+	call SamplePlayerInput
+	call GameStateMachine
+	call LoadSpritesForDMA
+	ld a, 1
+	ld [W_FrameCompleted], a
+.waitForNextFrame
+	ld a, [H_VBlankCompleted]
+	and a
+	jr z, .waitForNextFrame ; WTF: Not using the HALT opcode?
+	xor a
+	ld [H_VBlankCompleted], a
+	ld [W_FrameCompleted], a
+	jp .gameLoop
+;Main never returns.
