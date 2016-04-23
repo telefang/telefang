@@ -5,7 +5,6 @@
 
 ;http://wiki.telefang.net/Wikifang:Telefang_1_Translation_Patch/Malias_compression
 
-INCLUDE "components/compression/malias.inc"
 INCLUDE "registers.inc"
 
 SECTION "Malias_WRAM1", WRAM0[$C402]

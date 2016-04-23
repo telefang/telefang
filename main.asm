@@ -1,5 +1,4 @@
 INCLUDE "macros.asm"
-INCLUDE "components/LCDC/lcdc.inc"
 
 SECTION "rst $0", ROM0[$0]
 JumpAAtHL:

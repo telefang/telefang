@@ -1,6 +1,0 @@
-GLOBAL Malias_CopyHistoryLength
-GLOBAL Malias_BundleBitsCount
-GLOBAL Malias_CurBundleBits
-GLOBAL Malias_DecompressionHead
-GLOBAL Malias_CmpSrcBank
-GLOBAL Malias_DeCmpDst
