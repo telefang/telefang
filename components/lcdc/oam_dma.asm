@@ -21,7 +21,7 @@ ClearShadowOAM::
 ;keep the CPU off the main memory bus as DMA does it's thing.
 
 SECTION "LCDC yetagain", ROM0[$079A]
-InstallODMADriver: ld c, $80
+InstallODMADriver:: ld c, $80
 	ld b, $A ;Length value.
 	;I'm sure there's a way to calculate it with the
 	;macrolanguage but I can't be arsed
