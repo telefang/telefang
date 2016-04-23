@@ -6,5 +6,6 @@
 *.o
 *.2bpp
 *.1bpp
+*.pcm
 *.map
 *.sym
