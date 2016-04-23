@@ -1,0 +1,1 @@
+H_ExecuteOAMDMA EQU $FF80
