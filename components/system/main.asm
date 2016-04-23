@@ -41,11 +41,6 @@ SECTION "System Gameloop WRAM", WRAM0[$C3C0]
 W_FrameCounter:: ds 1
 W_FrameCompleted:: ds 1
 
-SECTION "SystemStateMachine WRAM", WRAM0[$C3E0]
-W_SystemState:: ds 1
-W_SystemSubState:: ds 1
-W_SystemSubSubState:: ds 1
-
 ;Much of this corresponds with code that hasn't been imported into this
 ;project yet, so we're using EQUates for everything that's still missing
 SECTION "EntryPoint", ROM0[$0150]
