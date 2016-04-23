@@ -6,7 +6,7 @@ INCLUDE "registers.inc"
 ;So-called "shadow" registers are temporary WRAM locations for storing what we
 ;want the contents of timing-specific registers to be. An interrupt or timed
 ;loop will later copy them into the appropriate registers.
-SECTION "LCDC_WRAM", WRAM0[$C3C2]
+SECTION "LCDC_WRAM0", WRAM0[$C3C2]
 W_ShadowREG_SCX: ds 1
 W_ShadowREG_SCY: ds 1
 W_ShadowREG_WX: ds 1
@@ -16,6 +16,9 @@ W_ShadowREG_OGP0: ds 1
 W_ShadowREG_OGP1: ds 1
 W_ShadowREG_LCDC: ds 1
 W_ShadowREG_LYC: ds 1
+
+SECTION "LCDC_WRAM1", WRAM0[$C437]
+W_OAMDMAReady: ds 1
 
 SECTION "LCDC_WRAM2", WRAM0[$C467]
 W_HBlank_Scanline24Pos: ds 1
@@ -103,14 +106,14 @@ VBlankingIRQ::
 	ld a, [H_VBlankCompleted]
 	or a
 	jr nz, .setCompletedFlag
-	ld a, [OAMDMAReady]
+	ld a, [W_OAMDMAReady]
 	or a
 	jr z, .setCompletedFlag
 	call H_ExecuteOAMDMA ; In-memory code: OAM DMA
 	call $3171 ; Looks like a crappy hack.
 	xor a
 	ld [$C430], a
-	ld [OAMDMAReady], a
+	ld [W_OAMDMAReady], a
 
 .setCompletedFlag:
 	ld a, 1
@@ -201,7 +204,7 @@ LCDCIRQ::
 	reti
 
 .doHblEffect1
-	ld a, [SystemState]
+	ld a, [W_SystemState]
 	cp 4
 	jr z, .letterboxEffect
 	ld hl, $C467
