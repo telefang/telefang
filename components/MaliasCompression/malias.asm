@@ -38,7 +38,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      a, [hl+]
                 ld      [Malias_DeCmpDst], a
                 ld      a, [hl+]
-                ld      [Malias_DeCmpDst1], a
+                ld      [Malias_DeCmpDst + 1], a
                 ld      a, [Malias_CmpSrcBank]
                 rst     $10
                 ld      hl, $1DE1
@@ -50,7 +50,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      l, a
                 push    hl
                 pop     de
-                ld      a, [Malias_DeCmpDst1]
+                ld      a, [Malias_DeCmpDst + 1]
                 ld      h, a
                 ld      a, [Malias_DeCmpDst]
                 ld      l, a            ; HL = Decompression Head
@@ -64,7 +64,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      a, h
                 ld      [Malias_DecompressionHead], a
                 ld      a, l
-                ld      [Malias_DecompressionHead1], a
+                ld      [Malias_DecompressionHead + 1], a
                 ld      a, [de]
                 ld      c, a
                 inc     de
@@ -77,7 +77,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 or      c
                 jp      z, .exit
                 ld      a, [de]
-                ld      [Malias_CurBundleBits1], a
+                ld      [Malias_CurBundleBits + 1], a
                 inc     de
                 ld      a, [de]
                 ld      [Malias_CurBundleBits], a
@@ -97,19 +97,19 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 push    de
                 ld      a, [Malias_CurBundleBits]
                 ld      d, a
-                ld      a, [Malias_CurBundleBits1]
+                ld      a, [Malias_CurBundleBits + 1]
                 ld      e, a
                 srl     d
                 ld      a, d
                 ld      [Malias_CurBundleBits], a
                 rr      e
                 ld      a, e
-                ld      [Malias_CurBundleBits1], a
+                ld      [Malias_CurBundleBits + 1], a
                 jp      c, .copyFromHistory ; Mode 1
                 pop     de              ; Mode 0
                 ld      a, [Malias_DecompressionHead]
                 ld      h, a
-                ld      a, [Malias_DecompressionHead1]
+                ld      a, [Malias_DecompressionHead + 1]
                 ld      l, a
                 di
                 call    YetAnotherWFB
@@ -120,7 +120,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      a, h
                 ld      [Malias_DecompressionHead], a
                 ld      a, l
-                ld      [Malias_DecompressionHead1], a
+                ld      [Malias_DecompressionHead + 1], a
                 dec     bc
                 inc     de
                 jp      .decodeBundleCommand
@@ -150,14 +150,14 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      e, a            ; DE = -HL
                 ld      a, [Malias_DecompressionHead]
                 ld      h, a
-                ld      a, [Malias_DecompressionHead1]
+                ld      a, [Malias_DecompressionHead + 1]
                 ld      l, a
                 add     hl, de
                 push    hl
                 pop     de
                 ld      a, [Malias_DecompressionHead]
                 ld      h, a
-                ld      a, [Malias_DecompressionHead1]
+                ld      a, [Malias_DecompressionHead + 1]
                 ld      l, a
 
 .copyByteToHead:                        ; CODE XREF: MaliasDecompress+DA.j
@@ -176,7 +176,7 @@ MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      a, h
                 ld      [Malias_DecompressionHead], a
                 ld      a, l
-                ld      [Malias_DecompressionHead1], a
+                ld      [Malias_DecompressionHead + 1], a
                 pop     de
                 inc     de
                 inc     de
