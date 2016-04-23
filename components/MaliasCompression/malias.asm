@@ -37,7 +37,7 @@ SECTION "Malias", ROM0[$0C48]
 MaliasDecompress: ld      [Malias_CmpSrcBank], a
                 ld      a, [hl+]
                 ld      [Malias_DeCmpDst], a
-                ld      a, [hl+]
+                ld      a, [hl]
                 ld      [Malias_DeCmpDst + 1], a
                 ld      a, [Malias_CmpSrcBank]
                 rst     $10
