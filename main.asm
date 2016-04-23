@@ -66,7 +66,6 @@ __start: nop
 
 SECTION "EntryPoint", ROM0[$0150]
 Main::
-	nop ;todo: import the gameloop
 
 SECTION "font", ROMX[$5229], BANK[$B]
 NUM_CHARACTERS EQU $d3
