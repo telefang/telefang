@@ -60,8 +60,13 @@ SECTION "joypad interrupt", ROM0[$60]
 SECTION "bank 1", ROMX[$4000], BANK[$1]
     ds $4000 ; bank 1 is empty
 
-SECTION "RomHeader", ROM0[$0150]
-Main:
+SECTION "RomHeader", ROM0[$0100]
+__start: nop
+    jp Main
+
+SECTION "EntryPoint", ROM0[$0150]
+Main::
+	nop ;todo: import the gameloop
 
 SECTION "font", ROMX[$5229], BANK[$B]
 NUM_CHARACTERS EQU $d3
