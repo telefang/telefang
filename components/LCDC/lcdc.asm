@@ -1,5 +1,8 @@
 INCLUDE "registers.inc"
 
+H_ExecuteOAMDMA EQU $FF80
+H_VBlankCompleted EQU $FF92
+
 ;The "LCDC" component consists of parts of the game that manage the LCD
 ;Controller and it's associated registers.
 
@@ -31,12 +34,6 @@ W_HBlank_SCYTableID: ds 1
 
 SECTION "LCDC_WRAM5", WRAM0[$CAC1]
 W_HBlank_State: ds 1
-
-SECTION "LCDC_HRAM", HRAM[$FF80]
-H_ExecuteOAMDMA: ds $A
-
-SECTION "LCDC_HRAM2", HRAM[$FF92]
-H_VBlankCompleted: ds 1
 
 SECTION "LCDC", ROM0[$0266]
 SyncShadowRegs:
