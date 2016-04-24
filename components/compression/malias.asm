@@ -24,6 +24,21 @@ SECTION "Malias_WFB", ROM0[$09AA]
 YetAnotherWFB: push af
 .loop:
 
+SECTION "Malias", ROM0[$0C36]
+LoadMaliasGraphics::
+	ld a, 6
+	rst $10
+	push bc
+	pop de
+	ld hl, $4000
+	sla e
+	rl d
+	sla e
+	rl d
+	add hl, de
+	ld a, [hli]
+	;Fall through to MaliasDecompress
+
 ; Decompress graphics.
 ;
 ; A: The bank the compressed graphics are stored in.
@@ -31,8 +46,6 @@ YetAnotherWFB: push af
 ; of addresses compressed graphics are stored at.
 ; HL: Pointer to the memory address to write the
 ; decompressed graphics to.
-
-SECTION "Malias", ROM0[$0C48]
 MaliasDecompress::
 	ld [Malias_CmpSrcBank], a
 	ld a, [hli]
