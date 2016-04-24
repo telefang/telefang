@@ -1,46 +1,5 @@
 INCLUDE "macros.asm"
 
-SECTION "rst $0", ROM0[$0]
-JumpAAtHL:
-    pop hl
-    add a
-    rst $28
-    ld a, [hli]
-    ld h, [hl]
-    ld l, a
-    jp hl
-
-SECTION "rst $8", ROM0[$8]
-    reti
-
-SECTION "rst $10", ROM0[$10]
-    jp $049e
-
-SECTION "rst $18", ROM0[$18]
-    ld a, [$c423]
-    rst $10
-    ret
-
-SECTION "rst $20", ROM0[$20]
-    jp $0476
-
-SECTION "rst $28", ROM0[$28]
-
-SECTION "rst $30", ROM0[$30]
-    add a
-    rst $28
-    ld a, [hli]
-    ld h, [hl]
-    ld l, a
-    ret
-
-SECTION "rst $38", ROM0[$38]
-SnapHL: ; http://www.catb.org/jargon/html/S/snap.html
-    ld a, [hli]
-    ld l, [hl]
-    ld h, a
-    ret
-
 SECTION "vblank interrupt", ROM0[$40]
     jp VBlankingIRQ
 
