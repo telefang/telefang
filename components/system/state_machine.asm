@@ -26,7 +26,100 @@ GameStateMachine::
 	jp [hl]
 
 GameStateMachineTable:
-	dw $1C14, $1C1D, $1C26, $1C2F, $1C38, $1C41, $1C4A, $1C53
-	dw $1C5C, $1C65, $1C6E, $1C77, $1C77, $1C80, $1C89, $1C92
+	dw GameState01, GameState02, GameState03, GameState04
+	dw GameState05, GameState06, GameState07, GameState08
+	dw GameState09, GameState10, GameState11, GameState12
+	dw GameState12, GameState14, GameState15, GameState16
 
 ;Disassembly of individual substates follows.
+;TODO: Name each state.
+
+GameState01:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $5300
+
+GameState02:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $493F
+
+GameState03:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4000
+
+GameState04:
+	ld a, 4
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4000
+
+GameState05:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $40BF
+
+GameState06:
+	ld a, $B
+	ld [W_PreviousBank], a
+	rst $10
+	jp $1EA1
+
+GameState07:
+	ld a, $1C
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4000
+
+GameState08:
+	ld a, 5
+	ld [W_PreviousBank], a
+	rst $10
+	jp $441B
+
+GameState09:
+	ld a, $1D
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4000
+
+GameState10:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4B8B
+
+GameState11:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4824
+
+GameState12: ;Repeated twice in original ROM.
+	ld a, 4
+	ld [W_PreviousBank], a
+	rst $10
+	jp $45C0
+
+GameState14:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $44CF
+
+GameState15:
+	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $458E
+
+GameState16:
+	ld a, $1F
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4000
