@@ -10,7 +10,8 @@ BASEROM := baserom.gbc
 OBJS := main.o wram.o components/compression/malias.o \
 	  components/lcdc/vblank_irq.o components/lcdc/hblank_irq.o \
 	  components/lcdc/oam_dma.o components/lcdc/shadow_regs.o \
-	  components/system/main.o components/system/state_machine.o
+	  components/system/main.o components/system/state_machine.o \
+	  components/system/rst.o
 
 # If your default python is 3, you may want to change this to python27.
 PYTHON := python
