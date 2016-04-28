@@ -52,7 +52,7 @@ MainScript_CCInterpreter::
 	cp $E7
 	jr nz, .thirdPersonCheckCC
 	call $422F
-	jp $4316
+	jp MainScript_EndOpcodeCheckIfSkipping
 	
 .thirdPersonCheckCC
 	cp $E9
@@ -106,8 +106,8 @@ MainScript_CCInterpreter::
 	ld b, a
 	ld a, [W_MainScript_TileBaseIdx]
 	add a, b
-	call $35C2 ;Converts tile base index to a VRAM ptr
-	call $422D
+	call MainScript_TileIdx2Ptr
+	call .swapRegsThing
 	ld a, c
 	call $4E29 ;Draws text. Heavily patched in the patch.
 	pop hl
@@ -135,6 +135,10 @@ MainScript_CCInterpreter::
 
 .isAsciiNonprintable
 	jp MainScript_EndOpcodeSkipNewlineCheck
+
+.swapRegsThing ;Not sure WTF this does, only called from one place!
+	ld a, c
+	ret
 
 SECTION "Main Script Control Code Interpreter 2", ROMX[$42EA], BANK[$B]
 MainScript_EndOpcode:: ;2C2EA $42EA
