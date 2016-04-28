@@ -57,7 +57,7 @@ MainScript_CCInterpreter::
 .thirdPersonCheckCC
 	cp $E9
 	jr nz, .textSpeedCC
-	call $4337
+	call MainScript_Moveup
 	jp $4313
 	
 .textSpeedCC
@@ -65,7 +65,7 @@ MainScript_CCInterpreter::
 	jr nz, .jumpCC
 	call MainScript_LoadFromBank
 	ld [W_MainScript_TextSpeed], a
-	call $4337
+	call MainScript_Moveup
 	jp $4313
 	
 .jumpCC
@@ -85,13 +85,13 @@ MainScript_CCInterpreter::
 	ld [W_MainScript_TextPtr], a
 	ld a, [W_MainScript_CodePtrSpill + 1]
 	ld [W_MainScript_TextPtr + 1], a
-	call $4337
-	call $4337
+	call MainScript_Moveup
+	call MainScript_Moveup
 	jp $4313
 
 .regularText
 	cp $E1
-	jp nc, $4337
+	jp nc, MainScript_Moveup
 	ld a, [W_MainScript_WaitFrames]
 	or a
 	jp z, .noWaiting
@@ -138,7 +138,7 @@ MainScript_CCInterpreter::
 
 SECTION "Main Script Control Code Interpreter 2", ROMX[$42EA], BANK[$B]
 MainScript_EndOpcode:: ;2C2EA $42EA
-	call $4337
+	call MainScript_Moveup
 	ld a, [W_MainScript_NumNewlines]
 	cp 2
 	jr nc, .moreThan1Newline
@@ -159,7 +159,7 @@ MainScript_EndOpcode:: ;2C2EA $42EA
 	ld a, 3
 	ld [W_MainScript_State], a
 	jr .checkIfSkipping
-	call $4337
+	call MainScript_Moveup
    
 .checkIfSkipping
 	ld a, [W_MainScript_TextSpeed]
