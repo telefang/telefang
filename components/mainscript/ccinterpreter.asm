@@ -109,7 +109,7 @@ MainScript_CCInterpreter::
 	call MainScript_TileIdx2Ptr
 	call .swapRegsThing
 	ld a, c
-	call $4E29 ;Draws text. Heavily patched in the patch.
+	call MainScript_DrawLetter
 	pop hl
 	ld a, [W_MainScript_TilesDrawn]
 	inc a

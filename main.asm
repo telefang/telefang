@@ -22,11 +22,6 @@ SECTION "RomHeader", ROM0[$0100]
 __start: nop
     jp Main
 
-SECTION "font", ROMX[$5229], BANK[$B]
-NUM_CHARACTERS EQU $d3
-Font:
-    INCBIN "gfx/font.1bpp", 0, NUM_CHARACTERS * 8
-
 SECTION "gfx/diploma.2bpp", ROMX[$44eb], BANK[$3f]
 DiplomaGfx:
 	INCBIN "gfx/diploma.2bpp"
