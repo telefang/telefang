@@ -58,7 +58,7 @@ MainScript_CCInterpreter::
 	cp $E9
 	jr nz, .textSpeedCC
 	call MainScript_Moveup
-	jp $4313
+	jp MainScript_EndOpcodeSkipNewlineCheck
 	
 .textSpeedCC
 	cp $E3
@@ -66,7 +66,7 @@ MainScript_CCInterpreter::
 	call MainScript_LoadFromBank
 	ld [W_MainScript_TextSpeed], a
 	call MainScript_Moveup
-	jp $4313
+	jp MainScript_EndOpcodeSkipNewlineCheck
 	
 .jumpCC
 	cp $E5
@@ -87,7 +87,7 @@ MainScript_CCInterpreter::
 	ld [W_MainScript_TextPtr + 1], a
 	call MainScript_Moveup
 	call MainScript_Moveup
-	jp $4313
+	jp MainScript_EndOpcodeSkipNewlineCheck
 
 .regularText
 	cp $E1
@@ -134,7 +134,7 @@ MainScript_CCInterpreter::
 	jp MainScript_EndOpcode
 
 .isAsciiNonprintable
-	jp $4313
+	jp MainScript_EndOpcodeSkipNewlineCheck
 
 SECTION "Main Script Control Code Interpreter 2", ROMX[$42EA], BANK[$B]
 MainScript_EndOpcode:: ;2C2EA $42EA
@@ -142,7 +142,7 @@ MainScript_EndOpcode:: ;2C2EA $42EA
 	ld a, [W_MainScript_NumNewlines]
 	cp 2
 	jr nc, .moreThan1Newline
-	jr .checkIfSkipping
+	jr MainScript_EndOpcodeCheckIfSkipping
 	
 .moreThan1Newline
 	and 1
@@ -151,17 +151,21 @@ MainScript_EndOpcode:: ;2C2EA $42EA
 	ld [W_MainScript_State], a
 	ld a, 0
 	ld [W_MainScript_WaitFrames], a
-	jr .checkIfSkipping
+	jr MainScript_EndOpcodeCheckIfSkipping
 	
 .oneOrLessNewlines
 	ld a, [W_MainScript_FramesCount]
 	ld [W_MainScript_WaitFrames], a
 	ld a, 3
 	ld [W_MainScript_State], a
-	jr .checkIfSkipping
+	jr MainScript_EndOpcodeCheckIfSkipping
+	
+;This and the following stupid label names are brought to you by rgbds' and
+;it's inability to resolve local symbols across a global one
+MainScript_EndOpcodeSkipNewlineCheck:
 	call MainScript_Moveup
    
-.checkIfSkipping
+MainScript_EndOpcodeCheckIfSkipping:
 	ld a, [W_MainScript_TextSpeed]
 	or a
 	jp z, MainScriptMachine
