@@ -71,5 +71,3 @@ PhoneKeypadGfx:
 	INCBIN "gfx/phones/2/menus.2bpp"
 	INCBIN "gfx/phones/2/solfege.2bpp"
 	INCBIN "gfx/phones/2/menus.2bpp"
-
-INCLUDE "data/compressed_gfx.asm"

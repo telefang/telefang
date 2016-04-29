@@ -1,3 +1,4 @@
+INCLUDE "macros.asm"
 
 SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb $00,	$8000, 0 ; $00
@@ -203,7 +204,7 @@ BattleMessagesGfx:
 	INCBIN "gfx/battle_messages.malias"
 BattleMessagesGfxEnd
 
-SECTION "Unknown Font Compressed GFX", ROMX[$60a9], BANK[$36]
+SECTION "Unknown Font Compressed GFX", ROMX[$615c], BANK[$36]
 UnknownFontGfx:
 	db COMPRESSED
 	INCBIN "gfx/unknown_font.malias"
@@ -226,7 +227,7 @@ MenuOptionsGfx:
 	INCBIN "gfx/menu/options.malias"
 MenuOptionsGfxEnd
 
-SECTION "Title - Sprites Compressed GFX", ROMX[$5973], BANK[$36]
+SECTION "Title - Sprites Compressed GFX", ROMX[$5a26], BANK[$36]
 TitleSpritesGfx:
 	db COMPRESSED
 	INCBIN "gfx/title/sprites.malias"
@@ -271,7 +272,7 @@ MenuUnkGfx:
 	INCBIN "gfx/menu/unk.malias"
 MenuUnkGfxEnd
 
-SECTION "Menu - Stats Compressed GFX", ROMX[$5c36], BANK[$36]
+SECTION "Menu - Stats Compressed GFX", ROMX[$5ce9], BANK[$36]
 MenuStatsGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/stats.malias"
@@ -306,7 +307,7 @@ MenuDmeloGfx:
 	INCBIN "gfx/menu/dmelo.malias"
 MenuDmeloGfxEnd
 
-SECTION "Menu - Battle2 Compressed GFX", ROMX[$617f], BANK[$36]
+SECTION "Menu - Battle2 Compressed GFX", ROMX[$6232], BANK[$36]
 MenuBattle2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/battle2.malias"
@@ -329,7 +330,7 @@ MenuNicknameGfx:
 	INCBIN "gfx/menu/nickname.malias"
 MenuNicknameGfxEnd
 
-SECTION "Menu - Numbers Compressed GFX", ROMX[$63ff], BANK[$36]
+SECTION "Menu - Numbers Compressed GFX", ROMX[$64b2], BANK[$36]
 MenuNumbersGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/numbers.malias"
@@ -462,7 +463,7 @@ IntroCryptoShigeki1Gfx:
 IntroCryptoShigeki1GfxEnd
 
 IntroCryptoShigeki2Gfx:
-	dbw NOT_COMPRESSED, IntroCryptoShigeki2GfxEnd - IntroCryptoShigeki2Gfx - 3
+	db COMPRESSED
 	INCBIN "gfx/intro/crypto_shigeki2.2bpp"
 IntroCryptoShigeki2GfxEnd
 
@@ -543,7 +544,7 @@ MenuMetGfx:
 	INCBIN "gfx/menu/met.malias"
 MenuMetGfxEnd
 
-SECTION "Cutscene - Antenna Tree Compressed GFX", ROMX[$6c7f], BANK[$39]
+SECTION "Cutscene - Antenna Tree Compressed GFX", ROMX[$6d07], BANK[$39]
 CutsceneAntennaTreeGfx:
 	db COMPRESSED
 	INCBIN "gfx/cutscene/antenna_tree.malias"
