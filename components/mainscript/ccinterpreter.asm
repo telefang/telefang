@@ -46,6 +46,8 @@ MainScript_CCInterpreter::
 .localStateJumpCC
 	cp $E1
 	jr nz, .opcodeE7
+   
+.j2StateOpcode
 	jp MainScript_StateOpcode
 	
 .opcodeE7 ;Don't know what this does yet.
@@ -124,7 +126,7 @@ MainScript_CCInterpreter::
 .noAutomaticNewline
 	cp $1F
 	jr c, .isAsciiNonprintable
-	call $42BE
+	call MainScript_LowControlCode
 	jr z, .isAsciiNonprintable
 	ld a, [W_MainScript_NumNewlines]
 	inc a
@@ -140,7 +142,48 @@ MainScript_CCInterpreter::
 	ld a, c
 	ret
 
-SECTION "Main Script Control Code Interpreter 2", ROMX[$42EA], BANK[$B]
+;Appears to be some kind of recovery routine.
+;Gets jumped to for nonprintable ASCII, does some weird crap
+SECTION "Main Script Control Code Interpreter 2", ROMX[$42BE], BANK[$B]
+MainScript_LowControlCode::
+    ld b, 0
+.loc_42C0
+    call MainScript_LoadFromBank
+    cp $E1
+    jr c, .loc_42E2
+    cp $E1
+    jr nz, .loc_42D6
+    ld a, b
+    or a
+    jr z, .loc_42D1
+    xor a
+    ret
+
+.loc_42D1
+    call $417F ;actually MainScript_CCInterpreter.j2StateOpcode
+    xor a
+    ret
+    
+.loc_42D6
+    cp $E2
+    jr nz, .loc_42E0
+    ld a, b
+    or a
+    jr nz, .loc_42E2
+    xor a
+    ret
+
+.loc_42E0
+    jr .loc_42C0
+
+.loc_42E2
+    inc b
+    ld a, b
+    cp 1
+    jr z, .loc_42C0
+    or a
+    ret
+
 MainScript_EndOpcode:: ;2C2EA $42EA
 	call MainScript_Moveup
 	ld a, [W_MainScript_NumNewlines]
