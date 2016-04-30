@@ -135,25 +135,25 @@ for i in range(NUMGFX):
             print '\tdb COMPRESSED'
         else:
             print '\tdbw NOT_COMPRESSED, {}End - {} - 3'.format(g['label'], g['label'])
-        print '\tINCBIN "gfx/{}.{}"'.format(g['filename'], ['2bpp', 'malias'][g['is_compressed']])
+        print '\tINCBIN "' + sys.argv[2] + '/{}.{}"'.format(g['filename'], ['2bpp', 'malias'][g['is_compressed']])
         print "{}End".format(g['label'])
 
 for i in range(NUMGFX):
     g = graphics[i]
     if g['filename']:
-        path = 'gfx/{}'.format('/'.join(g['filename'].split('/')[:-1]))
+        path = sys.argv[2] + '/{}'.format('/'.join(g['filename'].split('/')[:-1]))
         if not os.path.isdir(path):
             os.mkdir(path)
         if g['is_compressed']:
-            open("gfx/{}.malias".format(g['filename']), "wb").write(g['data'])
-        open("gfx/{}.2bpp".format(g['filename']), "wb").write(g['decompressed_data'])
-        os.system("python pokemon-reverse-engineering-tools/pokemontools/gfx.py png gfx/{}.2bpp".format(g['filename']))
+            open(sys.argv[2] + "/{}.malias".format(g['filename']), "wb").write(g['data'])
+        open(sys.argv[2] + "/{}.2bpp".format(g['filename']), "wb").write(g['decompressed_data'])
+        os.system("python pokemon-reverse-engineering-tools/pokemontools/gfx.py png " + sys.argv[2] + "/{}.2bpp".format(g['filename']))
         
         if g['is_compressed']:
-            os.system("git add gfx/{}.malias".format(g['filename']))
+            os.system("git add " + sys.argv[2] + "/{}.malias".format(g['filename']))
         else:
-            os.system("git add gfx/{}.2bpp".format(g['filename']))
-        os.system("git add gfx/{}.png".format(g['filename']))
+            os.system("git add " + sys.argv[2] + "/{}.2bpp".format(g['filename']))
+        os.system("git add " + sys.argv[2] + "/{}.png".format(g['filename']))
             
 
 #for i in range(NUMGFX):
