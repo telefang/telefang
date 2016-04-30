@@ -16,8 +16,8 @@ OBJS := main.o wram.o components/compression/malias.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o
-OBJS_POWER := versions/power/compressed_gfx.o
-OBJS_SPEED := versions/speed/compressed_gfx.o
+OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
+OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
 # If your default python is 3, you may want to change this to python27.

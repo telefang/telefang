@@ -22,10 +22,6 @@ SECTION "RomHeader", ROM0[$0100]
 __start: nop
     jp Main
 
-SECTION "gfx/diploma.2bpp", ROMX[$44eb], BANK[$3f]
-DiplomaGfx:
-	INCBIN "gfx/diploma.2bpp"
-
 SECTION "gfx/denjuu_stages.2bpp", ROMX[$5180], BANK[$7d]
 DenjuuStageGfx:
 	INCBIN "gfx/denjuu_stages.2bpp"
