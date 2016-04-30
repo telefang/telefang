@@ -49,20 +49,20 @@ SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb $29,	$9000, 0 ; $2d
 	dbwb $29,	$9000, 0 ; $2e
 	dbwb $29,	$9000, 0 ; $2f
-	dbwb BANK(IntroShadowAngios1Gfx),	$9000, 0 ; $30
-	dbwb BANK(IntroShadowAngios2Gfx),	$8800, 0 ; $31
+	dbwb BANK(IntroShadowGymnos1Gfx),	$9000, 0 ; $30
+	dbwb BANK(IntroShadowGymnos2Gfx),	$8800, 0 ; $31
 	dbwb BANK(IntroShigekiGfx),	$9000, 0 ; $32
 	dbwb BANK(IntroTreesGfx),	$9000, 0 ; $33
-	dbwb BANK(IntroCryptoShigeki1Gfx),	$9000, 0 ; $34
-	dbwb BANK(IntroCryptoShigeki2Gfx),	$8800, 0 ; $35
-	dbwb BANK(IntroAngios1Gfx),	$9000, 0 ; $36
-	dbwb BANK(IntroAngios2Gfx),	$8800, 0 ; $37
-	dbwb BANK(IntroCrypto1Gfx),	$9000, 0 ; $38
-	dbwb BANK(IntroCrypto2Gfx),	$8800, 0 ; $39
+	dbwb BANK(IntroFungusShigeki1Gfx),	$9000, 0 ; $34
+	dbwb BANK(IntroFungusShigeki2Gfx),	$8800, 0 ; $35
+	dbwb BANK(IntroGymnos1Gfx),	$9000, 0 ; $36
+	dbwb BANK(IntroGymnos2Gfx),	$8800, 0 ; $37
+	dbwb BANK(IntroFungus1Gfx),	$9000, 0 ; $38
+	dbwb BANK(IntroFungus2Gfx),	$8800, 0 ; $39
 	dbwb BANK(IntroShigekiSprites1Gfx),	$8000, 0 ; $3a
 	dbwb BANK(IntroShigekiSprites2Gfx),	$8000, 0 ; $3b
 	dbwb BANK(IntroShigekiMouthGfx),	$8000, 0 ; $3c
-	dbwb BANK(IntroCryptoCallGfx),	$8000, 0 ; $3d
+	dbwb BANK(IntroFungusCallGfx),	$8000, 0 ; $3d
 	dbwb BANK(IntroCryptoShigekiSpritesGfx),	$8000, 0 ; $3e
 	dbwb BANK(UnusedClawGfx),	$8000, 0 ; $3f
 	dbwb BANK(MenuMultiplayerGfx),	$9000, 0 ; $40
@@ -147,20 +147,20 @@ SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw $0000 ; $2d
 	dw $0000 ; $2e
 	dw $0000 ; $2f
-	dw IntroShadowAngios1Gfx ; $30
-	dw IntroShadowAngios2Gfx ; $31
+	dw IntroShadowGymnos1Gfx ; $30
+	dw IntroShadowGymnos2Gfx ; $31
 	dw IntroShigekiGfx ; $32
 	dw IntroTreesGfx ; $33
-	dw IntroCryptoShigeki1Gfx ; $34
-	dw IntroCryptoShigeki2Gfx ; $35
-	dw IntroAngios1Gfx ; $36
-	dw IntroAngios2Gfx ; $37
-	dw IntroCrypto1Gfx ; $38
-	dw IntroCrypto2Gfx ; $39
+	dw IntroFungusShigeki1Gfx ; $34
+	dw IntroFungusShigeki2Gfx ; $35
+	dw IntroGymnos1Gfx ; $36
+	dw IntroGymnos2Gfx ; $37
+	dw IntroFungus1Gfx ; $38
+	dw IntroFungus2Gfx ; $39
 	dw IntroShigekiSprites1Gfx ; $3a
 	dw IntroShigekiSprites2Gfx ; $3b
 	dw IntroShigekiMouthGfx ; $3c
-	dw IntroCryptoCallGfx ; $3d
+	dw IntroFungusCallGfx ; $3d
 	dw IntroCryptoShigekiSpritesGfx ; $3e
 	dw UnusedClawGfx ; $3f
 	dw MenuMultiplayerGfx ; $40
@@ -252,12 +252,12 @@ EvolveBgGfxEnd
 SECTION "Title - Title1 Compressed GFX", ROMX[$4e55], BANK[$36]
 TitleTitle1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/title/title1.malias"
+	INCBIN "versions/speed/gfx/title/title1.malias"
 TitleTitle1GfxEnd
 
 TitleTitle2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/title/title2.malias"
+	INCBIN "versions/speed/gfx/title/title2.malias"
 TitleTitle2GfxEnd
 
 SECTION "Screen - Save Deleted Compressed GFX", ROMX[$43ed], BANK[$37]
@@ -436,16 +436,16 @@ TilemapShrineGfx:
 	INCBIN "gfx/tilemap/shrine.malias"
 TilemapShrineGfxEnd
 
-SECTION "Intro - Shadow Angios1 Compressed GFX", ROMX[$4000], BANK[$39]
-IntroShadowAngios1Gfx:
+SECTION "Intro - Shadow Gymnos1 Compressed GFX", ROMX[$4000], BANK[$39]
+IntroShadowGymnos1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/shadow_angios1.malias"
-IntroShadowAngios1GfxEnd
+	INCBIN "versions/speed/gfx/intro/shadow_gymnos1.malias"
+IntroShadowGymnos1GfxEnd
 
-IntroShadowAngios2Gfx:
+IntroShadowGymnos2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/shadow_angios2.malias"
-IntroShadowAngios2GfxEnd
+	INCBIN "versions/speed/gfx/intro/shadow_gymnos2.malias"
+IntroShadowGymnos2GfxEnd
 
 IntroShigekiGfx:
 	db COMPRESSED
@@ -457,35 +457,35 @@ IntroTreesGfx:
 	INCBIN "gfx/intro/trees.malias"
 IntroTreesGfxEnd
 
-IntroCryptoShigeki1Gfx:
+IntroFungusShigeki1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto_shigeki1.malias"
-IntroCryptoShigeki1GfxEnd
+	INCBIN "versions/speed/gfx/intro/fungus_shigeki1.malias"
+IntroFungusShigeki1GfxEnd
 
-IntroCryptoShigeki2Gfx:
+IntroFungusShigeki2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto_shigeki2.2bpp"
-IntroCryptoShigeki2GfxEnd
+	INCBIN "versions/speed/gfx/intro/fungus_shigeki2.malias"
+IntroFungusShigeki2GfxEnd
 
-IntroAngios1Gfx:
+IntroGymnos1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/angios1.malias"
-IntroAngios1GfxEnd
+	INCBIN "versions/speed/gfx/intro/gymnos1.malias"
+IntroGymnos1GfxEnd
 
-IntroAngios2Gfx:
+IntroGymnos2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/angios2.malias"
-IntroAngios2GfxEnd
+	INCBIN "versions/speed/gfx/intro/gymnos2.malias"
+IntroGymnos2GfxEnd
 
-IntroCrypto1Gfx:
+IntroFungus1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto1.malias"
-IntroCrypto1GfxEnd
+	INCBIN "versions/speed/gfx/intro/fungus1.malias"
+IntroFungus1GfxEnd
 
-IntroCrypto2Gfx:
+IntroFungus2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto2.malias"
-IntroCrypto2GfxEnd
+	INCBIN "versions/speed/gfx/intro/fungus2.malias"
+IntroFungus2GfxEnd
 
 SECTION "Intro - Shigeki Sprites1 Compressed GFX", ROMX[$4000], BANK[$3a]
 IntroShigekiSprites1Gfx:
@@ -503,10 +503,10 @@ IntroShigekiMouthGfx:
 	INCBIN "gfx/intro/shigeki_mouth.malias"
 IntroShigekiMouthGfxEnd
 
-IntroCryptoCallGfx:
+IntroFungusCallGfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto_call.malias"
-IntroCryptoCallGfxEnd
+	INCBIN "versions/speed/gfx/intro/fungus_call.malias"
+IntroFungusCallGfxEnd
 
 IntroCryptoShigekiSpritesGfx:
 	db COMPRESSED
@@ -530,12 +530,12 @@ MenuMultiplayer2GfxEnd
 
 ScreenGameOverGfx:
 	db COMPRESSED
-	INCBIN "gfx/screen/game_over.malias"
+	INCBIN "versions/speed/gfx/screen/game_over.malias"
 ScreenGameOverGfxEnd
 
 ScreenGameOver2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/screen/game_over2.malias"
+	INCBIN "versions/speed/gfx/screen/game_over2.malias"
 ScreenGameOver2GfxEnd
 
 SECTION "Menu - Met Compressed GFX", ROMX[$5ce2], BANK[$37]
