@@ -54,13 +54,13 @@ MainScript_CCInterpreter::
 	cp $E7
 	jr nz, .thirdPersonCheckCC
 	call $422F
-	jp MainScript_EndOpcodeCheckIfSkipping
+	jp MainScript_EndOpcode.checkIfSkipping
 	
 .thirdPersonCheckCC
 	cp $E9
 	jr nz, .textSpeedCC
 	call MainScript_Moveup
-	jp MainScript_EndOpcodeSkipNewlineCheck
+	jp MainScript_EndOpcode.skipNewlineCheck
 	
 .textSpeedCC
 	cp $E3
@@ -68,7 +68,7 @@ MainScript_CCInterpreter::
 	call MainScript_LoadFromBank
 	ld [W_MainScript_TextSpeed], a
 	call MainScript_Moveup
-	jp MainScript_EndOpcodeSkipNewlineCheck
+	jp MainScript_EndOpcode.skipNewlineCheck
 	
 .jumpCC
 	cp $E5
@@ -89,7 +89,7 @@ MainScript_CCInterpreter::
 	ld [W_MainScript_TextPtr + 1], a
 	call MainScript_Moveup
 	call MainScript_Moveup
-	jp MainScript_EndOpcodeSkipNewlineCheck
+	jp MainScript_EndOpcode.skipNewlineCheck
 
 .regularText
 	cp $E1
@@ -136,7 +136,7 @@ MainScript_CCInterpreter::
 	jp MainScript_EndOpcode
 
 .isAsciiNonprintable
-	jp MainScript_EndOpcodeSkipNewlineCheck
+	jp MainScript_EndOpcode.skipNewlineCheck
 
 .swapRegsThing ;Not sure WTF this does, only called from one place!
 	ld a, c
@@ -160,7 +160,7 @@ MainScript_LowControlCode::
     ret
 
 .loc_42D1
-    call $417F ;actually MainScript_CCInterpreter.j2StateOpcode
+    call MainScript_CCInterpreter.j2StateOpcode
     xor a
     ret
     
@@ -189,7 +189,7 @@ MainScript_EndOpcode:: ;2C2EA $42EA
 	ld a, [W_MainScript_NumNewlines]
 	cp 2
 	jr nc, .moreThan1Newline
-	jr MainScript_EndOpcodeCheckIfSkipping
+	jr MainScript_EndOpcode.checkIfSkipping
 	
 .moreThan1Newline
 	and 1
@@ -198,21 +198,19 @@ MainScript_EndOpcode:: ;2C2EA $42EA
 	ld [W_MainScript_State], a
 	ld a, 0
 	ld [W_MainScript_WaitFrames], a
-	jr MainScript_EndOpcodeCheckIfSkipping
+	jr MainScript_EndOpcode.checkIfSkipping
 	
 .oneOrLessNewlines
 	ld a, [W_MainScript_FramesCount]
 	ld [W_MainScript_WaitFrames], a
 	ld a, 3
 	ld [W_MainScript_State], a
-	jr MainScript_EndOpcodeCheckIfSkipping
+	jr MainScript_EndOpcode.checkIfSkipping
 	
-;This and the following stupid label names are brought to you by rgbds' and
-;it's inability to resolve local symbols across a global one
-MainScript_EndOpcodeSkipNewlineCheck:
+.skipNewlineCheck:
 	call MainScript_Moveup
    
-MainScript_EndOpcodeCheckIfSkipping:
+.checkIfSkipping:
 	ld a, [W_MainScript_TextSpeed]
 	or a
 	jp z, MainScriptMachine
