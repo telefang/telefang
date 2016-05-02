@@ -6,7 +6,7 @@ INCLUDE "components/LCDC/vblank_irq.inc"
 ;Controller and it's associated registers.
 
 SECTION "LCDC VBlank_IRQ_WRAM1", WRAM0[$C437]
-W_OAMDMAReady: ds 1
+W_OAM_DMAReady:: ds 1
 
 SECTION "LCDC VBlank_IRQ again", ROM0[$02E7]
 VBlankingIRQ::
@@ -18,14 +18,14 @@ VBlankingIRQ::
 	ld a, [H_VBlankCompleted]
 	or a
 	jr nz, .setCompletedFlag
-	ld a, [W_OAMDMAReady]
+	ld a, [W_OAM_DMAReady]
 	or a
 	jr z, .setCompletedFlag
 	call H_ExecuteOAMDMA ; In-memory code: OAM DMA
 	call $3171 ; Looks like a crappy hack.
 	xor a
 	ld [$C430], a
-	ld [W_OAMDMAReady], a
+	ld [W_OAM_DMAReady], a
 
 .setCompletedFlag:
 	ld a, 1
