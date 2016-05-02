@@ -6,7 +6,6 @@ INCLUDE "components/lcdc/vblank_irq.inc"
 
 ;These are dummy labels for functions not yet imported into the disassembly.
 ;We should do those soon.
-LoadSpritesForDMA EQU $0824
 GameStateMachine EQU $1BE2
 LoadScheduledPalette EQU $3869
 CommitGBCPalettes EQU $106A
