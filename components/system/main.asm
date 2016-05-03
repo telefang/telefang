@@ -19,8 +19,6 @@ StagePaletteSetDD10 EQU $109D
 StagePaletteSetDD50 EQU $1145
 ClearDMGPaletteShadow EQU $1043
 InitializeSoundEngine EQU $0439
-ClearWRAMVariables EQU $097C
-ClearTilePatternTables EQU $0968
 ClearGBCTileMap0 EQU $09BF
 ClearGBCTileMap1 EQU $09E5
 ClearTilemap0 EQU $0807

@@ -1,1 +1,2 @@
+M_OAMShadowLength EQU $A0
 H_ExecuteOAMDMA EQU $FF80

@@ -1,21 +1,8 @@
 INCLUDE "registers.inc"
 INCLUDE "components/LCDC/oam_dma.inc"
 
-M_OAMShadowLength EQU $A0
-
 SECTION "LCDC OAM DMA Shadow", WRAM0[$C000]
 W_ShadowOAM:: ds M_OAMShadowLength
-
-SECTION "LCDC OAM Shadow Management", ROM0[$0971]
-ClearShadowOAM::
-	ld b, M_OAMShadowLength
-	xor a
-	ld hl, W_ShadowOAM
-.copyLoop
-	ld [hli], a
-	dec b
-	jr nz, .copyLoop
-	ret
 
 ;The OAM DMA driver is a small bit of code which executes in high memory to
 ;keep the CPU off the main memory bus as DMA does it's thing.

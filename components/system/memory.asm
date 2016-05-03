@@ -1,5 +1,9 @@
 ;Utilities that seem to be ASM analogs of common C Runtime mem* functions.
 
+;Project won't link unless I declare it in a banked WRAM section
+SECTION "System_Memory Stack", WRAMX[$DF00], BANK[1]
+W_Stack:: ds $FF
+
 SECTION "System_Memory", ROM0[$159F]
 ;Clear memory (set it to $00).
 ;HL is the target and BC is the size/count.
