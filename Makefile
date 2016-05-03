@@ -15,6 +15,7 @@ OBJS := main.o wram.o components/compression/malias.o \
 	  components/lcdc/sprite_compose.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
+	  components/system/memory.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
