@@ -6,15 +6,12 @@ INCLUDE "components/lcdc/vblank_irq.inc"
 
 ;These are dummy labels for functions not yet imported into the disassembly.
 ;We should do those soon.
-CommitGBCPalettes EQU $106A
 SIOActivityCheck EQU $0234
 ResetSIO EQU $1D23
 ResetSIO_B2 EQU $1D46
 SoftResetCheck EQU $02D0
 InitializeSGB EQU $4000 ;Bank 3, flat address 0xC000
 SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
-StagePaletteSetDD10 EQU $109D
-StagePaletteSetDD50 EQU $1145
 ClearDMGPaletteShadow EQU $1043
 InitializeSoundEngine EQU $0439
 ClearGBCTileMap0 EQU $09BF
@@ -25,8 +22,6 @@ SamplePlayerInput EQU $0766
 
 ;WRAM locations we haven't properly labeled yet
 W_SGBDetectSuccess EQU $C40A
-W_PaletteStagedBGP EQU $DD00
-W_PaletteStagedOBP EQU $DD03
 
 ;This stores the bootrom argument to determine what GB model we're on.
 SECTION "System WRAM", WRAM0[$C3E8]
@@ -98,11 +93,11 @@ Main::
 	xor a
 	ld [$CB3F], a
 	ld a, 1
-	ld [W_PaletteStagedBGP], a
-	ld [W_PaletteStagedOBP], a
+	ld [W_CGBPaletteStagedBGP], a
+	ld [W_CGBPaletteStagedOBP], a
 	xor a
-	call StagePaletteSetDD10
-	call StagePaletteSetDD50
+	call CGBLoadBackgroundPalette
+	call CGBLoadObjectPalette
 	ld a, 3
 	rst $10
 	xor a
@@ -131,8 +126,8 @@ Main::
 	call ResetSIO_B2
 .dontResetSIO
 	call SIOActivityCheck
-	call CommitGBCPalettes
-	call CGBLoadScheduledPalette
+	call CGBCommitPalettes
+	call CGBCommitScheduledPalette
 	call SamplePlayerInput
 	call GameStateMachine
 	call LoadSpritesForDMA

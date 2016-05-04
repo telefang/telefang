@@ -19,11 +19,6 @@ Malias_CmpSrcBank: ds 1
 SECTION "Malias_WRAM3", WRAM0[$C450]
 Malias_DeCmpDst: ds 2
 
-; As far as I can tell this wait-for-blank is only called by MaliasDecompress
-SECTION "Malias_WFB", ROM0[$09AA]
-YetAnotherWFB: push af
-.loop:
-
 SECTION "Malias", ROM0[$0C36]
 LoadMaliasGraphics::
 	ld a, 6

@@ -27,3 +27,15 @@ ClearWRAMVariables::
 	ld bc, W_Stack - (W_ShadowOAM + M_OAMShadowLength)
 	ld hl, W_ShadowOAM + M_OAMShadowLength
 	jp memclr
+	
+SECTION "LCDC Memory Utility 2", ROM0[$09AA]
+;Yet another wait-for-blank, because I assume there's more in the code.
+YetAnotherWFB::
+	push af
+	
+.loop
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .loop
+	pop af
+	ret
