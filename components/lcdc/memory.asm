@@ -39,3 +39,70 @@ YetAnotherWFB::
 	jr nz, .loop
 	pop af
 	ret
+	
+vmempoke::
+	di
+	push af
+	
+.wfb
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+	pop af
+	ld [hli], a
+	ei
+	ret
+	
+ClearGBCTileMap0::
+	ld bc, M_VRAM_TMAPSIZE
+	ld hl, VRAM_TMAP0
+	
+.bank0
+	xor a
+	call vmempoke
+	dec bc
+	ld a, b
+	or c
+	jr nz, .bank0
+	ld bc, M_VRAM_TMAPSIZE
+	ld hl, VRAM_TMAP0
+	ld a, 1
+	ld [REG_VBK], a
+	
+.bank1
+	xor a
+	call vmempoke
+	dec bc
+	ld a, b
+	or c
+	jr nz, .bank1
+	xor a
+	ld [REG_VBK], a
+	ret
+	
+ClearGBCTileMap1::
+	ld bc, M_VRAM_TMAPSIZE
+	ld hl, VRAM_TMAP1
+	
+.bank0
+	xor a
+	call vmempoke
+	dec bc
+	ld a, b
+	or c
+	jr nz, .bank0
+	ld bc, M_VRAM_TMAPSIZE
+	ld hl, VRAM_TMAP1
+	ld a, 1
+	ld [REG_VBK], a
+	
+.bank1
+	xor a
+	call vmempoke
+	dec bc
+	ld a, b
+	or c
+	jr nz, .bank1
+	xor a
+	ld [REG_VBK], a
+	ret

@@ -38,3 +38,5 @@ VRAM_TPT0 EQU $8000 ;Tile Pattern Table 0, can be used by sprites and BG.
 VRAM_TPT1 EQU $8800 ;Tile Pattern Table 1, can be used by BG and window.
 VRAM_TMAP0 EQU $9800 ;Tile Maps ("nametable" in NESspeak)
 VRAM_TMAP1 EQU $9C00
+
+M_VRAM_TMAPSIZE EQU $400

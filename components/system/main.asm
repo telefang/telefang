@@ -14,8 +14,6 @@ InitializeSGB EQU $4000 ;Bank 3, flat address 0xC000
 SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
 ClearDMGPaletteShadow EQU $1043
 InitializeSoundEngine EQU $0439
-ClearGBCTileMap0 EQU $09BF
-ClearGBCTileMap1 EQU $09E5
 ClearTilemap0 EQU $0807
 DisableLCD EQU $07DF
 SamplePlayerInput EQU $0766
