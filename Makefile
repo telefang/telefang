@@ -13,6 +13,7 @@ OBJS := main.o wram.o components/compression/malias.o \
 	  components/lcdc/vblank_irq.o components/lcdc/hblank_irq.o \
 	  components/lcdc/oam_dma.o components/lcdc/shadow_regs.o \
 	  components/lcdc/sprite_compose.o components/lcdc/memory.o \
+     components/lcdc/cgb_palette.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o \

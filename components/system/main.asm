@@ -6,8 +6,6 @@ INCLUDE "components/lcdc/vblank_irq.inc"
 
 ;These are dummy labels for functions not yet imported into the disassembly.
 ;We should do those soon.
-GameStateMachine EQU $1BE2
-LoadScheduledPalette EQU $3869
 CommitGBCPalettes EQU $106A
 SIOActivityCheck EQU $0234
 ResetSIO EQU $1D23
@@ -134,7 +132,7 @@ Main::
 .dontResetSIO
 	call SIOActivityCheck
 	call CommitGBCPalettes
-	call LoadScheduledPalette
+	call CGBLoadScheduledPalette
 	call SamplePlayerInput
 	call GameStateMachine
 	call LoadSpritesForDMA
