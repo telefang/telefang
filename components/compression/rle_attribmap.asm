@@ -1,40 +1,51 @@
 INCLUDE "registers.inc"
 
-;Implements an RLE decompression algorithm, intended for tilemaps.
-;It is not strictly RLE: incrementing or decrementing runs are allowed, as well
-;as pure uncompressed data.
+SECTION "RLE Attribmap Vars", WRAMX[$DD06], BANK[$1]
+W_RLEAttribMapsEnabled: ds 1
 
-SECTION "RLE Tilemap Vars", WRAM0[$C41E]
-W_RLETilemap_CurrentTilemap:: ds 1
-
-SECTION "RLE Tilemap", ROM0[$0A2A]
-RLEDecompressTMAP0::
+SECTION "RLE Attribmap Decompress", ROM0[$0B1A]
+RLEDecompressAttribsTMAP0::
 	push af
+	ld a, [W_RLEAttribMapsEnabled]
+	or a
+	jp z, RLEEarlyExit
+	ld a, [W_GameboyType]
+	cp $11
+	jp nz, RLEEarlyExit
 	ld hl, VRAM_TMAP0
 	xor a
 	ld [W_RLETilemap_CurrentTilemap], a
-	jr RLEDecompress
+	jr RLEDecompressAttribs
 
-RLEDecompressTMAP1::
+RLEDecompressAttribsTMAP1::
 	push af
+	ld a, [W_RLEAttribMapsEnabled]
+	or a
+	jp z, RLEEarlyExit
+	ld a, [W_GameboyType]
+	cp $11
+	jp nz, RLEEarlyExit
 	ld hl, VRAM_TMAP1
 	ld a, 1
 	ld [W_RLETilemap_CurrentTilemap], a
-	
-;Decompress a tilemap in the RLETilemap table.
-; A: RLETilemap bank to index
+
+;Decompress an attributemap in the RLEAttribmap table.
+;Uses an identical format to RLE Tilemaps, which is kind of disappointing.
+; A: RLEAttribmap bank to index
 ;    NOTE: This will be read from stack; the wrapper functions take A directly.
 ; B: Tilemap row to decompress to
 ; C: Tilemap column to decompress to
-; E: Index of tilemap/attribmap
+; E: Index of attribmap
 ; HL: Address of tilemap to decompress into.
 ;     Does not strictly need to be VRAM.
 ;		NOTE: The wrapper functions fill this in for you.
-RLEDecompress::
+RLEDecompressAttribs::
+	ld a, 1
+	ld [REG_VBK], a
 	pop af
 	push hl
 	push de
-	ld hl, RLETilemapBanks
+	ld hl, RLEAttribmapBanks
 	ld d, 0
 	ld e, a
 	add hl, de
@@ -64,7 +75,7 @@ RLEDecompress::
 	ld c, b
 	ld b, 0
 	add hl, bc
-	add hl, de ;Effectively: HL = &tilemap[B][C]
+	add hl, de
 	pop de
 	push hl
 	ld hl, $4000
@@ -78,25 +89,22 @@ RLEDecompress::
 	pop hl
 	ld b, h
 	ld c, l
-	
-	;Bookkeeping is over, we're now at the point where we can actually
-	;decompress data.
-	;Scorecard for those following at home:
-	;BC is our decompression output head
-	;DE is our decompression input head
-	
 	ld a, [de]
 	cp $FF
-	ret z	;Return on an $FF byte.
+	ret z ;WTF: Early bailout fails to reset REG_VBK!!!
 	and 3
-	jr z, .copyLinesMode ;If first byte's lower bits are 0, data is uncompressed
-	jr .rllDecompressMode ;Otherwise use the full decompression engine
+	jr z, RLEEarlyExit.copyLinesMode ;If first byte's lower bits are 0, data is uncompressed
+	jr RLEEarlyExit.rllDecompressMode ;Otherwise use the full decompression engine
+	
+RLEEarlyExit:
+	pop af
+	ret
 	
 .copyLinesMode
 	inc de
 	ld a, [de]
 	cp $FF
-	ret z
+	jp z, .cleanUpAndExit
 	cp $FE
 	jr z, .newLine
 	call vmempoke
@@ -124,7 +132,7 @@ RLEDecompress::
 	inc de
 	ld a, [de]
 	cp $ff
-	ret z
+	jp z, .cleanUpAndExit
 	ld a, [de] ; WTF: Useless read.
 	and $C0
 	cp $C0
@@ -216,7 +224,12 @@ RLEDecompress::
 	pop bc
 	jp .rllDecompressMode
 	
-;Lists banks that store RLE-compressed data.
-RLETilemapBanks:
-	db $3E
-	db $3F
+.cleanUpAndExit
+	xor a
+	ld [REG_VBK], a
+	ret
+
+;Lists banks that store RLE-compressed attribute data.
+RLEAttribmapBanks:
+	db 8
+	db 9

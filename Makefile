@@ -10,7 +10,7 @@ BASEROM_POWER := baserom_pw.gbc
 ROMS_SPEED := telefang_sp.gbc
 BASEROM_SPEED := baserom_sp.gbc
 OBJS := main.o wram.o components/compression/malias.o \
-     components/compression/rle_tilemap.o \
+     components/compression/rle_tilemap.o components/compression/rle_attribmap.o \
 	  components/lcdc/vblank_irq.o components/lcdc/hblank_irq.o \
 	  components/lcdc/oam_dma.o components/lcdc/shadow_regs.o \
 	  components/lcdc/sprite_compose.o components/lcdc/memory.o \
