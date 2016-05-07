@@ -1,4 +1,4 @@
-INCLUDE "components/system/input.inc"
+INCLUDE "components/jpinput/jpinput.inc"
 
 ;Control codes are as follows:
 ;E1: Local state change (1 byte follows)
@@ -217,10 +217,10 @@ MainScript_EndOpcode:: ;2C2EA $42EA
 	ld a, [W_MainScript_ContinueBtnPressed]
 	or a
 	jp nz, MainScriptMachine
-	ld a, [H_ButtonsPressed]
+	ld a, [H_JPInput_HeldDown]
 	and 2
 	jp nz, MainScriptMachine
-	ld a, [H_ButtonsChanged]
+	ld a, [H_JPInput_Changed]
 	and 1
 	jr z, .finished
 	ld a, 1

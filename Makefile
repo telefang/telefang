@@ -20,7 +20,8 @@ OBJS := main.o wram.o components/compression/malias.o \
 	  components/system/memory.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
-	  components/serio/driver.o
+	  components/serio/driver.o \
+	  components/jpinput/jpinput.o
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}

@@ -2,6 +2,7 @@
 ;These are macros rather than labels since their location should never change
 ;The names for the registers were pulled from PANDOCS which is why they're shit
 
+REG_JOYP EQU $FF00
 REG_SB EQU $FF01
 REG_SC EQU $FF02
 REG_IF EQU $FF0F

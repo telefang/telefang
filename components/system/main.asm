@@ -14,7 +14,7 @@ ClearDMGPaletteShadow EQU $1043
 InitializeSoundEngine EQU $0439
 ClearTilemap0 EQU $0807
 DisableLCD EQU $07DF
-SamplePlayerInput EQU $0766
+JPInput_SampleJoypad EQU $0766
 
 ;WRAM locations we haven't properly labeled yet
 W_SGBDetectSuccess EQU $C40A
@@ -124,7 +124,7 @@ Main::
 	call SerIOActivityCheck
 	call CGBCommitPalettes
 	call CGBCommitScheduledPalette
-	call SamplePlayerInput
+	call JPInput_SampleJoypad
 	call GameStateMachine
 	call LoadSpritesForDMA
 	ld a, 1
