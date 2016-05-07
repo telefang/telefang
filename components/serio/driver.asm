@@ -45,7 +45,7 @@ SECTION "SerIO Driver", ROM0[$1C9B]
 ;2. We are in the middle of SerIO_IRQ.packetXfrMode
 ;3. The last recieved data isn't M_SerIO_ConnectByte
 ;4. See check #2 (yes it's checked twice)
-SerIO_SwitchToInternalClock:
+SerIO_SwitchToInternalClock::
 	ld a, [W_SerIO_State]
 	and a
 	ret z
@@ -62,7 +62,7 @@ SerIO_SwitchToInternalClock:
 	ld [REG_SC], a
 	ret
 	
-SerIO_IRQ
+SerIO_IRQ::
 	push af
 	push bc
 	push de
@@ -128,7 +128,7 @@ SerIO_IRQ
 	pop af
 	reti
 	
-SerIO_ResetConnection:
+SerIO_ResetConnection::
 	ld hl, W_SerIO_SendBuffer
 	ld bc, $300 ;TODO: Calculate actual size of SerIO area
 	call memclr
@@ -148,7 +148,7 @@ SerIO_SendMysteryPacket:
 	ld [REG_SC], a
 	ret
 	
-SerIO_SendConnectPacket:
+SerIO_SendConnectPacket::
 	ld a, [W_SerIO_State]
 	and a
 	ret nz
@@ -171,7 +171,7 @@ SerIO_InitializeRecvArea:
 	ld bc, $100
 	jp memclr
 	
-SerIO_SendBufferPush:
+SerIO_SendBufferPush::
 	di
 	ld a, 1
 	ld [W_SerIO_SendBufferReady], a
@@ -230,7 +230,7 @@ SerIO_RecvBufferPush:
 	ld [W_SerIO_RecvBufferWrite], a
 	ret
 	
-SerIO_RecvBufferPull:
+SerIO_RecvBufferPull::
 	di
 	ld a, [W_SerIO_RecvBufferReady]
 	and a

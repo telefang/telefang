@@ -35,13 +35,14 @@ VBlankingIRQ::
 	call $3442
 	ld a, [$CB3F]
 	or a
-	jr nz, .loc_31C
+	jr nz, .enableInternalSIOClock
 	call $1F08
-	jr .loc_31F
+	jr .exit
 
-.loc_31C
-	call $1C9B
-.loc_31F
+.enableInternalSIOClock
+	call SerIO_SwitchToInternalClock
+
+.exit
 	pop hl
 	pop de
 	pop bc

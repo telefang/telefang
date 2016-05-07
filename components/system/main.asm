@@ -6,9 +6,7 @@ INCLUDE "components/lcdc/vblank_irq.inc"
 
 ;These are dummy labels for functions not yet imported into the disassembly.
 ;We should do those soon.
-SIOActivityCheck EQU $0234
-ResetSIO EQU $1D23
-ResetSIO_B2 EQU $1D46
+SerIOActivityCheck EQU $0234
 SoftResetCheck EQU $02D0
 InitializeSGB EQU $4000 ;Bank 3, flat address 0xC000
 SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
@@ -81,7 +79,7 @@ Main::
 	ld [W_ShadowREG_LCDC], a
 	ld [REG_LCDC], a ;Enable LCD display, OBJ, and BG layers.
 	ei
-	call ResetSIO
+	call SerIO_ResetConnection
 	ld a, $40
 	ld [REG_STAT], a
 	xor a
@@ -118,12 +116,12 @@ Main::
 	call SoftResetCheck
 	ld a, [$CB3F] ; MAYBE a check if another GB is connected? Or that flashy thing
 	or a
-	jr z, .dontResetSIO
-	call $1DBC
-	call $1D66
-	call ResetSIO_B2
-.dontResetSIO
-	call SIOActivityCheck
+	jr z, .dontProcessSerialIO
+	call SerIO_RecvBufferPull
+	call SerIO_SendBufferPush
+	call SerIO_SendConnectPacket
+.dontProcessSerialIO
+	call SerIOActivityCheck
 	call CGBCommitPalettes
 	call CGBCommitScheduledPalette
 	call SamplePlayerInput
