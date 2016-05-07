@@ -9,7 +9,7 @@ ROMS_POWER := telefang_pw.gbc
 BASEROM_POWER := baserom_pw.gbc
 ROMS_SPEED := telefang_sp.gbc
 BASEROM_SPEED := baserom_sp.gbc
-OBJS := main.o wram.o components/compression/malias.o \
+OBJS := components/compression/malias.o \
      components/compression/rle_tilemap.o components/compression/rle_attribmap.o \
 	  components/lcdc/vblank_irq.o components/lcdc/hblank_irq.o \
 	  components/lcdc/oam_dma.o components/lcdc/shadow_regs.o \
@@ -17,11 +17,13 @@ OBJS := main.o wram.o components/compression/malias.o \
      components/lcdc/cgb_palette.o components/lcdc/tilemap_math.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
-	  components/system/memory.o \
+	  components/system/memory.o components/system/empty.o \
+	  components/system/entrypoints.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
 	  components/serio/driver.o \
-	  components/jpinput/jpinput.o
+	  components/jpinput/jpinput.o \
+	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
