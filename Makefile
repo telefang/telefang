@@ -27,6 +27,7 @@ OBJS := components/compression/malias.o \
 	  components/system/entrypoints.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
+     components/mainscript/advice.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o

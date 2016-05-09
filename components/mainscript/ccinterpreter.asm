@@ -16,8 +16,8 @@ MainScript_CCInterpreter::
 	ld a, [W_MainScript_TextPtr + 1]
 	ld h, a
 	call MainScript_LoadFromBank
-	or a ;TODO: Pointcut exists in English patch
-	jr nz, .newlineCC
+	jp MainScript_ADVICE_StoreCurrentLetter
+.COMEFROM_StoreCurrentLetter
 	push af
 	ld a, [W_MainScript_TilesDrawn]
 	ld [W_MainScript_SecondAnswerTile], a
@@ -243,3 +243,12 @@ MainScript_Moveup::
 MainScript_ContinueWaiting::
 	ld [W_MainScript_WaitFrames], a
 	ret
+
+;Stores all of the patches we added to the main script routines.
+;"Advice" is a term from Aspect-Oriented Programming.
+SECTION "Main Script Patch Advice", ROMX[$7AA4], BANK[$B]
+MainScript_ADVICE_StoreCurrentLetter::
+	ld [W_MainScript_VWFCurrentLetter], a
+	or a
+	jp nz, MainScript_CCInterpreter.newlineCC
+	jp MainScript_CCInterpreter.COMEFROM_StoreCurrentLetter
