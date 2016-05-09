@@ -1,0 +1,28 @@
+SECTION "Phone keypad graphics", ROMX[$4000], BANK[$79]
+PhoneKeypadGfx:
+	INCBIN "gfx/phones/0/numbers.2bpp"
+	INCBIN "gfx/phones/0/menus.2bpp"
+	INCBIN "gfx/phones/0/letters1.2bpp"
+	INCBIN "gfx/phones/0/menus.2bpp"
+	INCBIN "gfx/phones/0/letters2.2bpp"
+	INCBIN "gfx/phones/0/menus.2bpp"
+	INCBIN "gfx/phones/0/solfege.2bpp"
+	INCBIN "gfx/phones/0/menus.2bpp"
+	
+	INCBIN "gfx/phones/1/numbers.2bpp"
+	INCBIN "gfx/phones/1/menus.2bpp"
+	INCBIN "gfx/phones/1/letters1.2bpp"
+	INCBIN "gfx/phones/1/menus.2bpp"
+	INCBIN "gfx/phones/1/letters2.2bpp"
+	INCBIN "gfx/phones/1/menus.2bpp"
+	INCBIN "gfx/phones/1/solfege.2bpp"
+	INCBIN "gfx/phones/1/menus.2bpp"
+	
+	INCBIN "gfx/phones/2/numbers.2bpp"
+	INCBIN "gfx/phones/2/menus.2bpp"
+	INCBIN "gfx/phones/2/letters1.2bpp"
+	INCBIN "gfx/phones/2/menus.2bpp"
+	INCBIN "gfx/phones/2/letters2.2bpp"
+	INCBIN "gfx/phones/2/menus.2bpp"
+	INCBIN "gfx/phones/2/solfege.2bpp"
+	INCBIN "gfx/phones/2/menus.2bpp"

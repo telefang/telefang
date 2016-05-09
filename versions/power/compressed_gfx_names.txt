@@ -1,0 +1,75 @@
+0x01 battle_messages
+unknown_font
+intro/screens
+intro/bonbon
+menu/options
+title/sprites
+cutscene/connected1
+cutscene/connected2
+evolve/bg
+title/title1
+title/title2
+screen/save_deleted
+menu/unk
+menu/stats
+menu/encounter
+menu/battle
+menu/misc_sprites
+menu/total
+menu/dmelo
+menu/battle2
+menu/battle3
+menu/got_number
+menu/nickname
+menu/numbers
+evolve/bg2
+menu/main1
+0x1b menu/main2
+0x1d evolve/bg3
+evolve/bg4
+evolve/cannot
+tilemap/overworld
+tilemap/antenna
+tilemap/dungeon
+tilemap/cave
+tilemap/house
+tilemap/tree
+tilemap/dungeon2
+tilemap/dungeon3
+tilemap/dungeon4
+tilemap/human1
+tilemap/human_antenna
+tilemap/human2
+0x2c tilemap/shrine
+0x30 intro/shadow_angios1
+intro/shadow_angios2
+intro/shigeki
+intro/trees
+intro/crypto_shigeki1
+intro/crypto_shigeki2
+intro/angios1
+intro/angios2
+intro/crypto1
+intro/crypto2
+intro/shigeki_sprites1
+intro/shigeki_sprites2
+intro/shigeki_mouth
+intro/crypto_call
+intro/crypto_shigeki_sprites
+unused_claw
+menu/multiplayer
+menu/multiplayer2
+screen/game_over
+0x43 screen/game_over2
+0x48 menu/met
+0x50 cutscene/antenna_tree
+cutscene/kai
+0x52 cutscene/unused
+0x54 menu/main1_dmg
+menu/main2_dmg
+menu/unk_dmg
+menu/total_dmg
+menu/nickname_dmg
+menu/options_dmg
+menu/dmelo_dmg
+0x5b menu/met_dmg

@@ -1,3 +1,4 @@
+INCLUDE "macros.asm"
 
 SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb $00,	$8000, 0 ; $00
@@ -254,13 +255,13 @@ EvolveBgGfxEnd
 SECTION "Title - Title1 Compressed GFX", ROMX[$4e55], BANK[$36]
 TitleTitle1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/title/title1.malias"
+	INCBIN "versions/power/gfx/title/title1.malias"
 TitleTitle1GfxEnd
 
 SECTION "Title - Title2 Compressed GFX", ROMX[$53cc], BANK[$36]
 TitleTitle2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/title/title2.malias"
+	INCBIN "versions/power/gfx/title/title2.malias"
 TitleTitle2GfxEnd
 
 SECTION "Screen - Save Deleted Compressed GFX", ROMX[$483f], BANK[$3b]
@@ -443,12 +444,12 @@ TilemapShrineGfxEnd
 SECTION "Intro - Shadow Angios1 Compressed GFX", ROMX[$4000], BANK[$39]
 IntroShadowAngios1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/shadow_angios1.malias"
+	INCBIN "versions/power/gfx/intro/shadow_angios1.malias"
 IntroShadowAngios1GfxEnd
 
 IntroShadowAngios2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/shadow_angios2.malias"
+	INCBIN "versions/power/gfx/intro/shadow_angios2.malias"
 IntroShadowAngios2GfxEnd
 
 IntroShigekiGfx:
@@ -463,32 +464,32 @@ IntroTreesGfxEnd
 
 IntroCryptoShigeki1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto_shigeki1.malias"
+	INCBIN "versions/power/gfx/intro/crypto_shigeki1.malias"
 IntroCryptoShigeki1GfxEnd
 
 IntroCryptoShigeki2Gfx:
 	dbw NOT_COMPRESSED, IntroCryptoShigeki2GfxEnd - IntroCryptoShigeki2Gfx - 3
-	INCBIN "gfx/intro/crypto_shigeki2.2bpp"
+	INCBIN "versions/power/gfx/intro/crypto_shigeki2.2bpp"
 IntroCryptoShigeki2GfxEnd
 
 IntroAngios1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/angios1.malias"
+	INCBIN "versions/power/gfx/intro/angios1.malias"
 IntroAngios1GfxEnd
 
 IntroAngios2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/angios2.malias"
+	INCBIN "versions/power/gfx/intro/angios2.malias"
 IntroAngios2GfxEnd
 
 IntroCrypto1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto1.malias"
+	INCBIN "versions/power/gfx/intro/crypto1.malias"
 IntroCrypto1GfxEnd
 
 IntroCrypto2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto2.malias"
+	INCBIN "versions/power/gfx/intro/crypto2.malias"
 IntroCrypto2GfxEnd
 
 SECTION "Intro - Shigeki Sprites1 Compressed GFX", ROMX[$4000], BANK[$3a]
@@ -509,7 +510,7 @@ IntroShigekiMouthGfxEnd
 
 IntroCryptoCallGfx:
 	db COMPRESSED
-	INCBIN "gfx/intro/crypto_call.malias"
+	INCBIN "versions/power/gfx/intro/crypto_call.malias"
 IntroCryptoCallGfxEnd
 
 IntroCryptoShigekiSpritesGfx:
@@ -534,12 +535,12 @@ MenuMultiplayer2GfxEnd
 
 ScreenGameOverGfx:
 	db COMPRESSED
-	INCBIN "gfx/screen/game_over.malias"
+	INCBIN "versions/power/gfx/screen/game_over.malias"
 ScreenGameOverGfxEnd
 
 ScreenGameOver2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/screen/game_over2.malias"
+	INCBIN "versions/power/gfx/screen/game_over2.malias"
 ScreenGameOver2GfxEnd
 
 SECTION "Menu - Met Compressed GFX", ROMX[$7d49], BANK[$3b]

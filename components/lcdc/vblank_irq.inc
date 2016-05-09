@@ -1,0 +1,1 @@
+H_VBlankCompleted EQU $FF92
