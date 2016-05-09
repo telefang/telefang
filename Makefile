@@ -52,7 +52,7 @@ $(foreach obj, $(OBJS_SPEED), \
 
 # Link objects together to build a rom.
 #We run power_patch last as that is not likely to work for some time.
-all: power speed power_patch
+all: power_patch power speed
 
 power: $(ROMS_POWER) compare_power
 
