@@ -26,7 +26,8 @@ MainScript_CCInterpreter::
 .newlineCC
 	cp $E2
 	jr nz, .localStateJumpCC
-	ld a, [W_MainScript_TilesDrawn]
+	call MainScript_ADVICE_NewlineVWFReset
+.COMEFROM_NewlineVWFReset
 	cp $10
 	jr nc, .earlyNewline
 	ld a, $10
@@ -48,7 +49,7 @@ MainScript_CCInterpreter::
 	jr nz, .opcodeE7
    
 .j2StateOpcode
-	jp MainScript_StateOpcode
+	jp MainScript_ADVICE_StateOpcode
 	
 .opcodeE7 ;Don't know what this does yet.
 	cp $E7
@@ -81,8 +82,12 @@ MainScript_CCInterpreter::
 	ret
 	
 .returnCC
-	cp $E0
-	jr nz, .regularText
+	;cp $E0
+	;jr nz, .regularText
+	nop
+	jp MainScript_ADVICE_AdditionalOpcodes
+	
+.COMEFROM_AdditionalOpcodes
 	ld a, [W_MainScript_CodePtrSpill]
 	ld [W_MainScript_TextPtr], a
 	ld a, [W_MainScript_CodePtrSpill + 1]
@@ -109,13 +114,13 @@ MainScript_CCInterpreter::
 	ld a, [W_MainScript_TileBaseIdx]
 	add a, b
 	call MainScript_TileIdx2Ptr
-	call .swapRegsThing
+	call MainScript_ADVICE_NewlineFixup
 	ld a, c
 	call MainScript_DrawLetter
 	pop hl
+	call MainScript_ADVICE_VWFNextTile
+	nop
 	ld a, [W_MainScript_TilesDrawn]
-	inc a
-	ld [W_MainScript_TilesDrawn], a
 	cp $10
 	jr nz, .noAutomaticNewline
 	ld a, [W_MainScript_NumNewlines]
@@ -246,9 +251,120 @@ MainScript_ContinueWaiting::
 
 ;Stores all of the patches we added to the main script routines.
 ;"Advice" is a term from Aspect-Oriented Programming.
-SECTION "Main Script Patch Advice", ROMX[$7AA4], BANK[$B]
-MainScript_ADVICE_StoreCurrentLetter::
+SECTION "Main Script Patch Advice", ROMX[$7A88], BANK[$B]
+MainScript_ADVICE_VWFReset:
+	push af
+	ld a, 0
+	ld [W_MainScript_VWFLetterShift], a
+	ld a, 2
+	ld [W_MainScript_VWFOldTileMode], a
+	pop af
+	ret
+	
+	ds 2
+MainScript_ADVICE_StateOpcode:
+	call MainScript_ADVICE_VWFReset
+	ld a, 0
+	ld [W_MainScript_VWFMainScriptHack], a
+	jp MainScript_StateOpcode
+	
+	ds 2
+MainScript_ADVICE_StoreCurrentLetter:
 	ld [W_MainScript_VWFCurrentLetter], a
 	or a
 	jp nz, MainScript_CCInterpreter.newlineCC
 	jp MainScript_CCInterpreter.COMEFROM_StoreCurrentLetter
+	
+	ds 2
+MainScript_ADVICE_NewlineVWFReset:
+	call MainScript_ADVICE_VWFReset
+	ld a, [W_MainScript_TilesDrawn]
+	ret
+	
+;Not ENTIRELY sure what this does.
+;Appears to move us back 2 tiles, then move the graphics pointer back by like
+;16 tiles.
+SECTION "MainScript Patch Advice 3", ROMX[$7C09], BANK[$B]
+MainScript_ADVICE_NewlineFixup:
+	ld a, [W_MainScript_VWFMainScriptHack]
+	cp 1
+	ret nz
+	ld a, [W_MainScript_TilesDrawn]
+	dec a
+	ld a, [W_MainScript_TilesDrawn]
+	dec a
+	ld [W_MainScript_TilesDrawn], a
+	push bc
+	ld bc, $FFF0
+	add hl, bc
+	pop bc
+	ret
+	
+MainScript_ADVICE_VWFNextTile:
+	ld a, [W_MainScript_VWFOldTileMode]
+	cp 1
+	ld a, [W_MainScript_TilesDrawn]
+	jr c, .noIncrement
+	inc a
+	ld [W_MainScript_TilesDrawn], a
+	
+.noIncrement
+	cp $10
+	ret nz
+	ld a, 1
+	ld [W_MainScript_VWFMainScriptHack], a
+	ld a, [W_MainScript_TilesDrawn]
+	inc a
+	ld [W_MainScript_TilesDrawn], a
+	ret
+	
+SECTION "MainScript Patch Advice 2", ROMX[$7C89], BANK[$B]
+MainScript_ADVICE_AdditionalOpcodes:
+	cp $E0
+	jp z, MainScript_CCInterpreter.COMEFROM_AdditionalOpcodes
+	
+	;Disable variable-width font rendering.
+.VWFdisableCC
+	cp $EA
+	jr nz, .VWFenableCC
+	ld a, 1
+	ld [W_MainScript_VWFDisable], a
+	jp MainScript_EndOpcode
+	
+	;Enable variable-width font rendering.
+.VWFenableCC
+	cp $EB
+	jp nz, .farJumpCC
+	xor a
+	ld [W_MainScript_VWFDisable], a
+	jp MainScript_EndOpcode
+	
+	;Jump to a script in bank $1E.
+.farJumpCC
+	cp $EC
+	jp nz, MainScript_CCInterpreter.regularText
+	nop
+	ld a, [W_MainScript_TextPtr]
+	ld l, a
+	ld a, [W_MainScript_TextPtr + 1]
+	ld h, a
+	inc hl
+	call MainScript_Jump2Operand
+	ld a, $1E
+	ld [W_MainScript_TextBank], a
+	ld a, [W_MainScript_TextPtr]
+	ld l, a
+	ld a, [W_MainScript_TextPtr + 1]
+	ld h, a
+	dec hl
+	ld a, l
+	ld [W_MainScript_TextPtr], a
+	ld a, h
+	ld [W_MainScript_TextPtr + 1], a
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	jp MainScript_EndOpcode
