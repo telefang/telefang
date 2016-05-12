@@ -11,8 +11,9 @@ W_MainScript_TextStyle:: ds 1
 ;The 1bpp font is turned into a 2bpp color
 SECTION "MainScript Text Drawing Routine", ROMX[$4E29], BANK[$B]
 MainScript_DrawLetter::
-	push hl
-	ld b, 0
+	jp MainScript_ADVICE_StoreCurrentLetter
+
+.COMEFROM_StoreCurrentLetter
 	add a, a
 	jr nc, .mulBy8
 	inc b
@@ -27,96 +28,157 @@ MainScript_DrawLetter::
 	ld d, h
 	ld e, l
 	pop hl
-	ld a, [W_MainScript_TextStyle]
-	cp 0
-	jr z, .textColor0
-	cp 1
-	jr z, .textColor1
+	call MainScript_ADVICE_DrawLetter
+	ret
+	ds $5C
+
+SECTION "MainScript Text Drawing Advice 2", ROMX[$79C1], BANK[$B]
+MainScript_ADVICE_DrawLetter:
+	ld b, 8
+	ld a, $CF
+	ld [W_MainScript_VWFCompositeArea], a
+	ld a, $D0
+	ld [W_MainScript_VWFCompositeArea + 1], a
+	push hl
+	push bc
+	ld a, [W_MainScript_VWFCurrentLetter]
+	ld h, $7B
+	ld l, a
+	xor a
+	ld b, [hl]
+	ld a, [W_MainScript_VWFLetterShift]
+	add a, b
+	bit 3, a
+	jr nz, .onSecondTile
+	xor a
+	jr .doneCalculatingTile
+.onSecondTile
+	ld a, 1
+.doneCalculatingTile
+	pop bc
+	pop hl
+	
+.tileShiftLoop
+	push bc
+	push de
+	push hl
+	push af
+	di
+	ld a, [W_MainScript_VWFCompositeArea]
+	ld h, a
+	ld a, [W_MainScript_VWFCompositeArea + 1]
+	ld l, a
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	dec hl
+	ld a, [de]
+	ld d, a
+	ld e, 0
+	ld a, [W_MainScript_VWFOldTileMode]
 	cp 2
-	jr z, .textColor2
-	cp 3
-	jr z, .textColor3
+	jr z, .newlineMode
+	cp 1
+	jr z, .secondTileMode
+	jr .firstTileMode
 	
-	;Mode 0: (and also any illegal modes)
-	;0ff pixels translate to color 0
-	;1n  pixels translate to color 4
+.newlineMode
+	ld c, 0
 	
-.textColor0
-	ld b, 8
-.textColor0Loop
-	di
-.wfbTC0
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .wfbTC0
-	ld a, [de]
-	ld [hli], a
-	ld [hli], a
+.secondTileMode
+	ld b, c
+	
+.firstTileMode
+	ld a, [W_MainScript_VWFLetterShift]
+	or a
+	jr z, .stopShifting
+	
+.shiftLoop
+	srl d
+	rr e
+	dec a
+	jr nz, .shiftLoop
+	
+.stopShifting
+	ld a, d
+	or b
+	ld b, a
+	ld c, e
+	ld [hl], b
+	inc hl
+	ld [hl], c
+	inc hl
+	ld a, h
+	ld [W_MainScript_VWFCompositeArea], a
+	ld a, l
+	ld [W_MainScript_VWFCompositeArea + 1], a
+	pop af
+	pop hl
+	ld d, h
+	ld e, l
+	push af
+	ld a, b
+	call $7C3F ;TODO: Disassemble mystery function
+	pop af
+	push hl
+	push af
+	or a
+	jr z, .skipSecondWhatevercall
+	ld hl, $10
+	add hl, de
+	ld a, c
+	call $7C3F
+	
+.skipSecondWhatevercall
 	ei
+	pop af
+	pop hl
+	pop de
+	pop bc
 	inc de
 	dec b
-	jr nz, .textColor0Loop
-	ret
+	jr nz, .tileShiftLoop
+	ld a, 0
+	ld [W_MainScript_VWFOldTileMode], a
+	ld b, $7B
+	ld a, [W_MainScript_VWFCurrentLetter]
+	ld c, a
+	ld a, [W_MainScript_VWFDisable]
+	or a
+	jr z, .useWidthTable
+	ld a, 8
+	jr .addWidth
 	
-	;Mode 1:
-	;0ff pixels translate to color 2
-	;1n  pixels translate to color 3
-.textColor1
-	ld b, 8
-.textColor1Loop
-	di
-.wfbTC1
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .wfbTC1
-	ld a, [de]
-	ld [hli], a
-	ld a, $FF
-	ld [hli], a
-	ei
-	inc de
-	dec b
-	jr nz, .textColor1Loop
-	ret
+.useWidthTable
+	ld a, [bc]
+	inc a
 	
-	;Mode 2:
-	;0ff pixels translate to color 3
-	;1n  pixels translate to color 0
-.textColor2
-	ld b, 8
-.textColor2Loop
-	di
-.wfbTC2
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .wfbTC2
-	ld a, [de]
-	cpl
-	ld [hli], a
-	ld [hli], a
-	ei
-	inc de
-	dec b
-	jr nz, .textColor2Loop
-	ret
+.addWidth
+	ld b, a
+	ld a, [W_MainScript_VWFLetterShift]
+	add a, b
+	bit 3, a
+	jr z, .noSecondTileShiftBack
+	sub 8
+	push af
+	ld a, 1
+	ld [W_MainScript_VWFOldTileMode], a
+	ld a, [W_MainScript_VWFMainScriptHack]
+	cp 1
+	jr nz, .noNewlineHackToDisable
+	ld a, 0
+	ld [W_MainScript_VWFMainScriptHack], a
 	
-	;Mode 3:
-	;0ff pixels translate to color 1
-	;1n  pixels translate to color 3
-.textColor3
-	ld b, 8
-.textColor3Loop
-	di
-.wfbTC3
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .wfbTC3
-	ld a, $FF
-	ld [hli], a
-	ld a, [de]
-	ld [hli], a
-	ei
-	inc de
-	dec b
-	jr nz, .textColor3Loop
+.noNewlineHackToDisable
+	pop af
+	
+.noSecondTileShiftBack
+	ld [W_MainScript_VWFLetterShift], a
 	ret
+
+SECTION "Main Script Text Drawing Advice", ROMX[$7C00], BANK[$B]
+MainScript_ADVICE_StoreCurrentLetter:
+	ld [W_MainScript_VWFCurrentLetter], a
+	push hl
+	ld b, 0
+	jp MainScript_DrawLetter.COMEFROM_StoreCurrentLetter
