@@ -329,7 +329,7 @@ MainScript_ADVICE_AdditionalOpcodes:
 	jr nz, .VWFenableCC
 	ld a, 1
 	ld [W_MainScript_VWFDisable], a
-	jp MainScript_EndOpcode
+	jp MainScript_EndOpcode.skipNewlineCheck
 	
 	;Enable variable-width font rendering.
 .VWFenableCC
@@ -337,7 +337,7 @@ MainScript_ADVICE_AdditionalOpcodes:
 	jp nz, .farJumpCC
 	xor a
 	ld [W_MainScript_VWFDisable], a
-	jp MainScript_EndOpcode
+	jp MainScript_EndOpcode.skipNewlineCheck
 	
 	;Jump to a script in bank $1E.
 .farJumpCC
@@ -367,4 +367,4 @@ MainScript_ADVICE_AdditionalOpcodes:
 	nop
 	nop
 	nop
-	jp MainScript_EndOpcode
+	jp MainScript_EndOpcode.skipNewlineCheck
