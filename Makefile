@@ -24,7 +24,7 @@ OBJS := components/compression/malias.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
-	  components/system/entrypoints.o \
+	  components/system/entrypoints.o components/system/patch_utils.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/advice.o \
