@@ -74,7 +74,7 @@ $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
 	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG PW" $@
 
 $(ROMS_POWER_PATCH): $(OBJS) $(OBJS_POWER)
-	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER_PATCH) -o $@ $^
+	rgblink -n $(@:.gbc=.sym) -m $(@:.gbc=.map) -O $(BASEROM_POWER_PATCH) -o $@ $^
 	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG PW" $@
 
 $(ROMS_SPEED): $(OBJS) $(OBJS_SPEED)
