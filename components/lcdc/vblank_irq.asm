@@ -1,6 +1,6 @@
 INCLUDE "registers.inc"
-INCLUDE "components/LCDC/oam_dma.inc"
-INCLUDE "components/LCDC/vblank_irq.inc"
+INCLUDE "components/lcdc/oam_dma.inc"
+INCLUDE "components/lcdc/vblank_irq.inc"
 
 ;The "LCDC" component consists of parts of the game that manage the LCD
 ;Controller and it's associated registers.
