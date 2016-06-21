@@ -1,5 +1,5 @@
 #!/bin/bash
-dd skip=$(($1)) count=$(($2)) if=baserom.gbc of=$3 bs=1 >& /dev/null
+dd skip=$(($1)) count=$(($2)) if=baserom_pw.gbc of=$3 bs=1 >& /dev/null
 if [[ "$3" == *.1bpp ]] || [[ "$3" == *.2bpp ]]; then
 	python pokemon-reverse-engineering-tools/pokemontools/gfx.py png $3
 fi

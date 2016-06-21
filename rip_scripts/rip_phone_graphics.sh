@@ -17,3 +17,13 @@ mkdir gfx/phones/2/
 ./rip.sh 0x1e6400 6*8*16 gfx/phones/2/letters1.2bpp
 ./rip.sh 0x1e6800 6*8*16 gfx/phones/2/letters2.2bpp
 ./rip.sh 0x1e6c00 6*8*16 gfx/phones/2/solfege.2bpp
+
+./rip.sh 0x1e8000 16*8*4 gfx/phones/0/buttons.2bpp
+./rip.sh 0x1e8200 16*8*4 gfx/phones/1/buttons.2bpp
+./rip.sh 0x1e8400 16*8*4 gfx/phones/2/buttons.2bpp
+
+./rip.sh 0x1ec300 16*16  gfx/phones/0/menus_dmg.2bpp
+./rip.sh 0x1ed000 6*8*16 gfx/phones/1/numbers_dmg.2bpp
+./rip.sh 0x1ed300 16*16  gfx/phones/1/menus_dmg.2bpp
+./rip.sh 0x1e6000 6*8*16 gfx/phones/2/numbers_dmg.2bpp
+./rip.sh 0x1ee300 16*16  gfx/phones/2/menus_dmg.2bpp
