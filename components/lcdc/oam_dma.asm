@@ -1,5 +1,5 @@
 INCLUDE "registers.inc"
-INCLUDE "components/LCDC/oam_dma.inc"
+INCLUDE "components/lcdc/oam_dma.inc"
 
 SECTION "LCDC OAM DMA Shadow", WRAM0[$C000]
 W_ShadowOAM:: ds M_OAMShadowLength

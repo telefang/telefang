@@ -1,5 +1,5 @@
 INCLUDE "registers.inc"
-INCLUDE "components/LCDC/oam_dma.inc"
+INCLUDE "components/lcdc/oam_dma.inc"
 
 ;Contains utility functions for initializing or setting memory used by other
 ;parts of the game.
