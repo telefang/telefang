@@ -1,0 +1,13 @@
+#Because macOS
+
+*.asm text
+*.inc text
+*.py text
+*.sh text
+*.txt text
+*.md text
+
+.gitignore text
+.gitmodules text
+Makefile text
+README text
