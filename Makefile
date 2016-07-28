@@ -23,6 +23,7 @@ OBJS := components/compression/malias.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
+	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o
