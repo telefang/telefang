@@ -41,20 +41,19 @@ PatchUtils_MysteryBlock
 	rst $18
 	ret
 	
-;$9E
+PatchUtils_LoadDenjuuName_Bankswitch:
 	ld a, h
 	cp $40
-	jr nz, .mystery1
+	jr nz, .aboveHL
 	ld a, l
 	or a
-	jr nz, .mystery1
+	jr nz, .aboveHL
 	ld a, $34
 	rst $10
 	ret
 	
-;$AB
-.mystery1
-	ld a, $75
+.aboveHL
+	ld a, $75 ;Original Denjuu bank
 	rst $10
 	ret
 	
