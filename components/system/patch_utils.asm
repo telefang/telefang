@@ -4,7 +4,7 @@ SECTION "Patch Utilities", ROM0[$0063]
 PatchUtils_ResetVector: jp PatchUtils_ResetGame
 	db "Denjuu" ;not sure what this is
 	ld [$FF00], a
-PatchUtils_LimitBreak: sla e
+PatchUtils_LimitBreak:: sla e
 	rl d
 	sla e
 	rl d
@@ -41,7 +41,7 @@ PatchUtils_MysteryBlock
 	rst $18
 	ret
 	
-PatchUtils_LoadDenjuuName_Bankswitch:
+PatchUtils_LoadDenjuuName_Bankswitch::
 	ld a, h
 	cp $40
 	jr nz, .aboveHL
