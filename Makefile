@@ -24,7 +24,8 @@ OBJS := components/compression/malias.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
-	  components/system/entrypoints.o components/system/patch_utils.o \
+	  components/system/entrypoints.o components/system/bankcalls.o \
+	  components/system/patch_utils.o components/system/patch_unknown.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/advice.o \
@@ -58,7 +59,7 @@ all: power_patch power speed
 
 power: $(ROMS_POWER) compare_power
 
-power_patch: $(ROMS_POWER_PATCH) compare_power_patch
+power_patch: $(ROMS_POWER_PATCH) #compare_power_patch
 
 speed: $(ROMS_SPEED)
 
