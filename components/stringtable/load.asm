@@ -41,3 +41,28 @@ StringTable_LoadFromROMTbl4::
     ld bc, 8
     ld de, W_StringTable_StagingLocDbl
     jp memcpy
+
+SECTION "String Table Load Functions 2", ROM0[$3C8B]
+StringTable_LoadBattlePhrase::
+    ld a, [W_StringTable_ROMTblIndex]
+    cp 0
+    jr z, .noTblIndex
+    ld e, a
+    ld d, 0
+    sla e
+    rl d
+    sla e
+    rl d
+    sla e
+    rl d
+    call PatchUtils_LimitBreak
+    nop
+    add hl, de
+    
+.noTblIndex
+    ld bc, $1F
+    ld de, $D658
+    call memcpy
+    ld a, $E0
+    ld [$D4CF], a
+    ret
