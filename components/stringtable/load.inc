@@ -1,0 +1,2 @@
+M_StringTable_Load8AreaSize EQU $10
+M_StringTable_Load4AreaSize EQU 8

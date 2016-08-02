@@ -75,6 +75,7 @@ PatchUtils_LoadDenjuuName_Bankswitch::
 	ret
 	
 ;E4
+MainScript_ADVICE_DrawDenjuuName::
 	push af
 	push hl
 	cp h

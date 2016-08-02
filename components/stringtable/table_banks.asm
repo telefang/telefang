@@ -1,5 +1,5 @@
 SECTION "String Table Bank Functions", ROM0[$0548]
-StringTable_LoadDenjuuName:
+StringTable_LoadDenjuuName::
     call PatchUtils_LoadDenjuuName_Bankswitch
     call StringTable_LoadFromROMTbl8
     rst $18
