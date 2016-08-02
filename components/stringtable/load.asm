@@ -37,6 +37,7 @@ StringTable_LoadFromROMTbl4::
     sla e
     rl d
     call PatchUtils_LimitBreak
+    nop
     add hl, de
     ld bc, 8
     ld de, W_StringTable_StagingLocDbl
