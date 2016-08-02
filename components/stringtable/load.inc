@@ -1,0 +1,2 @@
+M_StringTable_Load8AreaSize EQU 8
+M_StringTable_Load4AreaSize EQU 4

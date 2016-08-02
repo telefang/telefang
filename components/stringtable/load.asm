@@ -1,8 +1,10 @@
+INCLUDE "components/stringtable/load.inc"
+
 SECTION "String Table WRAM Locs", WRAMX[$D435], BANK[$1]
-W_StringTable_ROMTblIndex: ds 1
+W_StringTable_ROMTblIndex:: ds 1
 
 SECTION "String Table WRAM Locs 2", WRAMX[$D440], BANK[$1]
-W_StringTable_StagingLoc: ds 8
+W_StringTable_StagingLoc:: ds 8
 
 SECTION "String Table Load Functions", ROM0[$3A01]
 ; HL = Base address of table.
@@ -21,7 +23,7 @@ StringTable_LoadFromROMTbl8::
     sla e
     rl d
     add hl, de
-    ld bc, 8
+    ld bc, M_StringTable_Load8AreaSize
     ld de, W_StringTable_StagingLoc
     jp memcpy
 
@@ -34,7 +36,7 @@ StringTable_LoadFromROMTbl4::
     sla e
     rl d
     add hl, de
-    ld bc, 4
+    ld bc, M_StringTable_Load4AreaSize
     ld de, W_StringTable_StagingLoc
     jp memcpy
 
