@@ -1,5 +1,3 @@
-StatusText_NumLettersDrawn EQU $CB2F
-
 SECTION "Patch Utilities", ROM0[$0063]
 PatchUtils_ResetVector: jp PatchUtils_ResetGame
 	db "Denjuu" ;not sure what this is
@@ -10,31 +8,10 @@ PatchUtils_LimitBreak:: sla e
 	rl d
 	ret
 	
-;Part of a function that replaces status text drawing with the VWF.
-PatchUtils_VWFStatusText:
-	ld bc, $10
-	ld a, [W_MainScript_VWFOldTileMode]
-	cp 1
-	jp z, PatchUtils_VWFStatusText2.secondCompositeTile
-	jp PatchUtils_VWFStatusText2.firstCompositeTile
-	
-.enterSecondHalf
-	jp nz, PatchUtils_VWFStatusText2
-	
-.resetVWFAndExit
-	ld a, 2
-	ld [W_MainScript_VWFOldTileMode], a
-	ld a, 0
-	ld [W_MainScript_VWFLetterShift], a
-	ret
-	
-.exitFromSecondHalf
-	pop bc
-	jr .resetVWFAndExit
-	
+SECTION "Patch Utilities 2", ROM0[$0096]
 ;MYSTERY CODE WOO
 ;TODO: Disassemble
-PatchUtils_MysteryBlock
+PatchUtils_MysteryBlock:
 	ld a, $78
 	rst $10
 	call $6FD0
@@ -124,35 +101,3 @@ PatchUtils_ResetGame: nop
 	nop
 	nop
 	nop ;Further execution hits the main vector of the rom header
-	
-SECTION "Patch Utilities VWF Status Text", ROM0[$3A95]
-PatchUtils_VWFStatusText2:
-	push bc
-	push de
-	push hl
-	ld a, [de] ;Read next letter
-	cp $E0
-	jp z, .exit
-	pop hl
-	push hl
-	call $2FC7 ;VWF Draw Letter, HOME bank edition
-	pop hl
-	jp PatchUtils_VWFStatusText
-	
-.secondCompositeTile
-	add hl, bc
-	
-.firstCompositeTile
-	pop de
-	inc de
-	ld a, [StatusText_NumLettersDrawn]
-	inc a
-	ld [StatusText_NumLettersDrawn], a
-	pop bc
-	dec b
-	jp PatchUtils_VWFStatusText.enterSecondHalf
-	
-.exit
-	pop hl
-	pop de
-	jp PatchUtils_VWFStatusText.exitFromSecondHalf
