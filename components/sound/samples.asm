@@ -148,13 +148,3 @@ Sound_ExitSampleMode:
     ld [REG_NR14], a
     ld [REG_NR24], a
     ret
-
-Sound_SampleMetatable:
-    dw Sound_SampleMetatable_TitleScreenSample
-    
-Sound_SampleMetatable_TitleScreenSample:
-    db 1     ;Number of fragments.
-    db $7C   ;Bank where fragment exists. Addr assumed to be $4000
-    dw $789F ;Sample count (also double the byte count)
-    db 6
-    db 6     ;Unknown.

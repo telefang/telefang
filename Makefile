@@ -1,7 +1,7 @@
 .PHONY: all compare_power compare_speed clean power speed
 
 .SUFFIXES:
-.SUFFIXES: .asm .o .gbc .png
+.SUFFIXES: .asm .o .gbc .png .wav
 .SECONDEXPANSION:
 
 # Build Telefang.
@@ -26,7 +26,7 @@ OBJS := components/compression/malias.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
-	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o
+	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
@@ -59,7 +59,7 @@ speed: $(ROMS_SPEED) compare_speed
 $(OBJS_ALL): $$*.asm $$($$*_dep)
 	@$(PYTHON) $(PRET)/gfx.py 2bpp $(2bppq)
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $(1bppq)
-	@$(PYTHON) $(PRET)/pcm.py pcm $(pcmq)
+	@$(PYTHON) rip_scripts/pcm.py pcm $(pcmq)
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
