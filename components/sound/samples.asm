@@ -1,10 +1,69 @@
 INCLUDE "registers.inc"
+INCLUDE "components/sound/samples.inc"
+
+SECTION "Sound Sample Data WRAM", WRAM0[$CF8A]
+W_Sound_SampleFragmentCount: ds 1
+
+SECTION "Sound Sample Data Functions", ROM0[$3882]
+Sound_PlaySample:
+    push af
+    push bc
+    push de
+    push hl
+    xor a
+    ld [REG_NR52], a ;Disable sound hardware, resetting all state
+    call Sound_OpenSampleData
+    
+.fragmentLoop
+    call Sound_PrepareSampleFragment
+    call Sound_PlaySampleFragment
+    ld a, [W_Sound_SampleFragmentCount]
+    dec a
+    ld [W_Sound_SampleFragmentCount], a
+    jr nz, .fragmentLoop
+    
+    call Sound_ExitSampleMode
+    pop hl
+    pop de
+    pop bc
+    pop af
+    ret
+
+Sound_OpenSampleData:
+    ld hl, Sound_SampleMetatable
+    ld d, 0
+    ld a, [H_Sound_SampleSelect]
+    dec a
+    ld e, a
+    add hl, de
+    add hl, de
+    ld a, [hl+]
+    ld d, a
+    ld a, [hl+]
+    ld h, a
+    ld l, d
+    ld a, [hl+]
+    ld [W_Sound_SampleFragmentCount], a
+    ret
+
+;Assumes that your sample occupies the start of it's bank.
+Sound_PrepareSampleFragment:
+    ld a, [hl+]
+    rst $10
+    ld a, [hl+]
+    ld c, a
+    ld a, [hl+]
+    ld b, a
+    ld de, $4000
+    ld a, l
+    ld [$CF8B], a
+    ld a, h
+    ld [$CF8C], a ;Not sure what this does, doesn't seem to do anything
+    ret
 
 ;Play a sample through CH1 and 2.
 ;Sample data exists at [DE] for BC samples as 4-bit packed data.
-
-SECTION "Sound Sample Data Functions", ROM0[$38CA]
-Sound_PlaySample:
+Sound_PlaySampleFragment:
     ld a, $80
     ld [REG_NR52], a ;Enable sound, disable all channels
     ld a, $77
@@ -76,3 +135,26 @@ Sound_CycleDelay:
     nop
     nop
     ret
+
+Sound_ExitSampleMode:
+    xor a
+    ld [REG_NR12], a
+    ld [REG_NR22], a
+    ld [H_Sound_SampleSelect], a
+    ld a, $FF
+    ld [REG_NR13], a
+    ld [REG_NR23], a
+    ld a, $87
+    ld [REG_NR14], a
+    ld [REG_NR24], a
+    ret
+
+Sound_SampleMetatable:
+    dw Sound_SampleMetatable_TitleScreenSample
+    
+Sound_SampleMetatable_TitleScreenSample:
+    db 1     ;Number of fragments.
+    db $7C   ;Bank where fragment exists. Addr assumed to be $4000
+    dw $789F ;Sample count (also double the byte count)
+    db 6
+    db 6     ;Unknown.
