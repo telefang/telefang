@@ -22,6 +22,7 @@ OBJS := components/compression/malias.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o \
+	  components/sound/samples.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
