@@ -66,7 +66,15 @@ def parse_charmap(filename):
 
             delim_split = line.split('"')
             chara = delim_split[1]
-            unparsed_hex = delim_split[2].split("$")[1].strip()
+            if chara == u"":
+                #Special case: Quoted quotes.
+                #   e.g. charmap """, $22
+                
+                #This parsing logic sucks arse.
+                if len(delim_split) > 3:
+                    chara = u"\""
+            
+            unparsed_hex = delim_split[-1].split("$")[1].strip()
             bytes = 0
 
             for i in range(0, len(unparsed_hex), 2):

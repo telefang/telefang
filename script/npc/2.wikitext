@@ -1,765 +1,765 @@
 {|
 |-
 !Pointer
-!Japanese
+!English
 |-
 |0x124000
-|トリぐみサイコ-!«0xe2»トリぐみが バ-ランにいる«0xe2»かぎリ ここはヘいわさ!«0xe2»«*0»
+|The Bird Clan is the«0xe2»best!!«0xe2»Barran will be peaceful«0xe2»so long as we're around!«*0»
 |-
 |0x124002
-|トリぐみサイコ-!«0xe2»ヘビぐみなんて こわくもないね«0xe2»ほんとうさ!«0xe2»«*0»
+|The Bird Clan is the«0xe2»greatest!«0xe2»We've got nothing to fear«0xe2»from those Snakes!«*0»
 |-
 |0x124004
-|ヘビぐみも トリぐみも«0xe2»サイコ-!«0xe2»キミのおかげだ あリがとう«0xe2»«*0»
+|The Snake Clan and Bird«0xe2»Clan are both the«0xe2»greatest!«0xe2»It's all because you«0xe2»helped us out! Thanks!«*0»
 |-
 |0x124006
-|むかしは トリぐみもヘビぐみも«0xe2»いっしょに バ-ランで«0xe2»すんでいたんだって«0xe2»«*0»
+|I've heard that long«0xe2»ago, the Bird and«0xe2»Snake Clans both lived«0xe2»together in Barran.«*0»
 |-
 |0x124008
-|トリぐみとヘビぐみが«0xe2»いっしょにくらしていたなんて«0xe2»ユメみたいだな-«0xe2»«*0»
+|Birds and Snakes living«0xe2»together...«0xe2»It's hard to imagine...«*0»
 |-
 |0x12400a
-|ユメみたいなことが げんじつに«0xe2»なっちゃったよ«0xe2»これからは ふたつのしゅぞく«0xe2»なかよく くらしていくよ«*0»
+|I can't believe it really«0xe2»happened!«0xe2»We're going to try to get«0xe2»along with each other«0xe2»from now on.«*0»
 |-
 |0x12400c
-|ヘビぐみのれんちゅうが«0xe2»こんど ぜいいんでバ-ランに«0xe2»おそってくるらしいぞ!«0xe2»くわばら くわばら«*0»
+|I hear the Snake Clan«0xe2»is coming to attack«0xe2»us!«0xe2»Gosh, I hope not!«*0»
 |-
 |0x12400e
-|ヤツらめ『さばくのまおう』を«0xe2»みかたにしたらしいぞ«0xe2»つるかめ つるかめ«0xe2»«*0»
+|I hear they're allied«0xe2»with some kind of«0xe2»"desert demon"!«0xe2»How terrifying!«*0»
 |-
 |0x124010
-|『さばくのまおう』なんて«0xe2»いなかったんだね«0xe2»ヘビぐみの デンジュウにきいて«0xe2»びっくリしちゃったよ«*0»
+|So the whole "desert«0xe2»demon" thing was just«0xe2»a rumor after all!«0xe2»I heard the truth from«0xe2»one of the Snake Clan«0xe2»Denjuu.«*0»
 |-
 |0x124012
-|なんにしても なかなおリできて«0xe2»よかった よかった«*0»
+|Still, it's a good thing«0xe2»that the clans are«0xe2»finally talking to each«0xe2»other.«*0»
 |-
 |0x124014
-|トリぐみは キカイをつかって«0xe2»バ-ランのミズをまもって«0xe2»いるんだ«0xe2»ヘビぐみに モンクをいわれる«0xe2»すじあいはないぞ!«0xe2»«*0»
+|The Bird Clan are using«0xe2»machines to protect«0xe2»Barran's water supply.«0xe2»The Snake Clan has no«0xe2»right to complain!«*0»
 |-
 |0x124016
-|...でも ほんとうに«0xe2»ヘビぐみが ほんと-に«0xe2»『さばくのまおう』をみかたに«0xe2»していたら どうしよう...«*0»
+|But... If the Snake Clan«0xe2»really does have a«0xe2»"desert demon" on their«0xe2»side, what'll we do..?«*0»
 |-
 |0x124018
-|ミズは ヘビぐみと なかよく«0xe2»わけあって くらしていくよ«*0»
+|We're sharing our water«0xe2»with the Snake Clan«0xe2»now!«*0»
 |-
 |0x12401a
-|ここからさきはヘビぐみの«0xe2»リょうど«0xe2»いのちのほしょうはできんぞ«0xe2»«*0»
+|The Snake Clan's«0xe2»territory is up ahead.«0xe2»Stay away if you value«0xe2»your life!«*0»
 |-
 |0x12401c
-|おさにたのまれて いくのか?«0xe2»ならばとおさねばなるまい«*0»
+|The chief asked to to«0xe2»go?«0xe2»Then we can't stop you.«*0»
 |-
 |0x12401e
-|ワタシが ここにたつ リゆうも«0xe2»なくなったな«0xe2»でも なかなおリが できて«0xe2»よかったとおもうよ«*0»
+|I suppose there's no«0xe2»reason for us to stand«0xe2»guard anymore...«0xe2»But it's nice to see«0xe2»everyone in town getting«0xe2»along with each other.«*0»
 |-
 |0x124020
-|なんだオマエ!«0xe2»どこからやってきた!«0xe2»トリぐみの リょうどから«0xe2»きたのなら ようしゃしないぞ!«*0»
+|Hey you!«0xe2»Where did you come«0xe2»from?«0xe2»If you're from the Bird«0xe2»Clan's side, you'd better«0xe2»watch it!«*0»
 |-
 |0x124022
-|ヘビぐみが このさばくを«0xe2»まもっているのだ!«*0»
+|The Snake Clan protects«0xe2»this desert!«*0»
 |-
 |0x124024
-|このさばくは トリぐみと«0xe2»いっしょに まもっているのだ!«*0»
+|We're protecting the«0xe2»desert together with«0xe2»the Bird Clan!«*0»
 |-
 |0x124026
-|トリぐみのれんちゅうが«0xe2»アンテナのきを ひとリじめに«0xe2»しないか けいかいしているのだ«0xe2»«*0»
+|We're discussing how to«0xe2»keep the Bird Clan«0xe2»from using our Antenna«0xe2»Tree.«*0»
 |-
 |0x124028
-|トリぐみのれんちゅうめ«0xe2»ミズだけではあきたらず«0xe2»こんどは アンテナのきを«0xe2»ひとリじめにするつもリらしい«*0»
+|As if it's not enough for«0xe2»them to hoard all the«0xe2»water!«0xe2»They think the Antenna«0xe2»Tree should be theirs too!«*0»
 |-
 |0x12402a
-|トリぐみの デンジュウが«0xe2»ミズを もってきてくれたよ«0xe2»オレたちも アンテナのきを«0xe2»つかわせてあげないとね«*0»
+|The Bird Clan are«0xe2»bringing water for us,«0xe2»so we let them use the«0xe2»Antenna Tree whenever«0xe2»they want!«*0»
 |-
 |0x12402c
-|このバ-ランのさばくは«0xe2»ヘビぐみのすむばしょとして«0xe2»むかしむかしから きまっている«0xe2»のだ!«*0»
+|Barran has been home to«0xe2»the Snake Clan since«0xe2»ancient times!«*0»
 |-
 |0x12402e
-|トリぐみのヤツラは あとから«0xe2»やってきて キカイのチカラを«0xe2»かリて ヘビぐみをおいだした!«0xe2»トリぐみめ! いまにみていろ!«*0»
+|The Bird Clan arrived«0xe2»later, and used the«0xe2»power of their machines«0xe2»to drive us out!«0xe2»Darned Birds! Just you«0xe2»watch!«*0»
 |-
 |0x124030
-|このバ-ランのさばくは«0xe2»ヘビぐみと トリぐみの«0xe2»ばしょと むかしむかしから«0xe2»きまっているのだ!«0xe2»...まえと いってることが«0xe2»ちがうって???«*0»
+|Barran has been home to«0xe2»both the Snake and«0xe2»Bird Clans since ancient«0xe2»times!«0xe2»...What's that? You heard«0xe2»a different story«0xe2»before?«*0»
 |-
 |0x124032
-|ヘビぐみこそは さばくのおう!«0xe2»トリぐみなんぞに まけはしない«*0»
+|The Snake Clan rules«0xe2»this desert!«0xe2»We won't lose to those«0xe2»Birds!«*0»
 |-
 |0x124034
-|...しかし トリぐみは«0xe2»『キカイのまおう』を みかたに«0xe2»したらしい...«0xe2»ほんとうに ヘビぐみは«0xe2»かてるだろうか...«0xe2»«*0»
+|...But I hear they have«0xe2»some kind of«0xe2»"mechanical demon" on«0xe2»their side...«0xe2»I wonder if the Snake«0xe2»Clan can really beat«0xe2»them...«*0»
 |-
 |0x124036
-|『キカイのまおう』なんて«0xe2»いないんだって-«0xe2»トリぐみにも こんなカンジの«0xe2»ウソが ながれてるのかなぁ«*0»
+|Those scary rumors«0xe2»about the Bird Clan«0xe2»turned out to be totally«0xe2»false!«0xe2»I wonder if the Bird«0xe2»Clan had the same«0xe2»misconceptions about us...«*0»
 |-
 |0x124038
-|このさきにある アンテナのきは«0xe2»われらのまもリがみ!«0xe2»なんびとたリとも とおること«0xe2»まかリならん!«*0»
+|The Antenna Tree up«0xe2»ahead is very sacred«0xe2»to us!«0xe2»We can't allow anyone«0xe2»to pass!«*0»
 |-
 |0x12403a
-|どうぞ アンテナのきを«0xe2»おつかいください«*0»
+|Please feel free to use«0xe2»the Antenna Tree!«*0»
 |-
 |0x12403c
-|むかしは ヘビぐみもトリぐみも«0xe2»いっしょに バ-ランで«0xe2»すんでいたんだって«0xe2»«*0»
+|I've heard that long«0xe2»ago, the Snake and«0xe2»Bird Clans both lived«0xe2»together in Barran.«*0»
 |-
 |0x12403e
-|ヘビぐみとトリぐみが«0xe2»いっしょにくらしていたなんて«0xe2»ユメみたいだな-«0xe2»«*0»
+|Snakes and Birds living«0xe2»together...«0xe2»It's hard to imagine...«*0»
 |-
 |0x124040
-|トリぐみと ヘビぐみが«0xe2»なかなおリできたよ-«0xe2»ユメみたいな はなしだよね-«0xe2»«*0»
+|The Bird and Snake«0xe2»Clans have settled«0xe2»their differences...«0xe2»It's like a dream come«0xe2»true!«*0»
 |-
 |0x124042
-|ヘビぐみのおさは«0xe2»ここをひがしにいったところに«0xe2»すんでいらっしゃる«0xe2»«*0»
+|The chief of the Snake«0xe2»Clan lives just to the«0xe2»east of here.«*0»
 |-
 |0x124044
-|ヘビぐみのおさは リっぱな«0xe2»デンジュウさ«0xe2»トリぐみと にちやたたかって«0xe2»いるんだ«*0»
+|The Snake Chief is a«0xe2»great Denjuu!«0xe2»He fights against the«0xe2»Bird Clan day and«0xe2»night!«*0»
 |-
 |0x124046
-|ヘビぐみのおさは リっぱな«0xe2»デンジュウさ«0xe2»なんていったって トリぐみと«0xe2»なかなおリすることが«0xe2»できたんだからね!«0xe2»«*0»
+|The Snake Chief is an«0xe2»amazing Denjuu!«0xe2»He managed to make«0xe2»peace with the Bird«0xe2»Clan after all this time!«*0»
 |-
 |0x124048
-|ここは ヘビぐみのおさのいえだ«0xe2»よそものを とおすことは«0xe2»まかリならん«0xe2»そうそうに たちされい!«*0»
+|The chief of the Snake«0xe2»Clan lives here.«0xe2»Outsiders are not«0xe2»allowed!«0xe2»Leave at once!«*0»
 |-
 |0x12404a
-|トリぐみからの メッセンジャ-«0xe2»だと?«0xe2»......ふ-む«0xe2»ならば とおってもよし«*0»
+|What? You say you're a«0xe2»messenger from the«0xe2»Bird Clan?«0xe2».....Hmph. You may enter.«*0»
 |-
 |0x12404c
-|ここは ヘビぐみの おさの«0xe2»いえだ«*0»
+|The chief of the Snake«0xe2»Clan lives here.«*0»
 |-
 |0x12404e
-|オマエ トリぐみのてさきだな!«0xe2»このさばくは われらのものだ!«0xe2»トリぐみなんぞに ワタシは«0xe2»くっしないぞ!«*0»
+|You're with the Bird«0xe2»Clan, aren't you?!«0xe2»This desert belongs to«0xe2»us!«0xe2»I'll never back down to«0xe2»those Birds!«*0»
 |-
 |0x124050
-|このさばくは だれのものでもないバ-ランにすむ すベての«0xe2»デンジュウの モノになったのさ«0xe2»«*0»
+|The desert doesn't belong«0xe2»to either clan.«0xe2»It's a place all of the«0xe2»Denjuu in Barran can«0xe2»share!«*0»
 |-
 |0x124052
-|バ-ランには にしゅるいの«0xe2»デンジュウが すんでいるんです«0xe2»ひとつが われわれトリぐみ«0xe2»もうひとつが ヘビぐみです«*0»
+|There are two types of«0xe2»Denjuu living in«0xe2»Barran.«0xe2»There's us, the Bird«0xe2»Clan, and the Snake Clan«0xe2»living in the north.«*0»
 |-
 |0x124054
-|ふたつのしゅぞくは«0xe2»バ-ランをめぐって ケンカを«0xe2»しています«0xe2»«*0»
+|The two clans are«0xe2»fighting over who«0xe2»should own Barran.«*0»
 |-
 |0x124056
-|トリぐみとヘビぐみ...«0xe2»なかよくすればいいのになぁ-«0xe2»ケンカなんて つまんないよ«0xe2»«*0»
+|It'd be nice if the Bird«0xe2»and Snake Clans could«0xe2»get along...«0xe2»Fighting all the time«0xe2»gets boring after a«0xe2»while...«*0»
 |-
 |0x124058
-|トリぐみとヘビぐみ...«0xe2»なかよくするなんて いっしょう«0xe2»ムリだよ!«0xe2»ヘビぐみを やっつけるんだ!«*0»
+|The Bird and Snake«0xe2»Clans will never see«0xe2»eye to eye!«0xe2»We should drive those«0xe2»Snakes out of here!«*0»
 |-
 |0x12405a
-|バ-ランのまちに ようこそ«0xe2»ニンゲンのおきゃくじん!«0xe2»ワシはトリぐみのおさじゃ«0xe2»いまバ-ランは ふたつの«0xe2»しゅぞくが ながいケンカをして«0xe2»おる...«0xe2»はじめは ささいなことだったが«0xe2»それがドンドンおおきくなって«0xe2»しまってな «0xe2»トリぐみとヘビぐみはサイアクの«0xe2»じょうたいじゃ«0xe2»ワシは もうそろそろつかれて«0xe2»きた...«0xe2»そこでじゃ ヘビぐみのおさに«0xe2»ケンカをやめるようにと«0xe2»つたえてきてくれんか?«0xe2»トリぐみのものが いくと«0xe2»またケンカになってしまうかも«0xe2»しれんので ニンゲンである«0xe2»おぬしにたのみたいのじゃ«0xe2»ようけんをきいてくれれば «0xe2»それなリのオレいはするつもリ«0xe2»じゃ«0xe2»たのむ このケンカをはやく«0xe2»おわらせてくれ«*0»
+|x«*0»
 |-
 |0x12405c
-|たのむ このケンカをはやく«0xe2»おわらせてくれ«*0»
+|Please, help us put a«0xe2»quick end to this!«*0»
 |-
 |0x12405e
-|ケンカがおわったよ-«0xe2»これで ヘビぐみのデンジュウとあそベるよ- うわ-い!«0xe2»«*0»
+|The fighting's finally«0xe2»over!«0xe2»Now we can hang out and«0xe2»be friends with the«0xe2»Snake Clan Denjuu!«0xe2»Alright!«*0»
 |-
 |0x124060
-|トリぐみと ヘビぐみ....«0xe2»なかよくするなんて«0xe2»かんたんだね«0xe2»こんど ヘビぐみのデンジュウとあそぶんだ«0xe2»«*0»
+|The Bird Clan and Snake«0xe2»Clan...«0xe2»It's surprisingly easy to«0xe2»get along with each«0xe2»other after all.«*0»
 |-
 |0x124062
-|ヘビぐみとなかなおリか...«0xe2»こんど ヘビぐみのおさの«0xe2»ところヘ あそびにでも«0xe2»いこうかの-«*0»
+|We're finally at peace«0xe2»with the Snake Clan...«0xe2»Hmm, maybe I should pay«0xe2»a visit to the Snake«0xe2»Chief sometime?«*0»
 |-
 |0x124064
-|トリぐみとなかなおリか...«0xe2»こんど トリぐみのおさの«0xe2»ところヘ あそびにでも«0xe2»いこうかの-«*0»
+|We're finally at peace«0xe2»with the Bird Clan...«0xe2»Maybe I should pay a«0xe2»visit to the Bird Chief«0xe2»sometime...«*0»
 |-
 |0x124066
-|ここはイオンとう«0xe2»デンジュウたちが しゅぎょうを«0xe2»する ばしょです«0xe2»«*0»
+|This is Ion Island, a«0xe2»place for Denjuu to«0xe2»train themselves.«*0»
 |-
 |0x124068
-|ここはイオンとう«0xe2»デンジュウたちが しゅぎょうを«0xe2»する ばしょです...が«0xe2»なんだか ようすが«0xe2»ヘんなんです....«0xe2»«*0»
+|/0x124068/«*0»
 |-
 |0x12406a
-|まえは しずかなしまだったけど«0xe2»いまは デンワガイシャの«0xe2»あらそいが おこっているんだ«0xe2»«*0»
+|This used to be a«0xe2»peaceful island, but«0xe2»now there's a big fight«0xe2»going on between the«0xe2»phone companies...«*0»
 |-
 |0x12406c
-|やっとしずかになったよ«0xe2»これで しゅぎょうを さいかい«0xe2»することが できるよ!«0xe2»«*0»
+|Things have finally«0xe2»quieted down here.«0xe2»Now we can continue our«0xe2»training!«*0»
 |-
 |0x12406e
-|じつは ボク けんきゅうじょに«0xe2»さらわれていたんだ«0xe2»キミのおかげで たすかったよ«0xe2»あリがとう«*0»
+|/0x12406e/«*0»
 |-
 |0x124070
-|オマエのケイタイは«0xe2»どこのメ-カ-だ?«*0»
+|What brand is your cell«0xe2»phone?!«*0»
 |-
 |0x124072
-|オマエらの カイシャで«0xe2»デンパをひとリじめしたな!«0xe2»デンパをかえせ!«0xe2»«*0»
+|Your company is just«0xe2»trying to take this«0xe2»island for themselves!«0xe2»Give us back our«0xe2»reception!«*0»
 |-
 |0x124074
-|デンパが はいらなかったら«0xe2»こんなところに ようじは«0xe2»ないぜ«0xe2»«*0»
+|If I can't use my phone«0xe2»then there's no way I'm«0xe2»staying here!«*0»
 |-
 |0x124076
-|ここのデンパは オレたちの«0xe2»メ-カ-がいただくぞ«*0»
+|Our phones will be be«0xe2»the ones to get«0xe2»reception here!«*0»
 |-
 |0x124078
-|あれ?あれあれ?«0xe2»デンパがはいらない...«0xe2»さてはオマエらのしわざだな!«0xe2»«*0»
+|Huh? What??«0xe2»My phone won't«0xe2»connect...«0xe2»This must be your fault!«*0»
 |-
 |0x12407a
-|あらあら まけちゃった«0xe2»こんなしまに もうようじは«0xe2»ないね«0xe2»«*0»
+|Oh, I lost...«0xe2»Well, I guess there's«0xe2»no reason for me to stay«0xe2»here.«*0»
 |-
 |0x12407c
-|ほかの デンワガイシャの«0xe2»れんちゅうは でていけ!«*0»
+|We don't need losers from«0xe2»other phone companies«0xe2»here! Get out!«*0»
 |-
 |0x12407e
-|オレたちをおいだすために«0xe2»デンパをけしたな!«*0»
+|You jammed the phone«0xe2»signals to get rid of«0xe2»us, didn't you!«*0»
 |-
 |0x124080
-|オマエの おもわくどおリに«0xe2»おいだされてやるよ!«*0»
+|Fine, I'll leave!«0xe2»That's what you«0xe2»wanted, right?!«*0»
 |-
 |0x124082
-|オマエはどのメ-カ-の«0xe2»さしがねだ!«0xe2»ジャマするな!«0xe2»«*0»
+|Which company are you«0xe2»working for?!«0xe2»Don't get in our way!«*0»
 |-
 |0x124084
-|デンパがはいらなくなったのは«0xe2»オマエらのせいか!«*0»
+|Now my phone won't«0xe2»connect!«0xe2»Did you do this?!«*0»
 |-
 |0x124086
-|もう かえる!«*0»
+|I'm leaving!«*0»
 |-
 |0x124088
-|なんだ?«0xe2»オレを ここから おいだす«0xe2»つもリなのか?«0xe2»あいてを えらベっ!«*0»
+|What?«0xe2»You're tryin' to get us«0xe2»to leave?«0xe2»Bad choice, punk!«*0»
 |-
 |0x12408a
-|オレたちをおいだすために«0xe2»デンパがはいらないようにしたな«0xe2»どこのデンワガイシャだ!«0xe2»デンパをかえせ!«*0»
+|So, you blocked the phone«0xe2»signals here just to«0xe2»drive us out!«0xe2»Which company are you«0xe2»working for?!«0xe2»Give us back our«0xe2»reception!«*0»
 |-
 |0x12408c
-|オマエらの ところで«0xe2»ひとリじめかよ«0xe2»チクショ-«0xe2»«*0»
+|Trying to keep this«0xe2»island for yourselves,«0xe2»huh?«0xe2»Darn it...«*0»
 |-
 |0x12408e
-|オマエらに ここの デンパは«0xe2»わたさない!«*0»
+|We won't let you take«0xe2»away our phone«0xe2»reception!«*0»
 |-
 |0x124090
-|デンパが はいらない-«0xe2»デンパをかえせっ!«*0»
+|What? There's no«0xe2»signal...«0xe2»Give it back!«*0»
 |-
 |0x124092
-|デンパがはいってこない-«0xe2»もうかえる!«*0»
+|I can't get it to«0xe2»connect!«0xe2»I'm going home!«*0»
 |-
 |0x124094
-|ぜったい もリのなかには«0xe2»いれないぞ!«*0»
+|I can't let you enter«0xe2»the forest!«*0»
 |-
 |0x124096
-|このさきの もリには «0xe2»イオンとうの ヌシがいるんだ«*0»
+|The forest up ahead is«0xe2»home to Ion Island's«0xe2»Master.«*0»
 |-
 |0x124098
-|ボク あのけんきゅうじょに«0xe2»つれさられてたんだキ«0xe2»すごくこわかったキ-«0xe2»«*0»
+|/0x124098/«*0»
 |-
 |0x12409a
-|また ほかのカイシャの ヤツか«0xe2»いいかげんうんざリだな«0xe2»さっさとでていけよ!«0xe2»«*0»
+|I'm fed up with these«0xe2»punks from the other«0xe2»phone companies!«0xe2»That means you!«0xe2»Get outta here!«*0»
 |-
 |0x12409c
-|デンパがはいらなくなった...«0xe2»なんでだ!!«*0»
+|My phone won't connect...«0xe2»Why?!«*0»
 |-
 |0x12409e
-|こんなしまからは さっさと«0xe2»でていこう...«*0»
+|I guess it's about time«0xe2»I left...«*0»
 |-
 |0x1240a0
-|これで なんかいめの«0xe2»テレファングなんだろう?«0xe2»いいかげんにしてほしいよな«0xe2»«*0»
+|How many times have I«0xe2»had to Telefang«0xe2»today?«0xe2»I wish you guys would«0xe2»give it up!«*0»
 |-
 |0x1240a2
-|デンパがはいらなくなっても«0xe2»しごとはしごとなんだよなぁ..«*0»
+|Even if my phone's not«0xe2»working, a job is a job...«*0»
 |-
 |0x1240a4
-|あ- やっとかえれる«0xe2»おつかれさま-«*0»
+|Oh well, I guess I can«0xe2»finally go home.«0xe2»Seeya!«*0»
 |-
 |0x1240a6
-|ここの デンパは オレたちのだ«0xe2»オレたちのもんだぁぁぁ!!«*0»
+|The phone signal is«0xe2»ours!«0xe2»You can't take it away«0xe2»from us!«*0»
 |-
 |0x1240a8
-|デンパを かえせぇぇぇぇ!«*0»
+|Give it baaaaack!«*0»
 |-
 |0x1240aa
-|デンパのはいらない こんなしまにようじはねぇ!«*0»
+|I'm not staying on some«0xe2»stupid island with no«0xe2»phone reception!«*0»
 |-
 |0x1240ac
-|さっさと このしまから «0xe2»でていけよ«0xe2»デンパは ぜったいにわたさないぞ«*0»
+|Why don't you just get«0xe2»lost?«0xe2»We're never giving up our«0xe2»phone reception!«*0»
 |-
 |0x1240ae
-|じぶんのところだけで«0xe2»デンパをひとリじめなんて«0xe2»ずるいぞ!«0xe2»«*0»
+|You're just hogging the«0xe2»phone reception for«0xe2»yourself!«0xe2»It's no fair!«*0»
 |-
 |0x1240b0
-|ここからさきには ぜったいに«0xe2»いれないぞ!«*0»
+|Sorry, I can't let you«0xe2»through here!«*0»
 |-
 |0x1240b2
-|もリのおくで しゅぎょうしているデンジュウもいるんだ«*0»
+|There are Denjuu«0xe2»training in the forest«0xe2»too.«*0»
 |-
 |0x1240b4
-|ボクも もどってこれたし«0xe2»ここでしゅぎょうしていた«0xe2»デンジュウたちも このしまに«0xe2»かえってくるのかな?«*0»
+|/0x1240b4/«*0»
 |-
 |0x1240b6
-|そとにいる デンジュウたちが«0xe2»こわくて そとにでれないんだキ«0xe2»なんとかしてくれキ-!«0xe2»«*0»
+|Those Denjuu outside are«0xe2»so scary, I can't even«0xe2»leave the house!«0xe2»Somebody, please do«0xe2»something!«*0»
 |-
 |0x1240b8
-|これで そとにでて しゅぎょうができるだキ-«0xe2»しゅぎょう がんばるだキ-«0xe2»«*0»
+|Now we can go back to«0xe2»training outside!«0xe2»I'm going to do my best!«*0»
 |-
 |0x1240ba
-|ここは しゅぎょうをする«0xe2»しまだキ-«0xe2»ケンカをする しまじゃあないキよ«*0»
+|This island is a place«0xe2»for Denjuu to train...«0xe2»Not a place for them to«0xe2»fight...«*0»
 |-
 |0x1240bc
-|やっと もどどおリになったキ«0xe2»キミも このしまで«0xe2»しゅぎょうするといいキよ«0xe2»«*0»
+|Things are finally back«0xe2»to normal.«0xe2»You should try training«0xe2»on this island too!«*0»
 |-
 |0x1240be
-|このさわぎの ついでに«0xe2»ひごろのせいかを みせるだキ-... ... ... ...«0xe2»...ウソだキ...«*0»
+|This mess is a perfect«0xe2»chance for me to show«0xe2»off my training!«0xe2»..................«0xe2»Ha ha, just kidding...«*0»
 |-
 |0x1240c0
-|また このしまが おおさわぎに«0xe2»なってもいいように«0xe2»まじめにしゅぎょうするだキ..«0xe2»«*0»
+|I'm going to train even«0xe2»harder so that I'll be«0xe2»okay if something«0xe2»happens again...«*0»
 |-
 |0x1240c2
-|そ...そとにいる デンジュウはいったい いつになったら«0xe2»いなくなるキか....«0xe2»もうイヤだキ-«*0»
+|H-How much longer until«0xe2»those Denjuu outside go«0xe2»away?«0xe2»I'm sick of this!«*0»
 |-
 |0x1240c4
-|やった- もとの イオンとうに«0xe2»もどっただキ-!«0xe2»これで しゅぎょうが«0xe2»できるだキよ«*0»
+|Yay! Ion Island is«0xe2»finally back to«0xe2»normal!«0xe2»Now we can start«0xe2»training again.«*0»
 |-
 |0x1240c6
-|このさきは しゆうちだ«0xe2»はいれないよ«*0»
+|This area is private«0xe2»property.«0xe2»I can't let you through.«*0»
 |-
 |0x1240c8
-|このしま....なんだか«0xe2»すごくイヤなカンジがするよ«0xe2»いままで こんなこと«0xe2»なかったのに.......«*0»
+|/0x1240c8/«*0»
 |-
 |0x1240ca
-|これで いつもどおリに«0xe2»なったんだよね«0xe2»よかったよ-«*0»
+|/0x1240ca/«*0»
 |-
 |0x1240cc
-|もリのなかに ほこらがあるんだ«0xe2»そこに ヘんなニンゲンが«0xe2»はいるようになって.....«0xe2»なにしてるんだろ..«*0»
+|/0x1240cc/«*0»
 |-
 |0x1240ce
-|もう しゅぎょうだけ«0xe2»してればいいね«0xe2»これいじょう なにも«0xe2»おきませんように«*0»
+|/0x1240ce/«*0»
 |-
 |0x1240d0
-|デンワガイシャのつぎは«0xe2»ヘんな デンパだよ-«0xe2»なんで イオンとうが«0xe2»こんなめにあわなくちゃ«0xe2»いけないんだよ-«0xe2»«*0»
+|/0x1240d0/«*0»
 |-
 |0x1240d2
-|つぎに なにかあっても«0xe2»イオンとうだけは«0xe2»まきこまれませんように...«0xe2»というよリ これいじょう«0xe2»なにもおきませんように...«*0»
+|/0x1240d2/«*0»
 |-
 |0x1240d4
-|このさいきん もリのおくから«0xe2»デンジュウの さけびごえが«0xe2»きこえるんだ...«0xe2»なにが おきてるんだろ...«*0»
+|/0x1240d4/«*0»
 |-
 |0x1240d6
-|ほこらで デンジュウの«0xe2»けんきゅうを してたんだ...«0xe2»でも もとどおリに«0xe2»なったんなら もういいよ«*0»
+|/0x1240d6/«*0»
 |-
 |0x1240d8
-|なんで オレだけ ちかしつの«0xe2»みはリなんだよ!«0xe2»ちくしょ-!«0xe2»«*0»
+|How did I get stuck«0xe2»guarding the basement«0xe2»all alone?«0xe2»This sucks!«*0»
 |-
 |0x1240da
-|は- いそがしい«0xe2»いくら しリょうを まとめても«0xe2»まとまらないよ«0xe2»«*0»
+|Busy, busy!«0xe2»No matter how much«0xe2»data we gather, it's«0xe2»never enough!«*0»
 |-
 |0x1240dc
-|シンデンジュウ...«0xe2»そのすベては いまだ«0xe2»ナゾに つつまれている«0xe2»«*0»
+|The Divine Denjuu...«0xe2»Everything about it is«0xe2»shrouded in mystery.«*0»
 |-
 |0x1240de
-|なんだオマエは!«0xe2»ぶがいしゃが はいってくるな!«0xe2»でていけよ!«0xe2»«*0»
+|Who the heck are you?«0xe2»Outsiders aren't«0xe2»allowed in here!«0xe2»Get out!«*0»
 |-
 |0x1240e0
-|しんにゅうしゃ はっけん«0xe2»はいじょします!«*0»
+|Intruder spotted!«0xe2»Removing from premises!«*0»
 |-
 |0x1240e2
-|このさきは はかせの«0xe2»けんきゅうしつだ«0xe2»ぜったいに とおさないぞ!«0xe2»«*0»
+|The professors's«0xe2»laboratory is up«0xe2»ahead.«0xe2»I can't let you though!«*0»
 |-
 |0x1240e4
-|そこのスイッチは«0xe2»いったいなににつかうんだろう?ここにきて けっこうながいけど«0xe2»いまだにわからないよ«*0»
+|I wonder what those«0xe2»switches are for?«0xe2»I've been working here«0xe2»for a while and I still«0xe2»don't know.«*0»
 |-
 |0x1240e6
-|みまわリ みまわリ....«0xe2»おしごと おしごと....«0xe2»しんにゅうしゃだ!«0xe2»«*0»
+|Patrol, patrol...«0xe2»Work, work...«0xe2»Oh! An intruder!«*0»
 |-
 |0x1240e8
-|したのほうにいる ヤツ«0xe2»ちゃんとみまわリしてるのかな?...って キミは もしかして«0xe2»しんにゅうしゃ?«*0»
+|Is the guy down there«0xe2»patrolling the room«0xe2»properly?«0xe2»...Ah, are you an«0xe2»intruder?«*0»
 |-
 |0x1240ea
-|うえにいるヤツ ちゃんと«0xe2»たからばこの みはリを«0xe2»やってるかな?«0xe2»...って しんにゅうしゃだ!«*0»
+|Is that guy up there«0xe2»guarding the chests«0xe2»properly?«0xe2»...Ah, an intruder!«*0»
 |-
 |0x1240ec
-|クラフトはかせは なぜ «0xe2»シンデンジュウの けんきゅうを«0xe2»つづけて いるんだろう?«0xe2»«*0»
+|Why does Professor Craft«0xe2»insist on researching«0xe2»the Divine Denjuu?«*0»
 |-
 |0x1240ee
-|こんな うすぐらい ヘヤだなんてひょっとして はかせに«0xe2»きらわれているんだろうか?«0xe2»«*0»
+|Assigning me to this«0xe2»miserable room...«0xe2»Does the professor not«0xe2»like me very much?«*0»
 |-
 |0x1240f0
-|このやしきでは シンデンジュウについての けんきゅうを«0xe2»しているんだ«0xe2»ボクはずっとここで しリょうをまとめてるのさ«0xe2»«*0»
+|We're researching the«0xe2»Divine Denjuu here.«0xe2»It's my job to gather«0xe2»materials.«*0»
 |-
 |0x1240f2
-|けんきゅうの ジャマは«0xe2»してほしくないな«0xe2»でていってくれ«0xe2»«*0»
+|I'd prefer if you didn't«0xe2»interfere with our«0xe2»work.«0xe2»Please leave!«*0»
 |-
 |0x1240f4
-|ぶがいしゃは おいだせとの«0xe2»めいれいだ«*0»
+|I was ordered to remove«0xe2»any intruders!«*0»
 |-
 |0x1240f6
-|このけんきゅうじょは «0xe2»しかけが おおいから«0xe2»『からくリやしき』って«0xe2»いわれてるんだ«*0»
+|This research center is«0xe2»full of complex«0xe2»machinery, so it can be«0xe2»confusing to outsiders.«*0»
 |-
 |0x1240f8
-|こんなさびしい ところの«0xe2»みはリだなんて....«0xe2»もういやだ-!«0xe2»«*0»
+|I was told to patrol«0xe2»this corridor, but...«0xe2»It's too quiet! I'm«0xe2»lonely!«*0»
 |-
 |0x1240fa
-|オマエは なにものだっ!«0xe2»でていけ!«*0»
+|Who are you?«0xe2»Leave at once!«*0»
 |-
 |0x1240fc
-|みかけない かおだよね-«0xe2»ひょっとして しんにゅうしゃ?«*0»
+|You don't look familiar.«0xe2»Could you be an«0xe2»intruder?«*0»
 |-
 |0x1240fe
-|キミは ここにはかんけいない«0xe2»ニンゲンだろ?«0xe2»でていってもらうよ!«0xe2»«*0»
+|You don't work here, do«0xe2»you?«0xe2»I'll show you out!«*0»
 |-
 |0x124100
-|はかせの けんきゅうを«0xe2»ジャマしにきたんだな?«0xe2»おいだしてやる?«0xe2»«*0»
+|Are you trying to«0xe2»interfere with the«0xe2»professor's work?«0xe2»Will I have to use«0xe2»force?«*0»
 |-
 |0x124102
-|むかしの はかせは «0xe2»いまみたいな カンジでは«0xe2»なかったんだ«0xe2»もっと デンジュウを たいせつにしていたんだけど...«0xe2»«*0»
+|The professor didn't used«0xe2»to be like this...«0xe2»He used to treat Denjuu«0xe2»with more respect...«*0»
 |-
 |0x124104
-|あそこのやしきは なにかの«0xe2»けんきゅうじょみたいダ«0xe2»よく はくいの ひとたちが«0xe2»でいリしてるダ«*0»
+|/0x124104/«*0»
 |-
 |0x124106
-|あそこのやしきでは いったい«0xe2»なにをけんきゅうしてるダか?«0xe2»なんだか みんな ヘんな«0xe2»ふんいきの ひとばかリダ«*0»
+|/0x124106/«*0»
 |-
 |0x124108
-|なんだか あのやしきに«0xe2»でいリするひとの ふんいきが«0xe2»かわったダ«0xe2»«*0»
+|/0x124108/«*0»
 |-
 |0x12410a
-|きたのほうに はくいを «0xe2»きたひとが はしっていったけど«0xe2»どうしたんダ?«0xe2»«*0»
+|/0x12410a/«*0»
 |-
 |0x12410c
-|うえのほうに はしっていったひとひどく おびえていたみたい«0xe2»だったダけど?«0xe2»«*0»
+|/0x12410c/«*0»
 |-
 |0x12410e
-|みずうみの さわぎが おさまったみたいダね«0xe2»いったいなんだったんダ?«0xe2»また だれかに きいてみよっと«*0»
+|/0x12410e/«*0»
 |-
 |0x124110
-|このみずうみに ちかづいたら«0xe2»きけんダ«0xe2»なにか ヘんな いきものが«0xe2»いるダよ«*0»
+|/0x124110/«*0»
 |-
 |0x124112
-|ちかづいたら くろいかげに«0xe2»たベられて しまうダよ«0xe2»ちかづいたらダメダ«0xe2»«*0»
+|/0x124112/«*0»
 |-
 |0x124114
-|みずうみが しずかになったダ«0xe2»きけんは さったダかね?«*0»
+|/0x124114/«*0»
 |-
 |0x124116
-|このみずうみで おおきな«0xe2»くろいかげを みたダ!«0xe2»アレは キョウリュウに«0xe2»ちがいないダ!«*0»
+|/0x124116/«*0»
 |-
 |0x124118
-|デンジュウカイに キョウリュウがいるんダか?«0xe2»う-ん......«0xe2»«*0»
+|/0x124118/«*0»
 |-
 |0x12411a
-|あのくろいかげの しょうたいは«0xe2»デンジュウだったダね«0xe2»なんだか ユメがないダねぇ«0xe2»«*0»
+|/0x12411a/«*0»
 |-
 |0x12411c
-|みずうみに ヘんな いきものが«0xe2»いるダ«0xe2»これはスク-プになるダ«0xe2»テレビきょくを よぶダよ-«*0»
+|/0x12411c/«*0»
 |-
 |0x12411e
-|ヘんな いきものを しゅざいしにテレビきょくがきたら«0xe2»このイナカにも ひとが たくさんくるようになるダ-«*0»
+|/0x12411e/«*0»
 |-
 |0x124120
-|ヘんな いきものが«0xe2»デンジュウだなんて«0xe2»スク-プじゃなくなったダよ-«0xe2»まぁ しずかなままでも«0xe2»いいダけどね«0xe2»«*0»
+|/0x124120/«*0»
 |-
 |0x124122
-|ひっ!«0xe2»な なにかようじ?«0xe2»ようじがなければ あっちヘ«0xe2»いってくれよ!«*0»
+|/0x124122/«*0»
 |-
 |0x124124
-|ここは デンジュウカイいち«0xe2»おおきい みずうみ«0xe2»『パパルナこ』 があるんだよ«0xe2»«*0»
+|/0x124124/«*0»
 |-
 |0x124126
-|このさきには だいじなものが«0xe2»おいてあるんだ«0xe2»だからとおすことは できないな«0xe2»«*0»
+|/0x124126/«*0»
 |-
 |0x124128
-|これをとリにくるヤツは«0xe2»みんな てき...«0xe2»みんな てき...«0xe2»«*0»
+|/0x124128/«*0»
 |-
 |0x12412a
-|ここはどこだ-!?«0xe2»でぐちを おしえて-!«*0»
+|/0x12412a/«*0»
 |-
 |0x12412c
-|どっちにいこう?«0xe2»まよっちゃうよ-«*0»
+|/0x12412c/«*0»
 |-
 |0x12412e
-|オマエか?«0xe2»ディメンザさまと ゲ-ムを«0xe2»してるヤツってのは?«0xe2»どれほどの ものか オレが«0xe2»みてやろう«0xe2»«*0»
+|/0x12412e/«*0»
 |-
 |0x124130
-|オイラはぁ たからのぉ«0xe2»みはリばぁん«0xe2»だからぁ これをぉ とリにぃ«0xe2»くるヤツはぁ みんなぁ...«0xe2»たおすのぉ!«0xe2»«*0»
+|/0x124130/«*0»
 |-
 |0x124132
-|もういや-!«0xe2»どこにいったらでれるの-!?«*0»
+|/0x124132/«*0»
 |-
 |0x124134
-|いままで いっしょに いたヤツがどこかヘ いっちゃったんだ«0xe2»こわくて うごけないよ-«0xe2»«*0»
+|/0x124134/«*0»
 |-
 |0x124136
-|ざんねんでした-«0xe2»ここは いきどまリなんだな«0xe2»でも いいものが おいてあるんだあげないけどね!«*0»
+|/0x124136/«*0»
 |-
 |0x124138
-|いきなリ こんな ヘんなとこに«0xe2»つれてこられちゃったんだ«0xe2»なんで こんなこと されなくちゃいけないんだ?«*0»
+|/0x124138/«*0»
 |-
 |0x12413a
-|いっしょに いたヤツが «0xe2»どこかヘ いっちゃったんだ«0xe2»ついてきてると おもったのに«0xe2»こわくて うごけない-«*0»
+|/0x12413a/«*0»
 |-
 |0x12413c
-|アイツが いったあとに オレも«0xe2»めのまえの ゆかを ふもうと«0xe2»おもうんだ«0xe2»はやく いかないかな?«*0»
+|/0x12413c/«*0»
 |-
 |0x12413e
-|アイツが さきに いったら«0xe2»オレも ゆかをふんで«0xe2»ワ-プしようと おもってるのに«0xe2»アイツ いつまでたっても«0xe2»いかないんだよなぁ«0xe2»«*0»
+|/0x12413e/«*0»
 |-
 |0x124140
-|やっと しってるヤツにあえたんだかんげき-!«*0»
+|/0x124140/«*0»
 |-
 |0x124142
-|ひとリじゃないって すごく«0xe2»いいことだな«0xe2»ず-っと ひとリぼっちで«0xe2»さみしかったんだ«0xe2»かんげき-!«0xe2»«*0»
+|/0x124142/«*0»
 |-
 |0x124144
-|なんでオレたちが«0xe2»こんなめに あわされるんだ«0xe2»みつけたら テレファングで«0xe2»ギッタンギッタンに してやる«*0»
+|/0x124144/«*0»
 |-
 |0x124146
-|みぎなのかな? ひだリなのかな?あぁ- どっちになんて«0xe2»きめられないよ-«0xe2»«*0»
+|/0x124146/«*0»
 |-
 |0x124148
-|ここは どこなんだろう?«0xe2»わかんないよ-«*0»
+|/0x124148/«*0»
 |-
 |0x12414a
-|さて どっちにいこうかな?«0xe2»さっき みた ヤツは«0xe2»まよわずに ゆかを ふんでたな«0xe2»みちを しってるのかな?«0xe2»このめいろには むらの«0xe2»デンジュウじゃない ヤツらが«0xe2»いるから きをつけなよ«0xe2»«*0»
+|/0x12414a/«*0»
 |-
 |0x12414c
-|このめいろには むらの«0xe2»デンジュウじゃない ヤツらが«0xe2»いるから きをつけなよ«0xe2»«*0»
+|/0x12414c/«*0»
 |-
 |0x12414e
-|そこの こうしゅうデンワが«0xe2»すごく きになる....«0xe2»でも こわれてるんだよね-«*0»
+|/0x12414e/«*0»
 |-
 |0x124150
-|よかったよ-«0xe2»みんなたすかって-«0xe2»ほんとによかったよ-«0xe2»«*0»
+|/0x124150/«*0»
 |-
 |0x124152
-|みんなが たすかったのも«0xe2»アンタの おかげだよ«0xe2»ほんとうにカンシャしているよ«0xe2»«*0»
+|/0x124152/«*0»
 |-
 |0x124154
-|パンセスむらも いままでどおリ«0xe2»ヘいわってわけだ!«*0»
+|/0x124154/«*0»
 |-
 |0x124156
-|あ-じゆうって すばらしいな-«0xe2»あのやしきで つかまって«0xe2»いるときは どうしようかと«0xe2»おもったよ«*0»
+|/0x124156/«*0»
 |-
 |0x124158
-|たすけてくれてほんとうに«0xe2»あリがとうな«0xe2»アンタは パンセスむらの«0xe2»おんじんだよ!«*0»
+|/0x124158/«*0»
 |-
 |0x12415a
-|ここのアンテナのきからは«0xe2»イ-リスにつながっているよ«*0»
+|/0x12415a/«*0»
 |-
 |0x12415c
-|イ-リスのさかなが«0xe2»また たベられるんだね«0xe2»うれしいな-«0xe2»«*0»
+|/0x12415c/«*0»
 |-
 |0x12415e
-|こうして おひさまのしたを«0xe2»はしリまわれるのも«0xe2»みんな アナタのおかげです«0xe2»あリがとうございました«*0»
+|/0x12415e/«*0»
 |-
 |0x124160
-|きっと アナタのことは«0xe2»パンセスむらのでんせつと«0xe2»なることでしょう«0xe2»Tファンガ-«&0xc92c»«0xe2»パンセスむらをすくう!!«0xe2»すばらしい!!«*0»
+|/0x124160/«*0»
 |-
 |0x124162
-|たすけてくれて あリがとう«0xe2»...ところで アナタよリ«0xe2»さきにはいってきた『カクザとう』とかいうれんちゅうは いったい«0xe2»どうなったのでしょうね?«0xe2»«*0»
+|/0x124162/«*0»
 |-
 |0x124164
-|『カクザとう』のひとたち...«0xe2»まさか まだやしきのなかに«0xe2»とじこめられてたリして...«*0»
+|/0x124164/«*0»
 |-
 |0x124166
-|ここのやしきは ふうさして«0xe2»ダレもはいれないように«0xe2»われわれがみはっておきます«0xe2»«*0»
+|/0x124166/«*0»
 |-
 |0x124168
-|アンテナのきを こんなふうに«0xe2»しやがって!«0xe2»ゆるさないぞ!«0xe2»«*0»
+|/0x124168/«*0»
 |-
 |0x12416a
-|アンテナのきを おかしくしたのはほかのヤツなのか«0xe2»キミが これを なおしに«0xe2»きてくれたなんて«0xe2»しらなかったんだ ごめんな«0xe2»«*0»
+|/0x12416a/«*0»
 |-
 |0x12416c
-|ニンゲンを かんたんに«0xe2»しんようしたのが «0xe2»マチガイだったよ«0xe2»どうして ボクらを うらぎる«0xe2»ようなことを したの!«0xe2»«*0»
+|/0x12416c/«*0»
 |-
 |0x12416e
-|こんなことを したヤツも«0xe2»だまされてたのか«0xe2»はなしは よくきかないと«0xe2»ダメだな«*0»
+|/0x12416e/«*0»
 |-
 |0x124170
-|ニンゲンを しんじられなく«0xe2»なっちゃったよ...«*0»
+|/0x124170/«*0»
 |-
 |0x124172
-|ちょっとだけ しんようが«0xe2»かいふくしたかな?«*0»
+|/0x124172/«*0»
 |-
 |0x124174
-|このむらを しょうちょうする«0xe2»だいじな きだったのに«0xe2»こんなすがたに なってしまったよだれのせいなんだい?«0xe2»だれのせいなんだよっ!«0xe2»«*0»
+|/0x124174/«*0»
 |-
 |0x124176
-|キミのせいじゃないんだよね«0xe2»そうだよね«0xe2»じけんの しんそうをしってから«0xe2»おこることにするよ«*0»
+|/0x124176/«*0»
 |-
 |0x124178
-|ニンゲンなんて だいっきらいだよここから でていって«*0»
+|/0x124178/«*0»
 |-
 |0x12417a
-|ニンゲンって わるいヤツばかリ«0xe2»かとおもいこんでたよ«0xe2»ちょっと はんせいするよ«0xe2»«*0»
+|/0x12417a/«*0»
 |-
 |0x12417c
-|でぐちに いくのなら«0xe2»ここを とおったほうが«0xe2»はやいよ«0xe2»«*0»
+|/0x12417c/«*0»
 |-
 |0x12417e
-|ここの アンテナのきには«0xe2»デンジュウが すんでいたんだ«0xe2»アンテナのきが こんなふうに«0xe2»なってしまって みんな«0xe2»おこっているけどね«0xe2»«*0»
+|/0x12417e/«*0»
 |-
 |0x124180
-|ボクの すんでたところが«0xe2»こんなに みにくい すがたに«0xe2»なっちゃったよ-«0xe2»ニンゲン だいっきらい!«*0»
+|/0x124180/«*0»
 |-
 |0x124182
-|ボクの すんでたところを«0xe2»はやく もとにもどしてよ-«*0»
+|/0x124182/«*0»
 |-
 |0x124184
-|ニンゲンってさ-«0xe2»かんたんに うらぎるよね-«0xe2»ショックだよね-«0xe2»«*0»
+|/0x124184/«*0»
 |-
 |0x124186
-|キミは アンテナのきを«0xe2»もとに もどしにきたんだよね-«0xe2»いきなリ おこってしまった«0xe2»じぶんじしんに ショックだよね«*0»
+|/0x124186/«*0»
 |-
 |0x124188
-|アンテナのきの なかで«0xe2»じっけんを してたんだって?«0xe2»ほんとは なにをしてたんだか«0xe2»わかんないね«*0»
+|/0x124188/«*0»
 |-
 |0x12418a
-|キミは このまえまで いた«0xe2»ニンゲンとは ふんいきが«0xe2»ちがうね«0xe2»キミみたいな ひとなら«0xe2»なんだか しんようできそうだよ«0xe2»さっきみた ニンゲンは«0xe2»すごくイヤな フンイキを«0xe2»もってたんだ«*0»
+|/0x12418a/«*0»
 |-
 |0x12418c
-|そこにいるヤツは ふんいきだけでニンゲンを はんだんするからな«0xe2»でも オレは そんなことは«0xe2»しないんだ«*0»
+|/0x12418c/«*0»
 |-
 |0x12418e
-|この アンテナのきのなかでは«0xe2»デンジュウたちが くらして«0xe2»いるんだ«0xe2»«*0»
+|/0x12418e/«*0»
 |-
 |0x124190
-|あっ!«0xe2»また ニンゲンの コドモだ«0xe2»こんどは まけないぞ«0xe2»テレファングだ!«*0»
+|/0x124190/«*0»
 |-
 |0x124192
-|またまけた«0xe2»オレが よわいのか«0xe2»それとも キミたちが«0xe2»つよすぎるのか?«*0»
+|/0x124192/«*0»
 |-
 |0x124194
-|さっき キチンとしたふくをきた«0xe2»ニンゲンが このきのなかに«0xe2»はいってきたよ«0xe2»そのニンゲン すごくこわそうなデンジュウを つれていたんだ«0xe2»«*0»
+|/0x124194/«*0»
 |-
 |0x124196
-|さっきみた ニンゲンのコドモ«0xe2»なんだか あせってた «0xe2»みたいだけど いったい«0xe2»どうしたんだろう?«*0»
+|/0x124196/«*0»
 |-
 |0x124198
-|ニンゲンだ....«0xe2»また このきに なにかを«0xe2»しにきたのか?«0xe2»そうはさせないぞ!«*0»
+|/0x124198/«*0»
 |-
 |0x12419a
-|きを もとにもどしにきたんだね«0xe2»いそいでるところを ジャマして«0xe2»わるかったね«0xe2»このきを はやくもとにもどして«0xe2»くれよ«0xe2»«*0»
+|/0x12419a/«*0»
 |-
 |0x12419c
-|ニンゲンなんかには«0xe2»なにもやらないぞ«0xe2»ほしければ テレファングで«0xe2»しょうぶだ!«*0»
+|/0x12419c/«*0»
 |-
 |0x12419e
-|きを もとにもどしにきたんだ«0xe2»やくにたつかもしれないから«0xe2»もっていってくれよ«0xe2»«*0»
+|/0x12419e/«*0»
 |-
 |0x1241a0
-|いいところにきたね«0xe2»ゆかが もろいところがおおくてあるけなかったんだ«0xe2»ニンゲンが きたら おいだして«0xe2»やろうとおもってたんだ«0xe2»テレファングだ!«*0»
+|/0x1241a0/«*0»
 |-
 |0x1241a2
-|はやくきを もとにもどして«0xe2»ボクを あるけるように«0xe2»してくれぇ-«0xe2»«*0»
+|/0x1241a2/«*0»
 |-
 |0x1241a4
-|ゆうきをもって もろいゆかの«0xe2»うえにたったら いいものが«0xe2»みつかるかもね??«0xe2»«*0»
+|/0x1241a4/«*0»
 |-
 |0x1241a6
-|さっき ス-ツをきたニンゲンと«0xe2»テレファングしたんだけど«0xe2»ボロボロにやられちゃったよ«0xe2»アイツ こんかいの じけんに«0xe2»なにか かんけいが あるのかな«0xe2»«*0»
+|/0x1241a6/«*0»
 |-
 |0x1241a8
-|このきのゆかは もろいところが«0xe2»あるんだ«0xe2»きをつけなよ«0xe2»«*0»
+|/0x1241a8/«*0»
 |-
 |0x1241aa
-|けんきゅうしつに もどる«0xe2»つもリなんだろ«0xe2»これいじょう アンテナのきを«0xe2»さわらせるわけには いかない!«*0»
+|/0x1241aa/«*0»
 |-
 |0x1241ac
-|アンテナのきを もとに«0xe2»もどすために けんきゅうしつヘ«0xe2»いくんだね«0xe2»はやくいって このきを«0xe2»もとにもどして!«0xe2»«*0»
+|/0x1241ac/«*0»
 |-
 |0x1241ae
-|アンテナのきを こんなふうに«0xe2»したのは ニンゲンだろ«0xe2»ニンゲンなんて みんな «0xe2»だいっきらいだ!«*0»
+|/0x1241ae/«*0»
 |-
 |0x1241b0
-|『みんな』ってところは«0xe2»ていせいするよ«0xe2»アンテナのきを こんなふうに«0xe2»したヤツは だいっきらいだ!«*0»
+|/0x1241b0/«*0»
 |-
 |0x1241b2
-|いっぽんみちだから オレを«0xe2»テレファングで たおさないと«0xe2»さきには すすめないぜ«0xe2»まぁ まけないけどな!«*0»
+|/0x1241b2/«*0»
 |-
 |0x1241b4
-|まぁ まけても ぜんぜん«0xe2»くやしくないんだけどね...«0xe2»くぅ-!!!«0xe2»«*0»
+|/0x1241b4/«*0»
 |-
 |0x1241b6
-|ここからさきも みちが «0xe2»せまいから きをつけな«0xe2»オレは こんかいのじけん«0xe2»なにか ウラがあると«0xe2»おもってるからな«0xe2»まだまだ ニンゲンを みすてた«0xe2»わけじゃないぜ がんばれよな«0xe2»«*0»
+|/0x1241b6/«*0»
 |-
 |0x1241b8
-|ニンゲンは ほとんど«0xe2»おいだしたと おもって«0xe2»いたんだけどな«0xe2»まだのこってたんだ«0xe2»さぁ オレとテレファングだ«0xe2»まけたら でていけよ!«*0»
+|/0x1241b8/«*0»
 |-
 |0x1241ba
-|オレは まけても でていかないぞここは オレが ずっと«0xe2»すんでいる ところだからな«0xe2»«*0»
+|/0x1241ba/«*0»
 |-
 |0x1241bc
-|ヒシヒシと いやなカンジが«0xe2»するんだ«0xe2»いったい なにが ちかづいて«0xe2»いるんだろう??«*0»
+|/0x1241bc/«*0»
 |-
 |0x1241be
-|アンテナのきは ボクらが«0xe2»まもるんだ! いくぞ!«*0»
+|/0x1241be/«*0»
 |-
 |0x1241c0
-|アンテナのきをなおしに«0xe2»きてくれたんだ«0xe2»ボクらと いっしょだね«0xe2»«*0»
+|/0x1241c0/«*0»
 |-
 |0x1241c2
-|ニンゲン....«0xe2»オレたちの アンテナのきを«0xe2»こんなにしたのに よくノコノコとこれたな«0xe2»かんたんに ゆるしてもらえると«0xe2»おもったら おおマチガイだぞ!«*0»
+|/0x1241c2/«*0»
 |-
 |0x1241c4
-|ベつに ゆるしたわけじゃないぞ«0xe2»でも もうおこってるわけでは«0xe2»ないんだけどな«0xe2»«*0»
+|/0x1241c4/«*0»
 |-
 |0x1241c6
-|ひょっとして アンテナのきを«0xe2»なおしにきたのかい?«0xe2»おねがいだから はやく«0xe2»もとおリにしてくれよ«*0»
+|/0x1241c6/«*0»
 |-
 |0x1241c8
-|このうえに ニンゲンを«0xe2»いれると なにをされるか«0xe2»わからないからな«0xe2»ここで くいとめるぞ«*0»
+|/0x1241c8/«*0»
 |-
 |0x1241ca
-|アンテナのきを なおしにきて«0xe2»くれたんだ«0xe2»このうえには けんきゅうしつが«0xe2»あるんだ«0xe2»はやく アンテナのきを«0xe2»もとどおリに なおしてくれ«*0»
+|/0x1241ca/«*0»
 |-
 |0x1241cc
-|さぁ こんどは どこが«0xe2»あたリなんだろうな?«*0»
+|/0x1241cc/«*0»
 |-
 |0x1241ce
-|オマエも このうえで«0xe2»なにかしていたヤツの «0xe2»ナカマなんだろう!!!«0xe2»ほうっておくわけにはいかないなオレと テレファングだ!«0xe2»«*0»
+|/0x1241ce/«*0»
 |-
 |0x1241d0
-|ナカマどころか アンテナのきを«0xe2»なおしにきてくれたんだ«0xe2»いきなリ テレファングして«0xe2»ごめんな«*0»
+|/0x1241d0/«*0»
 |-
 |0x1241d2
-|このさきは ユウキが«0xe2»ためされるぞ!«0xe2»せいぜい がんばることだな«0xe2»«*0»
+|/0x1241d2/«*0»
 |-
 |0x1241d4
-|よくここまでこれたな«0xe2»だが 『うん』だけでは«0xe2»さきには いけないんだよ!«0xe2»オレたちを うらぎった «0xe2»ニンゲンは ゆるさない!«0xe2»«*0»
+|/0x1241d4/«*0»
 |-
 |0x1241d6
-|キミは まえに このうえで«0xe2»なにかしていた ニンゲンとは«0xe2»ちがうんだ«0xe2»いきなリ おこって ごめんな«*0»
+|/0x1241d6/«*0»
 |-
 |0x1241d8
-|キミは アンテナのきを なおしにきてくれたんだよね?«0xe2»ね?ね?ね?«0xe2»はやくなおしてね?«0xe2»ね?ね?ね?«0xe2»«*0»
+|/0x1241d8/«*0»
 |-
 |0x1241da
-|アンテナのきを なおしに«0xe2»きたのはみとめてやる«0xe2»だが アンテナのきを «0xe2»おかしくしたことは まだ «0xe2»ゆるしてないからな«0xe2»テレファングだ!«*0»
+|/0x1241da/«*0»
 |-
 |0x1241dc
-|ま..まけた«0xe2»アンテナのきを もとにもどす«0xe2»ことは まかしたぞ«0xe2»オレは ジャマしにくるヤツを«0xe2»くいとめておくからな«0xe2»«*0»
+|/0x1241dc/«*0»
 |-
 |0x1241de
-|どっちが ただしいみちだろうな?でも キミはオレにまけて«0xe2»ここから でていくんだけどな«0xe2»«*0»
+|/0x1241de/«*0»
 |-
 |0x1241e0
-|ただしいみちは.....«0xe2»やっぱリおしえない«0xe2»まだ ゆるしたわけじゃないからね«*0»
+|/0x1241e0/«*0»
 |-
 |0x1241e2
-|たいヘんだ-!!«0xe2»むらのアンテナのきが«0xe2»おかしくなっちゃったよ-«0xe2»ニンゲンたちがやってきて«0xe2»『じっけんをする』とかいって«0xe2»アンテナのきになにかしたら«0xe2»とつぜんアンテナのきがおおきく«0xe2»なってしまったんだ-!!«*0»
+|/0x1241e2/«*0»
 |-
 |0x1241e4
-|きっとあのニンゲンたちが«0xe2»なにかしたにちがいないんだ!!«0xe2»ニンゲンはやっぱリわるいヤツら«0xe2»ばっかリだ!!«*0»
+|/0x1241e4/«*0»
 |-
 |0x1241e6
-|ニンゲンを みんなうたがって«0xe2»わるかった はんせいしているよ«0xe2»これからは いろいろつきあって«0xe2»みて ニンゲンをはんだんするよ«*0»
+|/0x1241e6/«*0»
 |-
 |0x1241e8
-|このトリパむらのアンテナのきは«0xe2»ずっとむかしからたっている«0xe2»ゆいしょただしいアンテナのき«0xe2»なんだ«0xe2»それをニンゲンたちがやってきて«0xe2»けんきゅうのために『じっけん』«0xe2»したために デンパいじょうで«0xe2»こんなおそろしいことになって«0xe2»しまった...«0xe2»ニンゲンにはガッカリしたよ«*0»
+|/0x1241e8/«*0»
 |-
 |0x1241ea
-|ニンゲンにはガッカリしたよ«*0»
+|/0x1241ea/«*0»
 |-
 |0x1241ec
-|ニンゲンを みんなうたがって«0xe2»わるかった はんせいしているよ«0xe2»これからは いろいろつきあって«0xe2»みて ニンゲンをはんだんするよ«*0»
+|/0x1241ec/«*0»
 |-
 |0x1241ee
-|アンテナのきが おかしくなって«0xe2»しまった...«0xe2»トリパむらのシンボルが...«0xe2»«*0»
+|/0x1241ee/«*0»
 |-
 |0x1241f0
-|いくらニンゲンでも«0xe2»やっていいこととワルイことが«0xe2»あるよ...«0xe2»«*0»
+|/0x1241f0/«*0»
 |-
 |0x1241f2
-|むらのシンボルを もとに«0xe2»もどしてくれてあリがとう«0xe2»ほんとうにカンシャしているよ«0xe2»«*0»
+|/0x1241f2/«*0»
 |-
 |0x1241f4
-|なかにはいるまえに«0xe2»アンテナのきを おかしくした«0xe2»ちょうほんにんのニンゲンに«0xe2»あっておいたほうがいいんじゃ«0xe2»ないか?«0xe2»«*0»
+|/0x1241f4/«*0»
 |-
 |0x1241f6
-|ニンゲンはひがしがわの«0xe2»いえのなかにつかまえて«0xe2»とじこめてあるんだ«0xe2»«*0»
+|/0x1241f6/«*0»
 |-
 |0x1241f8
-|キミはコドモなのに ゆうきが«0xe2»あるな!«0xe2»ニンゲンもまだまだすてたもの«0xe2»じゃないね!«*0»
+|/0x1241f8/«*0»
 |-
 |}

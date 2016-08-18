@@ -1,522 +1,522 @@
 {|
 |-
 !Pointer
-!Japanese
+!English
 |-
 |0x11c000
-|ここはトロンコむらだプニ«0xe2»ここは ムサさまのきょかが«0xe2»ないと とおれないプニ-«0xe2»«*0»
+|This is Toronko Village,«0xe2»puni.«0xe2»You need Musa's«0xe2»permission to pass«0xe2»through here, puni!«*0»
 |-
 |0x11c002
-|アンテナのきが つかえるように«0xe2»なって あんしんしたプニ-«*0»
+|It's alright for you to«0xe2»use the Antenna Tree«0xe2»now, puni!«*0»
 |-
 |0x11c004
-|かわのミズなんて よごれてて«0xe2»のめないよ«0xe2»やっぱリ わきミズが«0xe2»いちばんおいしいよ«0xe2»はやく ミズがこないかな...«0xe2»«*0»
+|The water in the river«0xe2»is dirty, so we can't«0xe2»drink it.«0xe2»Spring water really is«0xe2»the tastiest!«0xe2»I hope we get more«0xe2»soon...«*0»
 |-
 |0x11c006
-|ネタロが ミズを はこんで«0xe2»きてくれたんだ-«0xe2»やっぱリ わきミズが«0xe2»イチバンだね!!«*0»
+|Netaro finally brought«0xe2»us water!«0xe2»Spring water really is«0xe2»the best!!«*0»
 |-
 |0x11c008
-|キミはデンジュウカイは«0xe2»はじめてかい?«0xe2»デンジュウにも いろんなヤツが«0xe2»いるから はなしを«0xe2»きいてみるといいよ«*0»
+|Is this your first time«0xe2»in the Denjuu World?«0xe2»There are as many kinds«0xe2»of Denjuu as people, so«0xe2»you should listen to«0xe2»what they have to say.«*0»
 |-
 |0x11c00a
-|トモダチはふえたかい??«*0»
+|Have you made more«0xe2»friends??«*0»
 |-
 |0x11c00c
-|デンジュウって いろいろな«0xe2»ところにすんでるんだ«0xe2»おおきくわけて 6しゅるい«0xe2»『いわやま』『そうげん』«0xe2»『しんリん』『みずベ』『そら』«0xe2»『さばく』«0xe2»っていうふうに わかれるんだよ«0xe2»«*0»
+|Denjuu live in all sorts«0xe2»of places.«0xe2»They're sorted into 6«0xe2»major groups: Mountain,«0xe2»Grassland, Forest,«0xe2»Aquatic, Sky, and«0xe2»Desert.«*0»
 |-
 |0x11c00e
-|デンジュウもニンゲンみたいに«0xe2»いろいろな せいかくや«0xe2»あいしょうが あるのさ«0xe2»«*0»
+|Denjuu are like humans,«0xe2»they each have«0xe2»different personalities«0xe2»and quirks.«*0»
 |-
 |0x11c010
-|なんだか さいきんおかしな«0xe2»ことがおきるんだ«0xe2»ヘんなニンゲンがきたリ «0xe2»『アンテナのき』が おられたリ«0xe2»したんだ«0xe2»«*0»
+|Some weird things have«0xe2»been happening lately.«0xe2»Weird people showing up,«0xe2»Antenna Trees getting«0xe2»cut down...«*0»
 |-
 |0x11c012
-|トロンコむらは いつもどおリに«0xe2»もどったみたいだね«0xe2»よかった-«0xe2»«*0»
+|It looks like Toronko«0xe2»Village has returned to«0xe2»normal.«0xe2»I'm glad!«*0»
 |-
 |0x11c014
-|キミは 『Tファンガ-』かい?«0xe2»『Tファンガ-』ってのは«0xe2»デンジュウを うまく«0xe2»つかいこなせる ニンゲンの«0xe2»ことをいうんだけどね«0xe2»«*0»
+|Are you a T-Fanger?«0xe2»T-Fangers are what«0xe2»they call humans who are«0xe2»good at handling Denjuu.«*0»
 |-
 |0x11c016
-|オレは ここでかわの«0xe2»みはリをしているんだ«0xe2»うみにすむ デンジュウは«0xe2»おっきくて おそろしい«0xe2»れんちゅうだからね«0xe2»«*0»
+|I'm keeping watch on the«0xe2»river here.«0xe2»Ocean Denjuu are big and«0xe2»scary, after all...«*0»
 |-
 |0x11c018
-|したのほうにいる ニンゲンが«0xe2»こわいんだよ-«0xe2»あのニンゲン デンジュウカイに«0xe2»なにをしにきたんだろう?«*0»
+|That human down there«0xe2»is scary!«0xe2»What are they doing in«0xe2»Denjuu World anyway?«*0»
 |-
 |0x11c01a
-|したにいた ニンゲン«0xe2»どこかヘいっちゃった«0xe2»ひとあんしんだよ-«0xe2»«*0»
+|The human that was down«0xe2»there left. That's a«0xe2»relief...«*0»
 |-
 |0x11c01c
-|くさのなかに おちてる«0xe2»アイテムを みつけるほうほうが«0xe2»あるんだって«0xe2»どうやって さがすんだろう?«*0»
+|There's a way to find«0xe2»items scattered in the«0xe2»grass, but...«0xe2»What was it again?«*0»
 |-
 |0x11c01e
-|くさのなかで ダッシュすると«0xe2»くさが なくなって アイテムが«0xe2»でてくるんだって-«0xe2»«*0»
+|Oh, if you dash in the«0xe2»grass, the items people«0xe2»have dropped will pop out!«*0»
 |-
 |0x11c020
-|デンジュウたちに たんじょうびがあるのはしってる??«0xe2»おなじデンジュウでも«0xe2»うまれたつきがちがうと«0xe2»つよさが ちがったリするんだよ«0xe2»«*0»
+|Did you know that Denjuu«0xe2»have birthdays??«0xe2»Similar Denjuu born in«0xe2»different months will«0xe2»have different strengths!«*0»
 |-
 |0x11c022
-|『おいしいカレ-を』だなんて«0xe2»あのニンゲン なにをいって«0xe2»いるんだろ-ね.....«0xe2»ところでカレ-って......«0xe2»なに????«0xe2»«*0»
+|That guy kept talking«0xe2»about "Delicious«0xe2»curry".....«0xe2»By the way, curry......«0xe2»What is it????«*0»
 |-
 |0x11c024
-|オレ カレ-っていうヤツ«0xe2»みたことあるぜ!«0xe2»きいろくて からくて...«0xe2»え-と...え-...«0xe2»すごくはやいんだ!!«0xe2»«*0»
+|I've seen "curry" before!«0xe2»It's yellow and spicy«0xe2»and...«0xe2»Um...«0xe2»Super fast!!«*0»
 |-
 |0x11c026
-|キミたち あのネジロと«0xe2»テレファングして«0xe2»かったそうじゃないプニか«0xe2»ボクとも テレファングを«0xe2»してプニよ-«0xe2»«*0»
+|So you're the guys who«0xe2»fought Nejiro and won,«0xe2»puni?«0xe2»Telefang with me, puni!«*0»
 |-
 |0x11c028
-|やっぱリ あのネジロと«0xe2»テレファングするだけのことは«0xe2»あるプニね-!«0xe2»«*0»
+|As expected from someone«0xe2»who fought Nejiro...!«*0»
 |-
 |0x11c02a
-|ネタロをおこしにいくの?«0xe2»じゃぁ オトウトの«0xe2»ネジロに きをつけたほうが«0xe2»いいわよ«0xe2»ネジロは ネタロのジャマをする«0xe2»ニンゲンが キライなんだって«*0»
+|You're going to wake up«0xe2»Netaro?«0xe2»Then watch out for his«0xe2»little brother, Nejiro.«0xe2»He hates humans who«0xe2»cause trouble for«0xe2»Netaro.«*0»
 |-
 |0x11c02c
-|ネジロに テレファングで«0xe2»かつなんて アナタの トモダチ«0xe2»すごいわね-«0xe2»«*0»
+|If you beat Nejiro at«0xe2»Telefang, then your«0xe2»friends must be pretty«0xe2»amazing!«*0»
 |-
 |0x11c02e
-|ネタロのかわリに ミズを«0xe2»はこぼうとおもったんだけど«0xe2»ネジロに«0xe2»『ネタロのしごとをとるな』«0xe2»っておいかえされたんだ...«0xe2»«*0»
+|I wanted to help Netaro«0xe2»carry water, but Nejiro«0xe2»refused saying "Don't«0xe2»steal Netaro's work"...«*0»
 |-
 |0x11c030
-|ネジロとそうだんしたんだけど«0xe2»これからはオレがネタロと«0xe2»こうたいでミズをはこぶことに«0xe2»したんだ!«0xe2»これならネタロもだいじょうぶ«0xe2»だよ!«0xe2»これからのことは イロイロ«0xe2»3びきで はなしていくよ!«*0»
+|I talked to Nejiro, and«0xe2»from now on Netaro and«0xe2»I will take turns«0xe2»carrying water!«0xe2»Now Netaro should be«0xe2»okay!«0xe2»I think it's better to«0xe2»split the work 3 ways!«*0»
 |-
 |0x11c032
-|このドウクツは トロンコむらの«0xe2»すいげんに なってるんだ«0xe2»おくのほうに ネタロが«0xe2»いるはずなんだけど..«*0»
+|This cave is the water«0xe2»source for Toronko«0xe2»Village.«0xe2»Netaro should be«0xe2»further inside...«*0»
 |-
 |0x11c034
-|さっき ネタロがむらのほうヘ«0xe2»ミズをもっていくのをみたよ«0xe2»また ミズはこびを«0xe2»はじめたんだね-«*0»
+|I just saw Netaro«0xe2»carrying water towards«0xe2»the village.«0xe2»I guess he's started«0xe2»working again!«*0»
 |-
 |0x11c036
-|こんにちわ-«0xe2»あっ? ニンゲンだ!«0xe2»ニンゲンには ようはないよ«0xe2»かえって かえって«0xe2»ボクは デンジュウとトモダチに«0xe2»なリたいんだ«0xe2»ニンゲンには きょうみないよ«0xe2»«*0»
+|Hello.. «0xe2»Oh? It's a human!«0xe2»Humans are worthless, go«0xe2»away.«0xe2»I only want to make«0xe2»friends with Denjuu,«0xe2»I'm not interested in«0xe2»people!«*0»
 |-
 |0x11c038
-|したのひろばで«0xe2»カクザとう とうしゅ«0xe2»ネリカラさまの こうえんを«0xe2»おこなっています«0xe2»デンジュウのみなさんは «0xe2»ぜひ おたちよリください«*0»
+|x«*0»
 |-
 |0x11c03a
-|せんきょけんのない コドモは«0xe2»こなくてもいいわよ«0xe2»あっ!うしろのデンジュウさんは«0xe2»きてくださいね!«*0»
+|It's alright if the kids«0xe2»who can't vote don't«0xe2»watch...«0xe2»Ah! But the Denjuu«0xe2»behind you should come!«*0»
 |-
 |0x11c03c
-|デンジュウのみなさん!«0xe2»きょうはわたくしのために«0xe2»おあつまリくださいまして«0xe2»まことにあリがとうございます!«0xe2»わたくし ネリカラは«0xe2»このデンジュウカイを«0xe2»よリよいばしょにするため«0xe2»にちや はたらきます!«0xe2»ワタシをデンジュウカイの«0xe2»そうリだいじんにして«0xe2»いただければ かならず«0xe2»このトロンコむらに«0xe2»カレ-ショップをつくることを«0xe2»おやくそくします!«0xe2»このネリカラ!ネリカラを«0xe2»よろしくおねがいします«*0»
+|x«*0»
 |-
 |0x11c03e
-|なによ アナタは?«0xe2»ワタシたち カクザとうは «0xe2»おいしいカレ-を つくるために«0xe2»おいしいミズがひつようなの!«0xe2»だから このなかに いれる«0xe2»わけには いかないわ«0xe2»このドウクツに はいリたければ«0xe2»ネリカラさんの はなしを«0xe2»きいていらっしゃい«0xe2»«*0»
+|What do you want?«0xe2»We, the Kakuza Party,«0xe2»require quality water to«0xe2»make delicious curry!«0xe2»That's why you can't be«0xe2»allowed in here.«0xe2»If you want to get into«0xe2»the cave, you should«0xe2»talk to Mr. Nerikara.«*0»
 |-
 |0x11c040
-|ヘんな おじさんが うえの«0xe2»ほうヘ いったんだけど«0xe2»なにをしに いったんだろう?«0xe2»ネタロに ようじかな?«*0»
+|There was a weird man«0xe2»heading to the north...«0xe2»I wonder what he«0xe2»wanted?«0xe2»Was it something to do«0xe2»with Netaro?«*0»
 |-
 |0x11c042
-|ネタロの いねむリぐせも«0xe2»こまったもんだよね«*0»
+|Netaro's constant«0xe2»napping is a real«0xe2»problem...«*0»
 |-
 |0x11c044
-|ここは クリノンむらっていう«0xe2»ところだよ«*0»
+|They call this place«0xe2»Kurinon Village.«*0»
 |-
 |0x11c046
-|クリノンむらは いまたいヘんに«0xe2»いそがしいんだ«*0»
+|The village is kind of in«0xe2»a mess right now.«*0»
 |-
 |0x11c048
-|もんだいかいけつだ-!«0xe2»よかったよかった«*0»
+|The case was solved!«0xe2»What a relief.«*0»
 |-
 |0x11c04a
-|アンテナのきにはいるための«0xe2»カギをだれかが もちだして«0xe2»しまったダスよ«0xe2»«*0»
+|Someone made off with«0xe2»the key we use for«0xe2»entering the Antenna«0xe2»Tree, man.«*0»
 |-
 |0x11c04c
-|こまったダスよ-«0xe2»これでは イ-リスからサカナが«0xe2»かえないダスよ-«0xe2»«*0»
+|This sucks, man!«0xe2»Now we can't buy any«0xe2»fish from Iris...«*0»
 |-
 |0x11c04e
-|これで イ-リスから«0xe2»おいしいさかなが かえるように«0xe2»なったダス-«0xe2»«*0»
+|Now we can buy tasty«0xe2»fish from Iris again,«0xe2»man!«*0»
 |-
 |0x11c050
-|クリノンむらはちいさなむらなの«0xe2»アンテナのきが なくなると«0xe2»すごくこまるのよ-«0xe2»«*0»
+|Kurinon is such a small«0xe2»village, we'd be in a«0xe2»lot of trouble if we lost«0xe2»the Antenna Tree...«*0»
 |-
 |0x11c052
-|まったく ダレがアンテナのきを«0xe2»つかえなくしてしまったの?«*0»
+|Honestly, who would want«0xe2»to keep people from«0xe2»using the Antenna Tree?«*0»
 |-
 |0x11c054
-|はんにんは カクザとうとか«0xe2»いうヤツらだったのね«0xe2»トモダチの デンジュウにも«0xe2»デンワで おしえておかなくちゃ«*0»
+|So the culprits were a«0xe2»group called the«0xe2»"Kakuza Party"...«0xe2»I'd better call my«0xe2»Denjuu friends and let«0xe2»them know!«*0»
 |-
 |0x11c056
-|そこの いえにいるデンジュウは«0xe2»アンテナのきのカギとうばん«0xe2»だったダス«0xe2»カギがなくなったって«0xe2»おおさわぎしてたダスが...«0xe2»«*0»
+|The Denjuu in that house«0xe2»over there was in«0xe2»charge of the key to the«0xe2»Antenna Tree, man.«0xe2»There was a big«0xe2»commotion when he lost«0xe2»it...«*0»
 |-
 |0x11c058
-|カギがなくなったって«0xe2»ほんとうダスか?«*0»
+|Man, is it true the key«0xe2»was stolen?«*0»
 |-
 |0x11c05a
-|あのさわぎは やっぱリ«0xe2»ほんとうだったダスね...«0xe2»でも カイケツしてよかったダス«0xe2»«*0»
+|So the key really was«0xe2»stolen...«0xe2»I'm glad that's over, man.«*0»
 |-
 |0x11c05c
-|かいがんのよこにあるドウクツに«0xe2»むらのもんでない デンジュウが«0xe2»はいっていくのをみたダス«0xe2»アレはだれだったんダスか?«0xe2»あそこは はいっちゃいけない«0xe2»ところダス«*0»
+|I saw some unfamiliar«0xe2»Denjuu going into the«0xe2»cave by the coast, man.«0xe2»I wonder who it was?«0xe2»We're not supposed to go«0xe2»in there, man.«*0»
 |-
 |0x11c05e
-|やっぱリ あそこは«0xe2»はいったら いけないところ«0xe2»だったダスね«0xe2»わるいことは できないもんダス«*0»
+|I guess that's why they«0xe2»don't want us going in«0xe2»there, man.«0xe2»It's so people can't do«0xe2»bad stuff like that, man.«*0»
 |-
 |0x11c060
-|はまベにいる ニンゲンの«0xe2»オンナのコがなにかみたって«0xe2»いっていたダスけど«0xe2»ほんとうなんダスかね...«*0»
+|That human girl by the«0xe2»beach said she saw«0xe2»something, man.«0xe2»I wonder if it's true...«*0»
 |-
 |0x11c062
-|しかし ニンゲンってのは«0xe2»すごいダスな-«0xe2»キカイなんてベんリなモノを«0xe2»どんどんみつけてくるダスから«0xe2»エッ? キカイってほリおこして«0xe2»みつけたんじゃないんダスか?«*0»
+|Y'know, humans really«0xe2»are amazing, man...«0xe2»I wonder where they find«0xe2»so many of these«0xe2»awesome machines...«0xe2»Huh? You mean people«0xe2»don't dig machines out of«0xe2»the ground, man??«*0»
 |-
 |0x11c064
-|そうダスか- キカイって«0xe2»つくるものだったんダスか-«0xe2»オラも つっくってみるダスよ-«0xe2»やるダスよ-«*0»
+|Ohh, I see, man... So«0xe2»people build machines,«0xe2»huh...«0xe2»I wanna try making one«0xe2»too, man!«0xe2»Gonna do it, man!«*0»
 |-
 |0x11c066
-|...ところで キカイって«0xe2»なにをつかって つくるダスか?«0xe2»...キカイはキカイをつかって«0xe2»つくるダスか?«0xe2»そ そのキカイはどうやって«0xe2»つくるダスか?«0xe2»え-! やっぱリキカイがいるん«0xe2»ダスか!!«*0»
+|So... What exactly do«0xe2»they use to make the«0xe2»machines, man?«0xe2»...They use more«0xe2»machines?«0xe2»Th...Then, where do«0xe2»those machines come«0xe2»from?«0xe2»Whaaat?? They use even«0xe2»more machines, man?!«*0»
 |-
 |0x11c068
-|...キカイをつくることは«0xe2»あきらめたダス«0xe2»キカイなんて なくったって«0xe2»いきていけるダス!«0xe2»テレビがあればいいダス«0xe2»«*0»
+|...I'm giving up on«0xe2»building machines, man.«0xe2»I can live just fine«0xe2»without technology,«0xe2»anyway!«0xe2»All I need is my TV,«0xe2»man!«*0»
 |-
 |0x11c06a
-|はしのむこうにいるデンジュウは«0xe2»みたことないヤツダス«*0»
+|See that Denjuu on the«0xe2»other side of the«0xe2»bridge?«0xe2»I've never seen them«0xe2»before, man...«*0»
 |-
 |0x11c06c
-|みためで はんだんしては«0xe2»ダメなんダスね-«0xe2»これからは きをつけるダス«0xe2»«*0»
+|It's bad to judge people«0xe2»on appearances, huh!«0xe2»I'll be careful from now«0xe2»on, man!«*0»
 |-
 |0x11c06e
-|ね-ね-«0xe2»なにかあったの?«*0»
+|Hey, hey, did something«0xe2»happen?«*0»
 |-
 |0x11c070
-|なにが あったか«0xe2»おしえなさいよ-«*0»
+|I wanna hear about what«0xe2»happened!«*0»
 |-
 |0x11c072
-|デンジュウにはおおきくわけて«0xe2»にしゅるい いるってしっている«0xe2»ダスか?«0xe2»«*0»
+|Did you know that Denjuu«0xe2»are seperated into two«0xe2»main groups, man?«*0»
 |-
 |0x11c074
-|デンジュウには«0xe2»『しぜんデンジュウ』と«0xe2»『ぶんめいデンジュウ』の«0xe2»にしゅるいダス«0xe2»しぜんデンジュウは«0xe2»たたかえばたたかうほど«0xe2»シンカしていくダス«0xe2»でも ぶんめいデンジュウは«0xe2»じぶんひとリではシンカ«0xe2»できないダス«0xe2»ぶんめいデンジュウを«0xe2»シンカさせるには «0xe2»ほかのデンジュウのDNAを«0xe2»かけあわせた『じっけん』を«0xe2»しないといけないんダス«0xe2»«*0»
+|There are two kinds of«0xe2»Denjuu, man: "Natural"«0xe2»and "Cultivated".«0xe2»Natural Denjuu can«0xe2»evolve by battling more,«0xe2»but Cultivated Denjuu«0xe2»can't evolve on their«0xe2»own, man.«0xe2»In order to evolve, they«0xe2»need their DNA spliced«0xe2»with another Denjuu in a«0xe2»laboratory, man.«*0»
 |-
 |0x11c076
-|DNAはデンジュウにテレカを«0xe2»つかうと とれるばあいが«0xe2»あるダス«0xe2»DNAが てにはいったら«0xe2»ショップの ひだリがわの«0xe2»カウンタ-ヘいくダス!«*0»
+|You can get DNA by«0xe2»using a Phone Card on«0xe2»a Denjuu, man.«0xe2»Once you have some«0xe2»DNA, head to the left«0xe2»counter inside a shop,«0xe2»man!«*0»
 |-
 |0x11c078
-|デンジュウに キカイを«0xe2»つけれるってこと しっている«0xe2»ダスか?«0xe2»«*0»
+|Did you know that you«0xe2»can equip Denjuu with«0xe2»machines, man?«*0»
 |-
 |0x11c07a
-|おねがいダス!«0xe2»カギをとリかえしてきてくれダス«*0»
+|Please, man!«0xe2»You've got to bring«0xe2»back that key!«*0»
 |-
 |0x11c07c
-|カギをとリかえしてくれて«0xe2»あリがとうダス!«0xe2»おれいに ドウクツの なかに«0xe2»ある たからものも«0xe2»アンテナのきのカギも«0xe2»あげるダス!«*0»
+|Thank you so much for«0xe2»returning the key,«0xe2»man!«0xe2»As thanks, you can«0xe2»keep the treasure you«0xe2»found in the cave and«0xe2»use the Antenna Tree key«0xe2»whenever you want, man!«*0»
 |-
 |0x11c07e
-|ほんとうにあリがとうダス!«*0»
+|Really, thanks man!«*0»
 |-
 |0x11c080
-|あっ!なんだね!キミたちは!«0xe2»ここは たちいリキンシだぞ!«0xe2»さっさともどリなさい!«0xe2»もどらないなら...«0xe2»チカラずくでかえって«0xe2»もらいますよ!«*0»
+|Ack! Who are you«0xe2»people?«0xe2»This place is off-limits,«0xe2»you know!«0xe2»Leave at once!«0xe2»If you refuse...«0xe2»I'll have to take you«0xe2»out by force!«*0»
 |-
 |0x11c082
-|うん?おいオマエら«0xe2»ダレのきょかをもらって«0xe2»ここにはいってきた?«0xe2»みはリのデンジュウは なにを«0xe2»しているんだ...«0xe2»しょうがない オレがおいだして«0xe2»やるか!«0xe2»«*0»
+|Hm? Hey, whose«0xe2»permission did you get«0xe2»to come in here?«0xe2»What the heck is that«0xe2»guard Denjuu doing...«0xe2»No helping it then, I'll«0xe2»have to drive you out!«*0»
 |-
 |0x11c084
-|イヤだな- こんなせまい«0xe2»ところでみはリなんて...«0xe2»どうして オレこんなことを«0xe2»しているんだ...«0xe2»かったリ-な-«0xe2»で なにかよう?テレファング?«0xe2»めんどくさいなぁ«0xe2»«*0»
+|This sucks, having to«0xe2»keep watch in a«0xe2»cramped place like this...«0xe2»How'd I end up with«0xe2»this job, anyway?«0xe2»Laaame.«0xe2»So, what did you want?«0xe2»Telefang?«0xe2»Fine, whatever...«*0»
 |-
 |0x11c086
-|アレレ!アレレレレ!«0xe2»オレのあいぼうが どこかに«0xe2»いったんだよ?«0xe2»いっしょに みはリをしようって«0xe2»やくそくしたのに«0xe2»あっ! さてはコゾウ!«0xe2»オマエがなにかしたんだな!«0xe2»オレのあいぼうをかえしやがれ!«*0»
+|Huh? What??«0xe2»Where did my partner«0xe2»go?«0xe2»He said he was going«0xe2»to help keep watch with«0xe2»me...«0xe2»Aaah! It was you!«0xe2»What have you done«0xe2»with him?!«0xe2»Give me back my«0xe2»partner, now!«*0»
 |-
 |0x11c088
-|アレレ!アレレレレ!«0xe2»アイツどこにいったんだ?«0xe2»したのみちで まちあわせしたのになんでいないんだ???«0xe2»...ところでキミ«0xe2»どこからきたの?«*0»
+|Huh? What??«0xe2»Where'd that other guy«0xe2»go off to?«0xe2»We saw eachother«0xe2»downstairs, so how come«0xe2»isn't he here yet???«0xe2»...By the way, where did«0xe2»you come from?«*0»
 |-
 |0x11c08a
-|クリノンむらは われらが«0xe2»カクザとうのほんきょちに«0xe2»なるのだ!«0xe2»このドウクツにねむっている«0xe2»アイテムをてにいれるベく«0xe2»タバスコさまが おくのヘヤに«0xe2»いっていらっしゃる!«0xe2»ジャマするものはようしゃしない«*0»
+|Kurinon Village will«0xe2»become the Kakuza«0xe2»Party's base of«0xe2»operations!«0xe2»Lady Tabasco has gone«0xe2»further inside to«0xe2»search for the items we«0xe2»need.«0xe2»I won't allow anyone to«0xe2»get in her way!«*0»
 |-
 |0x11c08c
-|クリノンむらは イ-リスに«0xe2»つながるだいじなポイント«0xe2»ここをおさえれば せんきょを«0xe2»おこなっても かならず«0xe2»とうせんかくじつだ-!«0xe2»あかるいミライをつくリます!«0xe2»カクザとう!カクザとうで«0xe2»ございます!«*0»
+|Kurinon Village is an«0xe2»important area because«0xe2»of its connection to«0xe2»Iris.«0xe2»If we can control it,«0xe2»we'll definitely have an«0xe2»upper hand in the next«0xe2»election!«0xe2»We will create a«0xe2»brighter future!«0xe2»Kakuza Party! We are«0xe2»the Kakuza Party!«*0»
 |-
 |0x11c08e
-|かえリうちにされてしまった-«0xe2»それでは みなさま«0xe2»あかるいミライを-!«0xe2»«*0»
+|Shot down, huh... Well«0xe2»then, for the bright«0xe2»future~!«*0»
 |-
 |0x11c090
-|しょうがない おいだされて«0xe2»やるか まったく...«*0»
+|No helping it then, you«0xe2»got me instead... Ugh.«*0»
 |-
 |0x11c092
-|しょせん アルバイトだからな-«0xe2»こんなもんかな«0xe2»もらうモノだけもらって«0xe2»かえろ-っと«*0»
+|This was my first job,«0xe2»too...«0xe2»Oh well. I just wanna«0xe2»get payed and get out...«*0»
 |-
 |0x11c094
-|オレの あいぼう....«0xe2»ほんとに どこいったんだろう?«*0»
+|My partner....«0xe2»Where could he have«0xe2»gone?«*0»
 |-
 |0x11c096
-|あれれっ?«0xe2»テレファングにまけちゃった«*0»
+|Huh...?«0xe2»I lost at Telefang?«*0»
 |-
 |0x11c098
-|もうしわけあリません«0xe2»タバスコさま-!!!!!«*0»
+|I've failed you, Lady«0xe2»Tabasco...!!«*0»
 |-
 |0x11c09a
-|オレにかっても タバスコさまにはかてないさ«0xe2»それでは あかるいミライを-«0xe2»«*0»
+|Even if you beat me,«0xe2»you'll never win«0xe2»against Lady Tabasco!«0xe2»So, uh... For the bright«0xe2»future~!«*0»
 |-
 |0x11c09c
-|ここは うみのみえるまち«0xe2»イ-リスです«*0»
+|Welcome to Iris, the«0xe2»town by the sea.«*0»
 |-
 |0x11c09e
-|このまま したにいけばうみに«0xe2»でますよ«*0»
+|If you continue south,«0xe2»you'll reach the ocean.«*0»
 |-
 |0x11c0a0
-|うみにすむデンジュウたちが«0xe2»おこっているんだ...«*0»
+|The Denjuu that live in«0xe2»the sea are angry at«0xe2»us...«*0»
 |-
 |0x11c0a2
-|どうしてうみのデンジュウたちが«0xe2»おこっているのか «0xe2»よくわからないんだ«0xe2»«*0»
+|We don't even know why«0xe2»the ocean Denjuu are«0xe2»so upset.«*0»
 |-
 |0x11c0a4
-|うみの デンジュウたちの«0xe2»きげんが なおったみたいだね«*0»
+|It looks like the ocean«0xe2»Denjuu are all back to«0xe2»normal.«*0»
 |-
 |0x11c0a6
-|うみのデンジュウたちは«0xe2»ウワサほどわるいヤツらじゃない«*0»
+|The ocean Denjuu really«0xe2»aren't as bad as the«0xe2»rumors say.«*0»
 |-
 |0x11c0a8
-|うみのデンジュウたちは«0xe2»からだのおおきなれんちゅうが«0xe2»いるからカンチガイされる«0xe2»だけだよ«*0»
+|People just«0xe2»misunderstand them«0xe2»since they're bigger than«0xe2»other Denjuu, y'know.«*0»
 |-
 |0x11c0aa
-|いまのうみのデンジュウたちは«0xe2»おこってこわいけどね...«*0»
+|It is pretty scary when«0xe2»they get angry like«0xe2»this, though...«*0»
 |-
 |0x11c0ac
-|アンテナのきは いまの«0xe2»デンジュウカイには なくては«0xe2»ならないものだからね«0xe2»うみの デンジュウの きげんが«0xe2»なおって よかったよ«0xe2»«*0»
+|Antenna Trees are too«0xe2»important to the«0xe2»Denjuu World for us to«0xe2»lose them now.«0xe2»I'm glad the ocean«0xe2»Denjuu are all back to«0xe2»normal.«*0»
 |-
 |0x11c0ae
-|イ-リスは サカナがたくさん«0xe2»つれるってきいたから«0xe2»きてみたのに うみにでることが«0xe2»できないんだ...«*0»
+|I came to Iris because«0xe2»I heard the fishing«0xe2»was good, but now I«0xe2»can't even get near the«0xe2»water...«*0»
 |-
 |0x11c0b0
-|もしかして つリびとのマナ-が«0xe2»わるくて うみのデンジュウが«0xe2»おこっているんじゃ...«0xe2»«*0»
+|Maybe it was the«0xe2»fishermen who upset the«0xe2»ocean Denjuu...«*0»
 |-
 |0x11c0b2
-|つリびとの マナ-が«0xe2»わるいわけじゃ なかったんだ«0xe2»でも きをつけないとね«*0»
+|It wasn't the fishermen«0xe2»who upset the ocean«0xe2»Denjuu, but we still need«0xe2»to be careful.«*0»
 |-
 |0x11c0b4
-|これで つリが できるように«0xe2»なったよ«0xe2»イ-リスに きたかいが«0xe2»あるってもんだね!«*0»
+|Finally, we can start«0xe2»fishing again!«0xe2»It's what Iris is known«0xe2»for!«*0»
 |-
 |0x11c0b6
-|イ-リスヘようこそ!«0xe2»ここのうみはキレイですよ!«*0»
+|Welcome to Iris! «0xe2»The sea is so pretty«0xe2»here!«*0»
 |-
 |0x11c0b8
-|パ-ムかいを わたることが«0xe2»できるように なリましたよ«*0»
+|Finally, we can cross«0xe2»the Palm Sea again!«*0»
 |-
 |0x11c0ba
-|イ-リスのどこかに ドウクツが«0xe2»あるらしいんだけど «0xe2»どこからいけるのか ダレも«0xe2»しらないんだ«*0»
+|Supposedly there's a«0xe2»cave here in Iris, but«0xe2»no one knows where the«0xe2»entrance is.«*0»
 |-
 |0x11c0bc
-|ボクらは しんリんけいびたい!«0xe2»うみもだいじだけど«0xe2»もリのきも たいせつに!«0xe2»«*0»
+|We're the Forest Defence«0xe2»Force!«0xe2»The sea is important,«0xe2»but forests are«0xe2»precious too!«*0»
 |-
 |0x11c0be
-|トリパむらには このおくにある«0xe2»ほこらから いけるんだ«*0»
+|You can reach Tripa«0xe2»Village through a«0xe2»shrine in the forest up«0xe2»ahead.«*0»
 |-
 |0x11c0c0
-|ボクらは しんリんけいびたい!«0xe2»うみもだいじだけど«0xe2»もリのきも たいせつに!«*0»
+|We're the Forest Defence«0xe2»Force!«0xe2»The sea is important,«0xe2»but forests are«0xe2»precious too!«*0»
 |-
 |0x11c0c2
-|したのガケからも うみが«0xe2»みえるわよ«*0»
+|The cliff over here has«0xe2»a great view of the«0xe2»ocean.«*0»
 |-
 |0x11c0c4
-|さっき かいがんで«0xe2»うみのデンジュウがいて«0xe2»こわくなってにげてきちゃったよ«0xe2»うみのデンジュウって«0xe2»ニンゲンをおそうんでしょ?«0xe2»«*0»
+|I saw an ocean Denjuu«0xe2»on the beach just now...«0xe2»I was so scared I ran«0xe2»away...«0xe2»I mean, they've been«0xe2»attacking humans«0xe2»lately, y'know?«*0»
 |-
 |0x11c0c6
-|う-ん«0xe2»しかし なんておそろしい«0xe2»デンジュウだったんだ«0xe2»もう たベられそうだったよ!«*0»
+|Yeah... «0xe2»That Denjuu was really«0xe2»scary.«0xe2»I thought I was going«0xe2»to get eaten!«*0»
 |-
 |0x11c0c8
-|うみのデンジュウのなかにも«0xe2»イイヤツはいるんだ«0xe2»オレのトモダチもそうだったよ«0xe2»でもいまはデンワにもでないんだ«*0»
+|Some ocean Denjuu are«0xe2»really nice, like my one«0xe2»friend who lives there.«0xe2»He hasn't been picking«0xe2»up whenever I call him«0xe2»lately, though...«*0»
 |-
 |0x11c0ca
-|オレがアイツをおこらせた?«0xe2»ベつにおこらせるようなことは«0xe2»してないとおもうんだけど...«0xe2»う-ん...いくらかんがえても«0xe2»おもいつかないよ«0xe2»«*0»
+|I wonder if I made him«0xe2»angry? «0xe2»I don't think I said«0xe2»anything to upset him«0xe2»though... «0xe2»Hmmm, I keep thinking«0xe2»about it but just don't«0xe2»know...«*0»
 |-
 |0x11c0cc
-|トモダチと デンワでしゃベる«0xe2»ことができたんだ«0xe2»きらわれたのかと おもったよ«*0»
+|I just talked to my«0xe2»friend on the phone. «0xe2»Phew, I was starting to«0xe2»think he was mad at me!«*0»
 |-
 |0x11c0ce
-|ひどいことする ニンゲンも«0xe2»いるんだね«0xe2»でも みんなが そういうわけじゃないんだけどね«*0»
+|There are some humans«0xe2»who do bad things, but«0xe2»that doesn't mean all of«0xe2»them are like that.«*0»
 |-
 |0x11c0d0
-|ガケのしたに ドウクツが«0xe2»みえるよね?«0xe2»あそこになにかあると«0xe2»ボクはかんがえているんだ«*0»
+|Do you see that cave«0xe2»down there? «0xe2»I wonder what it looks«0xe2»like inside...«*0»
 |-
 |0x11c0d2
-|う-ん«0xe2»いったい どうやればあそこに«0xe2»いけるのかな-?«0xe2»«*0»
+|Hmm, yeah... I wonder how«0xe2»you get down there?«*0»
 |-
 |0x11c0d4
-|イ-リスからみえるうみは«0xe2»パ-ムかいといって«0xe2»うみのデンジュウたちが«0xe2»たくさんくらしているんだよ«*0»
+|The part of the ocean«0xe2»you can see from Iris«0xe2»is called the Palm Sea.«0xe2»There are a lot of«0xe2»aquatic Denjuu who live«0xe2»there.«*0»
 |-
 |0x11c0d6
-|イ-リスにはキカイをうっている«0xe2»ショップが いっけんも«0xe2»まだないんだ...«0xe2»イナカのクリノンむらでさえ«0xe2»ショップが あるのに...«0xe2»«*0»
+|There still aren't any«0xe2»shops in Iris where you«0xe2»can buy machines...«0xe2»Even Kurinon has one,«0xe2»and they're way out in«0xe2»the sticks...«*0»
 |-
 |0x11c0d8
-|パ-ムかいのはしのほうに«0xe2»キカイのまち フリジアにつづく«0xe2»アンテナのきがはえているよ«0xe2»«*0»
+|If you cross the Palm«0xe2»Sea, you'll reach an«0xe2»Antenna Tree that«0xe2»connects to the city of«0xe2»Freesia.«*0»
 |-
 |0x11c0da
-|イ-リスには ふるくから«0xe2»『うみのドウクツ』とよばれる«0xe2»いせきがあるとされています«0xe2»ですが どこにあるのかはダレも«0xe2»しリません«0xe2»うみのデンジュウたちなら«0xe2»なにかしっているかも«0xe2»しれませんが...«*0»
+|For ages there have been«0xe2»rumours of an "ocean«0xe2»cavern" somewhere in«0xe2»Iris, but no one knows«0xe2»where it is.«0xe2»It's possible that the«0xe2»Denjuu in the sea know«0xe2»more...«*0»
 |-
 |0x11c0dc
-|ここはしんリんけいびたいの«0xe2»ほんぶです«0xe2»もリを マナ-のわるいニンゲン«0xe2»からまもることをしごとに«0xe2»しています«*0»
+|This is the headquarters«0xe2»for the Forest Defense«0xe2»Force. We're working to«0xe2»protect the forest from«0xe2»inconsiderate humans!«*0»
 |-
 |0x11c0de
-|ようこそいらっしゃいました«0xe2»ここは うみのデンジュウの«0xe2»まもリがみをまつるほこらに«0xe2»いくための ヒミツのかくれが«0xe2»アナタはわれわれのトモダチと«0xe2»みとめられました«0xe2»うみのデンジュウのせいいきに«0xe2»ごあんないしましょう«0xe2»それからせいいきから«0xe2»おかえリのさいは うきしまの«0xe2»まんなかにたっていただければ«0xe2»イ-リスにもどってくることが«0xe2»できます«0xe2»では いってらっしゃい...«*0»
+|x«*0»
 |-
 |0x11c0e0
-|どうですか?デンジュウカイにも«0xe2»だいぶ なれてきましたか?«*0»
+|Well, what do you think?«0xe2»Are you getting used to«0xe2»the Denjuu World?«*0»
 |-
 |0x11c0e2
-|デンジュウカイと ニンゲンカイ«0xe2»デンワをつかって ふたつの«0xe2»せかいをいききできるなんて«0xe2»すばらしいですね«*0»
+|It's wonderful that you«0xe2»can travel between the«0xe2»two worlds just by using«0xe2»a cell phone.«*0»
 |-
 |0x11c0e4
-|ニンゲンめ!«0xe2»また しょうこリもなく«0xe2»やってきたな!«0xe2»アンテナのきは わたさんぞ!«*0»
+|You, cursed humans!«0xe2»Come back for more,«0xe2»have you?«0xe2»We won't let you take«0xe2»our Antenna Tree!«*0»
 |-
 |0x11c0e6
-|さっきは すまなかったな«0xe2»アンテナのきを まもってくれて«0xe2»あリがとう«0xe2»«*0»
+|Sorry about earlier...«0xe2»Thanks for protecting«0xe2»the Antenna Tree.«*0»
 |-
 |0x11c0e8
-|アイツは いったい なんのためにアンテナのきを おろうと«0xe2»していたんだろう«*0»
+|I wonder why that guy«0xe2»was trying to cut down«0xe2»the Antenna Tree...«*0»
 |-
 |0x11c0ea
-|アイツが いたから «0xe2»アンテナのきをつかえないようにしていたんだ«0xe2»アンテナのきは じゆうに«0xe2»つかってくれよ«0xe2»«*0»
+|That guy was trying to«0xe2»take away the Antenna«0xe2»Tree...«0xe2»The Antenna Trees«0xe2»should belong to everyone!«*0»
 |-
 |0x11c0ec
-|もう おこるひつようは «0xe2»ないからね«0xe2»さっきは すまなかった«0xe2»«*0»
+|There's no point being«0xe2»angry anymore, I«0xe2»guess.«0xe2»Sorry about before.«*0»
 |-
 |0x11c0ee
-|みためで けっこう «0xe2»ごかいされるんだけど«0xe2»じつは いいヤツばっかリだったリするんだよ«*0»
+|We really misjudged you,«0xe2»but it turns out you«0xe2»were good guys all along.«*0»
 |-
 |0x11c0f0
-|うみのデンジュウって«0xe2»みためが こわいのかな?«0xe2»オレたちは まいにちみてる«0xe2»かおだから なんとも «0xe2»おもわないんだ«0xe2»«*0»
+|Do ocean Denjuu really«0xe2»look that scary?«0xe2»We see each other every«0xe2»day, so I never really«0xe2»thought about it.«*0»
 |-
 |0x11c0f2
-|いみもなく おこってた«0xe2»わけじゃないんだ«0xe2»アンテナのきは みんなにとって«0xe2»だいじなものだからね«*0»
+|It's not like we were«0xe2»getting upset over«0xe2»nothing...«0xe2»The Antenna Trees are«0xe2»really important to«0xe2»everyone.«*0»
 |-
 |0x11c0f4
-|イ-リスのまちに すんでる«0xe2»ひとは めいわくしたんだろうな«0xe2»あとからでも あやまリに«0xe2»いこうかな«*0»
+|I guess we caused a lot«0xe2»of trouble for the«0xe2»people living in Iris.«0xe2»Maybe I should go«0xe2»apologize too...«*0»
 |-
 |0x11c0f6
-|リリオペが せわになった«0xe2»みたいだね«0xe2»ナカマの ねがいを きいてくれたニンゲンに わるいことを«0xe2»したよ ごめんな«0xe2»«*0»
+|It sounds like Liriope«0xe2»helped you guys out.«0xe2»You were willing to«0xe2»listen to one of our«0xe2»friends, but we still«0xe2»acted mean... Sorry«0xe2»about that.«*0»
 |-
 |0x11c0f8
-|パ-ムかいの ヘいわは«0xe2»オレたちが まもるんだ!«*0»
+|We'll protect the peace«0xe2»of the Palm Sea!«*0»
 |-
 |0x11c0fa
-|ここの アンテナのきは«0xe2»キカイのまちフリジアに«0xe2»つながっているんだ«0xe2»«*0»
+|The Antenna Tree here«0xe2»connects to Freesia,«0xe2»the machine town.«*0»
 |-
 |0x11c0fc
-|ここは キカイのまち«0xe2»フリジアです«*0»
+|Welcome to Freesia, the«0xe2»town of machines.«*0»
 |-
 |0x11c0fe
-|フリジアは ニンゲンがおおく«0xe2»すむまちです«*0»
+|There are a lot of«0xe2»humans living in this«0xe2»town.«*0»
 |-
 |0x11c100
-|いまフリジアでは«0xe2»『Tファンガ- たいかい』«0xe2»をやっているよ«0xe2»だれがいちばんさきに«0xe2»やまのほこらにつくかを«0xe2»きょうそうしているんだ«*0»
+|They're having a«0xe2»T-Fanger tournament«0xe2»here in Freesia right«0xe2»now.«0xe2»Everyone's competing to«0xe2»see who can get to the«0xe2»shrine in the mountain«0xe2»first.«*0»
 |-
 |0x11c102
-|Tファンガ-たいかいの «0xe2»ゆうしょうしゃは いったい«0xe2»だれなんだろうね?«0xe2»きっとすごいかっこいいひと«0xe2»なんだろうね«0xe2»«*0»
+|I wonder who ended up«0xe2»winning?«0xe2»Hmm... It must have been«0xe2»someone amazingly cool.«*0»
 |-
 |0x11c104
-|1かいせんは すかした«0xe2»ニイちゃんなんだ«0xe2»アレなら たぶん よゆうだって«0xe2»«*0»
+|The guy in the first«0xe2»round seems pretty full«0xe2»of himself... «0xe2»He'll probably be easy«0xe2»to beat.«*0»
 |-
 |0x11c106
-|オマエが たいかいゆうしょう?«0xe2»そんなにつよいんだったら«0xe2»なにも おしえなくても«0xe2»よかったかもしれないなぁ«*0»
+|You won the tournament?«0xe2»If I'd known you were«0xe2»that strong, I wouldn't«0xe2»have told you anything!«*0»
 |-
 |0x11c108
-|たいかいを うんえいしてる«0xe2»ヤツらが なんだか ヘんなんだ«0xe2»『きよきいっぴょうを』とか«0xe2»『あかるいミライを-』とか«0xe2»いってるんだぜ«0xe2»«*0»
+|Those guys running the«0xe2»tournament seem kind«0xe2»of weird.«0xe2»They keep going on«0xe2»about "honest votes" and«0xe2»"the bright future" and«0xe2»stuff.«*0»
 |-
 |0x11c10a
-|アイツらには ちかづきがたい«0xe2»なにかがあるよね«*0»
+|They're being pretty«0xe2»secretive...«0xe2»I wonder if something's«0xe2»up.«*0»
 |-
 |0x11c10c
-|けっきょく たいかいを«0xe2»うんえいしてたヤツらって«0xe2»なにものだったんだろうな??«0xe2»«*0»
+|So... Who were those«0xe2»people running the«0xe2»tournament??«*0»
 |-
 |0x11c10e
-|2かいせんで いいとこまで«0xe2»いったんだけどね-«0xe2»まけちゃった«0xe2»あのこが つれてた ノリウツギ«0xe2»なかなかつよかったわ«0xe2»«*0»
+|I thought it was going«0xe2»well, but I lost at the«0xe2»second round...«0xe2»That girl's Noriutsugi«0xe2»was pretty strong.«*0»
 |-
 |0x11c110
-|すご-い Tファンガ-たいかい«0xe2»ゆうしょうしちゃったの??«0xe2»しょうひんは なんだった??«0xe2»«*0»
+|Wow, you won the«0xe2»T-Fanger tournament?«0xe2»What was the prize??«*0»
 |-
 |0x11c112
-|ここからさきは たいかいが«0xe2»おわるまで とおることが«0xe2»できません«0xe2»あしからず«*0»
+|Sorry, but you're not«0xe2»allowed through here«0xe2»until the tournament is«0xe2»over.«*0»
 |-
 |0x11c114
-|たいかいが おわったので«0xe2»とおれるように なリましたよ«*0»
+|The tournament is over,«0xe2»so you can feel free to«0xe2»pass.«*0»
 |-
 |0x11c116
-|このさきには さばくのまち«0xe2»バ-ランが あリますよ«*0»
+|Past here you'll find the«0xe2»desert town, Barran.«*0»
 |-
 |0x11c118
-|ゆうしょうしょうひんは«0xe2»もらいましたか?«0xe2»ほこらのいちばんおくに«0xe2»あリますよ«*0»
+|Did you get your prize?«0xe2»It should be inside the«0xe2»shrine.«*0»
 |-
 |0x11c11a
-|みんな つよそうだから«0xe2»こわくて なかなか まえに«0xe2»すすめないんだよ-«0xe2»«*0»
+|Everyone here looks so«0xe2»strong, I'm too scared«0xe2»to go on...«*0»
 |-
 |0x11c11c
-|すごい! ゆうしょうなんて«0xe2»すごすぎるよ!«0xe2»いまのうちに キミのサインを«0xe2»もらっとこうっと«*0»
+|Whoa, you're the winner?«0xe2»Awesome!«0xe2»Can I have your«0xe2»autograph?«*0»
 |-
 |0x11c11e
-|たいかいしゅうリょうまでは«0xe2»ここは とおれませんよ«*0»
+|Sorry, no going through«0xe2»here until the«0xe2»tournament's over.«*0»
 |-
 |0x11c120
-|たいかいが おわっても«0xe2»とられた デンワバンゴウは«0xe2»かえってこないのよね...«*0»
+|Even though the«0xe2»tournament's over, I«0xe2»guess I'm not getting«0xe2»the phone numbers I«0xe2»lost back....«*0»
 |-
 |0x11c122
-|デンワバンゴウを«0xe2»かえしてちょうだ-い!«*0»
+|Give me back my phone«0xe2»numbers!!«*0»
 |-
 |0x11c124
-|ここからさきは«0xe2»つよいTファンガ-しか«0xe2»とおることができない!«0xe2»キミがとおれるかどうか«0xe2»たしかめてあげよう!!«0xe2»«*0»
+|Only strong T-Fangers«0xe2»can continue past this«0xe2»point!«0xe2»Let's see if you're good«0xe2»enough!!«*0»
 |-
 |0x11c126
-|あっ! こないでこないで!«0xe2»もうワタシはテレファングは«0xe2»しないんだから!«0xe2»これいじょうトモダチを«0xe2»ヘらされたら たまらないわ!«0xe2»«*0»
+|Aah! Stay away!«0xe2»I won't Telefang«0xe2»anymore!«0xe2»I don't want to lose«0xe2»any more friends than«0xe2»this!«*0»
 |-
 |0x11c128
-|ぜったいに テレファングは«0xe2»しませんからね!«*0»
+|I swear I'm not going to«0xe2»Telefang with anyone!«*0»
 |-
 |0x11c12a
-|ニンゲンたちは おもしろいこと«0xe2»ばかリかんがえてくるね-«0xe2»そんなにヒマなのかな-«0xe2»«*0»
+|Humans are always«0xe2»thinking up new things«0xe2»to do...«0xe2»Are they really that«0xe2»bored?«*0»
 |-
 |0x11c12c
-|う-ん«0xe2»ニンゲンと トモダチになると«0xe2»タイクツしないのかな?«0xe2»だからみんな ニンゲンと«0xe2»トモダチになるのかな?«0xe2»«*0»
+|Sooo... Is it less boring«0xe2»to be friends with a«0xe2»human?«0xe2»Is that why everyone«0xe2»does it?«*0»
 |-
 |0x11c12e
-|ニンゲンがおもてで ヘんなこと«0xe2»しているよね«0xe2»なにかたのしいのかな-«0xe2»«*0»
+|The humans out there«0xe2»are doing something«0xe2»weird again.«0xe2»Doesn't seem that fun«0xe2»to me...«*0»
 |-
 |0x11c130
-|おもてが ちょっとだけ«0xe2»しずかになったかなぁ«0xe2»おもしろかったのかな-«0xe2»«*0»
+|The humans out there«0xe2»have gotten a bit«0xe2»quieter.«0xe2»I wonder if the«0xe2»tournament was any fun...«*0»
 |-
 |0x11c132
-|もリのほこらに たいかいの«0xe2»ゆうしょうしゃにわたす«0xe2»めずらしい アイテムがおいて«0xe2»あるらしいんだ«*0»
+|Supposedly they put a«0xe2»rare item in the forest«0xe2»shrine as a prize for«0xe2»whoever wins the«0xe2»tournament.«*0»
 |-
 |0x11c134
-|たいかいが おわったみたいだけどめずらしいアイテムって«0xe2»いったいなんだったんだろうね«0xe2»«*0»
+|Well, it looks like«0xe2»tournament is over.«0xe2»I wonder what the rare«0xe2»item was?«*0»
 |-
 |0x11c136
-|ほこらのまえに すごい«0xe2»Tファンガ-がいるそうなんだ«0xe2»なんでも つよいデンジュウを«0xe2»さがしているらしいよ«*0»
+|I hear there's an«0xe2»amazing T-Fanger«0xe2»hanging around outside«0xe2»the shrine.«0xe2»He's probably searching«0xe2»for strong Denjuu...«*0»
 |-
 |0x11c138
-|つよいデンジュウをさがしている«0xe2»すごいTファンガ-を«0xe2»たおした もっとすごい«0xe2»Tファンガ-があらわれたらしいね«*0»
+|I hear an even more«0xe2»amazing T-Fanger«0xe2»showed up and beat the«0xe2»other amazing T-Fanger!«*0»
 |-
 |0x11c13a
-|フリジアにはアンテナのきが«0xe2»いっぽんしかないんだ«0xe2»アンテナのきで たびしたいなら«0xe2»ひがしにある バ-ランまで«0xe2»いかないとダメだね«0xe2»バ-ランってのはさばくのまちさ«*0»
+|There's only one Antenna«0xe2»Tree in Freesia.«0xe2»If you want to keep«0xe2»traveling, you'll need«0xe2»to head west to Barran,«0xe2»the desert town.«*0»
 |-
 |0x11c13c
-|Tファンガ-たいかい...«0xe2»はやく おわらないかな-«0xe2»まちじゅう Tファンガ-だらけ«0xe2»だから つかれるよ...«*0»
+|I hope the T-Fanger«0xe2»tournament ends soon...«0xe2»I'm getting tired of«0xe2»having so many«0xe2»T-Fangers in town...«*0»
 |-
 |0x11c13e
-|ワシは ここにひとリで«0xe2»くらしているんじゃ«0xe2»フリジアは キカイがおおすぎて«0xe2»どうにもイカン«0xe2»ここはワシがあつめている«0xe2»『あるもの』をほかんするには«0xe2»もってこいなんじゃ«0xe2»«*0»
+|I'm living out here by«0xe2»myself because Freesia«0xe2»has too many machines.«0xe2»It's the perfect«0xe2»storage place for the«0xe2»"special something" I'm«0xe2»collecting though...«*0»
 |-
 |0x11c140
-|『あるもの』ってどんなもの«0xe2»じゃと?«0xe2»おおきなイワのようなモノじゃ«0xe2»ゴツゴツしていて ひょうめんに«0xe2»アナがあいている ふしぎいしを«0xe2»あつめているんじゃ«*0»
+|You want to know what«0xe2»it is?«0xe2»It's a mysterious type«0xe2»of rock with holes all«0xe2»over the surface.«*0»
 |-
 |0x11c142
-|たいかいちゅうは このみちは«0xe2»とおれませんよ«*0»
+|Sorry, this path is«0xe2»off-limits with the«0xe2»tournament going on.«*0»
 |-
 |0x11c144
-|ここからさきに いくのかい?«0xe2»ここからさきは さばくのまち«0xe2»バ-ランだよ«0xe2»«*0»
+|Are you planning on«0xe2»going through here?«0xe2»Keep going and you'll«0xe2»reach Barran, a desert«0xe2»town.«*0»
 |-
 |0x11c146
-|バ-ランは ふるいデンジュウの«0xe2»まちなんだよ«*0»
+|Barran is a very old«0xe2»Denjuu settlement.«*0»
 |-
 |0x11c148
-|キミは トリぐみ?ヘビぐみ?«0xe2»オレはトリぐみなんだ«0xe2»ヘビぐみは ひきょうだぞ!«0xe2»アンテナのきをひとリじめして«0xe2»いるんだ!«0xe2»«*0»
+|Are you with the Bird«0xe2»Clan or Snake Clan?«0xe2»I'm with the Bird Clan. «0xe2»Those Snakes are a«0xe2»bunch of dirty cowards!«0xe2»They're keeping the«0xe2»Antenna Tree all to«0xe2»themselves!«*0»
 |-
 |0x11c14a
-|キミは トリぐみ?ヘビぐみ?«0xe2»...なんて もう きかなくて«0xe2»いいんだね«0xe2»アンテナのきも なかよく«0xe2»つかっていくことに するよ«0xe2»«*0»
+|Are you with the Bird«0xe2»Clan or Snake Clan?«0xe2»...I guess it doesn't«0xe2»matter anymore.«0xe2»We're getting along fine«0xe2»now that the Antenna«0xe2»Tree's open to everyone!«*0»
 |-
 |0x11c14c
-|キミは トリぐみ?ヘビぐみ?«0xe2»オレはヘビぐみなんだ«0xe2»トリぐみは ズルイぞ!!«0xe2»みずをひとリじめしているんだ!«*0»
+|Are you with the Bird«0xe2»Clan or Snake Clan?«0xe2»I'm with the Snake Clan.«0xe2»The Bird Clan are«0xe2»despicable!«0xe2»They're hoarding all«0xe2»the water for themselves!«*0»
 |-
 |0x11c14e
-|キミは トリぐみ ヘビぐみ?«0xe2»...このクセ なおるかなぁ«0xe2»なおさないとなぁ«0xe2»«*0»
+|Are you with the Bird«0xe2»Clan or Snake Clan? «0xe2»...Oops! It's a hard habit«0xe2»to break, y'know?«*0»
 |-
 |0x11c150
-|さばくのまち バ-ランに«0xe2»ようこそ!«0xe2»ここは さばくのオアシス«0xe2»ゆっくリしてくださいね«*0»
+|Welcome to Barran, our«0xe2»very own desert oasis!«0xe2»Relax and stay a while!«*0»
 |-
 |0x11c152
-|トリぐみのおさのうちは«0xe2»ここをまっすぐきたに あがった«0xe2»ところだよ«0xe2»«*0»
+|The Bird Chief's house is«0xe2»just to the north of«0xe2»here.«*0»
 |-
 |0x11c154
-|トリぐみのおさは リっぱな«0xe2»デンジュウさ«0xe2»ヘビぐみと にちやたたかって«0xe2»いるんだ«*0»
+|The Bird Chief is a«0xe2»great Denjuu!«0xe2»He fights against the«0xe2»Snake Clan day and«0xe2»night!«*0»
 |-
 |0x11c156
-|トリぐみのおさも ヘビぐみの«0xe2»おさも リっぱなデンジュウさ«0xe2»なかなおリ できるなんて«0xe2»すごいよ!«*0»
+|The Bird Chief and Snake«0xe2»Chief are both amazing«0xe2»Denjuu!«0xe2»They managed to be«0xe2»friends again after all«0xe2»this time!«*0»
 |-
 |}
