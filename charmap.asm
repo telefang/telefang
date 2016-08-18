@@ -94,6 +94,3 @@ charmap "7", $C2
 charmap "8", $C3
 charmap "9", $C4
 charmap " ", $20
-charmap "«END»", $E0
-charmap "«EOT»", $E1
-charmap "\n", $E2
