@@ -110,12 +110,12 @@ METATABLE_FARPTR = struct.Struct("<HB")
 PTR = struct.Struct("<H")
 CHARA = struct.Struct("<B") #Pack or be packed
 
-def extract_metatable_from_rom(rom_filename, charmap, banknames):
+def extract_metatable_from_rom(rom_filename, charmap, banknames, args):
     """Parse the master script metatable"""
     banks = []
 
     with open(rom_filename, 'rb') as rom:
-        rom.seek(METATABLE_LOC)
+        rom.seek(args.metatable_loc)
 
         for bankdata in banknames:
             entry = rom.read(3)
@@ -220,6 +220,7 @@ def extract(rom_filename, charmap, banknames, args):
             with codecs.open(wikipath, "w+", "utf-8") as bank_wikitext:
                 bank_wikitext.write(wikitext)
 
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
@@ -227,6 +228,7 @@ def main():
     ap.add_argument('--banknames', type=str, default="rip_scripts/mainscript_bank_names.txt")
     ap.add_argument('--language', type=str, default="Japanese")
     ap.add_argument('--output', type=str, default="script")
+    ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
     ap.add_argument('filename', type=str)
     args = ap.parse_args()
 
