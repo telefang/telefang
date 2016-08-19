@@ -99,12 +99,14 @@ def parse_bank_names(filename):
             bank = {}
             bank["basedir"] = os.path.join(*parameters[0].split("/")[0:-1])
             bank["filename"] = os.path.join(*(parameters[0] + ".wikitext").split("/"))
+            bank["objname"] = os.path.join(*(parameters[0] + ".scripttbl").split("/"))
             bank["wikiname"] = parameters[1]
             bank["symbol"] = "MainScript_" + parameters[0].replace("/", "_")
 
-            if len(parameters) > 1:
-                #Parameter 2 is the flat address for the ROM
-                flatattr = int(parameters[1], 16)
+            if len(parameters) > 2:
+                #Parameter 3 is the flat address for the ROM
+                #If not present, location of table will be determined from ROM
+                flatattr = int(parameters[2], 16)
 
                 if (flatattr < 0x4000):
                     bank["baseaddr"] = flatattr
@@ -134,7 +136,7 @@ def extract_metatable_from_rom(rom_filename, charmap, banknames, args):
 
             bank = bankdata.copy()
 
-            if "baseaddr" in bank.keys():
+            if "baseaddr" not in bank.keys():
                 bank["baseaddr"] = parsed[0]
                 bank["basebank"] = parsed[1]
 
@@ -156,6 +158,13 @@ def format_int(i):
         return u"{0}".format(i)
     else: #Large numbers are hex
         return u"0x{0:x}".format(i)
+
+def format_sectionaddr_rom(flataddr):
+    """Format a flat address for the assembler's section macro."""
+    if (flataddr < 0x4000):
+        return u"ROM0[${0:x}]".format(flataddr)
+    else:
+        return u"ROMX[${0:x}], BANK[${1:x}]".format(0x4000 + flataddr % 0x4000, flataddr // 0x4000)
 
 def extract(rom_filename, charmap, banknames, args):
     with open(rom_filename, 'rb') as rom:
@@ -238,8 +247,27 @@ def asm(rom_filename, charmap, banknames, args):
     """Generate the ASM for the metatable and each section.
 
     This operation needs to be performed once, and once again if tables are to
-    be relocated."""
-    with open(rom_filename, 'rb') as rom:
+    be relocated. To relocate tables, add a third parameter for that table into
+    the bank names file with it's new flat address, regenerate the metatable
+    ASM, then reassemble the ROM.
+
+    Generated ASM will be printed to console. This portion of the script is
+    intended to be piped into a file."""
+
+    print u'SECTION "MainScript Meta Table", ' + format_sectionaddr_rom(args.metatable_loc)
+
+    for bank in banknames:
+        print u"dw " + bank["symbol"]
+        print u"db BANK(" + bank["symbol"] + u')'
+
+    print u''
+
+    for bank in banknames:
+        print u'SECTION "' + bank["symbol"] + u' Section", ' + format_sectionaddr_rom(flat(bank["basebank"], bank["baseaddr"]))
+        print bank["symbol"] + u':'
+        print u'\tINCBIN "' + os.path.join(args.output, bank["objname"]) + u'"'
+        print bank["symbol"] + u'_END'
+        print u''
 
 def main():
     ap = argparse.ArgumentParser()
@@ -254,10 +282,11 @@ def main():
 
     charmap = parse_charmap(args.charmap)
     banknames = parse_bank_names(args.banknames)
-    banknames = extract_metatable_from_rom(args.filename, charmap, banknames)
+    banknames = extract_metatable_from_rom(args.filename, charmap, banknames, args)
 
     method = {
-        "extract": extract
+        "extract": extract,
+        "asm": asm
     }.get(args.mode, None)
 
     if method == None:
