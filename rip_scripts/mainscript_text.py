@@ -102,6 +102,17 @@ def parse_bank_names(filename):
             bank["wikiname"] = parameters[1]
             bank["symbol"] = "MainScript_" + parameters[0].replace("/", "_")
 
+            if len(parameters) > 1:
+                #Parameter 2 is the flat address for the ROM
+                flatattr = int(parameters[1], 16)
+
+                if (flatattr < 0x4000):
+                    bank["baseaddr"] = flatattr
+                    bank["basebank"] = 0
+                else:
+                    bank["baseaddr"] = flatattr % 0x4000 + 0x4000
+                    bank["basebank"] = flatattr // 0x4000
+
             banks.append(bank)
 
     return banks
@@ -122,8 +133,11 @@ def extract_metatable_from_rom(rom_filename, charmap, banknames, args):
             parsed = METATABLE_FARPTR.unpack(entry)
 
             bank = bankdata.copy()
-            bank["baseaddr"] = parsed[0]
-            bank["basebank"] = parsed[1]
+
+            if "baseaddr" in bank.keys():
+                bank["baseaddr"] = parsed[0]
+                bank["basebank"] = parsed[1]
+
             banks.append(bank)
 
     return banks
@@ -220,6 +234,12 @@ def extract(rom_filename, charmap, banknames, args):
             with codecs.open(wikipath, "w+", "utf-8") as bank_wikitext:
                 bank_wikitext.write(wikitext)
 
+def asm(rom_filename, charmap, banknames, args):
+    """Generate the ASM for the metatable and each section.
+
+    This operation needs to be performed once, and once again if tables are to
+    be relocated."""
+    with open(rom_filename, 'rb') as rom:
 
 def main():
     ap = argparse.ArgumentParser()
