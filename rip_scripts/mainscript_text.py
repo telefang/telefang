@@ -265,7 +265,7 @@ def asm(rom_filename, charmap, banknames, args):
     for bank in banknames:
         print u'SECTION "' + bank["symbol"] + u' Section", ' + format_sectionaddr_rom(flat(bank["basebank"], bank["baseaddr"]))
         print bank["symbol"] + u':'
-        print u'\tINCBIN "' + os.path.join(args.output, bank["objname"]) + u'"'
+        print u'\tINCBIN "' + os.path.join(args.output, bank["objname"]).replace("\\", "/") + u'"'
         print bank["symbol"] + u'_END'
         print u''
 
