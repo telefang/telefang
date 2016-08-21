@@ -6,10 +6,12 @@ from __future__ import division
 
 import argparse
 import errno
+import sys
 import os
 import os.path
 import struct
-import codecs
+import io
+import exceptions
 
 def install_path(path):
     try:
@@ -56,7 +58,7 @@ def parse_charmap(filename):
     mapping = {}
     reverse_mapping = {}
 
-    with codecs.open(filename, "r", "utf-8") as charmap:
+    with io.open(filename, "r", encoding="utf-8") as charmap:
         for line in charmap:
             if CHARMAP_DELIM not in line:
                 continue
@@ -74,6 +76,9 @@ def parse_charmap(filename):
                 if len(delim_split) > 3:
                     chara = u"\""
 
+            if chara == u"\\n":
+                chara = u"\n"
+
             unparsed_hex = delim_split[-1].split("$")[1].strip()
             bytes = 0
 
@@ -89,7 +94,7 @@ def parse_bank_names(filename):
     """Parse the list of bank names"""
     banks = []
 
-    with codecs.open(filename, "r", "utf-8") as banknames:
+    with io.open(filename, "r", encoding="utf-8") as banknames:
         for line in banknames:
             if line[0] == "#":
                 continue
@@ -166,8 +171,12 @@ def format_sectionaddr_rom(flataddr):
     else:
         return u"ROMX[${0:x}], BANK[${1:x}]".format(0x4000 + flataddr % 0x4000, flataddr // 0x4000)
 
-def extract(rom_filename, charmap, banknames, args):
-    with open(rom_filename, 'rb') as rom:
+def extract(args):
+    charmap = parse_charmap(args.charmap)
+    banknames = parse_bank_names(args.banknames)
+    banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
+
+    with open(args.rom, 'rb') as rom:
         for bank in banknames:
             wikitext = [u"{|", u"|-", u"!Pointer", u"!" + args.language]
 
@@ -240,10 +249,10 @@ def extract(rom_filename, charmap, banknames, args):
             wikipath = os.path.join(args.output, bank["filename"])
 
             install_path(wikidir)
-            with codecs.open(wikipath, "w+", "utf-8") as bank_wikitext:
+            with io.open(wikipath, "w+", encoding="utf-8") as bank_wikitext:
                 bank_wikitext.write(wikitext)
 
-def asm(rom_filename, charmap, banknames, args):
+def asm(args):
     """Generate the ASM for the metatable and each section.
 
     This operation needs to be performed once, and once again if tables are to
@@ -253,6 +262,10 @@ def asm(rom_filename, charmap, banknames, args):
 
     Generated ASM will be printed to console. This portion of the script is
     intended to be piped into a file."""
+
+    charmap = parse_charmap(args.charmap)
+    banknames = parse_bank_names(args.banknames)
+    banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
 
     print u'SECTION "MainScript Meta Table", ' + format_sectionaddr_rom(args.metatable_loc)
 
@@ -269,30 +282,237 @@ def asm(rom_filename, charmap, banknames, args):
         print bank["symbol"] + u'_END'
         print u''
 
+def pack_string(string, charmap, metrics, window_width):
+    """Given a string, encode it as ROM table data.
+
+    This function, if provided with metrics, will also automatically insert a
+    newline after window_width pixels."""
+
+    text_data = ""
+    line_data = ""
+    line_px = 0
+    word_data = ""
+    word_px = 0
+
+    special = u""
+    skip_sentinel = False
+    end_sentinel = False
+
+    even_line = True
+
+    for char in string:
+        if skip_sentinel:
+            skip_sentinel = False
+            continue
+
+        if special:
+            if char in u">»": #End of a control code.
+                special = special[1:]
+                is_literal = True
+
+                try:
+                    special_num = int(special, 16)
+                except ValueError:
+                    is_literal = False
+
+                if is_literal and not special.startswith("D"):
+                    if special_num > 255:
+                        print u"Warning: Invalid literal special {} (0x{:3x})".format(special_num, special_num)
+                        continue
+
+                    word_data += str(chr(special_num))
+
+                    if metrics:
+                        word_px += metrics[special_num]
+
+                else:
+                    ctrl_code = special[0]
+                    if ctrl_code not in specials.keys():
+                        print u"Warning: Invalid control code: "
+                        for char in ctrl_code:
+                            print u"{0:x}".format(ord(char))
+                        print u"\n"
+                        special = u""
+                        continue
+
+                    s = specials[ctrl_code]
+                    val = special[1:]
+                    word_data += str(chr(s.byte))
+
+                    for value, name in s.names.items():
+                        if name == val:
+                            val = value
+                            break
+                    else:
+                        val = int(val, 16)
+
+                    if val == u"":
+                        val = s.default
+
+                    if s.bts:
+                        fmt = "<" + ("", "B", "H")[s.bts]
+                        word_data += struct.pack(fmt, val)
+
+                    if s.end:
+                        end_sentinel = True
+
+                    if special[0] == u"&":
+                        if val == 0xd448:
+                            word_px += 3*8
+                        else:
+                            word_px += 8*8
+
+                special = u""
+            else:
+                special += char
+        else:
+            if char == u"\\":
+                skip_sentinel = True
+
+            if char in u"<«":
+                special = char
+            else:
+                try:
+                    word_data += str(chr(charmap[0][char]))
+
+                    if metrics:
+                        word_px += metrics[charmap[0][char]] + 1
+                except KeyError:
+                    print u"Warning: Character 0x{0:x} does not exist in current ROM.\n".format(ord(char))
+                    word_data += str(chr(charmap[0][u"?"]))
+
+                    if metrics:
+                        word_px += metrics[charmap[0][u"?"]] + 1
+
+                if char in (u" ", u"\n"):
+                    if line_px + word_px > (window_width if even_line else window_width - 8):
+                        #Next word will overflow, so inject a newline.
+                        text_data += line_data[:-1] + str(chr(0xE2))
+                        line_data, line_px = word_data, word_px
+                        even_line = not even_line
+                    else:
+                        #Flush the word to the line with no injected newline.
+                        line_data += word_data
+                        line_px += word_px
+
+                    word_data, word_px = "", 0
+
+                if char == u"\n":
+                    text_data += line_data
+                    line_data, line_px = "", 0
+                    even_line = not even_line
+
+    if line_px + word_px > (window_width if even_line else window_width - 8):
+        text_data += line_data[:-1] + str(chr(0xE2))
+        line_data = word_data
+    else:
+        line_data += word_data
+    text_data += line_data
+
+    if not end_sentinel:
+        text_data += "\xe1\x00" #Null terminator
+
+    return text_data
+
+def parse_wikitext(wikitext):
+    tbl_start = wikitext.find(u"{|")
+    tbl_end = wikitext.find(u"|}")
+    rows = wikitext[tbl_start:tbl_end].split(u"|-")
+    parsed_rows = []
+    parsed_hdrs = []
+
+    for row in rows:
+        cols = row.split(u"\n|")[1:]
+        hdrs = row.split(u"\n!")[1:]
+
+        if len(hdrs) > 0:
+            #Extract headers
+            for col in hdrs:
+                parsed_hdrs.append(col.strip())
+        elif len(cols) > 0:
+            #Extract translations
+            parsed_rows.append(cols)
+
+    return parsed_rows, parsed_hdrs
+
+def make_tbl(args):
+    charmap = parse_charmap(args.charmap)
+    banknames = parse_bank_names(args.banknames)
+    banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
+
+    if args.language == u"Japanese":
+        metrics = [8] * 256
+    else:
+        #TODO: Parse and apply metrics for Latin-1 language patches.
+        raise exceptions.NotImplementedError("VWF ROMs can't be injected yet")
+
+    for bank in banknames:
+        print "Compiling " + bank["filename"]
+        #If filenames are specified, only export banks that are mentioned there
+        if len(args.filenames) > 0 and bank["objname"] not in args.filenames:
+            continue
+
+        #Open and parse the data
+        with io.open(os.path.join(args.output, bank["filename"]), "r", encoding="utf-8") as wikifile:
+            rows, headers = parse_wikitext(wikifile.read())
+
+        #Determine what column we want
+        str_col = headers.index(args.language)
+        ptr_col = headers.index(u"Pointer")
+
+        #Pack our strings
+        packed_strings = [""] * len(rows)
+        for i, row in enumerate(rows):
+            #def pack_string(string, charmap, metrics, window_width):
+            if str_col >= len(row):
+                print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
+                packed_strings.append("")
+                continue
+
+            packed = pack_string(row[str_col], charmap, metrics, args.window_width)
+            packed_strings.append(packed)
+
+        #Assign an address to each packed string and write it into the table
+        #area we reserved earlier. Also, sanity check to ensure that pointers
+        #are monotonically increasing.
+        baseaddr = bank["baseaddr"] + len(rows) * 2
+        lastbk = None
+        for i in range(len(rows)):
+            nextbk = int(rows[i][ptr_col], 16)
+            if lastbk != None and nextbk != lastbk + 2:
+                print "Warning: Pointer " + rows[i][ptr_col] + " is out of order."
+
+            lastbk = nextbk
+            packed_strings[i] = PTR.pack(baseaddr)
+
+        #Write the data out to the object files. We're done here!
+        with open(os.path.join(args.output, bank["objname"]), "w") as objfile:
+            for line in packed_strings:
+                objfile.write(line)
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
     ap.add_argument('--charmap', type=str, default="charmap.asm")
     ap.add_argument('--banknames', type=str, default="rip_scripts/mainscript_bank_names.txt")
-    ap.add_argument('--language', type=str, default="Japanese")
+    ap.add_argument('--language', type=str, default=u"Japanese")
     ap.add_argument('--output', type=str, default="script")
     ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
-    ap.add_argument('filename', type=str)
+    ap.add_argument('--window_width', type=int, default=0x16 * 0x8) #16 tiles
+    ap.add_argument('rom', type=str)
+    ap.add_argument('filenames', type=str, nargs="*")
     args = ap.parse_args()
-
-    charmap = parse_charmap(args.charmap)
-    banknames = parse_bank_names(args.banknames)
-    banknames = extract_metatable_from_rom(args.filename, charmap, banknames, args)
 
     method = {
         "extract": extract,
-        "asm": asm
+        "asm": asm,
+        "make_tbl": make_tbl
     }.get(args.mode, None)
 
     if method == None:
         raise Exception, "Unknown conversion method!"
 
-    method(args.filename, charmap, banknames, args)
+    method(args)
 
 if __name__ == "__main__":
     main()
