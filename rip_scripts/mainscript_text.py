@@ -10,7 +10,7 @@ import sys
 import os
 import os.path
 import struct
-import io
+import io, codecs
 import exceptions
 
 def install_path(path):
@@ -159,8 +159,14 @@ def flat(bank, addr):
     return (bank * 0x4000) + (addr - 0x4000)
 
 def format_int(i):
-    if i < 0x10: #Small numbers are treated as decimal
-        return u"{0}".format(i)
+    if i < 0x10: #Small numbers lack the 0x
+        return u"{0:x}".format(i)
+    else: #Large numbers are hex
+        return u"0x{0:x}".format(i)
+
+def format_hex(i):
+    if i < 0x10: #Small numbers lack the 0x
+        return u"{0:x}".format(i)
     else: #Large numbers are hex
         return u"0x{0:x}".format(i)
 
@@ -209,36 +215,44 @@ def extract(args):
                 rom.seek(flat(bank["basebank"], bank["baseaddr"] + i * 2))
                 read_ptr = PTR.unpack(rom.read(2))[0]
 
-                rom.seek(flat(bank["basebank"], read_ptr))
-                next_chara = CHARA.unpack(rom.read(1))[0]
-                while next_chara != 0xE0: #E0 is end-of-string
-                    if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
-                        string.append(charmap[1][next_chara])
-                    elif next_chara in reverse_specials:
-                        #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
-                        this_special = specials[reverse_specials[next_chara]]
-                        string.append(u"«")
-                        string.append(reverse_specials[next_chara])
-
-                        if this_special.bts:
-                            fmt = "<"+("", "B", "H")[this_special.bts]
-                            word = struct.unpack(fmt, rom.read(this_special.bts))[0]
-                            string.append(format_int(word))
-
-                        string.append(u"»")
-
-                        if this_special.end:
-                            break
-                    else:
-                        #Literal specials
-                        string.append(u"«")
-                        string.append(format_int(next_chara))
-                        string.append(u"»")
-
+                rom.seek(flat(bank["basebank"], bank["baseaddr"]))
+                for j in range(i):
+                    if read_ptr == PTR.unpack(rom.read(2))[0]:
+                        #Aliased pointer!
+                        wikitext.append(u"|«ALIAS ROW 0x{0:x}»".format(j))
+                        print u"Aliased pointer " + j
+                        break
+                else:
+                    rom.seek(flat(bank["basebank"], read_ptr))
                     next_chara = CHARA.unpack(rom.read(1))[0]
+                    while next_chara != 0xE0: #E0 is end-of-string
+                        if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
+                            string.append(charmap[1][next_chara])
+                        elif next_chara in reverse_specials:
+                            #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
+                            this_special = specials[reverse_specials[next_chara]]
+                            string.append(u"«")
+                            string.append(reverse_specials[next_chara])
 
-                wikitext.append(u"|" + u"".join(string))
-                string = []
+                            if this_special.bts:
+                                fmt = "<"+("", "B", "H")[this_special.bts]
+                                word = struct.unpack(fmt, rom.read(this_special.bts))[0]
+                                string.append(format_int(word))
+
+                            string.append(u"»")
+
+                            if this_special.end:
+                                break
+                        else:
+                            #Literal specials
+                            string.append(u"«")
+                            string.append(format_int(next_chara))
+                            string.append(u"»")
+
+                        next_chara = CHARA.unpack(rom.read(1))[0]
+
+                    wikitext.append(u"|" + u"".join(string))
+                    string = []
 
             wikitext.append(u"|-")
             wikitext.append(u"|}")
@@ -300,6 +314,19 @@ def pack_string(string, charmap, metrics, window_width):
 
     even_line = True
 
+    #This closure necessary to ensure proper newline handling
+    def encode(char):
+        try:
+            return charmap[0][char]
+        except KeyError:
+            print u"Warning: Character 0x{0:x} does not exist in current ROM.\n".format(ord(char))
+            return charmap[0][u"?"]
+
+    #Empty strings indicate text strings that alias to the next string in
+    #sequence.
+    if string == "":
+        return ""
+
     for char in string:
         if skip_sentinel:
             skip_sentinel = False
@@ -315,7 +342,30 @@ def pack_string(string, charmap, metrics, window_width):
                 except ValueError:
                     is_literal = False
 
-                if is_literal and not special.startswith("D"):
+                if is_literal and special_num == 0xE2:
+                    #Nonstandard newline
+                    word_data += str(chr(special_num))
+
+                    if metrics:
+                        word_px += metrics[special_num]
+
+                    max_px = window_width if even_line else window_width - 8
+                    if len(line_data) > 0 and line_px + word_px > max_px:
+                        #Next word will overflow, so inject a newline.
+                        text_data += line_data[:-1] + str(chr(0xE2))
+                        line_data, line_px = word_data, word_px
+                        even_line = not even_line
+                    else:
+                        #Flush the word to the line with no injected newline.
+                        line_data += word_data
+                        line_px += word_px
+
+                    word_data, word_px = "", 0
+
+                    text_data += line_data
+                    line_data, line_px = "", 0
+                    even_line = not even_line
+                elif is_literal and not special.startswith("D"):
                     if special_num > 255:
                         print u"Warning: Invalid literal special {} (0x{:3x})".format(special_num, special_num)
                         continue
@@ -324,7 +374,6 @@ def pack_string(string, charmap, metrics, window_width):
 
                     if metrics:
                         word_px += metrics[special_num]
-
                 else:
                     ctrl_code = special[0]
                     if ctrl_code not in specials.keys():
@@ -372,20 +421,15 @@ def pack_string(string, charmap, metrics, window_width):
             if char in u"<«":
                 special = char
             else:
-                try:
-                    word_data += str(chr(charmap[0][char]))
+                enc_char = encode(char)
+                word_data += str(chr(enc_char))
 
-                    if metrics:
-                        word_px += metrics[charmap[0][char]] + 1
-                except KeyError:
-                    print u"Warning: Character 0x{0:x} does not exist in current ROM.\n".format(ord(char))
-                    word_data += str(chr(charmap[0][u"?"]))
-
-                    if metrics:
-                        word_px += metrics[charmap[0][u"?"]] + 1
+                if metrics:
+                    word_px += metrics[enc_char] + 1
 
                 if char in (u" ", u"\n"):
-                    if line_px + word_px > (window_width if even_line else window_width - 8):
+                    max_px = window_width if even_line else window_width - 8
+                    if len(line_data) > 0 and line_px + word_px > max_px:
                         #Next word will overflow, so inject a newline.
                         text_data += line_data[:-1] + str(chr(0xE2))
                         line_data, line_px = word_data, word_px
@@ -402,7 +446,10 @@ def pack_string(string, charmap, metrics, window_width):
                     line_data, line_px = "", 0
                     even_line = not even_line
 
-    if line_px + word_px > (window_width if even_line else window_width - 8):
+    #Slight alteration: Don't inject a newline if there's no line data that
+    #needs to have it injected.
+    line_window_width = (window_width if even_line else window_width - 8)
+    if len(line_data) > 0 and line_px + word_px > line_window_width:
         text_data += line_data[:-1] + str(chr(0xE2))
         line_data = word_data
     else:
@@ -431,7 +478,14 @@ def parse_wikitext(wikitext):
                 parsed_hdrs.append(col.strip())
         elif len(cols) > 0:
             #Extract translations
-            parsed_rows.append(cols)
+            stripped_cols = []
+            for col in cols:
+                #Conservatively strip one newline from the end of the string only.
+                if col[-1] == "\n":
+                    col = col[:-1]
+
+                stripped_cols.append(col)
+            parsed_rows.append(stripped_cols)
 
     return parsed_rows, parsed_hdrs
 
@@ -441,7 +495,7 @@ def make_tbl(args):
     banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
 
     if args.language == u"Japanese":
-        metrics = [8] * 256
+        metrics = None
     else:
         #TODO: Parse and apply metrics for Latin-1 language patches.
         raise exceptions.NotImplementedError("VWF ROMs can't be injected yet")
@@ -461,32 +515,57 @@ def make_tbl(args):
         ptr_col = headers.index(u"Pointer")
 
         #Pack our strings
+        table = []
         packed_strings = [""] * len(rows)
+
+        baseaddr = bank["baseaddr"]
+        lastbk = None
+
         for i, row in enumerate(rows):
-            #def pack_string(string, charmap, metrics, window_width):
             if str_col >= len(row):
                 print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
                 packed_strings.append("")
                 continue
 
-            packed = pack_string(row[str_col], charmap, metrics, args.window_width)
-            packed_strings.append(packed)
+            if row[str_col][:11] == u"«ALIAS ROW ":
+                #Aliased string!
+                table.append(table[int(row[str_col][11:-1], 16)])
+                packed_strings.append("")
+            else:
+                packed = pack_string(row[str_col], charmap, metrics, args.window_width)
+                packed_strings.append(packed)
 
-        #Assign an address to each packed string and write it into the table
-        #area we reserved earlier. Also, sanity check to ensure that pointers
-        #are monotonically increasing.
-        baseaddr = bank["baseaddr"] + len(rows) * 2
-        lastbk = None
-        for i in range(len(rows)):
-            nextbk = int(rows[i][ptr_col], 16)
-            if lastbk != None and nextbk != lastbk + 2:
-                print "Warning: Pointer " + rows[i][ptr_col] + " is out of order."
+                #DEBUG: Strings we're interested in
+                if bank["filename"] == "npc\\1.wikitext" and i in (113, 114, 115):
+                    print i
+                    print codecs.encode(row[str_col], "utf-8")
+                    print codecs.encode(row[str_col], "raw_unicode_escape")
+                    print codecs.encode(packed, "hex")
 
-            lastbk = nextbk
-            packed_strings[i] = PTR.pack(baseaddr)
+                if row[ptr_col] != u"(No pointer)":
+                    #Yes, some text banks have strings not mentioned in the
+                    #table because screw you.
+                    table.append(baseaddr)
+
+                    #Sanity check: are our pointer numbers increasing?
+                    nextbk = int(rows[i][ptr_col], 16)
+                    if lastbk != None and nextbk != lastbk + 2:
+                        print "Warning: Pointer " + rows[i][ptr_col] + " is out of order."
+                    lastbk = nextbk
+                else:
+                    print "Warning: Row explicitly marked with no pointer"
+
+                baseaddr += len(packed)
+
+        #Moveup pointers to account for the table size
+        for i, value in enumerate(table):
+            table[i] = PTR.pack(value + len(table) * 2)
 
         #Write the data out to the object files. We're done here!
-        with open(os.path.join(args.output, bank["objname"]), "w") as objfile:
+        with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
+            for line in table:
+                objfile.write(line)
+
             for line in packed_strings:
                 objfile.write(line)
 
