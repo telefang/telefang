@@ -215,41 +215,67 @@ def extract(args):
                 rom.seek(flat(bank["basebank"], bank["baseaddr"] + i * 2))
                 read_ptr = PTR.unpack(rom.read(2))[0]
 
+                #Attempt to autodetect "holes" in the text data.
+                next_ptr = PTR.unpack(rom.read(2))[0]
+                expected_length = next_ptr - read_ptr
+                if i >= tbl_length - 1:
+                    expected_length = 0
+
                 rom.seek(flat(bank["basebank"], bank["baseaddr"]))
                 for j in range(i):
                     if read_ptr == PTR.unpack(rom.read(2))[0]:
                         #Aliased pointer!
                         wikitext.append(u"|«ALIAS ROW 0x{0:x}»".format(j))
-                        print u"Aliased pointer " + j
+                        print u"Aliased pointer {0:x}".format(j)
                         break
                 else:
+                    read_characters = 0
                     rom.seek(flat(bank["basebank"], read_ptr))
-                    next_chara = CHARA.unpack(rom.read(1))[0]
-                    while next_chara != 0xE0: #E0 is end-of-string
-                        if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
-                            string.append(charmap[1][next_chara])
-                        elif next_chara in reverse_specials:
-                            #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
-                            this_special = specials[reverse_specials[next_chara]]
-                            string.append(u"«")
-                            string.append(reverse_specials[next_chara])
 
-                            if this_special.bts:
-                                fmt = "<"+("", "B", "H")[this_special.bts]
-                                word = struct.unpack(fmt, rom.read(this_special.bts))[0]
-                                string.append(format_int(word))
-
-                            string.append(u"»")
-
-                            if this_special.end:
-                                break
-                        else:
-                            #Literal specials
-                            string.append(u"«")
-                            string.append(format_int(next_chara))
-                            string.append(u"»")
-
+                    while True:
                         next_chara = CHARA.unpack(rom.read(1))[0]
+                        while next_chara != 0xE0: #E0 is end-of-string
+                            if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
+                                string.append(charmap[1][next_chara])
+                            elif next_chara in reverse_specials:
+                                #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
+                                this_special = specials[reverse_specials[next_chara]]
+                                string.append(u"«")
+                                string.append(reverse_specials[next_chara])
+
+                                if this_special.bts:
+                                    fmt = "<"+("", "B", "H")[this_special.bts]
+                                    word = struct.unpack(fmt, rom.read(this_special.bts))[0]
+                                    string.append(format_int(word))
+
+                                string.append(u"»")
+
+                                if this_special.end:
+                                    break
+                            #elif next_chara == 0xE2:
+                                #Literal newline
+                            #    string.append(u"\n")
+                            else:
+                                #Literal specials
+                                string.append(u"«")
+                                string.append(format_int(next_chara))
+                                string.append(u"»")
+
+                            next_chara = CHARA.unpack(rom.read(1))[0]
+
+                        print 0x4000 + rom.tell() - flat(bank["basebank"], 0x4000) - read_ptr
+
+                        if 0x4000 + rom.tell() - flat(bank["basebank"], 0x4000) - read_ptr >= expected_length:
+                            break
+                        else:
+                            #There's a hole in the ROM!
+                            #Disassemble the next string.
+                            print u"Found a hole in our ROM!"
+                            wikitext.append(u"|" + u"".join(string))
+                            string = []
+
+                            wikitext.append(u"|-")
+                            wikitext.append(u"|(No pointer)")
 
                     wikitext.append(u"|" + u"".join(string))
                     string = []
