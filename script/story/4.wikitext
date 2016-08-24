@@ -433,7 +433,7 @@
 |Better return the key«0xe2»quickly...«*0»
 |-
 |0x14011e
-|Better return the key«0xe2»quickly...«*0»
+|«ALIAS ROW 0x8e»
 |-
 |0x140120
 |Oh man! You've brought«0xe2»the key back, haven't«0xe2»you!«0xe2»Thank you!!«0xe2»Please take these as a«0xe2»token of my thanks, man!«*0»
@@ -505,7 +505,7 @@
 |/0x14014c/«*0»
 |-
 |0x14014e
-|Is there anything you«0xe2»don't understand about«0xe2»the D-Shot?«0xe2»I can teach you about«0xe2»it!«0xe2»«0»Yes «0»No«*10»
+|Is there anything you«0xe2»don't understand about«0xe2»the D-Shot?«0xe2»I can teach you about«0xe2»it!«0xe2»«0»Yes «0»No«*a»
 |-
 |0x140150
 |Oh, hi «&0xc92c»!«0xe2»I see you made it to«0xe2»the Denjuu World.«*0»
@@ -514,43 +514,43 @@
 |Hey, it's Umekichi!«0xe2»You came to this«0xe2»village too, huh?«*0»
 |-
 |0x140154
-|If you're here, that«0xe2»means you must have a«0xe2»D-Shot now.«0xe2»Are you familiar with«0xe2»how to use it?«0xe2»«0»Yes «0»No«*10»
+|If you're here, that«0xe2»means you must have a«0xe2»D-Shot now.«0xe2»Are you familiar with«0xe2»how to use it?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x140156
 |Okay, then I'll explain«0xe2»the D-Shot's features.«*0»
 |-
 |0x140158
-|First, let's start with«0xe2»"Contacts". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|First, let's start with«0xe2»"Contacts". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x14015a
 |Here, you can view the«0xe2»Denjuu that you've«0xe2»befriended and can use«0xe2»in battle.«0xe2»You can easily call and«0xe2»switch between Denjuu«0xe2»here.«*0»
 |-
 |0x14015c
-|Next is "Calls".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|Next is "Calls".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x14015e
 |Here you can check which«0xe2»Denjuu you've received«0xe2»calls from recently.«*0»
 |-
 |0x140160
-|Next is "Items".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|Next is "Items".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x140162
 |Here, you can view your«0xe2»items or give them as«0xe2»gifts. If you want to«0xe2»fuse items, you need to«0xe2»do it in a shop.«*0»
 |-
 |0x140164
-|Next is "Texts".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|Next is "Texts".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x140166
 |This lets you view the«0xe2»text messages you've«0xe2»received from Denjuu«0xe2»while the D-Shot's«0xe2»power was off.«*0»
 |-
 |0x140168
-|Next is "Save".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|Next is "Save".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x14016a
 |You can use this to«0xe2»record your current«0xe2»progress.«*0»
 |-
 |0x14016c
-|Next is "Options".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|Next is "Options".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x14016e
 |The first option is«0xe2»"Silent mode".«0xe2»When it's set to ON,«0xe2»ringtones won't play«0xe2»when someone calls you.«*0»
@@ -565,13 +565,13 @@
 |Lastly, "Battle anim."«0xe2»When this is turned off,«0xe2»attack animations won't«0xe2»be shown during battles.«*0»
 |-
 |0x140176
-|Next is "Melo-D". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|Next is "Melo-D". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x140178
 |Here you can view and«0xe2»create ringtones that«0xe2»play when a Denjuu calls«0xe2»you.«*0»
 |-
 |0x14017a
-|Next is "Index". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*10»
+|Next is "Index". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x14017c
 |When you befriend a«0xe2»Denjuu, information«0xe2»about it is recorded«0xe2»here.«0xe2»It's a pretty big deal if«0xe2»you can complete it!«*0»
@@ -583,7 +583,7 @@
 |Well then, good luck.«0xe2»Try to make friends«0xe2»with lots of Denjuu!«*0»
 |-
 |0x140182
-|Oh, hey «&0xc92c».«0xe2»Did you want to hear«0xe2»about the Denjuu World?«0xe2»«0»Yes «0»No«*10»
+|Oh, hey «&0xc92c».«0xe2»Did you want to hear«0xe2»about the Denjuu World?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x140184
 |Aah, «&0xc92c»!«0xe2»I didn't know you were«0xe2»here.«*0»
@@ -598,7 +598,7 @@
 |It's a lot of fun! I've«0xe2»been making friends too!«*0»
 |-
 |0x14018c
-|That's good.«0xe2»So anyway, how much do«0xe2»you know about the«0xe2»Denjuu World?«0xe2»Do you want me to tell«0xe2»you more about it?«0xe2»«0»Yes «0»No«*10»
+|That's good.«0xe2»So anyway, how much do«0xe2»you know about the«0xe2»Denjuu World?«0xe2»Do you want me to tell«0xe2»you more about it?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x14018e
 |Then I'll explain.«0xe2»The Denjuu World is«0xe2»owned by the "Sanaeba«0xe2»Group", who were the«0xe2»first people to discover«0xe2»it.«0xe2»Kids like us are allowed«0xe2»to go to the Denjuu«0xe2»World whenever we want,«0xe2»but adults have to pay«0xe2»money to come here.«*0»
@@ -619,7 +619,7 @@
 |Yeah, you too«0xe2»«&0xc92c»!«0xe2»Bye-bye!«*0»
 |-
 |0x14019a
-|Hey! How's it going?«0xe2»Do you have any more«0xe2»questions about«0xe2»evolution?«0xe2»«0»Yes «0»No«*10»
+|Hey! How's it going?«0xe2»Do you have any more«0xe2»questions about«0xe2»evolution?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x14019c
 |Yo «&0xc92c»!«0xe2»Glad to see you finally«0xe2»made it to the Denjuu«0xe2»World!«*0»
@@ -634,22 +634,22 @@
 |"Evolve"?«0xe2»What do you mean??«*0»
 |-
 |0x1401a4
-|Well, I can explain it«0xe2»for you if you want.«0xe2»«0»Yes «0»No«*10»
+|Well, I can explain it«0xe2»for you if you want.«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401a6
-|Do you wanna hear about«0xe2»"Natural evolution"?«0xe2»«0»Yes «0»No«*10»
+|Do you wanna hear about«0xe2»"Natural evolution"?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401a8
 |Natural evolution can«0xe2»happen when a Denjuu«0xe2»gains enough experience«0xe2»points from battling.«0xe2»This type only happens«0xe2»with "Natural Denjuu",«0xe2»though.«*0»
 |-
 |0x1401aa
-|Do you wanna hear about«0xe2»"Fusion evolution"?«0xe2»«0»Yes «0»No«*10»
+|Do you wanna hear about«0xe2»"Fusion evolution"?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401ac
 |Fusion evolution is where«0xe2»you combine a Denjuu«0xe2»with an item in order to«0xe2»get it to evolve.«0xe2»This type works with«0xe2»both "Natural" and«0xe2»"Cultivated" Denjuu.«*0»
 |-
 |0x1401ae
-|Do you wanna hear about«0xe2»"Lab evolution"?«0xe2»«0»Yes «0»No«*10»
+|Do you wanna hear about«0xe2»"Lab evolution"?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401b0
 |Lab evolution involves«0xe2»taking DNA from an«0xe2»evolved "Natural" Denjuu«0xe2»and combining it with«0xe2»the DNA of a«0xe2»"Cultivated" Denjuu.«0xe2»This method only works«0xe2»for Cultivated Denjuu.«*0»
@@ -685,37 +685,37 @@
 |Here is where we teach«0xe2»people how to succeed«0xe2»at Telefang!«0xe2»And I'm your professor,«0xe2»"Taka-P"! Welcome!«*0»
 |-
 |0x1401c6
-|Would you like to learn«0xe2»the match-ups for«0xe2»"Mountain" Denjuu?«0xe2»«0»Yes «0»No«*10»
+|Would you like to learn«0xe2»the match-ups for«0xe2»"Mountain" Denjuu?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401c8
 |Denjuu that live on«0xe2»mountains are weak«0xe2»against Denjuu that live«0xe2»in fields, and strong«0xe2»against Denjuu that live«0xe2»in the sky.«*0»
 |-
 |0x1401ca
-|How about the match-ups«0xe2»for "Field" Denjuu?«0xe2»«0»Yes «0»No«*10»
+|How about the match-ups«0xe2»for "Field" Denjuu?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401cc
 |Denjuu that live in«0xe2»fields are weak«0xe2»against Denjuu that live«0xe2»in the desert, and«0xe2»strong against Denjuu«0xe2»that live on mountains.«*0»
 |-
 |0x1401ce
-|How about the match-ups«0xe2»for "Forest" Denjuu?«0xe2»«0»Yes «0»No«*10»
+|How about the match-ups«0xe2»for "Forest" Denjuu?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401d0
 |Denjuu that live in«0xe2»forests are weak«0xe2»against Denjuu that live«0xe2»in the sky, and strong«0xe2»against Denjuu that live«0xe2»near the water.«*0»
 |-
 |0x1401d2
-|How about the match-ups«0xe2»for "Water" Denjuu?«0xe2»«0»Yes «0»No«*10»
+|How about the match-ups«0xe2»for "Water" Denjuu?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401d4
 |Denjuu that live near«0xe2»the water are weak«0xe2»against Denjuu that live«0xe2»in forests, and strong«0xe2»against Denjuu that live«0xe2»in the desert.«*0»
 |-
 |0x1401d6
-|How about the match-ups«0xe2»for "Sky" Denjuu?«0xe2»«0»Yes «0»No«*10»
+|How about the match-ups«0xe2»for "Sky" Denjuu?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401d8
 |Denjuu that live in the«0xe2»sky are weak against«0xe2»Denjuu that live on«0xe2»mountains, and strong«0xe2»against Denjuu that live«0xe2»in forests.«*0»
 |-
 |0x1401da
-|How about the match-ups«0xe2»for "Desert" Denjuu?«0xe2»«0»Yes «0»No«*10»
+|How about the match-ups«0xe2»for "Desert" Denjuu?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x1401dc
 |Denjuu that live in the«0xe2»desert are weak«0xe2»against Denjuu that live«0xe2»near the water, and«0xe2»strong against Denjuu«0xe2»that live in fields!«*0»

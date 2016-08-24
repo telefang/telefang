@@ -16,7 +16,7 @@
 |Got «&0xd6a0»'s phone«0xe2»number!«*5»
 |-
 |0x114008
-|«&0xd6a0»«0xe2»"«&0xd658»"«*5»
+|«ALIAS ROW 0x2»
 |-
 |0x11400a
 |«&0xd6a0» fell!«*5»
@@ -91,7 +91,7 @@
 |«S0»Which Denjuu will you«0xe2»attack?«*5»
 |-
 |0x11403a
-|«&0xd6a0»«6» move!«0xe2»«&0xd658»!«*4»
+|«ALIAS ROW 0xd»
 |-
 |0x11403c
 |«S0»Are you sure?«0xe2»   Yes   No «*4»
@@ -388,7 +388,7 @@
 |Select the Melo-D to«0xe2»transfer!«*4»
 |-
 |0x114100
-|Hi, what's up?«0xe2»It's been a while!«0xe2»How's it going?«0xe2»Are you calling me«0xe2»over?«0xe2» «0» Yes «0» No«*10»
+|Hi, what's up?«0xe2»It's been a while!«0xe2»How's it going?«0xe2»Are you calling me«0xe2»over?«0xe2» «0» Yes «0» No«*a»
 |-
 |0x114102
 |Hi, what's up? «0xe2»It's been a while!«0xe2»How's it going?«*5»
@@ -529,16 +529,16 @@
 |Obtained «&0xcaf0».«*0»
 |-
 |0x11415e
-|Continue fusing?«0xe2» Yes   No«*10»
+|Continue fusing?«0xe2» Yes   No«*a»
 |-
 |0x114160
-|Received a small amount«0xe2»of experience.«0xe2»Continue fusing?«0xe2» «0» Yes «0» No«*10»
+|Received a small amount«0xe2»of experience.«0xe2»Continue fusing?«0xe2» «0» Yes «0» No«*a»
 |-
 |0x114162
-|Received some«0xe2»experience.«0xe2»Continue fusing?«0xe2» «0» Yes «0» No«*10»
+|Received some«0xe2»experience.«0xe2»Continue fusing?«0xe2» «0» Yes «0» No«*a»
 |-
 |0x114164
-|Received a large amount«0xe2»of experience!!«0xe2»Continue fusing?«0xe2» «0» Yes «0» No«*10»
+|Received a large amount«0xe2»of experience!!«0xe2»Continue fusing?«0xe2» «0» Yes «0» No«*a»
 |-
 |0x114166
 |«S3»Fusion in progress!!«*4»
@@ -553,7 +553,7 @@
 |«&0xca53» has Lab«0xe2»evolved!«0xe2»Evolved into«0xe2»«&0xca00».«*2»
 |-
 |0x11416e
-|Is this correct?«0xe2» «0» Yes «0» No«*10»
+|Is this correct?«0xe2» «0» Yes «0» No«*a»
 |-
 |0x114170
 |You have no items needed«0xe2»for evolution!!«*2»
@@ -598,34 +598,34 @@
 |«*0»
 |-
 |0x11418c
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x11418e
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x114190
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x114192
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x114194
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x114196
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x114198
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x11419a
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x11419c
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x11419e
-|«*0»
+|«ALIAS ROW 0xc5»
 |-
 |0x1141a0
 |«S0»«0xea»«&0xcc90»«0xeb»«*4»

@@ -94,7 +94,7 @@
 |It's alright if the kids«0xe2»who can't vote don't«0xe2»watch...«0xe2»Ah! But the Denjuu«0xe2»behind you should come!«*0»
 |-
 |0x11c03c
-|x«*0»
+|«ALIAS ROW 0x1c»
 |-
 |0x11c03e
 |What do you want?«0xe2»We, the Kakuza Party,«0xe2»require quality water to«0xe2»make delicious curry!«0xe2»That's why you can't be«0xe2»allowed in here.«0xe2»If you want to get into«0xe2»the cave, you should«0xe2»talk to Mr. Nerikara.«*0»
@@ -292,7 +292,7 @@
 |You can reach Tripa«0xe2»Village through a«0xe2»shrine in the forest up«0xe2»ahead.«*0»
 |-
 |0x11c0c0
-|We're the Forest Defence«0xe2»Force!«0xe2»The sea is important,«0xe2»but forests are«0xe2»precious too!«*0»
+|«ALIAS ROW 0x5e»
 |-
 |0x11c0c2
 |The cliff over here has«0xe2»a great view of the«0xe2»ocean.«*0»
@@ -337,7 +337,7 @@
 |This is the headquarters«0xe2»for the Forest Defense«0xe2»Force. We're working to«0xe2»protect the forest from«0xe2»inconsiderate humans!«*0»
 |-
 |0x11c0de
-|x«*0»
+|«ALIAS ROW 0x1c»
 |-
 |0x11c0e0
 |Well, what do you think?«0xe2»Are you getting used to«0xe2»the Denjuu World?«*0»

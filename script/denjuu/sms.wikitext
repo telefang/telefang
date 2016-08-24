@@ -292,100 +292,100 @@
 |/0x1180be/«*4»
 |-
 |0x1180c0
-|I feel«0xe2»like u«0xe2»r call«0xe2»ing me«0xe2»less«*4»
+|«ALIAS ROW 0x0»
 |-
 |0x1180c2
-|r u«0xe2»callin«0xe2»less?«0xe2»did i«0xe2»make u«0xe2»mad?«*4»
+|«ALIAS ROW 0x1»
 |-
 |0x1180c4
-|call«0xe2»me«0xe2»more!«0xe2»its so«0xe2»boring«0xe2»when u«0xe2»don't«*4»
+|«ALIAS ROW 0x2»
 |-
 |0x1180c6
-|hey...«0xe2»havent«0xe2»heard«0xe2»from u«0xe2»lately«0xe2»..what«0xe2»'s up?«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x1180c8
-|no one«0xe2»calls«0xe2»me...«0xe2»i'm so«0xe2»lonely«0xe2»>:(«*4»
+|«ALIAS ROW 0x4»
 |-
 |0x1180ca
-|hey u«0xe2»havent«0xe2»called«0xe2»lately«0xe2»r u«0xe2»busy?«*4»
+|«ALIAS ROW 0x5»
 |-
 |0x1180cc
-|ur fun«0xe2»2 be «0xe2»around«0xe2»lets«0xe2»play«0xe2»again!«*4»
+|«ALIAS ROW 0x6»
 |-
 |0x1180ce
-|ur my«0xe2»best«0xe2»frend!«0xe2»lets«0xe2»play«0xe2»again!«*4»
+|«ALIAS ROW 0x7»
 |-
 |0x1180d0
 |ur a«0xe2»cool«0xe2»guy!«0xe2»call«0xe2»me bac«0xe2»k soon«*0»
 |-
 |0x1180d2
-|time«0xe2»flies«0xe2»when«0xe2»i'm «0xe2»with«0xe2»u! :D«*4»
+|«ALIAS ROW 0x9»
 |-
 |0x1180d4
-|hey!!«0xe2»u and«0xe2»me r«0xe2»frends«0xe2»rite? :)«*4»
+|«ALIAS ROW 0xa»
 |-
 |0x1180d6
-|lets«0xe2»play«0xe2»togeth«0xe2»er som«0xe2»time,«0xe2»call«0xe2»me!«*4»
+|«ALIAS ROW 0xb»
 |-
 |0x1180d8
-|hey, r«0xe2»u doin«0xe2»well?«0xe2»i'm«0xe2»knd of«0xe2»woried«*4»
+|«ALIAS ROW 0xc»
 |-
 |0x1180da
-|heyy«0xe2»how r «0xe2»u doin«0xe2»? call«0xe2»me som«0xe2»time!«*4»
+|«ALIAS ROW 0xd»
 |-
 |0x1180dc
-|hi how«0xe2»r u «0xe2»doin?«0xe2»i'm«0xe2»doin«0xe2»just«0xe2»fine!«*4»
+|«ALIAS ROW 0xe»
 |-
 |0x1180de
-|umm...«0xe2»sry 2«0xe2»sound«0xe2»creepy«0xe2»but r«0xe2»u okay«0xe2»???«*4»
+|«ALIAS ROW 0xf»
 |-
 |0x1180e0
-|I feel«0xe2»like u«0xe2»r call«0xe2»ing me«0xe2»less«*4»
+|«ALIAS ROW 0x0»
 |-
 |0x1180e2
-|r u«0xe2»callin«0xe2»less?«0xe2»did i«0xe2»make u«0xe2»mad?«*4»
+|«ALIAS ROW 0x1»
 |-
 |0x1180e4
-|call«0xe2»me«0xe2»more!«0xe2»its so«0xe2»boring«0xe2»when u«0xe2»don't«*4»
+|«ALIAS ROW 0x2»
 |-
 |0x1180e6
-|hey...«0xe2»havent«0xe2»heard«0xe2»from u«0xe2»lately«0xe2»..what«0xe2»'s up?«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x1180e8
-|no one«0xe2»calls«0xe2»me...«0xe2»i'm so«0xe2»lonely«0xe2»>:(«*4»
+|«ALIAS ROW 0x4»
 |-
 |0x1180ea
-|hey u«0xe2»havent«0xe2»called«0xe2»lately«0xe2»r u«0xe2»busy?«*4»
+|«ALIAS ROW 0x5»
 |-
 |0x1180ec
-|ur fun«0xe2»2 be «0xe2»around«0xe2»lets«0xe2»play«0xe2»again!«*4»
+|«ALIAS ROW 0x6»
 |-
 |0x1180ee
-|ur my«0xe2»best«0xe2»frend!«0xe2»lets«0xe2»play«0xe2»again!«*4»
+|«ALIAS ROW 0x7»
 |-
 |0x1180f0
-|ur a«0xe2»cool«0xe2»guy!«0xe2»call«0xe2»me bac«0xe2»k soon«*0»
+|«ALIAS ROW 0x68»
 |-
 |0x1180f2
-|time«0xe2»flies«0xe2»when«0xe2»i'm «0xe2»with«0xe2»u! :D«*4»
+|«ALIAS ROW 0x9»
 |-
 |0x1180f4
-|hey!!«0xe2»u and«0xe2»me r«0xe2»frends«0xe2»rite? :)«*4»
+|«ALIAS ROW 0xa»
 |-
 |0x1180f6
-|lets«0xe2»play«0xe2»togeth«0xe2»er som«0xe2»time,«0xe2»call«0xe2»me!«*4»
+|«ALIAS ROW 0xb»
 |-
 |0x1180f8
-|hey, r«0xe2»u doin«0xe2»well?«0xe2»i'm«0xe2»knd of«0xe2»woried«*4»
+|«ALIAS ROW 0xc»
 |-
 |0x1180fa
-|heyy«0xe2»how r «0xe2»u doin«0xe2»? call«0xe2»me som«0xe2»time!«*4»
+|«ALIAS ROW 0xd»
 |-
 |0x1180fc
-|hi how«0xe2»r u «0xe2»doin?«0xe2»i'm«0xe2»doin«0xe2»just«0xe2»fine!«*4»
+|«ALIAS ROW 0xe»
 |-
 |0x1180fe
-|umm...«0xe2»sry 2«0xe2»sound«0xe2»creepy«0xe2»but r«0xe2»u okay«0xe2»???«*4»
+|«ALIAS ROW 0xf»
 |-
 |0x118100
 |Hohoho, I am impressed«0xe2»you found this number...«0xe2»Now I can join you in«0xe2»your travels.«*5»
@@ -475,253 +475,253 @@
 |Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
 |-
 |0x11813a
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11813c
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11813e
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118140
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118142
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118144
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118146
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118148
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11814a
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11814c
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11814e
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118150
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118152
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118154
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118156
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118158
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11815a
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11815c
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11815e
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118160
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118162
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118164
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118166
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118168
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11816a
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11816c
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11816e
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118170
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118172
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118174
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118176
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118178
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11817a
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11817c
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11817e
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118180
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118182
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118184
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118186
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118188
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11818a
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11818c
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11818e
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118190
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118192
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118194
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118196
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x118198
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11819a
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11819c
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x11819e
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181a0
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181a2
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181a4
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181a6
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181a8
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181aa
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181ac
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181ae
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181b0
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181b2
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181b4
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181b6
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181b8
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181ba
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181bc
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181be
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181c0
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181c2
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181c4
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181c6
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181c8
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181ca
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181cc
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181ce
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181d0
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181d2
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181d4
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181d6
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181d8
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181da
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181dc
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181de
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|«ALIAS ROW 0x9c»
 |-
 |0x1181e0
 |Take a look behind you!«0xe2»I'm right here!«*5»
@@ -733,40 +733,40 @@
 |This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
 |-
 |0x1181e6
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181e8
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181ea
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181ec
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181ee
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181f0
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181f2
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181f4
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181f6
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181f8
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181fa
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|«ALIAS ROW 0xf2»
 |-
 |0x1181fc
-|Are you calling me«0xe2»over?«0xe2»   Yes   No«*10»
+|Are you calling me«0xe2»over?«0xe2»   Yes   No«*a»
 |-
 |0x1181fe
 |Hi, what's up? «0xe2»It's been a while!«0xe2»How's it going?«*5»

@@ -7,7 +7,7 @@
 |Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
 |-
 |0x120002
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*a»
 |-
 |0x120004
 |«S0» «&0xca00»Ch.«*4»
@@ -22,22 +22,22 @@
 |In other shops, you can«0xe2»perform "Fusion" and«0xe2»"Lab" evolution at the«0xe2»left counter.«*0»
 |-
 |0x12000c
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x12000e
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x120010
 |«S0»«&0xca00»Ch.«*4»
 |-
 |0x120012
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x120014
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x120016
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120018
 |You can evolve your«0xe2»Denjuu through "Fusion"«0xe2»here.«*0»
@@ -49,22 +49,22 @@
 |You can't evolve your«0xe2»current Denjuu with«0xe2»this Fusion pass.«*0»
 |-
 |0x12001e
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120020
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x120022
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x120024
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x120026
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x120028
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x12002a
 |You can evolve your«0xe2»Denjuu using the«0xe2»laboratory here.«*0»
@@ -76,247 +76,247 @@
 |You can't evolve your«0xe2»current Denjuu with«0xe2»this Lab pass.«*0»
 |-
 |0x120030
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120032
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x120034
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x120036
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x120038
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x12003a
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x12003c
-|You can evolve your«0xe2»Denjuu using the«0xe2»laboratory here.«*0»
+|«ALIAS ROW 0x15»
 |-
 |0x12003e
-|Let me see your "Lab«0xe2»pass".«*0»
+|«ALIAS ROW 0x16»
 |-
 |0x120040
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Lab pass.«*0»
+|«ALIAS ROW 0x17»
 |-
 |0x120042
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120044
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x120046
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x120048
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x12004a
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x12004c
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x12004e
-|You can evolve your«0xe2»Denjuu through "Fusion"«0xe2»here.«*0»
+|«ALIAS ROW 0xc»
 |-
 |0x120050
-|Let me see your "Fusion«0xe2»pass".«*0»
+|«ALIAS ROW 0xd»
 |-
 |0x120052
 |You can't evolve your«0xe2»current Denjuu with«0xe2»this permit.«*0»
 |-
 |0x120054
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120056
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x120058
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x12005a
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x12005c
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x12005e
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120060
-|You can evolve your«0xe2»Denjuu using the«0xe2»laboratory here.«*0»
+|«ALIAS ROW 0x15»
 |-
 |0x120062
-|Let me see your "Lab«0xe2»pass".«*0»
+|«ALIAS ROW 0x16»
 |-
 |0x120064
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Lab pass.«*0»
+|«ALIAS ROW 0x17»
 |-
 |0x120066
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120068
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x12006a
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x12006c
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x12006e
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x120070
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120072
-|You can evolve your«0xe2»Denjuu through "Fusion"«0xe2»here.«*0»
+|«ALIAS ROW 0xc»
 |-
 |0x120074
-|Let me see your "Fusion«0xe2»pass".«*0»
+|«ALIAS ROW 0xd»
 |-
 |0x120076
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Fusion pass.«*0»
+|«ALIAS ROW 0xe»
 |-
 |0x120078
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x12007a
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x12007c
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x12007e
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x120080
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x120082
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120084
-|You can evolve your«0xe2»Denjuu through "Fusion"«0xe2»here.«*0»
+|«ALIAS ROW 0xc»
 |-
 |0x120086
-|Let me see your "Fusion«0xe2»pass".«*0»
+|«ALIAS ROW 0xd»
 |-
 |0x120088
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Fusion pass.«*0»
+|«ALIAS ROW 0xe»
 |-
 |0x12008a
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x12008c
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x12008e
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x120090
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x120092
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x120094
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x120096
-|You can evolve your«0xe2»Denjuu through "Fusion"«0xe2»here.«*0»
+|«ALIAS ROW 0xc»
 |-
 |0x120098
-|Let me see your "Fusion«0xe2»pass".«*0»
+|«ALIAS ROW 0xd»
 |-
 |0x12009a
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Fusion pass.«*0»
+|«ALIAS ROW 0xe»
 |-
 |0x12009c
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x12009e
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x1200a0
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x1200a2
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x1200a4
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x1200a6
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x1200a8
-|You can evolve your«0xe2»Denjuu using the«0xe2»laboratory here.«*0»
+|«ALIAS ROW 0x15»
 |-
 |0x1200aa
-|Let me see your "Lab«0xe2»pass".«*0»
+|«ALIAS ROW 0x16»
 |-
 |0x1200ac
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Lab pass.«*0»
+|«ALIAS ROW 0x17»
 |-
 |0x1200ae
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x1200b0
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x1200b2
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x1200b4
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x1200b6
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x1200b8
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x1200ba
-|You can evolve your«0xe2»Denjuu through "Fusion"«0xe2»here.«*0»
+|«ALIAS ROW 0xc»
 |-
 |0x1200bc
-|Let me see your "Fusion«0xe2»pass".«*0»
+|«ALIAS ROW 0xd»
 |-
 |0x1200be
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Fusion pass.«*0»
+|«ALIAS ROW 0xe»
 |-
 |0x1200c0
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x1200c2
-|That will be«0xe2»«&0xca00» chiru.«0xe2»Alright?«0xe2»«0»Yes «0»No«*10»
+|«ALIAS ROW 0x1»
 |-
 |0x1200c4
-|«S0»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x8»
 |-
 |0x1200c6
-|«S0»«0xe2»«&0xca00»Ch.«*4»
+|«ALIAS ROW 0x3»
 |-
 |0x1200c8
-|Not enough chiru.«*0»
+|«ALIAS ROW 0x4»
 |-
 |0x1200ca
-|Please purchase your«0xe2»items at the right«0xe2»counter.«*0»
+|«ALIAS ROW 0x0»
 |-
 |0x1200cc
-|You can evolve your«0xe2»Denjuu through "Fusion"«0xe2»here.«*0»
+|«ALIAS ROW 0xc»
 |-
 |0x1200ce
-|Let me see your "Fusion«0xe2»pass".«*0»
+|«ALIAS ROW 0xd»
 |-
 |0x1200d0
-|You can't evolve your«0xe2»current Denjuu with«0xe2»this Fusion pass.«*0»
+|«ALIAS ROW 0xe»
 |-
 |0x1200d2
 |I've heard that you can«0xe2»get to the Denjuu World«0xe2»through this giant tree...«0xe2»I wonder if it's true?«0xe2»The Denjuu World...«0xe2»I bet there's a lot of«0xe2»fun things to do there...«0xe2»I wish I could go see«0xe2»it...«*0»
@@ -421,7 +421,7 @@
 |«&0xc92c», let's go«0xe2»with him.«0xe2»This Denjuu doesn't look«0xe2»like a bad person.«0xe2»If we follow him, we«0xe2»might learn something.«*0»
 |-
 |0x120116
-|Hohoho.«0xe2»There is nothing to be«0xe2»afraid of.«0xe2»I am not going to eat«0xe2»you, or any such thing.«0xe2»Now then, are you«0xe2»familiar with the Denjuu«0xe2»World?«0xe2»«0»Yes   «0»No«*10»
+|Hohoho.«0xe2»There is nothing to be«0xe2»afraid of.«0xe2»I am not going to eat«0xe2»you, or any such thing.«0xe2»Now then, are you«0xe2»familiar with the Denjuu«0xe2»World?«0xe2»«0»Yes   «0»No«*a»
 |-
 |0x120118
 |Ah, then I suppose I«0xe2»should explain.«*0»
@@ -445,7 +445,7 @@
 |However, among us Denjuu«0xe2»there are many who«0xe2»believe that strength is«0xe2»key, and refuse to see«0xe2»those weaker than them«0xe2»as their friends.«0xe2»In these cases, one must«0xe2»battle if they truly«0xe2»wish to befriend the«0xe2»other.«0xe2»These fights between«0xe2»Denjuu are known as«0xe2»"Telefang".«*0»
 |-
 |0x120126
-|So?«0xe2»Do you understand«0xe2»now?«0xe2»«0»Yes   «0»No«*10»
+|So?«0xe2»Do you understand«0xe2»now?«0xe2»«0»Yes   «0»No«*a»
 |-
 |0x120128
 |Then we shall discuss«0xe2»the reason you were«0xe2»called here.«*0»
@@ -499,10 +499,10 @@
 |I can't quite hear it«0xe2»from here.«*0»
 |-
 |0x12014a
-|Denj....ns...«0xe2»Th....here...ay...«0xe2»..........«*0»
+|«ALIAS ROW 0xa3»
 |-
 |0x12014c
-|I can't quite hear it«0xe2»from here.«*0»
+|«ALIAS ROW 0xa4»
 |-
 |0x12014e
 |.....And now, Mr. Nerikara.«*0»

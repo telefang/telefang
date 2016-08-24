@@ -10,13 +10,13 @@
 |/0x144002/«*2»
 |-
 |0x144004
-|Guess what, I got a new«0xe2»pink casing for my«0xe2»cellphone!!«0xe2» «0» It's cute! «0» ...Pink?«*10»
+|Guess what, I got a new«0xe2»pink casing for my«0xe2»cellphone!!«0xe2» «0» It's cute! «0» ...Pink?«*a»
 |-
 |0x144006
-|I know, I know, right?«0xe2»Pink is totally in«0xe2»right now.«0xe2» «0» I want one! «0»«0xe2»Really?«*10»
+|I know, I know, right?«0xe2»Pink is totally in«0xe2»right now.«0xe2» «0» I want one! «0»«0xe2»Really?«*a»
 |-
 |0x144008
-|«&0xc92c», you got«0xe2»somethin' against«0xe2»pink?«0xe2» «0» You bet «0» Nah, it«0xe2»suits you«*10»
+|«&0xc92c», you got«0xe2»somethin' against«0xe2»pink?«0xe2» «0» You bet «0» Nah, it«0xe2»suits you«*a»
 |-
 |0x14400a
 |You want it? Too bad,«0xe2»I'm not giving it to«0xe2»you~!«*2»
@@ -31,13 +31,13 @@
 |Really? It does?«0xe2»Teehee... Thanks!«*2»
 |-
 |0x144012
-|There's an elder living«0xe2»in Toronko village,«0xe2»right??«0xe2» «0» Right «0» You sure?«*10»
+|There's an elder living«0xe2»in Toronko village,«0xe2»right??«0xe2» «0» Right «0» You sure?«*a»
 |-
 |0x144014
-|What was his name«0xe2»again?«0xe2» «0» It's Musa «0» Mosa?«*10»
+|What was his name«0xe2»again?«0xe2» «0» It's Musa «0» Mosa?«*a»
 |-
 |0x144016
-|There totally is! Did you«0xe2»forget already?«0xe2» «0» I didn't know «0» Ah,«0xe2»you're right«*10»
+|There totally is! Did you«0xe2»forget already?«0xe2» «0» I didn't know «0» Ah,«0xe2»you're right«*a»
 |-
 |0x144018
 |Yeah, that was it!«0xe2»Thanks!«*2»
@@ -52,13 +52,13 @@
 |You remember now? I«0xe2»keep forgetting his«0xe2»name though...«*2»
 |-
 |0x144020
-|Hey, that guy staying at«0xe2»the elder's house, is he«0xe2»your friend?«0xe2» «0» Yep «0» Sort of«*10»
+|Hey, that guy staying at«0xe2»the elder's house, is he«0xe2»your friend?«0xe2» «0» Yep «0» Sort of«*a»
 |-
 |0x144022
-|Do you guys get along?«0xe2» «0» We're best friends!«0xe2»«0» More or less«*10»
+|Do you guys get along?«0xe2» «0» We're best friends!«0xe2»«0» More or less«*a»
 |-
 |0x144024
-|You don't get along?«0xe2» «0» Not really «0» It's«0xe2»so-so«*10»
+|You don't get along?«0xe2» «0» Not really «0» It's«0xe2»so-so«*a»
 |-
 |0x144026
 |Huh, that must be nice!«0xe2»We should try being«0xe2»best friends too!«*2»
@@ -73,13 +73,13 @@
 |Hmm, I see.«*2»
 |-
 |0x14402e
-|/0x14402e/«*10»
+|/0x14402e/«*a»
 |-
 |0x144030
-|/0x144030/«*10»
+|/0x144030/«*a»
 |-
 |0x144032
-|/0x144032/«*10»
+|/0x144032/«*a»
 |-
 |0x144034
 |/0x144034/«*2»
@@ -94,13 +94,13 @@
 |/0x14403a/«*2»
 |-
 |0x14403c
-|/0x14403c/«*10»
+|/0x14403c/«*a»
 |-
 |0x14403e
-|/0x14403e/«*10»
+|/0x14403e/«*a»
 |-
 |0x144040
-|/0x144040/«*10»
+|/0x144040/«*a»
 |-
 |0x144042
 |/0x144042/«*2»
@@ -115,13 +115,13 @@
 |/0x144048/«*2»
 |-
 |0x14404a
-|/0x14404a/«*10»
+|/0x14404a/«*a»
 |-
 |0x14404c
-|/0x14404c/«*10»
+|/0x14404c/«*a»
 |-
 |0x14404e
-|/0x14404e/«*10»
+|/0x14404e/«*a»
 |-
 |0x144050
 |/0x144050/«*2»
@@ -136,13 +136,13 @@
 |/0x144056/«*2»
 |-
 |0x144058
-|/0x144058/«*10»
+|/0x144058/«*a»
 |-
 |0x14405a
-|/0x14405a/«*10»
+|/0x14405a/«*a»
 |-
 |0x14405c
-|/0x14405c/«*10»
+|/0x14405c/«*a»
 |-
 |0x14405e
 |/0x14405e/«*2»
@@ -157,13 +157,13 @@
 |/0x144064/«*2»
 |-
 |0x144066
-|/0x144066/«*10»
+|/0x144066/«*a»
 |-
 |0x144068
-|/0x144068/«*10»
+|/0x144068/«*a»
 |-
 |0x14406a
-|/0x14406a/«*10»
+|/0x14406a/«*a»
 |-
 |0x14406c
 |/0x14406c/«*2»
@@ -178,13 +178,13 @@
 |/0x144072/«*2»
 |-
 |0x144074
-|/0x144074/«*10»
+|/0x144074/«*a»
 |-
 |0x144076
-|/0x144076/«*10»
+|/0x144076/«*a»
 |-
 |0x144078
-|/0x144078/«*10»
+|/0x144078/«*a»
 |-
 |0x14407a
 |/0x14407a/«*2»
@@ -199,13 +199,13 @@
 |/0x144080/«*2»
 |-
 |0x144082
-|/0x144082/«*10»
+|/0x144082/«*a»
 |-
 |0x144084
-|/0x144084/«*10»
+|/0x144084/«*a»
 |-
 |0x144086
-|/0x144086/«*10»
+|/0x144086/«*a»
 |-
 |0x144088
 |/0x144088/«*2»
@@ -220,13 +220,13 @@
 |/0x14408e/«*2»
 |-
 |0x144090
-|/0x144090/«*10»
+|/0x144090/«*a»
 |-
 |0x144092
-|/0x144092/«*10»
+|/0x144092/«*a»
 |-
 |0x144094
-|/0x144094/«*10»
+|/0x144094/«*a»
 |-
 |0x144096
 |/0x144096/«*2»
@@ -241,13 +241,13 @@
 |/0x14409c/«*2»
 |-
 |0x14409e
-|/0x14409e/«*10»
+|/0x14409e/«*a»
 |-
 |0x1440a0
-|/0x1440a0/«*10»
+|/0x1440a0/«*a»
 |-
 |0x1440a2
-|/0x1440a2/«*10»
+|/0x1440a2/«*a»
 |-
 |0x1440a4
 |/0x1440a4/«*2»
@@ -262,13 +262,13 @@
 |/0x1440aa/«*2»
 |-
 |0x1440ac
-|/0x1440ac/«*10»
+|/0x1440ac/«*a»
 |-
 |0x1440ae
-|/0x1440ae/«*10»
+|/0x1440ae/«*a»
 |-
 |0x1440b0
-|/0x1440b0/«*10»
+|/0x1440b0/«*a»
 |-
 |0x1440b2
 |/0x1440b2/«*2»
@@ -283,13 +283,13 @@
 |/0x1440b8/«*2»
 |-
 |0x1440ba
-|It's so hot here, I wish«0xe2»I could cool down...«0xe2»What about you?«0xe2» «0» It's hot... «0» It's«0xe2»cool here«*10»
+|It's so hot here, I wish«0xe2»I could cool down...«0xe2»What about you?«0xe2» «0» It's hot... «0» It's«0xe2»cool here«*a»
 |-
 |0x1440bc
-|I knew it, so you're«0xe2»sweating a lot too?«0xe2» «0» Yeah, a bit «0» It's«0xe2»horrible«*10»
+|I knew it, so you're«0xe2»sweating a lot too?«0xe2» «0» Yeah, a bit «0» It's«0xe2»horrible«*a»
 |-
 |0x1440be
-|That must be nice... How«0xe2»cool is it?«0xe2» «0» Freezing «0» Just fine«*10»
+|That must be nice... How«0xe2»cool is it?«0xe2» «0» Freezing «0» Just fine«*a»
 |-
 |0x1440c0
 |We've just gotta hang on,«0xe2»I guess!«*2»
@@ -304,13 +304,13 @@
 |Wow, maybe I should head«0xe2»over there...«*2»
 |-
 |0x1440c8
-|/0x1440c8/«*10»
+|/0x1440c8/«*a»
 |-
 |0x1440ca
-|/0x1440ca/«*10»
+|/0x1440ca/«*a»
 |-
 |0x1440cc
-|/0x1440cc/«*10»
+|/0x1440cc/«*a»
 |-
 |0x1440ce
 |/0x1440ce/«*2»
@@ -325,13 +325,13 @@
 |/0x1440d4/«*2»
 |-
 |0x1440d6
-|/0x1440d6/«*10»
+|/0x1440d6/«*a»
 |-
 |0x1440d8
-|/0x1440d8/«*10»
+|/0x1440d8/«*a»
 |-
 |0x1440da
-|/0x1440da/«*10»
+|/0x1440da/«*a»
 |-
 |0x1440dc
 |/0x1440dc/«*2»
@@ -346,13 +346,13 @@
 |/0x1440e2/«*2»
 |-
 |0x1440e4
-|Hey, do you drink«0xe2»coffee?«0xe2» «0» Yep «0» Nope«*10»
+|Hey, do you drink«0xe2»coffee?«0xe2» «0» Yep «0» Nope«*a»
 |-
 |0x1440e6
-|I don't, it's nasty and«0xe2»black and tastes bad!«0xe2» «0» You're just picky «0» I«0xe2»guess«*10»
+|I don't, it's nasty and«0xe2»black and tastes bad!«0xe2» «0» You're just picky «0» I«0xe2»guess«*a»
 |-
 |0x1440e8
-|Me neither. It's nasty,«0xe2»right?«0xe2» «0» Adults drink it «0» It«0xe2»smells good«*10»
+|Me neither. It's nasty,«0xe2»right?«0xe2» «0» Adults drink it «0» It«0xe2»smells good«*a»
 |-
 |0x1440ea
 |So? It's not like it's«0xe2»good for you anyway!«*2»
@@ -367,13 +367,13 @@
 |Yeah, the smell is pretty«0xe2»nice.«*2»
 |-
 |0x1440f2
-|/0x1440f2/«*10»
+|/0x1440f2/«*a»
 |-
 |0x1440f4
-|/0x1440f4/«*10»
+|/0x1440f4/«*a»
 |-
 |0x1440f6
-|/0x1440f6/«*10»
+|/0x1440f6/«*a»
 |-
 |0x1440f8
 |/0x1440f8/«*2»
@@ -388,13 +388,13 @@
 |/0x1440fe/«*2»
 |-
 |0x144100
-|/0x144100/«*10»
+|/0x144100/«*a»
 |-
 |0x144102
-|/0x144102/«*10»
+|/0x144102/«*a»
 |-
 |0x144104
-|/0x144104/«*10»
+|/0x144104/«*a»
 |-
 |0x144106
 |/0x144106/«*2»
@@ -409,13 +409,13 @@
 |/0x14410c/«*2»
 |-
 |0x14410e
-|/0x14410e/«*10»
+|/0x14410e/«*a»
 |-
 |0x144110
-|/0x144110/«*10»
+|/0x144110/«*a»
 |-
 |0x144112
-|/0x144112/«*10»
+|/0x144112/«*a»
 |-
 |0x144114
 |/0x144114/«*2»
@@ -430,13 +430,13 @@
 |/0x14411a/«*2»
 |-
 |0x14411c
-|/0x14411c/«*10»
+|/0x14411c/«*a»
 |-
 |0x14411e
-|/0x14411e/«*10»
+|/0x14411e/«*a»
 |-
 |0x144120
-|/0x144120/«*10»
+|/0x144120/«*a»
 |-
 |0x144122
 |/0x144122/«*2»
@@ -451,13 +451,13 @@
 |/0x144128/«*2»
 |-
 |0x14412a
-|/0x14412a/«*10»
+|/0x14412a/«*a»
 |-
 |0x14412c
-|/0x14412c/«*10»
+|/0x14412c/«*a»
 |-
 |0x14412e
-|/0x14412e/«*10»
+|/0x14412e/«*a»
 |-
 |0x144130
 |/0x144130/«*2»
@@ -472,13 +472,13 @@
 |/0x144136/«*2»
 |-
 |0x144138
-|Hey, you hit your head«0xe2»when you fell into the«0xe2»Denjuu World, right? Are«0xe2»you sure you're okay??«0xe2» «0» Totally fine! «0» It«0xe2»still hurts«*10»
+|Hey, you hit your head«0xe2»when you fell into the«0xe2»Denjuu World, right? Are«0xe2»you sure you're okay??«0xe2» «0» Totally fine! «0» It«0xe2»still hurts«*a»
 |-
 |0x14413a
-|You're pretty tough, huh.«0xe2» «0» Yup «0» You think so?«*10»
+|You're pretty tough, huh.«0xe2» «0» Yup «0» You think so?«*a»
 |-
 |0x14413c
-|If it still hurts, you«0xe2»should go see a«0xe2»doctor!!«0xe2» «0» No way «0» Alright«*10»
+|If it still hurts, you«0xe2»should go see a«0xe2»doctor!!«0xe2» «0» No way «0» Alright«*a»
 |-
 |0x14413e
 |Well, so long as you're«0xe2»alright!«*2»
@@ -493,13 +493,13 @@
 |Take care and make sure«0xe2»it gets better!!«*2»
 |-
 |0x144146
-|/0x144146/«*10»
+|/0x144146/«*a»
 |-
 |0x144148
-|/0x144148/«*10»
+|/0x144148/«*a»
 |-
 |0x14414a
-|/0x14414a/«*10»
+|/0x14414a/«*a»
 |-
 |0x14414c
 |/0x14414c/«*2»
@@ -514,13 +514,13 @@
 |/0x144152/«*2»
 |-
 |0x144154
-|/0x144154/«*10»
+|/0x144154/«*a»
 |-
 |0x144156
-|/0x144156/«*10»
+|/0x144156/«*a»
 |-
 |0x144158
-|/0x144158/«*10»
+|/0x144158/«*a»
 |-
 |0x14415a
 |/0x14415a/«*2»
@@ -535,13 +535,13 @@
 |/0x144160/«*2»
 |-
 |0x144162
-|/0x144162/«*10»
+|/0x144162/«*a»
 |-
 |0x144164
-|/0x144164/«*10»
+|/0x144164/«*a»
 |-
 |0x144166
-|/0x144166/«*10»
+|/0x144166/«*a»
 |-
 |0x144168
 |/0x144168/«*2»
@@ -556,13 +556,13 @@
 |/0x14416e/«*2»
 |-
 |0x144170
-|/0x144170/«*10»
+|/0x144170/«*a»
 |-
 |0x144172
-|/0x144172/«*10»
+|/0x144172/«*a»
 |-
 |0x144174
-|/0x144174/«*10»
+|/0x144174/«*a»
 |-
 |0x144176
 |/0x144176/«*2»
@@ -577,13 +577,13 @@
 |/0x14417c/«*2»
 |-
 |0x14417e
-|/0x14417e/«*10»
+|/0x14417e/«*a»
 |-
 |0x144180
-|/0x144180/«*10»
+|/0x144180/«*a»
 |-
 |0x144182
-|/0x144182/«*10»
+|/0x144182/«*a»
 |-
 |0x144184
 |/0x144184/«*2»
@@ -598,13 +598,13 @@
 |/0x14418a/«*2»
 |-
 |0x14418c
-|/0x14418c/«*10»
+|/0x14418c/«*a»
 |-
 |0x14418e
-|/0x14418e/«*10»
+|/0x14418e/«*a»
 |-
 |0x144190
-|/0x144190/«*10»
+|/0x144190/«*a»
 |-
 |0x144192
 |/0x144192/«*2»
@@ -619,13 +619,13 @@
 |/0x144198/«*2»
 |-
 |0x14419a
-|/0x14419a/«*10»
+|/0x14419a/«*a»
 |-
 |0x14419c
-|/0x14419c/«*10»
+|/0x14419c/«*a»
 |-
 |0x14419e
-|/0x14419e/«*10»
+|/0x14419e/«*a»
 |-
 |0x1441a0
 |/0x1441a0/«*2»
@@ -640,13 +640,13 @@
 |/0x1441a6/«*2»
 |-
 |0x1441a8
-|/0x1441a8/«*10»
+|/0x1441a8/«*a»
 |-
 |0x1441aa
-|/0x1441aa/«*10»
+|/0x1441aa/«*a»
 |-
 |0x1441ac
-|/0x1441ac/«*10»
+|/0x1441ac/«*a»
 |-
 |0x1441ae
 |/0x1441ae/«*2»
@@ -661,13 +661,13 @@
 |/0x1441b4/«*2»
 |-
 |0x1441b6
-|I'm into fortune telling«0xe2»right now. I'll give you«0xe2»a reading!«0xe2» «0» Alright! «0» You can«0xe2»do that?«*10»
+|I'm into fortune telling«0xe2»right now. I'll give you«0xe2»a reading!«0xe2» «0» Alright! «0» You can«0xe2»do that?«*a»
 |-
 |0x1441b8
-|Then I'll try to read«0xe2»your star sign! Hmm...«0xe2»You seem like a "Claw"!«0xe2» «0» What's that? «0»«0xe2»Wrong!«*10»
+|Then I'll try to read«0xe2»your star sign! Hmm...«0xe2»You seem like a "Claw"!«0xe2» «0» What's that? «0»«0xe2»Wrong!«*a»
 |-
 |0x1441ba
-|You bet! It's pretty«0xe2»accurate too! «0xe2» «0» Cool! «0» ...Really?«*10»
+|You bet! It's pretty«0xe2»accurate too! «0xe2» «0» Cool! «0» ...Really?«*a»
 |-
 |0x1441bc
 |Eh..? Oh I see, your«0xe2»zodiac is different in«0xe2»the Human World! «*2»
@@ -682,13 +682,13 @@
 |Yes, really! I'm a«0xe2»magician by trade,«0xe2»didn't you know?!«*2»
 |-
 |0x1441c4
-|/0x1441c4/«*10»
+|/0x1441c4/«*a»
 |-
 |0x1441c6
-|/0x1441c6/«*10»
+|/0x1441c6/«*a»
 |-
 |0x1441c8
-|/0x1441c8/«*10»
+|/0x1441c8/«*a»
 |-
 |0x1441ca
 |/0x1441ca/«*2»
@@ -703,13 +703,13 @@
 |/0x1441d0/«*2»
 |-
 |0x1441d2
-|It's my birthday today!«0xe2» «0» Congrats! «0» What,«0xe2»again?«*10»
+|It's my birthday today!«0xe2» «0» Congrats! «0» What,«0xe2»again?«*a»
 |-
 |0x1441d4
-|Thanks! How old do I«0xe2»look?«0xe2» «0» 3 «0» 45«*10»
+|Thanks! How old do I«0xe2»look?«0xe2» «0» 3 «0» 45«*a»
 |-
 |0x1441d6
-|Huh? You think I said«0xe2»that before?«0xe2» «0» Don't play dumb! «0»«0xe2»Maybe not?«*10»
+|Huh? You think I said«0xe2»that before?«0xe2» «0» Don't play dumb! «0»«0xe2»Maybe not?«*a»
 |-
 |0x1441d8
 |Hey, I'm not THAT young!«*2»
@@ -724,13 +724,13 @@
 |No worries!«0xe2»Now where's my«0xe2»present??«*2»
 |-
 |0x1441e0
-|/0x1441e0/«*10»
+|/0x1441e0/«*a»
 |-
 |0x1441e2
-|/0x1441e2/«*10»
+|/0x1441e2/«*a»
 |-
 |0x1441e4
-|/0x1441e4/«*10»
+|/0x1441e4/«*a»
 |-
 |0x1441e6
 |/0x1441e6/«*2»
@@ -745,13 +745,13 @@
 |/0x1441ec/«*2»
 |-
 |0x1441ee
-|/0x1441ee/«*10»
+|/0x1441ee/«*a»
 |-
 |0x1441f0
-|/0x1441f0/«*10»
+|/0x1441f0/«*a»
 |-
 |0x1441f2
-|/0x1441f2/«*10»
+|/0x1441f2/«*a»
 |-
 |0x1441f4
 |/0x1441f4/«*2»
@@ -766,9 +766,9 @@
 |/0x1441fa/«*2»
 |-
 |0x1441fc
-|/0x1441fc/«*10»
+|/0x1441fc/«*a»
 |-
 |0x1441fe
-|/0x1441fe/«*10»
+|/0x1441fe/«*a»
 |-
 |}
