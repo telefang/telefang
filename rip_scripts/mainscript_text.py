@@ -208,6 +208,10 @@ def extract(args):
             #Actually extract our strings
             string = []
 
+            #Stores the actual end of the last string, used for alias detection
+            last_start = 0xFFFF
+            last_end = 0xFFFF
+
             for i in range(tbl_length):
                 wikitext.append(u"|-")
                 wikitext.append(u"|0x{0:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2)))
@@ -219,22 +223,34 @@ def extract(args):
                 next_ptr = PTR.unpack(rom.read(2))[0]
                 expected_length = next_ptr - read_ptr
                 if i >= tbl_length - 1:
-                    expected_length = 0
+                    expected_length = -1 #maximum length by far
 
+                #Two different alias detects:
+
+                #First, we try to see if this pointer matches another pointer
+                #in the table.
                 rom.seek(flat(bank["basebank"], bank["baseaddr"]))
                 for j in range(i):
                     if read_ptr == PTR.unpack(rom.read(2))[0]:
                         #Aliased pointer!
                         wikitext.append(u"|«ALIAS ROW 0x{0:x}»".format(j))
-                        print u"Aliased pointer {0:x}".format(j)
+                        print u"Pointer at 0x{0:x} fully aliases pointer 0x{1:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2), flat(bank["basebank"], bank["baseaddr"] + j * 2))
                         break
                 else:
-                    read_characters = 0
+                    #Second, we try to see if this pointer is in the middle of
+                    #the last string.
+                    if i > 0 and read_ptr < last_end - 1:
+                        print u"Pointer at 0x{0:x} partially aliases previous pointer".format(rom.tell() - 2)
+                        wikitext.append(u"|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(i - 1, read_ptr - last_start))
+                        continue
+
+                    read_length = 1
+                    first_read = True
                     rom.seek(flat(bank["basebank"], read_ptr))
 
                     while True:
                         next_chara = CHARA.unpack(rom.read(1))[0]
-                        while next_chara != 0xE0: #E0 is end-of-string
+                        while (read_length <= expected_length or first_read) and next_chara != 0xE0: #E0 is end-of-string
                             if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
                                 string.append(charmap[1][next_chara])
                             elif next_chara in reverse_specials:
@@ -244,6 +260,7 @@ def extract(args):
                                 string.append(reverse_specials[next_chara])
 
                                 if this_special.bts:
+                                    read_length += this_special.bts
                                     fmt = "<"+("", "B", "H")[this_special.bts]
                                     word = struct.unpack(fmt, rom.read(this_special.bts))[0]
                                     string.append(format_int(word))
@@ -251,6 +268,7 @@ def extract(args):
                                 string.append(u"»")
 
                                 if this_special.end:
+                                    first_read = False
                                     break
                             #elif next_chara == 0xE2:
                                 #Literal newline
@@ -262,23 +280,42 @@ def extract(args):
                                 string.append(u"»")
 
                             next_chara = CHARA.unpack(rom.read(1))[0]
+                            read_length = rom.tell() - flat(bank["basebank"], read_ptr)
 
-                        print 0x4000 + rom.tell() - flat(bank["basebank"], 0x4000) - read_ptr
-
-                        if 0x4000 + rom.tell() - flat(bank["basebank"], 0x4000) - read_ptr >= expected_length:
+                        if read_length >= expected_length:
                             break
                         else:
-                            #There's a hole in the ROM!
-                            #Disassemble the next string.
-                            print u"Found a hole in our ROM!"
-                            wikitext.append(u"|" + u"".join(string))
-                            string = []
+                            #Detect nulls (spaces) after the end of a string
+                            #and append them to avoid creating a new pointer row
+                            loc = rom.tell()
+                            while CHARA.unpack(rom.read(1))[0] == charmap[0][u" "] and read_length < expected_length:
+                                string.append(u" ")
+                                loc += 1
+                                read_length += 1
 
-                            wikitext.append(u"|-")
-                            wikitext.append(u"|(No pointer)")
+                            rom.seek(loc) #cleanup
+
+                            if read_length >= expected_length:
+                                break
+                            else:
+                                #There's a hole in the ROM!
+                                #Disassemble the next string.
+                                print u"Inaccessible data found at 0x{0:x}".format(flat(bank["basebank"], read_ptr))
+
+                                wikitext.append(u"|" + u"".join(string))
+                                string = []
+
+                                wikitext.append(u"|-")
+                                wikitext.append(u"|(No pointer)")
+
+                                read_length += 1
 
                     wikitext.append(u"|" + u"".join(string))
                     string = []
+
+                    #Store the actual end pointer for later use.
+                    last_start = read_ptr
+                    last_end = read_ptr + read_length
 
             wikitext.append(u"|-")
             wikitext.append(u"|}")
@@ -322,7 +359,7 @@ def asm(args):
         print bank["symbol"] + u'_END'
         print u''
 
-def pack_string(string, charmap, metrics, window_width):
+def pack_string(string, charmap, metrics, window_width, do_not_terminate = False):
     """Given a string, encode it as ROM table data.
 
     This function, if provided with metrics, will also automatically insert a
@@ -336,7 +373,7 @@ def pack_string(string, charmap, metrics, window_width):
 
     special = u""
     skip_sentinel = False
-    end_sentinel = False
+    end_sentinel = do_not_terminate
 
     even_line = True
 
@@ -555,10 +592,16 @@ def make_tbl(args):
 
             if row[str_col][:11] == u"«ALIAS ROW ":
                 #Aliased string!
-                table.append(table[int(row[str_col][11:-1], 16)])
-                packed_strings.append("")
+                split_row = row[str_col][11:-1].split(u" ")
+                if len(split_row) > 1 and split_row[1] == "INTO":
+                    #Partial string alias.
+                    table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
+                    packed_strings.append("")
+                else:
+                    table.append(table[int(split_row[0], 16)])
+                    packed_strings.append("")
             else:
-                packed = pack_string(row[str_col], charmap, metrics, args.window_width)
+                packed = pack_string(row[str_col], charmap, metrics, args.window_width, row[ptr_col] == u"(No pointer)")
                 packed_strings.append(packed)
 
                 #DEBUG: Strings we're interested in
