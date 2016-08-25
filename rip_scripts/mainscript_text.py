@@ -259,9 +259,9 @@ def extract(args):
                     first_read = True
                     rom.seek(flat(bank["basebank"], read_ptr))
 
-                    while (rom.tell() % 0x4000 > 0 or rom.tell() == flat(bank["basebank"], bank["baseaddr"])):
+                    while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])):
                         next_chara = CHARA.unpack(rom.read(1))[0]
-                        while (rom.tell() % 0x4000 > 0 or rom.tell() == flat(bank["basebank"], bank["baseaddr"])) and (read_length <= expected_length or first_read) and next_chara != 0xE0: #E0 is end-of-string
+                        while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])) and (read_length <= expected_length or first_read) and next_chara != 0xE0: #E0 is end-of-string
                             if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
                                 string.append(charmap[1][next_chara])
                             elif next_chara in reverse_specials:
