@@ -222,6 +222,7 @@ def extract(args):
             #Stores the actual end of the last string, used for alias detection
             last_start = 0xFFFF
             last_end = 0xFFFF
+            last_nonaliasing_row = -1
 
             for i in range(tbl_length):
                 wikitext.append(u"|-")
@@ -252,7 +253,7 @@ def extract(args):
                     #the last string.
                     if i > 0 and read_ptr < last_end - 1:
                         print u"Pointer at 0x{0:x} partially aliases previous pointer".format(rom.tell() - 2)
-                        wikitext.append(u"|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(i - 1, read_ptr - last_start))
+                        wikitext.append(u"|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(last_nonaliasing_row, read_ptr - last_start))
                         continue
 
                     read_length = 1
@@ -327,6 +328,7 @@ def extract(args):
                     #Store the actual end pointer for later use.
                     last_start = read_ptr
                     last_end = read_ptr + read_length
+                    last_nonaliasing_row = i
 
             wikitext.append(u"|-")
             wikitext.append(u"|}")
