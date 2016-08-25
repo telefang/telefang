@@ -149,6 +149,17 @@ def extract_metatable_from_rom(rom_filename, charmap, banknames, args):
 
     return banks
 
+def extract_metrics_from_rom(rom_filename, charmap, banknames, args):
+    metrics = []
+
+    with open(rom_filename, 'rb') as rom:
+        rom.seek(args.metrics_loc)
+
+        for i in range(255):
+            metrics.append(CHARA.unpack(rom.read(1))[0])
+
+    return metrics
+
 def flat(bank, addr):
     if (addr < 0x4000):
         return addr
@@ -560,8 +571,7 @@ def make_tbl(args):
     if args.language == u"Japanese":
         metrics = None
     else:
-        #TODO: Parse and apply metrics for Latin-1 language patches.
-        raise exceptions.NotImplementedError("VWF ROMs can't be injected yet")
+        metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
 
     for bank in banknames:
         print "Compiling " + bank["filename"]
@@ -646,6 +656,7 @@ def main():
     ap.add_argument('--language', type=str, default=u"Japanese")
     ap.add_argument('--output', type=str, default="script")
     ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
+    ap.add_argument('--metrics_loc', type=int, default=0x2FB00)
     ap.add_argument('--window_width', type=int, default=0x16 * 0x8) #16 tiles
     ap.add_argument('rom', type=str)
     ap.add_argument('filenames', type=str, nargs="*")
