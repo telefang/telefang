@@ -259,9 +259,9 @@ def extract(args):
                     first_read = True
                     rom.seek(flat(bank["basebank"], read_ptr))
 
-                    while True:
+                    while rom.tell() % 0x4000 > 0:
                         next_chara = CHARA.unpack(rom.read(1))[0]
-                        while (read_length <= expected_length or first_read) and next_chara != 0xE0: #E0 is end-of-string
+                        while rom.tell() % 0x4000 > 0 and (read_length <= expected_length or first_read) and next_chara != 0xE0: #E0 is end-of-string
                             if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
                                 string.append(charmap[1][next_chara])
                             elif next_chara in reverse_specials:
@@ -327,6 +327,10 @@ def extract(args):
                     #Store the actual end pointer for later use.
                     last_start = read_ptr
                     last_end = read_ptr + read_length
+
+                    #Stop decoding if we hit the end of the current bank.
+                    if rom.tell() % 0x4000 > 0:
+                        break
 
             wikitext.append(u"|-")
             wikitext.append(u"|}")
