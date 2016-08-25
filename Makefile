@@ -73,7 +73,7 @@ $(OBJS_ALL): $$*.asm $$($$*_dep)
 	@$(PYTHON) $(PRET)/gfx.py 2bpp $(2bppq)
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $(1bppq)
 	@$(PYTHON) rip_scripts/pcm.py pcm $(pcmq)
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) $(scripttblq)
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) $(scripttblq) --language="English"
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
