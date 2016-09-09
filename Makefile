@@ -26,6 +26,7 @@ OBJS := components/compression/malias.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
+	  components/stringtable/padding.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
      script/mainscript.o
      
