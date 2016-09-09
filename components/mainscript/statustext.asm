@@ -6,6 +6,9 @@ INCLUDE "components/stringtable/load.inc"
 SECTION "Main Script Status Text Drawing WRAM", WRAM0[$CB2F]
 W_MainScript_StatusLettersDrawn: ds 1
 
+SECTION "Main Script Status Text Drawing WRAM 2", WRAM0[$C3A0]
+W_MainScript_NameStagingLoc:: ds M_StringTable_Load8AreaSize + 1
+
 SECTION "Main Script Status Text Drawing", ROM0[$3A91]
 MainScript_DrawStatusText::
 	xor a
@@ -65,7 +68,39 @@ MainScript_DrawDenjuuName::
 	ld de, W_StringTable_StagingLocDbl
 	ld b, $16 ;likely incorrect.
 	jp Banked_MainScript_DrawStatusText
-		
+	
+;BC = Argument for Draw Empty Spaces
+;DE = Argument for Load Denjuu Name
+;I don't know why this function exists.
+;It appears to pad the loaded denjuu name with string terminators in a very
+;paranoid fashion. Wtf...
+MainScript_DrawPaddedDenjuuName::
+	ld [W_StringTable_ROMTblIndex], a
+	push bc
+	push de
+	ld hl, W_MainScript_NameStagingLoc
+	ld b, M_StringTable_Load8AreaSize + 1
+	
+.clearLoop
+	ld a, $E0
+	ld [hli], a
+	dec b
+	jr nz, .clearLoop
+	
+	pop hl
+	call StringTable_LoadDenjuuName
+	pop hl
+	push hl
+	ld a, M_StringTable_Load8AreaSize
+	call MainScript_DrawEmptySpaces
+	ld hl, W_StringTable_StagingLoc
+	ld de, W_MainScript_NameStagingLoc
+	call Banked_StringTable_PadCopyBuffer
+	ld de, W_MainScript_NameStagingLoc
+	pop hl
+	ld b, M_StringTable_Load8AreaSize
+	jp Banked_MainScript_DrawStatusText
+
 SECTION "Main Script Status Text Drawing Advice", ROM0[$0077]
 ;Part of a function that replaces status text drawing with the VWF.
 MainScript_ADVICE_DrawStatusText::
