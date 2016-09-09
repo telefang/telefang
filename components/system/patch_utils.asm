@@ -65,11 +65,12 @@ PatchUtils_LoadDenjuuName_Bankswitch::
 	ret
 
 ;D7
+Banked_StringTable_ADVICE_PadCopyBuffer::
 	ld a, [W_CurrentBank]
 	push af
-	ld a, $34
+	ld a, BANK(StringTable_ADVICE_PadCopyBuffer)
 	rst $10
-	call $7F40
+	call StringTable_ADVICE_PadCopyBuffer
 	pop af
 	rst $10
 	ret

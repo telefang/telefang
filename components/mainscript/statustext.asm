@@ -6,7 +6,7 @@ INCLUDE "components/stringtable/load.inc"
 SECTION "Main Script Status Text Drawing WRAM", WRAM0[$CB2F]
 W_MainScript_StatusLettersDrawn: ds 1
 
-SECTION "Main Script Status Text Drawing WRAM 2", WRAM0[$C3A0]
+SECTION "Main Script Status Text Drawing WRAM 2", WRAM0[$CC90]
 W_MainScript_NameStagingLoc:: ds M_StringTable_Load8AreaSize + 1
 
 SECTION "Main Script Status Text Drawing", ROM0[$3A91]
@@ -92,13 +92,13 @@ MainScript_DrawPaddedDenjuuName::
 	pop hl
 	push hl
 	ld a, M_StringTable_Load8AreaSize
-	call MainScript_DrawEmptySpaces
+	call MainScript_ADVICE_DrawDenjuuName
 	ld hl, W_StringTable_StagingLoc
 	ld de, W_MainScript_NameStagingLoc
-	call Banked_StringTable_PadCopyBuffer
+	call Banked_StringTable_ADVICE_PadCopyBuffer
 	ld de, W_MainScript_NameStagingLoc
 	pop hl
-	ld b, M_StringTable_Load8AreaSize
+	ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
 	jp Banked_MainScript_DrawStatusText
 
 SECTION "Main Script Status Text Drawing Advice", ROM0[$0077]
