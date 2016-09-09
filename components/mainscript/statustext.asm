@@ -7,7 +7,7 @@ SECTION "Main Script Status Text Drawing WRAM", WRAM0[$CB2F]
 W_MainScript_StatusLettersDrawn: ds 1
 
 SECTION "Main Script Status Text Drawing WRAM 2", WRAM0[$CC90]
-W_MainScript_NameStagingLoc:: ds M_StringTable_Load8AreaSize + 1
+W_MainScript_CenteredNameBuffer:: ds M_StringTable_Load8AreaSize + 1
 
 SECTION "Main Script Status Text Drawing", ROM0[$3A91]
 MainScript_DrawStatusText::
@@ -71,14 +71,12 @@ MainScript_DrawDenjuuName::
 	
 ;BC = Argument for Draw Empty Spaces
 ;DE = Argument for Load Denjuu Name
-;I don't know why this function exists.
-;It appears to pad the loaded denjuu name with string terminators in a very
-;paranoid fashion. Wtf...
-MainScript_DrawPaddedDenjuuName::
+;Draws the Denjuu name, but centered...
+MainScript_DrawCenteredDenjuuName::
 	ld [W_StringTable_ROMTblIndex], a
 	push bc
 	push de
-	ld hl, W_MainScript_NameStagingLoc
+	ld hl, W_MainScript_CenteredNameBuffer
 	ld b, M_StringTable_Load8AreaSize + 1
 	
 .clearLoop
@@ -94,9 +92,9 @@ MainScript_DrawPaddedDenjuuName::
 	ld a, M_StringTable_Load8AreaSize
 	call MainScript_ADVICE_DrawDenjuuName
 	ld hl, W_StringTable_StagingLoc
-	ld de, W_MainScript_NameStagingLoc
+	ld de, W_MainScript_CenteredNameBuffer
 	call Banked_StringTable_ADVICE_PadCopyBuffer
-	ld de, W_MainScript_NameStagingLoc
+	ld de, W_MainScript_CenteredNameBuffer
 	pop hl
 	ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
 	jp Banked_MainScript_DrawStatusText

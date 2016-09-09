@@ -1,6 +1,6 @@
 INCLUDE "components/stringtable/load.inc"
 
-SECTION "String Table Weird Paranoid Padding Nonsense Bankcalls", ROM0[$33E3]
+SECTION "String Table Pad-to-center-string function Bankcall", ROM0[$33E3]
 Banked_StringTable_PadCopyBuffer::
 	ld a, [W_CurrentBank]
 	push af
@@ -13,14 +13,14 @@ Banked_StringTable_PadCopyBuffer::
 	
 ;Old version of this function from Japanese ROM.
 ;Not sure why it wasn't overwritten...
-SECTION "String Table Weird Paranoid Padding Nonsense", ROMX[$45AE], BANK[$2A]
+SECTION "String Table Pad-to-center-string function", ROMX[$45AE], BANK[$2A]
 StringTable_PadCopyBuffer::
 	push hl
 	push de
 	ld c, 8
 	ld a, 0
 	
-	;Clear the target buffer a first time. Fair enough...
+	;Fill the target buffer with spaces
 .firstEraseLoop
 	ld [de], a
 	inc de
@@ -46,12 +46,12 @@ StringTable_PadCopyBuffer::
 	
 	ld a, 0
 	
-	;Now, clear the same loop we already cleared again for no reason
-.secondEraseLoop
+	;Add spaces to match the trash bytes at the end
+.firstAddSpacesLoop
 	ld [de], a
 	inc de
 	dec c
-	jr nz, .secondEraseLoop
+	jr nz, .firstAddSpacesLoop
 	
 .noMoreTrashBytes
 	pop hl
@@ -71,23 +71,22 @@ StringTable_PadCopyBuffer::
 	
 	ld a, 0
 	
-	;Now we're clearing the target buffer for like the third time wtf
-	;Except we're just clearing the trash bytes now
-.thirdEraseLoop
+	;Add spaces at the other end to balance this all out
+.lastAddSpacesLoop
 	ld [de], a
 	inc de
 	dec c
-	jr nz, .thirdEraseLoop
+	jr nz, .lastAddSpacesLoop
 	ret
 	
-SECTION "String Table Weird Paranoid Padding Nonsense Limit Broken", ROMX[$7F40], BANK[$34]
+SECTION "String Table Pad-to-center-string function Limit Broken", ROMX[$7F40], BANK[$34]
 StringTable_ADVICE_PadCopyBuffer::
 	push hl
 	push de
 	ld c, M_StringTable_Load8AreaSize
 	ld a, 0
 	
-	;Clear the target buffer a first time. Fair enough...
+	;Fill the target buffer with spaces
 .firstEraseLoop
 	ld [de], a
 	inc de
@@ -113,12 +112,12 @@ StringTable_ADVICE_PadCopyBuffer::
 	
 	ld a, 0
 	
-	;Now, clear the same loop we already cleared again for no reason
-.secondEraseLoop
+	;Add spaces to match the trash bytes at the end
+.firstAddSpacesLoop
 	ld [de], a
 	inc de
 	dec c
-	jr nz, .secondEraseLoop
+	jr nz, .firstAddSpacesLoop
 	
 .noMoreTrashBytes
 	pop hl
@@ -138,11 +137,10 @@ StringTable_ADVICE_PadCopyBuffer::
 	
 	ld a, 0
 	
-	;Now we're clearing the target buffer for like the third time wtf
-	;Except we're just clearing the trash bytes now
-.thirdEraseLoop
+	;Add spaces at the other end to balance this all out
+.lastAddSpacesLoop
 	ld [de], a
 	inc de
 	dec c
-	jr nz, .thirdEraseLoop
+	jr nz, .lastAddSpacesLoop
 	ret
