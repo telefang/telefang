@@ -122,7 +122,7 @@ MainScript_calls_denjuu_5:
 	INCBIN "script/calls/denjuu/5.scripttbl"
 MainScript_calls_denjuu_5_END
 
-SECTION "MainScript_calls_denjuu_6 Section", ROMX[$4000], BANK[$26]
+SECTION "MainScript_calls_denjuu_6 Section", ROMX[$4000], BANK[$25]
 MainScript_calls_denjuu_6:
 	INCBIN "script/calls/denjuu/6.scripttbl"
 MainScript_calls_denjuu_6_END
