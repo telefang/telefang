@@ -62,7 +62,7 @@ $(foreach obj, $(OBJS_SPEED), \
 #We run power_patch last as that is not likely to work for some time.
 all: power_patch power speed
 
-power: $(ROMS_POWER) compare_power
+power: $(ROMS_POWER) #compare_power
 
 power_patch: $(ROMS_POWER_PATCH) #compare_power_patch
 
@@ -93,13 +93,13 @@ $(ROMS_SPEED): $(OBJS) $(OBJS_SPEED)
 # pre-disassembly patched roms exactly. This is for contributors to make sure a
 # change didn't affect the contents of the patch.
 # More thorough comparison can be made by diffing the output of hexdump -C against both roms.
-compare_power_patch: $(ROMS_POWER_PATCH) $(BASEROM_POWER_PATCH)
-	cmp $^
+compare_power_correctness: $(ROMS_POWER_PATCH) $(BASEROM_POWER_PATCH)
+	cmp $^ --verbose
    
 #This compare target, on the other hand, tells us how far we are from building
 #a complete English patch from a Japanese ROM.
-compare_power: $(ROMS_POWER) $(BASEROM_POWER_PATCH)
-	cmp $^
+compare_power_completeness: $(ROMS_POWER) $(BASEROM_POWER_PATCH)
+	cmp $^ --verbose
 
 #There is no speed version compare target, since there never was a patch for
 #Speed version.
