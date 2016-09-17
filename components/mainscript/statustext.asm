@@ -86,12 +86,12 @@ MainScript_DrawCenteredDenjuuName::
 	jr nz, .clearLoop
 	
 	pop hl
-	call StringTable_LoadDenjuuName
+	call MainScript_ADVICE_DrawDenjuuName
 	pop hl
 	push hl
-	ld a, M_StringTable_Load8AreaSize
-	call MainScript_ADVICE_DrawDenjuuName
-	ld hl, W_StringTable_StagingLoc
+	ld a, 8
+	call MainScript_DrawEmptySpaces
+	ld hl, W_StringTable_StagingLocDbl
 	ld de, W_MainScript_CenteredNameBuffer
 	call Banked_StringTable_ADVICE_PadCopyBuffer
 	ld de, W_MainScript_CenteredNameBuffer
