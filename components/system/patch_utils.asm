@@ -85,14 +85,14 @@ MainScript_ADVICE_DrawDenjuuName::
 	jr .mystery3
 	
 .mystery2 ;EE
-	call $F4
+	call .mystery4
 
 .mystery3 ;F1
 	pop af
 	pop hl
 	ret
 
-;F4
+.mystery4 ;F4
 	ld a, $34
 	rst $10
 	call $7F10
