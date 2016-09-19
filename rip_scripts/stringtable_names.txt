@@ -5,14 +5,17 @@
 #Stride is the length of each entry, in bytes
 #Count is how many strings there are in total
 
-battle/items 2E652 8 68
-denjuu/nicknames 2F8FA 4 22
-denjuu/species 1D4000 8 174
-battle/tfangers 1D4578 8 48
-battle/attacks 1D46F8 8 138
-denjuu/habitats 1D5628 4 6
-battle/arrive_phrases 1D5888 16 174
-battle/attack_phrases 1D6368 16 174
-battle/message_unk 1D6E48 16 174
-denjuu/personalities 1D7928 8 12
-denjuu/statuses 1D7988 4 16
+#The unused denjuu/nicknames and battle/message_unk tables were never relocated
+#or translated.
+
+battle/items 1E2B80 16 68
+#denjuu/nicknames N/A 8 22
+denjuu/species D0000 16 174
+battle/tfangers 1D6300 16 48
+battle/attacks 1D5890 16 138
+denjuu/habitats 1D6200 8 6
+battle/arrive_phrases 1E0000 32 174
+battle/attack_phrases 1E15C0 32 174
+#battle/message_unk N/A 32 174
+denjuu/personalities 1D6130 16 12
+denjuu/statuses 1D6270 8 16
