@@ -36,7 +36,7 @@ OBJS := components/compression/malias.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
-     script/mainscript.o
+     script/mainscript.o script/stringtable.o
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o
@@ -75,6 +75,7 @@ $(OBJS_ALL): $$*.asm $$($$*_dep)
 	@$(PYTHON) $(PRET)/gfx.py 1bpp $(1bppq)
 	@$(PYTHON) rip_scripts/pcm.py pcm $(pcmq)
 	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER_PATCH) $(scripttblq) --language="English"
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER_PATCH) $(stringtblq) --language="English"
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
@@ -119,6 +120,10 @@ clean:
 
 %.scripttbl: %.wikitext
 	$(eval scripttblq += $<)
+	@rm -f $@
+
+%.stringtbl: %.wikitext
+	$(eval stringtblq += $<)
 	@rm -f $@
 
 %.pcm: %.wav

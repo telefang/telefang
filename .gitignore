@@ -12,3 +12,4 @@
 
 ;Prevent committing compiled script data.
 *.scripttbl
+*.stringtbl
