@@ -1,528 +1,528 @@
 {|
 |-
 !#
-!Japanese
+!English
 |-
 |0
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |1
-|ついたよ-
+|I'm here!
 |-
 |2
-|ついたよ-
+|I'm here!
 |-
 |3
-|...ついた
+|...Made it.
 |-
 |4
-|またせたなっ!
+|Made you wait, huh!
 |-
 |5
-|おまたせ-
+|Kept you waiting~
 |-
 |6
-|おまたせしました!
+|Thanks for waiting!
 |-
 |7
-|またせたカバ
+|Hip, made you wait.
 |-
 |8
-|ついたプニ
+|I'm here, puni!
 |-
 |9
-|ついたプルン
+|Made it... blurp
 |-
 |10
-|はやかっただろ
+|Pretty quick, huh?
 |-
 |11
-|おまたせコケ
+|Cluck! Made you wait!
 |-
 |12
-|けんざん!
+|Arrival!
 |-
 |13
-|おまたせ-
+|Kept you waiting~
 |-
 |14
-|おまたせタコ
+|I'm here, octo.
 |-
 |15
-|...ついた
+|...Made it.
 |-
 |16
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |17
-|ついたっクス
+|Heh, I'm here~
 |-
 |18
-|シャカシャカきた
+|Snip snip, I'm here!
 |-
 |19
-|きたカニよ-
+|Crab coming~
 |-
 |20
-|またせたなっ!
+|Made you wait, huh!
 |-
 |21
-|オレにまかせな!
+|Leave it to me!
 |-
 |22
-|ついたっペ
+|I'm here, ope!
 |-
 |23
-|ウキキ-
+|Ook eek eek...!
 |-
 |24
-|おまたっ!
+|Finally!
 |-
 |25
-|またせたなっ!
+|Made you wait, huh!
 |-
 |26
-|きたホロウ
+|I'm here, hoo.
 |-
 |27
-|きたもんネ
+|I'm here, huh!
 |-
 |28
-|ピュ-ときたぜ
+|Pheww, I'm here!
 |-
 |29
-|どうもどうも
+|Why, hello!
 |-
 |30
-|ビバっときたぜ
+|Viva, I'm here!
 |-
 |31
-|オレにまかせな!
+|Leave it to me!
 |-
 |32
-|もリのな-か-
+|The other day~
 |-
 |33
-|いそいできました
+|I came as fast as I could!
 |-
 |34
-|よ-おまたせ
+|Yo, thanks for waiting!
 |-
 |35
-|よんだかい
+|You called?
 |-
 |36
-|ついたよ-
+|I'm here!
 |-
 |37
-|ついたよ-
+|I'm here!
 |-
 |38
-|...ついた
+|...Made it.
 |-
 |39
-|またせたなっ!
+|Made you wait, huh!
 |-
 |40
-|おまたせ-
+|Kept you waiting~
 |-
 |41
-|おまたせしました!
+|Thanks for waiting!
 |-
 |42
-|またせたカバ
+|Hip, made you wait.
 |-
 |43
-|ついたプニ
+|I'm here, puni!
 |-
 |44
-|ついたブルン
+|I'm here... glurp
 |-
 |45
-|つきましたよ!
+|I have arrived!
 |-
 |46
-|ゲッゲゲゲゲゲ
+|Geh-heheheheh!
 |-
 |47
-|またせたかの-
+|Have I made you wait?
 |-
 |48
-|...ついた
+|...Made it.
 |-
 |49
-|さぁきたよ!
+|Here I am!
 |-
 |50
-|ウネウネきた-
+|I inched my way here!
 |-
 |51
-|おそかった?
+|Am I too late?
 |-
 |52
-|きてやったぜ
+|I've come!
 |-
 |53
-|ついたトリ
+|Made it, bird.
 |-
 |54
-|ついたクワ
+|I'm here, beet!
 |-
 |55
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |56
-|ついたよ-
+|I'm here!
 |-
 |57
-|ついたよ-
+|I'm here!
 |-
 |58
-|...ついた
+|...Made it.
 |-
 |59
-|またせたなっ!
+|Made you wait, huh!
 |-
 |60
-|おまたせ-
+|Kept you waiting~
 |-
 |61
-|おまたせしました!
+|Thanks for waiting!
 |-
 |62
-|またせたカバ
+|Hip, made you wait.
 |-
 |63
-|ついたプニ
+|I'm here, puni!
 |-
 |64
-|ついたプルン
+|Made it... blurp
 |-
 |65
-|はやかっただろ
+|Pretty quick, huh?
 |-
 |66
-|おまたせコケ
+|Cluck! Made you wait!
 |-
 |67
-|けんざん!
+|Arrival!
 |-
 |68
-|おまたせ-
+|Kept you waiting~
 |-
 |69
-|おまたせタコ
+|I'm here, octo.
 |-
 |70
-|...ついた
+|...Made it.
 |-
 |71
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |72
-|ついたっクス
+|Heh, I'm here~
 |-
 |73
-|シャカシャカきた
+|Snip snip, I'm here!
 |-
 |74
-|きたカニよ-
+|Crab coming~
 |-
 |75
-|またせたなっ!
+|Made you wait, huh!
 |-
 |76
-|オレにまかせな!
+|Leave it to me!
 |-
 |77
-|ついたっペ
+|I'm here, ope!
 |-
 |78
-|ウキッキ-
+|Ook eekeek!
 |-
 |79
-|おまたっ!
+|Finally!
 |-
 |80
-|またせたなっ!
+|Made you wait, huh!
 |-
 |81
-|きたホロウ
+|I'm here, hoo.
 |-
 |82
-|きたもんネ
+|I'm here, huh!
 |-
 |83
-|ピュ-ときたぜ
+|Pheww, I'm here!
 |-
 |84
-|どうもどうも
+|Why, hello!
 |-
 |85
-|ビバっときたぜ
+|Viva, I'm here!
 |-
 |86
-|オレにまかせな!
+|Leave it to me!
 |-
 |87
-|もリのな-か-
+|The other day~
 |-
 |88
-|うむ ついたぞ
+|Mhm, I'm here. 
 |-
 |89
-|よ-おまたせ
+|Yo, thanks for waiting!
 |-
 |90
-|ビバっときたぜ
+|Viva, I'm here!
 |-
 |91
-|オレにまかせな!
+|Leave it to me!
 |-
 |92
-|ついたっペ
+|I'm here, ope!
 |-
 |93
-|ウキキキキ-
+|Ook eek eek eek...
 |-
 |94
-|おまたっ!
+|Finally!
 |-
 |95
-|またせたなっ!
+|Made you wait, huh!
 |-
 |96
-|きたホロウ
+|I'm here, hoo.
 |-
 |97
-|きたもんネ
+|I'm here, huh!
 |-
 |98
-|ピュ-ときたぜ
+|Pheww, I'm here!
 |-
 |99
-|や-どうも
+|Hey, what's up?
 |-
 |100
-|きたダよ!
+|I'm HERE!
 |-
 |101
-|お-また-せ-
+|Thanks for waaaiting~
 |-
 |102
-|ここでいのか?
+|Is this the place?
 |-
 |103
-|なにかようか
+|You need something?
 |-
 |104
-|おまちど-さま!
+|Thanks for waitin'!
 |-
 |105
-|どいつがあいてだ
+|Who's my enemy?
 |-
 |106
-|キュルキュルきた
+|Twirl twirl... Here!
 |-
 |107
-|きったニャ-ン
+|I'm here, meow~
 |-
 |108
-|もしもし?
+|Hello?
 |-
 |109
-|またせたなっ!
+|Made you wait, huh!
 |-
 |110
-|ブロブロロン!
+|Vrrroooom!
 |-
 |111
-|ついたよ-
+|I'm here!
 |-
 |112
-|またせたなっ!
+|Made you wait, huh!
 |-
 |113
-|おまたせしました!
+|Thanks for waiting!
 |-
 |114
-|ついたプニ
+|I'm here, puni!
 |-
 |115
-|オレにまかせな!
+|Leave it to me!
 |-
 |116
-|けんざん!
+|Arrival!
 |-
 |117
-|おまたせタコ
+|I'm here, octo.
 |-
 |118
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |119
-|シャカシャカきた
+|Snip snip, I'm here!
 |-
 |120
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |121
-|ついたよ-
+|I'm here!
 |-
 |122
-|またせたなっ!
+|Made you wait, huh!
 |-
 |123
-|おまたせしました!
+|Thanks for waiting!
 |-
 |124
-|ついたプニ
+|I'm here, puni!
 |-
 |125
-|はやかっただろ
+|Pretty quick, huh?
 |-
 |126
-|けんざん!
+|Arrival!
 |-
 |127
-|おまたせタコ
+|I'm here, octo.
 |-
 |128
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |129
-|シャカシャカきた
+|Snip snip, I'm here!
 |-
 |130
-|はやかっただろ
+|Pretty quick, huh?
 |-
 |131
-|きたっちゃよ-
+|Heh, I'm here!
 |-
 |132
-|ついたタイ!
+|I'mma here!
 |-
 |133
-|キリキリキリ
+|Cut cut cut cut
 |-
 |134
-|きたぜきたぜ-!
+|I'm here, I'm here!
 |-
 |135
-|またせたなっ!
+|Made you wait, huh!
 |-
 |136
-|オレにまかせな!
+|Leave it to me!
 |-
 |137
-|ついたっペ
+|I'm here, ope!
 |-
 |138
-|ウキキ-
+|Ook eek eek...!
 |-
 |139
-|おまたっ!
+|Finally!
 |-
 |140
-|またせたなっ!
+|Made you wait, huh!
 |-
 |141
-|きたホロウ
+|I'm here, hoo.
 |-
 |142
-|きたもんネ
+|I'm here, huh!
 |-
 |143
-|すいさんっ!
+|Pardon me!
 |-
 |144
-|よんだかね?
+|You called for me?
 |-
 |145
-|いちいちよぶな!
+|Stop calling me!
 |-
 |146
-|よんだかね?
+|You called for me?
 |-
 |147
-|ケケケよんだか?
+|Keheheh, you called?
 |-
 |148
-|.......
+|..........
 |-
 |149
-|きたんだよ-ん!
+|I'm heeere!
 |-
 |150
-|またせたなっ!
+|Made you wait, huh!
 |-
 |151
-|オレにまかせな!
+|Leave it to me!
 |-
 |152
-|ついたっペ
+|I'm here, ope!
 |-
 |153
-|またせたなっ!
+|Made you wait, huh!
 |-
 |154
-|よんだかね?
+|You called for me?
 |-
 |155
-|とうちゃくしたぜ
+|I've arrived!
 |-
 |156
-|ついたよ-
+|I'm here!
 |-
 |157
-|またせたなっ!
+|Made you wait, huh!
 |-
 |158
-|おまたせしました!
+|Thanks for waiting!
 |-
 |159
-|われをよんだか?
+|Thou hast called me?
 |-
 |160
-|またせたなっ!
+|Made you wait, huh!
 |-
 |161
-|オレにまかせな!
+|Leave it to me!
 |-
 |162
-|ついたっペ
+|I'm here, ope!
 |-
 |163
-|ウキキ-
+|Ook eek eek...!
 |-
 |164
-|いちいちよぶな!
+|Stop calling me!
 |-
 |165
-|コ-ン!
+|Howwl!
 |-
 |166
-|ヒ-ン!
+|Neighh!
 |-
 |167
-|ケ-ン!
+|Kaaaw!
 |-
 |168
-|クククク
+|Heh heh heh...
 |-
 |169
-|またせたなっ!
+|Made you wait, huh!
 |-
 |170
-|オレにまかせな!
+|Leave it to me!
 |-
 |171
-|ガガガガガガッ!
+|Gah hah hah hah!
 |-
 |172
-|もしもし-
+|Hello~?
 |-
 |173
-|きました-
+|I'm here~
 |-
 |}

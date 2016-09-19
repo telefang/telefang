@@ -1,528 +1,528 @@
 {|
 |-
 !#
-!Japanese
+!English
 |-
 |0
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |1
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |2
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |3
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |4
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |5
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |6
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |7
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |8
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |9
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |10
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |11
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |12
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |13
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |14
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |15
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |16
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |17
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |18
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |19
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |20
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |21
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |22
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |23
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |24
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |25
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |26
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |27
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |28
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |29
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |30
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |31
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |32
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |33
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |34
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |35
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |36
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |37
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |38
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |39
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |40
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |41
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |42
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |43
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |44
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |45
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |46
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |47
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |48
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |49
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |50
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |51
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |52
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |53
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |54
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |55
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |56
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |57
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |58
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |59
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |60
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |61
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |62
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |63
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |64
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |65
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |66
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |67
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |68
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |69
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |70
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |71
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |72
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |73
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |74
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |75
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |76
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |77
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |78
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |79
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |80
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |81
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |82
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |83
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |84
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |85
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |86
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |87
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |88
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |89
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |90
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |91
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |92
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |93
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |94
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |95
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |96
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |97
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |98
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |99
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |100
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |101
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |102
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |103
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |104
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |105
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |106
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |107
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |108
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |109
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |110
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |111
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |112
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |113
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |114
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |115
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |116
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |117
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |118
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |119
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |120
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |121
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |122
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |123
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |124
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |125
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |126
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |127
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |128
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |129
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |130
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |131
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |132
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |133
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |134
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |135
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |136
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |137
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |138
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |139
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |140
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |141
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |142
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |143
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |144
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |145
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |146
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |147
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |148
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |149
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |150
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |151
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |152
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |153
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |154
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |155
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |156
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |157
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |158
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |159
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |160
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |161
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |162
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |163
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |164
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |165
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |166
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |167
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |168
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |169
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |170
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |171
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |172
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |173
-|あれ?もうおわったの?
+|Huh? It's over already?
 |-
 |}

@@ -1,528 +1,528 @@
 {|
 |-
 !#
-!Japanese
+!English
 |-
 |0
-|オレのばんだな!
+|Now it's my turn!
 |-
 |1
-|やっつけてやる!
+|I'll get you!
 |-
 |2
-|いくぞっ!
+|Let's go!
 |-
 |3
-|ぐにょ-ん
+|Boingg
 |-
 |4
-|かかってこい!
+|Bring it on!
 |-
 |5
-|いたいぞ-
+|This will hurt...!
 |-
 |6
-|いきますよ-!
+|Here I go...!
 |-
 |7
-|ボチボチいくカバ
+|Hip, let's get going...
 |-
 |8
-|やるプニよ-
+|Let's go, puni...!
 |-
 |9
-|やるプルルン
+|Come on... blurp
 |-
 |10
-|そらいくぞ-!
+|And here I go!
 |-
 |11
-|いくコケ!
+|Let's go! Cluck!
 |-
 |12
-|やるぜっ!
+|Yeah! Let's do it!
 |-
 |13
-|やるよ-
+|C'mon~
 |-
 |14
-|やるタコするタコ
+|Hey octo, let's go octo.
 |-
 |15
-|...やる
+|...Bring it. 
 |-
 |16
-|さくさくいくぞ!
+|Let's make it quick!
 |-
 |17
-|やっつけるクス
+|I'll get you! Haha
 |-
 |18
-|シャカシャカさす
+|Snip snip, stab!
 |-
 |19
-|きるカニよ-
+|Crab cutting~
 |-
 |20
-|いくぜっ!
+|Here we go!
 |-
 |21
-|くらいやがれ!
+|Take this!!
 |-
 |22
-|やるっペ!
+|Let's go, ope!
 |-
 |23
-|ウッキ-!!
+|Ook eeeek!!
 |-
 |24
-|やってやる!
+|Let's do this!
 |-
 |25
-|そらいくぞ-!
+|And here I go!
 |-
 |26
-|いくホロウ
+|Here I go, hoo.
 |-
 |27
-|やっつけるもんネ
+|Gonna get you, huh!
 |-
 |28
-|サ-とやるか!
+|Swoosh, let's go!
 |-
 |29
-|いきますか!
+|Let's go?!
 |-
 |30
-|ビバッとな-!
+|Viva, yeah!!
 |-
 |31
-|きリさいてやる!
+|I'll rip you apart!
 |-
 |32
-|であった-
+|I met a bear~~
 |-
 |33
-|やっつけます!
+|I will beat you!
 |-
 |34
-|いっちょやるか!
+|Let's go for it!
 |-
 |35
-|もえつきろ!
+|Burn away!!
 |-
 |36
-|やっつけてやる!
+|I'll get you!
 |-
 |37
-|いくぞっ!
+|Let's go!
 |-
 |38
-|ぐにょ-ん
+|Boingg
 |-
 |39
-|かかってこい!
+|Bring it on!
 |-
 |40
-|いたいぞ-
+|This will hurt...!
 |-
 |41
-|いきますよ-!
+|Here I go...!
 |-
 |42
-|ボチボチいくカバ
+|Hip, let's get going...
 |-
 |43
-|やるプニよ-
+|Let's go, puni...!
 |-
 |44
-|やるブルルン
+|Come on... glurp
 |-
 |45
-|わたしのばんです
+|It's my turn.
 |-
 |46
-|トゲだらけ-!
+|Spikes all over!
 |-
 |47
-|わしのばんじゃ
+|It is my turn...
 |-
 |48
-|ねむいな-
+|So sleepy...
 |-
 |49
-|どんどんやろう!
+|Let's do it!!
 |-
 |50
-|ウネウネいくか-
+|I'm inching all out!
 |-
 |51
-|なかせてやるぞ!
+|I'll make you cry!
 |-
 |52
-|オレがたおす
+|I will end you.
 |-
 |53
-|もやしちゃうね
+|Y'all gonna burn~
 |-
 |54
-|いちころクワ
+|I'll beet you up!
 |-
 |55
-|オレのばんだな!
+|Now it's my turn!
 |-
 |56
-|やっつけてやる!
+|I'll get you!
 |-
 |57
-|いくぞっ!
+|Let's go!
 |-
 |58
-|ぐにょ-ん
+|Boingg
 |-
 |59
-|かかってこい!
+|Bring it on!
 |-
 |60
-|いたいぞ-
+|This will hurt...!
 |-
 |61
-|いきますよ-!
+|Here I go...!
 |-
 |62
-|ボチボチいくカバ
+|Hip, let's get going...
 |-
 |63
-|やるプニよ-
+|Let's go, puni...!
 |-
 |64
-|やるプルルン
+|Come on... blurp
 |-
 |65
-|そらいくぞ-!
+|And here I go!
 |-
 |66
-|いくコケ!
+|Let's go! Cluck!
 |-
 |67
-|やるぜっ!
+|Yeah! Let's do it!
 |-
 |68
-|やるよ-
+|C'mon~
 |-
 |69
-|やるタコするタコ
+|Hey octo, let's go octo.
 |-
 |70
-|...やる
+|...Bring it.
 |-
 |71
-|さくさくいくぞ!
+|Let's make it quick!
 |-
 |72
-|やっつけるクス
+|I'll get you! Haha
 |-
 |73
-|シャカシャカさす
+|Snip snip, stab!
 |-
 |74
-|きるカニよ-
+|Crab cutting~
 |-
 |75
-|いくぜっ!
+|Here we go!
 |-
 |76
-|くらいやがれ!
+|Take this!!
 |-
 |77
-|やるっペ!
+|Let's go, ope!
 |-
 |78
-|ウキウッキ-!!
+|Ook eek ook eeeek!!
 |-
 |79
-|やってやる!
+|Let's do this!
 |-
 |80
-|そらいくぞ-!
+|And here I go!
 |-
 |81
-|いくホロウ
+|Here I go, hoo.
 |-
 |82
-|やっつけるもんネ
+|Gonna get you, huh!
 |-
 |83
-|サ-とやるか!
+|Swoosh, let's go!
 |-
 |84
-|いきますか!
+|Let's go?!
 |-
 |85
-|ビバッとな-!
+|Viva, yeah!!
 |-
 |86
-|きリさいてやる!
+|I'll rip you apart!
 |-
 |87
-|であった-
+|I met a bear~~
 |-
 |88
-|よがたおす
+|I'll defeat them all.
 |-
 |89
-|いっちょやるか!
+|Let's go for it!
 |-
 |90
-|ビバッとな-!
+|Viva, yeah!!
 |-
 |91
-|くらいやがれ!
+|Take this!!
 |-
 |92
-|やるっペ!
+|Let's go, ope!
 |-
 |93
-|ウワッキ-!!
+|Ooookeee!!
 |-
 |94
-|やってやる!
+|Let's do this!
 |-
 |95
-|そらいくぞ-!
+|And here I go!
 |-
 |96
-|やるホロウ
+|Let's do it, hoo. 
 |-
 |97
-|ピカるもんネ
+|Gonna shine, huh!
 |-
 |98
-|サ-とやるか!
+|Swoosh, let's go!
 |-
 |99
-|いっときますか!
+|Time to go!
 |-
 |100
-|やっつけるダす!
+|I'll BEAT you!
 |-
 |101
-|あらよっと!
+|Ally-oop!
 |-
 |102
-|つぶせばいのか
+|Can I smash them?
 |-
 |103
-|きリすてる!
+|Slice them away!
 |-
 |104
-|ショ-タイム!
+|Showtime!
 |-
 |105
-|ちからをみせるぞ
+|I'll show you my power!
 |-
 |106
-|キュルキュルやる
+|Twirl twirl... Let's go!
 |-
 |107
-|たおすニャ-ン
+|I'll beat you, meow~
 |-
 |108
-|ハイハイ!
+|Alright!
 |-
 |109
-|いくぜっ!
+|Here we go!
 |-
 |110
-|さっさといくぜ!
+|Let's get going!
 |-
 |111
-|いくぞっ!
+|Let's go!
 |-
 |112
-|かかってこい!
+|Bring it on!
 |-
 |113
-|いきますよ-!
+|Here I go...!
 |-
 |114
-|やるプニよ-
+|Let's go, puni...!
 |-
 |115
-|くらいやがれ!
+|Take this!!
 |-
 |116
-|やるぜっ!
+|Yeah! Let's do it!
 |-
 |117
-|やるタコするタコ
+|Hey octo, let's go octo.
 |-
 |118
-|さくさくいくぞ!
+|Let's make it quick!
 |-
 |119
-|シャカシャカさす
+|Snip snip, stab!
 |-
 |120
-|オレのばんだな!
+|Now it's my turn!
 |-
 |121
-|いくぞっ!
+|Let's go!
 |-
 |122
-|かかってこい!
+|Bring it on!
 |-
 |123
-|いきますよ-!
+|Here I go...!
 |-
 |124
-|やるプニよ-
+|Let's go, puni...!
 |-
 |125
-|そらいくぞ-!
+|And here I go!
 |-
 |126
-|やるぜっ!
+|Yeah! Let's do it!
 |-
 |127
-|やるタコするタコ
+|Hey octo, let's go octo.
 |-
 |128
-|さくさくいくぞ!
+|Let's make it quick!
 |-
 |129
-|シャカシャカさす
+|Snip snip, stab!
 |-
 |130
-|やるぜ!
+|Let's do it!
 |-
 |131
-|やるっちゃ!
+|Heh, let's go!
 |-
 |132
-|ドンやるたい!
+|Let's overdo it!
 |-
 |133
-|サスサスサスサス
+|Snip snip snip
 |-
 |134
-|パッとやるか!
+|In a flash!
 |-
 |135
-|いくぜっ!
+|Here we go!
 |-
 |136
-|くらいやがれ!
+|Take this!!
 |-
 |137
-|やるっペ!
+|Let's go, ope!
 |-
 |138
-|ウッキ-!!
+|Ook eeeek!!
 |-
 |139
-|やってやる!
+|Let's do this!
 |-
 |140
-|そらいくぞ-!
+|And here I go!
 |-
 |141
-|いくホロウ
+|Here I go, hoo.
 |-
 |142
-|やっつけるもんネ
+|Gonna get you, huh!
 |-
 |143
-|すベてたおす!
+|Defeat them all!
 |-
 |144
-|わたしがたおす!
+|I'll destroy you!
 |-
 |145
-|おもいしれ!
+|Know your place!
 |-
 |146
-|おもいしるがいい!
+|Realize your weakness!
 |-
 |147
-|ケケケいくか!
+|Keheheh, let's go!
 |-
 |148
-|...ちィッ
+|...Tch.
 |-
 |149
-|エヘヘやっつける
+|Ehehe, come on!
 |-
 |150
-|いくぜっ!
+|Here we go!
 |-
 |151
-|くらいやがれ!
+|Take this!!
 |-
 |152
-|やるっペ!
+|Let's go, ope!
 |-
 |153
-|そらいくぞ-!
+|And here I go!
 |-
 |154
-|おもいしるがいい!
+|Realize your weakness!
 |-
 |155
-|オレのばんだな!
+|Now it's my turn!
 |-
 |156
-|やっつけてやる!
+|I'll get you!
 |-
 |157
-|かかってこい!
+|Bring it on!
 |-
 |158
-|いきますよ-!
+|Here I go...!
 |-
 |159
-|めにやきつけろ!
+|Burn it into your eyes!
 |-
 |160
-|いくぜっ!
+|Here we go!
 |-
 |161
-|くらいやがれ!
+|Take this!!
 |-
 |162
-|やるっペ!
+|Let's go, ope!
 |-
 |163
-|ウッキ-!!
+|Ook eeeek!!
 |-
 |164
-|あまいッ!!
+|Too weak!!
 |-
 |165
-|そこかっ!
+|...There!
 |-
 |166
-|もえつきろっ!
+|Burn away!!
 |-
 |167
-|すベてをはいに!
+|All to ashes!
 |-
 |168
-|すベてたおす!
+|Defeat them all!
 |-
 |169
-|いくぜっ!
+|Here we go!
 |-
 |170
-|くらいやがれ!
+|Take this!!
 |-
 |171
-|ジゴクにおちろ!
+|Go to hell!
 |-
 |172
-|じゃ-いくね-
+|Well, here I go~
 |-
 |173
-|エヘやっつけるね
+|Ehe, I'll get you!
 |-
 |}

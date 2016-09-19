@@ -1,420 +1,420 @@
 {|
 |-
 !#
-!Japanese
+!English
 |-
 |0
-|ダミ-0
+|Dummy 0
 |-
 |1
-|つめ
+|Claw
 |-
 |2
-|とっしん
+|Rush
 |-
 |3
-|なぐる
+|Strike
 |-
 |4
-|ネコパンチ
+|Cat Punch
 |-
 |5
-|バイソンハンマ-
+|Bison Hammer
 |-
 |6
-|けリ
+|Kick
 |-
 |7
-|シッポ
+|Tail
 |-
 |8
-|つの
+|Horn
 |-
 |9
-|クチバシ
+|Beak
 |-
 |10
-|どくバリ
+|Poison Sting
 |-
 |11
-|しびれバリ
+|Numbing Sting
 |-
 |12
-|ハサミ
+|Scissor
 |-
 |13
-|サ-ベル
+|Sabre
 |-
 |14
-|かみつき
+|Bite
 |-
 |15
-|ボディプレス
+|Body Press
 |-
 |16
-|つのドリル
+|Horn Drill
 |-
 |17
-|キュウケツ
+|Bloodsuck
 |-
 |18
-|シュリケン
+|Shuriken
 |-
 |19
-|ボウガン
+|Bowgun
 |-
 |20
-|バイソンビ-ム
+|Bison Beam
 |-
 |21
-|くわがたビ-ム
+|Stag Beam
 |-
 |22
-|はどうビ-ム
+|Pulse Beam
 |-
 |23
-|プラズマレ-ザ-
+|Plasma Laser
 |-
 |24
-|メガランチャ-
+|Mega Launcher
 |-
 |25
-|メガキャノン
+|Mega Cannon
 |-
 |26
-|メガライフル
+|Mega Rifle
 |-
 |27
-|ドリルミサイル
+|Drill Missile
 |-
 |28
-|ハイパ-ミサイル
+|Hyper Missile
 |-
 |29
-|ドラゴンミサイル
+|Dragon Missile
 |-
 |30
-|ペンギンミサイル
+|Penguin Missile
 |-
 |31
-|ミサイルポッド
+|Missile Pod
 |-
 |32
-|クニクズシ
+|War Cannon
 |-
 |33
-|もリミサイル
+|Harpoon Missile
 |-
 |34
-|ツノランチャ-
+|Horn Launcher
 |-
 |35
-|トリバズ-カ
+|Bird Bazooka
 |-
 |36
-|ハナマグナム
+|Nose Magnum
 |-
 |37
-|ミミバルカン
+|Ear Vulcan
 |-
 |38
-|キババルカン
+|Fang Vulcan
 |-
 |39
-|マシンガン
+|Machine Gun
 |-
 |40
-|カエンホウシャ
+|Flamethrower
 |-
 |41
-|プチフレイム
+|Mini Flame
 |-
 |42
-|メガフレイム
+|Mega Flame
 |-
 |43
-|カマイタチ
+|Kamaitachi
 |-
 |44
-|ハリケ-ン
+|Hurricane
 |-
 |45
-|プチザ-ド
+|Mini Snow
 |-
 |46
-|ブリザ-ド
+|Blizzard
 |-
 |47
-|タマゴバクダン
+|Egg Bomb
 |-
 |48
-|うずしお
+|Whirlpool
 |-
 |49
-|おおつなみ
+|Tsunami
 |-
 |50
-|プチボルト
+|Mini Bolt
 |-
 |51
-|メガボルト
+|Mega Bolt
 |-
 |52
-|じしん
+|Earthquake
 |-
 |53
-|おおじしん
+|Mega Quake
 |-
 |54
-|ロック
+|Rock
 |-
 |55
-|メガロック
+|Mega Rock
 |-
 |56
-|スピ-ド
+|Speed Up
 |-
 |57
-|しゅうちゅう
+|Focus
 |-
 |58
-|よける
+|Avoid
 |-
 |59
-|ふんき
+|Invigorate
 |-
 |60
-|じゅうでん
+|Charge Up
 |-
 |61
-|なおす
+|Heal
 |-
 |62
-|かいふく
+|Recover
 |-
 |63
-|だいかいふく
+|Restore
 |-
 |64
-|シ-ルド
+|Shield
 |-
 |65
-|まもる
+|Protect
 |-
 |66
-|てっペき
+|Iron Wall
 |-
 |67
-|カムフラ-ジュ
+|Camouflage
 |-
 |68
-|ちょうおんぱ
+|Ultrasonic
 |-
 |69
-|デンジウエ-ブ
+|EM Wave
 |-
 |70
-|のろいのうた
+|Curse Song
 |-
 |71
-|こもリうた
+|Lullaby
 |-
 |72
-|にらむ
+|Glare
 |-
 |73
-|ねむリガス
+|Sleep Gas
 |-
 |74
-|えんまく
+|Smokescreen
 |-
 |75
-|どくガス
+|Poison Gas
 |-
 |76
-|ジャンプ
+|Jump
 |-
 |77
-|ひこう
+|Flight
 |-
 |78
-|さけぶ
+|Scream
 |-
 |79
-|はばたく
+|Wingbeat
 |-
 |80
-|でんじバリア
+|EM Barrier
 |-
 |81
-|けっかい
+|Force Field
 |-
 |82
-|れいき
+|Chill
 |-
 |83
-|おんぷう
+|Heat Wave
 |-
 |84
-|てっぽうみず
+|Water Shot
 |-
 |85
-|ようかいえき
+|Acid
 |-
 |86
-|なめる
+|Lick
 |-
 |87
-|しょくしゅ
+|Tentacle
 |-
 |88
-|こおリだま
+|Ice Ball
 |-
 |89
-|パラメ-タダウン
+|Stat Down
 |-
 |90
-|ステ-タスもどる
+|Status Return
 |-
 |91
-|アイアンクロ-
+|Iron Claw
 |-
 |92
-|とつげき
+|Assault
 |-
 |93
-|ミサイルパンチ
+|Missile Punch
 |-
 |94
-|カミソリパンチ
+|Razor Punch
 |-
 |95
-|ひづめ
+|Hoof
 |-
 |96
-|ハイキック
+|High Kick
 |-
 |97
-|ミドルキック
+|Middle Kick
 |-
 |98
-|つき
+|Stab
 |-
 |99
-|トリプルアタック
+|Triple Attack
 |-
 |100
-|もうどくバリ
+|Toxic Sting
 |-
 |101
-|でんきバリ
+|Electric Sting
 |-
 |102
-|クロスアタック
+|Cross Attack
 |-
 |103
-|しんくうぎリ
+|Vacuum Slash
 |-
 |104
-|キバクラッシュ
+|Fang Crush
 |-
 |105
-|あしげ
+|Punt
 |-
 |106
-|スクリュ-ホ-ン
+|Screw Horn
 |-
 |107
-|ドレイン
+|Drain
 |-
 |108
-|デンマシュリケン
+|Denma Shuriken
 |-
 |109
-|とげ
+|Needle
 |-
 |110
-|はやあし
+|Quick Step
 |-
 |111
-|ねらう
+|Aim
 |-
 |112
-|かいひ
+|Evade
 |-
 |113
-|ふんばる
+|Brace
 |-
 |114
-|ダミ-1
+|Dummy 1
 |-
 |115
-|ちリょう
+|First Aid
 |-
 |116
-|リピア-
+|Repair
 |-
 |117
-|ダミ-2
+|Dummy 2
 |-
 |118
-|シャッタ-
+|Shutter
 |-
 |119
-|ぼうぎょ
+|Defend
 |-
 |120
-|ダミ-3
+|Dummy 3
 |-
 |121
-|かくれる
+|Conceal
 |-
 |122
-|でんじは
+|EM Pulse
 |-
 |123
-|しょうげきは
+|Shockwave
 |-
 |124
-|ダミ-4
+|Dummy 4
 |-
 |125
-|ダミ-5
+|Dummy 5
 |-
 |126
-|みつめる
+|Stare
 |-
 |127
-|ダミ-6
+|Dummy 6
 |-
 |128
-|ダミ-7
+|Dummy 7
 |-
 |129
-|ダミ-8
+|Dummy 8
 |-
 |130
-|ダミ-9
+|Dummy 9
 |-
 |131
-|ダミ-10
+|Dummy 10
 |-
 |132
-|はぎしリ
+|Tooth Grind
 |-
 |133
-|すなぼこリ
+|Dust Cloud
 |-
 |134
-|でんきすだれ
+|Electro Screen
 |-
 |135
-|まふうじ
+|Denma Seal
 |-
 |136
-|フロストブレス
+|Frost Breath
 |-
 |137
-|はなふぶき
+|Petal Storm
 |-
 |}
