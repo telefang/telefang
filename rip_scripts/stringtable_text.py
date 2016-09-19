@@ -127,7 +127,7 @@ def asm(args):
     
     for table in tablenames:
         print u'SECTION "' + table["symbol"] + u' Section", ' + mainscript_text.format_sectionaddr_rom(mainscript_text.flat(table["basebank"], table["baseaddr"]))
-        print table["symbol"] + u':'
+        print table["symbol"] + u'::'
         print u'\tINCBIN "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + u'"'
         print table["symbol"] + u'_END'
         print u''

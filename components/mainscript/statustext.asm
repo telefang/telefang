@@ -98,6 +98,22 @@ MainScript_DrawCenteredDenjuuName::
 	pop hl
 	ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
 	jp Banked_MainScript_DrawStatusText
+   
+;3B09
+MainScript_DrawShortName::
+    ld [W_StringTable_ROMTblIndex], a
+    push bc
+    push de
+    pop hl
+    call $558
+    pop hl
+    push hl
+    ld a, 4
+    call MainScript_DrawEmptySpaces
+    pop hl
+    ld de, W_StringTable_StagingLoc
+    ld b, M_StringTable_Load4AreaSize
+    jp Banked_MainScript_DrawStatusText
 
 SECTION "Main Script Status Text Drawing Advice", ROM0[$0077]
 ;Part of a function that replaces status text drawing with the VWF.
