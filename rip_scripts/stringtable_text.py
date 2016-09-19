@@ -64,7 +64,7 @@ def extract(args):
             
             for i in range(table["count"]):
                 wikitext.append(u"|-")
-                wikitext.append(u"|{0}".format(i))
+                wikitext.append(u"|{0}".format(i + 1))
 
                 rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"] + i * table["stride"]))
                 
