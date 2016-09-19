@@ -114,9 +114,6 @@ def extract(args):
             with io.open(wikipath, "w+", encoding="utf-8") as table_wikitext:
                 table_wikitext.write(wikitext)
 
-def make_tbl(args):
-    pass
-
 def asm(args):
     """Generate the ASM for string tables.
 
@@ -134,6 +131,54 @@ def asm(args):
         print u'\tINCBIN "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + u'"'
         print table["symbol"] + u'_END'
         print u''
+
+def make_tbl(args):
+    charmap = mainscript_text.parse_charmap(args.charmap)
+    tablenames = parse_tablenames(args.tablenames)
+    
+    for bank in tablenames:
+        print "Compiling " + bank["filename"]
+        #If filenames are specified, only export banks that are mentioned there
+        if len(args.filenames) > 0 and bank["objname"] not in args.filenames:
+            continue
+
+        #Open and parse the data
+        with io.open(os.path.join(args.output, bank["filename"]), "r", encoding="utf-8") as wikifile:
+            rows, headers = mainscript_text.parse_wikitext(wikifile.read())
+
+        #Determine what column we want
+        str_col = headers.index(args.language)
+        index_col = headers.index(u"#")
+
+        #Pack our strings
+        packed_strings = []
+        
+        baseaddr = bank["baseaddr"]
+        lastbk = None
+
+        for i, row in enumerate(rows):
+            if str_col >= len(row):
+                print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
+                packed_strings.append("")
+                continue
+            
+            packed = mainscript_text.pack_string(row[str_col], charmap, None, args.window_width, True)
+            
+            if len(packed) > bank["stride"]:
+                print "WARNING: Row {} is too long for the current string table stride of {} in table {}.".format(i, bank["stride"], bank["filename"])
+                packed = packed[0:bank["stride"]]
+            else:
+                #Pad the string out with E0s.
+                packed = packed + "".join(["\xe0"] * (bank["stride"] - len(packed)))
+            
+            packed_strings.append(packed)
+
+            baseaddr += len(packed)
+        
+        #Write the data out to the object files. We're done here!
+        with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
+            for line in packed_strings:
+                objfile.write(line)
 
 def main():
     ap = argparse.ArgumentParser()
