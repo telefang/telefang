@@ -18,7 +18,7 @@ MainScript_battle_tfangers:
 	INCBIN "script/battle/tfangers.stringtbl"
 MainScript_battle_tfangers_END
 
-SECTION "MainScript_battle_attacks Section", ROMX[$4648], BANK[$75]
+SECTION "MainScript_battle_attacks Section", ROMX[$46f8], BANK[$75]
 MainScript_battle_attacks:
 	INCBIN "script/battle/attacks.stringtbl"
 MainScript_battle_attacks_END

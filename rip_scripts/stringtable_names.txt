@@ -9,7 +9,7 @@ battle/items 2E652 8 68
 denjuu/nicknames 2F8FA 4 22
 denjuu/species 1D4000 8 174
 battle/tfangers 1D4578 8 48
-battle/attacks 1D4648 8 138
+battle/attacks 1D46F8 8 138
 denjuu/habitats 1D5628 4 6
 battle/arrive_phrases 1D5888 16 174
 battle/attack_phrases 1D6368 16 174
