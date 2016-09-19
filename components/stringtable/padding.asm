@@ -99,12 +99,13 @@ StringTable_ADVICE_PadCopyBuffer::
 	;Now, count how many unused bytes are in the source buffer...
 .sourceTrashCountLoop
 	dec c
-	jr z, .noMoreTrashBytes
+	jr z, .forSomeReasonWeBranchHere
 	ld a, [hli]
 	cp $E0
 	jr nz, .sourceTrashCountLoop
 	
 	;Now half (round down) the count of trash bytes
+	srl c
 	srl c
 	ld a, c
 	or a
@@ -117,6 +118,8 @@ StringTable_ADVICE_PadCopyBuffer::
 	ld [de], a
 	inc de
 	dec c
+   
+.forSomeReasonWeBranchHere
 	jr nz, .firstAddSpacesLoop
 	
 .noMoreTrashBytes
