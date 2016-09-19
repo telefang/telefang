@@ -3,526 +3,526 @@
 !#
 !English
 |-
-|0
-|Now it's my turn!
-|-
 |1
-|I'll get you!
+|Now it's my turn!
 |-
 |2
-|Let's go!
+|I'll get you!
 |-
 |3
-|Boingg
+|Let's go!
 |-
 |4
-|Bring it on!
+|Boingg
 |-
 |5
-|This will hurt...!
+|Bring it on!
 |-
 |6
-|Here I go...!
+|This will hurt...!
 |-
 |7
-|Hip, let's get going...
+|Here I go...!
 |-
 |8
-|Let's go, puni...!
+|Hip, let's get going...
 |-
 |9
-|Come on... blurp
+|Let's go, puni...!
 |-
 |10
-|And here I go!
-|-
-|11
-|Let's go! Cluck!
-|-
-|12
-|Yeah! Let's do it!
-|-
-|13
-|C'mon~
-|-
-|14
-|Hey octo, let's go octo.
-|-
-|15
-|...Bring it. 
-|-
-|16
-|Let's make it quick!
-|-
-|17
-|I'll get you! Haha
-|-
-|18
-|Snip snip, stab!
-|-
-|19
-|Crab cutting~
-|-
-|20
-|Here we go!
-|-
-|21
-|Take this!!
-|-
-|22
-|Let's go, ope!
-|-
-|23
-|Ook eeeek!!
-|-
-|24
-|Let's do this!
-|-
-|25
-|And here I go!
-|-
-|26
-|Here I go, hoo.
-|-
-|27
-|Gonna get you, huh!
-|-
-|28
-|Swoosh, let's go!
-|-
-|29
-|Let's go?!
-|-
-|30
-|Viva, yeah!!
-|-
-|31
-|I'll rip you apart!
-|-
-|32
-|I met a bear~~
-|-
-|33
-|I will beat you!
-|-
-|34
-|Let's go for it!
-|-
-|35
-|Burn away!!
-|-
-|36
-|I'll get you!
-|-
-|37
-|Let's go!
-|-
-|38
-|Boingg
-|-
-|39
-|Bring it on!
-|-
-|40
-|This will hurt...!
-|-
-|41
-|Here I go...!
-|-
-|42
-|Hip, let's get going...
-|-
-|43
-|Let's go, puni...!
-|-
-|44
-|Come on... glurp
-|-
-|45
-|It's my turn.
-|-
-|46
-|Spikes all over!
-|-
-|47
-|It is my turn...
-|-
-|48
-|So sleepy...
-|-
-|49
-|Let's do it!!
-|-
-|50
-|I'm inching all out!
-|-
-|51
-|I'll make you cry!
-|-
-|52
-|I will end you.
-|-
-|53
-|Y'all gonna burn~
-|-
-|54
-|I'll beet you up!
-|-
-|55
-|Now it's my turn!
-|-
-|56
-|I'll get you!
-|-
-|57
-|Let's go!
-|-
-|58
-|Boingg
-|-
-|59
-|Bring it on!
-|-
-|60
-|This will hurt...!
-|-
-|61
-|Here I go...!
-|-
-|62
-|Hip, let's get going...
-|-
-|63
-|Let's go, puni...!
-|-
-|64
 |Come on... blurp
 |-
-|65
+|11
 |And here I go!
 |-
-|66
+|12
 |Let's go! Cluck!
 |-
-|67
+|13
 |Yeah! Let's do it!
 |-
-|68
+|14
 |C'mon~
 |-
-|69
+|15
 |Hey octo, let's go octo.
 |-
-|70
-|...Bring it.
+|16
+|...Bring it. 
 |-
-|71
+|17
 |Let's make it quick!
 |-
-|72
+|18
 |I'll get you! Haha
 |-
-|73
+|19
 |Snip snip, stab!
 |-
-|74
+|20
 |Crab cutting~
 |-
-|75
+|21
 |Here we go!
 |-
-|76
+|22
 |Take this!!
 |-
-|77
+|23
 |Let's go, ope!
 |-
-|78
-|Ook eek ook eeeek!!
+|24
+|Ook eeeek!!
 |-
-|79
+|25
 |Let's do this!
 |-
-|80
+|26
 |And here I go!
 |-
-|81
+|27
 |Here I go, hoo.
 |-
-|82
+|28
 |Gonna get you, huh!
 |-
-|83
+|29
 |Swoosh, let's go!
 |-
-|84
+|30
 |Let's go?!
 |-
-|85
+|31
 |Viva, yeah!!
 |-
-|86
+|32
 |I'll rip you apart!
 |-
-|87
+|33
 |I met a bear~~
 |-
-|88
-|I'll defeat them all.
+|34
+|I will beat you!
 |-
-|89
+|35
 |Let's go for it!
 |-
-|90
-|Viva, yeah!!
-|-
-|91
-|Take this!!
-|-
-|92
-|Let's go, ope!
-|-
-|93
-|Ooookeee!!
-|-
-|94
-|Let's do this!
-|-
-|95
-|And here I go!
-|-
-|96
-|Let's do it, hoo. 
-|-
-|97
-|Gonna shine, huh!
-|-
-|98
-|Swoosh, let's go!
-|-
-|99
-|Time to go!
-|-
-|100
-|I'll BEAT you!
-|-
-|101
-|Ally-oop!
-|-
-|102
-|Can I smash them?
-|-
-|103
-|Slice them away!
-|-
-|104
-|Showtime!
-|-
-|105
-|I'll show you my power!
-|-
-|106
-|Twirl twirl... Let's go!
-|-
-|107
-|I'll beat you, meow~
-|-
-|108
-|Alright!
-|-
-|109
-|Here we go!
-|-
-|110
-|Let's get going!
-|-
-|111
-|Let's go!
-|-
-|112
-|Bring it on!
-|-
-|113
-|Here I go...!
-|-
-|114
-|Let's go, puni...!
-|-
-|115
-|Take this!!
-|-
-|116
-|Yeah! Let's do it!
-|-
-|117
-|Hey octo, let's go octo.
-|-
-|118
-|Let's make it quick!
-|-
-|119
-|Snip snip, stab!
-|-
-|120
-|Now it's my turn!
-|-
-|121
-|Let's go!
-|-
-|122
-|Bring it on!
-|-
-|123
-|Here I go...!
-|-
-|124
-|Let's go, puni...!
-|-
-|125
-|And here I go!
-|-
-|126
-|Yeah! Let's do it!
-|-
-|127
-|Hey octo, let's go octo.
-|-
-|128
-|Let's make it quick!
-|-
-|129
-|Snip snip, stab!
-|-
-|130
-|Let's do it!
-|-
-|131
-|Heh, let's go!
-|-
-|132
-|Let's overdo it!
-|-
-|133
-|Snip snip snip
-|-
-|134
-|In a flash!
-|-
-|135
-|Here we go!
-|-
-|136
-|Take this!!
-|-
-|137
-|Let's go, ope!
-|-
-|138
-|Ook eeeek!!
-|-
-|139
-|Let's do this!
-|-
-|140
-|And here I go!
-|-
-|141
-|Here I go, hoo.
-|-
-|142
-|Gonna get you, huh!
-|-
-|143
-|Defeat them all!
-|-
-|144
-|I'll destroy you!
-|-
-|145
-|Know your place!
-|-
-|146
-|Realize your weakness!
-|-
-|147
-|Keheheh, let's go!
-|-
-|148
-|...Tch.
-|-
-|149
-|Ehehe, come on!
-|-
-|150
-|Here we go!
-|-
-|151
-|Take this!!
-|-
-|152
-|Let's go, ope!
-|-
-|153
-|And here I go!
-|-
-|154
-|Realize your weakness!
-|-
-|155
-|Now it's my turn!
-|-
-|156
-|I'll get you!
-|-
-|157
-|Bring it on!
-|-
-|158
-|Here I go...!
-|-
-|159
-|Burn it into your eyes!
-|-
-|160
-|Here we go!
-|-
-|161
-|Take this!!
-|-
-|162
-|Let's go, ope!
-|-
-|163
-|Ook eeeek!!
-|-
-|164
-|Too weak!!
-|-
-|165
-|...There!
-|-
-|166
+|36
 |Burn away!!
 |-
-|167
-|All to ashes!
+|37
+|I'll get you!
 |-
-|168
-|Defeat them all!
+|38
+|Let's go!
 |-
-|169
+|39
+|Boingg
+|-
+|40
+|Bring it on!
+|-
+|41
+|This will hurt...!
+|-
+|42
+|Here I go...!
+|-
+|43
+|Hip, let's get going...
+|-
+|44
+|Let's go, puni...!
+|-
+|45
+|Come on... glurp
+|-
+|46
+|It's my turn.
+|-
+|47
+|Spikes all over!
+|-
+|48
+|It is my turn...
+|-
+|49
+|So sleepy...
+|-
+|50
+|Let's do it!!
+|-
+|51
+|I'm inching all out!
+|-
+|52
+|I'll make you cry!
+|-
+|53
+|I will end you.
+|-
+|54
+|Y'all gonna burn~
+|-
+|55
+|I'll beet you up!
+|-
+|56
+|Now it's my turn!
+|-
+|57
+|I'll get you!
+|-
+|58
+|Let's go!
+|-
+|59
+|Boingg
+|-
+|60
+|Bring it on!
+|-
+|61
+|This will hurt...!
+|-
+|62
+|Here I go...!
+|-
+|63
+|Hip, let's get going...
+|-
+|64
+|Let's go, puni...!
+|-
+|65
+|Come on... blurp
+|-
+|66
+|And here I go!
+|-
+|67
+|Let's go! Cluck!
+|-
+|68
+|Yeah! Let's do it!
+|-
+|69
+|C'mon~
+|-
+|70
+|Hey octo, let's go octo.
+|-
+|71
+|...Bring it.
+|-
+|72
+|Let's make it quick!
+|-
+|73
+|I'll get you! Haha
+|-
+|74
+|Snip snip, stab!
+|-
+|75
+|Crab cutting~
+|-
+|76
 |Here we go!
 |-
-|170
+|77
 |Take this!!
 |-
+|78
+|Let's go, ope!
+|-
+|79
+|Ook eek ook eeeek!!
+|-
+|80
+|Let's do this!
+|-
+|81
+|And here I go!
+|-
+|82
+|Here I go, hoo.
+|-
+|83
+|Gonna get you, huh!
+|-
+|84
+|Swoosh, let's go!
+|-
+|85
+|Let's go?!
+|-
+|86
+|Viva, yeah!!
+|-
+|87
+|I'll rip you apart!
+|-
+|88
+|I met a bear~~
+|-
+|89
+|I'll defeat them all.
+|-
+|90
+|Let's go for it!
+|-
+|91
+|Viva, yeah!!
+|-
+|92
+|Take this!!
+|-
+|93
+|Let's go, ope!
+|-
+|94
+|Ooookeee!!
+|-
+|95
+|Let's do this!
+|-
+|96
+|And here I go!
+|-
+|97
+|Let's do it, hoo. 
+|-
+|98
+|Gonna shine, huh!
+|-
+|99
+|Swoosh, let's go!
+|-
+|100
+|Time to go!
+|-
+|101
+|I'll BEAT you!
+|-
+|102
+|Ally-oop!
+|-
+|103
+|Can I smash them?
+|-
+|104
+|Slice them away!
+|-
+|105
+|Showtime!
+|-
+|106
+|I'll show you my power!
+|-
+|107
+|Twirl twirl... Let's go!
+|-
+|108
+|I'll beat you, meow~
+|-
+|109
+|Alright!
+|-
+|110
+|Here we go!
+|-
+|111
+|Let's get going!
+|-
+|112
+|Let's go!
+|-
+|113
+|Bring it on!
+|-
+|114
+|Here I go...!
+|-
+|115
+|Let's go, puni...!
+|-
+|116
+|Take this!!
+|-
+|117
+|Yeah! Let's do it!
+|-
+|118
+|Hey octo, let's go octo.
+|-
+|119
+|Let's make it quick!
+|-
+|120
+|Snip snip, stab!
+|-
+|121
+|Now it's my turn!
+|-
+|122
+|Let's go!
+|-
+|123
+|Bring it on!
+|-
+|124
+|Here I go...!
+|-
+|125
+|Let's go, puni...!
+|-
+|126
+|And here I go!
+|-
+|127
+|Yeah! Let's do it!
+|-
+|128
+|Hey octo, let's go octo.
+|-
+|129
+|Let's make it quick!
+|-
+|130
+|Snip snip, stab!
+|-
+|131
+|Let's do it!
+|-
+|132
+|Heh, let's go!
+|-
+|133
+|Let's overdo it!
+|-
+|134
+|Snip snip snip
+|-
+|135
+|In a flash!
+|-
+|136
+|Here we go!
+|-
+|137
+|Take this!!
+|-
+|138
+|Let's go, ope!
+|-
+|139
+|Ook eeeek!!
+|-
+|140
+|Let's do this!
+|-
+|141
+|And here I go!
+|-
+|142
+|Here I go, hoo.
+|-
+|143
+|Gonna get you, huh!
+|-
+|144
+|Defeat them all!
+|-
+|145
+|I'll destroy you!
+|-
+|146
+|Know your place!
+|-
+|147
+|Realize your weakness!
+|-
+|148
+|Keheheh, let's go!
+|-
+|149
+|...Tch.
+|-
+|150
+|Ehehe, come on!
+|-
+|151
+|Here we go!
+|-
+|152
+|Take this!!
+|-
+|153
+|Let's go, ope!
+|-
+|154
+|And here I go!
+|-
+|155
+|Realize your weakness!
+|-
+|156
+|Now it's my turn!
+|-
+|157
+|I'll get you!
+|-
+|158
+|Bring it on!
+|-
+|159
+|Here I go...!
+|-
+|160
+|Burn it into your eyes!
+|-
+|161
+|Here we go!
+|-
+|162
+|Take this!!
+|-
+|163
+|Let's go, ope!
+|-
+|164
+|Ook eeeek!!
+|-
+|165
+|Too weak!!
+|-
+|166
+|...There!
+|-
+|167
+|Burn away!!
+|-
+|168
+|All to ashes!
+|-
+|169
+|Defeat them all!
+|-
+|170
+|Here we go!
+|-
 |171
-|Go to hell!
+|Take this!!
 |-
 |172
-|Well, here I go~
+|Go to hell!
 |-
 |173
+|Well, here I go~
+|-
+|174
 |Ehe, I'll get you!
 |-
 |}

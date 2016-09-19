@@ -3,418 +3,418 @@
 !#
 !English
 |-
-|0
+|1
 |Dummy 0
 |-
-|1
+|2
 |Claw
 |-
-|2
+|3
 |Rush
 |-
-|3
+|4
 |Strike
 |-
-|4
+|5
 |Cat Punch
 |-
-|5
+|6
 |Bison Hammer
 |-
-|6
+|7
 |Kick
 |-
-|7
+|8
 |Tail
 |-
-|8
+|9
 |Horn
 |-
-|9
+|10
 |Beak
 |-
-|10
+|11
 |Poison Sting
 |-
-|11
+|12
 |Numbing Sting
 |-
-|12
+|13
 |Scissor
 |-
-|13
+|14
 |Sabre
 |-
-|14
+|15
 |Bite
 |-
-|15
+|16
 |Body Press
 |-
-|16
+|17
 |Horn Drill
 |-
-|17
+|18
 |Bloodsuck
 |-
-|18
+|19
 |Shuriken
 |-
-|19
+|20
 |Bowgun
 |-
-|20
+|21
 |Bison Beam
 |-
-|21
+|22
 |Stag Beam
 |-
-|22
+|23
 |Pulse Beam
 |-
-|23
+|24
 |Plasma Laser
 |-
-|24
+|25
 |Mega Launcher
 |-
-|25
+|26
 |Mega Cannon
 |-
-|26
+|27
 |Mega Rifle
 |-
-|27
+|28
 |Drill Missile
 |-
-|28
+|29
 |Hyper Missile
 |-
-|29
+|30
 |Dragon Missile
 |-
-|30
+|31
 |Penguin Missile
 |-
-|31
+|32
 |Missile Pod
 |-
-|32
+|33
 |War Cannon
 |-
-|33
+|34
 |Harpoon Missile
 |-
-|34
+|35
 |Horn Launcher
 |-
-|35
+|36
 |Bird Bazooka
 |-
-|36
+|37
 |Nose Magnum
 |-
-|37
+|38
 |Ear Vulcan
 |-
-|38
+|39
 |Fang Vulcan
 |-
-|39
+|40
 |Machine Gun
 |-
-|40
+|41
 |Flamethrower
 |-
-|41
+|42
 |Mini Flame
 |-
-|42
+|43
 |Mega Flame
 |-
-|43
+|44
 |Kamaitachi
 |-
-|44
+|45
 |Hurricane
 |-
-|45
+|46
 |Mini Snow
 |-
-|46
+|47
 |Blizzard
 |-
-|47
+|48
 |Egg Bomb
 |-
-|48
+|49
 |Whirlpool
 |-
-|49
+|50
 |Tsunami
 |-
-|50
+|51
 |Mini Bolt
 |-
-|51
+|52
 |Mega Bolt
 |-
-|52
+|53
 |Earthquake
 |-
-|53
+|54
 |Mega Quake
 |-
-|54
+|55
 |Rock
 |-
-|55
+|56
 |Mega Rock
 |-
-|56
+|57
 |Speed Up
 |-
-|57
+|58
 |Focus
 |-
-|58
+|59
 |Avoid
 |-
-|59
+|60
 |Invigorate
 |-
-|60
+|61
 |Charge Up
 |-
-|61
+|62
 |Heal
 |-
-|62
+|63
 |Recover
 |-
-|63
+|64
 |Restore
 |-
-|64
+|65
 |Shield
 |-
-|65
+|66
 |Protect
 |-
-|66
+|67
 |Iron Wall
 |-
-|67
+|68
 |Camouflage
 |-
-|68
+|69
 |Ultrasonic
 |-
-|69
+|70
 |EM Wave
 |-
-|70
+|71
 |Curse Song
 |-
-|71
+|72
 |Lullaby
 |-
-|72
+|73
 |Glare
 |-
-|73
+|74
 |Sleep Gas
 |-
-|74
+|75
 |Smokescreen
 |-
-|75
+|76
 |Poison Gas
 |-
-|76
+|77
 |Jump
 |-
-|77
+|78
 |Flight
 |-
-|78
+|79
 |Scream
 |-
-|79
+|80
 |Wingbeat
 |-
-|80
+|81
 |EM Barrier
 |-
-|81
+|82
 |Force Field
 |-
-|82
+|83
 |Chill
 |-
-|83
+|84
 |Heat Wave
 |-
-|84
+|85
 |Water Shot
 |-
-|85
+|86
 |Acid
 |-
-|86
+|87
 |Lick
 |-
-|87
+|88
 |Tentacle
 |-
-|88
+|89
 |Ice Ball
 |-
-|89
+|90
 |Stat Down
 |-
-|90
+|91
 |Status Return
 |-
-|91
+|92
 |Iron Claw
 |-
-|92
+|93
 |Assault
 |-
-|93
+|94
 |Missile Punch
 |-
-|94
+|95
 |Razor Punch
 |-
-|95
+|96
 |Hoof
 |-
-|96
+|97
 |High Kick
 |-
-|97
+|98
 |Middle Kick
 |-
-|98
+|99
 |Stab
 |-
-|99
+|100
 |Triple Attack
 |-
-|100
+|101
 |Toxic Sting
 |-
-|101
+|102
 |Electric Sting
 |-
-|102
+|103
 |Cross Attack
 |-
-|103
+|104
 |Vacuum Slash
 |-
-|104
+|105
 |Fang Crush
 |-
-|105
+|106
 |Punt
 |-
-|106
+|107
 |Screw Horn
 |-
-|107
+|108
 |Drain
 |-
-|108
+|109
 |Denma Shuriken
 |-
-|109
+|110
 |Needle
 |-
-|110
+|111
 |Quick Step
 |-
-|111
+|112
 |Aim
 |-
-|112
+|113
 |Evade
 |-
-|113
+|114
 |Brace
 |-
-|114
+|115
 |Dummy 1
 |-
-|115
+|116
 |First Aid
 |-
-|116
+|117
 |Repair
 |-
-|117
+|118
 |Dummy 2
 |-
-|118
+|119
 |Shutter
 |-
-|119
+|120
 |Defend
 |-
-|120
+|121
 |Dummy 3
 |-
-|121
+|122
 |Conceal
 |-
-|122
+|123
 |EM Pulse
 |-
-|123
+|124
 |Shockwave
 |-
-|124
+|125
 |Dummy 4
 |-
-|125
+|126
 |Dummy 5
 |-
-|126
+|127
 |Stare
 |-
-|127
+|128
 |Dummy 6
 |-
-|128
+|129
 |Dummy 7
 |-
-|129
+|130
 |Dummy 8
 |-
-|130
+|131
 |Dummy 9
 |-
-|131
+|132
 |Dummy 10
 |-
-|132
+|133
 |Tooth Grind
 |-
-|133
+|134
 |Dust Cloud
 |-
-|134
+|135
 |Electro Screen
 |-
-|135
+|136
 |Denma Seal
 |-
-|136
+|137
 |Frost Breath
 |-
-|137
+|138
 |Petal Storm
 |-
 |}

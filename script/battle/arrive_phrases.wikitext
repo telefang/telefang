@@ -3,526 +3,526 @@
 !#
 !English
 |-
-|0
-|I've arrived!
-|-
 |1
-|I'm here!
+|I've arrived!
 |-
 |2
 |I'm here!
 |-
 |3
-|...Made it.
+|I'm here!
 |-
 |4
-|Made you wait, huh!
-|-
-|5
-|Kept you waiting~
-|-
-|6
-|Thanks for waiting!
-|-
-|7
-|Hip, made you wait.
-|-
-|8
-|I'm here, puni!
-|-
-|9
-|Made it... blurp
-|-
-|10
-|Pretty quick, huh?
-|-
-|11
-|Cluck! Made you wait!
-|-
-|12
-|Arrival!
-|-
-|13
-|Kept you waiting~
-|-
-|14
-|I'm here, octo.
-|-
-|15
 |...Made it.
 |-
+|5
+|Made you wait, huh!
+|-
+|6
+|Kept you waiting~
+|-
+|7
+|Thanks for waiting!
+|-
+|8
+|Hip, made you wait.
+|-
+|9
+|I'm here, puni!
+|-
+|10
+|Made it... blurp
+|-
+|11
+|Pretty quick, huh?
+|-
+|12
+|Cluck! Made you wait!
+|-
+|13
+|Arrival!
+|-
+|14
+|Kept you waiting~
+|-
+|15
+|I'm here, octo.
+|-
 |16
-|I've arrived!
+|...Made it.
 |-
 |17
-|Heh, I'm here~
+|I've arrived!
 |-
 |18
-|Snip snip, I'm here!
+|Heh, I'm here~
 |-
 |19
-|Crab coming~
+|Snip snip, I'm here!
 |-
 |20
-|Made you wait, huh!
+|Crab coming~
 |-
 |21
-|Leave it to me!
-|-
-|22
-|I'm here, ope!
-|-
-|23
-|Ook eek eek...!
-|-
-|24
-|Finally!
-|-
-|25
 |Made you wait, huh!
 |-
-|26
-|I'm here, hoo.
-|-
-|27
-|I'm here, huh!
-|-
-|28
-|Pheww, I'm here!
-|-
-|29
-|Why, hello!
-|-
-|30
-|Viva, I'm here!
-|-
-|31
+|22
 |Leave it to me!
 |-
+|23
+|I'm here, ope!
+|-
+|24
+|Ook eek eek...!
+|-
+|25
+|Finally!
+|-
+|26
+|Made you wait, huh!
+|-
+|27
+|I'm here, hoo.
+|-
+|28
+|I'm here, huh!
+|-
+|29
+|Pheww, I'm here!
+|-
+|30
+|Why, hello!
+|-
+|31
+|Viva, I'm here!
+|-
 |32
-|The other day~
+|Leave it to me!
 |-
 |33
-|I came as fast as I could!
+|The other day~
 |-
 |34
-|Yo, thanks for waiting!
+|I came as fast as I could!
 |-
 |35
-|You called?
+|Yo, thanks for waiting!
 |-
 |36
-|I'm here!
+|You called?
 |-
 |37
 |I'm here!
 |-
 |38
-|...Made it.
+|I'm here!
 |-
 |39
-|Made you wait, huh!
-|-
-|40
-|Kept you waiting~
-|-
-|41
-|Thanks for waiting!
-|-
-|42
-|Hip, made you wait.
-|-
-|43
-|I'm here, puni!
-|-
-|44
-|I'm here... glurp
-|-
-|45
-|I have arrived!
-|-
-|46
-|Geh-heheheheh!
-|-
-|47
-|Have I made you wait?
-|-
-|48
 |...Made it.
 |-
+|40
+|Made you wait, huh!
+|-
+|41
+|Kept you waiting~
+|-
+|42
+|Thanks for waiting!
+|-
+|43
+|Hip, made you wait.
+|-
+|44
+|I'm here, puni!
+|-
+|45
+|I'm here... glurp
+|-
+|46
+|I have arrived!
+|-
+|47
+|Geh-heheheheh!
+|-
+|48
+|Have I made you wait?
+|-
 |49
-|Here I am!
+|...Made it.
 |-
 |50
-|I inched my way here!
+|Here I am!
 |-
 |51
-|Am I too late?
+|I inched my way here!
 |-
 |52
-|I've come!
+|Am I too late?
 |-
 |53
-|Made it, bird.
+|I've come!
 |-
 |54
-|I'm here, beet!
+|Made it, bird.
 |-
 |55
-|I've arrived!
+|I'm here, beet!
 |-
 |56
-|I'm here!
+|I've arrived!
 |-
 |57
 |I'm here!
 |-
 |58
-|...Made it.
+|I'm here!
 |-
 |59
-|Made you wait, huh!
-|-
-|60
-|Kept you waiting~
-|-
-|61
-|Thanks for waiting!
-|-
-|62
-|Hip, made you wait.
-|-
-|63
-|I'm here, puni!
-|-
-|64
-|Made it... blurp
-|-
-|65
-|Pretty quick, huh?
-|-
-|66
-|Cluck! Made you wait!
-|-
-|67
-|Arrival!
-|-
-|68
-|Kept you waiting~
-|-
-|69
-|I'm here, octo.
-|-
-|70
 |...Made it.
 |-
+|60
+|Made you wait, huh!
+|-
+|61
+|Kept you waiting~
+|-
+|62
+|Thanks for waiting!
+|-
+|63
+|Hip, made you wait.
+|-
+|64
+|I'm here, puni!
+|-
+|65
+|Made it... blurp
+|-
+|66
+|Pretty quick, huh?
+|-
+|67
+|Cluck! Made you wait!
+|-
+|68
+|Arrival!
+|-
+|69
+|Kept you waiting~
+|-
+|70
+|I'm here, octo.
+|-
 |71
-|I've arrived!
+|...Made it.
 |-
 |72
-|Heh, I'm here~
+|I've arrived!
 |-
 |73
-|Snip snip, I'm here!
+|Heh, I'm here~
 |-
 |74
-|Crab coming~
+|Snip snip, I'm here!
 |-
 |75
-|Made you wait, huh!
+|Crab coming~
 |-
 |76
-|Leave it to me!
+|Made you wait, huh!
 |-
 |77
-|I'm here, ope!
+|Leave it to me!
 |-
 |78
-|Ook eekeek!
+|I'm here, ope!
 |-
 |79
-|Finally!
+|Ook eekeek!
 |-
 |80
-|Made you wait, huh!
+|Finally!
 |-
 |81
-|I'm here, hoo.
+|Made you wait, huh!
 |-
 |82
-|I'm here, huh!
+|I'm here, hoo.
 |-
 |83
-|Pheww, I'm here!
+|I'm here, huh!
 |-
 |84
-|Why, hello!
-|-
-|85
-|Viva, I'm here!
-|-
-|86
-|Leave it to me!
-|-
-|87
-|The other day~
-|-
-|88
-|Mhm, I'm here. 
-|-
-|89
-|Yo, thanks for waiting!
-|-
-|90
-|Viva, I'm here!
-|-
-|91
-|Leave it to me!
-|-
-|92
-|I'm here, ope!
-|-
-|93
-|Ook eek eek eek...
-|-
-|94
-|Finally!
-|-
-|95
-|Made you wait, huh!
-|-
-|96
-|I'm here, hoo.
-|-
-|97
-|I'm here, huh!
-|-
-|98
 |Pheww, I'm here!
 |-
-|99
-|Hey, what's up?
+|85
+|Why, hello!
 |-
-|100
-|I'm HERE!
+|86
+|Viva, I'm here!
 |-
-|101
-|Thanks for waaaiting~
-|-
-|102
-|Is this the place?
-|-
-|103
-|You need something?
-|-
-|104
-|Thanks for waitin'!
-|-
-|105
-|Who's my enemy?
-|-
-|106
-|Twirl twirl... Here!
-|-
-|107
-|I'm here, meow~
-|-
-|108
-|Hello?
-|-
-|109
-|Made you wait, huh!
-|-
-|110
-|Vrrroooom!
-|-
-|111
-|I'm here!
-|-
-|112
-|Made you wait, huh!
-|-
-|113
-|Thanks for waiting!
-|-
-|114
-|I'm here, puni!
-|-
-|115
+|87
 |Leave it to me!
 |-
-|116
-|Arrival!
+|88
+|The other day~
 |-
-|117
-|I'm here, octo.
+|89
+|Mhm, I'm here. 
 |-
-|118
-|I've arrived!
+|90
+|Yo, thanks for waiting!
 |-
-|119
-|Snip snip, I'm here!
+|91
+|Viva, I'm here!
 |-
-|120
-|I've arrived!
-|-
-|121
-|I'm here!
-|-
-|122
-|Made you wait, huh!
-|-
-|123
-|Thanks for waiting!
-|-
-|124
-|I'm here, puni!
-|-
-|125
-|Pretty quick, huh?
-|-
-|126
-|Arrival!
-|-
-|127
-|I'm here, octo.
-|-
-|128
-|I've arrived!
-|-
-|129
-|Snip snip, I'm here!
-|-
-|130
-|Pretty quick, huh?
-|-
-|131
-|Heh, I'm here!
-|-
-|132
-|I'mma here!
-|-
-|133
-|Cut cut cut cut
-|-
-|134
-|I'm here, I'm here!
-|-
-|135
-|Made you wait, huh!
-|-
-|136
+|92
 |Leave it to me!
 |-
-|137
+|93
 |I'm here, ope!
 |-
-|138
-|Ook eek eek...!
+|94
+|Ook eek eek eek...
 |-
-|139
+|95
 |Finally!
 |-
-|140
+|96
 |Made you wait, huh!
 |-
-|141
+|97
 |I'm here, hoo.
 |-
-|142
+|98
 |I'm here, huh!
 |-
-|143
-|Pardon me!
+|99
+|Pheww, I'm here!
 |-
-|144
-|You called for me?
+|100
+|Hey, what's up?
 |-
-|145
-|Stop calling me!
+|101
+|I'm HERE!
 |-
-|146
-|You called for me?
+|102
+|Thanks for waaaiting~
 |-
-|147
-|Keheheh, you called?
+|103
+|Is this the place?
 |-
-|148
-|..........
+|104
+|You need something?
 |-
-|149
-|I'm heeere!
+|105
+|Thanks for waitin'!
 |-
-|150
+|106
+|Who's my enemy?
+|-
+|107
+|Twirl twirl... Here!
+|-
+|108
+|I'm here, meow~
+|-
+|109
+|Hello?
+|-
+|110
 |Made you wait, huh!
 |-
-|151
-|Leave it to me!
+|111
+|Vrrroooom!
 |-
-|152
-|I'm here, ope!
-|-
-|153
-|Made you wait, huh!
-|-
-|154
-|You called for me?
-|-
-|155
-|I've arrived!
-|-
-|156
+|112
 |I'm here!
 |-
-|157
+|113
 |Made you wait, huh!
 |-
-|158
+|114
 |Thanks for waiting!
 |-
-|159
-|Thou hast called me?
+|115
+|I'm here, puni!
 |-
-|160
-|Made you wait, huh!
-|-
-|161
+|116
 |Leave it to me!
 |-
-|162
+|117
+|Arrival!
+|-
+|118
+|I'm here, octo.
+|-
+|119
+|I've arrived!
+|-
+|120
+|Snip snip, I'm here!
+|-
+|121
+|I've arrived!
+|-
+|122
+|I'm here!
+|-
+|123
+|Made you wait, huh!
+|-
+|124
+|Thanks for waiting!
+|-
+|125
+|I'm here, puni!
+|-
+|126
+|Pretty quick, huh?
+|-
+|127
+|Arrival!
+|-
+|128
+|I'm here, octo.
+|-
+|129
+|I've arrived!
+|-
+|130
+|Snip snip, I'm here!
+|-
+|131
+|Pretty quick, huh?
+|-
+|132
+|Heh, I'm here!
+|-
+|133
+|I'mma here!
+|-
+|134
+|Cut cut cut cut
+|-
+|135
+|I'm here, I'm here!
+|-
+|136
+|Made you wait, huh!
+|-
+|137
+|Leave it to me!
+|-
+|138
 |I'm here, ope!
 |-
-|163
+|139
 |Ook eek eek...!
 |-
-|164
-|Stop calling me!
+|140
+|Finally!
 |-
-|165
-|Howwl!
-|-
-|166
-|Neighh!
-|-
-|167
-|Kaaaw!
-|-
-|168
-|Heh heh heh...
-|-
-|169
+|141
 |Made you wait, huh!
 |-
-|170
+|142
+|I'm here, hoo.
+|-
+|143
+|I'm here, huh!
+|-
+|144
+|Pardon me!
+|-
+|145
+|You called for me?
+|-
+|146
+|Stop calling me!
+|-
+|147
+|You called for me?
+|-
+|148
+|Keheheh, you called?
+|-
+|149
+|..........
+|-
+|150
+|I'm heeere!
+|-
+|151
+|Made you wait, huh!
+|-
+|152
 |Leave it to me!
 |-
+|153
+|I'm here, ope!
+|-
+|154
+|Made you wait, huh!
+|-
+|155
+|You called for me?
+|-
+|156
+|I've arrived!
+|-
+|157
+|I'm here!
+|-
+|158
+|Made you wait, huh!
+|-
+|159
+|Thanks for waiting!
+|-
+|160
+|Thou hast called me?
+|-
+|161
+|Made you wait, huh!
+|-
+|162
+|Leave it to me!
+|-
+|163
+|I'm here, ope!
+|-
+|164
+|Ook eek eek...!
+|-
+|165
+|Stop calling me!
+|-
+|166
+|Howwl!
+|-
+|167
+|Neighh!
+|-
+|168
+|Kaaaw!
+|-
+|169
+|Heh heh heh...
+|-
+|170
+|Made you wait, huh!
+|-
 |171
-|Gah hah hah hah!
+|Leave it to me!
 |-
 |172
-|Hello~?
+|Gah hah hah hah!
 |-
 |173
+|Hello~?
+|-
+|174
 |I'm here~
 |-
 |}

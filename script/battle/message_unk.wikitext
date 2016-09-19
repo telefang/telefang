@@ -3,9 +3,6 @@
 !#
 !English
 |-
-|0
-|Huh? It's over already?
-|-
 |1
 |Huh? It's over already?
 |-
@@ -523,6 +520,9 @@
 |Huh? It's over already?
 |-
 |173
+|Huh? It's over already?
+|-
+|174
 |Huh? It's over already?
 |-
 |}
