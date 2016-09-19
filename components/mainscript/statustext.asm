@@ -108,10 +108,10 @@ MainScript_DrawShortName::
     call $558
     pop hl
     push hl
-    ld a, 4
+    ld a, 3
     call MainScript_DrawEmptySpaces
     pop hl
-    ld de, W_StringTable_StagingLoc
+    ld de, W_StringTable_StagingLocDbl
     ld b, M_StringTable_Load4AreaSize
     jp Banked_MainScript_DrawStatusText
 
