@@ -105,7 +105,7 @@ MainScript_DrawShortName::
     push bc
     push de
     pop hl
-    call $558
+    call StringTable_LoadShortName
     pop hl
     push hl
     ld a, 3
@@ -114,6 +114,24 @@ MainScript_DrawShortName::
     ld de, W_StringTable_StagingLocDbl
     ld b, M_StringTable_Load4AreaSize
     jp Banked_MainScript_DrawStatusText
+    
+;3B22
+MainScript_DrawHabitatString::
+    ld a, [$D497]
+    ld c, $D
+    call $58D
+    ld a, [$D45F]
+    ld de, MainScript_denjuu_habitats
+    ld bc, $9380
+    jp MainScript_DrawShortName
+    
+;3B36
+MainScript_DrawStatusEffectString::
+    push hl
+    ld a, b
+    ld de, MainScript_denjuu_statuses
+    pop bc
+    jp MainScript_DrawShortName
 
 SECTION "Main Script Status Text Drawing Advice", ROM0[$0077]
 ;Part of a function that replaces status text drawing with the VWF.
