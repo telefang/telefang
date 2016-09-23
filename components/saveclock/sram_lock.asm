@@ -1,3 +1,5 @@
+INCLUDE "registers.inc"
+
 SECTION "Save/Clock Services Safety Switch", ROM0[$3D6A]
 SaveClock_EnterSRAM2:
 	push af
