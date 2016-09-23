@@ -182,6 +182,10 @@ MainScript_denjuu_descriptions:
 	INCBIN "script/denjuu/descriptions.scripttbl"
 MainScript_denjuu_descriptions_END
 
+    REPT $3634
+        db 0
+    ENDR
+
 SECTION "MainScript_calls_story Section", ROMX[$4000], BANK[$56]
 MainScript_calls_story:
 	INCBIN "script/calls/story.scripttbl"
