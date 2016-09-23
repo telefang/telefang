@@ -8,10 +8,33 @@ MainScript_denjuu_species::
 	INCBIN "script/denjuu/species.stringtbl"
 MainScript_denjuu_species_END
 
+;D0B00
+    REPT $3200
+        db $E0
+    ENDR
+;D3D00
+
 SECTION "MainScript_battle_tfangers Section", ROMX[$6300], BANK[$75]
 MainScript_battle_tfangers::
 	INCBIN "script/battle/tfangers.stringtbl"
 MainScript_battle_tfangers_END
+
+;1D6610
+    REPT $1317
+        db 0
+    ENDR
+;1D7927
+
+;Flotsam in the ROM
+;TODO: Remove
+    INCBIN "script/denjuu/personalities_old.stringtbl"
+    INCBIN "script/denjuu/statuses_old.stringtbl"
+
+;1D79C8
+    REPT $0638
+        db 0
+    ENDR
+;1D8000 (end of bank)
 
 SECTION "MainScript_battle_attacks Section", ROMX[$5890], BANK[$75]
 MainScript_battle_attacks::
