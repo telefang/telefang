@@ -24,17 +24,19 @@ def install_path(path):
 
 #Used by the original text injector script to represent special codes.
 class Special():
-    def __init__(self, byte, default=0, bts=1, end=False, names=None):
+    def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False):
         self.byte = byte
         self.default = default
         self.bts = bts
         self.end = end
+        self.redirect = redirect
         self.names = names if names else {}
 
 specials = {}
 specials["&"] = Special(0xe5, bts=2, names={0xc92c: "name", 0xd448: "num"})
 specials['S'] = Special(0xe3, default=2)
 specials['*'] = Special(0xe1, end=True)
+specials['O'] = Special(0xec, bts=2, redirect=True)
 specials['D'] = Special(0xe9)
 
 #Used here for text extraction from the ROM.
@@ -42,6 +44,7 @@ reverse_specials = {}
 reverse_specials[0xE5] = "&"
 reverse_specials[0xE3] = "S"
 reverse_specials[0xE1] = "*"
+reverse_specials[0xEC] = "O"
 reverse_specials[0xE9] = "D"
 
 CHARMAP_DELIM = 'charmap "'
@@ -71,11 +74,11 @@ def parse_charmap(filename):
             if chara == u"":
                 #Special case: Quoted quotes.
                 #   e.g. charmap """, $22
-                
+
                 #This parsing logic sucks arse.
                 if len(delim_split) > 3:
                     chara = u"\""
-            
+
             if chara == u"\\n":
                 chara = u"\n"
 
@@ -187,6 +190,33 @@ def format_sectionaddr_rom(flataddr):
         return u"ROM0[${0:x}]".format(flataddr)
     else:
         return u"ROMX[${0:x}], BANK[${1:x}]".format(0x4000 + flataddr % 0x4000, flataddr // 0x4000)
+    
+def format_control_code(cc, word = None):
+    """Format a control code."""
+    string = []
+    
+    string.append(u"«")
+    string.append(cc)
+    
+    if word != None:
+        string.append(format_int(word))
+    
+    string.append(u"»")
+    
+    return "".join(string)
+
+def format_literal(chara, charmap = None):
+    """Format a literal character."""
+    if charmap is not None and chara in charmap:
+        return charmap[chara]
+    
+    string = []
+    
+    string.append(u"«")
+    string.append(format_int(chara))
+    string.append(u"»")
+    
+    return "".join(string)
 
 def extract(args):
     charmap = parse_charmap(args.charmap)
@@ -223,7 +253,11 @@ def extract(args):
             last_start = 0xFFFF
             last_end = 0xFFFF
             last_nonaliasing_row = -1
-
+            
+            #Also store if a redirected/overflowed row is being extracted
+            redirected = False
+            old_loc = None
+            
             for i in range(tbl_length):
                 wikitext.append(u"|-")
                 wikitext.append(u"|0x{0:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2)))
@@ -251,7 +285,10 @@ def extract(args):
                 else:
                     #Second, we try to see if this pointer is in the middle of
                     #the last string.
-                    if i > 0 and read_ptr < last_end - 1:
+                    
+                    #This alias detection breaks when the previous row uses the
+                    #overflow code, so disable it if so.
+                    if i > 0 and read_ptr < last_end - 1 and not redirected:
                         print u"Pointer at 0x{0:x} partially aliases previous pointer".format(rom.tell() - 2)
                         wikitext.append(u"|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(last_nonaliasing_row, read_ptr - last_start))
                         continue
@@ -259,25 +296,52 @@ def extract(args):
                     read_length = 1
                     first_read = True
                     rom.seek(flat(bank["basebank"], read_ptr))
-
+                    
+                    #Now we can initialize these...
+                    redirected = False
+                    old_loc = None
+                    
                     while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])):
                         next_chara = CHARA.unpack(rom.read(1))[0]
-                        while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])) and (read_length <= expected_length or first_read) and next_chara != 0xE0: #E0 is end-of-string
+                        while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])) and (read_length <= expected_length or first_read or redirected) and next_chara != 0xE0: #E0 is end-of-string
                             if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
                                 string.append(charmap[1][next_chara])
-                            elif next_chara in reverse_specials:
-                                #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
+                            elif next_chara in reverse_specials and specials[reverse_specials[next_chara]].redirect:
+                                #Redirecting opcodes are transparently removed from the extracted text.
                                 this_special = specials[reverse_specials[next_chara]]
-                                string.append(u"«")
-                                string.append(reverse_specials[next_chara])
-
+                                
                                 if this_special.bts:
                                     read_length += this_special.bts
                                     fmt = "<"+("", "B", "H")[this_special.bts]
                                     word = struct.unpack(fmt, rom.read(this_special.bts))[0]
-                                    string.append(format_int(word))
+                                    
+                                    if word < 0x4000 or word > 0x7FFF:
+                                        #Overflowing into RAM is illegal - use the jump opcode.
+                                        #Overflowing into ROM0 is technically not illegal, but
+                                        #unorthodox enough that we're going to disallow it.
+                                        string.append(format_literal(this_special.byte))
+                                        string.append(format_literal(word & 0xFF, charmap[1]))
+                                        string.append(format_literal(word >> 8, charmap[1]))
+                                    else:
+                                        #We need to do this right now to avoid breaking hole detection
+                                        old_loc = rom.tell()
+                                        read_length = rom.tell() - flat(bank["basebank"], read_ptr)
 
-                                string.append(u"»")
+                                        rom.seek(flat(args.overflow_bank, word))
+                                        redirected = True
+                                else:
+                                    raise RuntimeError("Invalid specials dictionary. Redirecting special character is missing bts.")
+                            elif next_chara in reverse_specials:
+                                #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
+                                this_special = specials[reverse_specials[next_chara]]
+                                
+                                if this_special.bts:
+                                    read_length += this_special.bts
+                                    fmt = "<"+("", "B", "H")[this_special.bts]
+                                    word = struct.unpack(fmt, rom.read(this_special.bts))[0]
+                                    string.append(format_control_code(reverse_specials[next_chara], word))
+                                else:
+                                    string.append(format_control_code(reverse_specials[next_chara]))
 
                                 if this_special.end:
                                     first_read = False
@@ -287,19 +351,26 @@ def extract(args):
                             #    string.append(u"\n")
                             else:
                                 #Literal specials
-                                string.append(u"«")
-                                string.append(format_int(next_chara))
-                                string.append(u"»")
+                                string.append(format_literal(next_chara))
 
                             next_chara = CHARA.unpack(rom.read(1))[0]
-                            read_length = rom.tell() - flat(bank["basebank"], read_ptr)
-
+                            
+                            #Explicitly stop updating read_length if the
+                            #overflow opcode is used. Otherwise we'd think we
+                            #read thousands or negative thousands of chars
+                            if not redirected:
+                                read_length = rom.tell() - flat(bank["basebank"], read_ptr)
+                        
+                        #After the main extraction loop
                         if read_length >= expected_length:
                             break
                         else:
                             #Detect nulls (spaces) after the end of a string
                             #and append them to avoid creating a new pointer row
                             loc = rom.tell()
+                            if redirected:
+                                loc = old_loc
+                            
                             while CHARA.unpack(rom.read(1))[0] == charmap[0][u" "] and read_length < expected_length:
                                 string.append(u" ")
                                 loc += 1
@@ -660,6 +731,7 @@ def main():
     ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
     ap.add_argument('--metrics_loc', type=int, default=0x2FB00)
     ap.add_argument('--window_width', type=int, default=0x16 * 0x8) #16 tiles
+    ap.add_argument('--overflow_bank', type=int, default=0x1E)
     ap.add_argument('rom', type=str)
     ap.add_argument('filenames', type=str, nargs="*")
     args = ap.parse_args()
