@@ -541,7 +541,7 @@
 |Hahaha, think nothing of«0xe2»it.«0xe2»It's us who should be«0xe2»thanking you.«0xe2»Now, good luck on your«0xe2»final errand!«*0»
 |-
 |0x12c166
-|Hand over the "Plush«0xe2»Toy"?«0xe2»«0»Yes «0»No«*a»
+|Hand over the "Plush«0xe2»Toy"?«0xe2»«0»Yes «0»No«*a»«*a»
 |-
 |0x12c168
 |Wh-What?«0xe2»You're not going to«0xe2»give it to me??«*0»
