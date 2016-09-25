@@ -729,7 +729,7 @@ def make_tbl(args):
         for line in packed_strings:
             bytes_remaining -= len(line)
         
-        if bytes_remaining < 0:
+        if bytes_remaining < 0 and overflow_bank_id is not None:
             print "Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining))
             
             #Compiled bank exceeds the amount of space available in the bank.
@@ -779,10 +779,11 @@ def make_tbl(args):
 
             for line in packed_strings:
                 objfile.write(line)
-        
-    with open(os.path.join(args.output, banknames[overflow_bank_id]["objname"]), "wb") as objfile:
-        for line in overflow_strings:
-            objfile.write(line)
+    
+    if overflow_bank_id is not None:
+        with open(os.path.join(args.output, banknames[overflow_bank_id]["objname"]), "wb") as objfile:
+            for line in overflow_strings:
+                objfile.write(line)
 
 def main():
     ap = argparse.ArgumentParser()
