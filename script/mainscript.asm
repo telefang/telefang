@@ -209,3 +209,7 @@ MainScript_story_5:
 	INCBIN "script/story/5.scripttbl"
 MainScript_story_5_END
 
+SECTION "MainScript_overflow_1 Section", ROMX[$4000], BANK[$1E]
+MainScript_overflow_1:
+	INCBIN "script/overflow/1.scripttbl"
+MainScript_overflow_1_END
