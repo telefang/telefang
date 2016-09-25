@@ -24,17 +24,19 @@ def install_path(path):
 
 #Used by the original text injector script to represent special codes.
 class Special():
-    def __init__(self, byte, default=0, bts=1, end=False, names=None):
+    def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False):
         self.byte = byte
         self.default = default
         self.bts = bts
         self.end = end
+        self.redirect = redirect
         self.names = names if names else {}
 
 specials = {}
 specials["&"] = Special(0xe5, bts=2, names={0xc92c: "name", 0xd448: "num"})
 specials['S'] = Special(0xe3, default=2)
 specials['*'] = Special(0xe1, end=True)
+specials['O'] = Special(0xec, bts=2, redirect=True)
 specials['D'] = Special(0xe9)
 
 #Used here for text extraction from the ROM.
@@ -42,6 +44,7 @@ reverse_specials = {}
 reverse_specials[0xE5] = "&"
 reverse_specials[0xE3] = "S"
 reverse_specials[0xE1] = "*"
+reverse_specials[0xEC] = "O"
 reverse_specials[0xE9] = "D"
 
 CHARMAP_DELIM = 'charmap "'
@@ -187,6 +190,33 @@ def format_sectionaddr_rom(flataddr):
         return u"ROM0[${0:x}]".format(flataddr)
     else:
         return u"ROMX[${0:x}], BANK[${1:x}]".format(0x4000 + flataddr % 0x4000, flataddr // 0x4000)
+    
+def format_control_code(cc, word = None):
+    """Format a control code."""
+    string = []
+    
+    string.append(u"«")
+    string.append(cc)
+    
+    if word != None:
+        string.append(format_int(word))
+    
+    string.append(u"»")
+    
+    return "".join(string)
+
+def format_literal(chara, charmap = None):
+    """Format a literal character."""
+    if charmap is not None and chara in charmap:
+        return charmap[chara]
+    
+    string = []
+    
+    string.append(u"«")
+    string.append(format_int(chara))
+    string.append(u"»")
+    
+    return "".join(string)
 
 def extract(args):
     charmap = parse_charmap(args.charmap)
@@ -223,7 +253,11 @@ def extract(args):
             last_start = 0xFFFF
             last_end = 0xFFFF
             last_nonaliasing_row = -1
-
+            
+            #Also store if a redirected/overflowed row is being extracted
+            redirected = False
+            old_loc = None
+            
             for i in range(tbl_length):
                 wikitext.append(u"|-")
                 wikitext.append(u"|0x{0:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2)))
@@ -251,7 +285,10 @@ def extract(args):
                 else:
                     #Second, we try to see if this pointer is in the middle of
                     #the last string.
-                    if i > 0 and read_ptr < last_end - 1:
+                    
+                    #This alias detection breaks when the previous row uses the
+                    #overflow code, so disable it if so.
+                    if i > 0 and read_ptr < last_end - 1 and not redirected:
                         print u"Pointer at 0x{0:x} partially aliases previous pointer".format(rom.tell() - 2)
                         wikitext.append(u"|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(last_nonaliasing_row, read_ptr - last_start))
                         continue
@@ -259,25 +296,52 @@ def extract(args):
                     read_length = 1
                     first_read = True
                     rom.seek(flat(bank["basebank"], read_ptr))
-
+                    
+                    #Now we can initialize these...
+                    redirected = False
+                    old_loc = None
+                    
                     while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])):
                         next_chara = CHARA.unpack(rom.read(1))[0]
-                        while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])) and (read_length <= expected_length or first_read) and next_chara != 0xE0: #E0 is end-of-string
+                        while (rom.tell() % 0x4000 < 0x3FFF or rom.tell() == flat(bank["basebank"], bank["baseaddr"])) and (read_length <= expected_length or first_read or redirected) and next_chara != 0xE0: #E0 is end-of-string
                             if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
                                 string.append(charmap[1][next_chara])
-                            elif next_chara in reverse_specials:
-                                #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
+                            elif next_chara in reverse_specials and specials[reverse_specials[next_chara]].redirect:
+                                #Redirecting opcodes are transparently removed from the extracted text.
                                 this_special = specials[reverse_specials[next_chara]]
-                                string.append(u"«")
-                                string.append(reverse_specials[next_chara])
-
+                                
                                 if this_special.bts:
                                     read_length += this_special.bts
                                     fmt = "<"+("", "B", "H")[this_special.bts]
                                     word = struct.unpack(fmt, rom.read(this_special.bts))[0]
-                                    string.append(format_int(word))
+                                    
+                                    if word < 0x4000 or word > 0x7FFF:
+                                        #Overflowing into RAM is illegal - use the jump opcode.
+                                        #Overflowing into ROM0 is technically not illegal, but
+                                        #unorthodox enough that we're going to disallow it.
+                                        string.append(format_literal(this_special.byte))
+                                        string.append(format_literal(word & 0xFF, charmap[1]))
+                                        string.append(format_literal(word >> 8, charmap[1]))
+                                    else:
+                                        #We need to do this right now to avoid breaking hole detection
+                                        old_loc = rom.tell()
+                                        read_length = rom.tell() - flat(bank["basebank"], read_ptr)
 
-                                string.append(u"»")
+                                        rom.seek(flat(args.overflow_bank, word))
+                                        redirected = True
+                                else:
+                                    raise RuntimeError("Invalid specials dictionary. Redirecting special character is missing bts.")
+                            elif next_chara in reverse_specials:
+                                #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
+                                this_special = specials[reverse_specials[next_chara]]
+                                
+                                if this_special.bts:
+                                    read_length += this_special.bts
+                                    fmt = "<"+("", "B", "H")[this_special.bts]
+                                    word = struct.unpack(fmt, rom.read(this_special.bts))[0]
+                                    string.append(format_control_code(reverse_specials[next_chara], word))
+                                else:
+                                    string.append(format_control_code(reverse_specials[next_chara]))
 
                                 if this_special.end:
                                     first_read = False
@@ -287,19 +351,26 @@ def extract(args):
                             #    string.append(u"\n")
                             else:
                                 #Literal specials
-                                string.append(u"«")
-                                string.append(format_int(next_chara))
-                                string.append(u"»")
+                                string.append(format_literal(next_chara))
 
                             next_chara = CHARA.unpack(rom.read(1))[0]
-                            read_length = rom.tell() - flat(bank["basebank"], read_ptr)
-
+                            
+                            #Explicitly stop updating read_length if the
+                            #overflow opcode is used. Otherwise we'd think we
+                            #read thousands or negative thousands of chars
+                            if not redirected:
+                                read_length = rom.tell() - flat(bank["basebank"], read_ptr)
+                        
+                        #After the main extraction loop
                         if read_length >= expected_length:
                             break
                         else:
                             #Detect nulls (spaces) after the end of a string
                             #and append them to avoid creating a new pointer row
                             loc = rom.tell()
+                            if redirected:
+                                loc = old_loc
+                            
                             while CHARA.unpack(rom.read(1))[0] == charmap[0][u" "] and read_length < expected_length:
                                 string.append(u" ")
                                 loc += 1
@@ -569,13 +640,24 @@ def make_tbl(args):
     charmap = parse_charmap(args.charmap)
     banknames = parse_bank_names(args.banknames)
     banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
-
+    
+    overflow_strings = []
+    overflow_ptr = 0x4000
+    overflow_bank_id = None
+    
+    last_aliased_row = -1
+    
     if args.language == u"Japanese":
         metrics = None
     else:
         metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
 
-    for bank in banknames:
+    for h, bank in enumerate(banknames):
+        if bank["filename"].startswith("overflow"):
+            #Don't attempt to compile the overflow bank. That's a separate pass
+            overflow_bank_id = h
+            continue
+        
         print "Compiling " + bank["filename"]
         #If filenames are specified, only export banks that are mentioned there
         if len(args.filenames) > 0 and bank["objname"] not in args.filenames:
@@ -599,7 +681,7 @@ def make_tbl(args):
         for i, row in enumerate(rows):
             if str_col >= len(row):
                 print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
-                packed_strings.append("")
+                packed_strings[i] = ""
                 continue
 
             if row[str_col][:11] == u"«ALIAS ROW ":
@@ -608,21 +690,18 @@ def make_tbl(args):
                 if len(split_row) > 1 and split_row[1] == "INTO":
                     #Partial string alias.
                     table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
-                    packed_strings.append("")
+                    packed_strings[i] = ""
                 else:
                     table.append(table[int(split_row[0], 16)])
-                    packed_strings.append("")
+                    packed_strings[i] = ""
+                
+                #We don't want to have to try to handle both overflow and
+                #aliasing at the same time, so don't.
+                last_aliased_row = i
             else:
                 packed = pack_string(row[str_col], charmap, metrics, args.window_width, row[ptr_col] == u"(No pointer)")
-                packed_strings.append(packed)
-
-                #DEBUG: Strings we're interested in
-                if bank["filename"] == "npc\\1.wikitext" and i in (113, 114, 115):
-                    print i
-                    print codecs.encode(row[str_col], "utf-8")
-                    print codecs.encode(row[str_col], "raw_unicode_escape")
-                    print codecs.encode(packed, "hex")
-
+                packed_strings[i] = packed
+                
                 if row[ptr_col] != u"(No pointer)":
                     #Yes, some text banks have strings not mentioned in the
                     #table because screw you.
@@ -641,6 +720,57 @@ def make_tbl(args):
         #Moveup pointers to account for the table size
         for i, value in enumerate(table):
             table[i] = PTR.pack(value + len(table) * 2)
+            
+        #Overflow detection + handling
+        bytes_remaining = 0x4000
+        for line in table:
+            bytes_remaining -= len(line)
+        
+        for line in packed_strings:
+            bytes_remaining -= len(line)
+        
+        if bytes_remaining < 0:
+            print "Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining))
+            
+            #Compiled bank exceeds the amount of space available in the bank.
+            #Start assigning strings from the last one forward to be spilled
+            #into the overflow bank. This reduces their size to 3.
+            strings_to_spill = 0
+            string_bytes_saved = 0
+            
+            for i, row in reversed(list(enumerate(rows))):
+                if i == last_aliased_row:
+                    #We can't spill aliased rows, nor do we want to attempt to
+                    #support that usecase, since it would be too much work.
+                    #Instead, stop spilling at the end.
+                    break
+                
+                strings_to_spill += 1
+                string_bytes_saved += len(packed_strings[i]) - 3
+                
+                #TODO: Change the threshold condition back to >= 0
+                #For some reason the overflow bank in the patch contains more
+                #strings than it technically needs in order to make the second
+                #story bank fit. For the sake of the diff report, we're making
+                #the string spill 60 extra bytes to maintain parity.
+                if string_bytes_saved + bytes_remaining > 60:
+                    #That's enough! Stop counting bytes, we've spilled enough.
+                    break
+            
+            #Actually spill strings to the overflow bank now, in order.
+            for i in range(len(rows) - strings_to_spill, len(rows)):
+                cur_string = packed_strings[i]
+                packed_strings[i] = "\xec" + chr(overflow_ptr & 0xFF) + chr(overflow_ptr >> 8)
+                
+                if i < len(rows) - 1:
+                    #fixup the next pointer in the table
+                    thisptr = PTR.unpack(table[i])[0]
+                    table[i + 1] = PTR.pack(thisptr + len(packed_strings[i]))
+                
+                overflow_strings.append(cur_string)
+                overflow_ptr += len(cur_string)
+                
+            print "Spilled 0x{0:x} bytes to overflow bank".format(abs(string_bytes_saved))
 
         #Write the data out to the object files. We're done here!
         with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
@@ -649,6 +779,10 @@ def make_tbl(args):
 
             for line in packed_strings:
                 objfile.write(line)
+        
+    with open(os.path.join(args.output, banknames[overflow_bank_id]["objname"]), "wb") as objfile:
+        for line in overflow_strings:
+            objfile.write(line)
 
 def main():
     ap = argparse.ArgumentParser()
@@ -660,6 +794,7 @@ def main():
     ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
     ap.add_argument('--metrics_loc', type=int, default=0x2FB00)
     ap.add_argument('--window_width', type=int, default=0x16 * 0x8) #16 tiles
+    ap.add_argument('--overflow_bank', type=int, default=0x1E)
     ap.add_argument('rom', type=str)
     ap.add_argument('filenames', type=str, nargs="*")
     args = ap.parse_args()
