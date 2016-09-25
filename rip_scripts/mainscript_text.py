@@ -640,13 +640,24 @@ def make_tbl(args):
     charmap = parse_charmap(args.charmap)
     banknames = parse_bank_names(args.banknames)
     banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
-
+    
+    overflow_strings = []
+    overflow_ptr = 0x4000
+    overflow_bank_id = None
+    
+    last_aliased_row = -1
+    
     if args.language == u"Japanese":
         metrics = None
     else:
         metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
 
-    for bank in banknames:
+    for h, bank in enumerate(banknames):
+        if bank["filename"].startswith("overflow"):
+            #Don't attempt to compile the overflow bank. That's a separate pass
+            overflow_bank_id = h
+            continue
+        
         print "Compiling " + bank["filename"]
         #If filenames are specified, only export banks that are mentioned there
         if len(args.filenames) > 0 and bank["objname"] not in args.filenames:
@@ -670,7 +681,7 @@ def make_tbl(args):
         for i, row in enumerate(rows):
             if str_col >= len(row):
                 print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
-                packed_strings.append("")
+                packed_strings[i] = ""
                 continue
 
             if row[str_col][:11] == u"«ALIAS ROW ":
@@ -679,21 +690,18 @@ def make_tbl(args):
                 if len(split_row) > 1 and split_row[1] == "INTO":
                     #Partial string alias.
                     table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
-                    packed_strings.append("")
+                    packed_strings[i] = ""
                 else:
                     table.append(table[int(split_row[0], 16)])
-                    packed_strings.append("")
+                    packed_strings[i] = ""
+                
+                #We don't want to have to try to handle both overflow and
+                #aliasing at the same time, so don't.
+                last_aliased_row = i
             else:
                 packed = pack_string(row[str_col], charmap, metrics, args.window_width, row[ptr_col] == u"(No pointer)")
-                packed_strings.append(packed)
-
-                #DEBUG: Strings we're interested in
-                if bank["filename"] == "npc\\1.wikitext" and i in (113, 114, 115):
-                    print i
-                    print codecs.encode(row[str_col], "utf-8")
-                    print codecs.encode(row[str_col], "raw_unicode_escape")
-                    print codecs.encode(packed, "hex")
-
+                packed_strings[i] = packed
+                
                 if row[ptr_col] != u"(No pointer)":
                     #Yes, some text banks have strings not mentioned in the
                     #table because screw you.
@@ -712,6 +720,57 @@ def make_tbl(args):
         #Moveup pointers to account for the table size
         for i, value in enumerate(table):
             table[i] = PTR.pack(value + len(table) * 2)
+            
+        #Overflow detection + handling
+        bytes_remaining = 0x4000
+        for line in table:
+            bytes_remaining -= len(line)
+        
+        for line in packed_strings:
+            bytes_remaining -= len(line)
+        
+        if bytes_remaining < 0:
+            print "Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining))
+            
+            #Compiled bank exceeds the amount of space available in the bank.
+            #Start assigning strings from the last one forward to be spilled
+            #into the overflow bank. This reduces their size to 3.
+            strings_to_spill = 0
+            string_bytes_saved = 0
+            
+            for i, row in reversed(list(enumerate(rows))):
+                if i == last_aliased_row:
+                    #We can't spill aliased rows, nor do we want to attempt to
+                    #support that usecase, since it would be too much work.
+                    #Instead, stop spilling at the end.
+                    break
+                
+                strings_to_spill += 1
+                string_bytes_saved += len(packed_strings[i]) - 3
+                
+                #TODO: Change the threshold condition back to >= 0
+                #For some reason the overflow bank in the patch contains more
+                #strings than it technically needs in order to make the second
+                #story bank fit. For the sake of the diff report, we're making
+                #the string spill 60 extra bytes to maintain parity.
+                if string_bytes_saved + bytes_remaining > 60:
+                    #That's enough! Stop counting bytes, we've spilled enough.
+                    break
+            
+            #Actually spill strings to the overflow bank now, in order.
+            for i in range(len(rows) - strings_to_spill, len(rows)):
+                cur_string = packed_strings[i]
+                packed_strings[i] = "\xec" + chr(overflow_ptr & 0xFF) + chr(overflow_ptr >> 8)
+                
+                if i < len(rows) - 1:
+                    #fixup the next pointer in the table
+                    thisptr = PTR.unpack(table[i])[0]
+                    table[i + 1] = PTR.pack(thisptr + len(packed_strings[i]))
+                
+                overflow_strings.append(cur_string)
+                overflow_ptr += len(cur_string)
+                
+            print "Spilled 0x{0:x} bytes to overflow bank".format(abs(string_bytes_saved))
 
         #Write the data out to the object files. We're done here!
         with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
@@ -720,6 +779,10 @@ def make_tbl(args):
 
             for line in packed_strings:
                 objfile.write(line)
+        
+    with open(os.path.join(args.output, banknames[overflow_bank_id]["objname"]), "wb") as objfile:
+        for line in overflow_strings:
+            objfile.write(line)
 
 def main():
     ap = argparse.ArgumentParser()
