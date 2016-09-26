@@ -1,7 +1,6 @@
-INCLUDE "registers.inc"
-INCLUDE "components/saveclock/save_format.inc"
+INCLUDE "telefang.inc"
 
-SECTION "Save/Clock Nickname Staging Area", WRAM0[$C9E1]
+SECTION "Save/Clock Nickname Staging Area Extended", WRAM0[$CCA3]
 W_SaveClock_NicknameStaging:: ds M_SaveClock_DenjuuNicknameStagingSize
 
 SECTION "Banked Call Site for Save/Clock Load Denjuu Nickname", ROM0[$065A]
@@ -17,6 +16,12 @@ Banked_SaveClock_LoadDenjuuNickname::
 
 SECTION "Save/Clock Load Denjuu Nickname", ROMX[$4E12], BANK[$29]
 SaveClock_LoadDenjuuNickname::
+	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNickname)
+	call Banked_SaveClock_ADVICE_LoadDenjuuNickname
+	ret
+
+SECTION "Save/Clock ADVICE'd Load Denjuu Nickname", ROMX[$7EAD], BANK[$34]
+SaveClock_ADVICE_LoadDenjuuNickname::
 	ld hl, -SaveClock_StatisticsArray & $FFFF
 	add hl, de
 	srl h
@@ -28,6 +33,7 @@ SaveClock_LoadDenjuuNickname::
 	srl h
 	rr l
 	add hl, bc ;HL = the original denjuu index * 6
+   push hl
 	ld de, SaveClock_NicknameArray
 	add hl, de
 	
@@ -37,6 +43,33 @@ SaveClock_LoadDenjuuNickname::
 	ld a, 2
 	ld [REG_MBC3_SRAMBANK], a
 	
+	ld a, [hl]
+	cp $E6
+	jp nz, .hasCustomNickname
+	
+	;Since nicknames were not widened, species names can exceed nickname
+	;length. Therefore they have to be loaded differently
+	pop hl
+	push bc
+	pop hl
+	sla l
+	rl h
+	sla l
+	rl h
+	push hl
+	ld a, $A0
+	add a, h
+	ld h, a
+	call Battle_ADVICE_GetDenjuuSpeciesFromStatistics
+	call PatchUtils_LimitBreak
+	call PatchUtils_LimitBreak
+	ld hl, $4000
+	add hl, de
+	ld de, W_SaveClock_NicknameStaging
+	ld c, M_SaveClock_DenjuuNicknameStagingSize - 1
+	jr .stageLoop
+	
+.hasCustomNickname
 	ld de, W_SaveClock_NicknameStaging
 	ld c, M_SaveClock_DenjuuNicknameSize
 	
@@ -54,5 +87,8 @@ SaveClock_LoadDenjuuNickname::
 	;Manual SRAM lock
 	ld a, 0
 	ld [REG_MBC3_SRAMENABLE], a
+	
+	pop af
+	ld a, BANK(SaveClock_LoadDenjuuNickname)
 	
 	ret

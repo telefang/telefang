@@ -8,4 +8,4 @@ M_SaveClock_DenjuuStatSize EQU $10
 M_SaveClock_DenjuuNicknameSize EQU 6
 
 ;Size of various staging areas.
-M_SaveClock_DenjuuNicknameStagingSize EQU M_SaveClock_DenjuuNicknameSize + 1
+M_SaveClock_DenjuuNicknameStagingSize EQU M_StringTable_Load8AreaSize + 1

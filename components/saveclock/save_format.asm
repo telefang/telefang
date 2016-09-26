@@ -1,4 +1,4 @@
-INCLUDE "components/saveclock/save_format.inc"
+INCLUDE "telefang.inc"
 
 SECTION "Active Save File", SRAM[$A006], BANK[2]
 SaveClock_StatisticsArray:: REPT M_SaveClock_MaxDenjuuContacts

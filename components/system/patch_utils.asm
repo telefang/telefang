@@ -59,8 +59,9 @@ PatchUtils_LoadDenjuuName_Bankswitch::
 	ret
 	
 ;D1
+Banked_SaveClock_ADVICE_LoadDenjuuNickname::
 	rst $10
-	call $7EAD
+	call SaveClock_ADVICE_LoadDenjuuNickname
 	rst $10
 	ret
 
