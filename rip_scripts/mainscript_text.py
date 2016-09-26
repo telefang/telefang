@@ -729,7 +729,7 @@ def make_tbl(args):
         for line in packed_strings:
             bytes_remaining -= len(line)
         
-        if bytes_remaining < 0 and overflow_bank_id is not None:
+        if bytes_remaining < 0:
             print "Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining))
             
             #Compiled bank exceeds the amount of space available in the bank.
