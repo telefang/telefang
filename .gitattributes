@@ -6,6 +6,8 @@
 *.sh text
 *.txt text
 *.md text
+*.wikitext text
+*.csv text
 
 .gitignore text
 .gitmodules text
