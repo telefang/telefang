@@ -1,9 +1,9 @@
 ;Ugh. Why do I gotta do this??
-IMPORT MainScript_denjuu_species
+IMPORT StringTable_denjuu_species
 
 SECTION "String Table Bank Functions", ROM0[$0548]
 StringTable_LoadDenjuuName::
-    ld a, BANK(MainScript_denjuu_species)
+    ld a, BANK(StringTable_denjuu_species)
     rst $10
     call StringTable_LoadFromROMTbl8
     rst $18
@@ -17,7 +17,7 @@ StringTable_LoadDenjuuName::
     ret
     
 StringTable_LoadShortName::
-    ld a, BANK(MainScript_denjuu_species)
+    ld a, BANK(StringTable_denjuu_species)
     rst $10
     call StringTable_LoadFromROMTbl4
     rst $18
