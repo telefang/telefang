@@ -2,13 +2,16 @@
 from __future__ import division
 
 import mainscript_text
-import argparse, io, os.path
+import argparse, io, os.path, csv
 
 def parse_tablenames(filename):
     """Parse the list of table names
     
-    #name baseaddr stride count"""
+    #name baseaddr (table) stride count
+    #name baseaddr (block)
+    #name baseaddr (index) foreign_name"""
     tables = []
+    tbl_index = {}
 
     with io.open(filename, "r", encoding="utf-8") as tablenames:
         for line in tablenames:
@@ -21,11 +24,24 @@ def parse_tablenames(filename):
                 continue
 
             table = {}
-            table["basedir"] = os.path.join(*parameters[0].split("/")[0:-1])
-            table["filename"] = os.path.join(*(parameters[0] + ".wikitext").split("/"))
-            table["objname"] = os.path.join(*(parameters[0] + ".stringtbl").split("/"))
-            #table["wikiname"] = parameters[1]
-            table["symbol"] = "MainScript_" + parameters[0].replace("/", "_")
+            table["name"] = parameters[0]
+            table["basedir"] = os.path.join(*(parameters[0].split("/")[0:-1]))
+            table["filename"] = os.path.join(*(parameters[0] + ".csv").split("/"))
+            table["symbol"] = "StringTable_" + parameters[0].replace("/", "_")
+            table["format"] = parameters[2]
+
+            if table["format"] == "table":
+                table["objname"] = os.path.join(*(parameters[0] + ".stringtbl").split("/"))
+
+                #The other parameters are the length of each entry and the total
+                #entry count. Base 10 this time.
+                table["stride"] = int(parameters[3], 10)
+                table["count"] = int(parameters[4], 10)
+            elif table["format"] == "index":
+                table["objname"] = os.path.join(*(parameters[0] + ".stringidx").split("/"))
+                table["foreign_name"] = parameters[3]
+            elif table["format"] == "block":
+                table["objname"] = os.path.join(*(parameters[0] + ".stringblk").split("/"))
             
             #Parameter 2 is the flat address for the ROM
             flatattr = int(parameters[1], 16)
@@ -36,13 +52,17 @@ def parse_tablenames(filename):
             else:
                 table["baseaddr"] = flatattr % 0x4000 + 0x4000
                 table["basebank"] = flatattr // 0x4000
-                
-            #The other parameters are the length of each entry and the total
-            #entry count. Base 10 this time.
-            table["stride"] = int(parameters[2], 10)
-            table["count"] = int(parameters[3], 10)
 
+            table["id"] = len(tables)
+            tbl_index[table["name"]] = table["id"]
             tables.append(table)
+
+    #Fixup foreign names
+    for i, row in enumerate(tables):
+        try:
+            row["foreign_id"] = tbl_index[row["foreign_name"]]
+        except KeyError:
+            pass
 
     return tables
 

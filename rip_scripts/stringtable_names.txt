@@ -1,18 +1,33 @@
-#name baseaddr stride count
+#name baseaddr (table) stride count
+#name baseaddr (block)
+#name baseaddr (index) foreign_name
 
-#Name is the name of the bank relative to the script directory.
-#Baseaddr is where the string table is in ROM
-#Stride is the length of each entry, in bytes
-#Count is how many strings there are in total
+#NAME is the name of the bank relative to the script directory.
+#BASEADDR is where the string table is in ROM
+#FORMAT is what this particular bit compiles into.
+#Available formats are TABLE, BLOCK, INDEX.
 
-battle/items 2E652 8 68
-denjuu/nicknames 2F8FA 4 22
-denjuu/species 1D4000 8 174
-battle/tfangers 1D4578 8 48
-battle/attacks 1D46F8 8 138
-denjuu/habitats 1D5628 4 6
-battle/arrive_phrases 1D5888 16 174
-battle/attack_phrases 1D6368 16 174
-battle/message_unk 1D6E48 16 174
-denjuu/personalities 1D7928 8 12
-denjuu/statuses 1D7988 4 16
+#TABLE format banks are regular arrays of packed strings with a stride and count.
+#STRIDE is the length of each entry, in bytes.
+#COUNT is how many strings there are in total.
+
+#BLOCK format banks are just string data of arbitrary length, packed together.
+
+#INDEX format banks are pointers into a TABLE or BLOCK bank.
+#FOREIGN_NAME is the name of the bank that the INDEX bank references.
+
+battle/items 2E652 table 8 68
+denjuu/nicknames 2F8FA table 4 22
+map/location_mapping AA875 index map/location_strings
+map/location_strings AAA75 block
+map/dungeon_mapping AAAFF index map/dungeon_strings
+map/dungeon_strings AAB69 block
+denjuu/species 1D4000 table 8 174
+battle/tfangers 1D4578 table 8 48
+battle/attacks 1D46F8 table 8 138
+denjuu/habitats 1D5628 table 4 6
+battle/arrive_phrases 1D5888 table 16 174
+battle/attack_phrases 1D6368 table 16 174
+battle/message_unk 1D6E48 table 16 174
+denjuu/personalities 1D7928 table 8 12
+denjuu/statuses 1D7988 table 4 16
