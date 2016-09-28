@@ -2,7 +2,7 @@
 from __future__ import division
 
 import mainscript_text
-import argparse, io, os.path, csv
+import argparse, io, os.path, csv, math, struct
 
 def parse_tablenames(filename):
     """Parse the list of table names
@@ -18,7 +18,7 @@ def parse_tablenames(filename):
             if line[0] == "#" or line == "":
                 continue
 
-            parameters = line.split(" ")
+            parameters = line.strip().split(" ")
             
             if len(parameters) < 4:
                 continue
@@ -35,13 +35,15 @@ def parse_tablenames(filename):
 
                 #The other parameters are the length of each entry and the total
                 #entry count. Base 10 this time.
-                table["stride"] = int(parameters[3], 10)
-                table["count"] = int(parameters[4], 10)
+                table["count"] = int(parameters[3], 10)
+                table["stride"] = int(parameters[4], 10)
             elif table["format"] == "index":
                 table["objname"] = os.path.join(*(parameters[0] + ".stringidx").split("/"))
-                table["foreign_name"] = parameters[3]
+                table["count"] = int(parameters[3], 10)
+                table["foreign_name"] = parameters[4]
             elif table["format"] == "block":
                 table["objname"] = os.path.join(*(parameters[0] + ".stringblk").split("/"))
+                table["count"] = int(parameters[3], 10)
             
             #Parameter 2 is the flat address for the ROM
             flatattr = int(parameters[1], 16)
@@ -60,11 +62,57 @@ def parse_tablenames(filename):
     #Fixup foreign names
     for i, row in enumerate(tables):
         try:
-            row["foreign_id"] = tbl_index[row["foreign_name"]]
+            tables[i]["foreign_id"] = tbl_index[row["foreign_name"]]
         except KeyError:
             pass
 
     return tables
+
+def extract_string(rom, charmap, max_length = None):
+    """Extract characters from the given file until exhausted.
+
+    This function will extract unti it reaches a terminal character, it will
+    return annotated text. You may limit the maximum string length in bytes
+    read with max_length."""
+
+    string = []
+    read_chara = 0
+
+    while True:
+        if max_length is not None and read_chara >= max_length:
+            break
+
+        next_chara = mainscript_text.CHARA.unpack(rom.read(1))[0]
+        read_chara += 1
+
+        if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
+            string.append(charmap[1][next_chara])
+        elif next_chara in mainscript_text.reverse_specials:
+            #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
+            this_special = mainscript_text.specials[mainscript_text.reverse_specials[next_chara]]
+            string.append(u"«")
+            string.append(mainscript_text.reverse_specials[next_chara])
+
+            if this_special.bts:
+                fmt = "<"+("", "B", "H")[this_special.bts]
+                word = struct.unpack(fmt, rom.read(this_special.bts))[0]
+                string.append(mainscript_text.format_int(word))
+
+            string.append(u"»")
+
+            if this_special.end:
+                first_read = False
+                break
+        elif next_chara == 0xE0:
+            #End of string
+            break
+        else:
+            #Literal specials
+            string.append(u"«")
+            string.append(mainscript_text.format_int(next_chara))
+            string.append(u"»")
+
+    return u"".join(string)
 
 def extract(args):
     charmap = mainscript_text.parse_charmap(args.charmap)
@@ -72,67 +120,74 @@ def extract(args):
 
     with open(args.rom, 'rb') as rom:
         for table in tablenames:
-            wikitext = [u"{|", u"|-", u"!#", u"!" + args.language]
+            #Indexes are extracted in a second pass
+            if table["format"] == "index":
+                continue
 
+            extracted_table = []
+            extracted_table.append([u"#", args.language])
+
+            entries = []
+            reverse_entries = {}
+
+            csvdir = os.path.join(args.output, table["basedir"])
+            csvpath = os.path.join(args.output, table["filename"])
+            mainscript_text.install_path(csvdir)
+
+            with open(csvpath, "w+") as table_csvfile:
+                csvwriter = csv.writer(table_csvfile)
+                csvwriter.writerow(["#", args.language])
+
+                if table["format"] == "table":
+                    for i in range(table["count"]):
+                        rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"] + i * table["stride"]))
+                        reverse_entries[rom.tell()] = len(entries)
+                        entries.append(rom.tell())
+                        data = extract_string(rom, charmap, table["stride"]).encode("utf-8")
+                        idx = u"{0}".format(i + 1).encode("utf-8")
+                        csvwriter.writerow([idx, data])
+                elif table["format"] == "block":
+                    rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
+                    for i in range(table["count"]):
+                        reverse_entries[rom.tell()] = len(entries)
+                        entries.append(rom.tell())
+                        data = extract_string(rom, charmap).encode("utf-8")
+                        idx = u"{0}".format(i + 1).encode("utf-8")
+                        csvwriter.writerow([idx, data])
+
+            #Save these for later
+            table["entries"] = entries
+            table["reverse_entries"] = reverse_entries
+
+        #OK, now we can extract the indexes
+        for table in tablenames:
+            if table["format"] != "index":
+                continue
+
+            foreign_ptrs = tablenames[table["foreign_id"]]["reverse_entries"]
             rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
-
-            addr = table["baseaddr"]
-            end = 0x8000
             
-            #Actually extract our strings
-            string = []
+            csvdir = os.path.join(args.output, table["basedir"])
+            csvpath = os.path.join(args.output, table["filename"])
+            mainscript_text.install_path(csvdir)
             
-            for i in range(table["count"]):
-                wikitext.append(u"|-")
-                wikitext.append(u"|{0}".format(i + 1))
-
-                rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"] + i * table["stride"]))
+            with open(csvpath, "w+") as table_csvfile:
+                csvwriter = csv.writer(table_csvfile)
                 
-                for j in range(table["stride"]):
-                    next_chara = mainscript_text.CHARA.unpack(rom.read(1))[0]
+                pretty_row_length = math.ceil(math.sqrt(table["count"]))
+                cur_row = []
+
+                for i in range(table["count"]):
+                    ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
+                    addr = mainscript_text.flat(table["basebank"], ptr)
                     
-                    if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
-                        string.append(charmap[1][next_chara])
-                    elif next_chara in mainscript_text.reverse_specials:
-                        #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
-                        this_special = specials[mainscript_text.reverse_specials[next_chara]]
-                        string.append(u"«")
-                        string.append(mainscript_text.reverse_specials[next_chara])
+                    cur_row.append(u"{0}".format(foreign_ptrs[addr] + 1).encode("utf-8"))
+                    if len(cur_row) >= pretty_row_length:
+                        csvwriter.writerow(cur_row)
+                        cur_row = []
 
-                        if this_special.bts:
-                            read_length += this_special.bts
-                            fmt = "<"+("", "B", "H")[this_special.bts]
-                            word = struct.unpack(fmt, rom.read(this_special.bts))[0]
-                            string.append(mainscript_text.format_int(word))
-
-                        string.append(u"»")
-
-                        if this_special.end:
-                            first_read = False
-                            break
-                    elif next_chara == 0xE0:
-                        #End of string
-                        break
-                    else:
-                        #Literal specials
-                        string.append(u"«")
-                        string.append(mainscript_text.format_int(next_chara))
-                        string.append(u"»")
-
-                wikitext.append(u"|" + u"".join(string))
-                string = []
-
-            wikitext.append(u"|-")
-            wikitext.append(u"|}")
-
-            wikitext = u"\n".join(wikitext)
-
-            wikidir = os.path.join(args.output, table["basedir"])
-            wikipath = os.path.join(args.output, table["filename"])
-
-            mainscript_text.install_path(wikidir)
-            with io.open(wikipath, "w+", encoding="utf-8") as table_wikitext:
-                table_wikitext.write(wikitext)
+                if len(cur_row) > 0:
+                    csvwriter.writerow(cur_row)
 
 def asm(args):
     """Generate the ASM for string tables.
