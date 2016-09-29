@@ -123,10 +123,7 @@ def extract(args):
             #Indexes are extracted in a second pass
             if table["format"] == "index":
                 continue
-
-            extracted_table = []
-            extracted_table.append([u"#", args.language])
-
+            
             entries = []
             reverse_entries = {}
 
@@ -211,15 +208,28 @@ def make_tbl(args):
     charmap = mainscript_text.parse_charmap(args.charmap)
     tablenames = parse_tablenames(args.tablenames)
     
-    for bank in tablenames:
-        print "Compiling " + bank["filename"]
-        #If filenames are specified, only export banks that are mentioned there
-        if len(args.filenames) > 0 and bank["objname"] not in args.filenames:
+    for table in tablenames:
+        #Indexes are compiled in a second pass
+        if table["format"] == "index":
             continue
-
+        
+        #If filenames are specified, only export banks that are mentioned there
+        if len(args.filenames) > 0 and table["objname"] not in args.filenames:
+            continue
+        
+        print "Compiling " + table["filename"]
+        
         #Open and parse the data
-        with io.open(os.path.join(args.output, bank["filename"]), "r", encoding="utf-8") as wikifile:
-            rows, headers = mainscript_text.parse_wikitext(wikifile.read())
+        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
+            csvreader = csv.reader(csvfile)
+            headers = None
+            rows = []
+            
+            for row in csvreader:
+                if headers is None:
+                    headers = [cell.decode("utf-8") for cell in row]
+                else:
+                    rows.append([cell.decode("utf-8") for cell in row])
 
         #Determine what column we want
         str_col = headers.index(args.language)
@@ -228,9 +238,11 @@ def make_tbl(args):
         #Pack our strings
         packed_strings = []
         
-        baseaddr = bank["baseaddr"]
-        lastbk = None
-
+        baseaddr = table["baseaddr"]
+        
+        entries = []
+        reverse_entries = {}
+        
         for i, row in enumerate(rows):
             if str_col >= len(row):
                 print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
@@ -239,19 +251,59 @@ def make_tbl(args):
             
             packed = mainscript_text.pack_string(row[str_col], charmap, None, args.window_width, True)
             
-            if len(packed) > bank["stride"]:
-                print "WARNING: Row {} is too long for the current string table stride of {} in table {}.".format(i, bank["stride"], bank["filename"])
-                packed = packed[0:bank["stride"]]
-            else:
-                #Pad the string out with E0s.
-                packed = packed + "".join(["\xe0"] * (bank["stride"] - len(packed)))
+            try:
+                if len(packed) > table["stride"]:
+                    print "WARNING: Row {} is too long for the current string table stride of {} in table {}.".format(i, table["stride"], table["filename"])
+                    packed = packed[0:table["stride"]]
+                else:
+                    #Pad the string out with E0s.
+                    packed = packed + "".join(["\xe0"] * (table["stride"] - len(packed)))
+            except KeyError:
+                pass
             
             packed_strings.append(packed)
 
             baseaddr += len(packed)
+            
+            reverse_entries[mainscript_text.flat(table["basebank"], baseaddr)] = len(entries)
+            entries.append(mainscript_text.flat(table["basebank"], baseaddr))
+        
+        #Save these for later
+        table["entries"] = entries
+        table["reverse_entries"] = reverse_entries
         
         #Write the data out to the object files. We're done here!
-        with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
+        with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
+            for line in packed_strings:
+                objfile.write(line)
+    
+    for table in tablenames:
+        #Now's the time to compile indexes
+        if table["format"] != "index":
+            continue
+        
+        #If filenames are specified, only export banks that are mentioned there
+        if len(args.filenames) > 0 and table["objname"] not in args.filenames:
+            continue
+        
+        print "Compiling " + table["filename"]
+        
+        foreign_ptrs = tablenames[table["foreign_id"]]["entries"]
+        packed_strings = []
+        
+        entries = []
+        reverse_entries = {}
+        
+        #Open and parse the data
+        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
+            csvreader = csv.reader(csvfile)
+            
+            for row in csvreader:
+                for cell in row:
+                    packed_strings.append(mainscript_text.PTR.pack(foreign_ptrs[int(cell, 10) - 1] % 0x4000 + 0x4000))
+        
+        #Write the data out to the object files. We're done here!
+        with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
             for line in packed_strings:
                 objfile.write(line)
 
