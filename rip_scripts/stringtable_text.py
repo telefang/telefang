@@ -251,22 +251,22 @@ def make_tbl(args):
             
             packed = mainscript_text.pack_string(row[str_col], charmap, None, args.window_width, True)
             
-            try:
+            if "stride" in table:
                 if len(packed) > table["stride"]:
                     print "WARNING: Row {} is too long for the current string table stride of {} in table {}.".format(i, table["stride"], table["filename"])
                     packed = packed[0:table["stride"]]
                 else:
                     #Pad the string out with E0s.
                     packed = packed + "".join(["\xe0"] * (table["stride"] - len(packed)))
-            except KeyError:
-                pass
+            else:
+                packed = packed + "\xe0"
             
             packed_strings.append(packed)
-
-            baseaddr += len(packed)
             
             reverse_entries[mainscript_text.flat(table["basebank"], baseaddr)] = len(entries)
             entries.append(mainscript_text.flat(table["basebank"], baseaddr))
+            
+            baseaddr += len(packed)
         
         #Save these for later
         table["entries"] = entries
