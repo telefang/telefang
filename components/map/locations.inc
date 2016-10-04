@@ -1,0 +1,1 @@
+M_Map_LocationStagingSize EQU $10
