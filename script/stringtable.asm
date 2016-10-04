@@ -8,6 +8,26 @@ StringTable_denjuu_nicknames::
 	INCBIN "script/denjuu/nicknames.stringtbl"
 StringTable_denjuu_nicknames_END
 
+SECTION "StringTable_map_location_mapping Section", ROMX[$6875], BANK[$2a]
+StringTable_map_location_mapping::
+	INCBIN "script/map/location_mapping.stringidx"
+StringTable_map_location_mapping_END
+
+SECTION "StringTable_map_location_strings Section", ROMX[$6a75], BANK[$2a]
+StringTable_map_location_strings::
+	INCBIN "script/map/location_strings.stringblk"
+StringTable_map_location_strings_END
+
+SECTION "StringTable_map_dungeon_mapping Section", ROMX[$6aff], BANK[$2a]
+StringTable_map_dungeon_mapping::
+	INCBIN "script/map/dungeon_mapping.stringidx"
+StringTable_map_dungeon_mapping_END
+
+SECTION "StringTable_map_dungeon_strings Section", ROMX[$6b69], BANK[$2a]
+StringTable_map_dungeon_strings::
+	INCBIN "script/map/dungeon_strings.stringblk"
+StringTable_map_dungeon_strings_END
+
 SECTION "StringTable_denjuu_species Section", ROMX[$4000], BANK[$75]
 StringTable_denjuu_species::
 	INCBIN "script/denjuu/species.stringtbl"
