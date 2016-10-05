@@ -31,6 +31,7 @@ OBJS := components/compression/malias.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o \
      components/mainscript/advice.o \
+	  components/map/locations.o \
 	  components/sound/samples.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \

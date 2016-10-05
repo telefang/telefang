@@ -1,25 +1,42 @@
-#name baseaddr stride count
+#name baseaddr (table) count stride
+#name baseaddr (block) count
+#name baseaddr (index) count foreign_name
 
-#Name is the name of the bank relative to the script directory.
-#Baseaddr is where the string table is in ROM
-#Stride is the length of each entry, in bytes
-#Count is how many strings there are in total
+#NAME is the name of the bank relative to the script directory.
+#BASEADDR is where the string table is in ROM
+#FORMAT is what this particular bit compiles into.
+#Available formats are TABLE, BLOCK, INDEX.
+
+#TABLE format banks are regular arrays of packed strings with a stride and count.
+#COUNT is how many strings there are in total.
+#STRIDE is the length of each entry, in bytes.
+
+#BLOCK format banks are just string data of arbitrary length, packed together.
+#COUNT is how many strings there are in total.
+
+#INDEX format banks are pointers into a TABLE or BLOCK bank.
+#COUNT is how many strings there are in total.
+#FOREIGN_NAME is the name of the bank that the INDEX bank references.
 
 #The unused denjuu/nicknames and battle/message_unk tables were never relocated
 #or translated.
 
-battle/items 1E2B80 16 68
-#denjuu/nicknames N/A 8 22
-denjuu/species D0000 16 174
-battle/tfangers 1D6300 16 48
-battle/attacks 1D5890 16 138
-denjuu/habitats 1D6200 8 6
-battle/arrive_phrases 1E0000 32 174
-battle/attack_phrases 1E15C0 32 174
-#battle/message_unk N/A 32 174
-denjuu/personalities 1D6130 16 12
-denjuu/statuses 1D6270 8 16
+battle/items 1E2B80 table 68 16
+#denjuu/nicknames N/A table 22 8
+map/location_mapping AA875 index 256 map/location_strings
+map/location_strings AAA75 block 16
+map/dungeon_mapping AAAFF index 53 map/dungeon_strings
+map/dungeon_strings AAB69 block 39
+denjuu/species D0000 table 174 16
+battle/tfangers 1D6300 table 48 16
+battle/attacks 1D5890 table 138 16
+denjuu/habitats 1D6200 table 6 8
+battle/arrive_phrases 1E0000 table 174 32
+battle/attack_phrases 1E15C0 table 174 32
+#battle/message_unk N/A table 174 32
+denjuu/personalities 1D6130 table 12 16
+denjuu/statuses 1D6270 table 16 8
 
 #TODO: Remove this data from the ROM
-denjuu/personalities_old 1D7928 8 12
-denjuu/statuses_old 1D7988 4 16
+denjuu/personalities_old 1D7928 table 12 8
+denjuu/statuses_old 1D7988 table 16 4

@@ -121,7 +121,7 @@ MainScript_DrawHabitatString::
     ld c, $D
     call $58D
     ld a, [$D45F]
-    ld de, MainScript_denjuu_habitats
+    ld de, StringTable_denjuu_habitats
     ld bc, $9380
     jp MainScript_DrawShortName
     
@@ -129,7 +129,7 @@ MainScript_DrawHabitatString::
 MainScript_DrawStatusEffectString::
     push hl
     ld a, b
-    ld de, MainScript_denjuu_statuses
+    ld de, StringTable_denjuu_statuses
     pop bc
     jp MainScript_DrawShortName
 
