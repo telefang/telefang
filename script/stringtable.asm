@@ -96,11 +96,6 @@ StringTable_denjuu_personalities::
 	INCBIN "script/denjuu/personalities.stringtbl"
 StringTable_denjuu_personalities_END
 
-SECTION "StringTable_battle_message_unk Section", ROMX[$6e48], BANK[$75]
-StringTable_battle_message_unk::
-	INCBIN "script/battle/message_unk.stringtbl"
-StringTable_battle_message_unk_END
-
 SECTION "StringTable_denjuu_statuses Section", ROMX[$6270], BANK[$75]
 StringTable_denjuu_statuses::
 	INCBIN "script/denjuu/statuses.stringtbl"
