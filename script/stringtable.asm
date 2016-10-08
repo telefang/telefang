@@ -13,17 +13,27 @@ StringTable_map_location_mapping::
 	INCBIN "script/map/location_mapping.stringidx"
 StringTable_map_location_mapping_END
 
-SECTION "StringTable_map_location_strings Section", ROMX[$6a75], BANK[$2a]
-StringTable_map_location_strings::
-	INCBIN "script/map/location_strings.stringblk"
-StringTable_map_location_strings_END
+SECTION "StringTable_map_location_strings_old Section", ROMX[$6a75], BANK[$2a]
+StringTable_map_location_strings_old::
+	INCBIN "script/map/location_strings_old.stringblk"
+StringTable_map_location_strings_old_END
 
 SECTION "StringTable_map_dungeon_mapping Section", ROMX[$6aff], BANK[$2a]
 StringTable_map_dungeon_mapping::
 	INCBIN "script/map/dungeon_mapping.stringidx"
 StringTable_map_dungeon_mapping_END
 
-SECTION "StringTable_map_dungeon_strings Section", ROMX[$6b69], BANK[$2a]
+SECTION "StringTable_map_dungeon_strings_old Section", ROMX[$6b69], BANK[$2a]
+StringTable_map_dungeon_strings_old::
+	INCBIN "script/map/dungeon_strings_old.stringblk"
+StringTable_map_dungeon_strings_old_END
+
+SECTION "StringTable_map_location_strings Section", ROMX[$7da0], BANK[$2a]
+StringTable_map_location_strings::
+	INCBIN "script/map/location_strings.stringblk"
+StringTable_map_location_strings_END
+
+SECTION "StringTable_map_dungeon_strings Section", ROMX[$7e65], BANK[$2a]
 StringTable_map_dungeon_strings::
 	INCBIN "script/map/dungeon_strings.stringblk"
 StringTable_map_dungeon_strings_END
