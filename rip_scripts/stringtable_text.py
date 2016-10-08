@@ -68,18 +68,28 @@ def parse_tablenames(filename):
 
     return tables
 
-def extract_string(rom, charmap, max_length = None):
+def extract_string(rom, charmap, max_length = None, expected_ptrs = None):
     """Extract characters from the given file until exhausted.
 
     This function will extract unti it reaches a terminal character, it will
     return annotated text. You may limit the maximum string length in bytes
-    read with max_length."""
+    read with max_length.
+    
+    The expected_ptrs array lists the strings that are directly referenced by
+    indexes elsewhere in the ROM. If provided, string extraction will continue
+    until an expected pointer is reached. This allows for trash byte
+    detection."""
 
     string = []
     read_chara = 0
+    reading_trash = False
+    is_last = expected_ptrs is None or rom.tell() >= expected_ptrs[-1]
 
     while True:
         if max_length is not None and read_chara >= max_length:
+            break
+        
+        if reading_trash and rom.tell() in expected_ptrs:
             break
 
         next_chara = mainscript_text.CHARA.unpack(rom.read(1))[0]
@@ -103,10 +113,13 @@ def extract_string(rom, charmap, max_length = None):
             if this_special.end:
                 first_read = False
                 break
-        elif next_chara == 0xE0:
+        elif next_chara == 0xE0 and (is_last or rom.tell() in expected_ptrs):
             #End of string
             break
         else:
+            if next_chara == 0xE0:
+                reading_trash = True
+            
             #Literal specials
             string.append(u"«")
             string.append(mainscript_text.format_int(next_chara))
@@ -119,6 +132,29 @@ def extract(args):
     tablenames = parse_tablenames(args.tablenames)
 
     with open(args.rom, 'rb') as rom:
+        #Extract a list of pointers each index is expecting
+        #This is used for trash byte detection later
+        for table in tablenames:
+            if table["format"] != "index":
+                continue
+            
+            try:
+                all_ptrs = tablenames[table["foreign_id"]]["expected_ptrs"]
+            except KeyError:
+                all_ptrs = []
+            
+            rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
+            
+            for i in range(table["count"]):
+                ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
+                addr = mainscript_text.flat(table["basebank"], ptr)
+                
+                if addr not in all_ptrs:
+                    all_ptrs.append(addr)
+            
+            all_ptrs.sort()
+            tablenames[table["foreign_id"]]["expected_ptrs"] = all_ptrs
+        
         for table in tablenames:
             #Indexes are extracted in a second pass
             if table["format"] == "index":
@@ -126,6 +162,11 @@ def extract(args):
             
             entries = []
             reverse_entries = {}
+            
+            try:
+                expected_ptrs = table["expected_ptrs"]
+            except KeyError:
+                expected_ptrs = None
 
             csvdir = os.path.join(args.output, table["basedir"])
             csvpath = os.path.join(args.output, table["filename"])
@@ -140,7 +181,7 @@ def extract(args):
                         rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"] + i * table["stride"]))
                         reverse_entries[rom.tell()] = len(entries)
                         entries.append(rom.tell())
-                        data = extract_string(rom, charmap, table["stride"]).encode("utf-8")
+                        data = extract_string(rom, charmap, table["stride"], expected_ptrs).encode("utf-8")
                         idx = u"{0}".format(i + 1).encode("utf-8")
                         csvwriter.writerow([idx, data])
                 elif table["format"] == "block":
@@ -148,7 +189,7 @@ def extract(args):
                     for i in range(table["count"]):
                         reverse_entries[rom.tell()] = len(entries)
                         entries.append(rom.tell())
-                        data = extract_string(rom, charmap).encode("utf-8")
+                        data = extract_string(rom, charmap, None, expected_ptrs).encode("utf-8")
                         idx = u"{0}".format(i + 1).encode("utf-8")
                         csvwriter.writerow([idx, data])
 
@@ -258,7 +299,9 @@ def make_tbl(args):
                 else:
                     #Pad the string out with E0s.
                     packed = packed + "".join(["\xe0"] * (table["stride"] - len(packed)))
-            else:
+            elif "\xe0" not in packed:
+                #Any data beyond an E0 is understood to be trash bytes; thus,
+                #it does not recieve the implicit terminator.
                 packed = packed + "\xe0"
             
             packed_strings.append(packed)
