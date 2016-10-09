@@ -99,10 +99,10 @@ StringTable_battle_tfangers::
 StringTable_battle_tfangers_END
 
 ;1D6610
-    REPT $1317
+    REPT $1318
         db 0
     ENDR
-;1D7927
+;1D7928
 
 ;Flotsam in the ROM
 ;TODO: Remove
