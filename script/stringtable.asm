@@ -98,8 +98,8 @@ StringTable_battle_tfangers::
 	INCBIN "script/battle/tfangers.stringtbl"
 StringTable_battle_tfangers_END
 
-;1D6600
-    REPT $1327
+;1D6610
+    REPT $1317
         db 0
     ENDR
 ;1D7927

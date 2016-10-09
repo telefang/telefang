@@ -30,7 +30,7 @@ map/dungeon_mapping AAAFF index 53 map/dungeon_strings
 map/dungeon_strings_old AAB69 block 39
 map/dungeon_strings ABE65 block 27
 denjuu/species D0000 table 174 16
-battle/tfangers 1D6300 table 48 16
+battle/tfangers 1D6300 table 49 16
 battle/attacks 1D5890 table 138 16
 denjuu/habitats 1D6200 table 14 8
 battle/arrive_phrases 1E0000 table 174 32
