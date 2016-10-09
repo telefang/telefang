@@ -36,7 +36,7 @@ denjuu/habitats 1D6200 table 6 8
 battle/arrive_phrases 1E0000 table 174 32
 battle/attack_phrases 1E15C0 table 174 32
 #battle/message_unk N/A table 174 32
-denjuu/personalities 1D6130 table 12 16
+denjuu/personalities 1D6130 table 13 16
 denjuu/statuses 1D6270 table 16 8
 
 #TODO: Remove this data from the ROM
