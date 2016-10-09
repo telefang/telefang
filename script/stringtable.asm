@@ -64,7 +64,16 @@ StringTable_battle_attacks_old::
 	INCBIN "script/battle/attacks_old.stringtbl"
 StringTable_battle_attacks_old_END
 
-SECTION "StringTable_battle_attacks Section", ROMX[$5890], BANK[$75]
+SECTION "StringTable_denjuu_habitats_old Section", ROMX[$5628], BANK[$75]
+StringTable_denjuu_habitats_old::
+	INCBIN "script/denjuu/habitats_old.stringtbl"
+StringTable_denjuu_habitats_old_END
+
+SECTION "StringTable_battle_attacks Section", ROMX[$5888], BANK[$75]
+	REPT $8
+		db 0
+	ENDR
+
 StringTable_battle_attacks::
 	INCBIN "script/battle/attacks.stringtbl"
 StringTable_battle_attacks_END
