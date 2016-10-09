@@ -49,13 +49,38 @@ StringTable_denjuu_species_END
     ENDR
 ;D3D00
 
+SECTION "StringTable_denjuu_species_old Section", ROMX[$4000], BANK[$75]
+StringTable_denjuu_species_old::
+	INCBIN "script/denjuu/species_old.stringtbl"
+StringTable_denjuu_species_old_END
+
+SECTION "StringTable_battle_attacks Section", ROMX[$5890], BANK[$75]
+StringTable_battle_attacks::
+	INCBIN "script/battle/attacks.stringtbl"
+StringTable_battle_attacks_END
+
+SECTION "StringTable_denjuu_personalities Section", ROMX[$6130], BANK[$75]
+StringTable_denjuu_personalities::
+	INCBIN "script/denjuu/personalities.stringtbl"
+StringTable_denjuu_personalities_END
+
+SECTION "StringTable_denjuu_habitats Section", ROMX[$6200], BANK[$75]
+StringTable_denjuu_habitats::
+	INCBIN "script/denjuu/habitats.stringtbl"
+StringTable_denjuu_habitats_END
+
+SECTION "StringTable_denjuu_statuses Section", ROMX[$6270], BANK[$75]
+StringTable_denjuu_statuses::
+	INCBIN "script/denjuu/statuses.stringtbl"
+StringTable_denjuu_statuses_END
+
 SECTION "StringTable_battle_tfangers Section", ROMX[$6300], BANK[$75]
 StringTable_battle_tfangers::
 	INCBIN "script/battle/tfangers.stringtbl"
 StringTable_battle_tfangers_END
 
-;1D6610
-    REPT $1318
+;1D6600
+    REPT $1327
         db 0
     ENDR
 ;1D7927
@@ -71,16 +96,6 @@ StringTable_battle_tfangers_END
     ENDR
 ;1D8000 (end of bank)
 
-SECTION "StringTable_battle_attacks Section", ROMX[$5890], BANK[$75]
-StringTable_battle_attacks::
-	INCBIN "script/battle/attacks.stringtbl"
-StringTable_battle_attacks_END
-
-SECTION "StringTable_denjuu_habitats Section", ROMX[$6200], BANK[$75]
-StringTable_denjuu_habitats::
-	INCBIN "script/denjuu/habitats.stringtbl"
-StringTable_denjuu_habitats_END
-
 SECTION "StringTable_battle_arrive_phrases Section", ROMX[$4000], BANK[$78]
 StringTable_battle_arrive_phrases::
 	INCBIN "script/battle/arrive_phrases.stringtbl"
@@ -90,14 +105,4 @@ SECTION "StringTable_battle_attack_phrases Section", ROMX[$55c0], BANK[$78]
 StringTable_battle_attack_phrases::
 	INCBIN "script/battle/attack_phrases.stringtbl"
 StringTable_battle_attack_phrases_END
-
-SECTION "StringTable_denjuu_personalities Section", ROMX[$6130], BANK[$75]
-StringTable_denjuu_personalities::
-	INCBIN "script/denjuu/personalities.stringtbl"
-StringTable_denjuu_personalities_END
-
-SECTION "StringTable_denjuu_statuses Section", ROMX[$6270], BANK[$75]
-StringTable_denjuu_statuses::
-	INCBIN "script/denjuu/statuses.stringtbl"
-StringTable_denjuu_statuses_END
 

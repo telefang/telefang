@@ -42,3 +42,4 @@ denjuu/statuses 1D6270 table 16 8
 #TODO: Remove this data from the ROM
 denjuu/personalities_old 1D7928 table 12 8
 denjuu/statuses_old 1D7988 table 16 4
+denjuu/species_old 1D4000 table 175 8
