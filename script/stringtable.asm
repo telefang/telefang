@@ -54,6 +54,11 @@ StringTable_denjuu_species_old::
 	INCBIN "script/denjuu/species_old.stringtbl"
 StringTable_denjuu_species_old_END
 
+SECTION "StringTable_battle_tfangers_old Section", ROMX[$4578], BANK[$75]
+StringTable_battle_tfangers_old::
+	INCBIN "script/battle/tfangers_old.stringtbl"
+StringTable_battle_tfangers_old_END
+
 SECTION "StringTable_battle_attacks_old Section", ROMX[$46F8], BANK[$75]
 StringTable_battle_attacks_old::
 	INCBIN "script/battle/attacks_old.stringtbl"
