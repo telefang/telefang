@@ -27,6 +27,7 @@ OBJS := components/compression/malias.o \
 	  components/system/entrypoints.o components/system/bankcalls.o \
 	  components/system/math.o \
 	  components/system/patch_utils.o components/system/patch_unknown.o \
+	  components/system/aux_code.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o \
