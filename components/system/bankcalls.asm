@@ -17,11 +17,11 @@ SECTION "Banked Call Helpers 3", ROM0[$2FC7]
 Banked_MainScript_DrawLetter::
     push af
     ld a, [W_CurrentBank]
-    ld [$CA52], a
+    ld [W_LCDC_LastBank], a
     ld a, $B
     rst $10
     pop af
     call MainScript_DrawLetter
-    ld a, [$CA52]
+    ld a, [W_LCDC_LastBank]
     rst $10
     ret
