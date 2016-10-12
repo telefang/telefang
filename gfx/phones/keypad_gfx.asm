@@ -74,3 +74,7 @@ PhoneKeypadGfxDmg:
 	INCBIN "gfx/phones/2/menus_dmg.2bpp"
 	
 ; rest of bank is blank
+
+SECTION "Phone Screen Graphics", ROMX[$6A5F], BANK[$37]
+PhoneScreenNewTextsGfx
+	INCBIN "gfx/phones/new_texts.2bpp"
