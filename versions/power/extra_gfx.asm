@@ -8,3 +8,4 @@ DiplomaGfx:
 SECTION "gfx/menu/script_window.2bpp", ROMX[$719C], BANK[$38]
 ScriptWindow::
 	INCBIN "gfx/menu/script_window.2bpp"
+ScriptWindow_END::
