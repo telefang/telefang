@@ -4,3 +4,7 @@
 SECTION "gfx/diploma.2bpp", ROMX[$44e9], BANK[$3f]
 DiplomaGfx:
 	INCBIN "gfx/diploma.2bpp"
+	
+SECTION "gfx/menu/script_window.2bpp", ROMX[$719C], BANK[$38]
+ScriptWindow::
+	INCBIN "gfx/menu/script_window.2bpp"
