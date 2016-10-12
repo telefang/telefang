@@ -23,7 +23,7 @@ OBJS := components/compression/malias.o \
 	  components/system/math.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
-     components/mainscript/statustext.o \
+     components/mainscript/statustext.o components/mainscript/window.o \
 	  components/map/locations.o \
 	  components/sound/samples.o \
 	  components/serio/driver.o \
