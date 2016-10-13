@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Map Screen Location Loader WRAM", WRAM0[$CA00]
+SECTION "Map Screen Location Loader WRAM", WRAM0[$CCC0]
 W_Map_LocationStaging: ds M_Map_LocationStagingSize
 
 SECTION "Map Screen Location Loader", ROMX[$4508], BANK[$2A]
@@ -17,13 +17,15 @@ Map_LoadLocationName:
 	ld l, a
 	ld de, W_Map_LocationStaging
 	push hl
-	ld c, M_Map_LocationStagingSize
+	jp .noAddedSpaces
 
+;A bit of an explanation - the patch for this function is to just skip space
+;counting, but it overwrites part of the loop target. Hence the weird macro
+;down there. I'd like to avoid unnecessary byte changes.
 .lengthCountLoop
-	dec c
 	ld a, [hli]
 	cp $E0
-	jr nz, .lengthCountLoop
+	jr nz, .lengthCountLoop - 1
 	
 	srl c
 	ld a, c
