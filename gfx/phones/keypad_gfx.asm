@@ -6,7 +6,7 @@ PhoneKeypadGfx:
 	INCBIN "gfx/phones/0/menus.2bpp"
 	INCBIN "gfx/phones/0/letters2.2bpp"
 	INCBIN "gfx/phones/0/menus.2bpp"
-	INCBIN "gfx/phones/0/solfege_old.2bpp"
+	INCBIN "gfx/phones/0/solfege.2bpp"
 	INCBIN "gfx/phones/0/menus.2bpp"
 	
 	INCBIN "gfx/phones/1/numbers.2bpp"
@@ -47,7 +47,7 @@ PhoneKeypadGfxDmg:
 	INCBIN "gfx/phones/0/menus_dmg.2bpp"
 	INCBIN "gfx/phones/0/letters2.2bpp"
 	INCBIN "gfx/phones/0/menus_dmg.2bpp"
-	INCBIN "gfx/phones/0/solfege_old.2bpp"
+	INCBIN "gfx/phones/0/solfege.2bpp"
 	INCBIN "gfx/phones/0/menus_dmg.2bpp"
 	
 	; one tile row has some extra shading against the cgb version
@@ -67,9 +67,9 @@ PhoneKeypadGfxDmg:
 	INCBIN "gfx/phones/1/numbers_dmg.2bpp"
 	INCBIN "gfx/phones/2/menus_dmg.2bpp"
 	INCBIN "gfx/phones/2/letters1.2bpp"
-	INCBIN "gfx/phones/2/menus_dmg.2bpp"
+	INCBIN "gfx/phones/2/menus_corrupt.2bpp"
 	INCBIN "gfx/phones/2/letters2.2bpp"
-	INCBIN "gfx/phones/2/menus_dmg.2bpp"
+	INCBIN "gfx/phones/2/menus_corrupt.2bpp"
 	INCBIN "gfx/phones/2/solfege.2bpp"
 	INCBIN "gfx/phones/2/menus_dmg.2bpp"
 	
