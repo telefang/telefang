@@ -227,6 +227,7 @@ MenuOptionsGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/options.malias"
 MenuOptionsGfxEnd
+	INCBIN "gfx/menu/options_trashbytes.bin"
 
 SECTION "Title - Sprites Compressed GFX", ROMX[$5973], BANK[$36]
 TitleSpritesGfx:
@@ -273,6 +274,7 @@ ScreenSaveDeletedGfxEnd
 SECTION "Menu - Unk Compressed GFX", ROMX[$7561], BANK[$3b]
 MenuUnkGfx:
 	; corrupted
+	INCBIN "gfx/unknown_trashbytes.bin"
 
 SECTION "Menu - Stats Compressed GFX", ROMX[$4a23], BANK[$35]
 MenuStatsGfx:
@@ -302,12 +304,14 @@ MenuTotalGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/total.malias"
 MenuTotalGfxEnd
+	INCBIN "gfx/menu/total_trashbytes.bin"
 
 SECTION "Menu - Dmelo Compressed GFX", ROMX[$61cb], BANK[$3b]
 MenuDmeloGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/dmelo.malias"
 MenuDmeloGfxEnd
+	INCBIN "gfx/menu/dmelo_trashbytes.bin"
 
 SECTION "Menu - Battle2 Compressed GFX", ROMX[$617f], BANK[$36]
 MenuBattle2Gfx:
@@ -331,6 +335,7 @@ MenuNicknameGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/nickname.malias"
 MenuNicknameGfxEnd
+	INCBIN "gfx/menu/nickname_trashbytes.bin"
 
 SECTION "Menu - Numbers Compressed GFX", ROMX[$63ff], BANK[$36]
 MenuNumbersGfx:
@@ -349,12 +354,15 @@ MenuMain1Gfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/main1.malias"
 MenuMain1GfxEnd
+	INCBIN "gfx/menu/main1_trashbytes.bin"
 
 SECTION "Menu - Main2 Compressed GFX", ROMX[$720b], BANK[$3b]
 MenuMain2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/main2.malias"
 MenuMain2GfxEnd
+;TODO: Are these trash bytes another graphic that gets used?
+	INCBIN "gfx/menu/main2_trashbytes.bin"
 
 SECTION "Evolve - Bg3 Compressed GFX", ROMX[$4000], BANK[$61]
 EvolveBg3Gfx:
@@ -548,6 +556,7 @@ MenuMetGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/met.malias"
 MenuMetGfxEnd
+	INCBIN "gfx/menu/met_trashbytes.bin"
 
 SECTION "Cutscene - Antenna Tree Compressed GFX", ROMX[$6c7f], BANK[$39]
 CutsceneAntennaTreeGfx:
