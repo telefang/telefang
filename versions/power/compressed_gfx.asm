@@ -375,6 +375,7 @@ EvolveBg4Gfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg4.malias"
 EvolveBg4GfxEnd
+	INCBIN "gfx/evolve/bg4_trashbytes.bin"
 
 SECTION "Evolve - Cannot Compressed GFX", ROMX[$46e3], BANK[$61]
 EvolveCannotGfx:

@@ -55,9 +55,8 @@ SECTION "MainScript_denjuu_sms Section", ROMX[$4000], BANK[$46]
 MainScript_denjuu_sms:
 	INCBIN "script/denjuu/sms.scripttbl"
 MainScript_denjuu_sms_END
-	INCBIN "script/denjuu/sms_trashbytes.bin"
 
-    REPT $4000 - $0EF3 - $F2
+    REPT $4000 - $0EF3
         db 0
     ENDR
 
