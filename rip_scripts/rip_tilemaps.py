@@ -187,6 +187,149 @@ def extract(args):
                     for row in data:
                         csvwriter.writerow(row)
 
+def linearized(data):
+    """Generator which yields every column in data without breaks."""
+    for row in data:
+        for tile in row:
+            yield tile
+
+def compress_tilemap(data):
+    """Compress tilemap data.
+    
+    Data is assumed to be in 32-column rows; row breaks will be ignored.
+    
+    Data will be compressed as efficiently as possible under the current format
+    and no attempt will be made at mirroring less-efficient algorithms."""
+    
+    #Technically, a whole number of bytes can indicate compressed data, we are
+    #assuming #FE.
+    encoded_bytes = ["\xfe"]
+    bytes_to_encode = []
+    incompressible = []
+    
+    for tile in linearized(data):
+        bytes_to_encode.append(tile)
+    
+    while len(bytes_to_encode) > 0:
+        #Attempt to encode as many bytes as possible using the three run-length
+        #encodings available; otherwise, move a byte into a CopyBytes packet.
+        
+        this_byte = bytes_to_encode[0]
+        run_length = 1
+        for byte in bytes_to_encode[1:]:
+            if byte == this_byte:
+                run_length += 1
+            else:
+                break
+        
+        inc_length = 1
+        for byte in bytes_to_encode[1:]:
+            if byte == (this_byte + inc_length) % 0xFF:
+                inc_length += 1
+            else:
+                break
+        
+        dec_length = 1
+        for byte in bytes_to_encode[1:]:
+            if byte == (this_byte - dec_length) % 0xFF:
+                dec_length += 1
+            else:
+                break
+        
+        #Flush incompressible data if it looks like we have something.
+        #TODO: Split runs of incompressible bytes if they overflow
+        if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
+            encoded_bytes.append(len(incompressible) - 1)
+            encoded_bytes.append("".join(incompressible))
+            incompressible = []
+        
+        #Now that we know how long each command can be, pick the best one.
+        #Keep in mind that there's a minimum to each! The format will not allow
+        #runs less than 2 bytes, for what should be fairly obvious reasons.
+        #EDGE CASE/TODO: If there's a run of 68 bytes, it will compress to five
+        #bytes, when there's a more optimal four-byte encoding to be had by
+        #splitting the run such that the second command has enough bytes..
+        
+        if run_length >= 2 and run_length > inc_length and run_length > dec_length:
+            if run_length > 66:
+                run_length = 66
+            
+            cmd_byte = 0x40 | (run_length - 2)
+            encoded_bytes.append(chr(cmd_byte))
+            encoded_bytes.append(chr(this_byte))
+        elif inc_length >= 2 and inc_length > dec_length:
+            if inc_length > 66:
+                inc_length = 66
+            
+            cmd_byte = 0x80 | (inc_length - 2)
+            encoded_bytes.append(chr(cmd_byte))
+            encoded_bytes.append(chr(this_byte))
+        elif dec_length >= 2:
+            if dec_length > 66:
+                dec_length = 66
+            
+            cmd_byte = 0xC0 | (dec_length - 2)
+            encoded_bytes.append(chr(cmd_byte))
+            encoded_bytes.append(chr(this_byte))
+        else:
+            #We can't compress data yet, so add this byte onto the pile of
+            #uncompressible data and try again.
+            incompressible.append(chr(this_byte))
+            bytes_to_encode = bytes_to_encode[1:]
+    
+    #Encode the last few bits of incompressible data if it exists
+    #TODO: Split runs of incompressible bytes if they overflow
+    if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
+        encoded_bytes.append(len(incompressible) - 1)
+        encoded_bytes.append("".join(incompressible))
+        incompressible = []
+        
+    encoded_bytes.append(chr(0xff))
+    return "".join(encoded_bytes)
+
+def encode_literal_tilemap(data):
+    """Given tile or attribute data, produce an uncompressed datastream.
+    
+    This data format is necessary for any tilemap which is not 32 columns wide.
+    It's the only format to support newlines."""
+    
+    outdat = []
+    
+    for i, row in enumerate(data):
+        for cell in row:
+            outdat.append(chr(cell))
+        
+        if i < len(data):
+            outdat.append(chr(0xFE))
+    
+    outdat.append(chr(0xFF))
+    return "".join(outdat)
+
+def encode_tilemap(data):
+    """Given tile or attribute data, produce a compressed datastream.
+    
+    Data streams with 32-column wide rows representable with the compressed
+    data format will automatically be compressed. Data streams with shorter
+    rows will be encoded using the uncompressed format as it's the only one
+    that supports newlines."""
+    
+    #Determine if the data is compressible or no
+    use_compression = True
+    for i, row in enumerate(data):
+        if i < len(data) and len(row) < 32:
+            use_compression = False
+            break
+        elif i == len(data):
+            break
+    else:
+        #Empty data gets a big fat 0xFF
+        return "\xff"
+    
+    if use_compression:
+        return compress_tilemap(data)
+    else:
+        return encode_literal_tilemap(data)
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
