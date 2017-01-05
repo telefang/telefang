@@ -4,6 +4,83 @@ from __future__ import division
 import mainscript_text
 import argparse, io, os.path, csv, math, struct
 
+def parse_mapnames(filename):
+    """Parse the list of tilemap names.
+    
+    Format is:
+    
+    name type bank index"""
+    tables = []
+    banks = []
+    tbl_index = {}
+    bank_index = {}
+    
+    bank = 0
+
+    with io.open(filename, "r", encoding="utf-8") as tablenames:
+        for line in tablenames:
+            if line[0] == "#" or line == "":
+                continue
+            
+            #The line is technically --BANK-- but let's be lazy here
+            if line[0] == "-":
+                bank += 1
+                continue
+
+            parameters = line.strip().split(" ")
+            
+            if len(parameters) < 3:
+                continue
+            
+            if parameters[0] == "BANK":
+                bank = {}
+                bank["category"] = parameters[1]
+                bank["bank"] = int(parameters[2], 16)
+                bank["flataddr"] = int(parameters[3], 16)
+
+                if bank["category"] == "attrib":
+                    bank["symbol"] = "Attribmap_BANK_" + parameters[2].replace("/", "_")
+                elif bank["category"] == "tilemap":
+                    bank["symbol"] = "Tilemap_BANK_" + parameters[2].replace("/", "_")
+                
+                bank["id"] = len(banks)
+                
+                if not bank_index.has_key(bank["category"]):
+                    bank_index[bank["category"]] = {}
+                
+                bank_index[bank["category"]][bank["bank"]] = bank["id"]
+                banks.append(bank)
+            else:
+                table = {}
+                table["name"] = parameters[0]
+                table["category"] = parameters[1]
+                table["bank"] = int(parameters[2], 16)
+                table["index"] = int(parameters[3], 16)
+                table["basedir"] = os.path.join(*(parameters[0].split("/")[0:-1]))
+                table["filename"] = os.path.join(*(parameters[0] + ".csv").split("/"))
+                table["objname"] = os.path.join(*(parameters[0] + ".tmap").split("/"))
+
+                if table["category"] == "attrib":
+                    table["symbol"] = "Attribmap_" + parameters[0].replace("/", "_")
+                elif table["category"] == "tilemap":
+                    table["symbol"] = "Tilemap_" + parameters[0].replace("/", "_")
+
+                table["id"] = len(tables)
+
+                if not tbl_index.has_key(table["category"]):
+                    tbl_index[table["category"]] = {}
+
+                if not tbl_index[table["category"]].has_key(table["bank"]):
+                    tbl_index[table["category"]][table["bank"]] = {}
+
+                if not tbl_index[table["category"]][table["bank"]].has_key(table["index"]):
+                    tbl_index[table["category"]][table["bank"]][table["index"]] = {}
+
+                tbl_index[table["category"]][table["bank"]][table["index"]] = table["id"]
+                tables.append(table)
+    
+    return tables, tbl_index, banks, bank_index
+
 def decompress_tilemap(rom, offset = None):
     """Decompress a compressed tilemap from a given ROM file.
     
@@ -330,11 +407,60 @@ def encode_tilemap(data):
     else:
         return encode_literal_tilemap(data)
 
+def asm(args):
+    """Generate an ASM file for the metatables and tables present within the
+    compressed tilemap system.
+    
+    This process needs to be run at least once, to convert the compressed
+    tilemap names into imports that the assembler and linker can use. Changes
+    to that file can be mirrored into the ASM by re-running this command, or
+    manually doing so."""
+
+    charmap = mainscript_text.parse_charmap(args.charmap)
+    tables, table_index, banks, bank_index = parse_mapnames(args.mapnames)
+    
+    for category_name, category_index in table_index.items():
+        if category_name == "attrib":
+            print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs)
+        elif category_name == "tilemap":
+            print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc)
+        
+        for bank_id, bank_table_index in category_index.items():
+            bank = banks[bank_index[category_name][bank_id]]
+            print u'\tdb BANK(' + bank["symbol"] + ')'
+        
+        print u''
+    
+    print u''
+    
+    for category_name, category_index in table_index.items():
+        for bank_id, bank_table_index in category_index.items():
+            bank = banks[bank_index[category_name][bank_id]]
+            print u'SECTION "' + category_name + u' Bank {0}'.format(bank_id) + u'", ' + mainscript_text.format_sectionaddr_rom(bank["flataddr"])
+            
+            for tmap_id, table_index in bank_table_index.items():
+                table = tables[table_index]
+                
+                print u'\tdw ' + table["symbol"]
+            
+            print u''
+            
+            for tmap_id, table_index in bank_table_index.items():
+                table = tables[table_index]
+                
+                print table["symbol"] + u'::'
+                print u'\tincbin ' + os.path.join(args.output, table["objname"]).replace("\\", "/")
+                print table["symbol"] + u'_END'
+                print u''
+        
+        print u''
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
     ap.add_argument('--charmap', type=str, default="charmap.asm")
     ap.add_argument('--output', type=str, default="gfx")
+    ap.add_argument('--mapnames', type=str, default="rip_scripts/compressed_tilemap_names.txt")
     ap.add_argument('--metatable_loc', type=int, default=0x0B18)
     ap.add_argument('--metatable_loc_attribs', type=int, default=0x0C34)
     ap.add_argument('--metatable_length', type=int, default=2)
@@ -344,7 +470,7 @@ def main():
 
     method = {
         "extract": extract,
-        #"asm": asm,
+        "asm": asm,
         #"make_tbl": make_tbl
     }.get(args.mode, None)
 
