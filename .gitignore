@@ -9,6 +9,7 @@
 *.pcm
 *.map
 *.sym
+*.tmap
 
 ;Prevent committing compiled script data.
 *.scripttbl

@@ -455,6 +455,30 @@ def asm(args):
         
         print u''
 
+def make_maps(args):
+    """Compile the stated (or all) tilemaps into .tmap files suitable for
+    inclusion within the compressed tilemap banks."""
+    
+    charmap = mainscript_text.parse_charmap(args.charmap)
+    tables, table_index, banks, bank_index = parse_mapnames(args.mapnames)
+    
+    #We Are Number One but a python script compiles everything
+    #YouTube: Our Cancer Has Cancer.
+    for i, table in enumerate(tables):
+        #If filenames are specified, only export maps that are mentioned there
+        if len(args.filenames) > 0 and table["objname"] not in args.filenames:
+            continue
+        
+        with open(os.path.join(args.output, bank["filename"]), "r") as csvfile:
+            csvreader = csv.reader(csvfile)
+            csv_data = []
+            
+            for row in csvreader:
+                csv_data.push(row)
+            
+            with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
+                objfile.write(encode_tilemap(csv_data))
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
@@ -471,7 +495,7 @@ def main():
     method = {
         "extract": extract,
         "asm": asm,
-        #"make_tbl": make_tbl
+        "make_maps": make_maps
     }.get(args.mode, None)
 
     if method == None:
