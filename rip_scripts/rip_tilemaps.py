@@ -374,7 +374,7 @@ def encode_literal_tilemap(data):
     
     for i, row in enumerate(data):
         for cell in row:
-            outdat.append(chr(cell))
+            outdat.append(chr(int(cell, 10)))
         
         if i < len(data):
             outdat.append(chr(0xFE))
@@ -469,14 +469,14 @@ def make_maps(args):
         if len(args.filenames) > 0 and table["objname"] not in args.filenames:
             continue
         
-        with open(os.path.join(args.output, bank["filename"]), "r") as csvfile:
+        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
             csvreader = csv.reader(csvfile)
             csv_data = []
             
             for row in csvreader:
-                csv_data.push(row)
+                csv_data.append(row)
             
-            with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
+            with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
                 objfile.write(encode_tilemap(csv_data))
 
 def main():
