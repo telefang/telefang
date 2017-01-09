@@ -449,7 +449,7 @@ def asm(args):
                 table = tables[table_index]
                 
                 print table["symbol"] + u'::'
-                print u'\tincbin ' + os.path.join(args.output, table["objname"]).replace("\\", "/")
+                print u'\tincbin "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + '"'
                 print table["symbol"] + u'_END'
                 print u''
         

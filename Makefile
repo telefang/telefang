@@ -34,7 +34,7 @@ OBJS := components/compression/malias.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
 	  components/saveclock/denjuu_nicknames.o \
-	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
+	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/tilemaps.o \
      script/mainscript.o script/stringtable.o
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
