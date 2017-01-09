@@ -72,7 +72,7 @@ $(OBJS_ALL): $$*.asm $$($$*_dep)
 	@$(PYTHON) rip_scripts/pcm.py pcm $(pcmq)
 	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) $(scripttblq)
 	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER) $(stringtblq)
-   @$(PYTHON) rip_scripts/rip_tilemaps.py make_maps $(BASEROM_POWER) $(tmapq)
+	@$(PYTHON) rip_scripts/rip_tilemaps.py make_maps $(BASEROM_POWER) $(tmapq)
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
