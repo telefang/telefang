@@ -215,8 +215,3 @@ RLEDecompress::
 	jp nz, .cmd3RepeatAndDecrement
 	pop bc
 	jp .rllDecompressMode
-	
-;Lists banks that store RLE-compressed data.
-RLETilemapBanks:
-	db $3E
-	db $3F

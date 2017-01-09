@@ -1,8 +1,10 @@
 SECTION "tilemap Section", ROM0[$b18]
+RLETilemapBanks::
 	db BANK(Tilemap_BANK_0)
 	db BANK(Tilemap_BANK_1)
 
 SECTION "attrib Section", ROM0[$c34]
+RLEAttribmapBanks::
 	db BANK(Attribmap_BANK_0)
 	db BANK(Attribmap_BANK_1)
 
