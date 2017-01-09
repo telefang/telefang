@@ -316,9 +316,11 @@ def compress_tilemap(data):
         #Flush incompressible data if it looks like we have something.
         #TODO: Split runs of incompressible bytes if they overflow
         if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
-            encoded_bytes.append(len(incompressible) - 1)
-            encoded_bytes.append("".join(incompressible))
-            incompressible = []
+            while len(incompressible) > 0:
+                inc_count = min(incompressible, 0x40)
+                encoded_bytes.append(chr(inc_count))
+                encoded_bytes.append("".join(incompressible[:inc_count]))
+                incompressible = incompressible[inc_count:]
         
         #Now that we know how long each command can be, pick the best one.
         #Keep in mind that there's a minimum to each! The format will not allow
@@ -334,6 +336,7 @@ def compress_tilemap(data):
             cmd_byte = 0x40 | (run_length - 2)
             encoded_bytes.append(chr(cmd_byte))
             encoded_bytes.append(chr(this_byte))
+            bytes_to_encode = bytes_to_encode[run_length:]
         elif inc_length >= 2 and inc_length > dec_length:
             if inc_length > 66:
                 inc_length = 66
@@ -341,6 +344,7 @@ def compress_tilemap(data):
             cmd_byte = 0x80 | (inc_length - 2)
             encoded_bytes.append(chr(cmd_byte))
             encoded_bytes.append(chr(this_byte))
+            bytes_to_encode = bytes_to_encode[inc_length:]
         elif dec_length >= 2:
             if dec_length > 66:
                 dec_length = 66
@@ -348,6 +352,7 @@ def compress_tilemap(data):
             cmd_byte = 0xC0 | (dec_length - 2)
             encoded_bytes.append(chr(cmd_byte))
             encoded_bytes.append(chr(this_byte))
+            bytes_to_encode = bytes_to_encode[dec_length:]
         else:
             #We can't compress data yet, so add this byte onto the pile of
             #uncompressible data and try again.
@@ -357,9 +362,11 @@ def compress_tilemap(data):
     #Encode the last few bits of incompressible data if it exists
     #TODO: Split runs of incompressible bytes if they overflow
     if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
-        encoded_bytes.append(len(incompressible) - 1)
-        encoded_bytes.append("".join(incompressible))
-        incompressible = []
+        while len(incompressible) > 0:
+            inc_count = min(incompressible, 0x40)
+            encoded_bytes.append(chr(inc_count))
+            encoded_bytes.append("".join(incompressible[:inc_count]))
+            incompressible = incompressible[inc_count:]
         
     encoded_bytes.append(chr(0xff))
     return "".join(encoded_bytes)
@@ -374,7 +381,7 @@ def encode_literal_tilemap(data):
     
     for i, row in enumerate(data):
         for cell in row:
-            outdat.append(chr(int(cell, 10)))
+            outdat.append(chr(cell))
         
         if i < len(data):
             outdat.append(chr(0xFE))
@@ -393,10 +400,10 @@ def encode_tilemap(data):
     #Determine if the data is compressible or no
     use_compression = True
     for i, row in enumerate(data):
-        if i < len(data) and len(row) < 32:
+        if i < len(data) - 1 and len(row) < 32:
             use_compression = False
             break
-        elif i == len(data):
+        elif i == len(data) - 1:
             break
     else:
         #Empty data gets a big fat 0xFF
@@ -474,7 +481,13 @@ def make_maps(args):
             csv_data = []
             
             for row in csvreader:
-                csv_data.append(row)
+                nrow = []
+                for cell in row:
+                    nrow.append(int(cell, 10))
+                
+                csv_data.append(nrow)
+            
+            print "Compiling " + table["filename"]
             
             with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
                 objfile.write(encode_tilemap(csv_data))
