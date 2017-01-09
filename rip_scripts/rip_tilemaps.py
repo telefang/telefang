@@ -426,41 +426,64 @@ def asm(args):
     charmap = mainscript_text.parse_charmap(args.charmap)
     tables, table_index, banks, bank_index = parse_mapnames(args.mapnames)
     
-    for category_name, category_index in table_index.items():
-        if category_name == "attrib":
-            print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs)
-        elif category_name == "tilemap":
-            print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc)
-        
-        for bank_id, bank_table_index in category_index.items():
-            bank = banks[bank_index[category_name][bank_id]]
-            print u'\tdb BANK(' + bank["symbol"] + ')'
-        
-        print u''
-    
-    print u''
-    
-    for category_name, category_index in table_index.items():
-        for bank_id, bank_table_index in category_index.items():
-            bank = banks[bank_index[category_name][bank_id]]
-            print u'SECTION "' + category_name + u' Bank {0}'.format(bank_id) + u'", ' + mainscript_text.format_sectionaddr_rom(bank["flataddr"])
-            
-            for tmap_id, table_index in bank_table_index.items():
-                table = tables[table_index]
-                
-                print u'\tdw ' + table["symbol"]
-            
+    with open(args.rom, 'rb') as rom:
+        for category_name, category_index in table_index.items():
+            if category_name == "attrib":
+                print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs)
+            elif category_name == "tilemap":
+                print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc)
+
+            for bank_id, bank_table_index in category_index.items():
+                bank = banks[bank_index[category_name][bank_id]]
+                print u'\tdb BANK(' + bank["symbol"] + ')'
+
             print u''
-            
-            for tmap_id, table_index in bank_table_index.items():
-                table = tables[table_index]
-                
-                print table["symbol"] + u'::'
-                print u'\tincbin "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + '"'
-                print table["symbol"] + u'_END'
-                print u''
-        
+
         print u''
+
+        for category_name, category_index in table_index.items():
+            for bank_id, bank_table_index in category_index.items():
+                bank = banks[bank_index[category_name][bank_id]]
+                
+                rom.seek(bank["flataddr"])
+                
+                #Prep the ROM table scan
+                last_table_index = None
+                last_ptr = None
+                skip_list = []
+                
+                print u'SECTION "' + category_name + u' Bank {0}'.format(bank_id) + u'", ' + mainscript_text.format_sectionaddr_rom(bank["flataddr"])
+                
+                for tmap_id, table_index in bank_table_index.items():
+                    table = tables[table_index]
+                    this_ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
+                    
+                    if last_ptr != None and this_ptr == last_ptr:
+                        #Aliased row. Link to the last unique ptr instead.
+                        skip_list.append(table_index)
+                        table = tables[last_table_index]
+                        table_index = last_table_index
+                    
+                    print u'\tdw ' + table["symbol"]
+                    
+                    last_ptr = this_ptr
+                    last_table_index = table_index
+
+                print u''
+
+                for tmap_id, table_index in bank_table_index.items():
+                    table = tables[table_index]
+                    
+                    if table_index in skip_list:
+                        #Aliased row. Skip it.
+                        continue
+
+                    print table["symbol"] + u'::'
+                    print u'\tincbin "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + '"'
+                    print table["symbol"] + u'_END'
+                    print u''
+
+            print u''
 
 def make_maps(args):
     """Compile the stated (or all) tilemaps into .tmap files suitable for

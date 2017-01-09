@@ -9,7 +9,7 @@ SECTION "attrib Section", ROM0[$c34]
 
 SECTION "tilemap Bank 0", ROMX[$4000], BANK[$8]
 	dw Tilemap_unknown_tilemap_0_0
-	dw Tilemap_unknown_tilemap_0_1
+	dw Tilemap_unknown_tilemap_0_0
 	dw Tilemap_unknown_tilemap_0_2
 	dw Tilemap_unknown_tilemap_0_3
 	dw Tilemap_unknown_tilemap_0_4
@@ -17,59 +17,59 @@ SECTION "tilemap Bank 0", ROMX[$4000], BANK[$8]
 	dw Tilemap_unknown_tilemap_0_6
 	dw Tilemap_unknown_tilemap_0_7
 	dw Tilemap_unknown_tilemap_0_8
-	dw Tilemap_unknown_tilemap_0_9
+	dw Tilemap_unknown_tilemap_0_8
 	dw Tilemap_unknown_tilemap_0_a
 	dw Tilemap_unknown_tilemap_0_b
 	dw Tilemap_unknown_tilemap_0_c
 	dw Tilemap_unknown_tilemap_0_d
 	dw Tilemap_unknown_tilemap_0_e
-	dw Tilemap_unknown_tilemap_0_f
+	dw Tilemap_unknown_tilemap_0_e
 	dw Tilemap_unknown_tilemap_0_10
 	dw Tilemap_unknown_tilemap_0_11
 	dw Tilemap_unknown_tilemap_0_12
 	dw Tilemap_unknown_tilemap_0_13
 	dw Tilemap_unknown_tilemap_0_14
 	dw Tilemap_unknown_tilemap_0_15
-	dw Tilemap_unknown_tilemap_0_16
-	dw Tilemap_unknown_tilemap_0_17
+	dw Tilemap_unknown_tilemap_0_15
+	dw Tilemap_unknown_tilemap_0_15
 	dw Tilemap_unknown_tilemap_0_18
-	dw Tilemap_unknown_tilemap_0_19
-	dw Tilemap_unknown_tilemap_0_1a
+	dw Tilemap_unknown_tilemap_0_18
+	dw Tilemap_unknown_tilemap_0_18
 	dw Tilemap_unknown_tilemap_0_1b
-	dw Tilemap_unknown_tilemap_0_1c
-	dw Tilemap_unknown_tilemap_0_1d
-	dw Tilemap_unknown_tilemap_0_1e
-	dw Tilemap_unknown_tilemap_0_1f
-	dw Tilemap_unknown_tilemap_0_20
+	dw Tilemap_unknown_tilemap_0_1b
+	dw Tilemap_unknown_tilemap_0_1b
+	dw Tilemap_unknown_tilemap_0_1b
+	dw Tilemap_unknown_tilemap_0_1b
+	dw Tilemap_unknown_tilemap_0_1b
 	dw Tilemap_unknown_tilemap_0_21
 	dw Tilemap_unknown_tilemap_0_22
-	dw Tilemap_unknown_tilemap_0_23
-	dw Tilemap_unknown_tilemap_0_24
-	dw Tilemap_unknown_tilemap_0_25
-	dw Tilemap_unknown_tilemap_0_26
-	dw Tilemap_unknown_tilemap_0_27
-	dw Tilemap_unknown_tilemap_0_28
-	dw Tilemap_unknown_tilemap_0_29
-	dw Tilemap_unknown_tilemap_0_2a
-	dw Tilemap_unknown_tilemap_0_2b
-	dw Tilemap_unknown_tilemap_0_2c
-	dw Tilemap_unknown_tilemap_0_2d
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
+	dw Tilemap_unknown_tilemap_0_22
 	dw Tilemap_unknown_tilemap_0_2e
 	dw Tilemap_unknown_tilemap_0_2f
 	dw Tilemap_unknown_tilemap_0_30
 	dw Tilemap_unknown_tilemap_0_31
 	dw Tilemap_unknown_tilemap_0_32
-	dw Tilemap_unknown_tilemap_0_33
-	dw Tilemap_unknown_tilemap_0_34
-	dw Tilemap_unknown_tilemap_0_35
+	dw Tilemap_unknown_tilemap_0_32
+	dw Tilemap_unknown_tilemap_0_32
+	dw Tilemap_unknown_tilemap_0_32
 	dw Tilemap_unknown_tilemap_0_36
-	dw Tilemap_unknown_tilemap_0_37
-	dw Tilemap_unknown_tilemap_0_38
-	dw Tilemap_unknown_tilemap_0_39
-	dw Tilemap_unknown_tilemap_0_3a
+	dw Tilemap_unknown_tilemap_0_36
+	dw Tilemap_unknown_tilemap_0_36
+	dw Tilemap_unknown_tilemap_0_36
+	dw Tilemap_unknown_tilemap_0_36
 	dw Tilemap_unknown_tilemap_0_3b
 	dw Tilemap_unknown_tilemap_0_3c
-	dw Tilemap_unknown_tilemap_0_3d
+	dw Tilemap_unknown_tilemap_0_3c
 	dw Tilemap_unknown_tilemap_0_3e
 	dw Tilemap_unknown_tilemap_0_3f
 	dw Tilemap_unknown_tilemap_0_40
@@ -81,19 +81,19 @@ SECTION "tilemap Bank 0", ROMX[$4000], BANK[$8]
 	dw Tilemap_unknown_tilemap_0_46
 	dw Tilemap_unknown_tilemap_0_47
 	dw Tilemap_unknown_tilemap_0_48
-	dw Tilemap_unknown_tilemap_0_49
-	dw Tilemap_unknown_tilemap_0_4a
-	dw Tilemap_unknown_tilemap_0_4b
-	dw Tilemap_unknown_tilemap_0_4c
-	dw Tilemap_unknown_tilemap_0_4d
-	dw Tilemap_unknown_tilemap_0_4e
-	dw Tilemap_unknown_tilemap_0_4f
-	dw Tilemap_unknown_tilemap_0_50
-	dw Tilemap_unknown_tilemap_0_51
-	dw Tilemap_unknown_tilemap_0_52
-	dw Tilemap_unknown_tilemap_0_53
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_55
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
+	dw Tilemap_unknown_tilemap_0_48
 	dw Tilemap_unknown_tilemap_0_56
 	dw Tilemap_unknown_tilemap_0_57
 	dw Tilemap_unknown_tilemap_0_58
@@ -102,25 +102,25 @@ SECTION "tilemap Bank 0", ROMX[$4000], BANK[$8]
 	dw Tilemap_unknown_tilemap_0_5b
 	dw Tilemap_unknown_tilemap_0_5c
 	dw Tilemap_unknown_tilemap_0_5d
-	dw Tilemap_unknown_tilemap_0_5e
-	dw Tilemap_unknown_tilemap_0_5f
-	dw Tilemap_unknown_tilemap_0_60
+	dw Tilemap_unknown_tilemap_0_5d
+	dw Tilemap_unknown_tilemap_0_5d
+	dw Tilemap_unknown_tilemap_0_5d
 	dw Tilemap_unknown_tilemap_0_61
 	dw Tilemap_unknown_tilemap_0_62
-	dw Tilemap_unknown_tilemap_0_63
-	dw Tilemap_unknown_tilemap_0_64
-	dw Tilemap_unknown_tilemap_0_65
-	dw Tilemap_unknown_tilemap_0_66
-	dw Tilemap_unknown_tilemap_0_67
-	dw Tilemap_unknown_tilemap_0_68
-	dw Tilemap_unknown_tilemap_0_69
-	dw Tilemap_unknown_tilemap_0_6a
-	dw Tilemap_unknown_tilemap_0_6b
-	dw Tilemap_unknown_tilemap_0_6c
-	dw Tilemap_unknown_tilemap_0_6d
-	dw Tilemap_unknown_tilemap_0_6e
-	dw Tilemap_unknown_tilemap_0_6f
-	dw Tilemap_unknown_tilemap_0_70
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
+	dw Tilemap_unknown_tilemap_0_62
 	dw Tilemap_unknown_tilemap_0_71
 	dw Tilemap_unknown_tilemap_0_72
 	dw Tilemap_unknown_tilemap_0_73
@@ -131,12 +131,12 @@ SECTION "tilemap Bank 0", ROMX[$4000], BANK[$8]
 	dw Tilemap_unknown_tilemap_0_78
 	dw Tilemap_unknown_tilemap_0_79
 	dw Tilemap_unknown_tilemap_0_7a
-	dw Tilemap_unknown_tilemap_0_7b
-	dw Tilemap_unknown_tilemap_0_7c
-	dw Tilemap_unknown_tilemap_0_7d
-	dw Tilemap_unknown_tilemap_0_7e
-	dw Tilemap_unknown_tilemap_0_7f
-	dw Tilemap_unknown_tilemap_0_80
+	dw Tilemap_unknown_tilemap_0_7a
+	dw Tilemap_unknown_tilemap_0_7a
+	dw Tilemap_unknown_tilemap_0_7a
+	dw Tilemap_unknown_tilemap_0_7a
+	dw Tilemap_unknown_tilemap_0_7a
+	dw Tilemap_unknown_tilemap_0_7a
 	dw Tilemap_unknown_tilemap_0_81
 	dw Tilemap_unknown_tilemap_0_82
 	dw Tilemap_unknown_tilemap_0_83
@@ -159,16 +159,16 @@ SECTION "tilemap Bank 0", ROMX[$4000], BANK[$8]
 	dw Tilemap_unknown_tilemap_0_94
 	dw Tilemap_unknown_tilemap_0_95
 	dw Tilemap_unknown_tilemap_0_96
-	dw Tilemap_unknown_tilemap_0_97
-	dw Tilemap_unknown_tilemap_0_98
-	dw Tilemap_unknown_tilemap_0_99
-	dw Tilemap_unknown_tilemap_0_9a
-	dw Tilemap_unknown_tilemap_0_9b
-	dw Tilemap_unknown_tilemap_0_9c
-	dw Tilemap_unknown_tilemap_0_9d
-	dw Tilemap_unknown_tilemap_0_9e
-	dw Tilemap_unknown_tilemap_0_9f
-	dw Tilemap_unknown_tilemap_0_a0
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
+	dw Tilemap_unknown_tilemap_0_96
 	dw Tilemap_unknown_tilemap_0_a1
 	dw Tilemap_unknown_tilemap_0_a2
 	dw Tilemap_unknown_tilemap_0_a3
@@ -176,54 +176,50 @@ SECTION "tilemap Bank 0", ROMX[$4000], BANK[$8]
 	dw Tilemap_unknown_tilemap_0_a5
 	dw Tilemap_unknown_tilemap_0_a6
 	dw Tilemap_unknown_tilemap_0_a7
-	dw Tilemap_unknown_tilemap_0_a8
-	dw Tilemap_unknown_tilemap_0_a9
-	dw Tilemap_unknown_tilemap_0_aa
-	dw Tilemap_unknown_tilemap_0_ab
-	dw Tilemap_unknown_tilemap_0_ac
-	dw Tilemap_unknown_tilemap_0_ad
-	dw Tilemap_unknown_tilemap_0_ae
-	dw Tilemap_unknown_tilemap_0_af
-	dw Tilemap_unknown_tilemap_0_b0
-	dw Tilemap_unknown_tilemap_0_b1
-	dw Tilemap_unknown_tilemap_0_b2
-	dw Tilemap_unknown_tilemap_0_b3
-	dw Tilemap_unknown_tilemap_0_b4
-	dw Tilemap_unknown_tilemap_0_b5
-	dw Tilemap_unknown_tilemap_0_b6
-	dw Tilemap_unknown_tilemap_0_b7
-	dw Tilemap_unknown_tilemap_0_b8
-	dw Tilemap_unknown_tilemap_0_b9
-	dw Tilemap_unknown_tilemap_0_ba
-	dw Tilemap_unknown_tilemap_0_bb
-	dw Tilemap_unknown_tilemap_0_bc
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
+	dw Tilemap_unknown_tilemap_0_a7
 	dw Tilemap_unknown_tilemap_0_bd
 	dw Tilemap_unknown_tilemap_0_be
 	dw Tilemap_unknown_tilemap_0_bf
 	dw Tilemap_unknown_tilemap_0_c0
 	dw Tilemap_unknown_tilemap_0_c1
 	dw Tilemap_unknown_tilemap_0_c2
-	dw Tilemap_unknown_tilemap_0_c3
-	dw Tilemap_unknown_tilemap_0_c4
-	dw Tilemap_unknown_tilemap_0_c5
-	dw Tilemap_unknown_tilemap_0_c6
-	dw Tilemap_unknown_tilemap_0_c7
-	dw Tilemap_unknown_tilemap_0_c8
-	dw Tilemap_unknown_tilemap_0_c9
-	dw Tilemap_unknown_tilemap_0_ca
-	dw Tilemap_unknown_tilemap_0_cb
-	dw Tilemap_unknown_tilemap_0_cc
-	dw Tilemap_unknown_tilemap_0_cd
-	dw Tilemap_unknown_tilemap_0_ce
-	dw Tilemap_unknown_tilemap_0_cf
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
+	dw Tilemap_unknown_tilemap_0_c2_END
 
 Tilemap_unknown_tilemap_0_0::
 	incbin "gfx/unknown/tilemap_0/0.tmap"
 Tilemap_unknown_tilemap_0_0_END
-
-Tilemap_unknown_tilemap_0_1::
-	incbin "gfx/unknown/tilemap_0/1.tmap"
-Tilemap_unknown_tilemap_0_1_END
 
 Tilemap_unknown_tilemap_0_2::
 	incbin "gfx/unknown/tilemap_0/2.tmap"
@@ -253,10 +249,6 @@ Tilemap_unknown_tilemap_0_8::
 	incbin "gfx/unknown/tilemap_0/8.tmap"
 Tilemap_unknown_tilemap_0_8_END
 
-Tilemap_unknown_tilemap_0_9::
-	incbin "gfx/unknown/tilemap_0/9.tmap"
-Tilemap_unknown_tilemap_0_9_END
-
 Tilemap_unknown_tilemap_0_a::
 	incbin "gfx/unknown/tilemap_0/a.tmap"
 Tilemap_unknown_tilemap_0_a_END
@@ -276,10 +268,6 @@ Tilemap_unknown_tilemap_0_d_END
 Tilemap_unknown_tilemap_0_e::
 	incbin "gfx/unknown/tilemap_0/e.tmap"
 Tilemap_unknown_tilemap_0_e_END
-
-Tilemap_unknown_tilemap_0_f::
-	incbin "gfx/unknown/tilemap_0/f.tmap"
-Tilemap_unknown_tilemap_0_f_END
 
 Tilemap_unknown_tilemap_0_10::
 	incbin "gfx/unknown/tilemap_0/10.tmap"
@@ -305,49 +293,13 @@ Tilemap_unknown_tilemap_0_15::
 	incbin "gfx/unknown/tilemap_0/15.tmap"
 Tilemap_unknown_tilemap_0_15_END
 
-Tilemap_unknown_tilemap_0_16::
-	incbin "gfx/unknown/tilemap_0/16.tmap"
-Tilemap_unknown_tilemap_0_16_END
-
-Tilemap_unknown_tilemap_0_17::
-	incbin "gfx/unknown/tilemap_0/17.tmap"
-Tilemap_unknown_tilemap_0_17_END
-
 Tilemap_unknown_tilemap_0_18::
 	incbin "gfx/unknown/tilemap_0/18.tmap"
 Tilemap_unknown_tilemap_0_18_END
 
-Tilemap_unknown_tilemap_0_19::
-	incbin "gfx/unknown/tilemap_0/19.tmap"
-Tilemap_unknown_tilemap_0_19_END
-
-Tilemap_unknown_tilemap_0_1a::
-	incbin "gfx/unknown/tilemap_0/1a.tmap"
-Tilemap_unknown_tilemap_0_1a_END
-
 Tilemap_unknown_tilemap_0_1b::
 	incbin "gfx/unknown/tilemap_0/1b.tmap"
 Tilemap_unknown_tilemap_0_1b_END
-
-Tilemap_unknown_tilemap_0_1c::
-	incbin "gfx/unknown/tilemap_0/1c.tmap"
-Tilemap_unknown_tilemap_0_1c_END
-
-Tilemap_unknown_tilemap_0_1d::
-	incbin "gfx/unknown/tilemap_0/1d.tmap"
-Tilemap_unknown_tilemap_0_1d_END
-
-Tilemap_unknown_tilemap_0_1e::
-	incbin "gfx/unknown/tilemap_0/1e.tmap"
-Tilemap_unknown_tilemap_0_1e_END
-
-Tilemap_unknown_tilemap_0_1f::
-	incbin "gfx/unknown/tilemap_0/1f.tmap"
-Tilemap_unknown_tilemap_0_1f_END
-
-Tilemap_unknown_tilemap_0_20::
-	incbin "gfx/unknown/tilemap_0/20.tmap"
-Tilemap_unknown_tilemap_0_20_END
 
 Tilemap_unknown_tilemap_0_21::
 	incbin "gfx/unknown/tilemap_0/21.tmap"
@@ -356,50 +308,6 @@ Tilemap_unknown_tilemap_0_21_END
 Tilemap_unknown_tilemap_0_22::
 	incbin "gfx/unknown/tilemap_0/22.tmap"
 Tilemap_unknown_tilemap_0_22_END
-
-Tilemap_unknown_tilemap_0_23::
-	incbin "gfx/unknown/tilemap_0/23.tmap"
-Tilemap_unknown_tilemap_0_23_END
-
-Tilemap_unknown_tilemap_0_24::
-	incbin "gfx/unknown/tilemap_0/24.tmap"
-Tilemap_unknown_tilemap_0_24_END
-
-Tilemap_unknown_tilemap_0_25::
-	incbin "gfx/unknown/tilemap_0/25.tmap"
-Tilemap_unknown_tilemap_0_25_END
-
-Tilemap_unknown_tilemap_0_26::
-	incbin "gfx/unknown/tilemap_0/26.tmap"
-Tilemap_unknown_tilemap_0_26_END
-
-Tilemap_unknown_tilemap_0_27::
-	incbin "gfx/unknown/tilemap_0/27.tmap"
-Tilemap_unknown_tilemap_0_27_END
-
-Tilemap_unknown_tilemap_0_28::
-	incbin "gfx/unknown/tilemap_0/28.tmap"
-Tilemap_unknown_tilemap_0_28_END
-
-Tilemap_unknown_tilemap_0_29::
-	incbin "gfx/unknown/tilemap_0/29.tmap"
-Tilemap_unknown_tilemap_0_29_END
-
-Tilemap_unknown_tilemap_0_2a::
-	incbin "gfx/unknown/tilemap_0/2a.tmap"
-Tilemap_unknown_tilemap_0_2a_END
-
-Tilemap_unknown_tilemap_0_2b::
-	incbin "gfx/unknown/tilemap_0/2b.tmap"
-Tilemap_unknown_tilemap_0_2b_END
-
-Tilemap_unknown_tilemap_0_2c::
-	incbin "gfx/unknown/tilemap_0/2c.tmap"
-Tilemap_unknown_tilemap_0_2c_END
-
-Tilemap_unknown_tilemap_0_2d::
-	incbin "gfx/unknown/tilemap_0/2d.tmap"
-Tilemap_unknown_tilemap_0_2d_END
 
 Tilemap_unknown_tilemap_0_2e::
 	incbin "gfx/unknown/tilemap_0/2e.tmap"
@@ -421,37 +329,9 @@ Tilemap_unknown_tilemap_0_32::
 	incbin "gfx/unknown/tilemap_0/32.tmap"
 Tilemap_unknown_tilemap_0_32_END
 
-Tilemap_unknown_tilemap_0_33::
-	incbin "gfx/unknown/tilemap_0/33.tmap"
-Tilemap_unknown_tilemap_0_33_END
-
-Tilemap_unknown_tilemap_0_34::
-	incbin "gfx/unknown/tilemap_0/34.tmap"
-Tilemap_unknown_tilemap_0_34_END
-
-Tilemap_unknown_tilemap_0_35::
-	incbin "gfx/unknown/tilemap_0/35.tmap"
-Tilemap_unknown_tilemap_0_35_END
-
 Tilemap_unknown_tilemap_0_36::
 	incbin "gfx/unknown/tilemap_0/36.tmap"
 Tilemap_unknown_tilemap_0_36_END
-
-Tilemap_unknown_tilemap_0_37::
-	incbin "gfx/unknown/tilemap_0/37.tmap"
-Tilemap_unknown_tilemap_0_37_END
-
-Tilemap_unknown_tilemap_0_38::
-	incbin "gfx/unknown/tilemap_0/38.tmap"
-Tilemap_unknown_tilemap_0_38_END
-
-Tilemap_unknown_tilemap_0_39::
-	incbin "gfx/unknown/tilemap_0/39.tmap"
-Tilemap_unknown_tilemap_0_39_END
-
-Tilemap_unknown_tilemap_0_3a::
-	incbin "gfx/unknown/tilemap_0/3a.tmap"
-Tilemap_unknown_tilemap_0_3a_END
 
 Tilemap_unknown_tilemap_0_3b::
 	incbin "gfx/unknown/tilemap_0/3b.tmap"
@@ -460,10 +340,6 @@ Tilemap_unknown_tilemap_0_3b_END
 Tilemap_unknown_tilemap_0_3c::
 	incbin "gfx/unknown/tilemap_0/3c.tmap"
 Tilemap_unknown_tilemap_0_3c_END
-
-Tilemap_unknown_tilemap_0_3d::
-	incbin "gfx/unknown/tilemap_0/3d.tmap"
-Tilemap_unknown_tilemap_0_3d_END
 
 Tilemap_unknown_tilemap_0_3e::
 	incbin "gfx/unknown/tilemap_0/3e.tmap"
@@ -509,58 +385,6 @@ Tilemap_unknown_tilemap_0_48::
 	incbin "gfx/unknown/tilemap_0/48.tmap"
 Tilemap_unknown_tilemap_0_48_END
 
-Tilemap_unknown_tilemap_0_49::
-	incbin "gfx/unknown/tilemap_0/49.tmap"
-Tilemap_unknown_tilemap_0_49_END
-
-Tilemap_unknown_tilemap_0_4a::
-	incbin "gfx/unknown/tilemap_0/4a.tmap"
-Tilemap_unknown_tilemap_0_4a_END
-
-Tilemap_unknown_tilemap_0_4b::
-	incbin "gfx/unknown/tilemap_0/4b.tmap"
-Tilemap_unknown_tilemap_0_4b_END
-
-Tilemap_unknown_tilemap_0_4c::
-	incbin "gfx/unknown/tilemap_0/4c.tmap"
-Tilemap_unknown_tilemap_0_4c_END
-
-Tilemap_unknown_tilemap_0_4d::
-	incbin "gfx/unknown/tilemap_0/4d.tmap"
-Tilemap_unknown_tilemap_0_4d_END
-
-Tilemap_unknown_tilemap_0_4e::
-	incbin "gfx/unknown/tilemap_0/4e.tmap"
-Tilemap_unknown_tilemap_0_4e_END
-
-Tilemap_unknown_tilemap_0_4f::
-	incbin "gfx/unknown/tilemap_0/4f.tmap"
-Tilemap_unknown_tilemap_0_4f_END
-
-Tilemap_unknown_tilemap_0_50::
-	incbin "gfx/unknown/tilemap_0/50.tmap"
-Tilemap_unknown_tilemap_0_50_END
-
-Tilemap_unknown_tilemap_0_51::
-	incbin "gfx/unknown/tilemap_0/51.tmap"
-Tilemap_unknown_tilemap_0_51_END
-
-Tilemap_unknown_tilemap_0_52::
-	incbin "gfx/unknown/tilemap_0/52.tmap"
-Tilemap_unknown_tilemap_0_52_END
-
-Tilemap_unknown_tilemap_0_53::
-	incbin "gfx/unknown/tilemap_0/53.tmap"
-Tilemap_unknown_tilemap_0_53_END
-
-Tilemap_unknown_tilemap_0_54::
-	incbin "gfx/unknown/tilemap_0/54.tmap"
-Tilemap_unknown_tilemap_0_54_END
-
-Tilemap_unknown_tilemap_0_55::
-	incbin "gfx/unknown/tilemap_0/55.tmap"
-Tilemap_unknown_tilemap_0_55_END
-
 Tilemap_unknown_tilemap_0_56::
 	incbin "gfx/unknown/tilemap_0/56.tmap"
 Tilemap_unknown_tilemap_0_56_END
@@ -593,18 +417,6 @@ Tilemap_unknown_tilemap_0_5d::
 	incbin "gfx/unknown/tilemap_0/5d.tmap"
 Tilemap_unknown_tilemap_0_5d_END
 
-Tilemap_unknown_tilemap_0_5e::
-	incbin "gfx/unknown/tilemap_0/5e.tmap"
-Tilemap_unknown_tilemap_0_5e_END
-
-Tilemap_unknown_tilemap_0_5f::
-	incbin "gfx/unknown/tilemap_0/5f.tmap"
-Tilemap_unknown_tilemap_0_5f_END
-
-Tilemap_unknown_tilemap_0_60::
-	incbin "gfx/unknown/tilemap_0/60.tmap"
-Tilemap_unknown_tilemap_0_60_END
-
 Tilemap_unknown_tilemap_0_61::
 	incbin "gfx/unknown/tilemap_0/61.tmap"
 Tilemap_unknown_tilemap_0_61_END
@@ -612,62 +424,6 @@ Tilemap_unknown_tilemap_0_61_END
 Tilemap_unknown_tilemap_0_62::
 	incbin "gfx/unknown/tilemap_0/62.tmap"
 Tilemap_unknown_tilemap_0_62_END
-
-Tilemap_unknown_tilemap_0_63::
-	incbin "gfx/unknown/tilemap_0/63.tmap"
-Tilemap_unknown_tilemap_0_63_END
-
-Tilemap_unknown_tilemap_0_64::
-	incbin "gfx/unknown/tilemap_0/64.tmap"
-Tilemap_unknown_tilemap_0_64_END
-
-Tilemap_unknown_tilemap_0_65::
-	incbin "gfx/unknown/tilemap_0/65.tmap"
-Tilemap_unknown_tilemap_0_65_END
-
-Tilemap_unknown_tilemap_0_66::
-	incbin "gfx/unknown/tilemap_0/66.tmap"
-Tilemap_unknown_tilemap_0_66_END
-
-Tilemap_unknown_tilemap_0_67::
-	incbin "gfx/unknown/tilemap_0/67.tmap"
-Tilemap_unknown_tilemap_0_67_END
-
-Tilemap_unknown_tilemap_0_68::
-	incbin "gfx/unknown/tilemap_0/68.tmap"
-Tilemap_unknown_tilemap_0_68_END
-
-Tilemap_unknown_tilemap_0_69::
-	incbin "gfx/unknown/tilemap_0/69.tmap"
-Tilemap_unknown_tilemap_0_69_END
-
-Tilemap_unknown_tilemap_0_6a::
-	incbin "gfx/unknown/tilemap_0/6a.tmap"
-Tilemap_unknown_tilemap_0_6a_END
-
-Tilemap_unknown_tilemap_0_6b::
-	incbin "gfx/unknown/tilemap_0/6b.tmap"
-Tilemap_unknown_tilemap_0_6b_END
-
-Tilemap_unknown_tilemap_0_6c::
-	incbin "gfx/unknown/tilemap_0/6c.tmap"
-Tilemap_unknown_tilemap_0_6c_END
-
-Tilemap_unknown_tilemap_0_6d::
-	incbin "gfx/unknown/tilemap_0/6d.tmap"
-Tilemap_unknown_tilemap_0_6d_END
-
-Tilemap_unknown_tilemap_0_6e::
-	incbin "gfx/unknown/tilemap_0/6e.tmap"
-Tilemap_unknown_tilemap_0_6e_END
-
-Tilemap_unknown_tilemap_0_6f::
-	incbin "gfx/unknown/tilemap_0/6f.tmap"
-Tilemap_unknown_tilemap_0_6f_END
-
-Tilemap_unknown_tilemap_0_70::
-	incbin "gfx/unknown/tilemap_0/70.tmap"
-Tilemap_unknown_tilemap_0_70_END
 
 Tilemap_unknown_tilemap_0_71::
 	incbin "gfx/unknown/tilemap_0/71.tmap"
@@ -708,30 +464,6 @@ Tilemap_unknown_tilemap_0_79_END
 Tilemap_unknown_tilemap_0_7a::
 	incbin "gfx/unknown/tilemap_0/7a.tmap"
 Tilemap_unknown_tilemap_0_7a_END
-
-Tilemap_unknown_tilemap_0_7b::
-	incbin "gfx/unknown/tilemap_0/7b.tmap"
-Tilemap_unknown_tilemap_0_7b_END
-
-Tilemap_unknown_tilemap_0_7c::
-	incbin "gfx/unknown/tilemap_0/7c.tmap"
-Tilemap_unknown_tilemap_0_7c_END
-
-Tilemap_unknown_tilemap_0_7d::
-	incbin "gfx/unknown/tilemap_0/7d.tmap"
-Tilemap_unknown_tilemap_0_7d_END
-
-Tilemap_unknown_tilemap_0_7e::
-	incbin "gfx/unknown/tilemap_0/7e.tmap"
-Tilemap_unknown_tilemap_0_7e_END
-
-Tilemap_unknown_tilemap_0_7f::
-	incbin "gfx/unknown/tilemap_0/7f.tmap"
-Tilemap_unknown_tilemap_0_7f_END
-
-Tilemap_unknown_tilemap_0_80::
-	incbin "gfx/unknown/tilemap_0/80.tmap"
-Tilemap_unknown_tilemap_0_80_END
 
 Tilemap_unknown_tilemap_0_81::
 	incbin "gfx/unknown/tilemap_0/81.tmap"
@@ -821,46 +553,6 @@ Tilemap_unknown_tilemap_0_96::
 	incbin "gfx/unknown/tilemap_0/96.tmap"
 Tilemap_unknown_tilemap_0_96_END
 
-Tilemap_unknown_tilemap_0_97::
-	incbin "gfx/unknown/tilemap_0/97.tmap"
-Tilemap_unknown_tilemap_0_97_END
-
-Tilemap_unknown_tilemap_0_98::
-	incbin "gfx/unknown/tilemap_0/98.tmap"
-Tilemap_unknown_tilemap_0_98_END
-
-Tilemap_unknown_tilemap_0_99::
-	incbin "gfx/unknown/tilemap_0/99.tmap"
-Tilemap_unknown_tilemap_0_99_END
-
-Tilemap_unknown_tilemap_0_9a::
-	incbin "gfx/unknown/tilemap_0/9a.tmap"
-Tilemap_unknown_tilemap_0_9a_END
-
-Tilemap_unknown_tilemap_0_9b::
-	incbin "gfx/unknown/tilemap_0/9b.tmap"
-Tilemap_unknown_tilemap_0_9b_END
-
-Tilemap_unknown_tilemap_0_9c::
-	incbin "gfx/unknown/tilemap_0/9c.tmap"
-Tilemap_unknown_tilemap_0_9c_END
-
-Tilemap_unknown_tilemap_0_9d::
-	incbin "gfx/unknown/tilemap_0/9d.tmap"
-Tilemap_unknown_tilemap_0_9d_END
-
-Tilemap_unknown_tilemap_0_9e::
-	incbin "gfx/unknown/tilemap_0/9e.tmap"
-Tilemap_unknown_tilemap_0_9e_END
-
-Tilemap_unknown_tilemap_0_9f::
-	incbin "gfx/unknown/tilemap_0/9f.tmap"
-Tilemap_unknown_tilemap_0_9f_END
-
-Tilemap_unknown_tilemap_0_a0::
-	incbin "gfx/unknown/tilemap_0/a0.tmap"
-Tilemap_unknown_tilemap_0_a0_END
-
 Tilemap_unknown_tilemap_0_a1::
 	incbin "gfx/unknown/tilemap_0/a1.tmap"
 Tilemap_unknown_tilemap_0_a1_END
@@ -889,90 +581,6 @@ Tilemap_unknown_tilemap_0_a7::
 	incbin "gfx/unknown/tilemap_0/a7.tmap"
 Tilemap_unknown_tilemap_0_a7_END
 
-Tilemap_unknown_tilemap_0_a8::
-	incbin "gfx/unknown/tilemap_0/a8.tmap"
-Tilemap_unknown_tilemap_0_a8_END
-
-Tilemap_unknown_tilemap_0_a9::
-	incbin "gfx/unknown/tilemap_0/a9.tmap"
-Tilemap_unknown_tilemap_0_a9_END
-
-Tilemap_unknown_tilemap_0_aa::
-	incbin "gfx/unknown/tilemap_0/aa.tmap"
-Tilemap_unknown_tilemap_0_aa_END
-
-Tilemap_unknown_tilemap_0_ab::
-	incbin "gfx/unknown/tilemap_0/ab.tmap"
-Tilemap_unknown_tilemap_0_ab_END
-
-Tilemap_unknown_tilemap_0_ac::
-	incbin "gfx/unknown/tilemap_0/ac.tmap"
-Tilemap_unknown_tilemap_0_ac_END
-
-Tilemap_unknown_tilemap_0_ad::
-	incbin "gfx/unknown/tilemap_0/ad.tmap"
-Tilemap_unknown_tilemap_0_ad_END
-
-Tilemap_unknown_tilemap_0_ae::
-	incbin "gfx/unknown/tilemap_0/ae.tmap"
-Tilemap_unknown_tilemap_0_ae_END
-
-Tilemap_unknown_tilemap_0_af::
-	incbin "gfx/unknown/tilemap_0/af.tmap"
-Tilemap_unknown_tilemap_0_af_END
-
-Tilemap_unknown_tilemap_0_b0::
-	incbin "gfx/unknown/tilemap_0/b0.tmap"
-Tilemap_unknown_tilemap_0_b0_END
-
-Tilemap_unknown_tilemap_0_b1::
-	incbin "gfx/unknown/tilemap_0/b1.tmap"
-Tilemap_unknown_tilemap_0_b1_END
-
-Tilemap_unknown_tilemap_0_b2::
-	incbin "gfx/unknown/tilemap_0/b2.tmap"
-Tilemap_unknown_tilemap_0_b2_END
-
-Tilemap_unknown_tilemap_0_b3::
-	incbin "gfx/unknown/tilemap_0/b3.tmap"
-Tilemap_unknown_tilemap_0_b3_END
-
-Tilemap_unknown_tilemap_0_b4::
-	incbin "gfx/unknown/tilemap_0/b4.tmap"
-Tilemap_unknown_tilemap_0_b4_END
-
-Tilemap_unknown_tilemap_0_b5::
-	incbin "gfx/unknown/tilemap_0/b5.tmap"
-Tilemap_unknown_tilemap_0_b5_END
-
-Tilemap_unknown_tilemap_0_b6::
-	incbin "gfx/unknown/tilemap_0/b6.tmap"
-Tilemap_unknown_tilemap_0_b6_END
-
-Tilemap_unknown_tilemap_0_b7::
-	incbin "gfx/unknown/tilemap_0/b7.tmap"
-Tilemap_unknown_tilemap_0_b7_END
-
-Tilemap_unknown_tilemap_0_b8::
-	incbin "gfx/unknown/tilemap_0/b8.tmap"
-Tilemap_unknown_tilemap_0_b8_END
-
-Tilemap_unknown_tilemap_0_b9::
-	incbin "gfx/unknown/tilemap_0/b9.tmap"
-Tilemap_unknown_tilemap_0_b9_END
-
-Tilemap_unknown_tilemap_0_ba::
-	incbin "gfx/unknown/tilemap_0/ba.tmap"
-Tilemap_unknown_tilemap_0_ba_END
-
-Tilemap_unknown_tilemap_0_bb::
-	incbin "gfx/unknown/tilemap_0/bb.tmap"
-Tilemap_unknown_tilemap_0_bb_END
-
-Tilemap_unknown_tilemap_0_bc::
-	incbin "gfx/unknown/tilemap_0/bc.tmap"
-Tilemap_unknown_tilemap_0_bc_END
-
 Tilemap_unknown_tilemap_0_bd::
 	incbin "gfx/unknown/tilemap_0/bd.tmap"
 Tilemap_unknown_tilemap_0_bd_END
@@ -997,68 +605,16 @@ Tilemap_unknown_tilemap_0_c2::
 	incbin "gfx/unknown/tilemap_0/c2.tmap"
 Tilemap_unknown_tilemap_0_c2_END
 
-Tilemap_unknown_tilemap_0_c3::
-	incbin "gfx/unknown/tilemap_0/c3.tmap"
-Tilemap_unknown_tilemap_0_c3_END
-
-Tilemap_unknown_tilemap_0_c4::
-	incbin "gfx/unknown/tilemap_0/c4.tmap"
-Tilemap_unknown_tilemap_0_c4_END
-
-Tilemap_unknown_tilemap_0_c5::
-	incbin "gfx/unknown/tilemap_0/c5.tmap"
-Tilemap_unknown_tilemap_0_c5_END
-
-Tilemap_unknown_tilemap_0_c6::
-	incbin "gfx/unknown/tilemap_0/c6.tmap"
-Tilemap_unknown_tilemap_0_c6_END
-
-Tilemap_unknown_tilemap_0_c7::
-	incbin "gfx/unknown/tilemap_0/c7.tmap"
-Tilemap_unknown_tilemap_0_c7_END
-
-Tilemap_unknown_tilemap_0_c8::
-	incbin "gfx/unknown/tilemap_0/c8.tmap"
-Tilemap_unknown_tilemap_0_c8_END
-
-Tilemap_unknown_tilemap_0_c9::
-	incbin "gfx/unknown/tilemap_0/c9.tmap"
-Tilemap_unknown_tilemap_0_c9_END
-
-Tilemap_unknown_tilemap_0_ca::
-	incbin "gfx/unknown/tilemap_0/ca.tmap"
-Tilemap_unknown_tilemap_0_ca_END
-
-Tilemap_unknown_tilemap_0_cb::
-	incbin "gfx/unknown/tilemap_0/cb.tmap"
-Tilemap_unknown_tilemap_0_cb_END
-
-Tilemap_unknown_tilemap_0_cc::
-	incbin "gfx/unknown/tilemap_0/cc.tmap"
-Tilemap_unknown_tilemap_0_cc_END
-
-Tilemap_unknown_tilemap_0_cd::
-	incbin "gfx/unknown/tilemap_0/cd.tmap"
-Tilemap_unknown_tilemap_0_cd_END
-
-Tilemap_unknown_tilemap_0_ce::
-	incbin "gfx/unknown/tilemap_0/ce.tmap"
-Tilemap_unknown_tilemap_0_ce_END
-
-Tilemap_unknown_tilemap_0_cf::
-	incbin "gfx/unknown/tilemap_0/cf.tmap"
-Tilemap_unknown_tilemap_0_cf_END
-
 SECTION "tilemap Bank 1", ROMX[$4000], BANK[$9]
 	dw Tilemap_unknown_tilemap_1_0
-	dw Tilemap_unknown_tilemap_1_1
+	dw Tilemap_unknown_tilemap_1_0
 	dw Tilemap_unknown_tilemap_1_2
-	dw Tilemap_unknown_tilemap_1_3
-	dw Tilemap_unknown_tilemap_1_4
-	dw Tilemap_unknown_tilemap_1_5
-	dw Tilemap_unknown_tilemap_1_6
-	dw Tilemap_unknown_tilemap_1_7
-	dw Tilemap_unknown_tilemap_1_8
+	dw Tilemap_unknown_tilemap_1_2
+	dw Tilemap_unknown_tilemap_1_2
+	dw Tilemap_unknown_tilemap_1_2
+	dw Tilemap_unknown_tilemap_1_2
+	dw Tilemap_unknown_tilemap_1_2
+	dw Tilemap_unknown_tilemap_1_2
 	dw Tilemap_unknown_tilemap_1_9
 	dw Tilemap_unknown_tilemap_1_a
 	dw Tilemap_unknown_tilemap_1_b
@@ -1071,37 +627,9 @@ Tilemap_unknown_tilemap_1_0::
 	incbin "gfx/unknown/tilemap_1/0.tmap"
 Tilemap_unknown_tilemap_1_0_END
 
-Tilemap_unknown_tilemap_1_1::
-	incbin "gfx/unknown/tilemap_1/1.tmap"
-Tilemap_unknown_tilemap_1_1_END
-
 Tilemap_unknown_tilemap_1_2::
 	incbin "gfx/unknown/tilemap_1/2.tmap"
 Tilemap_unknown_tilemap_1_2_END
-
-Tilemap_unknown_tilemap_1_3::
-	incbin "gfx/unknown/tilemap_1/3.tmap"
-Tilemap_unknown_tilemap_1_3_END
-
-Tilemap_unknown_tilemap_1_4::
-	incbin "gfx/unknown/tilemap_1/4.tmap"
-Tilemap_unknown_tilemap_1_4_END
-
-Tilemap_unknown_tilemap_1_5::
-	incbin "gfx/unknown/tilemap_1/5.tmap"
-Tilemap_unknown_tilemap_1_5_END
-
-Tilemap_unknown_tilemap_1_6::
-	incbin "gfx/unknown/tilemap_1/6.tmap"
-Tilemap_unknown_tilemap_1_6_END
-
-Tilemap_unknown_tilemap_1_7::
-	incbin "gfx/unknown/tilemap_1/7.tmap"
-Tilemap_unknown_tilemap_1_7_END
-
-Tilemap_unknown_tilemap_1_8::
-	incbin "gfx/unknown/tilemap_1/8.tmap"
-Tilemap_unknown_tilemap_1_8_END
 
 Tilemap_unknown_tilemap_1_9::
 	incbin "gfx/unknown/tilemap_1/9.tmap"
@@ -1134,7 +662,7 @@ Tilemap_unknown_tilemap_1_f_END
 
 SECTION "attrib Bank 0", ROMX[$4000], BANK[$3e]
 	dw Attribmap_unknown_attribs_0_0
-	dw Attribmap_unknown_attribs_0_1
+	dw Attribmap_unknown_attribs_0_0
 	dw Attribmap_unknown_attribs_0_2
 	dw Attribmap_unknown_attribs_0_3
 	dw Attribmap_unknown_attribs_0_4
@@ -1148,7 +676,7 @@ SECTION "attrib Bank 0", ROMX[$4000], BANK[$3e]
 	dw Attribmap_unknown_attribs_0_c
 	dw Attribmap_unknown_attribs_0_d
 	dw Attribmap_unknown_attribs_0_e
-	dw Attribmap_unknown_attribs_0_f
+	dw Attribmap_unknown_attribs_0_e
 	dw Attribmap_unknown_attribs_0_10
 	dw Attribmap_unknown_attribs_0_11
 	dw Attribmap_unknown_attribs_0_12
@@ -1163,7 +691,7 @@ SECTION "attrib Bank 0", ROMX[$4000], BANK[$3e]
 	dw Attribmap_unknown_attribs_0_1b
 	dw Attribmap_unknown_attribs_0_1c
 	dw Attribmap_unknown_attribs_0_1d
-	dw Attribmap_unknown_attribs_0_1e
+	dw Attribmap_unknown_attribs_0_1d
 	dw Attribmap_unknown_attribs_0_1f
 	dw Attribmap_unknown_attribs_0_20
 	dw Attribmap_unknown_attribs_0_21
@@ -1206,14 +734,14 @@ SECTION "attrib Bank 0", ROMX[$4000], BANK[$3e]
 	dw Attribmap_unknown_attribs_0_46
 	dw Attribmap_unknown_attribs_0_47
 	dw Attribmap_unknown_attribs_0_48
-	dw Attribmap_unknown_attribs_0_49
-	dw Attribmap_unknown_attribs_0_4a
-	dw Attribmap_unknown_attribs_0_4b
-	dw Attribmap_unknown_attribs_0_4c
-	dw Attribmap_unknown_attribs_0_4d
-	dw Attribmap_unknown_attribs_0_4e
-	dw Attribmap_unknown_attribs_0_4f
-	dw Attribmap_unknown_attribs_0_50
+	dw Attribmap_unknown_attribs_0_48
+	dw Attribmap_unknown_attribs_0_48
+	dw Attribmap_unknown_attribs_0_48
+	dw Attribmap_unknown_attribs_0_48
+	dw Attribmap_unknown_attribs_0_48
+	dw Attribmap_unknown_attribs_0_48
+	dw Attribmap_unknown_attribs_0_48
+	dw Attribmap_unknown_attribs_0_48
 	dw Attribmap_unknown_attribs_0_51
 	dw Attribmap_unknown_attribs_0_52
 	dw Attribmap_unknown_attribs_0_53
@@ -1227,41 +755,41 @@ SECTION "attrib Bank 0", ROMX[$4000], BANK[$3e]
 	dw Attribmap_unknown_attribs_0_5b
 	dw Attribmap_unknown_attribs_0_5c
 	dw Attribmap_unknown_attribs_0_5d
-	dw Attribmap_unknown_attribs_0_5e
-	dw Attribmap_unknown_attribs_0_5f
-	dw Attribmap_unknown_attribs_0_60
+	dw Attribmap_unknown_attribs_0_5d
+	dw Attribmap_unknown_attribs_0_5d
+	dw Attribmap_unknown_attribs_0_5d
 	dw Attribmap_unknown_attribs_0_61
 	dw Attribmap_unknown_attribs_0_62
-	dw Attribmap_unknown_attribs_0_63
-	dw Attribmap_unknown_attribs_0_64
-	dw Attribmap_unknown_attribs_0_65
-	dw Attribmap_unknown_attribs_0_66
-	dw Attribmap_unknown_attribs_0_67
-	dw Attribmap_unknown_attribs_0_68
-	dw Attribmap_unknown_attribs_0_69
-	dw Attribmap_unknown_attribs_0_6a
-	dw Attribmap_unknown_attribs_0_6b
-	dw Attribmap_unknown_attribs_0_6c
-	dw Attribmap_unknown_attribs_0_6d
-	dw Attribmap_unknown_attribs_0_6e
-	dw Attribmap_unknown_attribs_0_6f
-	dw Attribmap_unknown_attribs_0_70
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
+	dw Attribmap_unknown_attribs_0_62
 	dw Attribmap_unknown_attribs_0_71
 	dw Attribmap_unknown_attribs_0_72
 	dw Attribmap_unknown_attribs_0_73
 	dw Attribmap_unknown_attribs_0_74
-	dw Attribmap_unknown_attribs_0_75
-	dw Attribmap_unknown_attribs_0_76
-	dw Attribmap_unknown_attribs_0_77
-	dw Attribmap_unknown_attribs_0_78
+	dw Attribmap_unknown_attribs_0_74
+	dw Attribmap_unknown_attribs_0_74
+	dw Attribmap_unknown_attribs_0_74
+	dw Attribmap_unknown_attribs_0_74
 	dw Attribmap_unknown_attribs_0_79
 	dw Attribmap_unknown_attribs_0_7a
-	dw Attribmap_unknown_attribs_0_7b
-	dw Attribmap_unknown_attribs_0_7c
-	dw Attribmap_unknown_attribs_0_7d
-	dw Attribmap_unknown_attribs_0_7e
-	dw Attribmap_unknown_attribs_0_7f
-	dw Attribmap_unknown_attribs_0_80
+	dw Attribmap_unknown_attribs_0_7a
+	dw Attribmap_unknown_attribs_0_7a
+	dw Attribmap_unknown_attribs_0_7a
+	dw Attribmap_unknown_attribs_0_7a
+	dw Attribmap_unknown_attribs_0_7a
+	dw Attribmap_unknown_attribs_0_7a
 	dw Attribmap_unknown_attribs_0_81
 	dw Attribmap_unknown_attribs_0_82
 	dw Attribmap_unknown_attribs_0_83
@@ -1309,7 +837,7 @@ SECTION "attrib Bank 0", ROMX[$4000], BANK[$3e]
 	dw Attribmap_unknown_attribs_0_ad
 	dw Attribmap_unknown_attribs_0_ae
 	dw Attribmap_unknown_attribs_0_af
-	dw Attribmap_unknown_attribs_0_b0
+	dw Attribmap_unknown_attribs_0_af
 	dw Attribmap_unknown_attribs_0_b1
 	dw Attribmap_unknown_attribs_0_b2
 	dw Attribmap_unknown_attribs_0_b3
@@ -1328,27 +856,23 @@ SECTION "attrib Bank 0", ROMX[$4000], BANK[$3e]
 	dw Attribmap_unknown_attribs_0_c0
 	dw Attribmap_unknown_attribs_0_c1
 	dw Attribmap_unknown_attribs_0_c2
-	dw Attribmap_unknown_attribs_0_c3
-	dw Attribmap_unknown_attribs_0_c4
-	dw Attribmap_unknown_attribs_0_c5
-	dw Attribmap_unknown_attribs_0_c6
-	dw Attribmap_unknown_attribs_0_c7
-	dw Attribmap_unknown_attribs_0_c8
-	dw Attribmap_unknown_attribs_0_c9
-	dw Attribmap_unknown_attribs_0_ca
-	dw Attribmap_unknown_attribs_0_cb
-	dw Attribmap_unknown_attribs_0_cc
-	dw Attribmap_unknown_attribs_0_cd
-	dw Attribmap_unknown_attribs_0_ce
-	dw Attribmap_unknown_attribs_0_cf
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
+	dw Attribmap_unknown_attribs_0_c2_END
 
 Attribmap_unknown_attribs_0_0::
 	incbin "gfx/unknown/attribs_0/0.tmap"
 Attribmap_unknown_attribs_0_0_END
-
-Attribmap_unknown_attribs_0_1::
-	incbin "gfx/unknown/attribs_0/1.tmap"
-Attribmap_unknown_attribs_0_1_END
 
 Attribmap_unknown_attribs_0_2::
 	incbin "gfx/unknown/attribs_0/2.tmap"
@@ -1401,10 +925,6 @@ Attribmap_unknown_attribs_0_d_END
 Attribmap_unknown_attribs_0_e::
 	incbin "gfx/unknown/attribs_0/e.tmap"
 Attribmap_unknown_attribs_0_e_END
-
-Attribmap_unknown_attribs_0_f::
-	incbin "gfx/unknown/attribs_0/f.tmap"
-Attribmap_unknown_attribs_0_f_END
 
 Attribmap_unknown_attribs_0_10::
 	incbin "gfx/unknown/attribs_0/10.tmap"
@@ -1461,10 +981,6 @@ Attribmap_unknown_attribs_0_1c_END
 Attribmap_unknown_attribs_0_1d::
 	incbin "gfx/unknown/attribs_0/1d.tmap"
 Attribmap_unknown_attribs_0_1d_END
-
-Attribmap_unknown_attribs_0_1e::
-	incbin "gfx/unknown/attribs_0/1e.tmap"
-Attribmap_unknown_attribs_0_1e_END
 
 Attribmap_unknown_attribs_0_1f::
 	incbin "gfx/unknown/attribs_0/1f.tmap"
@@ -1634,38 +1150,6 @@ Attribmap_unknown_attribs_0_48::
 	incbin "gfx/unknown/attribs_0/48.tmap"
 Attribmap_unknown_attribs_0_48_END
 
-Attribmap_unknown_attribs_0_49::
-	incbin "gfx/unknown/attribs_0/49.tmap"
-Attribmap_unknown_attribs_0_49_END
-
-Attribmap_unknown_attribs_0_4a::
-	incbin "gfx/unknown/attribs_0/4a.tmap"
-Attribmap_unknown_attribs_0_4a_END
-
-Attribmap_unknown_attribs_0_4b::
-	incbin "gfx/unknown/attribs_0/4b.tmap"
-Attribmap_unknown_attribs_0_4b_END
-
-Attribmap_unknown_attribs_0_4c::
-	incbin "gfx/unknown/attribs_0/4c.tmap"
-Attribmap_unknown_attribs_0_4c_END
-
-Attribmap_unknown_attribs_0_4d::
-	incbin "gfx/unknown/attribs_0/4d.tmap"
-Attribmap_unknown_attribs_0_4d_END
-
-Attribmap_unknown_attribs_0_4e::
-	incbin "gfx/unknown/attribs_0/4e.tmap"
-Attribmap_unknown_attribs_0_4e_END
-
-Attribmap_unknown_attribs_0_4f::
-	incbin "gfx/unknown/attribs_0/4f.tmap"
-Attribmap_unknown_attribs_0_4f_END
-
-Attribmap_unknown_attribs_0_50::
-	incbin "gfx/unknown/attribs_0/50.tmap"
-Attribmap_unknown_attribs_0_50_END
-
 Attribmap_unknown_attribs_0_51::
 	incbin "gfx/unknown/attribs_0/51.tmap"
 Attribmap_unknown_attribs_0_51_END
@@ -1718,18 +1202,6 @@ Attribmap_unknown_attribs_0_5d::
 	incbin "gfx/unknown/attribs_0/5d.tmap"
 Attribmap_unknown_attribs_0_5d_END
 
-Attribmap_unknown_attribs_0_5e::
-	incbin "gfx/unknown/attribs_0/5e.tmap"
-Attribmap_unknown_attribs_0_5e_END
-
-Attribmap_unknown_attribs_0_5f::
-	incbin "gfx/unknown/attribs_0/5f.tmap"
-Attribmap_unknown_attribs_0_5f_END
-
-Attribmap_unknown_attribs_0_60::
-	incbin "gfx/unknown/attribs_0/60.tmap"
-Attribmap_unknown_attribs_0_60_END
-
 Attribmap_unknown_attribs_0_61::
 	incbin "gfx/unknown/attribs_0/61.tmap"
 Attribmap_unknown_attribs_0_61_END
@@ -1737,62 +1209,6 @@ Attribmap_unknown_attribs_0_61_END
 Attribmap_unknown_attribs_0_62::
 	incbin "gfx/unknown/attribs_0/62.tmap"
 Attribmap_unknown_attribs_0_62_END
-
-Attribmap_unknown_attribs_0_63::
-	incbin "gfx/unknown/attribs_0/63.tmap"
-Attribmap_unknown_attribs_0_63_END
-
-Attribmap_unknown_attribs_0_64::
-	incbin "gfx/unknown/attribs_0/64.tmap"
-Attribmap_unknown_attribs_0_64_END
-
-Attribmap_unknown_attribs_0_65::
-	incbin "gfx/unknown/attribs_0/65.tmap"
-Attribmap_unknown_attribs_0_65_END
-
-Attribmap_unknown_attribs_0_66::
-	incbin "gfx/unknown/attribs_0/66.tmap"
-Attribmap_unknown_attribs_0_66_END
-
-Attribmap_unknown_attribs_0_67::
-	incbin "gfx/unknown/attribs_0/67.tmap"
-Attribmap_unknown_attribs_0_67_END
-
-Attribmap_unknown_attribs_0_68::
-	incbin "gfx/unknown/attribs_0/68.tmap"
-Attribmap_unknown_attribs_0_68_END
-
-Attribmap_unknown_attribs_0_69::
-	incbin "gfx/unknown/attribs_0/69.tmap"
-Attribmap_unknown_attribs_0_69_END
-
-Attribmap_unknown_attribs_0_6a::
-	incbin "gfx/unknown/attribs_0/6a.tmap"
-Attribmap_unknown_attribs_0_6a_END
-
-Attribmap_unknown_attribs_0_6b::
-	incbin "gfx/unknown/attribs_0/6b.tmap"
-Attribmap_unknown_attribs_0_6b_END
-
-Attribmap_unknown_attribs_0_6c::
-	incbin "gfx/unknown/attribs_0/6c.tmap"
-Attribmap_unknown_attribs_0_6c_END
-
-Attribmap_unknown_attribs_0_6d::
-	incbin "gfx/unknown/attribs_0/6d.tmap"
-Attribmap_unknown_attribs_0_6d_END
-
-Attribmap_unknown_attribs_0_6e::
-	incbin "gfx/unknown/attribs_0/6e.tmap"
-Attribmap_unknown_attribs_0_6e_END
-
-Attribmap_unknown_attribs_0_6f::
-	incbin "gfx/unknown/attribs_0/6f.tmap"
-Attribmap_unknown_attribs_0_6f_END
-
-Attribmap_unknown_attribs_0_70::
-	incbin "gfx/unknown/attribs_0/70.tmap"
-Attribmap_unknown_attribs_0_70_END
 
 Attribmap_unknown_attribs_0_71::
 	incbin "gfx/unknown/attribs_0/71.tmap"
@@ -1810,22 +1226,6 @@ Attribmap_unknown_attribs_0_74::
 	incbin "gfx/unknown/attribs_0/74.tmap"
 Attribmap_unknown_attribs_0_74_END
 
-Attribmap_unknown_attribs_0_75::
-	incbin "gfx/unknown/attribs_0/75.tmap"
-Attribmap_unknown_attribs_0_75_END
-
-Attribmap_unknown_attribs_0_76::
-	incbin "gfx/unknown/attribs_0/76.tmap"
-Attribmap_unknown_attribs_0_76_END
-
-Attribmap_unknown_attribs_0_77::
-	incbin "gfx/unknown/attribs_0/77.tmap"
-Attribmap_unknown_attribs_0_77_END
-
-Attribmap_unknown_attribs_0_78::
-	incbin "gfx/unknown/attribs_0/78.tmap"
-Attribmap_unknown_attribs_0_78_END
-
 Attribmap_unknown_attribs_0_79::
 	incbin "gfx/unknown/attribs_0/79.tmap"
 Attribmap_unknown_attribs_0_79_END
@@ -1833,30 +1233,6 @@ Attribmap_unknown_attribs_0_79_END
 Attribmap_unknown_attribs_0_7a::
 	incbin "gfx/unknown/attribs_0/7a.tmap"
 Attribmap_unknown_attribs_0_7a_END
-
-Attribmap_unknown_attribs_0_7b::
-	incbin "gfx/unknown/attribs_0/7b.tmap"
-Attribmap_unknown_attribs_0_7b_END
-
-Attribmap_unknown_attribs_0_7c::
-	incbin "gfx/unknown/attribs_0/7c.tmap"
-Attribmap_unknown_attribs_0_7c_END
-
-Attribmap_unknown_attribs_0_7d::
-	incbin "gfx/unknown/attribs_0/7d.tmap"
-Attribmap_unknown_attribs_0_7d_END
-
-Attribmap_unknown_attribs_0_7e::
-	incbin "gfx/unknown/attribs_0/7e.tmap"
-Attribmap_unknown_attribs_0_7e_END
-
-Attribmap_unknown_attribs_0_7f::
-	incbin "gfx/unknown/attribs_0/7f.tmap"
-Attribmap_unknown_attribs_0_7f_END
-
-Attribmap_unknown_attribs_0_80::
-	incbin "gfx/unknown/attribs_0/80.tmap"
-Attribmap_unknown_attribs_0_80_END
 
 Attribmap_unknown_attribs_0_81::
 	incbin "gfx/unknown/attribs_0/81.tmap"
@@ -2046,10 +1422,6 @@ Attribmap_unknown_attribs_0_af::
 	incbin "gfx/unknown/attribs_0/af.tmap"
 Attribmap_unknown_attribs_0_af_END
 
-Attribmap_unknown_attribs_0_b0::
-	incbin "gfx/unknown/attribs_0/b0.tmap"
-Attribmap_unknown_attribs_0_b0_END
-
 Attribmap_unknown_attribs_0_b1::
 	incbin "gfx/unknown/attribs_0/b1.tmap"
 Attribmap_unknown_attribs_0_b1_END
@@ -2122,68 +1494,16 @@ Attribmap_unknown_attribs_0_c2::
 	incbin "gfx/unknown/attribs_0/c2.tmap"
 Attribmap_unknown_attribs_0_c2_END
 
-Attribmap_unknown_attribs_0_c3::
-	incbin "gfx/unknown/attribs_0/c3.tmap"
-Attribmap_unknown_attribs_0_c3_END
-
-Attribmap_unknown_attribs_0_c4::
-	incbin "gfx/unknown/attribs_0/c4.tmap"
-Attribmap_unknown_attribs_0_c4_END
-
-Attribmap_unknown_attribs_0_c5::
-	incbin "gfx/unknown/attribs_0/c5.tmap"
-Attribmap_unknown_attribs_0_c5_END
-
-Attribmap_unknown_attribs_0_c6::
-	incbin "gfx/unknown/attribs_0/c6.tmap"
-Attribmap_unknown_attribs_0_c6_END
-
-Attribmap_unknown_attribs_0_c7::
-	incbin "gfx/unknown/attribs_0/c7.tmap"
-Attribmap_unknown_attribs_0_c7_END
-
-Attribmap_unknown_attribs_0_c8::
-	incbin "gfx/unknown/attribs_0/c8.tmap"
-Attribmap_unknown_attribs_0_c8_END
-
-Attribmap_unknown_attribs_0_c9::
-	incbin "gfx/unknown/attribs_0/c9.tmap"
-Attribmap_unknown_attribs_0_c9_END
-
-Attribmap_unknown_attribs_0_ca::
-	incbin "gfx/unknown/attribs_0/ca.tmap"
-Attribmap_unknown_attribs_0_ca_END
-
-Attribmap_unknown_attribs_0_cb::
-	incbin "gfx/unknown/attribs_0/cb.tmap"
-Attribmap_unknown_attribs_0_cb_END
-
-Attribmap_unknown_attribs_0_cc::
-	incbin "gfx/unknown/attribs_0/cc.tmap"
-Attribmap_unknown_attribs_0_cc_END
-
-Attribmap_unknown_attribs_0_cd::
-	incbin "gfx/unknown/attribs_0/cd.tmap"
-Attribmap_unknown_attribs_0_cd_END
-
-Attribmap_unknown_attribs_0_ce::
-	incbin "gfx/unknown/attribs_0/ce.tmap"
-Attribmap_unknown_attribs_0_ce_END
-
-Attribmap_unknown_attribs_0_cf::
-	incbin "gfx/unknown/attribs_0/cf.tmap"
-Attribmap_unknown_attribs_0_cf_END
-
 SECTION "attrib Bank 1", ROMX[$4000], BANK[$3f]
 	dw Attribmap_unknown_attribs_1_0
-	dw Attribmap_unknown_attribs_1_1
+	dw Attribmap_unknown_attribs_1_0
 	dw Attribmap_unknown_attribs_1_2
-	dw Attribmap_unknown_attribs_1_3
-	dw Attribmap_unknown_attribs_1_4
-	dw Attribmap_unknown_attribs_1_5
-	dw Attribmap_unknown_attribs_1_6
-	dw Attribmap_unknown_attribs_1_7
-	dw Attribmap_unknown_attribs_1_8
+	dw Attribmap_unknown_attribs_1_2
+	dw Attribmap_unknown_attribs_1_2
+	dw Attribmap_unknown_attribs_1_2
+	dw Attribmap_unknown_attribs_1_2
+	dw Attribmap_unknown_attribs_1_2
+	dw Attribmap_unknown_attribs_1_2
 	dw Attribmap_unknown_attribs_1_9
 	dw Attribmap_unknown_attribs_1_a
 	dw Attribmap_unknown_attribs_1_b
@@ -2196,37 +1516,9 @@ Attribmap_unknown_attribs_1_0::
 	incbin "gfx/unknown/attribs_1/0.tmap"
 Attribmap_unknown_attribs_1_0_END
 
-Attribmap_unknown_attribs_1_1::
-	incbin "gfx/unknown/attribs_1/1.tmap"
-Attribmap_unknown_attribs_1_1_END
-
 Attribmap_unknown_attribs_1_2::
 	incbin "gfx/unknown/attribs_1/2.tmap"
 Attribmap_unknown_attribs_1_2_END
-
-Attribmap_unknown_attribs_1_3::
-	incbin "gfx/unknown/attribs_1/3.tmap"
-Attribmap_unknown_attribs_1_3_END
-
-Attribmap_unknown_attribs_1_4::
-	incbin "gfx/unknown/attribs_1/4.tmap"
-Attribmap_unknown_attribs_1_4_END
-
-Attribmap_unknown_attribs_1_5::
-	incbin "gfx/unknown/attribs_1/5.tmap"
-Attribmap_unknown_attribs_1_5_END
-
-Attribmap_unknown_attribs_1_6::
-	incbin "gfx/unknown/attribs_1/6.tmap"
-Attribmap_unknown_attribs_1_6_END
-
-Attribmap_unknown_attribs_1_7::
-	incbin "gfx/unknown/attribs_1/7.tmap"
-Attribmap_unknown_attribs_1_7_END
-
-Attribmap_unknown_attribs_1_8::
-	incbin "gfx/unknown/attribs_1/8.tmap"
-Attribmap_unknown_attribs_1_8_END
 
 Attribmap_unknown_attribs_1_9::
 	incbin "gfx/unknown/attribs_1/9.tmap"
