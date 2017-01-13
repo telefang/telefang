@@ -279,8 +279,8 @@ def compress_tilemap(data):
     and no attempt will be made at mirroring less-efficient algorithms."""
     
     #Technically, a whole number of bytes can indicate compressed data, we are
-    #assuming #FE.
-    encoded_bytes = ["\xfe"]
+    #assuming #01.
+    encoded_bytes = ["\x01"]
     bytes_to_encode = []
     incompressible = []
     
@@ -317,8 +317,8 @@ def compress_tilemap(data):
         #TODO: Split runs of incompressible bytes if they overflow
         if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
             while len(incompressible) > 0:
-                inc_count = min(incompressible, 0x40)
-                encoded_bytes.append(chr(inc_count))
+                inc_count = min(len(incompressible), 0x40)
+                encoded_bytes.append(chr(inc_count - 1))
                 encoded_bytes.append("".join(incompressible[:inc_count]))
                 incompressible = incompressible[inc_count:]
         
