@@ -861,7 +861,7 @@ Tilemap_BANK_1::
 	dw Tilemap_unknown_tilemap_1_c
 	dw Tilemap_unknown_tilemap_1_d
 	dw Tilemap_unknown_tilemap_1_e
-	dw Tilemap_unknown_tilemap_1_f
+	dw Tilemap_unknown_tilemap_1_e_END
 
 Tilemap_unknown_tilemap_1_0::
 	incbin "gfx/unknown/tilemap_1/0.tmap"
@@ -894,10 +894,6 @@ Tilemap_unknown_tilemap_1_d_END
 Tilemap_unknown_tilemap_1_e::
 	incbin "gfx/unknown/tilemap_1/e.tmap"
 Tilemap_unknown_tilemap_1_e_END
-
-Tilemap_unknown_tilemap_1_f::
-	incbin "gfx/unknown/tilemap_1/f.tmap"
-Tilemap_unknown_tilemap_1_f_END
 
 
 SECTION "attrib Bank 0", ROMX[$4000], BANK[$8]
