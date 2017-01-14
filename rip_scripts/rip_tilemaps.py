@@ -377,7 +377,7 @@ def encode_literal_tilemap(data):
     This data format is necessary for any tilemap which is not 32 columns wide.
     It's the only format to support newlines."""
     
-    outdat = []
+    outdat = ["\x00"]
     
     for i, row in enumerate(data):
         for cell in row:
