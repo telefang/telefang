@@ -260,8 +260,14 @@ def extract(args):
                 with open(os.path.join(csvpath, "{0:x}.csv".format(j)), "w+") as csvout:
                     csvwriter = csv.writer(csvout)
                     
-                    for row in data:
+                    for row in data[:-1]:
                         csvwriter.writerow(row)
+                    
+                    #Workaround for a csv.writer bug
+                    if len(data) > 0 and len(data[-1]) == 0:
+                        csvout.write(",")
+                    elif len(data) > 0:
+                        csvwriter.writerow(data[-1])
 
 def linearized(data):
     """Generator which yields every column in data without breaks."""
@@ -382,7 +388,7 @@ def encode_literal_tilemap(data):
         for cell in row:
             outdat.append(chr(cell))
         
-        if i < len(data):
+        if i < len(data) - 1:
             outdat.append(chr(0xFE))
     
     outdat.append(chr(0xFF))
@@ -505,7 +511,10 @@ def make_maps(args):
             for row in csvreader:
                 nrow = []
                 for cell in row:
-                    nrow.append(int(cell, 10))
+                    try:
+                        nrow.append(int(cell, 10))
+                    except ValueError:
+                        pass
                 
                 csv_data.append(nrow)
             
