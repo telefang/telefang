@@ -120,9 +120,8 @@ def decompress_tilemap(rom, offset = None):
                 #Literal tile value
                 decomp_row.append(next_cmd)
         
-        #In case there isn't a newline at the end...
-        if len(decomp_row) > 0:
-            decomp_mapping.append(decomp_row)
+        #Append the last row
+        decomp_mapping.append(decomp_row)
         
     elif next_cmd != 0xFF:
         #Compressed data
