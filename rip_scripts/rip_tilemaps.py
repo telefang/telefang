@@ -247,8 +247,14 @@ def extract(args):
                 with open(os.path.join(csvpath, "{0:x}.csv".format(j)), "w+") as csvout:
                     csvwriter = csv.writer(csvout)
                     
-                    for row in data:
+                    for row in data[:-1]:
                         csvwriter.writerow(row)
+                    
+                    #Workaround for a csv.writer bug
+                    if len(data) > 0 and len(data[-1]) == 0:
+                        csvout.write(",")
+                    elif len(data) > 0:
+                        csvwriter.writerow(data[-1])
         
         for i, bank in enumerate(metatable_attribs):
             this_bank = decompress_bank(rom, 0x4000 * bank)
