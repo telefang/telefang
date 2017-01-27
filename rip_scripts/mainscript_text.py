@@ -176,7 +176,7 @@ def banked(flataddr):
     if (flataddr < 0x4000):
         return flataddr, 0
     
-    return flataddr % 0x4000 + 0x4000, flataddr / 0x4000
+    return flataddr % 0x4000 + 0x4000, flataddr // 0x4000
 
 def format_int(i):
     if i < 0x10: #Small numbers lack the 0x
