@@ -191,24 +191,39 @@ def decompress_bank(rom, offset=None):
     rom.seek(offset)
     
     ret_dat = []
+    ext_dat = []
     
     #The table consists of multiple pointers followed immediately by compressed
     #tilemap data. There is no explicit length, so we discover the length of
     #the pointer table by reading and decompressing pointers until we overrun
     #already-decompressed data.
-    largest_ptr = 0xFFFF
+    first_data_ptr = 0xFFFF
+    last_ptr = None
     start_ptr, this_bank = mainscript_text.banked(offset)
     
-    while mainscript_text.banked(rom.tell())[0] < largest_ptr:
+    while mainscript_text.banked(rom.tell())[0] < first_data_ptr:
         this_ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
-        if this_ptr <= largest_ptr:
-            largest_ptr = this_ptr
+        if this_ptr <= first_data_ptr:
+            first_data_ptr = this_ptr
+        
+        if last_ptr == None:
+            last_ptr = this_ptr
+            
+        #Data "hole" detection
+        if mainscript_text.flat(this_bank, this_ptr) - last_ptr > 0:
+            print this_bank, this_ptr
+            print last_ptr, offset, mainscript_text.banked(offset)
+            ext_dat.append(rom.read(mainscript_text.flat(this_bank, this_ptr) - last_ptr))
+        else:
+            ext_dat.append(None)
         
         this_data, this_clen = decompress_tilemap(rom, mainscript_text.flat(this_bank, this_ptr))
         ret_dat.append(this_data)
+        
+        last_ptr = rom.tell()
     
     rom.seek(last)
-    return ret_dat
+    return ret_dat, ext_dat
 
 def extract_metatable(rom, length, offset=None):
     """Extract the bank list (metatable) from the ROM.
