@@ -2,7 +2,7 @@
 from __future__ import division
 
 import mainscript_text
-import argparse, io, os.path, csv, math, struct
+import argparse, io, StringIO, os.path, csv, math, struct
 
 def parse_mapnames(filename):
     """Parse the list of tilemap names.
@@ -59,6 +59,8 @@ def parse_mapnames(filename):
                 table["basedir"] = os.path.join(*(parameters[0].split("/")[0:-1]))
                 table["filename"] = os.path.join(*(parameters[0] + ".csv").split("/"))
                 table["objname"] = os.path.join(*(parameters[0] + ".tmap").split("/"))
+                table["filename_extra_tmpl"] = os.path.join(*(parameters[0] + "_excess{0:x}.csv").split("/"))
+                table["objname_extra_tmpl"] = os.path.join(*(parameters[0] + "_excess{0:x}.tmap").split("/"))
 
                 if table["category"] == "attrib":
                     table["symbol"] = "Attribmap_" + parameters[0].replace("/", "_")
@@ -206,21 +208,35 @@ def decompress_bank(rom, offset=None):
         if this_ptr <= first_data_ptr:
             first_data_ptr = this_ptr
         
-        if last_ptr == None:
-            last_ptr = this_ptr
-            
-        #Data "hole" detection
-        if mainscript_text.flat(this_bank, this_ptr) - last_ptr > 0:
-            print this_bank, this_ptr
-            print last_ptr, offset, mainscript_text.banked(offset)
-            ext_dat.append(rom.read(mainscript_text.flat(this_bank, this_ptr) - last_ptr))
-        else:
-            ext_dat.append(None)
+        this_ptr_flat = mainscript_text.flat(this_bank, this_ptr)
         
-        this_data, this_clen = decompress_tilemap(rom, mainscript_text.flat(this_bank, this_ptr))
+        if last_ptr == None:
+            last_ptr = this_ptr_flat
+        
+        #Data "hole" detection
+        if (this_ptr_flat - last_ptr) > 0:
+            old_loc = rom.tell()
+            
+            rom.seek(last_ptr)
+            holedata = rom.read(this_ptr_flat - last_ptr)
+            rom.seek(old_loc)
+            
+            parsed_hole = []
+            
+            holerom = StringIO.StringIO(holedata)
+            while holerom.tell() < len(holedata) - 1:
+                decompressed_holedata, hole_clen = decompress_tilemap(holerom)
+                holerom.seek(hole_clen, 1)
+                parsed_hole.append(decompressed_holedata)
+            
+            ext_dat.append(parsed_hole)
+        else:
+            ext_dat.append([])
+        
+        this_data, this_clen = decompress_tilemap(rom, this_ptr_flat)
         ret_dat.append(this_data)
         
-        last_ptr = rom.tell()
+        last_ptr = this_ptr_flat + this_clen
     
     rom.seek(last)
     return ret_dat, ext_dat
@@ -247,48 +263,48 @@ def extract_metatable(rom, length, offset=None):
     rom.seek(last)
     return ret_banks
 
+def extract_bank(args, rom, bank, bank_dir):
+    this_bank, this_unused = decompress_bank(rom, 0x4000 * bank)
+    
+    for j, data in enumerate(this_bank):
+        csvpath = os.path.join(args.output, "unknown", bank_dir)
+        mainscript_text.install_path(csvpath)
+
+        with open(os.path.join(csvpath, "{0:x}.csv".format(j)), "w+") as csvout:
+            csvwriter = csv.writer(csvout)
+
+            for row in data[:-1]:
+                csvwriter.writerow(row)
+
+            #Workaround for a csv.writer bug
+            if len(data) > 0 and len(data[-1]) == 0:
+                csvout.write(",")
+            elif len(data) > 0:
+                csvwriter.writerow(data[-1])
+        
+        for k, data in enumerate(this_unused[j]):
+            with open(os.path.join(csvpath, "{0:x}_excess{1:x}.csv".format(j, k)), "w+") as csvout:
+                csvwriter = csv.writer(csvout)
+
+                for row in data[:-1]:
+                    csvwriter.writerow(row)
+
+                #Workaround for a csv.writer bug
+                if len(data) > 0 and len(data[-1]) == 0:
+                    csvout.write(",")
+                elif len(data) > 0:
+                    csvwriter.writerow(data[-1])
+
 def extract(args):
     with open(args.rom, 'rb') as rom:
         metatable = extract_metatable(rom, args.metatable_length, args.metatable_loc)
         metatable_attribs = extract_metatable(rom, args.metatable_length, args.metatable_loc_attribs)
         
         for i, bank in enumerate(metatable):
-            this_bank = decompress_bank(rom, 0x4000 * bank)
-            
-            for j, data in enumerate(this_bank):
-                csvpath = os.path.join(args.output, "unknown", "tilemap_{0:x}".format(i))
-                mainscript_text.install_path(csvpath)
-                
-                with open(os.path.join(csvpath, "{0:x}.csv".format(j)), "w+") as csvout:
-                    csvwriter = csv.writer(csvout)
-                    
-                    for row in data[:-1]:
-                        csvwriter.writerow(row)
-                    
-                    #Workaround for a csv.writer bug
-                    if len(data) > 0 and len(data[-1]) == 0:
-                        csvout.write(",")
-                    elif len(data) > 0:
-                        csvwriter.writerow(data[-1])
+            extract_bank(args, rom, bank, "tilemap_{0:x}".format(i))
         
         for i, bank in enumerate(metatable_attribs):
-            this_bank = decompress_bank(rom, 0x4000 * bank)
-            
-            for j, data in enumerate(this_bank):
-                csvpath = os.path.join(args.output, "unknown", "attribs_{0:x}".format(i))
-                mainscript_text.install_path(csvpath)
-                
-                with open(os.path.join(csvpath, "{0:x}.csv".format(j)), "w+") as csvout:
-                    csvwriter = csv.writer(csvout)
-                    
-                    for row in data[:-1]:
-                        csvwriter.writerow(row)
-                    
-                    #Workaround for a csv.writer bug
-                    if len(data) > 0 and len(data[-1]) == 0:
-                        csvout.write(",")
-                    elif len(data) > 0:
-                        csvwriter.writerow(data[-1])
+            extract_bank(args, rom, bank, "attribs_{0:x}".format(i))
 
 def linearized(data):
     """Generator which yields every column in data without breaks."""
