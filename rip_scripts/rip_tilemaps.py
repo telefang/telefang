@@ -361,24 +361,24 @@ def compress_tilemap(data):
         #splitting the run such that the second command has enough bytes..
         
         if run_length >= 2 and run_length > inc_length and run_length > dec_length:
-            if run_length > 66:
-                run_length = 66
+            if run_length > 65:
+                run_length = 65
             
             cmd_byte = 0x40 | (run_length - 2)
             encoded_bytes.append(chr(cmd_byte))
             encoded_bytes.append(chr(this_byte))
             bytes_to_encode = bytes_to_encode[run_length:]
         elif inc_length >= 2 and inc_length > dec_length:
-            if inc_length > 66:
-                inc_length = 66
+            if inc_length > 65:
+                inc_length = 65
             
             cmd_byte = 0x80 | (inc_length - 2)
             encoded_bytes.append(chr(cmd_byte))
             encoded_bytes.append(chr(this_byte))
             bytes_to_encode = bytes_to_encode[inc_length:]
         elif dec_length >= 2:
-            if dec_length > 66:
-                dec_length = 66
+            if dec_length > 65:
+                dec_length = 65
             
             cmd_byte = 0xC0 | (dec_length - 2)
             encoded_bytes.append(chr(cmd_byte))
