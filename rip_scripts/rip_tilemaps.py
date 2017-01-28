@@ -10,9 +10,9 @@ def parse_mapnames(filename):
     Format is:
     
     name type bank index"""
-    tables = []
+    datas = []
     banks = []
-    tbl_index = {}
+    data_index = {}
     bank_index = {}
     
     bank = 0
@@ -67,21 +67,21 @@ def parse_mapnames(filename):
                 elif table["category"] == "tilemap":
                     table["symbol"] = "Tilemap_" + parameters[0].replace("/", "_")
 
-                table["id"] = len(tables)
+                table["id"] = len(datas)
 
-                if not tbl_index.has_key(table["category"]):
-                    tbl_index[table["category"]] = {}
+                if not data_index.has_key(table["category"]):
+                    data_index[table["category"]] = {}
 
-                if not tbl_index[table["category"]].has_key(table["bank"]):
-                    tbl_index[table["category"]][table["bank"]] = {}
+                if not data_index[table["category"]].has_key(table["bank"]):
+                    data_index[table["category"]][table["bank"]] = {}
 
-                if not tbl_index[table["category"]][table["bank"]].has_key(table["index"]):
-                    tbl_index[table["category"]][table["bank"]][table["index"]] = {}
+                if not data_index[table["category"]][table["bank"]].has_key(table["index"]):
+                    data_index[table["category"]][table["bank"]][table["index"]] = {}
 
-                tbl_index[table["category"]][table["bank"]][table["index"]] = table["id"]
-                tables.append(table)
+                data_index[table["category"]][table["bank"]][table["index"]] = table["id"]
+                datas.append(table)
     
-    return tables, tbl_index, banks, bank_index
+    return datas, data_index, banks, bank_index
 
 def decompress_tilemap(rom, offset = None):
     """Decompress a compressed tilemap from a given ROM file.
@@ -180,8 +180,10 @@ def decompress_tilemap(rom, offset = None):
 def decompress_bank(rom, offset=None):
     """Decompress an entire table of compressed data.
     
-    Return value is an array of data, individual data items match the return
-    value of decompress_tilemap.
+    First return value is an array of data, individual data items match the
+    return value of decompress_tilemap. Data is ordered in the same order that
+    the ROM orders it. Second return value is the extracted table, represented
+    as indexes into the data array.
     
     If offset is given, ROM will be read from that position. Your existing ROM
     position will be preserved."""
@@ -193,53 +195,53 @@ def decompress_bank(rom, offset=None):
     rom.seek(offset)
     
     ret_dat = []
-    ext_dat = []
+    order_dat = []
+    
+    ptr_table = [] #List of PTRs as specified in the table
+    ptr_data = [] #List of PTRs containing data, some unused
+    ptr_data_org = {} #Decompressed data
+    ptr_data_index = {}
     
     #The table consists of multiple pointers followed immediately by compressed
     #tilemap data. There is no explicit length, so we discover the length of
     #the pointer table by reading and decompressing pointers until we overrun
-    #already-decompressed data.
+    #already-decompressed data. Oh, and they don't come in a specified order
+    #either.
     first_data_ptr = 0xFFFF
+    last_data_ptr = 0x0000
     last_ptr = None
     start_ptr, this_bank = mainscript_text.banked(offset)
     
+    #Extract the table first.
     while mainscript_text.banked(rom.tell())[0] < first_data_ptr:
         this_ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
+        ptr_table.append(this_ptr)
+        
         if this_ptr <= first_data_ptr:
             first_data_ptr = this_ptr
         
-        this_ptr_flat = mainscript_text.flat(this_bank, this_ptr)
+        if last_data_ptr <= this_ptr:
+            last_data_ptr = this_ptr
+    
+    #Extract the data second
+    this_ptr = first_data_ptr
+    while this_ptr <= last_data_ptr:
+        decomp_data, decomp_len = decompress_tilemap(rom, mainscript_text.flat(this_bank, this_ptr))
+        ptr_data.append(this_ptr)
+        ptr_data_org[this_ptr] = decomp_data
         
-        if last_ptr == None:
-            last_ptr = this_ptr_flat
-        
-        #Data "hole" detection
-        if (this_ptr_flat - last_ptr) > 0:
-            old_loc = rom.tell()
-            
-            rom.seek(last_ptr)
-            holedata = rom.read(this_ptr_flat - last_ptr)
-            rom.seek(old_loc)
-            
-            parsed_hole = []
-            
-            holerom = StringIO.StringIO(holedata)
-            while holerom.tell() < len(holedata) - 1:
-                decompressed_holedata, hole_clen = decompress_tilemap(holerom)
-                holerom.seek(hole_clen, 1)
-                parsed_hole.append(decompressed_holedata)
-            
-            ext_dat.append(parsed_hole)
-        else:
-            ext_dat.append([])
-        
-        this_data, this_clen = decompress_tilemap(rom, this_ptr_flat)
-        ret_dat.append(this_data)
-        
-        last_ptr = this_ptr_flat + this_clen
+        this_ptr += decomp_len
+    
+    #Resolve PTRs into numerical indexes and return them.
+    for data_index, data_ptr in enumerate(ptr_data):
+        ret_dat.append(ptr_data_org[data_ptr])
+        ptr_data_index[data_ptr] = data_index
+    
+    for table_index, table_ptr in enumerate(ptr_table):
+        order_dat.append(ptr_data_index[table_ptr])
     
     rom.seek(last)
-    return ret_dat, ext_dat
+    return ret_dat, order_dat
 
 def extract_metatable(rom, length, offset=None):
     """Extract the bank list (metatable) from the ROM.
@@ -264,7 +266,7 @@ def extract_metatable(rom, length, offset=None):
     return ret_banks
 
 def extract_bank(args, rom, bank, bank_dir):
-    this_bank, this_unused = decompress_bank(rom, 0x4000 * bank)
+    this_bank, this_table = decompress_bank(rom, 0x4000 * bank)
     
     for j, data in enumerate(this_bank):
         csvpath = os.path.join(args.output, "unknown", bank_dir)
@@ -281,19 +283,6 @@ def extract_bank(args, rom, bank, bank_dir):
                 csvout.write(",")
             elif len(data) > 0:
                 csvwriter.writerow(data[-1])
-        
-        for k, data in enumerate(this_unused[j]):
-            with open(os.path.join(csvpath, "{0:x}_excess{1:x}.csv".format(j, k)), "w+") as csvout:
-                csvwriter = csv.writer(csvout)
-
-                for row in data[:-1]:
-                    csvwriter.writerow(row)
-
-                #Workaround for a csv.writer bug
-                if len(data) > 0 and len(data[-1]) == 0:
-                    csvout.write(",")
-                elif len(data) > 0:
-                    csvwriter.writerow(data[-1])
 
 def extract(args):
     with open(args.rom, 'rb') as rom:
@@ -466,31 +455,34 @@ def asm(args):
     manually doing so."""
 
     charmap = mainscript_text.parse_charmap(args.charmap)
-    tables, table_index, banks, bank_index = parse_mapnames(args.mapnames)
+    datas, datas_index, banks, bank_index = parse_mapnames(args.mapnames)
     
     with open(args.rom, 'rb') as rom:
-        #First step, look for unused bits in the table that we extracted in the
-        #previous pass... by extracting all over again. lol
+        #Extract the table so we know what order to reference data.
         metatable = extract_metatable(rom, args.metatable_length, args.metatable_loc)
         metatable_attribs = extract_metatable(rom, args.metatable_length, args.metatable_loc_attribs)
 
-        unused = {"tilemap": [], "attrib": []}
+        bank_tables = {"tilemap": [], "attrib": []}
+        bank_datas = {"tilemap": [], "attrib": []}
 
         for i, bank in enumerate(metatable):
-            this_bank, this_unused = decompress_bank(rom, 0x4000 * bank)
-            unused["tilemap"].append(this_unused)
+            this_bank_data, this_bank_table = decompress_bank(rom, 0x4000 * bank)
+            bank_tables["tilemap"].append(this_bank_table)
+            bank_datas["tilemap"].append(this_bank_data)
 
         for i, bank in enumerate(metatable_attribs):
-            this_bank, this_unused = decompress_bank(rom, 0x4000 * bank)
-            unused["attrib"].append(this_unused)
+            this_bank_data, this_bank_table = decompress_bank(rom, 0x4000 * bank)
+            bank_tables["attrib"].append(this_bank_table)
+            bank_datas["attrib"].append(this_bank_data)
 
-        #Now we have a list of all the table holes we have to fill.
-        #So we can generate the ASM as normal..
-        for category_name, category_index in table_index.items():
+        #Generate ASM for the metatables
+        for category_name, category_index in datas_index.items():
             if category_name == "attrib":
                 print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs)
+                print u'RLEAttribmapBanks::'
             elif category_name == "tilemap":
                 print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc)
+                print u'RLETilemapBanks::'
 
             for bank_id, bank_table_index in category_index.items():
                 bank = banks[bank_index[category_name][bank_id]]
@@ -499,52 +491,43 @@ def asm(args):
             print u''
 
         print u''
-
-        for category_name, category_index in table_index.items():
-            for bank_id, bank_table_index in category_index.items():
+        
+        #Generate ASM for each individual table.
+        for category_name, category_index in datas_index.items():
+            for bank_id, _ in category_index.items():
                 bank = banks[bank_index[category_name][bank_id]]
                 
                 rom.seek(bank["flataddr"])
                 
-                #Prep the ROM table scan
-                last_table_index = None
-                last_ptr = None
-                skip_list = []
-                
                 print u'SECTION "' + category_name + u' Bank {0}'.format(bank_id) + u'", ' + mainscript_text.format_sectionaddr_rom(bank["flataddr"])
+                print bank["symbol"] + u'::'
                 
-                for tmap_id, table_index in bank_table_index.items():
-                    table = tables[table_index]
-                    this_ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
+                #Print out the table in the order we extracted it from baserom
+                for table_index in bank_tables[category_name][bank_id]:
+                    #Detect if a table pointer refers to the end of the table
+                    is_junk = False
                     
-                    if last_ptr != None and this_ptr == last_ptr:
-                        #Aliased row. Link to the last unique ptr instead.
-                        skip_list.append(table_index)
-                        table = tables[last_table_index]
-                        table_index = last_table_index
-                    
-                    print u'\tdw ' + table["symbol"]
-                    
-                    last_ptr = this_ptr
-                    last_table_index = table_index
-
+                    if table_index >= len(datas_index[category_name][bank_id]):
+                        data_meta = datas[datas_index[category_name][bank_id][table_index - 1]]
+                        print u'\tdw ' + data_meta["symbol"] + u"_END"
+                    else:
+                        data_meta = datas[datas_index[category_name][bank_id][table_index]]
+                        print u'\tdw ' + data_meta["symbol"]
+                
                 print u''
-
-                for tmap_id, table_index in bank_table_index.items():
-                    table = tables[table_index]
-                    
-                    if table_index in skip_list:
-                        #Aliased row. Skip it.
+                
+                #Print out all the data blocks in the table.
+                for tmap_id, _ in enumerate(bank_datas[category_name][bank_id]):
+                    #Prevent spitting out nonexistent data here
+                    if tmap_id >= len(datas_index[category_name][bank_id]):
                         continue
-
-                    print table["symbol"] + u'::'
-                    print u'\tincbin "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + '"'
-                    print table["symbol"] + u'_END'
+                    
+                    data_meta = datas[datas_index[category_name][bank_id][tmap_id]]
+                    
+                    print data_meta["symbol"] + u'::'
+                    print u'\tincbin "' + os.path.join(args.output, data_meta["objname"]).replace("\\", "/") + '"'
+                    print data_meta["symbol"] + u'_END'
                     print u''
-
-                    #Check if we have holes to fill, then do so
-                    for i, data in enumerate(unused[category_name][bank_id][tmap_id]):
-                        print u'\tincbin "' + os.path.join(args.output, table["objname_extra_tmpl"].format(i)).replace("\\", "/") + '"'
 
             print u''
 
