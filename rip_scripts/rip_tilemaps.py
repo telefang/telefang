@@ -431,7 +431,7 @@ def encode_tilemap(data):
     #Determine if the data is compressible or no
     use_compression = True
     for i, row in enumerate(data):
-        if i < len(data) - 1 and len(row) < 32:
+        if (i < len(data) - 1 or i == 0) and len(row) < 32:
             use_compression = False
             break
         elif i == len(data) - 1:
