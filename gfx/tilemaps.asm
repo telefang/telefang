@@ -1130,16 +1130,16 @@ Attribmap_unknown_attribs_0_5_END
 Attribmap_unknown_attribs_0_6::
 	incbin "gfx/unknown/attribs_0/6.tmap"
 Attribmap_unknown_attribs_0_6_END
-	incbin "gfx/unknown/attribs_0/6_after_unused.tmap"
 
 Attribmap_unknown_attribs_0_7::
 	incbin "gfx/unknown/attribs_0/7.tmap"
 Attribmap_unknown_attribs_0_7_END
 
+	incbin "gfx/unknown/attribs_0/7_excess0.tmap"
 Attribmap_unknown_attribs_0_8::
 	incbin "gfx/unknown/attribs_0/8.tmap"
 Attribmap_unknown_attribs_0_8_END
- 
+
 Attribmap_unknown_attribs_0_a::
 	incbin "gfx/unknown/attribs_0/a.tmap"
 Attribmap_unknown_attribs_0_a_END
@@ -1148,6 +1148,8 @@ Attribmap_unknown_attribs_0_b::
 	incbin "gfx/unknown/attribs_0/b.tmap"
 Attribmap_unknown_attribs_0_b_END
 
+	incbin "gfx/unknown/attribs_0/b_excess0.tmap"
+	incbin "gfx/unknown/attribs_0/b_excess1.tmap"
 Attribmap_unknown_attribs_0_c::
 	incbin "gfx/unknown/attribs_0/c.tmap"
 Attribmap_unknown_attribs_0_c_END
@@ -1156,6 +1158,9 @@ Attribmap_unknown_attribs_0_d::
 	incbin "gfx/unknown/attribs_0/d.tmap"
 Attribmap_unknown_attribs_0_d_END
 
+	incbin "gfx/unknown/attribs_0/d_excess0.tmap"
+	incbin "gfx/unknown/attribs_0/d_excess1.tmap"
+	incbin "gfx/unknown/attribs_0/d_excess2.tmap"
 Attribmap_unknown_attribs_0_e::
 	incbin "gfx/unknown/attribs_0/e.tmap"
 Attribmap_unknown_attribs_0_e_END

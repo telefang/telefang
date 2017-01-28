@@ -469,6 +469,23 @@ def asm(args):
     tables, table_index, banks, bank_index = parse_mapnames(args.mapnames)
     
     with open(args.rom, 'rb') as rom:
+        #First step, look for unused bits in the table that we extracted in the
+        #previous pass... by extracting all over again. lol
+        metatable = extract_metatable(rom, args.metatable_length, args.metatable_loc)
+        metatable_attribs = extract_metatable(rom, args.metatable_length, args.metatable_loc_attribs)
+
+        unused = {"tilemap": [], "attrib": []}
+
+        for i, bank in enumerate(metatable):
+            this_bank, this_unused = decompress_bank(rom, 0x4000 * bank)
+            unused["tilemap"].append(this_unused)
+
+        for i, bank in enumerate(metatable_attribs):
+            this_bank, this_unused = decompress_bank(rom, 0x4000 * bank)
+            unused["attrib"].append(this_unused)
+
+        #Now we have a list of all the table holes we have to fill.
+        #So we can generate the ASM as normal..
         for category_name, category_index in table_index.items():
             if category_name == "attrib":
                 print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs)
@@ -524,6 +541,10 @@ def asm(args):
                     print u'\tincbin "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + '"'
                     print table["symbol"] + u'_END'
                     print u''
+
+                    #Check if we have holes to fill, then do so
+                    for i, data in enumerate(unused[category_name][bank_id][tmap_id]):
+                        print u'\tincbin "' + os.path.join(args.output, table["objname_extra_tmpl"].format(i)).replace("\\", "/") + '"'
 
             print u''
 
