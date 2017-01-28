@@ -272,10 +272,3 @@ unknown/tilemap_1/4 tilemap 1 4
 unknown/tilemap_1/5 tilemap 1 5
 unknown/tilemap_1/6 tilemap 1 6
 unknown/tilemap_1/7 tilemap 1 7
-unknown/tilemap_1/8 tilemap 1 8
-unknown/tilemap_1/9 tilemap 1 9
-unknown/tilemap_1/a tilemap 1 a
-unknown/tilemap_1/b tilemap 1 b
-unknown/tilemap_1/c tilemap 1 c
-unknown/tilemap_1/d tilemap 1 d
-unknown/tilemap_1/e tilemap 1 e
