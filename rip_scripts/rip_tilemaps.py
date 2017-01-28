@@ -553,16 +553,13 @@ def make_maps(args):
     inclusion within the compressed tilemap banks."""
     
     charmap = mainscript_text.parse_charmap(args.charmap)
-    tables, table_index, banks, bank_index = parse_mapnames(args.mapnames)
     
     #We Are Number One but a python script compiles everything
     #YouTube: Our Cancer Has Cancer.
-    for i, table in enumerate(tables):
-        #If filenames are specified, only export maps that are mentioned there
-        if len(args.filenames) > 0 and table["objname"] not in args.filenames:
-            continue
+    for i, filename in enumerate(args.filenames):
+        objname = os.path.splitext(filename)[0] + ".tmap"
         
-        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
+        with open(filename, "r") as csvfile:
             csvreader = csv.reader(csvfile)
             csv_data = []
             
@@ -576,9 +573,9 @@ def make_maps(args):
                 
                 csv_data.append(nrow)
             
-            print "Compiling " + table["filename"]
+            print "Compiling " + filename
             
-            with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
+            with open(objname, "wb") as objfile:
                 objfile.write(encode_tilemap(csv_data))
 
 def main():
