@@ -434,6 +434,12 @@ def encode_tilemap(data):
         if (i < len(data) - 1 or i == 0) and len(row) < 32:
             use_compression = False
             break
+        elif i == len(data) - 1 and len(row) == 0:
+            #Empty rows exist to add newlines to the incompressible data format.
+            #Therefore we shouldn't try to compress them, even if they are
+            #compressible.
+            use_compression = False
+            break
         elif i == len(data) - 1:
             break
     else:
