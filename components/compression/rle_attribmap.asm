@@ -228,8 +228,3 @@ RLEEarlyExit:
 	xor a
 	ld [REG_VBK], a
 	ret
-
-;Lists banks that store RLE-compressed attribute data.
-RLEAttribmapBanks:
-	db 8
-	db 9

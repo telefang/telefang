@@ -46,8 +46,10 @@ OBJS := components/compression/malias.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
      script/mainscript.o script/stringtable.o
      
-OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o
-OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o
+OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
+	  versions/power/tilemaps.o
+OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
+	  versions/speed/tilemaps.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
 # If your default python is 3, you may want to change this to python27.
@@ -55,15 +57,15 @@ PYTHON := python
 PRET := pokemon-reverse-engineering-tools/pokemontools
 
 $(foreach obj, $(OBJS), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) $(PRET)/scan_includes.py $(obj:.o=.asm))) \
+	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
 )
 
 $(foreach obj, $(OBJS_POWER), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) $(PRET)/scan_includes.py $(obj:.o=.asm))) \
+	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
 )
 
 $(foreach obj, $(OBJS_SPEED), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) $(PRET)/scan_includes.py $(obj:.o=.asm))) \
+	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
 )
 
 # Link objects together to build a rom.
@@ -79,11 +81,6 @@ speed: $(ROMS_SPEED)
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
 $(OBJS_ALL): $$*.asm $$($$*_dep)
-	@$(PYTHON) $(PRET)/gfx.py 2bpp $(2bppq)
-	@$(PYTHON) $(PRET)/gfx.py 1bpp $(1bppq)
-	@$(PYTHON) rip_scripts/pcm.py pcm $(pcmq)
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER_PATCH) $(scripttblq) --language="English"
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER_PATCH) $(stringtblq) --language="English"
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
@@ -119,22 +116,25 @@ clean:
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pcm' -o -iname '*.scripttbl' \) -exec rm {} +
 
 %.2bpp: %.png
-	$(eval 2bppq += $<)
 	@rm -f $@
+	@$(PYTHON) $(PRET)/gfx.py 2bpp $<
 
 %.1bpp: %.png
-	$(eval 1bppq += $<)
 	@rm -f $@
-
-%.scripttbl: %.wikitext
-	$(eval scripttblq += $<)
-	@rm -f $@
-
-%.stringtbl: %.wikitext
-	$(eval stringtblq += $<)
-	@rm -f $@
+	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
 
 %.pcm: %.wav
-	$(eval pcmq += $<)
 	@rm -f $@
+	@$(PYTHON) rip_scripts/pcm.py pcm $<
 
+%.scripttbl: %.wikitext
+	@rm -f $@
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) $<
+
+%.stringtbl: %.wikitext
+	@rm -f $@
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER) $<
+
+%.tmap: %.csv
+	@rm -f $@
+	@$(PYTHON) rip_scripts/rip_tilemaps.py make_maps $(BASEROM_POWER) $<
