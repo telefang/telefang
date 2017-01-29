@@ -345,7 +345,6 @@ def compress_tilemap(data):
                 break
         
         #Flush incompressible data if it looks like we have something.
-        #TODO: Split runs of incompressible bytes if they overflow
         if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
             while len(incompressible) > 0:
                 inc_count = min(len(incompressible), 0x40)
@@ -391,13 +390,11 @@ def compress_tilemap(data):
             bytes_to_encode = bytes_to_encode[1:]
     
     #Encode the last few bits of incompressible data if it exists
-    #TODO: Split runs of incompressible bytes if they overflow
-    if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
-        while len(incompressible) > 0:
-            inc_count = min(incompressible, 0x40)
-            encoded_bytes.append(chr(inc_count))
-            encoded_bytes.append("".join(incompressible[:inc_count]))
-            incompressible = incompressible[inc_count:]
+    while len(incompressible) > 0:
+        inc_count = min(len(incompressible), 0x40)
+        encoded_bytes.append(chr(inc_count - 1))
+        encoded_bytes.append("".join(incompressible[:inc_count]))
+        incompressible = incompressible[inc_count:]
         
     encoded_bytes.append(chr(0xff))
     return "".join(encoded_bytes)
