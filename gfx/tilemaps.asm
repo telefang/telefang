@@ -1512,7 +1512,7 @@ Attribmap_BANK_1::
 	dw Attribmap_unknown_attribs_1_5
 	dw Attribmap_unknown_attribs_1_6
 	dw Attribmap_unknown_attribs_1_7
-	dw Attribmap_unknown_attribs_1_8
+	dw Attribmap_unknown_attribs_1_7_END
 
 Attribmap_unknown_attribs_1_0::
 	incbin "gfx/unknown/attribs_1/0.tmap"
@@ -1545,9 +1545,5 @@ Attribmap_unknown_attribs_1_6_END
 Attribmap_unknown_attribs_1_7::
 	incbin "gfx/unknown/attribs_1/7.tmap"
 Attribmap_unknown_attribs_1_7_END
-
-Attribmap_unknown_attribs_1_8::
-	incbin "gfx/unknown/attribs_1/8.tmap"
-Attribmap_unknown_attribs_1_8_END
 
 

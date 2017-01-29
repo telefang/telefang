@@ -107,7 +107,6 @@ unknown/attribs_1/4 attrib 1 4
 unknown/attribs_1/5 attrib 1 5
 unknown/attribs_1/6 attrib 1 6
 unknown/attribs_1/7 attrib 1 7
-unknown/attribs_1/8 attrib 1 8
 unknown/tilemap_0/0 tilemap 0 0
 unknown/tilemap_0/1 tilemap 0 1
 unknown/tilemap_0/2 tilemap 0 2
