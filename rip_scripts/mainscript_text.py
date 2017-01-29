@@ -657,18 +657,17 @@ def make_tbl(args):
         metrics = None
     else:
         metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
-
+    
     for h, bank in enumerate(banknames):
         if bank["filename"].startswith("overflow"):
             #Don't attempt to compile the overflow bank. That's a separate pass
             overflow_bank_id = h
             continue
         
+        #If filenames are specified, don't bother because we can't do on-demand
+        #compilation anyway and the makefile gets the path wrong
+        
         print "Compiling " + bank["filename"]
-        #If filenames are specified, only export banks that are mentioned there
-        if len(args.filenames) > 0 and bank["objname"] not in args.filenames:
-            continue
-
         #Open and parse the data
         with io.open(os.path.join(args.output, bank["filename"]), "r", encoding="utf-8") as wikifile:
             rows, headers = parse_wikitext(wikifile.read())
