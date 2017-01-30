@@ -69,6 +69,8 @@ speed: $(ROMS_SPEED) compare_speed
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
 $(OBJS_ALL): $$*.asm $$($$*_dep)
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER)
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER)
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
@@ -107,11 +109,9 @@ clean:
 
 %.scripttbl: %.wikitext
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) $<
 
 %.stringtbl: %.wikitext
 	@rm -f $@
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER) $<
 
 %.tmap: %.csv
 	@rm -f $@
