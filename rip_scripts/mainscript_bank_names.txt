@@ -19,5 +19,5 @@ calls/denjuu/6 99068 94000
 denjuu/descriptions 40000
 calls/story 158000
 calls/exp_item 15C000
-story/5 1281D9
+story/5 1281D9 10C000
 overflow/1 78000
