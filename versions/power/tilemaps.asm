@@ -262,9 +262,7 @@ Tilemap_unknown_tilemap_0_9::
    db $00,$FF,$3E,$22,$85,$3F,$76,$00
    db $80,$46,$04,$25,$00,$23,$48,$27
    db $7F,$00,$7F,$00,$7F,$00,$4D,$00
-   db $FF,$20,$20,$20,$20,$20,$45,$4E
-   db $20,$50,$41,$54,$43,$48,$20,$56
-   db $45,$52,$53,$49,$4F,$4E
+   db $FF
 Tilemap_unknown_tilemap_0_9_END
 
 Tilemap_unknown_tilemap_0_a::
