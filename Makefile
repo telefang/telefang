@@ -29,7 +29,8 @@ OBJS := components/compression/malias.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o \
-	  components/status/nickname.o \
+	  components/status/nickname.o components/status/stats.o \
+     components/status/statetbl.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
