@@ -82,8 +82,8 @@ speed: $(ROMS_SPEED)
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
 $(OBJS_ALL): $$*.asm $$($$*_dep)
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER)
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER)
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) --language="English"
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER) --language="English"
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
