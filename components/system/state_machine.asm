@@ -11,6 +11,30 @@ W_SystemState:: ds 1
 W_SystemSubState:: ds 1
 W_SystemSubSubState:: ds 1
 
+SECTION "StateMachine Tools", ROM0[$E97]
+System_IndexWordList::
+    ld b, 0
+    ld c, a
+    sla c
+    rl b
+    add hl, bc
+    ld a, [hl+]
+    ld h, [hl]
+    ld l, a
+    ret
+    
+System_ScheduleNextSubState::
+    ld a, [W_SystemSubState]
+    inc a
+    ld [W_SystemSubState], a
+    ret
+    
+System_ScheduleNextSubSubState::
+    ld a, [W_SystemSubSubState]
+    inc a
+    ld [W_SystemSubSubState], a
+    ret
+
 SECTION "StateMachine Execution", ROM0[$1BE2]
 GameStateMachine::
 	ld a, [W_SystemState]
@@ -26,99 +50,99 @@ GameStateMachine::
 	jp [hl]
 
 GameStateMachineTable:
-	dw GameState01, GameState02, GameState03, GameState04
-	dw GameState05, GameState06, GameState07, GameState08
-	dw GameState09, GameState10, GameState11, GameState12
-	dw GameState12, GameState14, GameState15, GameState16
+	dw GameState00, GameState01, GameState02, GameState03
+	dw GameState04, GameState05, GameState06, GameState07
+	dw GameState08, GameState09, GameState10, GameState11
+	dw GameState11, GameState13, GameState14, GameState15
 
 ;Disassembly of individual substates follows.
 ;TODO: Name each state.
 
-GameState01:
+GameState00:
 	ld a, 2
 	ld [W_PreviousBank], a
 	rst $10
 	jp $5300
 
-GameState02:
+GameState01:
 	ld a, 2
 	ld [W_PreviousBank], a
 	rst $10
 	jp $493F
 
-GameState03:
+GameState02:
 	ld a, 2
+	ld [W_PreviousBank], a
+	rst $10
+	jp $4000
+
+GameState03:
+	ld a, 4
 	ld [W_PreviousBank], a
 	rst $10
 	jp $4000
 
 GameState04:
-	ld a, 4
-	ld [W_PreviousBank], a
-	rst $10
-	jp $4000
-
-GameState05:
 	ld a, 2
 	ld [W_PreviousBank], a
 	rst $10
 	jp $40BF
 
-GameState06:
+GameState05:
 	ld a, $B
 	ld [W_PreviousBank], a
 	rst $10
 	jp $1EA1
 
-GameState07:
+GameState06:
 	ld a, $1C
 	ld [W_PreviousBank], a
 	rst $10
 	jp $4000
 
-GameState08:
+GameState07:
 	ld a, 5
 	ld [W_PreviousBank], a
 	rst $10
 	jp $441B
 
-GameState09:
+GameState08:
 	ld a, $1D
 	ld [W_PreviousBank], a
 	rst $10
 	jp $4000
 
-GameState10:
+GameState09:
 	ld a, 2
 	ld [W_PreviousBank], a
 	rst $10
 	jp $4B8B
 
-GameState11:
+GameState10:
 	ld a, 2
 	ld [W_PreviousBank], a
 	rst $10
 	jp $4824
 
-GameState12: ;Repeated twice in original ROM.
+GameState11: ;Repeated twice in original ROM.
 	ld a, 4
 	ld [W_PreviousBank], a
 	rst $10
 	jp $45C0
 
-GameState14:
+GameState13:
 	ld a, 2
 	ld [W_PreviousBank], a
 	rst $10
 	jp $44CF
 
-GameState15:
+GameState14:
 	ld a, 2
 	ld [W_PreviousBank], a
 	rst $10
 	jp $458E
 
-GameState16:
+GameState15:
 	ld a, $1F
 	ld [W_PreviousBank], a
 	rst $10

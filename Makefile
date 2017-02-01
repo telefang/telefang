@@ -38,7 +38,8 @@ OBJS := components/compression/malias.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o \
-	  components/status/nickname.o \
+	  components/status/nickname.o components/status/stats.o \
+     components/status/statetbl.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
@@ -81,6 +82,8 @@ speed: $(ROMS_SPEED)
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
 $(OBJS_ALL): $$*.asm $$($$*_dep)
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER)
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER)
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
@@ -129,11 +132,9 @@ clean:
 
 %.scripttbl: %.wikitext
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl --language=English $(BASEROM_POWER) $<
 
 %.stringtbl: %.wikitext
 	@rm -f $@
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl --language=English $(BASEROM_POWER) $<
 
 %.tmap: %.csv
 	@rm -f $@
