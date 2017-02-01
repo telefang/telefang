@@ -7,7 +7,7 @@
 *.txt text
 *.md text
 *.wikitext text
-*.csv text
+*.csv text=auto
 
 .gitignore text
 .gitmodules text
