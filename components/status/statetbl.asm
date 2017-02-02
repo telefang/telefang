@@ -20,7 +20,11 @@ Status_GameStateMachine::
 Status_GameStateTable:
     dw Status_State0,Status_State1,Status_State2,$4D7A
     dw $4DBB,$4F2D,$4F96,$4E98
-    dw $4F1D,$6345 ;Pointers beyond this point seem invalid...
+    dw $4F1D
+
+Status_TextTable: ;4BA7
+    INCBIN "script/status/ui_strings_1.stringtbl"
+    INCBIN "script/status/ui_strings_2.stringtbl" ;4BB1
 
 SECTION "Status Screen State Implementations", ROMX[$4C81], BANK[$02]
 Status_State0:
@@ -118,7 +122,7 @@ Status_State2:
     call MainScript_DrawCenteredDenjuuName
     call $597
     call $50C2
-    ld de, $4BA7
+    ld de, Status_TextTable
     ld hl, $8E00
     ld b, 8
     call Banked_MainScript_DrawStatusText
