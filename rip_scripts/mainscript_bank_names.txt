@@ -1,4 +1,4 @@
-#filename wikifang-addr
+#filename wikifang-addr rom-addr
 battle/messages 114000
 denjuu/sms 118000
 npc/1 11C000
