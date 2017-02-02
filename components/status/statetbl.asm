@@ -118,7 +118,7 @@ Status_State2:
 .loc_8D37:
     ld a, [W_Status_SelectedDenjuuByte3]
     ld bc, $8D80
-    ld de, $7928
+    ld de, $6130 ;TODO: symbolize, why did this change?
     call MainScript_DrawCenteredDenjuuName
     call $597
     call $50C2
