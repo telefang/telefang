@@ -2,7 +2,7 @@ INCLUDE "components/sgb/palettes.inc"
 
 SECTION "SGB Palette Table", ROMX[$6BC8], BANK[3]
 SGB_PaletteData:
-    dSGB_Palette $7FFF, $7FFF, $7FFF, $7FFF
+    dSGB_Palette $7FFF, $4A52, $2522, 0
     dSGB_Palette $7FFF, $4A52, $2529, $C63
     dSGB_Palette $7FFF, $4E1F, $24FA, 0
     dSGB_Palette $7FFF, $7EAC, $7D85, 0
