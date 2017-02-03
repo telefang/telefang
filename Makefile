@@ -21,6 +21,7 @@ OBJS := components/compression/malias.o \
 	  components/system/memory.o components/system/empty.o \
 	  components/system/entrypoints.o components/system/bankcalls.o \
 	  components/system/math.o \
+     components/sgb/palettes.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
