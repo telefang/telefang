@@ -30,6 +30,8 @@ OBJS := components/compression/malias.o \
 	  components/system/patch_utils.o components/system/patch_unknown.o \
 	  components/system/aux_code.o \
      components/sgb/palettes.o \
+     components/pausemenu/contacts.o components/pausemenu/nameutil.o \
+     components/pausemenu/screenutil.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
