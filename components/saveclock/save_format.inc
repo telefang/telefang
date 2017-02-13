@@ -16,3 +16,5 @@ M_SaveClock_DenjuuLevel EQU $1
 M_SaveClock_DenjuuFriendship EQU $2
 M_SaveClock_DenjuuPersonality EQU $3
 M_SaveClock_DenjuuExperience EQU $4
+
+M_SaveClock_DenjuuLevelCap EQU $63
