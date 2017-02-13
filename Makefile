@@ -31,9 +31,10 @@ OBJS := components/compression/malias.o \
 	  components/sound/samples.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
-	  components/battle/statistics.o \
+	  components/battle/statistics.o components/battle/species.o \
 	  components/status/nickname.o components/status/stats.o \
-     components/status/statetbl.o \
+     components/status/statetbl.o components/status/icons.o \
+     components/status/tabs.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
