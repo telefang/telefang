@@ -6,4 +6,4 @@ M_Status_StateUserJPInput EQU 4
 M_Status_StateExit EQU 5
 M_Status_StateSwitchTab EQU 6
 M_Status_StateSwitchDenjuu EQU 7
-M_Status_State8 EQU 8
+M_Status_StateSwitchDenjuuCleanup EQU 8
