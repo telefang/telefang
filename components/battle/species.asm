@@ -39,7 +39,7 @@ Battle_LoadSpeciesData::
     
     ;Return value directly if it's not a base stat.
     ld a, c
-    cp M_Battle_Move1
+    cp M_Battle_SpeciesMove1
     ret nc
     
     ;Return value directly if Denjuu is LV1.
