@@ -68,7 +68,7 @@ Status_StateInitGraphics:
     call Status_LoadSpecialInfo ;Like LoadContactInfo but it loads from $D5B6
     jr .placeDenjuuGraphic
 
-.loacContactInfo:
+.loadContactInfo:
     call Status_LoadContactInfo
 
 .placeDenjuuGraphic:
@@ -460,7 +460,7 @@ Status_StateExit
     
 .loc_8F8B
     ld a, $F
-    ld [W_SystemState]
+    ld [W_SystemState], a
     ld a, 0
     ld [$D401], a
     ret
