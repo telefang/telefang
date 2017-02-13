@@ -86,7 +86,7 @@ Main::
 	ld a, $B
 	ld [REG_IE], a ;Only accept VBlank, LCD, and SIO interrupts
 	xor a
-	ld [$CB3F], a
+	ld [W_SerIO_ConnectionState], a
 	ld a, 1
 	ld [W_CGBPaletteStagedBGP], a
 	ld [W_CGBPaletteStagedOBP], a
@@ -113,7 +113,7 @@ Main::
 	inc a
 	ld [W_FrameCounter], a
 	call SoftResetCheck
-	ld a, [$CB3F] ; MAYBE a check if another GB is connected? Or that flashy thing
+	ld a, [W_SerIO_ConnectionState]
 	or a
 	jr z, .dontProcessSerialIO
 	call SerIO_RecvBufferPull

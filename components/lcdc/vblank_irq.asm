@@ -33,7 +33,7 @@ VBlankingIRQ::
 	ei
 	call $464
 	call $3442
-	ld a, [$CB3F]
+	ld a, [W_SerIO_ConnectionState]
 	or a
 	jr nz, .enableInternalSIOClock
 	call $1F08
