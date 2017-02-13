@@ -1,3 +1,9 @@
+;Banksafe versions of functions that switch banks on their own or exist in other
+;banks. These functions restore the previous bank in different ways, not all of
+;which are safe to recursively use. Only a few actually read and stack the
+;current bank; others assume W_PreviousBank (only set by the state machines...)
+;is valid. In practice this doesn't seem to matter for most functions...
+
 SECTION "Banked Call Helper WRAM", WRAM0[$CB26]
 W_System_BankedArg: ds 1
 
@@ -72,6 +78,16 @@ Banked_MainScript_DrawStatusText::
     rst $18
     ret
 
+Banked_MainScript_DrawName75::
+    call MainScript_DrawName75
+    rst $18
+    ret
+
+Banked_MainScript_DrawShortName::
+    call MainScript_DrawShortName
+    rst $18
+    ret
+
 SECTION "Banked Call Helpers 2", ROM0[$0620]
 Banked_LoadBattlePhrase:
     ld a, $75 ;Symbolic representation of bank suspended until disassembly
@@ -92,4 +108,14 @@ Banked_MainScript_DrawLetter::
     call MainScript_DrawLetter
     ld a, [W_LCDC_LastBank]
     rst $10
+    ret
+
+SECTION "Banked Call Helpers 4", ROM0[$05ED]
+Banked_Battle_LoadLevelupData:
+    push af
+    ld a, $27
+    rst $10
+    pop af
+    call Battle_LoadLevelupData
+    rst $18
     ret

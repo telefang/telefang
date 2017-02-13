@@ -2,14 +2,14 @@
 IMPORT StringTable_denjuu_species
 
 SECTION "String Table Bank Functions", ROM0[$0548]
-StringTable_LoadDenjuuName::
+StringTable_LoadName75::
     ld a, BANK(StringTable_denjuu_species)
     rst $10
     call StringTable_LoadFromROMTbl8
     rst $18
     ret
     
-;Mystery table
+StringTable_LoadNameB::
     ld a, $B
     rst $10
     call StringTable_LoadFromROMTbl8

@@ -11,6 +11,6 @@ PauseMenu_ContactPrepName::
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
     ld hl, $4000
-    call StringTable_LoadDenjuuName
+    call StringTable_LoadName75
     ld d, $C
     jp $5A80
