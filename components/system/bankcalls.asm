@@ -87,9 +87,73 @@ Banked_MainScript_DrawShortName::
     call MainScript_DrawShortName
     rst $18
     ret
+    
+SECTION "Banked Call Helpers 5 - The bankening", ROM0[$0588]
+Banked_Sound_PlaySample::
+    call Sound_PlaySample
+    rst $18
+    ret
+
+Banked_Battle_LoadSpeciesData::
+    push af
+    ld a, $75
+    rst $10
+    pop af
+    call Battle_LoadSpeciesData
+    rst $18
+    ret
+
+Banked_MainScript_DrawHabitatString::
+    ld a, $75
+    rst $10
+    call MainScript_DrawHabitatString
+    rst $18
+    ret
+
+Banked_MainScript_DrawStatusEffectString::
+    ld a, $75
+    rst $10
+    call MainScript_DrawStatusEffectString
+    rst $18
+    ret
+    
+Banked_Status_LoadDenjuuEvolutionIndicator::
+    call Status_LoadDenjuuEvolutionIndicator
+    rst $18
+    ret
+    
+Banked_Status_LoadDenjuuTypeIcon::
+    call Status_LoadDenjuuTypeIcon
+    rst $18
+    ret
+    
+Banked_Status_LoadDenjuuTypeIconPalette::
+    call Status_LoadDenjuuTypeIconPalette
+    rst $18
+    ret
+
+SECTION "Banked Call Helpers 6", ROM0[$05D9]
+Banked_Battle_LoadNextLevelExp::
+    push af
+    ld a, $27
+    rst $10
+    pop af
+    call Battle_LoadNextLevelExp
+    rst $18
+    ret
+
+SECTION "Banked Call Helpers 4", ROM0[$05ED]
+Banked_Battle_LoadLevelupData::
+    push af
+    ld a, $27
+    rst $10
+    pop af
+    call Battle_LoadLevelupData
+    rst $18
+    ret
 
 SECTION "Banked Call Helpers 2", ROM0[$0620]
-Banked_LoadBattlePhrase:
+Banked_LoadBattlePhrase::
     ld a, $75 ;Symbolic representation of bank suspended until disassembly
               ;of battle system
     rst $10
@@ -108,14 +172,4 @@ Banked_MainScript_DrawLetter::
     call MainScript_DrawLetter
     ld a, [W_LCDC_LastBank]
     rst $10
-    ret
-
-SECTION "Banked Call Helpers 4", ROM0[$05ED]
-Banked_Battle_LoadLevelupData:
-    push af
-    ld a, $27
-    rst $10
-    pop af
-    call Battle_LoadLevelupData
-    rst $18
     ret
