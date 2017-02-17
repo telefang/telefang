@@ -72,6 +72,23 @@ Banked_RLEDecompressTMAP1::
     rst $10
     ret
 
+Banked_LCDC_SetupPalswapAnimation::
+    call LCDC_SetupPalswapAnimation
+    rst $18
+    ret
+
+Banked_LCDC_PaletteFade::
+    call LCDC_PaletteFade
+    push af
+    rst $18
+    pop af
+    ret
+
+Banked_Battle_LoadDenjuuPortrait::
+    call Battle_LoadDenjuuPortrait
+    rst $18
+    ret
+
 SECTION "Banked Call Helpers", ROM0[$0560]
 Banked_MainScript_DrawStatusText::
     call MainScript_DrawStatusText
