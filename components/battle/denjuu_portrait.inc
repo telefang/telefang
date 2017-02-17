@@ -1,0 +1,2 @@
+M_Battle_DenjuuPortraitStride EQU $12
+M_Battle_DenjuuPortraitSize EQU $380

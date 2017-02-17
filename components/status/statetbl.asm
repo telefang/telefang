@@ -76,7 +76,7 @@ Status_StateInitGraphics:
     push af
     ld c, 1
     ld de, $8800
-    call Banked_Status_LoadDenjuuGraphic
+    call Banked_Battle_LoadDenjuuPortrait
     pop af
     call Status_LoadDenjuuPalette
     xor a
@@ -349,7 +349,7 @@ Status_StateSwitchDenjuu:
     push af
     ld c, 1
     ld de, $8800
-    call Banked_Status_LoadDenjuuGraphic
+    call Banked_Battle_LoadDenjuuPortrait
     pop af
     call Status_LoadDenjuuPalette
     ld a, 1
