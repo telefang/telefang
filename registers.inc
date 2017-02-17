@@ -64,3 +64,8 @@ VRAM_TMAP0 EQU $9800 ;Tile Maps ("nametable" in NESspeak)
 VRAM_TMAP1 EQU $9C00
 
 M_VRAM_TMAPSIZE EQU $400
+
+;Boot ROM specified hardware class values
+M_BIOS_CPU_DMG EQU $01 ;also SGB
+M_BIOS_CPU_MGB EQU $FF ;also SGB2
+M_BIOS_CPU_CGB EQU $11 ;also GBA

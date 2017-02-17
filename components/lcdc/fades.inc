@@ -1,0 +1,1 @@
+M_LCDC_FadeLength EQU 4
