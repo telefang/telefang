@@ -22,7 +22,7 @@ Status_LoadDenjuuEvolutionIndicator::
     add hl, de
     pop de
     ld bc, M_DenjuuStageGfx_Stride
-    jp LCDC_LoadFromMetatable_copyLoop
+    jp LCDC_LoadGraphicIntoVRAM
     
 Status_LoadDenjuuTypeIcon::
     and $F
@@ -39,7 +39,7 @@ Status_LoadDenjuuTypeIcon::
     add hl, de
     ld de, $92C0
     ld bc, M_DenjuuTypeGfx_Stride
-    jp LCDC_LoadFromMetatable_copyLoop
+    jp LCDC_LoadGraphicIntoVRAM
 
 Status_LoadDenjuuTypeIconPalette::
     ld e, a
