@@ -20,7 +20,7 @@ OBJS := components/compression/malias.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
 	  components/system/entrypoints.o components/system/bankcalls.o \
-	  components/system/math.o \
+	  components/system/math.o components/system/bitmanip.o \
      components/sgb/palettes.o \
      components/pausemenu/contacts.o components/pausemenu/nameutil.o \
      components/pausemenu/screenutil.o \
@@ -32,9 +32,10 @@ OBJS := components/compression/malias.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o components/battle/species.o \
+     components/battle/denjuu_portrait.o \
 	  components/status/nickname.o components/status/stats.o \
      components/status/statetbl.o components/status/icons.o \
-     components/status/tabs.o \
+     components/status/tabs.o components/status/interface.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
