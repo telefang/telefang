@@ -1,7 +1,4 @@
-INCLUDE "registers.inc"
-
-M_CGBPaletteOBPSize EQU $40
-M_CGBPaletteBGPSize EQU $40
+INCLUDE "telefang.inc"
 
 SECTION "CGB Palette Management Vars", WRAM0[$CA61]
 W_CGBPaletteScheduled: ds 8

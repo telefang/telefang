@@ -7,7 +7,16 @@
 SECTION "Banked Call Helper WRAM", WRAM0[$CB26]
 W_System_BankedArg: ds 1
 
-SECTION "Banked Call Helpers 0", ROM0[$04B1]
+SECTION "Banked Call Helpers 0", ROM0[$04A7]
+Banked_LCDC_PaletteFadeCGB::
+    ld a, BANK(LCDC_PaletteFadeCGB)
+    rst $10
+    call LCDC_PaletteFadeCGB
+    push af
+    rst $18
+    pop af
+    ret
+
 Banked_LoadMaliasGraphics::
     call LoadMaliasGraphics
     rst $18

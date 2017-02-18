@@ -1,0 +1,2 @@
+M_CGBPaletteOBPSize EQU $40
+M_CGBPaletteBGPSize EQU $40
