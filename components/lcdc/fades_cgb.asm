@@ -1,19 +1,13 @@
 INCLUDE "telefang.inc"
 
-SECTION "LCDC Palette Fade Staging WRAM", WRAMX[$DE00], BANK[1]
-; Palette fades and other color maths are calculated with each color component
-; unpacked.
-W_LCDC_FadeScratchAreaBGP:: ds M_LCDC_FadeScratchAreaSize
-W_LCDC_FadeScratchAreaOBP:: ds M_LCDC_FadeScratchAreaSize
-
-; Once faded the palettes are packed and written here for final staging.
-W_LCDC_FadeStagingArea:: ds M_CGBPaletteBGPSize
+SECTION "LCDC Palette Fade Staging 2 WRAM", WRAM0[$C440]
+W_LCDC_CGBFadeFactor:: ds 1
 
 SECTION "LCDC Palette Fade Staging 3 WRAM", WRAM0[$C451]
 ; And some parameters go here.
 ; Yes, this aliases Malias_DeCmpDst. Not sure how the hell they managed to do
 ; that...
-W_LCDC_FadeColMathArena:: ds M_LCDC_FadeColMathArenaSize
+W_LCDC_FadeColMathArena:: ds M_LCDC_CGBMathArenaSize
 W_LCDC_ColMathPaletteTarget:: ds 2
 
 SECTION "LCDC Palette Fade CGB", ROMX[$7682], BANK[3]
@@ -26,7 +20,7 @@ LCDC_PaletteFadeCGB::
     ld a, e
     ld [W_LCDC_ColMathPaletteTarget + 1], a
     ld a, [W_LCDC_FadeType]
-    ld hl, W_LCDC_FadeScratchAreaBGP
+    ld hl, W_LCDC_CGBScratchBGPaletteArea
     call LCDC_FadeExecuteCurve
     call LCDC_CGBStageFadedBGPalette
     
@@ -36,7 +30,7 @@ LCDC_PaletteFadeCGB::
     ld a, e
     ld [W_LCDC_ColMathPaletteTarget + 1], a
     ld a, [W_LCDC_FadeType]
-    ld hl, W_LCDC_FadeScratchAreaOBP
+    ld hl, W_LCDC_CGBScratchOBPaletteArea
     call LCDC_FadeExecuteCurve
     call LCDC_CGBStageFadedOBPalette
     
@@ -54,7 +48,7 @@ LCDC_PaletteFadeCGB::
 
 LCDC_CGBStageFadedBGPalette::
     ld hl, W_LCDC_FadeStagingArea
-    ld de, W_CGBPaletteBGPStagingArea
+    ld de, W_LCDC_CGBStagingBGPaletteArea
     ld b, 8
 
 .palLoop
@@ -81,7 +75,7 @@ LCDC_CGBStageFadedBGPalette::
 
 LCDC_CGBStageFadedOBPalette::
     ld hl, W_LCDC_FadeStagingArea
-    ld de, W_CGBPaletteOBPStagingArea
+    ld de, W_LCDC_CGBStagingOBPaletteArea
     ld b, 8
 
 .palLoop
@@ -154,7 +148,7 @@ LCDC_RevealWhiteCurve:
     push hl
     call LCDC_FadeCGBPaletteWhite
     pop hl
-    ld de, M_LCDC_FadeScratchAreaStride
+    ld de, M_LCDC_CGBScratchAreaStride
     add hl, de
     
     pop bc
@@ -185,7 +179,7 @@ LCDC_FadeToWhiteCurve:
     push hl
     call LCDC_FadeCGBPaletteWhite
     pop hl
-    ld de, M_LCDC_FadeScratchAreaStride
+    ld de, M_LCDC_CGBScratchAreaStride
     add hl, de
     
     pop bc
@@ -215,7 +209,7 @@ LCDC_RevealBlackCurve:
     push hl
     call LCDC_FadeCGBPaletteBlack
     pop hl
-    ld de, M_LCDC_FadeScratchAreaStride
+    ld de, M_LCDC_CGBScratchAreaStride
     add hl, de
     
     pop bc
@@ -246,7 +240,7 @@ LCDC_FadeToBlackCurve:
     push hl
     call LCDC_FadeCGBPaletteBlack
     pop hl
-    ld de, M_LCDC_FadeScratchAreaStride
+    ld de, M_LCDC_CGBScratchAreaStride
     add hl, de
     
     pop bc
@@ -270,7 +264,7 @@ LCDC_FadeCGBPaletteWhite::
     ret
 
 LCDC_FadeCGBColorWhite::
-    ld b, M_LCDC_FadeColMathArenaSize
+    ld b, M_LCDC_CGBMathArenaSize
 
 .componentLoop
     ld a, [W_LCDC_CGBFadeFactor]
@@ -303,7 +297,7 @@ LCDC_FadeCGBPaletteBlack::
     ret
 
 LCDC_FadeCGBColorBlack::
-    ld b, M_LCDC_FadeColMathArenaSize
+    ld b, M_LCDC_CGBMathArenaSize
 
 .componentLoop
     ld a, [W_LCDC_CGBFadeFactor]

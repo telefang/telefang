@@ -13,8 +13,17 @@ W_CGBPaletteStagedOBP:: ds 1
 W_CGBPaletteObjectIndex: ds 2
 
 SECTION "CGB Palette Management Second Staging", WRAMX[$DD10], BANK[$1]
-W_CGBPaletteBGPStagingArea: ds M_CGBPaletteBGPSize
-W_CGBPaletteOBPStagingArea: ds M_CGBPaletteOBPSize
+W_LCDC_CGBStagingBGPaletteArea:: ds M_LCDC_CGBStagingAreaSize
+W_LCDC_CGBStagingOBPaletteArea:: ds M_LCDC_CGBStagingAreaSize
+
+SECTION "LCDC Palette Fade Staging WRAM", WRAMX[$DE00], BANK[1]
+; Palette fades and other color maths are calculated with each color component
+; unpacked.
+W_LCDC_CGBScratchBGPaletteArea:: ds M_LCDC_CGBScratchAreaSize
+W_LCDC_CGBScratchOBPaletteArea:: ds M_LCDC_CGBScratchAreaSize
+
+; Once faded the palettes are packed and written here for final staging.
+W_LCDC_FadeStagingArea:: ds M_LCDC_CGBStagingAreaSize
 
 ;This is a system that loads entire palette sets from ROM.
 ;There's another system for loading a single palette further down.
@@ -36,8 +45,8 @@ CGBCommitPalettes::
 CGBCommitPalettesBGP:
 	ld a, $D
 	rst $10
-	ld hl, W_CGBPaletteBGPStagingArea
-	ld b, M_CGBPaletteOBPSize
+	ld hl, W_LCDC_CGBStagingBGPaletteArea
+	ld b, M_LCDC_CGBStagingAreaSize
 	ld a, $80
 	ld [REG_BGPI], a
 	
@@ -75,7 +84,7 @@ CGBLoadBackgroundPalette::
 	rl b
 	add hl, bc
 	ld b, 8
-	ld de, W_CGBPaletteBGPStagingArea
+	ld de, W_LCDC_CGBStagingBGPaletteArea
 	
 .paletteLoop
 	push bc
@@ -125,7 +134,7 @@ CGBLoadBackgroundPaletteBanked::
 	rl d
 	sla e
 	rl d
-	ld hl, W_CGBPaletteBGPStagingArea
+	ld hl, W_LCDC_CGBStagingBGPaletteArea
 	add hl, de
 	push hl
 	pop de
@@ -160,8 +169,8 @@ CGBLoadBackgroundPaletteBanked::
 CGBCommitPalettesOBP::
 	ld a, $D
 	rst $10
-	ld hl, W_CGBPaletteOBPStagingArea
-	ld b, M_CGBPaletteOBPSize
+	ld hl, W_LCDC_CGBStagingOBPaletteArea
+	ld b, M_LCDC_CGBStagingAreaSize
 	ld a, $80
 	ld [REG_OBPI], a
 	
@@ -196,7 +205,7 @@ CGBLoadObjectPalette::
 	rl b
 	add hl, bc
 	ld b, 8
-	ld de, W_CGBPaletteOBPStagingArea
+	ld de, W_LCDC_CGBStagingOBPaletteArea
 	
 .paletteLoop
 	push bc
@@ -246,7 +255,7 @@ CGBLoadObjectPaletteBanked::
 	rl d
 	sla e
 	rl d
-	ld hl, W_CGBPaletteOBPStagingArea
+	ld hl, W_LCDC_CGBStagingOBPaletteArea
 	add hl, de
 	push hl
 	pop de
@@ -274,6 +283,83 @@ CGBLoadObjectPaletteBanked::
 	ld a, [W_PreviousBank]
 	rst $10
 	ret
+
+LCDC_UnpackStagedPalettes::
+    ld hl, W_LCDC_CGBScratchBGPaletteArea
+    ld de, W_LCDC_CGBStagingBGPaletteArea
+    call LCDC_UnpackStagedBGPalettes
+    ld hl, W_LCDC_CGBScratchOBPaletteArea
+    ld de, W_LCDC_CGBStagingOBPaletteArea
+    call LCDC_UnpackStagedOBPalettes
+
+LCDC_UnpackStagedBGPalettes::
+    ld b, M_LCDC_CGBPaletteCount
+    
+.paletteUnpack
+    push bc
+    ld b, M_LCDC_CGBColorCount
+    
+.colorUnpack
+    push bc
+    call LCDC_CGBColorUnPack15to24
+    pop bc
+    dec b
+    jp nz, .colorUnpack
+    
+    pop bc
+    dec b
+    jp nz, .paletteUnpack
+    
+    ret
+
+;Literally a cut-and-paste of the BGP version... why?
+LCDC_UnpackStagedOBPalettes::
+    ld b, M_LCDC_CGBPaletteCount
+    
+.paletteUnpack
+    push bc
+    ld b, M_LCDC_CGBColorCount
+    
+.colorUnpack
+    push bc
+    call LCDC_CGBColorUnPack15to24
+    pop bc
+    dec b
+    jp nz, .colorUnpack
+    
+    pop bc
+    dec b
+    jp nz, .paletteUnpack
+    
+    ret
+
+LCDC_CGBColorUnPack15to24::
+    ld a, [de]
+    ld c, a
+    and $1F
+    ld [hli], a
+    
+    inc de
+    ld a, [de]
+    ld b, a
+    sla c
+    rl b
+    sla c
+    rl b
+    sla c
+    rl b
+    ld a, b
+    and $1F
+    ld [hli], a
+    
+    ld a, [de]
+    srl a
+    srl a
+    and $1F
+    ld [hli], a
+    inc de
+    
+    ret
 
 SECTION "CGB Palette Management", ROM0[$382E]
 CGBCommitObjectPalette:

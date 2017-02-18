@@ -1,2 +1,10 @@
-M_CGBPaletteOBPSize EQU $40
-M_CGBPaletteBGPSize EQU $40
+M_LCDC_CGBMathArenaSize EQU 3
+M_LCDC_CGBColorSize EQU 2
+M_LCDC_CGBColorCount EQU 4
+M_LCDC_CGBPaletteCount EQU 8
+
+M_LCDC_CGBStagingAreaStride EQU M_LCDC_CGBColorSize * M_LCDC_CGBColorCount
+M_LCDC_CGBStagingAreaSize EQU M_LCDC_CGBStagingAreaStride * M_LCDC_CGBPaletteCount
+
+M_LCDC_CGBScratchAreaStride EQU M_LCDC_CGBMathArenaSize * M_LCDC_CGBColorCount
+M_LCDC_CGBScratchAreaSize EQU M_LCDC_CGBScratchAreaStride * M_LCDC_CGBPaletteCount

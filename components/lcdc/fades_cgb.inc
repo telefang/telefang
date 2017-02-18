@@ -1,4 +1,0 @@
-M_LCDC_FadeColMathArenaSize EQU 3
-
-M_LCDC_FadeScratchAreaStride EQU 4*M_LCDC_FadeColMathArenaSize
-M_LCDC_FadeScratchAreaSize EQU M_LCDC_FadeScratchAreaStride * 8
