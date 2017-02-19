@@ -39,6 +39,7 @@ OBJS := components/compression/malias.o \
      components/status/tabs.o components/status/interface.o \
      components/status/draw_funcs.o components/status/evolution.o \
      components/status/shift_bg.o components/status/phone_number.o \
+     components/status/ui_graphics.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \

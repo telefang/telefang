@@ -97,6 +97,12 @@ Banked_Battle_LoadDenjuuPortrait::
     call Battle_LoadDenjuuPortrait
     rst $18
     ret
+    
+SECTION "Banked Call Helpers Number Niiiiininininine", ROM0[$543]
+Banked_Status_LoadUIGraphics::
+    call Status_LoadUIGraphics
+    rst $18
+    ret
 
 SECTION "Banked Call Helpers", ROM0[$0560]
 Banked_MainScript_DrawStatusText::
