@@ -24,7 +24,7 @@ OBJS := components/compression/malias.o \
 	  components/system/math.o components/system/bitmanip.o \
      components/sgb/palettes.o \
      components/pausemenu/contacts.o components/pausemenu/nameutil.o \
-     components/pausemenu/screenutil.o \
+     components/pausemenu/screenutil.o components/pausemenu/window_flavor.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
