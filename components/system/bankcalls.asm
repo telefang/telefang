@@ -186,6 +186,14 @@ Banked_LoadBattlePhrase::
     call StringTable_LoadBattlePhrase
     rst $18
     ret
+
+SECTION "Banked Call Helpers 8", ROM0[$0650]
+Banked_Status_DrawPhoneNumber::
+    ld a, BANK(Status_DrawPhoneNumber)
+    rst $10
+    call Status_DrawPhoneNumber
+    rst $18
+    ret
     
 SECTION "Banked Call Helpers 3", ROM0[$2FC7]
 Banked_MainScript_DrawLetter::
