@@ -118,3 +118,43 @@ REPT M_Battle_DenjuuPortraitStride
     dw $4000 + Vi
 Vi SET Vi + M_Battle_DenjuuPortraitSize
 ENDR
+
+;todo: What palettes live at $1B0?
+Battle_LoadExtraPalette::
+    ld b, M_Battle_OpponentDenjuuPalette
+    push bc
+    ld hl, $1B0
+    jp Battle_LoadDenjuuBackgroundPalette.indexPaletteId
+
+Battle_LoadDenjuuPalettePartner::
+    ld b, M_Battle_PartnerDenjuuPalette
+    jp Battle_LoadDenjuuBackgroundPalette
+    
+Battle_LoadDenjuuPaletteOpponent::
+    ld b, M_Battle_OpponentDenjuuPalette
+    
+Battle_LoadDenjuuBackgroundPalette::
+    push bc
+    ld hl, $100
+    
+.indexPaletteId
+    ld d, 0
+    ld e, a
+    add hl, de
+    pop bc
+    ld a, b
+    ld b, h
+    ld c, l
+    jp CGBLoadBackgroundPaletteBanked
+    
+Battle_LoadDenjuuObjectPalette::
+    push bc
+    ld hl, $100
+    ld d, 0
+    ld e, a
+    add hl, de
+    pop bc
+    ld a, b
+    ld b, h
+    ld c, l
+    jp CGBLoadObjectPaletteBanked

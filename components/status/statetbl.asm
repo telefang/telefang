@@ -78,7 +78,7 @@ Status_StateInitGraphics:
     ld de, $8800
     call Banked_Battle_LoadDenjuuPortrait
     pop af
-    call Status_LoadDenjuuPalette
+    call Battle_LoadDenjuuPalettePartner
     xor a
     ld [W_Status_CurrentTab], a
     jp Status_IncrementSubState
@@ -351,7 +351,7 @@ Status_StateSwitchDenjuu:
     ld de, $8800
     call Banked_Battle_LoadDenjuuPortrait
     pop af
-    call Status_LoadDenjuuPalette
+    call Battle_LoadDenjuuPalettePartner
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
     
