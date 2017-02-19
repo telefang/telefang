@@ -5,8 +5,8 @@ INCLUDE "components/jpinput/jpinput.inc"
 ;It handles player input.
 
 SECTION "JoyPad INPUT Variables", WRAM0[$C473]
-W_JPInput_TypematicBtns: ds 1
-W_JPInput_TypematicTimeout: ds 1
+W_JPInput_TypematicBtns:: ds 1
+W_JPInput_TypematicTimeout:: ds 1
 
 SECTION "JoyPad INPUT", ROM0[$0737]
 

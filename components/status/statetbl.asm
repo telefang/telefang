@@ -1,5 +1,4 @@
-INCLUDE "components/status/statetbl.inc"
-INCLUDE "components/stringtable/load.inc"
+INCLUDE "telefang.inc"
 
 SECTION "Status Screen State Machine Vars", WRAMX[$D41F], BANK[1]
 W_Status_SubState: ds 1
@@ -150,7 +149,7 @@ Status_StateDrawDenjuu:
     ld a, 0
     call Banked_RLEDecompressAttribsTMAP0
     ld a, 4
-    call Banked_SetupPalswapAnimation
+    call Banked_LCDC_SetupPalswapAnimation
     jp Status_IncrementSubState
 
 ; Execute fade processing. Once the screen has faded correctly, moves to the
@@ -316,7 +315,7 @@ Status_StateUserJPInput:
     
 .gotoContactScreen
     ld a, 4
-    call Banked_SetupPalswapAnimation
+    call Banked_LCDC_SetupPalswapAnimation
     ld a, [W_Status_CalledFromContactScreen]
     cp 0
     jp nz, .nextState
