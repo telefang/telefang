@@ -37,7 +37,7 @@ OBJS := components/compression/malias.o \
 	  components/status/nickname.o components/status/stats.o \
      components/status/statetbl.o components/status/icons.o \
      components/status/tabs.o components/status/interface.o \
-     components/status/draw_funcs.o \
+     components/status/draw_funcs.o components/status/evolution.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
