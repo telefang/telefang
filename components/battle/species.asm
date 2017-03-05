@@ -1,5 +1,4 @@
-INCLUDE "components/battle/species.inc"
-INCLUDE "components/saveclock/save_format.inc"
+INCLUDE "telefang.inc"
 
 SECTION "Battle Denjuu Species Info WRAM", WRAMX[$D45F], BANK[1]
 W_Battle_RetrSpeciesByte:: ds 1
