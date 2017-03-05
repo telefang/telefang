@@ -114,7 +114,7 @@ Status_ShiftTileRight::
     rr a
     ld [hli], a
     pop de
-    jp nz, .noBitCarry
+    jp nc, .noBitCarry
     
     ;Wrap that bit we shifted off back on
     ld a, [de]

@@ -62,6 +62,7 @@ LCDC_CGBStageFadedBGPalette::
     ld a, [hli]
     ld [de], a
     inc de
+    dec b
     jp nz, .colLoop
     
     pop bc
@@ -89,6 +90,7 @@ LCDC_CGBStageFadedOBPalette::
     ld a, [hli]
     ld [de], a
     inc de
+    dec b
     jp nz, .colLoop
     
     pop bc

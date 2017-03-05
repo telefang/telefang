@@ -22,7 +22,7 @@ Status_DecimalizeStatValue::
 .hundredsLoop
     ld c, a
     sub b
-    jr z, .checkTensDigit
+    jr c, .checkTensDigit
     inc d
     jr .hundredsLoop
     

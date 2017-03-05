@@ -75,6 +75,7 @@ LCDC_LoadGraphicIntoVRAM::
     ld a, b
     or c
     jr nz, LCDC_LoadGraphicIntoVRAM
+    ret
 
 ;Same parameters as the last function, but both instructions are covered under
 ;the blanking-state check, making this suitable for copies out of VRAM.
@@ -89,6 +90,7 @@ LCDC_SaveGraphicsFromVRAM::
     ld a, b
     or c
     jr nz, LCDC_SaveGraphicsFromVRAM
+    ret
 
 ;Like LoadGraphicIntoVRAM, but the tiles are flipped... Not necessary on CGB but
 ;all the code uses it anyway.
@@ -101,6 +103,7 @@ LCDC_LoadReversedGraphic::
     ei
     inc de
     dec bc
+    ld a, b
     or c
     jr nz, LCDC_LoadReversedGraphic
     ret

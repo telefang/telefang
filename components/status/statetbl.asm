@@ -9,6 +9,9 @@ W_Status_UseDenjuuNickname:: ds 1
 SECTION "Status Screen State Machine Vars 3", WRAMX[$D4B0], BANK[1]
 W_Status_NumDuplicateDenjuu: ds 1
 
+SECTION "Some HRAM thing", HRAM[$FFA1]
+byte_FFA1:: ds 1
+
 SECTION "Status Screen Home Utils", ROM0[$3CFD]
 Status_IncrementSubState::
     ld hl, W_Status_SubState
@@ -197,7 +200,7 @@ Status_StateFadeScreen:
 ; User can press Left/Right to select tabs; Up/Down to select denjuu.
 Status_StateUserJPInput:
     ld a, [W_FrameCounter]
-    add 3
+    and 3
     jr nz, .notEighthFrame
     ld hl, $91B0
     call Status_ShiftBackgroundTiles
@@ -246,7 +249,7 @@ Status_StateUserJPInput:
     
 .gotoSwitchDenjuuState
     ld a, 2
-    ld [$FFA1], a
+    ld [byte_FFA1], a
     ld a, M_Status_StateSwitchDenjuu
     ld [W_Status_SubState], a
     ret
@@ -280,7 +283,7 @@ Status_StateUserJPInput:
 
 .tabStateChanged
     ld a, 2
-    ld [$FFA1], a
+    ld [byte_FFA1], a
     ld a, M_Status_StateSwitchTab
     ld [W_Status_SubState], a
     ret
@@ -304,7 +307,7 @@ Status_StateUserJPInput:
     and 2
     jr z, .unchangedScreen
     ld a, 4
-    ld [$FFA1], a
+    ld [byte_FFA1], a
     jr .gotoContactScreen
     
 .unchangedScreen
@@ -314,7 +317,7 @@ Status_StateUserJPInput:
     
 .gotoContactMgmtScreen
     ld a, 3
-    ld [$FFA1], a
+    ld [byte_FFA1], a
     
 .gotoContactScreen
     ld a, 4
@@ -459,13 +462,14 @@ Status_StateExit
     ld [W_SystemState], a
     ld a, 0
     ld [$D401], a
+    ret ; Return to 0F 00
     
 .loc_8F8B
     ld a, $F
     ld [W_SystemState], a
     ld a, 0
     ld [$D401], a
-    ret
+    ret ; Return to 0F 00
     
 Status_StateSwitchTab:
     call Status_LoadCurrentTabTMAP

@@ -17,7 +17,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank2Denjuu
     cp M_Battle_DenjuuPortraitStride * 2
-    jp nz, .bank3Denjuu
+    jp nc, .bank3Denjuu
     sub M_Battle_DenjuuPortraitStride
     push af
     ld a, $6C
@@ -25,7 +25,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank3Denjuu
     cp M_Battle_DenjuuPortraitStride * 3
-    jp nz, .bank4Denjuu
+    jp nc, .bank4Denjuu
     sub M_Battle_DenjuuPortraitStride * 2
     push af
     ld a, $6D
@@ -33,7 +33,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank4Denjuu
     cp M_Battle_DenjuuPortraitStride * 4
-    jp nz, .bank5Denjuu
+    jp nc, .bank5Denjuu
     sub M_Battle_DenjuuPortraitStride * 3
     push af
     ld a, $6E
@@ -41,7 +41,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank5Denjuu
     cp M_Battle_DenjuuPortraitStride * 5
-    jp nz, .bank6Denjuu
+    jp nc, .bank6Denjuu
     sub M_Battle_DenjuuPortraitStride * 4
     push af
     ld a, $6F
@@ -49,7 +49,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank6Denjuu
     cp M_Battle_DenjuuPortraitStride * 6
-    jp nz, .bank7Denjuu
+    jp nc, .bank7Denjuu
     sub M_Battle_DenjuuPortraitStride * 5
     push af
     ld a, $70
@@ -57,7 +57,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank7Denjuu
     cp M_Battle_DenjuuPortraitStride * 7
-    jp nz, .bank8Denjuu
+    jp nc, .bank8Denjuu
     sub M_Battle_DenjuuPortraitStride * 6
     push af
     ld a, $71
@@ -65,7 +65,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank8Denjuu
     cp M_Battle_DenjuuPortraitStride * 8
-    jp nz, .bank9Denjuu
+    jp nc, .bank9Denjuu
     sub M_Battle_DenjuuPortraitStride * 7
     push af
     ld a, $72
@@ -73,7 +73,7 @@ Battle_LoadDenjuuPortrait::
     
 .bank9Denjuu
     cp M_Battle_DenjuuPortraitStride * 9
-    jp nz, .bank10Denjuu
+    jp nc, .bank10Denjuu
     sub M_Battle_DenjuuPortraitStride * 8
     push af
     ld a, $73
@@ -111,7 +111,7 @@ Battle_LoadDenjuuPortrait::
     ld bc, M_Battle_DenjuuPortraitSize ;wastefully duplicated instr
     jp LCDC_LoadReversedGraphic
     
-SECTION "Denjuu Portrait Loader Ptr Lookup Table", ROM0[$1731]
+SECTION "Denjuu Portrait Loader Ptr Lookup Table", ROM0[$1732]
 Battle_DenjuuPortraitLookupTable:
 Vi SET 0
 REPT M_Battle_DenjuuPortraitStride

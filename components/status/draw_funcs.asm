@@ -28,7 +28,7 @@ Status_DrawDenjuuMoves::
     ld b, a
     ld a, [W_Status_SelectedDenjuuLevel]
     cp b
-    call c, .drawUnknownMove3
+    jr c, .drawUnknownMove3
     
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld b, 0
@@ -57,7 +57,7 @@ Status_DrawDenjuuMoves::
     jr z, .drawEmptyMove4
     ld a, [W_Status_SelectedDenjuuLevel]
     cp b
-    call c, .drawUnknownMove4
+    jr c, .drawUnknownMove4
     
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld b, 0
@@ -102,6 +102,7 @@ Status_ValidateMoves::
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld b, 0
     ld c, M_Battle_SpeciesMove3Level
+    call Banked_Battle_LoadSpeciesData
     ld a, [W_Battle_RetrSpeciesByte]
     ld b, a
     ld a, [W_Status_SelectedDenjuuLevel]
@@ -117,6 +118,7 @@ Status_ValidateMoves::
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld b, 0
     ld c, M_Battle_SpeciesMove4Level
+    call Banked_Battle_LoadSpeciesData
     ld a, [W_Battle_RetrSpeciesByte]
     ld b, a
     ld a, [W_Status_SelectedDenjuuLevel]
@@ -259,6 +261,22 @@ Status_DrawDenjuuProgressionStats::
     pop hl
     ld bc, $9A0B
     call Status_DrawStatValuePad3
+    
+    ld a, [W_Status_SelectedDenjuuSpecies]
+    ld b, 0
+    ld c, M_Battle_SpeciesType
+    call Banked_Battle_LoadSpeciesData
+    ld a, [W_Status_SelectedDenjuuLevel]
+    ld b, a
+    ld a, [W_Battle_RetrSpeciesByte]
+    call Banked_Battle_LoadNextLevelExp
+    sra b
+    rr c
+    push bc
+    pop hl
+    ld bc, $9A0F
+    call Status_DrawStatValuePad3
+    
     jr .done
     
 .atLevelCap
