@@ -1,3 +1,8 @@
+INCLUDE "telefang.inc"
+
+SECTION "Status Screen Int to Digits WRAM", WRAM0[$C442]
+W_Status_DrawStatValuePad3Target:: ds 2
+
 SECTION "Status Screen Int to Digits Draw Func", ROM0[$12FB]
 Status_DecimalizeStatValue::
     push de
@@ -120,7 +125,7 @@ Status_DrawStatValue::
     pop hl
     
     xor a
-    ld [W_Malias_DeCmpDst], a
+    ld [Malias_DeCmpDst], a
     
     pop bc
     ld a, c
@@ -204,7 +209,7 @@ Status_DrawStatValuePad3::
     or a
     jr nz, .drawThousandsDigit
     ld b, a
-    ld a, [W_Malias_DeCmpDst]
+    ld a, [Malias_DeCmpDst]
     or a
     jr z, .checkHundredsDigit
     ld a, b

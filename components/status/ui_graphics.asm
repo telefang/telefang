@@ -1,5 +1,8 @@
 INCLUDE "telefang.inc"
 
+SECTION "Status UI Graphics Loader WRAM", WRAM0[$C91E]
+W_Status_NumericalTileIndex:: ds 1
+
 ; TODO: all of these functions reference uncompressed graphics in need of being
 ; imported into the project.
 
