@@ -114,15 +114,15 @@ LCDC_PaletteFade::
 LCDC_DMGPaletteFades:
     dw .pal1, .pal3, .pal4, .pal6, .pal7, .pal9, .palA, .palC
     
-.pal1 dw $00, $54, $A4, $E4, $FF
-.pal2 dw $00, $50, $A0, $E0, $FF
-.pal3 dw $00, $51, $92, $D2, $FF
-.pal4 dw $E4, $A4, $54, $00, $FF
-.pal5 dw $E0, $A0, $50, $00, $FF
-.pal6 dw $D2, $92, $51, $00, $FF
-.pal7 dw $FF, $EA, $E5, $E4, $FF
-.pal8 dw $FF, $EA, $E5, $E0, $FF
-.pal9 dw $FF, $EA, $D6, $D2, $FF
-.palA dw $E4, $E5, $EA, $FF, $FF
-.palB dw $E0, $E5, $EA, $FF, $FF
-.palC dw $D2, $D6, $EA, $FF, $FF
+.pal1 db $00, $54, $A4, $E4, $FF
+.pal2 db $00, $50, $A0, $E0, $FF
+.pal3 db $00, $51, $92, $D2, $FF
+.pal4 db $E4, $A4, $54, $00, $FF
+.pal5 db $E0, $A0, $50, $00, $FF
+.pal6 db $D2, $92, $51, $00, $FF
+.pal7 db $FF, $EA, $E5, $E4, $FF
+.pal8 db $FF, $EA, $E5, $E0, $FF
+.pal9 db $FF, $EA, $D6, $D2, $FF
+.palA db $E4, $E5, $EA, $FF, $FF
+.palB db $E0, $E5, $EA, $FF, $FF
+.palC db $D2, $D6, $EA, $FF, $FF
