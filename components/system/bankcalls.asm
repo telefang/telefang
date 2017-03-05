@@ -186,7 +186,7 @@ Banked_Battle_LoadLevelupData::
 
 SECTION "Banked Call Helpers 2", ROM0[$0620]
 Banked_LoadBattlePhrase::
-    ld a, $75 ;Symbolic representation of bank suspended until disassembly
+    ld a, $78 ;Symbolic representation of bank suspended until disassembly
               ;of battle system
     rst $10
     call StringTable_LoadBattlePhrase
