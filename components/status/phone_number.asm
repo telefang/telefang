@@ -106,3 +106,13 @@ Status_DrawBottomOfDigits::
     jr nz, .twoByteLoop
     
     ret
+
+SECTION "Status Phone Number Graphic", ROMX[$49B8], BANK[$29]
+Status_LoadPhoneDigits::
+    ld hl, $9600
+    ld de, Status_PhoneDigits
+    ld bc, $200
+    jp LCDC_LoadTiles
+    
+Status_PhoneDigits:
+    INCBIN "components/status/phone_digits.2bpp"
