@@ -1,6 +1,9 @@
 INCLUDE "registers.inc"
 INCLUDE "components/serio/driver.inc"
 
+SECTION "SerIO Other Vars", WRAM0[$CB3F]
+W_SerIO_ConnectionState:: ds 1
+
 ;TODO: Do any of these unknown bytes do anything?, slash
 ;NOTE: If you are getting a conflict for a WRAMX section in the $DC00-$DC43
 ;area, it's probably this section that needs to be split!

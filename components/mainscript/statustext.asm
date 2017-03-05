@@ -1,4 +1,5 @@
 INCLUDE "components/stringtable/load.inc"
+INCLUDE "components/battle/species.inc"
 
 ;"Status text" is text that we want to draw using the script system's text
 ;renderer, but isn't going to be interpreted by the script interpreter.
@@ -54,7 +55,7 @@ MainScript_DrawStatusText::
 MainScript_DrawEmptySpaces_Space: db 0
 
 ;3AC3
-MainScript_DrawDenjuuName::
+MainScript_DrawName75::
 	ld [W_StringTable_ROMTblIndex], a
 	push bc
 	push de
@@ -72,7 +73,7 @@ MainScript_DrawDenjuuName::
 ;BC = Argument for Draw Empty Spaces
 ;DE = Argument for Load Denjuu Name
 ;Draws the Denjuu name, but centered...
-MainScript_DrawCenteredDenjuuName::
+MainScript_DrawCenteredName75::
 	ld [W_StringTable_ROMTblIndex], a
 	push bc
 	push de
@@ -117,9 +118,9 @@ MainScript_DrawShortName::
     
 ;3B22
 MainScript_DrawHabitatString::
-    ld a, [$D497]
+    ld a, [W_Status_SelectedDenjuuSpecies]
     ld c, $D
-    call $58D
+    call Banked_Battle_LoadSpeciesData
     ld a, [$D45F]
     ld de, StringTable_denjuu_habitats
     ld bc, $9380

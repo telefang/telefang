@@ -23,29 +23,3 @@ MainScript_Jump2Operand::
 	pop af
 	rst $10
 	ret
-	
-;This may not actually be 
-SECTION "Main Script Graphical Utilities", ROM0[$35C2]
-MainScript_TileIdx2Ptr::
-	cp $80
-	jr c, .firstPage
-	swap a
-	ld h, a
-	and $F0
-	ld l, a
-	ld a, h
-	and $F
-	or $80
-	ld h, a
-	ret
-
-.firstPage
-	swap a
-	ld h, a
-	and $F0
-	ld l, a
-	ld a, h
-	and $F
-	or $90
-	ld h, a
-	ret

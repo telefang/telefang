@@ -2,13 +2,14 @@
 IMPORT StringTable_battle_tfangers
 
 SECTION "String Table Bank Functions", ROM0[$0548]
-StringTable_LoadDenjuuName::
+StringTable_LoadName75::
     call PatchUtils_LoadDenjuuName_Bankswitch
     call StringTable_LoadFromROMTbl8
     rst $18
     ret
     
-;Mystery table
+;This got relocated so the name is wrong but w/e
+StringTable_LoadNameB::
     ld a, $78
     rst $10
     call StringTable_LoadFromROMTbl8

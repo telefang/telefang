@@ -1,0 +1,9 @@
+M_Status_StateInitGraphics EQU 0
+M_Status_StateInitTilemaps EQU 1
+M_Status_StateDrawDenjuu EQU 2
+M_Status_StateFadeScreen EQU 3
+M_Status_StateUserJPInput EQU 4
+M_Status_StateExit EQU 5
+M_Status_StateSwitchTab EQU 6
+M_Status_StateSwitchDenjuu EQU 7
+M_Status_StateSwitchDenjuuCleanup EQU 8

@@ -21,17 +21,18 @@ OBJS := components/compression/malias.o \
 	  components/lcdc/oam_dma.o components/lcdc/shadow_regs.o \
 	  components/lcdc/sprite_compose.o components/lcdc/memory.o \
      components/lcdc/cgb_palette.o components/lcdc/tilemap_math.o \
-	  components/lcdc/load_tiles.o \
+	  components/lcdc/load_tiles.o components/lcdc/fades.o \
+     components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
 	  components/system/entrypoints.o components/system/bankcalls.o \
-	  components/system/math.o \
+	  components/system/math.o components/system/bitmanip.o \
 	  components/system/patch_utils.o components/system/patch_unknown.o \
 	  components/system/aux_code.o \
      components/sgb/palettes.o \
      components/pausemenu/contacts.o components/pausemenu/nameutil.o \
-     components/pausemenu/screenutil.o \
+     components/pausemenu/screenutil.o components/pausemenu/window_flavor.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
@@ -40,9 +41,14 @@ OBJS := components/compression/malias.o \
 	  components/sound/samples.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
-	  components/battle/statistics.o \
+	  components/battle/statistics.o components/battle/species.o \
+     components/battle/denjuu_portrait.o \
 	  components/status/nickname.o components/status/stats.o \
-     components/status/statetbl.o \
+     components/status/statetbl.o components/status/icons.o \
+     components/status/tabs.o components/status/interface.o \
+     components/status/draw_funcs.o components/status/evolution.o \
+     components/status/shift_bg.o components/status/phone_number.o \
+     components/status/ui_graphics.o components/status/digits.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \

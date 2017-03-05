@@ -10,8 +10,8 @@ W_ShadowREG_SCY:: ds 1
 W_ShadowREG_WX:: ds 1
 W_ShadowREG_WY:: ds 1
 W_ShadowREG_BGP:: ds 1
-W_ShadowREG_OGP0:: ds 1
-W_ShadowREG_OGP1:: ds 1
+W_ShadowREG_OBP0:: ds 1
+W_ShadowREG_OBP1:: ds 1
 W_ShadowREG_LCDC:: ds 1
 W_ShadowREG_LYC:: ds 1
 
@@ -42,9 +42,9 @@ SyncShadowRegs::
 	ld [REG_WY], a
 	ld a, [W_ShadowREG_BGP]
 	ld [REG_BGP], a
-	ld a, [W_ShadowREG_OGP0]
+	ld a, [W_ShadowREG_OBP0]
 	ld [REG_OBP0], a
-	ld a, [W_ShadowREG_OGP1]
+	ld a, [W_ShadowREG_OBP1]
 	ld [REG_OBP1], a
 	ld a, [W_ShadowREG_LCDC]
 	ld [REG_LCDC], a

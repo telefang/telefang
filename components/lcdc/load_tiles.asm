@@ -60,3 +60,50 @@ LCDC_LoadTiles::
 	or c
 	jr nz, .evenCopyLoop
 	ret
+   
+SECTION "Load Tiles Another One", ROM0[$1705]
+;Another set of load/save functions unrelated to the others...
+;These are mainly called by Battle/Status functions
+LCDC_LoadGraphicIntoVRAM::
+    ld a, [hli]
+    di
+    call YetAnotherWFB
+    ld [de], a
+    ei
+    inc de
+    dec bc
+    ld a, b
+    or c
+    jr nz, LCDC_LoadGraphicIntoVRAM
+    ret
+
+;Same parameters as the last function, but both instructions are covered under
+;the blanking-state check, making this suitable for copies out of VRAM.
+LCDC_SaveGraphicsFromVRAM::
+    di
+    call YetAnotherWFB
+    ld a, [hli]
+    ld [de], a
+    ei
+    inc de
+    dec bc
+    ld a, b
+    or c
+    jr nz, LCDC_SaveGraphicsFromVRAM
+    ret
+
+;Like LoadGraphicIntoVRAM, but the tiles are flipped... Not necessary on CGB but
+;all the code uses it anyway.
+LCDC_LoadReversedGraphic::
+    ld a, [hli]
+    call System_BitReverse
+    di
+    call YetAnotherWFB
+    ld [de], a
+    ei
+    inc de
+    dec bc
+    ld a, b
+    or c
+    jr nz, LCDC_LoadReversedGraphic
+    ret

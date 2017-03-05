@@ -5,7 +5,7 @@ SECTION "Sound Sample Data WRAM", WRAM0[$CF8A]
 W_Sound_SampleFragmentCount: ds 1
 
 SECTION "Sound Sample Data Functions", ROM0[$3882]
-Sound_PlaySample:
+Sound_PlaySample::
     push af
     push bc
     push de
