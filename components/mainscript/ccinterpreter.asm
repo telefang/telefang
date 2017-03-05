@@ -108,7 +108,7 @@ MainScript_CCInterpreter::
 	ld b, a
 	ld a, [W_MainScript_TileBaseIdx]
 	add a, b
-	call MainScript_TileIdx2Ptr
+	call LCDC_TileIdx2Ptr
 	call .swapRegsThing
 	ld a, c
 	call MainScript_DrawLetter

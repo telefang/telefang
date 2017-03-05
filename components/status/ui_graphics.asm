@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 ; TODO: all of these functions reference uncompressed graphics in need of being
 ; imported into the project.
 
@@ -24,7 +26,7 @@ Status_ExpandNumericalTiles::
     ld a, $38
     rst $10
     ld a, [W_Status_NumericalTileIndex]
-    call TileIdx2Ptr
+    call LCDC_TileIdx2Ptr
     ld de, $4B38
     ld b, $80
     
