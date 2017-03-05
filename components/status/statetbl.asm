@@ -108,7 +108,7 @@ Status_StateDrawDenjuu:
     ld a, [W_Status_SelectedDenjuuPersonality]
     call Banked_Status_LoadDenjuuTypeIconPalette
     ld hl, $9300
-    ld a, M_StringTable_Load8AreaSize
+    ld a, 8
     call MainScript_DrawEmptySpaces
     ld a, [W_Status_UseDenjuuNickname]
     cp 1
@@ -138,7 +138,7 @@ Status_StateDrawDenjuu:
     call Status_DrawDenjuuMoves
     ld de, Status_TextTable
     ld hl, $8E00
-    ld b, M_StringTable_Load8AreaSize
+    ld b, 8
     call Banked_MainScript_DrawStatusText
     ld a, [W_Status_CurrentTab]
     cp M_Status_StateInitGraphics
@@ -370,7 +370,7 @@ Status_StateSwitchDenjuu:
     call Banked_Status_LoadDenjuuTypeIconPalette
     
     ld hl, $9300
-    ld a, M_StringTable_Load8AreaSize
+    ld a, 8
     call MainScript_DrawEmptySpaces
     
     ld a, [W_SystemSubState]
