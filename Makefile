@@ -16,7 +16,7 @@ OBJS := components/compression/malias.o \
 	  components/lcdc/sprite_compose.o components/lcdc/memory.o \
      components/lcdc/cgb_palette.o components/lcdc/tilemap_math.o \
 	  components/lcdc/load_tiles.o components/lcdc/fades.o \
-     components/lcdc/fades_cgb.o \
+     components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
@@ -39,7 +39,7 @@ OBJS := components/compression/malias.o \
      components/status/tabs.o components/status/interface.o \
      components/status/draw_funcs.o components/status/evolution.o \
      components/status/shift_bg.o components/status/phone_number.o \
-     components/status/ui_graphics.o \
+     components/status/ui_graphics.o components/status/digits.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
