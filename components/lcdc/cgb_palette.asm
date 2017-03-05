@@ -290,7 +290,7 @@ LCDC_UnpackStagedPalettes::
     call LCDC_UnpackStagedBGPalettes
     ld hl, W_LCDC_CGBScratchOBPaletteArea
     ld de, W_LCDC_CGBStagingOBPaletteArea
-    call LCDC_UnpackStagedOBPalettes
+    jp LCDC_UnpackStagedOBPalettes
 
 LCDC_UnpackStagedBGPalettes::
     ld b, M_LCDC_CGBPaletteCount
