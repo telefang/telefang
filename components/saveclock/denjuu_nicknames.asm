@@ -4,17 +4,6 @@ INCLUDE "components/saveclock/save_format.inc"
 SECTION "Save/Clock Nickname Staging Area", WRAM0[$C9E1]
 W_SaveClock_NicknameStaging:: ds M_SaveClock_DenjuuNicknameStagingSize
 
-SECTION "Banked Call Site for Save/Clock Load Denjuu Nickname", ROM0[$065A]
-Banked_SaveClock_LoadDenjuuNickname::
-	ld a, [W_CurrentBank]
-	push af
-	ld a, BANK(SaveClock_LoadDenjuuNickname)
-	rst $10
-	call SaveClock_LoadDenjuuNickname
-	pop af
-	rst $10
-	ret
-
 SECTION "Save/Clock Load Denjuu Nickname", ROMX[$4E12], BANK[$29]
 SaveClock_LoadDenjuuNickname::
 	ld hl, -SaveClock_StatisticsArray & $FFFF

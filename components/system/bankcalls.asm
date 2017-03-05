@@ -195,10 +195,22 @@ Banked_LoadBattlePhrase::
 
 SECTION "Banked Call Helpers 8", ROM0[$0650]
 Banked_Status_DrawPhoneNumber::
+    push af
     ld a, BANK(Status_DrawPhoneNumber)
     rst $10
+    pop af
     call Status_DrawPhoneNumber
     rst $18
+    ret
+
+Banked_SaveClock_LoadDenjuuNickname::
+    ld a, [W_CurrentBank]
+    push af
+    ld a, BANK(SaveClock_LoadDenjuuNickname)
+    rst $10
+    call SaveClock_LoadDenjuuNickname
+    pop af
+    rst $10
     ret
     
 SECTION "Banked Call Helpers 3", ROM0[$2FC7]
