@@ -14,9 +14,8 @@ Malias_CurBundleBits: ds 2
 Malias_DecompressionHead: ds 2
 
 SECTION "Malias_WRAM2", WRAM0[$C44E]
-Malias_CmpSrcBank: ds 1
-
-SECTION "Malias_WRAM3", WRAM0[$C450]
+Malias_CmpSrcBank:: ds 1
+W_GenericRegPreserve:: ds 1 ;heavily aliased in many places... :/
 Malias_DeCmpDst: ds 1 ;Aliased by LCDC_FadeColMathArena on the 2nd byte.
 
 SECTION "Malias", ROM0[$0C36]
