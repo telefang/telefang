@@ -171,7 +171,7 @@ Status_DrawDenjuuBattleStats::
     ld c, M_Battle_SpeciesBaseDenmaAttack
     call Banked_Battle_LoadSpeciesData
     ld a, [W_Battle_RetrSpeciesByte]
-    ld hl, $998F
+    ld hl, $99AF
     ld c, 0
     call Status_DrawStatValue
     
@@ -181,7 +181,7 @@ Status_DrawDenjuuBattleStats::
     ld c, M_Battle_SpeciesBaseDenmaDefense
     call Banked_Battle_LoadSpeciesData
     ld a, [W_Battle_RetrSpeciesByte]
-    ld hl, $99CF
+    ld hl, $9A0F
     ld c, 0
     call Status_DrawStatValue
     
