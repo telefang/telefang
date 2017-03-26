@@ -20,8 +20,8 @@ unknown/attribs_0/e attrib 0 e
 unknown/attribs_0/f attrib 0 f
 unknown/attribs_0/10 attrib 0 10
 unknown/attribs_0/11 attrib 0 11
-unknown/attribs_0/12 attrib 0 12
-unknown/attribs_0/13 attrib 0 13
+unknown/attribs_0/12 attrib 0 12 ;Menu items (no text)
+unknown/attribs_0/13 attrib 0 13 ;Selected menu item (no text)
 unknown/attribs_0/14 attrib 0 14
 unknown/attribs_0/15 attrib 0 15
 unknown/attribs_0/16 attrib 0 16
@@ -56,7 +56,7 @@ unknown/attribs_0/32 attrib 0 32
 unknown/attribs_0/33 attrib 0 33
 unknown/attribs_0/34 attrib 0 34
 unknown/attribs_0/35 attrib 0 35
-unknown/attribs_0/36 attrib 0 36
+unknown/attribs_0/36 attrib 0 36 ;start of tile and attribmaps for title menu?
 unknown/attribs_0/37 attrib 0 37
 unknown/attribs_0/38 attrib 0 38
 unknown/attribs_0/39 attrib 0 39
@@ -125,8 +125,8 @@ unknown/tilemap_0/e tilemap 0 e
 unknown/tilemap_0/f tilemap 0 f
 unknown/tilemap_0/10 tilemap 0 10
 unknown/tilemap_0/11 tilemap 0 11
-unknown/tilemap_0/12 tilemap 0 12
-unknown/tilemap_0/13 tilemap 0 13
+unknown/tilemap_0/12 tilemap 0 12 ;Menu items (no text)
+unknown/tilemap_0/13 tilemap 0 13 ;Selected menu item (no text)
 unknown/tilemap_0/14 tilemap 0 14
 unknown/tilemap_0/15 tilemap 0 15
 unknown/tilemap_0/16 tilemap 0 16
@@ -137,8 +137,8 @@ unknown/tilemap_0/1a tilemap 0 1a
 unknown/tilemap_0/1b tilemap 0 1b
 unknown/tilemap_0/1c tilemap 0 1c
 unknown/tilemap_0/1d tilemap 0 1d
-unknown/tilemap_0/1e tilemap 0 1e
-unknown/tilemap_0/1f tilemap 0 1f
+unknown/tilemap_0/1e tilemap 0 1e ;Tilemap Scroll up frame 1
+unknown/tilemap_0/1f tilemap 0 1f ;Tilemap Scroll up frame 2
 unknown/tilemap_0/20 tilemap 0 20
 unknown/tilemap_0/21 tilemap 0 21
 unknown/tilemap_0/22 tilemap 0 22
