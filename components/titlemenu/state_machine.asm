@@ -11,7 +11,7 @@ TitleMenu_GameStateMachine::
 TitleMenu_StateTable
     dw $4054, $406E, $4089, $40BD, $40EA, $40FA, $4108, $4113
     dw $413B, $41EC, $41F7, $4205, $4216, $4221, $4232, $4265
-    dw $428A, $42AA, $42B3, TitleMenu_StateClearNameInput, $431C, $4328, $4339, $4346
+    dw $428A, $42AA, $42B3, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, $4339, $4346
     dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E
     dw $4452, $4546, $4558, $456A, $457D
 
@@ -19,7 +19,7 @@ SECTION "Title Menu State Machine - Name Input", ROMX[$42CD], BANK[$4]
 ; State 03 13
 TitleMenu_StateClearNameInput::
     ld hl, $9780 ;Tile no. 78
-    ld b, 8 ;Length of character name.
+    ld b, M_MainScript_PlayerNameSize
     call PauseMenu_ClearInputTiles
     xor a
     ld [$CA65], a
@@ -48,3 +48,27 @@ TitleMenu_StateClearNameInput::
     call PauseMenu_LoadMap0
     call PauseMenu_LoadPhoneIMETilemap
     jp System_ScheduleNextSubState
+
+; State 03 14
+TitleMenu_StateNameInput::
+    ld de, $C0C0
+    call Banked_PauseMenu_IterateArrowAnimation
+    call TitleMenu_PositionNameCursor
+    jp $74A9
+    
+; State 03 15
+TitleMenu_StateStorePlayerName::
+    ld b, M_MainScript_PlayerNameSize + 1
+    ld hl, W_MainScript_CenteredNameBuffer
+    ld de, W_MainScript_PlayerName
+    
+.copyLoop
+    ld a, [hli]
+    ld [de], a
+    inc de
+    dec b
+    jr nz, .copyLoop
+    
+    jp System_ScheduleNextSubState
+    
+; TODO: Disassemble states 03 16 thru 03 20. (that's A states)

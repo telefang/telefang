@@ -1,0 +1,1 @@
+M_MainScript_PlayerNameSize EQU 8
