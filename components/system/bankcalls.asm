@@ -184,7 +184,24 @@ Banked_Battle_LoadLevelupData::
     rst $18
     ret
 
-SECTION "Banked Call Helpers 2", ROM0[$0620]
+SECTION "Banked Call Helpers 2", ROM0[$0609]
+Banked_PauseMenu_InitializeCursor::
+    ld a, [W_CurrentBank]
+    push af
+    ld a, [W_PauseMenu_SelectedCursorType]
+    call PauseMenu_InitializeCursor
+    pop af
+    rst $10
+    ret
+    
+Banked_PauseMenu_IterateCursorAnimation::
+    ld a, [W_CurrentBank]
+    push af
+    call PauseMenu_IterateCursorAnimation
+    pop af
+    rst $10
+    ret
+    
 Banked_LoadBattlePhrase::
     ld a, $75 ;Symbolic representation of bank suspended until disassembly
               ;of battle system

@@ -5,3 +5,6 @@ M_PauseMenu_CursorAnimSetId    EQU $07
 M_PauseMenu_CursorAnimCounter  EQU $08
 M_PauseMenu_CursorAnimKeyframe EQU $09
 M_PauseMenu_CursorAnimStart    EQU $0A
+
+M_PauseMenu_CursorFinished     EQU $FF
+M_PauseMenu_CursorReset        EQU $FE
