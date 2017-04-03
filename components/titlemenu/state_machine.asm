@@ -52,7 +52,7 @@ TitleMenu_StateClearNameInput::
 ; State 03 14
 TitleMenu_StateNameInput::
     ld de, $C0C0
-    call Banked_PauseMenu_IterateArrowAnimation
+    call Banked_PauseMenu_IterateCursorAnimation
     call TitleMenu_PositionNameCursor
     jp $74A9
     
