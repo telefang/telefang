@@ -9,7 +9,7 @@ W_MainScript_StatusLettersDrawn: ds 1
 SECTION "Main Script Status Text Drawing WRAM 2", WRAM0[$C3A0]
 W_MainScript_CenteredNameBuffer:: ds M_StringTable_Load8AreaSize + 1
 
-SECTION "Main Script Status Text Drawing WRAM 3", WRAM0[$C3A0]
+SECTION "Main Script Status Text Drawing WRAM 3", WRAM0[$C92C]
 W_MainScript_PlayerName:: ds M_MainScript_PlayerNameSize + 1
 
 SECTION "Main Script Status Text Drawing", ROM0[$3A91]
