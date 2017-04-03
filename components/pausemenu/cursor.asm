@@ -1,5 +1,8 @@
 INCLUDE "telefang.inc"
 
+SECTION "Pause Menu Cursor Memory Stuff", WRAMX[$D411], BANK[1]
+W_PauseMenu_SelectedCursorType:: ds 1
+
 SECTION "Pause Menu Cursor Stuff", ROM0[$0D97]
 ;TODO: Is this even PauseMenu exclusive or is it it's own resource type used
 ;elsewhere?
