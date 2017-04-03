@@ -23,13 +23,13 @@ unknown/attribs_0/11 attrib 0 11
 unknown/attribs_0/12 attrib 0 12 ;Menu items (no text)
 unknown/attribs_0/13 attrib 0 13 ;Selected menu item (no text)
 unknown/attribs_0/14 attrib 0 14
-unknown/attribs_0/15 attrib 0 15
-unknown/attribs_0/16 attrib 0 16
+unknown/attribs_0/15 attrib 0 15 ;IME Tilemap (mode 0)
+unknown/attribs_0/16 attrib 0 16 ;IME Tilemap (mode 1)
 unknown/attribs_0/17 attrib 0 17
 unknown/attribs_0/18 attrib 0 18
 unknown/attribs_0/19 attrib 0 19
 unknown/attribs_0/1a attrib 0 1a
-unknown/attribs_0/1b attrib 0 1b
+unknown/attribs_0/1b attrib 0 1b ;IME Tilemap (mode 2)
 unknown/attribs_0/1c attrib 0 1c
 unknown/attribs_0/1d attrib 0 1d
 unknown/attribs_0/1e attrib 0 1e
