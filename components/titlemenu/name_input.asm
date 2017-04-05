@@ -1,3 +1,8 @@
+INCLUDE "telefang.inc"
+
+SECTION "Title Menu Player Name WRAM", WRAM0[$C3A9]
+W_TitleMenu_NameBuffer:: ds M_MainScript_PlayerNameSize + 1
+
 SECTION "Title Menu Player Name Input", ROMX[$68FF], BANK[$4]
 TitleMenu_PositionNameCursor::
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -42,4 +47,21 @@ TitleMenu_PositionNicknameCursor::
     call PauseMenu_PositionCursor
     ld a, 1
     ld [W_OAM_SpritesReady], a
+    ret
+
+SECTION "Title Menu Player Name Input 2", ROMX[$6488], BANK[$4]
+TitleMenu_ClearCharaName::
+    ld hl, W_TitleMenu_NameBuffer
+    ld de, W_MainScript_CenteredNameBuffer
+    ld b, M_MainScript_PlayerNameSize + 1
+
+.clearLoop
+    ld a, $E0
+    ld [de], a
+    inc de
+    xor a
+    ld [hli], a
+    dec b
+    jr nz, .clearLoop
+    
     ret
