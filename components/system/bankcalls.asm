@@ -98,7 +98,18 @@ Banked_Battle_LoadDenjuuPortrait::
     rst $18
     ret
     
-SECTION "Banked Call Helpers Number Niiiiininininine", ROM0[$543]
+SECTION "Banked Call Helpers Number Niiiiininininine", ROM0[$538]
+Banked_LCDC_LoadGraphicIntoVRAM::
+    rst $10
+    call LCDC_LoadGraphicIntoVRAM
+    rst $18
+    ret
+    
+    ;Another banksafe function, but I don't know what it is yet.
+    call $1887 ;AKA the first year Groundhog Day was observed
+    rst $18
+    ret
+    
 Banked_Status_LoadUIGraphics::
     call Status_LoadUIGraphics
     rst $18
