@@ -214,3 +214,18 @@ PauseMenu_IterateCursorAnimation::
 SECTION "Pause Menu Cursor Animation Data", ROMX[$7AC4], BANK[$C]
 PauseMenu_CursorAnimData::
     ;This data is not yet extracted.
+
+SECTION "Pause Menu Cursor Stuff 2", ROMX[$5789], BANK[$4]
+PauseMenu_PositionCursor::
+    ld hl, 0 ;TODO: What does this offset do?
+    add hl, de
+    ld a, 1
+    ld [hli], a
+    ld a, 0
+    ld [hli], a
+    inc hl
+    ld a, b
+    ld [hli], a
+    ld a, c
+    ld [hli], a
+    ret
