@@ -4,7 +4,13 @@ INCLUDE "telefang.inc"
 IMPORT PhoneKeypadGfx
 IMPORT PhoneKeypadGfxDmg
 
-SECTION "Pause Menu IME Memory", WRAM0[$CB28]
+SECTION "Pause Menu IME WRAM", WRAM0[$CDB5]
+W_PauseMenu_PhoneState:: ds 1
+
+SECTION "Pause Menu IME WRAM2", WRAM0[$CB3E]
+W_PauseMenu_PhoneIMEPressCount:: ds 1
+
+SECTION "Pause Menu IME WRAM3", WRAM0[$CB28]
 W_PauseMenu_PhoneIME:: ds 1
     ds 1 ; ???
 W_PauseMenu_NextPhoneIME:: ds 1
