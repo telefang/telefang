@@ -1,5 +1,9 @@
 INCLUDE "telefang.inc"
 
+; BANK() is stupid
+IMPORT PhoneKeypadGfx
+IMPORT PhoneKeypadGfxDmg
+
 SECTION "Pause Menu IME Memory", WRAM0[$CB28]
 W_PauseMenu_PhoneIME:: ds 1
     ds 1 ; ???
