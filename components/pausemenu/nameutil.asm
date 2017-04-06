@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION "Pause Menu Names Util", ROMX[$5A35], BANK[$4]
 PauseMenu_ContactPrepName::
     ld [W_StringTable_ROMTblIndex], a

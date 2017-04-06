@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION " Pause Menu Screen Utils", ROMX[$5A06], BANK[4]
 PauseMenu_ClearScreenTiles::
     push bc
