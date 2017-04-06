@@ -15,6 +15,35 @@ PauseMenu_ClearScreenTiles::
     jr nz, PauseMenu_ClearScreenTiles
     
     ret
+    
+PauseMenu_DMGClearInputTiles::
+    ld d, $FF
+    ld e, 0
+    jr PauseMenu_CGBClearInputTiles.clearLoop
+    
+PauseMenu_CGBClearInputTiles::
+    ld d, 0
+    ld e, $FF
+    
+.clearLoop
+    push bc
+    ld c, 8
+    
+.innerLoop
+    call YetAnotherWFB
+    ld a, d
+    ld [hli], a
+    ld a, e
+    call YetAnotherWFB
+    ld [hli], a
+    dec c
+    jr nz, .innerLoop
+    
+    pop bc
+    dec b
+    jr nz, .clearLoop
+    
+    ret
 
 SECTION "Pause Menu Tilemap Loading", ROMX[$7931], BANK[$4]
 
@@ -77,3 +106,12 @@ PauseMenu_LoadMap1::
     pop de
     pop bc
     jp PauseMenu_LoadAttribmap1
+
+SECTION "Pause Menu Tile Utils", ROMX[$7FD2], BANK[$4]
+PauseMenu_ClearInputTiles::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr nz, .dmgClear
+    jp PauseMenu_DMGClearInputTiles
+    
+.dmgClear
