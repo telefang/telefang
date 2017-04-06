@@ -114,6 +114,21 @@ PauseMenu_ClearInputTiles::
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
     jr nz, .dmgClear
-    jp PauseMenu_DMGClearInputTiles
+    jp PauseMenu_CGBClearInputTiles
     
 .dmgClear
+    jp PauseMenu_DMGClearInputTiles
+    
+PauseMenu_SelectTextStyle::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr nz, .selectDMGStyle
+    ld a, 1
+    jr .setTextStyle
+    
+.selectDMGStyle
+    ld a, 3
+    
+.setTextStyle
+    ld [W_MainScript_TextStyle], a
+    ret
