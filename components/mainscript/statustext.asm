@@ -1,5 +1,4 @@
-INCLUDE "components/stringtable/load.inc"
-INCLUDE "components/battle/species.inc"
+INCLUDE "telefang.inc"
 
 ;"Status text" is text that we want to draw using the script system's text
 ;renderer, but isn't going to be interpreted by the script interpreter.
@@ -9,6 +8,9 @@ W_MainScript_StatusLettersDrawn: ds 1
 
 SECTION "Main Script Status Text Drawing WRAM 2", WRAM0[$CC90]
 W_MainScript_CenteredNameBuffer:: ds M_StringTable_Load8AreaSize + 1
+
+SECTION "Main Script Status Text Drawing WRAM 3", WRAM0[$C92C]
+W_MainScript_PlayerName:: ds M_MainScript_PlayerNameSize + 1
 
 SECTION "Main Script Status Text Drawing", ROM0[$3A91]
 MainScript_DrawStatusText::

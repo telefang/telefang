@@ -1,5 +1,5 @@
 SECTION "Phone keypad graphics", ROMX[$4000], BANK[$79]
-PhoneKeypadGfx:
+PhoneKeypadGfx::
 	INCBIN "gfx/phones/0/numbers.2bpp"
 	INCBIN "gfx/phones/0/menus.2bpp"
 	INCBIN "gfx/phones/0/letters1.2bpp"
@@ -30,7 +30,7 @@ PhoneKeypadGfx:
 ; rest of bank is blank
 
 SECTION "Phone button graphics", ROMX[$4000], BANK[$7a]
-PhoneButtonGfx:
+PhoneButtonGfx::
 rept 3
 	INCBIN "gfx/phones/0/buttons.2bpp"
 	INCBIN "gfx/phones/1/buttons.2bpp"
@@ -40,7 +40,7 @@ endr
 ; rest of bank is blank
 
 SECTION "Phone keypad graphics DMG", ROMX[$4000], BANK[$7b]
-PhoneKeypadGfxDmg:
+PhoneKeypadGfxDmg::
 	INCBIN "gfx/phones/0/numbers.2bpp"
 	INCBIN "gfx/phones/0/menus_dmg.2bpp"
 	INCBIN "gfx/phones/0/letters1.2bpp"
@@ -76,5 +76,5 @@ PhoneKeypadGfxDmg:
 ; rest of bank is blank
 
 SECTION "Phone Screen Graphics", ROMX[$6A5F], BANK[$37]
-PhoneScreenNewTextsGfx
+PhoneScreenNewTextsGfx::
 	INCBIN "gfx/phones/new_texts.2bpp"
