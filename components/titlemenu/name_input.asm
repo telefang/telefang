@@ -51,17 +51,10 @@ TitleMenu_PositionNicknameCursor::
 
 SECTION "Title Menu Player Name Input 2", ROMX[$6488], BANK[$4]
 TitleMenu_ClearCharaName::
-    ld hl, W_TitleMenu_NameBuffer
-    ld de, W_MainScript_CenteredNameBuffer
-    ld b, M_MainScript_PlayerNameSize + 1
-
-.clearLoop
-    ld a, $E0
-    ld [de], a
-    inc de
-    xor a
-    ld [hli], a
-    dec b
-    jr nz, .clearLoop
-    
+    push af
+    push hl
+    ld a, 4
+    call PatchUtils_AuxCodeJump
+    pop hl
+    pop af
     ret

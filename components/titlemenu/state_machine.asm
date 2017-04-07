@@ -42,7 +42,7 @@ TitleMenu_StateClearNameInput::
     ld [W_PauseMenu_PhoneIME], a
     call PauseMenu_LoadPhoneIMEGraphics
     call TitleMenu_ClearCharaName
-    call $649A
+    call $6492
     ld bc, $104
     ld e, $35
     call PauseMenu_LoadMap0
