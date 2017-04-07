@@ -13,7 +13,7 @@ PauseMenu_ContactPrepName::
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
     ld hl, StringTable_denjuu_species
-    call StringTable_LoadName75
+    call Banked_PauseMenu_ADVICE_LoadName75
     ld d, $C
     jp PauseMenu_CenterPreppedName
     
