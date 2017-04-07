@@ -54,7 +54,7 @@ TitleMenu_ClearCharaName::
     push af
     push hl
     ld a, 4
-    call PatchUtils_AuxCodeJump
+    call PatchUtils_AuxCodeJmp
     pop hl
     pop af
     ret
