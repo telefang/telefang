@@ -106,7 +106,7 @@ PatchUtils_ResetGame: nop
 	nop ;Further execution hits the main vector of the rom header
 
 SECTION "PatchUtils Auxiliary Code", ROM0[$3FF1]
-PatchUtils_AuxCodeJmp:
+PatchUtils_AuxCodeJmp::
 	push af
 	ld a, 1
 	rst $10
