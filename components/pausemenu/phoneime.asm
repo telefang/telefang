@@ -21,10 +21,10 @@ PauseMenu_LoadPhoneIMETilemap::
     ld a, [W_PauseMenu_NextPhoneIME]
     cp 0
     jr z, .loadTmap
-    ld e, $16
+    ld e, $1B
     cp 1
     jr z, .loadTmap
-    ld e, $1B
+    ld e, $16
     
 .loadTmap
     ld bc, $111

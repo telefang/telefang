@@ -45,9 +45,9 @@ PauseMenu_CenterPreppedName:
     dec b
     jr nz, .nullTermLoop
     
-    ld hl, W_StringTable_StagingLoc
+    ld hl, W_StringTable_StagingLocDbl
     ld de, W_MainScript_CenteredNameBuffer
-    call Banked_StringTable_PadCopyBuffer
+    call Banked_StringTable_ADVICE_PadCopyBuffer
     pop de
     jp $649A
 
