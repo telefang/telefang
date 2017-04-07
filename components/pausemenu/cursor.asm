@@ -41,6 +41,7 @@ PauseMenu_InitializeCursor::
     ld a, [hl]
     rst $10
     
+    pop af
     ld hl, .cursorMetatablePtrs
     ld b, 0
     ld c, a
