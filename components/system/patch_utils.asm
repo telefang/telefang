@@ -86,17 +86,17 @@ MainScript_ADVICE_DrawDenjuuName::
 	jr .mystery3
 	
 .mystery2 ;EE
-	call Banked_PauseMenu_ADVICE_LoadDenjuuName
+	call Banked_PauseMenu_ADVICE_LoadName75
 
 .mystery3 ;F1
 	pop af
 	pop hl
 	ret
 
-Banked_PauseMenu_ADVICE_LoadDenjuuName:: ;F4
+Banked_PauseMenu_ADVICE_LoadName75:: ;F4
 	ld a, $34
 	rst $10
-	call PauseMenu_ADVICE_LoadDenjuuName
+	call PauseMenu_ADVICE_LoadName75
 	rst $18
 	ret
 	

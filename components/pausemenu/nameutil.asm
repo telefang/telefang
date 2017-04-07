@@ -52,7 +52,7 @@ PauseMenu_CenterPreppedName:
     jp $649A
 
 SECTION "Pause Menu Names Util ADVICE", ROMX[$7F10], BANK[$34]
-PauseMenu_ADVICE_LoadDenjuuName::
+PauseMenu_ADVICE_LoadName75::
     ld d, 0
     ld a, [W_StringTable_ROMTblIndex]
     ld e, a
