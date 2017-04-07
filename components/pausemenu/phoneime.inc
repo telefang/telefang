@@ -1,3 +1,3 @@
 M_PhoneMenu_IMENumerals EQU 0
-M_PhoneMenu_IMEHiragana EQU 1
-M_PhoneMenu_IMEKatakana EQU 2
+M_PhoneMenu_IMELatinUpper EQU 1
+M_PhoneMenu_IMELatinLower EQU 2

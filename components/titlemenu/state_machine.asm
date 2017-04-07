@@ -29,7 +29,7 @@ TitleMenu_StateClearNameInput::
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
     ld [W_PauseMenu_SelectedMenuItem], a
-    ld a, M_PhoneMenu_IMEHiragana
+    ld a, M_PhoneMenu_IMENumerals
     ld [W_PauseMenu_NextPhoneIME], a
     ld a, $FF
     ld [$CB66], a
@@ -38,7 +38,7 @@ TitleMenu_StateClearNameInput::
     ld [W_PauseMenu_SelectedCursorType], a
     ld de, $C0C0
     call Banked_PauseMenu_InitializeCursor
-    ld a, M_PhoneMenu_IMEKatakana
+    ld a, M_PhoneMenu_IMELatinUpper
     ld [W_PauseMenu_PhoneIME], a
     call PauseMenu_LoadPhoneIMEGraphics
     call TitleMenu_ClearCharaName
