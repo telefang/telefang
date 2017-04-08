@@ -2,12 +2,12 @@ INCLUDE "telefang.inc"
 
 SECTION "Melo-D Editor Indicator Code", ROMX[$61BF], BANK[$4]
 MelodyEdit_DrawPageIndicator::
-    ld a, $74
+    ld a, $57
     ld hl, $99C2
     call vmempoke
-    ld a, $72
+    ld a, $58
     call vmempoke
-    ld a, $75
+    ld a, $59
     call vmempoke
     ld a, $55
     call vmempoke
@@ -44,9 +44,9 @@ MelodyEdit_DrawTempoIndicator::
     ld a, $53
     ld hl, $99E2
     call vmempoke
-    ld a, $73
-    call vmempoke
     ld a, $54
+    call vmempoke
+    ld a, $56
     call vmempoke
     ld a, $55
     call vmempoke
@@ -57,12 +57,12 @@ MelodyEdit_DrawTempoIndicator::
     
 MelodyEdit_DrawDataIndicator::
     call MelodyEdit_CountData
-    ld a, $56
+    ld a, $71
     ld hl, $9A02
     call vmempoke
     ld a, $72
     call vmempoke
-    ld a, $71
+    ld a, $73
     call vmempoke
     ld a, $55
     call vmempoke
