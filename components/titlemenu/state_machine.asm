@@ -124,11 +124,11 @@ TitleMenu_StateInitNickname::
     ld de, $C0C0
     call Banked_PauseMenu_InitializeCursor
     
-    ld a, M_PhoneMenu_IMEKatakana
+    ld a, M_PhoneMenu_IMELatinUpper
     ld [W_PauseMenu_PhoneIME], a
     call PauseMenu_LoadPhoneIMEGraphics
     
-    ld a, M_PhoneMenu_IMEHiragana
+    ld a, M_PhoneMenu_IMENumerals
     ld [W_PauseMenu_NextPhoneIME], a
     
     call PauseMenu_CGBLoadPalettes
