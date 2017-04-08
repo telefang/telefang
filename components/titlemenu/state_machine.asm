@@ -195,7 +195,7 @@ TitleMenu_StateInitNickname::
     call $67B7
     
     ld d, $C
-    call $649A
+    call $6492
     call PauseMenu_LoadPhoneIMETilemap
     
     ld a, 4
