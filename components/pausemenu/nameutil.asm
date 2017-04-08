@@ -34,7 +34,7 @@ PauseMenu_ItemPrepName::
     ld d, $B
     jp PauseMenu_CenterPreppedName
     
-PauseMenu_CenterPreppedName:
+PauseMenu_CenterPreppedName::
     push de
     ld hl, W_MainScript_CenteredNameBuffer
     ld b, M_StringTable_Load8AreaSize + 1
