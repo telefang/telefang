@@ -65,3 +65,48 @@ TitleMenu_ClearCharaName::
     jr nz, .clearLoop
     
     ret
+
+SECTION "Title Menu Player Name Input 3", ROMX[$64A9], BANK[$4]
+TitleMenu_NameInputImpl::
+    call TitleMenu_NameInputProcessing
+    ld a, [H_JPInput_Changed]
+    and 2
+    jr z, .extraInputProcessingICantDisasmRightNow
+    
+;This code runs if A or B was pressed.
+    ld a, $FF
+    ld [$CB66], a
+    
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+    
+    ld hl, $9780
+    ld b, M_MainScript_PlayerNameSize
+    call PauseMenu_ClearInputTiles
+    
+    ld hl, W_TitleMenu_NameBuffer
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld e, a
+    ld d, 0
+    add hl, de
+    ld [hl], 0
+    
+    call $6794
+    call PauseMenu_DrawCenteredNameBuffer
+    
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp 0
+    ret z
+    
+    dec a
+    ld [W_PauseMenu_SelectedMenuItem], a
+    ld a, 4
+    ld [byte_FFA1], a
+    ret
+    
+.extraInputProcessingICantDisasmRightNow
+    ;TODO: Disasm
+    
+SECTION "Title Menu Player Name Input 4", ROMX[$5B37], BANK[$4]
+TitleMenu_NameInputProcessing::
+    ;TODO: Disasm

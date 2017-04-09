@@ -23,6 +23,9 @@ W_MainScript_ContinueBtnPressed:: ds 1
 SECTION "Main Script Variables 4", WRAM0[$C959]
 W_MainScript_SecondAnswerTile:: ds 1
 
+SECTION "Main Script Variable 5", WRAM0[$C9FC]
+W_MainScript_TilePtr:: ds 1
+
 SECTION "Main Script State Machine", ROMX[$4100], BANK[$B]
 MainScriptMachine::
 	ld a, [W_MainScript_FramesCount]
