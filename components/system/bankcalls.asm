@@ -98,7 +98,21 @@ Banked_Battle_LoadDenjuuPortrait::
     rst $18
     ret
     
-SECTION "Banked Call Helpers Number Niiiiininininine", ROM0[$538]
+SECTION "Banked Call Helpers Number Niiiiininininine", ROM0[$528]
+Banked_MainScript_InitializeMenuText::
+    ld a, BANK(MainScript_InitializeMenuText)
+    rst $10
+    call MainScript_InitializeMenuText
+    rst $18
+    ret
+    
+Banked_MainScriptMachine::
+    ld a, BANK(MainScriptMachine)
+    rst $10
+    call MainScriptMachine
+    rst $18
+    ret
+    
 Banked_LCDC_LoadGraphicIntoVRAM::
     rst $10
     call LCDC_LoadGraphicIntoVRAM

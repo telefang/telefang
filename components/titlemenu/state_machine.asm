@@ -54,7 +54,7 @@ TitleMenu_StateNameInput::
     ld de, $C0C0
     call Banked_PauseMenu_IterateCursorAnimation
     call TitleMenu_PositionNameCursor
-    jp $64A9
+    jp TitleMenu_NameInputImpl
     
 ; State 03 15
 TitleMenu_StateStorePlayerName::
