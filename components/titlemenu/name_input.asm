@@ -85,7 +85,7 @@ TitleMenu_NameInputImpl::
     ld [hl], 0
     
     call $6794
-    call PauseMenu_DrawCenteredNameBuffer
+    call PauseMenu_DrawCenteredNameBufferNoVWF
     
     ld a, [W_PauseMenu_SelectedMenuItem]
     cp 0
