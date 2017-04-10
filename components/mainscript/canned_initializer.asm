@@ -35,9 +35,9 @@ MainScript_InitializeMenuText::
     ld [W_MainScript_NumNewlines], a
     ld [W_MainScript_WaitFrames], a
     ld [W_MainScript_ContinueBtnPressed], a
-    ld a, 0
+    ld [W_MainScript_VWFMainScriptHack], a
     ld [W_MainScript_TextSpeed], a
     ld [$CADA], a
-    ld a, 1
+    inc a
     ld [W_MainScript_State], a
     ret
