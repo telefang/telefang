@@ -68,7 +68,7 @@ TitleMenu_ClearCharaName::
 
 SECTION "Title Menu Player Name Input 3", ROMX[$64A9], BANK[$4]
 TitleMenu_NameInputImpl::
-    call TitleMenu_NameInputProcessing
+    call PauseMenu_PhoneIMEInputProcessing
     ld a, [H_JPInput_Changed]
     and 2
     jr z, .noBButtonPress
@@ -206,7 +206,3 @@ TitleMenu_NameInputImpl::
 
 .return
     ret
-    
-SECTION "Title Menu Player Name Input 4", ROMX[$5B37], BANK[$4]
-TitleMenu_NameInputProcessing::
-    ;TODO: Disasm
