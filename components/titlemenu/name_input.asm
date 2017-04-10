@@ -157,19 +157,25 @@ TitleMenu_NameInputImpl::
     cp 0
     jr nz, .playerNameConfirmed
     
-    ;シゲキ
-    ld a, $C
-    ld [W_TitleMenu_NameBuffer], a
-    ld a, $70
-    ld [W_TitleMenu_NameBuffer + 1], a
-    ld a, 7
-    ld [W_TitleMenu_NameBuffer + 2], a
+    push af
+    push hl
+    ld a, 0
+    call PatchUtils_AuxCodeJmp
+    pop hl
+    pop af
     
-    ld a, 3
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    
+    ld a, 7
     ld [W_PauseMenu_SelectedMenuItem], a
     
     call $6794
-    jp PauseMenu_DrawCenteredNameBuffer
+    jp PauseMenu_DrawCenteredNameBufferNoVWF
     
 .playerNameConfirmed
     jp System_ScheduleNextSubState
