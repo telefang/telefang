@@ -71,9 +71,9 @@ TitleMenu_NameInputImpl::
     call TitleMenu_NameInputProcessing
     ld a, [H_JPInput_Changed]
     and 2
-    jr z, .extraInputProcessingICantDisasmRightNow
+    jr z, .noBButtonPress
     
-;This code runs if A or B was pressed.
+.bButtonPress
     ld a, $FF
     ld [$CB66], a
     
@@ -104,8 +104,108 @@ TitleMenu_NameInputImpl::
     ld [byte_FFA1], a
     ret
     
-.extraInputProcessingICantDisasmRightNow
-    ;TODO: Disasm
+.noBButtonPress
+    ld a, [H_JPInput_Changed]
+    and 8
+    jr nz, .confirmIntent
+    
+.noStartButtonPress
+    ld a, [H_JPInput_Changed]
+    and 1
+    jp z, .return
+    
+    call $66A1
+    ld a, [W_PauseMenu_PhoneIMEButton]
+    cp M_PhoneMenu_ButtonNote
+    jp z, .cycleNextIME
+    cp M_PhoneMenu_ButtonLeft
+    jp z, .leftKeypadPress
+    cp M_PhoneMenu_ButtonRight
+    jp z, .rightKeypadPress
+    cp M_PhoneMenu_ButtonConfirm
+    jp z, .confirmIntent
+    cp M_PhoneMenu_ButtonStar
+    jp z, .specialCharacterIntent
+    cp M_PhoneMenu_ButtonPound
+    jp z, .specialCharacterIntent
+    jp $66C0
+    
+;Cycle to the next IME mode.
+.cycleNextIME ;12519
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+    
+    ld a, [W_PauseMenu_NextPhoneIME]
+    inc a
+    cp M_PhoneMenu_IMEEND
+    jr nz, .storeNextIME
+    
+    xor a
+.storeNextIME
+    ld [W_PauseMenu_NextPhoneIME], a
+    
+    add a, 1
+    cp M_PhoneMenu_IMEEND
+    jr nz, .storePhoneIME
+    
+    xor a
+.storePhoneIME
+    ld [W_PauseMenu_PhoneIME], a
+    
+    call PauseMenu_LoadPhoneIMEGraphics
+    jp PauseMenu_LoadPhoneIMETilemap
+    
+;If the name is empty, write the default name.
+;Otherwise, confirm the player name.
+.confirmIntent ;12539
+    ld a, 3
+    ld [byte_FFA1], a
+    call $6794
+    cp 0
+    jr nz, .playerNameConfirmed
+    
+    ;シゲキ
+    ld a, $C
+    ld [W_TitleMenu_NameBuffer], a
+    ld a, $70
+    ld [W_TitleMenu_NameBuffer + 1], a
+    ld a, 7
+    ld [W_TitleMenu_NameBuffer + 2], a
+    
+    ld a, 3
+    ld [W_PauseMenu_SelectedMenuItem], a
+    
+    call $6794
+    jp PauseMenu_DrawCenteredNameBuffer
+    
+.playerNameConfirmed
+    jp System_ScheduleNextSubState
+    
+.specialCharacterIntent
+    jp $6673
+    
+.leftKeypadPress
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp 0
+    ret z
+    dec a
+    jr .cursorChange
+    
+.rightKeypadPress
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp M_MainScript_PlayerNameSize - 1
+    ret z
+    inc a
+    
+.cursorChange
+    ld [W_PauseMenu_SelectedMenuItem], a
+    ld a, $FF
+    ld [$CB66], a
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+
+.return
+    ret
     
 SECTION "Title Menu Player Name Input 4", ROMX[$5B37], BANK[$4]
 TitleMenu_NameInputProcessing::

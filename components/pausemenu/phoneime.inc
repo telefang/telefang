@@ -1,6 +1,7 @@
 M_PhoneMenu_IMENumerals EQU 0
 M_PhoneMenu_IMEHiragana EQU 1
 M_PhoneMenu_IMEKatakana EQU 2
+M_PhoneMenu_IMEEND EQU 3
 
 M_PhoneMenu_ButtonNote EQU 0
 M_PhoneMenu_ButtonLeft EQU 1
