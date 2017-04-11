@@ -232,7 +232,7 @@ TitleMenu_NicknameInputImpl::
     ld [hl], 0
     
     call $67B7
-    call PauseMenu_DrawCenteredNameBuffer
+    call PauseMenu_DrawCenteredNameBufferNoVWF
     
     ld a, [W_PauseMenu_SelectedMenuItem]
     cp 0
@@ -306,7 +306,7 @@ TitleMenu_NicknameInputImpl::
     call $6794
     
     ld d, $C
-    jp PauseMenu_DrawCenteredNameBuffer
+    jp PauseMenu_DrawCenteredNameBufferNoVWF
     
 .playerNameConfirmed
     jp System_ScheduleNextSubState
