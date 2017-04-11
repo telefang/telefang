@@ -68,12 +68,12 @@ TitleMenu_ClearCharaName::
 
 SECTION "Title Menu Player Name Input 3", ROMX[$64A9], BANK[$4]
 TitleMenu_NameInputImpl::
-    call PauseMenu_PhoneIMEInputProcessing
+    call PauseMenu_PhoneIMEWraparoundProcessing
     ld a, [H_JPInput_Changed]
     and 2
     jr z, .noBButtonPress
     
-.bButtonPress
+.backspaceProcessing
     ld a, $FF
     ld [$CB66], a
     
@@ -204,5 +204,145 @@ TitleMenu_NameInputImpl::
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
 
+.return
+    ret
+
+TitleMenu_NicknameInputImpl::
+    call PauseMenu_PhoneIMEWraparoundProcessing
+    
+    ld a, [H_JPInput_Changed]
+    and 2
+    jr z, .noBButtonPress
+    
+.backspaceProcessing
+    ld a, $FF
+    ld [$CB66], a
+    
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+    
+    ld hl, $9780
+    ld b, M_SaveClock_DenjuuNicknameSize
+    call PauseMenu_ClearInputTiles
+    
+    ld hl, W_TitleMenu_NameBuffer
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld e, a
+    ld d, 0
+    add hl, de
+    ld [hl], 0
+    
+    call $67B7
+    call PauseMenu_DrawCenteredNameBuffer
+    
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp 0
+    ret z
+    
+    dec a
+    ld [W_PauseMenu_SelectedMenuItem], a
+    ld a, 4
+    ld [byte_FFA1], a
+    ret
+    
+.noBButtonPress
+    ld a, [H_JPInput_Changed]
+    and 8
+    jr nz, .confirmIntent
+    
+    ld a, [H_JPInput_Changed]
+    and 1
+    jp z, .return
+    
+    call $66A1
+    ld a, [W_PauseMenu_PhoneIMEButton]
+    cp M_PhoneMenu_ButtonNote
+    jp z, .cycleNextIME
+    cp M_PhoneMenu_ButtonLeft
+    jp z, .leftKeypadPress
+    cp M_PhoneMenu_ButtonRight
+    jp z, .rightKeypadPress
+    cp M_PhoneMenu_ButtonConfirm
+    jp z, .confirmIntent
+    cp M_PhoneMenu_ButtonStar
+    jp z, .specialCharacterIntent
+    cp M_PhoneMenu_ButtonPound
+    jp z, .specialCharacterIntent
+    jp $672A
+    
+;Cycle to the next IME mode.
+.cycleNextIME
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+    
+    ld a, [W_PauseMenu_NextPhoneIME]
+    inc a
+    cp M_PhoneMenu_IMEEND
+    jr nz, .storeNextIME
+    
+    xor a
+.storeNextIME
+    ld [W_PauseMenu_NextPhoneIME], a
+    
+    add a, 1
+    cp M_PhoneMenu_IMEEND
+    jr nz, .storePhoneIME
+    
+    xor a
+.storePhoneIME
+    ld [W_PauseMenu_PhoneIME], a
+    
+    call PauseMenu_LoadPhoneIMEGraphics
+    jp PauseMenu_LoadPhoneIMETilemap
+    
+.confirmIntent
+    ld a, 3
+    ld [byte_FFA1], a
+    call $67B7
+    cp 0
+    jr nz, .playerNameConfirmed
+    
+    ld a, [$D4A7]
+    call $7D8C
+    call $6794
+    
+    ld d, $C
+    jp PauseMenu_DrawCenteredNameBuffer
+    
+.playerNameConfirmed
+    jp System_ScheduleNextSubState
+    
+.specialCharacterIntent
+    jp $668A
+    
+.leftKeypadPress
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp 0
+    ret z
+    
+    dec a
+    ld [W_PauseMenu_SelectedMenuItem], a
+    
+    ld a, $FF
+    ld [$CB66], a
+    
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ret
+    
+.rightKeypadPress
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp M_SaveClock_DenjuuNicknameSize - 1
+    ret z
+    
+    inc a
+    ld [W_PauseMenu_SelectedMenuItem], a
+    
+    ld a, $FF
+    ld [$CB66], a
+    
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+    
 .return
     ret

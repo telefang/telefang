@@ -159,7 +159,7 @@ PauseMenu_PhoneGraphicsTable::
     dw $6E5F,$6E8F,$6EBF,$6EEF,$6F1F,$6F4F,$6F7F,$6FAF,$6FDF
 
 SECTION "Title Menu Player Name Input 4", ROMX[$5B37], BANK[$4]
-PauseMenu_PhoneIMEInputProcessing::
+PauseMenu_PhoneIMEWraparoundProcessing::
     ld a, [W_JPInput_TypematicBtns]
     and $10
     jr z, .checkLeftBtn
