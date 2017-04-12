@@ -1,116 +1,85 @@
 SECTION "Phone IME button mapping data", ROMX[$680D], BANK[$4]
 PauseMenu_PhoneIMEData::
-    dw .hiraganaTable
-    dw .katakanaTable
+    dw .latinUpperTable
+    dw .latinLowerTable
     dw .numeralsTable
     
-.hiraganaTable
-    dw .hiraganaButton1
-    dw .hiraganaButton2
-    dw .hiraganaButton3
-    dw .hiraganaButton4
-    dw .hiraganaButton5
-    dw .hiraganaButton6
-    dw .hiraganaButton7
-    dw .hiraganaButton8
-    dw .hiraganaButton9
-    dw .hiraganaButtonStar
-    dw .hiraganaButton0
-    dw .hiraganaButtonPound
+.latinLowerTable
+    dw .latinLowerButton1
+    dw .latinLowerButton2
+    dw .latinLowerButton3
+    dw .latinLowerButton4
+    dw .latinLowerButton5
+    dw .latinLowerButton6
+    dw .latinLowerButton7
+    dw .latinLowerButton8
+    dw .latinLowerButton9
+    dw .latinLowerButtonStar
+    dw .latinLowerButton0
+    dw .latinLowerButtonPound
     
-.hiraganaButton1
-    db $A
-    db $38, $39, $3A, $3B, $3C, $64, $65, $66, $67, $68
-
-.hiraganaButton2
-    db 5
-    db $3D, $3E, $3F, $40, $41
-    
-.hiraganaButton3
-    db 5
-    db $42, $43, $44, $45, $46
-    
-.hiraganaButton4
-    db 6
-    db $47, $48, $49, $4A, $4B, $69
-    
-.hiraganaButton5
-    db 5
-    db $4C, $4D, $4E, $4F, $50
-    
-.hiraganaButton6
-    db 5
-    db $51, $52, $53, $1D, $54
-    
-.hiraganaButton7
-    db 5
-    db $55, $56, $57, $58, $59
-    
-.hiraganaButton8
-    db 6
-    db $5A, $5B, $5C, $6A, $6B, $6C
-    
-.hiraganaButton9
-    db 5
-    db $5D, $28, $5E, $5F, $60
-    
-.hiraganaButtonStar
+.latinLowerButton1
+    db $A, ".,:;'", $22, "!?", $1F, "-"
+.latinLowerButton2
+    db 5, "abc+*"
+.latinLowerButton3
+    db 5, "def<>"
+.latinLowerButton4
+    db 5, "ghi=%$"
+.latinLowerButton5
+    db 5, "jkl()"
+.latinLowerButton6
+    db 5, "mno[]"
+.latinLowerButton7
+    db 5, "pqrs#"
+.latinLowerButton8
+    db 5, "tuv/|\\"
+.latinLowerButton9
+    db 5, "wxyz_"
+.latinLowerButtonStar
+    db $FF
+.latinLowerButton0
+    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC ;ÅÆÇÉÊÌ
+.latinLowerButtonPound
     db $FF
     
-.hiraganaButton0
-    db 7
-    db $61, $62, $63, $CD, $C8, $B9, $B8
+.latinUpperTable
+    dw .latinUpperButton1
+    dw .latinUpperButton2
+    dw .latinUpperButton3
+    dw .latinUpperButton4
+    dw .latinUpperButton5
+    dw .latinUpperButton6
+    dw .latinUpperButton7
+    dw .latinUpperButton8
+    dw .latinUpperButton9
+    dw .latinUpperButtonStar
+    dw .latinUpperButton0
+    dw .latinUpperButtonPound
     
-.hiraganaButtonPound
+.latinUpperButton1
+    db $A, ".,:;'", $22, "!?", $1F, "-"
+.latinUpperButton2
+    db 5, "ABC+*"
+.latinUpperButton3
+    db 5, "DEF<>"
+.latinUpperButton4
+    db 6, "GHI=%$"
+.latinUpperButton5
+    db 5, "JKL()"
+.latinUpperButton6
+    db 5, "MNO[]"
+.latinUpperButton7
+    db 5, "PQRS#"
+.latinUpperButton8
+    db 6, "TUV/|\\"
+.latinUpperButton9
+    db 5, "WXYZ_"
+.latinUpperButtonStar
     db $FF
-    
-.katakanaTable
-    dw .katakanaButton1
-    dw .katakanaButton2
-    dw .katakanaButton3
-    dw .katakanaButton4
-    dw .katakanaButton5
-    dw .katakanaButton6
-    dw .katakanaButton7
-    dw .katakanaButton8
-    dw .katakanaButton9
-    dw .katakanaButtonStar
-    dw .katakanaButton0
-    dw .katakanaButtonPound
-    
-.katakanaButton1
-    db $A
-    db 1, 2, 3, 4, 5, $2F, $30, $31, $32, $33
-.katakanaButton2
-    db 5
-    db 6, 7, 8, 9, $A
-.katakanaButton3
-    db 5
-    db $B, $C, $D, $E, $F
-.katakanaButton4
-    db 6
-    db $10, $11, $12, $13, $14, $34
-.katakanaButton5
-    db 5
-    db $15, $16, $17, $18, $19
-.katakanaButton6
-    db 5
-    db $1A, $1B, $1C, $1D, $1E
-.katakanaButton7
-    db 5
-    db $1F, $20, $21, $22, $23
-.katakanaButton8
-    db 6
-    db $24, $25, $26, $35, $36, $37
-.katakanaButton9
-    db 5
-    db $27, $28, $29, $2A, $2B
-.katakanaButtonStar
-    db $FF
-.katakanaButton0
-    db 7
-    db $2C, $2D, $2E, $CD, $C8, $B9, $B8
-.katakanaButtonPound
+.latinUpperButton0
+    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC ;ÅÆÇÉÊÌ
+.latinUpperButtonPound
     db $FF
 
 .numeralsTable
