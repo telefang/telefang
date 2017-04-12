@@ -135,14 +135,14 @@ TitleMenu_NameInputImpl::
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
     
-    ld a, [W_PauseMenu_NextPhoneIME]
+    ld a, [W_PauseMenu_CurrentPhoneIME]
     inc a
     cp M_PhoneMenu_IMEEND
     jr nz, .storeNextIME
     
     xor a
 .storeNextIME
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
     
     add a, 1
     cp M_PhoneMenu_IMEEND
@@ -150,7 +150,7 @@ TitleMenu_NameInputImpl::
     
     xor a
 .storePhoneIME
-    ld [W_PauseMenu_PhoneIME], a
+    ld [W_PauseMenu_NextPhoneIME], a
     
     call PauseMenu_LoadPhoneIMEGraphics
     jp PauseMenu_LoadPhoneIMETilemap
@@ -275,14 +275,14 @@ TitleMenu_NicknameInputImpl::
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
     
-    ld a, [W_PauseMenu_NextPhoneIME]
+    ld a, [W_PauseMenu_CurrentPhoneIME]
     inc a
     cp M_PhoneMenu_IMEEND
     jr nz, .storeNextIME
     
     xor a
 .storeNextIME
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
     
     add a, 1
     cp M_PhoneMenu_IMEEND
@@ -290,7 +290,7 @@ TitleMenu_NicknameInputImpl::
     
     xor a
 .storePhoneIME
-    ld [W_PauseMenu_PhoneIME], a
+    ld [W_PauseMenu_NextPhoneIME], a
     
     call PauseMenu_LoadPhoneIMEGraphics
     jp PauseMenu_LoadPhoneIMETilemap
