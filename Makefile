@@ -36,6 +36,7 @@ OBJS := components/compression/malias.o \
      components/pausemenu/cursor.o components/pausemenu/phoneime.o \
      components/pausemenu/tilemaps.o components/pausemenu/utility.o \
      components/pausemenu/palette.o components/pausemenu/drawfuncs.o \
+     components/pausemenu/phoneime_mapping.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
