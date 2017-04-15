@@ -1,14 +1,19 @@
 INCLUDE "telefang.inc"
 
+;omfg why
+IMPORT TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer
+IMPORT S_SaveClock_NicknameArray
+
 SECTION "Title Menu Nickname Loader", ROMX[$7D8C], BANK[$4]
 TitleMenu_LoadDenjuuNicknameIntoBuffer::
     ld c, a
     ld b, 0
     ld de, M_SaveClock_DenjuuNicknameSize
-    call System_Multiply16
     
-    ld hl, S_SaveClock_NicknameArray
-    add hl, de
+    ld a, BANK(TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer)
+    call Banked_TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer
+    nop
+    nop
     
     ld b, BANK(S_SaveClock_NicknameArray)
     call TitleMenu_EnterSRAM

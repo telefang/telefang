@@ -53,8 +53,9 @@ PatchUtils_LoadDenjuuName_Bankswitch::
 	ret
 	
 ;CB
+Banked_TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer::
 	rst $10
-	call $7E45
+	call TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer
 	rst $18
 	ret
 	
