@@ -72,7 +72,7 @@ PauseMenu_PhoneIMEPlayerNameGlyph::
     ld [hl], a ;Set the current character
     
     call PauseMenu_PhoneIMESyncPlayerName
-    jp PauseMenu_DrawCenteredNameBuffer
+    jp PauseMenu_DrawCenteredNameBufferNoVWF
 
 PauseMenu_PhoneIMEDenjuuNicknameGlyph::
     ld a, [$CB66]
@@ -145,4 +145,4 @@ PauseMenu_PhoneIMEDenjuuNicknameGlyph::
     ld [hl], a ;Set the current character
     
     call PauseMenu_PhoneIMESyncDenjuuNickname
-    jp PauseMenu_DrawCenteredNameBuffer
+    jp PauseMenu_DrawCenteredNameBufferNoVWF
