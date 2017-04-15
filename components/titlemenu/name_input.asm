@@ -75,7 +75,7 @@ TitleMenu_NameInputImpl::
     
 .backspaceProcessing
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
@@ -200,7 +200,7 @@ TitleMenu_NameInputImpl::
 .cursorChange
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
 
@@ -216,7 +216,7 @@ TitleMenu_NicknameInputImpl::
     
 .backspaceProcessing
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
@@ -324,7 +324,7 @@ TitleMenu_NicknameInputImpl::
     ld [W_PauseMenu_SelectedMenuItem], a
     
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
@@ -339,7 +339,7 @@ TitleMenu_NicknameInputImpl::
     ld [W_PauseMenu_SelectedMenuItem], a
     
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a

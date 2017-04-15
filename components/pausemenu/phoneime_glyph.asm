@@ -2,7 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Phone IME Glyph Processing", ROMX[$66C0], BANK[$4]
 PauseMenu_PhoneIMEPlayerNameGlyph::
-    ld a, [$CB66]
+    ld a, [W_PauseMenu_PhoneIMELastPressedButton]
     cp $FF
     jr z, .setCharacter
     
@@ -30,7 +30,7 @@ PauseMenu_PhoneIMEPlayerNameGlyph::
     
 .setCharacter
     ld a, [W_PauseMenu_PhoneIMEButton]
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     ld a, [W_PauseMenu_CurrentPhoneIME]
     ld hl, PauseMenu_PhoneIMEData
@@ -75,7 +75,7 @@ PauseMenu_PhoneIMEPlayerNameGlyph::
     jp PauseMenu_DrawCenteredNameBuffer
 
 PauseMenu_PhoneIMEDenjuuNicknameGlyph::
-    ld a, [$CB66]
+    ld a, [W_PauseMenu_PhoneIMELastPressedButton]
     cp $FF
     jr z, .setCharacter
     
@@ -103,7 +103,7 @@ PauseMenu_PhoneIMEDenjuuNicknameGlyph::
     
 .setCharacter
     ld a, [W_PauseMenu_PhoneIMEButton]
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     ld a, [W_PauseMenu_CurrentPhoneIME]
     ld hl, PauseMenu_PhoneIMEData
