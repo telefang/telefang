@@ -47,8 +47,9 @@ PatchUtils_LoadDenjuuName_Bankswitch::
 	ret
 	
 ;C5
+Banked_TitleMenu_ADVICE_SplitNickAndSpeciesNames::
 	rst $10
-	call $7DCB
+	call TitleMenu_ADVICE_SplitNickAndSpeciesNames
 	rst $18
 	ret
 	

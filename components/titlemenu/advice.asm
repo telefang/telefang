@@ -1,11 +1,12 @@
 INCLUDE "telefang.inc"
 
 SECTION "Title Menu Advice Code", ROMX[$7D14], BANK[$34]
-TitleMenu_ADVICE_SplitNickAndSpeciesNames::
+TitleMenu_ADVICE_SplitNickAndSpeciesNamesBrokenCallsite::
     REPT $B7
     nop
     ENDR
     
+TitleMenu_ADVICE_SplitNickAndSpeciesNames::
     ld hl, W_MainScript_CenteredNameBuffer
     ld bc, $CCB5
     
@@ -85,7 +86,7 @@ TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer::
     cp $E6
     jp z, .useSpeciesName
     
-    call TitleMenu_ADVICE_SplitNickAndSpeciesNames
+    call TitleMenu_ADVICE_SplitNickAndSpeciesNamesBrokenCallsite
     
     pop af
     ret
