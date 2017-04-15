@@ -49,7 +49,7 @@ PauseMenu_CenterPreppedName::
     ld de, W_MainScript_CenteredNameBuffer
     call Banked_StringTable_ADVICE_PadCopyBuffer
     pop de
-    jp $649A
+    jp PauseMenu_DrawCenteredNameBuffer
 
 SECTION "Pause Menu Names Util ADVICE", ROMX[$7F10], BANK[$34]
 PauseMenu_ADVICE_LoadName75::

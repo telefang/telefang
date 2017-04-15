@@ -84,7 +84,7 @@ TitleMenu_NameInputImpl::
     add hl, de
     ld [hl], 0
     
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     call PauseMenu_DrawCenteredNameBufferNoVWF
     
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -121,7 +121,7 @@ TitleMenu_NameInputImpl::
     jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
     jp z, .diacriticIntent
-    jp $66C0
+    jp PauseMenu_PhoneIMEPlayerNameGlyph
     
 ;Cycle to the next IME mode.
 .cycleNextIME ;12519
@@ -153,7 +153,7 @@ TitleMenu_NameInputImpl::
 .confirmIntent ;12539
     ld a, 3
     ld [byte_FFA1], a
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     cp 0
     jr nz, .playerNameConfirmed
     
@@ -174,7 +174,7 @@ TitleMenu_NameInputImpl::
     ld a, 7
     ld [W_PauseMenu_SelectedMenuItem], a
     
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     jp PauseMenu_DrawCenteredNameBufferNoVWF
     
 .playerNameConfirmed
@@ -231,7 +231,7 @@ TitleMenu_NicknameInputImpl::
     add hl, de
     ld [hl], 0
     
-    call $67B7
+    call PauseMenu_PhoneIMESyncDenjuuNickname
     call PauseMenu_DrawCenteredNameBufferNoVWF
     
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -267,7 +267,7 @@ TitleMenu_NicknameInputImpl::
     jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
     jp z, .diacriticIntent
-    jp $672A
+    jp PauseMenu_PhoneIMEDenjuuNicknameGlyph
     
 ;Cycle to the next IME mode.
 .cycleNextIME
@@ -297,13 +297,13 @@ TitleMenu_NicknameInputImpl::
 .confirmIntent
     ld a, 3
     ld [byte_FFA1], a
-    call $67B7
+    call PauseMenu_PhoneIMESyncDenjuuNickname
     cp 0
     jr nz, .playerNameConfirmed
     
     ld a, [$D4A7]
     call $7D8C
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     
     ld d, $C
     jp PauseMenu_DrawCenteredNameBufferNoVWF
