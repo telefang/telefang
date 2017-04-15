@@ -32,6 +32,7 @@ OBJS := components/compression/malias.o \
      components/pausemenu/phoneime_diacritics.o components/pausemenu/phoneime_glyph.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
+     components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
