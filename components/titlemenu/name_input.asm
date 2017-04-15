@@ -91,7 +91,7 @@ TitleMenu_NameInputImpl::
     add hl, de
     ld [hl], 0
     
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     call PauseMenu_DrawCenteredNameBuffer
     
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -160,7 +160,7 @@ TitleMenu_NameInputImpl::
 .confirmIntent ;12539
     ld a, 3
     ld [byte_FFA1], a
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     cp 0
     jr nz, .playerNameConfirmed
     
@@ -175,7 +175,7 @@ TitleMenu_NameInputImpl::
     ld a, 3
     ld [W_PauseMenu_SelectedMenuItem], a
     
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     jp PauseMenu_DrawCenteredNameBuffer
     
 .playerNameConfirmed
@@ -232,7 +232,7 @@ TitleMenu_NicknameInputImpl::
     add hl, de
     ld [hl], 0
     
-    call $67B7
+    call PauseMenu_PhoneIMESyncDenjuuNickname
     call PauseMenu_DrawCenteredNameBuffer
     
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -298,13 +298,13 @@ TitleMenu_NicknameInputImpl::
 .confirmIntent
     ld a, 3
     ld [byte_FFA1], a
-    call $67B7
+    call PauseMenu_PhoneIMESyncDenjuuNickname
     cp 0
     jr nz, .playerNameConfirmed
     
     ld a, [$D4A7]
     call $7D8C
-    call $6794
+    call PauseMenu_PhoneIMESyncPlayerName
     
     ld d, $C
     jp PauseMenu_DrawCenteredNameBuffer

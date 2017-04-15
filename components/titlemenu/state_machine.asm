@@ -42,7 +42,7 @@ TitleMenu_StateClearNameInput::
     ld [W_PauseMenu_NextPhoneIME], a
     call PauseMenu_LoadPhoneIMEGraphics
     call TitleMenu_ClearCharaName
-    call $649A
+    call PauseMenu_DrawCenteredNameBuffer
     ld bc, $104
     ld e, $35
     call PauseMenu_LoadMap0
@@ -192,10 +192,10 @@ TitleMenu_StateInitNickname::
     
     ld a, [$D4A7]
     call $7D8C
-    call $67B7
+    call PauseMenu_PhoneIMESyncDenjuuNickname
     
     ld d, $C
-    call $649A
+    call PauseMenu_DrawCenteredNameBuffer
     call PauseMenu_LoadPhoneIMETilemap
     
     ld a, 4

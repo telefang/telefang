@@ -49,4 +49,4 @@ PauseMenu_CenterPreppedName::
     ld de, W_MainScript_CenteredNameBuffer
     call Banked_StringTable_PadCopyBuffer
     pop de
-    jp $649A
+    jp PauseMenu_DrawCenteredNameBuffer
