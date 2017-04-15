@@ -6,7 +6,7 @@ W_SaveClock_NicknameStaging:: ds M_SaveClock_DenjuuNicknameStagingSize
 
 SECTION "Save/Clock Load Denjuu Nickname", ROMX[$4E12], BANK[$29]
 SaveClock_LoadDenjuuNickname::
-	ld hl, -SaveClock_StatisticsArray & $FFFF
+	ld hl, -S_SaveClock_StatisticsArray & $FFFF
 	add hl, de
 	srl h
 	rr l
@@ -17,13 +17,13 @@ SaveClock_LoadDenjuuNickname::
 	srl h
 	rr l
 	add hl, bc ;HL = the original denjuu index * 6
-	ld de, SaveClock_NicknameArray
+	ld de, S_SaveClock_NicknameArray
 	add hl, de
 	
 	;Manual SRAM unlock
 	ld a, $A
 	ld [REG_MBC3_SRAMENABLE], a
-	ld a, 2
+	ld a, BANK(S_SaveClock_NicknameArray)
 	ld [REG_MBC3_SRAMBANK], a
 	
 	ld de, W_SaveClock_NicknameStaging
