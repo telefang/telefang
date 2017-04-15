@@ -18,6 +18,7 @@ W_PauseMenu_CurrentPhoneIME:: ds 1
 SECTION "Pause Menu IME WRAM4", WRAM0[$CB65]
 W_MelodyEdit_State::
 W_PauseMenu_PhoneIMEButton:: ds 1
+W_PauseMenu_PhoneIMELastPressedButton:: ds 1
 
 SECTION "Pause menu IME stuff", ROMX[$665A], BANK[$4]
 PauseMenu_LoadPhoneIMETilemap::

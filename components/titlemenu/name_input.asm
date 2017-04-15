@@ -68,7 +68,7 @@ TitleMenu_NameInputImpl::
     
 .backspaceProcessing
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
@@ -199,7 +199,7 @@ TitleMenu_NameInputImpl::
 .cursorChange
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
 
@@ -215,7 +215,7 @@ TitleMenu_NicknameInputImpl::
     
 .backspaceProcessing
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
@@ -302,7 +302,7 @@ TitleMenu_NicknameInputImpl::
     jr nz, .playerNameConfirmed
     
     ld a, [$D4A7]
-    call $7D8C
+    call TitleMenu_LoadDenjuuNicknameIntoBuffer
     call PauseMenu_PhoneIMESyncPlayerName
     
     ld d, $C
@@ -323,7 +323,7 @@ TitleMenu_NicknameInputImpl::
     ld [W_PauseMenu_SelectedMenuItem], a
     
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
@@ -338,7 +338,7 @@ TitleMenu_NicknameInputImpl::
     ld [W_PauseMenu_SelectedMenuItem], a
     
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a

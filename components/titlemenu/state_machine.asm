@@ -32,7 +32,7 @@ TitleMenu_StateClearNameInput::
     ld a, M_PhoneMenu_IMELatinUpper
     ld [W_PauseMenu_CurrentPhoneIME], a
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     call TitleMenu_PositionNameCursor
     ld a, 2
     ld [W_PauseMenu_SelectedCursorType], a
@@ -116,7 +116,7 @@ TitleMenu_StateInitNickname::
     ld [W_PauseMenu_PhoneIMEPressCount], a
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, $FF
-    ld [$CB66], a
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
     call TitleMenu_PositionNameCursor
     
     ld a, 2
@@ -191,7 +191,7 @@ TitleMenu_StateInitNickname::
     call TitleMenu_ClearCharaName
     
     ld a, [$D4A7]
-    call $7D8C
+    call TitleMenu_LoadDenjuuNicknameIntoBuffer
     call PauseMenu_PhoneIMESyncDenjuuNickname
     
     ld d, $C
