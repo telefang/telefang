@@ -303,7 +303,7 @@ TitleMenu_NicknameInputImpl::
     jr nz, .playerNameConfirmed
     
     ld a, [$D4A7]
-    call $7D8C
+    call TitleMenu_LoadDenjuuNicknameIntoBuffer
     call PauseMenu_PhoneIMESyncPlayerName
     
     ld d, $C

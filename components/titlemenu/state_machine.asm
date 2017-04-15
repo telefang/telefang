@@ -191,7 +191,7 @@ TitleMenu_StateInitNickname::
     call TitleMenu_ClearCharaName
     
     ld a, [$D4A7]
-    call $7D8C
+    call TitleMenu_LoadDenjuuNicknameIntoBuffer
     call PauseMenu_PhoneIMESyncDenjuuNickname
     
     ld d, $C
