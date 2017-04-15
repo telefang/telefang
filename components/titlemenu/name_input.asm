@@ -125,9 +125,9 @@ TitleMenu_NameInputImpl::
     cp M_PhoneMenu_ButtonConfirm
     jp z, .confirmIntent
     cp M_PhoneMenu_ButtonStar
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     jp $66C0
     
 ;Cycle to the next IME mode.
@@ -181,8 +181,8 @@ TitleMenu_NameInputImpl::
 .playerNameConfirmed
     jp System_ScheduleNextSubState
     
-.specialCharacterIntent
-    jp $6673
+.diacriticIntent
+    jp PauseMenu_PhoneIMEPlayerNameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -265,9 +265,9 @@ TitleMenu_NicknameInputImpl::
     cp M_PhoneMenu_ButtonConfirm
     jp z, .confirmIntent
     cp M_PhoneMenu_ButtonStar
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     jp $672A
     
 ;Cycle to the next IME mode.
@@ -312,8 +312,8 @@ TitleMenu_NicknameInputImpl::
 .playerNameConfirmed
     jp System_ScheduleNextSubState
     
-.specialCharacterIntent
-    jp $668A
+.diacriticIntent
+    jp PauseMenu_PhoneIMEDenjuuNicknameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]

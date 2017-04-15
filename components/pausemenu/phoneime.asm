@@ -34,6 +34,34 @@ PauseMenu_LoadPhoneIMETilemap::
     ld bc, $111
     ld a, 0
     jp Banked_RLEDecompressTMAP0
+    
+PauseMenu_PhoneIMEPlayerNameDiacritic::
+    ld hl, W_TitleMenu_NameBuffer
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld e, a
+    ld d, 0
+    add hl, de
+    ld a, [hl]
+    push hl
+    call PauseMenu_PhoneIMEApplyDiacritic
+    pop hl
+    ld [hl], a
+    call PauseMenu_PhoneIMESyncPlayerName
+    jp PauseMenu_DrawCenteredNameBuffer
+    
+PauseMenu_PhoneIMEDenjuuNicknameDiacritic::
+    ld hl, W_TitleMenu_NameBuffer
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld e, a
+    ld d, 0
+    add hl, de
+    ld a, [hl]
+    push hl
+    call PauseMenu_PhoneIMEApplyDiacritic
+    pop hl
+    ld [hl], a
+    call PauseMenu_PhoneIMESyncDenjuuNickname
+    jp PauseMenu_DrawCenteredNameBuffer
 
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PauseMenu_LoadPhoneIMEGraphics::
