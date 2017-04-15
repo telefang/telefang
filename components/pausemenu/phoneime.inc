@@ -1,6 +1,6 @@
-M_PhoneMenu_IMENumerals EQU 0
-M_PhoneMenu_IMELatinUpper EQU 1
-M_PhoneMenu_IMELatinLower EQU 2
+M_PhoneMenu_IMELatinUpper EQU 0
+M_PhoneMenu_IMELatinLower EQU 1
+M_PhoneMenu_IMENumerals EQU 2
 M_PhoneMenu_IMEEND EQU 3
 
 M_PhoneMenu_ButtonNote EQU 0

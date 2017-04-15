@@ -29,8 +29,8 @@ TitleMenu_StateClearNameInput::
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
     ld [W_PauseMenu_SelectedMenuItem], a
-    ld a, M_PhoneMenu_IMENumerals
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld a, M_PhoneMenu_IMELatinUpper
+    ld [W_PauseMenu_CurrentPhoneIME], a
     ld a, $FF
     ld [$CB66], a
     call TitleMenu_PositionNameCursor
@@ -38,8 +38,8 @@ TitleMenu_StateClearNameInput::
     ld [W_PauseMenu_SelectedCursorType], a
     ld de, $C0C0
     call Banked_PauseMenu_InitializeCursor
-    ld a, M_PhoneMenu_IMELatinUpper
-    ld [W_PauseMenu_PhoneIME], a
+    ld a, M_PhoneMenu_IMELatinLower
+    ld [W_PauseMenu_NextPhoneIME], a
     call PauseMenu_LoadPhoneIMEGraphics
     call TitleMenu_ClearCharaName
     call $6492
@@ -124,12 +124,12 @@ TitleMenu_StateInitNickname::
     ld de, $C0C0
     call Banked_PauseMenu_InitializeCursor
     
-    ld a, M_PhoneMenu_IMELatinUpper
-    ld [W_PauseMenu_PhoneIME], a
+    ld a, M_PhoneMenu_IMELatinLower
+    ld [W_PauseMenu_NextPhoneIME], a
     call PauseMenu_LoadPhoneIMEGraphics
     
-    ld a, M_PhoneMenu_IMENumerals
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld a, M_PhoneMenu_IMELatinUpper
+    ld [W_PauseMenu_CurrentPhoneIME], a
     
     call PauseMenu_CGBLoadPalettes
     xor a

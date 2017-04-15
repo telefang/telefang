@@ -11,9 +11,9 @@ SECTION "Pause Menu IME WRAM2", WRAM0[$CB3E]
 W_PauseMenu_PhoneIMEPressCount:: ds 1
 
 SECTION "Pause Menu IME WRAM3", WRAM0[$CB28]
-W_PauseMenu_PhoneIME:: ds 1
-    ds 1 ; ???
 W_PauseMenu_NextPhoneIME:: ds 1
+    ds 1 ; ???
+W_PauseMenu_CurrentPhoneIME:: ds 1
 
 SECTION "Pause Menu IME WRAM4", WRAM0[$CB65]
 W_MelodyEdit_State::
@@ -22,7 +22,7 @@ W_PauseMenu_PhoneIMEButton:: ds 1
 SECTION "Pause menu IME stuff", ROMX[$665A], BANK[$4]
 PauseMenu_LoadPhoneIMETilemap::
     ld e, $15
-    ld a, [W_PauseMenu_NextPhoneIME]
+    ld a, [W_PauseMenu_CurrentPhoneIME]
     cp 0
     jr z, .loadTmap
     ld e, $1B
@@ -34,6 +34,34 @@ PauseMenu_LoadPhoneIMETilemap::
     ld bc, $111
     ld a, 0
     jp Banked_RLEDecompressTMAP0
+    
+PauseMenu_PhoneIMEPlayerNameDiacritic::
+    ld hl, W_TitleMenu_NameBuffer
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld e, a
+    ld d, 0
+    add hl, de
+    ld a, [hl]
+    push hl
+    call PauseMenu_PhoneIMEApplyDiacritic
+    pop hl
+    ld [hl], a
+    call PauseMenu_PhoneIMESyncPlayerName
+    jp PauseMenu_DrawCenteredNameBuffer
+    
+PauseMenu_PhoneIMEDenjuuNicknameDiacritic::
+    ld hl, W_TitleMenu_NameBuffer
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld e, a
+    ld d, 0
+    add hl, de
+    ld a, [hl]
+    push hl
+    call PauseMenu_PhoneIMEApplyDiacritic
+    pop hl
+    ld [hl], a
+    call PauseMenu_PhoneIMESyncDenjuuNickname
+    jp PauseMenu_DrawCenteredNameBuffer
 
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PauseMenu_LoadPhoneIMEGraphics::
@@ -50,7 +78,7 @@ PauseMenu_LoadPhoneIMEGraphics::
     ld h, [hl]
     ld l, a
     
-    ld a, [W_PauseMenu_PhoneIME]
+    ld a, [W_PauseMenu_NextPhoneIME]
     call PauseMenu_IndexPtrTable
     ld a, [hli]
     ld h, [hl]

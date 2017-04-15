@@ -118,9 +118,9 @@ TitleMenu_NameInputImpl::
     cp M_PhoneMenu_ButtonConfirm
     jp z, .confirmIntent
     cp M_PhoneMenu_ButtonStar
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     jp $66C0
     
 ;Cycle to the next IME mode.
@@ -128,14 +128,14 @@ TitleMenu_NameInputImpl::
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
     
-    ld a, [W_PauseMenu_NextPhoneIME]
+    ld a, [W_PauseMenu_CurrentPhoneIME]
     inc a
     cp M_PhoneMenu_IMEEND
     jr nz, .storeNextIME
     
     xor a
 .storeNextIME
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
     
     add a, 1
     cp M_PhoneMenu_IMEEND
@@ -143,7 +143,7 @@ TitleMenu_NameInputImpl::
     
     xor a
 .storePhoneIME
-    ld [W_PauseMenu_PhoneIME], a
+    ld [W_PauseMenu_NextPhoneIME], a
     
     call PauseMenu_LoadPhoneIMEGraphics
     jp PauseMenu_LoadPhoneIMETilemap
@@ -180,8 +180,8 @@ TitleMenu_NameInputImpl::
 .playerNameConfirmed
     jp System_ScheduleNextSubState
     
-.specialCharacterIntent
-    jp $6673
+.diacriticIntent
+    jp PauseMenu_PhoneIMEPlayerNameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -264,9 +264,9 @@ TitleMenu_NicknameInputImpl::
     cp M_PhoneMenu_ButtonConfirm
     jp z, .confirmIntent
     cp M_PhoneMenu_ButtonStar
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
-    jp z, .specialCharacterIntent
+    jp z, .diacriticIntent
     jp $672A
     
 ;Cycle to the next IME mode.
@@ -274,14 +274,14 @@ TitleMenu_NicknameInputImpl::
     xor a
     ld [W_PauseMenu_PhoneIMEPressCount], a
     
-    ld a, [W_PauseMenu_NextPhoneIME]
+    ld a, [W_PauseMenu_CurrentPhoneIME]
     inc a
     cp M_PhoneMenu_IMEEND
     jr nz, .storeNextIME
     
     xor a
 .storeNextIME
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
     
     add a, 1
     cp M_PhoneMenu_IMEEND
@@ -289,7 +289,7 @@ TitleMenu_NicknameInputImpl::
     
     xor a
 .storePhoneIME
-    ld [W_PauseMenu_PhoneIME], a
+    ld [W_PauseMenu_NextPhoneIME], a
     
     call PauseMenu_LoadPhoneIMEGraphics
     jp PauseMenu_LoadPhoneIMETilemap
@@ -311,8 +311,8 @@ TitleMenu_NicknameInputImpl::
 .playerNameConfirmed
     jp System_ScheduleNextSubState
     
-.specialCharacterIntent
-    jp $668A
+.diacriticIntent
+    jp PauseMenu_PhoneIMEDenjuuNicknameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
