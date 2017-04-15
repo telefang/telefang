@@ -29,7 +29,7 @@ OBJS := components/compression/malias.o \
      components/pausemenu/tilemaps.o components/pausemenu/utility.o \
      components/pausemenu/palette.o components/pausemenu/drawfuncs.o \
      components/pausemenu/phoneime_mapping.o components/pausemenu/phoneime_sync.o \
-     components/pausemenu/phoneime_diacritics.o \
+     components/pausemenu/phoneime_diacritics.o components/pausemenu/phoneime_glyph.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \

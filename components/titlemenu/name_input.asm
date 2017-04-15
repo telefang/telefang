@@ -128,7 +128,7 @@ TitleMenu_NameInputImpl::
     jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
     jp z, .diacriticIntent
-    jp $66C0
+    jp PauseMenu_PhoneIMEPlayerNameGlyph
     
 ;Cycle to the next IME mode.
 .cycleNextIME ;12519
@@ -268,7 +268,7 @@ TitleMenu_NicknameInputImpl::
     jp z, .diacriticIntent
     cp M_PhoneMenu_ButtonPound
     jp z, .diacriticIntent
-    jp $672A
+    jp PauseMenu_PhoneIMEDenjuuNicknameGlyph
     
 ;Cycle to the next IME mode.
 .cycleNextIME
