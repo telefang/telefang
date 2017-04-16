@@ -245,12 +245,12 @@ Banked_Status_DrawPhoneNumber::
     rst $18
     ret
 
-Banked_SaveClock_LoadDenjuuNickname::
+Banked_SaveClock_LoadDenjuuNicknameByStatPtr::
     ld a, [W_CurrentBank]
     push af
-    ld a, BANK(SaveClock_LoadDenjuuNickname)
+    ld a, BANK(SaveClock_LoadDenjuuNicknameByStatPtr)
     rst $10
-    call SaveClock_LoadDenjuuNickname
+    call SaveClock_LoadDenjuuNicknameByStatPtr
     pop af
     rst $10
     ret

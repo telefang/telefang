@@ -36,7 +36,7 @@ Status_DrawDenjuuNickname::
    call Battle_IndexStatisticsArray
    push hl
    pop de
-   call Banked_SaveClock_LoadDenjuuNickname
+   call Banked_SaveClock_LoadDenjuuNicknameByStatPtr
    call SaveClock_EnterSRAM2
    call Status_CopyLoadedDenjuuNickname
    call SaveClock_ExitSRAM
