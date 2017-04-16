@@ -254,6 +254,14 @@ Banked_SaveClock_LoadDenjuuNicknameByStatPtr::
     pop af
     rst $10
     ret
+
+SECTION "Banked Call Helpers 67", ROM0[$069C]
+Banked_SaveClock_LoadDenjuuNicknameByIndex::
+    ld a, BANK(SaveClock_LoadDenjuuNicknameByIndex)
+    rst $10
+    call SaveClock_LoadDenjuuNicknameByIndex
+    rst $18
+    ret
     
 SECTION "Banked Call Helpers 3", ROM0[$2FC7]
 Banked_MainScript_DrawLetter::
