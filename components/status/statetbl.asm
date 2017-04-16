@@ -9,7 +9,8 @@ W_Status_UseDenjuuNickname:: ds 1
 SECTION "Status Screen State Machine Vars 3", WRAMX[$D4B0], BANK[1]
 W_Status_NumDuplicateDenjuu: ds 1
 
-SECTION "Some HRAM thing", HRAM[$FFA1]
+SECTION "Some HRAM thing", HRAM[$FFA0]
+byte_FFA0:: ds 1
 byte_FFA1:: ds 1
 
 SECTION "Status Screen Home Utils", ROM0[$3CFD]
