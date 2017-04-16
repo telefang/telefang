@@ -13,7 +13,7 @@ TitleMenu_StateTable
     dw $413B, $41EC, $41F7, $4205, $4216, $4221, $4232, $4265 ;0F
     dw $428A, $42AA, $42B3, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, $4339, $4346 ;17
     dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E ;1F
-    dw TitleMenu_StateInitNickname, $4546, $4558, $456A, $457D ;24
+    dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
 
 SECTION "Title Menu State Machine - Name Input", ROMX[$42CD], BANK[$4]
 ; State 03 13
@@ -200,4 +200,38 @@ TitleMenu_StateInitNickname::
     
     ld a, 4
     call Banked_LCDC_SetupPalswapAnimation
+    jp System_ScheduleNextSubState
+    
+;State 03 21
+TitleMenu_StateFadeNickname::
+    ld a, 0
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    
+    ld a, $32
+    call $15F5
+    ld [byte_FFA0], a
+    
+    jp System_ScheduleNextSubState
+
+;State 03 22
+TitleMenu_StateNickname::
+    ld de, $C0C0
+    call Banked_PauseMenu_IterateCursorAnimation
+    ld de, $C120
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    call TitleMenu_PositionNicknameCursor
+    jp TitleMenu_NicknameInputImpl
+    
+;State 03 23
+TitleMenu_StateSaveNickname::
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, $10
+    ld [$CF96], a
+    ld a, [$D4A7]
+    
+    call TitleMenu_SaveDenjuuNicknameFromBuffer
     jp System_ScheduleNextSubState
