@@ -3,6 +3,7 @@ INCLUDE "telefang.inc"
 ;omfg why
 IMPORT TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer
 IMPORT S_SaveClock_NicknameArray
+IMPORT TitleMenu_ADVICE_SplitNickAndSpeciesNames
 
 SECTION "Title Menu Nickname Loader", ROMX[$7D8C], BANK[$4]
 TitleMenu_LoadDenjuuNicknameIntoBuffer::
@@ -71,8 +72,12 @@ TitleMenu_SaveDenjuuNicknameFromBuffer::
     ld b, BANK(S_SaveClock_NicknameArray)
     call TitleMenu_EnterSRAM
     
-    ld hl, W_MainScript_CenteredNameBuffer
-    ld bc, M_SaveClock_DenjuuNicknameSize
-    call memcpy
+    push af
+    ld a, BANK(TitleMenu_ADVICE_SplitNickAndSpeciesNames)
+    call Banked_TitleMenu_ADVICE_SplitNickAndSpeciesNames
+    pop af
+    
+    nop
+    nop
     
     jp TitleMenu_ExitSRAM
