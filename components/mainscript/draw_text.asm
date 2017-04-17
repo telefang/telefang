@@ -118,7 +118,7 @@ MainScript_ADVICE_DrawLetter:
 	ld e, l
 	push af
 	ld a, b
-	call $7C3F ;TODO: Disassemble mystery function
+	call MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle
 	pop af
 	push hl
 	push af
@@ -127,7 +127,7 @@ MainScript_ADVICE_DrawLetter:
 	ld hl, $10
 	add hl, de
 	ld a, c
-	call $7C3F
+	call MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle
 	
 .skipSecondWhatevercall
 	ei
@@ -202,3 +202,71 @@ MainScript_ADVICE_StoreCurrentLetter:
 	push hl
 	ld b, 0
 	jp MainScript_DrawLetter.COMEFROM_StoreCurrentLetter
+
+SECTION "Main Script Text Drawing Advice 2", ROMX[$7C3F], BANK[$B]
+MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle::
+	push bc
+	ld b, a
+	ld a, [W_MainScript_TextStyle]
+	
+	bit 0, a
+	jr nz, .bit0One
+	
+.bit0Zero
+	bit 1, a
+	jr z, .mode0
+	jr nz, .mode2
+	
+.bit0One
+	bit 1, a
+	jr z, .mode1
+	
+.mode3
+	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	and 2
+	jr nz, .mode3
+	
+	ld a, $FF
+	ld [hli], a
+	ld a, b
+	ld [hli], a
+	jr .end
+	
+.mode0
+	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	and 2
+	jr nz, .mode0
+	
+	ld a, b
+	ld [hli], a
+	ld [hli], a
+	jr .end
+	
+.mode1
+	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	and 2
+	jr nz, .mode1
+	
+	ld a, b
+	ld [hli], a
+	ld a, $FF
+	ld [hli], a
+	jr .end
+	
+.mode2
+	ld a, b
+	cpl
+	ld b, a
+	
+.mode2Loop
+	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	and 2
+	jr nz, .mode2Loop
+	
+	ld a, b
+	ld [hli], a
+	ld [hli], a
+	
+.end
+	pop bc
+	ret
