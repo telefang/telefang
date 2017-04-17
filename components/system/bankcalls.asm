@@ -245,14 +245,22 @@ Banked_Status_DrawPhoneNumber::
     rst $18
     ret
 
-Banked_SaveClock_LoadDenjuuNickname::
+Banked_SaveClock_LoadDenjuuNicknameByStatPtr::
     ld a, [W_CurrentBank]
     push af
-    ld a, BANK(SaveClock_LoadDenjuuNickname)
+    ld a, BANK(SaveClock_LoadDenjuuNicknameByStatPtr)
     rst $10
-    call SaveClock_LoadDenjuuNickname
+    call SaveClock_LoadDenjuuNicknameByStatPtr
     pop af
     rst $10
+    ret
+
+SECTION "Banked Call Helpers 67", ROM0[$069C]
+Banked_SaveClock_LoadDenjuuNicknameByIndex::
+    ld a, BANK(SaveClock_LoadDenjuuNicknameByIndex)
+    rst $10
+    call SaveClock_LoadDenjuuNicknameByIndex
+    rst $18
     ret
     
 SECTION "Banked Call Helpers 3", ROM0[$2FC7]

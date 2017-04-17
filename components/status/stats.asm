@@ -9,7 +9,7 @@ W_Status_SelectedDenjuuPersonality:: ds 1
 
 SECTION "Status Screen Stat Loader", ROMX[$4FE8], BANK[$02]
 Status_LoadContactInfo::
-    ld hl, $D000 ;Contacts array (maps contact index to denjuu instance index)
+    ld hl, W_PauseMenu_ContactsArray
     ld d, 0
     ld a, [W_Status_SelectedContactIndex]
     ld e, a

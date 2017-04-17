@@ -3,10 +3,41 @@ INCLUDE "telefang.inc"
 SECTION "Save/Clock Nickname Staging Area Extended", WRAM0[$CCA3]
 W_SaveClock_NicknameStaging:: ds M_SaveClock_DenjuuNicknameStagingSize
 
-SECTION "Save/Clock Load Denjuu Nickname", ROMX[$4E12], BANK[$29]
-SaveClock_LoadDenjuuNickname::
+SECTION "Save/Clock Load Denjuu Nickname", ROMX[$4E02], BANK[$29]
+;Alternate LoadDenjuuNickname head.
+SaveClock_LoadDenjuuNicknameByIndex::
+	ld h, 0
+	ld l, c
+	sla l
+	rl h
+	
+	ld b, h
+	ld c, l
+	sla l
+	rl h
+	
+	add hl, bc
+	jr SaveClock_LoadDenjuuNicknameByStatPtr.indexNicknameArray
+	
+SaveClock_LoadDenjuuNicknameByStatPtr::
 	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNickname)
 	call Banked_SaveClock_ADVICE_LoadDenjuuNickname
+	ret
+   
+   ;I think these are leftovers...? Found at A4E18, after the first pointcut.
+   ;TODO: WHAT IS THIS
+   cp $65
+   jp c, $4DF0
+   ld a, $64
+   jp $4DF0
+   
+   nop
+   nop
+   nop
+   
+.indexNicknameArray
+	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNickname)
+	call Banked_SaveClock_ADVICE_LoadDenjuuNickname_indexNicknameArray
 	ret
 
 SECTION "Save/Clock ADVICE'd Load Denjuu Nickname", ROMX[$7EAD], BANK[$34]
@@ -26,6 +57,7 @@ SaveClock_ADVICE_LoadDenjuuNickname::
 	ld de, S_SaveClock_NicknameArray
 	add hl, de
 	
+.indexNicknameArray
 	;Manual SRAM unlock
 	ld a, $A
 	ld [REG_MBC3_SRAMENABLE], a
