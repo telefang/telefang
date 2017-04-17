@@ -39,6 +39,10 @@ SaveClock_LoadDenjuuNicknameByStatPtr::
 	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr)
 	call Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
 	ret
+   
+   REPT $1C
+   nop
+   ENDR
 
 SECTION "Save/Clock ADVICE'd Load Denjuu Nickname", ROMX[$7EAD], BANK[$34]
 SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr::
