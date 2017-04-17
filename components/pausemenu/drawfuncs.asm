@@ -24,14 +24,14 @@ PauseMenu_CallsMenuDrawDenjuuNickname::
     
     ld hl, W_SaveClock_NicknameStaging
     ld de, W_MainScript_CenteredNameBuffer
-    call Banked_StringTable_PadCopyBuffer
+    call Banked_StringTable_ADVICE_PadCopyBuffer
     
     ld hl, $9400
     ld b, 6
     call PauseMenu_ClearInputTiles
     
-    ld de, (W_MainScript_CenteredNameBuffer + 1)
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld de, W_MainScript_CenteredNameBuffer
+    ld b, M_StringTable_Load8AreaSize
     ld hl, $9400
     jp Banked_MainScript_DrawStatusText
 
@@ -43,13 +43,13 @@ PauseMenu_ContactsMenuDrawDenjuuNickname::
     
     ld hl, W_SaveClock_NicknameStaging
     ld de, W_MainScript_CenteredNameBuffer
-    call Banked_StringTable_PadCopyBuffer
+    call Banked_StringTable_ADVICE_PadCopyBuffer
     
     ld hl, $9780
     ld b, 6
     call PauseMenu_ClearScreenTiles
     
-    ld de, (W_MainScript_CenteredNameBuffer + 1)
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld de, W_MainScript_CenteredNameBuffer
+    ld b, M_StringTable_Load8AreaSize
     ld hl, $9780
     jp Banked_MainScript_DrawStatusText

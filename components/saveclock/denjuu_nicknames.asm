@@ -53,11 +53,12 @@ SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr::
 	srl h
 	rr l
 	add hl, bc ;HL = the original denjuu index * 6
+	
+SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
    push hl
 	ld de, S_SaveClock_NicknameArray
 	add hl, de
-	
-SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
+   
 	;Manual SRAM unlock
 	ld a, $A
 	ld [REG_MBC3_SRAMENABLE], a
