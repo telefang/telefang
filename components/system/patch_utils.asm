@@ -41,8 +41,9 @@ PatchUtils_LoadDenjuuName_Bankswitch::
 	db 0,0,0,0
 	
 ;BF
+Banked_SaveClock_ADVICE_LoadDenjuuNickname_indexNicknameArray
 	rst $10
-	call $7EC0
+	call SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
 	rst $10
 	ret
 	
