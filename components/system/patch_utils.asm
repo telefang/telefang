@@ -1,3 +1,5 @@
+IMPORT SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
+
 SECTION "Patch Utilities", ROM0[$0063]
 PatchUtils_ResetVector: jp PatchUtils_ResetGame
 	db "Denjuu" ;not sure what this is
@@ -41,9 +43,9 @@ PatchUtils_LoadDenjuuName_Bankswitch::
 	db 0,0,0,0
 	
 ;BF
-Banked_SaveClock_ADVICE_LoadDenjuuNickname_indexNicknameArray
+Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
 	rst $10
-	call SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
+	call SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
 	rst $10
 	ret
 	
@@ -62,9 +64,9 @@ Banked_TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer::
 	ret
 	
 ;D1
-Banked_SaveClock_ADVICE_LoadDenjuuNickname::
+Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr::
 	rst $10
-	call SaveClock_ADVICE_LoadDenjuuNickname
+	call SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr
 	rst $10
 	ret
 

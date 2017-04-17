@@ -20,8 +20,8 @@ SaveClock_LoadDenjuuNicknameByIndex::
 	jr SaveClock_LoadDenjuuNicknameByStatPtr.indexNicknameArray
 	
 SaveClock_LoadDenjuuNicknameByStatPtr::
-	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNickname)
-	call Banked_SaveClock_ADVICE_LoadDenjuuNickname
+	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr)
+	call Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr
 	ret
    
    ;I think these are leftovers...? Found at A4E18, after the first pointcut.
@@ -36,12 +36,12 @@ SaveClock_LoadDenjuuNicknameByStatPtr::
    nop
    
 .indexNicknameArray
-	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNickname)
-	call Banked_SaveClock_ADVICE_LoadDenjuuNickname_indexNicknameArray
+	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr)
+	call Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
 	ret
 
 SECTION "Save/Clock ADVICE'd Load Denjuu Nickname", ROMX[$7EAD], BANK[$34]
-SaveClock_ADVICE_LoadDenjuuNickname::
+SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr::
 	ld hl, -S_SaveClock_StatisticsArray & $FFFF
 	add hl, de
 	srl h
@@ -57,7 +57,7 @@ SaveClock_ADVICE_LoadDenjuuNickname::
 	ld de, S_SaveClock_NicknameArray
 	add hl, de
 	
-.indexNicknameArray
+SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
 	;Manual SRAM unlock
 	ld a, $A
 	ld [REG_MBC3_SRAMENABLE], a
@@ -110,6 +110,6 @@ SaveClock_ADVICE_LoadDenjuuNickname::
 	ld [REG_MBC3_SRAMENABLE], a
 	
 	pop af
-	ld a, BANK(SaveClock_LoadDenjuuNickname)
+	ld a, BANK(SaveClock_LoadDenjuuNicknameByStatPtr)
 	
 	ret
