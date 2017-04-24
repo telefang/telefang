@@ -1,15 +1,9 @@
 INCLUDE "telefang.inc"
 
-M_Status_StringStaging_Size EQU $11
-
-SECTION "Status String Staging Area", WRAMX[$D6A0], BANK[1]
-;Also used by a lot of battle messages
-W_Status_StringStaging:: ds M_Status_StringStaging_Size
-
 SECTION "Status Screen Nickname Drawing 2", ROM0[$3D7F]
 ;TODO: Is this only for denjuu nicknames?
 Status_CopyLoadedDenjuuNickname::
-	ld hl, W_Status_StringStaging
+	ld hl, W_MainScript_MessageArg1
 	ld a, 9 ;TODO: Clear entire staging area
 	push hl
 	
@@ -38,7 +32,7 @@ Status_DrawDenjuuNickname::
    call SaveClock_EnterSRAM2
    call Status_CopyLoadedDenjuuNickname
    call SaveClock_ExitSRAM
-   ld hl, W_Status_StringStaging
+   ld hl, W_MainScript_MessageArg1
    ld de, W_MainScript_CenteredNameBuffer
    call Banked_StringTable_ADVICE_PadCopyBuffer
    ld de, W_MainScript_CenteredNameBuffer

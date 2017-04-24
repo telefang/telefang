@@ -159,7 +159,7 @@ LCDCIRQ::
 	ld a, [W_HBlank_SCYTableID]
 	or a
 	jr nz, .copyToSCY
-	ld hl, $C0A0
+	ld hl, W_MetaSpriteConfig1
 
 .copyToSCY
 	ld a, [W_HBlank_SCYIndexAndMode]
