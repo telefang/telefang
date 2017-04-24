@@ -40,6 +40,7 @@ denjuu/personalities 1D6130 table 13 16
 denjuu/statuses 1D6270 table 18 8
 status/ui_strings_1 8BA7 table 1 10
 status/ui_strings_2 8BB1 table 1 6
+battle/ui_strings 1450D table 4 8
 
 #TODO: Remove this data from the ROM
 denjuu/personalities_old 1D7928 table 12 8
