@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Battle Message Argument Memory", WRAMX[$D420], BANK[$1]
+SECTION "Battle Message Argument Memory", WRAMX[$D645], BANK[$1]
 W_Battle_TableStringStaging:: ds M_StringTable_Load8AreaSize
 
 SECTION "Battle Message Argument Memory 2", WRAMX[$D45A], BANK[$1]
