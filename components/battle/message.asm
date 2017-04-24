@@ -63,3 +63,21 @@ Battle_LoadDenjuuSpeciesAsMessageArg1::
     ld bc, W_StringTable_StagingLoc
     call Battle_CopyTableString
     jp Battle_SetMessageArg1Denjuu
+
+SECTION "Battle Message Argument Loaders 2", ROMX[$42F9], BANK[$5]
+Battle_DrawSpecifiedDenjuuNickname::
+    push hl
+    push af
+    ld a, 8
+    call MainScript_DrawEmptySpaces
+    call SaveClock_EnterSRAM2
+    pop af
+    ld hl, S_SaveClock_StatisticsArray
+    call Battle_IndexStatisticsArray
+    push hl
+    pop de
+    call Banked_SaveClock_LoadDenjuuNicknameByStatPtr
+    pop hl
+    ld de, W_SaveClock_NicknameStaging
+    ld b, M_SaveClock_DenjuuNicknameSize
+    jp Banked_MainScript_DrawStatusText
