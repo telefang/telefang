@@ -18,6 +18,6 @@ Battle_SetAttackNameArg2::
     ld [W_Battle_LastAttackID], a
     call StringTable_LoadName75
     
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Battle_CopyTableString
     jp Battle_SetMessageArg2Denjuu
