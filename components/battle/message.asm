@@ -59,7 +59,7 @@ SECTION "Battle Message Argument Loaders", ROMX[$42CD], BANK[$5]
 Battle_LoadDenjuuSpeciesAsMessageArg1::
     ld [W_StringTable_ROMTblIndex], a
     ld hl, StringTable_denjuu_species
-    call StringTable_LoadName75
-    ld bc, W_StringTable_StagingLoc
+    call Banked_PauseMenu_ADVICE_LoadName75
+    ld bc, W_StringTable_StagingLocDbl
     call Battle_CopyTableString
     jp Battle_SetMessageArg1Denjuu
