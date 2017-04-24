@@ -37,13 +37,13 @@ OBJS := components/compression/malias.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
-     components/mainscript/canned_initializer.o \
+     components/mainscript/canned_initializer.o components/mainscript/message_args.o\
 	  components/map/locations.o \
 	  components/sound/samples.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o components/battle/species.o \
-     components/battle/denjuu_portrait.o \
+     components/battle/denjuu_portrait.o components/battle/message.o \
 	  components/status/nickname.o components/status/stats.o \
      components/status/statetbl.o components/status/icons.o \
      components/status/tabs.o components/status/interface.o \
