@@ -54,3 +54,12 @@ Battle_CopyTableString::
     
     ld hl, W_Battle_TableStringStaging
     ret
+
+SECTION "Battle Message Argument Loaders", ROMX[$42CD], BANK[$5]
+Battle_LoadDenjuuSpeciesAsMessageArg1::
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, StringTable_denjuu_species
+    call StringTable_LoadName75
+    ld bc, W_StringTable_StagingLoc
+    call Battle_CopyTableString
+    jp Battle_SetMessageArg1Denjuu
