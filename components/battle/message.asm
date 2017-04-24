@@ -79,5 +79,5 @@ Battle_DrawSpecifiedDenjuuNickname::
     call Banked_SaveClock_LoadDenjuuNicknameByStatPtr
     pop hl
     ld de, W_SaveClock_NicknameStaging
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld b, M_StringTable_Load8AreaSize
     jp Banked_MainScript_DrawStatusText
