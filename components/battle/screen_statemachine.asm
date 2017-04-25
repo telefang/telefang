@@ -1,3 +1,6 @@
+SECTION "Battle SubSubState", WRAMX[$D400], BANK[$5]
+W_Battle_SubSubState:: ds 1
+
 SECTION "Battle Screen State Machine", ROMX[$4460], BANK[$5]
 Battle_ScreenStateMachine::
     ld a, [W_SerIO_ConnectionState]
