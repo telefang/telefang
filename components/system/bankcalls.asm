@@ -7,6 +7,10 @@
 SECTION "Banked Call Helper WRAM", WRAM0[$CB26]
 W_System_BankedArg: ds 1
 
+;These bits of memory are just random things used by a lot of crap at once
+SECTION "System Memory Junk Drawer", WRAM0[$CB20]
+W_System_GenericCounter:: ds 1
+
 SECTION "Banked Call Helpers 0", ROM0[$04A7]
 Banked_LCDC_PaletteFadeCGB::
     ld a, BANK(LCDC_PaletteFadeCGB)
