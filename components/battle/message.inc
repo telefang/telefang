@@ -1,0 +1,6 @@
+M_Battle_MessageDenjuuBattlePhrase EQU $02
+M_Battle_MessageDenjuuBattlePhraseAlias EQU $04
+
+M_Battle_MessageBaseStatusConditionContinuing EQU $35
+M_Battle_MessageBaseStatusConditionRemoval EQU $44
+M_Battle_MessageBaseStatusConditionInflicted EQU $53
