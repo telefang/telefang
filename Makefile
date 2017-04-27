@@ -46,6 +46,7 @@ OBJS := components/compression/malias.o \
      components/battle/denjuu_portrait.o components/battle/message.o \
      components/battle/attacks.o components/battle/screen_statemachine.o \
      components/battle/participant.o components/battle/meters_ui.o \
+     components/battle/link_management.o \
 	  components/status/nickname.o components/status/stats.o \
      components/status/statetbl.o components/status/icons.o \
      components/status/tabs.o components/status/interface.o \
