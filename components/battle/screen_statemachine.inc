@@ -1,0 +1,1 @@
+M_Battle_SubStateStatusWarning EQU $26
