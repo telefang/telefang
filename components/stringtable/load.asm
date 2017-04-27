@@ -64,7 +64,7 @@ StringTable_LoadBattlePhrase::
     
 .noTblIndex
     ld bc, M_StringTable_BattlePhraseAreaSize
-    ld de, W_Battle_PhraseStagingBuffer
+    ld de, W_MainScript_MessageArg2
     call memcpy
     ld a, $E0
     ld [$D4CF], a
