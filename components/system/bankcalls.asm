@@ -231,7 +231,7 @@ Banked_PauseMenu_IterateCursorAnimation::
     rst $10
     ret
     
-Banked_LoadBattlePhrase::
+Banked_StringTable_LoadBattlePhrase::
     ld a, $75 ;Symbolic representation of bank suspended until disassembly
               ;of battle system
     rst $10
@@ -278,4 +278,12 @@ Banked_MainScript_DrawLetter::
     call MainScript_DrawLetter
     ld a, [W_LCDC_LastBank]
     rst $10
+    ret
+    
+SECTION "Banked Call Helpers Theta Prime", ROM0[$3F22]
+Banked_Battle_IncrementCurrentParticipantByte::
+    ld a, BANK(Battle_IncrementCurrentParticipantByte)
+    rst $10
+    call Battle_IncrementCurrentParticipantByte
+    rst $18
     ret
