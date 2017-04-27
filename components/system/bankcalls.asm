@@ -7,6 +7,10 @@
 SECTION "Banked Call Helper WRAM", WRAM0[$CB26]
 W_System_BankedArg: ds 1
 
+;These bits of memory are just random things used by a lot of crap at once
+SECTION "System Memory Junk Drawer", WRAM0[$CB20]
+W_System_GenericCounter:: ds 1
+
 SECTION "Banked Call Helpers 0", ROM0[$04A7]
 Banked_LCDC_PaletteFadeCGB::
     ld a, BANK(LCDC_PaletteFadeCGB)
@@ -227,7 +231,7 @@ Banked_PauseMenu_IterateCursorAnimation::
     rst $10
     ret
     
-Banked_LoadBattlePhrase::
+Banked_StringTable_LoadBattlePhrase::
     ld a, $78 ;Symbolic representation of bank suspended until disassembly
               ;of battle system
     rst $10
@@ -274,4 +278,12 @@ Banked_MainScript_DrawLetter::
     call MainScript_DrawLetter
     ld a, [W_LCDC_LastBank]
     rst $10
+    ret
+    
+SECTION "Banked Call Helpers Theta Prime", ROM0[$3F22]
+Banked_Battle_IncrementCurrentParticipantByte::
+    ld a, BANK(Battle_IncrementCurrentParticipantByte)
+    rst $10
+    call Battle_IncrementCurrentParticipantByte
+    rst $18
     ret

@@ -1,2 +1,3 @@
+M_StringTable_BattlePhraseAreaSize EQU $1F
 M_StringTable_Load8AreaSize EQU $10
 M_StringTable_Load4AreaSize EQU 8

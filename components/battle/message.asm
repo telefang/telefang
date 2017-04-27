@@ -3,6 +3,9 @@ INCLUDE "telefang.inc"
 SECTION "Battle Message Argument Memory", WRAMX[$D645], BANK[$1]
 W_Battle_TableStringStaging:: ds M_StringTable_Load8AreaSize
 
+SECTION "Battle Message Argument Memory 3", WRAMX[$D658], BANK[$1]
+W_Battle_PhraseStagingBuffer:: ds M_StringTable_BattlePhraseAreaSize
+
 SECTION "Battle Message Argument Memory 2", WRAMX[$D45A], BANK[$1]
 W_Battle_LoopIndex:: ds 1
 
@@ -81,3 +84,38 @@ Battle_DrawSpecifiedDenjuuNickname::
     ld de, W_SaveClock_NicknameStaging
     ld b, M_StringTable_Load8AreaSize
     jp Banked_MainScript_DrawStatusText
+
+SECTION "Battle Screen Status Condition Messages", ROMX[$489E], BANK[$5]
+;Given a status condition ID, returns the ID of the message to be queued when a
+;status condition's effect continues to exist (as opposed to being removed).
+Battle_IndexStatusConditionContinuingMessage::
+    ld c, M_Battle_MessageBaseStatusConditionContinuing
+    add a, c
+    ld c, a
+    ret
+
+;Given a status condition ID, returns the ID of the message to be queued when a
+;status condition is removed, cured, or completed.
+Battle_IndexStatusConditionRemovalMessage::
+    ld c, M_Battle_MessageBaseStatusConditionRemoval
+    add a, c
+    ld c, a
+    ret
+
+;Given a status condition ID, returns the ID of the message to be queued when a
+;status condition is inflicted, contracted, or begun.
+Battle_IndexStatusConditionInflictedMessage::
+    ld c, M_Battle_MessageBaseStatusConditionInflicted
+    add a, c
+    ld c, a
+    ret
+    
+SECTION "Battle Message Queue", ROM0[$3D02]
+;Queues a message for drawing by the MainScript subsystem.
+;Message ID is in register c. Bank is fixed to the battle messages bank.
+Battle_QueueMessage::
+    ld b, 0
+    ld d, $C
+    ld a, $60
+    ld [W_MainScript_TileBaseIdx], a
+    jp $0520

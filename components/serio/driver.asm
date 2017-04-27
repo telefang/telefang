@@ -9,34 +9,34 @@ W_SerIO_ConnectionState:: ds 1
 ;area, it's probably this section that needs to be split!
 ;(Though according to SerIO_ResetConnection the entire $DC00 page is ours)
 SECTION "SerIO Driver Variables", WRAMX[$DA00], BANK[1]
-W_SerIO_SendBuffer: ds $100
-W_SerIO_RecvBuffer: ds $100
-W_SerIO_PacketType: ds 1
-W_SerIO_SentMysteryPacket: ds 1
+W_SerIO_SendBuffer:: ds $100
+W_SerIO_RecvBuffer:: ds $100
+W_SerIO_PacketType:: ds 1
+W_SerIO_SentMysteryPacket:: ds 1
 	ds 2
-W_SerIO_DoingXfer: ds 1
-W_SerIO_State: ds 1
-W_ShadowREG_SB: ds 1
-W_SerIO_IdleCounter: ds 1
+W_SerIO_DoingXfer:: ds 1
+W_SerIO_State:: ds 1
+W_ShadowREG_SB:: ds 1
+W_SerIO_IdleCounter:: ds 1
 	ds 9
-W_SerIO_DriverInByte: ds 1
+W_SerIO_DriverInByte:: ds 1
 	ds $15
-W_SerIO_DriverOutByte: ds 1
+W_SerIO_DriverOutByte:: ds 1
 	ds 6
-W_SerIO_ProcessInByte: ds 1
+W_SerIO_ProcessInByte:: ds 1
 	ds 5
-W_SerIO_ProcessOutByte: ds 1
+W_SerIO_ProcessOutByte:: ds 1
 	ds 5
-W_SerIO_SendBufferWrite: ds 1
+W_SerIO_SendBufferWrite:: ds 1
 	ds 1
-W_SerIO_SendBufferRead: ds 1
+W_SerIO_SendBufferRead:: ds 1
 	ds 1
-W_SerIO_SendBufferReady: ds 1
-W_SerIO_RecvBufferWrite: ds 1
+W_SerIO_SendBufferReady:: ds 1
+W_SerIO_RecvBufferWrite:: ds 1
 	ds 1
-W_SerIO_RecvBufferRead: ds 1
+W_SerIO_RecvBufferRead:: ds 1
 	ds 1
-W_SerIO_RecvBufferReady: ds 1
+W_SerIO_RecvBufferReady:: ds 1
 
 SECTION "SerIO Driver", ROM0[$1C9B]
 

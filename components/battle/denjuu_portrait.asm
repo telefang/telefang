@@ -158,3 +158,20 @@ Battle_LoadDenjuuObjectPalette::
     ld b, h
     ld c, l
     jp CGBLoadObjectPaletteBanked
+    
+SECTION "Battle Resource Loaders", ROMX[$42DF], BANK[$5]
+Battle_LoadDenjuuResourcesOpponent::
+    push af
+    ld c, 0
+    ld de, $8800
+    call Banked_Battle_LoadDenjuuPortrait
+    pop af
+    jp Battle_LoadDenjuuPaletteOpponent
+
+Battle_LoadDenjuuResourcesPartner::
+    push af
+    ld c, 1
+    ld de, $8B80
+    call Banked_Battle_LoadDenjuuPortrait
+    pop af
+    jp Battle_LoadDenjuuPalettePartner
