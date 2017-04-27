@@ -58,8 +58,8 @@ StringTable_LoadBattlePhrase::
     add hl, de
     
 .noTblIndex
-    ld bc, $F
-    ld de, $D4D0
+    ld bc, M_StringTable_BattlePhraseAreaSize
+    ld de, W_Battle_PhraseStagingBuffer
     call memcpy
     ld a, $E0
     ld [$D4E0], a
