@@ -1,7 +1,17 @@
 INCLUDE "telefang.inc"
 
+SECTION "Battle UI Bookkeeping", WRAM0[$C460]
+W_Battle_WindowOverlap:: ds 1
+W_Battle_WindowYPos:: ds 1
+
 SECTION "Battle SubSubState", WRAMX[$D400], BANK[$5]
 W_Battle_SubSubState:: ds 1
+
+SECTION "Status Screen Home Utils", ROM0[$3CF8]
+Battle_IncrementSubSubState::
+    ld hl, W_Battle_SubSubState
+    inc [hl]
+    ret
 
 SECTION "Battle Screen State Machine", ROMX[$4460], BANK[$5]
 Battle_ScreenStateMachine::
@@ -506,3 +516,142 @@ Battle_SubStateStatusWarningOpponent::
     ld a, $29
     ld [W_Battle_SubSubState], a
     ret
+    
+SECTION "Battle Substate Attack Menu Draw", ROMX[$4C34], BANK[$5]
+Battle_SubStateDrawAttackMenuWindow::
+    ld hl, W_Battle_WindowOverlap
+    ld a, $3F ;This is the height of the menu.
+    ld [hli], a
+    ld a, [W_ShadowREG_WX]
+    ld [hl], a
+    
+    xor a
+    ld [W_ShadowREG_WY], a
+    
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    call Battle_StagePartnerStats
+    
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld c, M_Battle_SpeciesMove1
+    ld hl, $9400
+    call Battle_DrawAttackNameOnMenu
+    
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld c, M_Battle_SpeciesMove2
+    ld hl, $9480
+    call Battle_DrawAttackNameOnMenu
+    
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld b, 0
+    ld c, M_Battle_SpeciesMove3Level
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld b, a
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantLevel]
+    cp b
+    jr c, .noThirdAttack
+    
+.thirdAttack
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld c, M_Battle_SpeciesMove3
+    ld hl, $9500
+    call Battle_DrawAttackNameOnMenu
+    
+    ld a, 2
+    ld [$D41E], a
+    jr .checkFourthAttack
+
+.noThirdAttack
+    ld a, 1
+    ld [$D41E], a
+    
+    ld hl, $9500
+    ld a, 8
+    call MainScript_DrawEmptySpaces
+    jr .noFourthAttack
+
+.checkFourthAttack
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld b, 0
+    ld c, M_Battle_SpeciesMove4Level
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld b, a
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantLevel]
+    cp b
+    jr c, .noFourthAttack
+    
+.fourthAttack
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld c, M_Battle_SpeciesMove4
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    or a
+    jr z, .noFourthAttack
+    
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld c, M_Battle_SpeciesMove4
+    ld hl, $9580
+    call Battle_DrawAttackNameOnMenu
+    
+    ld a, 3
+    ld [$D41E], a
+    jr .drawMenuFrame
+
+.noFourthAttack
+    ld hl, $9580
+    ld a, 8
+    call MainScript_DrawEmptySpaces
+    
+.drawMenuFrame
+    ld bc, $909
+    ld e, $88
+    xor a
+    call Banked_RLEDecompressTMAP0
+    
+    ld bc, $909
+    ld e, $80
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+    
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    cp 1
+    jr z, .secondDenjuu
+    cp 2
+    jr z, .thirdDenjuu
+    
+.firstDenjuu
+    ld a, [$D49D]
+    ld [$D414], a
+    jr .setupCursor
+
+.secondDenjuu
+    ld a, [$D49E]
+    ld [$D414], a
+    jr .setupCursor
+
+.thirdDenjuu
+    ld a, [$D49F]
+    ld [$D414], a
+    
+.setupCursor
+    call $65C3
+    
+    xor a
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    call LCDC_BeginAnimationComplex
+    jp Battle_IncrementSubSubState
+    
+Battle_DrawAttackNameOnMenu::
+    push hl
+    ld b, 0
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld de, StringTable_battle_attacks
+    pop bc
+    jp Banked_MainScript_DrawName75
