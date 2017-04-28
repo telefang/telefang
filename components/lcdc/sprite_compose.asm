@@ -261,3 +261,77 @@ LoadMetasprite::
 ;   Attribute data
 MetaspriteBankMetatable: db $A, $E, $13, $14, $15, $16, $17, $18, $19
 MetaspriteAddressMetatable: dw $4000, $4120, $4000, $4000, $4000, $4000, $4000, $4000, $4000
+
+SECTION "LCDC Begin Animation Complex", ROM0[$3CB5]
+LCDC_BeginAnimationComplex::
+    push af
+    call LCDC_BeginMetaspriteAnimation
+    ld hl, W_MetaSpriteConfig1
+    ld de, M_MetaSpriteConfig_Size
+    ld a, [$D43E]
+    
+.findEmptyMetaspriteSlot
+    cp 0
+    jr z, .foundEmptySlot
+    
+    add hl, de
+    dec a
+    jr .findEmptyMetaspriteSlot
+    
+.foundEmptySlot
+    push hl
+    pop de
+    pop af
+    jp Banked_PauseMenu_InitializeCursor
+    
+SECTION "LCDC Begin Metasprite Animation", ROM0[$3D18]
+LCDC_BeginMetaspriteAnimation::
+    ld hl, W_MetaSpriteConfig1
+    ld de, M_MetaSpriteConfig_Size
+    ld a, [$D43E]
+    
+    cp 0
+    jr z, .metaspriteConfigSelected
+    
+.addLoop
+    add hl, de
+    dec a
+    jr nz, .addLoop
+    
+.metaspriteConfigSelected
+    push hl
+    ld hl, $D4F0
+    ld d, 0
+    ld a, [$D43E]
+    ld e, a
+    add hl, de
+    
+    ld a, [hl]
+    ld b, a
+    ld hl, $D4F6
+    ld d, 0
+    ld a, [$D43E]
+    ld e, a
+    add hl, de
+    
+    ld a, [hl]
+    ld c, a
+    pop hl
+    ld de, 0
+    add hl, de
+    
+    ld a, 1
+    ld [hli], a
+    ld a, [$D4EE]
+    ld [hli], a
+    ld a, [$D41D]
+    ld [hli], a
+    ld a, b
+    ld [hli], a
+    ld a, c
+    ld [hli], a
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    
+    ret

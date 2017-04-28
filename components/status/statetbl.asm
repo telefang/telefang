@@ -187,7 +187,7 @@ Status_StateFadeScreen:
     ld [$D4F0], a
     ld a, 0
     ld [$D4F6], a
-    call $3D18
+    call LCDC_BeginMetaspriteAnimation
     ld a, 0
     ld bc, 4
     call $1196
