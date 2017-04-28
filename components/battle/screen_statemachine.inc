@@ -1,1 +1,2 @@
-M_Battle_SubStateStatusWarning EQU $26
+M_Battle_SubStateStatusWarningPartner EQU $26
+M_Battle_SubStateStatusWarningOpponent EQU $28

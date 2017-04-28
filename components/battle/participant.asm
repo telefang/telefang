@@ -151,6 +151,18 @@ Battle_AdvanceToNextParticipantInFullPartnerTeam::
     
     ret
 
+Battle_AdvanceToNextPartnerInverse::
+    ld bc, W_Battle_PartnerDenjuuTurnOrder
+    ld a, [W_Battle_NumActivePartners]
+    cp M_Battle_TeamSize
+    jr z, .fullTeam
+    
+.partialTeam
+    jp Battle_AdvanceToNextParticipantInPartialTeam
+    
+.fullTeam
+    jp Battle_AdvanceToNextParticipantInFullOpponentTeam
+
 SECTION "Battle Participant Management 4", ROMX[$653B], BANK[$5]
 Battle_AdvanceToNextPartner::
     ld bc, W_Battle_PartnerDenjuuTurnOrder
