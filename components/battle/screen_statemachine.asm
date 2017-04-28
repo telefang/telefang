@@ -494,7 +494,9 @@ Battle_SubStateStatusWarningOpponent::
     ld hl, StringTable_battle_attack_phrases
     call Banked_StringTable_LoadBattlePhrase
     ld hl, W_Battle_PhraseStagingBuffer
-    call Battle_SetMessageArg2Phrase
+    nop
+    nop
+    nop
     
     ld a, $5D
     ld [byte_FFA1], a
