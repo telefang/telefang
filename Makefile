@@ -195,11 +195,11 @@ clean:
 
 $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc $(SRC_MESSAGE) $(OBJS_MESSAGE) --language="English"
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc $(SRC_MESSAGE) $(OBJS_MESSAGE) --language="German"
 
 %.stringtbl: %.csv
 	@rm -f $@
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl baserom_patch.gbc --language="English"
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl baserom_patch.gbc --language="German"
 
 %.tmap: %.csv
 	@rm -f $@
