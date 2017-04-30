@@ -694,7 +694,7 @@ Battle_SubStateParticipantArrivalProcessing::
     ld hl, StringTable_denjuu_species
     call StringTable_LoadName75
     
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Battle_CopyTableString
     call Battle_SetMessageArg2Denjuu
     
@@ -738,7 +738,7 @@ Battle_SubStateParticipantArrivalProcessing::
     ld hl, StringTable_denjuu_species
     call StringTable_LoadName75
     
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Battle_CopyTableString
     call Battle_SetMessageArg2Denjuu
     
@@ -766,7 +766,7 @@ Battle_SubStateParticipantArrivalProcessing::
     ld hl, StringTable_denjuu_species
     call StringTable_LoadName75
     
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Battle_CopyTableString
     call Battle_SetMessageArg2Denjuu
     
@@ -811,7 +811,7 @@ Battle_SubStateParticipantArrivalProcessing::
     ld hl, StringTable_denjuu_species
     call StringTable_LoadName75
     
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Battle_CopyTableString
     call Battle_SetMessageArg2Denjuu
     
