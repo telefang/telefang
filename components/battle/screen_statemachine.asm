@@ -45,7 +45,7 @@ Battle_ScreenStateMachine::
     dw $457D,$45A9,$45F5,$463E,$4681,$4B07,$4BC6,$4C34 ;00-07
     dw $4D1F,$4DDD,$4F81,$510A,$545C,$545F,$57FB,$59BC ;08-0F
     dw $5F2D,$5F57,$62CD,$6348,$6360,$63FE,$6416,$46E2 ;10-17
-    dw $46F2,$4707,$48E9,$48FC,$4911,$464B,$6099,$6289 ;18-1F
+    dw $46F2,$4707,$48E9,$48FC,$4911,$464B,Battle_SubStateParticipantArrivalProcessing,$6289 ;18-1F
     dw $5FD6,$6318,$61FB,$50F5,$53EF,$5F3D,Battle_SubStateStatusWarningPartner,$48AD ;20-27
     dw Battle_SubStateStatusWarningOpponent,$4AAD,$4F12,$5F79,$5428,$5489,$4AF8,$63EF ;28-2F
     dw $63E0,$5F66,$5FA1,$5FB4,$5661,$5292,$5683,$452D ;30-37
@@ -655,3 +655,181 @@ Battle_DrawAttackNameOnMenu::
     ld de, StringTable_battle_attacks
     pop bc
     jp Banked_MainScript_DrawName75
+    
+SECTION "Battle Substates - Participant Arrival Processing", ROMX[$6099], BANK[$5]
+Battle_SubStateParticipantArrivalProcessing::
+    ld bc, $C
+    ld e, $80
+    xor a
+    call Banked_RLEDecompressTMAP0
+    
+    ld bc, $30E
+    ld e, $83
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+    
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantLocation]
+    cp M_Battle_LocationArriving
+    jp z, .secondPartnerArriving
+    
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantLocation]
+    cp M_Battle_LocationArriving
+    jp z, .thirdPartnerArriving
+    
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantLocation]
+    cp M_Battle_LocationArriving
+    jp z, .secondOpponentArriving
+    
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantLocation]
+    cp M_Battle_LocationArriving
+    jp z, .thirdOpponentArriving
+    
+.secondPartnerArriving
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantSpecies]
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, StringTable_denjuu_species
+    call StringTable_LoadName75
+    
+    ld bc, W_StringTable_StagingLoc
+    call Battle_CopyTableString
+    call Battle_SetMessageArg2Denjuu
+    
+    ld a, [W_StringTable_ROMTblIndex]
+    call Battle_LoadDenjuuResourcesPartner
+    
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantContactID]
+    ld hl, $9200
+    call Battle_DrawSpecifiedDenjuuNickname
+    
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantMaxHP]
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantMaxHP], a
+    
+    call Battle_DrawPartnerHPMeter
+    ld a, 1
+    call Battle_DrawPartnerDPMeter
+    ld a, M_Battle_LocationPresent
+    ld [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantLocation], a
+    jp .nextState
+
+.thirdPartnerArriving
+    ld a, 1
+    call Battle_StagePartnerStats
+    
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantLocation]
+    cp 4
+    jr z, .reorderBeforeSecondPartner
+    cp M_Battle_LocationCalled
+    jr nz, .updatePartnerUI
+    
+.reorderBeforeSecondPartner
+    ld a, 2
+    ld [W_Battle_PartnerDenjuuTurnOrder + 1], a
+    ld a, 1
+    ld [W_Battle_PartnerDenjuuTurnOrder + 2], a
+    
+.updatePartnerUI
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantSpecies]
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, StringTable_denjuu_species
+    call StringTable_LoadName75
+    
+    ld bc, W_StringTable_StagingLoc
+    call Battle_CopyTableString
+    call Battle_SetMessageArg2Denjuu
+    
+    ld a, [W_StringTable_ROMTblIndex]
+    call Battle_LoadDenjuuResourcesPartner
+    
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantContactID]
+    ld hl, $9200
+    call Battle_DrawSpecifiedDenjuuNickname
+    
+    ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantMaxHP]
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantMaxHP], a
+    
+    call Battle_DrawPartnerHPMeter
+    ld a, 2
+    call Battle_DrawPartnerDPMeter
+    ld a, M_Battle_LocationPresent
+    ld [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantLocation], a
+    jp .nextState
+
+.secondOpponentArriving
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantSpecies]
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, StringTable_denjuu_species
+    call StringTable_LoadName75
+    
+    ld bc, W_StringTable_StagingLoc
+    call Battle_CopyTableString
+    call Battle_SetMessageArg2Denjuu
+    
+    ld a, [W_StringTable_ROMTblIndex]
+    call Battle_LoadDenjuuResourcesOpponent
+    
+    ld a, [W_StringTable_ROMTblIndex]
+    ld de, StringTable_denjuu_species
+    ld bc, $9280
+    call Banked_MainScript_DrawName75
+    
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantMaxHP]
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantMaxHP], a
+    
+    call Battle_DrawOpponentHPMeter
+    ld a, 1
+    call Battle_DrawOpponentDPMeter
+    ld a, M_Battle_LocationPresent
+    ld [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantLocation], a
+    jr .nextState
+
+.thirdOpponentArriving
+    ld a, 1
+    call Battle_StageOpponentStats
+    
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantLocation]
+    cp 4
+    jr z, .reorderBeforeSecondOpponent
+    cp M_Battle_LocationCalled
+    jr nz, .updateOpponentUI
+    
+.reorderBeforeSecondOpponent
+    ld a, 2
+    ld [W_Battle_OpponentDenjuuTurnOrder + 1], a
+    ld a, 1
+    ld [W_Battle_OpponentDenjuuTurnOrder + 2], a
+    
+.updateOpponentUI
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantSpecies]
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, StringTable_denjuu_species
+    call StringTable_LoadName75
+    
+    ld bc, W_StringTable_StagingLoc
+    call Battle_CopyTableString
+    call Battle_SetMessageArg2Denjuu
+    
+    ld a, [W_StringTable_ROMTblIndex]
+    call Battle_LoadDenjuuResourcesOpponent
+    
+    ld a, [W_StringTable_ROMTblIndex]
+    ld de, StringTable_denjuu_species
+    ld bc, $9280
+    call Banked_MainScript_DrawName75
+    
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantMaxHP]
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
+    ld [W_Battle_CurrentParticipant + M_Battle_ParticipantMaxHP], a
+    
+    call Battle_DrawOpponentHPMeter
+    ld a, 2
+    call Battle_DrawOpponentDPMeter
+    ld a, M_Battle_LocationPresent
+    ld [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantLocation], a
+
+.nextState
+    ld a, $22
+    ld [W_Battle_SubSubState], a
+    ret
