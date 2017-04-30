@@ -62,7 +62,7 @@ Battle_SubStateStatusWarningPartner::
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
     ld [W_StringTable_ROMTblIndex], a
     
-    ld a, [W_Battle_CurrentParticipant + $07]
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantLocation]
     cp 5
     jr nz, .notFive
     
@@ -294,7 +294,7 @@ Battle_SubStateStatusWarningOpponent::
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
     ld [W_StringTable_ROMTblIndex], a
     
-    ld a, [W_Battle_CurrentParticipant + $07]
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantLocation]
     cp 5
     jr nz, .notFive
     
