@@ -144,7 +144,7 @@ def rip_msprite_mtable(rom, offset = 0x094D, count = 9):
     for i in range(0, count):
         ptrs.append(PTR.unpack(rom.read(2))[0])
 
-    asmsrc = u"SECTION 'MetaSprite metatable', " + format_sectionaddr_rom(offset) + u"]\n"
+    asmsrc = u"SECTION 'MetaSprite metatable', " + format_sectionaddr_rom(offset) + u"\n"
     asmsrc += u"MetaspriteBankMetatable::\n"
 
     for bank in banks:
@@ -171,7 +171,7 @@ def extract(args):
         asmsrc, files = rip_msprite_mtable(rom, args.metatable_loc)
         
         for filename, data in files.iteritems():
-            install_path(os.path.basedir(filename))
+            install_path(os.path.dirname(filename))
             
             with io.open(filename, "w+", encoding="utf-8") as spr_csv:
                 spr_csv.write(data)
