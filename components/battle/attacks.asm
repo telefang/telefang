@@ -2,6 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Battle Attack WRAM", WRAMX[$D46F], BANK[$1]
 W_Battle_LastAttackID:: ds 1
+W_Battle_DenjuuHasNickname:: ds 1
 
 SECTION "Battle Stage Attack Name", ROMX[$43F9], BANK[$5]
 Battle_SetAttackNameArg2::
