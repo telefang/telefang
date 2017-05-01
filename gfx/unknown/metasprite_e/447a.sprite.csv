@@ -1,0 +1,5 @@
+X,Y,Tile Offset,Attribute Mixing,Attributes
+f0,f8,38,LocalAttribs,14
+f0,0,39,LocalAttribs,14
+f8,f8,3a,LocalAttribs,14
+f8,0,3b,LocalAttribs,14

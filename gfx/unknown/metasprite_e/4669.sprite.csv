@@ -1,0 +1,10 @@
+X,Y,Tile Offset,Attribute Mixing,Attributes
+f4,f4,9,ConfigPalette,10
+f4,fc,a,ConfigPalette,10
+f4,4,b,ConfigPalette,10
+fc,f4,c,ConfigPalette,10
+fc,fc,d,ConfigPalette,10
+fc,4,e,ConfigPalette,10
+4,f4,f,ConfigPalette,10
+4,fc,10,ConfigPalette,10
+4,4,11,ConfigPalette,10
