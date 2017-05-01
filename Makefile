@@ -141,5 +141,5 @@ clean:
 	@$(PYTHON) rip_scripts/rip_tilemaps.py make_maps $(BASEROM_POWER) $<
 
 %.sprite.bin: %.sprite.csv
-	@rm -f &@
+	@rm -f $@
 	@$(PYTHON) rip_scripts/metasprite.py make_spritebin $<
