@@ -88,7 +88,7 @@ def rip_msprite_table(rom, offset = None):
     
     table_symbol = u"MetaSprite_" + u"{0:x}".format(bank)
     
-    table_asmsrc += u"SECTION '" + table_symbol + u"', ROMX[$" + u"{0:x}".format(table_ptr) + u"], BANK[$" + u"{0:x}".format(bank) + u"]\n"
+    table_asmsrc += u"SECTION \"" + table_symbol + u"\", ROMX[$" + u"{0:x}".format(table_ptr) + u"], BANK[$" + u"{0:x}".format(bank) + u"]\n"
     table_asmsrc += table_symbol + u"::\n"
     
     sorted_ptrs = ripped_sprites.keys()
@@ -103,13 +103,13 @@ def rip_msprite_table(rom, offset = None):
         binfile = u"gfx/unknown/metasprite_" + u"{0:x}".format(bank) + u"/" + u"{0:x}".format(ptrkey) + u".sprite.bin"
         
         if last_ptrkey_end != ptrkey:
-            data_asmsrc += u"SECTION '" + symbol + u"', ROMX[$" + u"{0:x}".format(ptrkey) + u"], BANK[$" + u"{0:x}".format(bank) + u"]\n"
+            data_asmsrc += u"SECTION \"" + symbol + u"\", ROMX[$" + u"{0:x}".format(ptrkey) + u"], BANK[$" + u"{0:x}".format(bank) + u"]\n"
         
         data_asmsrc += symbol + u"::\n"
         
         #ASSUMPTION: All 0 size metasprites are dummy pointers
         if len(val) > 0:
-            data_asmsrc += u"    INCBIN '" + binfile + u"'\n"
+            data_asmsrc += u"    INCBIN \"" + binfile + u"\"\n"
         data_asmsrc += symbol + u"_END::\n"
         
         files[file] = u"X,Y,Tile Offset,Attribute Mixing,Attributes\n"
@@ -144,7 +144,7 @@ def rip_msprite_mtable(rom, offset = 0x094D, count = 9):
     for i in range(0, count):
         ptrs.append(PTR.unpack(rom.read(2))[0])
 
-    asmsrc = u"SECTION 'MetaSprite metatable', " + format_sectionaddr_rom(offset) + u"\n"
+    asmsrc = u"SECTION \"MetaSprite metatable\", " + format_sectionaddr_rom(offset) + u"\n"
     asmsrc += u"MetaspriteBankMetatable::\n"
 
     for bank in banks:
@@ -196,16 +196,18 @@ def spritecsv2bin(data):
 
 def make_spritebin(args):
     for filename in args.filenames:
-        dst_filename = os.path.join(os.path.splitext(filename)[0], ".bin")
-
+        print "Compiling " + filename
+        
+        dst_filename = os.path.splitext(filename)[0] + ".bin"
+        
         with open(filename, 'r') as srcfile:
-            csvreader = csv.reader(csvfile)
+            csvreader = csv.reader(srcfile)
             rows = []
 
             for row in csvreader:
                 rows.append([cell.decode("utf-8") for cell in row])
 
-            with open(dst_filename, 'rb') as dstfile:
+            with open(dst_filename, 'wb') as dstfile:
                 dstfile.write(spritecsv2bin(rows))
 
 def main():
