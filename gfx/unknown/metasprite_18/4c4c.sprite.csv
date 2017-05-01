@@ -1,0 +1,21 @@
+X,Y,Tile Offset,Attribute Mixing,Attributes
+0,10,42,LocalAttribs,20
+0,8,43,LocalAttribs,20
+0,0,42,LocalAttribs,20
+0,f8,43,LocalAttribs,20
+0,f0,42,LocalAttribs,20
+0,e8,43,LocalAttribs,20
+8,10,44,LocalAttribs,20
+8,8,45,LocalAttribs,20
+8,0,44,LocalAttribs,20
+8,f8,45,LocalAttribs,20
+8,f0,44,LocalAttribs,20
+8,e8,45,LocalAttribs,20
+10,18,46,LocalAttribs,20
+10,10,4c,LocalAttribs,20
+10,8,4d,LocalAttribs,20
+10,0,4c,LocalAttribs,20
+10,f8,4d,LocalAttribs,20
+10,f0,4c,LocalAttribs,20
+10,e8,4d,LocalAttribs,20
+10,e0,49,LocalAttribs,20

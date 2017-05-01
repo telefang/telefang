@@ -249,19 +249,6 @@ LoadMetasprite::
 	pop hl
 	ret
 
-;TODO: Rip metasprite data into the disassembly.
-;Each entry in this metatable points to another table of pointers in ROM.
-;Pointed to by that table are metasprite data, which looks something like this:
-; First byte: Number of sprite entries
-; 5 bytes * number of entries:
-;   Y offset from origin
-;   X offset from origin
-;   Tile ID
-;   Attribute mixing flag
-;   Attribute data
-MetaspriteBankMetatable: db $A, $E, $13, $14, $15, $16, $17, $18, $19
-MetaspriteAddressMetatable: dw $4000, $4120, $4000, $4000, $4000, $4000, $4000, $4000, $4000
-
 SECTION "LCDC Begin Animation Complex", ROM0[$3CB5]
 LCDC_BeginAnimationComplex::
     push af
