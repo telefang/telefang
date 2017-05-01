@@ -238,10 +238,13 @@ MetaSprite_a_435f::
 MetaSprite_a_435f_END::
 MetaSprite_a_4388::
     INCBIN "versions/power/gfx/unknown/metasprite_a/4388.sprite.bin"
+    ;Trash bytes. TODO: Remove
+    db $00, $F8, $0F, $01, $10
+    db $00, $08, $10, $01, $10
 MetaSprite_a_4388_END::
-MetaSprite_a_43a7::
+MetaSprite_a_43a7_old::
     INCBIN "versions/power/gfx/unknown/metasprite_a/43a7.sprite.bin"
-MetaSprite_a_43a7_END::
+MetaSprite_a_43a7_old_END::
 MetaSprite_a_43bc::
     INCBIN "gfx/unknown/metasprite_a/43bc.sprite.bin"
 MetaSprite_a_43bc_END::
@@ -340,6 +343,13 @@ MetaSprite_a_4859::
 MetaSprite_a_4859_END::
 MetaSprite_a_4891::
 MetaSprite_a_4891_END::
+
+SECTION "MetaSprite_a Data Out Of Bank", ROMX[$5000], BANK[$a]
+;This exists because five years ago I was too stupid to write a metasprite
+;injector so I put it off the end of the ROM by like a lot
+MetaSprite_a_43a7::
+    INCBIN "versions/power/gfx/unknown/metasprite_a/5000.sprite.bin"
+MetaSprite_a_43a7_END::
 
 SECTION "MetaSprite_e", ROMX[$4120], BANK[$e]
 MetaSprite_e::
