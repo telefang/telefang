@@ -61,9 +61,9 @@ OBJS := components/compression/malias.o \
      script/mainscript.o script/stringtable.o
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
-	  versions/power/tilemaps.o
+	  versions/power/tilemaps.o versions/power/metasprite.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
-	  versions/speed/tilemaps.o
+	  versions/speed/tilemaps.o versions/speed/metasprite.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
 # If your default python is 3, you may want to change this to python27.

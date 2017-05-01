@@ -237,10 +237,10 @@ MetaSprite_a_435f::
     INCBIN "gfx/unknown/metasprite_a/435f.sprite.bin"
 MetaSprite_a_435f_END::
 MetaSprite_a_4388::
-    INCBIN "gfx/unknown/metasprite_a/4388.sprite.bin"
+    INCBIN "versions/power/gfx/unknown/metasprite_a/4388.sprite.bin"
 MetaSprite_a_4388_END::
 MetaSprite_a_43a7::
-    INCBIN "gfx/unknown/metasprite_a/43a7.sprite.bin"
+    INCBIN "versions/power/gfx/unknown/metasprite_a/43a7.sprite.bin"
 MetaSprite_a_43a7_END::
 MetaSprite_a_43bc::
     INCBIN "gfx/unknown/metasprite_a/43bc.sprite.bin"
@@ -327,10 +327,10 @@ MetaSprite_a_4666::
     INCBIN "gfx/unknown/metasprite_a/4666.sprite.bin"
 MetaSprite_a_4666_END::
 MetaSprite_a_468f::
-    INCBIN "gfx/unknown/metasprite_a/468f.sprite.bin"
+    INCBIN "versions/power/gfx/unknown/metasprite_a/468f.sprite.bin"
 MetaSprite_a_468f_END::
 MetaSprite_a_4758::
-    INCBIN "gfx/unknown/metasprite_a/4758.sprite.bin"
+    INCBIN "versions/power/gfx/unknown/metasprite_a/4758.sprite.bin"
 MetaSprite_a_4758_END::
 MetaSprite_a_4821::
     INCBIN "gfx/unknown/metasprite_a/4821.sprite.bin"
