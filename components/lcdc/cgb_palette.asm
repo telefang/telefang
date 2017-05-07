@@ -1,10 +1,10 @@
 INCLUDE "telefang.inc"
 
 SECTION "CGB Palette Management Vars", WRAM0[$CA61]
-W_CGBPaletteScheduled: ds 8
+W_CGBPaletteScheduled:: ds 8
 
 SECTION "CGB Palette Management Staging", WRAM0[$CAC8]
-W_CGBPaletteStaging: ds 1
+W_CGBPaletteStaging:: ds 1
 
 SECTION "CGB Palette Management Second Vars", WRAMX[$DD00], BANK[$1]
 W_CGBPaletteStagedBGP:: ds 1

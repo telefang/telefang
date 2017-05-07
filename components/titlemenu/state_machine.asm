@@ -22,7 +22,7 @@ TitleMenu_StateClearNameInput::
     ld b, M_MainScript_PlayerNameSize
     call PauseMenu_ClearInputTiles
     xor a
-    ld [$CA65], a
+    ld [W_MainScript_WindowBorderAttribs], a
     call PauseMenu_SelectTextStyle
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
@@ -103,7 +103,7 @@ TitleMenu_StateInitNickname::
     call PauseMenu_LoadMap0
     
     xor a
-    ld [$CA65], a
+    ld [W_MainScript_WindowBorderAttribs], a
     
     call PauseMenu_SelectTextStyle
     
