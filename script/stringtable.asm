@@ -3,6 +3,11 @@ StringTable_battle_items::
 	INCBIN "script/battle/items.stringtbl"
 StringTable_battle_items_END
 
+SECTION "StringTable_battle_items_old Section", ROMX[$6652], BANK[$b]
+StringTable_battle_items_old::
+	INCBIN "script/battle/items_old.stringtbl"
+StringTable_battle_items_old_END
+
 SECTION "StringTable_denjuu_nicknames Section", ROMX[$78fa], BANK[$b]
 StringTable_denjuu_nicknames::
 ; Denjuu nicknames are unused and were not translated in the patch.

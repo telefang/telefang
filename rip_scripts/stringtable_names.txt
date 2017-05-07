@@ -21,6 +21,7 @@
 #The unused denjuu/nicknames and battle/message_unk tables were never relocated
 #or translated. Same for any table or block suffixed with "old".
 
+battle/items_old 2E652 table 68 8
 battle/items 1E2B80 table 68 16
 #denjuu/nicknames N/A table 22 8
 map/location_mapping AA875 index 256 map/location_strings
