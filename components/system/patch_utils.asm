@@ -11,12 +11,10 @@ PatchUtils_LimitBreak:: sla e
 	ret
 	
 SECTION "Patch Utilities 2", ROM0[$0096]
-;MYSTERY CODE WOO
-;TODO: Disassemble
-PatchUtils_MysteryBlock:
-	ld a, $78
+PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3::
+	ld a, BANK(MainScript_ADVICE_LoadItemNameAsArg3)
 	rst $10
-	call $6FD0
+	call MainScript_ADVICE_LoadItemNameAsArg3
 	rst $18
 	ret
 	

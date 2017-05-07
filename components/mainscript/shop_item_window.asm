@@ -1,7 +1,10 @@
 INCLUDE "telefang.inc"
 
-SECTION "Main Script Message Arg 3", WRAM0[$CA53]
+SECTION "Main Script Message Arg 3 Extended", WRAM0[$CAF0]
 W_MainScript_MessageArg3:: ds M_StringTable_Load8AreaSize
+
+SECTION "Main Script Message Arg 3", WRAM0[$CA53]
+W_MainScript_MessageArg3Old:: ds 8
 
 SECTION "Main Script Shop Item Window", ROM0[$2CEB]
 MainScript_DrawShopWindowForItem::
@@ -50,6 +53,16 @@ MainScript_SetupShopWindowForItem::
     ret
 
 MainScript_LoadItemNameAsArg3::
+    call PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3
+    
+    REPT $1E
+    nop
+    ENDR
+    
+    ret
+
+SECTION "Main Script Shop Item Window ADVICE 3", ROMX[$6FD0], BANK[$78]
+MainScript_ADVICE_LoadItemNameAsArg3::
     ld hl, StringTable_battle_items
     
     ld c, b
@@ -62,7 +75,7 @@ MainScript_LoadItemNameAsArg3::
     rl b
     add hl, bc
     
-    ld b, 8
+    ld b, M_StringTable_Load8AreaSize
     ld de, W_MainScript_MessageArg3
     
 .copyLoop
@@ -74,6 +87,16 @@ MainScript_LoadItemNameAsArg3::
     
     ld a, $E0
     ld [de], a
+    
+    ;Cap off the old Arg3 area with a terminator
+    ld de, W_MainScript_MessageArg3Old
+    ld [de], a
+    
+    ;This is incorrect, but there's no "correct" way to do a second-level of
+    ;banking safety. Telefang's bank-safe calls don't actually stack the current
+    ;bank, making it sort of 
+    ld a, BANK(MainScript_LoadItemNameAsArg3)
+    ld [W_PreviousBank], a
     ret
 
 SECTION "Main Script Shop Item Window 3", ROMX[$476C], BANK[$B]
