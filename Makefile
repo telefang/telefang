@@ -61,13 +61,14 @@ OBJS := components/compression/malias.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
 	  components/saveclock/denjuu_nicknames.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
-     gfx/palettes.o \
      script/mainscript.o script/stringtable.o
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
-	  versions/power/tilemaps.o versions/power/metasprite.o
+	  versions/power/tilemaps.o versions/power/metasprite.o \
+     versions/power/palettes.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
-	  versions/speed/tilemaps.o versions/speed/metasprite.o
+	  versions/speed/tilemaps.o versions/speed/metasprite.o \
+     versions/speed/palettes.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
 # If your default python is 3, you may want to change this to python27.
