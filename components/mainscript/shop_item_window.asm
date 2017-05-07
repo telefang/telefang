@@ -136,16 +136,20 @@ MainScript_QueueCustomWindowMessage::
     xor a
     ld [W_MainScript_TilesDrawn], a
     ld [W_MainScript_NumNewlines], a
-    ld a, 0
     ld [W_MainScript_WaitFrames], a
-    ld a, 1
-    ld [W_MainScript_TextSpeed], a
-    ld a, 0
     ld [W_MainScript_ContinueBtnPressed], a
-    ld a, 2
-    ld [$CADA], a
-    ld a, 1
+    ld [W_MainScript_VWFMainScriptHack], a
+    inc a
+    ld [W_MainScript_TextSpeed], a
     ld [W_MainScript_State], a
+    inc a
+    ld [$CADA], a
+    
+    nop
+    nop
+    nop
+    nop
+    nop
     
     ret
 
