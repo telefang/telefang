@@ -73,6 +73,8 @@ MainScript_ADVICE_LoadItemNameAsArg3::
     rl b
     sla c
     rl b
+    sla c
+    rl b
     add hl, bc
     
     ld b, M_StringTable_Load8AreaSize
