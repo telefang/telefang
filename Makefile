@@ -23,6 +23,7 @@ OBJS := components/compression/malias.o \
      components/lcdc/cgb_palette.o components/lcdc/tilemap_math.o \
 	  components/lcdc/load_tiles.o components/lcdc/fades.o \
      components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
+     components/lcdc/wraparound.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
@@ -47,8 +48,10 @@ OBJS := components/compression/malias.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
      components/mainscript/canned_initializer.o components/mainscript/message_args.o \
+     components/mainscript/shop_item_window.o \
      components/mainscript/advice.o \
 	  components/map/locations.o \
+     components/overworld/memory.o \
 	  components/sound/samples.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \

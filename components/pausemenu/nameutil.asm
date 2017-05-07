@@ -9,7 +9,7 @@ PauseMenu_ContactPrepName::
     ld a, $F0
     ld [W_Status_NumericalTileIndex], a
     xor a
-    ld [$CA65], a
+    ld [W_MainScript_WindowBorderAttribs], a
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
     ld hl, StringTable_denjuu_species
@@ -26,7 +26,7 @@ PauseMenu_ItemPrepName::
     ld [W_Status_NumericalTileIndex], a
     call Status_ExpandNumericalTiles
     xor a
-    ld [$CA65], a
+    ld [W_MainScript_WindowBorderAttribs], a
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
     ld hl, StringTable_battle_items
