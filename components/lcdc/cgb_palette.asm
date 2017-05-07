@@ -73,7 +73,7 @@ CGBLoadBackgroundPalette::
 	ld [W_CGBPaletteBackgroundIndex], a
 	ld a, c
 	ld [W_CGBPaletteBackgroundIndex + 1], a
-	ld hl, $4000
+	ld hl, LCDC_CGB_BGPaletteTable
 	sla c
 	rl b
 	sla c
@@ -88,16 +88,16 @@ CGBLoadBackgroundPalette::
 	
 .paletteLoop
 	push bc
-	ld a, 7
+	ld a, BANK(LCDC_CGB_BGPaletteTable)
 	rst $10
 	ld a, [hli]
 	ld b, a
 	ld a, [hli]
 	ld c, a
 	push hl
-	ld a, $D
+	ld a, BANK(LCDC_CGB_BGColorTable)
 	rst $10
-	ld hl, $4000
+	ld hl, LCDC_CGB_BGColorTable
 	sla c
 	rl b
 	sla c
@@ -138,9 +138,9 @@ CGBLoadBackgroundPaletteBanked::
 	add hl, de
 	push hl
 	pop de
-	ld a, $D
+	ld a, BANK(LCDC_CGB_BGColorTable)
 	rst $10
-	ld hl, $4000
+	ld hl, LCDC_CGB_BGColorTable
 	sla c
 	rl b
 	sla c
@@ -194,7 +194,7 @@ CGBLoadObjectPalette::
 	ld [W_CGBPaletteObjectIndex], a
 	ld a, c
 	ld [W_CGBPaletteObjectIndex + 1], a
-	ld hl, $4000
+	ld hl, LCDC_CGB_OBPaletteTable
 	sla c
 	rl b
 	sla c
@@ -209,16 +209,16 @@ CGBLoadObjectPalette::
 	
 .paletteLoop
 	push bc
-	ld a, $E
+	ld a, BANK(LCDC_CGB_OBPaletteTable)
 	rst $10
 	ld a, [hli]
 	ld b, a
 	ld a, [hli]
 	ld c, a
 	push hl
-	ld a, $D
+	ld a, BANK(LCDC_CGB_OBColorTable)
 	rst $10
-	ld hl, $5D80
+	ld hl, LCDC_CGB_OBColorTable
 	sla c
 	rl b
 	sla c
@@ -259,9 +259,9 @@ CGBLoadObjectPaletteBanked::
 	add hl, de
 	push hl
 	pop de
-	ld a, $D
+	ld a, BANK(LCDC_CGB_OBColorTable)
 	rst $10
-	ld hl, $5D80
+	ld hl, LCDC_CGB_OBColorTable
 	sla c
 	rl b
 	sla c

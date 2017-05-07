@@ -129,6 +129,7 @@ def parse_bank_names(filename):
 
 METATABLE_FARPTR = struct.Struct("<HB")
 PTR = struct.Struct("<H")
+BE_PTR = struct.Struct(">H")
 CHARA = struct.Struct("<B") #Pack or be packed
 
 def extract_metatable_from_rom(rom_filename, charmap, banknames, args):
