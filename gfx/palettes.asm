@@ -1334,7 +1334,7 @@ LCDC_CGB_OBColorTable::
     dcolor 31, 1, 1
 ;Palette 4
     dcolor 0, 0, 0
-    dcolor 31, 0, 0
+    dcolor 31, 31, 31
     dcolor 31, 0, 0
     dcolor 0, 0, 0
 ;Palette 5
