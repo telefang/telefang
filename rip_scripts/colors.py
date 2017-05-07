@@ -77,7 +77,7 @@ def extract(args):
         print "\nSECTION \"CGB Background Color Data\", " + format_sectionaddr_rom(args.bg_color_loc)
         print "LCDC_CGB_BGColorTable::"
         
-        bgc_code = rip_colordata(rom, args.bg_color_loc, max_bgp_index / 4)
+        bgc_code = rip_colordata(rom, args.bg_color_loc, max_bgp_index)
         
         i = 0
         
@@ -104,7 +104,7 @@ def extract(args):
         print "\nSECTION \"CGB Object Color Data\", " + format_sectionaddr_rom(args.obj_color_loc)
         print "LCDC_CGB_OBColorTable::"
         
-        obc_code = rip_colordata(rom, args.obj_color_loc, max_obp_index / 4)
+        obc_code = rip_colordata(rom, args.obj_color_loc, max_obp_index)
         
         i = 0
         
