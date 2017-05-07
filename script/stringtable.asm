@@ -2,7 +2,6 @@ SECTION "StringTable_battle_items Section", ROMX[$6b80], BANK[$78]
 StringTable_battle_items::
 	INCBIN "script/battle/items.stringtbl"
 StringTable_battle_items_END
-	INCBIN "script/battle/items_trashbytes.bin"
 
 SECTION "StringTable_denjuu_nicknames Section", ROMX[$78fa], BANK[$b]
 StringTable_denjuu_nicknames::
