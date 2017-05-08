@@ -70,7 +70,7 @@ OBJS := components/compression/malias.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
 	  components/saveclock/denjuu_nicknames.o \
-     components/encounter/string_utils.o \
+     components/encounter/string_utils.o components/encounter/select_indicator.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
      script/mainscript.o script/stringtable.o
      
