@@ -22,11 +22,11 @@ Encounter_PlaceSelectIndicator::
     jr z, .selectFurtherRight
     
 .selectFurtherLeft
-    ld a, $18
+    ld a, $17
     jr .setupAnimation
     
 .selectFurtherRight
-    ld a, $48
+    ld a, $36
 
 .setupAnimation
     ld [W_LCDC_MetaspriteAnimationXOffsets], a
