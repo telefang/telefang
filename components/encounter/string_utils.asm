@@ -2,7 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Encounter Staged-String Utilities", ROMX[$4357], BANK[$1C]
 Encounter_CopyStagedStringToArg2::
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Encounter_CopyToTableStringStaging
     jp Encounter_SetMessageArg2
     
@@ -35,7 +35,7 @@ Encounter_CopyToTableStringStaging::
     
 Encounter_SetMessageArg2::
     ld de, W_MainScript_MessageArg2
-    ld b, M_StringTable_Load8AreaSize + 1
+    ld b, M_StringTable_Load8AreaSize
     
 .loop
     ld a, [hli]
