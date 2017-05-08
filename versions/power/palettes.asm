@@ -4514,14 +4514,16 @@ LCDC_CGB_BGColorTable::
     dcolor 0, 0, 0
     dcolor 0, 0, 0
 ;Palette 370
+;TODO: Restore 370 / 371 to the palettes specified in Japanese version.
+;      Requested by RacieB
     dcolor 19, 28, 31
-    dcolor 19, 18, 20
-    dcolor 20, 9, 10
-    dcolor 21, 0, 0
+    dcolor 16, 21, 29
+    dcolor 14, 14, 27
+    dcolor 9, 0, 24
 ;Palette 371
     dcolor 19, 28, 31
-    dcolor 12, 20, 24
-    dcolor 6, 12, 17
+    dcolor 31, 29, 2
+    dcolor 24, 20, 0
     dcolor 0, 4, 11
 ;Palette 372
     dcolor 19, 28, 31
@@ -4874,7 +4876,7 @@ LCDC_CGB_OBColorTable::
     dcolor 31, 1, 1
 ;Palette 4
     dcolor 0, 0, 0
-    dcolor 31, 0, 0
+    dcolor 31, 31, 31
     dcolor 31, 0, 0
     dcolor 0, 0, 0
 ;Palette 5
