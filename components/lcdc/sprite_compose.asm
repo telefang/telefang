@@ -20,6 +20,19 @@ W_Metasprite_OAMYOffset: ds 1
 W_Metasprite_OAMXOffset: ds 1
 W_Metasprite_LowAttributes: ds 1
 
+SECTION "LCDC Sprite Prep Vars 3", WRAMX[$D41D], BANK[$1]
+W_LCDC_MetaspriteAnimationIndex:: ds 1
+
+SECTION "LCDC Sprite Prep Vars 4", WRAMX[$D43E], BANK[$1]
+W_LCDC_NextMetaspriteSlot:: ds 1
+
+SECTION "LCDC Sprite Prep Vars 5", WRAMX[$D4EE], BANK[$1]
+W_LCDC_MetaspriteAnimationBank:: ds 1
+
+SECTION "LCDC Sprite Prep Vars 6", WRAMX[$D4F0], BANK[$1]
+W_LCDC_MetaspriteAnimationXOffsets:: ds 6
+W_LCDC_MetaspriteAnimationYOffsets:: ds 6
+
 ;Called by the main gameloop.
 ;It loads "metasprites" from other staging locations and places the calculated
 ;OAM data in the DMA area for transfer on the next Vblank.
@@ -255,7 +268,7 @@ LCDC_BeginAnimationComplex::
     call LCDC_BeginMetaspriteAnimation
     ld hl, W_MetaSpriteConfig1
     ld de, M_MetaSpriteConfig_Size
-    ld a, [$D43E]
+    ld a, [W_LCDC_NextMetaspriteSlot]
     
 .findEmptyMetaspriteSlot
     cp 0
@@ -275,7 +288,7 @@ SECTION "LCDC Begin Metasprite Animation", ROM0[$3D18]
 LCDC_BeginMetaspriteAnimation::
     ld hl, W_MetaSpriteConfig1
     ld de, M_MetaSpriteConfig_Size
-    ld a, [$D43E]
+    ld a, [W_LCDC_NextMetaspriteSlot]
     
     cp 0
     jr z, .metaspriteConfigSelected
@@ -287,31 +300,33 @@ LCDC_BeginMetaspriteAnimation::
     
 .metaspriteConfigSelected
     push hl
-    ld hl, $D4F0
+    
+    ld hl, W_LCDC_MetaspriteAnimationXOffsets
     ld d, 0
-    ld a, [$D43E]
+    ld a, [W_LCDC_NextMetaspriteSlot]
     ld e, a
     add hl, de
-    
     ld a, [hl]
     ld b, a
-    ld hl, $D4F6
+    
+    ld hl, W_LCDC_MetaspriteAnimationYOffsets
     ld d, 0
-    ld a, [$D43E]
+    ld a, [W_LCDC_NextMetaspriteSlot]
     ld e, a
     add hl, de
-    
     ld a, [hl]
     ld c, a
+    
     pop hl
+    
     ld de, 0
     add hl, de
     
     ld a, 1
     ld [hli], a
-    ld a, [$D4EE]
+    ld a, [W_LCDC_MetaspriteAnimationBank]
     ld [hli], a
-    ld a, [$D41D]
+    ld a, [W_LCDC_MetaspriteAnimationIndex]
     ld [hli], a
     ld a, b
     ld [hli], a

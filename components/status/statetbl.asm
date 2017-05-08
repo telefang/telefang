@@ -178,15 +178,15 @@ Status_StateFadeScreen:
 ;This code appears to be adding some kind of sprites for something.
 ;Probably up/down indicators for multi-contact lists?
     ld a, $20
-    ld [$D4EE], a
+    ld [W_LCDC_MetaspriteAnimationBank], a
     ld a, $D7
-    ld [$D41D], a
+    ld [W_LCDC_MetaspriteAnimationIndex], a
     ld a, 0
-    ld [$D43E], a
+    ld [W_LCDC_NextMetaspriteSlot], a
     ld a, $28
-    ld [$D4F0], a
+    ld [W_LCDC_MetaspriteAnimationXOffsets], a
     ld a, 0
-    ld [$D4F6], a
+    ld [W_LCDC_MetaspriteAnimationYOffsets], a
     call LCDC_BeginMetaspriteAnimation
     ld a, 0
     ld bc, 4
