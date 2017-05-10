@@ -327,7 +327,7 @@ Status_StateUserJPInput:
     cp 0
     jp nz, .nextState
     ld a, 1
-    ld [$D43A], a
+    ld [W_Encounter_AlreadyInitialized], a
     
 .nextState
     jp Status_IncrementSubState

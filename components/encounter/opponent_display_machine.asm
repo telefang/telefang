@@ -1,0 +1,248 @@
+INCLUDE "telefang.inc"
+
+SECTION "Encounter Opponent Display Machine", ROMX[$44AF], BANK[$1C]
+Encounter_OpponentDisplayStateMachine::
+    ld a, [W_Battle_SubSubState]
+    ld hl, .stateTable
+    call System_IndexWordList
+    jp [hl]
+    
+.stateTable
+    dw Encounter_SubStateNull,Encounter_SubStateSetupThemeGraphics,Encounter_SubStateDrawEncounterScreen,$4693,$46B6,$4724,$4730,$4755
+    dw $4857,$48C2,$491D,$4929,$4945,$4957,$4961
+
+; State 06 01 00
+Encounter_SubStateNull::
+    jp Battle_IncrementSubSubState
+
+; State 06 01 01
+Encounter_SubStateSetupThemeGraphics::
+    call ClearGBCTileMap0
+    call ClearGBCTileMap1
+    call LCDC_ClearMetasprites
+    
+    ld bc, $12
+    call Banked_CGBLoadBackgroundPalette
+    
+    ld bc, $4
+    call Banked_CGBLoadObjectPalette
+    
+    ld bc, M_Malias_menu_encounter
+    call Banked_LoadMaliasGraphics
+    
+    ld a, $28
+    call PauseMenu_CGBStageFlavorPalette
+    
+    call Encounter_DrawScenery
+    jp Battle_IncrementSubSubState
+    
+Encounter_DrawScenery::
+    ld a, [W_Encounter_SceneryType]
+    call Banked_Encounter_LoadSceneryTiles
+    
+    ld a, [W_Encounter_SceneryType]
+    ld e, a
+    ld d, 0
+    sla e
+    rl d
+    ld hl, $60
+    ld a, [W_SaveClock_Hours]
+    cp 20
+    jr nc, .nightPalettes
+    cp 4
+    jr nz, .offsetByScenery
+    
+.nightPalettes
+    ld hl, $380
+    
+.offsetByScenery
+    ld a, [W_Encounter_SceneryType]
+    ld e, a
+    ld d, 0
+    sla e
+    rl d
+    add hl, de
+    
+    push hl
+    pop bc
+    push bc
+    
+    ld a, 3
+    call CGBLoadBackgroundPaletteBanked
+    
+    pop bc
+    inc bc
+    ld a, 4
+    call CGBLoadBackgroundPaletteBanked
+    
+    ld a, 1
+    ld [W_RLEAttribMapsEnabled], a
+    
+    ret
+
+; State 06 01 02
+Encounter_SubStateDrawEncounterScreen::
+    ld a, $20
+    ld [W_LCDC_MetaspriteAnimationBank], a
+    
+    ld bc, 0
+    ld e, $B
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    
+    ld bc, 0
+    ld e, $B
+    ld a, 0
+    call Banked_RLEDecompressAttribsTMAP0
+    
+    ld e, $40
+    ld a, [W_Encounter_SceneryType]
+    add a, e
+    ld e, a
+    ld bc, 4
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    
+    ld e, $40
+    ld a, [W_Encounter_SceneryType]
+    add a, e
+    ld e, a
+    ld bc, 4
+    ld a, 0
+    call Banked_RLEDecompressAttribsTMAP0
+    
+    ld bc, $201
+    ld e, $84
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    
+    ld hl, $9850
+    ld a, [W_Encounter_SignalStrength]
+    call Encounter_DrawSignalIndicator
+    
+    ld a, 5
+    ld [W_MainScript_WindowBorderAttribs], a
+    ld a, $F0
+    ld [W_Status_NumericalTileIndex], a
+    call Status_ExpandNumericalTiles
+    
+    ld a, [W_Encounter_AlreadyInitialized]
+    cp 0
+    jr z, .startMusic
+    
+.alreadyPlaying
+    ld a, [W_EncounterDenjuuSpecies]
+    push af
+    ld c, 0
+    ld de, $8800
+    call Banked_Battle_LoadDenjuuPortrait
+    
+    ld a, [W_Encounter_DenjuuSpecies]
+    ld de, StringTable_denjuu_species
+    ld bc, $9500
+    call MainScript_DrawCenteredName75
+    
+    ld bc, $B01
+    ld e, $97
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    
+    ld a, [W_Encounter_DenjuuLevel]
+    ld hl, $984B
+    ld c, 1
+    call Encounter_DrawTileDigits
+    jp Encounter_FadeAndNextState
+    
+.startMusic
+    xor a
+    ld [$D40E], a
+    ld [$D40D], a
+    
+    ld a, $12
+    call Sound_IndexMusicSetBySong
+    
+    ld [byte_FFA0], a
+    
+    ld a, [W_Encounter_BattleType]
+    cp M_Encounter_BattleTypeRandom
+    jr z, .drawDenjuu
+    cp M_Encounter_BattleTypeStory
+    jr z, .drawDenjuu
+    
+.drawTfanger
+    ld a, [W_Encounter_TFangerClass]
+    dec a
+    push af
+    
+    ld de, $8800
+    call Banked_Encounter_LoadTFangerPortrait
+    
+    pop af
+    call Battle_LoadExtraPalette
+    
+    ld a, [W_Encounter_DenjuuSpecies]
+    ld c, 0
+    ld de, $8B80
+    call Banked_Battle_LoadDenjuuPortrait
+    
+    ld a, [W_Encounter_TFangerClass]
+    dec a
+    ld de, StringTable_battle_tfangers
+    ld bc, $9500
+    call MainScript_DrawCenteredName75
+    
+    ld a, [W_Encounter_TFangerClass]
+    dec a
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, StringTable_battle_tfangers
+    call StringTable_LoadName75
+    call Encounter_CopyStagedStringToArg2
+    
+    ld c, $71
+    call Battle_QueueMessage
+    jp Encounter_FadeAndNextState
+
+.drawDenjuu
+    ld a, [W_Encounter_DenjuuSpecies]
+    push af
+    ld c, 0
+    ld de, $8800
+    call Banked_Battle_LoadDenjuuPortrait
+    
+    pop af
+    call Battle_LoadDenjuuPaletteOpponent
+    
+    ld a, [W_Encounter_DenjuuSpecies]
+    ld de, StringTable_denjuu_species
+    ld bc, $9500
+    call MainScript_DrawCenteredName75
+    
+    ld bc, $B01
+    ld e, $97
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    
+    ld a, [W_Encounter_DenjuuLevel]
+    ld hl, $984B
+    ld c, 1
+    call Encounter_DrawTileDigits
+    
+    ld a, [W_Encounter_DenjuuSpecies]
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, StringTable_denjuu_species
+    call StringTable_LoadName75
+    call Encounter_CopyStagedStringToArg2
+    
+    ld a, [W_Encounter_BattleType]
+    cp M_Encounter_BattleTypeStory
+    jr z, .storyDenjuuMessage
+    
+.randomEncounterMessage
+    ld c, M_Battle_MessageRandomEncounter
+    call Battle_QueueMessage
+    jp Encounter_FadeAndNextState
+    
+.storyDenjuuMessage
+    ld c, M_Battle_MessageStoryEncounter
+    call Battle_QueueMessage
+    jp Encounter_FadeAndNextState
