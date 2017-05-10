@@ -111,7 +111,7 @@ SECTION "Status Phone Number Graphic", ROMX[$49B8], BANK[$29]
 Status_LoadPhoneDigits::
     ld hl, $9600
     ld de, Status_PhoneDigits
-    ld bc, $200
+    ld bc, $200 ;This is a LIE. It's actually $1E0 bytes...
     jp LCDC_LoadTiles
     
 Status_PhoneDigits:
