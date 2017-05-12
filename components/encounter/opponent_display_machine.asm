@@ -66,7 +66,7 @@ Encounter_DrawScenery::
     cp 20
     jr nc, .nightPalettes
     cp 4
-    jr nz, .offsetByScenery
+    jr nc, .offsetByScenery
     
 .nightPalettes
     ld hl, $380
@@ -152,6 +152,9 @@ Encounter_SubStateDrawEncounterScreen::
     ld c, 0
     ld de, $8800
     call Banked_Battle_LoadDenjuuPortrait
+    
+    pop af
+    call Battle_LoadDenjuuPaletteOpponent
     
     ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     ld de, StringTable_denjuu_species
