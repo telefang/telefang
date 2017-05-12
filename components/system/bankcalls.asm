@@ -154,6 +154,11 @@ Banked_MainScript_DrawShortName::
     rst $18
     ret
     
+Banked_Encounter_LoadSceneryTiles::
+    call Encounter_LoadSceneryTiles
+    rst $18
+    ret
+    
 SECTION "Banked Call Helpers 5 - The bankening", ROM0[$0588]
 Banked_Sound_PlaySample::
     call Sound_PlaySample
