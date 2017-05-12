@@ -94,11 +94,11 @@ GameState05: ;Overworld
 	rst $10
 	jp $1EA1
 
-GameState06:
-	ld a, $1C
+GameState06: ;Encounter
+	ld a, BANK(Encounter_GameStateMachine)
 	ld [W_PreviousBank], a
 	rst $10
-	jp $4000
+	jp Encounter_GameStateMachine
 
 GameState07: ;Battle
 	ld a, 5
