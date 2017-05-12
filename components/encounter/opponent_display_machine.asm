@@ -1,5 +1,21 @@
 INCLUDE "telefang.inc"
 
+SECTION "Encounter Memory 6", WRAM0[$C9DA]
+W_Encounter_SceneryType:: ds 1
+
+SECTION "Encounter Memory 5", WRAM0[$CB2D]
+W_Encounter_PortraitOffset:: ds 1
+W_Encounter_PortraitBank:: ds 1
+
+SECTION "Encounter Memory 2", WRAMX[$D403], BANK[$1]
+W_Encounter_BattleType:: ds 1
+
+SECTION "Encounter Memory 3", WRAMX[$D406], BANK[$1]
+W_Encounter_TFangerClass:: ds 1
+
+SECTION "Encounter Memory 1", WRAMX[$D43A], BANK[$1]
+W_Encounter_AlreadyInitialized:: ds 1
+
 SECTION "Encounter Opponent Display Machine", ROMX[$44AF], BANK[$1C]
 Encounter_OpponentDisplayStateMachine::
     ld a, [W_Battle_SubSubState]
