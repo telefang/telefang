@@ -62,7 +62,7 @@ Encounter_DrawScenery::
     sla e
     rl d
     ld hl, $60
-    ld a, [W_SaveClock_Hours]
+    ld a, [W_Overworld_CurrentTimeHours]
     cp 20
     jr nc, .nightPalettes
     cp 4
