@@ -133,7 +133,7 @@ Encounter_SubStateDrawEncounterScreen::
     call Banked_RLEDecompressTMAP0
     
     ld hl, $9850
-    ld a, [W_Encounter_SignalStrength]
+    ld a, [W_Overworld_SignalStrength]
     call Encounter_DrawSignalIndicator
     
     ld a, 5
@@ -147,13 +147,13 @@ Encounter_SubStateDrawEncounterScreen::
     jr z, .startMusic
     
 .alreadyPlaying
-    ld a, [W_EncounterDenjuuSpecies]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     push af
     ld c, 0
     ld de, $8800
     call Banked_Battle_LoadDenjuuPortrait
     
-    ld a, [W_Encounter_DenjuuSpecies]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     ld de, StringTable_denjuu_species
     ld bc, $9500
     call MainScript_DrawCenteredName75
@@ -163,11 +163,11 @@ Encounter_SubStateDrawEncounterScreen::
     ld a, 0
     call Banked_RLEDecompressTMAP0
     
-    ld a, [W_Encounter_DenjuuLevel]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantLevel]
     ld hl, $984B
     ld c, 1
     call Encounter_DrawTileDigits
-    jp Encounter_FadeAndNextState
+    jp .fadeAndNextState
     
 .startMusic
     xor a
@@ -196,7 +196,7 @@ Encounter_SubStateDrawEncounterScreen::
     pop af
     call Battle_LoadExtraPalette
     
-    ld a, [W_Encounter_DenjuuSpecies]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     ld c, 0
     ld de, $8B80
     call Banked_Battle_LoadDenjuuPortrait
@@ -216,10 +216,10 @@ Encounter_SubStateDrawEncounterScreen::
     
     ld c, $71
     call Battle_QueueMessage
-    jp Encounter_FadeAndNextState
+    jp .fadeAndNextState
 
 .drawDenjuu
-    ld a, [W_Encounter_DenjuuSpecies]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     push af
     ld c, 0
     ld de, $8800
@@ -228,7 +228,7 @@ Encounter_SubStateDrawEncounterScreen::
     pop af
     call Battle_LoadDenjuuPaletteOpponent
     
-    ld a, [W_Encounter_DenjuuSpecies]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     ld de, StringTable_denjuu_species
     ld bc, $9500
     call MainScript_DrawCenteredName75
@@ -238,12 +238,12 @@ Encounter_SubStateDrawEncounterScreen::
     ld a, 0
     call Banked_RLEDecompressTMAP0
     
-    ld a, [W_Encounter_DenjuuLevel]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantLevel]
     ld hl, $984B
     ld c, 1
     call Encounter_DrawTileDigits
     
-    ld a, [W_Encounter_DenjuuSpecies]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     ld [W_StringTable_ROMTblIndex], a
     ld hl, StringTable_denjuu_species
     call StringTable_LoadName75
@@ -256,9 +256,19 @@ Encounter_SubStateDrawEncounterScreen::
 .randomEncounterMessage
     ld c, M_Battle_MessageRandomEncounter
     call Battle_QueueMessage
-    jp Encounter_FadeAndNextState
+    jp .fadeAndNextState
     
 .storyDenjuuMessage
     ld c, M_Battle_MessageStoryEncounter
     call Battle_QueueMessage
-    jp Encounter_FadeAndNextState
+    jp .fadeAndNextState
+    
+.unk
+    ld a, 0
+    ld [$D45D], a
+    ld [$D45E], a
+    
+.fadeAndNextState
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp Battle_IncrementSubSubState
