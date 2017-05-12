@@ -47,7 +47,8 @@ MainScript_DrawStatusText::
 	pop hl
 	pop de
 	jp MainScript_ADVICE_DrawStatusText.exitFromSecondHalf
-	
+
+Encounter_WriteTileToVRAM::
 	di
 	call YetAnotherWFB
 	ld [hl], c

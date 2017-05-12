@@ -51,8 +51,8 @@ OBJS := components/compression/malias.o \
      components/mainscript/shop_item_window.o \
      components/mainscript/advice.o \
 	  components/map/locations.o \
-     components/overworld/memory.o \
-	  components/sound/samples.o \
+     components/overworld/memory.o components/overworld/rtc.o \
+	  components/sound/samples.o components/sound/indexing.o \
 	  components/serio/driver.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o components/battle/species.o \
@@ -71,6 +71,9 @@ OBJS := components/compression/malias.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
 	  components/saveclock/denjuu_nicknames.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
+     components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
+     components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
+     components/encounter/scenery.o components/encounter/state_machine.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
      script/mainscript.o script/stringtable.o
      

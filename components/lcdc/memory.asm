@@ -1,5 +1,4 @@
-INCLUDE "registers.inc"
-INCLUDE "components/lcdc/oam_dma.inc"
+INCLUDE "telefang.inc"
 
 ;Contains utility functions for initializing or setting memory used by other
 ;parts of the game.
@@ -27,6 +26,18 @@ ClearWRAMVariables::
 	ld bc, W_Stack - (W_ShadowOAM + M_OAMShadowLength)
 	ld hl, W_ShadowOAM + M_OAMShadowLength
 	jp memclr
+
+LCDC_ClearMetasprites::
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    
+    ld bc, M_MetaSpriteConfig_Size * (M_MetaSpriteConfig1_Count + M_MetaSpriteConfig2_Count + M_MetaSpriteConfig3_Count)
+    ld hl, W_MetaSpriteConfig1
+    call memclr
+    
+    ld bc, $40
+    ld hl, $C480
+    jp memclr
 	
 SECTION "LCDC Memory Utility 2", ROM0[$09AA]
 ;Yet another wait-for-blank, because I assume there's more in the code.

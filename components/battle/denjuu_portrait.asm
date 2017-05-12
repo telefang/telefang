@@ -112,7 +112,7 @@ Battle_LoadDenjuuPortrait::
     jp LCDC_LoadReversedGraphic
     
 SECTION "Denjuu Portrait Loader Ptr Lookup Table", ROM0[$1732]
-Battle_DenjuuPortraitLookupTable:
+Battle_DenjuuPortraitLookupTable::
 Vi SET 0
 REPT M_Battle_DenjuuPortraitStride
     dw $4000 + Vi

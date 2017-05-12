@@ -1,7 +1,7 @@
 INCLUDE "registers.inc"
 
 SECTION "RLE Attribmap Vars", WRAMX[$DD06], BANK[$1]
-W_RLEAttribMapsEnabled: ds 1
+W_RLEAttribMapsEnabled:: ds 1
 
 SECTION "RLE Attribmap Decompress", ROM0[$0B1A]
 RLEDecompressAttribsTMAP0::

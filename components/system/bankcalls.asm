@@ -101,6 +101,11 @@ Banked_Battle_LoadDenjuuPortrait::
     call Battle_LoadDenjuuPortrait
     rst $18
     ret
+
+Banked_Encounter_LoadTFangerPortrait::
+    call Encounter_LoadTFangerPortrait
+    rst $18
+    ret
     
 SECTION "Banked Call Helpers Number Niiiiininininine", ROM0[$528]
 Banked_MainScript_InitializeMenuText::
@@ -146,6 +151,11 @@ Banked_MainScript_DrawName75::
 
 Banked_MainScript_DrawShortName::
     call MainScript_DrawShortName
+    rst $18
+    ret
+    
+Banked_Encounter_LoadSceneryTiles::
+    call Encounter_LoadSceneryTiles
     rst $18
     ret
     
