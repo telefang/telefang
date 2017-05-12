@@ -4,7 +4,7 @@ W_Sound_MusicSet:: ds 1
 SECTION "Sound Indexing", ROM0[$15F5]
 Sound_IndexMusicSetBySong::
     cp $10
-    jr nz, .midBank
+    jr nc, .midBank
     
 .lowBank
     push af
