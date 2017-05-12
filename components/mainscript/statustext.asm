@@ -46,7 +46,7 @@ MainScript_DrawStatusText::
 	pop bc
 	ret
 
-	;Mystery code block. Not important yet.
+Encounter_WriteTileToVRAM::
 	di
 	call YetAnotherWFB
 	ld [hl], c
