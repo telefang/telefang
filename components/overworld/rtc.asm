@@ -52,6 +52,7 @@ Overworld_ReadRTCTime::
     nop
     nop
     ld a, [$A000]
+    and 1
     ld [W_Overworld_CurrentTimeDays + 1], a
     
     ld a, 0
