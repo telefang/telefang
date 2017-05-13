@@ -74,7 +74,8 @@ OBJS := components/compression/malias.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
      components/encounter/scenery.o components/encounter/state_machine.o \
-     components/summon/state_machine.o \
+     components/summon/state_machine.o components/summon/index_utils.o \
+     components/summon/draw_utils.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
      script/mainscript.o script/stringtable.o
      
