@@ -22,4 +22,9 @@ M_Battle_LocationNotPresent EQU $00
 M_Battle_LocationCalled EQU $01
 M_Battle_LocationArriving EQU $02
 M_Battle_LocationPresent EQU $03
-M_Battle_LocationGettingExp EQU $09
+M_Battle_LocationDelayed EQU $04
+M_Battle_LocationChargingDenma EQU $05
+M_Battle_LocationDeserted EQU $08
+M_Battle_LocationQueuedForEXP EQU $09
+M_Battle_LocationLeveling EQU $0A
+M_Battle_LocationEvolving EQU $0B
