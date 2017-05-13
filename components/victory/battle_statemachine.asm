@@ -12,22 +12,22 @@ Victory_BattleScreenStateMachine::
 
 Victory_BattleScreenPrivateStrings::
 
-;すばやさ - $427D
+;Spd - $427D
 .speed
-    db $44, $96, $5A, $42
+    db "Spd "
     
-;こうげき - $4281
+;Atk - $4281
 .attack
-    db $41, $3A, $8A, $3E
+    db "Atk "
     
-;ぼうぎょ - $4285
+;Def - $4285
 .defense
-    db $99, $3A, $88, $6C
+    db "Def "
     
-;でんこう - $4289
+;D.Atk - $4289
 .denmaAtk
-    db $94, $63, $41, $3A
+    db $F, "Atk"
     
-;でんぼう - $428D
+;D.Def - $428D
 .denmaDef
-    db $94, $63, $99, $3A
+    db $F, "Def"
