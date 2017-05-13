@@ -107,10 +107,10 @@ GameState07: ;Battle
 	jp $441B
 
 GameState08: ;Victory
-	ld a, $1D
+	ld a, BANK(Victory_ExternalStateMachine)
 	ld [W_PreviousBank], a
 	rst $10
-	jp $4000
+	jp Victory_ExternalStateMachine
 
 GameState09: ;Denjuu Status
 	ld a, 2
