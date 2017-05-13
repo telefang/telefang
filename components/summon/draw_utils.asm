@@ -16,7 +16,7 @@ Summon_DrawPageContactNames::
     
     ld hl, $9400
     ld de, W_SaveClock_NicknameStaging
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld b, M_StringTable_Load8AreaSize
     call Banked_MainScript_DrawStatusText
     
     ld bc, $B03
@@ -42,7 +42,7 @@ Summon_DrawPageContactNames::
     
     ld hl, $9480
     ld de, W_SaveClock_NicknameStaging
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld b, M_StringTable_Load8AreaSize
     call Banked_MainScript_DrawStatusText
     
     ld bc, $B06
@@ -68,7 +68,7 @@ Summon_DrawPageContactNames::
     
     ld hl, $9500
     ld de, W_SaveClock_NicknameStaging
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld b, M_StringTable_Load8AreaSize
     call Banked_MainScript_DrawStatusText
     
     ld bc, $B09
