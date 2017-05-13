@@ -1,3 +1,11 @@
+SECTION "Summon Memory 1", WRAMX[$D413], BANK[1]
+W_Summon_SelectedPageCount:: ds 1
+W_Summon_SelectedPageContact:: ds 1
+
+SECTION "Summon Memory 2", WRAMX[$D4A0], BANK[1]
+W_Summon_CurrentPage:: ds 1
+W_Summon_MaxPages:: ds 1
+
 SECTION "Summon Screen State Machine", ROMX[$4AFD], BANK[$1C]
 Summon_StateMachine::
     ld a, [W_Battle_SubSubState]
