@@ -28,9 +28,9 @@ Victory_CopyParticipantIntoActiveSlot::
 Victory_LoadSpeciesNameAsArg1::
     ld [W_StringTable_ROMTblIndex], a
     ld hl, StringTable_denjuu_species
-    call StringTable_LoadName75
+    call Banked_PauseMenu_ADVICE_LoadName75
     
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Victory_CopyIntoTableStaging
     call Victory_CopyIntoArg1
     
@@ -65,7 +65,7 @@ Victory_CopyIntoTableStaging::
 
 Victory_CopyIntoArg1::
     ld de, W_MainScript_MessageArg1
-    ld b, M_MainScript_MessageArg1Size
+    ld b, 9
     
 .copyLoop
     ld a, [hli]
