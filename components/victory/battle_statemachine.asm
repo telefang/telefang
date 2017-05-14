@@ -10,24 +10,22 @@ Victory_BattleScreenStateMachine::
     dw $4FC2,$4FD4,$4FE8,$449F,$4B86,$497D,$4942,$4BDC
     dw $4C2B,$47E6,$4813,$4D96,$4E64,$4E89,$4F27,$4C3A
 
-Victory_BattleScreenPrivateStrings::
-
 ;すばやさ - $427D
-.speed
+Victory_BattleScreenPrivateStrings_speed::
     db $44, $96, $5A, $42
     
 ;こうげき - $4281
-.attack
+Victory_BattleScreenPrivateStrings_attack::
     db $41, $3A, $8A, $3E
     
 ;ぼうぎょ - $4285
-.defense
+Victory_BattleScreenPrivateStrings_defense::
     db $99, $3A, $88, $6C
     
 ;でんこう - $4289
-.denmaAtk
+Victory_BattleScreenPrivateStrings_denmaAtk::
     db $94, $63, $41, $3A
     
 ;でんぼう - $428D
-.denmaDef
+Victory_BattleScreenPrivateStrings_denmaDef::
     db $94, $63, $99, $3A
