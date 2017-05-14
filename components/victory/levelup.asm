@@ -428,10 +428,10 @@ Victory_SubStateCheckMoveUnlocks::
     
 .unlockedMoves
     ld [W_StringTable_ROMTblIndex], a
-    ld hl, StringTable_battle_attacks
+    ld hl, StringTable_battle_attacks_old
     call StringTable_LoadName75
     
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call Victory_CopyIntoTableStaging
     call Victory_CopyIntoArg1
     
