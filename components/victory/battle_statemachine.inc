@@ -1,0 +1,5 @@
+M_Victory_SubStateStatWindowPalette EQU $05
+M_Victory_SubStateStatWindowIdle EQU $0C
+M_Victory_SubStateDrawStatWindow EQU $0D
+M_Victory_SubStateCheckMoveUnlocks EQU $0F
+M_Victory_SubStateNewMoveMessage EQU $10
