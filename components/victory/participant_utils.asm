@@ -1,5 +1,8 @@
 INCLUDE "telefang.inc"
 
+SECTION "Victory Participant Memory", WRAMX[$D4C9], BANK[$1]
+W_Victory_UnlockedMove:: ds 1
+
 SECTION "Victory Participant Utils", ROMX[$404F], BANK[$1D]
 Victory_CopyParticipantIntoActiveSlot::
     ld bc, W_Battle_CurrentParticipant
@@ -74,4 +77,62 @@ Victory_CopyIntoArg1::
     dec b
     jr nz, .copyLoop
     
+    ret
+    
+Victory_CheckPartnerMoveUnlocks::
+    xor a
+    ld [W_Victory_UnlockedMove], a
+    
+    push hl
+    ld a, [hld] ;Level
+    ld b, a
+    ld a, [hl] ;Species
+    ld c, M_Battle_SpeciesMove3Level
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld b, a
+    pop hl
+    ld a, [hl] ;Level
+    cp b
+    jr nz, .checkFourthMove
+    
+.thirdMoveUnlocked
+    ld b, 0
+    dec hl
+    ld a, [hl]
+    ld c, M_Battle_SpeciesMove3
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld [W_Victory_UnlockedMove], a
+    
+    jr .ret
+    
+.checkFourthMove
+    push hl
+    ld a, [hld] ;Level
+    ld b, a
+    ld a, [hl] ;Species
+    ld c, M_Battle_SpeciesMove4Level
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld b, a
+    pop hl
+    ld a, [hl] ;Level
+    cp b
+    jr nz, .ret
+    
+.fourthMoveUnlocked
+    ld b, 0
+    dec hl
+    ld a, [hl]
+    ld c, M_Battle_SpeciesMove4
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld [W_Victory_UnlockedMove], a
+    
+.ret
     ret
