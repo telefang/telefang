@@ -190,7 +190,29 @@ Status_DrawStatValue::
     pop hl
     ret
 
-SECTION "Status Screen Int to Digits Draw Func 2", ROM0[$14B1]
+SECTION "Status Screen Int to Digits Draw Func 2", ROM0[$1499]
+Status_DrawStatValueSmall::
+    push hl
+    push de
+    push bc
+    push bc
+    push hl
+    call Status_DecimalizeStatValue
+    
+    pop hl
+    pop bc
+    
+    ld a, [W_GenericRegPreserve]
+    and $F
+    add a, $F0
+    call vmempoke
+    
+    pop bc
+    pop de
+    pop hl
+    
+    ret
+    
 Status_DrawStatValuePad3::
     push hl
     push de

@@ -6,28 +6,26 @@ Victory_BattleScreenStateMachine::
     jp [hl]
     
 .stateTable
-    dw $4291,$42C4,$42F6,$47D7,$4827,$4957,$4F3D,$4F80
-    dw $4FC2,$4FD4,$4FE8,$449F,$4B86,$497D,$4942,$4BDC
-    dw $4C2B,$47E6,$4813,$4D96,$4E64,$4E89,$4F27,$4C3A
-
-Victory_BattleScreenPrivateStrings::
+    dw $4291,$42C4,$42F6,$47D7,$4827,Victory_SubStateStatWindowPalette,$4F3D,$4F80
+    dw $4FC2,$4FD4,$4FE8,$449F,Victory_SubStateStatWindowIdle,Victory_SubStateDrawStatWindow,$4942,Victory_SubStateCheckMoveUnlocks
+    dw Victory_SubStateNewMoveMessage,$47E6,$4813,$4D96,$4E64,$4E89,$4F27,$4C3A
 
 ;Spd - $427D
-.speed
+Victory_BattleScreenPrivateStrings_speed::
     db "Spd "
     
 ;Atk - $4281
-.attack
+Victory_BattleScreenPrivateStrings_attack::
     db "Atk "
     
 ;Def - $4285
-.defense
+Victory_BattleScreenPrivateStrings_defense::
     db "Def "
     
 ;D.Atk - $4289
-.denmaAtk
+Victory_BattleScreenPrivateStrings_denmaAtk::
     db $F, "Atk"
     
 ;D.Def - $428D
-.denmaDef
+Victory_BattleScreenPrivateStrings_denmaDef::
     db $F, "Def"
