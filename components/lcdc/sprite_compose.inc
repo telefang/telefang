@@ -9,6 +9,11 @@ M_LCDC_MetaSpriteConfig_Index EQU $2
 M_LCDC_MetaSpriteConfig_XOffset EQU $3
 M_LCDC_MetaSpriteConfig_YOffset EQU $4
 M_LCDC_MetaSpriteConfig_LoAttribs EQU $5
+M_LCDC_MetaSpriteConfig_AnimPresent EQU $6
+M_LCDC_MetaSpriteConfig_AnimKeyframes EQU $7
+M_LCDC_MetaSpriteConfig_AnimCounter EQU $8
+M_LCDC_MetaSpriteConfig_AnimPosition EQU $9
+M_LCDC_MetaSpriteConfig_AnimStopped EQU $A
 
 M_LCDC_MetaSpriteData_XOffset EQU $0
 M_LCDC_MetaSpriteData_YOffset EQU $1

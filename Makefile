@@ -78,7 +78,8 @@ OBJS := components/compression/malias.o \
      components/summon/draw_utils.o \
      components/victory/external_statemachine.o components/victory/participant_utils.o \
      components/victory/battle_statemachine.o components/victory/levelup.o \
-     components/victory/stat_icon.o \
+     components/victory/stat_icon.o components/victory/natural_evo.o \
+     components/victory/ui_utils.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
      script/mainscript.o script/stringtable.o
      

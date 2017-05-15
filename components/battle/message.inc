@@ -8,3 +8,5 @@ M_Battle_MessageBaseStatusConditionRemoval EQU $44
 M_Battle_MessageBaseStatusConditionInflicted EQU $53
 
 M_Battle_MessageStoryEncounter EQU $71
+
+M_Battle_MessageNaturalEvoCancel EQU $8E
