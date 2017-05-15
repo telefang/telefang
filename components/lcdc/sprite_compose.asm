@@ -284,6 +284,37 @@ LCDC_BeginAnimationComplex::
     pop af
     jp Banked_PauseMenu_InitializeCursor
     
+LCDC_IterateAnimationComplex::
+    ld hl, W_MetaSpriteConfig1
+    ld de, M_MetaSpriteConfig_Size
+    ld a, [W_LCDC_NextMetaspriteSlot]
+    
+.indexLoop
+    cp 0
+    jr z, .initializeCursor
+    add hl, de
+    dec a
+    jr .indexLoop
+    
+.initializeCursor
+    push hl
+    pop de
+    push de
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    
+    ld hl, M_LCDC_MetaSpriteConfig_AnimPresent
+    pop de
+    add hl, de
+    
+    ld a, [hl]
+    cp 0
+    ret nz
+    
+    jp Status_IncrementSubState
+    
 SECTION "LCDC Begin Metasprite Animation", ROM0[$3D18]
 LCDC_BeginMetaspriteAnimation::
     ld hl, W_MetaSpriteConfig1
