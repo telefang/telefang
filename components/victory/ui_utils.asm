@@ -10,11 +10,11 @@ Victory_PlaceChoiceCursor::
     jr z, .secondOptionSelected
     
 .firstOptionSelected
-    ld a, $18
+    ld a, $17
     jr .writeXOffset
     
 .secondOptionSelected
-    ld a, $48
+    ld a, $36
     
 .writeXOffset
     ld [W_LCDC_MetaspriteAnimationXOffsets], a
