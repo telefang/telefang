@@ -1,5 +1,6 @@
 M_Battle_MessageDenjuuBattlePhrase EQU $02
 M_Battle_MessageDenjuuBattlePhraseAlias EQU $04
+M_Battle_MessageDenjuuDefected EQU $09
 
 M_Battle_MessageRandomEncounter EQU $0B
 

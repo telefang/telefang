@@ -1,0 +1,6 @@
+M_Victory_SubStateDrawDefectionScreen EQU $00
+M_Victory_SubStateFadeInDefectionScreen EQU $01
+M_Victory_SubStateDefectionScreenText EQU $01
+M_Victory_SubStateDefectionScreenFinish EQU $01
+M_Victory_SubStateFadeOutDefectionScreen EQU $01
+M_Victory_SubStateExitDefectionScreen EQU $01
