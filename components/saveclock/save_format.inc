@@ -1,5 +1,5 @@
 ;TODO: Determine actual size of array
-M_SaveClock_MaxDenjuuContacts EQU 1
+M_SaveClock_MaxDenjuuContacts EQU $FE
 
 ;Size of individual save data elements.
 ;WARNING: Other routines assume these values when calculating pointers.

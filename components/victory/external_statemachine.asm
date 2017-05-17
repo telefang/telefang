@@ -12,7 +12,7 @@ Victory_ExternalStateMachine::
 
 ;State 08 01
 Victory_ExStateVictoryScreen::
-    jp $40EE ; "Internal" state machine
+    jp Victory_GameStateMachine
     
 Victory_ExStateOverworldReturn::
     xor a
