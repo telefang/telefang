@@ -1,3 +1,16 @@
+INCLUDE "telefang.inc"
+
+SECTION "Defection Memory", WRAMX[$D492], BANK[$1]
+W_Victory_DefectedContactSpecies:: ds 1
+W_Victory_DefectedContactLevel:: ds 1
+
+SECTION "Defection Memory 2", WRAMX[$D4EB], BANK[$1]
+W_Victory_DefectedContact:: ds 1
+
+SECTION "Defection Memory 3", WRAMX[$D40C], BANK[$1]
+W_Victory_ContactsPresent:: ds 1
+
+SECTION "Defection State Machine", ROMX[$57C3], BANK[$1D]
 Victory_DefectionStateMachine::
     ld a, [W_Battle_4thOrderSubState]
     ld hl, .stateTable
@@ -20,26 +33,26 @@ Victory_SubStateDrawDefectionScreen::
     call Banked_CGBLoadBackgroundPalette
     
     ld a, $28
-    call PauseMenu_CGBStageFlavourPalette
+    call PauseMenu_CGBStageFlavorPalette
     
     ld bc, 0
     ld e, $70
-    lc a, 0
+    ld a, 0
     call Banked_RLEDecompressTMAP0
     
     ld bc, 0
     ld e, $70
-    lc a, 0
+    ld a, 0
     call Banked_RLEDecompressAttribsTMAP0
     
     ld bc, $605
     ld e, $91
-    lc a, 0
+    ld a, 0
     call Banked_RLEDecompressTMAP0
     
     ld bc, $605
     ld e, $8B
-    lc a, 0
+    ld a, 0
     call Banked_RLEDecompressAttribsTMAP0
     
     ld a, [W_Victory_ContactsPresent]

@@ -70,6 +70,7 @@ OBJS := components/compression/malias.o \
      components/victory/battle_statemachine.o components/victory/levelup.o \
      components/victory/stat_icon.o components/victory/natural_evo.o \
      components/victory/ui_utils.o components/victory/game_statemachine.o \
+     components/victory/defection_statemachine.o components/victory/contact_utils.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
      script/mainscript.o script/stringtable.o
      
