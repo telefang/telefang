@@ -10,4 +10,6 @@ M_Battle_MessageBaseStatusConditionInflicted EQU $53
 
 M_Battle_MessageStoryEncounter EQU $71
 
+M_Battle_MessageConnectionError EQU $74
+
 M_Battle_MessageNaturalEvoCancel EQU $8E
