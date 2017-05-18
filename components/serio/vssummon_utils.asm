@@ -2,6 +2,8 @@ INCLUDE "telefang.inc"
 
 SECTION "SerIO VSSummon Utils", ROMX[$56FE], BANK[$1F]
 ;Oh look, a duplicate of existing Summon code...
+;TODO: Change all of the DrawStatusText length parameters with the size of the
+;Nickname Staging buffer.
 SerIO_SummonDrawNicknames::
     ld a, [W_Summon_SelectedPageCount]
     cp 1
@@ -24,7 +26,7 @@ SerIO_SummonDrawNicknames::
     
     ld hl, $9400
     ld de, W_SaveClock_NicknameStaging
-    ld b, M_SaveClock_DenjuuNicknameStagingSize - 1
+    ld b, 6
     call Banked_MainScript_DrawStatusText
     
     ld bc, $B03
@@ -53,7 +55,7 @@ SerIO_SummonDrawNicknames::
     
     ld hl, $9480
     ld de, W_SaveClock_NicknameStaging
-    ld b, M_SaveClock_DenjuuNicknameStagingSize - 1
+    ld b, 6
     call Banked_MainScript_DrawStatusText
     
     ld bc, $B06
@@ -82,7 +84,7 @@ SerIO_SummonDrawNicknames::
     
     ld hl, $9500
     ld de, W_SaveClock_NicknameStaging
-    ld b, M_SaveClock_DenjuuNicknameStagingSize - 1
+    ld b, 6
     call Banked_MainScript_DrawStatusText
     
     ld bc, $B09
