@@ -48,3 +48,26 @@ SerIO_CopyIntoArg1::
     jr nz, .copyLoop
     
     ret
+    
+SECTION "VS Battle Copied Functions 2", ROMX[$60F9], BANK[$1F]
+SerIO_PlaceChoiceCursor::
+    ld a, [W_Victory_UserSelection]
+    cp 1
+    jr z, .secondOptionSelected
+    
+.firstOptionSelected
+    ld a, $18
+    jr .writeXOffset
+    
+.secondOptionSelected
+    ld a, $48
+    
+.writeXOffset
+    ld [W_LCDC_MetaspriteAnimationXOffsets], a
+    ld a, $80
+    ld [W_LCDC_MetaspriteAnimationYOffsets], a
+    xor a
+    ld [W_LCDC_NextMetaspriteSlot], a
+    ld a, $D0
+    ld [W_LCDC_MetaspriteAnimationIndex], a
+    jp LCDC_BeginMetaspriteAnimation
