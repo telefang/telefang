@@ -14,7 +14,7 @@ Status_DrawDenjuuPhoneNumber::
     jr nz, .specialUnknownNumber
     
 .drawPhoneNumber
-    ld hl, $A000 + M_SaveClock_DenjuuPhoneVals
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuPhoneVals
     ld a, [W_Status_SelectedDenjuuIndex]
     call Battle_IndexStatisticsArray
     ld a, [hli]

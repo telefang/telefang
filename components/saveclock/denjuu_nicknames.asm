@@ -46,7 +46,7 @@ SaveClock_LoadDenjuuNicknameByStatPtr::
 
 SECTION "Save/Clock ADVICE'd Load Denjuu Nickname", ROMX[$7EAD], BANK[$34]
 SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr::
-	ld hl, -S_SaveClock_StatisticsArray & $FFFF
+	ld hl, -(S_SaveClock_StatisticsArray + M_SaveClock_DenjuuNickname) & $FFFF
 	add hl, de
 	srl h
 	rr l

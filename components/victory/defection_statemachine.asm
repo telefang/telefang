@@ -70,7 +70,7 @@ Victory_SubStateDrawDefectionScreen::
 .processContactLoss
     call SaveClock_EnterSRAM2
     
-    ld hl, $A000 + M_SaveClock_DenjuuSpecies
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuSpecies
     ld a, [W_Victory_DefectedContact]
     call Battle_IndexStatisticsArray
     

@@ -220,7 +220,7 @@ Status_DrawDenjuuProgressionStats::
     
 .readFDValue
     ld a, [W_Status_SelectedDenjuuIndex]
-    ld hl, $A000 + M_SaveClock_DenjuuFriendship
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuFriendship
     call Battle_IndexStatisticsArray
     ld a, [hl]
     jr .drawFDValue
@@ -249,7 +249,7 @@ Status_DrawDenjuuProgressionStats::
 
 .drawExpCount
     ld a, [W_Status_SelectedDenjuuIndex]
-    ld hl, $A000 + M_SaveClock_DenjuuExperience
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuExperience
     call Battle_IndexStatisticsArray
     
     ld a, [hli]
