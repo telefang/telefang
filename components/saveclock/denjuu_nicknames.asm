@@ -21,7 +21,7 @@ SaveClock_LoadDenjuuNicknameByIndex::
 	jr SaveClock_LoadDenjuuNicknameByStatPtr.indexNicknameArray
 	
 SaveClock_LoadDenjuuNicknameByStatPtr::
-	ld hl, -S_SaveClock_StatisticsArray & $FFFF
+	ld hl, -(S_SaveClock_StatisticsArray + M_SaveClock_DenjuuNickname) & $FFFF
 	add hl, de
 	srl h
 	rr l

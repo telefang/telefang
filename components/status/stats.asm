@@ -18,7 +18,7 @@ Status_LoadContactInfo::
     ld [W_Status_SelectedDenjuuIndex], a
     call SaveClock_EnterSRAM2
     ld a, [W_Status_SelectedDenjuuIndex]
-    ld hl, $A000 ;Denjuu array (stores stats for each captured denjuu)
+    ld hl, S_SaveClock_StatisticsArray
     call Battle_IndexStatisticsArray
     ld a, [hli]
     ld [W_Status_SelectedDenjuuSpecies], a

@@ -75,7 +75,7 @@ Battle_DrawSpecifiedDenjuuNickname::
     call MainScript_DrawEmptySpaces
     call SaveClock_EnterSRAM2
     pop af
-    ld hl, S_SaveClock_StatisticsArray
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuNickname
     call Battle_IndexStatisticsArray
     push hl
     pop de

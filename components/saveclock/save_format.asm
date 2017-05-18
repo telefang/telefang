@@ -1,6 +1,6 @@
 INCLUDE "components/saveclock/save_format.inc"
 
-SECTION "Active Save File", SRAM[$A006], BANK[2]
+SECTION "Active Save File", SRAM[$A000], BANK[2]
 S_SaveClock_StatisticsArray:: REPT M_SaveClock_MaxDenjuuContacts
 	ds M_SaveClock_DenjuuStatSize
 	ENDR

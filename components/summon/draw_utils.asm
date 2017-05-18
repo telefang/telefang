@@ -7,7 +7,7 @@ Summon_DrawPageContactNames::
     ld d, 0
     call Summon_GetContactIDForCurrentPage
     
-    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuSpecies
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuNickname
     call Battle_IndexStatisticsArray
     
     push hl
@@ -33,7 +33,7 @@ Summon_DrawPageContactNames::
     ld d, 1
     call Summon_GetContactIDForCurrentPage
     
-    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuSpecies
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuNickname
     call Battle_IndexStatisticsArray
     
     push hl
@@ -59,7 +59,7 @@ Summon_DrawPageContactNames::
     ld d, 2
     call Summon_GetContactIDForCurrentPage
     
-    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuSpecies
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuNickname
     call Battle_IndexStatisticsArray
     
     push hl

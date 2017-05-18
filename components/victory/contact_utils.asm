@@ -26,7 +26,7 @@ Victory_DeleteContact::
     
     call SaveClock_EnterSRAM2
     
-    ld hl, $A000 + M_SaveClock_DenjuuLevel
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuLevel
     ld a, b
     call Battle_IndexStatisticsArray
     
@@ -68,7 +68,7 @@ Victory_DeleteContact::
     add hl, de
     ld a, [hl]
     
-    ld hl, $A000 + M_SaveClock_DenjuuFriendship
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuFriendship
     call Battle_IndexStatisticsArray
     
     ld a, [hl]
@@ -86,7 +86,7 @@ Victory_DeleteContact::
     jr nz, .indexLoopLate
     
     ld a, [hl]
-    ld hl, $A000 + M_SaveClock_DenjuuFriendship
+    ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuFriendship
     call Battle_IndexStatisticsArray
     pop bc
     
