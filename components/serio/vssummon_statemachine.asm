@@ -34,9 +34,9 @@ SerIO_VsSummonStateMachine::
     dw $51ED,$4F96,$4AAA
 
 SerIO_VsSummonPrivateString_Page::
-;"リスト" - $493F
-    db $28, $0D, $14, 0, 0
+;"Pg." - $493F
+    db "Pg.", 0, 0
     
 SerIO_VsSummonPrivateString_Separator::
-;"/" - $4944
-    db $CB, 0, 0
+;" /" - $4944
+    db 0, " /"
