@@ -5,7 +5,7 @@ SerIO_LoadDenjuuSpeciesAsMessageArg1::
     ld [W_StringTable_ROMTblIndex], a
     ld hl, StringTable_denjuu_species
     call StringTable_LoadName75
-    ld bc, W_StringTable_StagingLoc
+    ld bc, W_StringTable_StagingLocDbl
     call SerIO_BattleCopyTableString
     jp SerIO_CopyIntoArg1
     
@@ -38,7 +38,7 @@ SerIO_BattleCopyTableString::
     
 SerIO_CopyIntoArg1::
     ld de, W_MainScript_MessageArg1
-    ld b, M_MainScript_MessageArg1Size
+    ld b, 9
     
 .copyLoop
     ld a, [hli]
