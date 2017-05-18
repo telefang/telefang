@@ -83,13 +83,12 @@ Victory_SubStateDrawDefectionScreen::
     
     pop hl
     
-    ld a, M_SaveClock_DenjuuStatSize
-    
-.eraseLoop
-    ld [hl], 0
-    inc hl
-    dec a
-    jr nz, .eraseLoop
+    call Victory_ADVICE_SubStateDrawDefectionScreen
+    nop
+    nop
+    nop
+    nop
+    nop
     
     call SaveClock_ExitSRAM
     
@@ -195,4 +194,25 @@ Victory_SubStateExitDefectionScreen::
     ld [W_Battle_4thOrderSubState], a
     ld a, 9
     ld [W_Battle_SubSubState], a
+    ret
+    
+SECTION "Defection Screen Advice", ROMX[$598A], BANK[$1D]
+Victory_ADVICE_SubStateDrawDefectionScreen::
+    ld a, [hl]
+    
+    push de
+    
+    ld de, $CCBF
+    ld [de], a
+    
+    pop de
+    
+    ld a, M_SaveClock_DenjuuStatSize
+    
+.eraseLoop
+    ld [hl], 0
+    inc hl
+    dec a
+    jr nz, .eraseLoop
+    
     ret
