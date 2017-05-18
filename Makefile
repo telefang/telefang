@@ -43,7 +43,8 @@ OBJS := components/compression/malias.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
 	  components/sound/samples.o components/sound/indexing.o \
-	  components/serio/driver.o \
+	  components/serio/driver.o components/serio/vssummon_statemachine.o \
+     components/serio/game_statemachine.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o components/battle/species.o \
      components/battle/denjuu_portrait.o components/battle/message.o \
