@@ -1,6 +1,6 @@
 SECTION "Link Melody Transfer Choice Cursor", ROMX[$777F], BANK[$1F]
 LinkMelody_PlaceChoiceCursor::
-    ld b, $20
+    ld b, $17
     ld a, [W_Summon_SelectedPageContact]
     ld c, a
     cp 0
@@ -8,7 +8,7 @@ LinkMelody_PlaceChoiceCursor::
     
     ld a, b
 .positionLoop
-    add a, $30
+    add a, $1F
     ld b, a
     dec c
     jr nz, .positionLoop
