@@ -62,7 +62,7 @@ OBJS := components/compression/malias.o \
 	  components/stringtable/load.o components/stringtable/table_banks.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
-	  components/saveclock/denjuu_nicknames.o \
+	  components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \

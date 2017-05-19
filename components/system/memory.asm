@@ -58,3 +58,28 @@ memcpy::
 	or b
 	jr nz, memcpy
 	ret
+   
+SECTION "System Memory Copy (Banksafe)", ROM0[$2F7D]
+Banked_Memcpy::
+    ld a, [W_CurrentBank]
+    
+    push af
+    ld a, c
+    rst $10
+    
+    call .internal
+    
+    pop af
+    
+    rst $10
+    
+    ret
+    
+.internal
+    ld a, [hli]
+    ld [de], a
+    inc de
+    dec b
+    jr nz, .internal
+    
+    ret
