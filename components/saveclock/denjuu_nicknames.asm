@@ -17,25 +17,24 @@ SaveClock_LoadDenjuuNicknameByIndex::
 	rl h
 	
 	add hl, bc
-	jr SaveClock_LoadDenjuuNicknameByStatPtr.indexNicknameArray
+	jr SaveClock_LoadDenjuuNicknameByStatPtr_indexNicknameArray
 	
 SaveClock_LoadDenjuuNicknameByStatPtr::
 	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr)
 	call Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr
 	ret
    
-   ;I think these are leftovers...? Found at A4E18, after the first pointcut.
-   ;TODO: WHAT IS THIS
+SaveClock_ADVICE_FDRollover::
    cp $65
-   jp c, $4DF0
+   jp c, SaveClock_IncrementFD_storeFd
    ld a, $64
-   jp $4DF0
+   jp SaveClock_IncrementFD_storeFd
    
    nop
    nop
    nop
    
-.indexNicknameArray
+SaveClock_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
 	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr)
 	call Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
 	ret

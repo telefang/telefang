@@ -1,7 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "SaveClock FD Manip Memory", WRAM0[$CAFD]
-W_SaveClock_SelectedDenjuu:: ds 1
+W_SaveClock_SelectedDenjuu EQU $CAFD
 
 SECTION "SaveClock FD Manip", ROMX[$4DBB], BANK[$29]
 SaveClock_IncrementFD::
@@ -31,20 +30,20 @@ SaveClock_IncrementFD::
     
 .addFd
     add a, e
-    jr nc, .storeFd
+    db $30, $30 ;jr nc, SaveClock_ADVICE_FDRollover
     
 .saturateFdPos
-    ld a, $FF
-    jr .storeFd
+    ld a, $64
+    jr SaveClock_IncrementFD_storeFd
     
 .subtractFd
     add a, e
-    jr c, .storeFd
+    jr c, SaveClock_IncrementFD_storeFd
     
 .saturateFdNeg
     xor a
     
-.storeFd
+SaveClock_IncrementFD_storeFd::
     ld [hl], a
     ld c, a
     ld a, [$C20B]
