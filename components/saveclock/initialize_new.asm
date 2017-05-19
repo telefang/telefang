@@ -29,10 +29,10 @@ SaveClock_InitializeNewDenjuu::
     rl b
     add hl, bc
     
-    ld c, BANK(StringTable_denjuu_species)
-    ld b, M_SaveClock_DenjuuNicknameSize
+    call SaveClock_ADVICE_RelocateCopyBank
+    nop
     pop de
-    call Banked_Memcpy
+    call SaveClock_ADVICE_TerminateDenjuuNickname
     ret
     
 SaveClock_MarkSlotInUse47::
@@ -85,4 +85,67 @@ sub_A412E::
     pop hl
     pop bc
     
+    ret
+    
+SECTION "Save Clock Denjuu Initialization Utils ADVICE", ROMX[$7FBC], BANK[$29]
+SaveClock_ADVICE_TerminateDenjuuNickname::
+    push af
+    
+    ld a, $E6
+    ld [de], a
+    inc de
+    dec b
+    
+.terminateLoop
+    ld a, $E0
+    ld [de], a
+    inc de
+    dec b
+    
+    jp nz, .terminateLoop
+    
+    pop af
+    
+    ret
+    
+    nop
+    nop
+    nop
+    
+SaveClock_ADVICE_RelocateCopyBank::
+    push af
+    
+    ld a, $40
+    cp h
+    jp z, .bank34
+    jp nc, $7F38 ;TODO: This is a nop slide to nowhere! I think they meant .bank75
+    
+    ld a, $45
+    cp h
+    jp c, .bank75
+    jp nz, .bank34
+    
+    ld a, $78
+    cp l
+    jp nc, .bank34
+    
+.bank75
+    ld c, $75
+    pop af
+    ld b, M_SaveClock_DenjuuNicknameSize
+    ret
+    
+.bank34
+    ld c, $34
+    add hl, hl
+    
+    ld b, $40
+    
+    ld a, h
+    sub b
+    ld h, a
+    
+    pop af
+    
+    ld b, M_SaveClock_DenjuuNicknameSize
     ret
