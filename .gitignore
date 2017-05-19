@@ -1,6 +1,7 @@
 ;Prevent sharing ROMs accidentally.
 *.gb
 *.gbc
+*.sav
 
 ;Prevent committing compiled object code
 *.o
@@ -10,6 +11,7 @@
 *.map
 *.sym
 *.tmap
+*.pyc
 
 ;Prevent committing compiled script data.
 *.scripttbl
