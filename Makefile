@@ -56,6 +56,7 @@ OBJS := components/compression/malias.o \
 	  components/serio/driver.o components/serio/vssummon_statemachine.o \
      components/serio/game_statemachine.o components/serio/vssummon_utils.o \
      components/serio/battle_utils.o \
+     components/linkmelody/cursor_utils.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o components/battle/species.o \
      components/battle/denjuu_portrait.o components/battle/message.o \

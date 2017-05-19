@@ -1,6 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Victory UI Util Memory", WRAMX[$D40D], BANK[$1]
+;TODO: This variable is used by a lot of code. Should we rename it?
 W_Victory_UserSelection:: ds 1
 
 SECTION "Victory UI Utils", ROMX[$546D], BANK[$1D]
