@@ -42,15 +42,18 @@ Overworld_DrawIncomingCallerName::
     ld a, 0
     
 .noTerminate
-    inc de
-    push bc
-    push de
-    call Banked_MainScript_DrawLetter
-    pop de
-    pop bc
-    dec b
-    jr nz, .letterDrawingLoop
+    jp Overworld_ADVICE_DrawIncomingCallerName
     
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    
+.adviceComefrom
     ld d, 1
     ld bc, 8
     ld hl, $9866
@@ -58,3 +61,33 @@ Overworld_DrawIncomingCallerName::
     call $377B
     
     ret
+    
+SECTION "Overworld Incoming Caller Name Draw Advice", ROMX[$786A], BANK[$29]
+Overworld_ADVICE_DrawIncomingCallerName::
+    inc de
+    push bc
+    push de
+    push hl
+    call Banked_MainScript_DrawLetter
+    pop hl
+    pop de
+    pop bc
+    
+    ld a, [W_MainScript_VWFOldTileMode]
+    dec a
+    jr nz, .noAdjustment
+    
+.adjustment
+    push de
+    
+    ld d, 0
+    ld e, $10
+    add hl, de
+    
+    pop de
+    
+    dec b
+
+.noAdjustment
+    jp nz, Overworld_DrawIncomingCallerName.letterDrawingLoop
+    jp Overworld_DrawIncomingCallerName.adviceComefrom
