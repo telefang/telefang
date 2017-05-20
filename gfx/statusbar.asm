@@ -17,3 +17,8 @@ SECTION "Overworld Status Bar UI", ROMX[$4418], BANK[$38]
 	INCBIN "gfx/statusbar/startselect_disabled.2bpp"
 	INCBIN "gfx/statusbar/unk1.2bpp"
 	INCBIN "gfx/statusbar/unk2.2bpp"
+
+;TODO: Remove this trashbyte.
+;Someone changed one pixel on a T-Fanger graphic
+SECTION "Trash Bytes Endless", ROMX[$4E36], BANK[$7E]
+	db $FE
