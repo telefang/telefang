@@ -131,15 +131,15 @@ $(OBJS_ALL): $$*.asm $$($$*_dep)
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER)
 	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
-	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG PW" $@
+	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG PW" $@
 
 $(ROMS_POWER_PATCH): $(OBJS) $(OBJS_POWER)
 	rgblink -n $(@:.gbc=.sym) -m $(@:.gbc=.map) -O $(BASEROM_POWER_PATCH) -o $@ $^
-	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG PW" $@
+	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG PW" $@
 
 $(ROMS_SPEED): $(OBJS) $(OBJS_SPEED)
 	rgblink -n $(ROMS_SPEED:.gbc=.sym) -m $(ROMS_SPEED:.gbc=.map) -O $(BASEROM_SPEED) -o $@ $^
-	rgbfix -v -c -i BTZJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG SP" $@
+	rgbfix -v -c -i BTZJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG SP" $@
 
 # The compare target is a shortcut to check that the build matches the
 # pre-disassembly patched roms exactly. This is for contributors to make sure a
