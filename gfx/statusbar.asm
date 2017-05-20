@@ -16,7 +16,7 @@ SECTION "Overworld Status Bar UI", ROMX[$4418], BANK[$38]
 	INCBIN "gfx/statusbar/silenced_call_signal.2bpp"
 	INCBIN "gfx/statusbar/startselect_disabled.2bpp"
 	INCBIN "gfx/statusbar/unk1.2bpp"
-	INCBIN "gfx/statusbar/unk2.2bpp"
+	INCBIN "gfx/statusbar/intro_statusbar.2bpp"
 
 ;TODO: Remove this trashbyte.
 ;Someone changed one pixel on a T-Fanger graphic
