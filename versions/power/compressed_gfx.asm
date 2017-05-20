@@ -234,6 +234,9 @@ TitleSpritesGfx:
 	db COMPRESSED
 	INCBIN "gfx/title/sprites.malias"
 TitleSpritesGfxEnd
+REPT 174
+	db 0
+ENDR
 
 SECTION "Cutscene - Connected1 Compressed GFX", ROMX[$4e54], BANK[$3b]
 CutsceneConnected1Gfx:
@@ -258,6 +261,9 @@ TitleTitle1Gfx:
 	db COMPRESSED
 	INCBIN "versions/power/gfx/title/title1.malias"
 TitleTitle1GfxEnd
+REPT 121
+	db 0
+ENDR
 
 SECTION "Title - Title2 Compressed GFX", ROMX[$53cc], BANK[$36]
 TitleTitle2Gfx:
