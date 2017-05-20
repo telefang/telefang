@@ -56,7 +56,7 @@ SnapHL: ; http://www.catb.org/jargon/html/S/snap.html
 	ret
 
 SECTION "rst call banked function", ROM0[$0476]
-CallBankedFunction_int:
+CallBankedFunction_int::
 	di
 	ld [W_PreviousBank], a
 	ld a, [W_CurrentBank]
@@ -72,8 +72,13 @@ CallBankedFunction_int:
 	ld [W_CurrentBank], a
 	ei
 	ret
+	
+;TODO: Is there another entrypoint?
+	di
+	ld [REG_MBC3_ROMBANK], a
+	ld [W_CurrentBank], a
+	ei
 
-SECTION "rst internals", ROM0[$049D]
 IndirectFunctionCall:
 	jp [hl]
 
