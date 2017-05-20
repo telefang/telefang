@@ -256,6 +256,9 @@ EvolveBgGfx:
 	INCBIN "gfx/evolve/bg.malias"
 EvolveBgGfxEnd
 
+SECTION "Menu - Stats Compressed GFX - OLD STUFF", ROMX[$5c36], BANK[$36]
+	INCBIN "gfx/menu/stats_old.bin"
+
 SECTION "Title - Title1 Compressed GFX", ROMX[$4e55], BANK[$36]
 TitleTitle1Gfx:
 	db COMPRESSED
