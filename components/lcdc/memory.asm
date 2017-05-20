@@ -117,3 +117,11 @@ ClearGBCTileMap1::
 	xor a
 	ld [REG_VBK], a
 	ret
+
+SECTION "Wait For Blanking, Again", ROM0[$1F79]
+WaitForBlanking::
+    ld a, [REG_STAT]
+    and 2
+    jr nz, WaitForBlanking
+    
+    ret
