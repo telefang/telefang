@@ -230,8 +230,8 @@ TitleTitle2Gfx:
 TitleTitle2GfxEnd
 
 TitleSpritesGfx:
-	db COMPRESSED
-	INCBIN "gfx/title/sprites.malias"
+	dbw NOT_COMPRESSED, TitleSpritesGfxEnd - TitleSpritesGfx - 3
+	INCBIN "gfx/title/sprites.2bpp"
 TitleSpritesGfxEnd
 
 UnknownFontGfx:
