@@ -23,7 +23,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_8
 	dw Tilemap_unknown_tilemap_0_9
 	dw Tilemap_unknown_tilemap_0_a
-	dw Tilemap_unknown_tilemap_0_b
+	dw Tilemap_title_bg_tmap
 	dw Tilemap_unknown_tilemap_0_c
 	dw Tilemap_unknown_tilemap_0_d
 	dw Tilemap_unknown_tilemap_0_d
@@ -264,9 +264,9 @@ Tilemap_unknown_tilemap_0_a::
 	incbin "gfx/unknown/tilemap_0/a.tmap"
 Tilemap_unknown_tilemap_0_a_END
 
-Tilemap_unknown_tilemap_0_b::
-	incbin "versions/speed/gfx/unknown/tilemap_0/b.tmap"
-Tilemap_unknown_tilemap_0_b_END
+Tilemap_title_bg_tmap::
+	incbin "versions/speed/gfx/title/bg_tmap.tmap"
+Tilemap_title_bg_tmap_END
 
 Tilemap_unknown_tilemap_0_c::
 	incbin "gfx/unknown/tilemap_0/c.tmap"
@@ -906,8 +906,8 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_4
 	dw Attribmap_unknown_attribs_0_5
 	dw Attribmap_unknown_attribs_0_7
-	dw Attribmap_unknown_attribs_0_8
-	dw Attribmap_unknown_attribs_0_8
+	dw Attribmap_title_bg_attr
+	dw Attribmap_title_bg_attr
 	dw Attribmap_unknown_attribs_0_6
 	dw Attribmap_unknown_attribs_0_9
 	dw Attribmap_unknown_attribs_0_6
@@ -1139,9 +1139,9 @@ Attribmap_unknown_attribs_0_7::
 	incbin "gfx/unknown/attribs_0/7.tmap"
 Attribmap_unknown_attribs_0_7_END
 
-Attribmap_unknown_attribs_0_8::
-	incbin "versions/speed/gfx/unknown/attribs_0/8.tmap"
-Attribmap_unknown_attribs_0_8_END
+Attribmap_title_bg_attr::
+	incbin "versions/speed/gfx/title/bg_attr.tmap"
+Attribmap_title_bg_attr_END
 
 Attribmap_unknown_attribs_0_9::
 	incbin "gfx/unknown/attribs_0/9.tmap"
