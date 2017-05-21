@@ -6,11 +6,11 @@
 
 # Build Telefang.
 # We have two targets:
-# Power (English on top of Japanese Power)
-# Speed (English on top of Japanese Speed)
-ROMS_POWER := telefang_pw_english.gbc
+# Power (German on top of Japanese Power)
+# Speed (German on top of Japanese Speed)
+ROMS_POWER := telefang_pw_german.gbc
 BASEROM_POWER := baserom_pw.gbc
-ROMS_SPEED := telefang_sp_english.gbc
+ROMS_SPEED := telefang_sp_german.gbc
 BASEROM_SPEED := baserom_sp.gbc
 OBJS := components/compression/malias.o \
      components/compression/rle_tilemap.o components/compression/rle_attribmap.o \
