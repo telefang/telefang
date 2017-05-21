@@ -1,7 +1,5 @@
 INCLUDE "telefang.inc"
 
-W_SaveClock_SelectedDenjuu EQU $CAFD
-
 SECTION "SaveClock FD Manip", ROMX[$4DBB], BANK[$29]
 SaveClock_IncrementFD::
     push bc

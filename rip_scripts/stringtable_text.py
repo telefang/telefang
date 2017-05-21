@@ -273,9 +273,12 @@ def make_tbl(args):
                     rows.append([cell.decode("utf-8") for cell in row])
 
         #Determine what column we want
-        str_col = headers.index(args.language)
         index_col = headers.index(u"#")
-
+        try:
+            str_col = headers.index(args.language)
+        except ValueError:
+            str_col = index_col
+        
         #Pack our strings
         packed_strings = []
         

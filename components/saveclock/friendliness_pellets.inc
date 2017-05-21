@@ -1,0 +1,1 @@
+W_SaveClock_SelectedDenjuu EQU $CAFD

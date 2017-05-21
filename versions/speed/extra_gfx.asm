@@ -9,8 +9,8 @@ SECTION "gfx/menu/script_window.2bpp", ROMX[$719C], BANK[$38]
 ScriptWindow::
 	INCBIN "gfx/menu/script_window.2bpp"
 ScriptWindow_END::
-	
-SECTION "gfx/menu/signal_levels.2bpp", ROMX[$44D8], BANK[$38]
-Menu_SignalLevelsGfx::
-	INCBIN "gfx/menu/signal_levels.2bpp"
-Menu_SignalLevelsGfx_END::
+
+SECTION "gfx/menu/battle_contact_select.2bpp", ROMX[$5A00], BANK[$42]
+BattleContactSelect::
+	INCBIN "gfx/menu/battle_contact_select.2bpp"
+BattleContactSelect_END::
