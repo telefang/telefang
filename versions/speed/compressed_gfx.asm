@@ -220,13 +220,13 @@ MenuBattleGfx:
 MenuBattleGfxEnd
 
 TitleTitle1Gfx:
-	db COMPRESSED
-	INCBIN "versions/speed/gfx/title/title1.malias"
+	dbw NOT_COMPRESSED, TitleTitle1GfxEnd - TitleTitle1Gfx - 3
+	INCBIN "versions/speed/gfx/title/title1.2bpp"
 TitleTitle1GfxEnd
 
 TitleTitle2Gfx:
-	db COMPRESSED
-	INCBIN "versions/speed/gfx/title/title2.malias"
+	dbw NOT_COMPRESSED, TitleTitle2GfxEnd - TitleTitle2Gfx - 3
+	INCBIN "versions/speed/gfx/title/title2.2bpp"
 TitleTitle2GfxEnd
 
 TitleSpritesGfx:
