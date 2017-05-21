@@ -674,8 +674,11 @@ def make_tbl(args):
             rows, headers = parse_wikitext(wikifile.read())
 
         #Determine what column we want
-        str_col = headers.index(args.language)
         ptr_col = headers.index(u"Pointer")
+        try:
+            str_col = headers.index(args.language)
+        except ValueError:
+            str_col = ptr_col
 
         #Pack our strings
         table = []

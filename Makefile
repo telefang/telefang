@@ -42,6 +42,7 @@ OBJS := components/compression/malias.o \
      components/mainscript/shop_item_window.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
+     components/overworld/incoming_calls.o \
 	  components/sound/samples.o components/sound/indexing.o \
 	  components/serio/driver.o components/serio/vssummon_statemachine.o \
      components/serio/game_statemachine.o components/serio/vssummon_utils.o \
@@ -75,7 +76,8 @@ OBJS := components/compression/malias.o \
      components/victory/stat_icon.o components/victory/natural_evo.o \
      components/victory/ui_utils.o components/victory/game_statemachine.o \
      components/victory/defection_statemachine.o components/victory/contact_utils.o \
-	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o \
+	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
+	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
