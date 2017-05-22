@@ -541,46 +541,43 @@ CutsceneUnusedGfx:
 	INCBIN "gfx/cutscene/unused.malias"
 CutsceneUnusedGfxEnd
 
-SECTION "Menu - Main1 DMG Compressed GFX", ROMX[$439d], BANK[$35]
+SECTION "Menu - Dmelo DMG Compressed GFX", ROMX[$4000], BANK[$35]
+MenuDmeloDMGGfx:
+	dbw NOT_COMPRESSED, MenuDmeloDMGGfxEnd - MenuDmeloDMGGfx - 3
+	INCBIN "gfx/menu/dmelo_dmg.2bpp"
+MenuDmeloDMGGfxEnd
+
+MenuOptionsDMGGfx:
+	dbw NOT_COMPRESSED, MenuOptionsDMGGfxEnd - MenuOptionsDMGGfx - 3
+	INCBIN "gfx/menu/options_dmg.2bpp"
+MenuOptionsDMGGfxEnd
+
 MenuMain1DMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/main1_dmg.malias"
+	dbw NOT_COMPRESSED, MenuMain1DMGGfxEnd - MenuMain1DMGGfx - 3
+	INCBIN "gfx/menu/main1_dmg.2bpp"
 MenuMain1DMGGfxEnd
 
 MenuMain2DMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/main2_dmg.malias"
+	dbw NOT_COMPRESSED, MenuMain2DMGGfxEnd - MenuMain2DMGGfx - 3
+	INCBIN "gfx/menu/main2_dmg.2bpp"
 MenuMain2DMGGfxEnd
 
 MenuUnkDMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/unk_dmg.malias"
+	dbw NOT_COMPRESSED, MenuUnkDMGGfxEnd - MenuUnkDMGGfx - 3
+	INCBIN "gfx/menu/unk_dmg.2bpp"
 MenuUnkDMGGfxEnd
 
 MenuTotalDMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/total_dmg.malias"
+	dbw NOT_COMPRESSED, MenuTotalDMGGfxEnd - MenuTotalDMGGfx - 3
+	INCBIN "gfx/menu/total_dmg.2bpp"
 MenuTotalDMGGfxEnd
 
 MenuNicknameDMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/nickname_dmg.malias"
+	dbw NOT_COMPRESSED, MenuNicknameDMGGfxEnd - MenuNicknameDMGGfx - 3
+	INCBIN "gfx/menu/nickname_dmg.2bpp"
 MenuNicknameDMGGfxEnd
 
-SECTION "Menu - Options DMG Compressed GFX", ROMX[$4267], BANK[$35]
-MenuOptionsDMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/options_dmg.malias"
-MenuOptionsDMGGfxEnd
-
-SECTION "Menu - Dmelo DMG Compressed GFX", ROMX[$4000], BANK[$35]
-MenuDmeloDMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/dmelo_dmg.malias"
-MenuDmeloDMGGfxEnd
-
-SECTION "Menu - Met DMG Compressed GFX", ROMX[$4996], BANK[$35]
 MenuMetDMGGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/met_dmg.malias"
+	dbw NOT_COMPRESSED, MenuMetDMGGfxEnd - MenuMetDMGGfx - 3
+	INCBIN "gfx/menu/met_dmg.2bpp"
 MenuMetDMGGfxEnd
