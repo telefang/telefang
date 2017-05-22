@@ -27,10 +27,10 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_c
 	dw Tilemap_unknown_tilemap_0_d
 	dw Tilemap_unknown_tilemap_0_d
-	dw Tilemap_unknown_tilemap_0_e
+	dw Tilemap_menu_phone_left_tmap
 	dw Tilemap_unknown_tilemap_0_f
-	dw Tilemap_unknown_tilemap_0_10
-	dw Tilemap_unknown_tilemap_0_11
+	dw Tilemap_menu_empty_menu_tmap
+	dw Tilemap_menu_empty_expanded_option_tmap
 	dw Tilemap_unknown_tilemap_0_12
 	dw Tilemap_unknown_tilemap_0_13
 	dw Tilemap_unknown_tilemap_0_14
@@ -65,10 +65,10 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_30
 	dw Tilemap_unknown_tilemap_0_31
 	dw Tilemap_unknown_tilemap_0_32
-	dw Tilemap_unknown_tilemap_0_33
-	dw Tilemap_unknown_tilemap_0_34
-	dw Tilemap_unknown_tilemap_0_35
-	dw Tilemap_unknown_tilemap_0_36
+	dw Tilemap_menu_titlebtn_continue_tmap
+	dw Tilemap_menu_titlebtn_soundtest_tmap
+	dw Tilemap_menu_titlebtn_link_tmap
+	dw Tilemap_menu_titlebtn_newgame_tmap
 	dw Tilemap_unknown_tilemap_0_37
 	dw Tilemap_unknown_tilemap_0_38
 	dw Tilemap_unknown_tilemap_0_39
@@ -281,21 +281,21 @@ Tilemap_unknown_tilemap_0_d::
 	incbin "gfx/unknown/tilemap_0/d.tmap"
 Tilemap_unknown_tilemap_0_d_END
 
-Tilemap_unknown_tilemap_0_e::
-	incbin "gfx/unknown/tilemap_0/e.tmap"
-Tilemap_unknown_tilemap_0_e_END
+Tilemap_menu_phone_left_tmap::
+	incbin "gfx/menu/phone_left_tmap.tmap"
+Tilemap_menu_phone_left_tmap_END
 
 Tilemap_unknown_tilemap_0_f::
 	incbin "gfx/unknown/tilemap_0/f.tmap"
 Tilemap_unknown_tilemap_0_f_END
 
-Tilemap_unknown_tilemap_0_10::
-	incbin "gfx/unknown/tilemap_0/10.tmap"
-Tilemap_unknown_tilemap_0_10_END
+Tilemap_menu_empty_menu_tmap::
+	incbin "gfx/menu/empty_menu_tmap.tmap"
+Tilemap_menu_empty_menu_tmap_END
 
-Tilemap_unknown_tilemap_0_11::
-	incbin "gfx/unknown/tilemap_0/11.tmap"
-Tilemap_unknown_tilemap_0_11_END
+Tilemap_menu_empty_expanded_option_tmap::
+	incbin "gfx/menu/empty_expanded_option_tmap.tmap"
+Tilemap_menu_empty_expanded_option_tmap_END
 
 Tilemap_unknown_tilemap_0_12::
 	incbin "gfx/unknown/tilemap_0/12.tmap"
@@ -429,21 +429,21 @@ Tilemap_unknown_tilemap_0_32::
 	incbin "gfx/unknown/tilemap_0/32.tmap"
 Tilemap_unknown_tilemap_0_32_END
 
-Tilemap_unknown_tilemap_0_33::
-	incbin "gfx/unknown/tilemap_0/33.tmap"
-Tilemap_unknown_tilemap_0_33_END
+Tilemap_menu_titlebtn_continue_tmap::
+	incbin "gfx/menu/titlebtn_continue_tmap.tmap"
+Tilemap_menu_titlebtn_continue_tmap_END
 
-Tilemap_unknown_tilemap_0_34::
-	incbin "gfx/unknown/tilemap_0/34.tmap"
-Tilemap_unknown_tilemap_0_34_END
+Tilemap_menu_titlebtn_soundtest_tmap::
+	incbin "gfx/menu/titlebtn_soundtest_tmap.tmap"
+Tilemap_menu_titlebtn_soundtest_tmap_END
 
-Tilemap_unknown_tilemap_0_35::
-	incbin "gfx/unknown/tilemap_0/35.tmap"
-Tilemap_unknown_tilemap_0_35_END
+Tilemap_menu_titlebtn_link_tmap::
+	incbin "gfx/menu/titlebtn_link_tmap.tmap"
+Tilemap_menu_titlebtn_link_tmap_END
 
-Tilemap_unknown_tilemap_0_36::
-	incbin "gfx/unknown/tilemap_0/36.tmap"
-Tilemap_unknown_tilemap_0_36_END
+Tilemap_menu_titlebtn_newgame_tmap::
+	incbin "gfx/menu/titlebtn_newgame_tmap.tmap"
+Tilemap_menu_titlebtn_newgame_tmap_END
 
 Tilemap_unknown_tilemap_0_37::
 	incbin "gfx/unknown/tilemap_0/37.tmap"
@@ -919,10 +919,10 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_a
 	dw Attribmap_unknown_attribs_0_b
 	dw Attribmap_unknown_attribs_0_b
-	dw Attribmap_unknown_attribs_0_c
+	dw Attribmap_menu_phone_left_attr
 	dw Attribmap_unknown_attribs_0_d
-	dw Attribmap_unknown_attribs_0_e
-	dw Attribmap_unknown_attribs_0_f
+	dw Attribmap_menu_empty_menu_attr
+	dw Attribmap_menu_empty_expanded_option_attr
 	dw Attribmap_unknown_attribs_0_10
 	dw Attribmap_unknown_attribs_0_11
 	dw Attribmap_unknown_attribs_0_11
@@ -957,11 +957,11 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_1a
 	dw Attribmap_unknown_attribs_0_1a
 	dw Attribmap_unknown_attribs_0_1a
-	dw Attribmap_unknown_attribs_0_1b
-	dw Attribmap_unknown_attribs_0_1b
-	dw Attribmap_unknown_attribs_0_1b
-	dw Attribmap_unknown_attribs_0_1b
-	dw Attribmap_unknown_attribs_0_1b
+	dw Attribmap_menu_titlebtn_attr
+	dw Attribmap_menu_titlebtn_attr
+	dw Attribmap_menu_titlebtn_attr
+	dw Attribmap_menu_titlebtn_attr
+	dw Attribmap_menu_titlebtn_attr
 	dw Attribmap_unknown_attribs_0_1c
 	dw Attribmap_unknown_attribs_0_1d
 	dw Attribmap_unknown_attribs_0_1d
@@ -1160,21 +1160,21 @@ Attribmap_unknown_attribs_0_b::
 	incbin "gfx/unknown/attribs_0/b.tmap"
 Attribmap_unknown_attribs_0_b_END
 
-Attribmap_unknown_attribs_0_c::
-	incbin "gfx/unknown/attribs_0/c.tmap"
-Attribmap_unknown_attribs_0_c_END
+Attribmap_menu_phone_left_attr::
+	incbin "gfx/menu/phone_left_attr.tmap"
+Attribmap_menu_phone_left_attr_END
 
 Attribmap_unknown_attribs_0_d::
 	incbin "gfx/unknown/attribs_0/d.tmap"
 Attribmap_unknown_attribs_0_d_END
 
-Attribmap_unknown_attribs_0_e::
-	incbin "gfx/unknown/attribs_0/e.tmap"
-Attribmap_unknown_attribs_0_e_END
+Attribmap_menu_empty_menu_attr::
+	incbin "gfx/menu/empty_menu_attr.tmap"
+Attribmap_menu_empty_menu_attr_END
 
-Attribmap_unknown_attribs_0_f::
-	incbin "gfx/unknown/attribs_0/f.tmap"
-Attribmap_unknown_attribs_0_f_END
+Attribmap_menu_empty_expanded_option_attr::
+	incbin "gfx/menu/empty_expanded_option_attr.tmap"
+Attribmap_menu_empty_expanded_option_attr_END
 
 Attribmap_unknown_attribs_0_10::
 	incbin "gfx/unknown/attribs_0/10.tmap"
@@ -1220,9 +1220,9 @@ Attribmap_unknown_attribs_0_1a::
 	incbin "gfx/unknown/attribs_0/1a.tmap"
 Attribmap_unknown_attribs_0_1a_END
 
-Attribmap_unknown_attribs_0_1b::
-	incbin "gfx/unknown/attribs_0/1b.tmap"
-Attribmap_unknown_attribs_0_1b_END
+Attribmap_menu_titlebtn_attr::
+	incbin "gfx/menu/titlebtn_attr.tmap"
+Attribmap_menu_titlebtn_attr_END
 
 Attribmap_unknown_attribs_0_1c::
 	incbin "gfx/unknown/attribs_0/1c.tmap"
