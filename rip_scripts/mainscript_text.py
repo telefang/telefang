@@ -111,7 +111,7 @@ def parse_bank_names(filename):
             bank["wikiname"] = parameters[1]
             bank["symbol"] = "MainScript_" + parameters[0].replace("/", "_")
 
-            if len(parameters) > 2:
+            if len(parameters) > 2 and parameters[2] != "null":
                 #Parameter 3 is the flat address for the ROM
                 #If not present, location of table will be determined from ROM
                 flatattr = int(parameters[2], 16)
@@ -122,6 +122,9 @@ def parse_bank_names(filename):
                 else:
                     bank["baseaddr"] = flatattr % 0x4000 + 0x4000
                     bank["basebank"] = flatattr // 0x4000
+
+            if len(parameters) > 3:
+                bank["window_width"] = int(parameters[3], 10)
 
             banks.append(bank)
 
@@ -687,6 +690,10 @@ def make_tbl(args):
         baseaddr = bank["baseaddr"]
         lastbk = None
 
+        bank_window_width = args.window_width
+        if "window_width" in bank.keys():
+            bank_window_width = bank["window_width"]
+
         for i, row in enumerate(rows):
             if str_col >= len(row):
                 print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
@@ -708,7 +715,7 @@ def make_tbl(args):
                 #aliasing at the same time, so don't.
                 last_aliased_row = i
             else:
-                packed = pack_string(row[str_col], charmap, metrics, args.window_width, row[ptr_col] == u"(No pointer)")
+                packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == u"(No pointer)")
                 packed_strings[i] = packed
                 
                 if row[ptr_col] != u"(No pointer)":
