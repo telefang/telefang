@@ -51,8 +51,8 @@ MetaSprite_a::
     dw MetaSprite_a_4330
     dw MetaSprite_a_4336
     dw MetaSprite_a_435f
-    dw MetaSprite_a_4388
-    dw MetaSprite_a_43a7
+    dw MetaSprite_fungus_overhang
+    dw MetaSprite_gymnos_overhang
     dw MetaSprite_a_43bc
     dw MetaSprite_a_43bc
     dw MetaSprite_a_43c7
@@ -236,12 +236,12 @@ MetaSprite_a_4336_END::
 MetaSprite_a_435f::
     INCBIN "gfx/unknown/metasprite_a/435f.sprite.bin"
 MetaSprite_a_435f_END::
-MetaSprite_a_4388::
-    INCBIN "versions/speed/gfx/unknown/metasprite_a/4388.sprite.bin"
-MetaSprite_a_4388_END::
-MetaSprite_a_43a7::
-    INCBIN "versions/speed/gfx/unknown/metasprite_a/43a7.sprite.bin"
-MetaSprite_a_43a7_END::
+MetaSprite_fungus_overhang::
+    INCBIN "versions/speed/gfx/title/fungus_overhang.sprite.bin"
+MetaSprite_fungus_overhang_END::
+MetaSprite_gymnos_overhang::
+    INCBIN "versions/speed/gfx/title/gymnos_overhang.sprite.bin"
+MetaSprite_gymnos_overhang_END::
 MetaSprite_a_43bc::
     INCBIN "gfx/unknown/metasprite_a/43bc.sprite.bin"
 MetaSprite_a_43bc_END::
