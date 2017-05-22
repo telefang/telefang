@@ -8,7 +8,7 @@ SECTION "Battle SubSubState", WRAMX[$D400], BANK[$5]
 W_Battle_SubSubState:: ds 1
 W_Battle_4thOrderSubState:: ds 1
 
-SECTION "Status Screen Home Utils", ROM0[$3CF8]
+SECTION "Status Screen Home Utils 2", ROM0[$3CF8]
 Battle_IncrementSubSubState::
     ld hl, W_Battle_SubSubState
     inc [hl]
