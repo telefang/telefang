@@ -2,6 +2,7 @@
 *.gb
 *.gbc
 *.sav
+*.rtc
 
 ;Prevent committing compiled object code
 *.o
