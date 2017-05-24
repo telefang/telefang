@@ -706,13 +706,19 @@ def make_tbl(args):
             bank_window_width = bank["window_width"]
 
         for i, row in enumerate(rows):
-            if str_col >= len(row):
-                print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
-                packed_strings[i] = ""
-                continue
-            
             if u"#" in row[ptr_col]:
                 print "Row {} is not a message, skipped".format(i)
+                continue
+                
+            if row[ptr_col] != u"(No pointer)":
+                table_idx = int(row[ptr_col][2:], 16) % 0x4000 // 2
+            else:
+                table_idx = -1
+            
+            if str_col >= len(row):
+                print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
+                table.append(baseaddr)
+                packed_strings[table_idx] = pack_string(u"/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
                 continue
             
             if row[str_col][:11] == u"«ALIAS ROW " or row[str_col][:11] == u"<ALIAS ROW ":
@@ -721,17 +727,17 @@ def make_tbl(args):
                 if len(split_row) > 1 and split_row[1] == "INTO":
                     #Partial string alias.
                     table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
-                    packed_strings[i] = ""
+                    packed_strings[table_idx] = ""
                 else:
                     table.append(table[int(split_row[0], 16)])
-                    packed_strings[i] = ""
+                    packed_strings[table_idx] = ""
                 
                 #We don't want to have to try to handle both overflow and
                 #aliasing at the same time, so don't.
                 last_aliased_row = i
             else:
                 packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == u"(No pointer)")
-                packed_strings[i] = packed
+                packed_strings[table_idx] = packed
                 
                 if row[ptr_col] != u"(No pointer)":
                     #Yes, some text banks have strings not mentioned in the
@@ -745,9 +751,9 @@ def make_tbl(args):
                     lastbk = nextbk
                 else:
                     print "Warning: Row explicitly marked with no pointer"
-
+                
                 baseaddr += len(packed)
-
+        
         #Moveup pointers to account for the table size
         for i, value in enumerate(table):
             table[i] = PTR.pack(value + len(table) * 2)
@@ -776,8 +782,14 @@ def make_tbl(args):
                     #Instead, stop spilling at the end.
                     break
                 
+                if rows[i][ptr_col] != u"(No pointer)" and u"#" not in rows[i][ptr_col]:
+                    table_idx = int(row[ptr_col][2:], 16) % 0x4000 // 2
+                else:
+                    #We can't spill these rows
+                    continue
+                
                 strings_to_spill += 1
-                string_bytes_saved += len(packed_strings[i]) - 3
+                string_bytes_saved += len(packed_strings[table_idx]) - 3
                 
                 #TODO: Change the threshold condition back to >= 0
                 #For some reason the overflow bank in the patch contains more
@@ -790,13 +802,19 @@ def make_tbl(args):
             
             #Actually spill strings to the overflow bank now, in order.
             for i in range(len(rows) - strings_to_spill, len(rows)):
-                cur_string = packed_strings[i]
-                packed_strings[i] = "\xec" + chr(overflow_ptr & 0xFF) + chr(overflow_ptr >> 8)
+                if rows[i][ptr_col] != u"(No pointer)" and u"#" not in rows[i][ptr_col]:
+                    table_idx = int(rows[i][ptr_col][2:], 16) % 0x4000 // 2
+                else:
+                    #We can't spill these rows. Sorry.
+                    continue
                 
-                if i < len(rows) - 1:
+                cur_string = packed_strings[table_idx]
+                packed_strings[table_idx] = "\xec" + chr(overflow_ptr & 0xFF) + chr(overflow_ptr >> 8)
+                
+                if table_idx < len(table) - 1:
                     #fixup the next pointer in the table
-                    thisptr = PTR.unpack(table[i])[0]
-                    table[i + 1] = PTR.pack(thisptr + len(packed_strings[i]))
+                    thisptr = PTR.unpack(table[table_idx])[0]
+                    table[table_idx + 1] = PTR.pack(thisptr + len(packed_strings[table_idx]))
                 
                 overflow_strings.append(cur_string)
                 overflow_ptr += len(cur_string)
