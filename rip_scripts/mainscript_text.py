@@ -558,7 +558,10 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                             val = value
                             break
                     else:
-                        val = int(val, s.base)
+                        if val[:2] == u"0x":
+                            val = int(val[2:], 16)
+                        else:
+                            val = int(val, s.base)
 
                     if val == u"":
                         val = s.default
@@ -711,7 +714,7 @@ def make_tbl(args):
                 continue
                 
             if row[ptr_col] != u"(No pointer)":
-                table_idx = int(row[ptr_col][2:], 16) % 0x4000 // 2
+                table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
             else:
                 table_idx = -1
             
@@ -783,7 +786,7 @@ def make_tbl(args):
                     break
                 
                 if rows[i][ptr_col] != u"(No pointer)" and u"#" not in rows[i][ptr_col]:
-                    table_idx = int(row[ptr_col][2:], 16) % 0x4000 // 2
+                    table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
                 else:
                     #We can't spill these rows
                     continue
@@ -803,7 +806,7 @@ def make_tbl(args):
             #Actually spill strings to the overflow bank now, in order.
             for i in range(len(rows) - strings_to_spill, len(rows)):
                 if rows[i][ptr_col] != u"(No pointer)" and u"#" not in rows[i][ptr_col]:
-                    table_idx = int(rows[i][ptr_col][2:], 16) % 0x4000 // 2
+                    table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
                 else:
                     #We can't spill these rows. Sorry.
                     continue

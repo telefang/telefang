@@ -12,11 +12,11 @@ story/2 12C000
 story/3 138000
 npc/3 13C000
 story/4 140000
-calls/denjuu/3 11507B
+calls/denjuu/3 11507B 11507B
 calls/denjuu/4 144000
-calls/denjuu/5 145C9A
-calls/denjuu/6 99068
+calls/denjuu/5 145C9A 145C9A
+calls/denjuu/6 99068 99068
 denjuu/descriptions 40000
 calls/story 158000
 calls/exp_item 15C000
-story/5 1281D9
+story/5 1281D9 1281D9
