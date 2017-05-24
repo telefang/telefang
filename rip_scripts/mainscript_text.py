@@ -12,6 +12,8 @@ import os.path
 import struct
 import io, codecs
 import exceptions
+import urllib2
+import json
 
 def install_path(path):
     try:
@@ -24,12 +26,13 @@ def install_path(path):
 
 #Used by the original text injector script to represent special codes.
 class Special():
-    def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False):
+    def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False, base=16):
         self.byte = byte
         self.default = default
         self.bts = bts
         self.end = end
         self.redirect = redirect
+        self.base = base
         self.names = names if names else {}
 
 specials = {}
@@ -37,7 +40,7 @@ specials["&"] = Special(0xe5, bts=2, names={0xc92c: "name", 0xd448: "num"})
 specials['S'] = Special(0xe3, default=2)
 specials['*'] = Special(0xe1, end=True)
 specials['O'] = Special(0xec, bts=2, redirect=True)
-specials['D'] = Special(0xe9)
+specials['D'] = Special(0xe9, base=10)
 
 #Used here for text extraction from the ROM.
 reverse_specials = {}
@@ -483,6 +486,10 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
     #sequence.
     if string == "":
         return ""
+    
+    #Remove nowiki tags
+    string = string.replace(u"<nowiki>", u"")
+    string = string.replace(u"</nowiki>", u"")
 
     for char in string:
         if skip_sentinel:
@@ -538,6 +545,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                         for char in ctrl_code:
                             print u"{0:x}".format(ord(char))
                         print u"\n"
+                        print "Found in line " + string.encode("utf-8") + "\n"
                         special = u""
                         continue
 
@@ -550,7 +558,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                             val = value
                             break
                     else:
-                        val = int(val, 16)
+                        val = int(val, s.base)
 
                     if val == u"":
                         val = s.default
@@ -637,6 +645,9 @@ def parse_wikitext(wikitext):
             #Extract translations
             stripped_cols = []
             for col in cols:
+                if len(col) == 0:
+                    continue
+                
                 #Conservatively strip one newline from the end of the string only.
                 if col[-1] == "\n":
                     col = col[:-1]
@@ -699,8 +710,12 @@ def make_tbl(args):
                 print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
                 packed_strings[i] = ""
                 continue
-
-            if row[str_col][:11] == u"«ALIAS ROW ":
+            
+            if u"#" in row[ptr_col]:
+                print "Row {} is not a message, skipped".format(i)
+                continue
+            
+            if row[str_col][:11] == u"«ALIAS ROW " or row[str_col][:11] == u"<ALIAS ROW ":
                 #Aliased string!
                 split_row = row[str_col][11:-1].split(u" ")
                 if len(split_row) > 1 and split_row[1] == "INTO":
@@ -801,6 +816,26 @@ def make_tbl(args):
             for line in overflow_strings:
                 objfile.write(line)
 
+def wikisync(args):
+    charmap = parse_charmap(args.charmap)
+    banknames = parse_bank_names(args.banknames)
+    
+    for h, bank in enumerate(banknames):
+        api_url = u"http://wiki.telefang.net/api.php?action=query&titles=Wikifang:Telefang_1_Translation_Patch/Text_dump/{}&format=json&prop=revisions&rvprop=content".format(bank["wikiname"].strip())
+        full_wikiname = u"Wikifang:Telefang 1 Translation Patch/Text dump/{}".format(bank["wikiname"].strip())
+        
+        wikifile = urllib2.urlopen(api_url)
+        data = json.load(wikifile)
+        
+        for pageid in data["query"]["pages"]:
+            if data["query"]["pages"][pageid]["title"] == full_wikiname:
+                wikidir = os.path.join(args.output, bank["basedir"])
+                wikipath = os.path.join(args.output, bank["filename"])
+                
+                install_path(wikidir)
+                with io.open(wikipath, "w", encoding="utf-8") as bank_wikitext:
+                    bank_wikitext.write(data["query"]["pages"][pageid]["revisions"][0]["*"])
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
@@ -819,7 +854,8 @@ def main():
     method = {
         "extract": extract,
         "asm": asm,
-        "make_tbl": make_tbl
+        "make_tbl": make_tbl,
+        "wikisync": wikisync
     }.get(args.mode, None)
 
     if method == None:
