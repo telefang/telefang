@@ -100,6 +100,7 @@ def parse_bank_names(filename):
 
             bank = {}
             bank["basedir"] = os.path.join(*parameters[0].split("/")[0:-1])
+            bank["legacy_filename"] = os.path.join(*(parameters[0] + ".wikitext").split("/"))
             bank["filename"] = os.path.join(*(parameters[0] + ".messages.csv").split("/"))
             bank["objname"] = os.path.join(*(parameters[0] + ".scripttbl").split("/"))
             bank["wikiname"] = parameters[1]
@@ -692,7 +693,7 @@ def make_tbl(args):
         
         print "Compiling " + bank["filename"]
         #Open and parse the data
-        with io.open(os.path.join(args.output, bank["filename"]), "r", encoding="utf-8") as csvfile:
+        with open(os.path.join(args.output, bank["filename"]), "r") as csvfile:
             rows, headers = parse_csv(csvfile)
 
         #Determine what column we want
@@ -851,6 +852,35 @@ def wikisync(args):
                 with io.open(wikipath, "w", encoding="utf-8") as bank_wikitext:
                     bank_wikitext.write(data["query"]["pages"][pageid]["revisions"][0]["*"])
 
+def update_data(args):
+    charmap = parse_charmap(args.charmap)
+    banknames = parse_bank_names(args.banknames)
+    
+    for h, bank in enumerate(banknames):
+        #Wikitext to CSV conversion pass
+        #At the end of this conversion, the wikitext will be deleted and a CSV
+        #will have been created. Existing CSV file will be deleted, if any.
+        try:
+            with io.open(os.path.join(args.output, bank["legacy_filename"]), 'r', encoding="utf-8") as bank_wikifile:
+                rows, hdrs = parse_wikitext(bank_wikifile)
+                
+                with open(os.path.join(args.output, bank["filename"]), "w") as bank_csvfile:
+                    csvwriter = csv.writer(bank_csvfile)
+                    
+                    encoded_hdrs = [hdr.encode("utf-8") for hdr in hdrs]
+                    csvwriter.writerow(encoded_hdrs)
+                    
+                    for row in rows:
+                        encoded_row = [cell.encode("utf-8") for cell in row]
+                        csvwriter.writerow(encoded_row)
+            
+            os.remove(os.path.join(args.output, bank["legacy_filename"]))
+        except IOError:
+            pass
+        
+        #Special characters conversion pass
+        #Change double-brackets to single brackets.
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
@@ -870,7 +900,8 @@ def main():
         "extract": extract,
         "asm": asm,
         "make_tbl": make_tbl,
-        "wikisync": wikisync
+        "wikisync": wikisync,
+        "update_data": update_data
     }.get(args.mode, None)
 
     if method == None:
