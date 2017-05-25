@@ -150,11 +150,11 @@ clean:
 
 %.scripttbl: %.wikitext
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) --language="English"
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc --language="English"
 
 %.stringtbl: %.csv
 	@rm -f $@
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER) --language="English"
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl baserom_patch.gbc --language="English"
 
 %.tmap: %.csv
 	@rm -f $@
