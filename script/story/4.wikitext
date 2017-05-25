@@ -1,765 +1,1995 @@
-{|
+Text bank #15 - Story from Sanaeba's lab to the end of the game, plus text for a few other events and NPCs.
+
+Preceded by [[Wikifang:Telefang 1 Translation Patch/Text dump/138000|138000]], continued in [[Wikifang:Telefang 1 Translation Patch/Text dump/1281D9|1281D9]].
+
+{|cellspacing="1" cellpadding="7" width="640" border="1" class="wikitable sortable" style="background: #f8f8ff; border: 1px solid #88a; border-collapse: collapse; background: white; margin-right:10px; text-align:left;"
 |-
 !Pointer
+!Japanese
 !English
 |-
 |0x140000
-|/0x140000/«*0»
+|くそう....
+『シンデンジュウ』
+『いのちの き』
+これは いったいなんなんだよ!オレには わかんねーぞ!!
+
+|/0x140000/
 |-
 |0x140002
-|/0x140002/«*0»
+|<&name>くん
+マツキヨです
+ムサちょうろうが はなしがあるといっています
+いそいで トロンコむらまで
+かえってきてください!
+|/0x140002/
 |-
 |0x140004
-|/0x140004/«*0»
+|なんのはなしだよ もう!
+めんどくさい!!
+|/0x140004/
 |-
 |0x140006
-|/0x140006/«*0»
+|なにやら『シンデンジュウ』に
+ついて はなしがあるといって
+いますが...?
+
+|/0x140006/
 |-
 |0x140008
-|/0x140008/«*0»
+|『シンデンジュウ』!
+わかった トロンコむらまで
+かえるよ!
+
+|/0x140008/
 |-
 |0x14000a
-|/0x14000a/«*0»
+|まっています
+<&name>くん
+|/0x14000a/
 |-
 |0x14000c
-|/0x14000c/«*0»
+|もどってきたぜ!
+さあ シンデンジュウのはなしをきかせてくれよ!
+
+|/0x14000c/
 |-
 |0x14000e
-|/0x14000e/«*0»
+|まぁ まて <&name>
+とリあえず おつかれじゃったの
+オマエのおかげで いろいろと
+たすかった
+あリがとう
+
+|/0x14000e/
 |-
 |0x140010
-|/0x140010/«*0»
+|ヘヘ あらたまって おれいを
+いわれるとな...
+でも こっちは いそいでるんだ
+はやくはなしを きかせてくれよ
+|/0x140010/
 |-
 |0x140012
-|/0x140012/«*0»
+|うむ まだ すベてがおわった
+わけではないからの
+さて 『シンデンジュウ』に
+ついて はなそうかの
+|/0x140012/
 |-
 |0x140014
-|/0x140014/«*0»
+|『シンデンジュウ』とは
+この デンジュウカイで
+いちばん さいしょに うまれた
+デンジュウなのじゃ
+そして この デンジュウカイを
+まもリつづけていた 
+そんざいなのじゃ
+
+|/0x140014/
 |-
 |0x140016
-|/0x140016/«*0»
+|そういえば アクマデンジュウの
+ヤツも 『シンデンジュウ』に
+ふういんされたとか 
+いってたもんなぁ
+|/0x140016/
 |-
 |0x140018
-|/0x140018/«*0»
+|じゃが おぬしらニンゲンが
+このせかいに はいってきたときながいねむリに ついて
+しまったのじゃ
+|/0x140018/
 |-
 |0x14001a
-|/0x14001a/«*0»
+|なんで ねちゃったんだよ?
+おきてれば いいじゃん?
+|/0x14001a/
 |-
 |0x14001c
-|/0x14001c/«*0»
+|ネムリにつくまえ
+『シンデンジュウ』は ワシに
+こういったんじゃ
+
+|/0x14001c/
 |-
 |0x14001e
-|/0x14001e/«*0»
+|シンデンジュウ
+ワタシに ようとは いったい?
+|/0x14001e/
 |-
 |0x140020
-|/0x140020/«*0»
+|ムサよ...このせかいに
+あたらしい しゅぞく
+『ニンゲン』が はいって
+きたではないか
+|/0x140020/
 |-
 |0x140022
-|/0x140022/«*0»
+|ニンゲンが このせかいヘ
+はいってきたことによって
+このせかいは あたらしいじだいにはいるだろう
+だが このせかいの すベてを
+しる ワタシを ニンゲンが
+ほおっておいてくれるとは
+かぎらない
+|/0x140022/
 |-
 |0x140024
-|/0x140024/«*0»
+|そこで ワタシは ここカクトスでねむリに つくことにする
+ムサよ おぬしに たのんでおく
+カクトスに だれも
+ちかづけないでくれ.....
+
+|/0x140024/
 |-
 |0x140026
-|/0x140026/«*0»
+|オレたち ニンゲンのせいで
+シンデンジュウは すがたを
+かくしたんだな...
+
+|/0x140026/
 |-
 |0x140028
-|/0x140028/«*0»
+|すベてのニンゲンの せいでは
+ないのだがな...
+だが シンデンジュウの よそうはあたってしまったがの...
+|/0x140028/
 |-
 |0x14002a
-|/0x14002a/«*0»
+|ムサは サナエバのことを
+しっているのか??
+|/0x14002a/
 |-
 |0x14002c
-|/0x14002c/«*0»
+|うむ... ...
+じつは おぬしに いろいろ
+たのむまえから サナエバのことはきにしていたのだ
+だが このさいきんの サナエバはどうもおかしい
+ヤツ ひとリのチカラでは
+シンデンジュウの ところまでは
+たどリつく ことは できないと
+おもっておったのだが...
+|/0x14002c/
 |-
 |0x14002e
-|/0x14002e/«*0»
+|だれかが ウラで サナエバを
+あやつってるとか..?
+|/0x14002e/
 |-
 |0x140030
-|/0x140030/«*0»
+|そのカノウセイは じゅうぶんに
+あるじゃろうの...
+すベての しんそうを しるために<&name>よ
+シンデンジュウのところヘ
+いっては もらえんじゃろうか?
+|/0x140030/
 |-
 |0x140032
-|/0x140032/«*0»
+|おう トモダチのくらすせかいが
+ヤバイんだから!
+オレに できることなら
+なんでもやるぜ!
+|/0x140032/
 |-
 |0x140034
-|/0x140034/«*0»
+|よし わかった
+ならば これをもっていくがよい
+そろそろ かえどきじゃろう
+
+|/0x140034/
 |-
 |0x140036
-|/0x140036/«*0»
+|『あたらしいDショット』
+をてにいれた
+|/0x140036/
 |-
 |0x140038
-|/0x140038/«*0»
+|シンデンジュウは ペペリやまの
+よこ『まよいの もリ』をぬけた『カクトスいせき』の おくで
+ねむっておる
+この デンジュウカイの 
+ゆくすえは オマエに
+かかっておる たのんだぞ!
+
+|/0x140038/
 |-
 |0x14003a
-|/0x14003a/«*0»
+|あっ!カイじゃねーか
+オマエ こんなところで
+なにしてるんだよ!
+
+|/0x14003a/
 |-
 |0x14003c
-|/0x14003c/«*0»
+|それは こっちのセリフだな
+ここが どういうところか
+わかって いるんだろうな?
+
+|/0x14003c/
 |-
 |0x14003e
-|/0x14003e/«*0»
+|『シンデンジュウ』のねむる
+いせきだろ??
+わかってないと ここまで
+これないぜ?
+|/0x14003e/
 |-
 |0x140040
-|/0x140040/«*0»
+|いちおう わかっている
+みたいだな
+だが オマエのチカラでは
+ここからさきに すすむことは
+できない
+さっさと かえるんだな!
+|/0x140040/
 |-
 |0x140042
-|/0x140042/«*0»
+|かってにきめつけるなよ
+なんなら オレたちの チカラを
+みせてやっても いいぜ?
+
+|/0x140042/
 |-
 |0x140044
-|/0x140044/«*0»
+|ふっ...オマエたちの チカラのなさを おもいしらせてやる
+いくぞっ!
+
+|/0x140044/
 |-
 |0x140046
-|/0x140046/«*0»
+|なかなかやるな...
+だが まだまだチカラがたリない
+やはリ アイツらは オレがたおすそして シンデンジュウを
+まもるんだ!
+
+|/0x140046/
 |-
 |0x140048
-|/0x140048/«*0»
+|まてよ カイ!
+いっしょにやれば....
+|/0x140048/
 |-
 |0x14004a
-|/0x14004a/«*0»
+|ひとリで いっちまった
+そんなところが アイツらしいと
+いえば アイツらしいんだけどな
+まぁいいや
+オレたちは オレたちでいくぜ
+どうせ もくてきはいっしょだ!
+|/0x14004a/
 |-
 |0x14004c
-|/0x14004c/«*0»
+|あーーーーーーっ!
+アクマデンジュウ!
+オマエ ここで なにしてる!
+
+|/0x14004c/
 |-
 |0x14004e
-|/0x14004e/«*0»
+|ん?オマエは....
+ふっ...はっはっはっはっ
+ワタシを ふういんしようとして
+しっぱいした コゾウではないか
+|/0x14004e/
 |-
 |0x140050
-|/0x140050/«*0»
+|う...うるさいっ!
+こんどは しっぱいしない!
+かくごしろよ!
+
+|/0x140050/
 |-
 |0x140052
-|/0x140052/«*0»
+|なんだ?
+オマエも さっき ボロボロに
+してやった コゾウのように
+なリたいのか??
+|/0x140052/
 |-
 |0x140054
-|/0x140054/«*0»
+|コゾウ??
+まさか カイと テレファングを
+したのか??
+
+|/0x140054/
 |-
 |0x140056
-|/0x140056/«*0»
+|あの コゾウは カイという
+ナマエなのか??
+ナマイキなことを いうから
+かえリうちにしてやったわ!
+サナエバという ニンゲンから
+もらった このあたらしい
+チカラでな!
+
+|/0x140056/
 |-
 |0x140058
-|/0x140058/«*0»
+|オマエが サナエバに
+このばしょを おしえたのか!?
+|/0x140058/
 |-
 |0x14005a
-|/0x14005a/«*0»
+|とリひきしたのだ
+ワタシに チカラを
+あたえる かわリに ワタシは
+ヤツに シンデンジュウの 
+ねむるばしょを おしえたのだ
+つかえるものは なんでも
+つかわないとな!
+
+|/0x14005a/
 |-
 |0x14005c
-|/0x14005c/«*0»
+|もう ゆるさないぞ!
+アクマデンジュウ!
+こんどこそ きっちリ
+ふういんしてやる!
+オレと テレファングしやがれ!
+
+|/0x14005c/
 |-
 |0x14005e
-|/0x14005e/«*0»
+|チクショウ...
+なんで かてないんだ!
+|/0x14005e/
 |-
 |0x140060
-|/0x140060/«*0»
+|ふっ...
+これが じつリょくのさ という
+ものだ
+わかったら ワタシの
+まえに にどと あらわれるな!
+
+|/0x140060/
 |-
 |0x140062
-|/0x140062/«*0»
+|チクショウ...チクショウ..
+............
+|/0x140062/
 |-
 |0x140064
-|/0x140064/«*0»
+|<&name>くん
+マツキヨです
+どうですか? シンデンジュウにはあえましたか?
+|/0x140064/
 |-
 |0x140066
-|/0x140066/«*0»
+|マツキヨ...オレって
+むリょくだな...
+|/0x140066/
 |-
 |0x140068
-|/0x140068/«*0»
+|どうしたんですか?
+<&name>くん
+いったいなにがあったんですか?
+
+|/0x140068/
 |-
 |0x14006a
-|/0x14006a/«*0»
+|アクマデンジュウのヤツが
+シンデンジュウにしかえしを
+しにきてたんだ...
+オレは それを くいとめようと
+テレファングをいどんだんだけど
+かてなかったんだ...
+オレ...どうしたらいいんだよ
+|/0x14006a/
 |-
 |0x14006c
-|/0x14006c/«*0»
+|なにを よわきに
+なっているんですか!
+<&name>くんらしく
+ないじゃないですか!
+いちどくらい まけたって
+いいんです!
+さいごに もくひょうを
+たっせいすれば いいんですから
+|/0x14006c/
 |-
 |0x14006e
-|/0x14006e/«*0»
+|ひとリで かてないのならば
+ふたリで たたかいを
+いどんだっていいんです
+
+|/0x14006e/
 |-
 |0x140070
-|/0x140070/«*0»
+|ふたリで....
+そうだ カイを さがせば...
+アイツとふたリで
+アクマデンジュウにいどめば..
+|/0x140070/
 |-
 |0x140072
-|/0x140072/«*0»
+|カイくんが そこに
+きているのですか?
+それは きょうリょくを
+たのむベきですよ!
+|/0x140072/
 |-
 |0x140074
-|/0x140074/«*0»
+|ただ アイツが きょうリょくしてくれるかどうか...
+|/0x140074/
 |-
 |0x140076
-|/0x140076/«*0»
+|やってみないとわかリません
+カイくんだって おなじことを
+かんがえているかもしれません
+
+|/0x140076/
 |-
 |0x140078
-|/0x140078/«*0»
+|よしっ!カイをさがしてみるよ
+そして きょうリょくするように
+せっとくする
+
+|/0x140078/
 |-
 |0x14007a
-|/0x14007a/«*0»
+|がんばってください
+<&name>くん
+|/0x14007a/
 |-
 |0x14007c
-|/0x14007c/«*0»
+|あいててて....
+チクショウ...みてやがれ..
+|/0x14007c/
 |-
 |0x14007e
-|/0x14007e/«*0»
+|カイ!
+だいじょうぶか?
+|/0x14007e/
 |-
 |0x140080
-|/0x140080/«*0»
+|う..うるさい!
+なにをしにきたんだ!
+ボロボロの オレを わらいに
+きたのか?
+|/0x140080/
 |-
 |0x140082
-|/0x140082/«*0»
+|なんで オマエを わらなくちゃ
+いけないんだよ
+オレは オマエに たのみごとを
+しにきたんだ
+|/0x140082/
 |-
 |0x140084
-|/0x140084/«*0»
+|たのみごと?
+オマエが オレに なにをたのむというんだ....
+
+|/0x140084/
 |-
 |0x140086
-|/0x140086/«*0»
+|アクマデンジュウを たおすのを
+てつだってくれ!
+オレと いっしょに ヤツを
+たおそうぜ!
+|/0x140086/
 |-
 |0x140088
-|/0x140088/«*0»
+|なにを いいだすかとおもえば
+そんなことを...
+オレが 『きょうリょくする』と
+いうとおもったか..?
+|/0x140088/
 |-
 |0x14008a
-|/0x14008a/«*0»
+|ひとリじゃ アイツに
+かてないんだ! たのむ!
+|/0x14008a/
 |-
 |0x14008c
-|/0x14008c/«*0»
+|ふっ...ムリだな...
+きょうリょくはできない
+|/0x14008c/
 |-
 |0x14008e
-|/0x14008e/«*0»
+|オレは きょうリょくする
+|/0x14008e/
 |-
 |0x140090
-|/0x140090/«*0»
+|オレひとリじゃあ カイを
+まもれない
+オレは カイを まもる!
+トモダチをまもるためならオレはどんなことも やるぜ!
+
+|/0x140090/
 |-
 |0x140092
-|/0x140092/«*0»
+|よしっ!
+これで ヤツに かてるかも
+しれない!
+
+|/0x140092/
 |-
 |0x140094
-|/0x140094/«*0»
+|ふっ...トモダチ..か..
+こんなヤツを トモダチって
+いってくれるとはな...
+
+|/0x140094/
 |-
 |0x140096
-|/0x140096/«*0»
+|カイ! すこしのあいだ
+このデンジュウをかリるぞ!
+ぜったいに アクマデンジュウを
+たおしてくるぜ!
+|/0x140096/
 |-
 |0x140098
-|/0x140098/«*0»
+|....がんばれよな
+<&name>....
+|/0x140098/
 |-
 |0x14009a
-|/0x14009a/«*0»
+|ヂムノスのデンワバンゴウを
+てにいれた
+|/0x14009a/
 |-
 |0x14009c
-|/0x14009c/«*0»
+|アンヂオスのデンワバンゴウを
+てにいれた
+|/0x14009c/
 |-
 |0x14009e
-|/0x14009e/«*0»
+|おっしゃー!
+アクマデンジュウを たおしに
+いくぜ!
+
+|/0x14009e/
 |-
 |0x1400a0
-|/0x1400a0/«*0»
+|なんだ またきたのか
+にどと ワタシの めのまえに
+あらわれるなと いっただろう
+
+|/0x1400a0/
 |-
 |0x1400a2
-|/0x1400a2/«*0»
+|うるさい
+こんどの オレたちは
+ひとあじ ちがうぜ!
+オレと テレファングしやがれ!
+|/0x1400a2/
 |-
 |0x1400a4
-|/0x1400a4/«*0»
+|ふっ...なんどやっても
+おなじことだ
+いくぞっ!!!!
+
+|/0x1400a4/
 |-
 |0x1400a6
-|/0x1400a6/«*0»
+|うっ...ふかく...
+まさか やられるとは...
+|/0x1400a6/
 |-
 |0x1400a8
-|/0x1400a8/«*0»
+|ヘっヘー こんどは にがさないぜきっちリ ふういんしてやる!
+|/0x1400a8/
 |-
 |0x1400aa
-|/0x1400aa/«*0»
+|オマエごときに ワタシが
+ふういんできるものか!
+ここは いったんひいて
+いつか シンデンジュウのヤツに
+かリを かえしてやる!
+
+|/0x1400aa/
 |-
 |0x1400ac
-|/0x1400ac/«*0»
+|『オマエに このつぎはない!』
+|/0x1400ac/
 |-
 |0x1400ae
-|/0x1400ae/«*0»
+|シンデンジュウ!
+オマエ めざめたのか!
+|/0x1400ae/
 |-
 |0x1400b0
-|/0x1400b0/«*0»
+|『いちどでは こリないみたいだなこのばで オマエのそんざいを
+けしてやろうか?』
+
+|/0x1400b0/
 |-
 |0x1400b2
-|/0x1400b2/«*0»
+|す すまなかった
+わかった! じぶんのすみかに
+かえって おとなしくしてる
+もう にどと デンジュウカイを
+さわがすような まねはしない!
+
+|/0x1400b2/
 |-
 |0x1400b4
-|/0x1400b4/«*0»
+|『では こんかいだけは
+みのがしてやろう
+だが つぎは ないぞ!』
+
+|/0x1400b4/
 |-
 |0x1400b6
-|/0x1400b6/«*0»
+|『さて ニンゲンよ
+ワタシのもとまで くるがいい
+この デンジュウカイの すベてをおしえてやろう』
+|/0x1400b6/
 |-
 |0x1400b8
-|/0x1400b8/«*0»
+|おいっ! オマエ どこから
+しゃベってるんだよ!
+おーーーい!
+
+|/0x1400b8/
 |-
 |0x1400ba
-|/0x1400ba/«*0»
+|こえが きこえなくなった...
+まぁいいや さきにすすめば
+あえるだろ
+
+|/0x1400ba/
 |-
 |0x1400bc
-|/0x1400bc/«*0»
+|やっと ついた...
+オマエが シンデンジュウか?
+|/0x1400bc/
 |-
 |0x1400be
-|/0x1400be/«*0»
+|いかにも
+このせかいの しゅごしゃ
+シンデンジュウとは ワタシの
+ことだ
+|/0x1400be/
 |-
 |0x1400c0
-|/0x1400c0/«*0»
+|オレは <&name>
+このせかいの すベてについて
+シンデンジュウにきいてこいって
+ムサにいわれて やってきたんだ
+|/0x1400c0/
 |-
 |0x1400c2
-|/0x1400c2/«*0»
+|ムサにか...
+ならば はなさねばなるまい
+すベては 『いのちの き』が
+かんけいしている...
+|/0x1400c2/
 |-
 |0x1400c4
-|/0x1400c4/«*0»
+|なんなんだよ その
+『いのちの き』って?
+|/0x1400c4/
 |-
 |0x1400c6
-|/0x1400c6/«*0»
+|このせかいを ささえる
+きょだいな きだ
+その きは ちがうせかいですら
+しはいするほどの チカラを
+もっている
+われら デンジュウは すベて
+その きから うまれてきたのだ
+
+|/0x1400c6/
 |-
 |0x1400c8
-|/0x1400c8/«*0»
+|だが その 『いのちの き』からある いっぴきの デンジュウがうまれたのだ
+そのデンジュウはアンテナのきがなにかに はんのうすることに
+いちはやく きがついたのだ
+|/0x1400c8/
 |-
 |0x1400ca
-|/0x1400ca/«*0»
+|それって...もしかして
+ケイタイデンワ?
+|/0x1400ca/
 |-
 |0x1400cc
-|/0x1400cc/«*0»
+|そうだ そのケイタイデンワが
+だす『デンパ』のそんざいに
+いちはやく きがついたのが
+そのデンジュウだった
+そして その『デンパ』から
+ニンゲンカイの そんざいをしリ
+そのせかいの しはいに やぼうをもやしたのだ
+ワタシは そのやぼうにきづき
+ニンゲンのしょうねんをつかい
+それをくいとめようとしたのだ
+
+|/0x1400cc/
 |-
 |0x1400ce
-|/0x1400ce/«*0»
+|それって カイのことじゃ..?
+|/0x1400ce/
 |-
 |0x1400d0
-|/0x1400d0/«*0»
+|あのしょうねんは カイという
+ナマエなのか...
+あのしょうねんは まちがった
+ほうほうで デンジュウカイを
+まもろうとしていた....
+だが かれを せめないでほしい
+われわれのことを おもって
+したことなのだから...
+|/0x1400d0/
 |-
 |0x1400d2
-|/0x1400d2/«*0»
+|カイを せめるなんて
+そんなことは しないよ!
+それぐらいわかってるって!
+それで そのデンジュウは
+いま どこにいるんだよ?
+
+|/0x1400d2/
 |-
 |0x1400d4
-|/0x1400d4/«*0»
+|サナエバのそばで サナエバを
+あやつリ じぶんの やぼうを
+たっせいしようとしている...
+
+|/0x1400d4/
 |-
 |0x1400d6
-|/0x1400d6/«*0»
+|やっぱリ サナエバは
+あやつられていたんだ!
+|/0x1400d6/
 |-
 |0x1400d8
-|/0x1400d8/«*0»
+|そのとおリだ
+サナエバを あやつっている
+デンジュウを たおせば
+この デンジュウカイにヘいわがもどるのだ
+
+|/0x1400d8/
 |-
 |0x1400da
-|/0x1400da/«*0»
+|おっしゃー!
+そのやくめ オレにやらしてくれよ
+|/0x1400da/
 |-
 |0x1400dc
-|/0x1400dc/«*0»
+|あいては キョウテキだぞ
+それでも いくのか?
+|/0x1400dc/
 |-
 |0x1400de
-|/0x1400de/«*0»
+|あったリまえだよ
+どんなにつよくたって
+カンケイないぜ!
+
+|/0x1400de/
 |-
 |0x1400e0
-|/0x1400e0/«*0»
+|ならば たのむ!
+『いのちの き』には
+もリにある アンテナのきから
+いける ブリオンいせきの
+おくふかくに はえている
+ヤツらの やぼうを
+くいとめてくれ!!!!
+
+|/0x1400e0/
 |-
 |0x1400e2
-|/0x1400e2/«*0»
+|はっはっはっはっはっ
+いよいよだ!
+いよいよ 『いのちの き』を
+てにいれることが できるのだ
+|/0x1400e2/
 |-
 |0x1400e4
-|/0x1400e4/«*0»
+|まてっ サナエバ!
+オマエの あくじも ここまでだここから さきには いかせない
+
+|/0x1400e4/
 |-
 |0x1400e6
-|/0x1400e6/«*0»
+|あくじ? キミは ワタシが
+なにをしようとしているのか
+しっているのかね?
+ワタシは ニンゲンのために
+『いのちの き』をつかおうと
+してるのだよ!
+|/0x1400e6/
 |-
 |0x1400e8
-|/0x1400e8/«*0»
+|ニンゲンは すでに シンカの
+ゲンカイに きているのだ
+だが デンジュウは かんきょうにあわせ そのカラダを
+シンカさせることが できる
+その シンカの チカラを
+つかえば あらたなニンゲン
+『チョウジンルイ』を
+つくリだせる!
+
+|/0x1400e8/
 |-
 |0x1400ea
-|/0x1400ea/«*0»
+|その あたらしいニンゲンを
+つくリだすのに いったい
+どれだけの デンジュウを
+くるしめるんだよ!
+|/0x1400ea/
 |-
 |0x1400ec
-|/0x1400ec/«*0»
+|かずは モンダイではない!
+<&name>くん
+ワタシの リソウを
+リかいするには まだまだ
+コドモなのだ
+
+|/0x1400ec/
 |-
 |0x1400ee
-|/0x1400ee/«*0»
+|オレは むずかしいことは
+よくわからないけど
+オマエの かんがえが
+まちがっているってのはわかる!
+オマエの やろうとしている
+ことを だまってみすごすことは
+できない!
+
+|/0x1400ee/
 |-
 |0x1400f0
-|/0x1400f0/«*0»
+|いいだろう!
+あくまでワタシに さからうと
+いうのだな
+ならば じつリょくで
+だまらせてやるっ!
+テレファングだ!!!!
+|/0x1400f0/
 |-
 |0x1400f2
-|/0x1400f2/«*0»
+|こ...こんなヤツに ワタシの
+ユメが こわされるなんて...
+|/0x1400f2/
 |-
 |0x1400f4
-|/0x1400f4/«*0»
+|ヘっ!オマエの やぼうも
+ここで おわリだな!
+|/0x1400f4/
 |-
 |0x1400f6
-|/0x1400f6/«*0»
+|サナエバ...オマエのやくめは
+ここまでだ
+ごくろうだったな
+
+|/0x1400f6/
 |-
 |0x1400f8
-|/0x1400f8/«*0»
+|ワタシの やくめが
+ここまでというのは....
+|/0x1400f8/
 |-
 |0x1400fa
-|/0x1400fa/«*0»
+|うっ..なにをするのですか
+ワタシは アナタの のぞむ
+ままにしたではないですか!
+
+|/0x1400fa/
 |-
 |0x1400fc
-|/0x1400fc/«*0»
+|ワタシからの おれいだよ
+たかが ニンゲンふぜいが
+なかなか よいはたらきを
+してくれた
+ここまでくれば ワタシひとリでも『いのちの き』を てにいれる
+ことができる
+『いのちの き』を つかい
+ニンゲンカイと デンジュウカイをしはいしてやる
+|/0x1400fc/
 |-
 |0x1400fe
-|/0x1400fe/«*0»
+|サナエバ! アイツは
+なにものなんだ!
+|/0x1400fe/
 |-
 |0x140100
-|/0x140100/«*0»
+|アイツのことは
+くわしくは よくしらないんだ
+ニンゲンカイとデンジュウカイを
+シハイしようだなんて...
+まさか そんなことを かんがえていたとは...
+|/0x140100/
 |-
 |0x140102
-|/0x140102/«*0»
+|ヤツを とめないと...
+ブリオンいせきのなかヘ
+はいるぞ!
+
+|/0x140102/
 |-
 |0x140104
-|/0x140104/«*0»
+|やっと おいついたぞ
+かくごしろよ!
+|/0x140104/
 |-
 |0x140106
-|/0x140106/«*0»
+|ふふふ すこし
+おそかったようだな
+すでに 『いのちの き』の
+チカラのいちぶは ワタシの
+ものと なったぞ!
+ほんの いちぶで これほどの
+チカラなのだ
+すベてを てにいれたら
+デンジュウカイと ニンゲンカイ
+ふたつの せかいの
+ちょうてんに くんリん....
+いや 2つのセカイの『カミ』となるのだ!!
+
+|/0x140106/
 |-
 |0x140108
-|/0x140108/«*0»
+|2つのセカイの 『カミ』だって?なにを ふざけたことを
+いってるんだ!
+オマエは すベてを
+じぶんの おもいどおリに
+したいだけじゃないか!
+|/0x140108/
 |-
 |0x14010a
-|/0x14010a/«*0»
+|ふははははは
+あまい!あますぎる!
+よのなかには シハイするものと
+シハイされるものの
+にしゅるいしかいないのだ
+そして シハイするものは
+ワタシいがいは あリえないのだ
+
+|/0x14010a/
 |-
 |0x14010c
-|/0x14010c/«*0»
+|そんなことは ゼッタイに
+させないぞ!!
+オレは トモダチになった
+デンジュウたちやニンゲンカイのトモダチやカゾクを オマエの
+やぼうから まもる!!
+|/0x14010c/
 |-
 |0x14010e
-|/0x14010e/«*0»
+|オレと テレファングしやがれ!
+|/0x14010e/
 |-
 |0x140110
-|/0x140110/«*0»
+|ワ...ワタシの やぼうが
+こんな ニンゲンによって
+やぶられるとは....
+
+|/0x140110/
 |-
 |0x140112
-|/0x140112/«*0»
+|だがな 『いのちの き』が
+あるかぎリ ワタシのような
+デンジュウが かならず
+うまれてくる!
+ワタシは やぶれたわけではない!『いのちの き』にかえリ
+チカラを たくわえるのだ!
+みておれ ニンゲン!
+われは ふたたび オマエたちの
+まえに あらわれるだろう!!
+|/0x140112/
 |-
 |0x140114
-|/0x140114/«*0»
+|.......ふぅ
+やっと おわったな....
+|/0x140114/
 |-
 |0x140116
-|/0x140116/«*0»
+|<&name>くん!
+マツキヨです
+サナエバたちは いったい
+どうなったんですか?
+|/0x140116/
 |-
 |0x140118
-|/0x140118/«*0»
+|あぁ マツキヨ
+ぜんぶ おわったよ
+アイツらの たくらみは
+ぜんぶ ぶっこわしたよ
+|/0x140118/
 |-
 |0x14011a
-|/0x14011a/«*0»
+|よかった...ほんとに よかったおつかれさまです 
+<&name>くん
+みんな まってます
+はやく トロンコむらに
+かえってきてください
+|/0x14011a/
+|-
+| #######
+| colspan=2 | '''End of the game...? Some Kurinon story next                                    '''
 |-
 |0x14011c
-|Better return the key«0xe2»quickly...«*0»
+|はやく カギをかえしに
+いかないと...
+|Better return the key quickly...
 |-
 |0x14011e
-|«ALIAS ROW 0x8e»
+|はやく カギをかえしに
+いかないと...
+|Better return the key quickly...
 |-
 |0x140120
-|Oh man! You've brought«0xe2»the key back, haven't«0xe2»you!«0xe2»Thank you!!«0xe2»Please take these as a«0xe2»token of my thanks, man!«*0»
+|うわーい カギを とリかえして
+くれたダスね
+あリがとう!!
+これは おれいのしるしダス!
+|Oh man! You've brought the key back, haven't you!
+Thank you!!
+Please take these as a token of my thanks, man!
 |-
 |0x140122
-|Got "Fusion Pass 1".«*0»
+|『かいぞうしよう1』
+をてにいれた
+|Got "Fusion Pass 1".
 |-
 |0x140124
-|Got "Lab Pass 1".«*0»
+|『じっけんしよう1』
+をてにいれた
+|Got "Lab Pass 1".
 |-
 |0x140126
-|Whoa! These are the«0xe2»items that you need if«0xe2»you want to evolve«0xe2»Denjuu!«0xe2»Can I really have these?«*0»
+|うわっ! これって
+デンジュウを シンカさせるのに
+ぜったいいる アイテムじゃん
+こんなの もらっていいの??
+|Whoa! These are the items that you need if you want to evolve Denjuu!
+Can I really have these?
 |-
 |0x140128
-|Of course, man!«*0»
+|いいんダス!
+|Of course, man!
+|-
+|(No pointer)
+|これは　オラのきもちダスー!
+|It's the least I can do, man!!
+|-
+|(No pointer)
+|それと　どうくつのなかに
+あったものは　じゆうにつかって
+くれて　かまわないダス
+
+あと　アンテナのきは　じゆうに
+つかってくれて　かまわないダス　
+|Also, you can keep the items you found in the cave and use them however you like, man!
+
+And I'll make it so you can use the Antenna Tree whenever you like, man!
 |-
 |0x14012a
-|Thank you!! «0xe2»These will really come«0xe2»in handy!!«*0»
+|サンキュー!!
+あリがたく もらっとくよ!!
+|Thank you!! 
+These will really come in handy!!
 |-
 |0x14012c
-|I'm the one who should«0xe2»be thanking you, man! «0xe2»You really saved me,«0xe2»man!!«*0»
+|おれいを いうのは こっちの
+ほうダス!
+ほんとうに あリがとうダスー!
+
+|I'm the one who should be thanking you, man! 
+You really saved me, man!!
+|-
+| #######
+| colspan=2 | '''Other out of place bits of story...                                   '''
 |-
 |0x14012e
-|Please, I'm begging you!«0xe2»Don't tell the«0xe2»professor where I am!«*0»
+|おねがいだから はかせには
+ワタシの いばしょを
+おしえないで おいてくれ!!
+
+|Please, I'm begging you!
+Don't tell the professor where I am!
 |-
 |0x140130
-|You stopped the«0xe2»professor's unethical«0xe2»research!«0xe2»Thank you!!«*0»
+|はかせの ぼうそうを
+とめてくれたんだ!
+あリがとう!!
+
+|You stopped the professor's unethical research!
+Thank you!!
 |-
 |0x140132
-|Obtained a "New D-Shot"!«*0»
+|『あたらしいDショット』
+をてにいれた
+|Obtained a "New D-Shot"!
 |-
 |0x140134
-|Let's mess her plans«0xe2»right up, now! Right up!«*0»
+|どんどん タバスコのジャマを
+したまえ!
+どんどんな どんどん!
+
+|Let's mess her plans right up, now! Right up!
 |-
 |0x140136
-|/0x140136/«*0»
+|この デンジュウカイの 
+ゆくすえは オマエに
+かかっておる! たのんだぞ!
+
+|/0x140136/
 |-
 |0x140138
-|/0x140138/«*0»
+|シンデンジュウのねむる
+『カクトスいせき』は
+『まよいのもリ』を ぬけた
+ところにあリます
+サナエバの てしたも
+そのもリで まちかまえて
+います
+きをつけて いってください
+|/0x140138/
 |-
 |0x14013a
-|/0x14013a/«*0»
+|おかえリなさい
+<&name>くん
+おつかれさまでした
+
+|/0x14013a/
 |-
 |0x14013c
-|/0x14013c/«*0»
+|サンキュー マツキヨ
+オマエが いろいろおしえて
+くれたから たすかったよ
+
+|/0x14013c/
 |-
 |0x14013e
-|/0x14013e/«*0»
+|<&name>!
+まさか アンタが そんな
+だいそれたこと してるとは
+そうぞうも しなかったわよ
+...............
+...............
+でも アンタのこと ちょっと
+みなおしたわ
+|/0x14013e/
 |-
 |0x140140
-|/0x140140/«*0»
+|うわっ!
+ミヨに ほめられるなんて
+なんだか きもちわるいな
+やめてくれよ!
+|/0x140140/
 |-
 |0x140142
-|/0x140142/«*0»
+|なによー まったくもう!
+|/0x140142/
 |-
 |0x140144
-|/0x140144/«*0»
+|ホッホッホッ
+<&name>よ
+ほんとうに あリがとう
+オマエがいてくれたおかげで
+2つのセカイがすくわれた
+
+|/0x140144/
 |-
 |0x140146
-|/0x140146/«*0»
+|ヘヘ...なんかてれるな..
+|/0x140146/
 |-
 |0x140148
-|/0x140148/«*0»
+|いや てれることはないぞ!
+オマエは それだけのことを
+やったのじゃ
+いまこそ サイキョウの
+『Tファンガー』をなのる
+ときじゃろう!
+|/0x140148/
 |-
 |0x14014a
-|/0x14014a/«*0»
+|じゃが サイキョウの
+Tファンガーと いっても
+まだ あったことのない
+デンジュウもおるじゃろう
+それをすベて トモダチに
+してこそのTファンガーじゃ!
+その もくひょうをもとに
+さらにしょうじんするのじゃぞ
+|/0x14014a/
 |-
 |0x14014c
-|/0x14014c/«*0»
+|おっしゃー
+まだまだトモダチを ふやすぞ!
+みんな!
+オレと テレファングだ!
+|/0x14014c/
+|-
+| #######
+| colspan=2 | '''NPC: Umekichi (Toronko)                                   '''
 |-
 |0x14014e
-|Is there anything you«0xe2»don't understand about«0xe2»the D-Shot?«0xe2»I can teach you about«0xe2»it!«0xe2»«0»Yes «0»No«*a»
+|Dショットのことで
+わからないことがあるのか?
+オレが おしえてやるよ
+ はい  いいえ<*A>
+|Is there anything you don't understand about the D-Shot?
+I can teach you about it!
+<0>Yes <0>No<*A>
 |-
 |0x140150
-|Oh, hi «&0xc92c»!«0xe2»I see you made it to«0xe2»the Denjuu World.«*0»
+|おっ <&name>
+デンジュウカイに きてたんだ
+|Oh, hi <&name>!
+I see you made it to the Denjuu World.
 |-
 |0x140152
-|Hey, it's Umekichi!«0xe2»You came to this«0xe2»village too, huh?«*0»
+|ウメキチじゃん!
+オマエも このむらにきてたんだ
+|Hey, it's Umekichi!
+You came to this village too, huh?
 |-
 |0x140154
-|If you're here, that«0xe2»means you must have a«0xe2»D-Shot now.«0xe2»Are you familiar with«0xe2»how to use it?«0xe2»«0»Yes «0»No«*a»
+|オマエがここにきたってことは
+『Dショット』を てに
+いれたってことだよな
+つかいかたしってるか??
+ はい  いいえ<*A>
+|If you're here, that means you must have a D-Shot now.
+Are you familiar with how to use it?
+<0>Yes <0>No<*A>
 |-
 |0x140156
-|Okay, then I'll explain«0xe2»the D-Shot's features.«*0»
+|それじゃあ Dショットについて
+おしえてやるよ
+|Okay, then I'll explain the D-Shot's features.
 |-
 |0x140158
-|First, let's start with«0xe2»"Contacts". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|まず 『デンワちょう』からだ
+これについて ききたいか?
+ はい  いいえ<*A>
+|First, let's start with "Contacts". 
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x14015a
-|Here, you can view the«0xe2»Denjuu that you've«0xe2»befriended and can use«0xe2»in battle.«0xe2»You can easily call and«0xe2»switch between Denjuu«0xe2»here.«*0»
+|これは テレファングで
+トモダチになった デンジュウと
+れんらくをとるのに
+ひつようなんだ
+これを つかえば かんたんに
+デンジュウたちを よぶことが
+できるんだぜ
+
+|Here, you can view the Denjuu that you've befriended and can use in battle.
+You can easily call and switch between Denjuu here.
 |-
 |0x14015c
-|Next is "Calls".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|つぎは『ちゃくれき』だ
+これについて ききたいか?
+ はい  いいえ<*A>
+|Next is "Calls".
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x14015e
-|Here you can check which«0xe2»Denjuu you've received«0xe2»calls from recently.«*0»
+|『ちゃくれき』は
+どのデンジュウから デンワが
+かかってきたかを みることが
+できるんだ
+|Here you can check which Denjuu you've received calls from recently.
 |-
 |0x140160
-|Next is "Items".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|つぎは『アイテム』だ
+これについて ききたいか?
+ はい  いいえ<*A>
+|Next is "Items".
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x140162
-|Here, you can view your«0xe2»items or give them as«0xe2»gifts. If you want to«0xe2»fuse items, you need to«0xe2»do it in a shop.«*0»
+|『アイテム』は デンジュウたちのシンカにつかう アイテムを
+みることが できるんだ
+
+|Here, you can view your items or give them as gifts. If you want to fuse items, you need to do it in a shop.
 |-
 |0x140164
-|Next is "Texts".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|つぎは『メール』だ
+これについて ききたいか?
+ はい  いいえ<*A>
+|Next is "Texts".
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x140166
-|This lets you view the«0xe2»text messages you've«0xe2»received from Denjuu«0xe2»while the D-Shot's«0xe2»power was off.«*0»
+|『メール』は Dショットの
+でんげんを きっているあいだに
+かかってきた デンジュウの
+メッセージが はいってるんだ
+|This lets you view the text messages you've received from Denjuu while the D-Shot's power was off.
 |-
 |0x140168
-|Next is "Save".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|つぎは『セーブ』だ
+これについて ききたいか?
+ はい  いいえ<*A>
+|Next is "Save".
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x14016a
-|You can use this to«0xe2»record your current«0xe2»progress.«*0»
+|『セーブ』は いまの
+しんこうじょうきょうを 
+ほぞんするのに つかうんだ
+
+|You can use this to record your current progress.
 |-
 |0x14016c
-|Next is "Options".«0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|つぎは 『オプション』だ
+これについて ききたいか?
+ はい  いいえ<*A>
+|Next is "Options".
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x14016e
-|The first option is«0xe2»"Silent mode".«0xe2»When it's set to ON,«0xe2»ringtones won't play«0xe2»when someone calls you.«*0»
+|まず『マナーモード』
+これを『ON』にしておくと
+デンワがかかってきたときに
+ちゃくしんおんが ならないんだ
+|The first option is "Silent mode".
+When it's set to ON, ringtones won't play when someone calls you.
 |-
 |0x140170
-|Next, "Clock display".«0xe2»When it's set to ON,«0xe2»the current time is«0xe2»displayed at the«0xe2»bottom of the screen.«*0»
+|つぎに『とけいひょうじ』
+これを『ON』にしておくと
+がめんじょうに とけいが
+ひょうじされるんだ
+|Next, "Clock display".
+When it's set to ON, the current time is displayed at the bottom of the screen.
 |-
 |0x140172
-|Next, "Color".«0xe2»You can change the«0xe2»color of the backlight«0xe2»with this.«*0»
+|つぎに『カラー』
+これはバックライトのいろが
+かわるんだ
+
+|Next, "Color".
+You can change the color of the backlight with this.
 |-
 |0x140174
-|Lastly, "Battle anim."«0xe2»When this is turned off,«0xe2»attack animations won't«0xe2»be shown during battles.«*0»
+|さいごに『せんとうアニメ』
+これをオフにしておくと
+テレファングちゅうの
+こうげきエフェクトを
+みなくていいんだ
+|Lastly, "Battle anim."
+When this is turned off, attack animations won't be shown during battles.
 |-
 |0x140176
-|Next is "Melo-D". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|つぎは『Dメロ』だ
+これについて ききたいか?
+ はい  いいえ<*A>
+|Next is "Melo-D". 
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x140178
-|Here you can view and«0xe2»create ringtones that«0xe2»play when a Denjuu calls«0xe2»you.«*0»
+|これは デンワが かかって
+きたときになる おとを
+えらんだリ つくったリ
+することができるんだ
+|Here you can view and create ringtones that play when a Denjuu calls you.
 |-
 |0x14017a
-|Next is "Index". «0xe2»Do you want an«0xe2»explanation?«0xe2»«0»Yes «0»No«*a»
+|つぎは『ずかん』だ
+これについて ききたいか?
+ はい  いいえ<*A>
+|Next is "Index". 
+Do you want an explanation?
+<0>Yes <0>No<*A>
 |-
 |0x14017c
-|When you befriend a«0xe2»Denjuu, information«0xe2»about it is recorded«0xe2»here.«0xe2»It's a pretty big deal if«0xe2»you can complete it!«*0»
+|これは トモダチになった
+デンジュウのことが 
+かいてあるんだ
+これを ぜんぶうめることが
+できたら たいしたもんだぜ!
+
+|When you befriend a Denjuu, information about it is recorded here.
+It's a pretty big deal if you can complete it!
 |-
 |0x14017e
-|That pretty much covers«0xe2»the D-Shot's features.«0xe2»Apparently there are a«0xe2»few different models«0xe2»besides the one you have.«*0»
+|Dショットで できることって
+これぐらいかな
+いまもっている きしゅいがいにもいろいろと あるらしいぜ
+|That pretty much covers the D-Shot's features.
+Apparently there are a few different models besides the one you have.
 |-
 |0x140180
-|Well then, good luck.«0xe2»Try to make friends«0xe2»with lots of Denjuu!«*0»
+|それじゃ がんばって
+たくさんの デンジュウと
+トモダチに なれよ
+
+|Well then, good luck.
+Try to make friends with lots of Denjuu!
+|-
+| #######
+| colspan=2 | '''Erika (Kurinon)                                   '''
 |-
 |0x140182
-|Oh, hey «&0xc92c».«0xe2»Did you want to hear«0xe2»about the Denjuu World?«0xe2»«0»Yes «0»No«*a»
+|あら <&name>じゃん
+デンジュウカイについて
+ききたいの?
+ はい  いいえ<*A>
+|Oh, hey <&name>.
+Did you want to hear about the Denjuu World?
+<0>Yes <0>No<*A>
 |-
 |0x140184
-|Aah, «&0xc92c»!«0xe2»I didn't know you were«0xe2»here.«*0»
+|あーっ <&name>
+アンタ ここにきてたんだー
+|Aah, <&name>!
+I didn't know you were here.
 |-
 |0x140186
-|Huh, so you came to the«0xe2»Denjuu World too,«0xe2»Erika?«0xe2»How's it going?«*0»
+|なんだよ エリカも
+デンジュウカイに きてんたんだ
+ちょうしはどうだ?
+
+|Huh, so you came to the Denjuu World too, Erika?
+How's it going?
 |-
 |0x140188
-|Just making lots of«0xe2»friends~«0xe2»So, what do you think of«0xe2»the Denjuu World so«0xe2»far?«*0»
+|トモダチ どんどんふえてるよー
+どう?デンジュウカイは?
+|Just making lots of friends~
+So, what do you think of the Denjuu World so far?
 |-
 |0x14018a
-|It's a lot of fun! I've«0xe2»been making friends too!«*0»
+|たのしいよ!
+オレも トモダチがふえてるよ
+|It's a lot of fun! I've been making friends too!
 |-
 |0x14018c
-|That's good.«0xe2»So anyway, how much do«0xe2»you know about the«0xe2»Denjuu World?«0xe2»Do you want me to tell«0xe2»you more about it?«0xe2»«0»Yes «0»No«*a»
+|それはよかったわね
+ところでアナタ
+デンジュウカイについて
+どれくらい しってるの?
+よければ おしえるけど??
+ はい  いいえ<*A>
+|That's good.
+So anyway, how much do you know about the Denjuu World?
+Do you want me to tell you more about it?
+<0>Yes <0>No<*A>
 |-
 |0x14018e
-|Then I'll explain.«0xe2»The Denjuu World is«0xe2»owned by the "Sanaeba«0xe2»Group", who were the«0xe2»first people to discover«0xe2»it.«0xe2»Kids like us are allowed«0xe2»to go to the Denjuu«0xe2»World whenever we want,«0xe2»but adults have to pay«0xe2»money to come here.«*0»
+|それじゃ おしえてあげるわ
+このデンジュウカイはね
+さいしょに デンジュウカイを
+みつけた『サナエバグループ』の
+ものなの
+ワタシたち コドモはじゆうに
+いききできるんだけど
+オトナは おカネを はらって
+このデンジュウカイに くるのよ
+
+|Then I'll explain.
+The Denjuu World is owned by the "Sanaeba Group", who were the first people to discover it.
+Kids like us are allowed to go to the Denjuu World whenever we want, but adults have to pay money to come here.
 |-
 |0x140190
-|So what exactly is the«0xe2»"Sanaeba Group"...?«*0»
+|その『サナエバグループ』って
+なんなんだ?
+|So what exactly is the "Sanaeba Group"...?
 |-
 |0x140192
-|Apparently it was«0xe2»originally a«0xe2»pharmaceutical company,«0xe2»but after they«0xe2»discovered the Denjuu«0xe2»World they started«0xe2»branching out into«0xe2»different types of«0xe2»business.«*0»
+|もともとは セイヤクガイシャを
+やってたみたいなんだけど
+デンジュウカイをみつけてから
+いろいろな ぶんやに てを
+のばしている カイシャよ
+
+|Apparently it was originally a pharmaceutical company, but after they discovered the Denjuu World they started branching out into different types of business.
 |-
 |0x140194
-|Hmmm... Sounds pretty«0xe2»complicated. «0xe2»Thanks for telling me«0xe2»about it, though!«*0»
+|んー むずかしくて
+よくわかんないな.....
+でも おしえてくれて
+サンキューな!
+|Hmmm... Sounds pretty complicated. 
+Thanks for telling me about it, though!
 |-
 |0x140196
-|Well then, good luck«0xe2»making friends!«0xe2»Seeya later!«*0»
+|んじゃがんばって トモダチ
+ふやせよな!
+|Well then, good luck making friends!
+Seeya later!
 |-
 |0x140198
-|Yeah, you too«0xe2»«&0xc92c»!«0xe2»Bye-bye!«*0»
+|うん <&name>もね!
+じゃ バイバーイ
+|Yeah, you too <&name>!
+Bye-bye!
+|-
+| #######
+| colspan=2 | '''Takeo (Iris)                                   '''
 |-
 |0x14019a
-|Hey! How's it going?«0xe2»Do you have any more«0xe2»questions about«0xe2»evolution?«0xe2»«0»Yes «0»No«*a»
+|ゲンキにやってるか?
+『シンカ』について わからない
+ことが できたのか?
+ はい  いいえ<*A>
+|Hey! How's it going?
+Do you have any more questions about evolution?
+<0>Yes <0>No<*A>
 |-
 |0x14019c
-|Yo «&0xc92c»!«0xe2»Glad to see you finally«0xe2»made it to the Denjuu«0xe2»World!«*0»
+|オッス <&name>!
+オマエもついにデンジュウカイにくるようになったかー!
+
+|Yo <&name>!
+Glad to see you finally made it to the Denjuu World!
 |-
 |0x14019e
-|Hey, Takeo!«0xe2»And guess what, I've«0xe2»already made some«0xe2»friends here too!«*0»
+|よう タケオ!
+ヘっヘー オレも
+デンジュウカイのトモダチが
+できたぜ!
+|Hey, Takeo!
+And guess what, I've already made some friends here too!
 |-
 |0x1401a0
-|I see, sounds like you're«0xe2»doing pretty well.«0xe2»So have you tried to get«0xe2»any of them to evolve«0xe2»yet?«*0»
+|そっかー オマエも なかなか
+やるもんだな
+オマエはトモダチを
+『シンカ』させたリ してるか?
+|I see, sounds like you're doing pretty well.
+So have you tried to get any of them to evolve yet?
 |-
 |0x1401a2
-|"Evolve"?«0xe2»What do you mean??«*0»
+|『シンカ』??
+なんだそれ??
+|"Evolve"?
+What do you mean??
 |-
 |0x1401a4
-|Well, I can explain it«0xe2»for you if you want.«0xe2»«0»Yes «0»No«*a»
+|それじゃあ
+『シンカ』について おしえて
+やるよ
+ はい  いいえ<*A>
+|Well, I can explain it for you if you want.
+<0>Yes <0>No<*A>
 |-
 |0x1401a6
-|Do you wanna hear about«0xe2»"Natural evolution"?«0xe2»«0»Yes «0»No«*a»
+|『しぜんシンカ』について
+ききたいか?
+ はい  いいえ<*A>
+|Do you wanna hear about "Natural evolution"?
+<0>Yes <0>No<*A>
 |-
 |0x1401a8
-|Natural evolution can«0xe2»happen when a Denjuu«0xe2»gains enough experience«0xe2»points from battling.«0xe2»This type only happens«0xe2»with "Natural Denjuu",«0xe2»though.«*0»
+|『しぜんシンカ』は
+テレファングをくリかえして
+けいけんを つむと シンカ
+できるんだ
+このシンカは
+『しぜんデンジュウ』しか
+おこなうことができないんだ
+
+|Natural evolution can happen when a Denjuu gains enough experience points from battling.
+This type only happens with "Natural Denjuu", though.
 |-
 |0x1401aa
-|Do you wanna hear about«0xe2»"Fusion evolution"?«0xe2»«0»Yes «0»No«*a»
+|『かいぞうシンカ』について
+ききたいか?
+ はい  いいえ<*A>
+|Do you wanna hear about "Fusion evolution"?
+<0>Yes <0>No<*A>
 |-
 |0x1401ac
-|Fusion evolution is where«0xe2»you combine a Denjuu«0xe2»with an item in order to«0xe2»get it to evolve.«0xe2»This type works with«0xe2»both "Natural" and«0xe2»"Cultivated" Denjuu.«*0»
+|『かいぞうシンカ』は
+デンジュウとアイテムを
+ゴウセイすることで
+シンカさせることが できるんだ
+これは『しぜんデンジュウ』
+『ぶんめいデンジュウ』で
+おこなうことができるんだ
+
+|Fusion evolution is where you combine a Denjuu with an item in order to get it to evolve.
+This type works with both "Natural" and "Cultivated" Denjuu. 
 |-
 |0x1401ae
-|Do you wanna hear about«0xe2»"Lab evolution"?«0xe2»«0»Yes «0»No«*a»
+|『じっけんシンカ』について
+ききたいか?
+ はい  いいえ<*A>
+|Do you wanna hear about "Lab evolution"?
+<0>Yes <0>No<*A>
 |-
 |0x1401b0
-|Lab evolution involves«0xe2»taking DNA from an«0xe2»evolved "Natural" Denjuu«0xe2»and combining it with«0xe2»the DNA of a«0xe2»"Cultivated" Denjuu.«0xe2»This method only works«0xe2»for Cultivated Denjuu.«*0»
+|『じっけんシンカ』は 
+『しぜんデンジュウ』から
+とリだした DNAを
+『ぶんめいデンジュウ』に
+かけあわせることによって
+おこなうことが できる
+シンカなんだ
+これは『ぶんめいデンジュウ』がおこなえる シンカなんだ
+
+|Lab evolution involves taking DNA from an evolved "Natural" Denjuu and combining it with the DNA of a "Cultivated" Denjuu.
+This method only works for Cultivated Denjuu.
 |-
 |0x1401b2
-|So, do you get how«0xe2»evolution works now?«0xe2»If you want to hear it«0xe2»again, just let me know.«*0»
+|シンカのこと わかったかな?
+わからなかったら また
+こえを かけてくれよ
+
+|So, do you get how evolution works now?
+If you want to hear it again, just let me know.
 |-
 |0x1401b4
-|Well, seeya around.«0xe2»Good luck meeting lots«0xe2»of Denjuu!«*0»
+|それじゃあ がんばって
+トモダチを ふやしてくれよな
+|Well, seeya around.
+Good luck meeting lots of Denjuu!
+|-
+| #######
+| colspan=2 | '''Some dude in Tripa?                                   '''
 |-
 |0x1401b6
-|/0x1401b6/«*0»
+|いまのボクには キミだけが
+たよリなんだ
+きのてっペんで クスリを
+つかって きを もとどおリに
+してくれ! たのんだよ!
+
+|/0x1401b6/
 |-
 |0x1401b8
-|/0x1401b8/«*0»
+|アンテナのきが もとどおリに
+なったみたいだね
+あリがとう!!
+
+|/0x1401b8/
 |-
 |0x1401ba
-|/0x1401ba/«*0»
+|なーに どうってことないよ
+これで おっさんも ここから
+でられるな!
+よかったじゃん!
+|/0x1401ba/
 |-
 |0x1401bc
-|/0x1401bc/«*0»
+|うん そのことなんだけどね
+ボクはトリパむらにのこって
+ここのデンジュウたちと
+アンテナのきをまもっていくよ
+それぐらいしかできないからね
+
+|/0x1401bc/
 |-
 |0x1401be
-|/0x1401be/«*0»
+|そっか アンテナのきを
+まもるか....
+きっと ここのデンジュウたちも
+おっさんのこと みなおすよ
+がんばってくれよな
+
+|/0x1401be/
 |-
 |0x1401c0
-|/0x1401c0/«*0»
+|<&name>くん
+ほんとうにあリがとう
+アンテナのきは つかえるように
+なってるらしいよ
+そのさきには フラウラっていう
+むらが あるんだ
+なにか おかしなことが
+おきてるらしいから きをつけて
+それじゃあ がんばって
+たびをつづけてくれよ
+|/0x1401c0/
 |-
 |0x1401c2
-|/0x1401c2/«*0»
+|おう それじゃーな!
+おっさんもゲンキで!
+|/0x1401c2/
+|-
+| #######
+| colspan=2 | '''Taka-P (in a house in Toronko)                                   '''
 |-
 |0x1401c4
-|Here is where we teach«0xe2»people how to succeed«0xe2»at Telefang!«0xe2»And I'm your professor,«0xe2»"Taka-P"! Welcome!«*0»
+|ここでは テレファングを
+すすめる ほうほうを
+おしえてるんだ
+そして ボクはテレファングの
+センセイの『たかピー』だ
+よろしくね
+|Here is where we teach people how to succeed at Telefang!
+And I'm your professor, "Taka-P"! Welcome!
 |-
 |0x1401c6
-|Would you like to learn«0xe2»the match-ups for«0xe2»"Mountain" Denjuu?«0xe2»«0»Yes «0»No«*a»
+|『いわやま』にすむ
+デンジュウが あいてのときに
+ついて ききたい?
+ はい  いいえ<*A>
+|Would you like to learn the match-ups for "Mountain" Denjuu?
+<0>Yes <0>No<*A>
 |-
 |0x1401c8
-|Denjuu that live on«0xe2»mountains are weak«0xe2»against Denjuu that live«0xe2»in fields, and strong«0xe2»against Denjuu that live«0xe2»in the sky.«*0»
+|『いわやま』にすむ
+デンジュウがあいてのときの
+テレファングは
+『そうげん』にすむ
+デンジュウをつかうと
+テレファングを ゆうリに
+すすめることが できるんだ
+ぎゃくに 『そら』に
+すむ デンジュウを
+つかうと ふリになるんだ
+|Denjuu that live on mountains are weak against Denjuu that live in fields, and strong against Denjuu that live in the sky.
 |-
 |0x1401ca
-|How about the match-ups«0xe2»for "Field" Denjuu?«0xe2»«0»Yes «0»No«*a»
+|つぎに 『そうげん』にすむ
+デンジュウが あいてのときに
+ついて ききたい?
+ はい  いいえ<*A>
+|How about the match-ups for "Field" Denjuu?
+<0>Yes <0>No<*A>
 |-
 |0x1401cc
-|Denjuu that live in«0xe2»fields are weak«0xe2»against Denjuu that live«0xe2»in the desert, and«0xe2»strong against Denjuu«0xe2»that live on mountains.«*0»
+|『そうげん』にすむ
+デンジュウがあいてのときの
+テレファングは
+『さばく』にすむ
+デンジュウをつかうと
+テレファングを ゆうリに
+すすめることが できるんだ
+ぎゃくに 『いわやま』に
+すむ デンジュウを
+つかうと ふリになるんだ
+|Denjuu that live in fields are weak against Denjuu that live in the desert, and strong against Denjuu that live on mountains.
 |-
 |0x1401ce
-|How about the match-ups«0xe2»for "Forest" Denjuu?«0xe2»«0»Yes «0»No«*a»
+|つぎに 『しんリん』にすむ
+デンジュウが あいてのときに
+ついて ききたい?
+ はい  いいえ<*A>
+|How about the match-ups for "Forest" Denjuu?
+<0>Yes <0>No<*A>
 |-
 |0x1401d0
-|Denjuu that live in«0xe2»forests are weak«0xe2»against Denjuu that live«0xe2»in the sky, and strong«0xe2»against Denjuu that live«0xe2»near the water.«*0»
+|『しんリん』にすむ
+デンジュウがあいてのときの
+テレファングは
+『そら』にすむ
+デンジュウをつかうと
+テレファングを ゆうリに
+すすめることが できるんだ
+ぎゃくに 『みずベ』に
+すむ デンジュウを
+つかうと ふリになるんだ
+|Denjuu that live in forests are weak against Denjuu that live in the sky, and strong against Denjuu that live near the water.
 |-
 |0x1401d2
-|How about the match-ups«0xe2»for "Water" Denjuu?«0xe2»«0»Yes «0»No«*a»
+|つぎに 『みずベ』にすむ
+デンジュウが あいてのときに
+ついて ききたい?
+ はい  いいえ<*A>
+|How about the match-ups for "Water" Denjuu?
+<0>Yes <0>No<*A>
 |-
 |0x1401d4
-|Denjuu that live near«0xe2»the water are weak«0xe2»against Denjuu that live«0xe2»in forests, and strong«0xe2»against Denjuu that live«0xe2»in the desert.«*0»
+|『みずベ』にすむ
+デンジュウがあいてのときの
+テレファングは
+『しんリん』にすむ
+デンジュウをつかうと
+テレファングを ゆうリに
+すすめることが できるんだ
+ぎゃくに 『さばく』に
+すむ デンジュウを
+つかうと ふリになるんだ
+|Denjuu that live near the water are weak against Denjuu that live in forests, and strong against Denjuu that live in the desert.
 |-
 |0x1401d6
-|How about the match-ups«0xe2»for "Sky" Denjuu?«0xe2»«0»Yes «0»No«*a»
+|つぎに 『そら』にすむ
+デンジュウが あいてのときに
+ついて ききたい?
+ はい  いいえ<*A>
+|How about the match-ups for "Sky" Denjuu?
+<0>Yes <0>No<*A>
 |-
 |0x1401d8
-|Denjuu that live in the«0xe2»sky are weak against«0xe2»Denjuu that live on«0xe2»mountains, and strong«0xe2»against Denjuu that live«0xe2»in forests.«*0»
+|『そら』にすむ
+デンジュウがあいてのときの
+テレファングは
+『いわやま』にすむ
+デンジュウをつかうと
+テレファングを ゆうリに
+すすめることが できるんだ
+ぎゃくに 『しんリん』に
+すむ デンジュウを
+つかうと ふリになるんだ
+|Denjuu that live in the sky are weak against Denjuu that live on mountains, and strong against Denjuu that live in forests.
 |-
 |0x1401da
-|How about the match-ups«0xe2»for "Desert" Denjuu?«0xe2»«0»Yes «0»No«*a»
+|『さばく』にすむ
+デンジュウが あいてのときに
+ついて ききたい?
+ はい  いいえ<*A>
+|How about the match-ups for "Desert" Denjuu?
+<0>Yes <0>No<*A>
 |-
 |0x1401dc
-|Denjuu that live in the«0xe2»desert are weak«0xe2»against Denjuu that live«0xe2»near the water, and«0xe2»strong against Denjuu«0xe2»that live in fields!«*0»
+|つぎに 『さばく』にすむ
+デンジュウがあいてのときの
+テレファングは
+『みずベ』にすむ
+デンジュウをつかうと
+テレファングを ゆうリに
+すすめることが できるんだ
+ぎゃくに 『そうげん』に
+すむ デンジュウを
+つかうと ふリになるんだ
+|Denjuu that live in the desert are weak against Denjuu that live near the water, and strong against Denjuu that live in fields!
 |-
 |0x1401de
-|Well then, good luck«0xe2»gathering friends!«0xe2»Bye-Bye!«*0»
+|がんばって トモダチ
+あつめてねー
+バイバーイ
+
+|Well then, good luck gathering friends! Bye-Bye!
+|-
+| #######
+| colspan=2 | '''Matsukiyo (inside Musa's house)                                   '''
 |-
 |0x1401e0
-|/0x1401e0/«*0»
+|『クリノンむら』の かたがたの
+チカラに なってあげてください
+がんばって!
+<&name>くん
+|/0x1401e0/
 |-
 |0x1401e2
-|/0x1401e2/«*0»
+|『イーリス』のかいがんで
+うみのデンジュウが なにか
+さがしているらしいですよ
+たすけてあげると なにか
+いいことがかもしれません!
+
+|/0x1401e2/
 |-
 |0x1401e4
-|/0x1401e4/«*0»
+|『パームかい』のアンテナのきが
+たいヘんなことになっている
+みたいですよ
+くわしくは うみのデンジュウに
+きくとわかるとおもいます
+なんとか してあげてください!
+|/0x1401e4/
 |-
 |0x1401e6
-|/0x1401e6/«*0»
+|『フリジア』で
+『Tファンガーたいかい』という
+イベントをやってるみたいですね
+<&name>くんも
+さんかしているんですよね?
+がんばってください
+|/0x1401e6/
 |-
 |0x1401e8
-|/0x1401e8/«*0»
+|『バーラン』というさばくの
+まちで トリぐみと ヘビぐみの
+あらそいが つづいているという
+はなしを ききましたよ
+<&name>くんの
+チカラで なんとか おわらせる
+ことが できませんか?
+リょうほうの おさに はなしを
+きいてみるといいとおもいますよ
+
+|/0x1401e8/
 |-
 |0x1401ea
-|/0x1401ea/«*0»
+|『イオンとう』で
+デンワガイシャのあらそいで
+もともと そこにすんでいた
+デンジュウたちが めいわくを
+してるそうですよ
+<&name>くんの
+チカラで あらそいを おさめて
+ください
+よろしくたのみましたよ
+
+|/0x1401ea/
 |-
 |0x1401ec
-|/0x1401ec/«*0»
+|イオンとうの もリのおくで
+しゅぎょうしている
+デンジュウたちが いるという
+はなしを こみみにはさみました
+そのデンジュウたちと 
+テレファングしてみたら
+どうですか?
+トモダチのデンジュウもつよく
+なるかもしれませんよ
+
+|/0x1401ec/
 |-
 |0x1401ee
-|/0x1401ee/«*0»
+|『パパルナこ』で
+みょうな くろいかげが
+もくげきされたそうです
+そこにすんでいるデンジュウが
+きみわるがっているので
+そのくろいかげが なんなのか
+たしかめてきてくださいね
+
+|/0x1401ee/
 |-
 |0x1401f0
-|/0x1401f0/«*0»
+|<&name>くん
+『パンセスむら』のデンジュウと
+れんらくが とれなくなって
+しまいました
+『パンセスむら』にいって
+なにがおきているのか
+たしかめてきてください
+
+|/0x1401f0/
 |-
 |0x1401f2
-|/0x1401f2/«*0»
+|『トリパむら』にある
+アンテナのきが いじょうな
+せいちょうを しているようです
+そこにすむ デンジュウが
+おこっているそうです
+デンジュウたちのために
+トリパむらの アンテナのきを
+もとにもどしてあげてください
+|/0x1401f2/
 |-
 |0x1401f4
-|/0x1401f4/«*0»
+|『フラウラむら』で なにやら
+デンパいじょうが おきている
+ようなのです
+くわしくは むらのデンジュウに
+きいてください
+
+|/0x1401f4/
 |-
 |0x1401f6
-|/0x1401f6/«*0»
+|『ペペリやま』に 
+ふういんされていた
+アクマデンジュウが ふっかつ
+しようとしているみたいですね
+このままでは デンジュウカイが
+きけんです!
+<&name>くんの
+チカラで アクマデンジュウを
+ふういんしてくだい!
+
+|/0x1401f6/
 |-
 |0x1401f8
-|/0x1401f8/«*0»
+|『イオンとう』の ちかから
+なにやらおかしなデンパが
+でているらしいです
+サナエバが これに かかわって
+いることは まちがいあリません
+<&name>くん
+サナエバのしようとしている
+ことを とめてください
+|/0x1401f8/
 |-
 |}

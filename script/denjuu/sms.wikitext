@@ -1,774 +1,1495 @@
-{|
+Text bank #5 - Text for text messages, secret Denjuu, and calling regular Denjuu. 
+
+The order for the secret Denjuu is Musa, Hiyu, Zea, Kaya, Beebalm, Ruscus, Enishida, Gaultheria, Hagumanoki, Salal, Gamuru, Denfare, Kanzou, and Ornithogalum.
+
+(I tried translating some of the text messages to fit within the extremely limited space in the original (hence the chat speak), but now that full VWF support has been added they're all totally broken anyway... The game will need to be hacked more to get the text message screen to work properly, so translating the rest of these is indefinitely on hold.)
+
+{|cellspacing="1" cellpadding="7" width="640" border="1" class="wikitable sortable" style="background: #f8f8ff; border: 1px solid #88a; border-collapse: collapse; background: white; margin-right:10px; text-align:left;"
 |-
 !Pointer
+!Japanese
 !English
 |-
 |0x118000
-|I feel«0xe2»like u«0xe2»r call«0xe2»ing me«0xe2»less«*4»
+|さいきんなんか キミからのデンワが すくないような きがする<*4>
+|I feel
+like u
+r call
+ing me
+less<*4>
 |-
 |0x118002
-|r u«0xe2»callin«0xe2»less?«0xe2»did i«0xe2»make u«0xe2»mad?«*4»
+|さいきんデンワ すくなくない?おこるようなこと したかな?<*4>
+|r u
+callin
+less?
+did i
+make u
+mad?<*4>
 |-
 |0x118004
-|call«0xe2»me«0xe2»more!«0xe2»its so«0xe2»boring«0xe2»when u«0xe2»don't«*4»
+|もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>
+|call
+me
+more!
+its so
+boring
+when u
+don't<*4>
 |-
 |0x118006
-|hey...«0xe2»havent«0xe2»heard«0xe2»from u«0xe2»lately«0xe2»..what«0xe2»'s up?«*4»
+|あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>
+|hey...
+havent
+heard
+from u
+lately
+..what
+'s up?<*4>
 |-
 |0x118008
-|no one«0xe2»calls«0xe2»me...«0xe2»i'm so«0xe2»lonely«0xe2»>:(«*4»
+|もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>
+|no one
+calls
+me...
+i'm so
+lonely
+>:(<*4>
 |-
 |0x11800a
-|hey u«0xe2»havent«0xe2»called«0xe2»lately«0xe2»r u«0xe2»busy?«*4»
+|さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>
+|hey u
+havent
+called
+lately
+r u
+busy?<*4>
 |-
 |0x11800c
-|ur fun«0xe2»2 be «0xe2»around«0xe2»lets«0xe2»play«0xe2»again!«*4»
+|キミといると なんだかとってもたのしいよ またあそうぼうね<*4>
+|ur fun
+2 be 
+around
+lets
+play
+again!<*4>
 |-
 |0x11800e
-|ur my«0xe2»best«0xe2»frend!«0xe2»lets«0xe2»play«0xe2»again!«*4»
+|オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>
+|ur my
+best
+frend!
+lets
+play
+again!<*4>
 |-
 |0x118010
-|ur a«0xe2»cool«0xe2»guy!«0xe2»call«0xe2»me bac«0xe2»k soon«*4»
+|オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>
+|ur a
+cool
+guy!
+call
+me bac
+k soon<*4>
 |-
 |0x118012
-|time«0xe2»flies«0xe2»when«0xe2»i'm «0xe2»with«0xe2»u! :D«*4»
+|キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>
+|time
+flies
+when
+i'm 
+with
+u! :D<*4>
 |-
 |0x118014
-|hey!!«0xe2»u and«0xe2»me r«0xe2»frends«0xe2»rite? :)«*4»
+|いいかぁ オマエとオレはトモダチだ わかったなー!<*4>
+|hey!!
+u and
+me r
+frends
+rite? :)<*4>
 |-
 |0x118016
-|lets«0xe2»play«0xe2»togeth«0xe2»er som«0xe2»time,«0xe2»call«0xe2»me!«*4»
+|またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>
+|lets
+play
+togeth
+er som
+time,
+call
+me!<*4>
 |-
 |0x118018
-|hey, r«0xe2»u doin«0xe2»well?«0xe2»i'm«0xe2»knd of«0xe2»woried«*4»
+|あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>
+|hey, r
+u doin
+well?
+i'm
+knd of
+woried<*4>
 |-
 |0x11801a
-|heyy«0xe2»how r «0xe2»u doin«0xe2»? call«0xe2»me som«0xe2»time!«*4»
+|おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>
+|heyy
+how r 
+u doin
+? call
+me som
+time!<*4>
 |-
 |0x11801c
-|hi how«0xe2»r u «0xe2»doin?«0xe2»i'm«0xe2»doin«0xe2»just«0xe2»fine!«*4»
+|よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>
+|hi how
+r u 
+doin?
+i'm
+doin
+just
+fine!<*4>
 |-
 |0x11801e
-|umm...«0xe2»sry 2«0xe2»sound«0xe2»creepy«0xe2»but r«0xe2»u okay«0xe2»???«*4»
+|あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>
+|umm...
+sry 2
+sound
+creepy
+but r
+u okay
+???<*4>
 |-
 |0x118020
-|hey«0xe2»whats«0xe2»up?«0xe2»take «0xe2»care«0xe2»of ur«0xe2»self!«*4»
+|オマエ いまなにやってるんだ?からだには きをつけるんだぜ!<*4>
+|hey
+whats
+up?
+take 
+care
+of ur
+self!<*4>
 |-
 |0x118022
-|/0x118022/«*4»
+|そのご おかわリ あリませんか?ワタシはゲンキでやっています<*4>
+|/0x118022/<*4>
 |-
 |0x118024
-|/0x118024/«*4»
+|オレ なんかキミのことがすごいきらいになったみたいなんだよね<*4>
+|/0x118024/<*4>
 |-
 |0x118026
-|/0x118026/«*4»
+|さいきんのオマエは なんかすごくイヤなカンジだぜ まったく!<*4>
+|/0x118026/<*4>
 |-
 |0x118028
-|/0x118028/«*4»
+|さいきん キミたいどおおきいよ!もうすこしけんきょになったら?<*4>
+|/0x118028/<*4>
 |-
 |0x11802a
-|/0x11802a/«*4»
+|あのね...さいきんのキミはイヤな カンジがするんだよな..<*4>
+|/0x11802a/<*4>
 |-
 |0x11802c
-|ugh I«0xe2»hate u«0xe2»why u«0xe2»never«0xe2»call«0xe2»me??«*4»
+|うぉーーー キミなんかきらいだーたまには でんわ してよー<*4>
+|ugh I
+hate u
+why u
+never
+call
+me??<*4>
 |-
 |0x11802e
-|/0x11802e/«*4»
+|さいきんのキミは ちょっとつめたいとおもうのですが どうですか?<*4>
+|/0x11802e/<*4>
 |-
 |0x118030
-|/0x118030/«*4»
+|オマエ さいきんちょうしがわるいみたいだけど がんばってね!<*4>
+|/0x118030/<*4>
 |-
 |0x118032
-|/0x118032/«*4»
+|オマエ さいきんちょうしがよくないんだろ? むリするなよな!<*4>
+|/0x118032/<*4>
 |-
 |0x118034
-|/0x118034/«*4»
+|ちょうしわるいときって つらいよなーオマエもきをつけるんだぞ<*4>
+|/0x118034/<*4>
 |-
 |0x118036
-|Umm...«0xe2»are u«0xe2»feelin«0xe2»OK?«0xe2»keep«0xe2»it up!«*4»
+|あのぉ...ちょうしわるいんですか?がんばってくださいね!<*4>
+|Umm...
+are u
+feelin
+OK?
+keep
+it up!<*4>
 |-
 |0x118038
-|/0x118038/«*4»
+|なんだか さいきんちょうしがわるいんだな!もっとがんばれよ!<*4>
+|/0x118038/<*4>
 |-
 |0x11803a
-|/0x11803a/«*4»
+|なかなかれんらくがこないのでしんぱいしています!メールください!<*4>
+|/0x11803a/<*4>
 |-
 |0x11803c
-|/0x11803c/«*4»
+|ひさしぶリ!ゲンキか? オレじつは メールにがてなんだよな!<*4>
+|/0x11803c/<*4>
 |-
 |0x11803e
-|/0x11803e/«*4»
+|テレファングするまえに かならずアンテナのかずをよくみろよ!<*4>
+|/0x11803e/<*4>
 |-
 |0x118040
-|/0x118040/«*4»
+|デンワをまめにかけると デンジュウとなかよくなれるらしいぜ!<*4>
+|/0x118040/<*4>
 |-
 |0x118042
-|/0x118042/«*4»
+|デンジュウのせいかくを よくみてからデンワでよんだほうがいいぜ!<*4>
+|/0x118042/<*4>
 |-
 |0x118044
-|/0x118044/«*4»
+|たたかいにくるジカンは デンジュウのせいかくにかんけいしてるぞ!<*4>
+|/0x118044/<*4>
 |-
 |0x118046
-|I thnk«0xe2»denjuu«0xe2»r more«0xe2»common«0xe2»in the«0xe2»grass!«*4»
+|デンジュウは くさのところで よく しゅつげんするらしいぞ!<*4>
+|I thnk
+denjuu
+r more
+common
+in the
+grass!<*4>
 |-
 |0x118048
-|I thnk«0xe2»denjuu«0xe2»r more«0xe2»common«0xe2»in the«0xe2»water!«*4»
+|デンジュウは みずのところで よく しゅつげんするらしいぞ!<*4>
+|I thnk
+denjuu
+r more
+common
+in the
+water!<*4>
 |-
 |0x11804a
-|Denjuu«0xe2»dont«0xe2»appear«0xe2»near«0xe2»houses!«*4»
+|デンジュウは いえのちかくではしゅつげんしないらしいぞ!<*4>
+|Denjuu
+dont
+appear
+near
+houses!<*4>
 |-
 |0x11804c
-|/0x11804c/«*4»
+|デンジュウは とくいなヤツとふとくいなヤツがいるんだってさ!<*4>
+|/0x11804c/<*4>
 |-
 |0x11804e
-|/0x11804e/«*4»
+|つかれたデンジュウは じっとしてればかいふくするんだってさ!<*4>
+|/0x11804e/<*4>
 |-
 |0x118050
-|/0x118050/«*4»
+|アイテムをあげると そのデンジュウのけいけんちがあがるかも?<*4>
+|/0x118050/<*4>
 |-
 |0x118052
-|/0x118052/«*4»
+|じっけんしていろいろなしんかをさせてみることが たいせつだぞ<*4>
+|/0x118052/<*4>
 |-
 |0x118054
-|/0x118054/«*4»
+|いつか あるモノを もてるようになるかも? あるモノはヒミツだよ<*4>
+|/0x118054/<*4>
 |-
 |0x118056
-|/0x118056/«*4»
+|いつか あるモノを おせるようになるかも? あるモノはヒミツだよ<*4>
+|/0x118056/<*4>
 |-
 |0x118058
-|check«0xe2»your«0xe2»texts!«0xe2»u can«0xe2»only«0xe2»keep 8«*4»
+|メールは 8けんまでしか ほかんできないから たまにはみてね<*4>
+|check
+your
+texts!
+u can
+only
+keep 8<*4>
 |-
 |0x11805a
-|/0x11805a/«*4»
+|デンジュウをそだてていくと あらたなワザを おぼえるらしいぞ<*4>
+|/0x11805a/<*4>
 |-
 |0x11805c
-|/0x11805c/«*4»
+|オレ いますぐオマエに あいたいんだけど オマエはどうなの?<*4>
+|/0x11805c/<*4>
 |-
 |0x11805e
-|/0x11805e/«*4»
+|おーっす きょうもいちにち おたがいがんばろうなー!!<*4>
+|/0x11805e/<*4>
 |-
 |0x118060
-|/0x118060/«*4»
+|なぁなぁ オレもしんかできるのかな?ためしてみてくれよな!!<*4>
+|/0x118060/<*4>
 |-
 |0x118062
-|/0x118062/«*4»
+|いつになったらオレを よんでくれるんだよ!まってるんだぞ!!<*4>
+|/0x118062/<*4>
 |-
 |0x118064
-|havent«0xe2»played«0xe2»w/ my«0xe2»frends«0xe2»lately«0xe2»....u?«*4»
+|ここさいきん トモダチとあそんでないんだけど オマエはどう?<*4>
+|havent
+played
+w/ my
+frends
+lately
+....u?<*4>
 |-
 |0x118066
-|phone«0xe2»ppl or«0xe2»youll«0xe2»lose«0xe2»your«0xe2»frends«0xe2»«*4»
+|デンワは マメにしないと ダメだぞ トモダチなくすからな! <*4>
+|phone
+ppl or
+youll
+lose
+your
+frends
+<*4>
 |-
 |0x118068
-|/0x118068/«*4»
+|デンワがかかってきたとき テキトウにこたえると あとがたいヘん!<*4>
+|/0x118068/<*4>
 |-
 |0x11806a
-|/0x11806a/«*4»
+|このメールいつみてるんだ? もしヨルだったら さっさとねろよ<*4>
+|/0x11806a/<*4>
 |-
 |0x11806c
-|mornin«0xe2»...oh«0xe2»unless«0xe2»its «0xe2»nite 4«0xe2»u haha«*4»
+|おはよー..って これみてるのがヨルだったらさ まぬけだよな<*4>
+|mornin
+...oh
+unless
+its 
+nite 4
+u haha<*4>
 |-
 |0x11806e
-|/0x11806e/«*4»
+|テレファングのときは あいしょうを かんがえて よんでくれよ<*4>
+|/0x11806e/<*4>
 |-
 |0x118070
-|/0x118070/«*4»
+|ダイデンジュウとバクデンジュウのDNAは ちがうんだってさ!<*4>
+|/0x118070/<*4>
 |-
 |0x118072
-|/0x118072/«*4»
+|ボクを テレファングのときに よんでよー デンワまってるから<*4>
+|/0x118072/<*4>
 |-
 |0x118074
-|Do u«0xe2»read«0xe2»BomBom«0xe2»? its«0xe2»good 4«0xe2»info!«*4»
+|ボンボンよんでるか? いろんなじょうほうが かいてあるらしいぜ!<*4>
+|Do u
+read
+BomBom
+? its
+good 4
+info!<*4>
 |-
 |0x118076
-|/0x118076/«*4»
+|ボクたちをよぶときは とうちゃくするジカンも かんがえてよね<*4>
+|/0x118076/<*4>
 |-
 |0x118078
-|/0x118078/«*4»
+|ボクって わすれさられた そんざいになってないよね?ね?ね?<*4>
+|/0x118078/<*4>
 |-
 |0x11807a
-|/0x11807a/«*4»
+|ショップに うってないアイテムもあるらしいよ よくさがしてね<*4>
+|/0x11807a/<*4>
 |-
 |0x11807c
-|/0x11807c/«*4»
+|Dショットは つかいこなしてる?デンワかけるだけじゃないんだぜ!<*4>
+|/0x11807c/<*4>
 |-
 |0x11807e
-|Have u«0xe2»seen«0xe2»every«0xe2»denjuu«0xe2»yet?«0xe2»good«0xe2»luck!«*4»
+|すベてのデンジュウと あえたの?まだだったら がんばれよな!<*4>
+|Have u
+seen
+every
+denjuu
+yet?
+good
+luck!<*4>
 |-
 |0x118080
-|always«0xe2»look at«0xe2»enemy«0xe2»stats!«0xe2»i dont«0xe2»wanna«0xe2»lose«*4»
+|テキのステータスはちゃんとみてくれよオレはまけたくないからね<*4>
+|always
+look at
+enemy
+stats!
+i dont
+wanna
+lose<*4>
 |-
 |0x118082
-|if u«0xe2»battle «0xe2»smart,«0xe2»winnin«0xe2»g is«0xe2»easy!«*4»
+|ちゃんとかんがえて テレファングすると ラクにかてるようになるよ<*4>
+|if u
+battle 
+smart,
+winnin
+g is
+easy!<*4>
 |-
 |0x118084
-|/0x118084/«*4»
+|なかがいいヤツほど バンゴウをうしないにくいんだ しってた?<*4>
+|/0x118084/<*4>
 |-
 |0x118086
-|/0x118086/«*4»
+|ちょくせつ デンワをかけないとナカマにならないヤツもいるらしいよ<*4>
+|/0x118086/<*4>
 |-
 |0x118088
-|/0x118088/«*4»
+|ケイタイにも いろいろあるんだ!そのうち てにはいるかもね!<*4>
+|/0x118088/<*4>
 |-
 |0x11808a
-|/0x11808a/«*4»
+|オレ オマエのかおを おもいだせないんだ!ごめん どうしよう<*4>
+|/0x11808a/<*4>
 |-
 |0x11808c
-|/0x11808c/«*4»
+|キミにとってたいせつなモノってなに?ボクは トモダチなんだ!<*4>
+|/0x11808c/<*4>
 |-
 |0x11808e
-|/0x11808e/«*4»
+|テレファングで まけないでね デンワバンゴウ なくなるからさ<*4>
+|/0x11808e/<*4>
 |-
 |0x118090
-|/0x118090/«*4»
+|オリジナルのDメロってつくった?まだならつくってみたらどう?<*4>
+|/0x118090/<*4>
 |-
 |0x118092
-|/0x118092/«*4»
+|なにかオレに アイテムをかってよ! つよそうヤツがいいな!<*4>
+|/0x118092/<*4>
 |-
 |0x118094
-|/0x118094/«*4»
+|プレゼントはどんなものだったとしてもやっぱリうれしいよな!<*4>
+|/0x118094/<*4>
 |-
 |0x118096
-|/0x118096/«*4»
+|きょういちにち たのしいことが あるといいな きっとあるよね<*4>
+|/0x118096/<*4>
 |-
 |0x118098
-|/0x118098/«*4»
+|またこんど デンジュウクイズやろうぜデンワするからさ!! <*4>
+|/0x118098/<*4>
 |-
 |0x11809a
-|/0x11809a/«*4»
+|つよいヤツと テレファングしたいぞーやるときはよんでくれよ!<*4>
+|/0x11809a/<*4>
 |-
 |0x11809c
-|/0x11809c/«*4»
+|オレもたまにはよんでくれよ ほったらかしにすると..なくぞ!<*4>
+|/0x11809c/<*4>
 |-
 |0x11809e
-|/0x11809e/«*4»
+|ニンゲンカイについてきいたときは..ほんとのことをおしえてね<*4>
+|/0x11809e/<*4>
 |-
 |0x1180a0
-|/0x1180a0/«*4»
+|いまからトモダチのところヘ あそびにいってくるからねー<*4>
+|/0x1180a0/<*4>
 |-
 |0x1180a2
-|/0x1180a2/«*4»
+|しばらくたびにでてくるから なにか あったら デンワください<*4>
+|/0x1180a2/<*4>
 |-
 |0x1180a4
-|/0x1180a4/«*4»
+|デンワつながらなかったから メールをいれとくぜ デンワくれよ<*4>
+|/0x1180a4/<*4>
 |-
 |0x1180a6
-|/0x1180a6/«*4»
+|このメールをみたら すぐオレのとこにデンワしてくれよな!!<*4>
+|/0x1180a6/<*4>
 |-
 |0x1180a8
-|/0x1180a8/«*4»
+|たいリょくが もどらないあいだはさ テレファングはしないでね<*4>
+|/0x1180a8/<*4>
 |-
 |0x1180aa
-|/0x1180aa/«*4»
+|ゲンキにしてますか? さびしくなったときはデンワくださいね!<*4>
+|/0x1180aa/<*4>
 |-
 |0x1180ac
-|/0x1180ac/«*4»
+|オマエの トモダチとも テレファングしたいぞ やらないのか?<*4>
+|/0x1180ac/<*4>
 |-
 |0x1180ae
-|/0x1180ae/«*4»
+|Dメロいっぱいつくってさ オマエの トモダチにくばっちゃえ!<*4>
+|/0x1180ae/<*4>
 |-
 |0x1180b0
-|/0x1180b0/«*4»
+|こんど テレファングするときには  ぜったい よんでくれよ!<*4>
+|/0x1180b0/<*4>
 |-
 |0x1180b2
-|/0x1180b2/«*4»
+|キカイは みてるだけで たのしいよなってことで なにかくれ!<*4>
+|/0x1180b2/<*4>
 |-
 |0x1180b4
-|/0x1180b4/«*4»
+|オレの チカラを ためしてみようと おもうだろ!おもわない?<*4>
+|/0x1180b4/<*4>
 |-
 |0x1180b6
-|/0x1180b6/«*4»
+|あーヒマでヒマでしょうがないぜ!たのむから あそんでくれよー<*4>
+|/0x1180b6/<*4>
 |-
 |0x1180b8
-|/0x1180b8/«*4»
+|テレファングのとちゅうで にげたリ するとキライになるぞ!!<*4>
+|/0x1180b8/<*4>
 |-
 |0x1180ba
-|/0x1180ba/«*4»
+|Tファンガーとテレファングするときはきをひきしめていくんだぞ<*4>
+|/0x1180ba/<*4>
 |-
 |0x1180bc
-|/0x1180bc/«*4»
+|オレたちデンジュウと ニンゲンはトモダチだよな?そうだよな?<*4>
+|/0x1180bc/<*4>
 |-
 |0x1180be
-|/0x1180be/«*4»
+|オレは かいぞうシンカできるのか? しらベてみてくれよな!!<*4>
+|/0x1180be/<*4>
+|-
+| #######
+| colspan=2 | '''Some messages repeat...?                                   '''
 |-
 |0x1180c0
-|«ALIAS ROW 0x0»
+|さいきんなんか キミからのデンワが すくないような きがする<*4>
+|I feel
+like u
+r call
+ing me
+less<*4>
 |-
 |0x1180c2
-|«ALIAS ROW 0x1»
+|さいきんデンワ すくなくない?おこるようなこと したかな?<*4>
+|r u
+callin
+less?
+did i
+make u
+mad?<*4>
 |-
 |0x1180c4
-|«ALIAS ROW 0x2»
+|もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>
+|call
+me
+more!
+its so
+boring
+when u
+don't<*4>
 |-
 |0x1180c6
-|«ALIAS ROW 0x3»
+|あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>
+|hey...
+havent
+heard
+from u
+lately
+..what
+'s up?<*4>
 |-
 |0x1180c8
-|«ALIAS ROW 0x4»
+|もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>
+|no one
+calls
+me...
+i'm so
+lonely
+>:(<*4>
 |-
 |0x1180ca
-|«ALIAS ROW 0x5»
+|さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>
+|hey u
+havent
+called
+lately
+r u
+busy?<*4>
 |-
 |0x1180cc
-|«ALIAS ROW 0x6»
+|キミといると なんだかとってもたのしいよ またあそうぼうね<*4>
+|ur fun
+2 be 
+around
+lets
+play
+again!<*4>
 |-
 |0x1180ce
-|«ALIAS ROW 0x7»
+|オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>
+|ur my
+best
+frend!
+lets
+play
+again!<*4>
 |-
 |0x1180d0
-|ur a«0xe2»cool«0xe2»guy!«0xe2»call«0xe2»me bac«0xe2»k soon«*0»
+|オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>
+|ur a
+cool
+guy!
+call
+me bac
+k soon<*4>
 |-
 |0x1180d2
-|«ALIAS ROW 0x9»
+|キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>
+|time
+flies
+when
+i'm 
+with
+u! :D<*4>
 |-
 |0x1180d4
-|«ALIAS ROW 0xa»
+|いいかぁ オマエとオレはトモダチだ わかったなー!<*4>
+|hey!!
+u and
+me r
+frends
+rite? :)<*4>
 |-
 |0x1180d6
-|«ALIAS ROW 0xb»
+|またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>
+|lets
+play
+togeth
+er som
+time,
+call
+me!<*4>
 |-
 |0x1180d8
-|«ALIAS ROW 0xc»
+|あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>
+|hey, r
+u doin
+well?
+i'm
+knd of
+woried<*4>
 |-
 |0x1180da
-|«ALIAS ROW 0xd»
+|おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>
+|heyy
+how r 
+u doin
+? call
+me som
+time!<*4>
 |-
 |0x1180dc
-|«ALIAS ROW 0xe»
+|よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>
+|hi how
+r u 
+doin?
+i'm
+doin
+just
+fine!<*4>
 |-
 |0x1180de
-|«ALIAS ROW 0xf»
+|あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>
+|umm...
+sry 2
+sound
+creepy
+but r
+u okay
+???<*4>
+|-
+| #######
+| colspan=2 | '''And again...                                      '''
 |-
 |0x1180e0
-|«ALIAS ROW 0x0»
+|さいきんなんか キミからのデンワが すくないような きがする<*4>
+|I feel
+like u
+r call
+ing me
+less<*4>
 |-
 |0x1180e2
-|«ALIAS ROW 0x1»
+|さいきんデンワ すくなくない?おこるようなこと したかな?<*4>
+|r u
+callin
+less?
+did i
+make u
+mad?<*4>
 |-
 |0x1180e4
-|«ALIAS ROW 0x2»
+|もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>
+|call
+me
+more!
+its so
+boring
+when u
+don't<*4>
 |-
 |0x1180e6
-|«ALIAS ROW 0x3»
+|あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>
+|hey...
+havent
+heard
+from u
+lately
+..what
+'s up?<*4>
 |-
 |0x1180e8
-|«ALIAS ROW 0x4»
+|もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>
+|no one
+calls
+me...
+i'm so
+lonely
+>:(<*4>
 |-
 |0x1180ea
-|«ALIAS ROW 0x5»
+|さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>
+|hey u
+havent
+called
+lately
+r u
+busy?<*4>
 |-
 |0x1180ec
-|«ALIAS ROW 0x6»
+|キミといると なんだかとってもたのしいよ またあそうぼうね<*4>
+|ur fun
+2 be 
+around
+lets
+play
+again!<*4>
 |-
 |0x1180ee
-|«ALIAS ROW 0x7»
+|オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>
+|ur my
+best
+frend!
+lets
+play
+again!<*4>
 |-
 |0x1180f0
-|«ALIAS ROW 0x68»
+|オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>
+|ur a
+cool
+guy!
+call
+me bac
+k soon<*4>
 |-
 |0x1180f2
-|«ALIAS ROW 0x9»
+|キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>
+|time
+flies
+when
+i'm 
+with
+u! :D<*4>
 |-
 |0x1180f4
-|«ALIAS ROW 0xa»
+|いいかぁ オマエとオレはトモダチだ わかったなー!<*4>
+|hey!!
+u and
+me r
+frends
+rite? :)<*4>
 |-
 |0x1180f6
-|«ALIAS ROW 0xb»
+|またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>
+|lets
+play
+togeth
+er som
+time,
+call
+me!<*4>
 |-
 |0x1180f8
-|«ALIAS ROW 0xc»
+|あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>
+|hey, r
+u doin
+well?
+i'm
+knd of
+woried<*4>
 |-
 |0x1180fa
-|«ALIAS ROW 0xd»
+|おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>
+|heyy
+how r 
+u doin
+? call
+me som
+time!<*4>
 |-
 |0x1180fc
-|«ALIAS ROW 0xe»
+|よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>
+|hi how
+r u 
+doin?
+i'm
+doin
+just
+fine!<*4>
 |-
 |0x1180fe
-|«ALIAS ROW 0xf»
+|あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>
+|umm...
+sry 2
+sound
+creepy
+but r
+u okay
+???<*4>
+|-
+| #######
+| colspan=2 | '''Secret Denjuu (first call)                                   '''
 |-
 |0x118100
-|Hohoho, I am impressed«0xe2»you found this number...«0xe2»Now I can join you in«0xe2»your travels.«*5»
+|ホッホッホッ よくこのバンゴウが
+わかったのぉ
+これで ワシもオマエと たびを
+することができるわい<*5>
+|Hohoho, I am impressed you found this number...
+Now I can join you in your travels.<*5>
 |-
 |0x118102
-|/0x118102/«*5»
+|このバンゴウをみつけるとはな
+ジジイを あまリこきつかわないでくれよ
+あー...コシが...<*5>
+|/0x118102/<*5>
 |-
 |0x118104
-|Hweh heh heh... I've been«0xe2»waiting for this call.«0xe2»Don't take me lightly«0xe2»just because I'm old.«0xe2»I'm counting on you.«*5»
+|ホェホェホェ このデンワを
+まっておったぞ
+ジジイといって あなどるでないぞこれからも たのむぞ<*5>
+|Hweh heh heh... I've been waiting for this call.
+Don't take me lightly just because I'm old. I'm counting on you.<*5>
 |-
 |0x118106
-|/0x118106/«*5»
+|なんだっ! なんで バンゴウを
+オマエがしっているのだ!
+チッ まぁいい なにかあったら
+よぶんだな!<*5>
+|/0x118106/<*5>
 |-
 |0x118108
-|/0x118108/«*5»
+|よく デンワをしてきてくれたな
+オレといっしょに いろんなヤツとテレファングを していこうぜ!<*5>
+|/0x118108/<*5>
 |-
 |0x11810a
-|/0x11810a/«*5»
+|このバンゴウに デンワを
+してくるとは.......
+いいだろう ワタシのチカラを
+オマエにかそう!<*5>
+|/0x11810a/<*5>
 |-
 |0x11810c
-|/0x11810c/«*5»
+|あっ デンワが かかってきたぞ
+これから よろしくな!
+ところでキミの かいいん
+バンゴウは なんばんだい??<*5>
+|/0x11810c/<*5>
 |-
 |0x11810e
-|/0x11810e/«*5»
+|あーい もしもし..?
+オラのバンゴウを しってるって
+いうことは....フフッ
+んじゃ またよんでくれよな<*5>
+|/0x11810e/<*5>
 |-
 |0x118110
-|Oooh, I'm here!«0xe2»I already know why you«0xe2»have my number, see! «0xe2»Nice to meet you! «*5»
+|おー デンワがかかってきたぞ!
+オマエがなんで オレのバンゴウをしってるかを オレはしってるんだこれからも よろしくな!<*5>
+|Oooh, I'm here!
+I already know why you have my number, see! 
+Nice to meet you! <*5>
 |-
 |0x118112
-|Ahaha, you found me!«0xe2»Good job finding this«0xe2»number! Now you and I«0xe2»can travel together!«*5»
+|あははー みつけられちったぁ
+よくこのバンゴウが わかったね
+でも これで キミといっしょに
+いることができるよ よろしくね<*5>
+|Ahaha, you found me!
+Good job finding this number! Now you and I can travel together!<*5>
 |-
 |0x118114
-|Eh?? How did you find my«0xe2»number?«0xe2»...Well, whatever. I'll join«0xe2»you on this journey of«0xe2»yours.«*5»
+|あん??なんでこのバンゴウを
+オマエが しってるんだよ?
+...まあいい オマエのたびに
+ついていってやるよ<*5>
+|Eh?? How did you find my number?
+...Well, whatever. I'll join you on this journey of yours.<*5>
 |-
 |0x118116
-|Whoa, how did you know«0xe2»my number? ...Could you«0xe2»be a stalker?«0xe2»Haha, just kidding!«0xe2»Now you and me are«0xe2»friends!«*5»
+|うわー このバンゴウをしっているなんて...まさかストーカー?
+あははっ ウソだよ!
+これで ボクとキミはトモダチだ<*5>
+|Whoa, how did you know my number? ...Could you be a stalker?
+Haha, just kidding!
+Now you and me are friends!<*5>
 |-
 |0x118118
-|Thank you for calling me.«0xe2»I've been waiting!«0xe2»Let's travel the Denjuu«0xe2»World together!«*5»
+|デンワをくれて あリがとう
+このデンワを まっていたよ!
+いっしょに デンジュウカイを
+たびしよう!<*5>
+|Thank you for calling me. I've been waiting!
+Let's travel the Denjuu World together!<*5>
 |-
 |0x11811a
-|You're late!! You should«0xe2»have called me earlier!«0xe2»«0xe2»I've been waiting for«0xe2»ages! Well, it's nice to«0xe2»meet you!«*5»
+|おせーよ! もっとはやくに
+デンワくれよな!
+ずいぶんとまったぜ!
+まぁ これからも よろしくな!<*5>
+|You're late!! You should have called me earlier! 
+I've been waiting for ages! Well, it's nice to meet you!<*5>
+|-
+| #######
+| colspan=2 | '''Secret Denjuu (second call)                                   '''
 |-
 |0x11811c
-|/0x11811c/«*5»
+|ワシの バンゴウは もう
+もっておるじゃろうが
+
+ワシのバンゴウを なんどいれてもワシしか でないぞ<*5>
+|/0x11811c/<*5>
 |-
 |0x11811e
-|/0x11811e/«*5»
+|そのバンゴウは ワシしか
+でないぞえ ホェホェホェ
+
+なんだ? ひょっとして おなじ
+デンワバンゴウを いれたのか?
+そのバンゴウは ワシしか
+でないんだよ<*5>
+|/0x11811e/<*5>
 |-
 |0x118120
-|/0x118120/«*5»
+|なんだ?なんだ?
+ひょっとして まえにいれた
+オレのバンゴウをいれたのか?
+それには オレしか でないよ<*5>
+|/0x118120/<*5>
 |-
 |0x118122
-|/0x118122/«*5»
+|ようじが あるなら 
+デンワちょうから ダイヤルしろ<*5>
+|/0x118122/<*5>
 |-
 |0x118124
-|/0x118124/«*5»
+|オレといっしょに たびを
+したいなら デンワちょうから
+かけてきてくれよ<*5>
+|/0x118124/<*5>
 |-
 |0x118126
-|/0x118126/«*5»
+|....もしもし?きみが オラのデンワバンゴウを しってるのは
+わかったから デンワちょうから
+ダイヤルしてくれよな<*5>
+|/0x118126/<*5>
 |-
 |0x118128
-|/0x118128/«*5»
+|おー またデンワが かかって
+きたぞ!
+オレと たびをしたければ
+デンワちょうから かけてきて<*5>
+|/0x118128/<*5>
 |-
 |0x11812a
-|/0x11812a/«*5»
+|あははー またデンワを かけて
+きたんだねー
+こんどは デンワちょうから
+かけてきてよねー よろしくー<*5>
+|/0x11812a/<*5>
 |-
 |0x11812c
-|/0x11812c/«*5»
+|あん??こっちからかけてくるなよデンワちょうから かけてこい!<*5>
+|/0x11812c/<*5>
 |-
 |0x11812e
-|/0x11812e/«*5»
+|うわー ちょくせつダイヤルして
+くるなんて ひょっとして
+イヤガラセ???
+アハハッ!ウソだよー
+デンワちょうから かけてきてよ<*5>
+|/0x11812e/<*5>
 |-
 |0x118130
-|/0x118130/«*5»
+|ちょくせつダイヤルしたらダメだよデンワちょうを つかって
+かけてこないとね<*5>
+|/0x118130/<*5>
 |-
 |0x118132
-|/0x118132/«*5»
+|なんだよ?
+ちょくせつダイヤルしても
+オレは よベないんだよ
+デンワちょうから よんでくれ<*5>
+|/0x118132/<*5>
 |-
 |0x118134
-|/0x118134/«*5»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|/0x118134/<*5>
 |-
 |0x118136
-|/0x118136/«*5»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|/0x118136/<*5>
+|-
+| #######
+| colspan=2 | '''Extra placeholders                                         '''
 |-
 |0x118138
-|Good job finding this«0xe2»number! Now you're my«0xe2»friend too.«*5»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11813a
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11813c
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11813e
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118140
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118142
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118144
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118146
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118148
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11814a
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11814c
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11814e
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118150
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118152
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118154
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118156
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118158
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11815a
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11815c
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11815e
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118160
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118162
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118164
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118166
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118168
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11816a
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11816c
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11816e
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118170
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118172
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118174
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118176
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118178
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11817a
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11817c
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11817e
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118180
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118182
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118184
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118186
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118188
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11818a
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11818c
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11818e
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118190
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118192
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118194
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118196
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x118198
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11819a
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11819c
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x11819e
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181a0
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181a2
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181a4
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181a6
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181a8
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181aa
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181ac
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181ae
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181b0
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181b2
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181b4
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181b6
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181b8
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181ba
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181bc
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181be
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181c0
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181c2
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181c4
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181c6
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181c8
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181ca
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181cc
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181ce
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181d0
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181d2
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181d4
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181d6
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181d8
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181da
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181dc
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
 |-
 |0x1181de
-|«ALIAS ROW 0x9c»
+|よくこのばんごうが わかったな!これで キミもなかまだ<*5>
+|Good job finding this number! Now you're my friend too.<*5>
+|-
+| #######
+| colspan=2 | '''Denjuu calling stuff                                   '''
 |-
 |0x1181e0
-|Take a look behind you!«0xe2»I'm right here!«*5»
+|よくうしろを みてみろよ!
+うしろにいるよ!<*5>
+|Take a look behind you! I'm right here!<*5>
 |-
 |0x1181e2
-|You can't switch Denjuu«0xe2»if their HP isn't full!«*5»
+|HPがまんたんでないと
+デンジュウをかえれないよ!<*5>
+|You can't switch Denjuu if their HP isn't full!<*5>
 |-
 |0x1181e4
-|This phone's contact list«0xe2»is already full. You«0xe2»can't record any more«0xe2»numbers.«*5»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181e6
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181e8
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181ea
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181ec
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181ee
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181f0
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181f2
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181f4
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181f6
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181f8
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181fa
-|«ALIAS ROW 0xf2»
+|もう このケイタイデンワの
+デンワちょうがいっぱいです
+これいじょう おぼえられません
+<*5>
+|This phone's contact list is already full. You can't record any more numbers.<*5>
 |-
 |0x1181fc
-|Are you calling me«0xe2»over?«0xe2»   Yes   No«*a»
+|オレをよんでくれるのか?
+ はい  いいえ<*A>
+|Are you calling me over?
+   Yes   No<*A>
 |-
 |0x1181fe
-|Hi, what's up? «0xe2»It's been a while!«0xe2»How's it going?«*5»
+|もしもし なんかようじ?
+ひさしぶリ! ゲンキだったか?<*5>
+|Hi, what's up? 
+It's been a while! How's it going?<*5>
 |-
 |}
