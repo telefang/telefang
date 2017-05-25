@@ -148,7 +148,7 @@ clean:
 	@rm -f $@
 	@$(PYTHON) rip_scripts/pcm.py pcm $<
 
-%.scripttbl: %.wikitext
+%.scripttbl: %.messages.csv
 	@rm -f $@
 	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc --language="English"
 
