@@ -48,18 +48,10 @@ MainScript_battle_messages:
 	INCBIN "script/battle/messages.scripttbl"
 MainScript_battle_messages_END
 
-    REPT $295C
-        db 0
-    ENDR
-
 SECTION "MainScript_denjuu_sms Section", ROMX[$4000], BANK[$46]
 MainScript_denjuu_sms:
 	INCBIN "script/denjuu/sms.scripttbl"
 MainScript_denjuu_sms_END
-
-    REPT $4000 - $0EF3
-        db 0
-    ENDR
 
 SECTION "MainScript_npc_1 Section", ROMX[$4000], BANK[$47]
 MainScript_npc_1:
@@ -76,45 +68,25 @@ MainScript_npc_2:
 	INCBIN "script/npc/2.scripttbl"
 MainScript_npc_2_END
 
-    REPT $4000 - $29AF
-        db 0
-    ENDR
-
 SECTION "MainScript_npc_unused Section", ROMX[$4000], BANK[$4a]
 MainScript_npc_unused:
 	INCBIN "script/npc/unused.scripttbl"
 MainScript_npc_unused_END
-
-    REPT $4000 - $0070
-        db 0
-    ENDR
 
 SECTION "MainScript_npc_postgame Section", ROMX[$4000], BANK[$40]
 MainScript_npc_postgame:
 	INCBIN "script/npc/postgame.scripttbl"
 MainScript_npc_postgame_END
 
-    REPT $4000 - $04DE
-        db 0
-    ENDR
-
 SECTION "MainScript_calls_denjuu_1 Section", ROMX[$4000], BANK[$4c]
 MainScript_calls_denjuu_1:
 	INCBIN "script/calls/denjuu/1.scripttbl"
 MainScript_calls_denjuu_1_END
 
-    REPT $4000 - $1238
-        db 0
-    ENDR
-
 SECTION "MainScript_calls_denjuu_2 Section", ROMX[$4000], BANK[$4d]
 MainScript_calls_denjuu_2:
 	INCBIN "script/calls/denjuu/2.scripttbl"
 MainScript_calls_denjuu_2_END
-
-    REPT $4000 - $0E00
-        db 0
-    ENDR
 
 SECTION "MainScript_story_2 Section", ROMX[$4000], BANK[$4b]
 MainScript_story_2:
@@ -126,27 +98,15 @@ MainScript_story_3:
 	INCBIN "script/story/3.scripttbl"
 MainScript_story_3_END
 
-    REPT $4000 - $17F0
-        db 0
-    ENDR
-
 SECTION "MainScript_npc_3 Section", ROMX[$4000], BANK[$4f]
 MainScript_npc_3:
 	INCBIN "script/npc/3.scripttbl"
 MainScript_npc_3_END
 
-    REPT $4000 - $0E00
-        db 0
-    ENDR
-
 SECTION "MainScript_story_4 Section", ROMX[$4000], BANK[$50]
 MainScript_story_4:
 	INCBIN "script/story/4.scripttbl"
 MainScript_story_4_END
-
-    REPT $4000 - $21D4
-        db 0
-    ENDR
 
 SECTION "MainScript_calls_denjuu_3 Section", ROMX[$4000], BANK[$44]
 MainScript_calls_denjuu_3:
@@ -157,10 +117,6 @@ SECTION "MainScript_calls_denjuu_4 Section", ROMX[$4000], BANK[$51]
 MainScript_calls_denjuu_4:
 	INCBIN "script/calls/denjuu/4.scripttbl"
 MainScript_calls_denjuu_4_END
-
-    REPT $4000 - $173C
-        db 0
-    ENDR
 
 SECTION "MainScript_calls_denjuu_5 Section", ROMX[$4000], BANK[$58]
 MainScript_calls_denjuu_5:
@@ -183,27 +139,15 @@ MainScript_denjuu_descriptions:
 	INCBIN "script/denjuu/descriptions.scripttbl"
 MainScript_denjuu_descriptions_END
 
-    REPT $3634
-        db 0
-    ENDR
-
 SECTION "MainScript_calls_story Section", ROMX[$4000], BANK[$56]
 MainScript_calls_story:
 	INCBIN "script/calls/story.scripttbl"
 MainScript_calls_story_END
 
-    REPT $4000 - $18A4
-        db 0
-    ENDR
-
 SECTION "MainScript_calls_exp_item Section", ROMX[$4000], BANK[$57]
 MainScript_calls_exp_item:
 	INCBIN "script/calls/exp_item.scripttbl"
 MainScript_calls_exp_item_END
-
-    REPT $4000 - $05CC
-        db 0
-    ENDR
 
 SECTION "MainScript_story_5 Section", ROMX[$4000], BANK[$43]
 MainScript_story_5:
