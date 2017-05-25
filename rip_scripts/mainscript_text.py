@@ -669,14 +669,14 @@ def make_tbl(args):
     overflow_ptr = 0x4000
     overflow_bank_id = None
     
-    last_aliased_row = -1
-    
     if args.language == u"Japanese":
         metrics = None
     else:
         metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
     
     for h, bank in enumerate(banknames):
+        last_aliased_row = -1
+        
         if bank["filename"].startswith("overflow"):
             #Don't attempt to compile the overflow bank. That's a separate pass
             overflow_bank_id = h
@@ -740,7 +740,7 @@ def make_tbl(args):
                 
                 #We don't want to have to try to handle both overflow and
                 #aliasing at the same time, so don't.
-                last_aliased_row = i
+                last_aliased_row = table_idx
             else:
                 packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == u"(No pointer)")
                 packed_strings[table_idx] += packed #We concat here in case of nopointer rows
@@ -772,7 +772,7 @@ def make_tbl(args):
         for line in packed_strings:
             bytes_remaining -= len(line)
         
-        if bytes_remaining < 0:
+        if bytes_remaining <= 0:
             print "Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining))
             
             #Compiled bank exceeds the amount of space available in the bank.
@@ -781,39 +781,25 @@ def make_tbl(args):
             strings_to_spill = 0
             string_bytes_saved = 0
             
-            for i, row in reversed(list(enumerate(rows))):
-                if i == last_aliased_row:
+            for table_idx, spill_string in reversed(list(enumerate(packed_strings))):
+                if table_idx == last_aliased_row:
                     #We can't spill aliased rows, nor do we want to attempt to
                     #support that usecase, since it would be too much work.
                     #Instead, stop spilling at the end.
+                    print "WARNING: Terminating spills at 0x{0:x} due to aliasing.".format(table_idx)
+                    print "Your bank likely will not fit upon assembly."
+                    print "Please consider removing aliasing rows."
                     break
-                
-                if rows[i][ptr_col] != u"(No pointer)" and u"#" not in rows[i][ptr_col]:
-                    table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
-                else:
-                    #We can't spill these rows
-                    continue
                 
                 strings_to_spill += 1
                 string_bytes_saved += len(packed_strings[table_idx]) - 3
                 
-                #TODO: Change the threshold condition back to >= 0
-                #For some reason the overflow bank in the patch contains more
-                #strings than it technically needs in order to make the second
-                #story bank fit. For the sake of the diff report, we're making
-                #the string spill 60 extra bytes to maintain parity.
-                if string_bytes_saved + bytes_remaining > 60:
+                if string_bytes_saved + bytes_remaining > 0:
                     #That's enough! Stop counting bytes, we've spilled enough.
                     break
             
             #Actually spill strings to the overflow bank now, in order.
-            for i in range(len(rows) - strings_to_spill, len(rows)):
-                if rows[i][ptr_col] != u"(No pointer)" and u"#" not in rows[i][ptr_col]:
-                    table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
-                else:
-                    #We can't spill these rows. Sorry.
-                    continue
-                
+            for table_idx in range(len(packed_strings) - strings_to_spill, len(packed_strings)):
                 cur_string = packed_strings[table_idx]
                 packed_strings[table_idx] = "\xec" + chr(overflow_ptr & 0xFF) + chr(overflow_ptr >> 8)
                 
