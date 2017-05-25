@@ -4,16 +4,7 @@ from __future__ import division
 # mainscript_text.py
 # Injects (and/or extracts) main script data from the master metatable.
 
-import argparse
-import errno
-import sys
-import os
-import os.path
-import struct
-import io, codecs
-import exceptions
-import urllib2
-import json
+import argparse, errno, sys, os, os.path, struct, io, codecs, exceptions, urllib2, json, csv
 
 def install_path(path):
     try:
@@ -109,7 +100,7 @@ def parse_bank_names(filename):
 
             bank = {}
             bank["basedir"] = os.path.join(*parameters[0].split("/")[0:-1])
-            bank["filename"] = os.path.join(*(parameters[0] + ".wikitext").split("/"))
+            bank["filename"] = os.path.join(*(parameters[0] + ".messages.csv").split("/"))
             bank["objname"] = os.path.join(*(parameters[0] + ".scripttbl").split("/"))
             bank["wikiname"] = parameters[1]
             bank["symbol"] = "MainScript_" + parameters[0].replace("/", "_")
@@ -629,7 +620,8 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
 
     return text_data
 
-def parse_wikitext(wikitext):
+def parse_wikitext(wikifile):
+    wikitext = wikifile.read()
     tbl_start = wikitext.find(u"{|")
     tbl_end = wikitext.find(u"|}")
     rows = wikitext[tbl_start:tbl_end].split(u"|-")
@@ -660,6 +652,19 @@ def parse_wikitext(wikitext):
 
     return parsed_rows, parsed_hdrs
 
+def parse_csv(csvfile):
+    csvreader = csv.reader(csvfile)
+    headers = None
+    rows = []
+
+    for row in csvreader:
+        if headers is None:
+            headers = [cell.decode("utf-8") for cell in row]
+        else:
+            rows.append([cell.decode("utf-8") for cell in row])
+    
+    return rows, headers
+
 def make_tbl(args):
     charmap = parse_charmap(args.charmap)
     banknames = parse_bank_names(args.banknames)
@@ -687,8 +692,8 @@ def make_tbl(args):
         
         print "Compiling " + bank["filename"]
         #Open and parse the data
-        with io.open(os.path.join(args.output, bank["filename"]), "r", encoding="utf-8") as wikifile:
-            rows, headers = parse_wikitext(wikifile.read())
+        with io.open(os.path.join(args.output, bank["filename"]), "r", encoding="utf-8") as csvfile:
+            rows, headers = parse_csv(csvfile)
 
         #Determine what column we want
         ptr_col = headers.index(u"Pointer")
