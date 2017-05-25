@@ -707,6 +707,8 @@ def make_tbl(args):
         bank_window_width = args.window_width
         if "window_width" in bank.keys():
             bank_window_width = bank["window_width"]
+            
+        last_table_index = 0
 
         for i, row in enumerate(rows):
             if u"#" in row[ptr_col]:
@@ -715,8 +717,9 @@ def make_tbl(args):
                 
             if row[ptr_col] != u"(No pointer)":
                 table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
+                last_table_index = table_idx
             else:
-                table_idx = -1
+                table_idx = last_table_index
             
             if str_col >= len(row):
                 print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
@@ -740,7 +743,7 @@ def make_tbl(args):
                 last_aliased_row = i
             else:
                 packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == u"(No pointer)")
-                packed_strings[table_idx] = packed
+                packed_strings[table_idx] += packed #We concat here in case of nopointer rows
                 
                 if row[ptr_col] != u"(No pointer)":
                     #Yes, some text banks have strings not mentioned in the
