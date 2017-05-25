@@ -519,8 +519,8 @@ UnusedClawGfx:
 UnusedClawGfxEnd
 
 MenuMultiplayerGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/multiplayer.malias"
+	dbw NOT_COMPRESSED, MenuMultiplayerGfxEnd - MenuMultiplayerGfx - 3
+	INCBIN "gfx/menu/multiplayer.2bpp"
 MenuMultiplayerGfxEnd
 
 MenuMultiplayer2Gfx:
