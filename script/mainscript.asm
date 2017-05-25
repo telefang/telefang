@@ -157,10 +157,4 @@ MainScript_story_5_END
 SECTION "MainScript_overflow_1 Section", ROMX[$4000], BANK[$1E]
 MainScript_overflow_1:
 	INCBIN "script/overflow/1.scripttbl"
-   
-   ;TODO: Remove.
-   ;This floatsam was added for the sake of binary equivalence between the
-   ;old patch and the disassembly patch. When the disassembly process is
-   ;complete, please remove this flotsam.
-   INCBIN "script/overflow/1_flotsam.bin"
 MainScript_overflow_1_END
