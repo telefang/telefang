@@ -104,10 +104,10 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_4f
 	dw Tilemap_unknown_tilemap_0_50
 	dw Tilemap_unknown_tilemap_0_51
-	dw Tilemap_unknown_tilemap_0_52
-	dw Tilemap_unknown_tilemap_0_52
-	dw Tilemap_unknown_tilemap_0_52
-	dw Tilemap_unknown_tilemap_0_52
+	dw Tilemap_menu_multiplayer_tmap
+	dw Tilemap_menu_multiplayer_tmap
+	dw Tilemap_menu_multiplayer_tmap
+	dw Tilemap_menu_multiplayer_tmap
 	dw Tilemap_unknown_tilemap_0_53
 	dw Tilemap_unknown_tilemap_0_54
 	dw Tilemap_unknown_tilemap_0_54
@@ -202,7 +202,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_95
 	dw Tilemap_unknown_tilemap_0_96
 	dw Tilemap_unknown_tilemap_0_97
-	dw Tilemap_unknown_tilemap_0_98
+	dw Tilemap_menu_link_error_tmap
 	dw Tilemap_unknown_tilemap_0_99
 	dw Tilemap_unknown_tilemap_0_9a
 	dw Tilemap_unknown_tilemap_0_9b
@@ -553,9 +553,9 @@ Tilemap_unknown_tilemap_0_51::
 	incbin "gfx/unknown/tilemap_0/51.tmap"
 Tilemap_unknown_tilemap_0_51_END
 
-Tilemap_unknown_tilemap_0_52::
-	incbin "gfx/unknown/tilemap_0/52.tmap"
-Tilemap_unknown_tilemap_0_52_END
+Tilemap_menu_multiplayer_tmap::
+	incbin "gfx/menu/multiplayer_tmap.tmap"
+Tilemap_menu_multiplayer_tmap_END
 
 Tilemap_unknown_tilemap_0_53::
 	incbin "gfx/unknown/tilemap_0/53.tmap"
@@ -833,9 +833,9 @@ Tilemap_unknown_tilemap_0_97::
 	incbin "gfx/unknown/tilemap_0/97.tmap"
 Tilemap_unknown_tilemap_0_97_END
 
-Tilemap_unknown_tilemap_0_98::
-	incbin "gfx/unknown/tilemap_0/98.tmap"
-Tilemap_unknown_tilemap_0_98_END
+Tilemap_menu_link_error_tmap::
+	incbin "gfx/menu/link_error_tmap.tmap"
+Tilemap_menu_link_error_tmap_END
 
 Tilemap_unknown_tilemap_0_99::
 	incbin "gfx/unknown/tilemap_0/99.tmap"

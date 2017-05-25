@@ -20,3 +20,6 @@
 *.stringblk
 *.stringidx
 *.sprite.bin
+
+;Prevent committing filesystem floatsam
+.DS_Store
