@@ -87,7 +87,7 @@ sub_A412E::
     
     ret
     
-SECTION "Save Clock Denjuu Initialization Utils ADVICE", ROMX[$7FBC], BANK[$29]
+SECTION "Save Clock Denjuu Initialization Utils ADVICE", ROMX[$78A0], BANK[$29]
 SaveClock_ADVICE_TerminateDenjuuNickname::
     push af
     
@@ -149,3 +149,5 @@ SaveClock_ADVICE_RelocateCopyBank::
     
     ld b, M_SaveClock_DenjuuNicknameSize
     ret
+    
+SaveClock_ADVICE_RelocateCopyBank_END::

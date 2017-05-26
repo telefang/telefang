@@ -65,7 +65,7 @@ Overworld_ReadRTCTime::
     ld [REG_MBC3_SRAMENABLE], a
     ret
     
-SECTION "Overworld RTC Advice", ROMX[$7F9D], BANK[$29]
+SECTION "Overworld RTC Advice", ROMX[$7900], BANK[$29]
 ;Emulator-compatibility fix for Visual Boy Advance, whose emulated RTC counts
 ;from 1-60 instead of 0-59. Notably this breaks palette loading, causing the
 ;entire game to white out at 2400-2460 hours (a nonexistent time)
@@ -91,3 +91,4 @@ Overworld_ADVICE_ReadRTCTime::
     jp c, Overworld_ReadRTCTime.comefromAdvice
     sub 24
     jp .hoursBound
+Overworld_ADVICE_ReadRTCTime_END::

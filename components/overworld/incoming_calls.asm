@@ -91,3 +91,4 @@ Overworld_ADVICE_DrawIncomingCallerName::
 .noAdjustment
     jp nz, Overworld_DrawIncomingCallerName.letterDrawingLoop
     jp Overworld_DrawIncomingCallerName.adviceComefrom
+Overworld_ADVICE_DrawIncomingCallerName_END::
