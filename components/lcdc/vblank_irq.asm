@@ -36,7 +36,7 @@ VBlankingIRQ::
 	ld a, [W_SerIO_ConnectionState]
 	or a
 	jr nz, .enableInternalSIOClock
-	call $1F08
+	call Overworld_PowerAntennaIRQTask
 	jr .exit
 
 .enableInternalSIOClock
