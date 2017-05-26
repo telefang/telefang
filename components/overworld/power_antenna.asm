@@ -89,7 +89,7 @@ Overworld_PowerAntennaIRQTask::
     ld [W_Overworld_PowerAntennaFrameCounter], a
     
     call Overworld_ResetPowerAntenna
-    call Overworld_DrivePowerAntennaPattern
+    call Overworld_ADVICE_PowerAntennaIRQTask
     
     pop af
     rst $10
