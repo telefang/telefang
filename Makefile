@@ -40,6 +40,7 @@ OBJS := components/compression/malias.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
+     components/titlemenu/rtc.o \
      components/titlemenu/advice.o components/titlemenu/trash.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
@@ -49,7 +50,7 @@ OBJS := components/compression/malias.o \
      components/mainscript/advice.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
-     components/overworld/incoming_calls.o \
+     components/overworld/incoming_calls.o components/overworld/power_antenna.o \
 	  components/sound/samples.o components/sound/indexing.o \
 	  components/serio/driver.o components/serio/vssummon_statemachine.o \
      components/serio/game_statemachine.o components/serio/vssummon_utils.o \
@@ -71,7 +72,7 @@ OBJS := components/compression/malias.o \
 	  components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
 	  components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
-     components/saveclock/friendliness_pellets.o \
+     components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
