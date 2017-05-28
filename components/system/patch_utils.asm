@@ -114,12 +114,12 @@ PatchUtils_AuxCodeJmp::
 	ld a, 1
 	rst $10
 	pop af
-	ld hl, .returnVec
+	ld hl, PatchUtils_AuxCodeJmp_returnVec
 	push hl
 	ld l, a
 	ld h, $40
 	jp [hl]
 
-.returnVec
+PatchUtils_AuxCodeJmp_returnVec::
 	rst $18
 	ret

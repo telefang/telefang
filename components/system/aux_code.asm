@@ -6,6 +6,10 @@ Banked_PatchUtils_StoreDefaultCharaName:
 Banked_PatchUtils_InitializeRelocatedCharaName:
 	call PatchUtils_InitializeRelocatedCharaName
 	ret
+   
+Banked_TitleMenu_ADVICE_StoreRTCValues::
+	call TitleMenu_ADVICE_StoreRTCValues
+	ret
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
