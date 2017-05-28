@@ -44,3 +44,5 @@ PatchUtils_InitializeRelocatedCharaName:
 	dec b
 	jr nz, .secondEraseLoop
 	ret
+   
+PatchUtils_InitializeRelocatedCharaName_END::
