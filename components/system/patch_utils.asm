@@ -18,29 +18,34 @@ PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3::
 	rst $18
 	ret
 	
-PatchUtils_LoadDenjuuName_Bankswitch::
-	ld a, h
-	cp $40
-	jr nz, .aboveHL
-	ld a, l
-	or a
-	jr nz, .aboveHL
-	ld a, $34
+PatchUtils_AuxCodeJmp::
+	push af
+	
+	ld a, [W_CurrentBank]
+	push af
+	
+	ld a, 1
 	rst $10
-	ret
 	
-.aboveHL
-	ld a, $75 ;Original Denjuu bank
+	pop af
+	ld [W_CurrentBank], a
+	
+	pop af
+	ld hl, PatchUtils_AuxCodeJmp_returnVec
+	push hl
+	ld l, a
+	ld h, $40
+	jp [hl]
+
+PatchUtils_AuxCodeJmp_returnVec::
+	push af
+	ld a, [W_CurrentBank]
 	rst $10
+	pop af
 	ret
-	
-;YAY NOP SLIDE
-	db 0,0,0,0
-	db 0,0,0,0
-	db 0,0,0,0
-	db 0,0,0,0
-	
-;BF
+
+;TODO: Move these patches into the AuxCode area.
+SECTION "Patch Utilities 3", ROM0[$00BF]
 Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
 	rst $10
 	call SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
@@ -107,19 +112,3 @@ PatchUtils_ResetGame: nop
 	nop
 	nop
 	nop ;Further execution hits the main vector of the rom header
-
-SECTION "PatchUtils Auxiliary Code", ROM0[$3FF1]
-PatchUtils_AuxCodeJmp::
-	push af
-	ld a, 1
-	rst $10
-	pop af
-	ld hl, PatchUtils_AuxCodeJmp_returnVec
-	push hl
-	ld l, a
-	ld h, $40
-	jp [hl]
-
-PatchUtils_AuxCodeJmp_returnVec::
-	rst $18
-	ret
