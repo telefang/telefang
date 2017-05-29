@@ -11,14 +11,16 @@ TitleMenu_ResetRTC::
     ret
 
 TitleMenu_StoreRTCValues::
-    ld a, Banked_TitleMenu_ADVICE_StoreRTCValues & $FF
+    ld a, Banked_SaveClock_ADVICE_ValidateRTCFunction & $FF
     call PatchUtils_AuxCodeJmp
     
-    xor a
-    ld [REG_MBC3_RTCLATCH], a
-    ld a, 1
-    ld [REG_MBC3_RTCLATCH], a
-    
+    cp 0
+    jr z, .exitSram
+    jr .writeRTC
+	 
+    nop
+    nop
+    nop
     nop
     nop
     nop
@@ -107,33 +109,6 @@ TitleMenu_LoadRTCValues::
     jp TitleMenu_ExitSRAM
 
 SECTION "Title Menu Advice Block", ROMX[$41A0], BANK[$1]
-TitleMenu_ADVICE_StoreRTCValues::
-    pop hl
-    pop hl
-    
-;This function opens SRAM, and latches RTC for us.
-    call SaveClock_ADVICE_ValidateRTCFunction
-    
-    cp 0
-    jp z, .rtcNotPresent
-    
-;For both return paths we need to falsify stack values.
-.rtcPresent
-    ld hl, TitleMenu_StoreRTCValues.writeRTC
-    push hl
-    
-    jp .ret
-    
-.rtcNotPresent
-    ld hl, TitleMenu_StoreRTCValues.exitSram
-    push hl
-    
-.ret
-    ld hl, PatchUtils_AuxCodeJmp_returnVec
-    push hl
-    
-    ret
-    
 TitleMenu_ADVICE_LoadRTCValues::
     pop hl
     pop hl
@@ -171,4 +146,4 @@ TitleMenu_ADVICE_LoadRTCValues::
     
     ret
     
-TitleMenu_ADVICE_LoadRTCValues_END
+TitleMenu_ADVICE_LoadRTCValues_END::
