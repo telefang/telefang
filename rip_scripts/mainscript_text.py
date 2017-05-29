@@ -589,7 +589,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
 
                 if char in (u" ", u"\n"):
                     max_px = window_width if even_line else window_width - 8
-                    if len(line_data) > 0 and line_px + word_px > max_px:
+                    if len(line_data) > 0 and line_px + word_px > max_px or char == u"\n":
                         #Next word will overflow, so inject a newline.
                         text_data += line_data[:-1] + str(chr(0xE2))
                         line_data, line_px = word_data, word_px
@@ -600,11 +600,6 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                         line_px += word_px
 
                     word_data, word_px = "", 0
-
-                if char == u"\n":
-                    text_data += line_data
-                    line_data, line_px = "", 0
-                    even_line = not even_line
 
     #Slight alteration: Don't inject a newline if there's no line data that
     #needs to have it injected.
