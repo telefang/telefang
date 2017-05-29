@@ -12,13 +12,17 @@ Overworld_ReadRTCTime::
     and 3
     ret nz
     
-    ld a, $A
-    ld [REG_MBC3_SRAMENABLE], a
-    ld a, 0
-    ld [REG_MBC3_RTCLATCH], a
-    ld a, 1
-    ld [REG_MBC3_RTCLATCH], a
+    ld a, (Banked_SaveClock_ADVICE_ValidateRTCFunction & $FF)
+    call PatchUtils_AuxCodeJmp
+
+    cp 0
+    jr z, .exitSram
+    jr .readRTC
+    nop
+    nop
+    nop
     
+.readRTC
     ld a, 8
     ld [REG_MBC3_SRAMBANK], a
     nop

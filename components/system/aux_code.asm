@@ -14,8 +14,13 @@ Banked_TitleMenu_ADVICE_StoreRTCValues::
 Banked_TitleMenu_ADVICE_LoadRTCValues::
 	call TitleMenu_ADVICE_LoadRTCValues
 	ret
+
 Banked_StringTable_ADVICE_LoadName75::
 	call StringTable_ADVICE_LoadName75
+	ret
+   
+Banked_SaveClock_ADVICE_ValidateRTCFunction::
+	call SaveClock_ADVICE_ValidateRTCFunction
 	ret
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
