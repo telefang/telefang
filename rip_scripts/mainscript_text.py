@@ -581,15 +581,21 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
             if char in u"<«":
                 special = char
             else:
-                enc_char = encode(char)
-                word_data += str(chr(enc_char))
-
-                if metrics:
-                    word_px += metrics[enc_char] + 1
-
+                if char not in u"\n":
+                    enc_char = encode(char)
+                    word_data += str(chr(enc_char))
+                    
+                    if metrics:
+                        word_px += metrics[enc_char] + 1
+                
                 if char in (u" ", u"\n"):
                     max_px = window_width if even_line else window_width - 8
-                    if len(line_data) > 0 and line_px + word_px > max_px or char == u"\n":
+                    if char in u"\n":
+                        text_data += line_data + word_data + str(chr(0xE2))
+                        line_data = ""
+                        line_px = 0
+                        even_line = not even_line
+                    elif len(line_data) > 0 and line_px + word_px > max_px:
                         #Next word will overflow, so inject a newline.
                         text_data += line_data[:-1] + str(chr(0xE2))
                         line_data, line_px = word_data, word_px
