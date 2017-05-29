@@ -43,7 +43,7 @@ Overworld_ReadRTCTime::
     ld [REG_MBC3_SRAMBANK], a
     nop
     nop
-    jp Overworld_ADVICE_ReadRTCTime
+    jp Overworld_ADVICE_ReadRTCTime_paletteFix
     
 .comefromAdvice
     ld [W_Overworld_CurrentTimeHours], a
@@ -65,6 +65,7 @@ Overworld_ReadRTCTime::
     and 1
     ld [W_Overworld_CurrentTimeDays + 1], a
     
+.exitSram
     ld a, 0
     ld [REG_MBC3_SRAMENABLE], a
     ret
@@ -76,7 +77,7 @@ SECTION "Overworld RTC Advice", ROMX[$7900], BANK[$29]
 ;Emulator-compatibility fix for Visual Boy Advance, whose emulated RTC counts
 ;from 1-60 instead of 0-59. Notably this breaks palette loading, causing the
 ;entire game to white out at 2400-2460 hours (a nonexistent time)
-Overworld_ADVICE_ReadRTCTime::
+Overworld_ADVICE_ReadRTCTime_paletteFix::
     ld a, [$A000] ;Expected pointcut is right after the hours have been latched
     ld b, a
     
@@ -98,7 +99,7 @@ Overworld_ADVICE_ReadRTCTime::
     jp c, Overworld_ReadRTCTime.comefromAdvice
     sub 24
     jp .hoursBound
-Overworld_ADVICE_ReadRTCTime_END::
+Overworld_ADVICE_ReadRTCTime_paletteFix_END::
 
 Overworld_ADVICE_PowerAntennaIRQTask::
     call Overworld_DrivePowerAntennaPattern
