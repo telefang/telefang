@@ -3,9 +3,11 @@ IMPORT StringTable_battle_tfangers
 
 SECTION "String Table Bank Functions", ROM0[$0548]
 StringTable_LoadName75::
-    ld a, (Banked_StringTable_ADVICE_LoadName75 & $FF)
-    call PatchUtils_AuxCodeJmp
+    call StringTable_ADVICE_LoadName75
     jp StringTable_LoadNameB.rst10
+    
+    nop
+    nop
     
 ;This got relocated so the name is wrong but w/e
 StringTable_LoadNameB::
@@ -24,7 +26,7 @@ StringTable_LoadShortName::
     rst $18
     ret
 
-SECTION "StringTable ADVICE Functions", ROMX[$4240], BANK[$1]
+SECTION "StringTable ADVICE Functions", ROM0[$3FF1]
 StringTable_ADVICE_LoadName75::
 	ld a, h
 	cp $40
