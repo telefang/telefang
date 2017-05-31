@@ -29,6 +29,8 @@ PatchUtils_AuxCodeJmp::
 	
 	pop af
 	ld [W_CurrentBank], a
+   
+   di
 	
 	pop af
 	ld hl, PatchUtils_AuxCodeJmp_returnVec
@@ -42,7 +44,7 @@ PatchUtils_AuxCodeJmp_returnVec::
 	ld a, [W_CurrentBank]
 	rst $10
 	pop af
-	ret
+	reti
 
 ;TODO: Move these patches into the AuxCode area.
 SECTION "Patch Utilities 3", ROM0[$00BF]
@@ -90,7 +92,7 @@ MainScript_ADVICE_DrawDenjuuName::
 	push hl
 	cp h
 	jr z, .mystery2
-	call $548
+	call StringTable_LoadName75
 	jr .mystery3
 	
 .mystery2 ;EE
