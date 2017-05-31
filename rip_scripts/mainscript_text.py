@@ -581,6 +581,11 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
             if char in u"<«":
                 special = char
             else:
+                if char in u"\r":
+                    #Fix CRLF-based files parsed on LF operating systems.
+                    #NOTE: Breaks on Mac OS 9 and lower. Who cares?
+                    continue
+                
                 if char not in u"\n":
                     enc_char = encode(char)
                     word_data += str(chr(enc_char))
@@ -590,12 +595,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                 
                 if char in (u" ", u"\n"):
                     max_px = window_width if even_line else window_width - 8
-                    if char in u"\n":
-                        text_data += line_data + word_data + str(chr(0xE2))
-                        line_data = ""
-                        line_px = 0
-                        even_line = not even_line
-                    elif len(line_data) > 0 and line_px + word_px > max_px:
+                    if len(line_data) > 0 and line_px + word_px > max_px:
                         #Next word will overflow, so inject a newline.
                         text_data += line_data[:-1] + str(chr(0xE2))
                         line_data, line_px = word_data, word_px
@@ -604,8 +604,14 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                         #Flush the word to the line with no injected newline.
                         line_data += word_data
                         line_px += word_px
-
+                    
                     word_data, word_px = "", 0
+                    
+                    if char in u"\n" and len(line_data) > 0:
+                        text_data += line_data + str(chr(0xE2))
+                        line_data = ""
+                        line_px = 0
+                        even_line = not even_line
 
     #Slight alteration: Don't inject a newline if there's no line data that
     #needs to have it injected.
