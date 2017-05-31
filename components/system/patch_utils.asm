@@ -96,7 +96,11 @@ MainScript_ADVICE_DrawDenjuuName::
 	jr .mystery3
 	
 .mystery2 ;EE
-	call Banked_PauseMenu_ADVICE_LoadName75
+	;Code changed from:
+		;call Banked_PauseMenu_ADVICE_LoadName75
+	;Now it's an invalid opcode.
+	;Please report any crashes at EE.
+	db $EB, $EB, $EB
 
 .mystery3 ;F1
 	pop af
