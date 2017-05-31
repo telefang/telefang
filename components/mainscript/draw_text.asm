@@ -177,7 +177,7 @@ MainScript_ADVICE_DrawLetter:
 	ret
 
 SECTION "Main Script Text Drawing Advice", ROMX[$7B00], BANK[$B]
-MainScript_ADVICE_DrawLetterTable:
+MainScript_ADVICE_DrawLetterTable::
 ;This table is consulted to determine the widths of every letter in the font.
 ;There are 256 entries.
 db $07, $07, $07, $07, $07, $07, $06, $05, $06, $07, $07, $07, $07, $07, $07, $07

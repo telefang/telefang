@@ -95,13 +95,21 @@ MainScript_DrawCenteredName75::
 	push hl
 	ld a, 8
 	call MainScript_DrawEmptySpaces
-	ld hl, W_StringTable_StagingLocDbl
-	ld de, W_MainScript_CenteredNameBuffer
-	call Banked_StringTable_ADVICE_PadCopyBuffer
-	ld de, W_MainScript_CenteredNameBuffer
-	pop hl
-	ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
-	jp Banked_MainScript_DrawStatusText
+   nop
+   nop
+   nop
+	nop
+   nop
+   nop
+	nop
+   nop
+   nop
+   pop hl
+	ld a, BANK(MainScript_ADVICE_DrawCenteredName75)
+   rst $10
+	call MainScript_ADVICE_DrawCenteredName75
+   rst $18
+   ret
    
 ;3B09
 MainScript_DrawShortName::
@@ -136,6 +144,70 @@ MainScript_DrawStatusEffectString::
     ld de, StringTable_denjuu_statuses
     pop bc
     jp MainScript_DrawShortName
+
+SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7D00], BANK[$B]
+;HL = Tile ptr
+;Centers the drawn text.
+MainScript_ADVICE_DrawCenteredName75::
+    push hl
+    
+    ld bc, W_StringTable_StagingLocDbl
+    ld d, M_StringTable_Load8AreaSize + 1
+    ld e, 0
+    
+.sizingLoop
+    ld a, [bc]
+    cp $E0
+    jr z, .moveupTilePtr
+    
+    ;Index the font sizing array
+    ld h, MainScript_ADVICE_DrawLetterTable >> 8
+    ld l, a
+    ld a, [hl]
+    
+    inc a ;Widths are stored with implicit 1px between characters for... some reason
+    add e
+    ld e, a
+    
+    inc bc
+    dec d
+    jr nz, .sizingLoop
+    
+    ;At this point, e contains the total size of text we need to deal with.
+    ;NOTE: This logic WILL NOT WORK with a wider than 8 tile window!
+.moveupTilePtr
+    ld a, $40
+    sub e
+    jr c, .overwideStringFailsafe
+    sra a
+    push af
+    and $7 ; Number of pixels to push the compositing area forward by
+    ld [W_MainScript_VWFLetterShift], a
+    
+    pop af
+    and $F8 ; Number of tiles to push compositing area forward by, x8
+    sla a ;now a proper tile offset
+    
+    pop hl
+    add l
+    ld l, a
+    ld a, h
+    adc 0
+    ld h, a
+    
+    jr .drawString
+    
+    ;Used if the string being drawn is too wide, since we can't draw strings
+    ;before the selected tile
+.overwideStringFailsafe
+    pop hl
+    
+.drawString
+    ;Tile ptr has been moved up and our letters shifted.
+    ;Time to draw.
+    ld de, W_StringTable_StagingLocDbl
+    ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
+    jp MainScript_DrawStatusText
 
 SECTION "Main Script Status Text Drawing Advice", ROM0[$0077]
 ;Part of a function that replaces status text drawing with the VWF.
