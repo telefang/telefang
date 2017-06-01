@@ -32,10 +32,18 @@ Status_DrawDenjuuNickname::
    call SaveClock_EnterSRAM2
    call Status_CopyLoadedDenjuuNickname
    call SaveClock_ExitSRAM
-   ld hl, W_MainScript_MessageArg1
-   ld de, W_MainScript_CenteredNameBuffer
-   call Banked_StringTable_ADVICE_PadCopyBuffer
-   ld de, W_MainScript_CenteredNameBuffer
-   ld b, M_StringTable_Load8AreaSize
+   nop
+   nop
+   nop
+   nop
+   nop
+   nop
+   ld bc, W_MainScript_MessageArg1
    pop hl
-   jp Banked_MainScript_DrawStatusText
+	ld a, BANK(MainScript_ADVICE_DrawCenteredName75)
+   rst $10
+   call MainScript_ADVICE_DrawCenteredName75
+   rst $18
+   ret
+   
+Status_DrawDenjuuNickname_END::

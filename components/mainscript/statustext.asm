@@ -101,9 +101,7 @@ MainScript_DrawCenteredName75::
 	nop
    nop
    nop
-	nop
-   nop
-   nop
+	ld bc, W_StringTable_StagingLocDbl
    pop hl
 	ld a, BANK(MainScript_ADVICE_DrawCenteredName75)
    rst $10
@@ -147,11 +145,12 @@ MainScript_DrawStatusEffectString::
 
 SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7D00], BANK[$B]
 ;HL = Tile ptr
+;BC = Text string to draw
 ;Centers the drawn text.
 MainScript_ADVICE_DrawCenteredName75::
+    push bc
     push hl
     
-    ld bc, W_StringTable_StagingLocDbl
     ld d, M_StringTable_Load8AreaSize + 1
     ld e, 0
     
@@ -205,7 +204,7 @@ MainScript_ADVICE_DrawCenteredName75::
 .drawString
     ;Tile ptr has been moved up and our letters shifted.
     ;Time to draw.
-    ld de, W_StringTable_StagingLocDbl
+    pop de
     ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
     jp MainScript_DrawStatusText
 
