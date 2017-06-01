@@ -11,11 +11,11 @@ RLEAttribmapBanks::
 
 SECTION "tilemap Bank 0", ROMX[$4000], BANK[$3e]
 Tilemap_BANK_0::
-	dw Tilemap_unknown_tilemap_0_0
-	dw Tilemap_unknown_tilemap_0_0
-	dw Tilemap_unknown_tilemap_0_1
-	dw Tilemap_unknown_tilemap_0_2
-	dw Tilemap_unknown_tilemap_0_3
+	dw Tilemap_menu_stats_tmap
+	dw Tilemap_menu_stats_tmap
+	dw Tilemap_menu_stats_tab_progression_tmap
+	dw Tilemap_menu_stats_tab_stats_tmap
+	dw Tilemap_menu_stats_tab_moves_tmap
 	dw Tilemap_unknown_tilemap_0_4
 	dw Tilemap_unknown_tilemap_0_5
 	dw Tilemap_unknown_tilemap_0_6
@@ -220,21 +220,21 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_9b_END
 	dw Tilemap_unknown_tilemap_0_9b_END
 
-Tilemap_unknown_tilemap_0_0::
-	incbin "gfx/unknown/tilemap_0/0.tmap"
-Tilemap_unknown_tilemap_0_0_END
+Tilemap_menu_stats_tmap::
+	incbin "gfx/menu/stats_tmap.tmap"
+Tilemap_menu_stats_tmap_END
 
-Tilemap_unknown_tilemap_0_1::
-	incbin "gfx/unknown/tilemap_0/1.tmap"
-Tilemap_unknown_tilemap_0_1_END
+Tilemap_menu_stats_tab_progression_tmap::
+	incbin "gfx/menu/stats_tab_progression_tmap.tmap"
+Tilemap_menu_stats_tab_progression_tmap_END
 
-Tilemap_unknown_tilemap_0_2::
-	incbin "gfx/unknown/tilemap_0/2.tmap"
-Tilemap_unknown_tilemap_0_2_END
+Tilemap_menu_stats_tab_stats_tmap::
+	incbin "gfx/menu/stats_tab_stats_tmap.tmap"
+Tilemap_menu_stats_tab_stats_tmap_END
 
-Tilemap_unknown_tilemap_0_3::
-	incbin "gfx/unknown/tilemap_0/3.tmap"
-Tilemap_unknown_tilemap_0_3_END
+Tilemap_menu_stats_tab_moves_tmap::
+	incbin "gfx/menu/stats_tab_moves_tmap.tmap"
+Tilemap_menu_stats_tab_moves_tmap_END
 
 Tilemap_unknown_tilemap_0_4::
 	incbin "gfx/unknown/tilemap_0/4.tmap"
@@ -898,11 +898,11 @@ Tilemap_unknown_tilemap_1_7_END
 
 SECTION "attrib Bank 0", ROMX[$4000], BANK[$8]
 Attribmap_BANK_0::
-	dw Attribmap_unknown_attribs_0_0
-	dw Attribmap_unknown_attribs_0_0
-	dw Attribmap_unknown_attribs_0_1
-	dw Attribmap_unknown_attribs_0_2
-	dw Attribmap_unknown_attribs_0_3
+	dw Attribmap_menu_stats_attr
+	dw Attribmap_menu_stats_attr
+	dw Attribmap_menu_stats_tab_progression_attr
+	dw Attribmap_menu_stats_tab_stats_attr
+	dw Attribmap_menu_stats_tab_moves_attr
 	dw Attribmap_unknown_attribs_0_4
 	dw Attribmap_unknown_attribs_0_5
 	dw Attribmap_unknown_attribs_0_7
@@ -1107,21 +1107,21 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_60
 	dw Attribmap_unknown_attribs_0_60
 
-Attribmap_unknown_attribs_0_0::
-	incbin "gfx/unknown/attribs_0/0.tmap"
-Attribmap_unknown_attribs_0_0_END
+Attribmap_menu_stats_attr::
+	incbin "gfx/menu/stats_attr.tmap"
+Attribmap_menu_stats_attr_END
 
-Attribmap_unknown_attribs_0_1::
-	incbin "gfx/unknown/attribs_0/1.tmap"
-Attribmap_unknown_attribs_0_1_END
+Attribmap_menu_stats_tab_progression_attr::
+	incbin "gfx/menu/stats_tab_progression_attr.tmap"
+Attribmap_menu_stats_tab_progression_attr_END
 
-Attribmap_unknown_attribs_0_2::
-	incbin "gfx/unknown/attribs_0/2.tmap"
-Attribmap_unknown_attribs_0_2_END
+Attribmap_menu_stats_tab_stats_attr::
+	incbin "gfx/menu/stats_tab_stats_attr.tmap"
+Attribmap_menu_stats_tab_stats_attr_END
 
-Attribmap_unknown_attribs_0_3::
-	incbin "gfx/unknown/attribs_0/3.tmap"
-Attribmap_unknown_attribs_0_3_END
+Attribmap_menu_stats_tab_moves_attr::
+	incbin "gfx/menu/stats_tab_moves_attr.tmap"
+Attribmap_menu_stats_tab_moves_attr_END
 
 Attribmap_unknown_attribs_0_4::
 	incbin "gfx/unknown/attribs_0/4.tmap"
