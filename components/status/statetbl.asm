@@ -109,7 +109,7 @@ Status_StateDrawDenjuu:
     ld a, [W_Status_SelectedDenjuuPersonality]
     call Banked_Status_LoadDenjuuTypeIconPalette
     ld hl, $9300
-    ld a, 8
+    ld a, 13 ;This clears both the denjuu name AND the habitat we plan to draw
     call MainScript_DrawEmptySpaces
     ld a, [W_Status_UseDenjuuNickname]
     cp 1
