@@ -39,7 +39,8 @@ Status_GameStateTable:
 
 Status_TextTable: ;4BA7
     INCBIN "script/status/ui_strings_1.stringtbl"
-    INCBIN "script/status/ui_strings_2.stringtbl" ;4BB1
+Status_TextTable_UnkMove:: ;4BB1
+    INCBIN "script/status/ui_strings_2.stringtbl"
 
 SECTION "Status Screen State Implementations", ROMX[$4C81], BANK[$02]
 Status_StateInitGraphics:

@@ -2,6 +2,10 @@ INCLUDE "telefang.inc"
 
 SECTION "Status Screen Draw Funcs", ROMX[$50C2], BANK[2]
 Status_DrawDenjuuMoves::
+    ld hl, $8B80
+    ld a, 32
+    call MainScript_DrawEmptySpaces
+    
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld b, 0
     ld c, M_Battle_SpeciesMove1
@@ -41,9 +45,9 @@ Status_DrawDenjuuMoves::
     jr .drawMove4
     
 .drawUnknownMove3
-    ld de, $4BAF ;???
+    ld de, Status_TextTable_UnkMove
     ld hl, $8C80
-    ld b, 8
+    ld b, 4
     call Banked_MainScript_DrawStatusText
     
 .drawMove4
@@ -70,7 +74,7 @@ Status_DrawDenjuuMoves::
     jr .drawCompleted
     
 .drawUnknownMove4
-    ld de, $4BAF ;???
+    ld de, Status_TextTable_UnkMove
     ld hl, $8D00
     ld b, 8
     call Banked_MainScript_DrawStatusText
@@ -79,9 +83,6 @@ Status_DrawDenjuuMoves::
     ret
 
 .drawEmptyMove4
-    ld hl, $8D00
-    ld a, 8
-    call MainScript_DrawEmptySpaces
     ret
 
 ;Big WTF here: this is called to 'validate' the moves, but it just loads stuff
