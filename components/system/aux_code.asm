@@ -1,19 +1,19 @@
 SECTION "Patch Utilities - Auxiliary Code Trampolines", ROMX[$4000], BANK[$1]
 Banked_PatchUtils_StoreDefaultCharaName:
-	call PatchUtils_StoreDefaultCharaName
-	ret
+	jp PatchUtils_StoreDefaultCharaName
+	nop
 	
 Banked_PatchUtils_InitializeRelocatedCharaName:
-	call PatchUtils_InitializeRelocatedCharaName
-	ret
+	jp PatchUtils_InitializeRelocatedCharaName
+	nop
 	
 Banked_TitleMenu_ADVICE_LoadRTCValues::
-	call TitleMenu_ADVICE_LoadRTCValues
-	ret
+	jp TitleMenu_ADVICE_LoadRTCValues
+	nop
    
 Banked_SaveClock_ADVICE_ValidateRTCFunction::
-	call SaveClock_ADVICE_ValidateRTCFunction
-	ret
+	jp SaveClock_ADVICE_ValidateRTCFunction
+	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
