@@ -36,14 +36,14 @@ SaveClock_ADVICE_FDRollover::
    
 SaveClock_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
 	ld a, BANK(SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr)
-	call Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
+	call Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArrayFixed
 	ret
    
    REPT $1C
    nop
    ENDR
 
-SECTION "Save/Clock ADVICE'd Load Denjuu Nickname", ROMX[$7EAD], BANK[$34]
+SECTION "Save/Clock ADVICE'd Load Denjuu Nickname", ROMX[$7C00], BANK[$34]
 SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr::
 	ld hl, -(S_SaveClock_StatisticsArray + M_SaveClock_DenjuuNickname) & $FFFF
 	add hl, de
@@ -117,3 +117,38 @@ SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
 	ld a, BANK(SaveClock_LoadDenjuuNicknameByStatPtr)
 	
 	ret
+   
+SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArrayFixed::
+    push bc
+    push af
+    push hl
+    ld bc, $0000
+    ld a, $00
+    cp l
+    jp nz, .divideBySix
+    cp h
+    jp z, .divideBySixPostLoop
+
+.divideBySix
+    inc bc
+    dec hl
+    dec hl
+    dec hl
+    dec hl
+    dec hl
+    dec hl
+    cp l
+    jp nz, .divideBySix
+    cp h
+    jp nz, .divideBySix
+
+.divideBySixPostLoop
+    sla c
+    rl b
+    sla c
+    rl b
+    pop hl
+    pop af
+    call SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
+    pop bc
+    ret

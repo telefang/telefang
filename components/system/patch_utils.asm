@@ -48,9 +48,9 @@ PatchUtils_AuxCodeJmp_returnVec::
 
 ;TODO: Move these patches into the AuxCode area.
 SECTION "Patch Utilities 3", ROM0[$00BF]
-Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray::
+Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArrayFixed::
 	rst $10
-	call SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArray
+	call SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArrayFixed
 	rst $10
 	ret
 	

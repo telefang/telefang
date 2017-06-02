@@ -50,12 +50,6 @@ StringTable_denjuu_species::
 	INCBIN "script/denjuu/species.stringtbl"
 StringTable_denjuu_species_END
 
-;D0B00
-    REPT $3200
-        db $E0
-    ENDR
-;D3D00
-
 SECTION "StringTable_denjuu_species_old Section", ROMX[$4000], BANK[$75]
 StringTable_denjuu_species_old::
 	INCBIN "script/denjuu/species_old.stringtbl"
