@@ -63,7 +63,7 @@ MainScript_DrawName75::
 	push bc
 	push de
 	pop hl
-	call MainScript_ADVICE_DrawDenjuuName
+	call StringTable_LoadName75
 	pop hl
 	push hl
 	ld a, 8
@@ -90,7 +90,7 @@ MainScript_DrawCenteredName75::
 	jr nz, .clearLoop
 	
 	pop hl
-	call MainScript_ADVICE_DrawDenjuuName
+	call StringTable_LoadName75
 	pop hl
 	push hl
 	ld a, 8

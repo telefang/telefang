@@ -87,27 +87,7 @@ Banked_StringTable_ADVICE_PadCopyBuffer::
 	ret
 	
 ;E4
-MainScript_ADVICE_DrawDenjuuName::
-	push af
-	push hl
-	cp h
-	jr z, .mystery2
-	call StringTable_LoadName75
-	jr .mystery3
-	
-.mystery2 ;EE
-	;Code changed from:
-		;call Banked_PauseMenu_ADVICE_LoadName75
-	;Now it's an invalid opcode.
-	;Please report any crashes at EE.
-	db $EB, $EB, $EB
-
-.mystery3 ;F1
-	pop af
-	pop hl
-	ret
-
-Banked_PauseMenu_ADVICE_LoadName75:: ;F4
+Banked_PauseMenu_ADVICE_LoadName75::
 	ld a, $34
 	rst $10
 	call PauseMenu_ADVICE_LoadName75
