@@ -10,7 +10,7 @@ PauseMenu_ContactSubstate::
 
 PauseMenu_ContactSubstateMachine:
 ;TODO: Symbolize once we figure out what each subsubstate does
-    dw $4A86,$4A9C,$4AD6,$4AFC,$4B92,$4BBD,$4BC0,$4BCE
+    dw sub_10A86,sub_10A9C,$4AD6,$4AFC,$4B92,$4BBD,$4BC0,$4BCE
     dw $4BF3,$4C47,$7F47,$7F4E,$4C4A,$4C90,$4CB4,$4CC9
     dw $4D30,$4D86,$4DD3,$4DEC,$4E37,$4E45,$4E59,$4E5A
 
@@ -27,28 +27,28 @@ sub_10A86:
     jp System_ScheduleNextSubSubState
 
 sub_10A9C:
-    ld a, [$CD24]
+    ld a, [W_PauseMenu_CurrentContact]
     ld b, a
     ld a, [$CB72]
     dec a
     cp b
     jr nc, .skipdecCD24
-    ld a, [$CD24]
+    ld a, [W_PauseMenu_CurrentContact]
     dec a
-    ld [$CD24], a
+    ld [W_PauseMenu_CurrentContact], a
     
 .skipdecCD24
-    ld a, [$CD24]
-    call $6473
+    ld a, [W_PauseMenu_CurrentContact]
+    call PauseMenu_IndexedContactArrayLoad
     ld c, 0
     ld de, $9400
-    call $516
-    ld a, [$CD24]
-    call $6473
-    call $1764
+    call Banked_Battle_LoadDenjuuPortrait
+    ld a, [W_PauseMenu_CurrentContact]
+    call PauseMenu_IndexedContactArrayLoad
+    call Battle_LoadDenjuuPaletteOpponent
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
-    ld a, [$CD24]
-    call $6473
+    ld a, [W_PauseMenu_CurrentContact]
+    call PauseMenu_IndexedContactArrayLoad
     call PauseMenu_ContactPrepName
     jp System_ScheduleNextSubSubState

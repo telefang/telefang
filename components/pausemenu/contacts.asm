@@ -18,3 +18,12 @@ PauseMenu_IndexContactArray::
     add hl, de
     ld a, [hl]
     ret
+    
+SECTION "PauseMenu Contacts Funcs 2", ROMX[$6473], BANK[$4]
+PauseMenu_IndexedContactArrayLoad::
+    ld e, a
+    ld d, 0
+    ld hl, W_PauseMenu_ContactsArray
+    add hl, de
+    ld a, [hl]
+    ret
