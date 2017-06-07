@@ -92,17 +92,21 @@ MainScript_DrawCenteredName75::
 	pop hl
 	call StringTable_LoadName75
 	pop hl
+	
+	ld d, M_StringTable_Load8AreaSize + 1
+	ld bc, W_StringTable_StagingLocDbl
+   
+MainScript_DrawCenteredStagedString::
+	push bc
+	push de
 	push hl
+   
 	ld a, 8
 	call MainScript_DrawEmptySpaces
-   nop
-   nop
-   nop
-	nop
-   nop
-   nop
-	ld bc, W_StringTable_StagingLocDbl
+   
    pop hl
+	pop de
+	pop bc
 	ld a, BANK(MainScript_ADVICE_DrawCenteredName75)
    rst $10
 	call MainScript_ADVICE_DrawCenteredName75
@@ -146,13 +150,13 @@ MainScript_DrawStatusEffectString::
 SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7D00], BANK[$B]
 ;HL = Tile ptr
 ;BC = Text string to draw
+;D = Text drawing limit (terminators also respected)
 ;Centers the drawn text.
 MainScript_ADVICE_DrawCenteredName75::
     push bc
     push hl
-    
-    ld d, M_StringTable_Load8AreaSize + 1
-    ld e, 0
+	 
+	 ld e, 0
     
 .sizingLoop
     ld a, [bc]

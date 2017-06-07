@@ -30,10 +30,10 @@ PauseMenu_CallsMenuDrawDenjuuNickname::
     ld b, 6
     call PauseMenu_ClearInputTiles
     
-    ld de, W_MainScript_CenteredNameBuffer
-    ld b, M_StringTable_Load8AreaSize
+    ld bc, W_SaveClock_NicknameStaging
+    ld d, M_StringTable_Load8AreaSize
     ld hl, $9400
-    jp Banked_MainScript_DrawStatusText
+    jp MainScript_DrawCenteredStagedString
 
 PauseMenu_ContactsMenuDrawDenjuuNickname::
     call PauseMenu_IndexContactArray
@@ -49,7 +49,7 @@ PauseMenu_ContactsMenuDrawDenjuuNickname::
     ld b, 6
     call PauseMenu_ClearScreenTiles
     
-    ld de, W_MainScript_CenteredNameBuffer
-    ld b, M_StringTable_Load8AreaSize
+    ld bc, W_SaveClock_NicknameStaging
+    ld d, M_StringTable_Load8AreaSize
     ld hl, $9780
-    jp Banked_MainScript_DrawStatusText
+    jp MainScript_DrawCenteredStagedString
