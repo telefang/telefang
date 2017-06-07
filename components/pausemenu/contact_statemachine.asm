@@ -10,9 +10,15 @@ PauseMenu_ContactSubstate::
 
 PauseMenu_ContactSubstateMachine:
 ;TODO: Symbolize once we figure out what each subsubstate does
-    dw sub_10A86,sub_10A9C,$4AD6,$4AFC,$4B92,$4BBD,$4BC0,$4BCE
-    dw $4BF3,$4C47,$7F47,$7F4E,$4C4A,$4C90,$4CB4,$4CC9
-    dw $4D30,$4D86,$4DD3,$4DEC,$4E37,$4E45,$4E59,$4E5A
+    dw sub_10A86,sub_10A9C,$4AD6,$4AFC
+    dw $4B92,$4BBD,$4BC0,$4BCE
+    dw $4BF3,$4C47,$7F47,$7F4E
+    dw PhoneConversation_SubStateCallOutDrawScreen
+    dw PhoneConversation_SubStateCallOutFadeScreenIn
+    dw PhoneConversation_SubStateCallOutConvoScriptProcessing
+    dw PhoneConversation_SubStateCallOutSwitchScriptProcessing
+    dw $4D30,$4D86,$4DD3,$4DEC
+    dw $4E37,$4E45,$4E59,$4E5A
 
 sub_10A86:
     call $636B
