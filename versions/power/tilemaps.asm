@@ -37,9 +37,9 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_15
 	dw Tilemap_unknown_tilemap_0_16
 	dw Tilemap_unknown_tilemap_0_17
-	dw Tilemap_unknown_tilemap_0_18
+	dw Tilemap_phoneconversation_window_tmap
 	dw Tilemap_unknown_tilemap_0_19
-	dw Tilemap_unknown_tilemap_0_1a
+	dw Tilemap_phoneconversation_monster_name_tmap
 	dw Tilemap_unknown_tilemap_0_1b
 	dw Tilemap_unknown_tilemap_0_1b
 	dw Tilemap_unknown_tilemap_0_1c
@@ -316,17 +316,17 @@ Tilemap_unknown_tilemap_0_17::
 	incbin "gfx/unknown/tilemap_0/17.tmap"
 Tilemap_unknown_tilemap_0_17_END
 
-Tilemap_unknown_tilemap_0_18::
-	incbin "gfx/unknown/tilemap_0/18.tmap"
-Tilemap_unknown_tilemap_0_18_END
+Tilemap_phoneconversation_window_tmap::
+	incbin "gfx/phoneconversation/window_tmap.tmap"
+Tilemap_phoneconversation_window_tmap_END
 
 Tilemap_unknown_tilemap_0_19::
 	incbin "gfx/unknown/tilemap_0/19.tmap"
 Tilemap_unknown_tilemap_0_19_END
 
-Tilemap_unknown_tilemap_0_1a::
-	incbin "gfx/unknown/tilemap_0/1a.tmap"
-Tilemap_unknown_tilemap_0_1a_END
+Tilemap_phoneconversation_monster_name_tmap::
+	incbin "gfx/phoneconversation/monster_name_tmap.tmap"
+Tilemap_phoneconversation_monster_name_tmap_END
 
 Tilemap_unknown_tilemap_0_1b::
 	incbin "gfx/unknown/tilemap_0/1b.tmap"
@@ -922,15 +922,15 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_11
 	dw Attribmap_unknown_attribs_0_11
 	dw Attribmap_unknown_attribs_0_11
-	dw Attribmap_unknown_attribs_0_12
-	dw Attribmap_unknown_attribs_0_12
-	dw Attribmap_unknown_attribs_0_12
-	dw Attribmap_unknown_attribs_0_13
-	dw Attribmap_unknown_attribs_0_13
-	dw Attribmap_unknown_attribs_0_13
-	dw Attribmap_unknown_attribs_0_13
-	dw Attribmap_unknown_attribs_0_13
-	dw Attribmap_unknown_attribs_0_13
+	dw Attribmap_phoneconversation_window_attr
+	dw Attribmap_phoneconversation_window_attr
+	dw Attribmap_phoneconversation_window_attr
+	dw Attribmap_phoneconversation_monster_name_attr
+	dw Attribmap_phoneconversation_monster_name_attr
+	dw Attribmap_phoneconversation_monster_name_attr
+	dw Attribmap_phoneconversation_monster_name_attr
+	dw Attribmap_phoneconversation_monster_name_attr
+	dw Attribmap_phoneconversation_monster_name_attr
 	dw Attribmap_unknown_attribs_0_14
 	dw Attribmap_unknown_attribs_0_15
 	dw Attribmap_unknown_attribs_0_15
@@ -1179,13 +1179,13 @@ Attribmap_unknown_attribs_0_11::
 	incbin "gfx/unknown/attribs_0/11.tmap"
 Attribmap_unknown_attribs_0_11_END
 
-Attribmap_unknown_attribs_0_12::
-	incbin "gfx/unknown/attribs_0/12.tmap"
-Attribmap_unknown_attribs_0_12_END
+Attribmap_phoneconversation_window_attr::
+	incbin "gfx/phoneconversation/window_attr.tmap"
+Attribmap_phoneconversation_window_attr_END
 
-Attribmap_unknown_attribs_0_13::
-	incbin "gfx/unknown/attribs_0/13.tmap"
-Attribmap_unknown_attribs_0_13_END
+Attribmap_phoneconversation_monster_name_attr::
+	incbin "gfx/phoneconversation/monster_name_attr.tmap"
+Attribmap_phoneconversation_monster_name_attr_END
 
 Attribmap_unknown_attribs_0_14::
 	incbin "gfx/unknown/attribs_0/14.tmap"
