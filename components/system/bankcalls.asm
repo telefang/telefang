@@ -159,7 +159,26 @@ Banked_Encounter_LoadSceneryTiles::
     rst $18
     ret
     
-SECTION "Banked Call Helpers 5 - The bankening", ROM0[$0588]
+;dunno - $574
+    call $1BB3
+    rst $18
+    ret
+    
+Banked_PhoneConversation_LoadSceneryTiles::
+    call PhoneConversation_LoadSceneryTiles
+    rst $18
+    ret
+    
+;dunno - $57E
+    call $1AC6
+    rst $18
+    ret
+    
+Banked_PhoneConversation_LoadPhoneFrameTiles::
+    call PhoneConversation_LoadPhoneFrameTiles
+    rst $18
+    ret
+    
 Banked_Sound_PlaySample::
     call Sound_PlaySample
     rst $18
@@ -275,6 +294,19 @@ Banked_SaveClock_LoadDenjuuNicknameByIndex::
     rst $10
     call SaveClock_LoadDenjuuNicknameByIndex
     rst $18
+    ret
+    
+SECTION "Banked Call Helpers けつばん", ROM0[$20F6]
+Banked_PhoneConversation_DetermineSceneryType::
+    ld a, [W_CurrentBank]
+    push af
+    ld a, BANK(PhoneConversation_DetermineSceneryType)
+    rst $10
+    call PhoneConversation_DetermineSceneryType
+    ld a, b
+    ld [W_Encounter_SceneryType], a
+    pop af
+    rst $10
     ret
     
 SECTION "Banked Call Helpers 3", ROM0[$2FC7]

@@ -20,7 +20,7 @@ OBJS := components/compression/malias.o \
      components/lcdc/cgb_palette.o components/lcdc/tilemap_math.o \
 	  components/lcdc/load_tiles.o components/lcdc/fades.o \
      components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
-     components/lcdc/wraparound.o \
+     components/lcdc/wraparound.o components/lcdc/init_attributes.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
@@ -50,7 +50,10 @@ OBJS := components/compression/malias.o \
      components/mainscript/advice.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
-     components/overworld/incoming_calls.o components/overworld/power_antenna.o \
+     components/overworld/power_antenna.o \
+     components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
+     components/phoneconversation/ui.o components/phoneconversation/outbound.o \
+     components/phoneconversation/data.o \
 	  components/sound/samples.o components/sound/indexing.o \
 	  components/serio/driver.o components/serio/vssummon_statemachine.o \
      components/serio/game_statemachine.o components/serio/vssummon_utils.o \
