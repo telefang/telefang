@@ -271,8 +271,8 @@ BattleMessagesGfx:
 BattleMessagesGfxEnd
 
 ScreenSaveDeletedGfx:
-	db COMPRESSED
-	INCBIN "gfx/screen/save_deleted.malias"
+	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
+	INCBIN "gfx/screen/save_deleted.2bpp"
 ScreenSaveDeletedGfxEnd
 
 CutsceneConnected1Gfx:

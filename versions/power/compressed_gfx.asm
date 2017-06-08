@@ -287,8 +287,8 @@ EvolveBgGfxEnd
 
 SECTION "Screen - Save Deleted Compressed GFX", ROMX[$483f], BANK[$3b]
 ScreenSaveDeletedGfx:
-	db COMPRESSED
-	INCBIN "gfx/screen/save_deleted.malias"
+	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
+	INCBIN "gfx/screen/save_deleted.2bpp"
 ScreenSaveDeletedGfxEnd
 
 SECTION "Menu - Unk Compressed GFX", ROMX[$7561], BANK[$3b]
