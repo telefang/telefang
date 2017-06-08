@@ -16,7 +16,7 @@ Tilemap_BANK_0::
 	dw Tilemap_menu_stats_tab_progression_tmap
 	dw Tilemap_menu_stats_tab_stats_tmap
 	dw Tilemap_menu_stats_tab_moves_tmap
-	dw Tilemap_unknown_tilemap_0_4
+	dw Tilemap_screen_save_deleted_tmap
 	dw Tilemap_unknown_tilemap_0_5
 	dw Tilemap_unknown_tilemap_0_6
 	dw Tilemap_unknown_tilemap_0_7
@@ -236,9 +236,9 @@ Tilemap_menu_stats_tab_moves_tmap::
 	incbin "gfx/menu/stats_tab_moves_tmap.tmap"
 Tilemap_menu_stats_tab_moves_tmap_END
 
-Tilemap_unknown_tilemap_0_4::
-	incbin "gfx/unknown/tilemap_0/4.tmap"
-Tilemap_unknown_tilemap_0_4_END
+Tilemap_screen_save_deleted_tmap::
+	incbin "gfx/screen/save_deleted_tmap.tmap"
+Tilemap_screen_save_deleted_tmap_END
 
 Tilemap_unknown_tilemap_0_5::
 	incbin "gfx/unknown/tilemap_0/5.tmap"
@@ -908,7 +908,7 @@ Attribmap_BANK_0::
 	dw Attribmap_menu_stats_tab_progression_attr
 	dw Attribmap_menu_stats_tab_stats_attr
 	dw Attribmap_menu_stats_tab_moves_attr
-	dw Attribmap_unknown_attribs_0_4
+	dw Attribmap_screen_save_deleted_attr
 	dw Attribmap_unknown_attribs_0_5
 	dw Attribmap_unknown_attribs_0_7
 	dw Attribmap_title_bg_attr
@@ -1128,9 +1128,9 @@ Attribmap_menu_stats_tab_moves_attr::
 	incbin "gfx/menu/stats_tab_moves_attr.tmap"
 Attribmap_menu_stats_tab_moves_attr_END
 
-Attribmap_unknown_attribs_0_4::
-	incbin "gfx/unknown/attribs_0/4.tmap"
-Attribmap_unknown_attribs_0_4_END
+Attribmap_screen_save_deleted_attr::
+	incbin "gfx/screen/save_deleted_attr.tmap"
+Attribmap_screen_save_deleted_attr_END
 
 Attribmap_unknown_attribs_0_5::
 	incbin "gfx/unknown/attribs_0/5.tmap"
