@@ -26,6 +26,7 @@ LCDC_CGB_BGPaletteTable::
     dpalette $36, $37, $38, $39, $3A, $3B, $3C, $3D
     dpalette $18, $19, $1A, $1B, $1C, $1D, $1E, $1F
     dpalette $40, $36, $42, $43, $44, $45, $46, $47
+;Save Corruption Error Screen
     dpalette $48, $49, $4A, $0, $0, $0, $0, $0
     dpalette $0, $0, $0, $0, $0, $0, $0, $0
     dpalette $0, $0, $0, $0, $0, $0, $0, $0
@@ -473,17 +474,17 @@ LCDC_CGB_BGColorTable::
     dcolor 25, 27, 31
     dcolor 18, 23, 31
     dcolor 0, 0, 1
-;Palette 48
+;Palette 48 - Save Corruption Error Screen
     dcolor 31, 29, 16
     dcolor 20, 4, 4
     dcolor 4, 19, 5
     dcolor 0, 0, 0
-;Palette 49
+;Palette 49 - Save Corruption Error Screen
     dcolor 31, 29, 16
     dcolor 31, 18, 11
     dcolor 20, 4, 4
     dcolor 0, 0, 0
-;Palette 4A
+;Palette 4A - Save Corruption Error Screen
     dcolor 31, 31, 31
     dcolor 20, 4, 4
     dcolor 8, 2, 2
