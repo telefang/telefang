@@ -237,7 +237,7 @@ Tilemap_menu_stats_tab_moves_tmap::
 Tilemap_menu_stats_tab_moves_tmap_END
 
 Tilemap_screen_save_deleted_tmap::
-	incbin "gfx/screen/save_deleted_tmap.tmap"
+	incbin "versions/power/gfx/screen/save_deleted_tmap.tmap"
 Tilemap_screen_save_deleted_tmap_END
 
 Tilemap_unknown_tilemap_0_5::
@@ -1129,7 +1129,7 @@ Attribmap_menu_stats_tab_moves_attr::
 Attribmap_menu_stats_tab_moves_attr_END
 
 Attribmap_screen_save_deleted_attr::
-	incbin "gfx/screen/save_deleted_attr.tmap"
+	incbin "versions/power/gfx/screen/save_deleted_attr.tmap"
 Attribmap_screen_save_deleted_attr_END
 
 Attribmap_unknown_attribs_0_5::

@@ -272,7 +272,7 @@ BattleMessagesGfxEnd
 
 ScreenSaveDeletedGfx:
 	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
-	INCBIN "gfx/screen/save_deleted.2bpp"
+	INCBIN "versions/speed/gfx/screen/save_deleted.2bpp"
 ScreenSaveDeletedGfxEnd
 
 CutsceneConnected1Gfx:

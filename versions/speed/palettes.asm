@@ -475,19 +475,19 @@ LCDC_CGB_BGColorTable::
     dcolor 18, 23, 31
     dcolor 0, 0, 1
 ;Palette 48 - Save Corruption Error Screen
-    dcolor 31, 29, 16
-    dcolor 20, 4, 4
-    dcolor 4, 19, 5
+    dcolor 31, 24, 24
+    dcolor 26, 17, 17
+    dcolor 22, 10, 10
     dcolor 0, 0, 0
 ;Palette 49 - Save Corruption Error Screen
-    dcolor 31, 29, 16
-    dcolor 31, 18, 11
-    dcolor 20, 4, 4
+    dcolor 10, 8, 20
+    dcolor 23, 21, 15
+    dcolor 18, 17, 9
     dcolor 0, 0, 0
 ;Palette 4A - Save Corruption Error Screen
     dcolor 31, 31, 31
-    dcolor 20, 4, 4
-    dcolor 8, 2, 2
+    dcolor 23, 21, 15
+    dcolor 18, 17, 9
     dcolor 0, 0, 0
 ;Palette 4B
     dcolor 0, 0, 0
