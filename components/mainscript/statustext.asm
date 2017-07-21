@@ -134,10 +134,17 @@ MainScript_DrawHabitatString::
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld c, $D
     call Banked_Battle_LoadSpeciesData
-    ld a, [$D45F]
-    ld de, StringTable_denjuu_habitats
-    ld bc, $9380
-    jp MainScript_DrawShortName
+    
+    ld a, BANK(MainScript_ADVICE_DrawHabitatString)
+    rst $10
+    jp MainScript_ADVICE_DrawHabitatString
+    
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 ;3B36
 MainScript_DrawStatusEffectString::
@@ -211,6 +218,24 @@ MainScript_ADVICE_DrawCenteredName75::
     pop de
     ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
     jp MainScript_DrawStatusText
+
+MainScript_ADVICE_DrawHabitatString::
+    ld hl, $9380
+    ld a, 6
+    
+.loopSpaces
+    push af
+    ld de, MainScript_DrawEmptySpaces_Space
+    ld b, 1
+    call MainScript_DrawStatusText
+    pop af
+    dec a
+    jr nz, .loopSpaces
+    
+    ld a, [$D45F]
+    ld de, StringTable_denjuu_habitats
+    ld bc, $9380
+    jp MainScript_DrawShortName
 
 SECTION "Main Script Status Text Drawing Advice", ROM0[$0077]
 ;Part of a function that replaces status text drawing with the VWF.
