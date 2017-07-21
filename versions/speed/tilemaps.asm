@@ -108,7 +108,7 @@ Tilemap_BANK_0::
 	dw Tilemap_menu_multiplayer_tmap
 	dw Tilemap_menu_multiplayer_tmap
 	dw Tilemap_menu_multiplayer_tmap
-	dw Tilemap_unknown_tilemap_0_53
+	dw Tilemap_menu_multiplayer_gameboys_tmap
 	dw Tilemap_unknown_tilemap_0_54
 	dw Tilemap_unknown_tilemap_0_54
 	dw Tilemap_unknown_tilemap_0_54
@@ -552,9 +552,9 @@ Tilemap_menu_multiplayer_tmap::
 	incbin "gfx/menu/multiplayer_tmap.tmap"
 Tilemap_menu_multiplayer_tmap_END
 
-Tilemap_unknown_tilemap_0_53::
-	incbin "gfx/unknown/tilemap_0/53.tmap"
-Tilemap_unknown_tilemap_0_53_END
+Tilemap_menu_multiplayer_gameboys_tmap::
+	incbin "gfx/menu/multiplayer/gameboys_tmap.tmap"
+Tilemap_menu_multiplayer_gameboys_tmap_END
 
 Tilemap_unknown_tilemap_0_54::
 	incbin "gfx/unknown/tilemap_0/54.tmap"
@@ -995,7 +995,7 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_30
 	dw Attribmap_unknown_attribs_0_30
 	dw Attribmap_unknown_attribs_0_30
-	dw Attribmap_unknown_attribs_0_31
+	dw Attribmap_menu_multiplayer_gameboys_attr
 	dw Attribmap_unknown_attribs_0_32
 	dw Attribmap_unknown_attribs_0_32
 	dw Attribmap_unknown_attribs_0_32
@@ -1303,9 +1303,9 @@ Attribmap_unknown_attribs_0_30::
 	incbin "gfx/unknown/attribs_0/30.tmap"
 Attribmap_unknown_attribs_0_30_END
 
-Attribmap_unknown_attribs_0_31::
-	incbin "gfx/unknown/attribs_0/31.tmap"
-Attribmap_unknown_attribs_0_31_END
+Attribmap_menu_multiplayer_gameboys_attr::
+	incbin "gfx/menu/multiplayer/gameboys_attr.tmap"
+Attribmap_menu_multiplayer_gameboys_attr_END
 
 Attribmap_unknown_attribs_0_32::
 	incbin "gfx/unknown/attribs_0/32.tmap"
