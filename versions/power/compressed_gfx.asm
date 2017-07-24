@@ -524,8 +524,8 @@ MenuMultiplayerGfx:
 MenuMultiplayerGfxEnd
 
 MenuMultiplayer2Gfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/multiplayer2.malias"
+	dbw NOT_COMPRESSED, MenuMultiplayer2GfxEnd - MenuMultiplayer2Gfx - 3
+	INCBIN "gfx/menu/multiplayer2.2bpp"
 MenuMultiplayer2GfxEnd
 
 ScreenGameOverGfx:
