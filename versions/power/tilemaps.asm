@@ -201,7 +201,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_94
 	dw Tilemap_unknown_tilemap_0_95
 	dw Tilemap_menu_multiplayer_trade_tmap
-	dw Tilemap_unknown_tilemap_0_97
+	dw Tilemap_menu_multiplayer_melody_transfer_tmap
 	dw Tilemap_menu_link_error_tmap
 	dw Tilemap_unknown_tilemap_0_99
 	dw Tilemap_unknown_tilemap_0_9a
@@ -824,9 +824,9 @@ Tilemap_menu_multiplayer_trade_tmap::
 	incbin "gfx/menu/multiplayer/trade_tmap.tmap"
 Tilemap_menu_multiplayer_trade_tmap_END
 
-Tilemap_unknown_tilemap_0_97::
-	incbin "gfx/unknown/tilemap_0/97.tmap"
-Tilemap_unknown_tilemap_0_97_END
+Tilemap_menu_multiplayer_melody_transfer_tmap::
+	incbin "gfx/menu/multiplayer/melody_transfer_tmap.tmap"
+Tilemap_menu_multiplayer_melody_transfer_tmap_END
 
 Tilemap_menu_link_error_tmap::
 	incbin "gfx/menu/link_error_tmap.tmap"
@@ -1088,7 +1088,7 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_59
 	dw Attribmap_unknown_attribs_0_59
 	dw Attribmap_menu_multiplayer_trade_attr
-	dw Attribmap_unknown_attribs_0_5b
+	dw Attribmap_menu_multiplayer_melody_transfer_attr
 	dw Attribmap_unknown_attribs_0_5c
 	dw Attribmap_unknown_attribs_0_5d
 	dw Attribmap_unknown_attribs_0_5e
@@ -1471,9 +1471,9 @@ Attribmap_menu_multiplayer_trade_attr::
 	incbin "gfx/menu/multiplayer/trade_attr.tmap"
 Attribmap_menu_multiplayer_trade_attr_END
 
-Attribmap_unknown_attribs_0_5b::
-	incbin "gfx/unknown/attribs_0/5b.tmap"
-Attribmap_unknown_attribs_0_5b_END
+Attribmap_menu_multiplayer_melody_transfer_attr::
+	incbin "gfx/menu/multiplayer/melody_transfer_attr.tmap"
+Attribmap_menu_multiplayer_melody_transfer_attr_END
 
 Attribmap_unknown_attribs_0_5c::
 	incbin "gfx/unknown/attribs_0/5c.tmap"
