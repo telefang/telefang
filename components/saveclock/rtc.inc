@@ -1,0 +1,3 @@
+M_SaveClock_ADVICE_RTCUnknown EQU 0
+M_SaveClock_ADVICE_RTCNotPresent EQU 1
+M_SaveClock_ADVICE_RTCPresent EQU 2
