@@ -35,7 +35,7 @@ SaveClock_ADVICE_ValidateRTCFunction::
     
 ;If we've already checked the RTC, don't check it again.
     ld a, [W_SaveClock_ADVICE_RTCCheckStatus]
-    cp 0
+    and a ;equivalent to cp 0, but less clocks/faster
     jp nz, .returnRTCStatus
 
 ;Ensure at least part of the save header is present.
