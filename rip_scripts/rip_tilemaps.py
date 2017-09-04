@@ -311,7 +311,7 @@ def compress_tilemap(data):
     
     #Technically, a whole number of bytes can indicate compressed data, we are
     #assuming #01.
-    encoded_bytes = ["\x01"]
+    encoded_bytes = [b"\x01"]
     bytes_to_encode = []
     incompressible = []
     
@@ -348,8 +348,8 @@ def compress_tilemap(data):
         if run_length >= 2 or inc_length >= 2 or dec_length >= 2:
             while len(incompressible) > 0:
                 inc_count = min(len(incompressible), 0x40)
-                encoded_bytes.append(chr(inc_count - 1))
-                encoded_bytes.append("".join(incompressible[:inc_count]))
+                encoded_bytes.append(bytes([inc_count - 1]))
+                encoded_bytes.append(b"".join(incompressible[:inc_count]))
                 incompressible = incompressible[inc_count:]
         
         #Now that we know how long each command can be, pick the best one.
@@ -364,40 +364,40 @@ def compress_tilemap(data):
                 run_length = 65
             
             cmd_byte = 0x40 | (run_length - 2)
-            encoded_bytes.append(chr(cmd_byte))
-            encoded_bytes.append(chr(this_byte))
+            encoded_bytes.append(bytes([cmd_byte]))
+            encoded_bytes.append(bytes([this_byte]))
             bytes_to_encode = bytes_to_encode[run_length:]
         elif inc_length >= 2 and inc_length > dec_length:
             if inc_length > 65:
                 inc_length = 65
             
             cmd_byte = 0x80 | (inc_length - 2)
-            encoded_bytes.append(chr(cmd_byte))
-            encoded_bytes.append(chr(this_byte))
+            encoded_bytes.append(bytes([cmd_byte]))
+            encoded_bytes.append(bytes([this_byte]))
             bytes_to_encode = bytes_to_encode[inc_length:]
         elif dec_length >= 2:
             if dec_length > 65:
                 dec_length = 65
             
             cmd_byte = 0xC0 | (dec_length - 2)
-            encoded_bytes.append(chr(cmd_byte))
-            encoded_bytes.append(chr(this_byte))
+            encoded_bytes.append(bytes([cmd_byte]))
+            encoded_bytes.append(bytes([this_byte]))
             bytes_to_encode = bytes_to_encode[dec_length:]
         else:
             #We can't compress data yet, so add this byte onto the pile of
             #uncompressible data and try again.
-            incompressible.append(chr(this_byte))
+            incompressible.append(bytes([this_byte]))
             bytes_to_encode = bytes_to_encode[1:]
     
     #Encode the last few bits of incompressible data if it exists
     while len(incompressible) > 0:
         inc_count = min(len(incompressible), 0x40)
-        encoded_bytes.append(chr(inc_count - 1))
-        encoded_bytes.append("".join(incompressible[:inc_count]))
+        encoded_bytes.append(bytes([inc_count - 1]))
+        encoded_bytes.append(b"".join(incompressible[:inc_count]))
         incompressible = incompressible[inc_count:]
         
-    encoded_bytes.append(chr(0xff))
-    return "".join(encoded_bytes)
+    encoded_bytes.append(bytes([0xff]))
+    return b"".join(encoded_bytes)
 
 def encode_literal_tilemap(data):
     """Given tile or attribute data, produce an uncompressed datastream.
@@ -405,17 +405,16 @@ def encode_literal_tilemap(data):
     This data format is necessary for any tilemap which is not 32 columns wide.
     It's the only format to support newlines."""
     
-    outdat = ["\x00"]
+    outdat = [b"\x00"]
     
     for i, row in enumerate(data):
-        for cell in row:
-            outdat.append(chr(cell))
+        outdat.append(bytes(row))
         
         if i < len(data) - 1:
-            outdat.append(chr(0xFE))
+            outdat.append(bytes([0xFE]))
     
-    outdat.append(chr(0xFF))
-    return "".join(outdat)
+    outdat.append(bytes([0xFF]))
+    return b"".join(outdat)
 
 def encode_tilemap(data):
     """Given tile or attribute data, produce a compressed datastream.
@@ -441,7 +440,7 @@ def encode_tilemap(data):
             break
     else:
         #Empty data gets a big fat 0xFF
-        return "\xff"
+        return b"\xff"
     
     if use_compression:
         return compress_tilemap(data)

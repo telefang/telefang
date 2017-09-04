@@ -205,7 +205,7 @@ def make_spritebin(args):
             rows = []
 
             for row in csvreader:
-                rows.append([cell.decode("utf-8") for cell in row])
+                rows.append(row)
 
             with open(dst_filename, 'wb') as dstfile:
                 dstfile.write(spritecsv2bin(rows))

@@ -1,6 +1,5 @@
 # coding=utf-8
 
-
 import mainscript_text
 import argparse, io, os.path, csv, math, struct
 
@@ -13,7 +12,7 @@ def parse_tablenames(filename):
     tables = []
     tbl_index = {}
 
-    with io.open(filename, "r", encoding="utf-8") as tablenames:
+    with open(filename, "r", encoding="utf-8") as tablenames:
         for line in tablenames:
             if line[0] == "#" or line == "":
                 continue
@@ -172,7 +171,7 @@ def extract(args):
             csvpath = os.path.join(args.output, table["filename"])
             mainscript_text.install_path(csvdir)
 
-            with open(csvpath, "w+") as table_csvfile:
+            with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
                 csvwriter = csv.writer(table_csvfile)
                 csvwriter.writerow(["#", args.language])
 
@@ -209,7 +208,7 @@ def extract(args):
             csvpath = os.path.join(args.output, table["filename"])
             mainscript_text.install_path(csvdir)
             
-            with open(csvpath, "w+") as table_csvfile:
+            with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
                 csvwriter = csv.writer(table_csvfile)
                 
                 pretty_row_length = math.ceil(math.sqrt(table["count"]))
@@ -261,16 +260,16 @@ def make_tbl(args):
         print("Compiling " + table["filename"])
         
         #Open and parse the data
-        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
+        with open(os.path.join(args.output, table["filename"]), "r", encoding="utf-8") as csvfile:
             csvreader = csv.reader(csvfile)
             headers = None
             rows = []
             
             for row in csvreader:
                 if headers is None:
-                    headers = [cell.decode("utf-8") for cell in row]
+                    headers = row
                 else:
-                    rows.append([cell.decode("utf-8") for cell in row])
+                    rows.append(row)
 
         #Determine what column we want
         index_col = headers.index("#")
@@ -290,7 +289,7 @@ def make_tbl(args):
         for i, row in enumerate(rows):
             if str_col >= len(row):
                 print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
-                packed_strings.append("")
+                packed_strings.append(b"")
                 continue
             
             packed = mainscript_text.pack_string(row[str_col], charmap, None, args.window_width, True)
@@ -301,11 +300,11 @@ def make_tbl(args):
                     packed = packed[0:table["stride"]]
                 else:
                     #Pad the string out with E0s.
-                    packed = packed + "".join(["\xe0"] * (table["stride"] - len(packed)))
-            elif "\xe0" not in packed:
+                    packed = packed + bytes([0xE0] * (table["stride"] - len(packed)))
+            elif b"\xe0" not in packed:
                 #Any data beyond an E0 is understood to be trash bytes; thus,
                 #it does not recieve the implicit terminator.
-                packed = packed + "\xe0"
+                packed = packed + b"\xe0"
             
             packed_strings.append(packed)
             
@@ -341,7 +340,7 @@ def make_tbl(args):
         reverse_entries = {}
         
         #Open and parse the data
-        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
+        with open(os.path.join(args.output, table["filename"]), "r", encoding="utf-8") as csvfile:
             csvreader = csv.reader(csvfile)
             
             for row in csvreader:

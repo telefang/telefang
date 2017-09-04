@@ -4,7 +4,7 @@
 # mainscript_text.py
 # Injects (and/or extracts) main script data from the master metatable.
 
-import argparse, errno, sys, os, os.path, struct, io, codecs, exceptions, urllib.request, urllib.error, urllib.parse, json, csv
+import argparse, errno, sys, os, os.path, struct, io, codecs, urllib.request, urllib.error, urllib.parse, json, csv
 
 def install_path(path):
     try:
@@ -55,7 +55,7 @@ def parse_charmap(filename):
     mapping = {}
     reverse_mapping = {}
 
-    with io.open(filename, "r", encoding="utf-8") as charmap:
+    with open(filename, "r", encoding="utf-8") as charmap:
         for line in charmap:
             if CHARMAP_DELIM not in line:
                 continue
@@ -77,13 +77,13 @@ def parse_charmap(filename):
                 chara = "\n"
 
             unparsed_hex = delim_split[-1].split("$")[1].strip()
-            bytes = 0
+            bytedata = 0
 
             for i in range(0, len(unparsed_hex), 2):
-                bytes += int(unparsed_hex[i:i+2], 16) << i // 2
+                bytedata += int(unparsed_hex[i:i+2], 16) << i // 2
 
-            mapping[chara] = bytes
-            reverse_mapping[bytes] = chara
+            mapping[chara] = bytedata
+            reverse_mapping[bytedata] = chara
 
     return mapping, reverse_mapping
 
@@ -91,7 +91,7 @@ def parse_bank_names(filename):
     """Parse the list of bank names"""
     banks = []
 
-    with io.open(filename, "r", encoding="utf-8") as banknames:
+    with open(filename, "r", encoding="utf-8") as banknames:
         for line in banknames:
             if line[0] == "#":
                 continue
@@ -415,7 +415,7 @@ def extract(args):
             wikipath = os.path.join(args.output, bank["filename"])
 
             install_path(wikidir)
-            with io.open(wikipath, "w+", encoding="utf-8") as bank_wikitext:
+            with open(wikipath, "w+", encoding="utf-8") as bank_wikitext:
                 bank_wikitext.write(wikitext)
 
 def asm(args):
@@ -454,10 +454,10 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
     This function, if provided with metrics, will also automatically insert a
     newline after window_width pixels."""
 
-    text_data = ""
-    line_data = ""
+    text_data = b""
+    line_data = b""
     line_px = 0
-    word_data = ""
+    word_data = b""
     word_px = 0
 
     special = ""
@@ -477,7 +477,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
     #Empty strings indicate text strings that alias to the next string in
     #sequence.
     if string == "":
-        return ""
+        return b""
     
     #Remove nowiki tags
     string = string.replace("<nowiki>", "")
@@ -500,7 +500,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
 
                 if is_literal and special_num == 0xE2:
                     #Nonstandard newline
-                    word_data += str(chr(special_num))
+                    word_data += bytes([special_num])
 
                     if metrics:
                         word_px += metrics[special_num]
@@ -508,7 +508,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                     max_px = window_width if even_line else window_width - 8
                     if len(line_data) > 0 and line_px + word_px > max_px:
                         #Next word will overflow, so inject a newline.
-                        text_data += line_data[:-1] + str(chr(0xE2))
+                        text_data += line_data[:-1] + bytes([0xE2])
                         line_data, line_px = word_data, word_px
                         even_line = not even_line
                     else:
@@ -516,17 +516,17 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                         line_data += word_data
                         line_px += word_px
 
-                    word_data, word_px = "", 0
+                    word_data, word_px = b"", 0
 
                     text_data += line_data
-                    line_data, line_px = "", 0
+                    line_data, line_px = b"", 0
                     even_line = not even_line
                 elif is_literal and not special.startswith("D"):
                     if special_num > 255:
                         print("Warning: Invalid literal special {} (0x{:3x})".format(special_num, special_num))
                         continue
 
-                    word_data += str(chr(special_num))
+                    word_data += bytes([special_num])
 
                     if metrics:
                         word_px += metrics[special_num]
@@ -537,13 +537,13 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                         for char in ctrl_code:
                             print("{0:x}".format(ord(char)))
                         print("\n")
-                        print("Found in line " + string.encode("utf-8") + "\n")
+                        print("Found in line " + string + "\n")
                         special = ""
                         continue
 
                     s = specials[ctrl_code]
                     val = special[1:]
-                    word_data += str(chr(s.byte))
+                    word_data += bytes([s.byte])
 
                     for value, name in list(s.names.items()):
                         if name == val:
@@ -588,7 +588,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                 
                 if char not in "\n":
                     enc_char = encode(char)
-                    word_data += str(chr(enc_char))
+                    word_data += bytes([enc_char])
                     
                     if metrics:
                         word_px += metrics[enc_char] + 1
@@ -597,7 +597,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                     max_px = window_width if even_line else window_width - 8
                     if len(line_data) > 0 and line_px + word_px > max_px:
                         #Next word will overflow, so inject a newline.
-                        text_data += line_data[:-1] + str(chr(0xE2))
+                        text_data += line_data[:-1] + bytes([0xE2])
                         line_data, line_px = word_data, word_px
                         even_line = not even_line
                     else:
@@ -605,11 +605,11 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                         line_data += word_data
                         line_px += word_px
                     
-                    word_data, word_px = "", 0
+                    word_data, word_px = b"", 0
                     
                     if char in "\n" and len(line_data) > 0:
-                        text_data += line_data + str(chr(0xE2))
-                        line_data = ""
+                        text_data += line_data + bytes([0xE2])
+                        line_data = b""
                         line_px = 0
                         even_line = not even_line
 
@@ -617,14 +617,14 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
     #needs to have it injected.
     line_window_width = (window_width if even_line else window_width - 8)
     if len(line_data) > 0 and line_px + word_px > line_window_width:
-        text_data += line_data[:-1] + str(chr(0xE2))
+        text_data += line_data[:-1] + bytes([0xE2])
         line_data = word_data
     else:
         line_data += word_data
     text_data += line_data
 
     if not end_sentinel:
-        text_data += "\xe1\x00" #Null terminator
+        text_data += b"\xe1\x00" #Null terminator
 
     return text_data
 
@@ -666,10 +666,13 @@ def parse_csv(csvfile):
     rows = []
 
     for row in csvreader:
+        if len(row) == 0:
+            continue
+
         if headers is None:
-            headers = [cell.decode("utf-8") for cell in row]
+            headers = row
         else:
-            rows.append([cell.decode("utf-8") for cell in row])
+            rows.append(row)
     
     return rows, headers
 
@@ -700,7 +703,7 @@ def make_tbl(args):
         
         print("Compiling " + bank["filename"])
         #Open and parse the data
-        with open(os.path.join(args.output, bank["filename"]), "r") as csvfile:
+        with open(os.path.join(args.output, bank["filename"]), "r", encoding='utf-8') as csvfile:
             rows, headers = parse_csv(csvfile)
 
         #Determine what column we want
@@ -712,7 +715,7 @@ def make_tbl(args):
 
         #Pack our strings
         table = []
-        packed_strings = [""] * len(rows)
+        packed_strings = [b""] * len(rows)
 
         baseaddr = bank["baseaddr"]
         lastbk = None
@@ -746,10 +749,10 @@ def make_tbl(args):
                 if len(split_row) > 1 and split_row[1] == "INTO":
                     #Partial string alias.
                     table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
-                    packed_strings[table_idx] = ""
+                    packed_strings[table_idx] = b""
                 else:
                     table.append(table[int(split_row[0], 16)])
-                    packed_strings[table_idx] = ""
+                    packed_strings[table_idx] = b""
                 
                 #We don't want to have to try to handle both overflow and
                 #aliasing at the same time, so don't.
@@ -814,7 +817,7 @@ def make_tbl(args):
             #Actually spill strings to the overflow bank now, in order.
             for table_idx in range(len(packed_strings) - strings_to_spill, len(packed_strings)):
                 cur_string = packed_strings[table_idx]
-                packed_strings[table_idx] = "\xec" + chr(overflow_ptr & 0xFF) + chr(overflow_ptr >> 8)
+                packed_strings[table_idx] = bytes([0xEC, overflow_ptr & 0xFF, overflow_ptr >> 8])
                 
                 if table_idx < len(table) - 1:
                     #fixup the next pointer in the table
@@ -856,7 +859,7 @@ def wikisync(args):
                 wikipath = os.path.join(args.output, bank["filename"])
                 
                 install_path(wikidir)
-                with io.open(wikipath, "w", encoding="utf-8") as bank_wikitext:
+                with open(wikipath, "w", encoding="utf-8") as bank_wikitext:
                     bank_wikitext.write(data["query"]["pages"][pageid]["revisions"][0]["*"])
 
 def update_data(args):
@@ -871,7 +874,7 @@ def update_data(args):
             with io.open(os.path.join(args.output, bank["legacy_filename"]), 'r', encoding="utf-8") as bank_wikifile:
                 rows, hdrs = parse_wikitext(bank_wikifile)
                 
-                with open(os.path.join(args.output, bank["filename"]), "w") as bank_csvfile:
+                with open(os.path.join(args.output, bank["filename"]), "w", encoding="utf-8") as bank_csvfile:
                     csvwriter = csv.writer(bank_csvfile)
                     
                     encoded_hdrs = [hdr.encode("utf-8") for hdr in hdrs]
