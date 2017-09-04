@@ -93,9 +93,8 @@ OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
      versions/speed/palettes.o
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
-# If your default python is 3, you may want to change this to python27.
+# If your default python is 3, you may want to change this to python3.
 PYTHON := python
-PRET := pokemon-reverse-engineering-tools/pokemontools
 
 $(foreach obj, $(OBJS), \
 	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
@@ -144,12 +143,14 @@ clean:
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pcm' -o -iname '*.scripttbl' \) -exec rm {} +
 
 %.2bpp: %.png
+	@echo "Building" $<
 	@rm -f $@
-	@$(PYTHON) $(PRET)/gfx.py 2bpp $<
+	@rgbgfx -d 2 -o $@ $<
 
 %.1bpp: %.png
+	@echo "Building" $<
 	@rm -f $@
-	@$(PYTHON) $(PRET)/gfx.py 1bpp $<
+	@rgbgfx -d 1 -o $@ $<
 
 %.pcm: %.wav
 	@rm -f $@
