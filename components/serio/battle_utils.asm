@@ -71,3 +71,9 @@ SerIO_PlaceChoiceCursor::
     ld a, $D0
     ld [W_LCDC_MetaspriteAnimationIndex], a
     jp LCDC_BeginMetaspriteAnimation
+    
+SECTION "VS Battle Copied Functions 3", ROMX[$5C41], BANK[$1F]
+SerIO_Increment4thOrderSubState::
+    ld hl, W_Battle_4thOrderSubState
+    inc [hl]
+    ret

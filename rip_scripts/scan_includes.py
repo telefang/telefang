@@ -13,7 +13,7 @@ import os.path
 includes = set()
 
 def scan_file(filename):
-	for line in open(filename):
+	for line in open(filename, encoding="utf-8"):
 		if 'INC' not in line.upper():
 			continue
 		line = line.split(';')[0]

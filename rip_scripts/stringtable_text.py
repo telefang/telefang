@@ -1,5 +1,4 @@
 # coding=utf-8
-from __future__ import division
 
 import mainscript_text
 import argparse, io, os.path, csv, math, struct
@@ -13,7 +12,7 @@ def parse_tablenames(filename):
     tables = []
     tbl_index = {}
 
-    with io.open(filename, "r", encoding="utf-8") as tablenames:
+    with open(filename, "r", encoding="utf-8") as tablenames:
         for line in tablenames:
             if line[0] == "#" or line == "":
                 continue
@@ -100,7 +99,7 @@ def extract_string(rom, charmap, max_length = None, expected_ptrs = None):
         elif next_chara in mainscript_text.reverse_specials:
             #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
             this_special = mainscript_text.specials[mainscript_text.reverse_specials[next_chara]]
-            string.append(u"«")
+            string.append("«")
             string.append(mainscript_text.reverse_specials[next_chara])
 
             if this_special.bts:
@@ -108,7 +107,7 @@ def extract_string(rom, charmap, max_length = None, expected_ptrs = None):
                 word = struct.unpack(fmt, rom.read(this_special.bts))[0]
                 string.append(mainscript_text.format_int(word))
 
-            string.append(u"»")
+            string.append("»")
 
             if this_special.end:
                 first_read = False
@@ -121,11 +120,11 @@ def extract_string(rom, charmap, max_length = None, expected_ptrs = None):
                 reading_trash = True
             
             #Literal specials
-            string.append(u"«")
+            string.append("«")
             string.append(mainscript_text.format_int(next_chara))
-            string.append(u"»")
+            string.append("»")
 
-    return u"".join(string)
+    return "".join(string)
 
 def extract(args):
     charmap = mainscript_text.parse_charmap(args.charmap)
@@ -172,7 +171,7 @@ def extract(args):
             csvpath = os.path.join(args.output, table["filename"])
             mainscript_text.install_path(csvdir)
 
-            with open(csvpath, "w+") as table_csvfile:
+            with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
                 csvwriter = csv.writer(table_csvfile)
                 csvwriter.writerow(["#", args.language])
 
@@ -182,7 +181,7 @@ def extract(args):
                         reverse_entries[rom.tell()] = len(entries)
                         entries.append(rom.tell())
                         data = extract_string(rom, charmap, table["stride"], expected_ptrs).encode("utf-8")
-                        idx = u"{0}".format(i + 1).encode("utf-8")
+                        idx = "{0}".format(i + 1).encode("utf-8")
                         csvwriter.writerow([idx, data])
                 elif table["format"] == "block":
                     rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
@@ -190,7 +189,7 @@ def extract(args):
                         reverse_entries[rom.tell()] = len(entries)
                         entries.append(rom.tell())
                         data = extract_string(rom, charmap, None, expected_ptrs).encode("utf-8")
-                        idx = u"{0}".format(i + 1).encode("utf-8")
+                        idx = "{0}".format(i + 1).encode("utf-8")
                         csvwriter.writerow([idx, data])
 
             #Save these for later
@@ -209,7 +208,7 @@ def extract(args):
             csvpath = os.path.join(args.output, table["filename"])
             mainscript_text.install_path(csvdir)
             
-            with open(csvpath, "w+") as table_csvfile:
+            with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
                 csvwriter = csv.writer(table_csvfile)
                 
                 pretty_row_length = math.ceil(math.sqrt(table["count"]))
@@ -219,7 +218,7 @@ def extract(args):
                     ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
                     addr = mainscript_text.flat(table["basebank"], ptr)
                     
-                    cur_row.append(u"{0}".format(foreign_ptrs[addr] + 1).encode("utf-8"))
+                    cur_row.append("{0}".format(foreign_ptrs[addr] + 1).encode("utf-8"))
                     if len(cur_row) >= pretty_row_length:
                         csvwriter.writerow(cur_row)
                         cur_row = []
@@ -239,11 +238,11 @@ def asm(args):
     tablenames = parse_tablenames(args.tablenames)
     
     for table in tablenames:
-        print u'SECTION "' + table["symbol"] + u' Section", ' + mainscript_text.format_sectionaddr_rom(mainscript_text.flat(table["basebank"], table["baseaddr"]))
-        print table["symbol"] + u'::'
-        print u'\tINCBIN "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + u'"'
-        print table["symbol"] + u'_END'
-        print u''
+        print('SECTION "' + table["symbol"] + ' Section", ' + mainscript_text.format_sectionaddr_rom(mainscript_text.flat(table["basebank"], table["baseaddr"])))
+        print(table["symbol"] + '::')
+        print('\tINCBIN "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + '"')
+        print(table["symbol"] + '_END')
+        print('')
 
 def make_tbl(args):
     charmap = mainscript_text.parse_charmap(args.charmap)
@@ -258,22 +257,22 @@ def make_tbl(args):
         if len(args.filenames) > 0 and table["objname"] not in args.filenames:
             continue
         
-        print "Compiling " + table["filename"]
+        print("Compiling " + table["filename"])
         
         #Open and parse the data
-        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
+        with open(os.path.join(args.output, table["filename"]), "r", encoding="utf-8") as csvfile:
             csvreader = csv.reader(csvfile)
             headers = None
             rows = []
             
             for row in csvreader:
                 if headers is None:
-                    headers = [cell.decode("utf-8") for cell in row]
+                    headers = row
                 else:
-                    rows.append([cell.decode("utf-8") for cell in row])
+                    rows.append(row)
 
         #Determine what column we want
-        index_col = headers.index(u"#")
+        index_col = headers.index("#")
         try:
             str_col = headers.index(args.language)
         except ValueError:
@@ -289,23 +288,23 @@ def make_tbl(args):
         
         for i, row in enumerate(rows):
             if str_col >= len(row):
-                print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
-                packed_strings.append("")
+                print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
+                packed_strings.append(b"")
                 continue
             
             packed = mainscript_text.pack_string(row[str_col], charmap, None, args.window_width, True)
             
             if "stride" in table:
                 if len(packed) > table["stride"]:
-                    print "WARNING: Row {} is too long for the current string table stride of {} in table {}.".format(i, table["stride"], table["filename"])
+                    print("WARNING: Row {} is too long for the current string table stride of {} in table {}.".format(i, table["stride"], table["filename"]))
                     packed = packed[0:table["stride"]]
                 else:
                     #Pad the string out with E0s.
-                    packed = packed + "".join(["\xe0"] * (table["stride"] - len(packed)))
-            elif "\xe0" not in packed:
+                    packed = packed + bytes([0xE0] * (table["stride"] - len(packed)))
+            elif b"\xe0" not in packed:
                 #Any data beyond an E0 is understood to be trash bytes; thus,
                 #it does not recieve the implicit terminator.
-                packed = packed + "\xe0"
+                packed = packed + b"\xe0"
             
             packed_strings.append(packed)
             
@@ -332,7 +331,7 @@ def make_tbl(args):
         if len(args.filenames) > 0 and table["objname"] not in args.filenames:
             continue
         
-        print "Compiling " + table["filename"]
+        print("Compiling " + table["filename"])
         
         foreign_ptrs = tablenames[table["foreign_id"]]["entries"]
         packed_strings = []
@@ -341,7 +340,7 @@ def make_tbl(args):
         reverse_entries = {}
         
         #Open and parse the data
-        with open(os.path.join(args.output, table["filename"]), "r") as csvfile:
+        with open(os.path.join(args.output, table["filename"]), "r", encoding="utf-8") as csvfile:
             csvreader = csv.reader(csvfile)
             
             for row in csvreader:
@@ -358,7 +357,7 @@ def main():
     ap.add_argument('mode')
     ap.add_argument('--charmap', type=str, default="charmap.asm")
     ap.add_argument('--tablenames', type=str, default="rip_scripts/stringtable_names.txt")
-    ap.add_argument('--language', type=str, default=u"Japanese")
+    ap.add_argument('--language', type=str, default="Japanese")
     ap.add_argument('--output', type=str, default="script")
     ap.add_argument('--metrics_loc', type=int, default=0x2FB00)
     ap.add_argument('--window_width', type=int, default=0x16 * 0x8) #16 tiles
@@ -373,7 +372,7 @@ def main():
     }.get(args.mode, None)
 
     if method == None:
-        raise Exception, "Unknown conversion method!"
+        raise Exception("Unknown conversion method!")
 
     method(args)
 
