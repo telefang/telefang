@@ -1,10 +1,10 @@
 # coding=utf-8
-from __future__ import division
+
 
 # mainscript_text.py
 # Injects (and/or extracts) main script data from the master metatable.
 
-import argparse, errno, sys, os, os.path, struct, io, codecs, exceptions, urllib2, json, csv
+import argparse, errno, sys, os, os.path, struct, io, codecs, exceptions, urllib.request, urllib.error, urllib.parse, json, csv
 
 def install_path(path):
     try:
@@ -65,16 +65,16 @@ def parse_charmap(filename):
 
             delim_split = line.split('"')
             chara = delim_split[1]
-            if chara == u"":
+            if chara == "":
                 #Special case: Quoted quotes.
                 #   e.g. charmap """, $22
 
                 #This parsing logic sucks arse.
                 if len(delim_split) > 3:
-                    chara = u"\""
+                    chara = "\""
 
-            if chara == u"\\n":
-                chara = u"\n"
+            if chara == "\\n":
+                chara = "\n"
 
             unparsed_hex = delim_split[-1].split("$")[1].strip()
             bytes = 0
@@ -143,7 +143,7 @@ def extract_metatable_from_rom(rom_filename, charmap, banknames, args):
 
             bank = bankdata.copy()
 
-            if "baseaddr" not in bank.keys():
+            if "baseaddr" not in list(bank.keys()):
                 bank["baseaddr"] = parsed[0]
                 bank["basebank"] = parsed[1]
 
@@ -179,34 +179,34 @@ def banked(flataddr):
 
 def format_int(i):
     if i < 0x10: #Small numbers lack the 0x
-        return u"{0:x}".format(i)
+        return "{0:x}".format(i)
     else: #Large numbers are hex
-        return u"0x{0:x}".format(i)
+        return "0x{0:x}".format(i)
 
 def format_hex(i):
     if i < 0x10: #Small numbers lack the 0x
-        return u"{0:x}".format(i)
+        return "{0:x}".format(i)
     else: #Large numbers are hex
-        return u"0x{0:x}".format(i)
+        return "0x{0:x}".format(i)
 
 def format_sectionaddr_rom(flataddr):
     """Format a flat address for the assembler's section macro."""
     if (flataddr < 0x4000):
-        return u"ROM0[${0:x}]".format(flataddr)
+        return "ROM0[${0:x}]".format(flataddr)
     else:
-        return u"ROMX[${0:x}], BANK[${1:x}]".format(0x4000 + flataddr % 0x4000, flataddr // 0x4000)
+        return "ROMX[${0:x}], BANK[${1:x}]".format(0x4000 + flataddr % 0x4000, flataddr // 0x4000)
     
 def format_control_code(cc, word = None):
     """Format a control code."""
     string = []
     
-    string.append(u"«")
+    string.append("«")
     string.append(cc)
     
     if word != None:
         string.append(format_int(word))
     
-    string.append(u"»")
+    string.append("»")
     
     return "".join(string)
 
@@ -217,9 +217,9 @@ def format_literal(chara, charmap = None):
     
     string = []
     
-    string.append(u"«")
+    string.append("«")
     string.append(format_int(chara))
-    string.append(u"»")
+    string.append("»")
     
     return "".join(string)
 
@@ -230,7 +230,7 @@ def extract(args):
 
     with open(args.rom, 'rb') as rom:
         for bank in banknames:
-            wikitext = [u"{|", u"|-", u"!Pointer", u"!" + args.language]
+            wikitext = ["{|", "|-", "!Pointer", "!" + args.language]
 
             rom.seek(flat(bank["basebank"], bank["baseaddr"]))
 
@@ -264,8 +264,8 @@ def extract(args):
             old_loc = None
             
             for i in range(tbl_length):
-                wikitext.append(u"|-")
-                wikitext.append(u"|0x{0:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2)))
+                wikitext.append("|-")
+                wikitext.append("|0x{0:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2)))
 
                 rom.seek(flat(bank["basebank"], bank["baseaddr"] + i * 2))
                 read_ptr = PTR.unpack(rom.read(2))[0]
@@ -284,8 +284,8 @@ def extract(args):
                 for j in range(i):
                     if read_ptr == PTR.unpack(rom.read(2))[0]:
                         #Aliased pointer!
-                        wikitext.append(u"|«ALIAS ROW 0x{0:x}»".format(j))
-                        print u"Pointer at 0x{0:x} fully aliases pointer 0x{1:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2), flat(bank["basebank"], bank["baseaddr"] + j * 2))
+                        wikitext.append("|«ALIAS ROW 0x{0:x}»".format(j))
+                        print("Pointer at 0x{0:x} fully aliases pointer 0x{1:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2), flat(bank["basebank"], bank["baseaddr"] + j * 2)))
                         break
                 else:
                     #Second, we try to see if this pointer is in the middle of
@@ -294,8 +294,8 @@ def extract(args):
                     #This alias detection breaks when the previous row uses the
                     #overflow code, so disable it if so.
                     if i > 0 and read_ptr < last_end - 1 and not redirected:
-                        print u"Pointer at 0x{0:x} partially aliases previous pointer".format(rom.tell() - 2)
-                        wikitext.append(u"|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(last_nonaliasing_row, read_ptr - last_start))
+                        print("Pointer at 0x{0:x} partially aliases previous pointer".format(rom.tell() - 2))
+                        wikitext.append("|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(last_nonaliasing_row, read_ptr - last_start))
                         continue
 
                     read_length = 1
@@ -376,8 +376,8 @@ def extract(args):
                             if redirected:
                                 loc = old_loc
                             
-                            while CHARA.unpack(rom.read(1))[0] == charmap[0][u" "] and read_length < expected_length:
-                                string.append(u" ")
+                            while CHARA.unpack(rom.read(1))[0] == charmap[0][" "] and read_length < expected_length:
+                                string.append(" ")
                                 loc += 1
                                 read_length += 1
 
@@ -388,17 +388,17 @@ def extract(args):
                             else:
                                 #There's a hole in the ROM!
                                 #Disassemble the next string.
-                                print u"Inaccessible data found at 0x{0:x}".format(flat(bank["basebank"], read_ptr))
+                                print("Inaccessible data found at 0x{0:x}".format(flat(bank["basebank"], read_ptr)))
 
-                                wikitext.append(u"|" + u"".join(string))
+                                wikitext.append("|" + "".join(string))
                                 string = []
 
-                                wikitext.append(u"|-")
-                                wikitext.append(u"|(No pointer)")
+                                wikitext.append("|-")
+                                wikitext.append("|(No pointer)")
 
                                 read_length += 1
 
-                    wikitext.append(u"|" + u"".join(string))
+                    wikitext.append("|" + "".join(string))
                     string = []
 
                     #Store the actual end pointer for later use.
@@ -406,10 +406,10 @@ def extract(args):
                     last_end = read_ptr + read_length
                     last_nonaliasing_row = i
 
-            wikitext.append(u"|-")
-            wikitext.append(u"|}")
+            wikitext.append("|-")
+            wikitext.append("|}")
 
-            wikitext = u"\n".join(wikitext)
+            wikitext = "\n".join(wikitext)
 
             wikidir = os.path.join(args.output, bank["basedir"])
             wikipath = os.path.join(args.output, bank["filename"])
@@ -433,20 +433,20 @@ def asm(args):
     banknames = parse_bank_names(args.banknames)
     banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
 
-    print u'SECTION "MainScript Meta Table", ' + format_sectionaddr_rom(args.metatable_loc)
+    print('SECTION "MainScript Meta Table", ' + format_sectionaddr_rom(args.metatable_loc))
 
     for bank in banknames:
-        print u"dw " + bank["symbol"]
-        print u"db BANK(" + bank["symbol"] + u')'
+        print("dw " + bank["symbol"])
+        print("db BANK(" + bank["symbol"] + ')')
 
-    print u''
+    print('')
 
     for bank in banknames:
-        print u'SECTION "' + bank["symbol"] + u' Section", ' + format_sectionaddr_rom(flat(bank["basebank"], bank["baseaddr"]))
-        print bank["symbol"] + u':'
-        print u'\tINCBIN "' + os.path.join(args.output, bank["objname"]).replace("\\", "/") + u'"'
-        print bank["symbol"] + u'_END'
-        print u''
+        print('SECTION "' + bank["symbol"] + ' Section", ' + format_sectionaddr_rom(flat(bank["basebank"], bank["baseaddr"])))
+        print(bank["symbol"] + ':')
+        print('\tINCBIN "' + os.path.join(args.output, bank["objname"]).replace("\\", "/") + '"')
+        print(bank["symbol"] + '_END')
+        print('')
 
 def pack_string(string, charmap, metrics, window_width, do_not_terminate = False):
     """Given a string, encode it as ROM table data.
@@ -460,7 +460,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
     word_data = ""
     word_px = 0
 
-    special = u""
+    special = ""
     skip_sentinel = False
     end_sentinel = do_not_terminate
 
@@ -471,8 +471,8 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
         try:
             return charmap[0][char]
         except KeyError:
-            print u"Warning: Character 0x{0:x} does not exist in current ROM.\n".format(ord(char))
-            return charmap[0][u"?"]
+            print("Warning: Character 0x{0:x} does not exist in current ROM.\n".format(ord(char)))
+            return charmap[0]["?"]
 
     #Empty strings indicate text strings that alias to the next string in
     #sequence.
@@ -480,8 +480,8 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
         return ""
     
     #Remove nowiki tags
-    string = string.replace(u"<nowiki>", u"")
-    string = string.replace(u"</nowiki>", u"")
+    string = string.replace("<nowiki>", "")
+    string = string.replace("</nowiki>", "")
 
     for char in string:
         if skip_sentinel:
@@ -489,7 +489,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
             continue
 
         if special:
-            if char in u">»": #End of a control code.
+            if char in ">»": #End of a control code.
                 special = special[1:]
                 is_literal = True
 
@@ -523,7 +523,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                     even_line = not even_line
                 elif is_literal and not special.startswith("D"):
                     if special_num > 255:
-                        print u"Warning: Invalid literal special {} (0x{:3x})".format(special_num, special_num)
+                        print("Warning: Invalid literal special {} (0x{:3x})".format(special_num, special_num))
                         continue
 
                     word_data += str(chr(special_num))
@@ -532,30 +532,30 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                         word_px += metrics[special_num]
                 else:
                     ctrl_code = special[0]
-                    if ctrl_code not in specials.keys():
-                        print u"Warning: Invalid control code: "
+                    if ctrl_code not in list(specials.keys()):
+                        print("Warning: Invalid control code: ")
                         for char in ctrl_code:
-                            print u"{0:x}".format(ord(char))
-                        print u"\n"
-                        print "Found in line " + string.encode("utf-8") + "\n"
-                        special = u""
+                            print("{0:x}".format(ord(char)))
+                        print("\n")
+                        print("Found in line " + string.encode("utf-8") + "\n")
+                        special = ""
                         continue
 
                     s = specials[ctrl_code]
                     val = special[1:]
                     word_data += str(chr(s.byte))
 
-                    for value, name in s.names.items():
+                    for value, name in list(s.names.items()):
                         if name == val:
                             val = value
                             break
                     else:
-                        if val[:2] == u"0x":
+                        if val[:2] == "0x":
                             val = int(val[2:], 16)
                         else:
                             val = int(val, s.base)
 
-                    if val == u"":
+                    if val == "":
                         val = s.default
 
                     if s.bts:
@@ -565,35 +565,35 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                     if s.end:
                         end_sentinel = True
 
-                    if special[0] == u"&":
+                    if special[0] == "&":
                         if val == 0xd448:
                             word_px += 3*8
                         else:
                             word_px += 8*8
 
-                special = u""
+                special = ""
             else:
                 special += char
         else:
-            if char == u"\\":
+            if char == "\\":
                 skip_sentinel = True
 
-            if char in u"<«":
+            if char in "<«":
                 special = char
             else:
-                if char in u"\r":
+                if char in "\r":
                     #Fix CRLF-based files parsed on LF operating systems.
                     #NOTE: Breaks on Mac OS 9 and lower. Who cares?
                     continue
                 
-                if char not in u"\n":
+                if char not in "\n":
                     enc_char = encode(char)
                     word_data += str(chr(enc_char))
                     
                     if metrics:
                         word_px += metrics[enc_char] + 1
                 
-                if char in (u" ", u"\n"):
+                if char in (" ", "\n"):
                     max_px = window_width if even_line else window_width - 8
                     if len(line_data) > 0 and line_px + word_px > max_px:
                         #Next word will overflow, so inject a newline.
@@ -607,7 +607,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                     
                     word_data, word_px = "", 0
                     
-                    if char in u"\n" and len(line_data) > 0:
+                    if char in "\n" and len(line_data) > 0:
                         text_data += line_data + str(chr(0xE2))
                         line_data = ""
                         line_px = 0
@@ -630,15 +630,15 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
 
 def parse_wikitext(wikifile):
     wikitext = wikifile.read()
-    tbl_start = wikitext.find(u"{|")
-    tbl_end = wikitext.find(u"|}")
-    rows = wikitext[tbl_start:tbl_end].split(u"|-")
+    tbl_start = wikitext.find("{|")
+    tbl_end = wikitext.find("|}")
+    rows = wikitext[tbl_start:tbl_end].split("|-")
     parsed_rows = []
     parsed_hdrs = []
 
     for row in rows:
-        cols = row.split(u"\n|")[1:]
-        hdrs = row.split(u"\n!")[1:]
+        cols = row.split("\n|")[1:]
+        hdrs = row.split("\n!")[1:]
 
         if len(hdrs) > 0:
             #Extract headers
@@ -682,7 +682,7 @@ def make_tbl(args):
     overflow_ptr = 0x4000
     overflow_bank_id = None
     
-    if args.language == u"Japanese":
+    if args.language == "Japanese":
         metrics = None
     else:
         metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
@@ -698,13 +698,13 @@ def make_tbl(args):
         #If filenames are specified, don't bother because we can't do on-demand
         #compilation anyway and the makefile gets the path wrong
         
-        print "Compiling " + bank["filename"]
+        print("Compiling " + bank["filename"])
         #Open and parse the data
         with open(os.path.join(args.output, bank["filename"]), "r") as csvfile:
             rows, headers = parse_csv(csvfile)
 
         #Determine what column we want
-        ptr_col = headers.index(u"Pointer")
+        ptr_col = headers.index("Pointer")
         try:
             str_col = headers.index(args.language)
         except ValueError:
@@ -718,31 +718,31 @@ def make_tbl(args):
         lastbk = None
 
         bank_window_width = args.window_width
-        if "window_width" in bank.keys():
+        if "window_width" in list(bank.keys()):
             bank_window_width = bank["window_width"]
             
         last_table_index = 0
 
         for i, row in enumerate(rows):
-            if u"#" in row[ptr_col]:
-                print "Row {} is not a message, skipped".format(i)
+            if "#" in row[ptr_col]:
+                print("Row {} is not a message, skipped".format(i))
                 continue
                 
-            if row[ptr_col] != u"(No pointer)":
+            if row[ptr_col] != "(No pointer)":
                 table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
                 last_table_index = table_idx
             else:
                 table_idx = last_table_index
             
             if str_col >= len(row):
-                print "WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i)
+                print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
                 table.append(baseaddr)
-                packed_strings[table_idx] = pack_string(u"/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
+                packed_strings[table_idx] = pack_string("/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
                 continue
             
-            if row[str_col][:11] == u"«ALIAS ROW " or row[str_col][:11] == u"<ALIAS ROW ":
+            if row[str_col][:11] == "«ALIAS ROW " or row[str_col][:11] == "<ALIAS ROW ":
                 #Aliased string!
-                split_row = row[str_col][11:-1].split(u" ")
+                split_row = row[str_col][11:-1].split(" ")
                 if len(split_row) > 1 and split_row[1] == "INTO":
                     #Partial string alias.
                     table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
@@ -755,10 +755,10 @@ def make_tbl(args):
                 #aliasing at the same time, so don't.
                 last_aliased_row = table_idx
             else:
-                packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == u"(No pointer)")
+                packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == "(No pointer)")
                 packed_strings[table_idx] += packed #We concat here in case of nopointer rows
                 
-                if row[ptr_col] != u"(No pointer)":
+                if row[ptr_col] != "(No pointer)":
                     #Yes, some text banks have strings not mentioned in the
                     #table because screw you.
                     table.append(baseaddr)
@@ -766,10 +766,10 @@ def make_tbl(args):
                     #Sanity check: are our pointer numbers increasing?
                     nextbk = int(rows[i][ptr_col], 16)
                     if lastbk != None and nextbk != lastbk + 2:
-                        print "Warning: Pointer " + rows[i][ptr_col] + " is out of order."
+                        print("Warning: Pointer " + rows[i][ptr_col] + " is out of order.")
                     lastbk = nextbk
                 else:
-                    print "Warning: Row explicitly marked with no pointer"
+                    print("Warning: Row explicitly marked with no pointer")
                 
                 baseaddr += len(packed)
         
@@ -786,7 +786,7 @@ def make_tbl(args):
             bytes_remaining -= len(line)
         
         if bytes_remaining <= 0:
-            print "Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining))
+            print("Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining)))
             
             #Compiled bank exceeds the amount of space available in the bank.
             #Start assigning strings from the last one forward to be spilled
@@ -799,9 +799,9 @@ def make_tbl(args):
                     #We can't spill aliased rows, nor do we want to attempt to
                     #support that usecase, since it would be too much work.
                     #Instead, stop spilling at the end.
-                    print "WARNING: Terminating spills at 0x{0:x} due to aliasing.".format(table_idx)
-                    print "Your bank likely will not fit upon assembly."
-                    print "Please consider removing aliasing rows."
+                    print("WARNING: Terminating spills at 0x{0:x} due to aliasing.".format(table_idx))
+                    print("Your bank likely will not fit upon assembly.")
+                    print("Please consider removing aliasing rows.")
                     break
                 
                 strings_to_spill += 1
@@ -824,7 +824,7 @@ def make_tbl(args):
                 overflow_strings.append(cur_string)
                 overflow_ptr += len(cur_string)
                 
-            print "Spilled 0x{0:x} bytes to overflow bank".format(abs(string_bytes_saved))
+            print("Spilled 0x{0:x} bytes to overflow bank".format(abs(string_bytes_saved)))
 
         #Write the data out to the object files. We're done here!
         with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
@@ -844,10 +844,10 @@ def wikisync(args):
     banknames = parse_bank_names(args.banknames)
     
     for h, bank in enumerate(banknames):
-        api_url = u"http://wiki.telefang.net/api.php?action=query&titles=Wikifang:Telefang_1_Translation_Patch/Text_dump/{}&format=json&prop=revisions&rvprop=content".format(bank["wikiname"].strip())
-        full_wikiname = u"Wikifang:Telefang 1 Translation Patch/Text dump/{}".format(bank["wikiname"].strip())
+        api_url = "http://wiki.telefang.net/api.php?action=query&titles=Wikifang:Telefang_1_Translation_Patch/Text_dump/{}&format=json&prop=revisions&rvprop=content".format(bank["wikiname"].strip())
+        full_wikiname = "Wikifang:Telefang 1 Translation Patch/Text dump/{}".format(bank["wikiname"].strip())
         
-        wikifile = urllib2.urlopen(api_url)
+        wikifile = urllib.request.urlopen(api_url)
         data = json.load(wikifile)
         
         for pageid in data["query"]["pages"]:
@@ -893,7 +893,7 @@ def main():
     ap.add_argument('mode')
     ap.add_argument('--charmap', type=str, default="charmap.asm")
     ap.add_argument('--banknames', type=str, default="rip_scripts/mainscript_bank_names.txt")
-    ap.add_argument('--language', type=str, default=u"Japanese")
+    ap.add_argument('--language', type=str, default="Japanese")
     ap.add_argument('--output', type=str, default="script")
     ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
     ap.add_argument('--metrics_loc', type=int, default=0x2FB00)
@@ -912,7 +912,7 @@ def main():
     }.get(args.mode, None)
 
     if method == None:
-        raise Exception, "Unknown conversion method!"
+        raise Exception("Unknown conversion method!")
 
     method(args)
 

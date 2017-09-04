@@ -59,10 +59,10 @@ def rip_palettedata(rom, offset = None, count = 1):
 
 def extract(args):
     with open(args.rom, 'rb') as rom:
-        print "INCLUDE \"telefang.inc\""
-        print ""
-        print "SECTION \"CGB Background Palette Data\", " + format_sectionaddr_rom(args.bg_palette_loc)
-        print "LCDC_CGB_BGPaletteTable::"
+        print("INCLUDE \"telefang.inc\"")
+        print("")
+        print("SECTION \"CGB Background Palette Data\", " + format_sectionaddr_rom(args.bg_palette_loc))
+        print("LCDC_CGB_BGPaletteTable::")
         
         bgp_table, bgp_code = rip_palettedata(rom, args.bg_palette_loc, args.bg_palette_len)
         max_bgp_index = 0
@@ -72,24 +72,24 @@ def extract(args):
                     max_bgp_index = index
         
         for code in bgp_code:
-            print "    " + code
+            print("    " + code)
         
-        print "\nSECTION \"CGB Background Color Data\", " + format_sectionaddr_rom(args.bg_color_loc)
-        print "LCDC_CGB_BGColorTable::"
+        print("\nSECTION \"CGB Background Color Data\", " + format_sectionaddr_rom(args.bg_color_loc))
+        print("LCDC_CGB_BGColorTable::")
         
         bgc_code = rip_colordata(rom, args.bg_color_loc, max_bgp_index)
         
         i = 0
         
         for codeset in bgc_code:
-            print ";Palette {0:X}".format(i)
+            print(";Palette {0:X}".format(i))
             i += 1
             
             for code in codeset:
-                print "    " + code
+                print("    " + code)
         
-        print "\nSECTION \"CGB Object Palette Data\", " + format_sectionaddr_rom(args.obj_palette_loc)
-        print "LCDC_CGB_OBPaletteTable::"
+        print("\nSECTION \"CGB Object Palette Data\", " + format_sectionaddr_rom(args.obj_palette_loc))
+        print("LCDC_CGB_OBPaletteTable::")
         
         obp_table, obp_code = rip_palettedata(rom, args.obj_palette_loc, args.obj_palette_len)
         max_obp_index = 0
@@ -99,21 +99,21 @@ def extract(args):
                     max_obp_index = index
         
         for code in obp_code:
-            print "    " + code
+            print("    " + code)
         
-        print "\nSECTION \"CGB Object Color Data\", " + format_sectionaddr_rom(args.obj_color_loc)
-        print "LCDC_CGB_OBColorTable::"
+        print("\nSECTION \"CGB Object Color Data\", " + format_sectionaddr_rom(args.obj_color_loc))
+        print("LCDC_CGB_OBColorTable::")
         
         obc_code = rip_colordata(rom, args.obj_color_loc, max_obp_index)
         
         i = 0
         
         for codeset in obc_code:
-            print ";Palette {0:X}".format(i)
+            print(";Palette {0:X}".format(i))
             i += 1
             
             for code in codeset:
-                print "    " + code
+                print("    " + code)
         
 
 def main():
@@ -134,7 +134,7 @@ def main():
     }.get(args.mode, None)
 
     if method == None:
-        raise Exception, "Unknown conversion method!"
+        raise Exception("Unknown conversion method!")
 
     method(args)
 

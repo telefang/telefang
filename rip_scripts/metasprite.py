@@ -1,5 +1,5 @@
 # coding=utf-8
-from __future__ import division
+
 
 from mainscript_text import PTR, CHARA, flat, banked, format_hex, format_sectionaddr_rom, install_path
 import argparse, io, os.path, csv
@@ -69,7 +69,7 @@ def rip_msprite_table(rom, offset = None):
         cur += 2
         end = min(offset_ptr, end)
         
-        if offset_ptr not in ripped_sprites.keys():
+        if offset_ptr not in list(ripped_sprites.keys()):
             try:
                 ripped_sprites[offset_ptr] = rip_msprite(rom, flat(bank, offset_ptr))
             except KeyError:
@@ -82,48 +82,48 @@ def rip_msprite_table(rom, offset = None):
         table_ptr_list.append(offset_ptr)
     
     #Now that we have the tables and their data, generate the ASM for it...
-    data_asmsrc = u""
-    table_asmsrc = u""
+    data_asmsrc = ""
+    table_asmsrc = ""
     files = {}
     
-    table_symbol = u"MetaSprite_" + u"{0:x}".format(bank)
+    table_symbol = "MetaSprite_" + "{0:x}".format(bank)
     
-    table_asmsrc += u"SECTION \"" + table_symbol + u"\", ROMX[$" + u"{0:x}".format(table_ptr) + u"], BANK[$" + u"{0:x}".format(bank) + u"]\n"
-    table_asmsrc += table_symbol + u"::\n"
+    table_asmsrc += "SECTION \"" + table_symbol + "\", ROMX[$" + "{0:x}".format(table_ptr) + "], BANK[$" + "{0:x}".format(bank) + "]\n"
+    table_asmsrc += table_symbol + "::\n"
     
-    sorted_ptrs = ripped_sprites.keys()
+    sorted_ptrs = list(ripped_sprites.keys())
     sorted_ptrs.sort()
     last_ptrkey_end = 0x0000
     
     for ptrkey in sorted_ptrs:
         val = ripped_sprites[ptrkey]
         
-        symbol = table_symbol + u"_" + u"{0:x}".format(ptrkey)
-        file = u"gfx/unknown/metasprite_" + u"{0:x}".format(bank) + u"/" + u"{0:x}".format(ptrkey) + u".sprite.csv"
-        binfile = u"gfx/unknown/metasprite_" + u"{0:x}".format(bank) + u"/" + u"{0:x}".format(ptrkey) + u".sprite.bin"
+        symbol = table_symbol + "_" + "{0:x}".format(ptrkey)
+        file = "gfx/unknown/metasprite_" + "{0:x}".format(bank) + "/" + "{0:x}".format(ptrkey) + ".sprite.csv"
+        binfile = "gfx/unknown/metasprite_" + "{0:x}".format(bank) + "/" + "{0:x}".format(ptrkey) + ".sprite.bin"
         
         if last_ptrkey_end != ptrkey:
-            data_asmsrc += u"SECTION \"" + symbol + u"\", ROMX[$" + u"{0:x}".format(ptrkey) + u"], BANK[$" + u"{0:x}".format(bank) + u"]\n"
+            data_asmsrc += "SECTION \"" + symbol + "\", ROMX[$" + "{0:x}".format(ptrkey) + "], BANK[$" + "{0:x}".format(bank) + "]\n"
         
-        data_asmsrc += symbol + u"::\n"
+        data_asmsrc += symbol + "::\n"
         
         #ASSUMPTION: All 0 size metasprites are dummy pointers
         if len(val) > 0:
-            data_asmsrc += u"    INCBIN \"" + binfile + u"\"\n"
-        data_asmsrc += symbol + u"_END::\n"
+            data_asmsrc += "    INCBIN \"" + binfile + "\"\n"
+        data_asmsrc += symbol + "_END::\n"
         
-        files[file] = u"X,Y,Tile Offset,Attribute Mixing,Attributes\n"
+        files[file] = "X,Y,Tile Offset,Attribute Mixing,Attributes\n"
         for spritecfg in val:
-            files[file] += u"{0:x},{1:x},{2:x},{3},{4:x}\n".format(spritecfg['x'], spritecfg['y'], spritecfg['tile'], spritecfg['attrib_mode'], spritecfg['attribs'])
+            files[file] += "{0:x},{1:x},{2:x},{3},{4:x}\n".format(spritecfg['x'], spritecfg['y'], spritecfg['tile'], spritecfg['attrib_mode'], spritecfg['attribs'])
         
         last_ptrkey_end = ptrkey + 1 + len(val) * 5
     
     for ptr in table_ptr_list:
-        symbol = table_symbol + u"_" + u"{0:x}".format(ptr)
+        symbol = table_symbol + "_" + "{0:x}".format(ptr)
 
-        table_asmsrc += u"    dw " + symbol + u"\n"
+        table_asmsrc += "    dw " + symbol + "\n"
     
-    asm_src = table_asmsrc + u"\n" + data_asmsrc
+    asm_src = table_asmsrc + "\n" + data_asmsrc
     
     rom.seek(cloc)
     return (asm_src, files)
@@ -144,16 +144,16 @@ def rip_msprite_mtable(rom, offset = 0x094D, count = 9):
     for i in range(0, count):
         ptrs.append(PTR.unpack(rom.read(2))[0])
 
-    asmsrc = u"SECTION \"MetaSprite metatable\", " + format_sectionaddr_rom(offset) + u"\n"
-    asmsrc += u"MetaspriteBankMetatable::\n"
+    asmsrc = "SECTION \"MetaSprite metatable\", " + format_sectionaddr_rom(offset) + "\n"
+    asmsrc += "MetaspriteBankMetatable::\n"
 
     for bank in banks:
-        asmsrc += u"    db BANK(MetaSprite_" + u"{0:x}".format(bank) + u")\n"
+        asmsrc += "    db BANK(MetaSprite_" + "{0:x}".format(bank) + ")\n"
 
-    asmsrc += u"MetaspriteAddressMetatable::\n"
+    asmsrc += "MetaspriteAddressMetatable::\n"
 
     for bank, ptr in zip(banks, ptrs):
-        asmsrc += u"    dw MetaSprite_" + u"{0:x}".format(bank) + u"\n"
+        asmsrc += "    dw MetaSprite_" + "{0:x}".format(bank) + "\n"
 
     asmsrc += "\n"
     
@@ -161,7 +161,7 @@ def rip_msprite_mtable(rom, offset = 0x094D, count = 9):
     for bank, ptr in zip(banks, ptrs):
         table_asmsrc, table_files = rip_msprite_table(rom, flat(bank, ptr))
         
-        asmsrc += table_asmsrc + u"\n"
+        asmsrc += table_asmsrc + "\n"
         files.update(table_files)
     
     return (asmsrc, files)
@@ -170,13 +170,13 @@ def extract(args):
     with open(args.filenames[0], 'rb') as rom:
         asmsrc, files = rip_msprite_mtable(rom, args.metatable_loc)
         
-        for filename, data in files.iteritems():
+        for filename, data in files.items():
             install_path(os.path.dirname(filename))
             
             with io.open(filename, "w+", encoding="utf-8") as spr_csv:
                 spr_csv.write(data)
         
-        print asmsrc
+        print(asmsrc)
 
 def spritecsv2bin(data):
     """Given an array representation of CSV source data, produce a string
@@ -196,7 +196,7 @@ def spritecsv2bin(data):
 
 def make_spritebin(args):
     for filename in args.filenames:
-        print "Compiling " + filename
+        print("Compiling " + filename)
         
         dst_filename = os.path.splitext(filename)[0] + ".bin"
         
@@ -223,7 +223,7 @@ def main():
     }.get(args.mode, None)
 
     if method == None:
-        raise Exception, "Unknown conversion method!"
+        raise Exception("Unknown conversion method!")
 
     method(args)
 

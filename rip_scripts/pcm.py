@@ -1,4 +1,4 @@
-from __future__ import division
+
 
 # pcm.py
 # Converts between .wav files and 4-bit pcm data. (pcm = pulse-code modulation)
@@ -23,7 +23,7 @@ def convert_to_wav(filenames=[], options={}):
             byte = pcm_file.read(1)
             while byte != "":
                 byte = struct.unpack('B', byte)[0]
-                for i in reversed(range(2)):
+                for i in reversed(list(range(2))):
                     bit_index = i * 4
                     value = (byte >> bit_index) & 0xF
                     samples.append(value)
@@ -69,7 +69,7 @@ def convert_to_pcm(filenames=[], options={}):
 
         # Pack the 4-bit samples together.
         packed_samples = bytearray()
-        for i in xrange(0, len(clamped_samples), 2):
+        for i in range(0, len(clamped_samples), 2):
             # Read 2 pcm values to pack one byte.
             packed_value = 0
             for j in range(2):
@@ -100,7 +100,7 @@ def get_wav_samples(filename):
 
     # Unpack the values based on the sample byte width.
     unpacked_samples = []
-    for i in xrange(0, len(samples), sample_width):
+    for i in range(0, len(samples), sample_width):
         if sample_width == 1:
             fmt = 'B'
             largest_sample = 0xFF
@@ -109,7 +109,7 @@ def get_wav_samples(filename):
             largest_sample = 0xFFFF
         else:
             # todo: support 3-byte sample width
-            raise Exception, "Unsupported sample width: " + str(sample_width)
+            raise Exception("Unsupported sample width: " + str(sample_width))
 
         value = struct.unpack(fmt, samples[i:i + sample_width])[0]
         unpacked_samples.append(value)
@@ -146,7 +146,7 @@ def main():
     }.get(args.mode, None)
 
     if method == None:
-        raise Exception, "Unknown conversion method!"
+        raise Exception("Unknown conversion method!")
 
     method(args.filenames)
 

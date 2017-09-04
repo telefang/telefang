@@ -101,42 +101,42 @@ for line in open(sys.argv[2] + "/compressed_gfx_names.txt"):
     graphics[i]['label'] = filename.replace('/', ' ').replace('_', ' ').title().replace(' ', '').replace("Dmg", "DMG")+"Gfx"
     i += 1
 
-print
-print 'SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]'
+print()
+print('SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]')
 for i in range(NUMGFX):
     g = graphics[i]
     if g['label']:
-        print "\tdbwb BANK({}),\t${:04x}, 0 ; ${:02x}".format(g['label'], g['target'], i)
+        print("\tdbwb BANK({}),\t${:04x}, 0 ; ${:02x}".format(g['label'], g['target'], i))
     else:
-        print "\tdbwb ${:02x},\t${:04x}, 0 ; ${:02x}".format(g['bank'], g['target'], i)
+        print("\tdbwb ${:02x},\t${:04x}, 0 ; ${:02x}".format(g['bank'], g['target'], i))
 
-print
-print 'SECTION "Compressed gfx pointer table 2", HOME[$1DE1]'
+print()
+print('SECTION "Compressed gfx pointer table 2", HOME[$1DE1]')
 for i in range(NUMGFX):
     g = graphics[i]
     if g['label']:
-        print "\tdw {} ; ${:02x}".format(g['label'], i)
+        print("\tdw {} ; ${:02x}".format(g['label'], i))
     else:
-        print "\tdw ${:04x} ; ${:02x}".format(g['pointer'], i)
+        print("\tdw ${:04x} ; ${:02x}".format(g['pointer'], i))
 
-print "NOT_COMPRESSED EQU 0"
-print "COMPRESSED EQU 1"
+print("NOT_COMPRESSED EQU 0")
+print("COMPRESSED EQU 1")
 
 for i in range(NUMGFX):
     g = graphics[i]
     if g['label']:
-        print
+        print()
         if i != 0 and graphics[i-1]['bank'] == g['bank'] and graphics[i-1]['pointer'] + graphics[i-1]['size'] == g['pointer']:
             pass
         else:
-            print 'SECTION "{}", ROMX[${:04x}], BANK[${:02x}]'.format(g['title'], g['pointer'], g['bank'])
-        print "{}:".format(g['label'])
+            print('SECTION "{}", ROMX[${:04x}], BANK[${:02x}]'.format(g['title'], g['pointer'], g['bank']))
+        print("{}:".format(g['label']))
         if g['is_compressed']:
-            print '\tdb COMPRESSED'
+            print('\tdb COMPRESSED')
         else:
-            print '\tdbw NOT_COMPRESSED, {}End - {} - 3'.format(g['label'], g['label'])
-        print '\tINCBIN "' + sys.argv[2] + '/gfx/{}.{}"'.format(g['filename'], ['2bpp', 'malias'][g['is_compressed']])
-        print "{}End".format(g['label'])
+            print('\tdbw NOT_COMPRESSED, {}End - {} - 3'.format(g['label'], g['label']))
+        print('\tINCBIN "' + sys.argv[2] + '/gfx/{}.{}"'.format(g['filename'], ['2bpp', 'malias'][g['is_compressed']]))
+        print("{}End".format(g['label']))
 
 for i in range(NUMGFX):
     g = graphics[i]

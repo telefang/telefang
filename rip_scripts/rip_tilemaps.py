@@ -1,8 +1,8 @@
 # coding=utf-8
-from __future__ import division
+
 
 import mainscript_text
-import argparse, io, StringIO, os.path, csv, math, struct
+import argparse, io, os.path, csv, math, struct
 
 def parse_mapnames(filename):
     """Parse the list of tilemap names.
@@ -45,7 +45,7 @@ def parse_mapnames(filename):
                 
                 bank["id"] = len(banks)
                 
-                if not bank_index.has_key(bank["category"]):
+                if bank["category"] not in bank_index:
                     bank_index[bank["category"]] = {}
                 
                 bank_index[bank["category"]][bank["bank"]] = bank["id"]
@@ -69,13 +69,13 @@ def parse_mapnames(filename):
 
                 table["id"] = len(datas)
 
-                if not data_index.has_key(table["category"]):
+                if table["category"] not in data_index:
                     data_index[table["category"]] = {}
 
-                if not data_index[table["category"]].has_key(table["bank"]):
+                if table["bank"] not in data_index[table["category"]]:
                     data_index[table["category"]][table["bank"]] = {}
 
-                if not data_index[table["category"]][table["bank"]].has_key(table["index"]):
+                if table["index"] not in data_index[table["category"]][table["bank"]]:
                     data_index[table["category"]][table["bank"]][table["index"]] = {}
 
                 data_index[table["category"]][table["bank"]][table["index"]] = table["id"]
@@ -479,31 +479,31 @@ def asm(args):
             bank_datas["attrib"].append(this_bank_data)
 
         #Generate ASM for the metatables
-        for category_name, category_index in datas_index.items():
+        for category_name, category_index in list(datas_index.items()):
             if category_name == "attrib":
-                print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs)
-                print u'RLEAttribmapBanks::'
+                print('SECTION "' + category_name + ' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs))
+                print('RLEAttribmapBanks::')
             elif category_name == "tilemap":
-                print u'SECTION "' + category_name + u' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc)
-                print u'RLETilemapBanks::'
+                print('SECTION "' + category_name + ' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc))
+                print('RLETilemapBanks::')
 
-            for bank_id, bank_table_index in category_index.items():
+            for bank_id, bank_table_index in list(category_index.items()):
                 bank = banks[bank_index[category_name][bank_id]]
-                print u'\tdb BANK(' + bank["symbol"] + ')'
+                print('\tdb BANK(' + bank["symbol"] + ')')
 
-            print u''
+            print('')
 
-        print u''
+        print('')
         
         #Generate ASM for each individual table.
-        for category_name, category_index in datas_index.items():
-            for bank_id, _ in category_index.items():
+        for category_name, category_index in list(datas_index.items()):
+            for bank_id, _ in list(category_index.items()):
                 bank = banks[bank_index[category_name][bank_id]]
                 
                 rom.seek(bank["flataddr"])
                 
-                print u'SECTION "' + category_name + u' Bank {0}'.format(bank_id) + u'", ' + mainscript_text.format_sectionaddr_rom(bank["flataddr"])
-                print bank["symbol"] + u'::'
+                print('SECTION "' + category_name + ' Bank {0}'.format(bank_id) + '", ' + mainscript_text.format_sectionaddr_rom(bank["flataddr"]))
+                print(bank["symbol"] + '::')
                 
                 #Print out the table in the order we extracted it from baserom
                 for table_index in bank_tables[category_name][bank_id]:
@@ -512,12 +512,12 @@ def asm(args):
                     
                     if table_index >= len(datas_index[category_name][bank_id]):
                         data_meta = datas[datas_index[category_name][bank_id][table_index - 1]]
-                        print u'\tdw ' + data_meta["symbol"] + u"_END"
+                        print('\tdw ' + data_meta["symbol"] + "_END")
                     else:
                         data_meta = datas[datas_index[category_name][bank_id][table_index]]
-                        print u'\tdw ' + data_meta["symbol"]
+                        print('\tdw ' + data_meta["symbol"])
                 
-                print u''
+                print('')
                 
                 #Print out all the data blocks in the table.
                 for tmap_id, _ in enumerate(bank_datas[category_name][bank_id]):
@@ -527,12 +527,12 @@ def asm(args):
                     
                     data_meta = datas[datas_index[category_name][bank_id][tmap_id]]
                     
-                    print data_meta["symbol"] + u'::'
-                    print u'\tincbin "' + os.path.join(args.output, data_meta["objname"]).replace("\\", "/") + '"'
-                    print data_meta["symbol"] + u'_END'
-                    print u''
+                    print(data_meta["symbol"] + '::')
+                    print('\tincbin "' + os.path.join(args.output, data_meta["objname"]).replace("\\", "/") + '"')
+                    print(data_meta["symbol"] + '_END')
+                    print('')
 
-            print u''
+            print('')
 
 def make_maps(args):
     """Compile the stated (or all) tilemaps into .tmap files suitable for
@@ -559,7 +559,7 @@ def make_maps(args):
                 
                 csv_data.append(nrow)
             
-            print "Compiling " + filename
+            print("Compiling " + filename)
             
             with open(objname, "wb") as objfile:
                 objfile.write(encode_tilemap(csv_data))
@@ -584,7 +584,7 @@ def main():
     }.get(args.mode, None)
 
     if method == None:
-        raise Exception, "Unknown conversion method!"
+        raise Exception("Unknown conversion method!")
 
     method(args)
 
