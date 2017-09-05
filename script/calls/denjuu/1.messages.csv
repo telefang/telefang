@@ -1,665 +1,767 @@
-Pointer,Japanese,English
- #######, colspan=2 | '''001                                                     '''
+Pointer,Japanese,English,Notes
+#######,#001,,
 0x130000,"やあ ひさしぶリだね
 デンジュウクイズやる?
  やる やらない<*A>","Hey, long time no see!
 Wanna try a Denjuu Quiz?
- <0> Okay <0> No<*A>"
+<0>Okay<0>No<*A>",Questions 001 to 037 (partial).
 0x130002,"デンジュウのシンカは
 なんとおリある?
  3とおリ 4とおリ<*A>","How many ways are there to evolve a Denjuu?
- <0> 3 ways <0> 4 ways<*A>"
+<0>3 ways<0>4 ways<*A>","Status: Translated 99%
+Missing one string.
+"
 0x130004,"クイズきらいなの?
  うん そんなことないよ<*A>","Do you hate quizzes?
- <0> Yes <0> I don't!<*A>"
+<0>Yes<0>I don't!<*A>",
 0x130006,"さすが <&name>だね
 せいかいだよ!<*2>","Well done, <&name>!
-That's correct!<*2>"
+That's correct!<*2>","Remember to add appropriate tags
+<*2><0><*A> etc."
 0x130008,"おいおいどうしたんだよ
 まちがってるよ!<*2>","Aww, come on!
-You got it wrong!<*2>"
+You got it wrong!<*2>","// means ""finish/correct later"""
 0x13000a,"もしかしてアタマつかうの
-きらいなのか?<*2>",Is it because you hate using your brain??<*2>
+きらいなのか?<*2>",Is it because you hate using your brain??<*2>,
 0x13000c,"じゃ こんどにするね
 バイバーイ<*2>","Then you can try the next one.
-Bye-bye~<*2>"
- #######, colspan=2 | '''002                                                     '''
+Bye-bye~<*2>",
+#######,#'002,,
 0x13000e,"ゲンキか!
 デンジュウクイズやる?
  やる やらない<*A>","What's up?!
 Wanna try a Denjuu Quiz?
- <0> Sure <0> No thanks<*A>"
+<0>Sure<0>No thanks<*A>",(Questions 001-024 are Denjuu Quizzes)
 0x130010,"テレファングは2タイプ!
 パワーともう1つは?
  ハイパー スピード<*A>","There are 2 versions of Telefang!
 Power, and what else? 
- <0> Hyper <0> Speed<*A>"
+<0>Hyper<0>Speed<*A>",
 0x130012,"もしかしていまいそがしいの?
  まあね そうじゃないけど<*A>","Oh, are you busy right now?
- <0> Kind of <0> Well, not really<*A>"
+<0>Kind of<0>Well, not really<*A>",
 0x130014,"おしいけど ちがうんだな!
 またチャレンジしてよ<*2>","That sounds cool, but sadly, it's wrong! 
-Better luck next time!<*2>"
+Better luck next time!<*2>",
 0x130016,"かんたんだったかな
 みんなしってるよね!<*2>","I wonder if that was a bit too easy. 
-Everyone knows that!<*2>"
+Everyone knows that!<*2>",
 0x130018,"ごめんね!
 わるいことしちゃったね<*2>","Sorry!!
-I didn't mean to interrupt!<*2>"
+I didn't mean to interrupt!<*2>",
 0x13001a,"それならいいじゃん
 ケチだな!<*2>","Then what's the problem?
-Jerk!<*2>"
- #######, colspan=2 | '''003                                                     '''
+Jerk!<*2>",
+#######,#003,,
 0x13001c,"もしかしてひましてる?
 デンジュウクイズやらない?
  やる やらない<*A>","Are you bored?
 How about a Denjuu Quiz?
- <0> Sure <0> Nah<*A>"
+<0>Sure<0>Nah<*A>",
 0x13001e,"デンジュウつかいのことを
 なんていう?
  Tファンガー Bファンガー<*A>","What do you call a Denjuu user?
- <0> T-Fanger <0> B-Fanger<*A>"
+<0>T-Fanger<0>B-Fanger<*A>",
 0x130020,"やらないってことは
 オレのことがきらいなのか?
  そんなことない じつは..<*A>","You don't want to?
 Is it because you hate me??
- <0> Of course not <0> Well...<*A>"
+<0>Of course not<0>Well...<*A>",
 0x130022,"そのとおリ!
 だいせいかいだよ!<*2>","Exactly!
-That's correct!<*2>"
+That's correct!<*2>",
 0x130024,"えーうそー
 しんじられなーい!<*2>","Whaaat?
-You've gotta be kidding me!<*2>"
+You've gotta be kidding me!<*2>",
 0x130026,"よかった もしそうだったら
-どうしようかとおもったよ!<*2>",That's good! I don't know what I'd do otherwise!<*2>
+どうしようかとおもったよ!<*2>",That's good! I don't know what I'd do otherwise!<*2>,
 0x130028,"ガーン!そんな...
 オレのどこがきらいなんだ!<*2>","Wh-what?! Oh noo...
-What did I do wrong?!<*2>"
- #######, colspan=2 | '''004                                                     '''
+What did I do wrong?!<*2>",
+#######,#004,,
 0x13002a,"ははーん!もしかして
 デンジュウクイズがやリたいな!
  やリたい やリたくない<*A>","Haha! I bet you really want to try a Denjuu Quiz right now!
- <0> Yeah! <0> Not really<*A>"
+<0>Yeah!<0>Not really<*A>",
 0x13002c,"ダッシュは なにボタン?
  Aボタン Bボタン<*A>","What button do you press to dash?
- <0> A button <0> B button<*A>"
+<0>A button<0>B button<*A>",
 0x13002e,"どうしても やリたくないの?
  どうしても つぎにするよ<*A>","Are you suuure you don't wanna try?
- <0> Completely sure <0> Maybe next time<*A>"
+<0>Completely sure<0>Maybe next time<*A>",
 0x130030,"うそー!
 それじゃ できないよ<*2>","Seriously??
-That totally doesn't work!<*2>"
+That totally doesn't work!<*2>",
 0x130032,"さすが <&name>だね!
-カンペキだよ!<*2>","That's right, <&name>! Well done!<*2>"
+カンペキだよ!<*2>","That's right, <&name>! Well done!<*2>",
 0x130034,"なんで!そんなふうに
-いわなくてもいいじゃないか!<*2>",Why not?! You didn't have to say it like that! <*2>
+いわなくてもいいじゃないか!<*2>",Why not?! You didn't have to say it like that! <*2>,
 0x130036,"ほんと?ぜったい?
 やくそくだからね!<*2>","Really?
-You'd better promise then!<*2>"
- #######, colspan=2 | '''005                                                     '''
+You'd better promise then!<*2>",
+#######,#005,,
 0x130038,"デンワがつながったからには
 デンジュウクイズだ!
  やる やらない<*A>","You picked up the phone!
 It's time for a quiz!
-<0> Okay <0> No thanks<*A>"
+<0>Okay<0>No thanks<*A>",
 0x13003a,"デンジュウにはそれぞれ
 セイザがある?
- ほんと うそ<*A>","Denjuu each have their own zodiac sign?
-<0> True <0> False<*A>"
+ ほんと うそ<*A>","True or false? Denjuu have a different zodiac than humans.
+<0>True<0>False<*A>",***NEW ADDITIONS START HERE***
 0x13003c,"リゆうをいえ!リゆうを!
- つかれてる なんとなく<*A>",/0x13003c/<*A>
+ つかれてる なんとなく<*A>","State your reason!
+<0>I'm tired<0>Whatever<*A>",
 0x13003e,"そのとおリだ!
-らくしょうだったな!<*2>",/0x13003e/<*2>
+らくしょうだったな!<*2>",You got it! That was easy!<*2>,
 0x130040,"オマエしらないのか?
-しっかリしてくれよ!<*2>",/0x130040/<*2>
-0x130042,そうか..それじゃ しょうがないまたにするか!<*2>,/0x130042/<*2>
+しっかリしてくれよ!<*2>",You didn't know? You have to pay attention to these things!<*2>,
+0x130042,そうか..それじゃ しょうがないまたにするか!<*2>,"I see... Then I guess there's no helping it. Maybe next time, right?<*2>",
 0x130044,"はっきリしないヘんじだな!
-シャキっとしろよ!<*2>",/0x130044/<*2>
- #######, colspan=2 | '''006                                                     '''
+シャキっとしろよ!<*2>","What's with that half-hearted answer? Get it together, man!<*2>",
+#######,#006,,
 0x130046,"デンジュウクイズ
 ぜったいやるよな!
- やる やらない<*A>",/0x130046/<*A>
+ やる やらない<*A>","I know! You wanna try a Denjuu Quiz, don't you?
+<0>Sure<0>Nope <*A>",
 0x130048,"テレファングとは
 いったいなんのことでしょうか!
- デンジュウのなまえ たたかい<*A>",/0x130048/<*A>
+ デンジュウのなまえ たたかい<*A>","What does the word ""Telefang"" refer to?
+<0>A Denjuu<0>A battle<*A>",
 0x13004a,"やらない?オレのいうことを
 きかないつもリか?
- そうだ そうじゃない<*A>",/0x13004a/<*A>
+ そうだ そうじゃない<*A>","You don't? Or are you just trying to ignore me?
+<0>You got me<0>That's not it<*A>",
 0x13004c,"そんなヤツ いないよ!
-わざとまちがえたのか?<*2>",/0x13004c/<*2>
+わざとまちがえたのか?<*2>",I don't know anyone named that! Did you get it wrong on purpose?<*2>,
 0x13004e,"キホンだよな! 
-しらないヤツはいないよな!<*2>",/0x13004e/<*2>
+しらないヤツはいないよな!<*2>",Obviously! I'm pretty sure everyone knows that.<*2>,
 0x130050,"そうか!じょうとうだぜ!
-オマエとはゼッコウだ!!<*2>",/0x130050/<*2>
+オマエとはゼッコウだ!!<*2>","I see! Fine then, be that way!!<*2>",
 0x130052,"そうだよな オマエにかぎって
-それはないよな!<*2>",/0x130052/<*2>
- #######, colspan=2 | '''007                                                     '''
+それはないよな!<*2>","I knew it! You'd never say such a thing, would you? //<*2>",
+#######,#007,,
 0x130054,"もしよかっら
 デンジュウクイズしない?
- する しない<*A>",/0x130054/<*A>
+ する しない<*A>","Hey, if you've got a moment, wanna try a Denjuu Quiz?
+<0>Sure<0>No thanks<*A>",
 0x130056,"ニンゲンカイとデンジュウカイを
 さえぎっているのは
 なんのカーテン?
- やみ ひなた<*A>",/0x130056/<*A>
+ やみ ひなた<*A>","What kind of curtain separates the Human World from the Denjuu World?
+<0>Darkness<0>Sunshine<*A>",
 0x130058,"じしんがないの?
- そうじゃない やリたくない<*A>",/0x130058/<*A>
+ そうじゃない やリたくない<*A>","Not feeling confident?
+<0>That's not it<0>Don't feel like it<*A>",
 0x13005a,"ちゃんとはなしを
-きいてたんだね!えらい!<*2>",/0x13005a/<*2>
+きいてたんだね!えらい!<*2>",I see you were paying attention to Musa's story! Good job!<*2>,
 0x13005c,"しっかリきいておかないと
-ダメだよ!<*2>",/0x13005c/<*2>
+ダメだよ!<*2>",That's no good! You need to pay closer attention to what people tell you!<*2>,
 0x13005e,"そんなことあるわけないよね
-<&name>だもんね!<*2>",/0x13005e/<*2>
+<&name>だもんね!<*2>","That's right! I know you of all people wouldn't lack confidence, <&name>! //<*2>",
 0x130060,"そっか むリにとは
-いわないんだ ごめんね<*2>",/0x130060/<*2>
- #######, colspan=2 | '''008                                                     '''
+いわないんだ ごめんね<*2>","I see... Well, I won't force you to. Sorry.<*2>",
+#######,#008,,
 0x130062,"やあ いま ひまかな?
 デンジュウクイズやらない?
- やる やらない<*A>",/0x130062/<*A>
+ やる やらない<*A>","Hey, you're bored, right? Wanna try a Denjuu Quiz?
+<0>Sure<0>No thanks<*A>",
 0x130064,"ショップのなかには
 オカネをあずけるところがある?
- ある ない<*A>",/0x130064/<*A>
+ ある ない<*A>","Is there a place in the Shop to deposit your money? //
+<0>Yes<0>No<*A>",
 0x130066,"きぶんがのらないの?
- そうじゃない そうなんだ<*A>",/0x130066/<*A>
+ そうじゃない そうなんだ<*A>","Are you not feeling well?
+<0>No<0>That's right<*A>",
 0x130068,"いや ざんねんながら
-そういうところはないんだ<*2>",/0x130068/<*2>
-0x13006a,そうなんだよ たくさんもってるとあずけておきたくなるよね<*2>,/0x13006a/<*2>
+そういうところはないんだ<*2>","Sorry to say, but there's no such thing!<*2> //",
+0x13006a,そうなんだよ たくさんもってるとあずけておきたくなるよね<*2>,"That's correct! When you're carrying a lot of money you'd want to deposit it somewhere, wouldn't you?<*2>  //",
 0x13006c,"じゃあ つぎのきかいに
-またやろうね!<*2>",/0x13006c/<*2>
+またやろうね!<*2>","//Okay, well, we can do it next time!<*2>",
 0x13006e,"ごめんね!おこらないでね
-もうクイズなんてしないから<*2>",/0x13006e/<*2>
- #######, colspan=2 | '''009                                                     '''
+もうクイズなんてしないから<*2>",I'm sorry! Please don't get mad... I won't quiz you anymore!<*2>,
+#######,#009,,
 0x130070,"デンジュウクイズだ!
 やらないとはいわせないぞ!
- やる やらない<*A>",/0x130070/<*A>
+ やる やらない<*A>","Denjuu Quiz!! You can't refuse!
+<0>Okay<0>Too bad!<*A>",
 0x130072,"よくいねむリしている
 デンジュウのなまえは?
- ネタロ ネジロ<*A>",/0x130072/<*A>
+ ネタロ ネジロ<*A>","What's the name of the Denjuu that's sleepy a lot?  //
+<0>Netaro<0>Nejiro<*A>",
 0x130074,"やらないだと!
 もしかしてねむいのか!
- そうなんだ ベつに<*A>",/0x130074/<*A>
+ そうなんだ ベつに<*A>","You refused?! You feeling too tired or something?
+<0>Yeah<0>Not really<*A>",
 0x130076,"よしよし よくみれば
-カンタンなモンダイだよな!<*2>",/0x130076/<*2>
+カンタンなモンダイだよな!<*2>","That's right! It's obvious when you consider their names, isn't it?  //<*2>",
 0x130078,"なにやってるんだよ!
-よーくかんがえてみろよ!<*2>",/0x130078/<*2>
+よーくかんがえてみろよ!<*2>",What the hey! Use your brain before you answer!  //<*2>,
 0x13007a,"ねぼけてるばあいじゃないぞ!
-しっかリしろ!<*2>",/0x13007a/<*2>
+しっかリしろ!<*2>",This isn't the time to be zoning out! Pull yourself together!<*2>,
 0x13007c,"ベつに!ベつにっていったな!
-オレはおこったぞ!<*2>",/0x13007c/<*2>
- #######, colspan=2 | '''010                                                     '''
+オレはおこったぞ!<*2>","Not really?! ""Not really"", he says! Are you trying to make me angry?!<*2>",
+#######,#010,,
 0x13007e,"なにもいわずに
 デンジュウクイズやるよな!
- やる やらない<*A>",/0x13007e/<*A>
+ やる やらない<*A>","Suddenly, without warning... It's time for a Denjuu Quiz!
+<0>Okay<0>No<*A>",
 0x130080,"アンテナが3ぼんたっているとき
 なかまはなんにんよベる?
- 3にん 2にん<*A>",/0x130080/<*A>
+ 3にん 2にん<*A>","How many friends can you call when you have 3 bars of reception?
+<0>3 friends<0>2 friends  //<*A>",
 0x130082,"なんでだ!どうしてだ!
 つめたいぞ オマエ!
- そうか ごめん<*A>",/0x130082/<*A>
+ そうか ごめん<*A>","What? Why?! You've been such a jerk lately!
+<0>Oh, really?<0>Sorry<*A>",
 0x130084,"つれているデンジュウは
-かずに はいらないぞ!<*2>",/0x130084/<*2>
+かずに はいらないぞ!<*2>","Sorry, the Denjuu standing behind you isn't included in that number!<*2>",
 0x130086,"たんじゅんなことだけど
-たいせつだよな!<*2>",/0x130086/<*2>
+たいせつだよな!<*2>","It's such a simple little fact, but it's important to remember!  //<*2>",
 0x130088,"くー!!もう あったまきた!
-オマエなんかもうしらない!<*2>",/0x130088/<*2>
+オマエなんかもうしらない!<*2>",Grrr!! That's it! We're no longer friends!<*2>,
 0x13008a,"あやまるなよ 
-こんかいはゆるしてやるから<*2>",/0x13008a/<*2>
- #######, colspan=2 | '''011                                                     '''
+こんかいはゆるしてやるから<*2>",Don't apologize! I'll let you off this time!  //<*2>,
+#######,#011,,
 0x13008c,"とつぜんなんだけど
 デンジュウクイズやらない?
- やる やらない<*A>",/0x13008c/<*A>
+ やる やらない<*A>","I know it's sudden, but are you up for a Denjuu Quiz?
+<0>Sure<0>Nah<*A>",
 0x13008e,"マナーモードにしてると
 デンワがかかったときどうなる?
- おとがならない きれる<*A>",/0x13008e/<*A>
+ おとがならない きれる<*A>","If you put your phone on Silent mode, what happens if it goes off?
+<0>Makes no sound<0>Hangs up //<*A>",
 0x130090,"ほんとうはやリたいんじゃない?
- ばれた? ベつに<*A>",/0x130090/<*A>
+ ばれた? ベつに<*A>","Are you sure you don't want to? //
+<0>You found me out<0>Nah //<*A>",
 0x130092,"そうなんだよね 
-マナーはたいせつだよ<*2>",/0x130092/<*2>
+マナーはたいせつだよ<*2>",That's right! It's important to properly use Silent mode in the right situation!  //<*2>,
 0x130094,"それはさすがにないよ
-たしかめてみてね!<*2>",/0x130094/<*2>
+たしかめてみてね!<*2>","No, that's not right! Check it out and see!  //<*2>",
 0x130096,"やっぱリね!
-はずかしがらなくてもいいのに<*2>",/0x130096/<*2>
+はずかしがらなくてもいいのに<*2>","I knew it! You don't have to be embarrassed about it, you know.  //<*2>",
 0x130098,"そうか それならしかたがないね
-またこんどにするよ<*2>",/0x130098/<*2>
- #######, colspan=2 | '''012                                                     '''
+またこんどにするよ<*2>","I see... Oh well! Let's do it next time, then!<*2>",
+#######,#012,,
 0x13009a,"デンジュウクイズなんだけど
 もしよければやらない?
- やる やらない<*A>",/0x13009a/<*A>
+ やる やらない<*A>","Hey, would you like to do a Denjuu Quiz? //
+<0>Yeah!<0>No<*A>",
 0x13009c,"デンジュウかいに くるために
 ひつようなものはなに?
- Gショット Dショット<*A>",/0x13009c/<*A>
+ Gショット Dショット<*A>","In order to come to the Denjuu World, what item do you need? //
+<0>G-Shot<0>D-Shot<*A>",
 0x13009e,"なにかわけがあるの?
 よかったらはなしてよ
- じつは.. なにもない<*A>",/0x13009e/<*A>
+ じつは.. なにもない<*A>","Do you have a reason? // you can tell me.
+<0>Actually...<0>I don't //<*A>",
 0x1300a0,"なんかちがうとおもうんだ
-もういちどかんがえてみてね!<*2>",/0x1300a0/<*2>
+もういちどかんがえてみてね!<*2>",That's not quite right... Think it over and try again!<*2>,
 0x1300a2,"そうそう Dショットがないと
-ダメなんだよね!<*2>",/0x1300a2/<*2>
+ダメなんだよね!<*2>",That's right! You can't do anything without a D-Shot!<*2>,
 0x1300a4,"..そうだったのか 
-それじゃ しょうがないね<*2>",/0x1300a4/<*2>
+それじゃ しょうがないね<*2>","Oh, I see... Well, it can't be helped, huh? //<*2>",
 0x1300a6,"また つぎのきかいにするよ
-それじゃ またね<*2>",/0x1300a6/<*2>
- #######, colspan=2 | '''013                                                     '''
+それじゃ またね<*2>","Let's do it when the opportunity rises, then. Well, see ya! //<*2>",
+#######,#013,,
 0x1300a8,"せっかくだから
 デンジュウクイズでもやろうか?
- やる やらない<*A>",/0x1300a8/<*A>
+ やる やらない<*A>","I called, so we might as well do a Denjuu Quiz, right? //
+<0>Okay<0>No thanks<*A>",
 0x1300aa,"『ちず』は いったことがない
 ばしょでもひょうじされる?
- されない される<*A>",/0x1300aa/<*A>
+ されない される<*A>","Does the ""Map"" show you locations you haven't been to?
+<0>It doesn't<0>It does<*A>",
 0x1300ac,"だいじょうぶだよ!
 そんなにむずかしくないから
- でも.. わかった<*A>",/0x1300ac/<*A>
+ でも.. わかった<*A>","Don't worry! It won't be a difficult one.
+<0>But...<0>Well, okay<*A>",
 0x1300ae,"そうなんだよね! だから
-いろいろあるきまわらないとね<*2>",/0x1300ae/<*2>
+いろいろあるきまわらないとね<*2>",That's right! You gotta walk around and see lots of different places! //<*2>,
 0x1300b0,"それが ひょうじされないんだ
-きをつけないとね!<*2>",/0x1300b0/<*2>
+きをつけないとね!<*2>","No, it doesn't show you those places! Be careful to remember that! //<*2>",
 0x1300b2,"きもちはわかるけど
-なにごともチャレンジだよ!<*2>",/0x1300b2/<*2>
+なにごともチャレンジだよ!<*2>","I understand, but I think you should really accept any kind of challenge! //<*2>",
 0x1300b4,"あ!ごめん またにするよ
-まちあわせのじかんなんだ!<*2>",/0x1300b4/<*2>
- #######, colspan=2 | '''014                                                     '''
+まちあわせのじかんなんだ!<*2>","Oh, sorry! Let's do it next time, I've got an appointment! //<*2>",
+#######,#014,,
 0x1300b6,"そうだ!そろそろ
 デンジュウクイズをやろう!
- やる やらない<*A>",/0x1300b6/<*A>
+ やる やらない<*A>","Right! I think it's about time for a Denjuu Quiz!
+<0>Okay<0>No thanks<*A>",
 0x1300b8,"FDとはデンジュウとのなにを
 いみするものでしょうか?
- きょリ しんみつど<*A>",/0x1300b8/<*A>
+ きょリ しんみつど<*A>","What is the meaning of a Denjuu's FD?
+<0>Distance<0>Intimacy //<*A>",
 0x1300ba,"やっぱリ まだはやかった?
- うん はやい?<*A>",/0x1300ba/<*A>
+ うん はやい?<*A>","Too early, after all? // (early in the day)
+<0>Yeah<0>Early?<*A>",
 0x1300bc,"やっぱリかんちがいしてた?
-おおいんだよね けっこう!<*2>",/0x1300bc/<*2>
+おおいんだよね けっこう!<*2>",Did you guess wrong? That seems to happen a lot! //,
 0x1300be,"いがいにわかリづらいよね
-このFDっていうのは!<*2>",/0x1300be/<*2>
+このFDっていうのは!<*2>",Correct! A lot of people seem to have trouble grasping what FD is! //,
 0x1300c0,"そっか...ごめんね
-いつもはあせらないんだけど<*2>",/0x1300c0/<*2>
+いつもはあせらないんだけど<*2>",I see... I'm sorry. Normally I'm not this impatient...,
 0x1300c2,"いみがわからない?
-アハハ オレもわからない<*2>",/0x1300c2/<*2>
- #######, colspan=2 | '''015                                                     '''
+アハハ オレもわからない<*2>","You don't understand what I meant? Ahaha, me neither! //",
+#######,#015,,
 0x1300c4,"とくにはなしは ないんだけど
 デンジュウクイズでもどう?
- いいね やめとくよ<*A>",/0x1300c4/<*A>
+ いいね やめとくよ<*A>","I don't really have anything to talk about, so how about we have a Denjuu Quiz? //
+<0>Sounds good<0>Nah<*A>",
 0x1300c6,"ショップでどろぼうはできる?
- できない できる<*A>",/0x1300c6/<*A>
+ できない できる<*A>","Can you steal items from shops?
+<0>No<0>Yes<*A>",
 0x1300c8,"ほかのはなしにしようか?
- そうだね なんでもいい<*A>",/0x1300c8/<*A>
+ そうだね なんでもいい<*A>","Wanna talk about something else then?
+<0>Sure<0>Don't care<*A>",
 0x1300ca,"そリゃそうだよね!
-あたリまえのことだよね<*2>",/0x1300ca/<*2>
+あたリまえのことだよね<*2>",That's right! Of course you can't! //<*2>,
 0x1300cc,"できちゃったらまずいでしょ!
-いけないことだよやっぱリ!!<*2>",/0x1300cc/<*2>
+いけないことだよやっぱリ!!<*2>","If you could, that would be really bad! Of course you shouldn't steal! //<*2>",
 0x1300ce,"なにがいいかな...
-そういわれるとむずかしいな<*2>",/0x1300ce/<*2>
+そういわれるとむずかしいな<*2>","Let's see... Well, when you bring it up like that, I can't really think of anything! //<*2>",
 0x1300d0,"すこしつかれてるんじゃないか?
-やすんだほうがいいよ<*2>",/0x1300d0/<*2>
- #######, colspan=2 | '''016                                                     '''
+やすんだほうがいいよ<*2>","Are you tired? Make sure to take a break, okay? //<*2>",
+#######,#016,,
 0x1300d2,"オマエひまそうだよな!
 デンジュウクイズしない?
- いいよ いそがしい<*A>",/0x1300d2/<*A>
+ いいよ いそがしい<*A>","You seem bored! Wanna try a Denjuu Quiz? 
+<0>Sure<0>I'm busy<*A>",
 0x1300d4,"Dメロはじぶんで
 きょくをつくることができる?
- できない できる<*A>",/0x1300d4/<*A>
+ できない できる<*A>","Can you make your own tunes on the Melo-D? //
+<0>No<0>Yes<*A>",
 0x1300d6,"ベつにみえはらなくたって
 いいんだぞ!
- そうじゃない ちがうよ<*A>",/0x1300d6/<*A>
+ そうじゃない ちがうよ<*A>","You don't have to pretend you're busy! //
+<0>I'm not<0>Stop it<*A>",
 0x1300d8,"それが...できるんだよな!
-いままでしらなかったのか?<*2>",/0x1300d8/<*2>
+いままでしらなかったのか?<*2>",But... you can! You didn't know?<*2>,
 0x1300da,"そうなんだよな!
 でもオレ ヒットきょくって
-しらないんだけど...<*2>",/0x1300da/<*2>
+しらないんだけど...<*2>",That's right! But I don't know any hit songs I could enter... //<*2>,
 0x1300dc,"ほんとにいそがしかったのか!
-わるかったな<*2>",/0x1300dc/<*2>
+わるかったな<*2>","Wait, you were actually busy? I'm sorry!<*2>",
 0x1300de,"そんなにおこるなよ
-ジョーダンなんだからさ...<*2>",/0x1300de/<*2>
- #######, colspan=2 | '''017                                                     '''
+ジョーダンなんだからさ...<*2>",Don't be so angry! It was just a joke... //<*2>,
+#######,#017,,
 0x1300e0,"<&name>は 
 デンジュウクイズすきだよな!
- すき! ベつに<*A>",/0x1300e0/<*A>
+ すき! ベつに<*A>","<Name>, you're a fan of Denjuu Quizzes, right?
+<0>Yeah!<0>Not really<*A>",
 0x1300e2,"まちのひとにはなしかけるときは
 なにボタン?
- Aボタン Bボタン<*A>",/0x1300e2/<*A>
+ Aボタン Bボタン<*A>","What button do you press to talk to people?
+<0>A Button<0>B Button<*A>",
 0x1300e4,"どうしたんだよ
 オマエらしくないじゃないか!
- そうか? そうでもない<*A>",/0x1300e4/<*A>
+ そうか? そうでもない<*A>","What happened? This isn't like you at all!
+<0>Really?<0>Yes it is<*A>",
 0x1300e6,"あまリにもかんたんすぎて
-わらっちゃうってかんじか?<*2>",/0x1300e6/<*2>
+わらっちゃうってかんじか?<*2>",Maybe that was a little too easy? Laughably so? //<*2>,
 0x1300e8,"こんなもんだいを
-まちがっちゃいけないよ!<*2>",/0x1300e8/<*2>
+まちがっちゃいけないよ!<*2>",How could you get a question like this wrong?!<*2>,
 0x1300ea,"そうだよ!どんなことでも
-いっしょうけんめいだったろ!<*2>",/0x1300ea/<*2>
+いっしょうけんめいだったろ!<*2>",It's not! You always seem to do your best no matter what!  // (-seem to)<*2>,
 0x1300ec,"いつからそんなに
-クールなやつになったんだよ!<*2>",/0x1300ec/<*2>
- #######, colspan=2 | '''018                                                     '''
+クールなやつになったんだよ!<*2>","When did you become such a cold person, <Name>?! // (distant?)<*2>",
+#######,#018,,
 0x1300ee,"いまオレは デンジュウクイズが
 やリたいぞ!
- やる やらない<*A>",/0x1300ee/<*A>
+ やる やらない<*A>","I really wanna do a Denjuu Quiz right now!
+<0>Alright<0>No thanks<*A>",
 0x1300f0,"うしろにつれていくデンジュウは
 かえることができる?
- できない できる<*A>",/0x1300f0/<*A>
+ できない できる<*A>","Is the Denjuu you're bringing with you able to return to their home?  //
+<0>No<0>Yes<*A>",
 0x1300f2,"そういわずに!たのむよ!
- やだ! そこまでいうなら<*A>",/0x1300f2/<*A>
+ やだ! そこまでいうなら<*A>","Don't say that! Please!
+<0>No!<0>If you insist<*A>",
 0x1300f4,"やったことないなら
-いますぐためしてみなよ!<*2>",/0x1300f4/<*2>
+いますぐためしてみなよ!<*2>","If you haven't tried it yet, how about you try it now?  //<*2>",
 0x1300f6,"そう!そうなんだよ!
-だから おもしろいんだよね!<*2>",/0x1300f6/<*2>
+だから おもしろいんだよね!<*2>","That's entirely right! That's what makes it so interesting, isn't it? //<*2>",
 0x1300f8,"もういい!オマエが
-そんなヤツとはおもわなかった!<*2>",/0x1300f8/<*2>
+そんなヤツとはおもわなかった!<*2>","Fine, never mind! I never took you for that kind of person!  // (forget it)<*2>",
 0x1300fa,"オマエっていいヤツだよな!
-ほんとに そうおもうよ!<*2>",/0x1300fa/<*2>
- #######, colspan=2 | '''019                                                     '''
+ほんとに そうおもうよ!<*2>","You’re a good person, <Name>! I really think that! //<*2>",
+#######,#019,,
 0x1300fc,"ちょっとのじかんでいいから
 デンジュウクイズしない?
- いいよ えー<*A>",/0x1300fc/<*A>
+ いいよ えー<*A>","If you've got time to spare, wanna try a Denjuu Quiz?
+<0>Okay<0>Ugh...<*A>",
 0x1300fe,"マツキヨはおとこのこ?
 それともおんなのこ?
- おとこのこ おんなのこ<*A>",/0x1300fe/<*A>
+ おとこのこ おんなのこ<*A>","Is Matsukiyo a boy or a girl?
+<0>Boy<0>Girl<*A>",
 0x130100,"なに?なに?
 なんで『えー』なの?
- なんとなく うそ<*A>",/0x130100/<*A>
+ なんとなく うそ<*A>","What? Huh? Wait, why'd you go ""Ugh""??  //
+<0>...<0>Just messing with you<*A>",
 0x130102,"じぶんのトモダチのことを
-まちがえないよね!<*2>",/0x130102/<*2>
+まちがえないよね!<*2>","You wouldn't get things about your own friends wrong, after all! //<*2>",
 0x130104,"まさかそんな!
-オレには おとこにみえるぞ!<*2>",/0x130104/<*2>
+オレには おとこにみえるぞ!<*2>","What, really?! He looks like a boy to me!<*2>",
 0x130106,"なんかまずいこといった?
-ごめん!ごめんね!<*2>",/0x130106/<*2>
+ごめん!ごめんね!<*2>",Oh... Did I say something bad? I'm sorry! I didn't mean to! //<*2>,
 0x130108,"もうおどかさないでよ!
-ただでさえビクビクしてるのに<*2>",/0x130108/<*2>
- #######, colspan=2 | '''020                                                     '''
+ただでさえビクビクしてるのに<*2>",Hey... Don't startle me like that! I'm nervous enough as it is... //<*2>,
+#######,#020,,
 0x13010a,"もしデンジュウクイズしようって
 いったらおこる?
- おこらない おこる<*A>",/0x13010a/<*A>
-0x13010c,Tファンガーはおとこしかいない? いない そんなことない<*A>,/0x13010c/<*A>
+ おこらない おこる<*A>","If I told you I wanted to do a Denjuu quiz right now, would you be angry? //
+<0>No<0>Yes.<*A>",
+0x13010c,Tファンガーはおとこしかいない? いない そんなことない<*A>,"Are there only male T-Fangers? //
+<0>Yes<0>That's not true  //<*A>",
 0x13010e,"おこる?おこるの?ぜったい?
- ぜったい そんなわけないよ<*A>",/0x13010e/<*A>
+ ぜったい そんなわけないよ<*A>","Really? You'd get mad? You sure? // [You mean it?]
+<0>Yes<0>Obviously not!<*A>",
 0x130110,"それはちがうとおもうよ
-おんなのこもたくさんいるから<*2>",/0x130110/<*2>
+おんなのこもたくさんいるから<*2>",I don't think so! There are plenty of female T-Fangers out there!<*2>,
 0x130112,"<&name>のともだちにも
-おんなのこがいるもんね!<*2>",/0x130112/<*2>
+おんなのこがいるもんね!<*2>","You have a female friend who is one too, after all, right <NAME>? //<*2>",
 0x130114,"そうなの?そうなの?
-じゃあ やめるよ!<*2>",/0x130114/<*2>
+じゃあ やめるよ!<*2>","Really? Okay then, nevermind!  // (let’s forget about it)<*2>",
 0x130116,"よかったー おこられたら
-どうしようかとおもった!<*2>",/0x130116/<*2>
- #######, colspan=2 | '''021                                                     '''
+どうしようかとおもった!<*2>",Phew! I dunno what I'd do if you got mad at me!<*2>,
+#######,#021,,
 0x130118,"そろそろデンジュウクイズが
 やリたくなってきただろ!
- やリたい やリたくない<*A>",/0x130118/<*A>
+ やリたい やリたくない<*A>","I think it's about time for a Denjuu Quiz!
+<0>Okay<0>Don’t wanna<*A>",
 0x13011a,"けいけんちをあげることによって
 しんかするほうほうは?
- しぜんしんか はってんしんか<*A>",/0x13011a/<*A>
+ しぜんしんか はってんしんか<*A>","What is the kind of evolution that you get by gaining experience called?  // (type?)
+<0>Natural<0>Standard Evolution<*A>",
 0x13011c,"そういう たいどにでて
 いいとおもってるのか!
- おもってる わるかった<*A>",/0x13011c/<*A>
+ おもってる わるかった<*A>","Do you think that kind of attitude is acceptable?  // (?!)
+<0>Yep<0>Sorry  //<*A>",
 0x13011e,"わかってるじゃないか!
-しっかリおぼえといてくれよ!<*2>",/0x13011e/<*2>
+しっかリおぼえといてくれよ!<*2>",You know your stuff! Make sure to remember it!  // (be sure?)<*2>,
 0x130120,"なにかがちがうんだよなー
-オマエもわかってるだろ?<*2>",/0x130120/<*2>
+オマエもわかってるだろ?<*2>","Something's off about that... You realize it too, don't you?  //<*2>",
 0x130122,"オレをおこらせるとこわいぞ!
-ほんとだぞ!!<*2>",/0x130122/<*2>
+ほんとだぞ!!<*2>","You won't like me when I'm angry, you know! Really!!  //<*2>",
 0x130124,"こんかいはみのがしてやるけど
-つぎはぜったい やるんだぞ!<*2>",/0x130124/<*2>
- #######, colspan=2 | '''022                                                     '''
+つぎはぜったい やるんだぞ!<*2>","Fine, I'll overlook it this time! But next time, we're definitely doing it!  // (-fine)<*2>",
+#######,#022,,
 0x130126,"デンジュウクイズだ!
 やリたくないわけがないよな!
- そうだね いやだ<*A>",/0x130126/<*A>
+ そうだね いやだ<*A>","Time for a Denjuu Quiz! I won't accept any excuses! //
+<0>Got it!<0>No way<*A>",
 0x130128,"キカイとくみあわせて
 しんかさせるのは?
- かこうしんか かいぞうしんか<*A>",/0x130128/<*A>
+ かこうしんか かいぞうしんか<*A>","What's it called when you evolve a Denjuu using machines?
+<0>Merge<0>Fusion Evolution //<*A>",
 0x13012a,"オマエなら そういうと
 おもったんだよな
- やっぱリ? うそつけ<*A>",/0x13012a/<*A>
+ やっぱリ? うそつけ<*A>","I knew you'd say that.
+<0>For real?<0>Liar<*A>",
 0x13012c,"おしいな!でもちがうぞ!
-ベんきょうしてこいよ!<*2>",/0x13012c/<*2>
+ベんきょうしてこいよ!<*2>",Close! But wrong! Go and brush up your knowledge on evolution! //<*2>,
 0x13012e,"よくわかったな!
-すごいやつだぜ オマエ!<*2>",/0x13012e/<*2>
+すごいやつだぜ オマエ!<*2>",You sure know your things! You're quite amazing! //<*2>,
 0x130130,"バレバレだぜ!
-わかリやすいよな オマエって!<*2>",/0x130130/<*2>
+わかリやすいよな オマエって!<*2>","You definitely would! You're quite predictable, you know. // (I totally called it!)<*2>",
 0x130132,"オレはうそなんかついてない!
-ほんとのことだ!<*2>",/0x130132/<*2>
- #######, colspan=2 | '''023                                                     '''
+ほんとのことだ!<*2>",You really think I would lie? Come on! //<*2>,
+#######,#023,,
 0x130134,"ちょっときぶんをかえて
 デンジュウクイズはどうですか?
- やる やらない<*A>",/0x130134/<*A>
+ やる やらない<*A>","How about a Denjuu Quiz for a change?
+<0>Sure<0>No thanks<*A>",
 0x130136,"ちがうデンジュウのDNAを
 くみあわせるしんかは?
- じっけんしんか はかいしんか<*A>",/0x130136/<*A>
+ じっけんしんか はかいしんか<*A>","What type of evolution requires splicing DNA from another Denjuu?
+<0>Lab evolution<0>Ex evolution<*A>","Should change this to something more likely...
+Other options: DNA, Test, Genetic, Bio ???"
 0x130138,"のリきでないのなら
 しかたがないですね...
- やっぱリやる ごめん<*A>",/0x130138/<*A>
+ やっぱリやる ごめん<*A>","Well, if you really don't feel like it...
+<0>Actually...<0>Sorry<*A>",
 0x13013a,"セイカイ!じっけんしんかは
-なかなかできないんだよね!<*2>",/0x13013a/<*2>
+なかなかできないんだよね!<*2>",Correct! //<*2>,
 0x13013c,"もしかしてまだしらない?
-それじゃ しょうがないけど..<*2>",/0x13013c/<*2>
+それじゃ しょうがないけど..<*2>",Maybe you don't actually know about this yet? I suppose you wouldn't know the answer then...<*2>,
 0x13013e,"そうくるとおもってましたよ!
-でもまたこんどにしましょう<*2>",/0x13013e/<*2>
+でもまたこんどにしましょう<*2>",I knew you'd come around! But let's do it next time after all! //<*2>,
 0x130140,"あやまることはないですよ
-そういうこともあリます<*2>",/0x130140/<*2>
- #######, colspan=2 | '''024                                                     '''
+そういうこともあリます<*2>","You don't need to apologize. These things happen, right?<*2>",
+#######,#024,,
 0x130142,"ごぶさたしてました
 デンジュウクイズいかがですか?
- やる やらない<*A>",/0x130142/<*A>
+ やる やらない<*A>","It's been a while, huh? How about a Denjuu Quiz? // (politeness?)
+<0>Okay<0>No thanks<*A>",
 0x130144,"デンジュウのデンワバンゴウを
 ゲットするにはどうすればいい?
- にげだす たたかう<*A>",/0x130144/<*A>
+ にげだす たたかう<*A>","What does one have to do in order to get a Denjuu's phone number?
+<0>Flee<0>Fight<*A>",
 0x130146,"デンジュウカイについて
 しリたくはないんですか?
- しリたい しリたくない<*A>",/0x130146/<*A>
+ しリたい しリたくない<*A>","Don't you want to learn more about the Denjuu World?
+<0>I do<0>Nope<*A>",
 0x130148,"それではいつまでたっても
-ゲットすることはできませんよ!<*2>",/0x130148/<*2>
+ゲットすることはできませんよ!<*2>","If you do that, you will never be able to get one, unfortunately! //<*2>",
 0x13014a,"たたかって かつことによリ
-ゲットできます!<*2>",/0x13014a/<*2>
+ゲットできます!<*2>",Indeed! You get their number by fighting them and winning! //<*2>,
 0x13014c,"もし つぎのきかいがあれば
-ぜひちょうせんしてください!<*2>",/0x13014c/<*2>
+ぜひちょうせんしてください!<*2>","Fine. If the next opportunity arises, please take up the challenge! //<*2>",
 0x13014e,"そんな かなしいことは
-にどといわないでください!<*2>",/0x13014e/<*2>
- #######, colspan=2 | '''025                                                     '''
+にどといわないでください!<*2>",Please don't say such a sad thing ever again...<*2>,
+#######,#025,,
 0x130150,"とうとつなんだけどさ!
 オマエはどっちがすき?
- テレファング まちをたんさく<*A>",/0x130150/<*A>
+ テレファング まちをたんさく<*A>","I know this is sudden, but which one do you like most?
+<0>Telefang<0>Exploring towns<*A>",
 0x130152,"テレファングの
 どういうところがすきなの?
- かつこと まけること<*A>",/0x130152/<*A>
+ かつこと まけること<*A>","What do you like about Telefang battles?
+<0>Winning<0>Losing<*A>",
 0x130154,"たんさくしてるとき
 なにがいちばんたのしい?
- ひととはなす たからさがし<*A>",/0x130154/<*A>
+ ひととはなす たからさがし<*A>","What's the most fun thing for you while exploring?
+<0>Talking to others<0>Finding treasure<*A>",
 0x130156,"やっぱリそうだよね!
-オレも そうおもうよ!<*2>",/0x130156/<*2>
+オレも そうおもうよ!<*2>","That's right, isn't it? I feel the same way! //<*2>",
 0x130158,"めずらしいやつだな
-ふつうはぎゃくだぞ!<*2>",/0x130158/<*2>
+ふつうはぎゃくだぞ!<*2>","That's unusual! Usually, you'd want the opposite! // (you’re weird)<*2>",
 0x13015a,"いろんなじょうほうを
-きくことができるからな!<*2>",/0x13015a/<*2>
+きくことができるからな!<*2>","You'll get lots of information when talking to folks, after all! //<*2>",
 0x13015c,"みつけたときはうれしくて
-しょうがないよな!<*2>",/0x13015c/<*2>
- #######, colspan=2 | '''026                                                     '''
+しょうがないよな!<*2>","You can't help but feel so happy when you've found some, right? //<*2>",
+#######,#026,,
 0x13015e,"オレさ さいきんゆめをみるんだ
 オマエは ゆめをみたか?
- みた みない<*A>",/0x13015e/<*A>
+ みた みない<*A>","Y'know... I've been having these dreams lately... Have you had any? // 
+(do you dream a lot?)
+<0>Yes<0>No<*A>",
 0x130160,"どんなゆめみたのか
 おしえてくれないかなー?
- いいよ どうして?<*A>",/0x130160/<*A>
+ いいよ どうして?<*A>","Could you tell me what kind of dreams they were? //
+<0>Sure<0>Why?<*A>",
 0x130162,"オレ まいにちみるんだよ!
 それもこわいゆめなんだ!
- どんな? ききたくない<*A>",/0x130162/<*A>
+ どんな? ききたくない<*A>","I've been having them every night! And they're nightmares, at that!
+<0>What kind?<0>I don't wanna know<*A>",
 0x130164,"ヘー ホームランを
-うったゆめか!いいなー<*2>",/0x130164/<*2>
+うったゆめか!いいなー<*2>","Ohhh, dreams about hitting home runs? How nice! // (Nice!)<*2>",
 0x130166,"なんかさー ほかのひとの
-ゆめってきょうみあるんだよね!<*2>",/0x130166/<*2>
+ゆめってきょうみあるんだよね!<*2>",Well... I'm just really interested in what others dream about! // (other people?)<*2>,
 0x130168,"ききたいの?それがさ!
-うずにまきこまれるゆめなんだ!<*2>",/0x130168/<*2>
+うずにまきこまれるゆめなんだ!<*2>","You want to know? Well... In my dreams, I get dragged into this whirlpool! //<*2>",
 0x13016a,"こわいのか?よるトイレに
-いけなくなっちゃうからな...<*2>",/0x13016a/<*2>
- #######, colspan=2 | '''027                                                     '''
+いけなくなっちゃうからな...<*2>","Too scary for you? Well, they've made it difficult for me to go to the bathroom alone at night...<*2>",
+#######,#027,,
 0x13016c,"デンジュウカイは
 おまえにとってたのしいか?
- たのしい いまいち<*A>",/0x13016c/<*A>
+ たのしい いまいち<*A>","Do you consider the Denjuu World to be fun? //
+<0>Yeah!<0>Could be better<*A>",
 0x13016e,"どんなところがたのしい?
- ともだちがいる なんとなく<*A>",/0x13016e/<*A>
+ ともだちがいる なんとなく<*A>","What about it do you consider fun? //
+<0>My friends here<0>Not sure<*A>",
 0x130170,"どんなところがたのしくない?
- かぞくがいない ぜんぶ<*A>",/0x130170/<*A>
+ かぞくがいない ぜんぶ<*A>","Really? What don't you like about it?
+<0>I miss my family<0>Everything<*A>",
 0x130172,"なんていったって
-トモダチはたいせつだよな!<*2>",/0x130172/<*2>
+トモダチはたいせつだよな!<*2>","Friends are more important than anything, after all! //<*2>",
 0x130174,"なんとなくか...
-でも たのしいならいいか!<*2>",/0x130174/<*2>
+でも たのしいならいいか!<*2>","You're not sure what, huh... Well, you like it so it doesn't really matter! //<*2>",
 0x130176,"オマエがそんなさみしがリや
-だとはしらなかったよ<*2>",/0x130176/<*2>
+だとはしらなかったよ<*2>",I didn't know that you were the type to get that lonely! //<*2>,
 0x130178,"そんなはずないだろ!
-いいところはいっぱいあるよ!<*2>",/0x130178/<*2>
- #######, colspan=2 | '''028                                                     '''
+いいところはいっぱいあるよ!<*2>","No way, really?! There's lots of good stuff in this world, though! // (good things?)<*2>",
+#######,#028,,
 0x13017a,"オマエ すきなこいるのか?
- いる おしえない<*A>",/0x13017a/<*A>
+ いる おしえない<*A>","Do you have anyone you're interested in? // (a girl)
+<0>Yes<0>Not telling<*A>",
 0x13017c,"どんなこなんだ?
 オレにおしえてくれよ!
- いいよ ダーメ<*A>",/0x13017c/<*A>
+ いいよ ダーメ<*A>","What's she like? Please tell me! // (come on, tell me!)
+<0>Sure<0>No way<*A>",
 0x13017e,"ケチくさいこといわないで
 おしえてくれよ!
- どうしようかな ヒミツ<*A>",/0x13017e/<*A>
+ どうしようかな ヒミツ<*A>","Don't be so stingy! I promise! ///
+<0>Hmm...<0>It's a secret<*A>",
 0x130180,"ほんとか?!まさか!
-うそをおしえるつもリじゃ...<*2>",/0x130180/<*2>
+うそをおしえるつもリじゃ...<*2>","Wow! Really?! No way! You're not yanking my chain, are you?... //<*2>",
 0x130182,"やっぱリそういうとおもった
-こんどぜったいききだしてやる!<*2>",/0x130182/<*2>
+こんどぜったいききだしてやる!<*2>",I knew you would say that! Definitely tell me next time! //<*2>,
 0x130184,"もしかして オマエてれてるの?
-ワー てれてる!てれてる!<*2>",/0x130184/<*2>
+ワー てれてる!てれてる!<*2>","Wait... Are you embarrassed? Waah, you're embarrassed~!<*2>",
 0x130186,"ちぇ つまんないの!
-おしえてくれたっていいじゃん!<*2>",/0x130186/<*2>
- #######, colspan=2 | '''029                                                     '''
+おしえてくれたっていいじゃん!<*2>","Boo, you're no fun! You could have just said yes or no... //<*2>",
+#######,#029,,
 0x130188,"『ちゅうしゃ』ってなに?
 いたいってほんとうなの?
- いたいよ そんなことない<*A>",/0x130188/<*A>
+ いたいよ そんなことない<*A>","What's a ""vaccine""? Is it true that it hurts?
+<0>It hurts<0>It doesn't<*A>",
 0x13018a,"ないちゃったことある?
- あるよ ないよ<*A>",/0x13018a/<*A>
+ あるよ ないよ<*A>","Has getting one ever made you cry?
+<0>Yes<0>Nope<*A>",
 0x13018c,"そうなんだ!オレのトモダチは
 きらいだっていってたぞ!
- そうかな オレもきらい<*A>",/0x13018c/<*A>
-0x13018e,そうなんだ!そんなにいたいんだ!よかったこっちにはなくて!<*2>,/0x13018e/<*2>
+ そうかな オレもきらい<*A>","I see! My friend told me they hate injections! //
+<0>Really?<0>So do I<*A>",
+0x13018e,そうなんだ!そんなにいたいんだ!よかったこっちにはなくて!<*2>,"Oh, so it hurts that much, huh? I'm so glad we don't have that stuff over here! //<*2>",
 0x130190,"おとこのこだもんね!
-ないちゃったリはしないよね<*2>",/0x130190/<*2>
+ないちゃったリはしないよね<*2>","You're a real tough guy, after all! You wouldn't cry!<*2>",
 0x130192,"すごいね <&name>は!
-みなおしちゃったよ!<*2>",/0x130192/<*2>
+みなおしちゃったよ!<*2>","Wow, <NAME>, you're pretty amazing! I'm seeing you in a whole new light!  //<*2>",
 0x130194,"やっぱリ いたいのは
-みんな きらいだよね!<*2>",/0x130194/<*2>
- #######, colspan=2 | '''030                                                     '''
+みんな きらいだよね!<*2>","No one likes it because it hurts, huh? That makes sense! //<*2>",
+#######,#030,,
 0x130196,"『なつやすみ』ってなーに?
 なにをするものなの?おしえて!
- たベる あそぶ<*A>",/0x130196/<*A>
+ たベる あそぶ<*A>","What's a ""summer break""? What is it for? Please tell me!
+<0>Eating<0>Relaxing<*A>",
 0x130198,"たベものなの?
- そうだよ うそです<*A>",/0x130198/<*A>
+ そうだよ うそです<*A>","So it's food?
+<0>Yep<0>Just kidding<*A>",
 0x13019a,"なにしてあそぶの?
- うみにいく やまにいく<*A>",/0x13019a/<*A>
+ うみにいく やまにいく<*A>","Relaxing? Like how?
+<0>Enjoying the beach<0>Visiting the mountains  //<*A>",
 0x13019c,"そうなんだ!きっとおいしいもの
-なんだろうね!ってほんとに?<*2>",/0x13019c/<*2>
+なんだろうね!ってほんとに?<*2>","I see! It sounds very tasty... Wait, you're not lying, are you?<*2>",
 0x13019e,"なんだ うそか!
-しんじちゃうとこだった!<*2>",/0x13019e/<*2>
+しんじちゃうとこだった!<*2>","Oh, it was just a joke! You had me totally convinced!<*2>",
 0x1301a0,"うみにいくと うみのデンジュウ
-みたいのがいるのか?<*2>",/0x1301a0/<*2>
+みたいのがいるのか?<*2>","When you go to the beach, will you find creatures similar to aquatic Denjuu there? //<*2>",
 0x1301a2,"やまにいって かくれんぼでも
-するの?ちがうの?<*2>",/0x1301a2/<*2>
- #######, colspan=2 | '''031                                                     '''
+するの?ちがうの?<*2>",So do you go to the mountains and play hide and seek there?<*2>,Maybe change hide and seek to something else if we're going with relaxing instead of playing?
+#######,#031,,
 0x1301a4,"『オバケ』ってこわいんでしょ?
 <&name>はこわい?
- こわい こわくない<*A>",/0x1301a4/<*A>
+ こわい こわくない<*A>","Ghosts are scary, right? Are you scared of them, <Name>?
+<0>Yeah<0>Nope<*A>",
 0x1301a6,"どんなところにいるの?
- おはか きのなか<*A>",/0x1301a6/<*A>
+ おはか きのなか<*A>","Where can you find them?
+<0>At graves<0>Inside trees<*A>",
 0x1301a8,"であったときはどうするの?
- にげる ダンスする<*A>",/0x1301a8/<*A>
+ にげる ダンスする<*A>","What would you do if you met one?
+<0>Run!<0>Dance!<*A>",
 0x1301aa,"なんかこわくなってきた
-ひとリでかえれなくなっちゃう!<*2>",/0x1301aa/<*2>
-0x1301ac,ああ きのみつをチュウチュウ..って!それムシじゃん!<*2>,/0x1301ac/<*2>
+ひとリでかえれなくなっちゃう!<*2>","Ahh, I'm getting a little spooked! I don't think I can go home by myself now...<*2>",
+0x1301ac,ああ きのみつをチュウチュウ..って!それムシじゃん!<*2>,"Ahh, so they get into trees and suck up the sap... Wait, isn't that just an insect?! //<*2>",
 0x1301ae,"それがいちばんってことか
-でもにげきれなかったら...<*2>",/0x1301ae/<*2>
-0x1301b0,さあ いっしょにおどリましょう!って!あし ないんでしょ?<*2>,/0x1301b0/<*2>
- #######, colspan=2 | '''032                                                     '''
+でもにげきれなかったら...<*2>","That sounds like it would be best... And then, if you can't manage to flee... Brr... //<*2>",
+0x1301b0,さあ いっしょにおどリましょう!って!あし ないんでしょ?<*2>,You can do a nice little dance together! Wait! Ghosts don't have legs!<*2>,
+#######,#032,,
 0x1301b2,"『おこづかい』っていうのが
 ニンゲンにはあるんでしょう?
- あるよ オレはない<*A>",/0x1301b2/<*A>
+ あるよ オレはない<*A>","Humans receive pocket money, right? // (an “allowance”)
+<0>Yeah<0>I don't<*A>",
 0x1301b4,"<&name>は
 なんにつかうの?
- ためる マンガ<*A>",/0x1301b4/<*A>
+ ためる マンガ<*A>","<NAME>, what do you use yours for? //
+<0>Save it<0>Comics<*A>",
 0x1301b6,"ごめん なんかきいちゃマズイ
 ことだったのかな?
- まあね そうでもない<*A>",/0x1301b6/<*A>
+ まあね そうでもない<*A>","I'm sorry, was this a bad thing to ask?
+<0>Kind of<0>Not really<*A>",
 0x1301b8,"いがいだなー まさかためてる
-とはおもわなかったよ...<*2>",/0x1301b8/<*2>
+とはおもわなかったよ...<*2>",That's unexpected! I didn't expect you to be saving it up... // (to be so responsible)<*2>,
 0x1301ba,"マンガもいいし オカシっていう
-つかいみちもあるよね!<*2>",/0x1301ba/<*2>
+つかいみちもあるよね!<*2>",Manga's a good way to spend it! Buying snacks sounds like a good way to use it too! <*2>,
 0x1301bc,"ごめんね おねがいだから
-きらいにならないでね!<*2>",/0x1301bc/<*2>
+きらいにならないでね!<*2>","Oh, sorry! I hope you're not mad at me...<*2>",
 0x1301be,"<&name>はあんまリ
-おかねにこだわらないんだね!<*2>",/0x1301be/<*2>
- #######, colspan=2 | '''033                                                     '''
+おかねにこだわらないんだね!<*2>","You don't care about money all that much, huh <NAME>? //<*2>",
+#######,#033,,
 0x1301c0,"もしかして!オマエってすごく
 あたまいいのか?
- なんで? どうかな<*A>",/0x1301c0/<*A>
+ なんで? どうかな<*A>","Hey, could it be that you might actually be very smart? //
+<0>Why?<0>I wonder... //<*A>",
 0x1301c2,"オマエっていがいに
 いろいろ しってそうだから!
- まあね そんなことないよ<*A>",/0x1301c2/<*A>
+ まあね そんなことないよ<*A>","Because! You seem to know a lot about so many things! //
+<0>I guess<0>That's not true<*A>",
 0x1301c4,"どうなんだ!あたまがいいのか
 わるいのか!どっちだ!!
- いいかな? わかんないよ<*A>",/0x1301c4/<*A>
+ いいかな? わかんないよ<*A>","So which is it?! Are you smart? Or are you dumb?!!
+<0>Smart, maybe?<0>I dunno!<*A>",
 0x1301c6,"やっぱリな!オレって
-ひとをみるめがあるんだな!<*2>",/0x1301c6/<*2>
+ひとをみるめがあるんだな!<*2>","I knew it! I have an eye for these kinds of things, you know!<*2>",
 0x1301c8,"どうしたんだよ!めずらしく
-けんそんしちゃったリして!<*2>",/0x1301c8/<*2>
+けんそんしちゃったリして!<*2>","Wow, you're being unusually modest!  //<*2>",
 0x1301ca,"はっきリしないな!オレは
-はっきリしないのはきらいだ!<*2>",/0x1301ca/<*2>
+はっきリしないのはきらいだ!<*2>",You're not being clear! I don't like that at all!<*2>,
 0x1301cc,"じぶんのことだろ!
-オレか?オレはあたまいいぞ!<*2>",/0x1301cc/<*2>
- #######, colspan=2 | '''034                                                     '''
+オレか?オレはあたまいいぞ!<*2>",How can you not know this about yourself? Hm? Me? I'm quite smart! // (always smart)<*2>,
+#######,#034,,
 0x1301ce,"だれにもいってない
 かくしごとってあるのか?
- ある ない<*A>",/0x1301ce/<*A>
+ ある ない<*A>","Do you have a secret you can't tell anyone?
+<0>I do<0>I don't<*A>",
 0x1301d0,"それってなーに?
 もちろんおしえてくれるよな!
- ダメ いいけど...<*A>",/0x1301d0/<*A>
+ ダメ いいけど...<*A>","Ohhh, could you tell me? I won't tell anyone else!
+<0>No way<0>Fine…  // (Alright…)<*A>",
 0x1301d2,"ほんとうに?
 ぜったいないっていえる?
- いえる ぜったいとは...<*A>",/0x1301d2/<*A>
+ いえる ぜったいとは...<*A>","Really? You're telling me you don't have any at all?
+<0>That's right<0>Well…  //<*A>",
 0x1301d4,"そんなにじゅうだいな
-ヒミツなのか?しリたーい!<*2>",/0x1301d4/<*2>
+ヒミツなのか?しリたーい!<*2>","It's that important to you? Man, now I REALLY wanna know!<*2>",
 0x1301d6,"ふむふむ..え!そうなの?
-しらなかったなー!!<*2>",/0x1301d6/<*2>
+しらなかったなー!!<*2>","Uh huh... Wow, really? I had no clue!!<*2>",
 0x1301d8,"そっか うたがって
-わるかったな ゆるしてくれよ<*2>",/0x1301d8/<*2>
+わるかったな ゆるしてくれよ<*2>",I see! Sorry for doubting you. Please forgive me.  //<*2>,
 0x1301da,"そうだろやっぱリなー
-かくしごとはできないよな!<*2>",/0x1301da/<*2>
- #######, colspan=2 | '''035                                                     '''
+かくしごとはできないよな!<*2>","I knew it, you have a secret after all! You can't keep that secret from me!  ///<*2>",
+#######,#035,,
 0x1301dc,"どうしてもこれだけは
 ゆるせないってものある?
- ある ない<*A>",/0x1301dc/<*A>
+ ある ない<*A>","Do you have anything you would never forgive someone for?
+<0>Yes<0>No<*A>",
 0x1301de,"それってなに?
 どんなことかおしえてくれない?
- うそをつく じつはない<*A>",/0x1301de/<*A>
+ うそをつく じつはない<*A>","You do? Will you tell me what it is?
+<0>Lying to someone<0>I actually don't //<*A>",
 0x1301e0,"ひとつもないのか?
 オマエこころがひろいな!
- そうじゃないよ やっぱリ?<*A>",/0x1301e0/<*A>
+ そうじゃないよ やっぱリ?<*A>","Really? There's nothing at all? You're very broad-minded! //
+<0>That's not true<0>You think so? //<*A>",kind-hearted?
 0x1301e2,"うそをつくことか...
-それはたしかによくないな!<*2>",/0x1301e2/<*2>
+それはたしかによくないな!<*2>","Lying, huh... I agree, that would certainly be bad! //<*2>",
 0x1301e4,"なんだよ!きたいさせておいて!
-がっかリしたよ!<*2>",/0x1301e4/<*2>
+がっかリしたよ!<*2>","What, really? You were getting my hopes up for nothing!<*2>",
 0x1301e6,"けんそんするなって!
-すなおによろこベばいいじゃん!<*2>",/0x1301e6/<*2>
+すなおによろこベばいいじゃん!<*2>",You don't have to be so humble! You can be happy about it!<*2>,
 0x1301e8,"そうやってすぐちょうしに
-のるんだよな!オマエって!<*2>",/0x1301e8/<*2>
- #######, colspan=2 | '''036                                                     '''
+のるんだよな!オマエって!<*2>",/0x1301e8/<*2>,
+#######,#036,,
 0x1301ea,"からだと あたま どっちを
 つかうほうがとくい?
- あたま からだ<*A>",/0x1301ea/<*A>
+ あたま からだ<*A>","Are you better at using your muscles or your brain?
+<0>Brain<0>Muscles<*A>",
 0x1301ec,"うっそー!そうなんだ!
 たとえば?
- ベんきょう なぞなぞ<*A>",/0x1301ec/<*A>
+ ベんきょう なぞなぞ<*A>","Really? No way! Like how?
+<0>I study<0>I'm good at riddles<*A>",
 0x1301ee,"そうだろうなー!
 で!なにがとくいなんだ?
- やきゅう フェンシング<*A>",/0x1301ee/<*A>
+ やきゅう フェンシング<*A>","I knew it! So what sport are you good at?
+<0>Baseball<0>Fencing<*A>",
 0x1301f0,"そうだったのか!オレは
-オマエのことかんちがいしてた!<*2>",/0x1301f0/<*2>
+オマエのことかんちがいしてた!<*2>",I had no idea! You've made me think differently about you! //<*2>,Better way to express this?
 0x1301f2,"なぞなぞなら オレだって
-とくいなんだぞ!おどろいた?<*2>",/0x1301f2/<*2>
-0x1301f4,いつもヘルメットかぶってるよな!オレもやってみたいな!<*2>,/0x1301f4/<*2>
+とくいなんだぞ!おどろいた?<*2>","I'm quite good at riddles myself! Surprised, are you?<*2>",
+0x1301f4,いつもヘルメットかぶってるよな!オレもやってみたいな!<*2>,"That's right, you're always wearing your helmet! I'd like to try and play baseball sometime too!<*2>",
 0x1301f6,"うそだ!ぜったいうそだろ!
-だまされないぞオレは!<*2>",/0x1301f6/<*2>
- #######, colspan=2 | '''037 (partial)                                                     '''
+だまされないぞオレは!<*2>","No way, I don't believe it! If you thought you could fool me, guess again! //<*2>",
+#######,#037,,
 0x1301f8,"オレってはずかしがリやなのが
 なやみ なんだよね
- きにすんなよ うそつけ<*A>",/0x1301f8/<*A>
+ きにすんなよ うそつけ<*A>","I'm worried about being too shy... //
+<0>Don't worry<0>Yeah right //<*A>",
 0x1301fa,"やっぱリきにしすぎかな?
- そうだよ なおすには..<*A>",/0x1301fa/<*A>
+ そうだよ なおすには..<*A>","I guess I shouldn't be worrying over it? //
+<0>That's right<0>Try to improve //<*A>",
 0x1301fc,"うそじゃないよ!オマエには
 こんななやみはわからないよな!
- わるかった わかんない<*A>",/0x1301fc/<*A>
+ わるかった わかんない<*A>","I'm not lying! You would NEVER understand the kind of worry I have... //
+<0>I'm sorry<0>I wouldn't //<*A>",
 0x1301fe,"あリがとう!なんか
-じしんがでてきたよ!<*2>",/0x1301fe/<*2>
+じしんがでてきたよ!<*2>",Thank you! That gives me a little bit more self-confidence!<*2>,

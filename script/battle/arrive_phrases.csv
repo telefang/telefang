@@ -1,175 +1,175 @@
-#,English
-1,I've arrived!
-2,I'm here!
-3,I'm here!
-4,...Made it.
-5,"Made you wait, huh!"
-6,Kept you waiting~
-7,Thanks for waiting!
-8,"Hip, made you wait."
-9,"I'm here, puni!"
-10,Made it... blurp
-11,"Pretty quick, huh?"
-12,Cluck! Made you wait!
-13,Arrival!
-14,Kept you waiting~
-15,"I'm here, octo."
-16,...Made it.
-17,I've arrived!
-18,"Heh, I'm here~"
-19,"Snip snip, I'm here!"
-20,Crab coming~
-21,"Made you wait, huh!"
-22,Leave it to me!
-23,"I'm here, ope!"
-24,Ook eek eek...!
-25,Finally!
-26,"Made you wait, huh!"
-27,"I'm here, hoo."
-28,"I'm here, huh!"
-29,"Pheww, I'm here!"
-30,"Why, hello!"
-31,"Viva, I'm here!"
-32,Leave it to me!
-33,The other day~
-34,I came as fast as I could!
-35,"Yo, thanks for waiting!"
-36,You called?
-37,I'm here!
-38,I'm here!
-39,...Made it.
-40,"Made you wait, huh!"
-41,Kept you waiting~
-42,Thanks for waiting!
-43,"Hip, made you wait."
-44,"I'm here, puni!"
-45,I'm here... glurp
-46,I have arrived!
-47,Geh-heheheheh!
-48,Have I made you wait?
-49,...Made it.
-50,Here I am!
-51,I inched my way here!
-52,Am I too late?
-53,I've come!
-54,"Made it, bird."
-55,"I'm here, beet!"
-56,I've arrived!
-57,I'm here!
-58,I'm here!
-59,...Made it.
-60,"Made you wait, huh!"
-61,Kept you waiting~
-62,Thanks for waiting!
-63,"Hip, made you wait."
-64,"I'm here, puni!"
-65,Made it... blurp
-66,"Pretty quick, huh?"
-67,Cluck! Made you wait!
-68,Arrival!
-69,Kept you waiting~
-70,"I'm here, octo."
-71,...Made it.
-72,I've arrived!
-73,"Heh, I'm here~"
-74,"Snip snip, I'm here!"
-75,Crab coming~
-76,"Made you wait, huh!"
-77,Leave it to me!
-78,"I'm here, ope!"
-79,Ook eekeek!
-80,Finally!
-81,"Made you wait, huh!"
-82,"I'm here, hoo."
-83,"I'm here, huh!"
-84,"Pheww, I'm here!"
-85,"Why, hello!"
-86,"Viva, I'm here!"
-87,Leave it to me!
-88,The other day~
-89,"Mhm, I'm here. "
-90,"Yo, thanks for waiting!"
-91,"Viva, I'm here!"
-92,Leave it to me!
-93,"I'm here, ope!"
-94,Ook eek eek eek...
-95,Finally!
-96,"Made you wait, huh!"
-97,"I'm here, hoo."
-98,"I'm here, huh!"
-99,"Pheww, I'm here!"
-100,"Hey, what's up?"
-101,I'm HERE!
-102,Thanks for waaaiting~
-103,Is this the place?
-104,You need something?
-105,Thanks for waitin'!
-106,Who's my enemy?
-107,Twirl twirl... Here!
-108,"I'm here, meow~"
-109,Hello?
-110,"Made you wait, huh!"
-111,Vrrroooom!
-112,I'm here!
-113,"Made you wait, huh!"
-114,Thanks for waiting!
-115,"I'm here, puni!"
-116,Leave it to me!
-117,Arrival!
-118,"I'm here, octo."
-119,I've arrived!
-120,"Snip snip, I'm here!"
-121,I've arrived!
-122,I'm here!
-123,"Made you wait, huh!"
-124,Thanks for waiting!
-125,"I'm here, puni!"
-126,"Pretty quick, huh?"
-127,Arrival!
-128,"I'm here, octo."
-129,I've arrived!
-130,"Snip snip, I'm here!"
-131,"Pretty quick, huh?"
-132,"Heh, I'm here!"
-133,I'mma here!
-134,Cut cut cut cut
-135,"I'm here, I'm here!"
-136,"Made you wait, huh!"
-137,Leave it to me!
-138,"I'm here, ope!"
-139,Ook eek eek...!
-140,Finally!
-141,"Made you wait, huh!"
-142,"I'm here, hoo."
-143,"I'm here, huh!"
-144,Pardon me!
-145,You called for me?
-146,Stop calling me!
-147,You called for me?
-148,"Keheheh, you called?"
-149,..........
-150,I'm heeere!
-151,"Made you wait, huh!"
-152,Leave it to me!
-153,"I'm here, ope!"
-154,"Made you wait, huh!"
-155,You called for me?
-156,I've arrived!
-157,I'm here!
-158,"Made you wait, huh!"
-159,Thanks for waiting!
-160,Thou hast called me?
-161,"Made you wait, huh!"
-162,Leave it to me!
-163,"I'm here, ope!"
-164,Ook eek eek...!
-165,Stop calling me!
-166,Howwl!
-167,Neighh!
-168,Kaaaw!
-169,Heh heh heh...
-170,"Made you wait, huh!"
-171,Leave it to me!
-172,Gah hah hah hah!
-173,Hello~?
-174,I'm here~
+#,Japanese,English,Notes
+1,とうちゃくしたぜ,I've arrived!,Each row is numbered by Denjuu ID.
+2,ついたよ-,I'm here!,This is the same ordering as other Denjuu species string tables.
+3,ついたよ-,I'm here!,Japanese strings are limited to 16 characters.
+4,...ついた,...Made it.,English strings are limited to 32 characters.
+5,またせたなっ!,"Made you wait, huh!",
+6,おまたせ-,Kept you waiting~,
+7,おまたせしました!,Thanks for waiting!,
+8,またせたカバ,"Hip, made you wait.",
+9,ついたプニ,"I'm here, puni!",
+10,ついたプルン,Made it... blurp,
+11,はやかっただろ,"Pretty quick, huh?",
+12,おまたせコケ,Cluck! Made you wait!,
+13,けんざん!,Arrival!,
+14,おまたせ-,Kept you waiting~,
+15,おまたせタコ,"I'm here, octo.",
+16,...ついた,...Made it.,
+17,とうちゃくしたぜ,I've arrived!,
+18,ついたっクス,"Heh, I'm here~",
+19,シャカシャカきた,"Snip snip, I'm here!",
+20,きたカニよ-,Crab coming~,
+21,またせたなっ!,"Made you wait, huh!",
+22,オレにまかせな!,Leave it to me!,
+23,ついたっペ,"I'm here, ope!",
+24,ウキキ-,Ook eek eek...!,
+25,おまたっ!,Finally!,
+26,またせたなっ!,"Made you wait, huh!",
+27,きたホロウ,"I'm here, hoo.",
+28,きたもんネ,"I'm here, huh!",
+29,ピュ-ときたぜ,"Pheww, I'm here!",
+30,どうもどうも,"Why, hello!",
+31,ビバっときたぜ,"Viva, I'm here!",
+32,オレにまかせな!,Leave it to me!,
+33,もリのな-か-,The other day~,
+34,いそいできました,I came as fast as I could!,
+35,よ-おまたせ,"Yo, thanks for waiting!",
+36,よんだかい,You called?,
+37,ついたよ-,I'm here!,
+38,ついたよ-,I'm here!,
+39,...ついた,...Made it.,
+40,またせたなっ!,"Made you wait, huh!",
+41,おまたせ-,Kept you waiting~,
+42,おまたせしました!,Thanks for waiting!,
+43,またせたカバ,"Hip, made you wait.",
+44,ついたプニ,"I'm here, puni!",
+45,ついたブルン,I'm here... glurp,
+46,つきましたよ!,I have arrived!,
+47,ゲッゲゲゲゲゲ,Geh-heheheheh!,
+48,またせたかの-,Have I made you wait?,
+49,...ついた,...Made it.,
+50,さぁきたよ!,Here I am!,
+51,ウネウネきた-,I inched my way here!,
+52,おそかった?,Am I too late?,
+53,きてやったぜ,I've come!,
+54,ついたトリ,"Made it, bird.",
+55,ついたクワ,"I'm here, beet!",
+56,とうちゃくしたぜ,I've arrived!,
+57,ついたよ-,I'm here!,
+58,ついたよ-,I'm here!,
+59,...ついた,...Made it.,
+60,またせたなっ!,"Made you wait, huh!",
+61,おまたせ-,Kept you waiting~,
+62,おまたせしました!,Thanks for waiting!,
+63,またせたカバ,"Hip, made you wait.",
+64,ついたプニ,"I'm here, puni!",
+65,ついたプルン,Made it... blurp,
+66,はやかっただろ,"Pretty quick, huh?",
+67,おまたせコケ,Cluck! Made you wait!,
+68,けんざん!,Arrival!,
+69,おまたせ-,Kept you waiting~,
+70,おまたせタコ,"I'm here, octo.",
+71,...ついた,...Made it.,
+72,とうちゃくしたぜ,I've arrived!,
+73,ついたっクス,"Heh, I'm here~",
+74,シャカシャカきた,"Snip snip, I'm here!",
+75,きたカニよ-,Crab coming~,
+76,またせたなっ!,"Made you wait, huh!",
+77,オレにまかせな!,Leave it to me!,
+78,ついたっペ,"I'm here, ope!",
+79,ウキッキ-,Ook eekeek!,
+80,おまたっ!,Finally!,
+81,またせたなっ!,"Made you wait, huh!",
+82,きたホロウ,"I'm here, hoo.",
+83,きたもんネ,"I'm here, huh!",
+84,ピュ-ときたぜ,"Pheww, I'm here!",
+85,どうもどうも,"Why, hello!",
+86,ビバっときたぜ,"Viva, I'm here!",
+87,オレにまかせな!,Leave it to me!,
+88,もリのな-か-,The other day~,
+89,うむ ついたぞ,"Mhm, I'm here. ",
+90,よ-おまたせ,"Yo, thanks for waiting!",
+91,ビバっときたぜ,"Viva, I'm here!",
+92,オレにまかせな!,Leave it to me!,
+93,ついたっペ,"I'm here, ope!",
+94,ウキキキキ-,Ook eek eek eek...,
+95,おまたっ!,Finally!,
+96,またせたなっ!,"Made you wait, huh!",
+97,きたホロウ,"I'm here, hoo.",
+98,きたもんネ,"I'm here, huh!",
+99,ピュ-ときたぜ,"Pheww, I'm here!",
+100,や-どうも,"Hey, what's up?",
+101,きたダよ!,I'm HERE!,
+102,お-また-せ-,Thanks for waaaiting~,
+103,ここでいのか?,Is this the place?,
+104,なにかようか,You need something?,
+105,おまちど-さま!,Thanks for waitin'!,
+106,どいつがあいてだ,Who's my enemy?,
+107,キュルキュルきた,Twirl twirl... Here!,
+108,きったニャ-ン,"I'm here, meow~",
+109,もしもし?,Hello?,
+110,またせたなっ!,"Made you wait, huh!",
+111,ブロブロロン!,Vrrroooom!,
+112,ついたよ-,I'm here!,
+113,またせたなっ!,"Made you wait, huh!",
+114,おまたせしました!,Thanks for waiting!,
+115,ついたプニ,"I'm here, puni!",
+116,オレにまかせな!,Leave it to me!,
+117,けんざん!,Arrival!,
+118,おまたせタコ,"I'm here, octo.",
+119,とうちゃくしたぜ,I've arrived!,
+120,シャカシャカきた,"Snip snip, I'm here!",
+121,とうちゃくしたぜ,I've arrived!,
+122,ついたよ-,I'm here!,
+123,またせたなっ!,"Made you wait, huh!",
+124,おまたせしました!,Thanks for waiting!,
+125,ついたプニ,"I'm here, puni!",
+126,はやかっただろ,"Pretty quick, huh?",
+127,けんざん!,Arrival!,
+128,おまたせタコ,"I'm here, octo.",
+129,とうちゃくしたぜ,I've arrived!,
+130,シャカシャカきた,"Snip snip, I'm here!",
+131,はやかっただろ,"Pretty quick, huh?",
+132,きたっちゃよ-,"Heh, I'm here!",
+133,ついたタイ!,I'mma here!,
+134,キリキリキリ,Cut cut cut cut,
+135,きたぜきたぜ-!,"I'm here, I'm here!",
+136,またせたなっ!,"Made you wait, huh!",
+137,オレにまかせな!,Leave it to me!,
+138,ついたっペ,"I'm here, ope!",
+139,ウキキ-,Ook eek eek...!,
+140,おまたっ!,Finally!,
+141,またせたなっ!,"Made you wait, huh!",
+142,きたホロウ,"I'm here, hoo.",
+143,きたもんネ,"I'm here, huh!",
+144,すいさんっ!,Pardon me!,
+145,よんだかね?,You called for me?,
+146,いちいちよぶな!,Stop calling me!,
+147,よんだかね?,You called for me?,
+148,ケケケよんだか?,"Keheheh, you called?",
+149,.......,..........,
+150,きたんだよ-ん!,I'm heeere!,
+151,またせたなっ!,"Made you wait, huh!",
+152,オレにまかせな!,Leave it to me!,
+153,ついたっペ,"I'm here, ope!",
+154,またせたなっ!,"Made you wait, huh!",
+155,よんだかね?,You called for me?,
+156,とうちゃくしたぜ,I've arrived!,
+157,ついたよ-,I'm here!,
+158,またせたなっ!,"Made you wait, huh!",
+159,おまたせしました!,Thanks for waiting!,
+160,われをよんだか?,Thou hast called me?,
+161,またせたなっ!,"Made you wait, huh!",
+162,オレにまかせな!,Leave it to me!,
+163,ついたっペ,"I'm here, ope!",
+164,ウキキ-,Ook eek eek...!,
+165,いちいちよぶな!,Stop calling me!,
+166,コ-ン!,Howwl!,
+167,ヒ-ン!,Neighh!,
+168,ケ-ン!,Kaaaw!,
+169,クククク,Heh heh heh...,
+170,またせたなっ!,"Made you wait, huh!",
+171,オレにまかせな!,Leave it to me!,
+172,ガガガガガガッ!,Gah hah hah hah!,
+173,もしもし-,Hello~?,
+174,きました-,I'm here~,

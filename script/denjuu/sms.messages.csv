@@ -1,703 +1,705 @@
-Pointer,Japanese,English
+Pointer,Japanese,English,Notes
+#######,SMS messages,,
 0x118000,さいきんなんか キミからのデンワが すくないような きがする<*4>,"I feel
 like u
 r call
 ing me
-less<*4>"
+less<*4>",SMS messages and secret Denjuu calls.
 0x118002,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"r u
 callin
 less?
 did i
 make u
-mad?<*4>"
+mad?<*4>","Status: Needs a full rewrite.
+"
 0x118004,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"call
 me
 more!
 its so
 boring
 when u
-don't<*4>"
+don't<*4>",
 0x118006,あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>,"hey...
 havent
 heard
 from u
 lately
 ..what
-'s up?<*4>"
+'s up?<*4>",
 0x118008,もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>,"no one
 calls
 me...
 i'm so
 lonely
->:(<*4>"
+>:(<*4>",
 0x11800a,さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>,"hey u
 havent
 called
 lately
 r u
-busy?<*4>"
+busy?<*4>",
 0x11800c,キミといると なんだかとってもたのしいよ またあそうぼうね<*4>,"ur fun
 2 be 
 around
 lets
 play
-again!<*4>"
+again!<*4>",
 0x11800e,オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>,"ur my
 best
 frend!
 lets
 play
-again!<*4>"
+again!<*4>",
 0x118010,オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>,"ur a
 cool
 guy!
 call
 me bac
-k soon<*4>"
+k soon<*4>",
 0x118012,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"time
 flies
 when
 i'm 
 with
-u! :D<*4>"
+u! :D<*4>",
 0x118014,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"hey!!
 u and
 me r
 frends
-rite? :)<*4>"
+rite? :)<*4>",
 0x118016,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"lets
 play
 togeth
 er som
 time,
 call
-me!<*4>"
+me!<*4>",
 0x118018,あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>,"hey, r
 u doin
 well?
 i'm
 knd of
-woried<*4>"
+woried<*4>",
 0x11801a,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"heyy
 how r 
 u doin
 ? call
 me som
-time!<*4>"
+time!<*4>",
 0x11801c,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"hi how
 r u 
 doin?
 i'm
 doin
 just
-fine!<*4>"
+fine!<*4>",
 0x11801e,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"umm...
 sry 2
 sound
 creepy
 but r
 u okay
-???<*4>"
+???<*4>",
 0x118020,オマエ いまなにやってるんだ?からだには きをつけるんだぜ!<*4>,"hey
 whats
 up?
 take 
 care
 of ur
-self!<*4>"
-0x118022,そのご おかわリ あリませんか?ワタシはゲンキでやっています<*4>,/0x118022/<*4>
-0x118024,オレ なんかキミのことがすごいきらいになったみたいなんだよね<*4>,/0x118024/<*4>
-0x118026,さいきんのオマエは なんかすごくイヤなカンジだぜ まったく!<*4>,/0x118026/<*4>
-0x118028,さいきん キミたいどおおきいよ!もうすこしけんきょになったら?<*4>,/0x118028/<*4>
-0x11802a,あのね...さいきんのキミはイヤな カンジがするんだよな..<*4>,/0x11802a/<*4>
+self!<*4>",
+0x118022,そのご おかわリ あリませんか?ワタシはゲンキでやっています<*4>,/0x118022/<*4>,
+0x118024,オレ なんかキミのことがすごいきらいになったみたいなんだよね<*4>,/0x118024/<*4>,
+0x118026,さいきんのオマエは なんかすごくイヤなカンジだぜ まったく!<*4>,/0x118026/<*4>,
+0x118028,さいきん キミたいどおおきいよ!もうすこしけんきょになったら?<*4>,/0x118028/<*4>,
+0x11802a,あのね...さいきんのキミはイヤな カンジがするんだよな..<*4>,/0x11802a/<*4>,
 0x11802c,うぉーーー キミなんかきらいだーたまには でんわ してよー<*4>,"ugh I
 hate u
 why u
 never
 call
-me??<*4>"
-0x11802e,さいきんのキミは ちょっとつめたいとおもうのですが どうですか?<*4>,/0x11802e/<*4>
-0x118030,オマエ さいきんちょうしがわるいみたいだけど がんばってね!<*4>,/0x118030/<*4>
-0x118032,オマエ さいきんちょうしがよくないんだろ? むリするなよな!<*4>,/0x118032/<*4>
-0x118034,ちょうしわるいときって つらいよなーオマエもきをつけるんだぞ<*4>,/0x118034/<*4>
+me??<*4>",
+0x11802e,さいきんのキミは ちょっとつめたいとおもうのですが どうですか?<*4>,/0x11802e/<*4>,
+0x118030,オマエ さいきんちょうしがわるいみたいだけど がんばってね!<*4>,/0x118030/<*4>,
+0x118032,オマエ さいきんちょうしがよくないんだろ? むリするなよな!<*4>,/0x118032/<*4>,
+0x118034,ちょうしわるいときって つらいよなーオマエもきをつけるんだぞ<*4>,/0x118034/<*4>,
 0x118036,あのぉ...ちょうしわるいんですか?がんばってくださいね!<*4>,"Umm...
 are u
 feelin
 OK?
 keep
-it up!<*4>"
-0x118038,なんだか さいきんちょうしがわるいんだな!もっとがんばれよ!<*4>,/0x118038/<*4>
-0x11803a,なかなかれんらくがこないのでしんぱいしています!メールください!<*4>,/0x11803a/<*4>
-0x11803c,ひさしぶリ!ゲンキか? オレじつは メールにがてなんだよな!<*4>,/0x11803c/<*4>
-0x11803e,テレファングするまえに かならずアンテナのかずをよくみろよ!<*4>,/0x11803e/<*4>
-0x118040,デンワをまめにかけると デンジュウとなかよくなれるらしいぜ!<*4>,/0x118040/<*4>
-0x118042,デンジュウのせいかくを よくみてからデンワでよんだほうがいいぜ!<*4>,/0x118042/<*4>
-0x118044,たたかいにくるジカンは デンジュウのせいかくにかんけいしてるぞ!<*4>,/0x118044/<*4>
+it up!<*4>",
+0x118038,なんだか さいきんちょうしがわるいんだな!もっとがんばれよ!<*4>,/0x118038/<*4>,
+0x11803a,なかなかれんらくがこないのでしんぱいしています!メールください!<*4>,/0x11803a/<*4>,
+0x11803c,ひさしぶリ!ゲンキか? オレじつは メールにがてなんだよな!<*4>,/0x11803c/<*4>,
+0x11803e,テレファングするまえに かならずアンテナのかずをよくみろよ!<*4>,/0x11803e/<*4>,
+0x118040,デンワをまめにかけると デンジュウとなかよくなれるらしいぜ!<*4>,/0x118040/<*4>,
+0x118042,デンジュウのせいかくを よくみてからデンワでよんだほうがいいぜ!<*4>,/0x118042/<*4>,
+0x118044,たたかいにくるジカンは デンジュウのせいかくにかんけいしてるぞ!<*4>,/0x118044/<*4>,
 0x118046,デンジュウは くさのところで よく しゅつげんするらしいぞ!<*4>,"I thnk
 denjuu
 r more
 common
 in the
-grass!<*4>"
+grass!<*4>",
 0x118048,デンジュウは みずのところで よく しゅつげんするらしいぞ!<*4>,"I thnk
 denjuu
 r more
 common
 in the
-water!<*4>"
+water!<*4>",
 0x11804a,デンジュウは いえのちかくではしゅつげんしないらしいぞ!<*4>,"Denjuu
 dont
 appear
 near
-houses!<*4>"
-0x11804c,デンジュウは とくいなヤツとふとくいなヤツがいるんだってさ!<*4>,/0x11804c/<*4>
-0x11804e,つかれたデンジュウは じっとしてればかいふくするんだってさ!<*4>,/0x11804e/<*4>
-0x118050,アイテムをあげると そのデンジュウのけいけんちがあがるかも?<*4>,/0x118050/<*4>
-0x118052,じっけんしていろいろなしんかをさせてみることが たいせつだぞ<*4>,/0x118052/<*4>
-0x118054,いつか あるモノを もてるようになるかも? あるモノはヒミツだよ<*4>,/0x118054/<*4>
-0x118056,いつか あるモノを おせるようになるかも? あるモノはヒミツだよ<*4>,/0x118056/<*4>
+houses!<*4>",
+0x11804c,デンジュウは とくいなヤツとふとくいなヤツがいるんだってさ!<*4>,/0x11804c/<*4>,
+0x11804e,つかれたデンジュウは じっとしてればかいふくするんだってさ!<*4>,/0x11804e/<*4>,
+0x118050,アイテムをあげると そのデンジュウのけいけんちがあがるかも?<*4>,/0x118050/<*4>,
+0x118052,じっけんしていろいろなしんかをさせてみることが たいせつだぞ<*4>,/0x118052/<*4>,
+0x118054,いつか あるモノを もてるようになるかも? あるモノはヒミツだよ<*4>,/0x118054/<*4>,
+0x118056,いつか あるモノを おせるようになるかも? あるモノはヒミツだよ<*4>,/0x118056/<*4>,
 0x118058,メールは 8けんまでしか ほかんできないから たまにはみてね<*4>,"check
 your
 texts!
 u can
 only
-keep 8<*4>"
-0x11805a,デンジュウをそだてていくと あらたなワザを おぼえるらしいぞ<*4>,/0x11805a/<*4>
-0x11805c,オレ いますぐオマエに あいたいんだけど オマエはどうなの?<*4>,/0x11805c/<*4>
-0x11805e,おーっす きょうもいちにち おたがいがんばろうなー!!<*4>,/0x11805e/<*4>
-0x118060,なぁなぁ オレもしんかできるのかな?ためしてみてくれよな!!<*4>,/0x118060/<*4>
-0x118062,いつになったらオレを よんでくれるんだよ!まってるんだぞ!!<*4>,/0x118062/<*4>
+keep 8<*4>",
+0x11805a,デンジュウをそだてていくと あらたなワザを おぼえるらしいぞ<*4>,/0x11805a/<*4>,
+0x11805c,オレ いますぐオマエに あいたいんだけど オマエはどうなの?<*4>,/0x11805c/<*4>,
+0x11805e,おーっす きょうもいちにち おたがいがんばろうなー!!<*4>,/0x11805e/<*4>,
+0x118060,なぁなぁ オレもしんかできるのかな?ためしてみてくれよな!!<*4>,/0x118060/<*4>,
+0x118062,いつになったらオレを よんでくれるんだよ!まってるんだぞ!!<*4>,/0x118062/<*4>,
 0x118064,ここさいきん トモダチとあそんでないんだけど オマエはどう?<*4>,"havent
 played
 w/ my
 frends
 lately
-....u?<*4>"
+....u?<*4>",
 0x118066,デンワは マメにしないと ダメだぞ トモダチなくすからな! <*4>,"phone
 ppl or
 youll
 lose
 your
 frends
-<*4>"
-0x118068,デンワがかかってきたとき テキトウにこたえると あとがたいヘん!<*4>,/0x118068/<*4>
-0x11806a,このメールいつみてるんだ? もしヨルだったら さっさとねろよ<*4>,/0x11806a/<*4>
+<*4>",
+0x118068,デンワがかかってきたとき テキトウにこたえると あとがたいヘん!<*4>,/0x118068/<*4>,
+0x11806a,このメールいつみてるんだ? もしヨルだったら さっさとねろよ<*4>,/0x11806a/<*4>,
 0x11806c,おはよー..って これみてるのがヨルだったらさ まぬけだよな<*4>,"mornin
 ...oh
 unless
 its 
 nite 4
-u haha<*4>"
-0x11806e,テレファングのときは あいしょうを かんがえて よんでくれよ<*4>,/0x11806e/<*4>
-0x118070,ダイデンジュウとバクデンジュウのDNAは ちがうんだってさ!<*4>,/0x118070/<*4>
-0x118072,ボクを テレファングのときに よんでよー デンワまってるから<*4>,/0x118072/<*4>
+u haha<*4>",
+0x11806e,テレファングのときは あいしょうを かんがえて よんでくれよ<*4>,/0x11806e/<*4>,
+0x118070,ダイデンジュウとバクデンジュウのDNAは ちがうんだってさ!<*4>,/0x118070/<*4>,
+0x118072,ボクを テレファングのときに よんでよー デンワまってるから<*4>,/0x118072/<*4>,
 0x118074,ボンボンよんでるか? いろんなじょうほうが かいてあるらしいぜ!<*4>,"Do u
 read
 BomBom
 ? its
 good 4
-info!<*4>"
-0x118076,ボクたちをよぶときは とうちゃくするジカンも かんがえてよね<*4>,/0x118076/<*4>
-0x118078,ボクって わすれさられた そんざいになってないよね?ね?ね?<*4>,/0x118078/<*4>
-0x11807a,ショップに うってないアイテムもあるらしいよ よくさがしてね<*4>,/0x11807a/<*4>
-0x11807c,Dショットは つかいこなしてる?デンワかけるだけじゃないんだぜ!<*4>,/0x11807c/<*4>
+info!<*4>",
+0x118076,ボクたちをよぶときは とうちゃくするジカンも かんがえてよね<*4>,/0x118076/<*4>,
+0x118078,ボクって わすれさられた そんざいになってないよね?ね?ね?<*4>,/0x118078/<*4>,
+0x11807a,ショップに うってないアイテムもあるらしいよ よくさがしてね<*4>,/0x11807a/<*4>,
+0x11807c,Dショットは つかいこなしてる?デンワかけるだけじゃないんだぜ!<*4>,/0x11807c/<*4>,
 0x11807e,すベてのデンジュウと あえたの?まだだったら がんばれよな!<*4>,"Have u
 seen
 every
 denjuu
 yet?
 good
-luck!<*4>"
+luck!<*4>",
 0x118080,テキのステータスはちゃんとみてくれよオレはまけたくないからね<*4>,"always
 look at
 enemy
 stats!
 i dont
 wanna
-lose<*4>"
+lose<*4>",
 0x118082,ちゃんとかんがえて テレファングすると ラクにかてるようになるよ<*4>,"if u
 battle 
 smart,
 winnin
 g is
-easy!<*4>"
-0x118084,なかがいいヤツほど バンゴウをうしないにくいんだ しってた?<*4>,/0x118084/<*4>
-0x118086,ちょくせつ デンワをかけないとナカマにならないヤツもいるらしいよ<*4>,/0x118086/<*4>
-0x118088,ケイタイにも いろいろあるんだ!そのうち てにはいるかもね!<*4>,/0x118088/<*4>
-0x11808a,オレ オマエのかおを おもいだせないんだ!ごめん どうしよう<*4>,/0x11808a/<*4>
-0x11808c,キミにとってたいせつなモノってなに?ボクは トモダチなんだ!<*4>,/0x11808c/<*4>
-0x11808e,テレファングで まけないでね デンワバンゴウ なくなるからさ<*4>,/0x11808e/<*4>
-0x118090,オリジナルのDメロってつくった?まだならつくってみたらどう?<*4>,/0x118090/<*4>
-0x118092,なにかオレに アイテムをかってよ! つよそうヤツがいいな!<*4>,/0x118092/<*4>
-0x118094,プレゼントはどんなものだったとしてもやっぱリうれしいよな!<*4>,/0x118094/<*4>
-0x118096,きょういちにち たのしいことが あるといいな きっとあるよね<*4>,/0x118096/<*4>
-0x118098,またこんど デンジュウクイズやろうぜデンワするからさ!! <*4>,/0x118098/<*4>
-0x11809a,つよいヤツと テレファングしたいぞーやるときはよんでくれよ!<*4>,/0x11809a/<*4>
-0x11809c,オレもたまにはよんでくれよ ほったらかしにすると..なくぞ!<*4>,/0x11809c/<*4>
-0x11809e,ニンゲンカイについてきいたときは..ほんとのことをおしえてね<*4>,/0x11809e/<*4>
-0x1180a0,いまからトモダチのところヘ あそびにいってくるからねー<*4>,/0x1180a0/<*4>
-0x1180a2,しばらくたびにでてくるから なにか あったら デンワください<*4>,/0x1180a2/<*4>
-0x1180a4,デンワつながらなかったから メールをいれとくぜ デンワくれよ<*4>,/0x1180a4/<*4>
-0x1180a6,このメールをみたら すぐオレのとこにデンワしてくれよな!!<*4>,/0x1180a6/<*4>
-0x1180a8,たいリょくが もどらないあいだはさ テレファングはしないでね<*4>,/0x1180a8/<*4>
-0x1180aa,ゲンキにしてますか? さびしくなったときはデンワくださいね!<*4>,/0x1180aa/<*4>
-0x1180ac,オマエの トモダチとも テレファングしたいぞ やらないのか?<*4>,/0x1180ac/<*4>
-0x1180ae,Dメロいっぱいつくってさ オマエの トモダチにくばっちゃえ!<*4>,/0x1180ae/<*4>
-0x1180b0,こんど テレファングするときには  ぜったい よんでくれよ!<*4>,/0x1180b0/<*4>
-0x1180b2,キカイは みてるだけで たのしいよなってことで なにかくれ!<*4>,/0x1180b2/<*4>
-0x1180b4,オレの チカラを ためしてみようと おもうだろ!おもわない?<*4>,/0x1180b4/<*4>
-0x1180b6,あーヒマでヒマでしょうがないぜ!たのむから あそんでくれよー<*4>,/0x1180b6/<*4>
-0x1180b8,テレファングのとちゅうで にげたリ するとキライになるぞ!!<*4>,/0x1180b8/<*4>
-0x1180ba,Tファンガーとテレファングするときはきをひきしめていくんだぞ<*4>,/0x1180ba/<*4>
-0x1180bc,オレたちデンジュウと ニンゲンはトモダチだよな?そうだよな?<*4>,/0x1180bc/<*4>
-0x1180be,オレは かいぞうシンカできるのか? しらベてみてくれよな!!<*4>,/0x1180be/<*4>
- #######, colspan=2 | '''Some messages repeat...?                                   '''
+easy!<*4>",
+0x118084,なかがいいヤツほど バンゴウをうしないにくいんだ しってた?<*4>,/0x118084/<*4>,
+0x118086,ちょくせつ デンワをかけないとナカマにならないヤツもいるらしいよ<*4>,/0x118086/<*4>,
+0x118088,ケイタイにも いろいろあるんだ!そのうち てにはいるかもね!<*4>,/0x118088/<*4>,
+0x11808a,オレ オマエのかおを おもいだせないんだ!ごめん どうしよう<*4>,/0x11808a/<*4>,
+0x11808c,キミにとってたいせつなモノってなに?ボクは トモダチなんだ!<*4>,/0x11808c/<*4>,
+0x11808e,テレファングで まけないでね デンワバンゴウ なくなるからさ<*4>,/0x11808e/<*4>,
+0x118090,オリジナルのDメロってつくった?まだならつくってみたらどう?<*4>,/0x118090/<*4>,
+0x118092,なにかオレに アイテムをかってよ! つよそうヤツがいいな!<*4>,/0x118092/<*4>,
+0x118094,プレゼントはどんなものだったとしてもやっぱリうれしいよな!<*4>,/0x118094/<*4>,
+0x118096,きょういちにち たのしいことが あるといいな きっとあるよね<*4>,/0x118096/<*4>,
+0x118098,またこんど デンジュウクイズやろうぜデンワするからさ!! <*4>,/0x118098/<*4>,
+0x11809a,つよいヤツと テレファングしたいぞーやるときはよんでくれよ!<*4>,/0x11809a/<*4>,
+0x11809c,オレもたまにはよんでくれよ ほったらかしにすると..なくぞ!<*4>,/0x11809c/<*4>,
+0x11809e,ニンゲンカイについてきいたときは..ほんとのことをおしえてね<*4>,/0x11809e/<*4>,
+0x1180a0,いまからトモダチのところヘ あそびにいってくるからねー<*4>,/0x1180a0/<*4>,
+0x1180a2,しばらくたびにでてくるから なにか あったら デンワください<*4>,/0x1180a2/<*4>,
+0x1180a4,デンワつながらなかったから メールをいれとくぜ デンワくれよ<*4>,/0x1180a4/<*4>,
+0x1180a6,このメールをみたら すぐオレのとこにデンワしてくれよな!!<*4>,/0x1180a6/<*4>,
+0x1180a8,たいリょくが もどらないあいだはさ テレファングはしないでね<*4>,/0x1180a8/<*4>,
+0x1180aa,ゲンキにしてますか? さびしくなったときはデンワくださいね!<*4>,/0x1180aa/<*4>,
+0x1180ac,オマエの トモダチとも テレファングしたいぞ やらないのか?<*4>,/0x1180ac/<*4>,
+0x1180ae,Dメロいっぱいつくってさ オマエの トモダチにくばっちゃえ!<*4>,/0x1180ae/<*4>,
+0x1180b0,こんど テレファングするときには  ぜったい よんでくれよ!<*4>,/0x1180b0/<*4>,
+0x1180b2,キカイは みてるだけで たのしいよなってことで なにかくれ!<*4>,/0x1180b2/<*4>,
+0x1180b4,オレの チカラを ためしてみようと おもうだろ!おもわない?<*4>,/0x1180b4/<*4>,
+0x1180b6,あーヒマでヒマでしょうがないぜ!たのむから あそんでくれよー<*4>,/0x1180b6/<*4>,
+0x1180b8,テレファングのとちゅうで にげたリ するとキライになるぞ!!<*4>,/0x1180b8/<*4>,
+0x1180ba,Tファンガーとテレファングするときはきをひきしめていくんだぞ<*4>,/0x1180ba/<*4>,
+0x1180bc,オレたちデンジュウと ニンゲンはトモダチだよな?そうだよな?<*4>,/0x1180bc/<*4>,
+0x1180be,オレは かいぞうシンカできるのか? しらベてみてくれよな!!<*4>,/0x1180be/<*4>,
+#######,Some messages repeat...?,,
 0x1180c0,さいきんなんか キミからのデンワが すくないような きがする<*4>,"I feel
 like u
 r call
 ing me
-less<*4>"
+less<*4>",
 0x1180c2,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"r u
 callin
 less?
 did i
 make u
-mad?<*4>"
+mad?<*4>",
 0x1180c4,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"call
 me
 more!
 its so
 boring
 when u
-don't<*4>"
+don't<*4>",
 0x1180c6,あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>,"hey...
 havent
 heard
 from u
 lately
 ..what
-'s up?<*4>"
+'s up?<*4>",
 0x1180c8,もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>,"no one
 calls
 me...
 i'm so
 lonely
->:(<*4>"
+>:(<*4>",
 0x1180ca,さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>,"hey u
 havent
 called
 lately
 r u
-busy?<*4>"
+busy?<*4>",
 0x1180cc,キミといると なんだかとってもたのしいよ またあそうぼうね<*4>,"ur fun
 2 be 
 around
 lets
 play
-again!<*4>"
+again!<*4>",
 0x1180ce,オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>,"ur my
 best
 frend!
 lets
 play
-again!<*4>"
+again!<*4>",
 0x1180d0,オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>,"ur a
 cool
 guy!
 call
 me bac
-k soon<*4>"
+k soon<*4>",
 0x1180d2,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"time
 flies
 when
 i'm 
 with
-u! :D<*4>"
+u! :D<*4>",
 0x1180d4,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"hey!!
 u and
 me r
 frends
-rite? :)<*4>"
+rite? :)<*4>",
 0x1180d6,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"lets
 play
 togeth
 er som
 time,
 call
-me!<*4>"
+me!<*4>",
 0x1180d8,あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>,"hey, r
 u doin
 well?
 i'm
 knd of
-woried<*4>"
+woried<*4>",
 0x1180da,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"heyy
 how r 
 u doin
 ? call
 me som
-time!<*4>"
+time!<*4>",
 0x1180dc,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"hi how
 r u 
 doin?
 i'm
 doin
 just
-fine!<*4>"
+fine!<*4>",
 0x1180de,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"umm...
 sry 2
 sound
 creepy
 but r
 u okay
-???<*4>"
- #######, colspan=2 | '''And again...                                      '''
+???<*4>",
+#######,And again...,,
 0x1180e0,さいきんなんか キミからのデンワが すくないような きがする<*4>,"I feel
 like u
 r call
 ing me
-less<*4>"
+less<*4>",
 0x1180e2,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"r u
 callin
 less?
 did i
 make u
-mad?<*4>"
+mad?<*4>",
 0x1180e4,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"call
 me
 more!
 its so
 boring
 when u
-don't<*4>"
+don't<*4>",
 0x1180e6,あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>,"hey...
 havent
 heard
 from u
 lately
 ..what
-'s up?<*4>"
+'s up?<*4>",
 0x1180e8,もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>,"no one
 calls
 me...
 i'm so
 lonely
->:(<*4>"
+>:(<*4>",
 0x1180ea,さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>,"hey u
 havent
 called
 lately
 r u
-busy?<*4>"
+busy?<*4>",
 0x1180ec,キミといると なんだかとってもたのしいよ またあそうぼうね<*4>,"ur fun
 2 be 
 around
 lets
 play
-again!<*4>"
+again!<*4>",
 0x1180ee,オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>,"ur my
 best
 frend!
 lets
 play
-again!<*4>"
+again!<*4>",
 0x1180f0,オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>,"ur a
 cool
 guy!
 call
 me bac
-k soon<*4>"
+k soon<*4>",
 0x1180f2,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"time
 flies
 when
 i'm 
 with
-u! :D<*4>"
+u! :D<*4>",
 0x1180f4,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"hey!!
 u and
 me r
 frends
-rite? :)<*4>"
+rite? :)<*4>",
 0x1180f6,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"lets
 play
 togeth
 er som
 time,
 call
-me!<*4>"
+me!<*4>",
 0x1180f8,あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>,"hey, r
 u doin
 well?
 i'm
 knd of
-woried<*4>"
+woried<*4>",
 0x1180fa,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"heyy
 how r 
 u doin
 ? call
 me som
-time!<*4>"
+time!<*4>",
 0x1180fc,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"hi how
 r u 
 doin?
 i'm
 doin
 just
-fine!<*4>"
+fine!<*4>",
 0x1180fe,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"umm...
 sry 2
 sound
 creepy
 but r
 u okay
-???<*4>"
- #######, colspan=2 | '''Secret Denjuu (first call)                                   '''
+???<*4>",
+#######,Secret Denjuu (first call),,
 0x118100,"ホッホッホッ よくこのバンゴウが
 わかったのぉ
 これで ワシもオマエと たびを
 することができるわい<*5>","Hohoho, I am impressed you found this number...
-Now I can join you in your travels.<*5>"
+Now I can join you in your travels.<*5>",
 0x118102,"このバンゴウをみつけるとはな
 ジジイを あまリこきつかわないでくれよ
-あー...コシが...<*5>",/0x118102/<*5>
+あー...コシが...<*5>",/0x118102/<*5>,
 0x118104,"ホェホェホェ このデンワを
 まっておったぞ
 ジジイといって あなどるでないぞこれからも たのむぞ<*5>","Hweh heh heh... I've been waiting for this call.
-Don't take me lightly just because I'm old. I'm counting on you.<*5>"
+Don't take me lightly just because I'm old. I'm counting on you.<*5>",
 0x118106,"なんだっ! なんで バンゴウを
 オマエがしっているのだ!
 チッ まぁいい なにかあったら
-よぶんだな!<*5>",/0x118106/<*5>
+よぶんだな!<*5>",/0x118106/<*5>,
 0x118108,"よく デンワをしてきてくれたな
-オレといっしょに いろんなヤツとテレファングを していこうぜ!<*5>",/0x118108/<*5>
+オレといっしょに いろんなヤツとテレファングを していこうぜ!<*5>",/0x118108/<*5>,
 0x11810a,"このバンゴウに デンワを
 してくるとは.......
 いいだろう ワタシのチカラを
-オマエにかそう!<*5>",/0x11810a/<*5>
+オマエにかそう!<*5>",/0x11810a/<*5>,
 0x11810c,"あっ デンワが かかってきたぞ
 これから よろしくな!
 ところでキミの かいいん
-バンゴウは なんばんだい??<*5>",/0x11810c/<*5>
+バンゴウは なんばんだい??<*5>",/0x11810c/<*5>,
 0x11810e,"あーい もしもし..?
 オラのバンゴウを しってるって
 いうことは....フフッ
-んじゃ またよんでくれよな<*5>",/0x11810e/<*5>
+んじゃ またよんでくれよな<*5>",/0x11810e/<*5>,
 0x118110,"おー デンワがかかってきたぞ!
 オマエがなんで オレのバンゴウをしってるかを オレはしってるんだこれからも よろしくな!<*5>","Oooh, I'm here!
 I already know why you have my number, see! 
-Nice to meet you! <*5>"
+Nice to meet you! <*5>",
 0x118112,"あははー みつけられちったぁ
 よくこのバンゴウが わかったね
 でも これで キミといっしょに
 いることができるよ よろしくね<*5>","Ahaha, you found me!
-Good job finding this number! Now you and I can travel together!<*5>"
+Good job finding this number! Now you and I can travel together!<*5>",
 0x118114,"あん??なんでこのバンゴウを
 オマエが しってるんだよ?
 ...まあいい オマエのたびに
 ついていってやるよ<*5>","Eh?? How did you find my number?
-...Well, whatever. I'll join you on this journey of yours.<*5>"
+...Well, whatever. I'll join you on this journey of yours.<*5>",
 0x118116,"うわー このバンゴウをしっているなんて...まさかストーカー?
 あははっ ウソだよ!
 これで ボクとキミはトモダチだ<*5>","Whoa, how did you know my number? ...Could you be a stalker?
 Haha, just kidding!
-Now you and me are friends!<*5>"
+Now you and me are friends!<*5>",
 0x118118,"デンワをくれて あリがとう
 このデンワを まっていたよ!
 いっしょに デンジュウカイを
 たびしよう!<*5>","Thank you for calling me. I've been waiting!
-Let's travel the Denjuu World together!<*5>"
+Let's travel the Denjuu World together!<*5>",
 0x11811a,"おせーよ! もっとはやくに
 デンワくれよな!
 ずいぶんとまったぜ!
 まぁ これからも よろしくな!<*5>","You're late!! You should have called me earlier! 
-I've been waiting for ages! Well, it's nice to meet you!<*5>"
- #######, colspan=2 | '''Secret Denjuu (second call)                                   '''
+I've been waiting for ages! Well, it's nice to meet you!<*5>",
+#######,Secret Denjuu (second call),,
 0x11811c,"ワシの バンゴウは もう
 もっておるじゃろうが
 
-ワシのバンゴウを なんどいれてもワシしか でないぞ<*5>",/0x11811c/<*5>
+ワシのバンゴウを なんどいれてもワシしか でないぞ<*5>",/0x11811c/<*5>,
 0x11811e,"そのバンゴウは ワシしか
 でないぞえ ホェホェホェ
 
 なんだ? ひょっとして おなじ
 デンワバンゴウを いれたのか?
 そのバンゴウは ワシしか
-でないんだよ<*5>",/0x11811e/<*5>
+でないんだよ<*5>",/0x11811e/<*5>,
 0x118120,"なんだ?なんだ?
 ひょっとして まえにいれた
 オレのバンゴウをいれたのか?
-それには オレしか でないよ<*5>",/0x118120/<*5>
+それには オレしか でないよ<*5>",/0x118120/<*5>,
 0x118122,"ようじが あるなら 
-デンワちょうから ダイヤルしろ<*5>",/0x118122/<*5>
+デンワちょうから ダイヤルしろ<*5>",/0x118122/<*5>,
 0x118124,"オレといっしょに たびを
 したいなら デンワちょうから
-かけてきてくれよ<*5>",/0x118124/<*5>
+かけてきてくれよ<*5>",/0x118124/<*5>,
 0x118126,"....もしもし?きみが オラのデンワバンゴウを しってるのは
 わかったから デンワちょうから
-ダイヤルしてくれよな<*5>",/0x118126/<*5>
+ダイヤルしてくれよな<*5>",/0x118126/<*5>,
 0x118128,"おー またデンワが かかって
 きたぞ!
 オレと たびをしたければ
-デンワちょうから かけてきて<*5>",/0x118128/<*5>
+デンワちょうから かけてきて<*5>",/0x118128/<*5>,
 0x11812a,"あははー またデンワを かけて
 きたんだねー
 こんどは デンワちょうから
-かけてきてよねー よろしくー<*5>",/0x11812a/<*5>
-0x11812c,あん??こっちからかけてくるなよデンワちょうから かけてこい!<*5>,/0x11812c/<*5>
+かけてきてよねー よろしくー<*5>",/0x11812a/<*5>,
+0x11812c,あん??こっちからかけてくるなよデンワちょうから かけてこい!<*5>,/0x11812c/<*5>,
 0x11812e,"うわー ちょくせつダイヤルして
 くるなんて ひょっとして
 イヤガラセ???
 アハハッ!ウソだよー
-デンワちょうから かけてきてよ<*5>",/0x11812e/<*5>
+デンワちょうから かけてきてよ<*5>",/0x11812e/<*5>,
 0x118130,"ちょくせつダイヤルしたらダメだよデンワちょうを つかって
-かけてこないとね<*5>",/0x118130/<*5>
+かけてこないとね<*5>",/0x118130/<*5>,
 0x118132,"なんだよ?
 ちょくせつダイヤルしても
 オレは よベないんだよ
-デンワちょうから よんでくれ<*5>",/0x118132/<*5>
-0x118134,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,/0x118134/<*5>
-0x118136,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,/0x118136/<*5>
- #######, colspan=2 | '''Extra placeholders                                         '''
-0x118138,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11813a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11813c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11813e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118140,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118142,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118144,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118146,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118148,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11814a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11814c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11814e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118150,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118152,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118154,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118156,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118158,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11815a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11815c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11815e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118160,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118162,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118164,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118166,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118168,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11816a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11816c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11816e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118170,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118172,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118174,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118176,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118178,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11817a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11817c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11817e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118180,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118182,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118184,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118186,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118188,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11818a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11818c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11818e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118190,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118192,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118194,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118196,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x118198,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11819a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11819c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x11819e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181a0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181a2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181a4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181a6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181a8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181aa,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181ac,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181ae,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181b0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181b2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181b4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181b6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181b8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181ba,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181bc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181be,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181c0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181c2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181c4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181c6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181c8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181ca,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181cc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181ce,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181d0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181d2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181d4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181d6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181d8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181da,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181dc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
-0x1181de,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>
- #######, colspan=2 | '''Denjuu calling stuff                                   '''
+デンワちょうから よんでくれ<*5>",/0x118132/<*5>,
+0x118134,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,/0x118134/<*5>,
+0x118136,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,/0x118136/<*5>,
+#######,Extra placeholders,,
+0x118138,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11813a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11813c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11813e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118140,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118142,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118144,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118146,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118148,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11814a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11814c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11814e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118150,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118152,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118154,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118156,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118158,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11815a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11815c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11815e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118160,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118162,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118164,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118166,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118168,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11816a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11816c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11816e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118170,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118172,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118174,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118176,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118178,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11817a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11817c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11817e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118180,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118182,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118184,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118186,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118188,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11818a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11818c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11818e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118190,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118192,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118194,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118196,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x118198,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11819a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11819c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x11819e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181a0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181a2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181a4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181a6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181a8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181aa,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181ac,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181ae,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181b0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181b2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181b4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181b6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181b8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181ba,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181bc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181be,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181c0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181c2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181c4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181c6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181c8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181ca,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181cc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181ce,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181d0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181d2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181d4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181d6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181d8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181da,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181dc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+0x1181de,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,
+#######,Denjuu calling stuff,,
 0x1181e0,"よくうしろを みてみろよ!
-うしろにいるよ!<*5>",Take a look behind you! I'm right here!<*5>
+うしろにいるよ!<*5>",Take a look behind you! I'm right here!<*5>,
 0x1181e2,"HPがまんたんでないと
-デンジュウをかえれないよ!<*5>",You can't switch Denjuu if their HP isn't full!<*5>
+デンジュウをかえれないよ!<*5>",You can't switch Denjuu if their HP isn't full!<*5>,
 0x1181e4,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181e6,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181e8,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181ea,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181ec,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181ee,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181f0,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181f2,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181f4,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181f6,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181f8,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181fa,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>
+<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,
 0x1181fc,"オレをよんでくれるのか?
  はい  いいえ<*A>","Are you calling me over?
-   Yes   No<*A>"
+   Yes   No<*A>",
 0x1181fe,"もしもし なんかようじ?
 ひさしぶリ! ゲンキだったか?<*5>","Hi, what's up? 
-It's been a while! How's it going?<*5>"
+It's been a while! How's it going?<*5>",

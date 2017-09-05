@@ -1,139 +1,139 @@
-#,English
-1,Dummy 0
-2,Claw
-3,Rush
-4,Strike
-5,Cat Punch
-6,Bison Hammer
-7,Kick
-8,Tail
-9,Horn
-10,Beak
-11,Poison Sting
-12,Numbing Sting
-13,Scissor
-14,Sabre
-15,Bite
-16,Body Press
-17,Horn Drill
-18,Bloodsuck
-19,Shuriken
-20,Bowgun
-21,Bison Beam
-22,Stag Beam
-23,Pulse Beam
-24,Plasma Laser
-25,Mega Launcher
-26,Mega Cannon
-27,Mega Rifle
-28,Drill Missile
-29,Hyper Missile
-30,Dragon Missile
-31,Penguin Missile
-32,Missile Pod
-33,War Cannon
-34,Harpoon Missile
-35,Horn Launcher
-36,Bird Bazooka
-37,Nose Magnum
-38,Ear Vulcan
-39,Fang Vulcan
-40,Machine Gun
-41,Flamethrower
-42,Mini Flame
-43,Mega Flame
-44,Kamaitachi
-45,Hurricane
-46,Mini Snow
-47,Blizzard
-48,Egg Bomb
-49,Whirlpool
-50,Tsunami
-51,Mini Bolt
-52,Mega Bolt
-53,Earthquake
-54,Mega Quake
-55,Rock
-56,Mega Rock
-57,Speed Up
-58,Focus
-59,Avoid
-60,Invigorate
-61,Charge Up
-62,Heal
-63,Recover
-64,Restore
-65,Shield
-66,Protect
-67,Iron Wall
-68,Camouflage
-69,Ultrasonic
-70,EM Wave
-71,Curse Song
-72,Lullaby
-73,Glare
-74,Sleep Gas
-75,Smokescreen
-76,Poison Gas
-77,Jump
-78,Flight
-79,Scream
-80,Wingbeat
-81,EM Barrier
-82,Force Field
-83,Chill
-84,Heat Wave
-85,Water Shot
-86,Acid
-87,Lick
-88,Tentacle
-89,Ice Ball
-90,Stat Down
-91,Status Return
-92,Iron Claw
-93,Assault
-94,Missile Punch
-95,Razor Punch
-96,Hoof
-97,High Kick
-98,Middle Kick
-99,Stab
-100,Triple Attack
-101,Toxic Sting
-102,Electric Sting
-103,Cross Attack
-104,Vacuum Slash
-105,Fang Crush
-106,Punt
-107,Screw Horn
-108,Drain
-109,Denma Shuriken
-110,Needle
-111,Quick Step
-112,Aim
-113,Evade
-114,Brace
-115,Dummy 1
-116,First Aid
-117,Repair
-118,Dummy 2
-119,Shutter
-120,Defend
-121,Dummy 3
-122,Conceal
-123,EM Pulse
-124,Shockwave
-125,Dummy 4
-126,Dummy 5
-127,Stare
-128,Dummy 6
-129,Dummy 7
-130,Dummy 8
-131,Dummy 9
-132,Dummy 10
-133,Tooth Grind
-134,Dust Cloud
-135,Electro Screen
-136,Denma Seal
-137,Frost Breath
-138,Petal Storm
+#,Japanese,English,Notes
+1,ダミ-0,Dummy 0,Each row is numbered by Denjuu ID.
+2,つめ,Claw,This is the same ordering as other Denjuu species string tables.
+3,とっしん,Rush,Japanese strings are limited to 8 characters.
+4,なぐる,Strike,English strings are limited to 16 characters.
+5,ネコパンチ,Cat Punch,
+6,バイソンハンマ-,Bison Hammer,
+7,けリ,Kick,
+8,シッポ,Tail,
+9,つの,Horn,
+10,クチバシ,Beak,
+11,どくバリ,Poison Sting,
+12,しびれバリ,Numbing Sting,
+13,ハサミ,Scissor,
+14,サ-ベル,Sabre,
+15,かみつき,Bite,
+16,ボディプレス,Body Press,
+17,つのドリル,Horn Drill,
+18,キュウケツ,Bloodsuck,
+19,シュリケン,Shuriken,
+20,ボウガン,Bowgun,
+21,バイソンビ-ム,Bison Beam,
+22,くわがたビ-ム,Stag Beam,
+23,はどうビ-ム,Pulse Beam,
+24,プラズマレ-ザ-,Plasma Laser,
+25,メガランチャ-,Mega Launcher,
+26,メガキャノン,Mega Cannon,
+27,メガライフル,Mega Rifle,
+28,ドリルミサイル,Drill Missile,
+29,ハイパ-ミサイル,Hyper Missile,
+30,ドラゴンミサイル,Dragon Missile,
+31,ペンギンミサイル,Penguin Missile,
+32,ミサイルポッド,Missile Pod,
+33,クニクズシ,War Cannon,
+34,もリミサイル,Harpoon Missile,
+35,ツノランチャ-,Horn Launcher,
+36,トリバズ-カ,Bird Bazooka,
+37,ハナマグナム,Nose Magnum,
+38,ミミバルカン,Ear Vulcan,
+39,キババルカン,Fang Vulcan,
+40,マシンガン,Machine Gun,
+41,カエンホウシャ,Flamethrower,
+42,プチフレイム,Mini Flame,
+43,メガフレイム,Mega Flame,
+44,カマイタチ,Kamaitachi,
+45,ハリケ-ン,Hurricane,
+46,プチザ-ド,Mini Snow,
+47,ブリザ-ド,Blizzard,
+48,タマゴバクダン,Egg Bomb,
+49,うずしお,Whirlpool,
+50,おおつなみ,Tsunami,
+51,プチボルト,Mini Bolt,
+52,メガボルト,Mega Bolt,
+53,じしん,Earthquake,
+54,おおじしん,Mega Quake,
+55,ロック,Rock,
+56,メガロック,Mega Rock,
+57,スピ-ド,Speed Up,
+58,しゅうちゅう,Focus,
+59,よける,Avoid,
+60,ふんき,Invigorate,
+61,じゅうでん,Charge Up,
+62,なおす,Heal,
+63,かいふく,Recover,
+64,だいかいふく,Restore,
+65,シ-ルド,Shield,
+66,まもる,Protect,
+67,てっペき,Iron Wall,
+68,カムフラ-ジュ,Camouflage,
+69,ちょうおんぱ,Ultrasonic,
+70,デンジウエ-ブ,EM Wave,
+71,のろいのうた,Curse Song,
+72,こもリうた,Lullaby,
+73,にらむ,Glare,
+74,ねむリガス,Sleep Gas,
+75,えんまく,Smokescreen,
+76,どくガス,Poison Gas,
+77,ジャンプ,Jump,
+78,ひこう,Flight,
+79,さけぶ,Scream,
+80,はばたく,Wingbeat,
+81,でんじバリア,EM Barrier,
+82,けっかい,Force Field,
+83,れいき,Chill,
+84,おんぷう,Heat Wave,
+85,てっぽうみず,Water Shot,
+86,ようかいえき,Acid,
+87,なめる,Lick,
+88,しょくしゅ,Tentacle,
+89,こおリだま,Ice Ball,
+90,パラメ-タダウン,Stat Down,
+91,ステ-タスもどる,Status Return,
+92,アイアンクロ-,Iron Claw,
+93,とつげき,Assault,
+94,ミサイルパンチ,Missile Punch,
+95,カミソリパンチ,Razor Punch,
+96,ひづめ,Hoof,
+97,ハイキック,High Kick,
+98,ミドルキック,Middle Kick,
+99,つき,Stab,
+100,トリプルアタック,Triple Attack,
+101,もうどくバリ,Toxic Sting,
+102,でんきバリ,Electric Sting,
+103,クロスアタック,Cross Attack,
+104,しんくうぎリ,Vacuum Slash,
+105,キバクラッシュ,Fang Crush,
+106,あしげ,Punt,
+107,スクリュ-ホ-ン,Screw Horn,
+108,ドレイン,Drain,
+109,デンマシュリケン,Denma Shuriken,
+110,とげ,Needle,
+111,はやあし,Quick Step,
+112,ねらう,Aim,
+113,かいひ,Evade,
+114,ふんばる,Brace,
+115,ダミ-1,Dummy 1,
+116,ちリょう,First Aid,
+117,リピア-,Repair,
+118,ダミ-2,Dummy 2,
+119,シャッタ-,Shutter,
+120,ぼうぎょ,Defend,
+121,ダミ-3,Dummy 3,
+122,かくれる,Conceal,
+123,でんじは,EM Pulse,
+124,しょうげきは,Shockwave,
+125,ダミ-4,Dummy 4,
+126,ダミ-5,Dummy 5,
+127,みつめる,Stare,
+128,ダミ-6,Dummy 6,
+129,ダミ-7,Dummy 7,
+130,ダミ-8,Dummy 8,
+131,ダミ-9,Dummy 9,
+132,ダミ-10,Dummy 10,
+133,はぎしリ,Tooth Grind,
+134,すなぼこリ,Dust Cloud,
+135,でんきすだれ,Electro Screen,
+136,まふうじ,Denma Seal,
+137,フロストブレス,Frost Breath,
+138,はなふぶき,Petal Storm,

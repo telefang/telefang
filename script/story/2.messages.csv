@@ -1,9 +1,11 @@
-Pointer,Japanese,English
+Pointer,Japanese,English,Notes
+#######,"Text for Kurinon, cont'd.",,
 0x12c000,"カギを ぬすんだ はんにんの
-こころあたリは ないの?",You can't think of anyone who might have stolen it?
+こころあたリは ないの?",You can't think of anyone who might have stolen it?,"Story text for Kurinon (cont'd), Iris, Freesia, and Ion Island (partial)."
 0x12c002,"... ... ... ...
 ... ... ... ...","................
-................"
+................","Status: Translated 100%
+"
 0x12c004,"..........そうダス
 そういえば むらのあちこちに
 ヘんなニンゲンと みなれない
@@ -15,27 +17,27 @@ Pointer,Japanese,English
 とリかえして ほしいダス!","........... Well, now that you mention it, there have been a lot of weird humans and Denjuu I don't recognize around lately, man.
 They must have been the ones who stole the key, man!
 Please, man!
-Could you get the key to the Antenna Tree back from them?"
+Could you get the key to the Antenna Tree back from them?",
 0x12c006,"じぶんで とリかえせば
-いいじゃないか",Can't you just do it yourself?
+いいじゃないか",Can't you just do it yourself?,
 0x12c008,"だって あのデンジュウ
-つよそうじゃないダスか...","But, those Denjuu looked pretty strong, man..."
+つよそうじゃないダスか...","But, those Denjuu looked pretty strong, man...",
 0x12c00a,"わかった
-たのまれて あげるよ","Alright, I'll accept your request."
+たのまれて あげるよ","Alright, I'll accept your request.",
 0x12c00c,"うわーい あリがとうダス!
 おれいは きちんとするから
 おねいがいするダス!","Wooo, thanks man!
-I'll be sure to pay you back, so please do it, man!!"
+I'll be sure to pay you back, so please do it, man!!",
 0x12c00e,"なんだ オマエたちは?
 ようがないなら いまはここに
 ちかづくな","Who are you guys?
-If you don't have any business here, then go away."
+If you don't have any business here, then go away.",
 0x12c010,"おいっ!
 オマエが アンテナのきの
 カギをぬすんだ はんにんか?
 おとなしく カギを かえせよっ","Hey!
 You're the one who stole the key to the Antenna Tree, right?
-Give it back, now!"
+Give it back, now!",
 0x12c012,"カギ?そんなものはしらないぞ
 なんで オレがうたがわれなきゃ
 いけないんだ?
@@ -44,14 +46,14 @@ Give it back, now!"
 してやるぜ!","Key? I don't know what you're talking about.
 How come I'm the one being suspected, here?
 Are you looking for a fight?
-Heh... Alright, bring it on!"
+Heh... Alright, bring it on!",
 0x12c014,"ふーん なかなかつよいな
 でもカギのことなんかなんにも
 しらないし
 ここからさきにいっても
 ほんとうになにもないぞ
 オレのトモダチがいるだけさ","Hmph... You're pretty strong, huh?
-But I really don't know anything about that key, and there's nobody else around back here except for one of my friends."
+But I really don't know anything about that key, and there's nobody else around back here except for one of my friends.",
 0x12c016,"もしもし?マツキヨですけど?
 いまムサさんに きいたのですが
 <&name>くんのいる
@@ -60,19 +62,19 @@ But I really don't know anything about that key, and there's nobody else around 
 らしいです
 きをつけてくださいね!","Hello? It's me, Matsukiyo.
 I just heard it from Musa, but apparently those Kakuza Party people are up to something in Kurinon Village.
-You'd best be careful!"
+You'd best be careful!",
 0x12c018,"あーあー
 なんで このネリカラさまが
 こんなところで みはリを
 しなくちゃならんのだ...
 あっ!","Honestly... 
 Why do I, the honorable Mr. Nerikara, have to keep watch in a place like this...
-Hm?!"
+Hm?!",
 0x12c01a,"あっ! そこにみえるは
 トロンコむらであったチミ!
 チミ!ちょっとこっちに
 きなさい!","Ah! You're the kid who I met in Toronko Village!
-Hey, kid! Come over here!"
+Hey, kid! Come over here!",
 0x12c01c,"チミチミ!
 よくきてくれたね!
 チミはアレだろ?
@@ -85,9 +87,9 @@ Thanks for coming! You're here for that, right?
 You're here to beat Tabasco?
 That's right, isn't it? That's right!
 Ahahaha! It seems you and I understand eachother, kid!
-Let's mess her plans right up, now! Right up, right up!"
+Let's mess her plans right up, now! Right up, right up!",
 0x12c01e,"ジャマって...オマエたち
-ナカマじゃなかったのか?","""Her"" plans...? I thought you guys were working together?"
+ナカマじゃなかったのか?","""Her"" plans...? I thought you guys were working together?",
 0x12c020,"かまわん!かまわん!
 チミが タバスコのジャマを
 するのなら よろこんで
@@ -108,9 +110,9 @@ This is a just between you and me, kid, but you need a key to get to the center 
 Here, I'll give it to you! As a present!
 No, no! It's perfectly fine!
 Just take it with you and don't say a word!
-In exchange, all I ask for is your honest vote!"
-0x12c022,『どうくつのカギ』をてにいれた!,"Obtained ""Cavern Key""!"
-0x12c024,カギをあけた,Used the key.
+In exchange, all I ask for is your honest vote!",
+0x12c022,『どうくつのカギ』をてにいれた!,"Obtained ""Cavern Key""!",
+0x12c024,カギをあけた,Used the key.,
 0x12c026,"たーリらリらー
 とうとうクリノンむらの
 たからをみつけたわー
@@ -128,7 +130,7 @@ In exchange, all I ask for is your honest vote!"
 Finally, I've found it... The treasures of Kurinon Village!
 With this, we can buy out all of the Denjuu in this area and change ""Kurinon Village"" into ""Kakuza Party Village""!
 And once we have a foothold here, we can start spreading out into other towns!
-The polling stations will be flooded with our votes!"
+The polling stations will be flooded with our votes!",
 0x12c028,"そーすればー ワタシはー
 デンジュウカイはつの じょせい
 だいとうリょうになるんだわー
@@ -141,13 +143,13 @@ The first female president of the Denjuu World~!
 ...Hmhm...Hmhmhmhm...
 Excellent!!
 We will create a brighter future!
-Kakuza Party! We are the Kakuza Party!"
+Kakuza Party! We are the Kakuza Party!",
 0x12c02a,"あら?アナタは トロンコむらで
 ワタシたちのジャマをしてくれた
 <&name>くんね?
 ここでもハデに やってくれてる
 みたいだけど??","Hm? You're the one who got in our way at Toronko Village, <&name>, right?
-Though you're certainly acting like a big shot coming in here, aren't you?"
+Though you're certainly acting like a big shot coming in here, aren't you?",
 0x12c02c,"このタバスコさまを あまく
 みないでほしいわね?
 だいたい あれだけうちの
@@ -167,7 +169,7 @@ But who could have guessed that old man Nerikara would try to help you out...
 I never expected that one.
 Whatever, so you came here to get in my way, right?
 Very well, but there's no running or hiding from Lady Tabasco!
-Just you watch!"
+Just you watch!",
 0x12c02e,"ちょっとまちなさいよ...
 ピ...ポパ...っと
 もしもーし!あーリムちゃーん
@@ -182,10 +184,10 @@ Yeah, it's me, Tabasco...
 I need some help... Yeah...
 Do you think you could come?
 Mhm... Yeah, inside the cave...
-Right... Okay, I'll be waiting!"
+Right... Okay, I'll be waiting!",
 0x12c030,"さーこんどばっかリは
 ねんぐのおさめどきよ!
-<&name>くん!","Alright <&name>, it's time to pay your taxes!!"
+<&name>くん!","Alright <&name>, it's time to pay your taxes!!",
 0x12c032,"...まけた...まけたわ
 あんなにみついでなかよくなった
 リムちゃんをいともかんたんに
@@ -195,10 +197,10 @@ Right... Okay, I'll be waiting!"
 Well, I wasn't expecting this.
 For Limmy to lose so easily like that...
 ................
-ARGH!!"
-0x12c034,くやしいー!!,This SUCKS!
-0x12c036,にくいー!!,So ANNOYING!
-0x12c038,はらたつー!!,I'M ANGRY!!
+ARGH!!",
+0x12c034,くやしいー!!,This SUCKS!,
+0x12c036,にくいー!!,So ANNOYING!,
+0x12c038,はらたつー!!,I'M ANGRY!!,
 0x12c03a,"おぼえてらっしゃい!
 <&name>!!
 ワタシは だいとうリょうに
@@ -207,15 +209,15 @@ ARGH!!"
 もうこんなもの ひつようないわ
 アナタのすきにしなさい!!","Remember this, <&name>!!
 I'm not going to give up on becoming president!! 
-I don't even need this stuff anymore, take it for all I care!!"
+I don't even need this stuff anymore, take it for all I care!!",
 0x12c03c,"『アンテナのきのカギ』を
-とリもどした!","Retrieved ""Antenna Tree Key""!"
+とリもどした!","Retrieved ""Antenna Tree Key""!",
 0x12c03e,"『リボルバーガン』を4つ
-てにいれた!","Got 4 ""Revolvers""!"
+てにいれた!","Got 4 ""Revolvers""!",
 0x12c040,"『テレカ』を4まい
-てにいれた!","Got 4 ""Phone Cards""!"
+てにいれた!","Got 4 ""Phone Cards""!",
 0x12c042,"カクザとうも おいだしたし
-ここからでようぜ!",The Kakuza Party is gone. Let's get out of here!
+ここからでようぜ!",The Kakuza Party is gone. Let's get out of here!,
 0x12c044,"もしもし?マツキヨですけど?
 クリノンむらにいた
 カクザとうのひとたちは
@@ -228,67 +230,67 @@ I don't even need this stuff anymore, take it for all I care!!"
 <&name>くん","Hello? It's me, Matsukiyo. It looks like the Kakuza Party has fled Kurinon Village.
 That's a relief...
 Similar things may be happening in other towns.
-Keep up the good work, <&name>!"
+Keep up the good work, <&name>!",
 0x12c046,"アンテナのきにはいるカギを
-つかった",Used the Antenna Tree Key.
+つかった",Used the Antenna Tree Key.,
 0x12c048,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c04a,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c04c,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c04e,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c050,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c052,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c054,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c056,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c058,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c05a,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c05c,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c05e,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c060,"カギが かかっている
 るすのようだ","The door is locked.
-They must not be home."
+They must not be home.",
 0x12c062,"『たかピーのいえ 
  テレファングについて
  おしえるよ!』","""Taka-P's House
-I'll teach you all about Telefang!"""
+I'll teach you all about Telefang!""",
 0x12c064,"ふーん....
 『たかピー』ね...","Hmmm....
-""Taka-P"", huh..."
- #######," colspan=2 | '''Kurinon ends, Iris starts                                     '''"
-0x12c066,あっ!ニンゲンだ!,Eek! It's a human!
+""Taka-P"", huh...",
+#######,"Kurinon ends, Iris starts",,
+0x12c066,あっ!ニンゲンだ!,Eek! It's a human!,
 0x12c068,"うわーっ!!!!!!!!!
-うみの デンジュウだー!!!",AAAAAH!! It's an ocean Denjuu!
+うみの デンジュウだー!!!",AAAAAH!! It's an ocean Denjuu!,
 0x12c06a,にげないでっペ!にげないでっペ!ボクは なにもしないっペ!,"No, please don't run away-ope!
-I won't do anything-ope!"
+I won't do anything-ope!",
 0x12c06c,"ほんとに なにもしない?
 そばに いってもだいじょうぶ?","...You really won't do anything?
-Are you sure it's okay?"
+Are you sure it's okay?",
 0x12c06e,"だいじょうぶだっペ!
 だから こっちにきて 
-ボクの はなしをきいてくれっペ","That's right-ope, so please listen to what I have to say!"
+ボクの はなしをきいてくれっペ","That's right-ope, so please listen to what I have to say!",
 0x12c070,"あのねボク うみのみんなに
 イーリスにいっちゃダメって
 いわれたんだペど どうしても
@@ -302,20 +304,20 @@ Are you sure it's okay?"
 ニンゲンは ボクをみると
 キミみたいに にげだしちゃうし","You see, well, everyone in the ocean's been saying to stay away from Iris, but I just really wanted a ""Game Machine"", so I came here-ope...
 But it turns out there's nowhere in Iris that sells Game Machines-ope...
-I thought I could ask someone for help, but all of the Denjuu here stay away from me, and the humans just run away like you did..."
+I thought I could ask someone for help, but all of the Denjuu here stay away from me, and the humans just run away like you did...",
 0x12c072,"おねがいだっペ!
 『ゲームマシン』を もってきて
 くれないっペ?
 『ゲームマシン』を もってきて
 くれたら おれいに うみに 
 はいれるように してあげるっペよ","So please-ope, do you think you could help me find a Game Machine?
-If you bring me one, I can make it so you can enter the sea if you want-ope!"
+If you bring me one, I can make it so you can enter the sea if you want-ope!",
 0x12c074,"『ゲームマシン』をもってきて
 くれっペ!
-おねがいだっペ!",Please find me a Game Machine-ope!
+おねがいだっペ!",Please find me a Game Machine-ope!,
 0x12c076,"『ゲームマシン』をあげますか?
  はい  いいえ<*A>","Hand over the ""Game Machine""?
-<0>Yes <0>No<*A>"
+<0>Yes<0>No<*A>",
 0x12c078,"『ゲームマシン』だっペー!!
 あリがとうだっペ!
 やくそくどおリ うみにつれて
@@ -323,38 +325,38 @@ If you bring me one, I can make it so you can enter the sea if you want-ope!"
 これが ボクのデンワバンゴウ!","It's a Game Machine-ope!!
 Thank you so much-ope!
 As promised, I'll carry you into the ocean-ope!
-Here's my phone number!"
+Here's my phone number!",
 0x12c07a,"リリオペの デンワバンゴウを
-てにいれた",Got Liriope's phone number!
+てにいれた",Got Liriope's phone number!,
 0x12c07c,"これで みずのなかに
 はいれるように なるんだっペ!
 たまには デンワしてくれっペ!
 それじゃ バイバーイ","Now you'll be able to enter the ocean whenever you want-ope!
 Remember to call me sometimes-ope, okay?
-Bye-bye~"
+Bye-bye~",
 0x12c07e,"あ!イーリスからきたの?
 うみをわたってこれたってことは
 キミはTファンガーなんだね?","Hey! Did you come from Iris?
-If you've made it this far that must mean you're a T-Fanger, right?"
+If you've made it this far that must mean you're a T-Fanger, right?",
 0x12c080,"じつは いま パームかいは
 おそろしい Tファンガーに 
 ねらわれてるんだ
 そいつは パームかいにある
 たいせつな アンテナのきを
 たたきおろうと しているんだ!","Right now, the Palm Sea is being targeted by this really scary T-Fanger...
-He's been trying to cut down our precious Antenna Tree!"
+He's been trying to cut down our precious Antenna Tree!",
 0x12c082,"なんだって?
 なんてことするんだ!
 おなじ Tファンガーとして
 ゆるせない!","What?!
 That's horrible!
-As a fellow T-Fanger, I can't forgive that!"
+As a fellow T-Fanger, I can't forgive that!",
 0x12c084,"だから おねがいだよ!
 そのTファンガーを キミが 
 やっつけて くれないか?","Then please!
-Do you think you could defeat that guy?"
+Do you think you could defeat that guy?",
 0x12c086,"もちろん! でもどこにいるか
-わからないじゃん",Definitely! But I'll need to know where to find him first.
+わからないじゃん",Definitely! But I'll need to know where to find him first.,
 0x12c088,"ボクに さくせんが あるんだ
 いいかい よくきいて...
 アンテナのきの とびらは
@@ -364,9 +366,9 @@ Do you think you could defeat that guy?"
 アイツを まちぶせて やっつけてしまうんだよ","Well, I have a plan for that.
 Okay, listen up...
 Right now, the gate to the Antenna Tree is locked, and nobody can get inside...
-So I want you to open it, ambush the guy, and beat him up."
-0x12c08a,すごい! あったまいい!,Whoa! That sounds pretty smart!
-0x12c08c,いやぁ それほどでも....,"Haha, you really think so? ..."
+So I want you to open it, ambush the guy, and beat him up.",
+0x12c08a,すごい! あったまいい!,Whoa! That sounds pretty smart!,
+0x12c08c,いやぁ それほどでも....,"Haha, you really think so? ...",
 0x12c08e,"いや..そうじゃなくて..
 でもアンテナのきに いくには
 『うみのどうくつ』にある
@@ -380,18 +382,18 @@ So I want you to open it, ambush the guy, and beat him up."
 あんないしてくれるよ","Er, I mean....
 Anyway, to get to the Antenna Tree you'll need to enter the Ocean Cavern, and hit the switch inside to open up the gate.
 You won't be able to reach it from the sea, but there's a way to get there from Iris...
-There's a certain place that asks you for a password, and inside you'll meet a Denjuu who'll guide you to the cave."
+There's a certain place that asks you for a password, and inside you'll meet a Denjuu who'll guide you to the cave.",
 0x12c090,"そのデンジュウに あうための
 あいことばは
 『ふるききは ささえる
  ふたつのせかいを ささえる』
 だよ わかったかい?","The password you'll need to meet the Denjuu is...
 ""He who controls the ancient tree holds control of both worlds"".
-You got all that?"
+You got all that?",
 0x12c092,"たのんだよ
-アイツをやっつけてくれ!!","I'm counting on you, please stop that T-Fanger!"
+アイツをやっつけてくれ!!","I'm counting on you, please stop that T-Fanger!",
 0x12c094,"『あいことばをいえぬもの
- たちいること キンシ』","""NO ENTRY WITHOUT PASSWORD"""
+ たちいること キンシ』","""NO ENTRY WITHOUT PASSWORD""",
 0x12c096,"『あいことばをいえぬもの
  たちいること キンシ』
 あいことばは...??
@@ -403,7 +405,7 @@ You got all that?"
 What's the password...??
 ................
 ""He who controls the ancient tree holds control of both worlds.""
-Password accepted, please enter."
+Password accepted, please enter.",
 0x12c098,"ようこそいらっしゃいました
 ここは うみのデンジュウの
 まもリがみをまつる
@@ -422,9 +424,9 @@ Password accepted, please enter."
 This hidden passageway leads to the ""Ocean Cavern"", a shrine to the ocean Denjuu's guardian spirit.
 I see our friends have deemed you worthy to enter...
 I will guide you there. When you wish to leave, simply stand in the center of the small island, and you will be returned to Iris.
-I wish you a safe trip..."
+I wish you a safe trip...",
 0x12c09a,"アンテナのきにつづく
-とびらをひらいた",Opened the gate to the Antenna Tree.
+とびらをひらいた",Opened the gate to the Antenna Tree.,
 0x12c09c,"もしもし?マツキヨですけど?
 <&name>くん
 ききましたよ...
@@ -434,9 +436,9 @@ Tファンガーとは いったい
 うーん きょうみぶかいです","Hello? It's me, Matsukiyo.
 <&name>, I heard all about it...
 I wonder just what's going on with that T-Fanger?
-Hmmm, it's a mystery..."
+Hmmm, it's a mystery...",
 0x12c09e,"アンテナのきにはいるとびらを
-ひらいた",The door is now open.
+ひらいた",The door is now open.,
 0x12c0a0,"もしもし!マツキヨです!
 <&name>くん!!
 いまそちらにむかって
@@ -449,8 +451,8 @@ Hmmm, it's a mystery..."
 There's a group of strange Denjuu heading towards where you are now!
 ...Something weird is going on!
 Please get out of there, now!
-<&name>!!"
-0x12c0a2,もうおそい!!,...Too late!!
+<&name>!!",
+0x12c0a2,もうおそい!!,...Too late!!,
 0x12c0a4,"...オマエか?
 うみのデンジュウにきょうリょく
 して オレのジャマをしようとするTファンガーというのは...
@@ -460,19 +462,19 @@ Please get out of there, now!
 アンテナのきを けす!","...Hmm?
 So you're the T-Fanger who's been cooperating with the ocean Denjuu to try and stop me...
 My name is ""Kai"".
-I'm under orders from the Divine Denjuu to eliminate all Antenna Trees from the Denjuu World!"
+I'm under orders from the Divine Denjuu to eliminate all Antenna Trees from the Denjuu World!",
 0x12c0a6,"『シンデンジュウ』?
 なんだよそれ???
 それよリも なぜ
 そんなことを するんだ!?","""Divine Denjuu""?
 What the heck is that??
-And anyway, why would you want to do something like that?!"
+And anyway, why would you want to do something like that?!",
 0x12c0a8,"オマエに はなすひつようはない
 オレのジャマをするな...
 アンテナのきなんて このよに
 ひつようのないものだ!","I have no reason to talk to you.
 You'd better not interfere...
-Antenna Trees are not needed in this world!"
+Antenna Trees are not needed in this world!",
 0x12c0aa,"ふん...
 どうしても オレのジャマをする
 つもリなんだな...
@@ -480,18 +482,18 @@ Antenna Trees are not needed in this world!"
 オマエとにらみあっていても
 じかんのムダだ!","Hmph, looks like you insist on getting in my way...
 I see...
-I'm done wasting time with you!"
+I'm done wasting time with you!",
 0x12c0ac,"こい!コイツらにすがたを
-みせてやれ!!",Come! Show yourself to them!
+みせてやれ!!",Come! Show yourself to them!,
 0x12c0ae,"くっ...
 まさかオマエのつれている
 『ヘイタイ』がそこまでつよい
 とはな...","Ugh...
-To think the soldiers you brought with you would be so strong..."
+To think the soldiers you brought with you would be so strong...",
 0x12c0b0,"『ヘイタイ』じゃない!
 デンジュウは オレのだいじな
 『トモダチ』だ!","They're not ""soldiers""!
-These Denjuu are my precious friends!"
+These Denjuu are my precious friends!",
 0x12c0b2,"『ヘイタイ』じゃない?
 『トモダチ』だと?...
 ふん!まぁいい!
@@ -500,18 +502,18 @@ These Denjuu are my precious friends!"
 するようだったら こんどは
 ようしゃしないぞ!!","Not soldiers, but friends?...
 Hmph! Whatever...
-You've won for now, but if you choose to interfere with me again... I won't be nearly as merciful!!"
+You've won for now, but if you choose to interfere with me again... I won't be nearly as merciful!!",
 0x12c0b4,"もしもし!マツキヨです!
 いきなリ デンワが きれたので
 どうしたのかとおもいましたよ","Hello! It's Matsukiyo!
-The call got cut off all of a sudden, can you tell me what happened?"
+The call got cut off all of a sudden, can you tell me what happened?",
 0x12c0b6,"『カイ』っていうヤツに
 いきなリ テレファングを
 いどまれたんだ
 デンジュウカイから
 アンテナのきを なくそうと
 しているみたいなんだ","This jerk named ""Kai"" suddenly challenged me to Telefang...
-It looks like he's trying to eliminate all the Antenna Trees from the Denjuu World."
+It looks like he's trying to eliminate all the Antenna Trees from the Denjuu World.",
 0x12c0b8,"それは たいヘんでしたね...
 しかし その『カイ』という
 しょうねんのもくてきはなんなの
@@ -523,25 +525,25 @@ It looks like he's trying to eliminate all the Antenna Trees from the Denjuu Wor
 つぎのまちにすすみましょう!","That sounds bad...
 I wonder just what this ""Kai"" person's goal could be?...
 Well, there's no use worrying about it for now!
-<&name>, you should pass through that Antenna Tree and go on to the next town!"
- #######," colspan=2 | '''Iris ends, Freesia starts                                   '''"
+<&name>, you should pass through that Antenna Tree and go on to the next town!",
+#######,"Iris ends, Freesia starts",,
 0x12c0ba,"こんにちは
-Tファンガーの かたですか?","Hello, are you a T-Fanger?"
+Tファンガーの かたですか?","Hello, are you a T-Fanger?",
 0x12c0bc,"ここ きかいのまち フリジアでは『Tファンガーたいかい』を
-かいさいして いますよ",Freesia is holding a T-Fanger tournament right now.
+かいさいして いますよ",Freesia is holding a T-Fanger tournament right now.,
 0x12c0be,"Tファンガーたいかい!
 なんかおもしろそーじゃん!
 それって どんなルールなの?","A T-Fanger tournament?!
 That sounds awesome!
-How does it work?"
+How does it work?",
 0x12c0c0,"まちの にしがわにある
 もリを つかって
 かちぬきせんの テレファングを
 おこなってもらいます
 そして もリの つきあたリにあるほこらから しょうひんを
 とってきて いただきます","Well, we're using the forest to the west of town for an elimination-style Telefang tournament.
-The winner will pick up their prize from the shrine at the far end of the forest."
-0x12c0c2,でる! オレ それにでるよ!,Count me in! I am so doing this!
+The winner will pick up their prize from the shrine at the far end of the forest.",
+0x12c0c2,でる! オレ それにでるよ!,Count me in! I am so doing this!,
 0x12c0c4,"わかリました
 それでは おナマエを...
 ... ... ... ...
@@ -551,17 +553,17 @@ The winner will pick up their prize from the shrine at the far end of the forest
 ...............
 ...............
 Mr. <&name>... 
-Okay, you've been entered."
+Okay, you've been entered.",
 0x12c0c6,"うおー!
 どんなデンジュウが 
 でてくるんだろう たのしみー!","Alright!!
-I can't wait to see what kinds of Denjuu show up!"
+I can't wait to see what kinds of Denjuu show up!",
 0x12c0c8,"フリジアのまちで たいかいの
 じょうほうを あつめておいた
 ほうが よろしいですよ
 それでは とうろくしておきます
 がんばってくださいね","It might be a good idea to look around town and gather some information.
-Well, you're all entered now, so good luck!"
+Well, you're all entered now, so good luck!",
 0x12c0ca,"...............
 ...............
 あのひと どっかで みたことが
@@ -569,30 +571,30 @@ Well, you're all entered now, so good luck!"
 まぁ いいか!","...............
 ...............
 Come to think of it, haven't I seen that guy somewhere before?...
-Well, whatever! "
+Well, whatever! ",
 0x12c0cc,"いくぞ!1かいせん
-オレと テレファングだ!","Let's go! For the first round, you'll be fighting me! Telefang!"
+オレと テレファングだ!","Let's go! For the first round, you'll be fighting me! Telefang!",
 0x12c0ce,"なかなか やるね!
 2かいせんも がんばって!","Hey, not bad!
-Good luck with round 2!"
+Good luck with round 2!",
 0x12c0d0,"2かいせんは ワタシが
 あいてですわ
 テレファング いきますわよ","I'll be your opponent for the second round.
-Now, let's Telefang!"
+Now, let's Telefang!",
 0x12c0d2,すばらしい テレファングですわ!3かいせんも がんばって!,"That was an excellent battle!
-Good luck with the next round!"
+Good luck with the next round!",
 0x12c0d4,"いくぞ!3かいせん
 ワタシが あいてよっ!","Here we go, round 3!
-See if you can beat me!"
+See if you can beat me!",
 0x12c0d6,"アンタ なかなか やるね!
 4かいせんも がんばるんだよ!","Heh, you're pretty good!
-Good luck in round 4!"
+Good luck in round 4!",
 0x12c0d8,4かいせんは オレが あいてだ!かぜになるぜ!ゴーゴー!!,"Your opponent for the 4th round is me!
-I'm as fast as the wind! Go, go!!"
+I'm as fast as the wind! Go, go!!",
 0x12c0da,"やるな! オマエになら
 まけても くいはない!
 つぎもがんばるんだぜ!","Not bad! I have no regrets losing to one such as you!
-Good luck with the next one!"
+Good luck with the next one!",
 0x12c0dc,"おっ!
 オマエTファンガーだな!
 オレたちは
@@ -600,27 +602,27 @@ Good luck with the next one!"
 スゴウデTファンガーさまの
 コブンさまだ! エッヘン!","Oho!
 You're a T-Fanger, aren't you?
-Well, we're the Leading #1 Amazing T-Fanger's trusted lackies! Hahaha!"
+Well, we're the Leading #1 Amazing T-Fanger's trusted lackies! Hahaha!",
 0x12c0de,"スゴウデTファンガーさまは
 ゆうしょうしょうひんを
 うけとリに このさきにある
-ほこらヘ いっているのだ","The Amazing T-Fanger is just up ahead, claiming the winner's prize from the shrine!"
+ほこらヘ いっているのだ","The Amazing T-Fanger is just up ahead, claiming the winner's prize from the shrine!",
 0x12c0e0,"ここまできた Tファンガーなら
 それなリのチカラをもって
 いるだろうが
 スゴウデTファンガーさまには
-かなわないさ!","It may have taken some skill to make it this far, but you're still nothing to compared to the Amazing T-Fanger!"
+かなわないさ!","It may have taken some skill to make it this far, but you're still nothing to compared to the Amazing T-Fanger!",
 0x12c0e2,"スゴウデTファンガーさまの
 てを わずらわすまでもない
 オレタチがあいてをしてやるよ!
 かくごしな!!","We can't allow anyone to get in the way of the Amazing T-Fanger!
 We'll be your opponents!
-Prepare yourself!!"
+Prepare yourself!!",
 0x12c0e4,"うわっ!
 オレたちの たいせつな
 デンジュウが! くそー!
 おぼえてろ!","Waah!
-Our poor Denjuu... Darn it, we'll remember this!"
+Our poor Denjuu... Darn it, we'll remember this!",
 0x12c0e6,"...ん?
 なんだ オマエは?
 なんで ここまでこれたんだ?
@@ -628,7 +630,7 @@ Our poor Denjuu... Darn it, we'll remember this!"
 しているんだ?","...Hm?
 Who are you?
 How did you get in here?
-What do those two think they're doing..."
+What do those two think they're doing...",
 0x12c0e8,"ヘヘっ!やっとここまできたぜ!
 オマエが
 『スゴウデTファンガー』とか
@@ -638,7 +640,7 @@ Tファンガーたいかいの
 ゆうしょうは オレが
 いただくぜ!","Heh! I've finally made it!
 So you're the one they're calling the ""Amazing T-Fanger""?
-Sorry, but I'm gonna defeat you and win this tournament!"
+Sorry, but I'm gonna defeat you and win this tournament!",
 0x12c0ea,"ふっ...なかなかのじしんだな
 ここまでこれたぐらいだ
 かなリのデンジュウなんだろう
@@ -651,7 +653,7 @@ As expected of one who's made it this far.
 I've seen many Denjuu, so I understand...
 Yes, I understand that the Denjuu who follows you is indeed very strong...
 But it won't be good enough! 
-Let's go! Telefang!"
+Let's go! Telefang!",
 0x12c0ec,"なにっ!
 まさかオレが まけるとは!
 ...オレもまだ しゅぎょうが
@@ -664,7 +666,7 @@ For me to lose here...
 My training is still lacking...
 Well done, young one! 
 The next time we meet, I will surely defeat you!
-Farewell!"
+Farewell!",
 0x12c0ee,"おー チミが 
 Tファンガーたいかいの
 ゆうしょうしゃか!
@@ -673,11 +675,11 @@ Tファンガーたいかいの
 ネリカラでございます.....
 ってチミはぁ!!!!","Well, it looks like you're the winner of the T-Fanger tournament, kid!
 I am Mr. Nerikara, the leader of the Kakuza Party, who have kindly sponsored this tourna......
-Gahhh, it's you!!"
+Gahhh, it's you!!",
 0x12c0f0,"あー!! どっかでみた
 ヘんなおっさんじゃんか!
 ここで なにをしてるんだよ!","Aaah!! You're that weird old man from before!
-What are you doing here?!"
+What are you doing here?!",
 0x12c0f2,"ヘんなおっさんとは なんだ!
 ヘんなおっさんとは!
 ワタシは なにもたくらんでなんかいないぞ!
@@ -685,12 +687,12 @@ What are you doing here?!"
 たいかいを....","Who are you calling a weird old man?!
 I'm not weird!
 And I'm not even planning anything!
-I just honestly wanted to organize a.... "
+I just honestly wanted to organize a.... ",
 0x12c0f4,"うそつけっ!
 どうせ たいかいをしゅさいして
 ユウメイになろうとか
 かんがえてたんだろ!","Liar!
-You obviously just wanted to sponsor a tournament so you could spread your name around!"
+You obviously just wanted to sponsor a tournament so you could spread your name around!",
 0x12c0f6,"うー...ズボシだったリして..く..くそーーっ
 もう チミとはかかわリたくない
 もっと ちっちゃな ところから
@@ -699,7 +701,7 @@ You obviously just wanted to sponsor a tournament so you could spread your name 
 D-Darn you, kid...!!
 I don't want to have to deal with you right now.
 Looks like I'll need to start somewhere smaller!
-Well then, for the bright future...!"
+Well then, for the bright future...!",
 0x12c0f8,"あっ にげた....
 まぁ いいや ほっとこうっと
 ゆうしょうしょうひんは
@@ -707,10 +709,10 @@ Well then, for the bright future...!"
 おくにいってみよう...","Ah... He ran away.
 Oh well, who cares.
 The prize should be around here somewhere...
-Let's take a look up ahead..."
- #######," colspan=2 | '''Freesia ends, Barran starts                                   '''"
-0x12c0fa,もう イヤだー!!,I can't take it anymore!!
-0x12c0fc,どうしたんだ?,"Hey, what happened?"
+Let's take a look up ahead...",
+#######,"Freesia ends, Barran starts",,
+0x12c0fa,もう イヤだー!!,I can't take it anymore!!,
+0x12c0fc,どうしたんだ?,"Hey, what happened?",
 0x12c0fe,"きいてくれよ!
 このさきに バーランっていう
 まちがあるんだけど
@@ -724,11 +726,11 @@ Let's take a look up ahead..."
 Just up ahead of here there's a town called Barran...
 The bird and snake Denjuu there have been at each other's throats for generations.
 Would YOU wanna live somewhere like that?
-I'm sick of watching them fight every day, so I'm leaving town."
+I'm sick of watching them fight every day, so I'm leaving town.",
 0x12c100,"そうなのか....
 なんで そんなにながいあいだ
 ケンカしてるんだ?","I see... 
-Why have they been fighting for so long?"
+Why have they been fighting for so long?",
 0x12c102,"くわしい はなしは トリぐみの
 おさにでも きいてくれよ
 オイラは これから フリジアで あたらしいせいかつを
@@ -738,11 +740,11 @@ Why have they been fighting for so long?"
 つたえておいてくれよ","If you want to know, you should talk to the chief of the Bird Clan.
 I'm off to start a new life in Freesia.
 It'll be nice to live somewhere peaceful for a change...
-Tell that to the chief when you see him, too."
+Tell that to the chief when you see him, too.",
 0x12c104,"..オマエとは えんがあったら
 また あいたいな...
 オイラのナマエは『ガンバンオー』じゃあ またな!","...Hey, if you're in the area, feel free to drop by.
-My name is ""Ganbanno"". Seeya!"
+My name is ""Ganbanno"". Seeya!",
 0x12c106,"... ... ... ...
 はなしだけでも おさに
 きいてみるか
@@ -751,11 +753,11 @@ My name is ""Ganbanno"". Seeya!"
 いってみよう!","................
 I guess I should at least go talk to the chief...
 He wanted me to pass a message along anyway...
-Alright! Let's head for Barran!"
+Alright! Let's head for Barran!",
 0x12c108,"バーランのまちに ようこそ
 ニンゲンのおきゃくじん
 ワシはトリぐみのおさじゃ","Welcome to the town of Barran, human visitor!
-I am the chief of the Bird Clan."
+I am the chief of the Bird Clan.",
 0x12c10a,"ここにくるまえに
 『ガンバンオー』っていう
 デンジュウにあったんだ
@@ -763,7 +765,7 @@ I am the chief of the Bird Clan."
 イヤだから フリジアで
 あたらしい せいかつを
 はじめるんだ』っていってたよ","I met a Denjuu named ""Ganbanno"" on the way here...
-He said he doesn't want to live somewhere where they fight every day, so he's going to start a new life in Freesia."
+He said he doesn't want to live somewhere where they fight every day, so he's going to start a new life in Freesia.",
 0x12c10c,"ガンバンオーのやつ
 ニンゲンに われらのハジを
 しゃベったのか....
@@ -772,9 +774,9 @@ He said he doesn't want to live somewhere where they fight every day, so he's go
 しておるからの","Ganbanno? 
 Darn it, telling the humans all about our problems...
 But I do see where he's coming from.
-Indeed, the Bird and Snake Clans have been at odds with each other for a very long time now."
+Indeed, the Bird and Snake Clans have been at odds with each other for a very long time now.",
 0x12c10e,"どうして そんなにながいあいだ
-ケンカをつづけてるんだ?",Why have you guys been fighting for so long?
+ケンカをつづけてるんだ?",Why have you guys been fighting for so long?,
 0x12c110,"くわしいことは もうわすれて
 しもうたが ささいなこと
 じゃったとおもう
@@ -784,13 +786,13 @@ Indeed, the Bird and Snake Clans have been at odds with each other for a very lo
 もう ケンカをすることに
 つかれてしもうた....","We've forgotten how it started, but it was probably over some trivial thing.
 Then the argument just got bigger and bigger over time...
-To be honest, I'm growing tired of the whole ordeal."
+To be honest, I'm growing tired of the whole ordeal.",
 0x12c112,"それなら さっさと なかなおリ
-しちゃえば いいじゃないか","In that case, why don't you put aside your differences and call a truce?"
+しちゃえば いいじゃないか","In that case, why don't you put aside your differences and call a truce?",
 0x12c114,"トリぐみの ものが いくと
 はなしにならんのでの...
 いつもケンカになってしまう..","It's no use, they won't speak to anyone from the Bird Clan.
-It always turns into another fight..."
+It always turns into another fight...",
 0x12c116,"そうじゃ!
 ニンゲンの オマエさんが
 なかなおリの ししゃになって
@@ -798,30 +800,30 @@ It always turns into another fight..."
 しれん!
 おねがいできんかの?","I've got it!
 If we let a human like you deliver the message, they may be willing to listen!
-Do you think you could do it?"
+Do you think you could do it?",
 0x12c118,"... ... ... ...
 ケンカしてるよリは なかよく
 してるほうが たのしいもんな
 わかったよ!
 その やくめ ひきうける!","................
 Well, it'd be way more fun here if everyone could get along...
-Alright! I'll honor your request!"
+Alright! I'll honor your request!",
 0x12c11a,"おぉ!あリがとう
 おれいは キチンとするでのぉ
 では たのんだぞ!","Oho! Thank you!
 I'll be sure to reward you when you come back.
-We're counting on you!"
+We're counting on you!",
 0x12c11c,"トリぐみの ししゃとして
 ヘビぐみのおさの ところヘ
 いってくれ
 よろしく たのんだぞ!","Please, hurry and tell the chief of the Snake Clan that we wish to make peace.
-We're counting on you!"
+We're counting on you!",
 0x12c11e,"ニンゲンふぜいが 
 ヘビぐみの おさに なんの
-ようじと いうのじゃ!","What business does a human have speaking with me, the chief of the Snake Clan?"
+ようじと いうのじゃ!","What business does a human have speaking with me, the chief of the Snake Clan?",
 0x12c120,"トリぐみの おさから
 なかなおリの ししゃを
-たのまれたんだ",I was sent here by the Bird Clan's chief to deliver a message of peace!
+たのまれたんだ",I was sent here by the Bird Clan's chief to deliver a message of peace!,
 0x12c122,"なにぃ! あの トリぐみの
 ししゃだと?
 きさまも トリぐみのナカマか!
@@ -830,25 +832,25 @@ We're counting on you!"
 ワシと テレファングじゃ!","Whaat?! A messenger from the Bird Clan?
 Then you're one of them!
 If that's the case, I can't just allow you to leave...
-Telefang with me!"
+Telefang with me!",
 0x12c124,"... ... ... ...
 むぅ なかなかやるのう
 はなしだけはきいてやろう
 で...なんの はなしじゃ?","................
 Urg... Not bad.
 I suppose I can listen to what you have to say.
-So... What is it that you want? "
+So... What is it that you want? ",
 0x12c126,"だからさっきもいったじゃん
 オレは なかなおリの 
 ししゃなんだって!","I just told you!
-I was sent here to bring a message of peace from the Bird Clan!"
+I was sent here to bring a message of peace from the Bird Clan!",
 0x12c128,"!!
 トリぐみが なかなおリとはのぉ
 ワシも おなじことを かんがえておった","!!
 The Bird Clan wants to make peace with us?
-Actually, I had been thinking the exact same thing..."
+Actually, I had been thinking the exact same thing...",
 0x12c12a,"じゃあ このもんだいは
-かいけつじゃん!","Well then, that settles it!"
+かいけつじゃん!","Well then, that settles it!",
 0x12c12c,"まてい!
 そうそう かんたんに 
 なかなおリは できんのじゃ
@@ -857,7 +859,7 @@ Actually, I had been thinking the exact same thing..."
 そうじゃのう.....","Wait! Hold on...
 We can't put our differences aside that easily.
 We have our pride, after all.
-Hmm, yes..."
+Hmm, yes...",
 0x12c12e,"そうじゃ!
 ワシはいま 『ぬいぐるみ』が
 ほしいのじゃ
@@ -866,7 +868,7 @@ Hmm, yes..."
 はずじゃ","I've got it!
 Lately I've been wanting to own a ""Plush Toy"".
 How about you bring one to me?
-The chief of the Bird Clan should have one."
+The chief of the Bird Clan should have one.",
 0x12c130,"『ぬいぐるみ』を もってきたら
 トリぐみと なかなおリを
 するんだな
@@ -874,19 +876,19 @@ The chief of the Bird Clan should have one."
 トリぐみの おさに いって
 もらってくるよ","So if I bring you a ""Plush Toy"", you'll make peace with the Bird Clan?
 Alright!
-I'll go talk to the Bird Chief and bring it back here!"
+I'll go talk to the Bird Chief and bring it back here!",
 0x12c132,"トリぐみのおさがもっている
 『ぬいぐるみ』をもってこないと
 なかなおリは できないぞ!","Go ask the chief of the Bird Clan for his ""Plush Toy"" and bring it back to me.
-If you do, I will agree to stop the fighting!"
+If you do, I will agree to stop the fighting!",
 0x12c134,"どうじゃった?
 .....『ぬいぐるみ』とな?はて...どこにやったかの?","How did it go?
 ....A ""Plush Toy"", eh?
-Alright then, hmmm... Where did I leave it?"
+Alright then, hmmm... Where did I leave it?",
 0x12c136,"そうじゃ!
 ガンバンオーのヤツが もって
 いってしまいおったんじゃ!","Oh no! That's right!
-That Ganbanno must have taken it with him when he left!"
+That Ganbanno must have taken it with him when he left!",
 0x12c138,"たしか フリジアのまちに
 おるんじゃったな...
 すまんが ガンバンオーを
@@ -894,32 +896,32 @@ That Ganbanno must have taken it with him when he left!"
 もらってきてくれんか?
 たのんだぞ!","You said he went to Freesia, right?
 Sorry to ask you this, but could you find him and ask for it back?
-Thank you! Good luck!"
+Thank you! Good luck!",
 0x12c13a,"フリジアで ガンバンオーを
 さがしだして 『ぬいぐるみ』を
-もってきてくれ!","Please, find Ganbanno in Freesia and bring back the ""Plush Toy""!"
+もってきてくれ!","Please, find Ganbanno in Freesia and bring back the ""Plush Toy""!",
 0x12c13c,"あーーーーーっ!
 このまえあった ニンゲンじゃん
 わざわざたずねてきてくれたんだ!ウレシー!!","Wow! If it isn't the human that I met before!
 You finally came to see me!
-I'm so happy!!"
+I'm so happy!!",
 0x12c13e,"じつは トリぐみとヘビぐみが
-なかなおリできそうなんだ!","Actually, it looks like the Bird and Snake Clans might be willing to call a truce soon!"
+なかなおリできそうなんだ!","Actually, it looks like the Bird and Snake Clans might be willing to call a truce soon!",
 0x12c140,"!!
 あんなに なかが
 わるかったのに...
 でも『できそう』っていうのは?","!!
 Even when things were so bad before..?
 What do you mean they ""might"" though?
-Is there a problem?"
+Is there a problem?",
 0x12c142,"ヘビぐみの おさが 
-『ぬいぐるみ』をもってこいっていってるんだ","Well, the chief of the Snake Clan is asking us to bring him a ""Plush Toy""..."
-0x12c144,『ぬいぐるみ』...,"A ""Plush Toy""..."
+『ぬいぐるみ』をもってこいっていってるんだ","Well, the chief of the Snake Clan is asking us to bring him a ""Plush Toy""...",
+0x12c144,『ぬいぐるみ』...,"A ""Plush Toy""...",
 0x12c146,"ひょっとして オイラがもってる
-これのことかい?","Oh, you mean like this one here?"
+これのことかい?","Oh, you mean like this one here?",
 0x12c148,"それ!それがあれば
 なかなおリできるんだ!","Yeah, that!
-With this, the clans can finally stop fighting!"
+With this, the clans can finally stop fighting!",
 0x12c14a,"なかなおリは してほしいけど
 ... ... ...
 やっぱリ ただじゃあげれないよねここはひとつ...
@@ -927,21 +929,21 @@ With this, the clans can finally stop fighting!"
 ................
 I can't just give it away!
 That leaves only one option...
-Telefang me!"
+Telefang me!",
 0x12c14c,"アイタタ...キミ つよいね!
 はい やくそくだったね","Yowch... You're pretty strong!
-Alright, as promised, here you go!"
-0x12c14e,『ぬいぐるみ』をてにいれた!,"Got the ""Plush Toy""!"
+Alright, as promised, here you go!",
+0x12c14e,『ぬいぐるみ』をてにいれた!,"Got the ""Plush Toy""!",
 0x12c150,"あっ! ってことは
 オイラが まちをでたリゆうが
 なくなっちゃったんだ
 どうしよう...
 まちに かえろうかな?","Oh! I guess this means there's no reason for me to leave Barran now...
 What should I do?
-Think I should go back?"
+Think I should go back?",
 0x12c152,"かえっちゃえ!かえっちゃえ!
 ガンバンオーは わるくないよ!","You should!
-I'm sure they'd be happy to see you!"
+I'm sure they'd be happy to see you!",
 0x12c154,"そういってもらえると
 かえリやすいな
 じゃあ キミは さきに
@@ -951,48 +953,48 @@ I'm sure they'd be happy to see you!"
 じゃあ またこんど!","Well, when you put it that way...
 Alright!
 You go ahead first, I'll head back to town in a little while.
-Seeya later!"
+Seeya later!",
 0x12c156,"さきに もどっていてよ
-オイラもあとから もどるからさ",Go on! I'll head back to town later.
+オイラもあとから もどるからさ",Go on! I'll head back to town later.,
 0x12c158,"おぉ!!!
 『ぬいぐるみ』を もらって
 きてくれたのか!
 これで ヘビぐみのデンジュウと
 なかなおリができるの!!","Oho, well done!
 I see you managed to find the ""Plush Toy""!
-With this the Snake Chief should agree to make amends!"
+With this the Snake Chief should agree to make amends!",
 0x12c15a,"ヘっ! これぐらいカンタンだぜ!んじゃ あとは これを
 ヘビぐみの おさに
 わたしてくるだけだな!
 それじゃあ ヘビぐみのところヘ
 いって わたしてくるよ","Heh, piece of cake!
-Now all that's left is to take it over to the Snake Chief!"
+Now all that's left is to take it over to the Snake Chief!",
 0x12c15c,"ちょっとまて
 ここまでやってくれたのじゃ
 さきに そのおれいをさせてくれ","Wait!
 First I must reward you for all you have done.
-Here, please take this."
+Here, please take this.",
 0x12c15e,"『かいぞうしよう2』
-をてにいれた","Got ""Fusion Pass 2""."
+をてにいれた","Got ""Fusion Pass 2"".",
 0x12c160,"『じっけんしよう2』
-をてにいれた","Got ""Lab Pass 2""."
+をてにいれた","Got ""Lab Pass 2"".",
 0x12c162,"ほんとに これくれるの?
 サンキュー! これで
 いろんなデンジュウを シンカ
 させることが できるぜ!","Wow, you're really giving these to me? Thanks!
-Now I can evolve even more kinds of Denjuu!"
+Now I can evolve even more kinds of Denjuu!",
 0x12c164,"ホッホッホッ
 ほんの おれいじゃよ
 では さいごの ひとしごとを
 たのむぞ!","Hahaha, think nothing of it.
 It's us who should be thanking you.
-Now, good luck on your final errand!"
+Now, good luck on your final errand!",
 0x12c166,『ぬいぐるみ』を わたしますか? はい  いいえ<*A>,"Hand over the ""Plush Toy""?
-<0>Yes <0>No<*A><*A>"
+<0>Yes<0>No<*A><*A>",
 0x12c168,"ワ ワシに くれるんじゃ
 ないのか??","Wh-What?
-You're not going to give it to me??"
-0x12c16a,『ぬいぐるみ』を わたした,"Gave away the ""Plush Toy""."
+You're not going to give it to me??",
+0x12c16a,『ぬいぐるみ』を わたした,"Gave away the ""Plush Toy"".",
 0x12c16c,"おぉ!『ぬいぐるみ』じゃ
 やくそくどおリ トリぐみとは
 なかなおリを しよう
@@ -1002,19 +1004,19 @@ You're not going to give it to me??"
 なかなおリじゃー!","Yes, here it is! A ""Plush Toy""! 
 Then, as promised, I will call a truce between us and the Bird Clan!
 As proof, I'll give the order to unlock the Antenna Tree gates immediately.
-That should settle everything!"
- #######," colspan=2 | '''Barran ends, Ion Island starts                                   '''"
+That should settle everything!",
+#######,"Barran ends, Ion Island starts",,
 0x12c16e,"<&name>くんですか?
 マツキヨです
 いま どのあたリに
 おられるのでしょうか?","Hello, <&name>?
 It's me, Matsukiyo...
-Can you tell me where you are right now?"
+Can you tell me where you are right now?",
 0x12c170,"うーん...
 よくわからないけど
 みどリが いっぱいあリそうな
 ところだぜ","Hmmm...
-Not really sure, but it's definitely a lot greener here."
+Not really sure, but it's definitely a lot greener here.",
 0x12c172,"おそらく『イオンとう』と
 いうところでしょう
 どうやらそのしまでは
@@ -1025,10 +1027,10 @@ Not really sure, but it's definitely a lot greener here."
 デンジュウに しょうさいを
 きいてみてください","It sounds like you've arrived on ""Ion Island"".
 From what I've heard, there's some kind of disagreement happening between the phone companies there.
-I don't know the details, but you might be able to ask the Denjuu living there for more information."
-0x12c174,たすけてよー,Help meee!
+I don't know the details, but you might be able to ask the Denjuu living there for more information.",
+0x12c174,たすけてよー,Help meee!,
 0x12c176,"このさわぎは いったい
-どうしたんだ?",Whoa! What's going on?
+どうしたんだ?",Whoa! What's going on?,
 0x12c178,"いま このしまでは
 デンワガイシャどうしが
 デンパのとリあいを してるんだ!その カイシャどうしのケンカに
@@ -1039,70 +1041,70 @@ I don't know the details, but you might be able to ask the Denjuu living there f
 ところだったのに...","Right now, the phone companies on this island are trying to jam each other's signals!
 The Denjuu here have gotten involved, and now it's turning into a huge mess!
 It's horrible...
-This island used to be such a peaceful place..."
+This island used to be such a peaceful place...",
 0x12c17a,"かいけつする ほうほうは
-ないのかな?",Is there no way to get them to stop?
+ないのかな?",Is there no way to get them to stop?,
 0x12c17c,"このしまに ケイタイデンワの
 デンパが はいらなければ
 みんな このしまから でていくとおもうんだ
 でもそんなこと できっこないし","Well... If we could somehow cut off their phone signals, I'm sure a lot of them would leave the island...
-But's that's not really possible, especially for me... "
+But's that's not really possible, especially for me... ",
 0x12c17e,"あきらめたら それで
 おわリじゃないか!
 なにか ほうほうを 
 いっしょに かんがえようぜ!","Hey, there's no point giving up already!
-I'm sure if we work together, we can figure something out!"
+I'm sure if we work together, we can figure something out!",
 0x12c180,"<&name>くん
-しまの ようすは どうですか?","Hello <&name>, have you learned anything about the situation there?"
+しまの ようすは どうですか?","Hello <&name>, have you learned anything about the situation there?",
 0x12c182,"おっ!マツキヨ
 いいところに デンワを
 してきたな
 しまに デンパをはいリにくく
 するほうほうって ないか?","Oh, Matsukiyo!
 You called at a good time.
-Do you know if there's anything we can do to weaken the phone signals on the island?"
+Do you know if there's anything we can do to weaken the phone signals on the island?",
 0x12c184,"デンパをさえぎる デンジュウが
 いるという はなしを
-きいたことがあリますが?","Well, I've heard that there's a Denjuu who can eliminate phone reception..."
+きいたことがあリますが?","Well, I've heard that there's a Denjuu who can eliminate phone reception...",
 0x12c186,"そんな デンジュウいるんだ!
 で そいつは どこにいるんだ?","Whoa, seriously?
-Where can I find him?"
+Where can I find him?",
 0x12c188,"さすがにそこまでは
-ワタシもしリません","Sorry, I'm afraid I haven't heard..."
+ワタシもしリません","Sorry, I'm afraid I haven't heard...",
 0x12c18a,"そっか サンキュー!
 じゃあまたな","Got it, thanks!
-Talk to you later. "
+Talk to you later. ",
 0x12c18c,"あっ! ちょっと!
-<&name>くん!!","Ah, wait! <&name>!!"
+<&name>くん!!","Ah, wait! <&name>!!",
 0x12c18e,"デンパをさえぎるデンジュウがいることがわかったし
 そいつをさがすか!","Well, it sounds like there's a Denjuu who might be able to help us.
-I'll try to track him down!"
+I'll try to track him down!",
 0x12c190,"おねがいだよ ボクたちを
 たすけて!","Please do!
-We really need your help!"
+We really need your help!",
 0x12c192,"あーっ!ミヨ!
 またオマエにあうなんて!","Aaaagh! It's Miyo!
-I didn't expect to run into YOU again..."
-0x12c194,あーっ!<&name>!,Aaaah! <&name>!
+I didn't expect to run into YOU again...",
+0x12c194,あーっ!<&name>!,Aaaah! <&name>!,
 0x12c196,"なんで オマエが ここに
-いるんだよ!",Miyo! What are you doing here?
+いるんだよ!",Miyo! What are you doing here?,
 0x12c198,"ワタシがどこにいようと
 かってでしょ!
 それよリなにかようじ?","Hey! I'm allowed to go wherever I want, aren't I?
-So, is there something you wanted?"
+So, is there something you wanted?",
 0x12c19a,"ようじっていわれても...
 あっ!そういえば
 オマエのトモダチで
 デンパをさえぎることが
 できる デンジュウって
 いないか?","Not exactly...
-Oh! Actually, do you know any Denjuu that can block phone signals?"
+Oh! Actually, do you know any Denjuu that can block phone signals?",
 0x12c19c,"デンパをさえぎる...
 トモダチで 『ノイジー』
 っていう デンジュウが
 いるけど?","Block signals...?
 Well, there's one Denjuu I know named ""Noisy""...
-Why do you ask?"
+Why do you ask?",
 0x12c19e,"ほんとうか!?
 このしまでおきてる
 あらそいを どうにかして
@@ -1110,7 +1112,7 @@ Why do you ask?"
 その デンジュウに
 れんらくとって くれないか?","Seriously?!
 I'm trying to stop the fight over the phone signals here.
-Do you think you could contact him?"
+Do you think you could contact him?",
 0x12c1a0,"いいわよ
 ... ... ...
 もしもし ノイジー
@@ -1119,7 +1121,7 @@ Do you think you could contact him?"
 ................
 Hi, Noisy?
 It's me, Miyo...
-Can you tell me where you are right now?"
+Can you tell me where you are right now?",
 0x12c1a2,"え?イーリスにいるんだ
 わかった あリがとう
 いまから ワタシのトモダチが
@@ -1129,7 +1131,7 @@ Can you tell me where you are right now?"
 Got it, thanks.
 One of my friends wants to talk to you.
 Mhm. Alright, talk to you later.
-Bye-bye!"
+Bye-bye!",
 0x12c1a4,"ってことで いまイーリスに
 いるんだって
 がんばって トモダチに
@@ -1140,62 +1142,62 @@ Bye-bye!"
 バイバーイ","...So, it looks like he's in Iris right now.
 Good luck becoming his friend!
 I should warn you, he's a pretty strong.
-Well then, I have stuff to do, so bye-bye for now!"
+Well then, I have stuff to do, so bye-bye for now!",
 0x12c1a6,"オレのナマエは ノイジー
 オレに ちかづくと
 やけどを するぜ!","They call me Noisy.
-Stay away from me if you don't wanna get burned."
+Stay away from me if you don't wanna get burned.",
 0x12c1a8,"やっとみつけた
 オマエがノイジー?","Finally!
-You're that guy, right? Noisy?"
+You're that guy, right? Noisy?",
 0x12c1aa,"しょたいめんの デンジュウに
 『オマエ』はないだろ?
 ミヨがいってたヤツってのは
 オマエのことか?","Huh. Are you always this rude when you meet someone new?
-I suppose you're the one Miyo was talking about?"
+I suppose you're the one Miyo was talking about?",
 0x12c1ac,"おう ちょっと おねがいが
-あるんだけど?","Yup! Actually, I have a favor to ask you."
+あるんだけど?","Yup! Actually, I have a favor to ask you.",
 0x12c1ae,"さらにそのたいどかよ
 ハッ! ミヨも こまった
 ヤツを しょうかいしてくれた
 もんだな
 で? おねがいってなんだよ","Still with the attitude, huh?
 Hmph! Miyo sure sent me an annoying guy to deal with...
-So? What do you want?"
+So? What do you want?",
 0x12c1b0,"いっしょに イオンとうまで
 きてほしいんだ
 オマエのチカラで 
 イオンとうで おきてる
 ケンカを おわらせてくれよ","I need you to come with me to Ion Island.
 With your ability, we should be able to stop the fighting that's going on over there.
-So, will you help?"
+So, will you help?",
 0x12c1b2,"このせかいの ルールは
-わかってるよなぁ..?","You know how this world works, right..?"
-0x12c1b4,いくぞ! テレファングだ!,Let's go! Telefang!
+わかってるよなぁ..?","You know how this world works, right..?",
+0x12c1b4,いくぞ! テレファングだ!,Let's go! Telefang!,
 0x12c1b6,"けっこうやるじゃねーか
 よしっ!オマエのたのみ
 きいてやろうじゃねーか","Heh, you're pretty tough!
-Alright! I'll go along with you on this one."
+Alright! I'll go along with you on this one.",
 0x12c1b8,"ノイジーのデンワバンゴウを
-てにいれた",Got Noisy's phone number!
+てにいれた",Got Noisy's phone number!,
 0x12c1ba,"デンパを さえぎることの
-できるデンジュウは?",So? Did you find the Denjuu who can block phone signals?
+できるデンジュウは?",So? Did you find the Denjuu who can block phone signals?,
 0x12c1bc,"ごめん...デンワバンゴウ
-なくしちゃったんだ",Sorry... I lost his phone number...
+なくしちゃったんだ",Sorry... I lost his phone number...,
 0x12c1be,"オレが デンワバンゴウを
 メモリーしてるぜ
 おしえてやるよ","Don't worry, I still have his number saved.
-Here it is!"
+Here it is!",
 0x12c1c0,"ノイジーのデンワバンゴウを
-てにいれた",Got Noisy's phone number!
+てにいれた",Got Noisy's phone number!,
 0x12c1c2,"おねがいだよ はやく
 デンパを さえぎることが
 できる デンジュウを
-つれてきてよ!","Please, hurry and bring the Denjuu who can block phone signals here!"
+つれてきてよ!","Please, hurry and bring the Denjuu who can block phone signals here!",
 0x12c1c4,"おねがいだよ はやく
 デンパを さえぎることが
 できる デンジュウを
-つれてきてよ!","Please, hurry and bring the Denjuu who can block phone signals here!"
+つれてきてよ!","Please, hurry and bring the Denjuu who can block phone signals here!",
 0x12c1c6,"<&name>くん
 まちわびたよー
 そこにいる デンジュウが
@@ -1205,15 +1207,15 @@ Here it is!"
 よろしくね","<&name>, I've been waiting for you!
 So this is the Denjuu who's going to save us?
 My name is Beepy.
-It's nice to meet you!"
+It's nice to meet you!",
 0x12c1c8,"オレの ナマエは『ノイジー』
 っていうんだ よろしくな","They call me ""Noisy"".
-Nice to meet you."
+Nice to meet you.",
 0x12c1ca,"やっぱリ しょたいめんの
-たいどは こうでないとな",See? That's how you're supposed to do it!
+たいどは こうでないとな",See? That's how you're supposed to do it!,
 0x12c1cc,"うるさいな!
 はやいとこ やっちゃってくれよ","Oh, whatever!
-Hurry up and use your power!"
+Hurry up and use your power!",
 0x12c1ce,"はっはっはっはっ!
 わかったわかった
 んじゃいくぜ!
@@ -1221,23 +1223,23 @@ Hurry up and use your power!"
 むこうのほうヘ いってくれよ","Hahaha!
 Alright, alright.
 Then here we go!
-It's dangerous, so everyone stay back!"
+It's dangerous, so everyone stay back!",
 0x12c1d0,"おっしゃ これで
 このしまには デンパが
 はいらなくなったぜ!","Okay!
-That should make it so no signals can reach the island!"
+That should make it so no signals can reach the island!",
 0x12c1d2,"あれ? オレのケイタイは
-デンパはいってるぞ?",Huh? It looks like my phone's still working though...
+デンパはいってるぞ?",Huh? It looks like my phone's still working though...,
 0x12c1d4,"え..?
 だ..だいじょうぶだって!
 オマエのケイタイが とくベつな
 だけだよ","Huh...?
 W-Well, let's not worry about that!
-Your phone is probably just special."
+Your phone is probably just special.",
 0x12c1d6,"あとは このしまにいる
 デンワガイシャの
 デンジュウたちを おいだす
-だけだね",Now all that's left is to chase away the Denjuu working for the phone companies!
+だけだね",Now all that's left is to chase away the Denjuu working for the phone companies!,
 0x12c1d8,"まかせとけって
 ピポパは いえで
 まっててくれよ
@@ -1245,20 +1247,20 @@ Your phone is probably just special."
 このしまから おいだしたら
 おしえに いくからさ!","Leave that to me!
 Beepy, you can go wait in your house.
-I'll come talk to you once I've gotten rid of them!"
+I'll come talk to you once I've gotten rid of them!",
 0x12c1da,"うん わかった
 それじゃあ がんばってね","Okay, got it!
-Good luck <&name>!"
+Good luck <&name>!",
 0x12c1dc,"デンワガイシャのれんちゅう
 みーんな このしまから
-おいだしたぜ!","Okay, I finished chasing away all those guys from the phone companies!"
+おいだしたぜ!","Okay, I finished chasing away all those guys from the phone companies!",
 0x12c1de,"うわー あリがとう
 <&name>くん
 キミぐらいつよければ このしまのヌシに あえるかもね!","Hurray!!
 Thank you, <&name>!
-If you're this strong, you might even be able to meet the Master of the island!"
+If you're this strong, you might even be able to meet the Master of the island!",
 0x12c1e0,"このしまにいるヌシ??
-どんな デンジュウなんだ?",The Master? What kind of Denjuu is he?
+どんな デンジュウなんだ?",The Master? What kind of Denjuu is he?,
 0x12c1e2,"ボクも あったことないんだけど
 しゅぎょうにきた デンジュウが
 まえに はなしてたんだ
@@ -1266,34 +1268,34 @@ If you're this strong, you might even be able to meet the Master of the island!"
 しゅぎょうを つづけてる
 デンジュウたちに きけば
 なにかわかるかもしれないね","I've never met him myself, but I've heard stories from the Denjuu training here.
-I'm sure if you ask the Denjuu training in the forest, you might be able to find out where he is!"
+I'm sure if you ask the Denjuu training in the forest, you might be able to find out where he is!",
 0x12c1e4,"おっしゃー!
 とリあえず もリにいって
 ヌシの いばしょを きいてくるぜどんな デンジュウなんだろう?
 たのしみー!","Alright!
 In that case, I'll head into the forest and try asking them about the Master!
 I wonder what kind of Denjuu he is?
-I can't wait!"
+I can't wait!",
 0x12c1e6,"ヌシに あえるといいね
 <&name>くん
 おうえんしてるよ","I hope you can meet him, <&name>!
-I'll be rooting for you!"
+I'll be rooting for you!",
 0x12c1e8,"あとすこしで もとの
 イオンとうに もどるんだ
 <&name>くん
 がんばってね!","Keep at it, <&name>!
-It won't be long until the island is back to normal!"
-0x12c1ea,とあーっ!,Tooooh!
-0x12c1ec,あちゃー!,Achaaaa!
-0x12c1ee,とリゃ!,Toryaaah!
-0x12c1f0,も..もしかして...,Uh-oh... Is he going to...?
-0x12c1f2,あちょー!,Wachoooo!
+It won't be long until the island is back to normal!",
+0x12c1ea,とあーっ!,Tooooh!,
+0x12c1ec,あちゃー!,Achaaaa!,
+0x12c1ee,とリゃ!,Toryaaah!,
+0x12c1f0,も..もしかして...,Uh-oh... Is he going to...?,
+0x12c1f2,あちょー!,Wachoooo!,
 0x12c1f4,"あいてて...
 ところでキミはだれ?","Owww...
-Huh? Who are you?"
+Huh? Who are you?",
 0x12c1f6,"それはこっちのセリフだ!
 いきなリ なにするんだよ!","That's my line!
-You just attacked me out of nowhere!"
+You just attacked me out of nowhere!",
 0x12c1f8,"ん...?
 ああ ごめんごめん
 しゅぎょうちゅうは 
@@ -1303,11 +1305,11 @@ You just attacked me out of nowhere!"
 またやっちゃったみたいだ","Hm...?
 Oh, sorry about that!
 I was so focused on my training that I mustn't have been paying attention.
-This sorta thing happens sometimes. "
+This sorta thing happens sometimes. ",
 0x12c1fa,"またって...いつも
 こんなカンジなのかよ
 ところで このもリのヌシを
 さがしているんだけど 
 どこにいるか しらない?","Wait, you mean it's always like this?...
 Anyway, I'm looking for the Master who lives in this forest.
-Do you know where I can find him?"
+Do you know where I can find him?",
