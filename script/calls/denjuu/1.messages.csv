@@ -348,7 +348,7 @@ It's time for a quiz!
 #######,#017,,
 0x1300e0,"<&name>は 
 デンジュウクイズすきだよな!
- すき! ベつに<*A>","<Name>, you're a fan of Denjuu Quizzes, right?
+ すき! ベつに<*A>","<&name>, you're a fan of Denjuu Quizzes, right?
 <0>Yeah!<0>Not really<*A>",
 0x1300e2,"まちのひとにはなしかけるときは
 なにボタン?
@@ -365,7 +365,7 @@ It's time for a quiz!
 0x1300ea,"そうだよ!どんなことでも
 いっしょうけんめいだったろ!<*2>",It's not! You always seem to do your best no matter what!  // (-seem to)<*2>,
 0x1300ec,"いつからそんなに
-クールなやつになったんだよ!<*2>","When did you become such a cold person, <Name>?! // (distant?)<*2>",
+クールなやつになったんだよ!<*2>","When did you become such a cold person, <&name>?! // (distant?)<*2>",
 #######,#018,,
 0x1300ee,"いまオレは デンジュウクイズが
 やリたいぞ!
@@ -385,7 +385,7 @@ It's time for a quiz!
 0x1300f8,"もういい!オマエが
 そんなヤツとはおもわなかった!<*2>","Fine, never mind! I never took you for that kind of person!  // (forget it)<*2>",
 0x1300fa,"オマエっていいヤツだよな!
-ほんとに そうおもうよ!<*2>","You’re a good person, <Name>! I really think that! //<*2>",
+ほんとに そうおもうよ!<*2>","You’re a good person, <&name>! I really think that! //<*2>",
 #######,#019,,
 0x1300fc,"ちょっとのじかんでいいから
 デンジュウクイズしない?
@@ -420,7 +420,7 @@ It's time for a quiz!
 0x130110,"それはちがうとおもうよ
 おんなのこもたくさんいるから<*2>",I don't think so! There are plenty of female T-Fangers out there!<*2>,
 0x130112,"<&name>のともだちにも
-おんなのこがいるもんね!<*2>","You have a female friend who is one too, after all, right <NAME>? //<*2>",
+おんなのこがいるもんね!<*2>","You have a female friend who is one too, after all, right <&name>? //<*2>",
 0x130114,"そうなの?そうなの?
 じゃあ やめるよ!<*2>","Really? Okay then, nevermind!  // (let’s forget about it)<*2>",
 0x130116,"よかったー おこられたら
@@ -608,7 +608,7 @@ Other options: DNA, Test, Genetic, Bio ???"
 0x130190,"おとこのこだもんね!
 ないちゃったリはしないよね<*2>","You're a real tough guy, after all! You wouldn't cry!<*2>",
 0x130192,"すごいね <&name>は!
-みなおしちゃったよ!<*2>","Wow, <NAME>, you're pretty amazing! I'm seeing you in a whole new light!  //<*2>",
+みなおしちゃったよ!<*2>","Wow, <&name>, you're pretty amazing! I'm seeing you in a whole new light!  //<*2>",
 0x130194,"やっぱリ いたいのは
 みんな きらいだよね!<*2>","No one likes it because it hurts, huh? That makes sense! //<*2>",
 #######,#030,,
@@ -633,7 +633,7 @@ Other options: DNA, Test, Genetic, Bio ???"
 #######,#031,,
 0x1301a4,"『オバケ』ってこわいんでしょ?
 <&name>はこわい?
- こわい こわくない<*A>","Ghosts are scary, right? Are you scared of them, <Name>?
+ こわい こわくない<*A>","Ghosts are scary, right? Are you scared of them, <&name>?
 <0>Yeah<0>Nope<*A>",
 0x1301a6,"どんなところにいるの?
  おはか きのなか<*A>","Where can you find them?
@@ -654,7 +654,7 @@ Other options: DNA, Test, Genetic, Bio ???"
 <0>Yeah<0>I don't<*A>",
 0x1301b4,"<&name>は
 なんにつかうの?
- ためる マンガ<*A>","<NAME>, what do you use yours for? //
+ ためる マンガ<*A>","<&name>, what do you use yours for? //
 <0>Save it<0>Comics<*A>",
 0x1301b6,"ごめん なんかきいちゃマズイ
 ことだったのかな?
@@ -667,7 +667,7 @@ Other options: DNA, Test, Genetic, Bio ???"
 0x1301bc,"ごめんね おねがいだから
 きらいにならないでね!<*2>","Oh, sorry! I hope you're not mad at me...<*2>",
 0x1301be,"<&name>はあんまリ
-おかねにこだわらないんだね!<*2>","You don't care about money all that much, huh <NAME>? //<*2>",
+おかねにこだわらないんだね!<*2>","You don't care about money all that much, huh <&name>? //<*2>",
 #######,#033,,
 0x1301c0,"もしかして!オマエってすごく
 あたまいいのか?
