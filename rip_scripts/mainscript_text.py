@@ -483,6 +483,9 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
     string = string.replace("<nowiki>", "")
     string = string.replace("</nowiki>", "")
 
+    #Remove comments
+    string = string.split("//")[0]
+
     for char in string:
         if skip_sentinel:
             skip_sentinel = False
