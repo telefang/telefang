@@ -94,7 +94,7 @@ OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
 # If your default python is 3, you may want to change this to python3.
-PYTHON := python
+PYTHON := rip_scripts/find_python.sh
 
 $(foreach obj, $(OBJS), \
 	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
