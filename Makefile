@@ -91,6 +91,10 @@ OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
      versions/speed/palettes.o
+
+SRC_MESSAGE := 
+OBJ_MESSAGE := script/mainscript_data.o
+
 OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
 # If your default python is 3, you may want to change this to python3.
@@ -120,11 +124,11 @@ speed: $(ROMS_SPEED) compare_speed
 $(OBJS_ALL): $$*.asm $$($$*_dep)
 	rgbasm -h -o $@ $<
 
-$(ROMS_POWER): $(OBJS) $(OBJS_POWER)
+$(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJ_MESSAGE)
 	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
 	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG PW" $@
 
-$(ROMS_SPEED): $(OBJS) $(OBJS_SPEED)
+$(ROMS_SPEED): $(OBJS) $(OBJS_SPEED) $(OBJ_MESSAGE)
 	rgblink -n $(ROMS_SPEED:.gbc=.sym) -m $(ROMS_SPEED:.gbc=.map) -O $(BASEROM_SPEED) -o $@ $^
 	rgbfix -v -c -i BTZJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG SP" $@
 
@@ -156,9 +160,9 @@ clean:
 	@rm -f $@
 	@$(PYTHON) rip_scripts/pcm.py pcm $<
 
-%.scripttbl: %.messages.csv
+$(OBJS_MESSAGE): $(SRC_MESSAGE)
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER)
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) $< $@
 
 %.stringtbl: %.csv
 	@rm -f $@
