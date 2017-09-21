@@ -1141,6 +1141,16 @@ class _Union(_CFieldDecl):
                 reverseValues[value].append(vname)
             except KeyError:
                 reverseValues[value] = [vname]
+            
+            #We also need to import any Enum values into ourself
+            try:
+                exVals = cfields[vname].EXPORTEDVALUES
+                cdict.update(exVals)
+            except:
+                pass
+        
+        #Import the exported values from any Enums in our Union.
+        cdict.update(values)
         
         cdict["_Union__mapping"] = mapping
         cdict["_Union__reverseValues"] = reverseValues
@@ -1288,10 +1298,11 @@ class Union(CField, metaclass = _Union):
                     self.__fieldstorage.core = val
             except AttributeError:
                 #Not a class, just do the direct storage method
-                self.__storage[name].core = val
-        elif name in self.__mapping.keys():
-            if name not in self.__reverseValues[self.__tag__]:
-                self.__tag__ = self.__mapping[name]
+                self.__fieldstorage.core = val
+        elif name in self.__tagstorage.EXPORTEDVALUES.keys():
+            tagvalue = self.__tagstorage.EXPORTEDVALUES[name]
+            if self.__tag__ != tagvalue:
+                self.__tag__ = tagvalue
             self.__contents__ = val
         else:
             super(Union, self).__setattr__(name, val)
