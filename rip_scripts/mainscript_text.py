@@ -5,7 +5,7 @@
 # Injects (and/or extracts) main script data from the master metatable.
 
 import argparse, errno, sys, os, os.path, struct, io, codecs, urllib.request, urllib.error, urllib.parse, json, csv
-from CodeModule.asm.rgbds import Rgb4, Rgb4Section, Rgb4SectionData, Rgb4Patch, Rgb4PatchExpr
+from CodeModule.asm.rgbds import Rgb4, Rgb4Section, Rgb4SectionData, Rgb4Patch, Rgb4PatchExpr, Rgb4Symbol
 
 def install_path(path):
     try:
@@ -664,7 +664,7 @@ def parse_wikitext(wikifile):
 
     return parsed_rows, parsed_hdrs
 
-def parse_csv(csvfile):
+def parse_csv(csvfile, language):
     csvreader = csv.reader(csvfile)
     headers = None
     rows = []
@@ -681,7 +681,7 @@ def parse_csv(csvfile):
     #Determine what column we want
     ptr_col = headers.index("Pointer")
     try:
-        str_col = headers.index(args.language)
+        str_col = headers.index(language)
     except ValueError:
         str_col = ptr_col
     
@@ -718,7 +718,7 @@ def omnibus_bank_split(rowdata, banknames):
     
     return out
 
-def generate_table_section(bank, rows, objdata):
+def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_width):
     """Given a bank and string data, generate an RGBDS binary section for it.
     
     rows is assumed to be an iterable yielding 2-tuples where the first item is
@@ -726,6 +726,13 @@ def generate_table_section(bank, rows, objdata):
     
     objdata is the current Rgb4 instance.
     
+    charmap is the mapping of string characters to encoded bytes.
+
+    metrics is the character widths for each encoded byte, if applicable.
+
+    bank_window_width is how many pixels wide the window these rows must fit
+    into is
+
     Returns a tuple with the following information:
     
      - section: The Rgb4Section instance containing all of the packed data.
@@ -736,7 +743,7 @@ def generate_table_section(bank, rows, objdata):
     
     table_section = Rgb4Section()
     table_section.name = "String table " + bank["symbol"]
-    table_section.sectype = "ROMX"
+    table_section.sectype = Rgb4Section.ROMX
     table_section.org = bank["baseaddr"]
     table_section.bank = bank["basebank"]
     table_section.align = 0
@@ -753,6 +760,8 @@ def generate_table_section(bank, rows, objdata):
     ptr_col = 0
     str_col = 1
     
+    section_id = len(objdata.sections)
+
     for i, row in enumerate(rows):
         if "#" in row[ptr_col]:
             print("Row {} is not a message, skipped".format(i))
@@ -767,7 +776,10 @@ def generate_table_section(bank, rows, objdata):
         if str_col >= len(row):
             print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
             table.append(baseaddr)
-            packed_strings[table_idx] = pack_string("/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
+            packed = pack_string("/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
+
+            baseaddr += len(packed)
+            packed_strings[table_idx] = packed
             continue
 
         if row[str_col][:11] == "«ALIAS ROW " or row[str_col][:11] == "<ALIAS ROW ":
@@ -800,21 +812,17 @@ def generate_table_section(bank, rows, objdata):
                 lastbk = nextbk
             else:
                 print("Warning: Row explicitly marked with no pointer")
-
-            baseaddr += len(packed)
             
-        bank_window_width = args.window_width
-        if "window_width" in list(bank.keys()):
-            bank_window_width = bank["window_width"]
-        
-        #Moveup pointers to account for the table size
-        for i, value in enumerate(table):
-            table[i] = PTR.pack(value + len(table) * 2)
+            baseaddr += len(packed)
+
+    #Moveup pointers to account for the table size
+    for i, value in enumerate(table):
+        table[i] = value + len(table) * 2
     
     #Overflow detection + handling
     bytes_remaining = 0x4000
-    for line in table:
-        bytes_remaining -= len(line)
+    for intptr in table:
+        bytes_remaining -= 2
 
     for line in packed_strings:
         bytes_remaining -= len(line)
@@ -881,10 +889,20 @@ def generate_table_section(bank, rows, objdata):
     
     #Write out the table data to the section.
     #We could use fixups here but we already know the offsets, so bleh
+    table = [PTR.pack(table_ptr) for table_ptr in table]
     table_section.datsec.data = b"".join(table) + b"".join(packed_strings)
     
     objdata.sections.append(table_section)
     
+    #Also export a symbol for our own data bank
+    block_symbol = Rgb4Symbol()
+    block_symbol.name = bank["symbol"]
+    block_symbol.symtype = Rgb4Symbol.EXPORT
+    block_symbol.value.sectionid = section_id
+    block_symbol.value.value = 0
+
+    objdata.symbols.append(block_symbol)
+
     return (table_section, objdata, overflow)
 
 def make_tbl(args):
@@ -898,16 +916,12 @@ def make_tbl(args):
         metrics = None
     else:
         metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
-    
-    #These are valid
-    print(args.filenames)
-    print(args.output_filename)
-    
+
     #Some CSV files in the patch branch are merged together.
     #We'll parse these first and add their row data to each individual bank...
     for filename in args.filenames:
         with open(filename, "r", encoding="utf-8") as csvfile:
-            rowdata = parse_csv(csvfile)
+            rowdata = parse_csv(csvfile, args.language)
         
         split_rowdata = omnibus_bank_split(rowdata, banknames)
         
@@ -932,17 +946,23 @@ def make_tbl(args):
         #Open and parse the data
         if "textdata" not in bank.keys():
             with open(os.path.join(args.output, bank["filename"]), "r", encoding='utf-8') as csvfile:
-                bank["textdata"] = parse_csv(csvfile)
+                bank["textdata"] = parse_csv(csvfile, args.language)
+
+        bank_window_width = args.window_width
+        if "window_width" in list(bank.keys()):
+            bank_window_width = bank["window_width"]
         
-        tsection, objdata, overflow = generate_table_section(bank, bank["textdata"], objdata)
+        tsection, objdata, overflow = generate_table_section(bank, bank["textdata"], objdata, charmap, metrics, bank_window_width)
     
+    overflow_sectionid = len(objdata.sections)
     if overflow_bank_id is not None:
         overflow_offset = 0x4000
         overflow_data = []
         
         for symid, packed_str in overflow_strings:
             overflow_data.append(packed_str)
-            objdata.symbols[symid].value = overflow_offset
+            objdata.symbols[symid].value.sectionid = overflow_sectionid
+            objdata.symbols[symid].value.value = overflow_offset
             overflow_offset += len(packed_str)
         
         overflow_section = Rgb4Section
@@ -953,7 +973,7 @@ def make_tbl(args):
         overflow_section.align = 0
         overflow_section.datsec.data = b"".join(overflow_data)
         
-        objdata.append(overflow_section)
+        objdata.sections.append(overflow_section)
     
     with open(args.output_filename, "wb") as objfile:
         objfile.write(objdata.bytes)
