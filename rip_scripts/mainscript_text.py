@@ -5,6 +5,7 @@
 # Injects (and/or extracts) main script data from the master metatable.
 
 import argparse, errno, sys, os, os.path, struct, io, codecs, urllib.request, urllib.error, urllib.parse, json, csv
+from CodeModule.asm.rgbds import Rgb4, Rgb4Section, Rgb4SectionData, Rgb4Patch, Rgb4PatchExpr, Rgb4Symbol
 
 def install_path(path):
     try:
@@ -663,7 +664,7 @@ def parse_wikitext(wikifile):
 
     return parsed_rows, parsed_hdrs
 
-def parse_csv(csvfile):
+def parse_csv(csvfile, language):
     csvreader = csv.reader(csvfile)
     headers = None
     rows = []
@@ -677,21 +678,258 @@ def parse_csv(csvfile):
         else:
             rows.append(row)
     
-    return rows, headers
+    #Determine what column we want
+    ptr_col = headers.index("Pointer")
+    try:
+        str_col = headers.index(language)
+    except ValueError:
+        str_col = ptr_col
+    
+    return [(row[ptr_col], row[str_col]) for row in rows]
+
+def omnibus_bank_split(rowdata, banknames):
+    """Given row data from a non-bank-affiliated file, split it into banks.
+    
+    Returns a dict whose keys are bank IDs and values are that bank's specific
+    row data."""
+    
+    out = {}
+    
+    for bankid, bank in enumerate(banknames):
+        in_current_bank = False
+        
+        for row in rowdata:
+            try:
+                rowptr = int(row[0][2:], 16)
+                bankflat = flat(bank["basebank"], bank["baseaddr"])
+                
+                #This line assumes text blocks do not share an MBC3 bank, which
+                #is NOT true for the original game. Patched versions do relocate
+                #the text blocks to occupy one bank each.
+                in_current_bank = rowptr > bankflat and rowptr <= bankflat + 0x4000
+            except ValueError:
+                pass
+            
+            if in_current_bank:
+                if bankid not in out.keys():
+                    out[bankid] = []
+                
+                out[bankid].append(row)
+    
+    return out
+
+def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_width):
+    """Given a bank and string data, generate an RGBDS binary section for it.
+    
+    rows is assumed to be an iterable yielding 2-tuples where the first item is
+    the pointer index and the second is the string to pack.
+    
+    objdata is the current Rgb4 instance.
+    
+    charmap is the mapping of string characters to encoded bytes.
+
+    metrics is the character widths for each encoded byte, if applicable.
+
+    bank_window_width is how many pixels wide the window these rows must fit
+    into is
+
+    Returns a tuple with the following information:
+    
+     - section: The Rgb4Section instance containing all of the packed data.
+     - objdata: The Rgb4 instance, with things added.
+     - overflow: A dict of data which overflows this block. Dict keys are the
+     names of RGBDS symbols which must be defined in the overflow bank. Section
+     will be configured with fixups for those symbols."""
+    
+    table_section = Rgb4Section()
+    table_section.name = "String table " + bank["symbol"]
+    table_section.sectype = Rgb4Section.ROMX
+    table_section.org = bank["baseaddr"]
+    table_section.bank = bank["basebank"]
+    table_section.align = 0
+    
+    table = []
+    packed_strings = [b""] * len(rows)
+    
+    baseaddr = bank["baseaddr"]
+    lastbk = None
+    last_table_index = 0
+    
+    overflow = {}
+    
+    ptr_col = 0
+    str_col = 1
+    
+    section_id = len(objdata.sections)
+
+    for i, row in enumerate(rows):
+        if "#" in row[ptr_col]:
+            print("Row {} is not a message, skipped".format(i))
+            continue
+
+        if row[ptr_col] != "(No pointer)":
+            table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
+            last_table_index = table_idx
+        else:
+            table_idx = last_table_index
+        
+        if str_col >= len(row):
+            print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
+            table.append(baseaddr)
+            packed = pack_string("/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
+
+            baseaddr += len(packed)
+            packed_strings[table_idx] = packed
+            continue
+
+        if row[str_col][:11] == "«ALIAS ROW " or row[str_col][:11] == "<ALIAS ROW ":
+            #Aliased string!
+            split_row = row[str_col][11:-1].split(" ")
+            if len(split_row) > 1 and split_row[1] == "INTO":
+                #Partial string alias.
+                table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
+                packed_strings[table_idx] = b""
+            else:
+                table.append(table[int(split_row[0], 16)])
+                packed_strings[table_idx] = b""
+
+            #We don't want to have to try to handle both overflow and
+            #aliasing at the same time, so don't.
+            last_aliased_row = table_idx
+        else:
+            packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == "(No pointer)")
+            packed_strings[table_idx] += packed #We concat here in case of nopointer rows
+
+            if row[ptr_col] != "(No pointer)":
+                #Yes, some text banks have strings not mentioned in the
+                #table because screw you.
+                table.append(baseaddr)
+
+                #Sanity check: are our pointer numbers increasing?
+                nextbk = int(rows[i][ptr_col], 16)
+                if lastbk != None and nextbk != lastbk + 2:
+                    print("Warning: Pointer " + rows[i][ptr_col] + " is out of order.")
+                lastbk = nextbk
+            else:
+                print("Warning: Row explicitly marked with no pointer")
+            
+            baseaddr += len(packed)
+
+    #Moveup pointers to account for the table size
+    for i, value in enumerate(table):
+        table[i] = value + len(table) * 2
+    
+    #Overflow detection + handling
+    bytes_remaining = 0x4000
+    for intptr in table:
+        bytes_remaining -= 2
+
+    for line in packed_strings:
+        bytes_remaining -= len(line)
+    
+    if bytes_remaining <= 0:
+        print("Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining)))
+        
+        #Compiled bank exceeds the amount of space available in the bank.
+        #Start assigning strings from the last one forward to be spilled
+        #into the overflow bank. This reduces their size to 3.
+        strings_to_spill = 0
+        string_bytes_saved = 0
+        
+        for table_idx, spill_string in reversed(list(enumerate(packed_strings))):
+            if table_idx == last_aliased_row:
+                #We can't spill aliased rows, nor do we want to attempt to
+                #support that usecase, since it would be too much work.
+                #Instead, stop spilling at the end.
+                print("WARNING: Terminating spills at 0x{0:x} due to aliasing.".format(table_idx))
+                print("The resulting object file is invalid.")
+                print("Please consider removing aliasing rows.")
+                break
+            
+            strings_to_spill += 1
+            string_bytes_saved += len(packed_strings[table_idx]) - 3
+            
+            if string_bytes_saved + bytes_remaining > 0:
+                #That's enough! Stop counting bytes, we've spilled enough.
+                break
+        
+        #Replace each spilled string with the overflow opcode and a fixup into
+        #the overflow list.
+        for table_idx in range(len(packed_strings) - strings_to_spill, len(packed_strings)):
+            cur_string = packed_strings[table_idx]
+            packed_strings[table_idx] = bytes([0xEC, 0x00, 0x00])
+            
+            thisptr = PTR.unpack(table[table_idx])[0]
+            
+            if table_idx < len(table) - 1:
+                #fixup the next pointer in the table
+                table[table_idx + 1] = PTR.pack(thisptr + len(packed_strings[table_idx]))
+            
+            symbol = Rgb4Symbol()
+            symbol.name = bank["symbol"] + ("_%d_OVERFLOW" % table_idx)
+            symbol.symtype = Rgb4Symbol.EXPORT
+            
+            symbol_id = len(objdata.symbols)
+            objdata.symbols.append(symbol)
+            
+            fixup = Rgb4Patch()
+            fixup.srcfile = bank["filename"]
+            fixup.srcline = 0 #todo: wut
+            fixup.patchoffset = thisptr + 1
+            fixup.patchtype = Rgb4Patch.LE16
+            
+            patchexpr = Rgb4PatchExpr()
+            patchexpr.SYM = symbol_id
+            
+            fixup.patchexprs.append(patchexpr)
+            table_section.datsec.fixups.append(fixup)
+            overflow[symbol_id] = cur_string
+        
+        print("Spilled 0x{0:x} bytes to overflow bank".format(abs(string_bytes_saved)))
+    
+    #Write out the table data to the section.
+    #We could use fixups here but we already know the offsets, so bleh
+    table = [PTR.pack(table_ptr) for table_ptr in table]
+    table_section.datsec.data = b"".join(table) + b"".join(packed_strings)
+    
+    objdata.sections.append(table_section)
+    
+    #Also export a symbol for our own data bank
+    block_symbol = Rgb4Symbol()
+    block_symbol.name = bank["symbol"]
+    block_symbol.symtype = Rgb4Symbol.EXPORT
+    block_symbol.value.sectionid = section_id
+    block_symbol.value.value = 0
+
+    objdata.symbols.append(block_symbol)
+
+    return (table_section, objdata, overflow)
 
 def make_tbl(args):
     charmap = parse_charmap(args.charmap)
     banknames = parse_bank_names(args.banknames)
     banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
     
-    overflow_strings = []
-    overflow_ptr = 0x4000
     overflow_bank_id = None
     
     if args.language == "Japanese":
         metrics = None
     else:
         metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
+
+    #Some CSV files in the patch branch are merged together.
+    #We'll parse these first and add their row data to each individual bank...
+    for filename in args.filenames:
+        with open(filename, "r", encoding="utf-8") as csvfile:
+            rowdata = parse_csv(csvfile, args.language)
+        
+        split_rowdata = omnibus_bank_split(rowdata, banknames)
+        
+        for bankid, rowdata in enumerate(split_rowdata):
+            bank["textdata"] = rowdata
+    
+    objdata = Rgb4()
+    overflow_strings = {}
     
     for h, bank in enumerate(banknames):
         last_aliased_row = -1
@@ -706,144 +944,39 @@ def make_tbl(args):
         
         print("Compiling " + bank["filename"])
         #Open and parse the data
-        with open(os.path.join(args.output, bank["filename"]), "r", encoding='utf-8') as csvfile:
-            rows, headers = parse_csv(csvfile)
-
-        #Determine what column we want
-        ptr_col = headers.index("Pointer")
-        try:
-            str_col = headers.index(args.language)
-        except ValueError:
-            str_col = ptr_col
-
-        #Pack our strings
-        table = []
-        packed_strings = [b""] * len(rows)
-
-        baseaddr = bank["baseaddr"]
-        lastbk = None
+        if "textdata" not in bank.keys():
+            with open(os.path.join(args.output, bank["filename"]), "r", encoding='utf-8') as csvfile:
+                bank["textdata"] = parse_csv(csvfile, args.language)
 
         bank_window_width = args.window_width
         if "window_width" in list(bank.keys()):
             bank_window_width = bank["window_width"]
-            
-        last_table_index = 0
-
-        for i, row in enumerate(rows):
-            if "#" in row[ptr_col]:
-                print("Row {} is not a message, skipped".format(i))
-                continue
-                
-            if row[ptr_col] != "(No pointer)":
-                table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
-                last_table_index = table_idx
-            else:
-                table_idx = last_table_index
-            
-            if str_col >= len(row):
-                print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
-                table.append(baseaddr)
-                packed_strings[table_idx] = pack_string("/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
-                continue
-            
-            if row[str_col][:11] == "«ALIAS ROW " or row[str_col][:11] == "<ALIAS ROW ":
-                #Aliased string!
-                split_row = row[str_col][11:-1].split(" ")
-                if len(split_row) > 1 and split_row[1] == "INTO":
-                    #Partial string alias.
-                    table.append(table[int(split_row[0], 16)] + int(split_row[2], 16))
-                    packed_strings[table_idx] = b""
-                else:
-                    table.append(table[int(split_row[0], 16)])
-                    packed_strings[table_idx] = b""
-                
-                #We don't want to have to try to handle both overflow and
-                #aliasing at the same time, so don't.
-                last_aliased_row = table_idx
-            else:
-                packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == "(No pointer)")
-                packed_strings[table_idx] += packed #We concat here in case of nopointer rows
-                
-                if row[ptr_col] != "(No pointer)":
-                    #Yes, some text banks have strings not mentioned in the
-                    #table because screw you.
-                    table.append(baseaddr)
-
-                    #Sanity check: are our pointer numbers increasing?
-                    nextbk = int(rows[i][ptr_col], 16)
-                    if lastbk != None and nextbk != lastbk + 2:
-                        print("Warning: Pointer " + rows[i][ptr_col] + " is out of order.")
-                    lastbk = nextbk
-                else:
-                    print("Warning: Row explicitly marked with no pointer")
-                
-                baseaddr += len(packed)
         
-        #Moveup pointers to account for the table size
-        for i, value in enumerate(table):
-            table[i] = PTR.pack(value + len(table) * 2)
-            
-        #Overflow detection + handling
-        bytes_remaining = 0x4000
-        for line in table:
-            bytes_remaining -= len(line)
-        
-        for line in packed_strings:
-            bytes_remaining -= len(line)
-        
-        if bytes_remaining <= 0:
-            print("Bank " + bank["filename"] + " exceeds size of MBC bank limit by 0x{0:x} bytes".format(abs(bytes_remaining)))
-            
-            #Compiled bank exceeds the amount of space available in the bank.
-            #Start assigning strings from the last one forward to be spilled
-            #into the overflow bank. This reduces their size to 3.
-            strings_to_spill = 0
-            string_bytes_saved = 0
-            
-            for table_idx, spill_string in reversed(list(enumerate(packed_strings))):
-                if table_idx == last_aliased_row:
-                    #We can't spill aliased rows, nor do we want to attempt to
-                    #support that usecase, since it would be too much work.
-                    #Instead, stop spilling at the end.
-                    print("WARNING: Terminating spills at 0x{0:x} due to aliasing.".format(table_idx))
-                    print("Your bank likely will not fit upon assembly.")
-                    print("Please consider removing aliasing rows.")
-                    break
-                
-                strings_to_spill += 1
-                string_bytes_saved += len(packed_strings[table_idx]) - 3
-                
-                if string_bytes_saved + bytes_remaining > 0:
-                    #That's enough! Stop counting bytes, we've spilled enough.
-                    break
-            
-            #Actually spill strings to the overflow bank now, in order.
-            for table_idx in range(len(packed_strings) - strings_to_spill, len(packed_strings)):
-                cur_string = packed_strings[table_idx]
-                packed_strings[table_idx] = bytes([0xEC, overflow_ptr & 0xFF, overflow_ptr >> 8])
-                
-                if table_idx < len(table) - 1:
-                    #fixup the next pointer in the table
-                    thisptr = PTR.unpack(table[table_idx])[0]
-                    table[table_idx + 1] = PTR.pack(thisptr + len(packed_strings[table_idx]))
-                
-                overflow_strings.append(cur_string)
-                overflow_ptr += len(cur_string)
-                
-            print("Spilled 0x{0:x} bytes to overflow bank".format(abs(string_bytes_saved)))
-
-        #Write the data out to the object files. We're done here!
-        with open(os.path.join(args.output, bank["objname"]), "wb") as objfile:
-            for line in table:
-                objfile.write(line)
-
-            for line in packed_strings:
-                objfile.write(line)
+        tsection, objdata, overflow = generate_table_section(bank, bank["textdata"], objdata, charmap, metrics, bank_window_width)
     
+    overflow_sectionid = len(objdata.sections)
     if overflow_bank_id is not None:
-        with open(os.path.join(args.output, banknames[overflow_bank_id]["objname"]), "wb") as objfile:
-            for line in overflow_strings:
-                objfile.write(line)
+        overflow_offset = 0x4000
+        overflow_data = []
+        
+        for symid, packed_str in overflow_strings:
+            overflow_data.append(packed_str)
+            objdata.symbols[symid].value.sectionid = overflow_sectionid
+            objdata.symbols[symid].value.value = overflow_offset
+            overflow_offset += len(packed_str)
+        
+        overflow_section = Rgb4Section
+        overflow_section.name = "Overflow Bank"
+        overflow_section.sectype = Rgb4Section.ROMX
+        overflow_section.org = 0x4000
+        overflow_section.bank = args.overflow_bank
+        overflow_section.align = 0
+        overflow_section.datsec.data = b"".join(overflow_data)
+        
+        objdata.sections.append(overflow_section)
+    
+    with open(args.output_filename, "wb") as objfile:
+        objfile.write(objdata.bytes)
 
 def wikisync(args):
     charmap = parse_charmap(args.charmap)
@@ -907,6 +1040,7 @@ def main():
     ap.add_argument('--overflow_bank', type=int, default=0x1E)
     ap.add_argument('rom', type=str)
     ap.add_argument('filenames', type=str, nargs="*")
+    ap.add_argument('output_filename', type=str)
     args = ap.parse_args()
 
     method = {
