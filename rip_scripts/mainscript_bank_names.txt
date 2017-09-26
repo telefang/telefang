@@ -1,23 +1,23 @@
 #filename wikifang-addr rom-addr
-battle/messages 114000
-denjuu/sms 118000 null 48
-npc/1 11C000
-story/1 120000
-npc/2 124000
-npc/unused 128000
-npc/postgame 100000
-calls/denjuu/1 130000
-calls/denjuu/2 134000
-story/2 12C000
-story/3 138000
-npc/3 13C000
-story/4 140000
+battle/messages 114000 114000
+denjuu/sms 118000 118000 48
+npc/1 11C000 11C000
+story/1 120000 120000
+npc/2 124000 124000
+npc/unused 128000 128000
+npc/postgame 100000 100000
+calls/denjuu/1 130000 130000
+calls/denjuu/2 134000 134000
+story/2 12C000 12C000
+story/3 138000 138000
+npc/3 13C000 13C000
+story/4 140000 140000
 calls/denjuu/3 11507B 110000
-calls/denjuu/4 144000
+calls/denjuu/4 144000 144000
 calls/denjuu/5 145C9A 160000
 calls/denjuu/6 99068 94000
-denjuu/descriptions 40000
-calls/story 158000
-calls/exp_item 15C000
+denjuu/descriptions 40000 40000
+calls/story 158000 158000
+calls/exp_item 15C000 15C000
 story/5 1281D9 10C000
-overflow/1 78000
+overflow/1 78000 78000
