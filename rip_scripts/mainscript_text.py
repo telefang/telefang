@@ -836,7 +836,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
         
         #Compiled bank exceeds the amount of space available in the bank.
         #Start assigning strings from the last one forward to be spilled
-        #into the overflow bank. This reduces their size to 3.
+        #into the overflow bank. This reduces their size to 4.
         strings_to_spill = 0
         string_bytes_saved = 0
         
@@ -851,7 +851,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
                 break
             
             strings_to_spill += 1
-            string_bytes_saved += len(packed_strings[table_idx]) - 3
+            string_bytes_saved += len(packed_strings[table_idx]) - 4
             
             if string_bytes_saved + bytes_remaining > 0:
                 #That's enough! Stop counting bytes, we've spilled enough.
@@ -861,7 +861,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
         #the overflow list.
         for table_idx in range(len(packed_strings) - strings_to_spill, len(packed_strings)):
             cur_string = packed_strings[table_idx]
-            packed_strings[table_idx] = bytes([0xEC, 0x00, 0x00])
+            packed_strings[table_idx] = bytes([0xEC, 0x00, 0x00, 0x00])
             
             thisptr = table[table_idx]
             
@@ -880,6 +880,18 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             fixup.srcfile = bank["filename"]
             fixup.srcline = 0 #todo: wut
             fixup.patchoffset = thisptr + 1 - bank["baseaddr"]
+            fixup.patchtype = Rgb4Patch.BYTE
+
+            patchexpr = Rgb4PatchExpr()
+            patchexpr.BANK = symbol_id
+
+            fixup.patchexprs.append(patchexpr)
+            table_section.datsec.patches.append(fixup)
+
+            fixup = Rgb4Patch()
+            fixup.srcfile = bank["filename"]
+            fixup.srcline = 0 #todo: wut
+            fixup.patchoffset = thisptr + 2 - bank["baseaddr"]
             fixup.patchtype = Rgb4Patch.LE16
             
             patchexpr = Rgb4PatchExpr()
@@ -912,7 +924,7 @@ def make_tbl(args):
     banknames = parse_bank_names(args.banknames)
     banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
     
-    overflow_bank_id = None
+    overflow_bank_ids = []
     
     if args.language == "Japanese":
         metrics = None
@@ -937,7 +949,7 @@ def make_tbl(args):
     for h, bank in enumerate(banknames):
         if bank["filename"].startswith("overflow"):
             #Don't attempt to compile the overflow bank. That's a separate pass
-            overflow_bank_id = h
+            overflow_bank_ids.append(h)
             continue
         
         #If filenames are specified, don't bother because we can't do on-demand
@@ -957,13 +969,26 @@ def make_tbl(args):
         bank_objects[bank["objname"]] = objdata
         overflow_strings.update(overflow)
     
-    overflow_sectionid = len(ovrflowdata.sections)
-    if overflow_bank_id is not None:
+    number_symbols_exported = 0
+
+    for overflow_bank_id in overflow_bank_ids:
+        overflow_sectionid = len(ovrflowdata.sections)
         overflow_offset = 0
-        overflow_data = []
+        overflow_bytes = []
         
+        current_symbol_id = 0
         for symname, packed_str in overflow_strings.items():
-            overflow_data.append(packed_str)
+            if number_symbols_exported < current_symbol_id:
+                current_symbol_id += 1
+                continue
+
+            if overflow_offset + len(packed_str) > 0x4000:
+                number_symbols_exported = current_symbol_id
+                break
+
+            current_symbol_id += 1
+
+            overflow_bytes.append(packed_str)
             
             ofsym = Rgb4Symbol()
             ofsym.name = symname
@@ -973,6 +998,8 @@ def make_tbl(args):
             overflow_offset += len(packed_str)
             
             ovrflowdata.symbols.append(ofsym)
+        else:
+            break
         
         overflow_section = Rgb4Section()
         overflow_section.name = "Overflow Bank"
@@ -980,7 +1007,7 @@ def make_tbl(args):
         overflow_section.org = 0x4000
         overflow_section.bank = args.overflow_bank
         overflow_section.align = 0
-        overflow_section.datsec.data = b"".join(overflow_data)
+        overflow_section.datsec.data = b"".join(overflow_bytes)
         
         ovrflowdata.sections.append(overflow_section)
     
