@@ -836,7 +836,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
         
         #Compiled bank exceeds the amount of space available in the bank.
         #Start assigning strings from the last one forward to be spilled
-        #into the overflow bank. This reduces their size to 3.
+        #into the overflow bank. This reduces their size to 4.
         strings_to_spill = 0
         string_bytes_saved = 0
         
@@ -851,7 +851,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
                 break
             
             strings_to_spill += 1
-            string_bytes_saved += len(packed_strings[table_idx]) - 3
+            string_bytes_saved += len(packed_strings[table_idx]) - 4
             
             if string_bytes_saved + bytes_remaining > 0:
                 #That's enough! Stop counting bytes, we've spilled enough.
@@ -861,7 +861,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
         #the overflow list.
         for table_idx in range(len(packed_strings) - strings_to_spill, len(packed_strings)):
             cur_string = packed_strings[table_idx]
-            packed_strings[table_idx] = bytes([0xEC, 0x00, 0x00])
+            packed_strings[table_idx] = bytes([0xEC, 0x00, 0x00, 0x00])
             
             thisptr = table[table_idx]
             
@@ -880,6 +880,18 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             fixup.srcfile = bank["filename"]
             fixup.srcline = 0 #todo: wut
             fixup.patchoffset = thisptr + 1 - bank["baseaddr"]
+            fixup.patchtype = Rgb4Patch.BYTE
+
+            patchexpr = Rgb4PatchExpr()
+            patchexpr.BANK = symbol_id
+
+            fixup.patchexprs.append(patchexpr)
+            table_section.datsec.patches.append(fixup)
+
+            fixup = Rgb4Patch()
+            fixup.srcfile = bank["filename"]
+            fixup.srcline = 0 #todo: wut
+            fixup.patchoffset = thisptr + 2 - bank["baseaddr"]
             fixup.patchtype = Rgb4Patch.LE16
             
             patchexpr = Rgb4PatchExpr()
