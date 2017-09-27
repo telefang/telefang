@@ -912,7 +912,7 @@ def make_tbl(args):
     banknames = parse_bank_names(args.banknames)
     banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
     
-    overflow_bank_id = None
+    overflow_bank_ids = []
     
     if args.language == "Japanese":
         metrics = None
@@ -937,7 +937,7 @@ def make_tbl(args):
     for h, bank in enumerate(banknames):
         if bank["filename"].startswith("overflow"):
             #Don't attempt to compile the overflow bank. That's a separate pass
-            overflow_bank_id = h
+            overflow_bank_ids.append(h)
             continue
         
         #If filenames are specified, don't bother because we can't do on-demand
@@ -957,13 +957,26 @@ def make_tbl(args):
         bank_objects[bank["objname"]] = objdata
         overflow_strings.update(overflow)
     
-    overflow_sectionid = len(ovrflowdata.sections)
-    if overflow_bank_id is not None:
+    number_symbols_exported = 0
+
+    for overflow_bank_id in overflow_bank_ids:
+        overflow_sectionid = len(ovrflowdata.sections)
         overflow_offset = 0
-        overflow_data = []
+        overflow_bytes = []
         
+        current_symbol_id = 0
         for symname, packed_str in overflow_strings.items():
-            overflow_data.append(packed_str)
+            if number_symbols_exported < current_symbol_id:
+                current_symbol_id += 1
+                continue
+
+            if overflow_offset + len(packed_str) > 0x4000:
+                number_symbols_exported = current_symbol_id
+                break
+
+            current_symbol_id += 1
+
+            overflow_bytes.append(packed_str)
             
             ofsym = Rgb4Symbol()
             ofsym.name = symname
@@ -973,6 +986,8 @@ def make_tbl(args):
             overflow_offset += len(packed_str)
             
             ovrflowdata.symbols.append(ofsym)
+        else:
+            break
         
         overflow_section = Rgb4Section()
         overflow_section.name = "Overflow Bank"
@@ -980,7 +995,7 @@ def make_tbl(args):
         overflow_section.org = 0x4000
         overflow_section.bank = args.overflow_bank
         overflow_section.align = 0
-        overflow_section.datsec.data = b"".join(overflow_data)
+        overflow_section.datsec.data = b"".join(overflow_bytes)
         
         ovrflowdata.sections.append(overflow_section)
     
