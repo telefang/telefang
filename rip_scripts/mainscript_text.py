@@ -706,7 +706,7 @@ def omnibus_bank_split(rowdata, banknames):
                 #This line assumes text blocks do not share an MBC3 bank, which
                 #is NOT true for the original game. Patched versions do relocate
                 #the text blocks to occupy one bank each.
-                in_current_bank = rowptr > bankflat and rowptr <= bankflat + 0x4000
+                in_current_bank = rowptr >= bankflat and rowptr < bankflat + 0x4000
             except ValueError:
                 pass
             
@@ -718,13 +718,11 @@ def omnibus_bank_split(rowdata, banknames):
     
     return out
 
-def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_width):
+def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
     """Given a bank and string data, generate an RGBDS binary section for it.
     
     rows is assumed to be an iterable yielding 2-tuples where the first item is
     the pointer index and the second is the string to pack.
-    
-    objdata is the current Rgb4 instance.
     
     charmap is the mapping of string characters to encoded bytes.
 
@@ -735,8 +733,7 @@ def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_wi
 
     Returns a tuple with the following information:
     
-     - section: The Rgb4Section instance containing all of the packed data.
-     - objdata: The Rgb4 instance, with things added.
+     - objdata: Rgb4 instance containing all table section data and symbols.
      - overflow: A dict of data which overflows this block. Dict keys are the
      names of RGBDS symbols which must be defined in the overflow bank. Section
      will be configured with fixups for those symbols."""
@@ -754,6 +751,9 @@ def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_wi
     baseaddr = bank["baseaddr"]
     lastbk = None
     last_table_index = 0
+    last_aliased_row = -1
+    
+    objdata = Rgb4()
     
     overflow = {}
     
@@ -814,7 +814,11 @@ def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_wi
                 print("Warning: Row explicitly marked with no pointer")
             
             baseaddr += len(packed)
-
+    
+    #Remove empty strings from packed strings list.
+    while packed_strings[-1] == b"":
+        packed_strings = packed_strings[:-1]
+    
     #Moveup pointers to account for the table size
     for i, value in enumerate(table):
         table[i] = value + len(table) * 2
@@ -859,15 +863,15 @@ def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_wi
             cur_string = packed_strings[table_idx]
             packed_strings[table_idx] = bytes([0xEC, 0x00, 0x00])
             
-            thisptr = PTR.unpack(table[table_idx])[0]
+            thisptr = table[table_idx]
             
             if table_idx < len(table) - 1:
                 #fixup the next pointer in the table
-                table[table_idx + 1] = PTR.pack(thisptr + len(packed_strings[table_idx]))
+                table[table_idx + 1] = thisptr + len(packed_strings[table_idx])
             
             symbol = Rgb4Symbol()
             symbol.name = bank["symbol"] + ("_%d_OVERFLOW" % table_idx)
-            symbol.symtype = Rgb4Symbol.EXPORT
+            symbol.symtype = Rgb4Symbol.IMPORT
             
             symbol_id = len(objdata.symbols)
             objdata.symbols.append(symbol)
@@ -875,15 +879,15 @@ def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_wi
             fixup = Rgb4Patch()
             fixup.srcfile = bank["filename"]
             fixup.srcline = 0 #todo: wut
-            fixup.patchoffset = thisptr + 1
+            fixup.patchoffset = thisptr + 1 - bank["baseaddr"]
             fixup.patchtype = Rgb4Patch.LE16
             
             patchexpr = Rgb4PatchExpr()
             patchexpr.SYM = symbol_id
             
             fixup.patchexprs.append(patchexpr)
-            table_section.datsec.fixups.append(fixup)
-            overflow[symbol_id] = cur_string
+            table_section.datsec.patches.append(fixup)
+            overflow[symbol.name] = cur_string
         
         print("Spilled 0x{0:x} bytes to overflow bank".format(abs(string_bytes_saved)))
     
@@ -898,12 +902,10 @@ def generate_table_section(bank, rows, objdata, charmap, metrics, bank_window_wi
     block_symbol = Rgb4Symbol()
     block_symbol.name = bank["symbol"]
     block_symbol.symtype = Rgb4Symbol.EXPORT
-    block_symbol.value.sectionid = section_id
-    block_symbol.value.value = 0
 
     objdata.symbols.append(block_symbol)
 
-    return (table_section, objdata, overflow)
+    return (objdata, overflow)
 
 def make_tbl(args):
     charmap = parse_charmap(args.charmap)
@@ -925,15 +927,14 @@ def make_tbl(args):
         
         split_rowdata = omnibus_bank_split(rowdata, banknames)
         
-        for bankid, rowdata in enumerate(split_rowdata):
-            bank["textdata"] = rowdata
+        for bankid, rowdata in split_rowdata.items():
+            banknames[bankid]["textdata"] = rowdata
     
-    objdata = Rgb4()
+    ovrflowdata = Rgb4()
     overflow_strings = {}
+    bank_objects = {}
     
     for h, bank in enumerate(banknames):
-        last_aliased_row = -1
-        
         if bank["filename"].startswith("overflow"):
             #Don't attempt to compile the overflow bank. That's a separate pass
             overflow_bank_id = h
@@ -952,20 +953,28 @@ def make_tbl(args):
         if "window_width" in list(bank.keys()):
             bank_window_width = bank["window_width"]
         
-        tsection, objdata, overflow = generate_table_section(bank, bank["textdata"], objdata, charmap, metrics, bank_window_width)
+        objdata, overflow = generate_table_section(bank, bank["textdata"], charmap, metrics, bank_window_width)
+        bank_objects[bank["objname"]] = objdata
+        overflow_strings.update(overflow)
     
-    overflow_sectionid = len(objdata.sections)
+    overflow_sectionid = len(ovrflowdata.sections)
     if overflow_bank_id is not None:
-        overflow_offset = 0x4000
+        overflow_offset = 0
         overflow_data = []
         
-        for symid, packed_str in overflow_strings:
+        for symname, packed_str in overflow_strings.items():
             overflow_data.append(packed_str)
-            objdata.symbols[symid].value.sectionid = overflow_sectionid
-            objdata.symbols[symid].value.value = overflow_offset
+            
+            ofsym = Rgb4Symbol()
+            ofsym.name = symname
+            ofsym.symtype = Rgb4Symbol.EXPORT
+            ofsym.value.sectionid = overflow_sectionid
+            ofsym.value.value = overflow_offset
             overflow_offset += len(packed_str)
+            
+            ovrflowdata.symbols.append(ofsym)
         
-        overflow_section = Rgb4Section
+        overflow_section = Rgb4Section()
         overflow_section.name = "Overflow Bank"
         overflow_section.sectype = Rgb4Section.ROMX
         overflow_section.org = 0x4000
@@ -973,10 +982,14 @@ def make_tbl(args):
         overflow_section.align = 0
         overflow_section.datsec.data = b"".join(overflow_data)
         
-        objdata.sections.append(overflow_section)
+        ovrflowdata.sections.append(overflow_section)
     
     with open(args.output_filename, "wb") as objfile:
-        objfile.write(objdata.bytes)
+        objfile.write(ovrflowdata.bytes)
+    
+    for filename, objdata in bank_objects.items():
+        with open(os.path.join(args.output, filename), "wb") as objfile:
+            objfile.write(objdata.bytes)
 
 def wikisync(args):
     charmap = parse_charmap(args.charmap)
@@ -1039,8 +1052,8 @@ def main():
     ap.add_argument('--window_width', type=int, default=16 * 8) #16 tiles
     ap.add_argument('--overflow_bank', type=int, default=0x1E)
     ap.add_argument('rom', type=str)
-    ap.add_argument('filenames', type=str, nargs="*")
     ap.add_argument('output_filename', type=str)
+    ap.add_argument('filenames', type=str, nargs="*")
     args = ap.parse_args()
 
     method = {
