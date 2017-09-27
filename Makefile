@@ -99,10 +99,21 @@ OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
      versions/speed/palettes.o
 
-SRC_MESSAGE := 
-OBJ_MESSAGE := script/mainscript_data.o
+SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
+					script/npc/1.messages.csv script/story/1.messages.csv \
+					script/npc/2.messages.csv script/npc/unused.messages.csv \
+					script/npc/postgame.messages.csv script/calls/denjuu/1.messages.csv \
+					script/calls/denjuu/2.messages.csv script/story/2.messages.csv script/story/3.messages.csv \
+					script/npc/3.messages.csv script/story/4.messages.csv script/calls/denjuu/3.messages.csv \
+					script/calls/denjuu/4.messages.csv script/calls/denjuu/5.messages.csv \
+					script/calls/denjuu/6.messages.csv script/denjuu/descriptions.messages.csv \
+					script/calls/story.messages.csv script/calls/exp_item.messages.csv \
+					script/story/5.messages.csv
 
-OBJS_ALL := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
+OBJS_MESSAGE := script/mainscript_data.o
+OBJS_MESSAGE_BLOCKS := ${SRC_MESSAGE:.messages.csv=.scripttbl}
+
+OBJS_ASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
 # If your default python is 3, you may want to change this to python3.
 PYTHON := rip_scripts/find_python.sh
@@ -128,14 +139,14 @@ speed: $(ROMS_SPEED)
 
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
-$(OBJS_ALL): $$*.asm $$($$*_dep)
+$(OBJS_ASM): $$*.asm $$($$*_dep)
 	rgbasm -h -o $@ $<
 
-$(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJ_MESSAGE)
+$(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
 	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG PW" $@
 
-$(ROMS_SPEED): $(OBJS) $(OBJS_SPEED) $(OBJ_MESSAGE)
+$(ROMS_SPEED): $(OBJS) $(OBJS_SPEED) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_SPEED:.gbc=.sym) -m $(ROMS_SPEED:.gbc=.map) -O $(BASEROM_SPEED) -o $@ $^
 	rgbfix -v -c -i BTZJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG SP" $@
 
@@ -158,9 +169,9 @@ clean:
 	@rm -f $@
 	@$(PYTHON) rip_scripts/pcm.py pcm $<
 
-$(OBJ_MESSAGE): $(SRC_MESSAGE)
+$(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc --language="English" $< $(OBJ_MESSAGE)
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc --language="English" $< $(OBJS_MESSAGE) $(SRC_MESSAGE)
 
 %.stringtbl: %.csv
 	@rm -f $@
