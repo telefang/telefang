@@ -343,14 +343,15 @@ MainScript_ADVICE_AdditionalOpcodes:
 .farJumpCC
 	cp $EC
 	jp nz, MainScript_CCInterpreter.regularText
-	nop
 	ld a, [W_MainScript_TextPtr]
 	ld l, a
 	ld a, [W_MainScript_TextPtr + 1]
 	ld h, a
 	inc hl
+   call MainScript_LoadFromBank
+   push af
 	call MainScript_Jump2Operand
-	ld a, $1E
+	pop af
 	ld [W_MainScript_TextBank], a
 	ld a, [W_MainScript_TextPtr]
 	ld l, a
@@ -361,10 +362,5 @@ MainScript_ADVICE_AdditionalOpcodes:
 	ld [W_MainScript_TextPtr], a
 	ld a, h
 	ld [W_MainScript_TextPtr + 1], a
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 	jp MainScript_EndOpcode.skipNewlineCheck
+MainScript_ADVICE_AdditionalOpcodes_END:
