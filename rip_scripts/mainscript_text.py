@@ -977,8 +977,9 @@ def make_tbl(args):
         overflow_bytes = []
         
         current_symbol_id = 0
+        break_after_adding = False
         for symname, packed_str in overflow_strings.items():
-            if number_symbols_exported < current_symbol_id:
+            if current_symbol_id < number_symbols_exported:
                 current_symbol_id += 1
                 continue
 
@@ -999,7 +1000,7 @@ def make_tbl(args):
             
             ovrflowdata.symbols.append(ofsym)
         else:
-            break
+            break_after_adding = True
         
         overflow_section = Rgb4Section()
         overflow_section.name = "Overflow Bank"
@@ -1010,6 +1011,9 @@ def make_tbl(args):
         overflow_section.datsec.data = b"".join(overflow_bytes)
         
         ovrflowdata.sections.append(overflow_section)
+        
+        if break_after_adding:
+            break
     
     with open(args.output_filename, "wb") as objfile:
         objfile.write(ovrflowdata.bytes)
