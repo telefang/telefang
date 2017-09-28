@@ -339,7 +339,12 @@ MainScript_ADVICE_AdditionalOpcodes:
 	ld [W_MainScript_VWFDisable], a
 	jp MainScript_EndOpcode.skipNewlineCheck
 	
-	;Jump to a script in bank $1E.
+	;Jump to any string data in the ROM.
+   ;Format:
+   ; EC bb mm mm
+   ; 
+   ;  - where bb is the new ROM bank
+   ;  - where mm mm is the new text ptr.
 .farJumpCC
 	cp $EC
 	jp nz, MainScript_CCInterpreter.regularText
