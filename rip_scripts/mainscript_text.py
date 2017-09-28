@@ -1083,8 +1083,8 @@ def main():
     ap.add_argument('--window_width', type=int, default=16 * 8) #16 tiles
     ap.add_argument('--overflow_bank', type=int, default=0x1E)
     ap.add_argument('rom', type=str)
-    ap.add_argument('output_filename', type=str)
     ap.add_argument('filenames', type=str, nargs="*")
+    ap.add_argument('output_filename', type=str)
     args = ap.parse_args()
 
     method = {
