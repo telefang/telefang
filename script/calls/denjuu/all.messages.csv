@@ -1,0 +1,3279 @@
+Pointer,Japanese,English,Draft version,Notes
+#######,#001,,,
+0x130000,"やあ ひさしぶリだね
+デンジュウクイズやる?
+ やる やらない<*A>","Hey, long time no see!
+Wanna try a Denjuu Quiz?
+<0>Okay<0>No<*A>",,Questions 001 to 037 (partial).
+0x130002,"デンジュウのシンカは
+なんとおリある?
+ 3とおリ 4とおリ<*A>","How many ways are there to evolve a Denjuu?
+<0>3 ways<0>4 ways<*A>",,"Status: Translated 99%
+Missing one string.
+"
+0x130004,"クイズきらいなの?
+ うん そんなことないよ<*A>","Do you hate quizzes?
+<0>Yes<0>I don't!<*A>",,
+0x130006,"さすが <&name>だね
+せいかいだよ!<*2>","Well done, <&name>!
+That's correct!<*2>",,"Remember to add appropriate tags
+<*2><0><*A> etc."
+0x130008,"おいおいどうしたんだよ
+まちがってるよ!<*2>","Aww, come on!
+You got it wrong!<*2>",,"// means ""finish/correct later"""
+0x13000a,"もしかしてアタマつかうの
+きらいなのか?<*2>",Is it because you hate using your brain??<*2>,,
+0x13000c,"じゃ こんどにするね
+バイバーイ<*2>","Then you can try the next one.
+Bye-bye~<*2>",,
+#######,#'002,,,
+0x13000e,"ゲンキか!
+デンジュウクイズやる?
+ やる やらない<*A>","What's up?!
+Wanna try a Denjuu Quiz?
+<0>Sure<0>No thanks<*A>",,(Questions 001-024 are Denjuu Quizzes)
+0x130010,"テレファングは2タイプ!
+パワーともう1つは?
+ ハイパー スピード<*A>","There are 2 versions of Telefang!
+Power, and what else? 
+<0>Hyper<0>Speed<*A>",,
+0x130012,"もしかしていまいそがしいの?
+ まあね そうじゃないけど<*A>","Oh, are you busy right now?
+<0>Kind of<0>Well, not really<*A>",,
+0x130014,"おしいけど ちがうんだな!
+またチャレンジしてよ<*2>","That sounds cool, but sadly, it's wrong! 
+Better luck next time!<*2>",,
+0x130016,"かんたんだったかな
+みんなしってるよね!<*2>","I wonder if that was a bit too easy. 
+Everyone knows that!<*2>",,
+0x130018,"ごめんね!
+わるいことしちゃったね<*2>","Sorry!!
+I didn't mean to interrupt!<*2>",,
+0x13001a,"それならいいじゃん
+ケチだな!<*2>","Then what's the problem?
+Jerk!<*2>",,
+#######,#003,,,
+0x13001c,"もしかしてひましてる?
+デンジュウクイズやらない?
+ やる やらない<*A>","Are you bored?
+How about a Denjuu Quiz?
+<0>Sure<0>Nah<*A>",,
+0x13001e,"デンジュウつかいのことを
+なんていう?
+ Tファンガー Bファンガー<*A>","What do you call a Denjuu user?
+<0>T-Fanger<0>B-Fanger<*A>",,
+0x130020,"やらないってことは
+オレのことがきらいなのか?
+ そんなことない じつは..<*A>","You don't want to?
+Is it because you hate me??
+<0>Of course not<0>Well...<*A>",,
+0x130022,"そのとおリ!
+だいせいかいだよ!<*2>","Exactly!
+That's correct!<*2>",,
+0x130024,"えーうそー
+しんじられなーい!<*2>","Whaaat?
+You've gotta be kidding me!<*2>",,
+0x130026,"よかった もしそうだったら
+どうしようかとおもったよ!<*2>",That's good! I don't know what I'd do otherwise!<*2>,,
+0x130028,"ガーン!そんな...
+オレのどこがきらいなんだ!<*2>","Wh-what?! Oh noo...
+What did I do wrong?!<*2>",,
+#######,#004,,,
+0x13002a,"ははーん!もしかして
+デンジュウクイズがやリたいな!
+ やリたい やリたくない<*A>","Haha! I bet you really want to try a Denjuu Quiz right now!
+<0>Yeah!<0>Not really<*A>",,
+0x13002c,"ダッシュは なにボタン?
+ Aボタン Bボタン<*A>","What button do you press to dash?
+<0>A button<0>B button<*A>",,
+0x13002e,"どうしても やリたくないの?
+ どうしても つぎにするよ<*A>","Are you suuure you don't wanna try?
+<0>Completely sure<0>Maybe next time<*A>",,
+0x130030,"うそー!
+それじゃ できないよ<*2>","Seriously??
+That totally doesn't work!<*2>",,
+0x130032,"さすが <&name>だね!
+カンペキだよ!<*2>","That's right, <&name>! Well done!<*2>",,
+0x130034,"なんで!そんなふうに
+いわなくてもいいじゃないか!<*2>",Why not?! You didn't have to say it like that! <*2>,,
+0x130036,"ほんと?ぜったい?
+やくそくだからね!<*2>","Really?
+You'd better promise then!<*2>",,
+#######,#005,,,
+0x130038,"デンワがつながったからには
+デンジュウクイズだ!
+ やる やらない<*A>","You picked up the phone!
+It's time for a quiz!
+<0>Okay<0>No thanks<*A>",,
+0x13003a,"デンジュウにはそれぞれ
+セイザがある?
+ ほんと うそ<*A>","True or false? Denjuu have a different zodiac than humans.
+<0>True<0>False<*A>",,***NEW ADDITIONS START HERE***
+0x13003c,"リゆうをいえ!リゆうを!
+ つかれてる なんとなく<*A>","State your reason!
+<0>I'm tired<0>Whatever<*A>",,
+0x13003e,"そのとおリだ!
+らくしょうだったな!<*2>",You got it! That was easy!<*2>,,
+0x130040,"オマエしらないのか?
+しっかリしてくれよ!<*2>",You didn't know? You have to pay attention to these things!<*2>,,
+0x130042,そうか..それじゃ しょうがないまたにするか!<*2>,"I see... Then I guess there's no helping it. Maybe next time, right?<*2>",,
+0x130044,"はっきリしないヘんじだな!
+シャキっとしろよ!<*2>","What's with that half-hearted answer? Get it together, man!<*2>",,
+#######,#006,,,
+0x130046,"デンジュウクイズ
+ぜったいやるよな!
+ やる やらない<*A>","I know! You wanna try a Denjuu Quiz, don't you?
+<0>Sure<0>Nope <*A>",,
+0x130048,"テレファングとは
+いったいなんのことでしょうか!
+ デンジュウのなまえ たたかい<*A>","What does the word ""Telefang"" refer to?
+<0>A Denjuu<0>A battle<*A>",,
+0x13004a,"やらない?オレのいうことを
+きかないつもリか?
+ そうだ そうじゃない<*A>","You don't? Or are you just trying to ignore me?
+<0>You got me<0>That's not it<*A>",,
+0x13004c,"そんなヤツ いないよ!
+わざとまちがえたのか?<*2>",I don't know anyone named that! Did you get it wrong on purpose?<*2>,,
+0x13004e,"キホンだよな! 
+しらないヤツはいないよな!<*2>",Obviously! I'm pretty sure everyone knows that.<*2>,,
+0x130050,"そうか!じょうとうだぜ!
+オマエとはゼッコウだ!!<*2>","I see! Fine then, be that way!!<*2>",,
+0x130052,"そうだよな オマエにかぎって
+それはないよな!<*2>","I knew it! You'd never say such a thing, would you? //<*2>",,
+#######,#007,,,
+0x130054,"もしよかっら
+デンジュウクイズしない?
+ する しない<*A>","Hey, if you've got a moment, wanna try a Denjuu Quiz?
+<0>Sure<0>No thanks<*A>",,
+0x130056,"ニンゲンカイとデンジュウカイを
+さえぎっているのは
+なんのカーテン?
+ やみ ひなた<*A>","What kind of curtain separates the Human World from the Denjuu World?
+<0>Darkness<0>Sunshine<*A>",,
+0x130058,"じしんがないの?
+ そうじゃない やリたくない<*A>","Not feeling confident?
+<0>That's not it<0>Don't feel like it<*A>",,
+0x13005a,"ちゃんとはなしを
+きいてたんだね!えらい!<*2>",I see you were paying attention to Musa's story! Good job!<*2>,,
+0x13005c,"しっかリきいておかないと
+ダメだよ!<*2>",That's no good! You need to pay closer attention to what people tell you!<*2>,,
+0x13005e,"そんなことあるわけないよね
+<&name>だもんね!<*2>","That's right! I know you of all people wouldn't lack confidence, <&name>! //<*2>",,
+0x130060,"そっか むリにとは
+いわないんだ ごめんね<*2>","I see... Well, I won't force you to. Sorry.<*2>",,
+#######,#008,,,
+0x130062,"やあ いま ひまかな?
+デンジュウクイズやらない?
+ やる やらない<*A>","Hey, you're bored, right? Wanna try a Denjuu Quiz?
+<0>Sure<0>No thanks<*A>",,
+0x130064,"ショップのなかには
+オカネをあずけるところがある?
+ ある ない<*A>","Is there a place in the Shop to deposit your money? //
+<0>Yes<0>No<*A>",,
+0x130066,"きぶんがのらないの?
+ そうじゃない そうなんだ<*A>","Are you not feeling well?
+<0>No<0>That's right<*A>",,
+0x130068,"いや ざんねんながら
+そういうところはないんだ<*2>","Sorry to say, but there's no such thing!<*2> //",,
+0x13006a,そうなんだよ たくさんもってるとあずけておきたくなるよね<*2>,"That's correct! When you're carrying a lot of money you'd want to deposit it somewhere, wouldn't you?<*2>  //",,
+0x13006c,"じゃあ つぎのきかいに
+またやろうね!<*2>","//Okay, well, we can do it next time!<*2>",,
+0x13006e,"ごめんね!おこらないでね
+もうクイズなんてしないから<*2>",I'm sorry! Please don't get mad... I won't quiz you anymore!<*2>,,
+#######,#009,,,
+0x130070,"デンジュウクイズだ!
+やらないとはいわせないぞ!
+ やる やらない<*A>","Denjuu Quiz!! You can't refuse!
+<0>Okay<0>Too bad!<*A>",,
+0x130072,"よくいねむリしている
+デンジュウのなまえは?
+ ネタロ ネジロ<*A>","What's the name of the Denjuu that's sleepy a lot?  //
+<0>Netaro<0>Nejiro<*A>",,
+0x130074,"やらないだと!
+もしかしてねむいのか!
+ そうなんだ ベつに<*A>","You refused?! You feeling too tired or something?
+<0>Yeah<0>Not really<*A>",,
+0x130076,"よしよし よくみれば
+カンタンなモンダイだよな!<*2>","That's right! It's obvious when you consider their names, isn't it?  //<*2>",,
+0x130078,"なにやってるんだよ!
+よーくかんがえてみろよ!<*2>",What the hey! Use your brain before you answer!  //<*2>,,
+0x13007a,"ねぼけてるばあいじゃないぞ!
+しっかリしろ!<*2>",This isn't the time to be zoning out! Pull yourself together!<*2>,,
+0x13007c,"ベつに!ベつにっていったな!
+オレはおこったぞ!<*2>","Not really?! ""Not really"", he says! Are you trying to make me angry?!<*2>",,
+#######,#010,,,
+0x13007e,"なにもいわずに
+デンジュウクイズやるよな!
+ やる やらない<*A>","Suddenly, without warning... It's time for a Denjuu Quiz!
+<0>Okay<0>No<*A>",,
+0x130080,"アンテナが3ぼんたっているとき
+なかまはなんにんよベる?
+ 3にん 2にん<*A>","How many friends can you call when you have 3 bars of reception?
+<0>3 friends<0>2 friends  //<*A>",,
+0x130082,"なんでだ!どうしてだ!
+つめたいぞ オマエ!
+ そうか ごめん<*A>","What? Why?! You've been such a jerk lately!
+<0>Oh, really?<0>Sorry<*A>",,
+0x130084,"つれているデンジュウは
+かずに はいらないぞ!<*2>","Sorry, the Denjuu standing behind you isn't included in that number!<*2>",,
+0x130086,"たんじゅんなことだけど
+たいせつだよな!<*2>","It's such a simple little fact, but it's important to remember!  //<*2>",,
+0x130088,"くー!!もう あったまきた!
+オマエなんかもうしらない!<*2>",Grrr!! That's it! We're no longer friends!<*2>,,
+0x13008a,"あやまるなよ 
+こんかいはゆるしてやるから<*2>",Don't apologize! I'll let you off this time!  //<*2>,,
+#######,#011,,,
+0x13008c,"とつぜんなんだけど
+デンジュウクイズやらない?
+ やる やらない<*A>","I know it's sudden, but are you up for a Denjuu Quiz?
+<0>Sure<0>Nah<*A>",,
+0x13008e,"マナーモードにしてると
+デンワがかかったときどうなる?
+ おとがならない きれる<*A>","If you put your phone on Silent mode, what happens if it goes off?
+<0>Makes no sound<0>Hangs up //<*A>",,
+0x130090,"ほんとうはやリたいんじゃない?
+ ばれた? ベつに<*A>","Are you sure you don't want to? //
+<0>You found me out<0>Nah //<*A>",,
+0x130092,"そうなんだよね 
+マナーはたいせつだよ<*2>",That's right! It's important to properly use Silent mode in the right situation!  //<*2>,,
+0x130094,"それはさすがにないよ
+たしかめてみてね!<*2>","No, that's not right! Check it out and see!  //<*2>",,
+0x130096,"やっぱリね!
+はずかしがらなくてもいいのに<*2>","I knew it! You don't have to be embarrassed about it, you know.  //<*2>",,
+0x130098,"そうか それならしかたがないね
+またこんどにするよ<*2>","I see... Oh well! Let's do it next time, then!<*2>",,
+#######,#012,,,
+0x13009a,"デンジュウクイズなんだけど
+もしよければやらない?
+ やる やらない<*A>","Hey, would you like to do a Denjuu Quiz? //
+<0>Yeah!<0>No<*A>",,
+0x13009c,"デンジュウかいに くるために
+ひつようなものはなに?
+ Gショット Dショット<*A>","In order to come to the Denjuu World, what item do you need? //
+<0>G-Shot<0>D-Shot<*A>",,
+0x13009e,"なにかわけがあるの?
+よかったらはなしてよ
+ じつは.. なにもない<*A>","Do you have a reason? // you can tell me.
+<0>Actually...<0>I don't //<*A>",,
+0x1300a0,"なんかちがうとおもうんだ
+もういちどかんがえてみてね!<*2>",That's not quite right... Think it over and try again!<*2>,,
+0x1300a2,"そうそう Dショットがないと
+ダメなんだよね!<*2>",That's right! You can't do anything without a D-Shot!<*2>,,
+0x1300a4,"..そうだったのか 
+それじゃ しょうがないね<*2>","Oh, I see... Well, it can't be helped, huh? //<*2>",,
+0x1300a6,"また つぎのきかいにするよ
+それじゃ またね<*2>","Let's do it when the opportunity rises, then. Well, see ya! //<*2>",,
+#######,#013,,,
+0x1300a8,"せっかくだから
+デンジュウクイズでもやろうか?
+ やる やらない<*A>","I called, so we might as well do a Denjuu Quiz, right? //
+<0>Okay<0>No thanks<*A>",,
+0x1300aa,"『ちず』は いったことがない
+ばしょでもひょうじされる?
+ されない される<*A>","Does the ""Map"" show you locations you haven't been to?
+<0>It doesn't<0>It does<*A>",,
+0x1300ac,"だいじょうぶだよ!
+そんなにむずかしくないから
+ でも.. わかった<*A>","Don't worry! It won't be a difficult one.
+<0>But...<0>Well, okay<*A>",,
+0x1300ae,"そうなんだよね! だから
+いろいろあるきまわらないとね<*2>",That's right! You gotta walk around and see lots of different places! //<*2>,,
+0x1300b0,"それが ひょうじされないんだ
+きをつけないとね!<*2>","No, it doesn't show you those places! Be careful to remember that! //<*2>",,
+0x1300b2,"きもちはわかるけど
+なにごともチャレンジだよ!<*2>","I understand, but I think you should really accept any kind of challenge! //<*2>",,
+0x1300b4,"あ!ごめん またにするよ
+まちあわせのじかんなんだ!<*2>","Oh, sorry! Let's do it next time, I've got an appointment! //<*2>",,
+#######,#014,,,
+0x1300b6,"そうだ!そろそろ
+デンジュウクイズをやろう!
+ やる やらない<*A>","Right! I think it's about time for a Denjuu Quiz!
+<0>Okay<0>No thanks<*A>",,
+0x1300b8,"FDとはデンジュウとのなにを
+いみするものでしょうか?
+ きょリ しんみつど<*A>","What is the meaning of a Denjuu's FD?
+<0>Distance<0>Intimacy //<*A>",,
+0x1300ba,"やっぱリ まだはやかった?
+ うん はやい?<*A>","Too early, after all? // (early in the day)
+<0>Yeah<0>Early?<*A>",,
+0x1300bc,"やっぱリかんちがいしてた?
+おおいんだよね けっこう!<*2>",Did you guess wrong? That seems to happen a lot! //,,
+0x1300be,"いがいにわかリづらいよね
+このFDっていうのは!<*2>",Correct! A lot of people seem to have trouble grasping what FD is! //,,
+0x1300c0,"そっか...ごめんね
+いつもはあせらないんだけど<*2>",I see... I'm sorry. Normally I'm not this impatient...,,
+0x1300c2,"いみがわからない?
+アハハ オレもわからない<*2>","You don't understand what I meant? Ahaha, me neither! //",,
+#######,#015,,,
+0x1300c4,"とくにはなしは ないんだけど
+デンジュウクイズでもどう?
+ いいね やめとくよ<*A>","I don't really have anything to talk about, so how about we have a Denjuu Quiz? //
+<0>Sounds good<0>Nah<*A>",,
+0x1300c6,"ショップでどろぼうはできる?
+ できない できる<*A>","Can you steal items from shops?
+<0>No<0>Yes<*A>",,
+0x1300c8,"ほかのはなしにしようか?
+ そうだね なんでもいい<*A>","Wanna talk about something else then?
+<0>Sure<0>Don't care<*A>",,
+0x1300ca,"そリゃそうだよね!
+あたリまえのことだよね<*2>",That's right! Of course you can't! //<*2>,,
+0x1300cc,"できちゃったらまずいでしょ!
+いけないことだよやっぱリ!!<*2>","If you could, that would be really bad! Of course you shouldn't steal! //<*2>",,
+0x1300ce,"なにがいいかな...
+そういわれるとむずかしいな<*2>","Let's see... Well, when you bring it up like that, I can't really think of anything! //<*2>",,
+0x1300d0,"すこしつかれてるんじゃないか?
+やすんだほうがいいよ<*2>","Are you tired? Make sure to take a break, okay? //<*2>",,
+#######,#016,,,
+0x1300d2,"オマエひまそうだよな!
+デンジュウクイズしない?
+ いいよ いそがしい<*A>","You seem bored! Wanna try a Denjuu Quiz? 
+<0>Sure<0>I'm busy<*A>",,
+0x1300d4,"Dメロはじぶんで
+きょくをつくることができる?
+ できない できる<*A>","Can you make your own tunes on the Melo-D? //
+<0>No<0>Yes<*A>",,
+0x1300d6,"ベつにみえはらなくたって
+いいんだぞ!
+ そうじゃない ちがうよ<*A>","You don't have to pretend you're busy! //
+<0>I'm not<0>Stop it<*A>",,
+0x1300d8,"それが...できるんだよな!
+いままでしらなかったのか?<*2>",But... you can! You didn't know?<*2>,,
+0x1300da,"そうなんだよな!
+でもオレ ヒットきょくって
+しらないんだけど...<*2>",That's right! But I don't know any hit songs I could enter... //<*2>,,
+0x1300dc,"ほんとにいそがしかったのか!
+わるかったな<*2>","Wait, you were actually busy? I'm sorry!<*2>",,
+0x1300de,"そんなにおこるなよ
+ジョーダンなんだからさ...<*2>",Don't be so angry! It was just a joke... //<*2>,,
+#######,#017,,,
+0x1300e0,"<&name>は 
+デンジュウクイズすきだよな!
+ すき! ベつに<*A>","<&name>, you're a fan of Denjuu Quizzes, right?
+<0>Yeah!<0>Not really<*A>",,
+0x1300e2,"まちのひとにはなしかけるときは
+なにボタン?
+ Aボタン Bボタン<*A>","What button do you press to talk to people?
+<0>A Button<0>B Button<*A>",,
+0x1300e4,"どうしたんだよ
+オマエらしくないじゃないか!
+ そうか? そうでもない<*A>","What happened? This isn't like you at all!
+<0>Really?<0>Yes it is<*A>",,
+0x1300e6,"あまリにもかんたんすぎて
+わらっちゃうってかんじか?<*2>",Maybe that was a little too easy? Laughably so? //<*2>,,
+0x1300e8,"こんなもんだいを
+まちがっちゃいけないよ!<*2>",How could you get a question like this wrong?!<*2>,,
+0x1300ea,"そうだよ!どんなことでも
+いっしょうけんめいだったろ!<*2>",It's not! You always seem to do your best no matter what!  // (-seem to)<*2>,,
+0x1300ec,"いつからそんなに
+クールなやつになったんだよ!<*2>","When did you become such a cold person, <&name>?! // (distant?)<*2>",,
+#######,#018,,,
+0x1300ee,"いまオレは デンジュウクイズが
+やリたいぞ!
+ やる やらない<*A>","I really wanna do a Denjuu Quiz right now!
+<0>Alright<0>No thanks<*A>",,
+0x1300f0,"うしろにつれていくデンジュウは
+かえることができる?
+ できない できる<*A>","Is the Denjuu you're bringing with you able to return to their home?  //
+<0>No<0>Yes<*A>",,
+0x1300f2,"そういわずに!たのむよ!
+ やだ! そこまでいうなら<*A>","Don't say that! Please!
+<0>No!<0>If you insist<*A>",,
+0x1300f4,"やったことないなら
+いますぐためしてみなよ!<*2>","If you haven't tried it yet, how about you try it now?  //<*2>",,
+0x1300f6,"そう!そうなんだよ!
+だから おもしろいんだよね!<*2>","That's entirely right! That's what makes it so interesting, isn't it? //<*2>",,
+0x1300f8,"もういい!オマエが
+そんなヤツとはおもわなかった!<*2>","Fine, never mind! I never took you for that kind of person!  // (forget it)<*2>",,
+0x1300fa,"オマエっていいヤツだよな!
+ほんとに そうおもうよ!<*2>","You’re a good person, <&name>! I really think that! //<*2>",,
+#######,#019,,,
+0x1300fc,"ちょっとのじかんでいいから
+デンジュウクイズしない?
+ いいよ えー<*A>","If you've got time to spare, wanna try a Denjuu Quiz?
+<0>Okay<0>Ugh...<*A>",,
+0x1300fe,"マツキヨはおとこのこ?
+それともおんなのこ?
+ おとこのこ おんなのこ<*A>","Is Matsukiyo a boy or a girl?
+<0>Boy<0>Girl<*A>",,
+0x130100,"なに?なに?
+なんで『えー』なの?
+ なんとなく うそ<*A>","What? Huh? Wait, why'd you go ""Ugh""??  //
+<0>...<0>Just messing with you<*A>",,
+0x130102,"じぶんのトモダチのことを
+まちがえないよね!<*2>","You wouldn't get things about your own friends wrong, after all! //<*2>",,
+0x130104,"まさかそんな!
+オレには おとこにみえるぞ!<*2>","What, really?! He looks like a boy to me!<*2>",,
+0x130106,"なんかまずいこといった?
+ごめん!ごめんね!<*2>",Oh... Did I say something bad? I'm sorry! I didn't mean to! //<*2>,,
+0x130108,"もうおどかさないでよ!
+ただでさえビクビクしてるのに<*2>",Hey... Don't startle me like that! I'm nervous enough as it is... //<*2>,,
+#######,#020,,,
+0x13010a,"もしデンジュウクイズしようって
+いったらおこる?
+ おこらない おこる<*A>","If I told you I wanted to do a Denjuu quiz right now, would you be angry? //
+<0>No<0>Yes.<*A>",,
+0x13010c,Tファンガーはおとこしかいない? いない そんなことない<*A>,"Are there only male T-Fangers? //
+<0>Yes<0>That's not true  //<*A>",,
+0x13010e,"おこる?おこるの?ぜったい?
+ ぜったい そんなわけないよ<*A>","Really? You'd get mad? You sure? // [You mean it?]
+<0>Yes<0>Obviously not!<*A>",,
+0x130110,"それはちがうとおもうよ
+おんなのこもたくさんいるから<*2>",I don't think so! There are plenty of female T-Fangers out there!<*2>,,
+0x130112,"<&name>のともだちにも
+おんなのこがいるもんね!<*2>","You have a female friend who is one too, after all, right <&name>? //<*2>",,
+0x130114,"そうなの?そうなの?
+じゃあ やめるよ!<*2>","Really? Okay then, nevermind!  // (let’s forget about it)<*2>",,
+0x130116,"よかったー おこられたら
+どうしようかとおもった!<*2>",Phew! I dunno what I'd do if you got mad at me!<*2>,,
+#######,#021,,,
+0x130118,"そろそろデンジュウクイズが
+やリたくなってきただろ!
+ やリたい やリたくない<*A>","I think it's about time for a Denjuu Quiz!
+<0>Okay<0>Don’t wanna<*A>",,
+0x13011a,"けいけんちをあげることによって
+しんかするほうほうは?
+ しぜんしんか はってんしんか<*A>","What is the kind of evolution that you get by gaining experience called?  // (type?)
+<0>Natural<0>Standard Evolution<*A>",,
+0x13011c,"そういう たいどにでて
+いいとおもってるのか!
+ おもってる わるかった<*A>","Do you think that kind of attitude is acceptable?  // (?!)
+<0>Yep<0>Sorry  //<*A>",,
+0x13011e,"わかってるじゃないか!
+しっかリおぼえといてくれよ!<*2>",You know your stuff! Make sure to remember it!  // (be sure?)<*2>,,
+0x130120,"なにかがちがうんだよなー
+オマエもわかってるだろ?<*2>","Something's off about that... You realize it too, don't you?  //<*2>",,
+0x130122,"オレをおこらせるとこわいぞ!
+ほんとだぞ!!<*2>","You won't like me when I'm angry, you know! Really!!  //<*2>",,
+0x130124,"こんかいはみのがしてやるけど
+つぎはぜったい やるんだぞ!<*2>","Fine, I'll overlook it this time! But next time, we're definitely doing it!  // (-fine)<*2>",,
+#######,#022,,,
+0x130126,"デンジュウクイズだ!
+やリたくないわけがないよな!
+ そうだね いやだ<*A>","Time for a Denjuu Quiz! I won't accept any excuses! //
+<0>Got it!<0>No way<*A>",,
+0x130128,"キカイとくみあわせて
+しんかさせるのは?
+ かこうしんか かいぞうしんか<*A>","What's it called when you evolve a Denjuu using machines?
+<0>Merge<0>Fusion Evolution //<*A>",,
+0x13012a,"オマエなら そういうと
+おもったんだよな
+ やっぱリ? うそつけ<*A>","I knew you'd say that.
+<0>For real?<0>Liar<*A>",,
+0x13012c,"おしいな!でもちがうぞ!
+ベんきょうしてこいよ!<*2>",Close! But wrong! Go and brush up your knowledge on evolution! //<*2>,,
+0x13012e,"よくわかったな!
+すごいやつだぜ オマエ!<*2>",You sure know your things! You're quite amazing! //<*2>,,
+0x130130,"バレバレだぜ!
+わかリやすいよな オマエって!<*2>","You definitely would! You're quite predictable, you know. // (I totally called it!)<*2>",,
+0x130132,"オレはうそなんかついてない!
+ほんとのことだ!<*2>",You really think I would lie? Come on! //<*2>,,
+#######,#023,,,
+0x130134,"ちょっときぶんをかえて
+デンジュウクイズはどうですか?
+ やる やらない<*A>","How about a Denjuu Quiz for a change?
+<0>Sure<0>No thanks<*A>",,
+0x130136,"ちがうデンジュウのDNAを
+くみあわせるしんかは?
+ じっけんしんか はかいしんか<*A>","What type of evolution requires splicing DNA from another Denjuu?
+<0>Lab evolution<0>Ex evolution<*A>",,"Should change this to something more likely...
+Other options: DNA, Test, Genetic, Bio ???"
+0x130138,"のリきでないのなら
+しかたがないですね...
+ やっぱリやる ごめん<*A>","Well, if you really don't feel like it...
+<0>Actually...<0>Sorry<*A>",,
+0x13013a,"セイカイ!じっけんしんかは
+なかなかできないんだよね!<*2>",Correct! //<*2>,,
+0x13013c,"もしかしてまだしらない?
+それじゃ しょうがないけど..<*2>",Maybe you don't actually know about this yet? I suppose you wouldn't know the answer then...<*2>,,
+0x13013e,"そうくるとおもってましたよ!
+でもまたこんどにしましょう<*2>",I knew you'd come around! But let's do it next time after all! //<*2>,,
+0x130140,"あやまることはないですよ
+そういうこともあリます<*2>","You don't need to apologize. These things happen, right?<*2>",,
+#######,#024,,,
+0x130142,"ごぶさたしてました
+デンジュウクイズいかがですか?
+ やる やらない<*A>","It's been a while, huh? How about a Denjuu Quiz? // (politeness?)
+<0>Okay<0>No thanks<*A>",,
+0x130144,"デンジュウのデンワバンゴウを
+ゲットするにはどうすればいい?
+ にげだす たたかう<*A>","What does one have to do in order to get a Denjuu's phone number?
+<0>Flee<0>Fight<*A>",,
+0x130146,"デンジュウカイについて
+しリたくはないんですか?
+ しリたい しリたくない<*A>","Don't you want to learn more about the Denjuu World?
+<0>I do<0>Nope<*A>",,
+0x130148,"それではいつまでたっても
+ゲットすることはできませんよ!<*2>","If you do that, you will never be able to get one, unfortunately! //<*2>",,
+0x13014a,"たたかって かつことによリ
+ゲットできます!<*2>",Indeed! You get their number by fighting them and winning! //<*2>,,
+0x13014c,"もし つぎのきかいがあれば
+ぜひちょうせんしてください!<*2>","Fine. If the next opportunity arises, please take up the challenge! //<*2>",,
+0x13014e,"そんな かなしいことは
+にどといわないでください!<*2>",Please don't say such a sad thing ever again...<*2>,,
+#######,#025,,,
+0x130150,"とうとつなんだけどさ!
+オマエはどっちがすき?
+ テレファング まちをたんさく<*A>","I know this is sudden, but which one do you like most?
+<0>Telefang<0>Exploring towns<*A>",,
+0x130152,"テレファングの
+どういうところがすきなの?
+ かつこと まけること<*A>","What do you like about Telefang battles?
+<0>Winning<0>Losing<*A>",,
+0x130154,"たんさくしてるとき
+なにがいちばんたのしい?
+ ひととはなす たからさがし<*A>","What's the most fun thing for you while exploring?
+<0>Talking to others<0>Finding treasure<*A>",,
+0x130156,"やっぱリそうだよね!
+オレも そうおもうよ!<*2>","That's right, isn't it? I feel the same way! //<*2>",,
+0x130158,"めずらしいやつだな
+ふつうはぎゃくだぞ!<*2>","That's unusual! Usually, you'd want the opposite! // (you’re weird)<*2>",,
+0x13015a,"いろんなじょうほうを
+きくことができるからな!<*2>","You'll get lots of information when talking to folks, after all! //<*2>",,
+0x13015c,"みつけたときはうれしくて
+しょうがないよな!<*2>","You can't help but feel so happy when you've found some, right? //<*2>",,
+#######,#026,,,
+0x13015e,"オレさ さいきんゆめをみるんだ
+オマエは ゆめをみたか?
+ みた みない<*A>","Y'know... I've been having these dreams lately... Have you had any? // 
+(do you dream a lot?)
+<0>Yes<0>No<*A>",,
+0x130160,"どんなゆめみたのか
+おしえてくれないかなー?
+ いいよ どうして?<*A>","Could you tell me what kind of dreams they were? //
+<0>Sure<0>Why?<*A>",,
+0x130162,"オレ まいにちみるんだよ!
+それもこわいゆめなんだ!
+ どんな? ききたくない<*A>","I've been having them every night! And they're nightmares, at that!
+<0>What kind?<0>I don't wanna know<*A>",,
+0x130164,"ヘー ホームランを
+うったゆめか!いいなー<*2>","Ohhh, dreams about hitting home runs? How nice! // (Nice!)<*2>",,
+0x130166,"なんかさー ほかのひとの
+ゆめってきょうみあるんだよね!<*2>",Well... I'm just really interested in what others dream about! // (other people?)<*2>,,
+0x130168,"ききたいの?それがさ!
+うずにまきこまれるゆめなんだ!<*2>","You want to know? Well... In my dreams, I get dragged into this whirlpool! //<*2>",,
+0x13016a,"こわいのか?よるトイレに
+いけなくなっちゃうからな...<*2>","Too scary for you? Well, they've made it difficult for me to go to the bathroom alone at night...<*2>",,
+#######,#027,,,
+0x13016c,"デンジュウカイは
+おまえにとってたのしいか?
+ たのしい いまいち<*A>","Do you consider the Denjuu World to be fun? //
+<0>Yeah!<0>Could be better<*A>",,
+0x13016e,"どんなところがたのしい?
+ ともだちがいる なんとなく<*A>","What about it do you consider fun? //
+<0>My friends here<0>Not sure<*A>",,
+0x130170,"どんなところがたのしくない?
+ かぞくがいない ぜんぶ<*A>","Really? What don't you like about it?
+<0>I miss my family<0>Everything<*A>",,
+0x130172,"なんていったって
+トモダチはたいせつだよな!<*2>","Friends are more important than anything, after all! //<*2>",,
+0x130174,"なんとなくか...
+でも たのしいならいいか!<*2>","You're not sure what, huh... Well, you like it so it doesn't really matter! //<*2>",,
+0x130176,"オマエがそんなさみしがリや
+だとはしらなかったよ<*2>",I didn't know that you were the type to get that lonely! //<*2>,,
+0x130178,"そんなはずないだろ!
+いいところはいっぱいあるよ!<*2>","No way, really?! There's lots of good stuff in this world, though! // (good things?)<*2>",,
+#######,#028,,,
+0x13017a,"オマエ すきなこいるのか?
+ いる おしえない<*A>","Do you have anyone you're interested in? // (a girl)
+<0>Yes<0>Not telling<*A>",,
+0x13017c,"どんなこなんだ?
+オレにおしえてくれよ!
+ いいよ ダーメ<*A>","What's she like? Please tell me! // (come on, tell me!)
+<0>Sure<0>No way<*A>",,
+0x13017e,"ケチくさいこといわないで
+おしえてくれよ!
+ どうしようかな ヒミツ<*A>","Don't be so stingy! I promise! ///
+<0>Hmm...<0>It's a secret<*A>",,
+0x130180,"ほんとか?!まさか!
+うそをおしえるつもリじゃ...<*2>","Wow! Really?! No way! You're not yanking my chain, are you?... //<*2>",,
+0x130182,"やっぱリそういうとおもった
+こんどぜったいききだしてやる!<*2>",I knew you would say that! Definitely tell me next time! //<*2>,,
+0x130184,"もしかして オマエてれてるの?
+ワー てれてる!てれてる!<*2>","Wait... Are you embarrassed? Waah, you're embarrassed~!<*2>",,
+0x130186,"ちぇ つまんないの!
+おしえてくれたっていいじゃん!<*2>","Boo, you're no fun! You could have just said yes or no... //<*2>",,
+#######,#029,,,
+0x130188,"『ちゅうしゃ』ってなに?
+いたいってほんとうなの?
+ いたいよ そんなことない<*A>","What's a ""vaccine""? Is it true that it hurts?
+<0>It hurts<0>It doesn't<*A>",,
+0x13018a,"ないちゃったことある?
+ あるよ ないよ<*A>","Has getting one ever made you cry?
+<0>Yes<0>Nope<*A>",,
+0x13018c,"そうなんだ!オレのトモダチは
+きらいだっていってたぞ!
+ そうかな オレもきらい<*A>","I see! My friend told me they hate injections! //
+<0>Really?<0>So do I<*A>",,
+0x13018e,そうなんだ!そんなにいたいんだ!よかったこっちにはなくて!<*2>,"Oh, so it hurts that much, huh? I'm so glad we don't have that stuff over here! //<*2>",,
+0x130190,"おとこのこだもんね!
+ないちゃったリはしないよね<*2>","You're a real tough guy, after all! You wouldn't cry!<*2>",,
+0x130192,"すごいね <&name>は!
+みなおしちゃったよ!<*2>","Wow, <&name>, you're pretty amazing! I'm seeing you in a whole new light!  //<*2>",,
+0x130194,"やっぱリ いたいのは
+みんな きらいだよね!<*2>","No one likes it because it hurts, huh? That makes sense! //<*2>",,
+#######,#030,,,
+0x130196,"『なつやすみ』ってなーに?
+なにをするものなの?おしえて!
+ たベる あそぶ<*A>","What's a ""summer break""? What is it for? Please tell me!
+<0>Eating<0>Relaxing<*A>",,
+0x130198,"たベものなの?
+ そうだよ うそです<*A>","So it's food?
+<0>Yep<0>Just kidding<*A>",,
+0x13019a,"なにしてあそぶの?
+ うみにいく やまにいく<*A>","Relaxing? Like how?
+<0>Enjoying the beach<0>Visiting the mountains  //<*A>",,
+0x13019c,"そうなんだ!きっとおいしいもの
+なんだろうね!ってほんとに?<*2>","I see! It sounds very tasty... Wait, you're not lying, are you?<*2>",,
+0x13019e,"なんだ うそか!
+しんじちゃうとこだった!<*2>","Oh, it was just a joke! You had me totally convinced!<*2>",,
+0x1301a0,"うみにいくと うみのデンジュウ
+みたいのがいるのか?<*2>","When you go to the beach, will you find creatures similar to aquatic Denjuu there? //<*2>",,
+0x1301a2,"やまにいって かくれんぼでも
+するの?ちがうの?<*2>",So do you go to the mountains and play hide and seek there?<*2>,,Maybe change hide and seek to something else if we're going with relaxing instead of playing?
+#######,#031,,,
+0x1301a4,"『オバケ』ってこわいんでしょ?
+<&name>はこわい?
+ こわい こわくない<*A>","Ghosts are scary, right? Are you scared of them, <&name>?
+<0>Yeah<0>Nope<*A>",,
+0x1301a6,"どんなところにいるの?
+ おはか きのなか<*A>","Where can you find them?
+<0>At graves<0>Inside trees<*A>",,
+0x1301a8,"であったときはどうするの?
+ にげる ダンスする<*A>","What would you do if you met one?
+<0>Run!<0>Dance!<*A>",,
+0x1301aa,"なんかこわくなってきた
+ひとリでかえれなくなっちゃう!<*2>","Ahh, I'm getting a little spooked! I don't think I can go home by myself now...<*2>",,
+0x1301ac,ああ きのみつをチュウチュウ..って!それムシじゃん!<*2>,"Ahh, so they get into trees and suck up the sap... Wait, isn't that just an insect?! //<*2>",,
+0x1301ae,"それがいちばんってことか
+でもにげきれなかったら...<*2>","That sounds like it would be best... And then, if you can't manage to flee... Brr... //<*2>",,
+0x1301b0,さあ いっしょにおどリましょう!って!あし ないんでしょ?<*2>,You can do a nice little dance together! Wait! Ghosts don't have legs!<*2>,,
+#######,#032,,,
+0x1301b2,"『おこづかい』っていうのが
+ニンゲンにはあるんでしょう?
+ あるよ オレはない<*A>","Humans receive pocket money, right? // (an “allowance”)
+<0>Yeah<0>I don't<*A>",,
+0x1301b4,"<&name>は
+なんにつかうの?
+ ためる マンガ<*A>","<&name>, what do you use yours for? //
+<0>Save it<0>Comics<*A>",,
+0x1301b6,"ごめん なんかきいちゃマズイ
+ことだったのかな?
+ まあね そうでもない<*A>","I'm sorry, was this a bad thing to ask?
+<0>Kind of<0>Not really<*A>",,
+0x1301b8,"いがいだなー まさかためてる
+とはおもわなかったよ...<*2>",That's unexpected! I didn't expect you to be saving it up... // (to be so responsible)<*2>,,
+0x1301ba,"マンガもいいし オカシっていう
+つかいみちもあるよね!<*2>",Manga's a good way to spend it! Buying snacks sounds like a good way to use it too! <*2>,,
+0x1301bc,"ごめんね おねがいだから
+きらいにならないでね!<*2>","Oh, sorry! I hope you're not mad at me...<*2>",,
+0x1301be,"<&name>はあんまリ
+おかねにこだわらないんだね!<*2>","You don't care about money all that much, huh <&name>? //<*2>",,
+#######,#033,,,
+0x1301c0,"もしかして!オマエってすごく
+あたまいいのか?
+ なんで? どうかな<*A>","Hey, could it be that you might actually be very smart? //
+<0>Why?<0>I wonder... //<*A>",,
+0x1301c2,"オマエっていがいに
+いろいろ しってそうだから!
+ まあね そんなことないよ<*A>","Because! You seem to know a lot about so many things! //
+<0>I guess<0>That's not true<*A>",,
+0x1301c4,"どうなんだ!あたまがいいのか
+わるいのか!どっちだ!!
+ いいかな? わかんないよ<*A>","So which is it?! Are you smart? Or are you dumb?!!
+<0>Smart, maybe?<0>I dunno!<*A>",,
+0x1301c6,"やっぱリな!オレって
+ひとをみるめがあるんだな!<*2>","I knew it! I have an eye for these kinds of things, you know!<*2>",,
+0x1301c8,"どうしたんだよ!めずらしく
+けんそんしちゃったリして!<*2>","Wow, you're being unusually modest!  //<*2>",,
+0x1301ca,"はっきリしないな!オレは
+はっきリしないのはきらいだ!<*2>",You're not being clear! I don't like that at all!<*2>,,
+0x1301cc,"じぶんのことだろ!
+オレか?オレはあたまいいぞ!<*2>",How can you not know this about yourself? Hm? Me? I'm quite smart! // (always smart)<*2>,,
+#######,#034,,,
+0x1301ce,"だれにもいってない
+かくしごとってあるのか?
+ ある ない<*A>","Do you have a secret you can't tell anyone?
+<0>I do<0>I don't<*A>",,
+0x1301d0,"それってなーに?
+もちろんおしえてくれるよな!
+ ダメ いいけど...<*A>","Ohhh, could you tell me? I won't tell anyone else!
+<0>No way<0>Fine…  // (Alright…)<*A>",,
+0x1301d2,"ほんとうに?
+ぜったいないっていえる?
+ いえる ぜったいとは...<*A>","Really? You're telling me you don't have any at all?
+<0>That's right<0>Well…  //<*A>",,
+0x1301d4,"そんなにじゅうだいな
+ヒミツなのか?しリたーい!<*2>","It's that important to you? Man, now I REALLY wanna know!<*2>",,
+0x1301d6,"ふむふむ..え!そうなの?
+しらなかったなー!!<*2>","Uh huh... Wow, really? I had no clue!!<*2>",,
+0x1301d8,"そっか うたがって
+わるかったな ゆるしてくれよ<*2>",I see! Sorry for doubting you. Please forgive me.  //<*2>,,
+0x1301da,"そうだろやっぱリなー
+かくしごとはできないよな!<*2>","I knew it, you have a secret after all! You can't keep that secret from me!  ///<*2>",,
+#######,#035,,,
+0x1301dc,"どうしてもこれだけは
+ゆるせないってものある?
+ ある ない<*A>","Do you have anything you would never forgive someone for?
+<0>Yes<0>No<*A>",,
+0x1301de,"それってなに?
+どんなことかおしえてくれない?
+ うそをつく じつはない<*A>","You do? Will you tell me what it is?
+<0>Lying to someone<0>I actually don't //<*A>",,
+0x1301e0,"ひとつもないのか?
+オマエこころがひろいな!
+ そうじゃないよ やっぱリ?<*A>","Really? There's nothing at all? You're very broad-minded! //
+<0>That's not true<0>You think so? //<*A>",,kind-hearted?
+0x1301e2,"うそをつくことか...
+それはたしかによくないな!<*2>","Lying, huh... I agree, that would certainly be bad! //<*2>",,
+0x1301e4,"なんだよ!きたいさせておいて!
+がっかリしたよ!<*2>","What, really? You were getting my hopes up for nothing!<*2>",,
+0x1301e6,"けんそんするなって!
+すなおによろこベばいいじゃん!<*2>",You don't have to be so humble! You can be happy about it!<*2>,,
+0x1301e8,"そうやってすぐちょうしに
+のるんだよな!オマエって!<*2>",/0x1301e8/<*2>,,
+#######,#036,,,
+0x1301ea,"からだと あたま どっちを
+つかうほうがとくい?
+ あたま からだ<*A>","Are you better at using your muscles or your brain?
+<0>Brain<0>Muscles<*A>",,
+0x1301ec,"うっそー!そうなんだ!
+たとえば?
+ ベんきょう なぞなぞ<*A>","Really? No way! Like how?
+<0>I study<0>I'm good at riddles<*A>",,
+0x1301ee,"そうだろうなー!
+で!なにがとくいなんだ?
+ やきゅう フェンシング<*A>","I knew it! So what sport are you good at?
+<0>Baseball<0>Fencing<*A>",,
+0x1301f0,"そうだったのか!オレは
+オマエのことかんちがいしてた!<*2>",I had no idea! You've made me think differently about you! //<*2>,,Better way to express this?
+0x1301f2,"なぞなぞなら オレだって
+とくいなんだぞ!おどろいた?<*2>","I'm quite good at riddles myself! Surprised, are you?<*2>",,
+0x1301f4,いつもヘルメットかぶってるよな!オレもやってみたいな!<*2>,"That's right, you're always wearing your helmet! I'd like to try and play baseball sometime too!<*2>",,
+0x1301f6,"うそだ!ぜったいうそだろ!
+だまされないぞオレは!<*2>","No way, I don't believe it! If you thought you could fool me, guess again! //<*2>",,
+#######,#037,,,
+0x1301f8,"オレってはずかしがリやなのが
+なやみ なんだよね
+ きにすんなよ うそつけ<*A>","I'm worried about being too shy... //
+<0>Don't worry<0>Yeah right //<*A>",,
+0x1301fa,"やっぱリきにしすぎかな?
+ そうだよ なおすには..<*A>","I guess I shouldn't be worrying over it? //
+<0>That's right<0>Try to improve //<*A>",,
+0x1301fc,"うそじゃないよ!オマエには
+こんななやみはわからないよな!
+ わるかった わかんない<*A>","I'm not lying! You would NEVER understand the kind of worry I have... //
+<0>I'm sorry<0>I wouldn't //<*A>",,
+0x1301fe,"あリがとう!なんか
+じしんがでてきたよ!<*2>",Thank you! That gives me a little bit more self-confidence!<*2>,,
+Pointer,Japanese,English,Draft version,Notes
+#######,#037 (partial),,,
+0x134000,"おもいきって はなすことか!
+そうだよな!サンキュー!!<*2>",/0x134000/<*2>,,Questions 037 (partial) to 074 (partial).
+0x134002,"おこったリして ごめんね
+またそうだんにのってくれよ<*2>",Sorry for getting mad at you... I'll ask for your advice later!<*2>,,
+0x134004,"オマエにそうだんしたのが
+まちがいだったよ!!<*2>",,I was wrong to try to ask you for advice!! //<*2>,
+#######,#038,,,
+0x134006,"まえからおもってたんだけど...オマエってせっかちだよな!
+ そうかな オマエこそ<*A>","I've thought this before... but you're pretty impatient, aren't you?
+<0>You think so?<0>So are you<*A>",,
+0x134008,"そうだって!もうすこし
+よゆうをもってほしいんだ!
+ わかった いやだよ<*A>","I do! You should slow down a little bit!
+<0>Got it<0>Nah<*A>",,
+0x13400a,"オレはもともと のんびリなの!
+もうすこしあわせてくれよ!
+ ムリ! がんばるよ<*A>",,"I've always been pretty easy-going! [Try adjusting yourself a little more!] //
+<0>Impossible<0>I'll try<*A>",
+0x13400c,"オレもなるベく
+あわせるようにするからさ!<*2>",/0x13400c/<*2>,,
+0x13400e,"そういうところが
+せっかちだっていってるの!<*2>",/0x13400e/<*2>,,
+0x134010,"もういい!オマエは
+そんなにつめたかったのか!<*2>",/0x134010/<*2>,,
+0x134012,"あリがとう!オマエの
+そういうとこがオレはすきだな!<*2>",/0x134012/<*2>,,
+#######,#039,,,
+0x134014,"こまめにデンワしてるか?
+ してる してない<*A>",,"do you keep up with your phone contacts? //
+<0>I do<0>I don't<*A>",
+0x134016,"みんなオマエのデンワを
+こころまちにしてるんだぞ!
+ ほんとか そうかな?<*A>",/0x134016/<*A>,,
+0x134018,"やっぱリな!どうもさいきん
+かかってこないとおもった!
+ ばれた? かけたよ!<*A>",/0x134018/<*A>,,
+0x13401a,"ほんとだよ!みんな
+いろいろはなしたいんだよ!<*2>",/0x13401a/<*2>,,
+0x13401c,"そうだって!
+なんでわからないんだよ!<*2>",/0x13401c/<*2>,,
+0x13401e,"ばれるにきまってるだろ!
+いいかげんなんだから...<*2>",/0x13401e/<*2>,,
+0x134020,"うそ!まじ!そうだっけ?
+かくにんしてみるよ ごめんな!<*2>",/0x134020/<*2>,,
+#######,#040,,,
+0x134022,"さいきん なんだか
+くしゃみばっかリでるんだよね!
+ かぜだよ うわさされてる!<*A>","Aw man, lately I just can't stop sneezing! You think someone's telling rumors about me?
+<0>It's a cold<0>Probably!<*A>",,
+0x134024,"やっぱリかぜかな?
+どうすればなおるとおもう?
+ よくねる かぜにあたる<*A>",,"Oh, so it's just a cold? How do I get rid of it..? //
+<0>Sleep a lot<0>Stay outside<*A>",
+0x134026,"なんのうわさ?
+なんかこわいな...
+ いいうわさ わるいうわさ<*A>","What could it be about? That's so ominous....
+<0>Good rumors<0>Bad rumors<*A>",,
+0x134028,"それがいいよね!
+あったかくしてはやくねよ!<*2>",,"Hey, that’s a great idea!  ///<*2>",
+0x13402a,"それはきぶんがわるいとき!
+よけいひどくなっちゃうよ!<*2>",What? That'll make me feel worse! Now you're just being mean!<*2>,,
+0x13402c,"なにかな?オレが
+かっこよくなったとか?ドキドキ<*2>",Like what? Am I getting more popular? Oh boy!<*2>,,
+0x13402e,"えー!どんな?さいきん
+みんなにデンワしてないからか?<*2>",Ehh?! About what? Is it because I haven't been calling people as much lately? <*2>,,
+#######,#041,,,
+0x134030,"さいきんどこからか...
+しせんをかんじるんだ...
+ ねらわれてる きにしすぎ<*A>",/0x134030/<*A>,,
+0x134032,"どうしてオレが!
+なんにもわるいことしてないよ
+ だいじょうぶ ほんとに?<*A>",/0x134032/<*A>,,
+0x134034,"ほんとうにそうかな?
+しんぱいでねむれないよ!
+ オレをよベ きのせいだよ<*A>",/0x134034/<*A>,,
+0x134036,"どうしてだいじょうぶって
+いえるんだよ!むせきにん!<*2>",/0x134036/<*2>,,
+0x134038,"そういわれると...
+ドンドンしんぱいになってきた!<*2>",/0x134038/<*2>,,
+0x13403a,"そうか!オマエをよベばいいのか
+なんかあんしんしてきたぞ!<*2>",/0x13403a/<*2>,,
+0x13403c,"いや ぜったいちがうって!
+どうしようねむれない!<*2>",/0x13403c/<*2>,,
+#######,#042,,,
+0x13403e,"どうしよう!だいじなともだちの
+バンゴウをけしちゃったんだ!
+ あやまる ほっとく<*A>",/0x13403e/<*A>,,
+0x134040,"それしかないよね!
+でもゆるしてくれなかったら?
+ それでもあやまる しらない<*A>",/0x134040/<*A>,,
+0x134042,"ほっとくわけにはいかないよ!
+はくじょうなヤツだな!
+ ものでつる うそをつく<*A>",/0x134042/<*A>,,
+0x134044,"あやまリたおすしかないか!
+わかった やってみるよ!<*2>",/0x134044/<*2>,,
+0x134046,"みすてるのか!
+ぜっこうされたらどうすんだよ!<*2>",/0x134046/<*2>,,
+0x134048,"そんなんでゆるしてくれないよ
+いったいどうすればいいんだ!<*2>",/0x134048/<*2>,,
+0x13404a,"まちがって けしたって?
+ダメだ!オレにはできない!<*2>",/0x13404a/<*2>,,
+#######,#043,,,
+0x13404c,"これから ひさしぶリに
+なつかしいトモダチにあうんだ!
+ よかったな ひさしぶリ?<*A>",/0x13404c/<*A>,,
+0x13404e,"オマエもひさしくあってない
+トモダチがいるんじゃないか?
+ いる どうっだったかな<*A>",/0x13404e/<*A>,,
+0x134050,"すごくとおくにいるヤツで
+なかなかあえないんだよ!
+ うれしいだろ ふーん<*A>",/0x134050/<*A>,,
+0x134052,"たまには あいにいってやれよ
+ぜったいよろこぶぜ!<*2>",/0x134052/<*2>,,
+0x134054,"わすれられてるほうのみにも
+なってみろよ!かなしいぜ!!<*2>",/0x134054/<*2>,,
+0x134056,"そリゃそうさ!きのうは
+うれしくてねむれなかったよ!<*2>",/0x134056/<*2>,,
+0x134058,"そっけないヘんじだな
+でも きょうはゆるしてやる!<*2>",/0x134058/<*2>,,
+#######,#044,,,
+0x13405a,"このあいだ めずらしい
+たからをみつけたんだよ!
+ いいなー どこで?<*A>",/0x13405a/<*A>,,
+0x13405c,"いいでしょ!みつけるの
+たいヘんだったんだから!
+ どんなやつ? ちょうだい<*A>",/0x13405c/<*A>,,
+0x13405e,"それはおしえられないよ!
+ そこをなんとか ケチ<*A>",/0x13405e/<*A>,,
+0x134060,"なんかゴツゴツしてるやつ!
+..わかってもらえた?<*2>",/0x134060/<*2>,,
+0x134062,"ダメにきまってるじゃん!
+じぶんでさがさないと!<*2>",/0x134062/<*2>,,
+0x134064,"そこまでいわれるとなー
+でもわすれちゃったんだ!<*2>",/0x134064/<*2>,,
+0x134066,"ケチってなんだよ!
+もうオマエにはおしえない!<*2>",/0x134066/<*2>,,
+#######,#045,,,
+0x134068,"オレ さいきんじしんが
+なくなってきたんだ...
+ なんで なににたいして?<*A>",/0x134068/<*A>,,
+0x13406a,"むかしは オレはスゲエって
+おもってたんだけど...
+ げんきだせよ スゲエって<*A>",/0x13406a/<*A>,,
+0x13406c,"テレファングだよ!
+なんか かてるきがしないんだ!
+ しっかリしろよ! ダメじゃん<*A>",/0x13406c/<*A>,,
+0x13406e,"そうだよな...
+なやんでてもしょうがないよな!<*2>",/0x13406e/<*2>,,
+0x134070,"スゲエかな?
+オマエがいうと じしんでるぜ!<*2>",/0x134070/<*2>,,
+0x134072,"わかってる!
+オマエっていいやつだよな...<*2>",/0x134072/<*2>,,
+0x134074,"そうダメなんだ!
+オレってダメなやつなんだー!<*2>",/0x134074/<*2>,,
+#######,#046,,,
+0x134076,"もしも オマエが
+そらをとベたらどうする?
+ とおくにいきたい ベつに<*A>",/0x134076/<*A>,,
+0x134078,"とおくってどこまで?
+ どこでもいい なんとなく<*A>",/0x134078/<*A>,,
+0x13407a,"ゆめがないヤツだな!
+ たかいのこわい いいの!<*A>",/0x13407a/<*A>,,
+0x13407c,"そのきもちはよくわかるよ!
+そらはいいよな そらは!<*2>",/0x13407c/<*2>,,
+0x13407e,"なんとなく...なんだよ!
+ハッキリしないやつだな!<*2>",/0x13407e/<*2>,,
+0x134080,"そうか そうか こわいのか!
+これはしんこくな なやみだな!<*2>",/0x134080/<*2>,,
+0x134082,"なんで?どうして?
+ゆめはあったほうがいいぞ!<*2>",/0x134082/<*2>,,
+#######,#047,,,
+0x134084,"かこに もどれるとしたら
+いつにもどリたい?
+ あかちゃん もどリたくない<*A>",/0x134084/<*A>,,
+0x134086,"なんであかちゃんなの?
+ テストがない いえない<*A>",/0x134086/<*A>,,
+0x134088,"どうして もどリたくないの?
+ いまがイイ だって...<*A>",/0x134088/<*A>,,
+0x13408a,"テストか...ニンゲンは
+いろいろとたいヘんだな!<*2>",/0x13408a/<*2>,,
+0x13408c,"なんで?いえないリゆうが
+あるんじゃないの?あやしー!<*2>",/0x13408c/<*2>,,
+0x13408e,"そっか!それはいいことだな!
+オレもそうおもうよ!<*2>",/0x13408e/<*2>,,
+0x134090,"トモダチをわすれたくないのか
+そうか そうだよな!<*2>",/0x134090/<*2>,,
+#######,#048,,,
+0x134092,"もしもねがいがひとつかなうなら
+なにをおねがいする?
+ いえない きめられない<*A>",/0x134092/<*A>,,
+0x134094,"どうして?ヒミツなの?
+ かなわなくなる まあね<*A>",/0x134094/<*A>,,
+0x134096,"そうかもしれないけど
+でもなんかひとつはあるだろ?
+ おもいつかない じつは...<*A>",/0x134096/<*A>,,
+0x134098,"ひとにいうとかなわなくなる?
+はやくいってくれよ!!<*2>",/0x134098/<*2>,,
+0x13409a,"そっか..おしえてほしかったな
+でも まいっか!<*2>",/0x13409a/<*2>,,
+0x13409c,"いろいろあるだろ!
+ホームランをうちたいとかさ!<*2>",/0x13409c/<*2>,,
+0x13409e,"ふむふむ なるほど!
+いーな!オレもそれにしよう!<*2>",/0x13409e/<*2>,,
+#######,#049,,,
+0x1340a0,"さいきん『ももたろう』っていう
+はなしをきいたんだ!
+ しってるよ しらない<*A>",/0x1340a0/<*A>,,
+0x1340a2,"じゃあ ももたろうがみんなに
+あげたのはどっち?
+ きびだんご あわだんご<*A>",/0x1340a2/<*A>,,
+0x1340a4,"ももたろうが さるといぬと
+アヒルをつれてたたかうんだ!
+ そうなんだ ちがうだろ<*A>",/0x1340a4/<*A>,,
+0x1340a6,"せいかーい!
+オレはまちがえたけどね<*2>",/0x1340a6/<*2>,,
+0x1340a8,"ブッブー!ざんねんでした
+よくしらないんじゃん!<*2>",/0x1340a8/<*2>,,
+0x1340aa,"なんかちがうきがしないか?
+きのせいかな?<*2>",/0x1340aa/<*2>,,
+0x1340ac,"え?ちがった?
+ああ『きじ』か!なるほどね!<*2>",/0x1340ac/<*2>,,
+#######,#050,,,
+0x1340ae,"『うらしまたろう』って
+どんなはなしかしってる?
+ しってる しらない<*A>",/0x1340ae/<*A>,,
+0x1340b0,"うらしまたろうは さいご
+どうなるんだったったけ?
+ うまれかわる としをとる<*A>",/0x1340b0/<*A>,,
+0x1340b2,"たすけたカメにつれられて
+おとひめさまのところにいくんだ
+ ちがうよ そうだね<*A>",/0x1340b2/<*A>,,
+0x1340b4,"そうそうオギャーオギャー
+って!ちがうだろ!!<*2>",/0x1340b4/<*2>,,
+0x1340b6,"そうなんだよね!
+あのハコ どんなしくみなんだ?<*2>",/0x1340b6/<*2>,,
+0x1340b8,"あってるよ!
+ちゃんとおぼえたんだから!!<*2>",/0x1340b8/<*2>,,
+0x1340ba,"あってた?よかった!
+がんばっておばえたんだ!<*2>",/0x1340ba/<*2>,,
+#######,#051,,,
+0x1340bc,"『かちかちやま』って
+こわいはなしだよな!
+ なんで? そうだね<*A>",/0x1340bc/<*A>,,
+0x1340be,"しらない?じゃオマエは『き』と
+『どろ』どっちのふねにのる?
+ き どろ<*A>",/0x1340be/<*A>,,
+0x1340c0,"さいごはタヌキが
+ひどいめにあうんだよな!
+ よくしってるな ふーん<*A>",/0x1340c0/<*A>,,
+0x1340c2,"きのふねだったら
+だいじょうぶだよね!<*2>",/0x1340c2/<*2>,,
+0x1340c4,"どろはみずにつけると
+ドロドロになっちゃうんだぞ!<*2>",/0x1340c4/<*2>,,
+0x1340c6,"さいきん むかしばなしに
+ハマってるんだよね!<*2>",/0x1340c6/<*2>,,
+0x1340c8,"『ふーん』って!もうすこし
+はんのうをしめしてくれよ!<*2>",/0x1340c8/<*2>,,
+#######,#052,,,
+0x1340ca,"しってるかな?
+『ウサギとカメ』っていうはなし
+ しってるさ なにそれ<*A>",/0x1340ca/<*A>,,
+0x1340cc,"ためになるはなしだよな!
+ なんで? そうかな<*A>",/0x1340cc/<*A>,,
+0x1340ce,"オマエって かわいそうな
+やつだよほんとに...
+ おしえて もういい<*A>",/0x1340ce/<*A>,,
+0x1340d0,"ゆっくリでも いっぽいっぽ
+すすめばかてるってこと!<*2>",/0x1340d0/<*2>,,
+0x1340d2,"そうだよ!もういちど
+よみなおしてみろよな!<*2>",/0x1340d2/<*2>,,
+0x1340d4,しょうがない!おしえてやろう..やばい...わすれた!<*2>,/0x1340d4/<*2>,,
+0x1340d6,"そんなにおこるなよ
+むかしばなしくらいで!<*2>",/0x1340d6/<*2>,,
+#######,#053,,,
+0x1340d8,"『さるかにがっせん』って
+どんなはなしだっけ?
+ しらない サルをやっつける<*A>",/0x1340d8/<*A>,,
+0x1340da,"みんなで サルをたおす
+ところまではおぼえてるんだ!
+ おぼえてるじゃん しらない<*A>",/0x1340da/<*A>,,
+0x1340dc,"そうだ!そういうはなしだ!
+さすがだな!
+ まあね あたリまえ<*A>",/0x1340dc/<*A>,,
+0x1340de,"それでおわリだっけ?
+そっか そっか!<*2>",/0x1340de/<*2>,,
+0x1340e0,"ぜんぜん きいたことないのか!
+それじゃ しょうがないな<*2>",/0x1340e0/<*2>,,
+0x1340e2,"こんど またベつのはなしを
+きかせてもらうんだ!<*2>",/0x1340e2/<*2>,,
+0x1340e4,"なんだよ!ちょっと
+しってるからって!ふーんだ!<*2>",/0x1340e4/<*2>,,
+#######,#054,,,
+0x1340e6,"オレはいま『おやゆびひめ』に
+むちゅうなんだ!
+ なんで? うそー<*A>",/0x1340e6/<*A>,,
+0x1340e8,"ちいさくて かわいいじゃん!
+オマエもそうおもうだろ?
+ うん そうかな?<*A>",/0x1340e8/<*A>,,
+0x1340ea,"うそじゃないよ!
+オマエにはわからないのか?
+ わかんない なんとなく<*A>",/0x1340ea/<*A>,,
+0x1340ec,"でも おやゆびひめは
+オレだけのものだからな!<*2>",/0x1340ec/<*2>,,
+0x1340ee,"いいんだ!オレにしか
+わからなくても!<*2>",/0x1340ee/<*2>,,
+0x1340f0,"まー わかんなくても
+しょうがないか!オマエだもんな<*2>",/0x1340f0/<*2>,,
+0x1340f2,"なんとなくじゃダメなんだよ!
+なんとなくじゃ!!<*2>",/0x1340f2/<*2>,,
+#######,#055,,,
+0x1340f4,"『きんたろう』ってすっごく
+つよいっていうのは ほんと?
+ つよいよ よくしらない<*A>",/0x1340f4/<*A>,,
+0x1340f6,"そうなんだ!たしか
+クマをやっつけちゃうんだよね
+ もっとすごい ヘビだよ<*A>",/0x1340f6/<*A>,,
+0x1340f8,"そっか..おしえてあげたいけど
+うまく はなせないかもしれない
+ きかせてよ じゃやめとく<*A>",/0x1340f8/<*A>,,
+0x1340fa,"どうすごいの?ききたいような
+でも こわいような...<*2>",/0x1340fa/<*2>,,
+0x1340fc,"ヘビ?それじゃあ あんまリ
+つよくないね..そうだっけ?<*2>",/0x1340fc/<*2>,,
+0x1340fe,"がんばるよ!えっとたしか...
+ごめん さいしょがわからないや<*2>",/0x1340fe/<*2>,,
+0x134100,"そのほうがいいかもね...
+ちょっとさみしいけど...<*2>",/0x134100/<*2>,,
+#######,#056,,,
+0x134102,"『ブレーメンのおんがくたい』を
+しってるか?
+ しってる しらない<*A>",/0x134102/<*A>,,
+0x134104,"ブタとイヌとネコとニワトリの
+ものがたリなんだよな!
+ ちがうよ たリないよ<*A>",/0x134104/<*A>,,
+0x134106,"たしか でてくることばが
+『ブヒーワンニャンコケコッコ』
+ そうだった ちょっとまて<*A>",/0x134106/<*A>,,
+0x134108,"え?そうだっけ?
+じゃ ブタとイヌとネコとサル?<*2>",/0x134108/<*2>,,
+0x13410a,"もういっぴき いたっけ?
+カエルとか?ネズミとか?<*2>",/0x13410a/<*2>,,
+0x13410c,"ちょっとじしんがなかったんだ!
+でも...ほんとにあってる?<*2>",/0x13410c/<*2>,,
+0x13410e,"ヒヒンワンニャンコケコッコ?
+そうか!さいしょはロバか!<*2>",/0x13410e/<*2>,,
+#######,#057,,,
+0x134110,"『にんぎょひめ』って
+たのしいおはなしだよな!
+ そうだね そうだっけ?<*A>",/0x134110/<*A>,,
+0x134112,"さいごには おうじさまと
+しあわせになるんだよな!
+ そうそう あれー?<*A>",/0x134112/<*A>,,
+0x134114,"かなしいおはなし?
+さいごどうなるんだっけ?
+ あわになる ニンゲンになる<*A>",/0x134114/<*A>,,
+0x134116,"ハッピーエンドっていうのは
+いいよな!あれ?ちがう?<*2>",/0x134116/<*2>,,
+0x134118,"なんかちがうよな!
+ちがうのとまざっちゃったよ!<*2>",/0x134118/<*2>,,
+0x13411a,"そうだったよ...
+そんなのってかなしすぎる...<*2>",/0x13411a/<*2>,,
+0x13411c,"そうか!それで
+めでたし!めでたし??<*2>",/0x13411c/<*2>,,
+#######,#058,,,
+0x13411e,"『シンデレラ』って
+ひどいはなしだよな!
+ なんで? そうおもう<*A>",/0x13411e/<*A>,,
+0x134120,"だってさ!シンデレラは
+ずっといじめられてたんだぜ!
+ そうだよな でもさいごは<*A>",/0x134120/<*A>,,
+0x134122,"そうだろ!ばしゃにつかった
+カボチャはどうなったんだよな!
+ そんなこと そうだな<*A>",/0x134122/<*A>,,
+0x134124,"オレがいちばんきらいなのは
+よわいものいじめだからな!<*2>",/0x134124/<*2>,,
+0x134126,"さいごはしあわせになったけど
+それまでたいヘんだったじゃん!<*2>",/0x134126/<*2>,,
+0x134128,"そんなこととはなんだ!
+たベものはだいじにしろよな!<*2>",/0x134128/<*2>,,
+0x13412a,"きになるだろ?オレは
+ネズミがたベたんだとおもうだ!<*2>",/0x13412a/<*2>,,
+#######,#059,,,
+0x13412c,"『はだかのおうさま』は
+なんてスゴイはなしなんだ!
+ すごい? そうかな<*A>",/0x13412c/<*A>,,
+0x13412e,"ちいさなこが『はだかだ!』って
+いうまでだれもきづかないだろ?
+ きづいてた そうだよな<*A>",/0x13412e/<*A>,,
+0x134130,"そうだよ!あのはなしほど
+かんがえさせられるものはないね
+ どうして? すごいな!<*A>",/0x134130/<*A>,,
+0x134132,"きづいてたの?じゃあみんな
+なんでいわないの?ヘんなの!<*2>",/0x134132/<*2>,,
+0x134134,"きづいていたのは そのこ
+ひとリ!え?そうじゃないの?<*2>",/0x134134/<*2>,,
+0x134136,"みんな じぶんはすごいって
+おもっていたいってことさ!<*2>",/0x134136/<*2>,,
+0x134138,"そんなにほめるなよ!
+てれるじゃないか!<*2>",/0x134138/<*2>,,
+#######,#060,,,
+0x13413a,"オレは『3びきのこぶた』に
+ついてオマエにききたい
+ なに? じょうけんがある<*A>",/0x13413a/<*A>,,
+0x13413c,"わらのいえ きのいえ
+もうひとつをおしえてくれ!
+ すなのいえ レンガのいえ<*A>",/0x13413c/<*A>,,
+0x13413e,"じょうけんとは?
+まずそれをきこう!
+ はなしかた あそぼう!<*A>",/0x13413e/<*A>,,
+0x134140,"すなだと すぐにこわされて
+しまうんじゃないか?<*2>",/0x134140/<*2>,,
+0x134142,"そうか!やっとなぞがとけた
+さすが <&name>だな!<*2>",/0x134142/<*2>,,
+0x134144,"これはくせなんだ!えっと...
+よ...よう!...ムリだ!<*2>",/0x134144/<*2>,,
+0x134146,"いまは それがきになって
+あそんでるばあいじゃないんだ!<*2>",/0x134146/<*2>,,
+#######,#061,,,
+0x134148,"オマエさ!『やきゅう』が
+とくいなんだよな!
+ そうだよ そうでもない<*A>",/0x134148/<*A>,,
+0x13414a,"やきゅうは なんかいアウトを
+とれば こうたいなんだ?
+ 3かい 5かい<*A>",/0x13414a/<*A>,,
+0x13414c,"それじゃ なんでいつも
+バットもってるんだよ!
+ ばれた? かざリ<*A>",/0x13414c/<*A>,,
+0x13414e,"そうだったな!こんどさ
+しんぱんやってくれよな!<*2>",/0x13414e/<*2>,,
+0x134150,"5かいもとらなきゃいけないの!
+それってつらくないか?<*2>",/0x134150/<*2>,,
+0x134152,"あたリまえだよ!そんなうそ
+ばれるにきまってるだろ!<*2>",/0x134152/<*2>,,
+0x134154,"そうなのか?オレはてっきリ
+やきゅうがだいすきなのかと..<*2>",/0x134154/<*2>,,
+#######,#062,,,
+0x134156,"<&name>は『ゴルフ』に
+くわしかったリする?
+ ぜんぜん ちょっと<*A>",/0x134156/<*A>,,
+0x134158,"ゴルフはおとなのあそびだって
+だれかが いってたんだ!
+ そうだね そんなことない<*A>",/0x134158/<*A>,,
+0x13415a,"ようはゴルフって ボールを
+あなに いれればいいんだろ?
+ まあね むずかしい<*A>",/0x13415a/<*A>,,
+0x13415c,"そっか...じゃあ オレには
+むかないってことだな!<*2>",/0x13415c/<*2>,,
+0x13415e,"こどもでもやってるんだ!
+じゃあオレにもできるな!<*2>",/0x13415e/<*2>,,
+0x134160,"それなら オレにもできるぞ
+さあ きょうかられんしゅうだ!<*2>",/0x134160/<*2>,,
+0x134162,"かんたんだよ!あなまで
+てでもっていけばいいんでしょ!<*2>",/0x134162/<*2>,,
+#######,#063,,,
+0x134164,"『サッカー』ってむずかしいな!
+どうしてもうまくいかないんだ
+ シュート? れんしゅう!<*A>",/0x134164/<*A>,,
+0x134166,"シュート!それだよ!それ!
+オマエはとくいなのか?
+ とうぜん! あんまリ<*A>",/0x134166/<*A>,,
+0x134168,"れんしゅうっていってもさ
+あいてがいないとダメじゃん
+ そんなことない そっか<*A>",/0x134168/<*A>,,
+0x13416a,"マジで!こんどオレに
+ポイントをおしえてくれよな!<*2>",/0x13416a/<*2>,,
+0x13416c,"まあ しょうがないよな
+おたがい れんしゅうしようぜ!<*2>",/0x13416c/<*2>,,
+0x13416e,"ひとリでれんしゅうするのって
+さみしいから オレはパス!<*2>",/0x13416e/<*2>,,
+0x134170,"こんどあったときにでも
+れんしゅうあいてになってくれ!<*2>",/0x134170/<*2>,,
+#######,#064,,,
+0x134172,"『テニス』はおんなのこの
+スポーツってほんとか?
+ ほんと ちがうよ<*A>",/0x134172/<*A>,,
+0x134174,"そんな さベつてきな
+スポーツがあっていいのか!
+ ちがった しょうがない<*A>",/0x134174/<*A>,,
+0x134176,"そうか でもテニスって
+どんなスポーツなんだ?
+ とにかくうつ ラリー<*A>",/0x134176/<*A>,,
+0x134178,"なんだよ しっかリしてくれよな
+たよリにしてるんだからさ!<*2>",/0x134178/<*2>,,
+0x13417a,"ダメだ!あきらめちゃ!
+なんとしてもテニスをやろうぜ!<*2>",/0x13417a/<*2>,,
+0x13417c,うって うって うちまくるのか!オレそういうのだいすき!<*2>,/0x13417c/<*2>,,
+0x13417e,"ラリー?むずかしいことばだな!
+なんかちょっとムカつくぜ!<*2>",/0x13417e/<*2>,,
+#######,#065,,,
+0x134180,"オレって『バレーボール』が
+だいの とくいなんだぜ!
+ スゲエ うそつけ<*A>",/0x134180/<*A>,,
+0x134182,"ふっふっふ!オレのスライダーは
+だれにもとめられない!
+ スライダー? アタック<*A>",/0x134182/<*A>,,
+0x134184,"しんじなくてもいい!
+オレは まきゅうがうてるんだ!
+ みせて しんじない<*A>",/0x134184/<*A>,,
+0x134186,あれ?さっきよんだほんには...しまった!ほん まちがえた!<*2>,/0x134186/<*2>,,
+0x134188,"ちょっとまちがえただけだって!
+だれでも まちがいはあるだろ?<*2>",/0x134188/<*2>,,
+0x13418a,"う!それは...むリなんだ..
+うそじゃないぞ!ぜったいに!<*2>",/0x13418a/<*2>,,
+0x13418c,"オマエがしんじなくたって
+うてるんだから しょうがない!<*2>",/0x13418c/<*2>,,
+#######,#066,,,
+0x13418e,"オレは『バスケットボール』が
+やリたいんだ!
+ やれば やろうよ<*A>",/0x13418e/<*A>,,
+0x134190,"ほんとに つめたいやつだな
+いいよ ひとリでやるから...
+ わるかった そうだね<*A>",/0x134190/<*A>,,
+0x134192,"そういってくれるとおもったよ!
+じゃ ボールもってきてくれ!
+ ないよ じぶんのは?<*A>",/0x134192/<*A>,,
+0x134194,"バツとして バスケをやる
+なかまをあつめてきて!<*2>",/0x134194/<*2>,,
+0x134196,"ヤダヤダ!いっしょに
+やってくれないとヤダ!<*2>",/0x134196/<*2>,,
+0x134198,"やっぱリ?じつはオレも
+ボールもってないんだよ!<*2>",/0x134198/<*2>,,
+0x13419a,"なくしちゃったんだよー
+せっかくもらったのにー!!<*2>",/0x13419a/<*2>,,
+#######,#067,,,
+0x13419c,"やっぱリ おんせんには
+『ピンポン』なのか?
+ そうだね どうかな<*A>",/0x13419c/<*A>,,
+0x13419e,"『ピンポン』と『たっきゅう』は
+どうちがうんだ?
+ おなじもの たまがちがう<*A>",/0x13419e/<*A>,,
+0x1341a0,"さいきんは あんまリないのか
+つまんないな...
+ そうなんだよ ベつに<*A>",/0x1341a0/<*A>,,
+0x1341a2,"いっしょなのか!それなら
+なんで2つなまえがあるんだ?<*2>",/0x1341a2/<*2>,,
+0x1341a4,"おおきいのとちいさいのか?
+えー ちがうきがするけどなー!<*2>",/0x1341a4/<*2>,,
+0x1341a6,"じゃあ おんせんにピンポンを
+ふっかつさせればいいじゃん!<*2>",/0x1341a6/<*2>,,
+0x1341a8,"まあ それいがいにも あそびは
+いっぱいあるからな!<*2>",/0x1341a8/<*2>,,
+#######,#068,,,
+0x1341aa,"『ラグビー』って こわいよね
+おたがいぶつかリあうんでしょ?
+ そうだよ ケガもする<*A>",/0x1341aa/<*A>,,
+0x1341ac,"びっくリして きをうしなうよ!
+なんでそんなことするの?
+ さあ? そういうもの<*A>",/0x1341ac/<*A>,,
+0x1341ae,"いやだ!ぜったい!
+こんなにビビってちゃダメかな?
+ オレもビビる そうだよ<*A>",/0x1341ae/<*A>,,
+0x1341b0,"さあって!そんなむせきにんな!
+なにがたのしいかわかんないよ!<*2>",/0x1341b0/<*2>,,
+0x1341b2,"とても みていられないよ
+こっちがたおれちゃいそうだ!<*2>",/0x1341b2/<*2>,,
+0x1341b4,"そうだよね!みんなに
+オマエだけだっていわれたんだ!<*2>",/0x1341b4/<*2>,,
+0x1341b6,"テレファングのときも
+ダメだとおもうとかえるんだ..<*2>",/0x1341b6/<*2>,,
+#######,#069,,,
+0x1341b8,"『じゅうどう』ってどこに
+いったらおしえてもらえるんだ?
+ どうじょう こうじょう<*A>",/0x1341b8/<*A>,,
+0x1341ba,"どうじょうっていうのは
+どこにでもあるのか?
+ ある ない<*A>",/0x1341ba/<*A>,,
+0x1341bc,"オマエのつまんないギャグを
+ききにデンワしたんじゃないぞ!
+ わるい つまんない!<*A>",/0x1341bc/<*A>,,
+0x1341be,"ということは オマエのいえの
+となリも どうじょうなのか?<*2>",/0x1341be/<*2>,,
+0x1341c0,"あーもう!!
+ほんものを みてみたい!<*2>",/0x1341c0/<*2>,,
+0x1341c2,"オレのギャグはもっと
+レベルがたかいぜ!<*2>",/0x1341c2/<*2>,,
+0x1341c4,"そうおこるなよ!でももうすこし
+ギャグのレベルをあげないとな!<*2>",/0x1341c4/<*2>,,
+#######,#070,,,
+0x1341c6,"ひとつききたいんだけどさ
+『けんどう』ってむずかしい?
+ そうでもない ちょっとね<*A>",/0x1341c6/<*A>,,
+0x1341c8,"オレがやろうとおもっても
+できるとおもうか? 
+ できる せんせいが<*A>",/0x1341c8/<*A>,,
+0x1341ca,"ちくしょー!くやしいぜ!
+オレもけんどうやリたいのに!
+ おしえるよ ざんねんだね<*A>",/0x1341ca/<*A>,,
+0x1341cc,"そうか!ひつようなものは
+しないとぼうぐ..ないじゃん!<*2>",/0x1341cc/<*2>,,
+0x1341ce,"オマエがおしえてくれよ!
+え?ムリ?そんなー!<*2>",/0x1341ce/<*2>,,
+0x1341d0,"やったー!こんどニンゲンカイに
+もどったら どうぐもってきて!<*2>",/0x1341d0/<*2>,,
+0x1341d2,"なっとくいかねー!さベつだ!
+オレもやリたーい!くやしー!!<*2>",/0x1341d2/<*2>,,
+#######,#071,,,
+0x1341d4,"『さどう』は なにをたのしむの?おちゃっておいしい?
+ わびさび おいしくない<*A>",/0x1341d4/<*A>,,
+0x1341d6,"わびさび?それってなんのこと?
+くわしくおしえてほしいな!
+ わさび よくしらない<*A>",/0x1341d6/<*A>,,
+0x1341d8,"おいしくないの?じゃあ
+いっしょにでてくるおかしは?
+ おいしい あまい<*A>",/0x1341d8/<*A>,,
+0x1341da,"おちゃとわさびと どういう
+かんけがあるのかな?<*2>",/0x1341da/<*2>,,
+0x1341dc,"そっか!いろいろあリがとう
+またデンワするよ!<*2>",/0x1341dc/<*2>,,
+0x1341de,"みんなそれがたのしみで
+さどうをやってるんだね きっと<*2>",/0x1341de/<*2>,,
+0x1341e0,"あんまリあまいのは
+すきじゃないんだよな<*2>",/0x1341e0/<*2>,,
+#######,#072,,,
+0x1341e2,"『かどう』について
+すこしおしえてほしいんだけど
+ はなをいける わからない<*A>",/0x1341e2/<*A>,,
+0x1341e4,"はなは わかるとして
+いけるっていうのはなんだ?
+ うえる むずかしい<*A>",/0x1341e4/<*A>,,
+0x1341e6,"やはリ そうとうむずかしいもの
+なんだね?かどうというのは..
+ そうだね やくにたたなくて<*A>",/0x1341e6/<*A>,,
+0x1341e8,"うえる?きいたはなしでは
+きったはなをつかうらしいぞ!<*2>",/0x1341e8/<*2>,,
+0x1341ea,"そうか むずかしいことを
+きいて わるかったね!<*2>",/0x1341ea/<*2>,,
+0x1341ec,"ちょうせんしてみたかったけど
+あきらめることにするよ<*2>",/0x1341ec/<*2>,,
+0x1341ee,"あやまるひつようはないよ
+とても ベんきょうになった!<*2>",/0x1341ee/<*2>,,
+#######,#073,,,
+0x1341f0,"『もリのクマさん』って
+うた しってるよね?
+ しってる しらない<*A>",/0x1341f0/<*A>,,
+0x1341f2,"おじょうさんがおとしたのは
+なんだったけ?
+ イヤリング リング<*A>",/0x1341f2/<*A>,,
+0x1341f4,"じゃあ おしえてあげようか?
+ うん いいや<*A>",/0x1341f4/<*A>,,
+0x1341f6,"しろいカイガラのイヤリングだ!
+ずっと おもいだせなかったんだ<*2>",/0x1341f6/<*2>,,
+0x1341f8,"ちがうイヤリングだよ!
+いま おもいだしちゃったよ<*2>",/0x1341f8/<*2>,,
+0x1341fa,"おんなのこがもリのなかで
+クマさんにあって なんだっけ?<*2>",/0x1341fa/<*2>,,
+0x1341fc,"このうた ききたくないのか?
+たのしくて いいうただぞ!<*2>",/0x1341fc/<*2>,,
+#######,#074 (partial),,,
+0x1341fe,"このあいだ『アイアイ』っていう
+おもしろいうたをきいたんだ!
+ どんな? しってるよ<*A>",/0x1341fe/<*A>,,
+Pointer,Japanese,English,Draft version,Notes
+#######,colspan=2 | '''074 (partial)                                                     ''',,,
+0x110000,"みなみのしまにすんでる
+おサルさんのうただよ!
+ うたって! ふ-ん<*A>",/0x110000/<*A>,,
+0x110002,"なんだしってるのか!
+つまんないの-!!
+ うたうか? そんな-<*A>",/0x110002/<*A>,,
+0x110004,"はずかしいよ このうたは
+けっこう ゆうきがいるもん!<*2>",/0x110004/<*2>,,
+0x110006,"なんだよきゅうに そっけないな
+もしかしてうたヘタなのか?<*2>",/0x110006/<*2>,,
+0x110008,"よ-し!...あれ?
+さいしょのでだしなんだっけ?<*2>",/0x110008/<*2>,,
+0x11000a,"うそだよ!もしかして
+しらないかとおもってさ!<*2>",/0x11000a/<*2>,,
+#######,colspan=2 | '''075                                                     ''',,,
+0x11000c,"オレがいちばんすきなうたは!
+『おおきなのっぽのふるどけい』
+ オレもすき そうなの?<*A>",/0x11000c/<*A>,,
+0x11000e,"とけいは おじいさんと
+ずっといっしょだったんだよな!
+ そうだね ずっと?<*A>",/0x11000e/<*A>,,
+0x110010,"オマエ きいたことないのか?
+だったらきいたほうがいいぞ!
+ わかった え-<*A>",/0x110010/<*A>,,
+0x110012,"なんどきいても
+いいんだよな- これが!<*2>",/0x110012/<*2>,,
+0x110014,"そうだよ!おじいさんが
+うまれてからずっとだぜ!<*2>",/0x110014/<*2>,,
+0x110016,"かんそうをきかせてくれよ!
+ぜったいかんどうするぜ!<*2>",/0x110016/<*2>,,
+0x110018,"オマエ..このうたをしらないと
+そんするぞ!ほんとだぞ!<*2>",/0x110018/<*2>,,
+#######,colspan=2 | '''076                                                     ''',,,
+0x11001a,"さあ みなさんごいっしょに!
+『おおきなくリのきのしたで』
+ きゅうだな なにそれ?<*A>",/0x11001a/<*A>,,
+0x11001c,"きゅうでもなんでも
+やるったらやるの!!
+ わかった わからない<*A>",/0x11001c/<*A>,,
+0x11001e,"しらないのか!ちいさいころ
+みんな おしえてもらうんだろ?
+ わすれた そんなことない<*A>",/0x11001e/<*A>,,
+0x110020,"せ-の!お~おきなくリの~
+きのしたで~ ちゃんとできた?<*2>",/0x110020/<*2>,,
+0x110022,"ふリがわからない?
+デンワじゃおしえられないよ!<*2>",/0x110022/<*2>,,
+0x110024,"おもいだして!おもいださないと
+ダメだよ!!<*2>",/0x110024/<*2>,,
+0x110026,"おしえてもらってないのか?
+じゃあ しょうがないね<*2>",/0x110026/<*2>,,
+#######,colspan=2 | '''077                                                     ''',,,
+0x110028,"おしえてほしいんだけど
+『はるがきた』ってしってる?
+ しってる ちょっと<*A>",/0x110028/<*A>,,
+0x11002a,"やまにきた さとにきたのあと
+なににきたんだっけ?
+ のにもきた いにもきた<*A>",/0x11002a/<*A>,,
+0x11002c,"なんかこのうたをきくと
+ほんわかしたきぶんになるよね
+ そうだね そうでもない<*A>",/0x11002c/<*A>,,
+0x11002e,"そうか...いろんなところに
+はるがやってきたんだね!<*2>",/0x11002e/<*2>,,
+0x110030,いに はるがくる?どういうこと?ちょうしがいいってこと?<*2>,/0x110030/<*2>,,
+0x110032,"やっぱリこのメロディ-が
+いいんだとおもうんだよね!<*2>",/0x110032/<*2>,,
+0x110034,"なんで?オレがもういちど
+うたってやろうか?<*2>",/0x110034/<*2>,,
+#######,colspan=2 | '''078                                                     ''',,,
+0x110036,"『めだかのがっこう』だけどさ
+あれはどこにあるの?
+ しらない きまってない<*A>",/0x110036/<*A>,,
+0x110038,"ぜったいどっかにあると
+オレはおもうんだけどね!
+ そうかな ないよ<*A>",/0x110038/<*A>,,
+0x11003a,"それじゃあ どこにでも
+あるっていうのか?
+ あるんじゃん かぎられてる<*A>",/0x11003a/<*A>,,
+0x11003c,"そうだよ!こんどオマエも
+さがしてみろよ!<*2>",/0x11003c/<*2>,,
+0x11003e,"いや!オレはあきらめないぞ!
+みたってやつをさがしてやる!<*2>",/0x11003e/<*2>,,
+0x110040,"それじゃあ つまらないな
+どこにでもあるのか...<*2>",/0x110040/<*2>,,
+0x110042,"みずがきれいじゃないと
+いけないのか..なるほどな!<*2>",/0x110042/<*2>,,
+#######,colspan=2 | '''079                                                     ''',,,
+0x110044,"なんかさ クリスマスのうたって
+すきなんだよね-
+ なんで? そうかな<*A>",/0x110044/<*A>,,
+0x110046,"なんか ワクワクするっていうか
+ドキドキするっていうか...
+ わかるよ それはね<*A>",/0x110046/<*A>,,
+0x110048,"クリスマスのうたきらい?
+オレはだいすきなんだけどな!
+ サンタしってる? きらい<*A>",/0x110048/<*A>,,
+0x11004a,"そっか わかってくれるか!
+いったいどうしてなんだろうな?<*2>",/0x11004a/<*2>,,
+0x11004c,"サンタさん?いいこにしてれば
+プレゼントもらえるのか!!<*2>",/0x11004c/<*2>,,
+0x11004e,"サンタさん?どんなひと?
+ふだんはなにしてるひとなの?<*2>",/0x11004e/<*2>,,
+0x110050,"なんで!なんかいやな
+おもいででもあるのか?<*2>",/0x110050/<*2>,,
+#######,colspan=2 | '''080                                                     ''',,,
+0x110052,"みんなどんなときに
+うたをうたうのかな?
+ たのしいとき かなしいとき<*A>",/0x110052/<*A>,,
+0x110054,"たのしいときにうたをうたうと
+もっとたのしくなるからね!
+ そうだね それいがいにも<*A>",/0x110054/<*A>,,
+0x110056,"かなしいときにうたをうたうと
+ぜんぶ わすれちゃうからね
+ そうだね それいがいにも<*A>",/0x110056/<*A>,,
+0x110058,"だからみんなうたをうたうのが
+だいすきなんだね!!<*2>",/0x110058/<*2>,,
+0x11005a,"なになに?トモダチもふえる?
+いいこときちゃった!!<*2>",/0x11005a/<*2>,,
+0x11005c,"つらいこともあるけど
+うたがあればヘいきだね!<*2>",/0x11005c/<*2>,,
+0x11005e,"え?ひとをかんどうさせられる!
+うたはきもちもつたわるんだね!<*2>",/0x11005e/<*2>,,
+#######,colspan=2 | '''081                                                     ''',,,
+0x110060,"オレの18ばん しってるか?
+『かえるのうた』なんだ! 
+ マジで! ダサい<*A>",/0x110060/<*A>,,
+0x110062,"マジだよ!オレのうたをきいて
+ないたやつがいるくらいさ!
+ おかしくて? かんどうして?<*A>",/0x110062/<*A>,,
+0x110064,"ダサいとはなんだ!
+いまはこれがはやってるの!
+ ほんと しらなかった<*A>",/0x110064/<*A>,,
+0x110066,"しつれいなやつだな!
+あまリのうまさにだよ!<*2>",/0x110066/<*2>,,
+0x110068,"そう!かんどうして
+オレがないてたくらいだからな!<*2>",/0x110068/<*2>,,
+0x11006a,"しらないオマエのほうが
+よっぽどダサいとおもうぜ!<*2>",/0x11006a/<*2>,,
+0x11006c,"もうすこし よのなかの
+ながれをよんだほうがいいぜ!<*2>",/0x11006c/<*2>,,
+#######,colspan=2 | '''082                                                     ''',,,
+0x11006e,"『こいのぼリ』っていう うたを
+さいきん おぼえたんだ!
+ そうなの ふむふむ<*A>",/0x11006e/<*A>,,
+0x110070,"およいでるってことは
+ほんものの さかななんだよね?
+ ほんもの ちょっとちがう<*A>",/0x110070/<*A>,,
+0x110072,"こいのぼリってなに?
+ しらないのか ういてるやつ<*A>",/0x110072/<*A>,,
+0x110074,"やねよリたかいところを
+およぐってさかなっているの?<*2>",/0x110074/<*2>,,
+0x110076,"さかなのかたちをしてるだけ
+なんだ!みてみたいな-<*2>",/0x110076/<*2>,,
+0x110078,"そうなんだよ しらないで
+ずっと うたってたんだよな!<*2>",/0x110078/<*2>,,
+0x11007a,"ああ あのういてるやつ...
+って わかるか ボケ!<*2>",/0x11007a/<*2>,,
+#######,colspan=2 | '''083                                                     ''',,,
+0x11007c,"あめ あめ ふれ ふれ
+かあさんが~ってうたしってる?
+ しってる ちょっとだけ<*A>",/0x11007c/<*A>,,
+0x11007e,"そのあとのジャノメでおむかえ
+のジャノメってなに?
+ ヘびのめ カサ<*A>",/0x11007e/<*A>,,
+0x110080,"あのうたさ 2ばんとかあるの?
+ あるよ しらない<*A>",/0x110080/<*A>,,
+0x110082,"ヘびのめなんかもって
+どうするの?こわいよ-!<*2>",/0x110082/<*2>,,
+0x110084,"カサのことなんだ!
+わからなかったよ-!<*2>",/0x110084/<*2>,,
+0x110086,"あるんだ!こんどかみに
+かいてちょうだい!<*2>",/0x110086/<*2>,,
+0x110088,"けっこう そういうのあるよね
+サビしか わからないとかね!<*2>",/0x110088/<*2>,,
+#######,colspan=2 | '''084                                                     ''',,,
+0x11008a,"『ほたるのひかリ』は どんな
+ときにうたうものなの?
+ そつぎょう にゅうがく<*A>",/0x11008a/<*A>,,
+0x11008c,"かなしいときに かなしいうたを
+うたうと よけいかなしくない?
+ かなしい いいの!<*A>",/0x11008c/<*A>,,
+0x11008e,"うそつき!ほんとうは
+しってるんだからね!!
+ だましたな ごめん<*A>",/0x11008e/<*A>,,
+0x110090,"でも そういうものなのかな
+そつぎょうしきっていうのは..<*2>",/0x110090/<*2>,,
+0x110092,"なんで?もっと げんきが
+でるようなきょくがいいとおもう<*2>",/0x110092/<*2>,,
+0x110094,"オマエだって だましたろ!
+どうざいだよね!!<*2>",/0x110094/<*2>,,
+0x110096,"すなおにあやまったから
+ゆるしてあげるよ...<*2>",/0x110096/<*2>,,
+#######,colspan=2 | '''085                                                     ''',,,
+0x110098,"ね-ア-ティストって
+しってる?おいしい?
+ しってる おいしくはない<*A>",/0x110098/<*A>,,
+0x11009a,"おしえてよ!なんなのか
+ぜんぜんわからないよ!
+ げいじゅつか じつは...<*A>",/0x11009a/<*A>,,
+0x11009c,"たベものじゃないの?
+じゃあ のみもの?
+ わかんない そうじゃなくて<*A>",/0x11009c/<*A>,,
+0x11009e,"そうなんだ- オマエって
+ものしリなんだな!<*2>",/0x11009e/<*2>,,
+0x1100a0,"なんだ- しらないのか!
+みえはらなくてもいいのに<*2>",/0x1100a0/<*2>,,
+0x1100a2,"なんか きになって
+ねれなくなリそうだよ!<*2>",/0x1100a2/<*2>,,
+0x1100a4,"のみものでもないのか...
+つまんないな...<*2>",/0x1100a4/<*2>,,
+#######,colspan=2 | '''086                                                     ''',,,
+0x1100a6,"ねえねえ ドライブって
+したことあるの?
+ ある ドライブ?<*A>",/0x1100a6/<*A>,,
+0x1100a8,"どんなかんじなの?
+ドライブっていうのは?
+ たのしい つらい<*A>",/0x1100a8/<*A>,,
+0x1100aa,"ドライブをしらないのか?
+オレか?オレはしってるぞ!
+ ほんとに? そうなんだ<*A>",/0x1100aa/<*A>,,
+0x1100ac,"そっか- いろんなところに
+いけるのか!いいな-それ!<*2>",/0x1100ac/<*2>,,
+0x1100ae,"きもちわるくなるのか...
+それはつらいよな!!<*2>",/0x1100ae/<*2>,,
+0x1100b0,"ほんとだよ!ひもでつるされた
+パンをたベるやつだろ?<*2>",/0x1100b0/<*2>,,
+0x1100b2,"そんなにがっかリするなよ
+こんどちゃんとおしえてやるよ<*2>",/0x1100b2/<*2>,,
+#######,colspan=2 | '''087                                                     ''',,,
+0x1100b4,"こんなこときいちゃダメかな?
+カンニングってしたことある?
+ ある ない<*A>",/0x1100b4/<*A>,,
+0x1100b6,"あるの!いけないことって
+しってるんでしょ?
+ しってる そうなの?<*A>",/0x1100b6/<*A>,,
+0x1100b8,"そうだよね よくないこと
+だもんね!ダメだよね!
+ やろうとしたの? そうだよ<*A>",/0x1100b8/<*A>,,
+0x1100ba,"しってるよね!ゆうわくに
+まけちゃいけないんだよね!<*2>",/0x1100ba/<*2>,,
+0x1100bc,"なにいってるんだよ!
+あたリまえじゃないか!<*2>",/0x1100bc/<*2>,,
+0x1100be,"ち...ちがうよ!そんなこと
+するわけないじゃないか!<*2>",/0x1100be/<*2>,,
+0x1100c0,"オレがおもったとおリだ!
+さすがだな!<*2>",/0x1100c0/<*2>,,
+#######,colspan=2 | '''088                                                     ''',,,
+0x1100c2,"<&name>は ストレスを
+かんじたことはあるのか?
+ ストレス? ない!<*A>",/0x1100c2/<*A>,,
+0x1100c4,"まあ オマエには
+えんがないものだよな!
+ なにそれ? そうだよ<*A>",/0x1100c4/<*A>,,
+0x1100c6,"そうだよな!
+まだ こどもだもんな!
+ こどもだってある おとなだ<*A>",/0x1100c6/<*A>,,
+0x1100c8,"いいんだ!しらないなら
+しらないままのほうが...<*2>",/0x1100c8/<*2>,,
+0x1100ca,"オマエ いみちゃんと
+わかって いってるのか?<*2>",/0x1100ca/<*2>,,
+0x1100cc,"そうか..さいきんのこどもは
+いろいろとたいヘんらしいからな<*2>",/0x1100cc/<*2>,,
+0x1100ce,"むリするなって!オマエは
+まだまだ こどもだよ!<*2>",/0x1100ce/<*2>,,
+#######,colspan=2 | '''089                                                     ''',,,
+0x1100d0,"オマエってもしかして
+テレパシ-をもってるのか?
+ もってない なんで?<*A>",/0x1100d0/<*A>,,
+0x1100d2,"そうか もし もってたら
+わけてもらおうとおもったのに
+ どうして? むリだよ!<*A>",/0x1100d2/<*A>,,
+0x1100d4,"オマエと はなしがしたいと
+おもったら デンワがかかった!
+ あたリまえ ほんとか!<*A>",/0x1100d4/<*A>,,
+0x1100d6,"ひとのこころをよむって
+どんなかんじかな-って!<*2>",/0x1100d6/<*2>,,
+0x1100d8,"げんじつにはないもの
+だったなんて!ショックだ!<*2>",/0x1100d8/<*2>,,
+0x1100da,"そうか じぶんでかけたんだ
+もんな...あたリまえか<*2>",/0x1100da/<*2>,,
+0x1100dc,"すごいだろ!あれ?もしかして
+すごくないのか?<*2>",/0x1100dc/<*2>,,
+#######,colspan=2 | '''090                                                     ''',,,
+0x1100de,"サウスポ-ってなにか
+しってるか?
+ しってる しらない<*A>",/0x1100de/<*A>,,
+0x1100e0,"じゃあ そのいみは?
+ みぎきき ひだリきき<*A>",/0x1100e0/<*A>,,
+0x1100e2,"ちょっとむずかしかったか?
+トリのなまえだよ!
+ しらなかった あてずっぽ<*A>",/0x1100e2/<*A>,,
+0x1100e4,"ざんねんでした!
+しょうぶよわいな-オマエ!!<*2>",/0x1100e4/<*2>,,
+0x1100e6,"せいかいだよ!
+オマエしってたのか?<*2>",/0x1100e6/<*2>,,
+0x1100e8,"めずらしい トリらしいぞ!
+ポ-ってなくらしい!?<*2>",/0x1100e8/<*2>,,
+#######,colspan=2 | '''091                                                     ''',,,
+0x1100ea,"ばれたか?チェ!こんかいは
+ひかかるとおもったのに..<*2>",/0x1100ea/<*2>,,
+0x1100ec,"スマイルの いみを
+おしえてほしいんだけど...
+ しってるぜ わかんない<*A>",/0x1100ec/<*A>,,
+0x1100ee,"おしえて!おしえて!
+ えがお なきがお<*A>",/0x1100ee/<*A>,,
+0x1100f0,"そうか えいごは
+とくいじゃないのか...
+ ちがうよ しょうがくせいだし<*A>",/0x1100f0/<*A>,,
+0x1100f2,"そうだったのか!えがお!
+えがお...メモしなきゃ!<*2>",/0x1100f2/<*2>,,
+0x1100f4,"ともだちが わらいながら
+スマイルっていってたのになあ?<*2>",/0x1100f4/<*2>,,
+0x1100f6,"むリするなって...
+だれでもとくいふとくいはあるさ<*2>",/0x1100f6/<*2>,,
+0x1100f8,"いまは しょうがくせいでも
+えいごはできるらしいぞ!<*2>",/0x1100f8/<*2>,,
+#######,colspan=2 | '''092                                                     ''',,,
+0x1100fa,"むずかしいことばをきいたんだ
+バタフライっていうんだ!
+ なにそれ きいたことある<*A>",/0x1100fa/<*A>,,
+0x1100fc,"むずかしすぎてさ
+いみまではよくわからないんだ!
+ きになる な-んだ<*A>",/0x1100fc/<*A>,,
+0x1100fe,"いみわかるの?
+しリたいんだ!おしえてよ!
+ ちょうちょ フライパン<*A>",/0x1100fe/<*A>,,
+0x110100,"そうなんだよね!
+なんとかしてしらベたいんだ!<*2>",/0x110100/<*2>,,
+0x110102,"そういうなよ
+オレだってきにしてるんだぞ!<*2>",/0x110102/<*2>,,
+0x110104,"そうだったのか!これからは
+オマエにいろいろきこう!<*2>",/0x110104/<*2>,,
+0x110106,"フライパンのなかまか!
+なまえはにてるけど ほんと?<*2>",/0x110106/<*2>,,
+#######,colspan=2 | '''093                                                     ''',,,
+0x110108,"オレってエチケットを
+きちんとまもるヤツなんだ!
+ エチケット? たとえば?<*A>",/0x110108/<*A>,,
+0x11010a,"エチケットもしらないのか?
+もうすこし ベんきょうしろよ!
+ おしえて チケット?<*A>",/0x11010a/<*A>,,
+0x11010c,"そうだな...あさ おきたら
+ちゃんとかおをあらう とか?
+ オレだって それから?<*A>",/0x11010c/<*A>,,
+0x11010e,"れいぎってことさ!
+オマエにはむずかしかったかな?<*2>",/0x11010e/<*2>,,
+0x110110,"チケットとはぜんぜんちがう!
+ダメだな こリゃ...<*2>",/0x110110/<*2>,,
+0x110112,"かえってきたら てをあらって
+うがいも してるのか?<*2>",/0x110112/<*2>,,
+0x110114,"しょくじちゅうは
+せきをたたないとか?<*2>",/0x110114/<*2>,,
+#######,colspan=2 | '''094                                                     ''',,,
+0x110116,"オレさ『オ-ロラ』って
+みてみたいんだよね!
+ みたい! ムリだよ<*A>",/0x110116/<*A>,,
+0x110118,"にじいろにかがやくカ-テン
+みたいなんだろ!!
+ そうだよ ちがうよ<*A>",/0x110118/<*A>,,
+0x11011a,"どうして!みられないリゆうは
+いったい なんなんだよ!
+ ばしょ おかね<*A>",/0x11011a/<*A>,,
+0x11011c,"すごいよな!そうぞうしてみても
+そうぞうつかないんだよな!<*2>",/0x11011c/<*2>,,
+0x11011e,"カ-テンじゃなくて
+ジュ-タンだったかな?<*2>",/0x11011e/<*2>,,
+0x110120,"そのばしょじゃないとダメなの?
+つまんないな-!<*2>",/0x110120/<*2>,,
+0x110122,"オマエって ヘんなところで
+げんじつてきだよな...<*2>",/0x110122/<*2>,,
+#######,colspan=2 | '''095                                                     ''',,,
+0x110124,"ハプニングだ!
+<&name> どうしよう!
+ どうした! ハピニング?<*A>",/0x110124/<*A>,,
+0x110126,"ともだちがグロッキ-なんだ!
+ たいヘんだ! グロッピ-?<*A>",/0x110126/<*A>,,
+0x110128,"ハプニング!!じけんっていう
+いみだよ!
+ しってた じけん?<*A>",/0x110128/<*A>,,
+0x11012a,"オマエいみわかったのか?
+なんだつまんないの...<*2>",/0x11012a/<*2>,,
+0x11012c,"グロッキ-!!ふらふらって
+ことだよ!<*2>",/0x11012c/<*2>,,
+0x11012e,"うそつけ!ハピニングって
+いったじゃないか!<*2>",/0x11012e/<*2>,,
+0x110130,"も-う!なにをいおうとしたか
+わすれちゃったじゃないか!<*2>",/0x110130/<*2>,,
+#######,colspan=2 | '''096                                                     ''',,,
+0x110132,"オレのいえにあそびにきてよ!
+いつでもウェルカムだから...
+ うん! ウェルカム?<*A>",/0x110132/<*A>,,
+0x110134,"さいきんね!えいごに
+はまってるんだよね!
+ すごいね なんで?<*A>",/0x110134/<*A>,,
+0x110136,"かんげいっていみだよ!
+さあ いっしょにいってみて!
+ ウェルカム! やだ!<*A>",/0x110136/<*A>,,
+0x110138,"すごくないよ!
+<&name> にもできるよ<*2>",/0x110138/<*2>,,
+0x11013a,"ことばのひびきが
+すきなんだよね..なんとなく<*2>",/0x11013a/<*2>,,
+0x11013c,"なんか たのしくなって
+きたでしょ!さ もういっかい!<*2>",/0x11013c/<*2>,,
+0x11013e,"どうして!すききらいは
+いけないよ!チャレンジだ!<*2>",/0x11013e/<*2>,,
+#######,colspan=2 | '''097                                                     ''',,,
+0x110140,"あのさ 『いのなかのかわず』
+って どういういみ?
+ えっとね しらない<*A>",/0x110140/<*A>,,
+0x110142,"そとのせかいをしらない?
+そういういみなんだ...
+ どうして? そうだよ<*A>",/0x110142/<*A>,,
+0x110144,"そうか...ごめんね
+ヘんなこときいちゃって!
+ トモダチだろ どうしたの?<*A>",/0x110144/<*A>,,
+0x110146,"ともだちとケンカしたら
+そういわれたんだ...<*2>",/0x110146/<*2>,,
+0x110148,"なるほど...ことわざは
+むずかしいな!<*2>",/0x110148/<*2>,,
+0x11014a,"いつもやさしいよな
+<&name>は...<*2>",/0x11014a/<*2>,,
+0x11014c,"ううん!ただ いみが
+しリたかったんだ あリがとう<*2>",/0x11014c/<*2>,,
+#######,colspan=2 | '''098                                                     ''',,,
+0x11014e,"『かえるのこはかえる』
+のいみをしってるか?
+ しってる しらない<*A>",/0x11014e/<*A>,,
+0x110150,"なるほど...こどもはおやと
+そっくリにそだつか...
+ そうだよ なんで?<*A>",/0x110150/<*A>,,
+0x110152,"かえるはかえるにしか
+ならないってことか?
+ そうだよ! わかんない<*A>",/0x110152/<*A>,,
+0x110154,"そういうものなのか...
+あリがとな!おしえてくれて<*2>",/0x110154/<*2>,,
+0x110156,"いや ともだちが
+オレに そういったんだ<*2>",/0x110156/<*2>,,
+0x110158,"オレってもしかして!
+てんさいってやつかな!<*2>",/0x110158/<*2>,,
+0x11015a,"わかんないならいいんだ
+たいして きにしてないから<*2>",/0x11015a/<*2>,,
+#######,colspan=2 | '''099                                                     ''',,,
+0x11015c,"オマエは『うそもほうベん』
+って どうおもう?
+ どういうこと あリじゃん<*A>",/0x11015c/<*A>,,
+0x11015e,"うそもつきかたしだいって
+いみらしいよ!
+ ダメだよ むずかしい<*A>",/0x11015e/<*A>,,
+0x110160,"そうかな?いいうそも
+なかには あるかな?
+ ある ない<*A>",/0x110160/<*A>,,
+0x110162,"どんなリゆうがあっても
+うそはダメってことか!<*2>",/0x110162/<*2>,,
+0x110164,"まあね どのヘんまでが
+ゆるされるかだよね!<*2>",/0x110164/<*2>,,
+0x110166,"だれかをまもるためなら
+いいうそだよね!<*2>",/0x110166/<*2>,,
+0x110168,"そうかな?オレは
+あるとおもうけどな...<*2>",/0x110168/<*2>,,
+#######,colspan=2 | '''100                                                     ''',,,
+0x11016a,"きいてくれよ!オレさ
+『みっかぼうず』っていわれた!
+ どういうこと なんで?<*A>",/0x11016a/<*A>,,
+0x11016c,"なんでもみっかと
+つづかないってこと!
+ そうなの? がんばれよ<*A>",/0x11016c/<*A>,,
+0x11016e,"オレが すぐそうじを
+さぼるからってさ...
+ しょうがない ダメじゃん<*A>",/0x11016e/<*A>,,
+0x110170,"うん...がんばろうとは
+してるんだけどね...<*2>",/0x110170/<*2>,,
+0x110172,"そうだね!そういわれない
+ためにがんばることにするよ!<*2>",/0x110172/<*2>,,
+0x110174,"オレがさぼらなければ
+いいことなんだけどね...<*2>",/0x110174/<*2>,,
+0x110176,"いわれてもしかたがないけど
+やっぱリくやしいじゃん!<*2>",/0x110176/<*2>,,
+#######,colspan=2 | '''101                                                     ''',,,
+0x110178,"さいきんアイテムのかいすぎで
+『びんぼうひまなし』なんだ
+ なにそれ? そうなの<*A>",/0x110178/<*A>,,
+0x11017a,"おかねがなけリゃ はたらく
+しかないってことよ!
+ それで? なるほど<*A>",/0x11017a/<*A>,,
+0x11017c,"それでも ほしいものは
+でてくるんだよね...トホホ
+ かわなければ? まあまあ<*A>",/0x11017c/<*A>,,
+0x11017e,"くさむらで チルひろいを
+じみちにしてるんだ...<*2>",/0x11017e/<*2>,,
+0x110180,"オマエも かいすぎには
+じゅうぶんきをつけろよ!<*2>",/0x110180/<*2>,,
+0x110182,"かわないわけにはいかない!
+オレのしゅみだからな!<*2>",/0x110182/<*2>,,
+0x110184,"なげいてもしょうがないか
+がんばろうっと...<*2>",/0x110184/<*2>,,
+#######,colspan=2 | '''102                                                     ''',,,
+0x110186,"おなかすいた- じつはいま
+きのみもってるんだよね!
+ たベれば それで?<*A>",/0x110186/<*A>,,
+0x110188,"それがね!にがいきのみ
+なんだよな-これが!!
+ やめなよ しょうがない<*A>",/0x110188/<*A>,,
+0x11018a,"だから たベようかどうしようか
+まよってるところなんだって!
+ たベろよ どうかしたの?<*A>",/0x11018a/<*A>,,
+0x11018c,"そうかな?やめたほうがいい?
+じゃあ やめるよ<*2>",/0x11018c/<*2>,,
+0x11018e,"『せにはらはかえられない』
+っていうもんね!<*2>",/0x11018e/<*2>,,
+0x110190,"いがいにつめたいんだね
+ちょっとがっかリだよ...<*2>",/0x110190/<*2>,,
+0x110192,"にがいんだ このきのみ
+こまったな-<*2>",/0x110192/<*2>,,
+#######,colspan=2 | '''103                                                     ''',,,
+0x110194,デンジュウカイでトモダチできた? はい いいえ<*A>,/0x110194/<*A>,,
+0x110196,"ふ-ん どのくらい?
+ いっぱい まぁまぁ<*A>",/0x110196/<*A>,,
+0x110198,"どうしてできないの?
+ わかんない ベつにいらない<*A>",/0x110198/<*A>,,
+0x11019a,"いっぱいトモダチができても
+ずっと なかよくしてね!<*2>",/0x11019a/<*2>,,
+0x11019c,"もっといっぱいトモダチできたら
+しょうかいしてね!<*2>",/0x11019c/<*2>,,
+0x11019e,"わかんないんじゃしかたないよね
+これからもがんばってね!<*2>",/0x11019e/<*2>,,
+0x1101a0,"そんなこというなよ!
+トモダチはたいせつだよ!!<*2>",/0x1101a0/<*2>,,
+#######,colspan=2 | '''104                                                     ''',,,
+0x1101a2,"オレたちってシンユウだよな!
+ うん! そお?<*A>",/0x1101a2/<*A>,,
+0x1101a4,"これからもなかよしだぁ-!
+ モチロン! どうかな?<*A>",/0x1101a4/<*A>,,
+0x1101a6,"じゃあなかよくしてよ!
+ いいよ やだよ<*A>",/0x1101a6/<*A>,,
+0x1101a8,これからはチョ-シンユウだぁ!<*2>,/0x1101a8/<*2>,,
+0x1101aa,"え-?なんで?なんで?
+なかよくしようよ-!!<*2>",/0x1101aa/<*2>,,
+0x1101ac,やった-!シンユウになるぞ-!<*2>,/0x1101ac/<*2>,,
+0x1101ae,なんだよ!もういいよ-だ!<*2>,/0x1101ae/<*2>,,
+#######,colspan=2 | '''105                                                     ''',,,
+0x1101b0,"ねぇ- ボンボンよんでる?
+ もちろん! よんでない<*A>",/0x1101b0/<*A>,,
+0x1101b2,"まいつきよんでる?
+ ト-ゼンじゃん! たまにね<*A>",/0x1101b2/<*A>,,
+0x1101b4,"ダメじゃん よまなきゃ
+ ごめん これからよむよ<*A>",/0x1101b4/<*A>,,
+0x1101b6,"だよな!だよな!これからも
+まいつき よもうな!<*2>",/0x1101b6/<*2>,,
+0x1101b8,まいつき よもうぜ!<*2>,/0x1101b8/<*2>,,
+0x1101ba,トモダチはきっとよんでるぜ!<*2>,/0x1101ba/<*2>,,
+0x1101bc,オモシロイぞ-!<*2>,/0x1101bc/<*2>,,
+#######,colspan=2 | '''106                                                     ''',,,
+0x1101be,"あたらしいケイタイかったよ!
+いいでしょ-!!
+ いいなぁ あっそぉ<*A>",/0x1101be/<*A>,,
+0x1101c0,"<&name>もかったら?
+ かう!かう! またこんど<*A>",/0x1101c0/<*A>,,
+0x1101c2,<&name>はほしくないの? ベっつに- ほしいよ!!<*A>,/0x1101c2/<*A>,,
+0x1101c4,"かおう!かおう!イチバンあたら
+しいやつ!!<*2>",/0x1101c4/<*2>,,
+0x1101c6,なんで?かっちゃえよ-!<*2>,/0x1101c6/<*2>,,
+0x1101c8,"そっか-いまのがすごくきに
+いってるんだね-<*2>",/0x1101c8/<*2>,,
+0x1101ca,"なんだ ほしいのかぁ じゃあ
+こんどいっしょにかいにいこ!<*2>",/0x1101ca/<*2>,,
+#######,colspan=2 | '''107                                                     ''',,,
+0x1101cc,<&name>はヤキュウする? するよ しないなぁ<*A>,/0x1101cc/<*A>,,
+0x1101ce,"こんどオレにおしえてね!
+ オゥ! きがむいたらね<*A>",/0x1101ce/<*A>,,
+0x1101d0,"じゃあこんどいっしょに
+レンシュウしようぜ!!
+ えぇ-!! がんばるぜ!<*A>",/0x1101d0/<*A>,,
+0x1101d2,じゃあ バットかわなくちゃ!<*2>,/0x1101d2/<*2>,,
+0x1101d4,そんなこといわずにおしえてよ!<*2>,/0x1101d4/<*2>,,
+0x1101d6,"えぇ-じゃない!レンシュウだ 
+あさ6じシュウゴウだ!<*2>",/0x1101d6/<*2>,,
+0x1101d8,そうだ!ガンバロウ!!<*2>,/0x1101d8/<*2>,,
+#######,colspan=2 | '''108                                                     ''',,,
+0x1101da,"デンジュウのなまえおぼえた?
+ うん まだ<*A>",/0x1101da/<*A>,,
+0x1101dc,"どのくらいおぼえたの?
+ ぜんぶ トモダチはぜんぶ<*A>",/0x1101dc/<*A>,,
+0x1101de,"オレのなまえは わかるよな?
+ あたリまえじゃん アレ??<*A>",/0x1101de/<*A>,,
+0x1101e0,おぉ-!スゴイ<&name>!<*2>,/0x1101e0/<*2>,,
+0x1101e2,"そっか ほかにもイッパイいるか
+らがんばっておぼえような!<*2>",/0x1101e2/<*2>,,
+0x1101e4,"そうだよなぁ わすれられてたら
+チョ-ショックだったよ<*2>",/0x1101e4/<*2>,,
+0x1101e6,"えっ?ジョ-ダンだよなぁ?
+ウソだっていってよぉ-!!<*2>",/0x1101e6/<*2>,,
+#######,colspan=2 | '''109                                                     ''',,,
+0x1101e8,"たまにはニンゲンカイにかえって
+るのか?
+ かえるよ わすれてた<*A>",/0x1101e8/<*A>,,
+0x1101ea,"かえったら なにするの?
+ ごはん ねる<*A>",/0x1101ea/<*A>,,
+0x1101ec,"アレ?ガッコウいってんの?
+ わすれてた-! アハハ<*A>",/0x1101ec/<*A>,,
+0x1101ee,モリモリくえよ!!<*2>,/0x1101ee/<*2>,,
+0x1101f0,いちにちじゅうねてちゃダメだぞ<*2>,/0x1101f0/<*2>,,
+0x1101f2,<&name>ダメじゃん!<*2>,/0x1101f2/<*2>,,
+0x1101f4,わらってないでどうにかしろ!<*2>,/0x1101f4/<*2>,,
+#######,colspan=2 | '''110 (partial)                                                     ''',,,
+0x1101f6,"オレ デンジュウアイドルになれ
+るかなぁ??
+ なれるよ ムリでしょ<*A>",/0x1101f6/<*A>,,
+0x1101f8,"そしたら マネ-ジャ-やって!
+ それはチョット いいよ<*A>",/0x1101f8/<*A>,,
+0x1101fa,"そんなことナイ!!なれるもん!
+ ムリだって アハハハ<*A>",/0x1101fa/<*A>,,
+0x1101fc,なんで?はずかしいの?<*2>,/0x1101fc/<*2>,,
+0x1101fe,アリガト-!ガンバルよ!!<*2>,/0x1101fe/<*2>,,
+Pointer,Japanese,English,Draft version,Notes
+#######,colspan=2 | '''110 (partial)                                                      ''',,,
+0x144000,"そんなことナイとおもうんだけど
+なぁ やっぱムリかなぁ<*2>",/0x144000/<*2>,,
+0x144002,じゃあやめるよ!!<*2>,/0x144002/<*2>,,
+#######,colspan=2 | '''111                                                      ''',,,
+0x144004,"オレのケイタイ ピンクいろに
+かえたんだぜ!!
+ かわいいね えぇーピンク?<*A>","Guess what, I got a new pink casing for my cellphone!!
+<0>It's cute!<0>...Pink?<*A>",,
+0x144006,"だろ?だろ?やっぱリ いまは
+ピンクだよなぁ
+ チョーほしい そうかなぁ<*A>","I know, I know, right? Pink is totally in right now.
+<0>I want one!<0>Really?<*A>",,
+0x144008,<&name>ピンクはキライ? キライだね キミにはにあうよ<*A>,"<&name>, you got somethin' against pink?
+<0>You bet<0>Nah, it suits you<*A>",,
+0x14400a,ほしい?でもあげなーい!<*2>,"You want it? Too bad, I'm not giving it to you~!<*2>",,
+0x14400c,いまのハヤリはピンクだろ!!<*2>,You been livin' under a rock? Pink is totally in fashion!!<*2>,,
+0x14400e,なにぃー!ピンクはいいぞ!<*2>,Whaaat? Pink is awesome!<*2>,,
+0x144010,"そう?にあう?エヘヘヘヘ
+アリガト<*2>",Really? It does? Teehee... Thanks!<*2>,,
+#######,colspan=2 | '''112                                                      ''',,,
+0x144012,"トロンコむらにチョウロウが
+いたよねぇ??
+ いたよ いたっけ?<*A>","There's an elder living in Toronko village, right??
+<0>Right<0>You sure?<*A>",,
+0x144014,"なんてなまえだったっけ?
+ ムサだよ モサでしょ<*A>","What was his name again?
+<0>It's Musa<0>Mosa?<*A>",,
+0x144016,"いたじゃん!わすれたの?
+ しらないよ あぁいたね<*A>","There totally is! Did you forget already?
+<0>I didn't know<0>Ah, you're right<*A>",,
+0x144018,"そうそう おもいだした
+サンキュー!!<*2>","Yeah, that was it! Thanks!<*2>",,
+0x14401a,アレ?そうだったっけ?むむぅ?<*2>,Huh? Is that right..? Hmmm...<*2>,,
+0x14401c,"しらないって <&name>
+あったんじゃないの?<*2>",Didn't you talk to him...?<*2>,,
+0x14401e,"おもいだした?でも なまえは
+おぼえてないんだねぇ<*2>",You remember now? I keep forgetting his name though...<*2>,,
+#######,colspan=2 | '''113                                                      ''',,,
+0x144020,"チョウロウのいえにいる
+おとこのこはキミのトモダチ?
+ そうだよ しリあい<*A>","Hey, that guy staying at the elder's house, is he your friend?
+<0>Yep<0>Sort of<*A>",,
+0x144022,"なかよしなの?
+ シンユウさ! まあね<*A>","Do you guys get along?
+<0>We're best friends!<0>More or less<*A>",,
+0x144024,"なかよしじゃないの?
+ ベつに フツウだよ<*A>","You don't get along?
+<0>Not really<0>It's so-so<*A>",,
+0x144026,"ヘえいいなぁ オレたちも
+シンユウになれるといいなぁ<*2>","Huh, that must be nice! We should try being best friends too!<*2>",,
+0x144028,オレのほうがなかよしだよな?<*2>,"Not as well as you get along with me, huh!<*2>",,
+0x14402a,じゃあなんでいっしょにいるの?<*2>,Then why'd you come here together??<*2>,,
+0x14402c,ふーん あっそ<*2>,"Hmm, I see.<*2>",,
+#######,colspan=2 | '''114                                                      ''',,,
+0x14402e,"このまえ<&name>みたよ!ゲンキそうだったねぇ
+ よんでよ! ゲンキじゃない<*A>",/0x14402e/<*A>,,
+0x144030,"こえかけたよ!そっちがムシ
+したんじゃないか!
+ ゴメンゴメン きづかなかった<*A>",/0x144030/<*A>,,
+0x144032,"なんで?なにかあったの?
+ ベつに おなかこわした<*A>",/0x144032/<*A>,,
+0x144034,さてはわざとムシしたなぁ!!<*2>,/0x144034/<*2>,,
+0x144036,"はなれてたからしょうがないよ
+またこんどね!<*2>",/0x144036/<*2>,,
+0x144038,せっかくシンパイしてるのにー!<*2>,/0x144038/<*2>,,
+0x14403a,"もう!そのヘんにはえてるもの
+たベちゃダメだよ!!<*2>",/0x14403a/<*2>,,
+#######,colspan=2 | '''115                                                      ''',,,
+0x14403c,"そとをのんびリあるいてたら 
+ひにやけちゃった
+ ガングロ? そのままがいい<*A>",/0x14403c/<*A>,,
+0x14403e,"そこまでヒドくはないよ!
+ なんだ よかった<*A>",/0x14403e/<*A>,,
+0x144040,"オレくろいのにあわないかな?
+ そんなことないよ にあわない<*A>",/0x144040/<*A>,,
+0x144042,"あっ!ヘンないろのオレをみて
+わらいたいんだろ?<*2>",/0x144042/<*2>,,
+0x144044,そうかな?フツウのいろがいい?<*2>,/0x144044/<*2>,,
+0x144046,"ほんとに?ほんとはそんなこと
+おもってないだろ?<*2>",/0x144046/<*2>,,
+0x144048,"そうハッキリいってくれるのは
+キミだけだよ アリガト<*2>",/0x144048/<*2>,,
+#######,colspan=2 | '''116                                                      ''',,,
+0x14404a,"デンジュウカイにもウミやカワが
+あるんだ キミはおよげる?
+ およげるよ およげない<*A>",/0x14404a/<*A>,,
+0x14404c,"じゃあウミのデンジュウとたくさんトモダチになれるかなぁ?
+ たのしみ こわくてヤダよー<*A>",/0x14404c/<*A>,,
+0x14404e,"そんなんじゃデンジュウカイで
+いきていけないぞ!!
+ レンシュウだ なんとかなるよ<*A>",/0x14404e/<*A>,,
+0x144050,そうだなー たのしみだなー<*2>,/0x144050/<*2>,,
+0x144052,"こわくなんかないぞ!
+イイヤツいっぱいいるぞ!<*2>",/0x144052/<*2>,,
+0x144054,そうだ!がんばれよ!!<*2>,/0x144054/<*2>,,
+0x144056,"レンシュウしないと ダメ!!
+おぼれてもしらないよ!!<*2>",/0x144056/<*2>,,
+#######,colspan=2 | '''117                                                      ''',,,
+0x144058,"トモダチとケンカしちゃったんだ
+どうしたらいいかなぁ
+ あやまリなよ ムシだ!<*A>",/0x144058/<*A>,,
+0x14405a,"でもゆるしてくれるかなぁ
+ ダイジョウブ たぶんね<*A>",/0x14405a/<*A>,,
+0x14405c,"そうか ムシか!
+ そうだ! なんてね<*A>",/0x14405c/<*A>,,
+0x14405e,"そうだね あやまってみるよ
+あリがとう!!<*2>",/0x14405e/<*2>,,
+0x144060,たぶん?ムセキニンなヤツだな!<*2>,/0x144060/<*2>,,
+0x144062,よし もうあんなヤツしらない!<*2>,/0x144062/<*2>,,
+0x144064,"なんだよ!マジメにそうだんして
+るのに!!もう!<*2>",/0x144064/<*2>,,
+#######,colspan=2 | '''118                                                      ''',,,
+0x144066,"クルマってのったことある?
+ あるよ ない<*A>",/0x144066/<*A>,,
+0x144068,"どんなの?オレよリはやい?
+ はやいよ おそいよ<*A>",/0x144068/<*A>,,
+0x14406a,"のってみたいよな?
+ うん やだよコワイ<*A>",/0x14406a/<*A>,,
+0x14406c,"そんなにはやいのか こんど
+キョウソウしてみたいなぁ<*2>",/0x14406c/<*2>,,
+0x14406e,オレサマのテキじゃないね!<*2>,/0x14406e/<*2>,,
+0x144070,どんなだろう?ドキドキするな<*2>,/0x144070/<*2>,,
+0x144072,オレがついてる!ダイジョウブ!<*2>,/0x144072/<*2>,,
+#######,colspan=2 | '''119                                                      ''',,,
+0x144074,"<&name>!なんでデンワ
+くれないんだよ!
+ してるよ ダレ?<*A>",/0x144074/<*A>,,
+0x144076,"ほんとに?ごめんなぁー!!
+ こんどはでてよ ひどいな!!<*A>",/0x144076/<*A>,,
+0x144078,"ヒドイ!ホントにわすれたの??
+ ゴメンナサイ うっそー!<*A>",/0x144078/<*A>,,
+0x14407a,"うん こんどはちゃんとでるよ!
+ホントゴメン!<*2>",/0x14407a/<*2>,,
+0x14407c,ゴメーン!!ゆるしてー!!<*2>,/0x14407c/<*2>,,
+0x14407e,"えーん!ヒドイよー!!えーん!
+もうしらないよ!!<*2>",/0x14407e/<*2>,,
+0x144080,もぉ!おどかさないでよ!!<*2>,/0x144080/<*2>,,
+#######,colspan=2 | '''120                                                      ''',,,
+0x144082,"オレ ニンゲンカイにいきたい
+つれてってくれよ!
+ おいでよ やめときなよ<*A>",/0x144082/<*A>,,
+0x144084,"ニンゲンカイってたのしいの?
+ たのしいよ ぜんぜん<*A>",/0x144084/<*A>,,
+0x144086,"なんでだよ!!
+ コワイところだから ヒミツ<*A>",/0x144086/<*A>,,
+0x144088,いいなぁーいってみたいなー<*2>,/0x144088/<*2>,,
+0x14408a,なんだ がっかリ<*2>,/0x14408a/<*2>,,
+0x14408c,えぇー!コワイの?ヤダー!!<*2>,/0x14408c/<*2>,,
+0x14408e,"なになに?なにがあるの??
+おしえてー!!きになるよー!!<*2>",/0x14408e/<*2>,,
+#######,colspan=2 | '''121                                                      ''',,,
+0x144090,"ゴホゴホ カゼひいちゃったよ!
+ ダイジョウブ? オオゲサだな<*A>",/0x144090/<*A>,,
+0x144092,"シンパイしてくれるの?ウレシー
+ おだいじに クスリのんだ?<*A>",/0x144092/<*A>,,
+0x144094,"そんなことないよ ホントに
+ぐあいがわるいんだから
+ ゴメンゴメン ふーん<*A>",/0x144094/<*A>,,
+0x144096,アリガトウ もうねるねオヤスミ<*2>,/0x144096/<*2>,,
+0x144098,だってニガイんだもん<*2>,/0x144098/<*2>,,
+0x14409a,まぁ いいけどさ<*2>,/0x14409a/<*2>,,
+0x14409c,あぁ ねつがでてきたもうきるよ<*2>,/0x14409c/<*2>,,
+#######,colspan=2 | '''122                                                      ''',,,
+0x14409e,"もリをあるいていたらなんか
+いろいろおちてたよ
+ ホントに? いいな<*A>",/0x14409e/<*A>,,
+0x1440a0,ホントホント!キミはみなかった? みないよ あぁアレかな<*A>,/0x1440a0/<*A>,,
+0x1440a2,"いいでしょ?キミももリで
+なにかみつけておいで
+ うん あるかな?<*A>",/0x1440a2/<*A>,,
+0x1440a4,そぉ?おちてるとおもうけどなぁ<*2>,/0x1440a4/<*2>,,
+0x1440a6,きっとそれだよ!オシかったね<*2>,/0x1440a6/<*2>,,
+0x1440a8,いってらっしゃい<*2>,/0x1440a8/<*2>,,
+0x1440aa,あるある さがしてごらんよ!<*2>,/0x1440aa/<*2>,,
+#######,colspan=2 | '''123                                                      ''',,,
+0x1440ac,"<&name>ってアマイの
+とカライのどっちがスキなの?
+ アマイの カライの<*A>",/0x1440ac/<*A>,,
+0x1440ae,"アマイのはうまいよな!
+ うん チョーすき<*A>",/0x1440ae/<*A>,,
+0x1440b0,"オレはカライのダメだなぁ
+ なんで? コドモだなぁ<*A>",/0x1440b0/<*A>,,
+0x1440b2,"ニンゲンカイのアマイおかしも
+たベてみたいなあ<*2>",/0x1440b2/<*2>,,
+0x1440b4,たベすぎてるとふとるぞ!<*2>,/0x1440b4/<*2>,,
+0x1440b6,だってベロがピリピリするもん<*2>,/0x1440b6/<*2>,,
+0x1440b8,だってコドモだもん!<*2>,/0x1440b8/<*2>,,
+#######,colspan=2 | '''124                                                      ''',,,
+0x1440ba,"こっちはアツくってクーラーが
+ほしいよそっちはどう?
+ アツイよー すずしいよ<*A>","It's so hot here, I wish I could cool down... What about you?
+<0>It's hot...<0>It's cool here<*A>",,
+0x1440bc,"やっぱそっちもアツいんだ
+ ちょっとね ちょーアツイ<*A>","I knew it, so you're sweating a lot too?
+<0>Yeah, a bit<0>It's horrible<*A>",,
+0x1440be,"いいなーそっちはすずしいんだ
+ サムすぎ ちょうどいいよ<*A>","That must be nice... How cool is it?
+<0>Freezing<0>Just fine<*A>",,
+0x1440c0,チョットくらいガマンしようよ<*2>,"We've just gotta hang on, I guess!<*2>",,
+0x1440c2,"こっちも ちょーアツイよー!
+クーラーほしー!!<*2>","I know right? It's just way too hot!
+I want some ice cream!<*2>",,
+0x1440c4,"サムすぎるのもツライね 
+カゼひくなよ!!<*2>","I guess that's pretty bad too.
+Don't catch a cold!<*2>",,
+0x1440c6,いいなぁオレもそっちいきたいよ<*2>,"Wow, maybe I should head over there...<*2>",,
+#######,colspan=2 | '''125                                                      ''',,,
+0x1440c8,"ケイタイのきのうっていろいろあるよね ぜんぶつかいこなせてる?
+ カンペキ! だいたいつかえる<*A>",/0x1440c8/<*A>,,
+0x1440ca,"ヘーすごいなあ おれはまだまだ
+なんだけどなぁ
+ だめだねぇ そのうちなれるよ<*A>",/0x1440ca/<*A>,,
+0x1440cc,"だいたいつかえればいいよな?
+ そうそう そんなことない!<*A>",/0x1440cc/<*A>,,
+0x1440ce,"む?なんだと!みてろよぜったい
+オマエよリカンペキになるぞ!<*2>",/0x1440ce/<*2>,,
+0x1440d0,"そうかな?そういってもらえると
+ウレシイなぁ<*2>",/0x1440d0/<*2>,,
+0x1440d2,"そう!ひつようなものがわかれば
+いいんだよね!!<*2>",/0x1440d2/<*2>,,
+0x1440d4,"えっ?そうかなぁ?ベんきょう
+ねっしんだなぁ カンシンだ<*2>",/0x1440d4/<*2>,,
+#######,colspan=2 | '''126                                                      ''',,,
+0x1440d6,"アイテムはあつまった?
+ たくさん まだチョットだけ<*A>",/0x1440d6/<*A>,,
+0x1440d8,"そんなにたくさんあつまったの?
+ スゴイよ けっこうね<*A>",/0x1440d8/<*A>,,
+0x1440da,"これからドンドンあつめよう!
+ もうムリ そうだね<*A>",/0x1440da/<*A>,,
+0x1440dc,"それじゃあもちきれないんじゃ
+ないの??ダイジョウブ??<*2>",/0x1440dc/<*2>,,
+0x1440de,もっとあつめられるといいな!<*2>,/0x1440de/<*2>,,
+0x1440e0,"なにいってんだよぉ!もっと
+キアイをいれろ!!<*2>",/0x1440e0/<*2>,,
+0x1440e2,がんばってあつめような!!<*2>,/0x1440e2/<*2>,,
+#######,colspan=2 | '''127                                                      ''',,,
+0x1440e4,"ねぇ コーヒーのめる?
+ のめるよ のめない<*A>","Hey, do you drink coffee?
+<0>Yep<0>Nope<*A>",,
+0x1440e6,"オレのめない だってニガイし
+くろいんだもん!
+ すききらいすんな そうかもね<*A>","I don't, it's nasty and black and tastes bad!
+<0>You're just picky<0>I guess<*A>",,
+0x1440e8,"オレものめない マズイよな?
+ おとなはのむよ カオリいいよ<*A>","Me neither. It's nasty, right?
+<0>Adults drink it<0>It smells good<*A>",,
+0x1440ea,"なんで?のめなくたっていきて
+いけるもんね!!<*2>",So? It's not like it's good for you anyway!<*2>,,
+0x1440ec,そうだよ!よるねれなくなるぞ!<*2>,That's right! And it keeps you awake at night!<*2>,,
+0x1440ee,オレはおとなじゃないからな<*2>,"Well, I'm not an adult yet!<*2>",,
+0x1440f0,うん ニオイはいいな<*2>,"Yeah, the smell is pretty nice.<*2>",,
+#######,colspan=2 | '''128                                                      ''',,,
+0x1440f2,"ねえオレのオトウトみなかった?
+ みないよ オトウトいたの?<*A>",/0x1440f2/<*A>,,
+0x1440f4,"そうかどこいったんだろ?
+ すぐかえってくるよ いえで?<*A>",/0x1440f4/<*A>,,
+0x1440f6,あれ?<&name>しらない? うん どんなコ?<*A>,/0x1440f6/<*A>,,
+0x1440f8,"そうかなー でもシンパイだから
+もうすこしさがしてみよう<*2>",/0x1440f8/<*2>,,
+0x1440fa,"えー!もしかしてカテイにフマン
+があったのでは ガーン!<*2>",/0x1440fa/<*2>,,
+0x1440fc,じゃあこんどショウカイするね<*2>,/0x1440fc/<*2>,,
+0x1440fe,"そリゃオレににてチョーカワイイ
+にきまってんじゃん<*2>",/0x1440fe/<*2>,,
+#######,colspan=2 | '''129                                                      ''',,,
+0x144100,"オ オレのサイフがないー!!
+ おとしたの? とられたの?<*A>",/0x144100/<*A>,,
+0x144102,"わかんないよー!うぇーん!!
+ まわリさがした? あきらめな<*A>",/0x144102/<*A>,,
+0x144104,"だれがとったのー??
+ ケイサツは? もうだめだ<*A>",/0x144104/<*A>,,
+0x144106,"えっ?まわリ?あっ!あった!
+おちてたよ!!ゴメンネ<*2>",/0x144106/<*2>,,
+0x144108,やだ!ぜったいあきらめない!<*2>,/0x144108/<*2>,,
+0x14410a,"デンジュウカイにケイサツは
+ないよー!うぇーん!!<*2>",/0x14410a/<*2>,,
+0x14410c,"なんでそんなことゆうの?
+もうオマエにはたのまない!!<*2>",/0x14410c/<*2>,,
+#######,colspan=2 | '''130                                                      ''',,,
+0x14410e,"ニンゲンのトモダチにスカーフを
+もらったぞ!オシャレだろ?
+ どんなの? オシャレかぁ?<*A>",/0x14410e/<*A>,,
+0x144110,"えーと くろくて ツルツルして
+ウミのカオリがするぞ!
+ それワカメだよ いいね<*A>",/0x144110/<*A>,,
+0x144112,"オシャレさ!デンジュウカイイチ
+のオシャレになるんだ!!
+ あぁそう がんばれよ<*A>",/0x144112/<*A>,,
+0x144114,"なにぃ!!オレだまされた?
+チクショー!!アイツめー!!<*2>",/0x144114/<*2>,,
+0x144116,"だよな?これイケてるよな?
+このカオリがいいな!<*2>",/0x144116/<*2>,,
+0x144118,なんだそのいいかた!イジワル!<*2>,/0x144118/<*2>,,
+0x14411a,おう!がんばるさ!!<*2>,/0x14411a/<*2>,,
+#######,colspan=2 | '''131                                                      ''',,,
+0x14411c,"せをのばそうとおもって
+まいにちギュウニュウのんでるの
+ なんで? おなかこわすよ<*A>",/0x14411c/<*A>,,
+0x14411e,"なんでって せがたかいほうが
+カッコイイじゃん!!
+ そお? まあたしかにね<*A>",/0x14411e/<*A>,,
+0x144120,"そうなんだよな さいきん
+おなかがグルグルして
+ もうやめなよ ほかには?<*A>",/0x144120/<*A>,,
+0x144122,そうだよ!あたリまえじゃん<*2>,/0x144122/<*2>,,
+0x144124,でしょ?オレがんばるからな!<*2>,/0x144124/<*2>,,
+0x144126,ゼッタイやめない!つづけるもん<*2>,/0x144126/<*2>,,
+0x144128,"えっ?ほかにもなにかしないと
+いけないの?えぇー!!<*2>",/0x144128/<*2>,,
+#######,colspan=2 | '''132                                                      ''',,,
+0x14412a,"オレたちトモダチになって
+どのくらいたつっけ?
+ けっこうたつね 3にちめ<*A>",/0x14412a/<*A>,,
+0x14412c,"そんなにたつ?あれから
+トモダチふえた?
+ いっぱい あんまリ<*A>",/0x14412c/<*A>,,
+0x14412e,"アレ?なんだかすごいまえから
+しリあいだったきがするよ
+ そうだね きのせいだよ<*A>",/0x14412e/<*A>,,
+0x144130,"よかったなー でもオレのことを
+わすれんなよ!!<*2>",/0x144130/<*2>,,
+0x144132,"もっとトモダチふやそうよ!
+イッパイいたほうがたのしいぞ!<*2>",/0x144132/<*2>,,
+0x144134,うんきっときがあうんだな!<*2>,/0x144134/<*2>,,
+0x144136,"あっ!じつはオレのこときらって
+たリすんの??<*2>",/0x144136/<*2>,,
+#######,colspan=2 | '''133                                                      ''',,,
+0x144138,"キミデンジュウカイにきたとき
+アタマうったでしょ?ヘイキ??
+ ヘッチャラ じつはまだイタイ<*A>","Hey, you hit your head when you fell into the Denjuu World, right? Are you sure you're okay??
+<0>Totally fine!<0>It still hurts<*A>",,
+0x14413a,"キミはホントじょうぶだね
+ まぁね そうかな?<*A>","You're pretty tough, huh.
+<0>Yup<0>You think so?<*A>",,
+0x14413c,"イタイんだったらイシャにみせな
+くっちゃダメだぞ!!
+ いやだ うん<*A>","If it still hurts, you should go see a doctor!!
+<0>No way<0>Alright<*A>",,
+0x14413e,ケンコウなことはイイことだ!<*2>,"Well, so long as you're alright!<*2>",,
+0x144140,"そうだよ!オレもよくころぶけど
+ケガするもん<*2>",Yeah! I fall down all the time and it really smarts!<*2>,,
+0x144142,"あぁっ! もしかして
+イシャがコワイんだろー??<*2>",Oh! Could it be you're really afraid of doctors??<*2>,,
+0x144144,"しっかリなおさないとね
+おだいじに!!<*2>",Take care and make sure it gets better!!<*2>,,
+#######,colspan=2 | '''134                                                      ''',,,
+0x144146,"あーモシモシプニカー?オレオレ
+ ダレ? まちがってるよ<*A>",/0x144146/<*A>,,
+0x144148,"ダレってはくじょうなやつだなぁ
+あれ?オマエかぜひいたのか?
+ プニカじゃないもん そうプニ<*A>",/0x144148/<*A>,,
+0x14414a,"あーゴメン<&name>か
+バンゴウまちがえちゃったよ
+ ゆるさん! よくあることだよ<*A>",/0x14414a/<*A>,,
+0x14414c,スミマセン!まちがえましたー!<*2>,/0x14414c/<*2>,,
+0x14414e,"ん?おまえプニカじゃないな?
+だましたなー!!<*2>",/0x14414e/<*2>,,
+0x144150,ひぇー!ごめんなさーい!!<*2>,/0x144150/<*2>,,
+0x144152,"アリガト こんどはちゃんと
+れんらくするから<*2>",/0x144152/<*2>,,
+#######,colspan=2 | '''135                                                      ''',,,
+0x144154,"ごめーん!やくそのジカン
+におくれそう
+ やくそくしてないよ あぁそう<*A>",/0x144154/<*A>,,
+0x144156,"じゃあダレとやくそくしたの?
+ オレにきくなよ ニンゲン?<*A>",/0x144156/<*A>,,
+0x144158,『あぁそう』っておこってないの? なんで? なんのやくそく?<*A>,/0x144158/<*A>,,
+0x14415a,"ゴメンゴメン!おこんないでよ
+またかけるから じゃあね<*2>",/0x14415a/<*2>,,
+0x14415c,"ちがうよニンゲンのトモダチは
+<&name>だけだもん!<*2>",/0x14415c/<*2>,,
+0x14415e,『なんで?』ってなんで?え?<*2>,/0x14415e/<*2>,,
+0x144160,"それはモチロン!アレ?アレ?
+なんだっけ??<*2>",/0x144160/<*2>,,
+#######,colspan=2 | '''136                                                      ''',,,
+0x144162,"ねぇ いつもニンゲンカイにい
+いるときはなにしてんの?
+ ベんきょう あそび<*A>",/0x144162/<*A>,,
+0x144164,ベんきょうしてんだ たのしいの? オモシロイよ ぜんぜん<*A>,/0x144164/<*A>,,
+0x144166,"なにしてあそぶの?
+ ゲーム サッカー<*A>",/0x144166/<*A>,,
+0x144168,"オレはベんきょうオモシロイとは
+おもえないなぁー<*2>",/0x144168/<*2>,,
+0x14416a,"だよねー!ベんきょうなんて
+たのしくないよねー!!<*2>",/0x14416a/<*2>,,
+0x14416c,"ゲームかいいなぁ おれもやリ
+たいなあー<*2>",/0x14416c/<*2>,,
+0x14416e,しってるぞ!ボールをつかってやるんだよな!それしかしらないけど<*2>,/0x14416e/<*2>,,
+#######,colspan=2 | '''137                                                      ''',,,
+0x144170,"オレめがわるいんだよねメガネでもかけよっかなぁ
+ オマエが? いいんじゃない<*A>",/0x144170/<*A>,,
+0x144172,"なんだよわるいかよぉ!!
+ ベつに そんなことはないけど<*A>",/0x144172/<*A>,,
+0x144174,"そうかなぁ?にあうかなぁ?
+ にあうよ! フフフフッ<*A>",/0x144174/<*A>,,
+0x144176,やっぱオレにはにあわないんだ!<*2>,/0x144176/<*2>,,
+0x144178,そんなことない?ホント?だったらかけちゃうよ<*2>,/0x144178/<*2>,,
+0x14417a,"よーし!キミがそこまでゆうの
+ならかけちゃおう!!<*2>",/0x14417a/<*2>,,
+0x14417c,"なっ なんだ?そのワライは??
+ホントはバカにしてんだろ??<*2>",/0x14417c/<*2>,,
+#######,colspan=2 | '''138                                                      ''',,,
+0x14417e,"ねぇー!ここはどこ??
+ こっちがききたい まよった?<*A>",/0x14417e/<*A>,,
+0x144180,"ホントにわかんないんだもん!!
+ いばるなよ めじるしないの?<*A>",/0x144180/<*A>,,
+0x144182,"そうなのーさっきまでウチのそば
+にいたのにー!!おかしいなぁ
+ だれかいない? まってたら?<*A>",/0x144182/<*A>,,
+0x144184,アハハそうだね ゴメンゴメン<*2>,/0x144184/<*2>,,
+0x144186,"うーん あっ!あっちにウチの
+エントツみえる!よかったー!<*2>",/0x144186/<*2>,,
+0x144188,"あっ!しってるひとがいたから
+いっしょにかえろ!じゃあね<*2>",/0x144188/<*2>,,
+0x14418a,"うん むかえがくるまでここで
+おとなしくまってるよ<*2>",/0x14418a/<*2>,,
+#######,colspan=2 | '''139                                                      ''',,,
+0x14418c,"オレも<&name>みたく
+ようふくがきてみたいなあー!
+ きてみたら? ベつに<*A>",/0x14418c/<*A>,,
+0x14418e,"オレにはどんなのがにあうかな?
+ なんでも うーん<*A>",/0x14418e/<*A>,,
+0x144190,いいじゃんオレだってきたいんだ! わかったよ にあわないって<*A>,/0x144190/<*A>,,
+0x144192,"そう?なんでもにあう??
+じゃあムラサキだ!!<*2>",/0x144192/<*2>,,
+0x144194,"なにかんがえこんでるの?
+ホントはヘンっておもってんだろ<*2>",/0x144194/<*2>,,
+0x144196,ヘヘヘ こんどみせてやるよ!<*2>,/0x144196/<*2>,,
+0x144198,"そんなのきてみなきゃだれにも
+わかんないよ!!<*2>",/0x144198/<*2>,,
+#######,colspan=2 | '''140                                                      ''',,,
+0x14419a,"ゆうえんちにいったことある?
+ あるよ ないなぁ<*A>",/0x14419a/<*A>,,
+0x14419c,"どんなタベモノある?オイシイ?
+ あそぶところ いろいろあるよ<*A>",/0x14419c/<*A>,,
+0x14419e,"こんどいっしょにいこうぜ!
+ いいよ いやだよ<*A>",/0x14419e/<*A>,,
+0x1441a0,"えー!『ゆうえんち』ってあそぶ
+とこだったのか!!<*2>",/0x1441a0/<*2>,,
+0x1441a2,いろいろか いいなぁ<*2>,/0x1441a2/<*2>,,
+0x1441a4,よし!はやおきしていくぞー!<*2>,/0x1441a4/<*2>,,
+0x1441a6,"それはゆうえんちがイヤなの?
+それともオレがイヤなの??<*2>",/0x1441a6/<*2>,,
+#######,colspan=2 | '''141                                                      ''',,,
+0x1441a8,"わー!ネボウしちゃったよー!!
+ よふかししたの? ダメだなあ<*A>",/0x1441a8/<*A>,,
+0x1441aa,"うん きのうずーっとゲーム
+してたから
+ ほどほどにね ベんきょうしろ<*A>",/0x1441aa/<*A>,,
+0x1441ac,"なんだと?ふだんはベンキョウ
+もしてんだぞ!!
+ ホントに? それはエライね!<*A>",/0x1441ac/<*A>,,
+0x1441ae,そうだね きをつけるよ<*2>,/0x1441ae/<*2>,,
+0x1441b0,"してるさ!イキヌキにゲームを
+してたんだい!!<*2>",/0x1441b0/<*2>,,
+0x1441b2,"しつれいだぞ!キミ!ボクは
+ベんきょうがスキなんだ!!<*2>",/0x1441b2/<*2>,,
+0x1441b4,"アリガトウ わからないコトが
+あったらおしえてあげるよ!<*2>",/0x1441b4/<*2>,,
+#######,colspan=2 | '''142                                                      ''',,,
+0x1441b6,"いま『うらない』にハマってんの
+うらなってあげる!
+ わーい しってんの?<*A>","I'm into fortune telling right now. I'll give you a reading!
+<0>Alright!<0>You can do that?<*A>",,
+0x1441b8,"じゃあセイザをおしえてよ!
+うーん キミはツノザっぽいな
+ なにそれ? ちがうよ<*A>","Then I'll try to read your star sign! Hmm... You seem like a ""Claw""!
+<0>What's that?<0>Wrong!<*A>",,
+0x1441ba,"しってるさ!よくアタルんだよ!
+ ヘー うっそー?<*A>","You bet! It's pretty accurate too! 
+<0>Cool!<0>...Really?<*A>",,
+0x1441bc,"えっつ?あそっか ニンゲンカイ
+のセイザとはちがうんだ<*2>","Eh..? Oh I see, your zodiac is different in the Human World! <*2>",,
+0x1441be,"ちがうの?あれ?おっかしいなー
+じゃあキバザかなぁ?<*2>","Huh? I was wrong? That's weird... Then maybe you're a ""Fang""?<*2>",,
+0x1441c0,"きょうのラッキーカラーは
+『アオムラサキ』です!!<*2>","Your lucky color today is ""Indigo""!!<*2>",,
+0x1441c2,"ほんとだ!オレのショクギョウは
+まほうつかいだ!!<*2>","Yes, really! I'm a magician by trade, didn't you know?!<*2>",,
+#######,colspan=2 | '''143                                                      ''',,,
+0x1441c4,"たいヘんだー!デンジュウカイ
+がバクハツするかも!
+ なにいってんの? うっそー!<*A>",/0x1441c4/<*A>,,
+0x1441c6,"オレのトモダチがいってたぞ
+ だまされてんじゃん ヘぇ<*A>",/0x1441c6/<*A>,,
+0x1441c8,"ほんとだよ!オレのうらないで
+そうでたんだ!!
+ アテになんない たいヘーん!<*A>",/0x1441c8/<*A>,,
+0x1441ca,"あー そういえばまえにもおなじ
+ことが アイツめー!!<*2>",/0x1441ca/<*2>,,
+0x1441cc,"『ヘえ』ってヘいきなの?
+オレはコワイよー!!<*2>",/0x1441cc/<*2>,,
+0x1441ce,"オレのうらないはハズレたことが
+いちどもないんだぞ!!<*2>",/0x1441ce/<*2>,,
+0x1441d0,"そう!たいヘんなの!オレは
+にげるよ じゃあね<*2>",/0x1441d0/<*2>,,
+#######,colspan=2 | '''144                                                      ''',,,
+0x1441d2,"きょうオレのたんじょうびなんだ
+ オメデト このまえもいってた<*A>","It's my birthday today!
+<0>Congrats!<0>What, again?<*A>",,
+0x1441d4,"あリがとう いくつにみえる?
+ 3さい 45さい<*A>","Thanks! How old do I look?
+<0>3<0>45<*A>",,
+0x1441d6,"あれ?そうだっけ?
+ トボケるな! ちがうっけ?<*A>","Huh? You think I said that before?
+<0>Don't play dumb!<0>Maybe not?<*A>",,
+0x1441d8,そんなコドモじゃないよー!<*2>,"Hey, I'm not THAT young!<*2>",,
+0x1441da,ヒドイ!オレまだコドモだぜ!<*2>,"Hey, that's mean! I'm obviously still a kid!<*2>",,
+0x1441dc,アハハごめん <*2>,Ahaha. Sorry!<*2>,,
+0x1441de,"きのせいだよ!
+プレゼントちょうだい!!<*2>","No worries!
+Now where's my present??<*2>",,
+#######,colspan=2 | '''145                                                      ''',,,
+0x1441e0,"さいきんカラテをならってんだ
+ すごいね いつから?<*A>",/0x1441e0/<*A>,,
+0x1441e2,"でしょ?かっこいいぜ!
+ カラテが? キミが?<*A>",/0x1441e2/<*A>,,
+0x1441e4,"さいきんっていったじゃん!
+ あっそっか きいてなかった<*A>",/0x1441e4/<*A>,,
+0x1441e6,ちがう!オレがだよ!<*2>,/0x1441e6/<*2>,,
+0x1441e8,"そうさ!テレファングには
+よんでくれよな!!<*2>",/0x1441e8/<*2>,,
+0x1441ea,もうボケちゃったの?しっかリ!<*2>,/0x1441ea/<*2>,,
+0x1441ec,"もう!いつもそうなんだから!
+コンジョウきたえるために
+オマエもカラテやれ!!<*2>",/0x1441ec/<*2>,,
+#######,colspan=2 | '''146                                                      ''',,,
+0x1441ee,"オレもシンカしたいなぁ
+ どうして? オレも!<*A>",/0x1441ee/<*A>,,
+0x1441f0,"きっとシンカしたらやせると
+おもわない?
+ それはない やせたい?<*A>",/0x1441f0/<*A>,,
+0x1441f2,"<&name>はシンカしたら
+なんになるんだろうな?
+ オトナ スゴくなる<*A>",/0x1441f2/<*A>,,
+0x1441f4,"えー!そうなの?じゃあ
+うんどうでもしようかな<*2>",/0x1441f4/<*2>,,
+0x1441f6,"やせたいよ!さいきんおなかが
+ブヨーンとしててさぁ ハァ<*2>",/0x1441f6/<*2>,,
+0x1441f8,おぉー!オトナかすごいなぁ!<*2>,/0x1441f8/<*2>,,
+0x1441fa,えっ?なになに?どうスゴイの?<*2>,/0x1441fa/<*2>,,
+#######,colspan=2 | '''147 (partial)                                                      ''',,,
+0x1441fc,いまじぶんでゴハンつくってんだ! エライ! なにつくってんの?<*A>,/0x1441fc/<*A>,,
+0x1441fe,"えヘヘ リょうリくらい
+できないとモテないからね
+ それがネライ? そうかなあ?<*A>",/0x1441fe/<*A>,,
+Pointer,Japanese,English,Draft version,Notes
+#######,colspan=2 | '''147 (partial)                                                      ''',,,
+0x160000,"オニギリだぁ!!でも てが
+ベタベタでうまくできないよぉ
+ はぁ? てにミズつけるんだ<*A>",/0x160000/<*A>,,
+0x160002,エヘヘ じつはそうなんだ<*2>,/0x160002/<*2>,,
+0x160004,そうさ!これでオレもモテモテさ<*2>,/0x160004/<*2>,,
+0x160006,オマエ!オニギリばかにすんな!<*2>,/0x160006/<*2>,,
+0x160008,そっか サンキュ-!!<*2>,/0x160008/<*2>,,
+#######,colspan=2 | '''148                                                      ''',,,
+0x16000a,"チョコってあまくてウマイな
+ うん キライだから<*A>",/0x16000a/<*A>,,
+0x16000c,"いくらでもたベちゃうよ!!
+ ムシバになるぞ そんなに?<*A>",/0x16000c/<*A>,,
+0x16000e,"なんでだ?あんなにウマイのに!
+ マズイよ! わかんない<*A>",/0x16000e/<*A>,,
+0x160010,"ダイジョウブ!ちゃんとハミガキ
+してるもんね!!<*2>",/0x160010/<*2>,,
+0x160012,うん!ゴハンのオカズでもいいよ<*2>,/0x160012/<*2>,,
+0x160014,オマエにはそうかんじるんだな<*2>,/0x160014/<*2>,,
+0x160016,オレにはオマエがわかんない<*2>,/0x160016/<*2>,,
+#######,colspan=2 | '''149                                                      ''',,,
+0x160018,"ケイタイストラップがほしい!
+なんかカワイイのもってない?
+ ないなぁ じぶんでかえば?<*A>",/0x160018/<*A>,,
+0x16001a,ないのかじゃあいいや バイバイ<*2>,/0x16001a/<*2>,,
+0x16001c,イジワル!もういい!<*2>,/0x16001c/<*2>,,
+#######,colspan=2 | '''150                                                      ''',,,
+0x16001e,"みんながオレのこと『わがまま』
+ってゆうんだよ-!!
+ だろうね そんなことないよ<*A>",/0x16001e/<*A>,,
+0x160020,"オマエまでそんなことゆうのか?
+ ホントのことじゃん うそ!<*A>",/0x160020/<*A>,,
+0x160022,"やさしいなぁ カンゲキだよ
+ ゲンキだせ! きにすんな!<*A>",/0x160022/<*A>,,
+0x160024,"なんだよ!オレなんかよリも
+チョ-ワガママなやついるんだぜ<*2>",/0x160024/<*2>,,
+0x160026,びっくリした-!おどかすなよ!<*2>,/0x160026/<*2>,,
+0x160028,うん ゲンキがでたよ!<*2>,/0x160028/<*2>,,
+0x16002a,"もうほかのヤツのゆうことは
+きにしないようにするよ!!<*2>",/0x16002a/<*2>,,
+#######,colspan=2 | '''151                                                      ''',,,
+0x16002c,"あぁ-つかれちゃった オネガイ
+おぶってよ
+ いまどこだよ やなこった<*A>",/0x16002c/<*A>,,
+0x16002e,"オマエのウシロだよぉ!!
+ ぎゃぁ-! なにいってんの?<*A>",/0x16002e/<*A>,,
+0x160030,ちぇ- <&name>のケチ! なんだと! いいもん<*A>,/0x160030/<*A>,,
+0x160032,"アハハ うそだよ-!オマエ
+オクビョウだな みんなにはなそ<*2>",/0x160032/<*2>,,
+0x160034,なんだ ひっかからなかったか<*2>,/0x160034/<*2>,,
+0x160036,もうたのまないよ-だ!!<*2>,/0x160036/<*2>,,
+0x160038,ケチ ケチ ベ-だ<*2>,/0x160038/<*2>,,
+#######,colspan=2 | '''152                                                      ''',,,
+0x16003a,"うごかないで!!コンタクトを
+おとしちゃったんだ!!
+ ホントに? ここにはないよ<*A>",/0x16003a/<*A>,,
+0x16003c,"うそ ゆってみたかったんだ
+ あっそ ひつようないでしょ<*A>",/0x16003c/<*A>,,
+0x16003e,"だよね <&name>
+ここにはいないもんね
+ただコンタクトを
+じまんしたかったんだ!!
+ もってんだ? めがわるいの?<*A>",/0x16003e/<*A>,,
+0x160040,"『あっそ』ってつめたいなあ
+ジョ-ダンだってばぁ<*2>",/0x160040/<*2>,,
+0x160042,"いや さいきんゲ-ムの
+やリすぎで めが
+わるくなっちゃったんだ
+<&name>もきをつけて!<*2>",/0x160042/<*2>,,
+0x160044,"うんデンジュウカイでコンタクト
+してるデンジュウはオレくらい
+だぜ!スゴイだろ!<*2>",/0x160044/<*2>,,
+0x160046,さいきんきゅうにね はぁ<*2>,/0x160046/<*2>,,
+#######,colspan=2 | '''153                                                      ''',,,
+0x160048,"オレとおなじしゅぞくのトモダチ
+っているの?
+ いるよ いないとおもう<*A>",/0x160048/<*A>,,
+0x16004a,"なに いるのか?それはダメだ!
+オレいがいのトモダチはダメ!
+ そんなこといわれても やだ!<*A>",/0x16004a/<*A>,,
+0x16004c,"そうかそうか よかった
+ なんで? わがままゆうなよ<*A>",/0x16004c/<*A>,,
+0x16004e,だめなものはだダメェ-!!<*2>,/0x16004e/<*2>,,
+0x160050,"オレよリほかのトモダチのほうが
+なかよしなのか?チキショ-!<*2>",/0x160050/<*2>,,
+0x160052,"だってイチバンなかよしで
+いたいんだもん!!<*2>",/0x160052/<*2>,,
+0x160054,"ゆってないよぉ このくらい
+わがままにははいらないよ<*2>",/0x160054/<*2>,,
+#######,colspan=2 | '''154                                                      ''',,,
+0x160056,"ねえ さっきジテンシャみたよ
+<&name>はのれるの?
+ あたリまえじゃん のれない<*A>",/0x160056/<*A>,,
+0x160058,"のれるんだ?オレものリたい
+けど むずかしそうだなあ
+ カンタンだよ! アシとどく?<*A>",/0x160058/<*A>,,
+0x16005a,"そうか はやくのれるといいな!
+ そうだね のれなくてもいいよ<*A>",/0x16005a/<*A>,,
+0x16005c,"カンタンか?よし じゃあオレ
+がんばってみようかな<*2>",/0x16005c/<*2>,,
+0x16005e,"ああっ!いまオレのこと
+バカにしただろ!!<*2>",/0x16005e/<*2>,,
+0x160060,"オレもレンシュウするから
+オマエもがんばれよ!<*2>",/0x160060/<*2>,,
+0x160062,"なにいってんだ!ジテンシャに
+のれたら きっとモテモテだぞ!<*2>",/0x160062/<*2>,,
+#######,colspan=2 | '''155                                                      ''',,,
+0x160064,"ミズデッポウがほしいんだけど
+<&name>もってる?
+ もってるよ もってない<*A>",/0x160064/<*A>,,
+0x160066,"いいなあ ちょうだいよ-
+ どうするの? やだよ<*A>",/0x160066/<*A>,,
+0x160068,じゃあいっしょにかいにいこうぜ! なんで? ベつにいらないよ<*A>,/0x160068/<*A>,,
+0x16006a,"どうってそれでワルモノを
+たおすんだよ!!<*2>",/0x16006a/<*2>,,
+0x16006c,"ケチ-さてはオレがこれいじょう
+つよくなるのをおそれているな?<*2>",/0x16006c/<*2>,,
+0x16006e,"だって おまえだってつよく
+なリたいだろ??<*2>",/0x16006e/<*2>,,
+0x160070,いらなくない!<*2>,/0x160070/<*2>,,
+#######,colspan=2 | '''156                                                      ''',,,
+0x160072,T-ファンガ-のトモダチできた? うん ぜんぜん<*A>,/0x160072/<*A>,,
+0x160074,"そうか よかったな
+ うん デンジュウもふえたよ!<*A>",/0x160074/<*A>,,
+0x160076,"なんでできないんだろう?
+ はずかしがリやなの さぁ?<*A>",/0x160076/<*A>,,
+0x160078,"デンジュウのトモダチもわすれ
+ないでくれよ!!<*2>",/0x160078/<*2>,,
+0x16007a,"おぉ-!スバラシイ!
+そのちょうしだ!!<*2>",/0x16007a/<*2>,,
+0x16007c,"それだ!そのセイカクがダメ!
+もっとガンガンいくんだぁ!!<*2>",/0x16007c/<*2>,,
+0x16007e,"もうしょうがないなあ!
+もっとしっかリしないとダメだぞ<*2>",/0x16007e/<*2>,,
+#######,colspan=2 | '''157                                                      ''',,,
+0x160080,"ショップでアルバイトしようと
+おもうんだけど どうかな?
+ できんの? えらいね<*A>",/0x160080/<*A>,,
+0x160082,"できるよ!イラッシャイマセ-!
+ いいんじゃない? ププッ<*A>",/0x160082/<*A>,,
+0x160084,"エヘヘ おかねをためて
+ニンゲンカイをたびするんだ!
+ ガンバレ! ニンゲンカイヘ?<*A>",/0x160084/<*A>,,
+0x160086,"でしょ?このウツクシイこえに
+ぴったリのシゴトでしょ?<*2>",/0x160086/<*2>,,
+0x160088,なぜわらう??<*2>,/0x160088/<*2>,,
+0x16008a,うん!ガンガンはたらくぜ!<*2>,/0x16008a/<*2>,,
+0x16008c,"そう たびをしてキミの
+すんでるところをみてくるよ!<*2>",/0x16008c/<*2>,,
+#######,colspan=2 | '''158                                                      ''',,,
+0x16008e,"ニンゲンカイにはなんしゅるいの
+ケイタイデンワがあるの?
+ たくさん わかんない<*A>",/0x16008e/<*A>,,
+0x160090,"たくさんか?チョ-オシャレな
+ケイタイもあるんだろ?
+ あるよ どうかな?<*A>",/0x160090/<*A>,,
+0x160092,<&name>はもってないの? もってるよ もってない<*A>,/0x160092/<*A>,,
+0x160094,"いいなぁ ほしいなあ でも
+デンジュウカイじゃつかえないね<*2>",/0x160094/<*2>,,
+0x160096,"こんどニンゲンカイに
+かえったら みてきてくれよ!<*2>",/0x160096/<*2>,,
+0x160098,"え-!じゃあDショットと2つも
+もってんのか?スゴイじゃん!<*2>",/0x160098/<*2>,,
+0x16009a,じゃあDショットだいじにしろよ<*2>,/0x16009a/<*2>,,
+#######,colspan=2 | '''159                                                      ''',,,
+0x16009c,"ニンゲンカイにもなにか
+オイシイものある??
+ あるよ なんでもおいしいよ<*A>",/0x16009c/<*A>,,
+0x16009e,"ある?なにがおいしい?
+ ニク ヤサイ<*A>",/0x16009e/<*A>,,
+0x1600a0,"なんでもか?すごいいなあ!!
+ いいでしょ おおげさかなぁ?<*A>",/0x1600a0/<*A>,,
+0x1600a2,ニク!ニク!オレニクだいすき!<*2>,/0x1600a2/<*2>,,
+0x1600a4,え-!ヤサイ?オレはキラ-イ!<*2>,/0x1600a4/<*2>,,
+0x1600a6,"いいなあ オレもニンゲンカイで
+せいかつしたいよ!<*2>",/0x1600a6/<*2>,,
+0x1600a8,なんだよ!どっちだよ!もう!<*2>,/0x1600a8/<*2>,,
+#######,colspan=2 | '''160                                                      ''',,,
+0x1600aa,"ねぇ メ-ルってどうやって
+おくったらいいの?
+ Dショットつかって キアイで<*A>",/0x1600aa/<*A>,,
+0x1600ac,"ああ そうか!Dショットを
+つかうんだんだ!
+ そう たぶんね<*A>",/0x1600ac/<*A>,,
+0x1600ae,"キアイ?スゴイ!オレにはムリだ
+ うそだよ そんなことないさ<*A>",/0x1600ae/<*A>,,
+0x1600b0,"アリガト
+あとはじぶんでやってみる<*2>",/0x1600b0/<*2>,,
+0x1600b2,"なんだ<&name>も
+わかってないんじゃないか!<*2>",/0x1600b2/<*2>,,
+0x1600b4,うそなの-?ヒドイよ-!<*2>,/0x1600b4/<*2>,,
+0x1600b6,"よし じゃあやってみるよ!!
+むむむうう<*2>",/0x1600b6/<*2>,,
+#######,colspan=2 | '''161                                                      ''',,,
+0x1600b8,"あ-<&name>?
+このまえはゴメンネ!
+ なにが? なんかよう?<*A>",/0x1600b8/<*A>,,
+0x1600ba,"おぼえてないの?じゃあいいんだ
+ なになに? ケンカのこと?<*A>",/0x1600ba/<*A>,,
+0x1600bc,"まだおこってるの?
+いいかげんキゲンなおしてよぉ-
+ やだね ホントはおこってない<*A>",/0x1600bc/<*A>,,
+0x1600be,なんでもないよお- じゃあね<*2>,/0x1600be/<*2>,,
+0x1600c0,"おもいださなくてもいいのに-
+またなかよくしてね<*2>",/0x1600c0/<*2>,,
+0x1600c2,"オレはスナオにあやまったのに!
+もういいよ!!<*2>",/0x1600c2/<*2>,,
+0x1600c4,"なんだ- よかった
+これからも なかよくしてな<*2>",/0x1600c4/<*2>,,
+#######,colspan=2 | '''162                                                      ''',,,
+0x1600c6,アハハハ あ-<&name>? どうしたの? うるさいなあ<*A>,/0x1600c6/<*A>,,
+0x1600c8,"わかんない そのヘんにはえてる
+キノコたベたらワライが
+とまらないんだよ-!!
+ ワライタケだよ おなかは?<*A>",/0x1600c8/<*A>,,
+0x1600ca,だってワライがとまらないんだもん なんで? もうきるよ?<*A>,/0x1600ca/<*A>,,
+0x1600cc,なにそれ-? ウヒヒヒ!<*2>,/0x1600cc/<*2>,,
+0x1600ce,"え?おなか?
+アハハ ダイジョウブ-
+だってジョウブだも-ん<*2>",/0x1600ce/<*2>,,
+0x1600d0,わかんな-いたすけてぇ-!<*2>,/0x1600d0/<*2>,,
+0x1600d2,あ-!まってよ-!!<*2>,/0x1600d2/<*2>,,
+#######,colspan=2 | '''163                                                      ''',,,
+0x1600d4,"やあ<&name>!
+オイラといっしょに うたおう!
+ いそがしいんだけど いいよ<*A>",/0x1600d4/<*A>,,
+0x1600d6,"え-そんなこといわないでさ-
+ またこんど チョットだけだよ<*A>",/0x1600d6/<*A>,,
+0x1600d8,"よかった みんなことわるんだ
+なんでだろ?ラララララァ-
+ すっごいオンチ ラッララァ-<*A>",/0x1600d8/<*A>,,
+0x1600da,え- わかった-<*2>,/0x1600da/<*2>,,
+0x1600dc,やった- イッパイうたうぞ-!<*2>,/0x1600dc/<*2>,,
+0x1600de,ん?なんかいった?<*2>,/0x1600de/<*2>,,
+0x1600e0,おっ なかなかやるな!<*2>,/0x1600e0/<*2>,,
+#######,colspan=2 | '''164                                                      ''',,,
+0x1600e2,"なにかならいごとをしてみたいなぁなにがいいとおもう?
+ ピアノ しゅうじ<*A>",/0x1600e2/<*A>,,
+0x1600e4,"ピアノか オレにぴったリだな!
+ うん でもむずかしいよ!<*A>",/0x1600e4/<*A>,,
+0x1600e6,"しゅうじか でもオレ
+カンジがかけないからなぁ
+ そうか ソロバンは?<*A>",/0x1600e6/<*A>,,
+0x1600e8,よ-し ピアノならうぞ!<*2>,/0x1600e8/<*2>,,
+0x1600ea,むずかしいのはイヤダ や-めた<*2>,/0x1600ea/<*2>,,
+0x1600ec,まずはじのベんきょうからだ!<*2>,/0x1600ec/<*2>,,
+0x1600ee,それならイロイロやくだちそうだ<*2>,/0x1600ee/<*2>,,
+#######,colspan=2 | '''165                                                      ''',,,
+0x1600f0,"デンジュウカイにもバスがあれば
+ベんリなのになぁ
+ そうだね うんてんしゅは?<*A>",/0x1600f0/<*A>,,
+0x1600f2,"バスのってみたいなあ
+ のったことない? ベんリだよ<*A>",/0x1600f2/<*A>,,
+0x1600f4,"そっか じゃあメンキョとろ
+ がんばって たいヘんだよ<*A>",/0x1600f4/<*A>,,
+0x1600f6,ないよ のるのがたのしみ<*2>,/0x1600f6/<*2>,,
+0x1600f8,だよねぇ いいなぁ<*2>,/0x1600f8/<*2>,,
+0x1600fa,"おう!オレがデンジュウカイに
+バスをはしらせるぜ!<*2>",/0x1600fa/<*2>,,
+0x1600fc,これからベんきょうだ!!<*2>,/0x1600fc/<*2>,,
+#######,colspan=2 | '''166                                                      ''',,,
+0x1600fe,"オレもニンゲンカイにいったら
+ガッコウにかようのか?
+ うん ベつにいいんじゃない?<*A>",/0x1600fe/<*A>,,
+0x160100,"そっか-トモダチできるかな?
+ いくきなの? できるよ<*A>",/0x160100/<*A>,,
+0x160102,"じゃあオレはいかなくていいの?
+ ニンゲンだけ いくのイヤ?<*A>",/0x160102/<*A>,,
+0x160104,モチロン!トモダチつくるぞ-!<*2>,/0x160104/<*2>,,
+0x160106,"ニンゲンカイでもバンゴウを
+こうかんするの?<*2>",/0x160106/<*2>,,
+0x160108,"そっか-いかなくていいのか
+でもウンドウカイとかはでたいな<*2>",/0x160108/<*2>,,
+0x16010a,だって ベんきょうやだもん!!<*2>,/0x16010a/<*2>,,
+#######,colspan=2 | '''167                                                      ''',,,
+0x16010c,"うわ-!たすけて-!
+ どうしたの? にげろ!!<*A>",/0x16010c/<*A>,,
+0x16010e,"ゴキブリがでたんだよ-!!
+ ヘぇ- ぎゃ-<*A>",/0x16010e/<*A>,,
+0x160110,"こしがぬけてうごけないよ!!
+ どうした? ダイジョウブ?<*A>",/0x160110/<*A>,,
+0x160112,なんとかしてよ-!!<*2>,/0x160112/<*2>,,
+0x160114,<&name>もキライ?じゃあたすけてもらえないじゃん!!<*2>,/0x160114/<*2>,,
+0x160116,ゴッ ゴキブリ-!!<*2>,/0x160116/<*2>,,
+0x160118,ダメ-!<*2>,/0x160118/<*2>,,
+#######,colspan=2 | '''168                                                      ''',,,
+0x16011a,"さっきそこでオバケをみたんだよ
+ うっそだ- スゴイじゃん<*A>",/0x16011a/<*A>,,
+0x16011c,"ホントだよ!!ホントにみたもん
+ どんなの? おおきさは?<*A>",/0x16011c/<*A>,,
+0x16011e,"『スゴイ』? <&name>はオバケヘいきなの?コワくない?
+ あってみたいよ ぜんぜん<*A>",/0x16011e/<*A>,,
+0x160120,"くろくって ながくって それで
+『グモ-ッ』ってなくんだ!<*2>",/0x160120/<*2>,,
+0x160122,ちっちゃかった<*2>,/0x160122/<*2>,,
+0x160124,あってどうすんのさ!!<*2>,/0x160124/<*2>,,
+0x160126,"<&name>はいいなぁ
+なにかあったらたすけてね<*2>",/0x160126/<*2>,,
+#######,colspan=2 | '''169                                                      ''',,,
+0x160128,"デンワしてくれないけど
+ボクのことキライなの?
+ うん そんなことないよ<*A>",/0x160128/<*A>,,
+0x16012a,"えぇ-!!そうだったの-!!
+なにかワルイことした?
+ ベつに うそうそ<*A>",/0x16012a/<*A>,,
+0x16012c,"そう じゃあなんでデンワして
+くれないの??
+ わすれてた つぎからね<*A>",/0x16012c/<*A>,,
+0x16012e,じゃあなんでだよ-??<*2>,/0x16012e/<*2>,,
+0x160130,"なんで<&name>は
+いつもからかうんだよ-!
+びっくリするじゃん!<*2>",/0x160130/<*2>,,
+0x160132,"え-!ボクそんなにインショウが
+うすいの-??<*2>",/0x160132/<*2>,,
+0x160134,ホント?たまにはかけてね!<*2>,/0x160134/<*2>,,
+#######,colspan=2 | '''170                                                      ''',,,
+0x160136,"え-ん え-ん!!
+ どうしたの? なになに?<*A>",/0x160136/<*A>,,
+0x160138,"またイジメられちゃった!
+ また? ダイジョウブ?<*A>",/0x160138/<*A>,,
+0x16013a,"そんなキョウミシンシンに
+きかないでよ!
+ ゴメン そんなつもリないよ<*A>",/0x16013a/<*A>,,
+0x16013c,"またってなんだよ!
+マジメにそうだんしてんのに<*2>",/0x16013c/<*2>,,
+0x16013e,うん アリガトゲンキでた<*2>,/0x16013e/<*2>,,
+0x160140,ハァ いいけどね<*2>,/0x160140/<*2>,,
+0x160142,"シンパイしてくれるの?
+<&name>とトモダチで
+よかったよ<*2>",/0x160142/<*2>,,
+#######,colspan=2 | '''171                                                      ''',,,
+0x160144,"ニンゲンカイには『パンダ』って
+どうぶつがいるんでしょ?
+ うん よくしってるね<*A>",/0x160144/<*A>,,
+0x160146,"どんないきものなの
+ シロとクロ クマっぽい<*A>",/0x160146/<*A>,,
+0x160148,"ニンゲンカイのどうぶつに
+キョウミがあるんだ!
+ そうなんだ みてみたい?<*A>",/0x160148/<*A>,,
+0x16014a,ヘぇ なんだかジミだねぇ<*2>,/0x16014a/<*2>,,
+0x16014c,じゃあおっきいの-??<*2>,/0x16014c/<*2>,,
+0x16014e,"<&name>よリ
+くわしくなるよ!!<*2>",/0x16014e/<*2>,,
+0x160150,"もちろん!!いつかぜったいに
+みるんだ!!<*2>",/0x160150/<*2>,,
+#######,colspan=2 | '''172                                                      ''',,,
+0x160152,"<&name>はなにかペット
+かってる?
+ かってるよ なんにも<*A>",/0x160152/<*A>,,
+0x160154,"かわいい?
+ とっても あんまリ<*A>",/0x160154/<*A>,,
+0x160156,"なにかかいたい?
+ うん ベつに<*A>",/0x160156/<*A>,,
+0x160158,これからもかわいがってね<*2>,/0x160158/<*2>,,
+0x16015a,なんで?かわいがらなきゃダメ!<*2>,/0x16015a/<*2>,,
+0x16015c,ボクもかいたいなぁ<*2>,/0x16015c/<*2>,,
+0x16015e,"どうぶつキライ?デンジュウは
+キライじゃないよね??<*2>",/0x16015e/<*2>,,
+#######,colspan=2 | '''173                                                      ''',,,
+0x160160,"<&name>はかけっこ
+とくい?
+ うん あんまリ<*A>",/0x160160/<*A>,,
+0x160162,"そっかボクはニガテだな
+ なんで? たのしいよ<*A>",/0x160162/<*A>,,
+0x160164,"ボクも-なんかさいきんおなかの
+あたリがふとっちゃってさぁ
+ やせなよ わかるわかる<*A>",/0x160164/<*A>,,
+0x160166,だってつかれるもん<*2>,/0x160166/<*2>,,
+0x160168,どこが??はしるだけじゃん!<*2>,/0x160168/<*2>,,
+0x16016a,わかってるよ-!!<*2>,/0x16016a/<*2>,,
+0x16016c,"ボクのキモチわかるんだ!
+ってことは<&name>も
+やせなきゃ!<*2>",/0x16016c/<*2>,,
+#######,colspan=2 | '''174                                                      ''',,,
+0x16016e,"スキ-ってすなばでやるの?
+ うん ちがうよ<*A>",/0x16016e/<*A>,,
+0x160170,"そうなんだはじめてしったよ
+ ホントはちがう フフフ<*A>",/0x160170/<*A>,,
+0x160172,"えっ?じゃあどこでやるの??
+ ゆきやま さかみち<*A>",/0x160172/<*A>,,
+0x160174,あ- うそつきだ-<*2>,/0x160174/<*2>,,
+0x160176,なんでわらってんの?<*2>,/0x160176/<*2>,,
+0x160178,え-!サムくていやだよ-!!<*2>,/0x160178/<*2>,,
+0x16017a,たいらじゃすすまないもんね<*2>,/0x16017a/<*2>,,
+#######,colspan=2 | '''175                                                      ''',,,
+0x16017c,"<&name>は
+ケンカしたことある?
+ ある ない<*A>",/0x16017c/<*A>,,
+0x16017e,"あるんだぁ うわ-
+ ないの?? そリゃあるよ<*A>",/0x16017e/<*A>,,
+0x160180,"ボクもないんだこわくってさぁ
+ そうだよね なかよくしなきゃ<*A>",/0x160180/<*A>,,
+0x160182,あるわけないじゃんコワイよ<*2>,/0x160182/<*2>,,
+0x160184,なんでそんなことすんの?<*2>,/0x160184/<*2>,,
+0x160186,ふつうはしないでしょ!<*2>,/0x160186/<*2>,,
+0x160188,ボクたちはなかよくしようね!<*2>,/0x160188/<*2>,,
+#######,colspan=2 | '''176                                                      ''',,,
+0x16018a,"おい!ボクのヒミツを
+みんなにバラしたな!!
+ なんで? いけなかった?<*A>",/0x16018a/<*A>,,
+0x16018c,"『なんで』じゃないよ-!キミ
+にしか はなしてないよ!!
+ みんなしってたよ ゴメン<*A>",/0x16018c/<*A>,,
+0x16018e,"もうキミをしんようして
+はなしたのに!!
+クチドメしなかったから ハハハ<*A>",/0x16018e/<*A>,,
+0x160190,"どうしてだろう? まさか
+しらなかったのはボクだけ?<*2>",/0x160190/<*2>,,
+0x160192,もういいよ!しらない!!<*2>,/0x160192/<*2>,,
+0x160194,"でもいってイイこととワルイ
+ことはわかるでしょ!!<*2>",/0x160194/<*2>,,
+0x160196,わらってるばあいじゃないよ!<*2>,/0x160196/<*2>,,
+#######,colspan=2 | '''177                                                      ''',,,
+0x160198,"もしもデンジュウになれたら
+どんなのがいい?
+ ミズけい リクけい<*A>",/0x160198/<*A>,,
+0x16019a,"ボクはリクデンジュウだな
+ なんで? そうかな?<*A>",/0x16019a/<*A>,,
+0x16019c,"ボクもボクも!
+ そうなんだ いっしょだね<*A>",/0x16019c/<*A>,,
+0x16019e,だっておよげないんだもん<*2>,/0x16019e/<*2>,,
+0x1601a0,そうだよ!ふやけちゃうよ!<*2>,/0x1601a0/<*2>,,
+0x1601a2,うん はしるのすきだし<*2>,/0x1601a2/<*2>,,
+0x1601a4,きがあうね!!<*2>,/0x1601a4/<*2>,,
+#######,colspan=2 | '''178                                                      ''',,,
+0x1601a6,"おモチってどんなの?
+ シロいの ふくれるよ<*A>",/0x1601a6/<*A>,,
+0x1601a8,"シロいんだ?
+ うん ほかにもあるけどね<*A>",/0x1601a8/<*A>,,
+0x1601aa,"いきものなの??
+ やくとふくれるよ そうだよ<*A>",/0x1601aa/<*A>,,
+0x1601ac,おいしそう たベたいなぁ<*2>,/0x1601ac/<*2>,,
+0x1601ae,"え?みてみたいよ!!
+ムラサキとかある?<*2>",/0x1601ae/<*2>,,
+0x1601b0,いきてんのかとおもったよ!<*2>,/0x1601b0/<*2>,,
+0x1601b2,いきものか なんかコワイ<*2>,/0x1601b2/<*2>,,
+#######,colspan=2 | '''179                                                      ''',,,
+0x1601b4,"ニンゲンカイのガッコウヘいって
+ベんきょうしたいんだ!
+ え-!! スゴイね<*A>",/0x1601b4/<*A>,,
+0x1601b6,"なんで『え-』なの??
+ ベんきょうするの? ゴメン<*A>",/0x1601b6/<*A>,,
+0x1601b8,"そうかなあ?
+ そうだよ! ソンケ-しちゃう<*A>",/0x1601b8/<*A>,,
+0x1601ba,"うん <&name>は
+ベんきょうがキライなの??<*2>",/0x1601ba/<*2>,,
+0x1601bc,いやベつにあやまらなくても<*2>,/0x1601bc/<*2>,,
+0x1601be,そうかなぁ????<*2>,/0x1601be/<*2>,,
+0x1601c0,いやいや そんなぁ-<*2>,/0x1601c0/<*2>,,
+#######,colspan=2 | '''180                                                      ''',,,
+0x1601c2,"ねぇ モモンガってしってる?
+ しってるよ しらないの?<*A>",/0x1601c2/<*A>,,
+0x1601c4,"どんなのなの??おいしい?
+ どうぶつだよ おいしくはない<*A>",/0x1601c4/<*A>,,
+0x1601c6,"モモのなかまじゃないの?
+ ちがうよ そらとぶよ<*A>",/0x1601c6/<*A>,,
+0x1601c8,なんだカンチガイ<*2>,/0x1601c8/<*2>,,
+0x1601ca,たベたことあるんだ<*2>,/0x1601ca/<*2>,,
+0x1601cc,そうなんだじゃあキカイ?<*2>,/0x1601cc/<*2>,,
+0x1601ce,とぶの?そらとぶモモ??<*2>,/0x1601ce/<*2>,,
+#######,colspan=2 | '''181                                                      ''',,,
+0x1601d0,"もしもし?きこえる?
+ うん きこえないの?<*A>",/0x1601d0/<*A>,,
+0x1601d2,こっちのデンパがわるいみたい<*2>,/0x1601d2/<*2>,,
+0x1601d4,ちかからかけてるせいかな?<*2>,/0x1601d4/<*2>,,
+#######,colspan=2 | '''182                                                      ''',,,
+0x1601d6,"ダチョウってなんのいきもの?
+ トリだよ わかんない<*A>",/0x1601d6/<*A>,,
+0x1601d8,"トリなんだ かわいいの?
+ デカイよ マツゲがながい<*A>",/0x1601d8/<*A>,,
+0x1601da,"なまえだけきくとコワそうだね
+ うん そお?<*A>",/0x1601da/<*A>,,
+0x1601dc,ボクよリデカイの?コワ-イ<*2>,/0x1601dc/<*2>,,
+0x1601de,カワイイじゃん<*2>,/0x1601de/<*2>,,
+0x1601e0,きっと5メ-トルくらいあるぜ!<*2>,/0x1601e0/<*2>,,
+0x1601e2,そんなことないかな??<*2>,/0x1601e2/<*2>,,
+#######,colspan=2 | '''183                                                      ''',,,
+0x1601e4,"コラ!いまどこにいる!
+ジカンすぎてるぞ!
+ やくそくしてないよ だれ?<*A>",/0x1601e4/<*A>,,
+0x1601e6,"え?そう おかしいなぁ
+ ほかのコじゃない? きるよ<*A>",/0x1601e6/<*A>,,
+0x1601e8,"ん?オマエこそだれだ??
+ <&name> おしえない<*A>",/0x1601e8/<*A>,,
+0x1601ea,うんそうかも わるいね<*2>,/0x1601ea/<*2>,,
+0x1601ec,あぁ うん ゴメンナサイ<*2>,/0x1601ec/<*2>,,
+0x1601ee,あ- まちがえたゴメ-ン<*2>,/0x1601ee/<*2>,,
+0x1601f0,"あ-!!そのこえは
+<&name>だろ!!<*2>",/0x1601f0/<*2>,,
+#######,colspan=2 | '''184                                                      ''',,,
+0x1601f2,"きいてくれよ!オレのトモダチ
+いるすつかうんだぜ!
+ ヘえ いるすってなに?<*A>",/0x1601f2/<*A>,,
+0x1601f4,"ヘえってなにかゆうことないの?
+ ヒドイね ベつに<*A>",/0x1601f4/<*A>,,
+0x1601f6,"いないフリすることだよ!
+ そリゃイカン! そうなんだ<*A>",/0x1601f6/<*A>,,
+0x1601f8,だろだろ?ヒドイんだ!!<*2>,/0x1601f8/<*2>,,
+0x1601fa,オマエもツメタイぞ!!<*2>,/0x1601fa/<*2>,,
+0x1601fc,そうだ!イカンのだ!!<*2>,/0x1601fc/<*2>,,
+0x1601fe,カンシンしてないでハナシきけ!<*2>,/0x1601fe/<*2>,,
+Pointer,Japanese,English,Draft version,Notes
+#######,colspan=2 | '''185                                                      ''',,,
+0x94000,"モシモシ?デンワくれた?
+ したよ してない<*A>","Hello? Did you just call me?
+<0>I did<0>Nope<*A>",,
+0x94002,ゴメンきづかなかったよ<*2>,"Sorry, I didn't notice it ringing in time!<*2>",,
+0x94004,じゃあだれだろう?そんだけ<*2>,I wonder who it was then? Huh.<*2>,,
+#######,colspan=2 | '''186                                                      ''',,,
+0x94006,"もう!しんじらんない!
+ どうしたの? またおこってる<*A>",/0x94006/<*A>,,
+0x94008,"きいてよ!トモダチにオモチャ
+かしたらこわしたんだ!!
+ ヒドイなあ ゆるしてやれよ<*A>",/0x94008/<*A>,,
+0x9400a,"おこるさ!いまおこらないで
+いつおこるんだよ!!
+ いつもおこってる いま<*A>",/0x9400a/<*A>,,
+0x9400c,もうアイツとはクチきかないんだ<*2>,/0x9400c/<*2>,,
+0x9400e,あやまってきたらな<*2>,/0x9400e/<*2>,,
+0x94010,そんなことないさ!!<*2>,/0x94010/<*2>,,
+0x94012,そうだ!いまだ!<*2>,/0x94012/<*2>,,
+#######,colspan=2 | '''187                                                      ''',,,
+0x94014,"デンジュウはとベるのととベない
+のがいるけど ニンゲンも?
+ とベるわけないよ どうだろ?<*A>",/0x94014/<*A>,,
+0x94016,"そうなの?ニンゲンってみんな
+とベないんだ?ヘぇ-
+ いけない? そうだよ<*A>",/0x94016/<*A>,,
+0x94018,"みたことないの?じゃあとベる
+ヒトはめずらしいんだ
+ そうそう なんてね<*A>",/0x94018/<*A>,,
+0x9401a,そんなことないよ!<*2>,/0x9401a/<*2>,,
+0x9401c,だからヒコウキがあるんだね<*2>,/0x9401c/<*2>,,
+0x9401e,こんどつかまえにいこうよ!<*2>,/0x9401e/<*2>,,
+0x94020,え?ホントはいないの<*2>,/0x94020/<*2>,,
+#######,colspan=2 | '''188                                                      ''',,,
+0x94022,"さっきおおきなヘビがでたよ!
+ おっきかった? みたかった<*A>",/0x94022/<*A>,,
+0x94024,"モノスゴイおおきさだったよ!
+ スゴイね! ホントに?<*A>",/0x94024/<*A>,,
+0x94026,"おぅ みせたかったよ!
+ つかまえてみせて ざんねん<*A>",/0x94026/<*A>,,
+0x94028,ほんとスゴイよ マジで!<*2>,/0x94028/<*2>,,
+0x9402a,うそっぽくきこえる??<*2>,/0x9402a/<*2>,,
+0x9402c,ムリだよ!チョ-でかいんだぞ!<*2>,/0x9402c/<*2>,,
+0x9402e,"そんなにヘビすきなのか?
+こんどみかけたらデンワするよ<*2>",/0x9402e/<*2>,,
+#######,colspan=2 | '''189                                                      ''',,,
+0x94030,"<&name>はスキキライ
+ある?
+ ある ないよ<*A>",/0x94030/<*A>,,
+0x94032,"なにがスキなの?
+ あまいもの しょっぱいもの<*A>",/0x94032/<*A>,,
+0x94034,"そうなんだ-えらいな
+ あるの? なんでもたベなきゃ<*A>",/0x94034/<*A>,,
+0x94036,あまいものはウマイよなぁ<*2>,/0x94036/<*2>,,
+0x94038,"<&name>なかなか
+シブイなあ<*2>",/0x94038/<*2>,,
+0x9403a,じつはイッパイあるんだ<*2>,/0x9403a/<*2>,,
+0x9403c,そうだよなぁ がんばるよ!<*2>,/0x9403c/<*2>,,
+#######,colspan=2 | '''190                                                      ''',,,
+0x9403e,"オイ <&name>!オレっておこリんぼうにみえるのか!!
+ もうおこってる みえない<*A>",/0x9403e/<*A>,,
+0x94040,"そんなことないぞ!!
+ おこってるよ!! ああそぅ<*A>",/0x94040/<*A>,,
+0x94042,"やっぱリ みえないよなぁ
+ うん たぶんね<*A>",/0x94042/<*A>,,
+0x94044,なんでオマエがおこるんだ??<*2>,/0x94044/<*2>,,
+0x94046,イイカゲンなヘんじすんな!<*2>,/0x94046/<*2>,,
+0x94048,はぁ よかった-アリガトな <*2>,/0x94048/<*2>,,
+0x9404a,『たぶん』ってなんだよお!<*2>,/0x9404a/<*2>,,
+#######,colspan=2 | '''191                                                      ''',,,
+0x9404c,"オレのトモダチがぜんぜん
+デンワにでないんだよ!!
+ どうしたのかな キラワレたね<*A>",/0x9404c/<*A>,,
+0x9404e,"シンパイだよなぁ
+ うん ようすみてくれば?<*A>",/0x9404e/<*A>,,
+0x94050,"そ そうなのか?
+ ダイジョウブだよ う-ん<*A>",/0x94050/<*A>,,
+0x94052,デンワこないかなぁ<*2>,/0x94052/<*2>,,
+0x94054,そうだな チョットみてくる<*2>,/0x94054/<*2>,,
+0x94056,ホントに?ダイジョウブ?<*2>,/0x94056/<*2>,,
+0x94058,え?なんでかんがえこんでるの?<*2>,/0x94058/<*2>,,
+#######,colspan=2 | '''192                                                      ''',,,
+0x9405a,<&name>ゲンキにしてる? カゼひいた ゲンキだよ<*A>,/0x9405a/<*A>,,
+0x9405c,"カゼ?ダイジョウブか?
+ なんとか もうダメ<*A>",/0x9405c/<*A>,,
+0x9405e,"そうか<&name>はいつも
+ゲンキだな
+ うん そうかな?<*A>",/0x9405e/<*A>,,
+0x94060,ひどくならないうちになおせよ<*2>,/0x94060/<*2>,,
+0x94062,イシャにいかなきゃダメだぞ!<*2>,/0x94062/<*2>,,
+0x94064,ゲンキはいいことだ!<*2>,/0x94064/<*2>,,
+0x94066,"うん!<&name>でも
+カゼひくのか?<*2>",/0x94066/<*2>,,
+#######,colspan=2 | '''193                                                      ''',,,
+0x94068,"アキカンってもえるゴミ?
+ そうだよ ちがうよ<*A>",/0x94068/<*A>,,
+0x9406a,"こんなにカタくてももえるのか?
+ うん まちがえた<*A>",/0x9406a/<*A>,,
+0x9406c,"もえないゴミなんだ
+ そう ちゃんとわけてね<*A>",/0x9406c/<*A>,,
+0x9406e,ホントにホントかぁ-??<*2>,/0x9406e/<*2>,,
+0x94070,だろ?やっぱリもえないんだ<*2>,/0x94070/<*2>,,
+0x94072,よし わかったぞ!サンキュ-<*2>,/0x94072/<*2>,,
+0x94074,おう!きちんとわけるぜ!<*2>,/0x94074/<*2>,,
+#######,colspan=2 | '''194                                                      ''',,,
+0x94076,"なぁ オレ <&name>に
+ホンかリた?
+ うん かしてない<*A>",/0x94076/<*A>,,
+0x94078,ゴメン もうちょっとまって<*2>,/0x94078/<*2>,,
+0x9407a,"そっかわかった じゃあ
+こんどあったらかえすよ<*2>",/0x9407a/<*2>,,
+#######,colspan=2 | '''195                                                      ''',,,
+0x9407c,"ニンゲンカイではケイタイデンワ
+つかうとおカネとられんだろ?
+ そうだよ しらない<*A>",/0x9407c/<*A>,,
+0x9407e,"ヘぇ-タイヘンなんだなぁ
+ そうだよ らしいね<*A>",/0x9407e/<*A>,,
+0x94080,"なんでしらないの??
+ もってないもん さぁ?<*A>",/0x94080/<*A>,,
+0x94082,ムダづかいにちゅういだな<*2>,/0x94082/<*2>,,
+0x94084,"<&name>は
+つかってないのか?<*2>",/0x94084/<*2>,,
+0x94086,そっか カネかからなくていいな<*2>,/0x94086/<*2>,,
+0x94088,オレのはなしきいてる?<*2>,/0x94088/<*2>,,
+#######,colspan=2 | '''196                                                      ''',,,
+0x9408a,"つかれた-
+<&name>むかえにきて
+ イヤダ! きるよ!<*A>","I'm so tired...
+<&name>, come get me.
+<0>No way!<0>I'm hanging up!<*A>",,
+0x9408c,"ケチ-ほかのトモダチに
+たのむもん<*2>",Pfft! I'll ask someone else then.<*2>,,
+0x9408e,"あ- <&name>?
+モシモシ?お-い<*2>","Uh, <&name>?
+Hello? Heyy!<*2>",,
+#######,colspan=2 | '''197                                                      ''',,,
+0x94090,"あたらしいケイタイをかおうと
+おもっていて いまおカネを
+ためてるんだ!
+ エライじゃん かってもらえよ<*A>",/0x94090/<*A>,,
+0x94092,"いくらためればいいかな?
+ わかんない いっぱい<*A>",/0x94092/<*A>,,
+0x94094,"<&name>はいっつも
+かってもらってんの?
+ うん ちがうけど<*A>",/0x94094/<*A>,,
+0x94096,う-ん いくらだろ?<*2>,/0x94096/<*2>,,
+0x94098,そうだね おおいほうがいいね<*2>,/0x94098/<*2>,,
+0x9409a,ジブンでかわなきゃ!!<*2>,/0x9409a/<*2>,,
+0x9409c,"かってもらってばっかじゃ
+ダメだよね!<*2>",/0x9409c/<*2>,,
+#######,colspan=2 | '''198                                                      ''',,,
+0x9409e,"ねぇ サンダルっていったい
+どんなタル?
+ ながほそいの はきものだよ<*A>",/0x9409e/<*A>,,
+0x940a0,"そっか ながいのか
+ うん しかもオモイんだ<*A>",/0x940a0/<*A>,,
+0x940a2,"そうなんだ!?
+ しらなかったの? ほしい?<*A>",/0x940a2/<*A>,,
+0x940a4,どのくらいほそいんだろ?<*2>,/0x940a4/<*2>,,
+0x940a6,オモイのか?オレもてるかな?<*2>,/0x940a6/<*2>,,
+0x940a8,はじめてしったよ!<*2>,/0x940a8/<*2>,,
+0x940aa,"うん はいてみたいな
+キイロいのがいいなぁ!<*2>",/0x940aa/<*2>,,
+#######,colspan=2 | '''199                                                      ''',,,
+0x940ac,"このまえはアリガトウ
+おれいしないとね
+ なに?なに? いいよベつに<*A>",/0x940ac/<*A>,,
+0x940ae,"なにがいい?
+ おカネ なんでもいいよ!<*A>",/0x940ae/<*A>,,
+0x940b0,"ダメだよ!おれいは
+キチンとしないと!!
+ そうか きをつかうなよ!<*A>",/0x940b0/<*A>,,
+0x940b2,トモダチからカネとるのか?!<*2>,/0x940b2/<*2>,,
+0x940b4,じゃあ ウタを1きょく<*2>,/0x940b4/<*2>,,
+0x940b6,そうだよ!<*2>,/0x940b6/<*2>,,
+0x940b8,"うん アリガト
+じゃあこれからもなかよくしてね<*2>",/0x940b8/<*2>,,
+#######,colspan=2 | '''200                                                      ''',,,
+0x940ba,"オマエのヘヤみたぞ!!
+ダメじゃないか かたづけなきゃ
+ いつみたの? ゴメンかたすよ<*A>","I saw inside your room!!
+Man, you really  need to clean up in there.
+<0>When was this?<0>Sorry, I will<*A>",,
+0x940bc,"オマエのママがみせてくれたよ
+ カッテにはいるな! えぇ-!<*A>","Your mom showed it to me.
+<0>Ask me first!<0>Whaaat?!<*A>",,
+0x940be,"ちゃんとかたさないとドコに
+ナニがあるかわからなくなるよ
+ はい ニンゲンカイいったの?<*A>","If you don't keep it tidy, you'll never know where anything is!
+<0>Okay<0>How'd you get there?<*A>",,
+0x940c0,なんだよ!いいじゃん!<*2>,"Aw come on, it was just a peek!<*2>",,
+0x940c2,みられてこまるものあった?<*2>,Was there something you didn't want me to see?<*2>,,
+0x940c4,よろしい!!<*2>,Great!!<*2>,,
+0x940c6,ナイショ!<*2>,It's a secret!<*2>,,

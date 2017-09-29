@@ -1,413 +1,413 @@
-Pointer,Japanese,English,Notes
+Pointer,Japanese,English,Draft version,Notes
 0x114000,"<&0xd4b1>が
-とうちゃくした!<*5>",<&0xd658> arrived!<*5>,Text for battles and stuff.
+とうちゃくした!<*5>",<&0xd658> arrived!<*5>,,Text for battles and stuff.
 0x114002,"たいリょくが
-かいふくした!<*5>",Recovered HP!<*5>,"Status: Translated 100%
+かいふくした!<*5>",Recovered HP!<*5>,,"Status: Translated 100%
 "
 0x114004,"<&0xd460>
 『<&0xd4b1>』<*5>","<&0xd6a0>
-""<&0xd658>""<*5>",
+""<&0xd658>""<*5>",,
 0x114006,"<&0xd460>の
-デンワバンゴウをゲットした!<*5>",Got <&0xd6a0>'s phone number!<*5>,
+デンワバンゴウをゲットした!<*5>",Got <&0xd6a0>'s phone number!<*5>,,
 0x114008,"<&0xd460>
 『<&0xd4b1>』<*5>","<&0xd6a0>
-""<&0xd658>""<*5>",
+""<&0xd658>""<*5>",,
 0x11400a,"<&0xd460>は
-たおれた!<*5>",<&0xd6a0> fell!<*5>,
-0x11400c,『コイツはかなわないや!』<*5>,"""I'm no match for this guy!""<*5>",
+たおれた!<*5>",<&0xd6a0> fell!<*5>,,
+0x11400c,『コイツはかなわないや!』<*5>,"""I'm no match for this guy!""<*5>",,
 0x11400e,"<&0xd460>は
-にげだした!<*5> ",<&0xd6a0> fled!<*5>,
+にげだした!<*5> ",<&0xd6a0> fled!<*5>,,
 0x114010,"<&0xd460>
 『みちくさをしている!』<*5>","<&0xd6a0>
-""I got distracted!""<*5>",
+""I got distracted!""<*5>",,
 0x114012,"<&0xc9e1>の
-デンワバンゴウをうしなった!<*5>",Lost <&0xcca3>'s phone number!<*5>,
+デンワバンゴウをうしなった!<*5>",Lost <&0xcca3>'s phone number!<*5>,,
 0x114014,"けっかいがはられていて
 でんまリゅくが
-はつどうできない!!<*5>",Can't use Denma power due to the force field!!<*5>,
+はつどうできない!!<*5>",Can't use Denma power due to the force field!!<*5>,,
 0x114016,"<&0xd4b1>が
-あらわれた!<*5>",<&0xd658> appeared!<*5>,
-0x114018,でんまリょく じゅうでんかいし!<*5>,Charging Denma power!<*5>,
+あらわれた!<*5>",<&0xd658> appeared!<*5>,,
+0x114018,でんまリょく じゅうでんかいし!<*5>,Charging Denma power!<*5>,,
 0x11401a,"<&0xd6a0>のこうげき!
 <&0xd4b1>!<*4>","<&0xd6a0><6> move!
-<&0xd658>!<*4>",
+<&0xd658>!<*4>",,
 0x11401c,"よぶ デンジュウを
-せんたくしてください<*4>",Please select a Denjuu to call.<*4>,
-0x11401e,ゲームオーバー<*5>,Game Over<*5>,
+せんたくしてください<*4>",Please select a Denjuu to call.<*4>,,
+0x11401e,ゲームオーバー<*5>,Game Over<*5>,,
 0x114020,"てきのデンジュウを
-やっつけた!<*5>",You defeated the enemy Denjuu!<*5>,
-0x114022,にげだした!<*5>,Ran away!<*5>,
+やっつけた!<*5>",You defeated the enemy Denjuu!<*5>,,
+0x114022,にげだした!<*5>,Ran away!<*5>,,
 0x114024,"されど
-にげられなかった!<*5>",...But couldn't escape!<*5>,
+にげられなかった!<*5>",...But couldn't escape!<*5>,,
 0x114026,"たたかいに
-やぶれた!<*5>",You lost the battle!<*5>,
+やぶれた!<*5>",You lost the battle!<*5>,,
 0x114028,"<&0xd448>ポイントの
-ダメージ!<*4>",<&0xd448> points of damage!<*4>,
-0x11402a,てきをたおした!<*5>,Defeated the enemy!<*5>,
-0x11402c,みかたのこうげき!<*5>,Ally's attack!<*5>,
+ダメージ!<*4>",<&0xd448> points of damage!<*4>,,
+0x11402a,てきをたおした!<*5>,Defeated the enemy!<*5>,,
+0x11402c,みかたのこうげき!<*5>,Ally's attack!<*5>,,
 0x11402e,"<&0xd460>は
 <&0xd448>ポイントの
-けいけんちをえた!<*5>",<&0xd6a0> got <&0xd448> points of experience!<*5>,
+けいけんちをえた!<*5>",<&0xd6a0> got <&0xd448> points of experience!<*5>,,
 0x114030,"<&0xd460>は
-レベルアップした!<*5>",<&0xd6a0> leveled up!<*5>,
+レベルアップした!<*5>",<&0xd6a0> leveled up!<*5>,,
 0x114032,"<&0xd460>は
-しんかした!<*5>",<&0xd6a0> has evolved!<*5>,
+しんかした!<*5>",<&0xd6a0> has evolved!<*5>,,
 0x114034,"<&0xd460>に
-なった!<*5>",It evolved into <&0xd6a0>!<*5>,
-0x114036,こうげきは はずれた!<*4>,Attack missed!<*4>,
+なった!<*5>",It evolved into <&0xd6a0>!<*5>,,
+0x114036,こうげきは はずれた!<*4>,Attack missed!<*4>,,
 0x114038,"どのデンジュウを
-こうげきしますか?<*5>",<S0>Which Denjuu will you attack?<*5>,
+こうげきしますか?<*5>",<S0>Which Denjuu will you attack?<*5>,,
 0x11403a,"<&0xd460>のこうげき!
 <&0xd4b1>!<*4>","<&0xd6a0><6> move!
-<&0xd658>!<*4>",
+<&0xd658>!<*4>",,
 0x11403c,"<S0>これでいいですか?
    はい    いいえ<*4>","<S0>Are you sure?
-   Yes   No <*4>",
+   Yes   No <*4>",,
 0x11403e,"<&0xd460>は
-ゆうことをきかない!<*5>",<&0xd6a0> is ignoring orders!<*5>,
+ゆうことをきかない!<*5>",<&0xd6a0> is ignoring orders!<*5>,,
 0x114040,"<&0xd460>は
-かってにこうげきした!<*4>",<&0xd6a0> attacked on its own!<*4>,
+かってにこうげきした!<*4>",<&0xd6a0> attacked on its own!<*4>,,
 0x114042,"バリアがでんまリゅくを
-はじきとばした!!<*5>",The barrier blocked the Denma power!<*5>,
+はじきとばした!!<*5>",The barrier blocked the Denma power!<*5>,,
 0x114044,<ALIAS ROW 0x21>,"The barrier
 blocked the
-Denma power!<*5>",
-0x114046,いけ! <&0xd4b1>!<*5>,Go! <&0xd658>!<*5>,
-0x114048,にげられなかった!<*5>,Couldn't run away!<*5>,
+Denma power!<*5>",,
+0x114046,いけ! <&0xd4b1>!<*5>,Go! <&0xd658>!<*5>,,
+0x114048,にげられなかった!<*5>,Couldn't run away!<*5>,,
 0x11404a,"どのデンジュウの
-ステータスをみますか?<*5>",Which Denjuu's status will you check?<*5>,
+ステータスをみますか?<*5>",Which Denjuu's status will you check?<*5>,,
 0x11404c,"<S0> たたかう    にげる
  ステータス      <*4>","<S0> Fight<0><0><0><0><0>Flee
- Status<*4>",
+ Status<*4>",,
 0x11404e,"<&0xd460>の
-すばやさがアップした!<*5>",<&0xd6a0>'s speed went up!<*5>,
+すばやさがアップした!<*5>",<&0xd6a0>'s speed went up!<*5>,,
 0x114050,"<&0xd460>の
-めいちゅうリつがアップした!<*5>",<&0xd6a0>'s accuracy went up!<*5>,
+めいちゅうリつがアップした!<*5>",<&0xd6a0>'s accuracy went up!<*5>,,
 0x114052,"<&0xd460>の
-かいひリつがアップした!<*5>",<&0xd6a0>'s evasion went up!<*5>,
+かいひリつがアップした!<*5>",<&0xd6a0>'s evasion went up!<*5>,,
 0x114054,"<&0xd460>の
-こうげきリょくがアップした!<*5>",<&0xd6a0>'s attack power went up!<*5>,
+こうげきリょくがアップした!<*5>",<&0xd6a0>'s attack power went up!<*5>,,
 0x114056,"<&0xd460>の
-でんまリょくがアップした!<*5>",<&0xd6a0>'s Denma attack went up!<*5>,
+でんまリょくがアップした!<*5>",<&0xd6a0>'s Denma attack went up!<*5>,,
 0x114058,"<&0xd460>の
-ぼうぎょリょくがアップした!<*5>",<&0xd6a0>'s defense went up!<*5>,
+ぼうぎょリょくがアップした!<*5>",<&0xd6a0>'s defense went up!<*5>,,
 0x11405a,"<&0xd460>の
-たいリょくがかいふくした!<*5>",<&0xd6a0> recovered HP!<*5>,
-0x11405c,どくのダメージ!<*5>,Poison damage!<*5>,
-0x11405e,しっぱい!!<*4>,Failed!!<*4>,
-0x114060,<S0><&0xc3a0><*4>,<S0><&0xcc90><*4>,
-0x114062,わざにかからなかった!<*5>,The move had no effect!<*5>,
+たいリょくがかいふくした!<*5>",<&0xd6a0> recovered HP!<*5>,,
+0x11405c,どくのダメージ!<*5>,Poison damage!<*5>,,
+0x11405e,しっぱい!!<*4>,Failed!!<*4>,,
+0x114060,<S0><&0xc3a0><*4>,<S0><&0xcc90><*4>,,
+0x114062,わざにかからなかった!<*5>,The move had no effect!<*5>,,
 0x114064,"<S0>なかまをよびますか?
    よぶ    よばない<*4>","<S0>Call an ally?
-   Yes   No<*4>",
-0x114066,<S0>なかまはよベません!<*5>,<S0>Couldn't call anyone!<*5>,
+   Yes   No<*4>",,
+0x114066,<S0>なかまはよベません!<*5>,<S0>Couldn't call anyone!<*5>,,
 0x114068,"<&0xd460> のわざを
-おぼえた!<*5>",Learned <&0xd6a0>!<*5>,
+おぼえた!<*5>",Learned <&0xd6a0>!<*5>,,
 0x11406a,"<&0xd460>
 『みちにまよっている!』<*5>","<&0xd6a0>
-""I'm lost!""<*5>",
+""I'm lost!""<*5>",,
 0x11406c,"<&0xd460>は
-かくれている!<*5>",<&0xd6a0> is hiding!<*5>,
+かくれている!<*5>",<&0xd6a0> is hiding!<*5>,,
 0x11406e,"<&0xd460>は
-じゃんぷしている!<*5>",<&0xd6a0> is jumping!<*5>,
+じゃんぷしている!<*5>",<&0xd6a0> is jumping!<*5>,,
 0x114070,"<&0xd460>は
-ひこうしている!<*5>",<&0xd6a0> is flying!<*5>,
+ひこうしている!<*5>",<&0xd6a0> is flying!<*5>,,
 0x114072,"<&0xd460>は
-こんらんしている!<*5>",<&0xd6a0> is confused!<*5>,
+こんらんしている!<*5>",<&0xd6a0> is confused!<*5>,,
 0x114074,"<&0xd460>は
-まひしている!<*5>",<&0xd6a0> is paralyzed!<*5>,
+まひしている!<*5>",<&0xd6a0> is paralyzed!<*5>,,
 0x114076,"<&0xd460>は
-のろわれている!<*5>",<&0xd6a0> is cursed!<*5>,
+のろわれている!<*5>",<&0xd6a0> is cursed!<*5>,,
 0x114078,"<&0xd460>は
-ねむっている!<*5>",<&0xd6a0> is sleeping!<*5>,
+ねむっている!<*5>",<&0xd6a0> is sleeping!<*5>,,
 0x11407a,"<&0xd460>は
-ひるんでいる!<*5>",<&0xd6a0> is flinching!<*5>,
+ひるんでいる!<*5>",<&0xd6a0> is flinching!<*5>,,
 0x11407c,"<&0xd460>は
-けむリにつつまれている!<*5>",<&0xd6a0> is covered in smoke!<*5>,
+けむリにつつまれている!<*5>",<&0xd6a0> is covered in smoke!<*5>,,
 0x11407e,"<&0xd460>は
-どくにおかされている!<*5>",<&0xd6a0> is poisoned!<*5>,
+どくにおかされている!<*5>",<&0xd6a0> is poisoned!<*5>,,
 0x114080,"<&0xd460>は
-めのまえがみえない!<*5>",<&0xd6a0> can't see!<*5>,
+めのまえがみえない!<*5>",<&0xd6a0> can't see!<*5>,,
 0x114082,"<&0xd460>は
-バリアをはっている!<*5>",<&0xd6a0> is forming a barrier!<*5>,
+バリアをはっている!<*5>",<&0xd6a0> is forming a barrier!<*5>,,
 0x114084,"<&0xd460>は
-けっかいをはられている!<*5>",<&0xd6a0> is forming a force field!<*5>,
+けっかいをはられている!<*5>",<&0xd6a0> is forming a force field!<*5>,,
 0x114086,"<&0xd460>は
-しもやけになっている!<*5>",<&0xd6a0> is frostbitten!<*5>,
+しもやけになっている!<*5>",<&0xd6a0> is frostbitten!<*5>,,
 0x114088,"<&0xd460>は
-やけどをおっている!<*5>",<&0xd6a0> is burned!<*5>,
+やけどをおっている!<*5>",<&0xd6a0> is burned!<*5>,,
 0x11408a,"<&0xd460>は
-すがたをあらわした!<*5>",<&0xd6a0> became visible!<*5>,
+すがたをあらわした!<*5>",<&0xd6a0> became visible!<*5>,,
 0x11408c,"<&0xd460>は
-ちゃくちした!<*5>",<&0xd6a0> came down!<*5>,
+ちゃくちした!<*5>",<&0xd6a0> came down!<*5>,,
 0x11408e,"<&0xd460>は
-まいおリた!<*5>",<&0xd6a0> landed!<*5>,
+まいおリた!<*5>",<&0xd6a0> landed!<*5>,,
 0x114090,"<&0xd460>は
-こんらんからさめた!<*5>",<&0xd6a0> came to its senses!<*5>,
+こんらんからさめた!<*5>",<&0xd6a0> came to its senses!<*5>,,
 0x114092,"<&0xd460>の
-まひがなおった!<*5>",<&0xd6a0> recovered from paralysis!<*5>,
+まひがなおった!<*5>",<&0xd6a0> recovered from paralysis!<*5>,,
 0x114094,"<&0xd460>の
-のろいがとけた!<*5>",<&0xd6a0>'s curse was lifted!<*5>,
+のろいがとけた!<*5>",<&0xd6a0>'s curse was lifted!<*5>,,
 0x114096,"<&0xd460>は
-ねむリからさめた!<*5>",<&0xd6a0> woke up!<*5>,
+ねむリからさめた!<*5>",<&0xd6a0> woke up!<*5>,,
 0x114098,"<&0xd460>は
-こうげきたいせいにもどった!<*5>",<&0xd6a0> can attack again!<*5>,
+こうげきたいせいにもどった!<*5>",<&0xd6a0> can attack again!<*5>,,
 0x11409a,"<&0xd460>の
-まわリのけむリがなくなった!<*5>",The smoke around <&0xd6a0> cleared!<*5>,
+まわリのけむリがなくなった!<*5>",The smoke around <&0xd6a0> cleared!<*5>,,
 0x11409c,"<&0xd460>の
-どくがきえた!<*5>",<&0xd6a0>'s poison faded!<*5>,
+どくがきえた!<*5>",<&0xd6a0>'s poison faded!<*5>,,
 0x11409e,"<&0xd460>は
-めのまえがみえるようになった!<*5>",<&0xd6a0> can see again!<*5>,
+めのまえがみえるようになった!<*5>",<&0xd6a0> can see again!<*5>,,
 0x1140a0,"<&0xd460>の
-バリアのこうかがなくなった!<*5>",<&0xd6a0>'s barrier faded!<*5>,
+バリアのこうかがなくなった!<*5>",<&0xd6a0>'s barrier faded!<*5>,,
 0x1140a2,"<&0xd460>の
-けっかいがきえた!<*5>",<&0xd6a0>'s force field faded!<*5>,
+けっかいがきえた!<*5>",<&0xd6a0>'s force field faded!<*5>,,
 0x1140a4,"<&0xd460>の
-しもやけがなおった!<*5>",<&0xd6a0> recovered from frostbite!<*5>,
+しもやけがなおった!<*5>",<&0xd6a0> recovered from frostbite!<*5>,,
 0x1140a6,"<&0xd460>の
-やけどがなおった!<*5>",<&0xd6a0> recovered from its burn!<*5>,
+やけどがなおった!<*5>",<&0xd6a0> recovered from its burn!<*5>,,
 0x1140a8,"<&0xd460>は
-みをかくした!<*5>",<&0xd6a0> hid itself!<*5>,
+みをかくした!<*5>",<&0xd6a0> hid itself!<*5>,,
 0x1140aa,"<&0xd460>は
-たかくとびあがった!<*5>",<&0xd6a0> jumped up high!<*5>,
+たかくとびあがった!<*5>",<&0xd6a0> jumped up high!<*5>,,
 0x1140ac,"<&0xd460>は
-おおぞらにまいあがった!<*5>",<&0xd6a0> flew up high!<*5>,
+おおぞらにまいあがった!<*5>",<&0xd6a0> flew up high!<*5>,,
 0x1140ae,"<&0xd460>は
-こんらんした!<*5>",<&0xd6a0> was confused!<*5>,
+こんらんした!<*5>",<&0xd6a0> was confused!<*5>,,
 0x1140b0,"<&0xd460>は
-まひした!<*5>",<&0xd6a0> was paralyzed!<*5>,
+まひした!<*5>",<&0xd6a0> was paralyzed!<*5>,,
 0x1140b2,"<&0xd460>は
-のろわれた!<*5>",<&0xd6a0> was cursed!<*5>,
+のろわれた!<*5>",<&0xd6a0> was cursed!<*5>,,
 0x1140b4,"<&0xd460>は
-ねむリだした!<*5>",<&0xd6a0> was put to sleep!<*5>,
+ねむリだした!<*5>",<&0xd6a0> was put to sleep!<*5>,,
 0x1140b6,"<&0xd460>は
-ひるんだ!<*5>",<&0xd6a0> flinched!<*5>,
+ひるんだ!<*5>",<&0xd6a0> flinched!<*5>,,
 0x1140b8,"<&0xd460>は
-けむリにつつまれた!<*5>",<&0xd6a0> was covered in smoke!<*5>,
+けむリにつつまれた!<*5>",<&0xd6a0> was covered in smoke!<*5>,,
 0x1140ba,"<&0xd460>は
-どくにおかされた!<*5>",<&0xd6a0> was poisoned!<*5>,
+どくにおかされた!<*5>",<&0xd6a0> was poisoned!<*5>,,
 0x1140bc,"<&0xd460>は
-めをつむった!<*5>",<&0xd6a0> covered its eyes!<*5>,
+めをつむった!<*5>",<&0xd6a0> covered its eyes!<*5>,,
 0x1140be,"<&0xd460>は
-バリアをはった!<*5>",<&0xd6a0> put up a barrier!<*5>,
+バリアをはった!<*5>",<&0xd6a0> put up a barrier!<*5>,,
 0x1140c0,"<&0xd460>は
-けっかいをはられた!<*5>",<&0xd6a0> put up a force field!<*5>,
+けっかいをはられた!<*5>",<&0xd6a0> put up a force field!<*5>,,
 0x1140c2,"<&0xd460>は
 しもやけになった!
-しゅびリょくダウン!!<*5>",<&0xd6a0> was frostbitten! Defense down!!<*5>,
+しゅびリょくダウン!!<*5>",<&0xd6a0> was frostbitten! Defense down!!<*5>,,
 0x1140c4,"<&0xd460>は
 やけどをおった!
-こうげきリょくダウン!!<*5>",<&0xd6a0> was burned! Attack power down!!<*5>,
+こうげきリょくダウン!!<*5>",<&0xd6a0> was burned! Attack power down!!<*5>,,
 0x1140c6,"メモリーしますか?
    はい    いいえ<*4>","Save number?
-   Yes   No<*4>",
+   Yes   No<*4>",,
 0x1140c8,"<&0xd460>の
-デンワバンゴウをメモリーした!<*5>",<&0xd6a0>'s number was saved!<*5>,
+デンワバンゴウをメモリーした!<*5>",<&0xd6a0>'s number was saved!<*5>,,
 0x1140ca,"デンワバンゴウを
-メモリーしなかった!<*5>",The number wasn't saved!<*5>,
+メモリーしなかった!<*5>",The number wasn't saved!<*5>,,
 0x1140cc,"『ちょっと よリみちするから
- すこし おくれるね!』<*4>","""I got distracted, so I'll be a bit late!""<*4>",
+ すこし おくれるね!』<*4>","""I got distracted, so I'll be a bit late!""<*4>",,
 0x1140ce,"『ごめん!まよっちゃった!
- すこし おくれそう!』<*4>","""Sorry! I got lost! I'll be a bit longer!""<*4>",
-0x1140d0,<&0xd448>チル ゲット!<*5>,Got <&0xd448> Chiru!<*5>,
+ すこし おくれそう!』<*4>","""Sorry! I got lost! I'll be a bit longer!""<*4>",,
+0x1140d0,<&0xd448>チル ゲット!<*5>,Got <&0xd448> Chiru!<*5>,,
 0x1140d2,"てきのなかまは
-おくれているようだ!<*4>",The enemy's ally is late to battle!<*4>,
+おくれているようだ!<*4>",The enemy's ally is late to battle!<*4>,,
 0x1140d4,"<&0xd448>ひきまで よベます
 SELECTで ステータス<*4>","Call up to <&0xd448>! 
-SELECT: Status<*4>",
+SELECT: Status<*4>",,
 0x1140d6,"デンパの
-とどかないじょうたいです!<*5>",There's no reception!<*5>,
+とどかないじょうたいです!<*5>",There's no reception!<*5>,,
 0x1140d8,"オマエ つよいなぁ!
-デンワバンゴウ おしえてやるよ!<*5>","Wow, you're strong! Here's my phone number!<*5>",
+デンワバンゴウ おしえてやるよ!<*5>","Wow, you're strong! Here's my phone number!<*5>",,
 0x1140da,"<&0xc9e1>から
-デンワがかかってきた!<*4>",Got a call from <&0xcca3>!<*4>,
-0x1140dc,でも もうメモリーが いっぱいでとうろくできない!!<*5>,...But the phone memory is full! Can't save any more numbers!!<*5>,
+デンワがかかってきた!<*4>",Got a call from <&0xcca3>!<*4>,,
+0x1140dc,でも もうメモリーが いっぱいでとうろくできない!!<*5>,...But the phone memory is full! Can't save any more numbers!!<*5>,,
 0x1140de,"にがてな あいてにたいして
 ひかえめダメージ!!<*5>","Disadvantage!
-Lower damage!!<*5>",
+Lower damage!!<*5>",,
 0x1140e0,"とくいな あいてにたいして
 わリましダメージ!!<*5>","Advantage!
-Extra damage!!<*5>",
+Extra damage!!<*5>",,
 0x1140e2,"<&0xd4b1>が
 しょうぶを しかけてきた!<*5>","<&0xd658> has
-challenged you!<*5>",
-0x1140e4,<S0>    つうしんまち!<*4>,"<S0> Connecting, please wait!<*4>",
-0x1140e6,つうしん しっぱいです!<*5>,Connection failed!<*5>,
-0x1140e8,つうしんが きれました!<*5>,The connection was closed!<*5>,
+challenged you!<*5>",,
+0x1140e4,<S0>    つうしんまち!<*4>,"<S0> Connecting, please wait!<*4>",,
+0x1140e6,つうしん しっぱいです!<*5>,Connection failed!<*5>,,
+0x1140e8,つうしんが きれました!<*5>,The connection was closed!<*5>,,
 0x1140ea,"トレードする デンジュウを
-えらんでください!<*4>",Select a Denjuu to trade!<*4>,
+えらんでください!<*4>",Select a Denjuu to trade!<*4>,,
 0x1140ec,"つうしんモードが
-ちがいます!!<*5>",The connection mode doesn't match!!<*5>,
+ちがいます!!<*5>",The connection mode doesn't match!!<*5>,,
 0x1140ee,"VSたいせんは
-できません!!<*5>",Cannot VS battle!!<*5>,
+できません!!<*5>",Cannot VS battle!!<*5>,,
 0x1140f0,"VSたいせんをするには
 2ひき いじょうのデンジュウが
-ひつようです!!<*5>",You need at least 2 Denjuu for a VS battle!!<*5>,
-0x1140f2,VSたいせんOK!!<*5>,VS battle OK!!<*5>,
+ひつようです!!<*5>",You need at least 2 Denjuu for a VS battle!!<*5>,,
+0x1140f2,VSたいせんOK!!<*5>,VS battle OK!!<*5>,,
 0x1140f4,"トレードは
-できません!!<*5>",Cannot trade!!<*5>,
+できません!!<*5>",Cannot trade!!<*5>,,
 0x1140f6,"トレードできる
-デンジュウがいません!!<*5>",There are no tradable Denjuu!!<*5>,
-0x1140f8,トレードOK!!<*5>,Trade OK!!<*5>,
+デンジュウがいません!!<*5>",There are no tradable Denjuu!!<*5>,,
+0x1140f8,トレードOK!!<*5>,Trade OK!!<*5>,,
 0x1140fa,"Dショットのメモリーが
-いっぱいです!!<*5>",The D-Shot's memory is full!!<*5>,
+いっぱいです!!<*5>",The D-Shot's memory is full!!<*5>,,
 0x1140fc,"つうしんモードを
-えらんでください!<*5>",Choose a connection mode!<*5>,
+えらんでください!<*5>",Choose a connection mode!<*5>,,
 0x1140fe,"てんそうする Dメロを
-えらんでください!<*4>",Select the Melo-D to transfer!<*4>,
+えらんでください!<*4>",Select the Melo-D to transfer!<*4>,,
 0x114100,"もしもし なんかようじ?
 ひさしぶリ! げんきだったか?
 おれをよんでくれるのか?
  はい  いいえ<*A>","Hi, what's up?
 It's been a while! How's it going?
 Are you calling me over?
-<0>Yes<0>No<*A>",
+<0>Yes<0>No<*A>",,
 0x114102,"もしもし なんかようじ?
 ひさしぶリ! げんきだったか?<*5>","Hi, what's up? 
-It's been a while! How's it going?<*5>",
+It's been a while! How's it going?<*5>",,
 0x114104,"Dメロが てんそうされるまで
-おまちください!<*4>",Please wait for the Melo-D to transfer!<*4>,
+おまちください!<*4>",Please wait for the Melo-D to transfer!<*4>,,
 0x114106,"こちらから Dメロを
-てんそうします<*5>",The Melo-D will now transfer.<*5>,
-0x114108,<S0>   そうしんちゅう!!<*4>,<S0> Transferring!!<*4>,
-0x11410a,おわリました!!<*5>,Complete!!<*5>,
+てんそうします<*5>",The Melo-D will now transfer.<*5>,,
+0x114108,<S0>   そうしんちゅう!!<*4>,<S0> Transferring!!<*4>,,
+0x11410a,おわリました!!<*5>,Complete!!<*5>,,
 0x11410c,"セーブする ばしょを
-えらんでください!<*4>",Please choose a slot to save to!<*4>,
-0x11410e,セーブしました!<*5>,Save complete!<*5>,
-0x114110,データを うけとリました!<*5>,Data received!<*5>,
-0x114112,セーブデータが あリません!!<*5>,No save data!!<*5>,
+えらんでください!<*4>",Please choose a slot to save to!<*4>,,
+0x11410e,セーブしました!<*5>,Save complete!<*5>,,
+0x114110,データを うけとリました!<*5>,Data received!<*5>,,
+0x114112,セーブデータが あリません!!<*5>,No save data!!<*5>,,
 0x114114,"Dメロてんそうは
-できません!!<*5>",Cannot transfer the Melo-D!!<*5>,
+できません!!<*5>",Cannot transfer the Melo-D!!<*5>,,
 0x114116,"どのデンジュウに
-わざを かけますか?<*4>",Target which Denjuu?<*4>,
-0x114118,<&0xd460>は しんかできるレベルになっています<*5>,<&0xd6a0> has reached a level where it can evolve.<*5>,
+わざを かけますか?<*4>",Target which Denjuu?<*4>,,
+0x114118,<&0xd460>は しんかできるレベルになっています<*5>,<&0xd6a0> has reached a level where it can evolve.<*5>,,
 0x11411a,"<S0>しんかさせますか?
    はい    いいえ<*4>","<S0>Will you let it evolve?
-   Yes   No<*4>",
+   Yes   No<*4>",,
 0x11411c,"<&0xd460>は
-しんかしなかった!<*5>",<&0xd6a0> didn't evolve!<*5>,
+しんかしなかった!<*5>",<&0xd6a0> didn't evolve!<*5>,,
 0x11411e,"<S0>ニックネームをつけますか?
    はい    いいえ<*4>","<S0>Give it a nickname?
-   Yes   No<*4>",
-0x114120,クリティカル!!<*4>,Critical!!<*4>,
-0x114122,あいても このがめんにいることをかくにんしてください<*5>,Confirm that your partner is at this screen.<*5>,
+   Yes   No<*4>",,
+0x114120,クリティカル!!<*4>,Critical!!<*4>,,
+0x114122,あいても このがめんにいることをかくにんしてください<*5>,Confirm that your partner is at this screen.<*5>,,
 0x114124,"つうしんをかいししますか?
    はい    いいえ<*4>","Connect?
-   Yes   No<*4>",
-0x114126,<S0>   じゅしんちゅう!!<*4>,<S0>   Receiving!!<*4>,
+   Yes   No<*4>",,
+0x114126,<S0>   じゅしんちゅう!!<*4>,<S0>   Receiving!!<*4>,,
 0x114128,"ターゲット
-けってい!<*4>",Choose a target!<*4>,
+けってい!<*4>",Choose a target!<*4>,,
 0x11412a,"どのデンジュウを
-こうげきしますか?<*4>",Which Denjuu will you attack?<*4>,
+こうげきしますか?<*4>",Which Denjuu will you attack?<*4>,,
 0x11412c,"<S0>   けいたいメモリー
-   アクセスちゅう!<*4>",<S0>Accessing phone memory!<*4>,
-0x11412e,やったぁ!! あリがとう!!,Woohoo! Thanks!!,
-0x114130,『うわ<nowiki>~~~</nowiki>!!』<*4>,"""Waaaaahh!!""<*4>",
+   アクセスちゅう!<*4>",<S0>Accessing phone memory!<*4>,,
+0x11412e,やったぁ!! あリがとう!!,Woohoo! Thanks!!,,
+0x114130,『うわ<nowiki>~~~</nowiki>!!』<*4>,"""Waaaaahh!!""<*4>",,
 0x114132,"<&0xc9e1> から
-デンワが かかってきた!<*3>",Got a call from <&0xcca3>!<*3>,
-0x114134,おもくて おせないや...。,It's too heavy to move...,
-0x114136,もてそうなんだけどなぁ...。,"Aw, I thought I could lift it...",
+デンワが かかってきた!<*3>",Got a call from <&0xcca3>!<*3>,,
+0x114134,おもくて おせないや...。,It's too heavy to move...,,
+0x114136,もてそうなんだけどなぁ...。,"Aw, I thought I could lift it...",,
 0x114138,"これくらいに しといてやるぜ!
-あばよ。",/0x114138/,
-0x11413a,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,
+あばよ。",/0x114138/,,
+0x11413a,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,
 0x11413c,"<S0>
 <&0xca00>チル<*4>","<S0>
-<&0xca00>Ch.<*4>",
-0x11413e,ちくしょー! おぼえてやがれ!,Aargh! I'll remember this!,
-0x114140,<S3>『やっと つながったのう<S10>...』<*2>,"<S3>""Finally, we are connected<S10>...""<*2>",
+<&0xca00>Ch.<*4>",,
+0x11413e,ちくしょー! おぼえてやがれ!,Aargh! I'll remember this!,,
+0x114140,<S3>『やっと つながったのう<S10>...』<*2>,"<S3>""Finally, we are connected<S10>...""<*2>",,
 0x114142,"コイツが オレの『ヘいたい』だ
 オレの じゃまをするヤツには
 ようしゃしない!
 いくぞ! テレファングだ!<*2>","This guy is one of my ""soldiers"". 
 He'll show no mercy for people who get in my way. 
-Let's go! Telefang!<*2>",
+Let's go! Telefang!<*2>",,
 0x114144,"メールが 1けん
-とどいています。",You received 1 text message.,
+とどいています。",You received 1 text message.,,
 0x114146,"メールが 2けん
-とどいています。",You received 2 text messages.,
+とどいています。",You received 2 text messages.,,
 0x114148,"メールが 3けん
-とどいています。",You received 3 text messages.,
+とどいています。",You received 3 text messages.,,
 0x11414a,"メールが 4けん
-とどいています。",You received 4 text messages.,
+とどいています。",You received 4 text messages.,,
 0x11414c,"<S2>
 <&0xca00>","<S2>
-<&0xccc0>",
+<&0xccc0>",,
 0x11414e,"<&0xca53> の <&0xc9e1>
-から デンワが かかってきた!<*3>",Got a call from <&0xca53>'s <&0xcca3>!<*3>,
-0x114150,とびらはかたくとざされている。,The door is closed tightly.,
-0x114152,<S10>......<S30>.<S1>いらない。,<S10>......<S30>.<S1>No thanks.,
+から デンワが かかってきた!<*3>",Got a call from <&0xca53>'s <&0xcca3>!<*3>,,
+0x114150,とびらはかたくとざされている。,The door is closed tightly.,,
+0x114152,<S10>......<S30>.<S1>いらない。,<S10>......<S30>.<S1>No thanks.,,
 0x114154,"<&0xca53> を
-<&0xc9e1> ヘプレゼントした",You gave <&0xcca3> the <&0xcaf0>.,
+<&0xc9e1> ヘプレゼントした",You gave <&0xcca3> the <&0xcaf0>.,,
 0x114156,"<&0xc9e1> は
-ふてきなえみを うかベた。",<&0xcca3> gave a bold smile.,
+ふてきなえみを うかベた。",<&0xcca3> gave a bold smile.,,
 0x114158,"<&0xca53>で DNAを
-さいしゅ しようとした...。",Tried to harvest DNA with the <&0xcaf0>,
+さいしゅ しようとした...。",Tried to harvest DNA with the <&0xcaf0>,,
 0x11415a,"が...<&0xc9e1> からは
 DNAを さいしゅ することが
-できない。",But... You couldn't get any DNA from <&0xcca3>.,
-0x11415c,<&0xca53> をてにいれた。,Obtained <&0xcaf0>.,
+できない。",But... You couldn't get any DNA from <&0xcca3>.,,
+0x11415c,<&0xca53> をてにいれた。,Obtained <&0xcaf0>.,,
 0x11415e,"かいぞうをつづけますか?
  はい  いいえ<*A>","Continue fusing?
- Yes   No<*A>",
+ Yes   No<*A>",,
 0x114160,"けいけんちをすこしえた。
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received a small amount of experience.
 Continue fusing?
-<0>Yes<0>No<*A>",
+<0>Yes<0>No<*A>",,
 0x114162,"けいけんちをえた。
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received some experience.
 Continue fusing?
-<0>Yes<0>No<*A>",
+<0>Yes<0>No<*A>",,
 0x114164,"けいけんちをかなリえた!!
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received a large amount of experience!!
 Continue fusing?
-<0>Yes<0>No<*A>",
-0x114166,<S3>かいぞうかいし!!<*4>,<S3>Fusion in progress!!<*4>,
-0x114168,<S3>じっけんかいし!!<*4>,<S3>Experiment in progress!!<*4>,
+<0>Yes<0>No<*A>",,
+0x114166,<S3>かいぞうかいし!!<*4>,<S3>Fusion in progress!!<*4>,,
+0x114168,<S3>じっけんかいし!!<*4>,<S3>Experiment in progress!!<*4>,,
 0x11416a,"<&0xca53> は
 かいぞうしんか した!!
 <&0xca00> になった。<*2>","<&0xca53> has Fusion evolved!!
-Evolved into <&0xca00>.<*2>",
+Evolved into <&0xca00>.<*2>",,
 0x11416c,"<&0xca53> は
 じっけんしんか した!!
 <&0xca00> になった。<*2>","<&0xca53> has Lab evolved!
-Evolved into <&0xca00>.<*2>",
+Evolved into <&0xca00>.<*2>",,
 0x11416e,"よろしいですか?
  はい  いいえ<*A>","Is this correct?
-<0>Yes<0>No<*A>",
+<0>Yes<0>No<*A>",,
 0x114170,"しんかにひつような
-アイテムがあリません!!<*2>",You have no items needed for evolution!!<*2>,
+アイテムがあリません!!<*2>",You have no items needed for evolution!!<*2>,,
 0x114172,"<S0>どのアイテムを
-くみあわせますか?<*2>",<S0>Which item will you combine?<*2>,
-0x114174,<S0><&0xca53><*4>,<S0><&0xcaf0><*4>,
+くみあわせますか?<*2>",<S0>Which item will you combine?<*2>,,
+0x114174,<S0><&0xca53><*4>,<S0><&0xcaf0><*4>,,
 0x114176,"<S2>
 <&0xca00><*4>","<S2>
-<&0xccc0><*4>",
+<&0xccc0><*4>",,
 0x114178,"<S2>
 <&0xca00><*2>","<S2>
-<&0xccc0><*2>",
-0x11417a,カギをつかった。,You used the key.,
-0x11417c,カギがかかっている。,It's locked.,
+<&0xccc0><*2>",,
+0x11417a,カギをつかった。,You used the key.,,
+0x11417c,カギがかかっている。,It's locked.,,
 0x11417e,"<S15> <S1>『<&0xca53>』を
 <S0>        <S2> てにいれた。","<S15> <S1>""<&0xca53>""
-<S0>        <S2> obtained<S2>.",
+<S0>        <S2> obtained<S2>.",,
 0x114180,"あれ? <&name>?
 ほかのトモダチと
 おもったんだけどなー<*2>","Hm? <&name>?
-I was expecting someone else...<*2>",
+I was expecting someone else...<*2>",,
 0x114182,"やぁ <&name>
 いまどこいるんだ?
 まぁ どこでもいいんだけどな
 ゲンキでやってればね
 ちょっと きになっただけさ<*2>","Hey <&name>, where are you right now?
 Well, I guess it doesn't matter so long as you're doing alright.
-I was just kind of worried is all.<*2>",
+I was just kind of worried is all.<*2>",,
 0x114184,"もしもし?
 このさいきん ヒマしてない?
 おれは ヒマなんだよねー<*2>","Hello? 
-Hey, have you done anything interesting lately? I'm so bored...<*2>",
+Hey, have you done anything interesting lately? I'm so bored...<*2>",,
 0x114186,"もしもーし...あれ?
 もしもーし???
 ケンガイなのかな?
@@ -420,19 +420,19 @@ Is the reception bad?
 Hello?? 
 Ah... There we go. 
 Now, what was I going to ask you about again? 
-Ugh, I forgot!<*2>",
+Ugh, I forgot!<*2>",,
 0x114188,"こちらから おくリますか?
    おくる   うけとる<*4>","What will you do?
-<0>Send<0>Receive<*4>",
-0x11418a,<*0>,<*0>,
-0x11418c,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x11418e,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x114190,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x114192,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x114194,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x114196,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x114198,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x11419a,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x11419c,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x11419e,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,
-0x1141a0,<S0><0xea><&0xcc90><0xeb><*4>,<S0><0xea><&0xcc90><0xeb><*4>,
+<0>Send<0>Receive<*4>",,
+0x11418a,<*0>,<*0>,,
+0x11418c,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x11418e,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x114190,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x114192,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x114194,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x114196,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x114198,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x11419a,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x11419c,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x11419e,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,
+0x1141a0,<S0><0xea><&0xcc90><0xeb><*4>,<S0><0xea><&0xcc90><0xeb><*4>,,

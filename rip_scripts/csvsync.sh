@@ -1,17 +1,10 @@
 #!/bin/bash
 
 wget --no-check-certificate -O script/story/all.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1935066788
-wget --no-check-certificate -O script/npc/1.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1435413006
-wget --no-check-certificate -O script/npc/2.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=12154921
-wget --no-check-certificate -O script/npc/3.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1116652498
+wget --no-check-certificate -O script/npc/all.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1435413006
 wget --no-check-certificate -O script/npc/postgame.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1999641522
 wget --no-check-certificate -O script/npc/unused.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1634712150
-wget --no-check-certificate -O script/calls/denjuu/1.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=317080452
-wget --no-check-certificate -O script/calls/denjuu/2.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1170175708
-wget --no-check-certificate -O script/calls/denjuu/3.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=752748126
-wget --no-check-certificate -O script/calls/denjuu/4.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=705259364
-wget --no-check-certificate -O script/calls/denjuu/5.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1429555173
-wget --no-check-certificate -O script/calls/denjuu/6.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=388178877
+wget --no-check-certificate -O script/calls/denjuu/all.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=317080452
 wget --no-check-certificate -O script/calls/story.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=2033175693
 wget --no-check-certificate -O script/calls/exp_item.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1056966167
 wget --no-check-certificate -O script/battle/messages.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1751024229

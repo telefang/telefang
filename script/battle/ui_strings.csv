@@ -1,5 +1,5 @@
-#,Japanese,English,Notes
-1,たたかう<0><0><0><0>,Fight<0><0><0>,These strings are used by the Battle UI.
-2,にげる<0><0><0><0><0>,Flee<0><0><0><0>,Strings are limited to 8 characters.
-3,にげだした!<0><0>,Escaped!,Empty characters must be filled with null bytes.
-4,とうちゃく!<0><0>,arrived!,
+#,Japanese,English,Draft version,Notes
+1,たたかう<0><0><0><0>,Fight<0><0><0>,,These strings are used by the Battle UI.
+2,にげる<0><0><0><0><0>,Flee<0><0><0><0>,,Strings are limited to 8 characters.
+3,にげだした!<0><0>,Escaped!,,Empty characters must be filled with null bytes.
+4,とうちゃく!<0><0>,arrived!,,

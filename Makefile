@@ -100,15 +100,10 @@ OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
      versions/speed/palettes.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
-					script/npc/1.messages.csv script/story/1.messages.csv \
-					script/npc/2.messages.csv script/npc/unused.messages.csv \
-					script/npc/postgame.messages.csv script/calls/denjuu/1.messages.csv \
-					script/calls/denjuu/2.messages.csv script/story/2.messages.csv script/story/3.messages.csv \
-					script/npc/3.messages.csv script/story/4.messages.csv script/calls/denjuu/3.messages.csv \
-					script/calls/denjuu/4.messages.csv script/calls/denjuu/5.messages.csv \
-					script/calls/denjuu/6.messages.csv script/denjuu/descriptions.messages.csv \
-					script/calls/story.messages.csv script/calls/exp_item.messages.csv \
-					script/story/5.messages.csv
+					script/npc/all.messages.csv script/npc/unused.messages.csv \
+					script/npc/postgame.messages.csv script/calls/denjuu/all.messages.csv \
+					script/story/all.messages.csv script/denjuu/descriptions.messages.csv \
+					script/calls/story.messages.csv script/calls/exp_item.messages.csv
 
 OBJS_MESSAGE := script/mainscript_data.o
 OBJS_MESSAGE_BLOCKS := ${SRC_MESSAGE:.messages.csv=.scripttbl}
