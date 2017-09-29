@@ -1,10 +1,6 @@
 #!/bin/bash
 
-wget --no-check-certificate -O script/story/1.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1935066788
-wget --no-check-certificate -O script/story/2.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1487293118
-wget --no-check-certificate -O script/story/3.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1935827047
-wget --no-check-certificate -O script/story/4.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=618722197
-wget --no-check-certificate -O script/story/5.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=184941261
+wget --no-check-certificate -O script/story/all.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1935066788
 wget --no-check-certificate -O script/npc/1.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1435413006
 wget --no-check-certificate -O script/npc/2.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=12154921
 wget --no-check-certificate -O script/npc/3.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1116652498
