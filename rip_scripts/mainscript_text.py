@@ -768,8 +768,11 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             continue
 
         if row[ptr_col] != "(No pointer)":
-            table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
-            last_table_index = table_idx
+            try:
+                table_idx = (int(row[ptr_col][2:], 16) - bank["baseaddr"]) % 0x4000 // 2
+                last_table_index = table_idx
+            except ValueError:
+                continue #Skip rows that don't have parsable ptr columns
         else:
             table_idx = last_table_index
         
