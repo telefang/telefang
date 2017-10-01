@@ -106,7 +106,16 @@ SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.cs
 					script/calls/story.messages.csv script/calls/exp_item.messages.csv
 
 OBJS_MESSAGE := script/mainscript_data.o
-OBJS_MESSAGE_BLOCKS := ${SRC_MESSAGE:.messages.csv=.scripttbl}
+OBJS_MESSAGE_BLOCKS := script/battle/messages.scripttbl script/denjuu/sms.scripttbl \
+               script/npc/1.scripttbl script/story/1.scripttbl \
+               script/npc/2.scripttbl script/npc/unused.scripttbl \
+               script/npc/postgame.scripttbl script/calls/denjuu/1.scripttbl \
+               script/calls/denjuu/2.scripttbl script/story/2.scripttbl script/story/3.scripttbl \
+               script/npc/3.scripttbl script/story/4.scripttbl script/calls/denjuu/3.scripttbl \
+               script/calls/denjuu/4.scripttbl script/calls/denjuu/5.scripttbl \
+               script/calls/denjuu/6.scripttbl script/denjuu/descriptions.scripttbl \
+               script/calls/story.scripttbl script/calls/exp_item.scripttbl \
+               script/story/5.scripttbl
 
 OBJS_ASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
