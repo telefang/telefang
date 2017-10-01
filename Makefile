@@ -166,7 +166,7 @@ clean:
 
 $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc --language="English" $(SRC_MESSAGE) $(OBJS_MESSAGE)
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc $(SRC_MESSAGE) $(OBJS_MESSAGE) --language="English"
 
 %.stringtbl: %.csv
 	@rm -f $@
