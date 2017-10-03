@@ -109,7 +109,13 @@ PauseMenu_LoadMap1::
     pop bc
     jp PauseMenu_LoadAttribmap1
 
-SECTION "Pause Menu Tile Utils", ROMX[$7FD2], BANK[$4]
+SECTION "Pause Menu Tile Utils", ROMX[$7FC6], BANK[$4]
+PauseMenu_ClearArrowMetasprites::
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call LCDC_ClearSingleMetasprite
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    jp LCDC_ClearSingleMetasprite
+    
 PauseMenu_ClearInputTiles::
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB

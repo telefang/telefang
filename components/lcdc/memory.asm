@@ -38,6 +38,20 @@ LCDC_ClearMetasprites::
     ld bc, $40
     ld hl, $C480
     jp memclr
+
+LCDC_ClearSingleMetasprite::
+    ld b, M_MetaSpriteConfig_Size
+    xor a
+    
+.clrLoop
+    ld [de], a
+    inc de
+    dec b
+    jr nz, .clrLoop
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    ret
 	
 SECTION "LCDC Memory Utility 2", ROM0[$09AA]
 ;Yet another wait-for-blank, because I assume there's more in the code.
