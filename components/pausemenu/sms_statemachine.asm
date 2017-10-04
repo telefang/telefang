@@ -27,7 +27,7 @@ PauseMenu_SubStateSMSInit:
     call PauseMenu_ClearScreenTiles
     
     xor a
-    ld [$CB67], a
+    ld [W_MelodyEdit_DataCurrent], a
     ld [W_MelodyEdit_DataCount], a
     
     ld a, $F0
@@ -108,7 +108,7 @@ PauseMenu_SubStateSMSListingInit::
     ld a, 0
     call Banked_RLEDecompressTMAP0
     
-    ld a, [$CB67]
+    ld a, [W_MelodyEdit_DataCurrent]
     call PauseMenu_DrawSMSListingEntry
     
     ld a, 4
