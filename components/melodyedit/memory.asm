@@ -1,6 +1,7 @@
 INCLUDE "telefang.inc"
 
-SECTION "Melody Edit Variables", WRAM0[$CB68]
+SECTION "Melody Edit Variables", WRAM0[$CB67]
+W_MelodyEdit_DataCurrent:: ds 1
 W_MelodyEdit_DataCount:: ds 1
 W_MelodyEdit_CurrentPage:: ds 1
 

@@ -78,3 +78,4 @@ PhoneKeypadGfxDmg::
 SECTION "Phone Screen Graphics", ROMX[$6A5F], BANK[$37]
 PhoneScreenNewTextsGfx::
 	INCBIN "gfx/phones/new_texts.2bpp"
+PhoneScreenNewTextsGfx_END::

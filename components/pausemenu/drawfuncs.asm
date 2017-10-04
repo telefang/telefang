@@ -53,3 +53,50 @@ PauseMenu_ContactsMenuDrawDenjuuNickname::
     ld d, M_StringTable_Load8AreaSize
     ld hl, $9780
     jp MainScript_DrawCenteredStagedString
+
+SECTION "Pause Menu Draw Functions 3", ROMX[$79F9], BANK[$4]
+PauseMenu_DrawTwoDigits::
+    ld a, [W_GenericRegPreserve]
+    swap a
+    and $F
+    call PauseMenu_DrawDigit
+    
+    ld a, [W_GenericRegPreserve]
+    and $F
+    jp PauseMenu_DrawDigit
+
+SECTION "Pause Menu Draw Functions 4", ROMX[$7181], BANK[$4]
+PauseMenu_DrawDigit::
+    add a, $E0
+    di
+    call YetAnotherWFB
+    ld [hli], a
+    ei
+    ret
+
+SECTION "Pause Menu Draw Functions 5", ROMX[$67EB], BANK[$4]
+PauseMenu_DecimalizeAndDrawTwoDigits::
+    push hl
+    call Status_DecimalizeStatValue
+    
+    pop hl
+    ld a, [W_GenericRegPreserve]
+    and $F0
+    swap a
+    add a, $F0
+    
+    di
+    call YetAnotherWFB
+    ld [hli], a
+    ei
+    
+    ld a, [W_GenericRegPreserve]
+    and $F
+    add a, $F0
+    
+    di
+    call YetAnotherWFB
+    ld [hl], a
+    ei
+    
+    ret
