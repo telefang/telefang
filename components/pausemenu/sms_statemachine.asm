@@ -124,7 +124,7 @@ PauseMenu_SubStateSMSListingInit::
     call Banked_PauseMenu_InitializeCursor
     
     ld a, $40
-    ld [W_PauseMenu_CursorX], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_XOffset], a
     
     ld a, 8
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_XOffset], a
