@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
-SECTION "Pause Menu SMS Arena", WRAM0[W_PauseMenu_SMSArena]
-W_PauseMenu_SMSArena: ds M_PauseMenu_SMSArenaSize
+SECTION "Pause Menu SMS Arena", WRAM0[$CD90]
+W_PauseMenu_SMSArena:: ds M_PauseMenu_SMSArenaSize
 
 SECTION "Pause Menu SMS Utils", ROMX[$7028], BANK[$4]
 PauseMenu_SMSListingInputHandler::
@@ -31,7 +31,7 @@ PauseMenu_SMSListingInputHandler::
     
     ld a, $40
     ld [W_MainScript_TileBaseIdx], a
-    call PhoneTexts_DrawSMSFromMessages
+    call PauseMenu_DrawSMSFromMessages
     
     jp System_ScheduleNextSubSubState
     
@@ -190,3 +190,39 @@ PauseMenu_CountActiveSMS::
     dec b
     jr nz, .countLoop
     ret
+
+SECTION "Pause Menu SMS Utils 3", ROMX[$77A1], BANK[$4]
+PauseMenu_LoadMsgsGraphic::
+    ld hl, PhoneScreenNewTextsGfx
+    ld de, $9400
+    ld bc, PhoneScreenNewTextsGfx_END - PhoneScreenNewTextsGfx
+    ld a, PhoneScreenNewTextsGfx
+    jp Banked_LCDC_LoadGraphicIntoVRAM
+    
+PauseMenu_DrawSMSFromMessages::
+    ld a, [W_MelodyEdit_DataCurrent]
+    ld b, a
+    
+    ld a, [W_MelodyEdit_DataCount]
+    dec a
+    sub b
+    
+    ld e, a
+    ld d, 0
+    sla e
+    rl d
+    sla e
+    rl d
+    ld hl, W_PauseMenu_SMSArena
+    add hl, de
+    
+    inc hl
+    inc hl
+    inc hl
+    ld a, [hl]
+    ld c, a
+    ld b, 1
+    ld d, $C
+    call Banked_MainScript_InitializeMenuText
+    call Banked_MainScriptMachine
+    jp Banked_MainScriptMachine
