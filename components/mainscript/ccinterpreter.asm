@@ -410,5 +410,18 @@ MainScript_ADVICE_NewlineVWFReset::
 	inc a
 	ld [W_MainScript_NumNewlines], a
 	
+   ;The moveup animation does not support nonstandard window widths
+   ;so we don't trigger it if that's the case.
+   
+	ld a, [W_MainScript_VWFNewlineWidth]
+	and a
+	jr z, .standardWidth
+	cp $10
+	jr z, .standardWidth
+	
+.nonStandardWidth
+	jp MainScript_EndOpcode.skipNewlineCheck
+	
+.standardWidth
 	jp MainScript_EndOpcode
 MainScript_ADVICE_AdjustableNewlineOffset_END::
