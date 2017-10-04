@@ -200,6 +200,40 @@ PauseMenu_LoadMsgsGraphic::
     jp Banked_LCDC_LoadGraphicIntoVRAM
     
 PauseMenu_DrawSMSFromMessages::
+    ld a, (Banked_PauseMenu_ADVICE_DrawSMSFromMessages & $FF)
+    jp PatchUtils_AuxCodeJmp
+
+SECTION "Pause Menu SMS Utils 4", ROMX[$5B21], BANK[$4]
+PauseMenu_ExitToCentralMenu::
+    call PauseMenu_LoadMainGraphics
+    jp System_ScheduleNextSubSubState
+    
+PauseMenu_ExitToCentralMenu2::
+    call $7E37
+    call $59CD
+    
+    ld a, 5
+    ld [W_SystemSubState], a
+    
+    xor a
+    ld [W_SystemSubSubState], a
+    
+    ret
+
+SECTION "Pause Menu SMS Utils ADVICE", ROMX[$4240], BANK[$1]
+PauseMenu_ADVICE_DrawSMSFromMessages::
+    ld a, [W_CurrentBank]
+    push af
+    
+    ld a, [W_PreviousBank]
+    push af
+    
+    ld a, BANK(PauseMenu_ADVICE_DrawSMSFromMessages)
+    ld [W_PreviousBank], a
+    
+    ld a, 6
+    ld [W_MainScript_VWFNewlineWidth], a
+    
     ld a, [W_MelodyEdit_DataCurrent]
     ld b, a
     
@@ -224,22 +258,20 @@ PauseMenu_DrawSMSFromMessages::
     ld b, 1
     ld d, $C
     call Banked_MainScript_InitializeMenuText
+    
+.waitForExhaustionLoop
     call Banked_MainScriptMachine
-    jp Banked_MainScriptMachine
-
-SECTION "Pause Menu SMS Utils 4", ROMX[$5B21], BANK[$4]
-PauseMenu_ExitToCentralMenu::
-    call PauseMenu_LoadMainGraphics
-    jp System_ScheduleNextSubSubState
+    ld a, [W_MainScript_State]
+    cp M_MainScript_StateTerminated
+    jp nz, .waitForExhaustionLoop
     
-PauseMenu_ExitToCentralMenu2::
-    call $7E37
-    call $59CD
+    ld a, $10
+    ld [W_MainScript_VWFNewlineWidth], a
     
-    ld a, 5
-    ld [W_SystemSubState], a
+    pop af
+    ld [W_PreviousBank], a
     
-    xor a
-    ld [W_SystemSubSubState], a
+    pop af
+    ld [W_CurrentBank], a
     
     ret
