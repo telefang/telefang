@@ -196,7 +196,7 @@ PauseMenu_LoadMsgsGraphic::
     ld hl, PhoneScreenNewTextsGfx
     ld de, $9400
     ld bc, PhoneScreenNewTextsGfx_END - PhoneScreenNewTextsGfx
-    ld a, PhoneScreenNewTextsGfx
+    ld a, BANK(PhoneScreenNewTextsGfx)
     jp Banked_LCDC_LoadGraphicIntoVRAM
     
 PauseMenu_DrawSMSFromMessages::
@@ -226,3 +226,20 @@ PauseMenu_DrawSMSFromMessages::
     call Banked_MainScript_InitializeMenuText
     call Banked_MainScriptMachine
     jp Banked_MainScriptMachine
+
+SECTION "Pause Menu SMS Utils 4", ROMX[$5B21], BANK[$4]
+PauseMenu_ExitToCentralMenu::
+    call PauseMenu_LoadMainGraphics
+    jp System_ScheduleNextSubSubState
+    
+PauseMenu_ExitToCentralMenu2::
+    call $7E37
+    call $59CD
+    
+    ld a, 5
+    ld [W_SystemSubState], a
+    
+    xor a
+    ld [W_SystemSubSubState], a
+    
+    ret

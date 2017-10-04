@@ -203,3 +203,20 @@ PauseMenu_SubStateSMSExit1::
     
 PauseMenu_SubStateSMSExit2::
     jp $5B27
+
+PauseMenu_LoadMainGraphics::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .cgbGfx
+    
+.dmgGfx
+    ld bc, $54
+    call Banked_LoadMaliasGraphics
+    ld bc, $55
+    jp Banked_LoadMaliasGraphics
+
+.cgbGfx
+    ld bc, $1A
+    call Banked_LoadMaliasGraphics
+    ld bc, $1B
+    jp Banked_LoadMaliasGraphics
