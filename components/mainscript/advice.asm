@@ -5,6 +5,7 @@ W_MainScript_VWFCompositeArea:: ds 2
 W_MainScript_VWFOldTileMode:: ds 1
 W_MainScript_VWFMainScriptHack:: ds 1
 W_MainScript_VWFDisable:: ds 1
+W_MainScript_VWFNewlineWidth:: ds 1
 
 ;Actual patches exist in their own files due to RGBDS limitations.
 ;Here have some trashbytes instead

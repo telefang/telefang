@@ -26,7 +26,10 @@ MainScript_CCInterpreter::
 .newlineCC
 	cp $E2
 	jr nz, .localStateJumpCC
-	call MainScript_ADVICE_NewlineVWFReset
+	jp MainScript_ADVICE_NewlineVWFReset
+	
+	;TODO: This entire branch of code is now unused.
+	;Remove if feasible
 .COMEFROM_NewlineVWFReset
 	cp $10
 	jr nc, .earlyNewline
@@ -275,12 +278,6 @@ MainScript_ADVICE_StoreCurrentLetter:
 	jp nz, MainScript_CCInterpreter.newlineCC
 	jp MainScript_CCInterpreter.COMEFROM_StoreCurrentLetter
 	
-	ds 2
-MainScript_ADVICE_NewlineVWFReset:
-	call MainScript_ADVICE_VWFReset
-	ld a, [W_MainScript_TilesDrawn]
-	ret
-	
 ;Not ENTIRELY sure what this does.
 ;Appears to move us back 2 tiles, then move the graphics pointer back by like
 ;16 tiles.
@@ -368,4 +365,50 @@ MainScript_ADVICE_AdditionalOpcodes:
 	ld a, h
 	ld [W_MainScript_TextPtr + 1], a
 	jp MainScript_EndOpcode.skipNewlineCheck
-MainScript_ADVICE_AdditionalOpcodes_END:
+MainScript_ADVICE_AdditionalOpcodes_END::
+
+SECTION "MainScript Patch Advice 4", ROMX[$7D60], BANK[$B]
+MainScript_ADVICE_NewlineVWFReset::
+	call MainScript_ADVICE_VWFReset
+	
+	ld a, [W_MainScript_VWFNewlineWidth]
+	and a
+	jr nz, .countSetup
+	
+	;Most code doesn't set VWFNewlineWidth, so we special-case 0
+	ld a, $10
+	
+.countSetup
+	ld b, a
+	ld c, 2
+	ld a, [W_MainScript_TilesDrawn]
+	
+.divLoop
+	sub b
+	jr c, .lineCountFound
+	inc c
+	jr .divLoop
+	
+.lineCountFound
+	xor a
+	
+.mulLoop
+	dec c
+	jr z, .checkOverflow
+	add b
+	jr .mulLoop
+	
+.checkOverflow
+	cp $20
+	jr c, .noOverflow
+	xor a
+	
+.noOverflow
+	ld [W_MainScript_TilesDrawn], a
+	
+	ld a, [W_MainScript_NumNewlines]
+	inc a
+	ld [W_MainScript_NumNewlines], a
+	
+	jp MainScript_EndOpcode
+MainScript_ADVICE_AdjustableNewlineOffset_END::
