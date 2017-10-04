@@ -155,3 +155,35 @@ PauseMenu_DrawSMSListingEntry::
     
     ld hl, $99E5
     jp PauseMenu_DrawTwoDigits
+
+SECTION "Pause Menu SMS Utils 2", ROMX[$6F31], BANK[$4]
+PauseMenu_DrawSMSMessageCount::
+    ld a, [W_MelodyEdit_DataCount]
+    ld hl, $9942
+    jp PauseMenu_DecimalizeAndDrawTwoDigits
+    
+PauseMenu_CountActiveSMS::
+    xor a
+    ld [W_MelodyEdit_DataCount], a
+    
+    ld hl, $CD90
+    ld de, 4
+    ld b, 8
+    
+.countLoop
+    push hl
+    ldi a, [hl]
+    
+    cp 0
+    jr z, .nullEntry
+    
+    ld a, [W_MelodyEdit_DataCount]
+    inc a
+    ld [W_MelodyEdit_DataCount], a
+    
+.nullEntry
+    pop hl
+    add hl, de
+    dec b
+    jr nz, .countLoop
+    ret
