@@ -1,5 +1,8 @@
 INCLUDE "telefang.inc"
 
+SECTION "Pause Menu SMS Arena", WRAM0[W_PauseMenu_SMSArena]
+W_PauseMenu_SMSArena: ds M_PauseMenu_SMSArenaSize
+
 SECTION "Pause Menu SMS Utils", ROMX[$7028], BANK[$4]
 PauseMenu_SMSListingInputHandler::
     ld a, [H_JPInput_Changed]
@@ -114,7 +117,7 @@ PauseMenu_DrawSMSListingEntry::
     rl d
     sla e
     rl d
-    ld hl, $CD90
+    ld hl, W_PauseMenu_SMSArena
     add hl, de
     
     ld a, [hli]
@@ -166,9 +169,9 @@ PauseMenu_CountActiveSMS::
     xor a
     ld [W_MelodyEdit_DataCount], a
     
-    ld hl, $CD90
-    ld de, 4
-    ld b, 8
+    ld hl, W_PauseMenu_SMSArena
+    ld de, M_PauseMenu_SMSDataSize
+    ld b, M_PauseMenu_SMSDataCount
     
 .countLoop
     push hl
