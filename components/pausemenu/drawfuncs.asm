@@ -51,9 +51,10 @@ PauseMenu_DrawTwoDigits::
     swap a
     and $F
     call PauseMenu_DrawDigit
+    
     ld a, [W_GenericRegPreserve]
     and $F
-    call PauseMenu_DrawDigit
+    jp PauseMenu_DrawDigit
 
 SECTION "Pause Menu Draw Functions 4", ROMX[$7181], BANK[$4]
 PauseMenu_DrawDigit::

@@ -81,7 +81,7 @@ PauseMenu_SMSListingInputHandler::
     
 .prevTraverseCheck
     ld a, [W_JPInput_TypematicBtns]
-    and $10
+    and $20
     jr z, .idle
     
 .moveToPrev
@@ -93,12 +93,12 @@ PauseMenu_SMSListingInputHandler::
     ld b, a
     
     ld a, [W_MelodyEdit_DataCurrent]
-    cp b
+    cp 0
     jr nz, .noLoadEnd
     
     ld a, [W_MelodyEdit_DataCount]
 .noLoadEnd
-    inc a
+    dec a
     ld [W_MelodyEdit_DataCurrent], a
     jp PauseMenu_DrawSMSListingEntry
 

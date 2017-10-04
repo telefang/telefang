@@ -199,7 +199,7 @@ SECTION "Pause Menu SMS State Machine 2", ROMX[$7F47], BANK[$4]
 PauseMenu_SubStateSMSExit1::
     xor a
     ld [W_MainScript_TextStyle], a
-    call PauseMenu_ExitToCentralMenu
+    jp PauseMenu_ExitToCentralMenu
     
 PauseMenu_SubStateSMSExit2::
     jp $5B27
