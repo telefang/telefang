@@ -234,6 +234,9 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
     ld a, 6
     ld [W_MainScript_VWFNewlineWidth], a
     
+    ld a, 6
+    ld [W_MainScript_VWFWindowHeight], a
+    
     ld a, [W_MelodyEdit_DataCurrent]
     ld b, a
     
@@ -265,8 +268,11 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
     cp M_MainScript_StateTerminated
     jp nz, .waitForExhaustionLoop
     
-    ld a, $10
+    ld a, M_MainScript_DefaultWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
+    
+    ld a, M_MainScript_DefaultWindowHeight
+    ld [W_MainScript_VWFWindowHeight], a
     
     pop af
     ld [W_PreviousBank], a
