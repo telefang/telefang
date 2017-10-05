@@ -18,7 +18,7 @@ PauseMenu_SMSListingInputHandler::
     call PauseMenu_ClearArrowMetasprites
     
     ld hl, $9400
-    ld b, $20
+    ld b, M_PauseMenu_SMSWindowWidth * M_PauseMenu_SMSWindowHeight
     call PauseMenu_ClearInputTiles
     
     ld a, $F0
@@ -231,10 +231,10 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
     ld a, BANK(PauseMenu_ADVICE_DrawSMSFromMessages)
     ld [W_PreviousBank], a
     
-    ld a, 6
+    ld a, M_PauseMenu_SMSWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
     
-    ld a, 6
+    ld a, M_PauseMenu_SMSWindowHeight
     ld [W_MainScript_VWFWindowHeight], a
     
     ld a, [W_MelodyEdit_DataCurrent]
