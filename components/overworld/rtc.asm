@@ -70,7 +70,7 @@ Overworld_ReadRTCTime::
     ld [REG_MBC3_SRAMENABLE], a
     ret
     
-SECTION "Overworld RTC-Free IRQ Memory", WRAM0[$C7C9]
+SECTION "Overworld RTC-Free IRQ Memory", WRAM0[$C7CA]
 W_Overworld_ADVICE_CurrentTimeFrames:: ds 1
 
 SECTION "Overworld RTC Advice", ROMX[$7900], BANK[$29]

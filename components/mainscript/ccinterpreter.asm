@@ -1,4 +1,4 @@
-INCLUDE "components/jpinput/jpinput.inc"
+INCLUDE "telefang.inc"
 
 ;Control codes are as follows:
 ;E1: Local state change (1 byte follows)
@@ -122,8 +122,10 @@ MainScript_CCInterpreter::
 	call MainScript_DrawLetter
 	pop hl
 	call MainScript_ADVICE_VWFNextTile
+	jp MainScript_ADVICE_AutomaticNewline
+	
+	;TODO: All of this is dead code...
 	nop
-	ld a, [W_MainScript_TilesDrawn]
 	cp $10
 	jr nz, .noAutomaticNewline
 	ld a, [W_MainScript_NumNewlines]
@@ -376,7 +378,7 @@ MainScript_ADVICE_NewlineVWFReset::
 	jr nz, .countSetup
 	
 	;Most code doesn't set VWFNewlineWidth, so we special-case 0
-	ld a, $10
+	ld a, M_MainScript_DefaultWindowWidth
 	
 .countSetup
 	ld b, a
@@ -415,13 +417,77 @@ MainScript_ADVICE_NewlineVWFReset::
    
 	ld a, [W_MainScript_VWFNewlineWidth]
 	and a
-	jr z, .standardWidth
-	cp $10
-	jr z, .standardWidth
-	
-.nonStandardWidth
+	jp z, MainScript_EndOpcode
+	cp M_MainScript_DefaultWindowWidth
+	jp z, MainScript_EndOpcode
 	jp MainScript_EndOpcode.skipNewlineCheck
 	
-.standardWidth
+MainScript_ADVICE_NewlineVWFReset_END::
+
+MainScript_ADVICE_AutomaticNewline::
+	ld a, [W_MainScript_VWFNewlineWidth]
+	and a
+	jr nz, .loadOtherParameters
+	
+	;Most code doesn't set VWFNewlineWidth, so we special-case 0
+	ld a, M_MainScript_DefaultWindowWidth
+	
+.loadOtherParameters
+	ld b, a
+	ld a, [W_MainScript_TilesDrawn]
+	ld c, 0
+	
+	and a
+	jr z, .noAutomaticNewline
+	
+	;Compute TilesDrawn % VWFNewlineWidth and use that to determine if we're on a
+	;newline or not...
+	
+.modLoop
+	sub b
+	jr c, .doneDividing
+	inc c
+	jr .modLoop
+	
+.doneDividing
+	add b
+	cp 0
+	jr nz, .noAutomaticNewline
+	ld a, [W_MainScript_NumNewlines]
+	inc a
+	ld [W_MainScript_NumNewlines], a
+	
+.checkNonprintable
+	cp $1F
+	jr c, .noAutomaticNewline
+	call MainScript_LowControlCode
+	jr z, .noAutomaticNewline
+	
+.checkWraparound
+	ld a, [W_MainScript_VWFWindowHeight]
+	and a
+	jr nz, .heightIsProperlySet
+	ld a, M_MainScript_DefaultWindowHeight
+	
+.heightIsProperlySet
+	cp c
+	jr c, .noAutomaticNewline
+	
+	ld a, 0
+	ld [W_MainScript_TilesDrawn], a
 	jp MainScript_EndOpcode
-MainScript_ADVICE_AdjustableNewlineOffset_END::
+	
+   ;The moveup animation does not support nonstandard window widths
+   ;so we don't trigger it if that's the case.
+.maybeAutoNewline
+	ld a, [W_MainScript_VWFNewlineWidth]
+	and a
+	jp z, MainScript_EndOpcode
+	cp M_MainScript_DefaultWindowWidth
+	jp z, MainScript_EndOpcode
+	
+	;Non-printables also do not trigger the newline machinery.
+.noAutomaticNewline
+	jp MainScript_EndOpcode.skipNewlineCheck
+
+MainScript_ADVICE_AutomaticNewline_END::
