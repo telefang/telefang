@@ -48,7 +48,7 @@ PauseMenu_PhoneIMEPlayerNameDiacritic::
     pop hl
     ld [hl], a
     call PauseMenu_PhoneIMESyncPlayerName
-    jp PauseMenu_DrawCenteredNameBuffer
+    jp PauseMenu_DrawCenteredNameBufferNoVWF
     
 PauseMenu_PhoneIMEDenjuuNicknameDiacritic::
     ld hl, W_TitleMenu_NameBuffer
@@ -62,7 +62,7 @@ PauseMenu_PhoneIMEDenjuuNicknameDiacritic::
     pop hl
     ld [hl], a
     call PauseMenu_PhoneIMESyncDenjuuNickname
-    jp PauseMenu_DrawCenteredNameBuffer
+    jp PauseMenu_DrawCenteredNameBufferNoVWF
 
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PauseMenu_LoadPhoneIMEGraphics::
