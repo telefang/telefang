@@ -98,7 +98,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_49
 	dw Tilemap_unknown_tilemap_0_4a
 	dw Tilemap_unknown_tilemap_0_4b
-	dw Tilemap_unknown_tilemap_0_4c
+	dw Tilemap_menu_sms_contents_tmap
 	dw Tilemap_unknown_tilemap_0_4d
 	dw Tilemap_unknown_tilemap_0_4e
 	dw Tilemap_unknown_tilemap_0_4f
@@ -529,9 +529,9 @@ Tilemap_unknown_tilemap_0_4b::
 	incbin "gfx/unknown/tilemap_0/4b.tmap"
 Tilemap_unknown_tilemap_0_4b_END
 
-Tilemap_unknown_tilemap_0_4c::
-	incbin "gfx/unknown/tilemap_0/4c.tmap"
-Tilemap_unknown_tilemap_0_4c_END
+Tilemap_menu_sms_contents_tmap::
+	incbin "gfx/menu/sms/contents_tmap.tmap"
+Tilemap_menu_sms_contents_tmap_END
 
 Tilemap_unknown_tilemap_0_4d::
 	incbin "gfx/unknown/tilemap_0/4d.tmap"
@@ -990,7 +990,7 @@ Attribmap_BANK_0::
 	dw Attribmap_unknown_attribs_0_28
 	dw Attribmap_unknown_attribs_0_28
 	dw Attribmap_unknown_attribs_0_29
-	dw Attribmap_unknown_attribs_0_2a
+	dw Attribmap_menu_sms_contents_attr
 	dw Attribmap_unknown_attribs_0_2b
 	dw Attribmap_unknown_attribs_0_2c
 	dw Attribmap_unknown_attribs_0_2d
@@ -1280,9 +1280,9 @@ Attribmap_unknown_attribs_0_29::
 	incbin "gfx/unknown/attribs_0/29.tmap"
 Attribmap_unknown_attribs_0_29_END
 
-Attribmap_unknown_attribs_0_2a::
-	incbin "gfx/unknown/attribs_0/2a.tmap"
-Attribmap_unknown_attribs_0_2a_END
+Attribmap_menu_sms_contents_attr::
+	incbin "gfx/menu/sms/contents_attr.tmap"
+Attribmap_menu_sms_contents_attr_END
 
 Attribmap_unknown_attribs_0_2b::
 	incbin "gfx/unknown/attribs_0/2b.tmap"
