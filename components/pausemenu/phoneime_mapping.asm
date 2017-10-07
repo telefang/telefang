@@ -19,29 +19,29 @@ PauseMenu_PhoneIMEData::
     dw .latinLowerButtonPound
     
 .latinLowerButton1
-    db $A, ".,:;'", $22, "!?", $1F, "-"
+    db $A, ".,:;'", $22, "!?", "-"
 .latinLowerButton2
-    db 5, "abc+*"
+    db 3, "abc"
 .latinLowerButton3
-    db 5, "def<>"
+    db 3, "def"
 .latinLowerButton4
-    db 5, "ghi=%$"
+    db 3, "ghi"
 .latinLowerButton5
-    db 5, "jkl()"
+    db 3, "jkl"
 .latinLowerButton6
-    db 5, "mno[]"
+    db 3, "mno"
 .latinLowerButton7
-    db 5, "pqrs#"
+    db 4, "pqrs"
 .latinLowerButton8
-    db 5, "tuv/|\\"
+    db 3, "tuv"
 .latinLowerButton9
-    db 5, "wxyz_"
+    db 4, "wxyz"
 .latinLowerButtonStar
     db $FF
 .latinLowerButton0
-    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC ;ÅÆÇÉÊÌ
+    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC
 .latinLowerButtonPound
-    db $FF
+    db 6, "<>()[]"
     
 .latinUpperTable
     dw .latinUpperButton1
@@ -58,29 +58,29 @@ PauseMenu_PhoneIMEData::
     dw .latinUpperButtonPound
     
 .latinUpperButton1
-    db $A, ".,:;'", $22, "!?", $1F, "-"
+    db $A, ".,:;'", $22, "!?", "-"
 .latinUpperButton2
-    db 5, "ABC+*"
+    db 3, "ABC"
 .latinUpperButton3
-    db 5, "DEF<>"
+    db 3, "DEF"
 .latinUpperButton4
-    db 6, "GHI=%$"
+    db 3, "GHI"
 .latinUpperButton5
-    db 5, "JKL()"
+    db 3, "JKL"
 .latinUpperButton6
-    db 5, "MNO[]"
+    db 3, "MNO"
 .latinUpperButton7
-    db 5, "PQRS#"
+    db 4, "PQRS"
 .latinUpperButton8
-    db 6, "TUV/|\\"
+    db 3, "TUV"
 .latinUpperButton9
-    db 5, "WXYZ_"
+    db 4, "WXYZ"
 .latinUpperButtonStar
     db $FF
 .latinUpperButton0
-    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC ;ÅÆÇÉÊÌ
+    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC ;space, arrows, and 「」
 .latinUpperButtonPound
-    db $FF
+    db 6, "<>()[]"
 
 .numeralsTable
     dw .numeralsButton1
@@ -124,9 +124,9 @@ PauseMenu_PhoneIMEData::
     db 1
     db $C4
 .numeralsButtonStar
-    db $FF
+    db $6, "*+-%$="
 .numeralsButton0
     db 1
     db $BB
 .numeralsButtonPound
-    db $FF
+    db $5, "#_/|\\"

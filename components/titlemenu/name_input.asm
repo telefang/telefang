@@ -88,7 +88,7 @@ TitleMenu_NameInputImpl::
     call PauseMenu_DrawCenteredNameBufferNoVWF
     
     ld a, [W_PauseMenu_SelectedMenuItem]
-    cp 0
+    and a
     ret z
     
     dec a
@@ -118,8 +118,6 @@ TitleMenu_NameInputImpl::
     cp M_PhoneMenu_ButtonConfirm
     jp z, .confirmIntent
     cp M_PhoneMenu_ButtonStar
-    jp z, .diacriticIntent
-    cp M_PhoneMenu_ButtonPound
     jp z, .diacriticIntent
     jp PauseMenu_PhoneIMEPlayerNameGlyph
     
@@ -154,7 +152,7 @@ TitleMenu_NameInputImpl::
     ld a, 3
     ld [byte_FFA1], a
     call PauseMenu_PhoneIMESyncPlayerName
-    cp 0
+    and a
     jr nz, .playerNameConfirmed
     
     push af
@@ -181,11 +179,14 @@ TitleMenu_NameInputImpl::
     jp System_ScheduleNextSubState
     
 .diacriticIntent
+    ld a, [W_PauseMenu_CurrentPhoneIME]
+    cp M_PhoneMenu_IMENumerals
+    jp z, PauseMenu_PhoneIMEPlayerNameGlyph
     jp PauseMenu_PhoneIMEPlayerNameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
-    cp 0
+    and a
     ret z
     dec a
     jr .cursorChange
@@ -235,7 +236,7 @@ TitleMenu_NicknameInputImpl::
     call PauseMenu_DrawCenteredNameBufferNoVWF
     
     ld a, [W_PauseMenu_SelectedMenuItem]
-    cp 0
+    and a
     ret z
     
     dec a
@@ -264,8 +265,6 @@ TitleMenu_NicknameInputImpl::
     cp M_PhoneMenu_ButtonConfirm
     jp z, .confirmIntent
     cp M_PhoneMenu_ButtonStar
-    jp z, .diacriticIntent
-    cp M_PhoneMenu_ButtonPound
     jp z, .diacriticIntent
     jp PauseMenu_PhoneIMEDenjuuNicknameGlyph
     
@@ -298,7 +297,7 @@ TitleMenu_NicknameInputImpl::
     ld a, 3
     ld [byte_FFA1], a
     call PauseMenu_PhoneIMESyncDenjuuNickname
-    cp 0
+    and a
     jr nz, .playerNameConfirmed
     
     ld a, [$D4A7]
@@ -312,11 +311,14 @@ TitleMenu_NicknameInputImpl::
     jp System_ScheduleNextSubState
     
 .diacriticIntent
+    ld a, [W_PauseMenu_CurrentPhoneIME]
+    cp M_PhoneMenu_IMENumerals
+    jp z, PauseMenu_PhoneIMEDenjuuNicknameGlyph
     jp PauseMenu_PhoneIMEDenjuuNicknameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
-    cp 0
+    and a
     ret z
     
     dec a
