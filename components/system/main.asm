@@ -14,9 +14,6 @@ ClearDMGPaletteShadow EQU $1043
 InitializeSoundEngine EQU $0439
 ClearTilemap0 EQU $0807
 
-;WRAM locations we haven't properly labeled yet
-W_SGBDetectSuccess EQU $C40A
-
 ;This stores the bootrom argument to determine what GB model we're on.
 SECTION "System WRAM", WRAM0[$C3E8]
 W_GameboyType:: ds 1
@@ -95,11 +92,11 @@ Main::
 	ld a, 3
 	rst $10
 	xor a
-	ld [W_SGBDetectSuccess], a
+	ld [W_SGB_DetectSuccess], a
 	call SGBDetect
 	jp nc, .noSGBDetected
 	ld a, 1
-	ld [W_SGBDetectSuccess], a
+	ld [W_SGB_DetectSuccess], a
 	call InitializeSGB ;Bank 3, 0x4000
 .noSGBDetected
 	xor a

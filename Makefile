@@ -24,7 +24,8 @@ OBJS := components/compression/malias.o \
 	  components/system/memory.o components/system/empty.o \
 	  components/system/entrypoints.o components/system/bankcalls.o \
 	  components/system/math.o components/system/bitmanip.o \
-     components/sgb/palettes.o \
+     components/sgb/palettes.o components/sgb/detect.o \
+     components/sgb/packets.o components/sgb/precomposed.o \
      components/pausemenu/contacts.o components/pausemenu/nameutil.o \
      components/pausemenu/menu.o components/pausemenu/window_flavor.o \
      components/pausemenu/cursor.o components/pausemenu/phoneime.o \
