@@ -13,7 +13,6 @@ SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
 ClearDMGPaletteShadow EQU $1043
 InitializeSoundEngine EQU $0439
 ClearTilemap0 EQU $0807
-DisableLCD EQU $07DF
 
 ;WRAM locations we haven't properly labeled yet
 W_SGBDetectSuccess EQU $C40A
@@ -32,7 +31,7 @@ SECTION "EntryPoint", ROM0[$0150]
 Main::
 	ld [W_GameboyType], a
 	di
-	call DisableLCD
+	call LCDC_DisableLCD
 	xor a
 	ld [REG_IF], a
 	ld [REG_IE], a ;Turn off all the interrupts
