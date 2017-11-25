@@ -90,10 +90,10 @@ OBJS := components/compression/malias.o \
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
 	  versions/power/tilemaps.o versions/power/metasprite.o \
-     versions/power/palettes.o
+     versions/power/palettes.o versions/power/gfx/sgb/border.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
-     versions/speed/palettes.o
+     versions/speed/palettes.o versions/speed/gfx/sgb/border.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/1.messages.csv script/story/1.messages.csv \
