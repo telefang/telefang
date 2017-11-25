@@ -69,7 +69,7 @@ SGB_InstallBorderAndHotpatches::
     ld de, SGB_PacketTileTransferHigh
     call SGB_SendPacketsWithVRAM
     
-    ld hl, $6368 ;TODO: disasm
+    ld hl, SGB_BorderTmapPalData
     ld de, SGB_PacketBorderTmapTransfer
     call SGB_SendPacketsWithVRAM
     
