@@ -21,6 +21,7 @@ OBJS := components/compression/malias.o \
 	  components/lcdc/load_tiles.o components/lcdc/fades.o \
      components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
      components/lcdc/wraparound.o components/lcdc/init_attributes.o \
+     components/lcdc/disable_lcd.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
@@ -28,7 +29,8 @@ OBJS := components/compression/malias.o \
 	  components/system/math.o components/system/bitmanip.o \
 	  components/system/patch_utils.o components/system/patch_unknown.o \
 	  components/system/aux_code.o \
-     components/sgb/palettes.o \
+     components/sgb/palettes.o components/sgb/detect.o \
+     components/sgb/packets.o components/sgb/precomposed.o \
      components/pausemenu/contacts.o components/pausemenu/nameutil.o \
      components/pausemenu/menu.o components/pausemenu/window_flavor.o \
      components/pausemenu/cursor.o components/pausemenu/phoneime.o \
@@ -95,10 +97,10 @@ OBJS := components/compression/malias.o \
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
 	  versions/power/tilemaps.o versions/power/metasprite.o \
-     versions/power/palettes.o
+     versions/power/palettes.o versions/power/gfx/sgb/border.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
-     versions/speed/palettes.o
+     versions/speed/palettes.o versions/speed/gfx/sgb/border.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/all.messages.csv script/npc/unused.messages.csv \
