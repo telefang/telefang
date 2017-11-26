@@ -90,10 +90,12 @@ OBJS := components/compression/malias.o \
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
 	  versions/power/tilemaps.o versions/power/metasprite.o \
-     versions/power/palettes.o versions/power/gfx/sgb/border.o
+     versions/power/palettes.o versions/power/gfx/sgb/border.o \
+     versions/power/gfx/sgb/attrfile.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
-     versions/speed/palettes.o versions/speed/gfx/sgb/border.o
+     versions/speed/palettes.o versions/speed/gfx/sgb/border.o \
+     versions/speed/gfx/sgb/attrfile.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/1.messages.csv script/story/1.messages.csv \
@@ -189,3 +191,7 @@ $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 %.sprite.bin: %.sprite.csv
 	@rm -f $@
 	@$(PYTHON) rip_scripts/metasprite.py make_spritebin $<
+   
+%.atf: %.sgbattr.csv
+	@rm -f $@
+	@$(PYTHON) rip_scripts/rip_sgb_attrfile.py make_atf $< $@

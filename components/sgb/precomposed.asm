@@ -57,7 +57,7 @@ SGB_InstallBorderAndHotpatches::
     ld de, SGB_PacketPaletteTransfer
     call SGB_SendPacketsWithVRAM
     
-    ld hl, $6ED8 ;TODO: disasm
+    ld hl, SGB_AttrFileData
     ld de, SGB_PacketAttrTransfer
     call SGB_SendPacketsWithVRAM
     
@@ -92,15 +92,15 @@ SGB_ReinstallBorder::
     ld bc, 4
     call SGB_AdjustableWait
     
-    ld hl, $4368 ;TODO: disasm
+    ld hl, SGB_BorderTileData
     ld de, SGB_PacketTileTransferLow
     call SGB_SendPacketsWithVRAM
     
-    ld hl, $5368 ;TODO: disasm
+    ld hl, SGB_BorderTileData + $1000
     ld de, SGB_PacketTileTransferHigh
     call SGB_SendPacketsWithVRAM
     
-    ld hl, $6368 ;TODO: disasm
+    ld hl, SGB_BorderTmapPalData
     ld de, SGB_PacketBorderTmapTransfer
     call SGB_SendPacketsWithVRAM
     
