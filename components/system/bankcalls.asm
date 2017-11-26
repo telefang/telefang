@@ -36,12 +36,12 @@ Banked_CGBLoadObjectPalette::
     rst $18
     ret
 
-Banked_SGBLoadPalette::
+Banked_SGB_ConstructPaletteSetPacket::
     push af
-    ld a, 3
+    ld a, BANK(SGB_ConstructPaletteSetPacket)
     rst $10
     pop af
-    call $4320
+    call SGB_ConstructPaletteSetPacket
     rst $18
     ret
 
