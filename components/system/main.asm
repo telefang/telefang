@@ -10,7 +10,6 @@ SerIOActivityCheck EQU $0234
 SoftResetCheck EQU $02D0
 InitializeSGB EQU $4000 ;Bank 3, flat address 0xC000
 SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
-ClearDMGPaletteShadow EQU $1043
 InitializeSoundEngine EQU $0439
 ClearTilemap0 EQU $0807
 
@@ -69,7 +68,7 @@ Main::
 	call InitializeSoundEngine
 	ld a, 1
 	ld [$C430], a
-	call ClearDMGPaletteShadow
+	call LCDC_ClearDMGPaletteShadow
 	ld a, $83
 	ld [W_ShadowREG_LCDC], a
 	ld [REG_LCDC], a ;Enable LCD display, OBJ, and BG layers.

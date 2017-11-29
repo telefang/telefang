@@ -18,7 +18,7 @@ OBJS := components/compression/malias.o \
 	  components/lcdc/load_tiles.o components/lcdc/fades.o \
      components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
      components/lcdc/wraparound.o components/lcdc/init_attributes.o \
-     components/lcdc/disable_lcd.o \
+     components/lcdc/disable_lcd.o components/lcdc/dmg_palette.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
