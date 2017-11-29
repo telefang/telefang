@@ -38,7 +38,7 @@ OBJS := components/compression/malias.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
-     components/titlemenu/rtc.o \
+     components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
@@ -92,11 +92,13 @@ OBJS := components/compression/malias.o \
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
 	  versions/power/tilemaps.o versions/power/metasprite.o \
      versions/power/palettes.o versions/power/gfx/sgb/border.o \
-     versions/power/gfx/sgb/attrfile.o
+     versions/power/gfx/sgb/attrfile.o \
+     versions/power/components/titlemenu/state_machine.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
      versions/speed/palettes.o versions/speed/gfx/sgb/border.o \
-     versions/speed/gfx/sgb/attrfile.o
+     versions/speed/gfx/sgb/attrfile.o \
+     versions/speed/components/titlemenu/state_machine.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/1.messages.csv script/story/1.messages.csv \

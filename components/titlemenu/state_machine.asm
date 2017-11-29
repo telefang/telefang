@@ -9,11 +9,139 @@ TitleMenu_GameStateMachine::
     
 ;TODO: disassemble
 TitleMenu_StateTable
-    dw $4054, $406E, $4089, $40BD, $40EA, $40FA, $4108, $4113 ;07
+    dw TitleMenu_StateSetupPalettes, TitleMenu_StateLoadGraphics, TitleMenu_StateLoadTMaps, TitleMenu_StateDrawMenu, TitleMenu_StatePositionMenuHalves, TitleMenu_StateCommitMenuPalettes, TitleMenu_StatePlayMenuBGM, TitleMenu_StateAnimateMenuHalvesIn ;07
     dw $413B, $41EC, $41F7, $4205, $4216, $4221, $4232, $4265 ;0F
     dw $428A, $42AA, $42B3, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, $4339, $4346 ;17
     dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E ;1F
     dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
+    
+; State 03 00 is version-specific.
+    
+SECTION "Title Menu State Machine 2", ROMX[$406E], BANK[$4]
+; State 03 01, 03 1F
+TitleMenu_StateLoadGraphics
+    call ClearGBCTileMap0
+    call ClearGBCTileMap1
+    call LCDC_ClearMetasprites
+    call PauseMenu_LoadMainGraphics
+    
+    ld bc, $11
+    call Banked_LoadMaliasGraphics
+    call PauseMenu_LoadPhoneGraphics
+    call PauseMenu_LoadPhoneIMEGraphics
+    jp System_ScheduleNextSubState
+    
+; State 03 02
+TitleMenu_StateLoadTMaps::
+    ld a, 1
+    ld [W_RLEAttribMapsEnabled], a
+    
+    ld bc, 0
+    ld e, $10
+    call PauseMenu_LoadMap0
+    
+    ld e, $12
+    call PauseMenu_LoadMenuMap0
+    
+    ld bc, $30F
+    ld e, $20
+    call PauseMenu_LoadMap0
+    
+    ld bc, 0
+    ld e, $11
+    call PauseMenu_LoadMap1
+    
+    xor a
+    ld [W_PauseMenu_SelectedMenuItem], a
+    ld [$CB39], a
+    ld [$CB3C], a
+    
+    ld a, 3
+    ld [$CB3A], a
+    
+    jp System_ScheduleNextSubState
+    
+; State 03 03
+TitleMenu_StateDrawMenu::
+    ld a, $10
+    ld [$CB39], a
+    
+    ld b, 0
+    ld a, [$C434]
+    cp 0
+    jr z, .jmp1
+    
+    ld b, 3
+    
+.jmp1
+    ld a, b
+    ld [W_PauseMenu_SelectedMenuItem], a
+    
+    ld a, [W_SerIO_ConnectionState]
+    cp 0
+    jr z, .jmp2
+    
+    ld a, 2
+    ld [W_PauseMenu_SelectedMenuItem], a
+    
+.jmp2
+    xor a
+    ld [W_SerIO_ConnectionState], a
+    ld [$C900], a
+    
+    call TitleMenu_ScrollMenu_refresh
+    jp System_ScheduleNextSubState
+    
+; State 03 04
+TitleMenu_StatePositionMenuHalves::
+    call PauseMenu_CGBLoadPalettes
+    ld a, $A7
+    ld [W_ShadowREG_WX], a
+    ld a, $50
+    ld [W_ShadowREG_SCX], a
+    jp System_ScheduleNextSubState
+    
+; State 03 05
+TitleMenu_StateCommitMenuPalettes::
+    call LCDC_DMGSetupDirectPalette
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    ld [W_CGBPaletteStagedOBP], a
+    jp System_ScheduleNextSubState
+    
+; State 03 06
+TitleMenu_StatePlayMenuBGM::
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    jp System_ScheduleNextSubState
+    
+; State 03 07
+TitleMenu_StateAnimateMenuHalvesIn::
+    ld a, $E3
+    ld [W_ShadowREG_LCDC], a
+    
+    xor a
+    ld [W_ShadowREG_SCY], a
+    
+    ld a, [W_ShadowREG_SCX]
+    sub $10
+    ld [W_ShadowREG_SCX], a
+    
+    ld a, [W_ShadowREG_WX]
+    sub $10
+    ld [W_ShadowREG_WX], a
+    
+    cp $58
+    ret nc
+    
+    ld a, $58
+    ld [W_ShadowREG_WX], a
+    
+    xor a
+    ld [W_ShadowREG_SCX], a
+    
+    jp System_ScheduleNextSubState
 
 SECTION "Title Menu State Machine - Name Input", ROMX[$42CD], BANK[$4]
 ; State 03 13
@@ -211,7 +339,7 @@ TitleMenu_StateFadeNickname::
     
     ld a, $32
     call $15F5
-    ld [byte_FFA0], a
+    ld [W_Sound_NextBGMSelect], a
     
     jp System_ScheduleNextSubState
 
