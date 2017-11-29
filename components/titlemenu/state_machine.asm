@@ -10,7 +10,7 @@ TitleMenu_GameStateMachine::
 ;TODO: disassemble
 TitleMenu_StateTable
     dw TitleMenu_StateSetupPalettes, TitleMenu_StateLoadGraphics, TitleMenu_StateLoadTMaps, TitleMenu_StateDrawMenu, TitleMenu_StatePositionMenuHalves, TitleMenu_StateCommitMenuPalettes, TitleMenu_StatePlayMenuBGM, TitleMenu_StateAnimateMenuHalvesIn ;07
-    dw $413B, $41EC, $41F7, $4205, $4216, $4221, $4232, $4265 ;0F
+    dw TitleMenu_StateMenuInputHandler, $41EC, $41F7, $4205, $4216, $4221, $4232, $4265 ;0F
     dw $428A, $42AA, $42B3, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, $4339, $4346 ;17
     dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E ;1F
     dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
@@ -142,6 +142,132 @@ TitleMenu_StateAnimateMenuHalvesIn::
     ld [W_ShadowREG_SCX], a
     
     jp System_ScheduleNextSubState
+    
+; State 03 08
+TitleMenu_StateMenuInputHandler::
+    call TitleMenu_ScrollMenu
+    
+    ld a, [W_JPInput_TypematicBtns]
+    and $80
+    jr z, .checkUpPress
+    
+.downPress
+    ld a, M_TitleMenu_StateAnimateMenuScrollUpOne
+    jr .gotoScrollAnimation
+    
+.checkUpPress
+    ld a, [W_JPInput_TypematicBtns]
+    and $40
+    jr z, .checkAPress
+    
+.upPress
+    ld a, M_TitleMenu_StateAnimateMenuScrollDownOne
+    
+.gotoScrollAnimation
+    ld [W_SystemSubState], a
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ret
+    
+.checkAPress
+    ld a, [H_JPInput_Changed]
+    and 1
+    jp z, .noInputToProcess
+    
+.aPress
+    xor a
+    ld [W_SerIO_ConnectionState], a
+    
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp M_TitleMenu_ItemContinue
+    jr z, .continueSelected
+    
+    cp M_TitleMenu_ItemNewGame
+    jp z, .newGameSelected
+    
+    cp M_TitleMenu_ItemSoundTest
+    jr z, .soundTestSelected
+    
+    cp M_TitleMenu_ItemLink
+    jr z, .linkSelected
+    
+    ret
+    
+.linkSelected
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, 1
+    ld [W_SerIO_ConnectionState], a
+    
+    xor a
+    ld [W_SystemSubState], a
+    ld [W_Battle_SubSubState], a
+    
+    ld a, $F
+    ld [W_SystemState], a
+    ret
+    
+.soundTestSelected
+    ld a, 1
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld bc, $104
+    ld e, $3B
+    call PauseMenu_LoadMap0
+    
+    ld a, $F0
+    ld [W_Status_NumericalTileIndex], a
+    call Status_ExpandNumericalTiles
+    
+    ld a, M_TitleMenu_StateLoadSoundTestScreen
+    ld [W_SystemSubState], a
+    jp $6CD3
+    
+.continueSelected
+    ld a, [$C434]
+    cp 1
+    jr z, .saveInvalidated
+    
+.savePresent
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, $10
+    ld [$CF96], a
+    
+    ld a, M_TitleMenu_StateFadeToOverworldContinue
+    ld [W_SystemSubState], a
+    
+    ret
+    
+.saveInvalidated
+    ld a, 5
+    ld [W_Sound_NextSFXSelect], a
+    ret
+    
+.newGameSelected
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, M_TitleMenu_StateLoadTimeInputScreen
+    ld [W_SystemSubState], a
+    
+    xor a
+    ld [$CB39], a
+    ld [$CB3A], a
+    
+    ret
+    
+.noInputToProcess
+    ret
 
 SECTION "Title Menu State Machine - Name Input", ROMX[$42CD], BANK[$4]
 ; State 03 13

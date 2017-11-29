@@ -32,8 +32,17 @@ M_TitleMenu_StateStorePlayerName EQU $15
 M_TitleMenu_StateInitNewGame EQU $16
 M_TitleMenu_StateFadeToOverworldNewGame EQU $17
 
+;Sound test
+M_TitleMenu_StateLoadSoundTestScreen EQU $18
+
 ;Name input (denjuu)
 M_TitleMenu_StateInitNickname EQU $20
 M_TitleMenu_StateFadeNickname EQU $21
 M_TitleMenu_StateNickname EQU $22
 M_TitleMenu_StateSaveNickname EQU $23
+
+;Menu items
+M_TitleMenu_ItemContinue EQU 0
+M_TitleMenu_ItemSoundTest EQU 1
+M_TitleMenu_ItemLink EQU 2
+M_TitleMenu_ItemNewGame EQU 3
