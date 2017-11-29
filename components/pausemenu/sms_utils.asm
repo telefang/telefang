@@ -11,7 +11,7 @@ PauseMenu_SMSListingInputHandler::
     
 .selectSMSText
     ld a, 3
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld e, $2D
     call PauseMenu_LoadMenuMap0
@@ -42,7 +42,7 @@ PauseMenu_SMSListingInputHandler::
     
 .dismissMenu
     ld a, 4
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     xor a
     ld [W_MainScript_TextStyle], a
@@ -63,7 +63,7 @@ PauseMenu_SMSListingInputHandler::
     
 .moveToNext
     ld a, 2
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_MelodyEdit_DataCount]
     dec a
@@ -86,7 +86,7 @@ PauseMenu_SMSListingInputHandler::
     
 .moveToPrev
     ld a, 2
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_MelodyEdit_DataCount]
     dec a

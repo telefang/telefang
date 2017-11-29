@@ -57,7 +57,7 @@ Victory_SubStateNaturalEvoInput::
     
 .repositionCursor
     ld a, 2
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     jp Victory_PlaceChoiceCursor
 
 .checkBButton
@@ -66,7 +66,7 @@ Victory_SubStateNaturalEvoInput::
     jr z, .checkAButton
     
     ld a, 3
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     jr .evolveCancelled
     
 .checkAButton
@@ -75,7 +75,7 @@ Victory_SubStateNaturalEvoInput::
     ret z
     
     ld a, 3
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_Victory_UserSelection]
     cp 0

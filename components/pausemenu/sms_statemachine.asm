@@ -59,7 +59,7 @@ PauseMenu_SubStateSMSGraphicIdle::
     
 .bBtn
     ld a, 4
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     jp .exitSMSScreen
     
 .noBBtn
@@ -69,7 +69,7 @@ PauseMenu_SubStateSMSGraphicIdle::
     
 .aBtn
     ld a, 3
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_MelodyEdit_DataCount]
     cp 0

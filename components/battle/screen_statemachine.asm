@@ -273,7 +273,7 @@ Battle_SubStateStatusWarningPartner::
     call Battle_SetMessageArg2Phrase
     
     ld a, $5C
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     call Status_CopyLoadedDenjuuNickname
     
@@ -506,7 +506,7 @@ Battle_SubStateStatusWarningOpponent::
     call Battle_SetMessageArg2Phrase
     
     ld a, $5D
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld c, M_Battle_MessageDenjuuBattlePhraseAlias
     

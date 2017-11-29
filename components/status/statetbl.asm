@@ -9,10 +9,6 @@ W_Status_UseDenjuuNickname:: ds 1
 SECTION "Status Screen State Machine Vars 3", WRAMX[$D4B0], BANK[1]
 W_Status_NumDuplicateDenjuu: ds 1
 
-SECTION "Some HRAM thing", HRAM[$FFA0]
-byte_FFA0:: ds 1
-byte_FFA1:: ds 1
-
 SECTION "Status Screen Home Utils", ROM0[$3CFD]
 Status_IncrementSubState::
     ld hl, W_Status_SubState
@@ -250,7 +246,7 @@ Status_StateUserJPInput:
     
 .gotoSwitchDenjuuState
     ld a, 2
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     ld a, M_Status_StateSwitchDenjuu
     ld [W_Status_SubState], a
     ret
@@ -284,7 +280,7 @@ Status_StateUserJPInput:
 
 .tabStateChanged
     ld a, 2
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     ld a, M_Status_StateSwitchTab
     ld [W_Status_SubState], a
     ret
@@ -308,7 +304,7 @@ Status_StateUserJPInput:
     and 2
     jr z, .unchangedScreen
     ld a, 4
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     jr .gotoContactScreen
     
 .unchangedScreen
@@ -318,7 +314,7 @@ Status_StateUserJPInput:
     
 .gotoContactMgmtScreen
     ld a, 3
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
 .gotoContactScreen
     ld a, 4

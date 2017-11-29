@@ -51,6 +51,7 @@ OBJS := components/compression/malias.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
 	  components/sound/samples.o components/sound/indexing.o \
+     components/sound/control.o \
 	  components/serio/driver.o components/serio/vssummon_statemachine.o \
      components/serio/game_statemachine.o components/serio/vssummon_utils.o \
      components/serio/battle_utils.o \

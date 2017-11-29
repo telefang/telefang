@@ -194,7 +194,7 @@ PauseMenu_PhoneIMEWraparoundProcessing::
     jr z, .checkLeftBtn
     
     ld a, $63
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_PauseMenu_PhoneIMEButton]
     cp M_PhoneMenu_ButtonConfirm
@@ -230,7 +230,7 @@ PauseMenu_PhoneIMEWraparoundProcessing::
     jr z, .checkUpBtn
     
     ld a, $63
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_PauseMenu_PhoneIMEButton]
     cp M_PhoneMenu_ButtonNote
@@ -266,7 +266,7 @@ PauseMenu_PhoneIMEWraparoundProcessing::
     jr z, .checkDownBtn
     
     ld a, $63
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_PauseMenu_PhoneIMEButton]
     cp M_PhoneMenu_ButtonNote
@@ -312,7 +312,7 @@ PauseMenu_PhoneIMEWraparoundProcessing::
     jr z, .return
     
     ld a, $63
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_PauseMenu_PhoneIMEButton]
     cp M_PhoneMenu_ButtonNote
