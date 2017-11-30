@@ -405,7 +405,7 @@ TitleMenu_StateTimeInputHandler::
 ; State 03 12
 TiteMenu_StateLoadNameInputScreen::
     ld a, 7
-    ld [$C0A2], a
+    ld [W_MetaSpriteConfig1 + M_LCDC_MetaSpriteData_TileID], a
     
     ld b, $50
     ld c, $50
@@ -437,7 +437,7 @@ TitleMenu_StateClearNameInput::
     call TitleMenu_PositionNameCursor
     ld a, 2
     ld [W_PauseMenu_SelectedCursorType], a
-    ld de, $C0C0
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
     ld a, M_PhoneMenu_IMENumerals
     ld [W_PauseMenu_NextPhoneIME], a
@@ -452,7 +452,7 @@ TitleMenu_StateClearNameInput::
 
 ; State 03 14
 TitleMenu_StateNameInput::
-    ld de, $C0C0
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_IterateCursorAnimation
     call TitleMenu_PositionNameCursor
     jp TitleMenu_NameInputImpl
@@ -522,7 +522,7 @@ TitleMenu_StateInitNickname::
     
     ld a, 2
     ld [W_PauseMenu_SelectedCursorType], a
-    ld de, $C0C0
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
     
     ld a, M_PhoneMenu_IMENumerals
@@ -618,7 +618,7 @@ TitleMenu_StateFadeNickname::
 
 ;State 03 22
 TitleMenu_StateNickname::
-    ld de, $C0C0
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_IterateCursorAnimation
     ld de, $C120
     call Banked_PauseMenu_IterateCursorAnimation
