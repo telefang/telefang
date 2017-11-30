@@ -39,6 +39,7 @@ OBJS := components/compression/malias.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
      components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
+     components/titlemenu/time_entry.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \

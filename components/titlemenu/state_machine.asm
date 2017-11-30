@@ -349,8 +349,74 @@ TitleMenu_StateFadeToOverworldContinue::
     ld [$C900], a
     
     ret
+    
+; State 03 0F
+TitleMenu_StateLoadTimeInputScreen::
+    ld e, $2D
+    call PauseMenu_LoadMenuMap0
+    
+    ld a, [$C434]
+    cp 0
+    jr nz, .skipTilemapLoad
+    
+    ld bc, $D
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .useCGBTmap
+    
+.useDMGTmap
+    ld bc, $56
+    
+.useCGBTmap
+    call Banked_LoadMaliasGraphics
+    
+    ld a, $1B
+    ld [W_SystemSubState], a
+    
+    ret
+    
+.skipTilemapLoad
+    jp System_ScheduleNextSubState
 
-SECTION "Title Menu State Machine - Name Input", ROMX[$42CD], BANK[$4]
+; State 03 10
+TitleMenu_StateResetTimeDrawWidget::
+    ld bc, $104
+    ld e, $14
+    call PauseMenu_LoadMap0
+    call TitleMenu_ResetRTC
+    
+    ld a, 5
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
+    call Banked_PauseMenu_InitializeCursor
+    
+    xor a
+    ld [W_PauseMenu_PhoneIMEPressCount], a
+    call TitleMenu_DrawTimeSetWidget
+    jp System_ScheduleNextSubState
+
+; State 03 11
+TitleMenu_StateTimeInputHandler::
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
+    call Banked_PauseMenu_IterateCursorAnimation
+    jp TitleMenu_TimeEntryProcessing
+    
+; State 03 12
+TiteMenu_StateLoadNameInputScreen::
+    ld a, 7
+    ld [$C0A2], a
+    
+    ld b, $50
+    ld c, $50
+    ld de, W_MetaSpriteConfig1
+    call PauseMenu_PositionCursor
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    call PauseMenu_PhoneIMEPlaceCursor
+    jp System_ScheduleNextSubState
+
 ; State 03 13
 TitleMenu_StateClearNameInput::
     ld hl, $9780 ;Tile no. 78

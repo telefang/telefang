@@ -7,7 +7,8 @@ IMPORT PhoneKeypadGfxDmg
 SECTION "Pause Menu IME WRAM", WRAM0[$CDB5]
 W_PauseMenu_PhoneState:: ds 1
 
-SECTION "Pause Menu IME WRAM2", WRAM0[$CB3E]
+SECTION "Pause Menu IME WRAM2", WRAM0[$CB3D]
+W_PauseMenu_CursorBlinkState:: ds 1
 W_PauseMenu_PhoneIMEPressCount:: ds 1
 
 SECTION "Pause Menu IME WRAM3", WRAM0[$CB28]
@@ -186,6 +187,34 @@ PauseMenu_PhoneGraphicsTable::
     dw $4000,$4200,$4400,$4600,$4800,$4A00,$4C00,$4E00,$5000
 .modelNoTable
     dw $6E5F,$6E8F,$6EBF,$6EEF,$6F1F,$6F4F,$6F7F,$6FAF,$6FDF
+
+SECTION "Phone IME stuff 2", ROMX[$5D40], BANK[$4]
+PauseMenu_PhoneIMEPlaceCursor::
+    ld hl, .positionTable
+    ld a, [W_PauseMenu_PhoneIMEButton]
+    call PauseMenu_IndexPtrTable
+    
+    ld a, [hli]
+    ld b, a
+    ld a, [hl]
+    ld c, a
+    ld a, 7
+    ld [$C0A2], a
+    
+    ld de, W_MetaSpriteConfig1
+    call PauseMenu_PositionCursor
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    
+    ret
+    
+.positionTable
+    dw $2868, $2878, $2888, $2898
+    dw $4068, $4080, $4098
+    dw $5068, $5080, $5098
+    dw $6068, $6080, $6098
+    dw $7068, $7080, $7098
 
 SECTION "Title Menu Player Name Input 4", ROMX[$5B37], BANK[$4]
 PauseMenu_PhoneIMEWraparoundProcessing::
