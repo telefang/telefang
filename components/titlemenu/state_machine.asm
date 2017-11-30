@@ -316,6 +316,40 @@ TitleMenu_StateAnimateMenuScrollDownTwo::
     ld [W_SystemSubState], a
     ret
 
+; State 03 0E
+TitleMenu_StateFadeToOverworldContinue::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    ld a, $C3
+    ld [W_ShadowREG_LCDC], a
+    
+    xor a
+    ld [W_ShadowREG_SCX], a
+    ld [W_ShadowREG_SCY], a
+    ld [W_ShadowREG_WX], a
+    ld [W_ShadowREG_WY], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
+    
+    ld a, 5
+    ld [W_SystemState], a
+    
+    xor a
+    ld [W_SystemSubState], a
+    
+    call $5C1
+    
+    ld b, 1
+    call $3768
+    
+    ld a, 1
+    ld [$C900], a
+    
+    ret
+
 SECTION "Title Menu State Machine - Name Input", ROMX[$42CD], BANK[$4]
 ; State 03 13
 TitleMenu_StateClearNameInput::
