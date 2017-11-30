@@ -108,6 +108,20 @@ PauseMenu_LoadMap1::
     pop de
     pop bc
     jp PauseMenu_LoadAttribmap1
+    
+SECTION "Pause Menu Tilemap Loading 2", ROMX[$7F38], BANK[$4]
+;Another round of tilemap decompressor frontends
+PauseMenu_LoadScrollAnimationFrameD2::
+    ld e, $1E
+    jp PauseMenu_LoadScrollAnimationFrame
+    
+PauseMenu_LoadScrollAnimationFrameD1::
+    ld e, $1F
+    
+PauseMenu_LoadScrollAnimationFrame::
+    call PauseMenu_LoadMenuTilemap0
+    ld e, $12
+    jp PauseMenu_LoadMenuAttribmap0
 
 SECTION "Pause Menu Tile Utils", ROMX[$7FC6], BANK[$4]
 PauseMenu_ClearArrowMetasprites::

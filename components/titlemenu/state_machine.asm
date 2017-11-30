@@ -268,6 +268,53 @@ TitleMenu_StateMenuInputHandler::
     
 .noInputToProcess
     ret
+    
+; State 03 09
+TitleMenu_StateAnimateMenuScrollUpOne::
+    ld e, $1E
+    call PauseMenu_LoadScrollAnimationFrame
+    call TitleMenu_DrawUpScrollMenuItems
+    jp System_ScheduleNextSubState
+    
+; State 03 0A
+TitleMenu_StateAnimateMenuScrollUpTwo::
+    ld e, $1F
+    call PauseMenu_LoadScrollAnimationFrame
+    
+    ld bc, $307
+    call TitleMenu_DrawMenuItems_custCoords
+    jp System_ScheduleNextSubState
+    
+; State 03 0B
+TitleMenu_StateAnimateMenuScrollFinish::
+    ld e, $12
+    call PauseMenu_LoadScrollAnimationFrame
+    
+    ld bc, $307
+    call TitleMenu_DrawMenuItems_custCoords
+    
+    ld a, 8
+    ld [W_SystemSubState], a
+    ret
+    
+; State 03 0C
+TitleMenu_StateAnimateMenuScrollDownOne::
+    ld e, $1F
+    call PauseMenu_LoadScrollAnimationFrame
+    call TitleMenu_DrawDownScrollMenuItems
+    jp System_ScheduleNextSubState
+    
+; State 03 0D
+TitleMenu_StateAnimateMenuScrollDownTwo::
+    ld e, $1E
+    call PauseMenu_LoadScrollAnimationFrame
+    
+    ld bc, $306
+    call TitleMenu_DrawMenuItems_custCoords
+    
+    ld a, $B
+    ld [W_SystemSubState], a
+    ret
 
 SECTION "Title Menu State Machine - Name Input", ROMX[$42CD], BANK[$4]
 ; State 03 13

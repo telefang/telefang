@@ -72,3 +72,66 @@ TitleMenu_LoadItemTilemapSequence::
     ld c, a
     
     ret
+
+SECTION "Title Menu Scroll 3", ROMX[$5799], BANK[$4]
+TitleMenu_DrawUpScrollMenuItems::
+    ld a, [$CB3C]
+    cp 0
+    jr nz, .alternateDrawPath
+    
+    ld bc, $306
+    call TitleMenu_DrawMenuItems_custCoords
+    
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp 3
+    jr nz, .noWraparound
+    
+.wraparound
+    ld a, $FF
+    
+.noWraparound
+    inc a
+    ld [W_PauseMenu_SelectedMenuItem], a
+    ret
+    
+    ;Not sure what any of this does...
+.alternateDrawPath
+    ld bc, $306
+    call $5985
+    
+    ld a, [$CB3A]
+    inc a
+    and 3
+    ld [$CB3A], a
+    ret
+    
+TitleMenu_DrawDownScrollMenuItems::
+    ld a, [$CB3C]
+    cp 0
+    jr nz, .alternateDrawPath
+    
+    ld bc, $308
+    call TitleMenu_DrawMenuItems_custCoords
+    
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    cp 0
+    jr nz, .noWraparound
+    
+.wraparound
+    ld a, 4
+    
+.noWraparound
+    dec a
+    ld [W_PauseMenu_SelectedMenuItem], a
+    ret
+    
+    ;Not sure what any of this does...
+.alternateDrawPath
+    ld bc, $308
+    call $5985
+    
+    ld a, [$CB3A]
+    dec a
+    and 3
+    ld [$CB3A], a
+    ret
