@@ -11,7 +11,7 @@ TitleMenu_GameStateMachine::
 TitleMenu_StateTable
     dw TitleMenu_StateSetupPalettes, TitleMenu_StateLoadGraphics, TitleMenu_StateLoadTMaps, TitleMenu_StateDrawMenu, TitleMenu_StatePositionMenuHalves, TitleMenu_StateCommitMenuPalettes, TitleMenu_StatePlayMenuBGM, TitleMenu_StateAnimateMenuHalvesIn ;07
     dw TitleMenu_StateMenuInputHandler, TitleMenu_StateAnimateMenuScrollUpOne, TitleMenu_StateAnimateMenuScrollUpTwo, TitleMenu_StateAnimateMenuScrollFinish, TitleMenu_StateAnimateMenuScrollDownOne, TitleMenu_StateAnimateMenuScrollDownTwo, TitleMenu_StateFadeToOverworldContinue, TitleMenu_StateLoadTimeInputScreen ;0F
-    dw TitleMenu_StateResetTimeDrawWidget, TitleMenu_StateTimeInputHandler, TitleMenu_StateLoadNameInputScreen, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, $4339, $4346 ;17
+    dw TitleMenu_StateResetTimeDrawWidget, TitleMenu_StateTimeInputHandler, TitleMenu_StateLoadNameInputScreen, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, TitleMenu_StateInitNewGame, TitleMenu_StateFadeToOverworldNewGame ;17
     dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E ;1F
     dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
     
@@ -472,7 +472,48 @@ TitleMenu_StateStorePlayerName::
     
     jp System_ScheduleNextSubState
     
-; TODO: Disassemble states 03 16 thru 03 20. (that's A states)
+; State 03 16
+TitleMenu_StateInitNewGame::
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    
+    ld a, $10
+    ld [$CF96], a
+    jp System_ScheduleNextSubState
+    
+; State 03 17
+TitleMenu_StateFadeToOverworldNewGame::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    ld a, $C3
+    ld [W_ShadowREG_LCDC], a
+    
+    xor a
+    ld [W_ShadowREG_SCX], a
+    ld [W_ShadowREG_SCY], a
+    ld [W_ShadowREG_WX], a
+    ld [W_ShadowREG_WY], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_MainScript_TextStyle], a
+    
+    ld a, 5
+    ld [W_SystemState], a
+    
+    xor a
+    ld [W_SystemSubState], a
+    
+    ld b, 1
+    call $3768
+    call SaveClock_EraseSaveData
+    call SaveClock_EraseLoadedSave
+    call SaveClock_WriteDefaultSaveFile
+    jp TitleMenu_StoreRTCValues
+    
+; TODO: Disassemble states 03 18 thru 03 20. (that's 8 states)
 
 SECTION "Title Menu State Machine - Denjuu Nickname Input", ROMX[$4452], BANK[$4]
 ; State 03 20
