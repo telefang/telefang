@@ -10,8 +10,8 @@ TitleMenu_GameStateMachine::
 ;TODO: disassemble
 TitleMenu_StateTable
     dw TitleMenu_StateSetupPalettes, TitleMenu_StateLoadGraphics, TitleMenu_StateLoadTMaps, TitleMenu_StateDrawMenu, TitleMenu_StatePositionMenuHalves, TitleMenu_StateCommitMenuPalettes, TitleMenu_StatePlayMenuBGM, TitleMenu_StateAnimateMenuHalvesIn ;07
-    dw TitleMenu_StateMenuInputHandler, $41EC, $41F7, $4205, $4216, $4221, $4232, $4265 ;0F
-    dw $428A, $42AA, $42B3, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, $4339, $4346 ;17
+    dw TitleMenu_StateMenuInputHandler, TitleMenu_StateAnimateMenuScrollUpOne, TitleMenu_StateAnimateMenuScrollUpTwo, TitleMenu_StateAnimateMenuScrollFinish, TitleMenu_StateAnimateMenuScrollDownOne, TitleMenu_StateAnimateMenuScrollDownTwo, TitleMenu_StateFadeToOverworldContinue, TitleMenu_StateLoadTimeInputScreen ;0F
+    dw TitleMenu_StateResetTimeDrawWidget, TitleMenu_StateTimeInputHandler, TitleMenu_StateLoadNameInputScreen, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, $4339, $4346 ;17
     dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E ;1F
     dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
     
@@ -403,7 +403,7 @@ TitleMenu_StateTimeInputHandler::
     jp TitleMenu_TimeEntryProcessing
     
 ; State 03 12
-TiteMenu_StateLoadNameInputScreen::
+TitleMenu_StateLoadNameInputScreen::
     ld a, 7
     ld [W_MetaSpriteConfig1 + M_LCDC_MetaSpriteData_TileID], a
     
