@@ -322,6 +322,21 @@ Banked_MainScript_DrawLetter::
     rst $10
     ret
     
+SECTION "Banked Call Helpers That Dont Actually Work", ROM0[$3768]
+Banked_System_CGBToggleClockspeed::
+    ld a, [W_CurrentBank]
+    
+    push af
+    
+    ld a, BANK(System_CGBToggleClockspeed)
+    rst $10
+    call System_CGBToggleClockspeed
+    
+    pop af
+    
+    rst $10
+    ret
+    
 SECTION "Banked Call Helpers Theta Prime", ROM0[$3F22]
 Banked_Battle_IncrementCurrentParticipantByte::
     ld a, BANK(Battle_IncrementCurrentParticipantByte)

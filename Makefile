@@ -24,6 +24,7 @@ OBJS := components/compression/malias.o \
 	  components/system/memory.o components/system/empty.o \
 	  components/system/entrypoints.o components/system/bankcalls.o \
 	  components/system/math.o components/system/bitmanip.o \
+     components/system/overclock.o \
      components/sgb/palettes.o components/sgb/detect.o \
      components/sgb/packets.o components/sgb/precomposed.o \
      components/pausemenu/contacts.o components/pausemenu/nameutil.o \
@@ -40,6 +41,7 @@ OBJS := components/compression/malias.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
      components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
      components/titlemenu/time_entry.o \
+     components/titlescreen/state_machine.o components/titlescreen/position_sprite.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
@@ -74,7 +76,7 @@ OBJS := components/compression/malias.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
 	  components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
      components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
-     components/saveclock/initialize_save.o \
+     components/saveclock/initialize_save.o components/saveclock/integrity.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
@@ -95,12 +97,16 @@ OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
 	  versions/power/tilemaps.o versions/power/metasprite.o \
      versions/power/palettes.o versions/power/gfx/sgb/border.o \
      versions/power/gfx/sgb/attrfile.o \
-     versions/power/components/titlemenu/state_machine.o
+     versions/power/components/titlemenu/state_machine.o \
+     versions/power/components/saveclock/integrity.o \
+     versions/power/components/titlescreen/state_machine.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
      versions/speed/palettes.o versions/speed/gfx/sgb/border.o \
      versions/speed/gfx/sgb/attrfile.o \
-     versions/speed/components/titlemenu/state_machine.o
+     versions/speed/components/titlemenu/state_machine.o \
+     versions/speed/components/saveclock/integrity.o \
+     versions/speed/components/titlescreen/state_machine.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/1.messages.csv script/story/1.messages.csv \
