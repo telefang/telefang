@@ -4,6 +4,9 @@ INCLUDE "components/sound/samples.inc"
 SECTION "Sound Sample Data WRAM", WRAM0[$CF8A]
 W_Sound_SampleFragmentCount: ds 1
 
+SECTION "Sound Sample Control", HRAM[$FFA9]
+H_Sound_SampleSelect:: ds 1
+
 SECTION "Sound Sample Data Functions", ROM0[$3882]
 Sound_PlaySample::
     push af
@@ -32,7 +35,7 @@ Sound_PlaySample::
 Sound_OpenSampleData:
     ld hl, Sound_SampleMetatable
     ld d, 0
-    ld a, [H_Sound_SampleSelect]
+    ld a, [HM_Sound_SampleSelect]
     dec a
     ld e, a
     add hl, de
@@ -140,7 +143,7 @@ Sound_ExitSampleMode:
     xor a
     ld [REG_NR12], a
     ld [REG_NR22], a
-    ld [H_Sound_SampleSelect], a
+    ld [HM_Sound_SampleSelect], a
     ld a, $FF
     ld [REG_NR13], a
     ld [REG_NR23], a

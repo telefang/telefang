@@ -180,7 +180,7 @@ Encounter_SubStateDrawEncounterScreen::
     ld a, $12
     call Sound_IndexMusicSetBySong
     
-    ld [byte_FFA0], a
+    ld [W_Sound_NextBGMSelect], a
     
     ld a, [W_Encounter_BattleType]
     cp M_Encounter_BattleTypeRandom

@@ -21,12 +21,13 @@ OBJS := components/compression/malias.o \
 	  components/lcdc/load_tiles.o components/lcdc/fades.o \
      components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
      components/lcdc/wraparound.o components/lcdc/init_attributes.o \
-     components/lcdc/disable_lcd.o \
+     components/lcdc/disable_lcd.o components/lcdc/dmg_palette.o \
 	  components/system/main.o components/system/state_machine.o \
 	  components/system/rst.o components/mainscript/state_machine.o \
 	  components/system/memory.o components/system/empty.o \
 	  components/system/entrypoints.o components/system/bankcalls.o \
 	  components/system/math.o components/system/bitmanip.o \
+     components/system/overclock.o \
 	  components/system/patch_utils.o components/system/patch_unknown.o \
 	  components/system/aux_code.o \
      components/sgb/palettes.o components/sgb/detect.o \
@@ -43,8 +44,10 @@ OBJS := components/compression/malias.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
-     components/titlemenu/rtc.o \
+     components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
+     components/titlemenu/time_entry.o \
      components/titlemenu/advice.o components/titlemenu/trash.o \
+     components/titlescreen/state_machine.o components/titlescreen/position_sprite.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
@@ -58,6 +61,7 @@ OBJS := components/compression/malias.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
 	  components/sound/samples.o components/sound/indexing.o \
+     components/sound/control.o \
 	  components/serio/driver.o components/serio/vssummon_statemachine.o \
      components/serio/game_statemachine.o components/serio/vssummon_utils.o \
      components/serio/battle_utils.o \
@@ -79,6 +83,7 @@ OBJS := components/compression/malias.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
 	  components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
      components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
+     components/saveclock/initialize_save.o components/saveclock/integrity.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
@@ -98,11 +103,17 @@ OBJS := components/compression/malias.o \
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
 	  versions/power/tilemaps.o versions/power/metasprite.o \
      versions/power/palettes.o versions/power/gfx/sgb/border.o \
-     versions/power/gfx/sgb/attrfile.o
+     versions/power/gfx/sgb/attrfile.o \
+     versions/power/components/titlemenu/state_machine.o \
+     versions/power/components/saveclock/integrity.o \
+     versions/power/components/titlescreen/state_machine.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
      versions/speed/palettes.o versions/speed/gfx/sgb/border.o \
-     versions/speed/gfx/sgb/attrfile.o
+     versions/speed/gfx/sgb/attrfile.o \
+     versions/speed/components/titlemenu/state_machine.o \
+     versions/speed/components/saveclock/integrity.o \
+     versions/speed/components/titlescreen/state_machine.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/all.messages.csv script/npc/unused.messages.csv \

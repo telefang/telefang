@@ -94,7 +94,7 @@ TitleMenu_NameInputImpl::
     dec a
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, 4
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     ret
     
 .noBButtonPress
@@ -150,7 +150,7 @@ TitleMenu_NameInputImpl::
 ;Otherwise, confirm the player name.
 .confirmIntent ;12539
     ld a, 3
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     call PauseMenu_PhoneIMESyncPlayerName
     and a
     jr nz, .playerNameConfirmed
@@ -242,7 +242,7 @@ TitleMenu_NicknameInputImpl::
     dec a
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, 4
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     ret
     
 .noBButtonPress
@@ -295,7 +295,7 @@ TitleMenu_NicknameInputImpl::
     
 .confirmIntent
     ld a, 3
-    ld [byte_FFA1], a
+    ld [W_Sound_NextSFXSelect], a
     call PauseMenu_PhoneIMESyncDenjuuNickname
     and a
     jr nz, .playerNameConfirmed

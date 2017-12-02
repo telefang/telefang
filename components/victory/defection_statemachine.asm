@@ -134,7 +134,7 @@ Victory_SubStateDrawDefectionScreen::
     
     ld a, $2E
     call Sound_IndexMusicSetBySong
-    ld [byte_FFA0], a
+    ld [W_Sound_NextBGMSelect], a
     
     ld a, 4
     call Banked_LCDC_SetupPalswapAnimation
