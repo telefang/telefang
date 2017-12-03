@@ -49,7 +49,7 @@ def encode_atf(data):
                 bytenum = 0
                 bitcnt = 0
             
-            bytenum = (val << 6) | (bytenum >> 2)
+            bytenum = (bytenum << 2) | val
             bitcnt += 2
     
     if bitcnt != 0:
