@@ -68,4 +68,4 @@ TitleScreen_StateLoadTilemapsAndSprites::
     ld a, 1
     ld [W_OAM_SpritesReady], a
     
-    jp System_ScheduleNextSubState
+    jp TitleScreen_ADVICE_RecolorVersionBand

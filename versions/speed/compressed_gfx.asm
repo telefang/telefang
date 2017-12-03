@@ -96,7 +96,7 @@ SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb $29,	$9000, 0 ; $5c
 	dbwb $29,	$9000, 0 ; $5d
 	dbwb $29,	$9000, 0 ; $5e
-	dbwb $29,	$9000, 0 ; $5f
+	dbwb BANK(TitleSpritesSgbGfx),	$8000, 0 ; $5f (repurposed from an unused val...)
 
 SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw $0000 ; $00
@@ -194,7 +194,7 @@ SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw $0000 ; $5c
 	dw $0000 ; $5d
 	dw $0000 ; $5e
-	dw $0000 ; $5f
+   dw TitleSpritesSgbGfx ; $5f (repurposed)
 NOT_COMPRESSED EQU 0
 COMPRESSED EQU 1
 
@@ -581,3 +581,8 @@ MenuMetDMGGfx:
 	dbw NOT_COMPRESSED, MenuMetDMGGfxEnd - MenuMetDMGGfx - 3
 	INCBIN "gfx/menu/met_dmg.2bpp"
 MenuMetDMGGfxEnd
+
+TitleSpritesSgbGfx:
+	dbw NOT_COMPRESSED, TitleSpritesSgbGfxEnd - TitleSpritesSgbGfx - 3
+	INCBIN "gfx/title/sprites_sgb.2bpp"
+TitleSpritesSgbGfxEnd

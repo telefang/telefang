@@ -54,7 +54,7 @@ TitleScreen_StateLoadGraphicsAndSound::
     ld [W_Sound_NextBGMSelect], a
     
     ld b, 0
-    call Banked_System_CGBToggleClockspeed ;NOP'd in production carts
+    call TitleScreen_ADVICE_LoadSGBFiles ;used to be the unused cgb speed switch
     jp System_ScheduleNextSubState
     
 SECTION "Title Screen State Machine 2", ROMX[$4A1A], BANK[$2]
@@ -178,7 +178,7 @@ TitleScreen_StateFadeOut::
     
     or a
     ret z
-    jp System_ScheduleNextSubState
+    jp TitleScreen_ADVICE_UnloadSGBFiles
     
 ; State 01 08
 TitleScreen_StateCorruptSaveCheck::

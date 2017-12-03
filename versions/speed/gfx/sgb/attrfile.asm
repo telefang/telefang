@@ -2,7 +2,7 @@ SECTION "SGB Attribute Data (Speed Version)", ROMX[$6ED8], BANK[$3]
 SGB_AttrFileData::
     INCBIN "versions/speed/gfx/sgb/attrfile/00.atf"
     INCBIN "versions/speed/gfx/sgb/attrfile/01.atf"
-    INCBIN "versions/speed/gfx/sgb/attrfile/02.atf"
+    INCBIN "versions/speed/gfx/title/sgb.atf"
     INCBIN "versions/speed/gfx/sgb/attrfile/03.atf"
     INCBIN "versions/speed/gfx/sgb/attrfile/04.atf"
     INCBIN "versions/speed/gfx/sgb/attrfile/05.atf"
