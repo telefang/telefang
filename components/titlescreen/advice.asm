@@ -13,10 +13,6 @@ TitleScreen_ADVICE_LoadSGBFiles::
     cp M_BIOS_CPU_CGB
     ret z
     
-    ;Replace the version band sprite
-    ld bc, $60
-    call Banked_LoadMaliasGraphics
-    
     ;Load our ATF
     ld a, 2
     ld b, 1
@@ -37,6 +33,10 @@ TitleScreen_ADVICE_RecolorVersionBand::
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
     jp z, System_ScheduleNextSubState
+    
+    ;Replace the version band sprite tiles
+    ld bc, $5f
+    call Banked_LoadMaliasGraphics
     
     ;The version band on the titlescreen is designed to consume all four colors.
     ;On SGB, we need all four of our palettes to have a black value, which also
