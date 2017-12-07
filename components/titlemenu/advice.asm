@@ -148,3 +148,39 @@ TitleMenu_ADVICE_IndexArray16::
     sla c
     rl b
     ret
+
+SECTION "Title Menu SGB Advice", ROMX[$4300], BANK[$1]
+TitleMenu_ADVICE_LoadSGBFiles::
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+	 
+    ;Do nothing if no SGB detected.
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret z
+    
+    ;Do nothing if CGB hardware detected. This is possible if, say, we're in bgb
+    ;or someone builds a Super Game Boy Color cart
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z
+    
+    ;Load our ATF
+    ld a, 2
+    ld b, 1
+    ld c, 2
+    ld d, 3
+    ld e, 4
+    call Banked_SGB_ConstructPaletteSetPacket
+    ret
+    
+TitleMenu_ADVICE_UnloadSGBFiles::
+    ;Load a neutral ATF
+    ld a, 0
+    ld b, 0
+    ld c, 0
+    ld d, 0
+    ld e, 0
+    call Banked_SGB_ConstructPaletteSetPacket
+    ret

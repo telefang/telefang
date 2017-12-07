@@ -111,9 +111,12 @@ TitleMenu_StateCommitMenuPalettes::
     
 ; State 03 06
 TitleMenu_StatePlayMenuBGM::
-    ld a, $32
-    call Sound_IndexMusicSetBySong
-    ld [W_Sound_NextBGMSelect], a
+    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFiles & $FF)
+    call PatchUtils_AuxCodeJmp
+	 
+    nop
+    nop
+    nop
     jp System_ScheduleNextSubState
     
 ; State 03 07

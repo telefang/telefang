@@ -18,6 +18,14 @@ Banked_SaveClock_ADVICE_ValidateRTCFunction::
 Banked_PauseMenu_ADVICE_DrawSMSFromMessages::
 	jp PauseMenu_ADVICE_DrawSMSFromMessages
 	nop
+   
+Banked_TitleMenu_ADVICE_LoadSGBFiles::
+	jp TitleMenu_ADVICE_LoadSGBFiles
+	nop
+
+Banked_TitleMenu_ADVICE_UnloadSGBFiles::
+	jp TitleMenu_ADVICE_UnloadSGBFiles
+	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
