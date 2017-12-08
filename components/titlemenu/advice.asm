@@ -174,11 +174,11 @@ TitleMenu_ADVICE_LoadSGBFiles::
     ld [W_PreviousBank], a
     
     ;Load our ATF
-    ld a, 2
-    ld b, 1
-    ld c, 2
-    ld d, 3
-    ld e, 4
+    ld a, 3
+    ld b, 5
+    ld c, 6
+    ld d, 7
+    ld e, 8
     call Banked_SGB_ConstructPaletteSetPacket
     
     pop af
