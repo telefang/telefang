@@ -207,8 +207,8 @@ TitleMenu_StateMenuInputHandler::
     ld [W_SystemSubState], a
     ld [W_Battle_SubSubState], a
     
-    ld a, $F
-    ld [W_SystemState], a
+    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesLink & $FF)
+    call PatchUtils_AuxCodeJmp
     ret
     
 .soundTestSelected
@@ -337,8 +337,8 @@ TitleMenu_StateFadeToOverworldContinue::
     ld [W_ShadowREG_WY], a
     ld [W_PauseMenu_CurrentPhoneIME], a
     
-    ld a, 5
-    ld [W_SystemState], a
+    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld & $FF)
+    call PatchUtils_AuxCodeJmp
     
     xor a
     ld [W_SystemSubState], a
@@ -503,8 +503,8 @@ TitleMenu_StateFadeToOverworldNewGame::
     ld [W_PauseMenu_CurrentPhoneIME], a
     ld [W_MainScript_TextStyle], a
     
-    ld a, 5
-    ld [W_SystemState], a
+    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld & $FF)
+    call PatchUtils_AuxCodeJmp
     
     xor a
     ld [W_SystemSubState], a

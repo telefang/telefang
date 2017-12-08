@@ -23,8 +23,12 @@ Banked_TitleMenu_ADVICE_LoadSGBFiles::
 	jp TitleMenu_ADVICE_LoadSGBFiles
 	nop
 
-Banked_TitleMenu_ADVICE_UnloadSGBFiles::
-	jp TitleMenu_ADVICE_UnloadSGBFiles
+Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
+	jp TitleMenu_ADVICE_UnloadSGBFilesOverworld
+	nop
+
+Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
+	jp TitleMenu_ADVICE_UnloadSGBFilesLink
 	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
