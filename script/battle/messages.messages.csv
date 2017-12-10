@@ -337,15 +337,15 @@ Let's go! Telefang!<*2>",,
 0x114150,とびらはかたくとざされている。,The door is closed tightly.,,
 0x114152,<S10>......<S30>.<S1>いらない。,<S10>......<S30>.<S1>No thanks.,,
 0x114154,"<&0xca53> を
-<&0xc9e1> ヘプレゼントした",You gave <&0xcca3> the <&0xcaf0>.,,
+<&0xc9e1> ヘプレゼントした",You gave <&0xcca3> the <&0xd6b1>.,,
 0x114156,"<&0xc9e1> は
 ふてきなえみを うかベた。",<&0xcca3> gave a bold smile.,,
 0x114158,"<&0xca53>で DNAを
-さいしゅ しようとした...。",Tried to harvest DNA with the <&0xcaf0>,,
+さいしゅ しようとした...。",Tried to harvest DNA with the <&0xd6b1>,,
 0x11415a,"が...<&0xc9e1> からは
 DNAを さいしゅ することが
 できない。",But... You couldn't get any DNA from <&0xcca3>.,,
-0x11415c,<&0xca53> をてにいれた。,Obtained <&0xcaf0>.,,
+0x11415c,<&0xca53> をてにいれた。,Obtained <&0xd6b1>.,,
 0x11415e,"かいぞうをつづけますか?
  はい  いいえ<*A>","Continue fusing?
  Yes   No<*A>",,
@@ -381,7 +381,7 @@ Evolved into <&0xca00>.<*2>",,
 アイテムがあリません!!<*2>",You have no items needed for evolution!!<*2>,,
 0x114172,"<S0>どのアイテムを
 くみあわせますか?<*2>",<S0>Which item will you combine?<*2>,,
-0x114174,<S0><&0xca53><*4>,<S0><&0xcaf0><*4>,,
+0x114174,<S0><&0xca53><*4>,<S0><&0xd6b1><*4>,,
 0x114176,"<S2>
 <&0xca00><*4>","<S2>
 <&0xccc0><*4>",,

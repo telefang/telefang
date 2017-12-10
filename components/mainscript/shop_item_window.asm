@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Main Script Message Arg 3 Extended", WRAM0[$CAF0]
+SECTION "Main Script Message Arg 3 Extended", WRAMX[$D6B1], BANK[1]
 W_MainScript_MessageArg3:: ds M_StringTable_Load8AreaSize
 
 SECTION "Main Script Message Arg 3", WRAM0[$CA53]
