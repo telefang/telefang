@@ -1,0 +1,9 @@
+M_PauseMenu_SubStateInventoryCheck EQU $0
+M_PauseMenu_SubStateInventoryLoadGraphic EQU $1
+M_PauseMenu_SubStateInventoryDrawNameQty EQU $2
+M_PauseMenu_SubStateInventoryListingIdle EQU $3
+M_PauseMenu_SubStateInventoryEmptyIdle EQU $4
+M_PauseMenu_SubStateInventoryHang5 EQU $5
+M_PauseMenu_SubStateInventoryHang6 EQU $6
+M_PauseMenu_SubStateInventoryExit1 EQU $7
+M_PauseMenu_SubStateInventoryExit2 EQU $8
