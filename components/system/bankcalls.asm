@@ -268,6 +268,14 @@ Banked_StringTable_LoadBattlePhrase::
     rst $18
     ret
 
+SECTION "Banked Call Helpers wut", ROM0[$0630]
+Banked_PauseMenu_LoadItemGraphic::
+    ld a, BANK(PauseMenu_LoadItemGraphic)
+    rst $10
+    call PauseMenu_LoadItemGraphic
+    rst $18
+    ret
+
 SECTION "Banked Call Helpers 8", ROM0[$0650]
 Banked_Status_DrawPhoneNumber::
     push af

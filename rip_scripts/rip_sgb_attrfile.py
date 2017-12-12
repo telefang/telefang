@@ -22,7 +22,7 @@ def extract(args):
             if (len(byte) < 1):
                 break
             
-            for i in range(0, 4):
+            for i in range(3, -1, -1):
                 csv_row.append(str((ord(byte) >> (i * 2)) & 0x03))
         
         if (len(csv_row) > 0):

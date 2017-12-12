@@ -22,3 +22,10 @@ M_SaveClock_DenjuuNickname EQU $6
 M_SaveClock_DenjuuPhoneVals EQU $A ;5 bytes
 
 M_SaveClock_DenjuuLevelCap EQU $63
+
+;Inventory data
+M_SaveClock_InventoryCount EQU $44
+M_SaveClock_InventorySize EQU $2
+
+M_SaveClock_InventoryQuantity EQU 0
+M_SaveClock_InventoryItem EQU 1
