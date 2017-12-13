@@ -609,7 +609,9 @@ TitleMenu_StateInitNickname::
     call StringTable_LoadName75
     
     ld d, $C
-    call PauseMenu_CenterPreppedName
+    nop
+    nop
+    nop
     
     ld a, [$D480]
     call $7D46
