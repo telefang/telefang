@@ -7,7 +7,7 @@ SECTION "String Table WRAM Locs 2", WRAMX[$D440], BANK[$1]
 W_StringTable_StagingLoc:: ds 8
 
 SECTION "String Table WRAM Locs 3", WRAMX[$D68D], BANK[$1]
-W_StringTable_StagingLocDbl:: ds 8
+W_StringTable_StagingLocDbl:: ds M_StringTable_Load8AreaSize
 
 SECTION "String Table Load Functions", ROM0[$3A01]
 ; HL = Base address of table.
