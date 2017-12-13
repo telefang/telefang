@@ -35,21 +35,25 @@ PauseMenu_ItemPrepName::
     jp PauseMenu_CenterPreppedName
     
 PauseMenu_CenterPreppedName::
-    push de
-    ld hl, W_MainScript_CenteredNameBuffer
-    ld b, M_StringTable_Load8AreaSize + 1
+    ld hl, $9780
+    ld bc, W_StringTable_StagingLocDbl
+    ld d, M_StringTable_Load8AreaSize
+    jp MainScript_DrawCenteredStagedString
     
-.nullTermLoop
-    ld a, $E0
-    ld [hli], a
-    dec b
-    jr nz, .nullTermLoop
-    
-    ld hl, W_StringTable_StagingLocDbl
-    ld de, W_MainScript_CenteredNameBuffer
-    call Banked_StringTable_ADVICE_PadCopyBuffer
-    pop de
-    jp PauseMenu_DrawCenteredNameBuffer
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 SECTION "Pause Menu Names Util ADVICE", ROMX[$7F10], BANK[$34]
 PauseMenu_ADVICE_LoadName75::
