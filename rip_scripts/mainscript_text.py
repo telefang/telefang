@@ -5,7 +5,7 @@
 # Injects (and/or extracts) main script data from the master metatable.
 
 import argparse, errno, sys, os, os.path, struct, io, codecs, urllib.request, urllib.error, urllib.parse, json, csv
-from CodeModule.asm.rgbds import Rgb4, Rgb4Section, Rgb4SectionData, Rgb4Patch, Rgb4PatchExpr, Rgb4Symbol
+from CodeModule.asm.rgbds import Rgb5, Rgb5Section, Rgb5SectionData, Rgb5Patch, Rgb5PatchExpr, Rgb5Symbol
 
 def install_path(path):
     try:
@@ -733,14 +733,14 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
 
     Returns a tuple with the following information:
     
-     - objdata: Rgb4 instance containing all table section data and symbols.
+     - objdata: Rgb5 instance containing all table section data and symbols.
      - overflow: A dict of data which overflows this block. Dict keys are the
      names of RGBDS symbols which must be defined in the overflow bank. Section
      will be configured with fixups for those symbols."""
     
-    table_section = Rgb4Section()
+    table_section = Rgb5Section()
     table_section.name = "String table " + bank["symbol"]
-    table_section.sectype = Rgb4Section.ROMX
+    table_section.sectype = Rgb5Section.ROMX
     table_section.org = bank["baseaddr"]
     table_section.bank = bank["basebank"]
     table_section.align = 0
@@ -753,7 +753,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
     last_table_index = 0
     last_aliased_row = -1
     
-    objdata = Rgb4()
+    objdata = Rgb5()
     
     overflow = {}
     
@@ -872,32 +872,32 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
                 #fixup the next pointer in the table
                 table[table_idx + 1] = thisptr + len(packed_strings[table_idx])
             
-            symbol = Rgb4Symbol()
+            symbol = Rgb5Symbol()
             symbol.name = bank["symbol"] + ("_%d_OVERFLOW" % table_idx)
-            symbol.symtype = Rgb4Symbol.IMPORT
+            symbol.symtype = Rgb5Symbol.IMPORT
             
             symbol_id = len(objdata.symbols)
             objdata.symbols.append(symbol)
             
-            fixup = Rgb4Patch()
+            fixup = Rgb5Patch()
             fixup.srcfile = bank["filename"]
             fixup.srcline = 0 #todo: wut
             fixup.patchoffset = thisptr + 1 - bank["baseaddr"]
-            fixup.patchtype = Rgb4Patch.BYTE
+            fixup.patchtype = Rgb5Patch.BYTE
 
-            patchexpr = Rgb4PatchExpr()
+            patchexpr = Rgb5PatchExpr()
             patchexpr.BANK = symbol_id
 
             fixup.patchexprs.append(patchexpr)
             table_section.datsec.patches.append(fixup)
 
-            fixup = Rgb4Patch()
+            fixup = Rgb5Patch()
             fixup.srcfile = bank["filename"]
             fixup.srcline = 0 #todo: wut
             fixup.patchoffset = thisptr + 2 - bank["baseaddr"]
-            fixup.patchtype = Rgb4Patch.LE16
+            fixup.patchtype = Rgb5Patch.LE16
             
-            patchexpr = Rgb4PatchExpr()
+            patchexpr = Rgb5PatchExpr()
             patchexpr.SYM = symbol_id
             
             fixup.patchexprs.append(patchexpr)
@@ -914,9 +914,9 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
     objdata.sections.append(table_section)
     
     #Also export a symbol for our own data bank
-    block_symbol = Rgb4Symbol()
+    block_symbol = Rgb5Symbol()
     block_symbol.name = bank["symbol"]
-    block_symbol.symtype = Rgb4Symbol.EXPORT
+    block_symbol.symtype = Rgb5Symbol.EXPORT
 
     objdata.symbols.append(block_symbol)
 
@@ -945,7 +945,7 @@ def make_tbl(args):
         for bankid, rowdata in split_rowdata.items():
             banknames[bankid]["textdata"] = rowdata
     
-    ovrflowdata = Rgb4()
+    ovrflowdata = Rgb5()
     overflow_strings = {}
     bank_objects = {}
     
@@ -994,9 +994,9 @@ def make_tbl(args):
 
             overflow_bytes.append(packed_str)
             
-            ofsym = Rgb4Symbol()
+            ofsym = Rgb5Symbol()
             ofsym.name = symname
-            ofsym.symtype = Rgb4Symbol.EXPORT
+            ofsym.symtype = Rgb5Symbol.EXPORT
             ofsym.value.sectionid = overflow_sectionid
             ofsym.value.value = overflow_offset
             overflow_offset += len(packed_str)
@@ -1005,9 +1005,9 @@ def make_tbl(args):
         else:
             break_after_adding = True
         
-        overflow_section = Rgb4Section()
+        overflow_section = Rgb5Section()
         overflow_section.name = "Overflow Bank"
-        overflow_section.sectype = Rgb4Section.ROMX
+        overflow_section.sectype = Rgb5Section.ROMX
         overflow_section.org = 0x4000
         overflow_section.bank = args.overflow_bank
         overflow_section.align = 0
