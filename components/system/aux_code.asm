@@ -31,6 +31,10 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 	jp TitleMenu_ADVICE_UnloadSGBFilesLink
 	nop
 
+Banked_TitleMenu_ADVICE_PropagateSavedRTC::
+	jp TitleMenu_ADVICE_PropagateSavedRTC
+	nop
+
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
 	ld a, "S"

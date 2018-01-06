@@ -2,27 +2,36 @@ INCLUDE "telefang.inc"
 
 SECTION "Title Menu RTC Handlers", ROMX[$6A4E], BANK[$4]
 TitleMenu_ResetRTC::
+    ld de, W_SaveClock_RealTimeSeconds
+    
+.rtcClearLoop
     xor a
-    ld [W_SaveClock_RealTimeSeconds], a
-    ld [W_SaveClock_RealTimeMinutes], a
-    ld [W_SaveClock_RealTimeHours], a
-    ld [W_SaveClock_RealTimeDays], a
-    ld [W_SaveClock_RealTimeDays + 1], a
+    ld [de], a
+    
+    inc e
+    ld a, e
+    cp a, $D2
+    jr nz,.rtcClearLoop
     ret
+    
+    nop
+    nop
+    nop
+    nop
+    nop
 
 TitleMenu_StoreRTCValues::
     ld a, Banked_SaveClock_ADVICE_ValidateRTCFunction & $FF
     call PatchUtils_AuxCodeJmp
     
     cp 0
-    jr z, .exitSram
-    jr .writeRTC
+    jr nz, .writeRTC
 	 
-    nop
-    nop
-    nop
-    nop
-    nop
+    ld a, Banked_TitleMenu_ADVICE_PropagateSavedRTC & $FF
+    call PatchUtils_AuxCodeJmp
+    
+    jr .exitSram
+    
     nop
     nop
     
@@ -146,4 +155,14 @@ TitleMenu_ADVICE_LoadRTCValues::
     
     ret
     
-TitleMenu_ADVICE_LoadRTCValues_END::
+TitleMenu_ADVICE_PropagateSavedRTC::
+    ld a, [W_SaveClock_RealTimeSeconds]
+    ld [W_Overworld_CurrentTimeSeconds], a
+    
+    ld a, [W_SaveClock_RealTimeMinutes]
+    ld [W_Overworld_CurrentTimeMinutes], a
+    
+    ld a, [W_SaveClock_RealTimeHours]
+    ld [W_Overworld_CurrentTimeHours], a
+
+TitleMenu_ADVICE_PropagateSavedRTC_END::
