@@ -557,10 +557,6 @@ def make_maps(args):
                         pass
                 
                 csv_data.append(nrow)
-            
-            if len(csv_data) > 0:
-                if len(csv_data[-1]) == 0:
-                    csv_data = csv_data[:-1]
 
             print("Compiling " + filename)
             
