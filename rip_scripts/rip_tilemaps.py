@@ -557,7 +557,7 @@ def make_maps(args):
                         pass
                 
                 csv_data.append(nrow)
-            
+
             print("Compiling " + filename)
             
             with open(objname, "wb") as objfile:
