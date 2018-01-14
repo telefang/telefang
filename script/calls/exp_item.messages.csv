@@ -2,26 +2,27 @@ Pointer,Japanese,English,Draft version,Notes
 0x15c000,"<D1>なぁなぁしってるか?
 ツノナスに『でんち』を
 くっつけると いいこと
-あるんだぜ!<*2>",/0x15c000/<*2>,,
+あるんだぜ!<*2>",/0x15c000/<*2>,"<D1>Yo, have you heard? If you fuse a Tsunonasu with a ""battery"", something good'll happen!<*2>",
 0x15c002,"<D2>もしもし?
 あのねー コキアに
 『アンテナ』をくっつけると
-ちょこっと つよくなるんだぜ<*2>",/0x15c002/<*2>,,
+ちょこっと つよくなるんだぜ<*2>",/0x15c002/<*2>,"<D2>Hello? I just wanted to tell you...
+If you fuse a Kochia with an ""antenna"", it's gonna get a little stronger.<*2>",
 0x15c004,"<D3>ねぇねぇ
 これきいたことある?
 オーシェっていうデンジュウに
 『クレーン』をくっつけて
 あげるとつよくなるんだってー
-<*2>",/0x15c004/<*2>,,
+<*2>",/0x15c004/<*2>,"<D3>Hey, do you know about this? I heard if you fuse an Oshe with a ""crane"", it'll grow stronger.<*2>",
 0x15c006,"<D4>ケシってさー
 『レンジ』をくっつけると
 なんだか つよくなるんだよね
 よわっちいカンジがするんだけどそんなこと いったら
-おこられるかな?<*2>",/0x15c006/<*2>,,
+おこられるかな?<*2>",/0x15c006/<*2>,"<D4>You know Keshi? If you fuse one with a ""microwave"", it'll grow a bit. They seem sort of weak, but... maybe they'd get mad if they heard me say that.<*2>",
 0x15c008,"<D5>クリプトって『ガン』が
 すきなんだよ
 くっつけたら すごいことに
-なるぜ!<*2>",/0x15c008/<*2>,,
+なるぜ!<*2>",/0x15c008/<*2>,"<D5>Crypto, you know the one, likes ""guns"". If you fuse them, something cool will happen!<*2>",
 0x15c00a,"<D6>ヘっヘー いいこときいたよ
 キミにも おしえてあげる
 モンステラって
@@ -29,27 +30,29 @@ Pointer,Japanese,English,Draft version,Notes
 おこのみらしいよ
 かいぞうで くっつけたら
 いいことあるかもね
-<*2>",/0x15c00a/<*2>,,
+<*2>",/0x15c00a/<*2>,"<D6>Heh heh, I heard something interesting! Okay, I'll tell you.
+Monstera is a fan of ""revolvers"". Fusing them might be a good idea!<*2>",
 0x15c00c,"<D7>ファンガスに『アンテナ』って
 なんかキーワードらしいよ
 どういうことなんだろうね?
-<*2>",/0x15c00c/<*2>,,
+<*2>",/0x15c00c/<*2>,"<D7>""Antenna"" seems to be sort of a keyword for Fungus. What do you make of that, hm?<*2>",
 0x15c00e,"<D8>もしもーし
 <&name>??
 キミのトモダチに ヒオウギって
 いるかな?
 かれには『スパナ』がいいカンジ
-らしいよ<*2>",/0x15c00e/<*2>,,
+らしいよ<*2>",/0x15c00e/<*2>,"<D8>Hi, is this <&name>?
+Are you friends with a Hiougi? I heard they're into ""spanners"".<*2>",
 0x15c010,"<D9>ねーねー
 『バケツ』はプニカって
 なぞのことばだよね
-<*2>",/0x15c010/<*2>,,
+<*2>",/0x15c010/<*2>,"<D9>Hey... The word ""bucket"" means something special to Punica, just so you know.<*2>",
 0x15c012,"<D10>やぁ <&name>
 ヒミツの じょうほうを
 ゲットしたよ
 グミには『ビデオ』が
 いけてるらしいよ
-<*2>",/0x15c012/<*2>,,
+<*2>",/0x15c012/<*2>,"<D10>Yo, <&name>! I got my hands on some rare info. Get this: Gumi gets along well with ""video cameras"".<*2>",
 0x15c014,"<D11>おーう <&name>
 ゲンキにしてるか?
 あのなー スグリについての
@@ -57,25 +60,33 @@ Pointer,Japanese,English,Draft version,Notes
 きいたんだー
 あいつらって『マウス』が
 すきらしいよ
-やっぱ ネコににてるからかな?<*2>",/0x15c014/<*2>,,
+やっぱ ネコににてるからかな?<*2>",/0x15c014/<*2>,"<D11>What's up, <&name>! How are ya?
+A friend told me something about Suguri...
+Apparently, they like ""mice"". I guess they really are similar to cats?<*2>
+",
 0x15c016,"<D12>ガンライコウって
 『フライパン』をくっつけて
 あげると けいけんちが
 あがるんだって
 なんとなく そんなふんいき
-するよねー<*2>",/0x15c016/<*2>,,
+するよねー<*2>",/0x15c016/<*2>,"<D12>If you fuse a Ganraikou with a ""frying pan"", I hear it'll gain experience.
+It has that feel to it, doesn't it?<*2>",
 0x15c018,"<D13>ビャクブってトモダチにいるー?
 いるんだったら
 『ノコギリ』をくっつけてごらん
 でも ビャクブって
 ノコギリよリもいたそうな
-キバをもってるんだよねー<*2>",/0x15c018/<*2>,,
+キバをもってるんだよねー<*2>",/0x15c018/<*2>,"<D13>Are you friends with a Byakubu?
+If you are, try fusing it with a ""saw"".
+You'd probably be hurt worse by a Byakubu than by a saw, though.
+It has those sharp fangs!<*2>",
 0x15c01a,"<D14>タマゴをせなかにしょった
 デンジュウのテロペアって
 いるじゃない
 あのデンジュウって『ギア』を
 つけると ちょっとだけつよく
-なるんだってさ<*2>",/0x15c01a/<*2>,,
+なるんだってさ<*2>",/0x15c01a/<*2>,"<D14>There's a Denjuu with eggs on its back called Telopea, right?
+I heard it'll get just a bit stronger if fused with a ""gear""!<*2>",
 0x15c01c,"<D15>ねー<&name>
 マンテアのデンワバンゴウを
 もってる??
@@ -83,13 +94,13 @@ Pointer,Japanese,English,Draft version,Notes
 『アーチェリー』をつけると
 いいらしいよ
 ためしてみたらどう??
-<*2>",/0x15c01c/<*2>,,
+<*2>",/0x15c01c/<*2>,"<D15>Hey, <&name>... Do you have a Mantea's number? If you do, I've heard you should fuse it with an ""archery set"". How about you give it a shot?<*2>",
 0x15c01e,"<D16><&name>の
 トモダチのなかに イクソラって
 デンジュウはいるのかな?
 そのデンジュウ『アイロン』を
 つけると つよくなるらしいよ
-ホントかウソか しらないけどさ<*2>",/0x15c01e/<*2>,,
+ホントかウソか しらないけどさ<*2>",/0x15c01e/<*2>,"<D16>Is there any chance you're friends with an Ixora, <&name>? I heard it'll grow stronger if you fuse it with an ""iron"". I don't know if it's true, though.<*2>",
 0x15c020,"<D17>ミルツスがさー
 『プロペラエンジン』を
 つけたがってるって はなしを
@@ -97,13 +108,13 @@ Pointer,Japanese,English,Draft version,Notes
 すごいモノ ほしがるよねー
 もってるんだったら
 くっつけてあげなよー
-<*2>",/0x15c020/<*2>,,
+<*2>",/0x15c020/<*2>,"<D17>Someone told me they wanted to fuse a Myrtus with a ""propeller engine"". Tall order, right //? If you get the chance, try fusing them!<*2>",
 0x15c022,"<D18>リクニスって
 『ドリル』だいすきデンジュウ
 らしいよ
 なんで すきなのかは だれも
 しらないんだけどさー
-<*2>",/0x15c022/<*2>,,
+<*2>",/0x15c022/<*2>,"<D18>I heard the Denjuu called Lychnis love ""drills"". Why they like them is anyone's guess, though...<*2>",
 0x15c024,"<D19><&name>ってさ
 ラペロイジアってデンジュウを
 みたことある??
@@ -111,7 +122,7 @@ Pointer,Japanese,English,Draft version,Notes
 いう アイテムがいいんだって
 そのデンジュウから
 デンワバンゴウを もらうことが
-あったら つけてみなよー<*2>",/0x15c024/<*2>,,
+あったら つけてみなよー<*2>",/0x15c024/<*2>,"<D19>So, <&name>, have you ever seen a Lapeirousia? They like ""mixers"", I hear. If you get one's phone number, try fusing them!<*2>",
 0x15c026,"<D20>ブバリアってデンジュウ
 『バズーカ』を つけると
 シンカはしないけど 
@@ -119,7 +130,7 @@ Pointer,Japanese,English,Draft version,Notes
 すごい こわいモノ
 ほしがるよねー
 なに かんがえてるんだろ..
-<*2>",/0x15c026/<*2>,,
+<*2>",/0x15c026/<*2>,"<D20>If you fuse a Bubaria with a ""bazooka"", it won't evolve, but I hear they're into them. Scary thing to want, isn't it? Wonder what they're thinking...<*2>",
 0x15c028,"<D21>アンジオスってデンジュウが
 いるじゃない?
 ボクはみたことが ないんだけど
@@ -129,7 +140,8 @@ Pointer,Japanese,English,Draft version,Notes
 きもするなー
 まだ みたこと なかったら
 わからないかな??
-<*2>",/0x15c028/<*2>,,
+<*2>",/0x15c028/<*2>,"<D21>There's a Denjuu called Angios, right? I haven't seen one, but I hear if you fuse it with a ""flamethrower"", it'll gain experience.
+I feel like I get it... If you haven't seen one yet, maybe it's hard to understand?<*2>",
 0x15c02a,"<D22>よう <&name>
 ジムノスってデンジュウは
 しってるか??
@@ -139,7 +151,8 @@ Pointer,Japanese,English,Draft version,Notes
 『ミサイル』つかんで
 なげれそうなぐらい ごつい
 ヤツなんだけどなー
-<*2>",/0x15c02a/<*2>,,
+<*2>",/0x15c02a/<*2>,"<D22>Yo, <&name>! Have you heard of Gymnos? It's a real ""tough guy"" Denjuu.
+I heard it likes ""missiles"". It looks strong enough to throw one of those around!<*2>",
 0x15c02c,"<D23>あの かわいいデンジュウ
 リリオペっているじゃん
 あのデンジュウって みために
@@ -149,7 +162,7 @@ Pointer,Japanese,English,Draft version,Notes
 よらないよなー
 やっぱリ うみのデンジュウって
 こわいのかな?
-<*2>",/0x15c02c/<*2>,,
+<*2>",/0x15c02c/<*2>,"<D23>You know that one cute Denjuu? Liriope? It's a bit of a mismatch, but I hear you should fuse it with a ""revolver"". You really can't tell from its looks! Maybe ocean Denjuu are as scary as people say?<*2>",
 0x15c02e,"<D24>イオンとうに ワラタって
 デンジュウが いるんだけどさ
 『サーベル』を くっつけると
@@ -157,13 +170,13 @@ Pointer,Japanese,English,Draft version,Notes
 うわさできいたよ
 トモダチにいるんだったら
 くっつけてあげなよー
-つよくなるかもよ?<*2>",/0x15c02e/<*2>,,
+つよくなるかもよ?<*2>",/0x15c02e/<*2>,"<D24>There's a Denjuu called Waratah on Ion Island. I've heard rumors saying you should fuse it with a ""sabre"". If you become friends with one, try it! Maybe it'll grow stronger?<*2>",
 0x15c030,"<D25>ソルガムってヘビみたいな
 デンジュウしってる??
 そのデンジュウ『シュリケン』が
 おこのみらしいよ
 なんだか かっこいいよねー
-<*2>",/0x15c030/<*2>,,
+<*2>",/0x15c030/<*2>,"<D25>You know Sorghum, that snakey Denjuu? I hear they like ""shurikens"". Kind of cool, right?<*2>",
 0x15c032,"<D26>おーっす <&name>
 みみよリな じょうほうが
 あるよー
@@ -171,7 +184,7 @@ Pointer,Japanese,English,Draft version,Notes
 いるじゃん?
 じつは『マシンガン』をつけると
 いいことあるんだってさ
-いがいだよなー<*2>",/0x15c032/<*2>,,
+いがいだよなー<*2>",/0x15c032/<*2>,"Hiya, <&name>! I've got some good news!",
 0x15c034,"<D27>ここで もんだいです
 『ボム』をつけると いいという
 デンジュウを こたえなさい

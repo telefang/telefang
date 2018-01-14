@@ -26,7 +26,7 @@ Spring water really is the best!!",,
 いるから はなしを
 きいてみるといいよ","Is this your first time in the Denjuu World?
 There are as many kinds of Denjuu as people, so you should listen to what they have to say.",,
-0x11c00a,トモダチはふえたかい??,Have you made more friends??,,
+0x11c00a,トモダチはふえたかい??,Have you made any more friends??,,
 0x11c00c,"デンジュウって いろいろな
 ところにすんでるんだ
 おおきくわけて 6しゅるい
@@ -34,16 +34,16 @@ There are as many kinds of Denjuu as people, so you should listen to what they h
 『しんリん』『みずベ』『そら』
 『さばく』
 っていうふうに わかれるんだよ","Denjuu live in all sorts of places.
-They're sorted into 6 major groups: Mountain, Grassland, Forest, Aquatic, Sky, and Desert.",,
+They're sorted into 6 major groups: Mountain, Field, Forest, Aquatic, Sky, and Desert.",,
 0x11c00e,"デンジュウもニンゲンみたいに
 いろいろな せいかくや
-あいしょうが あるのさ","Denjuu are like humans, they each have different personalities and quirks.",,
+あいしょうが あるのさ",Denjuu are like humans. They each have different personalities and quirks.,,
 0x11c010,"なんだか さいきんおかしな
 ことがおきるんだ
 ヘんなニンゲンがきたリ 
 『アンテナのき』が おられたリ
 したんだ","Some weird things have been happening lately.
-Weird people showing up, Antenna Trees getting cut down...",,
+Weird humans showing up, Antenna Trees getting cut down...",,
 0x11c012,"トロンコむらは いつもどおリに
 もどったみたいだね
 よかったー","It looks like Toronko Village has returned to normal.
@@ -200,7 +200,7 @@ Was it something to do with Netaro?",,
 こまったもんだよね",Netaro's constant napping is a real problem...,,
 #######,32 strings   -   Kurinon Village,,,
 0x11c044,"ここは クリノンむらっていう
-ところだよ",They call this place Kurinon Village.,,
+ところだよ",This here is a place called Kurinon Village.,,
 0x11c046,"クリノンむらは いまたいヘんに
 いそがしいんだ",The village is kind of in a mess right now.,,
 0x11c048,"もんだいかいけつだー!
@@ -217,7 +217,7 @@ Now we can't buy any fish from Iris...",,
 なったダスー","Now we can buy tasty fish from Iris again, man!",,
 0x11c050,"クリノンむらはちいさなむらなの
 アンテナのきが なくなると
-すごくこまるのよー","Kurinon is such a small village, we'd be in a lot of trouble if we lost the Antenna Tree...",,
+すごくこまるのよー",Kurinon is such a small village. We'd be in a lot of trouble if we lost the Antenna Tree...,,
 0x11c052,"まったく ダレがアンテナのきを
 つかえなくしてしまったの?","Honestly, who would want to keep people from using the Antenna Tree?",,
 0x11c054,"はんにんは カクザとうとか
@@ -729,7 +729,7 @@ Let's see if you're good enough!!",,(Unused)
 もうワタシはテレファングは
 しないんだから!
 これいじょうトモダチを
-ヘらされたら たまらないわ!","Aah! Stay away!
+ヘらされたら たまらないわ!","Agh! Stay away!
 I won't Telefang anymore!
 I don't want to lose any more friends than this!",,(Unused)
 0x11c128,"ぜったいに テレファングは
@@ -747,7 +747,7 @@ Is that why everyone does it?",,(Unused)
 0x11c12e,"ニンゲンがおもてで ヘんなこと
 しているよね
 なにかたのしいのかなー","The humans out there are doing something weird again.
-Doesn't seem that fun to me...",,
+I wonder if they're having fun...",,
 0x11c130,"おもてが ちょっとだけ
 しずかになったかなぁ
 おもしろかったのかなー","The humans out there have gotten a bit quieter.
@@ -763,7 +763,7 @@ I wonder what the rare item was?",,
 Tファンガーがいるそうなんだ
 なんでも つよいデンジュウを
 さがしているらしいよ","I hear there's an amazing T-Fanger hanging around outside the shrine.
-He's probably searching for strong Denjuu...",,
+They say he's searching for strong Denjuu...",,
 0x11c138,"つよいデンジュウをさがしている
 すごいTファンガーを
 たおした もっとすごい
@@ -774,7 +774,7 @@ Tファンガーがあらわれたらしいね",I hear an even more amazing T-Fa
 ひがしにある バーランまで
 いかないとダメだね
 バーランってのはさばくのまちさ","There's only one Antenna Tree in Freesia.
-If you want to keep traveling, you'll need to head west to Barran, the desert town.",,
+If you want to keep traveling, you'll need to head east to Barran, the desert town.",,
 0x11c13c,"Tファンガーたいかい...
 はやく おわらないかなー
 まちじゅう Tファンガーだらけ
@@ -956,7 +956,7 @@ Darned Birds! Just you watch!",,
 ...What's that? You heard a different story before?",,
 0x124032,"ヘビぐみこそは さばくのおう!
 トリぐみなんぞに まけはしない","The Snake Clan rules this desert!
-We won't lose to those Birds!",,
+There's no way we'd lose to the likes of those Birds.",,
 0x124034,"...しかし トリぐみは
 『キカイのまおう』を みかたに
 したらしい...
@@ -1901,7 +1901,8 @@ Tファンガーだよ!!",/0x13c012/,,
 0x13c01a,"ボクはトリパむらにのこって
 ここのデンジュウたちと
 アンテナのきをまもっていくよ
-それぐらいしかできないからね",/0x13c01a/,,
+それぐらいしかできないからね",/0x13c01a/,"I'm staying in Tripa. I'll keep protecting the Antenna Tree together with the Denjuu here.
+That's about all I can do!",
 #######,36 strings   -   Flaura Village,,,
 0x13c01c,"ここは いろいろなものが
 はっくつされるむら

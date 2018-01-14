@@ -312,7 +312,7 @@ Oh well, better look for that ball.",,
 こんなところでなにしてるんだよ","Hm? Hey Matsukiyo.
 What're you doing here?",,
 0x1200e6,"<&0xc92c>くん
-ボールを ここまでとばしたのはやっぱリ キミですか?","<&0xc92c>, so it really was you who hit the ball over here?",,
+ボールを ここまでとばしたのはやっぱリ キミですか?",<&0xc92c>! So it really was you who hit the ball over here?,,
 0x1200e8,おう!すげーだろ!,"Yup! Pretty awesome, huh?",,
 0x1200ea,"あぶないじゃないですか!!
 もうすこしであたるところ
@@ -456,7 +456,7 @@ Now then, are you familiar with the Denjuu World?
 しかしニンゲンのかがくしゃが
 『やみのカーテン』をすリぬける
 ほうほうを みつけだしたのじゃ","The Human World and the Denjuu World...
-The two worlds have always been seperated by a ""curtain of darkness"", but human scientists have discovered a way to pass through it.",,
+The two worlds have always been separated by a ""curtain of darkness"", but human scientists have discovered a way to pass through it.",,
 0x12011c,"しかしこのデンジュウカイと
 いうばしょは いきるには
 たいヘんなせかいでな...
@@ -653,7 +653,7 @@ How about you just go away instead?",,
 Then there's no choice...
 Let's Telefang!",,
 0x120158,"つ..つよいー
-ネリカラさまー!!!","S.. Strong...
+ネリカラさまー!!!","S... strong...
 I'm sorry, Nerikara!!!",,
 0x12015a,"なんで カギが かかってるんだーよーし.....
 むリやリにでも あけてやる!","Why is this locked?
@@ -666,14 +666,14 @@ I wonder if that guy has the key....",,
 0x12015e,"... ...はっ!
 なにも みて いないよね?
 ... ... ... ...
-... ... ... ...","... ...Aah!! 
+... ... ... ...","... ...Agh!! 
 You didn't see that, right?
 ... ... ... ...
 ... ... ... ...",,
 0x120160,"なんだったんだろう...?
 まぁ いいか","What was that all
 about...?
-Whatever.",,
+Well, whatever.",,
 0x120162,"オマエら なにものだ!
 ここからさきは いかせはしない
 わかったなら かえれ!かえれ!","Who are you!?
@@ -722,7 +722,7 @@ Now he'll be beaten up by you ""Kakuza Party"" people...!",,
 おこしに きたんだって!
 『カクザとう』なんて わけの
 わかんないヤツらは かんけい
-ないよ!","That's why I said, we were sent by Musa to wake him up!
+ないよ!","I told you, we were sent by Musa to wake him up!
 That ""Kakuza Party"" or whatever has nothing to do with us!",,
 0x12016e,"しらじらしい... ...
 オマエも『カクザとう』とか
@@ -736,7 +736,7 @@ That ""Kakuza Party"" or whatever has nothing to do with us!",,
 だましやがって!!","No, I get it... ...
 You guys are working together, aren't you!
 You plan on using Netaro for your ""election"" thing!!
-You're trying to trick him with your ""We need quality water for delicious curry"" talk!!",,
+You're trying to trick him with your ""we need quality water for delicious curry"" talk!!",,
 0x120170,"そんなことしらない?...
 ほんとうに ムサさまから
 たのまれてネタロのようすを
@@ -750,7 +750,7 @@ You were really sent by Musa to check on Netaro?
 ごめんよ!
 オレ ヒドイことしちゃった!
 ネタロのことがシンパイで
-ちょっとカンチガイしてたんだ!","Aaaah! I'm sorry! I'm really sorry!
+ちょっとカンチガイしてたんだ!","Ahhhh! I'm sorry! I'm really sorry!
 I've done something horrible!
 I really just misunderstood because I was worried about Netaro!",,
 0x120174,"ネタロは『カクザとう』の
@@ -796,7 +796,7 @@ Zzz...Zzz...",,
 0x120186,"おきろって!!!!!!
 ネタロ!!!!
 むらに ミズが たリないんだよ!ムサも おきろっていってるぞ!","I said WAKE UP!!!
-NETARO!
+NETARO!!!
 The village doesn't have enough water!
 Musa said to wake you up!!",,
 0x120188,"...あーごめん
@@ -808,7 +808,7 @@ Musa said to wake you up!!",,
 れんちゅうは?","...Ahh, sorry, I must have dozed off again.
 Alright... I'm awake...
 But what happened to those noisy humans?
-Those ""Kakuza party"" guys?",,
+Those ""Kakuza Party"" guys?",,
 0x12018a,"イヤイヤイヤイヤイヤ
 これはどうもネタロくん!
 おはようございます!
@@ -825,7 +825,7 @@ Those ""Kakuza party"" guys?",,
 『すばらしい しゃかい』を
 つくろうじゃないか!","Well, well, well, it's a pleasure to meet you, Netaro!
 Good morning! It's a lovely day!
-Aah, I was really having trouble getting into your room here, Netaro.
+Ahh, I was really having trouble getting into your room here, Netaro.
 Without your help, you know I won't be able to keep my promise of opening a curry shop, hmm?
 So come now, Netaro!
 Come, and we shall build a glorious business together!",,
@@ -1021,7 +1021,7 @@ Do you think that you can do it?",,
 『クリノンむら』で なにやら
 じけんが おきているのじゃ
 むらのデンジュウたちのチカラになってやってくれ
-たのんだぞ!","Aah, thank you.
+たのんだぞ!","Ah, thank you.
 Then, as your first task, go through this tree to Kurinon Village.
 There has been trouble brewing, and the Denjuu there could use your strength.
 We are counting on you!",,
@@ -1139,7 +1139,7 @@ So have you seen anyone suspicious?",,
 I saw some humans and Denjuu going in there, and one of them stayed behind at the entrance.
 That's the only thing I can think of, right now...",,
 0x1201ee,"サンキュー ミヨ
-たすかったよ","Thanks Miyo, that helps me out!",,
+たすかったよ","Thanks Miyo, that really helps!",,
 0x1201f0,"さて...ワタシは
 あたらしい トモダチを
 さがしにいくわ

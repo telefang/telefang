@@ -47,7 +47,7 @@ Pointer,Japanese,English,Draft version,Notes
 0x11402c,みかたのこうげき!<*5>,Ally's attack!<*5>,,
 0x11402e,"<&0xd460>は
 <&0xd448>ポイントの
-けいけんちをえた!<*5>",<&0xd6a0> got <&0xd448> points of experience!<*5>,,
+けいけんちをえた!<*5>",<&0xd6a0> got <&0xd448> points of experience!<*5>,<&0xd6a0> got <&0xd448> experience points!<*5>,
 0x114030,"<&0xd460>は
 レベルアップした!<*5>",<&0xd6a0> leveled up!<*5>,,
 0x114032,"<&0xd460>は
@@ -339,7 +339,7 @@ Let's go! Telefang!<*2>",,
 0x114154,"<&0xca53> を
 <&0xc9e1> ヘプレゼントした",You gave <&0xcca3> the <&0xd6b1>.,,
 0x114156,"<&0xc9e1> は
-ふてきなえみを うかベた。",<&0xcca3> gave a bold smile.,,
+ふてきなえみを うかベた。",<&0xcca3> gave a bold smile.,<name> flashed a fearless smile.,
 0x114158,"<&0xca53>で DNAを
 さいしゅ しようとした...。",Tried to harvest DNA with the <&0xd6b1>,,
 0x11415a,"が...<&0xc9e1> からは
