@@ -75,12 +75,12 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_3a
 	dw Tilemap_unknown_tilemap_0_3b
 	dw Tilemap_unknown_tilemap_0_3c
-	dw Tilemap_unknown_tilemap_0_3d
-	dw Tilemap_unknown_tilemap_0_3e
+	dw Tilemap_encounter_backgrounds_field_tmap
+	dw Tilemap_encounter_backgrounds_forest_tmap
 	dw Tilemap_unknown_tilemap_0_3f
 	dw Tilemap_unknown_tilemap_0_40
-	dw Tilemap_unknown_tilemap_0_41
-	dw Tilemap_unknown_tilemap_0_42
+	dw Tilemap_encounter_backgrounds_cave_tmap
+	dw Tilemap_encounter_backgrounds_ocean_tmap
 	dw Tilemap_unknown_tilemap_0_43
 	dw Tilemap_unknown_tilemap_0_44
 	dw Tilemap_phoneconversation_backgrounds_field_tmap
@@ -464,13 +464,13 @@ Tilemap_unknown_tilemap_0_3c::
 	incbin "gfx/unknown/tilemap_0/3c.tmap"
 Tilemap_unknown_tilemap_0_3c_END
 
-Tilemap_unknown_tilemap_0_3d::
-	incbin "gfx/unknown/tilemap_0/3d.tmap"
-Tilemap_unknown_tilemap_0_3d_END
+Tilemap_encounter_backgrounds_field_tmap::
+	incbin "components/encounter/backgrounds/field_tmap.tmap"
+Tilemap_encounter_backgrounds_field_tmap_END
 
-Tilemap_unknown_tilemap_0_3e::
-	incbin "gfx/unknown/tilemap_0/3e.tmap"
-Tilemap_unknown_tilemap_0_3e_END
+Tilemap_encounter_backgrounds_forest_tmap::
+	incbin "components/encounter/backgrounds/forest_tmap.tmap"
+Tilemap_encounter_backgrounds_forest_tmap_END
 
 Tilemap_unknown_tilemap_0_3f::
 	incbin "gfx/unknown/tilemap_0/3f.tmap"
@@ -480,13 +480,13 @@ Tilemap_unknown_tilemap_0_40::
 	incbin "gfx/unknown/tilemap_0/40.tmap"
 Tilemap_unknown_tilemap_0_40_END
 
-Tilemap_unknown_tilemap_0_41::
-	incbin "gfx/unknown/tilemap_0/41.tmap"
-Tilemap_unknown_tilemap_0_41_END
+Tilemap_encounter_backgrounds_cave_tmap::
+	incbin "components/encounter/backgrounds/cave_tmap.tmap"
+Tilemap_encounter_backgrounds_cave_tmap_END
 
-Tilemap_unknown_tilemap_0_42::
-	incbin "gfx/unknown/tilemap_0/42.tmap"
-Tilemap_unknown_tilemap_0_42_END
+Tilemap_encounter_backgrounds_ocean_tmap::
+	incbin "components/encounter/backgrounds/ocean_tmap.tmap"
+Tilemap_encounter_backgrounds_ocean_tmap_END
 
 Tilemap_unknown_tilemap_0_43::
 	incbin "gfx/unknown/tilemap_0/43.tmap"
