@@ -184,7 +184,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_84
 	dw Tilemap_unknown_tilemap_0_85
 	dw Tilemap_unknown_tilemap_0_86
-	dw Tilemap_unknown_tilemap_0_87
+	dw Tilemap_contactenlist_bg_tmap
 	dw Tilemap_unknown_tilemap_0_88
 	dw Tilemap_unknown_tilemap_0_89
 	dw Tilemap_unknown_tilemap_0_89
@@ -760,9 +760,9 @@ Tilemap_unknown_tilemap_0_86::
 	incbin "gfx/unknown/tilemap_0/86.tmap"
 Tilemap_unknown_tilemap_0_86_END
 
-Tilemap_unknown_tilemap_0_87::
-	incbin "gfx/unknown/tilemap_0/87.tmap"
-Tilemap_unknown_tilemap_0_87_END
+Tilemap_contactenlist_bg_tmap::
+	incbin "components/contactenlist/bg_tmap.tmap"
+Tilemap_contactenlist_bg_tmap_END
 
 Tilemap_unknown_tilemap_0_88::
 	incbin "gfx/unknown/tilemap_0/88.tmap"
