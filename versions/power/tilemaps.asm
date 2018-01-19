@@ -168,7 +168,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_74
 	dw Tilemap_unknown_tilemap_0_75
 	dw Tilemap_unknown_tilemap_0_76
-	dw Tilemap_unknown_tilemap_0_77
+	dw Tilemap_victory_levelup_tmap
 	dw Tilemap_unknown_tilemap_0_78
 	dw Tilemap_unknown_tilemap_0_79
 	dw Tilemap_unknown_tilemap_0_7a
@@ -696,9 +696,9 @@ Tilemap_unknown_tilemap_0_76::
 	incbin "gfx/unknown/tilemap_0/76.tmap"
 Tilemap_unknown_tilemap_0_76_END
 
-Tilemap_unknown_tilemap_0_77::
-	incbin "gfx/unknown/tilemap_0/77.tmap"
-Tilemap_unknown_tilemap_0_77_END
+Tilemap_victory_levelup_tmap::
+	incbin "components/victory/levelup_tmap.tmap"
+Tilemap_victory_levelup_tmap_END
 
 Tilemap_unknown_tilemap_0_78::
 	incbin "gfx/unknown/tilemap_0/78.tmap"
