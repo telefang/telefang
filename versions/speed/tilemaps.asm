@@ -22,7 +22,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_7
 	dw Tilemap_unknown_tilemap_0_8
 	dw Tilemap_unknown_tilemap_0_9
-	dw Tilemap_unknown_tilemap_0_a
+	dw Tilemap_encounter_backgrounds_base_tmap
 	dw Tilemap_title_bg_tmap
 	dw Tilemap_unknown_tilemap_0_c
 	dw Tilemap_unknown_tilemap_0_d
@@ -260,9 +260,9 @@ Tilemap_unknown_tilemap_0_9::
 	incbin "gfx/unknown/tilemap_0/9.tmap"
 Tilemap_unknown_tilemap_0_9_END
 
-Tilemap_unknown_tilemap_0_a::
-	incbin "gfx/unknown/tilemap_0/a.tmap"
-Tilemap_unknown_tilemap_0_a_END
+Tilemap_encounter_backgrounds_base_tmap::
+	incbin "components/encounter/backgrounds/base_tmap.tmap"
+Tilemap_encounter_backgrounds_base_tmap_END
 
 Tilemap_title_bg_tmap::
 	incbin "versions/speed/gfx/title/bg_tmap.tmap"
