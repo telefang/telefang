@@ -83,21 +83,21 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_42
 	dw Tilemap_unknown_tilemap_0_43
 	dw Tilemap_unknown_tilemap_0_44
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_45
-	dw Tilemap_unknown_tilemap_0_46
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_field_tmap
+	dw Tilemap_phoneconversation_backgrounds_forest_tmap
 	dw Tilemap_unknown_tilemap_0_47
 	dw Tilemap_unknown_tilemap_0_48
-	dw Tilemap_unknown_tilemap_0_49
-	dw Tilemap_unknown_tilemap_0_4a
-	dw Tilemap_unknown_tilemap_0_4b
+	dw Tilemap_phoneconversation_backgrounds_cave_tmap
+	dw Tilemap_phoneconversation_backgrounds_ocean_tmap
+	dw Tilemap_phoneconversation_backgrounds_desert_tmap
 	dw Tilemap_menu_sms_contents_tmap
 	dw Tilemap_unknown_tilemap_0_4d
 	dw Tilemap_unknown_tilemap_0_4e
@@ -496,13 +496,13 @@ Tilemap_unknown_tilemap_0_44::
 	incbin "gfx/unknown/tilemap_0/44.tmap"
 Tilemap_unknown_tilemap_0_44_END
 
-Tilemap_unknown_tilemap_0_45::
-	incbin "gfx/unknown/tilemap_0/45.tmap"
-Tilemap_unknown_tilemap_0_45_END
+Tilemap_phoneconversation_backgrounds_field_tmap::
+	incbin "components/phoneconversation/backgrounds/field_tmap.tmap"
+Tilemap_phoneconversation_backgrounds_field_tmap_END
 
-Tilemap_unknown_tilemap_0_46::
-	incbin "gfx/unknown/tilemap_0/46.tmap"
-Tilemap_unknown_tilemap_0_46_END
+Tilemap_phoneconversation_backgrounds_forest_tmap::
+	incbin "components/phoneconversation/backgrounds/forest_tmap.tmap"
+Tilemap_phoneconversation_backgrounds_forest_tmap_END
 
 Tilemap_unknown_tilemap_0_47::
 	incbin "gfx/unknown/tilemap_0/47.tmap"
@@ -512,17 +512,17 @@ Tilemap_unknown_tilemap_0_48::
 	incbin "gfx/unknown/tilemap_0/48.tmap"
 Tilemap_unknown_tilemap_0_48_END
 
-Tilemap_unknown_tilemap_0_49::
-	incbin "gfx/unknown/tilemap_0/49.tmap"
-Tilemap_unknown_tilemap_0_49_END
+Tilemap_phoneconversation_backgrounds_cave_tmap::
+	incbin "components/phoneconversation/backgrounds/cave_tmap.tmap"
+Tilemap_phoneconversation_backgrounds_cave_tmap_END
 
-Tilemap_unknown_tilemap_0_4a::
-	incbin "gfx/unknown/tilemap_0/4a.tmap"
-Tilemap_unknown_tilemap_0_4a_END
+Tilemap_phoneconversation_backgrounds_ocean_tmap::
+	incbin "components/phoneconversation/backgrounds/ocean_tmap.tmap"
+Tilemap_phoneconversation_backgrounds_ocean_tmap_END
 
-Tilemap_unknown_tilemap_0_4b::
-	incbin "gfx/unknown/tilemap_0/4b.tmap"
-Tilemap_unknown_tilemap_0_4b_END
+Tilemap_phoneconversation_backgrounds_desert_tmap::
+	incbin "components/phoneconversation/backgrounds/desert_tmap.tmap"
+Tilemap_phoneconversation_backgrounds_desert_tmap_END
 
 Tilemap_menu_sms_contents_tmap::
 	incbin "gfx/menu/sms/contents_tmap.tmap"
