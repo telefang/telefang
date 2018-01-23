@@ -846,8 +846,8 @@ Tilemap_unknown_tilemap_0_9b_END
 
 SECTION "tilemap Bank 1", ROMX[$4000], BANK[$3f]
 Tilemap_BANK_1::
-	dw Tilemap_unknown_tilemap_1_0
-	dw Tilemap_unknown_tilemap_1_0
+	dw Tilemap_zukan_page_tmap
+	dw Tilemap_zukan_page_tmap
 	dw Tilemap_unknown_tilemap_1_1
 	dw Tilemap_unknown_tilemap_1_1
 	dw Tilemap_unknown_tilemap_1_1
@@ -863,9 +863,9 @@ Tilemap_BANK_1::
 	dw Tilemap_unknown_tilemap_1_7
 	dw Tilemap_unknown_tilemap_1_7_END
 
-Tilemap_unknown_tilemap_1_0::
-	incbin "gfx/unknown/tilemap_1/0.tmap"
-Tilemap_unknown_tilemap_1_0_END
+Tilemap_zukan_page_tmap::
+	incbin "components/zukan/page_tmap.tmap"
+Tilemap_zukan_page_tmap_END
 
 Tilemap_unknown_tilemap_1_1::
 	incbin "gfx/unknown/tilemap_1/1.tmap"
