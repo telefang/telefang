@@ -65,10 +65,10 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_30
 	dw Tilemap_unknown_tilemap_0_31
 	dw Tilemap_unknown_tilemap_0_32
-	dw Tilemap_menu_titlebtn_continue_tmap
-	dw Tilemap_menu_titlebtn_soundtest_tmap
-	dw Tilemap_menu_titlebtn_link_tmap
-	dw Tilemap_menu_titlebtn_newgame_tmap
+	dw Tilemap_titlemenu_buttons_start_tmap
+	dw Tilemap_titlemenu_buttons_continue_tmap
+	dw Tilemap_titlemenu_buttons_soundtest_tmap
+	dw Tilemap_titlemenu_buttons_link_tmap
 	dw Tilemap_unknown_tilemap_0_37
 	dw Tilemap_unknown_tilemap_0_38
 	dw Tilemap_unknown_tilemap_0_39
@@ -424,21 +424,21 @@ Tilemap_unknown_tilemap_0_32::
 	incbin "gfx/unknown/tilemap_0/32.tmap"
 Tilemap_unknown_tilemap_0_32_END
 
-Tilemap_menu_titlebtn_continue_tmap::
-	incbin "gfx/menu/titlebtn_continue_tmap.tmap"
-Tilemap_menu_titlebtn_continue_tmap_END
+Tilemap_titlemenu_buttons_start_tmap::
+	incbin "components/titlemenu/buttons/start_tmap.tmap"
+Tilemap_titlemenu_buttons_start_tmap_END
 
-Tilemap_menu_titlebtn_soundtest_tmap::
-	incbin "gfx/menu/titlebtn_soundtest_tmap.tmap"
-Tilemap_menu_titlebtn_soundtest_tmap_END
+Tilemap_titlemenu_buttons_continue_tmap::
+	incbin "components/titlemenu/buttons/continue_tmap.tmap"
+Tilemap_titlemenu_buttons_continue_tmap_END
 
-Tilemap_menu_titlebtn_link_tmap::
-	incbin "gfx/menu/titlebtn_link_tmap.tmap"
-Tilemap_menu_titlebtn_link_tmap_END
+Tilemap_titlemenu_buttons_soundtest_tmap::
+	incbin "components/titlemenu/buttons/soundtest_tmap.tmap"
+Tilemap_titlemenu_buttons_soundtest_tmap_END
 
-Tilemap_menu_titlebtn_newgame_tmap::
-	incbin "gfx/menu/titlebtn_newgame_tmap.tmap"
-Tilemap_menu_titlebtn_newgame_tmap_END
+Tilemap_titlemenu_buttons_link_tmap::
+	incbin "components/titlemenu/buttons/link_tmap.tmap"
+Tilemap_titlemenu_buttons_link_tmap_END
 
 Tilemap_unknown_tilemap_0_37::
 	incbin "gfx/unknown/tilemap_0/37.tmap"
