@@ -819,7 +819,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             baseaddr += len(packed)
     
     #Remove empty strings from packed strings list.
-    while packed_strings[-1] == b"":
+    while len(packed_strings) > 0 and packed_strings[-1] == b"":
         packed_strings = packed_strings[:-1]
     
     #Moveup pointers to account for the table size
