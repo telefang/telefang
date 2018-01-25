@@ -47,15 +47,15 @@ Tilemap_BANK_0::
 	dw Tilemap_pausemenu_resources_controls_hint_2_tmap
 	dw Tilemap_unknown_tilemap_0_1f
 	dw Tilemap_unknown_tilemap_0_20
-	dw Tilemap_unknown_tilemap_0_21
-	dw Tilemap_unknown_tilemap_0_22
-	dw Tilemap_unknown_tilemap_0_23
-	dw Tilemap_unknown_tilemap_0_24
-	dw Tilemap_unknown_tilemap_0_25
-	dw Tilemap_unknown_tilemap_0_26
-	dw Tilemap_unknown_tilemap_0_27
-	dw Tilemap_unknown_tilemap_0_28
-	dw Tilemap_unknown_tilemap_0_29
+	dw Tilemap_pausemenu_buttons_zukan_tmap
+	dw Tilemap_pausemenu_buttons_contacts_tmap
+	dw Tilemap_pausemenu_buttons_calls_tmap
+	dw Tilemap_pausemenu_buttons_melody_tmap
+	dw Tilemap_pausemenu_buttons_items_tmap
+	dw Tilemap_pausemenu_buttons_sms_tmap
+	dw Tilemap_pausemenu_buttons_save_tmap
+	dw Tilemap_pausemenu_buttons_options_tmap
+	dw Tilemap_pausemenu_buttons_cancel_tmap
 	dw Tilemap_unknown_tilemap_0_2a
 	dw Tilemap_unknown_tilemap_0_2b
 	dw Tilemap_unknown_tilemap_0_2c
@@ -352,41 +352,41 @@ Tilemap_unknown_tilemap_0_20::
 	incbin "gfx/unknown/tilemap_0/20.tmap"
 Tilemap_unknown_tilemap_0_20_END
 
-Tilemap_unknown_tilemap_0_21::
-	incbin "gfx/unknown/tilemap_0/21.tmap"
-Tilemap_unknown_tilemap_0_21_END
+Tilemap_pausemenu_buttons_zukan_tmap::
+	incbin "components/pausemenu/buttons/zukan_tmap.tmap"
+Tilemap_pausemenu_buttons_zukan_tmap_END
 
-Tilemap_unknown_tilemap_0_22::
-	incbin "gfx/unknown/tilemap_0/22.tmap"
-Tilemap_unknown_tilemap_0_22_END
+Tilemap_pausemenu_buttons_contacts_tmap::
+	incbin "components/pausemenu/buttons/contacts_tmap.tmap"
+Tilemap_pausemenu_buttons_contacts_tmap_END
 
-Tilemap_unknown_tilemap_0_23::
-	incbin "gfx/unknown/tilemap_0/23.tmap"
-Tilemap_unknown_tilemap_0_23_END
+Tilemap_pausemenu_buttons_calls_tmap::
+	incbin "components/pausemenu/buttons/calls_tmap.tmap"
+Tilemap_pausemenu_buttons_calls_tmap_END
 
-Tilemap_unknown_tilemap_0_24::
-	incbin "gfx/unknown/tilemap_0/24.tmap"
-Tilemap_unknown_tilemap_0_24_END
+Tilemap_pausemenu_buttons_melody_tmap::
+	incbin "components/pausemenu/buttons/melody_tmap.tmap"
+Tilemap_pausemenu_buttons_melody_tmap_END
 
-Tilemap_unknown_tilemap_0_25::
-	incbin "gfx/unknown/tilemap_0/25.tmap"
-Tilemap_unknown_tilemap_0_25_END
+Tilemap_pausemenu_buttons_items_tmap::
+	incbin "components/pausemenu/buttons/items_tmap.tmap"
+Tilemap_pausemenu_buttons_items_tmap_END
 
-Tilemap_unknown_tilemap_0_26::
-	incbin "gfx/unknown/tilemap_0/26.tmap"
-Tilemap_unknown_tilemap_0_26_END
+Tilemap_pausemenu_buttons_sms_tmap::
+	incbin "components/pausemenu/buttons/sms_tmap.tmap"
+Tilemap_pausemenu_buttons_sms_tmap_END
 
-Tilemap_unknown_tilemap_0_27::
-	incbin "gfx/unknown/tilemap_0/27.tmap"
-Tilemap_unknown_tilemap_0_27_END
+Tilemap_pausemenu_buttons_save_tmap::
+	incbin "components/pausemenu/buttons/save_tmap.tmap"
+Tilemap_pausemenu_buttons_save_tmap_END
 
-Tilemap_unknown_tilemap_0_28::
-	incbin "gfx/unknown/tilemap_0/28.tmap"
-Tilemap_unknown_tilemap_0_28_END
+Tilemap_pausemenu_buttons_options_tmap::
+	incbin "components/pausemenu/buttons/options_tmap.tmap"
+Tilemap_pausemenu_buttons_options_tmap_END
 
-Tilemap_unknown_tilemap_0_29::
-	incbin "gfx/unknown/tilemap_0/29.tmap"
-Tilemap_unknown_tilemap_0_29_END
+Tilemap_pausemenu_buttons_cancel_tmap::
+	incbin "components/pausemenu/buttons/cancel_tmap.tmap"
+Tilemap_pausemenu_buttons_cancel_tmap_END
 
 Tilemap_unknown_tilemap_0_2a::
 	incbin "gfx/unknown/tilemap_0/2a.tmap"
