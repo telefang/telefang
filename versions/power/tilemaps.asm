@@ -43,7 +43,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_1b
 	dw Tilemap_unknown_tilemap_0_1b
 	dw Tilemap_unknown_tilemap_0_1c
-	dw Tilemap_unknown_tilemap_0_1d
+	dw Tilemap_pausemenu_resources_controls_hint_tmap
 	dw Tilemap_unknown_tilemap_0_1e
 	dw Tilemap_unknown_tilemap_0_1f
 	dw Tilemap_unknown_tilemap_0_20
@@ -336,9 +336,9 @@ Tilemap_unknown_tilemap_0_1c::
 	incbin "gfx/unknown/tilemap_0/1c.tmap"
 Tilemap_unknown_tilemap_0_1c_END
 
-Tilemap_unknown_tilemap_0_1d::
-	incbin "gfx/unknown/tilemap_0/1d.tmap"
-Tilemap_unknown_tilemap_0_1d_END
+Tilemap_pausemenu_resources_controls_hint_tmap::
+	incbin "components/pausemenu/resources/controls_hint_tmap.tmap"
+Tilemap_pausemenu_resources_controls_hint_tmap_END
 
 Tilemap_unknown_tilemap_0_1e::
 	incbin "gfx/unknown/tilemap_0/1e.tmap"
