@@ -344,12 +344,12 @@ EvolveBg2GfxEnd
 
 MenuMain1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/main1.malias"
+	INCBIN "components/pausemenu/resources/text1.malias"
 MenuMain1GfxEnd
 
 MenuMain2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/main2.malias"
+	INCBIN "components/pausemenu/resources/text2.malias"
 MenuMain2GfxEnd
 
 SECTION "Evolve - Bg3 Compressed GFX", ROMX[$65c9], BANK[$4d]
@@ -563,12 +563,12 @@ CutsceneUnusedGfxEnd
 SECTION "Menu - Main1 DMG Compressed GFX", ROMX[$439d], BANK[$35]
 MenuMain1DMGGfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/main1_dmg.malias"
+	INCBIN "components/pausemenu/resources/text1_dmg.malias"
 MenuMain1DMGGfxEnd
 
 MenuMain2DMGGfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/main2_dmg.malias"
+	INCBIN "components/pausemenu/resources/text2_dmg.malias"
 MenuMain2DMGGfxEnd
 
 MenuUnkDMGGfx:
