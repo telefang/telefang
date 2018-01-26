@@ -573,12 +573,12 @@ MenuOptionsDMGGfxEnd
 
 MenuMain1DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain1DMGGfxEnd - MenuMain1DMGGfx - 3
-	INCBIN "components\pausemenu\resources\text1_dmg.2bpp"
+	INCBIN "components/pausemenu/resources/text1_dmg.2bpp"
 MenuMain1DMGGfxEnd
 
 MenuMain2DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain2DMGGfxEnd - MenuMain2DMGGfx - 3
-	INCBIN "components\pausemenu\resources\text2_dmg.2bpp"
+	INCBIN "components/pausemenu/resources/text2_dmg.2bpp"
 MenuMain2DMGGfxEnd
 
 MenuUnkDMGGfx:
