@@ -337,10 +337,9 @@ EvolveBg2GfxEnd
 
 SECTION "Menu - Main1 Compressed GFX", ROMX[$6d56], BANK[$3b]
 MenuMain1Gfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/main1.malias"
+	dbw NOT_COMPRESSED, MenuMain1GfxEnd - MenuMain1Gfx - 3
+    INCBIN "gfx/menu/main1.2bpp"
 MenuMain1GfxEnd
-	INCBIN "gfx/menu/main1_trashbytes.bin"
 
 SECTION "Menu - Main2 Compressed GFX", ROMX[$720b], BANK[$3b]
 MenuMain2Gfx:

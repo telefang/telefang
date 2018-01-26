@@ -14,7 +14,7 @@ If you fuse a Kochia with an ""antenna"", it's gonna get a little stronger.<*2>"
 オーシェっていうデンジュウに
 『クレーン』をくっつけて
 あげるとつよくなるんだってー
-<*2>","<D3>Hey, do you know about this? I heard if you fuse an Oshe with a ""crane"", it'll grow stronger.<*2>","<D3>Hey, do you know about this? I heard if you fuse an Oshe with a ""crane"", it'll grow stronger.<*2>",
+<*2>","<D3>Hey, did you know? I heard if you fuse an Oshe with a ""crane"", it'll grow stronger.<*2>","<D3>Hey, did you know? I heard if you fuse an Oshe with a ""crane"", it'll grow stronger.<*2>",
 0x15c006,"<D4>ケシってさー
 『レンジ』をくっつけると
 なんだか つよくなるんだよね
@@ -86,18 +86,18 @@ It has that feel to it, doesn't it?<*2>",
 キバをもってるんだよねー<*2>","<D13>Are you friends with a Byakubu?
 If you are, try fusing it with a ""saw"".
 You'd probably be hurt worse by a Byakubu than by a saw, though.
-It has those sharp fangs!<*2>","<D13>Are you friends with a Byakubu?
+Those fangs look so sharp!<*2>","<D13>Are you friends with a Byakubu?
 If you are, try fusing it with a ""saw"".
 You'd probably be hurt worse by a Byakubu than by a saw, though.
-It has those sharp fangs!<*2>",
+Those fangs look so sharp!<*2>",
 0x15c01a,"<D14>タマゴをせなかにしょった
 デンジュウのテロペアって
 いるじゃない
 あのデンジュウって『ギア』を
 つけると ちょっとだけつよく
 なるんだってさ<*2>","<D14>There's a Denjuu with eggs on its back called Telopea, right?
-I heard it'll get just a bit stronger if fused with a ""gear""!<*2>","<D14>There's a Denjuu with eggs on its back called Telopea, right?
-I heard it'll get just a bit stronger if fused with a ""gear""!<*2>",
+I heard fusing it with a ""gear"" would make it an itty bit stronger!<*2>","<D14>There's a Denjuu with eggs on its back called Telopea, right?
+I heard fusing it with a ""gear"" would make it an itty bit stronger!<*2>",
 0x15c01c,"<D15>ねー<&name>
 マンテアのデンワバンゴウを
 もってる??
@@ -198,14 +198,18 @@ I heard it likes ""missiles"". It looks strong enough to throw one of those arou
 じつは『マシンガン』をつけると
 いいことあるんだってさ
 いがいだよなー<*2>","<D26>Hiya, <&name>! I've got some good news!
-There's a Natural Denjuu called Eryngo, right? I heard something good happens if you fuse it with a ""machine gun"". Unexpected, right?<*2>","<D26>Hiya, <&name>! I've got some good news!
-There's a Natural Denjuu called Eryngo, right? I heard something good happens if you fuse it with a ""machine gun"". Unexpected, right?<*2>",
+There's a Natural Denjuu called Eryngo, right? I heard something good happens if you fuse it with a ""machine gun"". Surprising, right?<*2>","<D26>Hiya, <&name>! I've got some good news!
+There's a Natural Denjuu called Eryngo, right? I heard something good happens if you fuse it with a ""machine gun"". Surprising, right?<*2>",
 0x15c034,"<D27>ここで もんだいです
 『ボム』をつけると いいという
 デンジュウを こたえなさい
 3.2.1....ブッブー
 こたえは ノリウツギでしたー
-おぼえておきなよー<*2>",/0x15c034/<*2>,,
+おぼえておきなよー<*2>","<D27>Question: what Denjuu should be fused with a ""bomb""?
+3... 2... 1... Bzzz!
+The correct answer is Noriutsugi! Better luck next time!<*2>","<D27>Question: what Denjuu should be fused with a ""bomb""?
+3... 2... 1... Bzzz!
+The correct answer is Noriutsugi! Better luck next time!<*2>",
 0x15c036,"<D28>うみのデンジュウ パンパスって
 ごぞんじですか??
 かれは『ガトリング』なんて
@@ -213,26 +217,34 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 そうです....
 ワタシには かんがえられません
 なんであんなモノを
-つけたがるんでしょう....<*2>",/0x15c036/<*2>,,
+つけたがるんでしょう....<*2>","<D28>Are you familiar with Pampas, the ocean Denjuu?
+I hear they want to be fused with something scary: a ""gatling gun"".
+I can't imagine why you'd want to fuse with something like that...<*2>","<D28>Are you familiar with Pampas, the ocean Denjuu?
+I hear it wants to be fused with something scary: a ""gatling gun"".
+I can't imagine why you'd want to fuse with something like that...<*2>",
 0x15c038,"<D29>ローダンセってデンジュウさー
 『ミキサー』が すきなんだって
-なんだか うごきがにてるもんなーわかるきがするよ<*2>",/0x15c038/<*2>,,
+なんだか うごきがにてるもんなーわかるきがするよ<*2>","<D29>Okay, so the Denjuu called Rhodanthe...
+I hear they like ""mixers"". I get it, I think. They both move the same way!<*2>","<D29>Okay, so the Denjuu called Rhodanthe...
+I hear they like ""mixers"". I get it, I think. They both move the same way!<*2>",
 0x15c03a,"<D30>リコリスって『コンピュータ』を
 つけると いいんだろ?
 じつは キカイをつかわせると
 すごかったリして...
 そんなことはないかなー
-<*2>",/0x15c03a/<*2>,,
+<*2>",/0x15c03a/<*2>,"<D30>Good things happen if you fuse a Liquorice with a ""computer"", right?
+No idea what ""すごかったりして"" is supposed to mean//<*2>",
 0x15c03c,"<D31>おーう <&name>
 ビバーナムがな『ビデオ』を
 つけたいって いってたぜ
 でも あいつ テレビは
 どうなんだろうな?
-<*2>",/0x15c03c/<*2>,,
+<*2>","/0x15c03c/<*2>
+","<D31>Yo, <&name>! Viburnum was saying it wants to be fused with a ""video camera"". I dunno how Viburnum would look on TV, though...//<*2>",
 0x15c03e,"<D32>ファンネルってデンジュウさぁ
 『ノコギリ』さがしてるんだって
 つけてあげたら きっと
-よろこぶよ<*2>",/0x15c03e/<*2>,,
+よろこぶよ<*2>","<D32>So, the Denjuu called Funnel... I heard it's looking for a ""saw"". I bet it'd be real happy if you fused it with one!<*2>","<D32>So, the Denjuu called Funnel... I heard it's looking for a ""saw"". I bet it'd be real happy if you fused it with one!<*2>",
 0x15c040,"<D33>バンダってうでのながい
 デンジュウを しってるかな?
 このデンジュウは『クレーン』を
@@ -240,7 +252,7 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 けいけんちがアップだって!
 デンワバンゴウを 
 しってるんだったら ためしてね
-<*2>",/0x15c040/<*2>,,
+<*2>","<D33>Have you heard of Vanda, that Denjuu with the long arms? They say it'll gain experience BIG-TIME if you fuse it with a  ""crane""! Try it if you've got one's number!<*2>",,
 0x15c042,"<D34>『アーチェリー』を
 ほしがってるデンジュウを
 オレ しってるんだー
@@ -248,31 +260,32 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 デンジュウなんだけどね
 <&name>の
 トモダチに いるのかな??
-<*2>",/0x15c042/<*2>,,
+<*2>","<D34>I know a Denjuu who wants an ""archery set""!♪
+It's the one called Uikyou. Are you friends with an Uikyou?<*2>",,
 0x15c044,"<D35>オバナってさー
 『そうじき』がいいんだって
 きれいずきなのかな?
 あの『ブィーン』っていう
 おとがすきなのかな?
-どっちにしても いがいだよなー<*2>",/0x15c044/<*2>,,
+どっちにしても いがいだよなー<*2>","<D35>I heard Obana likes ""vacuums"". Is it a clean freak? Does it like the whooshy noise? Whatever the case, it's a bit odd!<*2>",,
 0x15c046,"<D36>ファイアーコッコって
 『ボンベ』がけいけんちアップの
 ヒケツらしいよ
 もっと もえたいのかな??
 まさか そんなことはないよなー
-<*2>",/0x15c046/<*2>,,
+<*2>","<D36>I hear the trick to strengthening a Firekokko is to give it a ""gas tank"". Is it because it wants to burn hotter...? Probably not, huh.<*2>",,
 0x15c048,"<D37>レイゴーテンってデンジュウを
 みたことある??
 このデンジュウは『じゃぐち』が
 いいらしいんだよ
 もし トモダチになったら
-くっつけてあげたら?<*2>",/0x15c048/<*2>,,
+くっつけてあげたら?<*2>","<D37>Have you seen the Denjuu called Raygoten? It seems to be a fan of ""faucets"". If you happen to become friends with one, why not try a fusion?<*2>",,
 0x15c04a,"<D38>ドリアーマって
 『リボルバーガン』をあげると
 よろこぶんだってー
 『ドリル』がカラダに
 くっついてるだけじゃ
-ものたリないのかな??<*2>",/0x15c04a/<*2>,,
+ものたリないのかな??<*2>","<D38>I heard Drilarmor would be overjoyed to get a ""revolver"". Isn't it enough to have a huge drill?<*2>",,
 0x15c04c,"<D39>よう <&name>
 ひさびさだっけ?
 トモダチから いいこと
@@ -282,7 +295,7 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 ほしいっていってるらしいよ
 ところで オレのくっつけたい
 モノは わかってるかなー?
-しんぱいだなー....<*2>",/0x15c04c/<*2>,,
+しんぱいだなー....<*2>","<D39>Hey yo, <&name>, it's been a while! A friend told me something cool. Get this: Chamelan wants to be fused with a ""machine gun"". Do you know what I want to be fused with? I hope so...<*2>",,
 0x15c04e,"<D40><&name>?
 『バズーカ』をくっつけて
 けいけんちアップのデンジュウを
@@ -290,56 +303,57 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 こたえはねー....
 クリプトアームだよ
 でも トモダチに いる?
-<*2>",/0x15c04e/<*2>,,
+<*2>","<D40><&name>? I know a Denjuu who would grow if you fused it with a ""bazooka"". It's Cryptoarm! Do you know one of those?<*2>",,
 0x15c050,"<D41>シェルステラって
 『ジェットエンジン』で
 つよくなるらしいんだよ
 あいつ...とぶきかよ..
 じつはもう とベたリして..
-<*2>",/0x15c050/<*2>,,
+<*2>",/0x15c050/<*2>,"<D41>I hear Shellstera can grow stronger using a ""jet engine"".
+Couldn't tell you what とぶきか or じつはもうとべたりして is meant to mean, though.//<*2>",
 0x15c052,"<D42>ファンガイストって
 『ガトリング』がいいんだぜー
 これは オレしか しらないかも
 しれないけどなー
 ヘっヘっヘっ オレを
-トモダチにして よかったろ?<*2>",/0x15c052/<*2>,,
+トモダチにして よかったろ?<*2>","<D42>Y'know, Fungeist loves ""gatling guns""! I might be the only one who knows that. Heh heh heh, I bet you're glad I'm your friend!<*2>",,
 0x15c054,"<D43>ボルタマスってデンジュウなー
 『ミサイル』つけたいんだってさあんなこわいモノ つけるなって
-おもうのは オレだけなのかなー<*2>",/0x15c054/<*2>,,
+おもうのは オレだけなのかなー<*2>",/0x15c054/<*2>,"Did you know that Balltamus wants to fuse with a ""missile""? Am I the only one who couldn't imagine fusing with something so scary!?",
 0x15c056,"<D44>ブレニカって カワイイかおして
 『ランス』をつけると ちょっと
 つよくなるんだってねー
-わかんないもんだよねー<*2>",/0x15c056/<*2>,,
+わかんないもんだよねー<*2>",/0x15c056/<*2>,Who does the kawaii kao? Punica or the player? //,
 0x15c058,"<D45>『シュリケン』をくっつけたがる
 ゲーロンって
 いったいナニモノなんだろうな?
 カラダのなかでどうなってるのかスゴイきょうみあるよ
-<*2>",/0x15c058/<*2>,,
+<*2>",/0x15c058/<*2>,"Apparently Geron wants to fuse with a ""shuriken"". I wonder what that's about. What would happen inside its body!?",
 0x15c05a,"<D46>『ガン』をバーゼリアに
 つけるといいっていう
 はなしを きいたんだけどー
 どうなんだろう?
 ホントかなー?
-どうなんだろうなー?<*2>",/0x15c05a/<*2>,,
+どうなんだろうなー?<*2>",/0x15c05a/<*2>,"Someone was saying it's a good idea to fuse Berzelia with a ""gun"". Do you think that's true? Mayyyybe?",
 0x15c05c,"<D47>なぁなぁー
 ニゲラってデンジュウ みたことある??
 ニゲラが『アーチェリー』を
 つけると けいけんちアップって
 はなししってる??
 みためからして とがったモノを
-とばすの すきそうだもんなー<*2>",/0x15c05c/<*2>,,
+とばすの すきそうだもんなー<*2>",/0x15c05c/<*2>,"Hey, have you seen the Denjuu called Nigella? Did you know it gains experience if fused with an ""archery set""? You can tell just by looking that it likes shooting pointy things.",
 0x15c05e,"<D48>ちょうろうの ムサさまが
 いるじゃん
 このまえ ムサさまが
 『プロペラエンジン』を
 つけてみたいって いってたのを
-きいたよ<*2>",/0x15c05e/<*2>,,
+きいたよ<*2>",/0x15c05e/<*2>,"So there's an elder named Musa, right? I heard he's been saying he wants to try fusing with a ""propeller engine"".",
 0x15c060,"<D49>ネタロってさー
 『サーベル』がいいんだぜー
 のんびリしてて なにも
 かんがえてなさそうだけど
 そういうモノって あるんだなー
-<*2>",/0x15c060/<*2>,,
+<*2>",/0x15c060/<*2>,"That Netaro guy wants a ""sabre""! Seems a bit irresponsible if you ask me, but that's what I heard. //",
 0x15c062,"<D50>やっほー <&name>
 ネジロがさー
 『ボム』をくっつけてほしいって
@@ -347,7 +361,7 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 あわてものの あいつに
 そんなあぶないモノ あげても
 いいものかなー?
-<*2>",/0x15c062/<*2>,,
+<*2>",/0x15c062/<*2>,"Hullo, <&name>! Nejiro was saying he wants to fuse with a ""bomb"". Think it's a good idea to give something so dangerous to someone so scatterbrained!?",
 0x15c064,"<D51>デンジュウカイにね
 ゴデチアっていうデンジュウが
 いるんだけど『ドリル』が
@@ -355,12 +369,12 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 あたまの かたすみに
 おいておくと
 いいかもねー
-<*2>",/0x15c064/<*2>,,
+<*2>",/0x15c064/<*2>,"So here in the Denjuu World, there's a Denjuu called Godetia. I hear it's really eager to get ahold of a ""drill"". Stuff that in your brain; it might come in handy!",
 0x15c066,"<D52>オレが しってるデンジュウで
 クルクマってデンジュウが
 いるんだけどね
 こいつ『ビームガン』ずきなんだほんとに『ビームガン』が
-いいらしいんだよ<*2>",/0x15c066/<*2>,,
+いいらしいんだよ<*2>",/0x15c066/<*2>,"Okay, so, I know a Denjuu called Curcuma. It's a big fan of ""ray guns"". I'm sure it'd like being fused with one!",
 0x15c068,"<D53>テッセンっていうかっこいい
 デンジュウがいるんだけど
 このデンジュウ『ガン』が
@@ -368,18 +382,18 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 アイテムらしいんだ
 やっぱ かっこいいヤツは
 あいしょうがいいアイテムも
-ちがうよなー<*2>",/0x15c068/<*2>,,
+ちがうよなー<*2>",/0x15c068/<*2>,"There's a super cool Denjuu called Tessen. It's good with ""guns"", I hear. Man, the coolest Denjuu are different in item preference too, huh...",
 0x15c06a,"<D54>『プロペラエンジン』が
 すきなデンジュウで
 ヘリオプシスってのがいるんだけどいかにも キカイずきって
 カンジの ヤツなんだ
-ほんとだって!<*2>",/0x15c06a/<*2>,,
+ほんとだって!<*2>",/0x15c06a/<*2>,"Heliopsis is one of those Denjuu that like ""propeller engines"". It really does feel like the type to be into machines!",
 0x15c06c,"<D55>ハグマノキってデンジュウは
 『ビームガン』を
 こよなく あいする
 デンジュウなんだって
 どんなデンジュウか
-オレは みたことないんだけどさ<*2>",/0x15c06c/<*2>,,
+オレは みたことないんだけどさ<*2>",/0x15c06c/<*2>,"Hagumanoki really, really loves ""ray guns"". What kind of Denjuu is it, ya think? I haven't seen one.",
 0x15c06e,"<D56>『アーミーナイフ』なんて
 ごっついモノ ほしがる
 デンジュウも いるんだなー
@@ -387,7 +401,7 @@ There's a Natural Denjuu called Eryngo, right? I heard something good happens if
 デンジュウなんだけどな
 どんなヤツか
 みておいてくれよ
-<*2>",/0x15c06e/<*2>,,
+<*2>",/0x15c06e/<*2>,"I hear there's a tough Denjuu who wants an ""army knife"". Gilerth, I think. I wonder what kind of Denjuu it is... Keep an eye out for it!",
 0x15c070,"<D57>レイガースってヤツ
 『コンピュータ』を くっつけて
 ほしいって いってたんだけど?

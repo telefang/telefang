@@ -1938,21 +1938,26 @@ As expected of <&name>!<*2>",
 #######,#089,,,
 0x1100d0,"オマエってもしかして
 テレパシーをもってるのか?
- もってない なんで?<*A>",/0x1100d0/<*A>,,
+ もってない なんで?<*A>",/0x1100d0/<*A>,"Are you telepathic...?
+No / Why do you ask?",
 0x1100d2,"そうか もし もってたら
 わけてもらおうとおもったのに
- どうして? むリだよ!<*A>",/0x1100d2/<*A>,,
+ どうして? むリだよ!<*A>",/0x1100d2/<*A>,"Oh, okay... I was gonna ask you to share your telepathy with me.
+Why? / It's impossible!",
 0x1100d4,"オマエと はなしがしたいと
 おもったら デンワがかかった!
- あたリまえ ほんとか!<*A>",/0x1100d4/<*A>,,
+ あたリまえ ほんとか!<*A>",/0x1100d4/<*A>,"I was just thinking I wanted to talk to you, and now we're on the phone all of a sudden!
+Obviously / Wow, really?
+",
 0x1100d6,"ひとのこころをよむって
-どんなかんじかなーって!<*2>",/0x1100d6/<*2>,,
+どんなかんじかなーって!<*2>",/0x1100d6/<*2>,I wanna know what it'd be like to read other people's thoughts!,
 0x1100d8,"げんじつにはないもの
-だったなんて!ショックだ!<*2>",/0x1100d8/<*2>,,
+だったなんて!ショックだ!<*2>",/0x1100d8/<*2>,Telepathy isn't real?! I had no idea!,
 0x1100da,"そうか じぶんでかけたんだ
-もんな...あたリまえか<*2>",/0x1100da/<*2>,,
+もんな...あたリまえか<*2>",/0x1100da/<*2>,"Oh, because I called you. Right. That makes sense.",
 0x1100dc,"すごいだろ!あれ?もしかして
-すごくないのか?<*2>",/0x1100dc/<*2>,,
+すごくないのか?<*2>",/0x1100dc/<*2>,"Crazy, right?!
+...Huh? It's not?",
 #######,#090,,,
 0x1100de,"サウスポーってなにか
 しってるか?
@@ -1968,9 +1973,9 @@ As expected of <&name>!<*2>",
 オマエしってたのか?<*2>",/0x1100e6/<*2>,,
 0x1100e8,"めずらしい トリらしいぞ!
 ポーってなくらしい!?<*2>",/0x1100e8/<*2>,,
-#######,#091,,,
 0x1100ea,"ばれたか?チェ!こんかいは
 ひかかるとおもったのに..<*2>",/0x1100ea/<*2>,,
+#######,#091,,,
 0x1100ec,"スマイルの いみを
 おしえてほしいんだけど...
  しってるぜ わかんない<*A>",/0x1100ec/<*A>,,
@@ -2519,8 +2524,8 @@ I'm learning / I'll figure it out",
 <0>Tag along<0>No thanks<*A>","I wanna go to the Human World. Bring me there!
 <0>Tag along<0>No thanks<*A>",
 0x144084,"ニンゲンカイってたのしいの?
- たのしいよ ぜんぜん<*A>","Is the Human World fun?
-<0>It is<0>Not at all<*A>","Is the Human World fun?
+ たのしいよ ぜんぜん<*A>","Is it fun there?
+<0>It is<0>Not at all<*A>","Is it fun there?
 <0>It is<0>Not at all<*A>",
 0x144086,"なんでだよ!!
  コワイところだから ヒミツ<*A>","Why not?!
@@ -2564,19 +2569,22 @@ I'm learning / I'll figure it out",
 #######,#123,,,
 0x1440ac,"<&name>ってアマイの
 とカライのどっちがスキなの?
- アマイの カライの<*A>",/0x1440ac/<*A>,"<Name>, do you prefer sweet food or spicy food?
+ アマイの カライの<*A>","<&name>, do you prefer sweet or spicy food?
+<0>Sweet<0>Spicy<*A>","<Name>, do you prefer sweet or spicy food?
 Sweet / Spicy",
 0x1440ae,"アマイのはうまいよな!
- うん チョーすき<*A>",/0x1440ae/<*A>,"Yeah, sweet stuff is really great!
-Yep / I love it!",
+ うん チョーすき<*A>","Yeah, sweet stuff is great!
+<0>Yeah<0>I love it!<*A>","Yeah, sweet stuff is great!
+Yeah / I love it!",
 0x1440b0,"オレはカライのダメだなぁ
- なんで? コドモだなぁ<*A>",/0x1440b0/<*A>,"I can't handle spicy stuff...
-Why? / Grow up!",
+ なんで? コドモだなぁ<*A>","I can't handle spicy stuff...
+<0>Why?<0>Don't be such a child!<*A>","I can't handle spicy stuff...
+Why? / Don't be such a child!",
 0x1440b2,"ニンゲンカイのアマイおかしも
-たベてみたいなあ<*2>",/0x1440b2/<*2>,I'd like to try candy from the Human world sometime... ,
-0x1440b4,たベすぎてるとふとるぞ!<*2>,/0x1440b4/<*2>,"But if you eat too much, you'll get fat!",
-0x1440b6,だってベロがピリピリするもん<*2>,/0x1440b6/<*2>,It makes your tongue hurt!,
-0x1440b8,だってコドモだもん!<*2>,/0x1440b8/<*2>,But... I'm still a kid!!,
+たベてみたいなあ<*2>",I'd like to try candy from the Human World sometime...<*2>,I'd like to try candy from the Human World sometime...,
+0x1440b4,たベすぎてるとふとるぞ!<*2>,"But if you eat too much, you'll get fat!<*2>","But if you eat too much, you'll get fat!",
+0x1440b6,だってベロがピリピリするもん<*2>,It makes your tongue hurt!<*2>,It makes your tongue hurt!,
+0x1440b8,だってコドモだもん!<*2>,But... I AM a child!<*2>,But... I AM a child!,
 #######,#124,,,
 0x1440ba,"こっちはアツくってクーラーが
 ほしいよそっちはどう?
@@ -2601,20 +2609,28 @@ Don't catch a cold!<*2>",I guess that's pretty bad too. Don't catch a cold!,
 0x1440c6,いいなぁオレもそっちいきたいよ<*2>,"Wow, maybe I should head over there...<*2>","Wow, maybe I should head over there...",
 #######,#125,,,
 0x1440c8,"ケイタイのきのうっていろいろあるよね ぜんぶつかいこなせてる?
- カンペキ! だいたいつかえる<*A>",/0x1440c8/<*A>,,
+ カンペキ! だいたいつかえる<*A>","Phones have a lot of features nowadays... Have you gotten the hang of all of them?
+<0>Completely!<0>Well, mostly<*A>","Phones have a lot of features nowadays... Have you gotten the hang of all of them?
+Completely! / Well, mostly",
 0x1440ca,"ヘーすごいなあ おれはまだまだ
 なんだけどなぁ
- だめだねぇ そのうちなれるよ<*A>",/0x1440ca/<*A>,,
+ だめだねぇ そのうちなれるよ<*A>","Wow, that's amazing... I'm still learning.
+<0>You'll never learn<0>You'll figure it out!<*A>
+","Wow, that's amazing... I'm still learning.
+You'll never learn / You'll figure it out!
+",
 0x1440cc,"だいたいつかえればいいよな?
- そうそう そんなことない!<*A>",/0x1440cc/<*A>,,
+ そうそう そんなことない!<*A>","I guess the basics are enough.
+<0>Yeah<0>Never!<*A>","I guess the basics are enough.
+Yeah / Never!",
 0x1440ce,"む?なんだと!みてろよぜったい
-オマエよリカンペキになるぞ!<*2>",/0x1440ce/<*2>,,
+オマエよリカンペキになるぞ!<*2>",Excuse me?! Just you watch! I'll become better than you!<*2>,Excuse me?! Just you watch! I'll become better than you!,
 0x1440d0,"そうかな?そういってもらえると
-ウレシイなぁ<*2>",/0x1440d0/<*2>,,
+ウレシイなぁ<*2>",You really think so? I'm happy to hear you say that!<*2>,You really think so? I'm happy to hear you say that!,
 0x1440d2,"そう!ひつようなものがわかれば
-いいんだよね!!<*2>",/0x1440d2/<*2>,,
+いいんだよね!!<*2>","Yeah! As long as you understand the important stuff, you're good!<*2>","Yeah! As long as you understand the important stuff, you're good!",
 0x1440d4,"えっ?そうかなぁ?ベんきょう
-ねっしんだなぁ カンシンだ<*2>",/0x1440d4/<*2>,,
+ねっしんだなぁ カンシンだ<*2>","Not enough for you? Wow, I admire your enthusiasm for learning.<*2>","Not enough for you? Wow, I admire your enthusiasm for learning.",
 #######,#126,,,
 0x1440d6,"アイテムはあつまった?
  たくさん まだチョットだけ<*A>",/0x1440d6/<*A>,,
@@ -2635,8 +2651,8 @@ Don't catch a cold!<*2>",I guess that's pretty bad too. Don't catch a cold!,
 Yep / Nope",
 0x1440e6,"オレのめない だってニガイし
 くろいんだもん!
- すききらいすんな そうかもね<*A>","I don't, it's nasty and black and tastes bad!
-<0>You're just picky<0>I guess<*A>","I don't, it's nasty and black and tastes bad!
+ すききらいすんな そうかもね<*A>","I don't! It's nasty and black and tastes bad!
+<0>You're just picky<0>I guess<*A>","I don't! It's nasty and black and tastes bad!
 You're just picky / I guess",
 0x1440e8,"オレものめない マズイよな?
  おとなはのむよ カオリいいよ<*A>","Me neither. It's nasty, right?
@@ -2895,7 +2911,7 @@ What's that? / Wrong!",
 <0>Cool!<0>...Really?<*A>","You bet! It's pretty accurate too! 
 Cool! / ...Really?",
 0x1441bc,"えっつ?あそっか ニンゲンカイ
-のセイザとはちがうんだ<*2>","Eh..? Oh I see, your zodiac is different in the Human World! <*2>","Eh..? Oh I see, your zodiac is different in the Human World! ",
+のセイザとはちがうんだ<*2>","Eh..? Oh I see, the zodiac is different in the Human World! <*2>","Eh..? Oh I see, your the is different in the Human World! ",
 0x1441be,"ちがうの?あれ?おっかしいなー
 じゃあキバザかなぁ?<*2>","Huh? I was wrong? That's weird... Then maybe you're a ""Fang""?<*2>","Huh? I was wrong? That's weird... Then maybe you're a ""Fang""?",
 0x1441c0,"きょうのラッキーカラーは
@@ -3432,7 +3448,7 @@ Why? / ...Really?",
 #######,#179,,,
 0x1601b4,"ニンゲンカイのガッコウヘいって
 ベんきょうしたいんだ!
- えー!! スゴイね<*A>",/0x1601b4/<*A>,"I wanna try going to school in the human world!
+ えー!! スゴイね<*A>",/0x1601b4/<*A>,"I wanna try going to school in the Human World!
 Why?! / Impressive",
 0x1601b6,"なんで『えー』なの??
  ベんきょうするの? ゴメン<*A>",/0x1601b6/<*A>,"Huh? What's with that reaction??

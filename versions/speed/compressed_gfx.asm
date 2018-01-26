@@ -311,8 +311,8 @@ EvolveBg2Gfx:
 EvolveBg2GfxEnd
 
 MenuMain1Gfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/main1.malias"
+	dbw NOT_COMPRESSED, MenuMain1GfxEnd - MenuMain1Gfx - 3
+    INCBIN "gfx/menu/main1.2bpp"
 MenuMain1GfxEnd
 
 MenuMain2Gfx:
