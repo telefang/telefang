@@ -312,12 +312,12 @@ EvolveBg2GfxEnd
 
 MenuMain1Gfx:
 	dbw NOT_COMPRESSED, MenuMain1GfxEnd - MenuMain1Gfx - 3
-    INCBIN "gfx/menu/main1.2bpp"
+    INCBIN "components/pausemenu/resources/text1.2bpp"
 MenuMain1GfxEnd
 
 MenuMain2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/main2.malias"
+	INCBIN "components/pausemenu/resources/text2.malias"
 MenuMain2GfxEnd
 
 MenuUnkGfx:
@@ -553,6 +553,7 @@ MenuOptionsDMGGfx:
 MenuOptionsDMGGfxEnd
 
 MenuMain1DMGGfx:
+<<<<<<< HEAD
 	dbw NOT_COMPRESSED, MenuMain1DMGGfxEnd - MenuMain1DMGGfx - 3
 	INCBIN "gfx/menu/main1_dmg.2bpp"
 MenuMain1DMGGfxEnd
@@ -560,6 +561,15 @@ MenuMain1DMGGfxEnd
 MenuMain2DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain2DMGGfxEnd - MenuMain2DMGGfx - 3
 	INCBIN "gfx/menu/main2_dmg.2bpp"
+=======
+	db COMPRESSED
+	INCBIN "components/pausemenu/resources/text1_dmg.malias"
+MenuMain1DMGGfxEnd
+
+MenuMain2DMGGfx:
+	db COMPRESSED
+	INCBIN "components/pausemenu/resources/text2_dmg.malias"
+>>>>>>> master
 MenuMain2DMGGfxEnd
 
 MenuUnkDMGGfx:

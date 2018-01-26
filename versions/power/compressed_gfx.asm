@@ -338,13 +338,13 @@ EvolveBg2GfxEnd
 SECTION "Menu - Main1 Compressed GFX", ROMX[$6d56], BANK[$3b]
 MenuMain1Gfx:
 	dbw NOT_COMPRESSED, MenuMain1GfxEnd - MenuMain1Gfx - 3
-    INCBIN "gfx/menu/main1.2bpp"
+    INCBIN "components/pausemenu/resources/text1.2bpp"
 MenuMain1GfxEnd
 
 SECTION "Menu - Main2 Compressed GFX", ROMX[$720b], BANK[$3b]
 MenuMain2Gfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/main2.malias"
+	INCBIN "components/pausemenu/resources/text2.malias"
 MenuMain2GfxEnd
 ;TODO: Are these trash bytes another graphic that gets used?
 	INCBIN "gfx/menu/main2_trashbytes.bin"
@@ -572,6 +572,7 @@ MenuOptionsDMGGfx:
 MenuOptionsDMGGfxEnd
 
 MenuMain1DMGGfx:
+<<<<<<< HEAD
 	dbw NOT_COMPRESSED, MenuMain1DMGGfxEnd - MenuMain1DMGGfx - 3
 	INCBIN "gfx/menu/main1_dmg.2bpp"
 MenuMain1DMGGfxEnd
@@ -579,6 +580,15 @@ MenuMain1DMGGfxEnd
 MenuMain2DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain2DMGGfxEnd - MenuMain2DMGGfx - 3
 	INCBIN "gfx/menu/main2_dmg.2bpp"
+=======
+	db COMPRESSED
+	INCBIN "components/pausemenu/resources/text1_dmg.malias"
+MenuMain1DMGGfxEnd
+
+MenuMain2DMGGfx:
+	db COMPRESSED
+	INCBIN "components/pausemenu/resources/text2_dmg.malias"
+>>>>>>> master
 MenuMain2DMGGfxEnd
 
 MenuUnkDMGGfx:

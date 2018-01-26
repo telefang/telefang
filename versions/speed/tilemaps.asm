@@ -43,19 +43,19 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_1b
 	dw Tilemap_unknown_tilemap_0_1b
 	dw Tilemap_unknown_tilemap_0_1c
-	dw Tilemap_unknown_tilemap_0_1d
-	dw Tilemap_unknown_tilemap_0_1e
+	dw Tilemap_pausemenu_resources_controls_hint_tmap
+	dw Tilemap_pausemenu_resources_controls_hint_2_tmap
 	dw Tilemap_unknown_tilemap_0_1f
 	dw Tilemap_unknown_tilemap_0_20
-	dw Tilemap_unknown_tilemap_0_21
-	dw Tilemap_unknown_tilemap_0_22
-	dw Tilemap_unknown_tilemap_0_23
-	dw Tilemap_unknown_tilemap_0_24
-	dw Tilemap_unknown_tilemap_0_25
-	dw Tilemap_unknown_tilemap_0_26
-	dw Tilemap_unknown_tilemap_0_27
-	dw Tilemap_unknown_tilemap_0_28
-	dw Tilemap_unknown_tilemap_0_29
+	dw Tilemap_pausemenu_buttons_zukan_tmap
+	dw Tilemap_pausemenu_buttons_contacts_tmap
+	dw Tilemap_pausemenu_buttons_calls_tmap
+	dw Tilemap_pausemenu_buttons_melody_tmap
+	dw Tilemap_pausemenu_buttons_items_tmap
+	dw Tilemap_pausemenu_buttons_sms_tmap
+	dw Tilemap_pausemenu_buttons_save_tmap
+	dw Tilemap_pausemenu_buttons_options_tmap
+	dw Tilemap_pausemenu_buttons_cancel_tmap
 	dw Tilemap_unknown_tilemap_0_2a
 	dw Tilemap_unknown_tilemap_0_2b
 	dw Tilemap_unknown_tilemap_0_2c
@@ -65,10 +65,10 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_30
 	dw Tilemap_unknown_tilemap_0_31
 	dw Tilemap_unknown_tilemap_0_32
-	dw Tilemap_menu_titlebtn_continue_tmap
-	dw Tilemap_menu_titlebtn_soundtest_tmap
-	dw Tilemap_menu_titlebtn_link_tmap
-	dw Tilemap_menu_titlebtn_newgame_tmap
+	dw Tilemap_titlemenu_buttons_start_tmap
+	dw Tilemap_titlemenu_buttons_continue_tmap
+	dw Tilemap_titlemenu_buttons_soundtest_tmap
+	dw Tilemap_titlemenu_buttons_link_tmap
 	dw Tilemap_unknown_tilemap_0_37
 	dw Tilemap_unknown_tilemap_0_38
 	dw Tilemap_unknown_tilemap_0_39
@@ -336,13 +336,13 @@ Tilemap_unknown_tilemap_0_1c::
 	incbin "gfx/unknown/tilemap_0/1c.tmap"
 Tilemap_unknown_tilemap_0_1c_END
 
-Tilemap_unknown_tilemap_0_1d::
-	incbin "gfx/unknown/tilemap_0/1d.tmap"
-Tilemap_unknown_tilemap_0_1d_END
+Tilemap_pausemenu_resources_controls_hint_tmap::
+	incbin "components/pausemenu/resources/controls_hint_tmap.tmap"
+Tilemap_pausemenu_resources_controls_hint_tmap_END
 
-Tilemap_unknown_tilemap_0_1e::
-	incbin "gfx/unknown/tilemap_0/1e.tmap"
-Tilemap_unknown_tilemap_0_1e_END
+Tilemap_pausemenu_resources_controls_hint_2_tmap::
+	incbin "components/pausemenu/resources/controls_hint_2_tmap.tmap"
+Tilemap_pausemenu_resources_controls_hint_2_tmap_END
 
 Tilemap_unknown_tilemap_0_1f::
 	incbin "gfx/unknown/tilemap_0/1f.tmap"
@@ -352,41 +352,41 @@ Tilemap_unknown_tilemap_0_20::
 	incbin "gfx/unknown/tilemap_0/20.tmap"
 Tilemap_unknown_tilemap_0_20_END
 
-Tilemap_unknown_tilemap_0_21::
-	incbin "gfx/unknown/tilemap_0/21.tmap"
-Tilemap_unknown_tilemap_0_21_END
+Tilemap_pausemenu_buttons_zukan_tmap::
+	incbin "components/pausemenu/buttons/zukan_tmap.tmap"
+Tilemap_pausemenu_buttons_zukan_tmap_END
 
-Tilemap_unknown_tilemap_0_22::
-	incbin "gfx/unknown/tilemap_0/22.tmap"
-Tilemap_unknown_tilemap_0_22_END
+Tilemap_pausemenu_buttons_contacts_tmap::
+	incbin "components/pausemenu/buttons/contacts_tmap.tmap"
+Tilemap_pausemenu_buttons_contacts_tmap_END
 
-Tilemap_unknown_tilemap_0_23::
-	incbin "gfx/unknown/tilemap_0/23.tmap"
-Tilemap_unknown_tilemap_0_23_END
+Tilemap_pausemenu_buttons_calls_tmap::
+	incbin "components/pausemenu/buttons/calls_tmap.tmap"
+Tilemap_pausemenu_buttons_calls_tmap_END
 
-Tilemap_unknown_tilemap_0_24::
-	incbin "gfx/unknown/tilemap_0/24.tmap"
-Tilemap_unknown_tilemap_0_24_END
+Tilemap_pausemenu_buttons_melody_tmap::
+	incbin "components/pausemenu/buttons/melody_tmap.tmap"
+Tilemap_pausemenu_buttons_melody_tmap_END
 
-Tilemap_unknown_tilemap_0_25::
-	incbin "gfx/unknown/tilemap_0/25.tmap"
-Tilemap_unknown_tilemap_0_25_END
+Tilemap_pausemenu_buttons_items_tmap::
+	incbin "components/pausemenu/buttons/items_tmap.tmap"
+Tilemap_pausemenu_buttons_items_tmap_END
 
-Tilemap_unknown_tilemap_0_26::
-	incbin "gfx/unknown/tilemap_0/26.tmap"
-Tilemap_unknown_tilemap_0_26_END
+Tilemap_pausemenu_buttons_sms_tmap::
+	incbin "components/pausemenu/buttons/sms_tmap.tmap"
+Tilemap_pausemenu_buttons_sms_tmap_END
 
-Tilemap_unknown_tilemap_0_27::
-	incbin "gfx/unknown/tilemap_0/27.tmap"
-Tilemap_unknown_tilemap_0_27_END
+Tilemap_pausemenu_buttons_save_tmap::
+	incbin "components/pausemenu/buttons/save_tmap.tmap"
+Tilemap_pausemenu_buttons_save_tmap_END
 
-Tilemap_unknown_tilemap_0_28::
-	incbin "gfx/unknown/tilemap_0/28.tmap"
-Tilemap_unknown_tilemap_0_28_END
+Tilemap_pausemenu_buttons_options_tmap::
+	incbin "components/pausemenu/buttons/options_tmap.tmap"
+Tilemap_pausemenu_buttons_options_tmap_END
 
-Tilemap_unknown_tilemap_0_29::
-	incbin "gfx/unknown/tilemap_0/29.tmap"
-Tilemap_unknown_tilemap_0_29_END
+Tilemap_pausemenu_buttons_cancel_tmap::
+	incbin "components/pausemenu/buttons/cancel_tmap.tmap"
+Tilemap_pausemenu_buttons_cancel_tmap_END
 
 Tilemap_unknown_tilemap_0_2a::
 	incbin "gfx/unknown/tilemap_0/2a.tmap"
@@ -424,21 +424,21 @@ Tilemap_unknown_tilemap_0_32::
 	incbin "gfx/unknown/tilemap_0/32.tmap"
 Tilemap_unknown_tilemap_0_32_END
 
-Tilemap_menu_titlebtn_continue_tmap::
-	incbin "gfx/menu/titlebtn_continue_tmap.tmap"
-Tilemap_menu_titlebtn_continue_tmap_END
+Tilemap_titlemenu_buttons_start_tmap::
+	incbin "components/titlemenu/buttons/start_tmap.tmap"
+Tilemap_titlemenu_buttons_start_tmap_END
 
-Tilemap_menu_titlebtn_soundtest_tmap::
-	incbin "gfx/menu/titlebtn_soundtest_tmap.tmap"
-Tilemap_menu_titlebtn_soundtest_tmap_END
+Tilemap_titlemenu_buttons_continue_tmap::
+	incbin "components/titlemenu/buttons/continue_tmap.tmap"
+Tilemap_titlemenu_buttons_continue_tmap_END
 
-Tilemap_menu_titlebtn_link_tmap::
-	incbin "gfx/menu/titlebtn_link_tmap.tmap"
-Tilemap_menu_titlebtn_link_tmap_END
+Tilemap_titlemenu_buttons_soundtest_tmap::
+	incbin "components/titlemenu/buttons/soundtest_tmap.tmap"
+Tilemap_titlemenu_buttons_soundtest_tmap_END
 
-Tilemap_menu_titlebtn_newgame_tmap::
-	incbin "gfx/menu/titlebtn_newgame_tmap.tmap"
-Tilemap_menu_titlebtn_newgame_tmap_END
+Tilemap_titlemenu_buttons_link_tmap::
+	incbin "components/titlemenu/buttons/link_tmap.tmap"
+Tilemap_titlemenu_buttons_link_tmap_END
 
 Tilemap_unknown_tilemap_0_37::
 	incbin "gfx/unknown/tilemap_0/37.tmap"
