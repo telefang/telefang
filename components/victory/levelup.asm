@@ -428,7 +428,7 @@ Victory_SubStateCheckMoveUnlocks::
     
 .unlockedMoves
     ld [W_StringTable_ROMTblIndex], a
-    ld hl, StringTable_battle_attacks_old
+    ld hl, StringTable_battle_attacks
     call StringTable_LoadName75
     
     ld bc, W_StringTable_StagingLocDbl
