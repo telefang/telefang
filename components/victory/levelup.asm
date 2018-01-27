@@ -31,29 +31,29 @@ Victory_SubStateStatWindowPalette::
 
 ;State 08 00 00 0D
 Victory_SubStateDrawStatWindow::
-    ld de, Victory_BattleScreenPrivateStrings_speed
-    ld hl, $9400
-    ld b, 4
+    call Victory_ADVICE_SubStateDrawStatWindow
+    ld hl, $9450
+    ld b, 8
     call Banked_MainScript_DrawStatusText
     
-    ld de, Victory_BattleScreenPrivateStrings_attack
-    ld hl, $9440
-    ld b, 4
+    ld de, Victory_ADVICE_BattleScreenPrivateStrings_defense
+    ld hl, $94A0
+    ld b, 8
     call Banked_MainScript_DrawStatusText
     
-    ld de, Victory_BattleScreenPrivateStrings_defense
-    ld hl, $9480
-    ld b, 4
+    ld de, Victory_ADVICE_BattleScreenPrivateStrings_denma
+    ld hl, $94F0
+    ld b, 8
     call Banked_MainScript_DrawStatusText
     
-    ld de, Victory_BattleScreenPrivateStrings_denmaAtk
-    ld hl, $94C0
-    ld b, 4
+    ld de, Victory_ADVICE_BattleScreenPrivateStrings_denmaAtk
+    ld hl, $9540
+    ld b, 8
     call Banked_MainScript_DrawStatusText
     
-    ld de, Victory_BattleScreenPrivateStrings_denmaDef
-    ld hl, $9500
-    ld b, 4
+    ld de, Victory_ADVICE_BattleScreenPrivateStrings_denmaDef
+    ld hl, $9590
+    ld b, 8
     call Banked_MainScript_DrawStatusText
     
     ld bc, $A00
