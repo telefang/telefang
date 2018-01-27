@@ -1,19 +1,19 @@
-#,Japanese,English,Draft version,Notes
-1,ふつう,Normal,,Could use some work.
-2,かくれる,Hidden,,
-3,ジャンプ,Jump,,
-4,ひこう,Fly,,
-5,こんらん,Confue,,:/
-6,まひ,Stun,,
-7,のろい,Curse,,
-8,ねむリ,Sleep,,
-9,ひるむ,Flinch,,
-10,けむリ,Smoke,,
-11,どく,Poison,,
-12,みえない,Blind,,
-13,バリア,Barrier,,
-14,けっかい,Force,,
-15,しもやけ,Frosted,,
-16,やけど,Burn,,
-17,,INVALID,,
-18,,INVALID,,
+#,Japanese,English,Draft version,German,Draft version (German),Notes
+1,ふつう,Normal,,Normal,,Could use some work.
+2,かくれる,Hidden,,Verst.,,
+3,ジャンプ,Jump,,Sprung,,
+4,ひこう,Fly,,Fliegt,,
+5,こんらん,Confue,,Konfus,,:/
+6,まひ,Stun,,Betäubt,,
+7,のろい,Curse,,Fluch,,
+8,ねむリ,Sleep,,Schlaf,,
+9,ひるむ,Flinch,,Perplex,,
+10,けむリ,Smoke,,Rauch,,
+11,どく,Poison,,Gift,,
+12,みえない,Blind,,Blind,,
+13,バリア,Barrier,,Schild,,
+14,けっかい,Force,,Kraftf.,,
+15,しもやけ,Frosted,,Frost,,
+16,やけど,Burn,,Brand,,
+17,,INVALID,,INVALID,,
+18,,INVALID,,INVALID,,

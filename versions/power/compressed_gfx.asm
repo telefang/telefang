@@ -215,8 +215,8 @@ MenuEncounterGfx:
 MenuEncounterGfxEnd
 
 MenuBattleGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/battle.malias"
+	dbw NOT_COMPRESSED, MenuBattleGfxEnd - MenuBattleGfx - 3
+	INCBIN "gfx/menu/battle.2bpp"
 MenuBattleGfxEnd
 
 TitleTitle1Gfx:
@@ -240,13 +240,13 @@ UnknownFontGfx:
 UnknownFontGfxEnd
 
 MenuBattle2Gfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/battle2.malias"
+	dbw NOT_COMPRESSED, MenuBattle2GfxEnd - MenuBattle2Gfx - 3
+	INCBIN "gfx/menu/battle2.2bpp"
 MenuBattle2GfxEnd
 
 MenuBattle3Gfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/battle3.malias"
+	dbw NOT_COMPRESSED, MenuBattle3GfxEnd - MenuBattle3Gfx - 3
+	INCBIN "gfx/menu/battle3.2bpp"
 MenuBattle3GfxEnd
 
 MenuNumbersGfx:
@@ -256,16 +256,15 @@ MenuNumbersGfxEnd
 
 SECTION "Battle Messages Compressed GFX", ROMX[$4417], BANK[$3b]
 BattleMessagesGfx:
-	db COMPRESSED
-	INCBIN "gfx/battle_messages.malias"
+	dbw NOT_COMPRESSED, BattleMessagesGfxEnd - BattleMessagesGfx - 3
+	INCBIN "gfx/battle_messages.2bpp"
 BattleMessagesGfxEnd
 
 SECTION "Menu - Options Compressed GFX", ROMX[$665a], BANK[$3b]
 MenuOptionsGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/options.malias"
+	dbw NOT_COMPRESSED, MenuOptionsGfxEnd - MenuOptionsGfx - 3
+	INCBIN "gfx/menu/options.2bpp"
 MenuOptionsGfxEnd
-	INCBIN "gfx/menu/options_trashbytes.bin"
 
 SECTION "Cutscene - Connected1 Compressed GFX", ROMX[$4e54], BANK[$3b]
 CutsceneConnected1Gfx:
@@ -304,17 +303,15 @@ MenuMiscSpritesGfxEnd
 
 SECTION "Menu - Total Compressed GFX", ROMX[$7849], BANK[$3b]
 MenuTotalGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/total.malias"
+	dbw NOT_COMPRESSED, MenuTotalGfxEnd - MenuTotalGfx - 3
+	INCBIN "gfx/menu/total.2bpp"
 MenuTotalGfxEnd
-	INCBIN "gfx/menu/total_trashbytes.bin"
 
 SECTION "Menu - Dmelo Compressed GFX", ROMX[$61cb], BANK[$3b]
 MenuDmeloGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/dmelo.malias"
+	dbw NOT_COMPRESSED, MenuDmeloGfxEnd - MenuDmeloGfx - 3
+	INCBIN "gfx/menu/dmelo.2bpp"
 MenuDmeloGfxEnd
-	INCBIN "gfx/menu/dmelo_trashbytes.bin"
 
 SECTION "Menu - Got Number Compressed GFX", ROMX[$5e86], BANK[$3b]
 MenuGotNumberGfx:
@@ -539,10 +536,9 @@ ScreenGameOver2GfxEnd
 
 SECTION "Menu - Met Compressed GFX", ROMX[$7d49], BANK[$3b]
 MenuMetGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/met.malias"
+	dbw NOT_COMPRESSED, MenuMetGfxEnd - MenuMetGfx - 3
+	INCBIN "gfx/menu/met.2bpp"
 MenuMetGfxEnd
-	INCBIN "gfx/menu/met_trashbytes.bin"
 
 SECTION "Cutscene - Antenna Tree Compressed GFX", ROMX[$6c7f], BANK[$39]
 CutsceneAntennaTreeGfx:

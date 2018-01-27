@@ -215,8 +215,8 @@ MenuEncounterGfx:
 MenuEncounterGfxEnd
 
 MenuBattleGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/battle.malias"
+	dbw NOT_COMPRESSED, MenuBattleGfxEnd - MenuBattleGfx - 3
+	INCBIN "gfx/menu/battle.2bpp"
 MenuBattleGfxEnd
 
 TitleTitle1Gfx:
@@ -245,13 +245,13 @@ UnknownFontGfx:
 UnknownFontGfxEnd
 
 MenuBattle2Gfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/battle2.malias"
+	dbw NOT_COMPRESSED, MenuBattle2GfxEnd - MenuBattle2Gfx - 3
+	INCBIN "gfx/menu/battle2.2bpp"
 MenuBattle2GfxEnd
 
 MenuBattle3Gfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/battle3.malias"
+	dbw NOT_COMPRESSED, MenuBattle3GfxEnd - MenuBattle3Gfx - 3
+	INCBIN "gfx/menu/battle3.2bpp"
 MenuBattle3GfxEnd
 
 MenuNumbersGfx:
@@ -266,8 +266,8 @@ MenuMiscSpritesGfx:
 MenuMiscSpritesGfxEnd
 
 BattleMessagesGfx:
-	db COMPRESSED
-	INCBIN "gfx/battle_messages.malias"
+	dbw NOT_COMPRESSED, BattleMessagesGfxEnd - BattleMessagesGfx - 3
+	INCBIN "gfx/battle_messages.2bpp"
 BattleMessagesGfxEnd
 
 ScreenSaveDeletedGfx:
@@ -296,13 +296,13 @@ MenuGotNumberGfx:
 MenuGotNumberGfxEnd
 
 MenuDmeloGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/dmelo.malias"
+	dbw NOT_COMPRESSED, MenuDmeloGfxEnd - MenuDmeloGfx - 3
+	INCBIN "gfx/menu/dmelo.2bpp"
 MenuDmeloGfxEnd
 
 MenuOptionsGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/options.malias"
+	dbw NOT_COMPRESSED, MenuOptionsGfxEnd - MenuOptionsGfx - 3
+	INCBIN "gfx/menu/options.2bpp"
 MenuOptionsGfxEnd
 
 EvolveBg2Gfx:
@@ -326,8 +326,8 @@ MenuUnkGfx:
 MenuUnkGfxEnd
 
 MenuTotalGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/total.malias"
+	dbw NOT_COMPRESSED, MenuTotalGfxEnd - MenuTotalGfx - 3
+	INCBIN "gfx/menu/total_dmg.2bpp"
 MenuTotalGfxEnd
 
 MenuNicknameGfx:
@@ -336,8 +336,8 @@ MenuNicknameGfx:
 MenuNicknameGfxEnd
 
 MenuMetGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/met.malias"
+	dbw NOT_COMPRESSED, MenuMetGfxEnd - MenuMetGfx - 3
+	INCBIN "gfx/menu/met.2bpp"
 MenuMetGfxEnd
 
 SECTION "Evolve - Bg4 Compressed GFX", ROMX[$4000], BANK[$61]

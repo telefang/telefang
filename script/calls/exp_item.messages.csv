@@ -232,7 +232,7 @@ I hear they like ""mixers"". I get it, I think. They both move the same way!<*2>
 じつは キカイをつかわせると
 すごかったリして...
 そんなことはないかなー
-<*2>",/0x15c03a/<*2>,"<D30>Good things happen if you fuse a Liquorice with a ""computer"", right?
+<*2>",/0x15c03a/<*2>,"<D30>Good things happen if you fuse a Licorice with a ""computer"", right?
 No idea what ""すごかったりして"" is supposed to mean//<*2>",
 0x15c03c,"<D31>おーう <&name>
 ビバーナムがな『ビデオ』を
@@ -279,7 +279,7 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",,
 このデンジュウは『じゃぐち』が
 いいらしいんだよ
 もし トモダチになったら
-くっつけてあげたら?<*2>","<D37>Have you seen the Denjuu called Raygoten? It seems to be a fan of ""faucets"". If you happen to become friends with one, why not try a fusion?<*2>",,
+くっつけてあげたら?<*2>","<D37>Have you seen the Denjuu called Raygoten? I hear it's a fan of ""faucets"". If you happen to become friends with one, why not try a fusion?<*2>",,
 0x15c04a,"<D38>ドリアーマって
 『リボルバーガン』をあげると
 よろこぶんだってー
@@ -303,7 +303,7 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",,
 こたえはねー....
 クリプトアームだよ
 でも トモダチに いる?
-<*2>","<D40><&name>? I know a Denjuu who would grow if you fused it with a ""bazooka"". It's Cryptoarm! Do you know one of those?<*2>",,
+<*2>","<D40><&name>? I know a Denjuu who would grow if you fused it with a ""bazooka"". I'm talking about Cryptoarm! Do you know one of those?<*2>",,
 0x15c050,"<D41>シェルステラって
 『ジェットエンジン』で
 つよくなるらしいんだよ
@@ -401,13 +401,14 @@ Couldn't tell you what とぶきか or じつはもうとべたりして is mean
 デンジュウなんだけどな
 どんなヤツか
 みておいてくれよ
-<*2>",/0x15c06e/<*2>,"I hear there's a tough Denjuu who wants an ""army knife"". Gilerth, I think. I wonder what kind of Denjuu it is... Keep an eye out for it!",
+<*2>",/0x15c06e/<*2>,"I hear there's a tough Denjuu who wants an ""army knife"". Gilerth, I think. I wonder what kind of Denjuu it is...
+Keep an eye out for it!",
 0x15c070,"<D57>レイガースってヤツ
 『コンピュータ』を くっつけて
 ほしいって いってたんだけど?
 つかえないけど ほしいって
 タイプなんじゃないかなー
-ぜったいそうだよなー<*2>",/0x15c070/<*2>,,
+ぜったいそうだよなー<*2>",/0x15c070/<*2>,"Raygirth was saying it'd like to fuse with a ""computer"". Seems like the type to want things it has no use for, doesn't it...",
 0x15c072,"<D58>もしもーし
 <&name>?
 アーマルってデンジュウの
@@ -417,27 +418,27 @@ Couldn't tell you what とぶきか or じつはもうとべたりして is mean
 けいけんちアップのアイテムって
 はなしだったよ
 きいたはなしだから ウソかも
-しれないけどさー<*2>",/0x15c072/<*2>,,
+しれないけどさー<*2>",/0x15c072/<*2>,"Hello, <&name>? I heard something interesting about Armaru. Apparently, its experience item is a ""pencil"". I just heard it second-hand, so I dunno if it's true.",
 0x15c074,"<D59>カメレイドってデンジュウがさ
 『マシンガン』をブッぱなすのがすきだって いってたんだ
 なんか こわくない??
 そうでもないのかな...
-<*2>",/0x15c074/<*2>,,
+<*2>",/0x15c074/<*2>,"So, Chameraid was saying it likes shooting ""machine guns"". Doesn't that scare you? Maybe it doesn't...",
 0x15c076,"<D60>クリプトライドってねー
 『モバイル』がおきにいリだって
 けっこう おしゃれな
-デンジュウだよねー<*2>",/0x15c076/<*2>,,
+デンジュウだよねー<*2>",/0x15c076/<*2>,"You know Cryptoride? I heard it's into ""laptops"". Man, that Denjuu really gets with the times, doesn't it?",
 0x15c078,"<D61>『じゃぐち』がけいけんちアップのアイテムだっていうマニアックな
 デンジュウが ワーミテララって
 いうヤツなんだ
 いえに すいどうが とおって
-いるのかなー?<*2>",/0x15c078/<*2>,,
+いるのかなー?<*2>",/0x15c078/<*2>,"That one Denjuu, Wormiterala, is really into ""faucets"". I wonder if its house has plumbing?",
 0x15c07a,"<D62>ファンブレードってさー
 『アーミーナイフ』が
 すきなんだってさー
 やっぱ カッコいいヤツは
 すきなモノも ちがうよなー
-<*2>",/0x15c07a/<*2>,,
+<*2>",/0x15c07a/<*2>,"So, about Fungblade... I heard it likes ""army knives"". Man, the coolest Denjuu even like different items than I do, huh...",
 0x15c07c,"<D63>もしもーし
 ブルタマスって『ドライバー』が
 けいけんちアップの
@@ -445,18 +446,18 @@ Couldn't tell you what とぶきか or じつはもうとべたりして is mean
 きっと これをてにいれたら
 ほかのキカイを バラバラにして
 あそんでるんだろうなー
-<*2>",/0x15c07c/<*2>,,
+<*2>",/0x15c07c/<*2>,"Hey, hello! I heard a ""screwdriver"" is the key to strengthening a Bulltamus. I guess it'd use it to take apart machines?",
 0x15c07e,"<D64>プニードルが『ネジ』を
 さがしてるっていう
 ハナシを トモダチから
 きいたんだ
 なにか こわれたのかなー?
-ダイジョウブかなー<*2>",/0x15c07e/<*2>,,
+ダイジョウブかなー<*2>",/0x15c07e/<*2>,"A friend was telling me Puneedle is looking for a ""screw"". Did something break? I hope it'll be okay...",
 0x15c080,"<D65>ケロリンって『コンピュータ』で
 つよくなるデンジュウなんだってはなしを きいたよ
 あいつ『コンピュータ』を
 つかいこなせるのかな?
-<*2>",/0x15c080/<*2>,,
+<*2>",/0x15c080/<*2>,"I heard Kerorin would grow stronger if you gave it a ""computer"". Do you think it knows how to use one?",
 0x15c082,"<D66>スグライってデンジュウは
 『チェーンソー』なんて
 ヤバいモノが いいんだって
