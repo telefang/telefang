@@ -848,52 +848,52 @@ SECTION "tilemap Bank 1", ROMX[$4000], BANK[$3f]
 Tilemap_BANK_1::
 	dw Tilemap_zukan_page_tmap
 	dw Tilemap_zukan_page_tmap
-	dw Tilemap_unknown_tilemap_1_1
-	dw Tilemap_unknown_tilemap_1_1
-	dw Tilemap_unknown_tilemap_1_1
-	dw Tilemap_unknown_tilemap_1_1
-	dw Tilemap_unknown_tilemap_1_1
-	dw Tilemap_unknown_tilemap_1_1
-	dw Tilemap_unknown_tilemap_1_1
-	dw Tilemap_unknown_tilemap_1_2
-	dw Tilemap_unknown_tilemap_1_3
-	dw Tilemap_unknown_tilemap_1_4
-	dw Tilemap_unknown_tilemap_1_5
-	dw Tilemap_unknown_tilemap_1_6
-	dw Tilemap_unknown_tilemap_1_7
-	dw Tilemap_unknown_tilemap_1_7_END
+	dw Tilemap_attractmode_scene1_cave_bg_tmap
+	dw Tilemap_attractmode_scene1_cave_bg_tmap
+	dw Tilemap_attractmode_scene1_cave_bg_tmap
+	dw Tilemap_attractmode_scene1_cave_bg_tmap
+	dw Tilemap_attractmode_scene1_cave_bg_tmap
+	dw Tilemap_attractmode_scene1_cave_bg_tmap
+	dw Tilemap_attractmode_scene1_cave_bg_tmap
+	dw Tilemap_attractmode_scene1_angios_tmap
+	dw Tilemap_attractmode_scene2_shigeki_phone_tmap
+	dw Tilemap_attractmode_scene3_tree_bg_tmap
+	dw Tilemap_attractmode_scene4_crypto_shigeki_tmap
+	dw Tilemap_attractmode_scene5_angios_tmap
+	dw Tilemap_attractmode_scene6_crypto_tmap
+	dw Tilemap_attractmode_scene6_crypto_tmap_END
 
 Tilemap_zukan_page_tmap::
 	incbin "components/zukan/page_tmap.tmap"
 Tilemap_zukan_page_tmap_END
 
-Tilemap_unknown_tilemap_1_1::
-	incbin "gfx/unknown/tilemap_1/1.tmap"
-Tilemap_unknown_tilemap_1_1_END
+Tilemap_attractmode_scene1_cave_bg_tmap::
+	incbin "components/attractmode/scene1/cave_bg_tmap.tmap"
+Tilemap_attractmode_scene1_cave_bg_tmap_END
 
-Tilemap_unknown_tilemap_1_2::
-	incbin "versions/power/gfx/unknown/tilemap_1/2.tmap"
-Tilemap_unknown_tilemap_1_2_END
+Tilemap_attractmode_scene1_angios_tmap::
+	incbin "versions/power/components/attractmode/scene1/angios_tmap.tmap"
+Tilemap_attractmode_scene1_angios_tmap_END
 
-Tilemap_unknown_tilemap_1_3::
-	incbin "gfx/unknown/tilemap_1/3.tmap"
-Tilemap_unknown_tilemap_1_3_END
+Tilemap_attractmode_scene2_shigeki_phone_tmap::
+	incbin "components/attractmode/scene2/shigeki_phone_tmap.tmap"
+Tilemap_attractmode_scene2_shigeki_phone_tmap_END
 
-Tilemap_unknown_tilemap_1_4::
-	incbin "gfx/unknown/tilemap_1/4.tmap"
-Tilemap_unknown_tilemap_1_4_END
+Tilemap_attractmode_scene3_tree_bg_tmap::
+	incbin "components/attractmode/scene3/tree_bg_tmap.tmap"
+Tilemap_attractmode_scene3_tree_bg_tmap_END
 
-Tilemap_unknown_tilemap_1_5::
-	incbin "versions/power/gfx/unknown/tilemap_1/5.tmap"
-Tilemap_unknown_tilemap_1_5_END
+Tilemap_attractmode_scene4_crypto_shigeki_tmap::
+	incbin "versions/power/components/attractmode/scene4/crypto_shigeki_tmap.tmap"
+Tilemap_attractmode_scene4_crypto_shigeki_tmap_END
 
-Tilemap_unknown_tilemap_1_6::
-	incbin "versions/power/gfx/unknown/tilemap_1/6.tmap"
-Tilemap_unknown_tilemap_1_6_END
+Tilemap_attractmode_scene5_angios_tmap::
+	incbin "versions/power/components/attractmode/scene5/angios_tmap.tmap"
+Tilemap_attractmode_scene5_angios_tmap_END
 
-Tilemap_unknown_tilemap_1_7::
-	incbin "versions/power/gfx/unknown/tilemap_1/7.tmap"
-Tilemap_unknown_tilemap_1_7_END
+Tilemap_attractmode_scene6_crypto_tmap::
+	incbin "versions/power/components/attractmode/scene6/crypto_tmap.tmap"
+Tilemap_attractmode_scene6_crypto_tmap_END
 
 
 SECTION "attrib Bank 0", ROMX[$4000], BANK[$8]
