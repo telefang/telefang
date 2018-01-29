@@ -15,25 +15,25 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 ""<&0xd658>""<*5>",,"<&0xd6a0>
 ""<&0xd658>""<*5>",,
 0x11400a,"<&0xd460>は
-たおれた!<*5>",<&0xd6a0> fell!<*5>,,<&0xd6a0> wurde besiegt!<*5>,,
+たおれた!<*5>",<&0xd6a0> fell!<*5>,,<&0xd6a0> ist am Boden!<*5>,,
 0x11400c,『コイツはかなわないや!』<*5>,"""I'm no match for this guy!""<*5>",,"""Keine Chance... Ich hau ab!""<*5>",,
 0x11400e,"<&0xd460>は
 にげだした!<*5> ",<&0xd6a0> fled!<*5>,,<&0xd6a0> ist geflohen!<*5>,,
 0x114010,"<&0xd460>
 『みちくさをしている!』<*5>","<&0xd6a0>
 ""I got distracted!""<*5>",,"<&0xd6a0>
-""Wurde auf dem Weg abgelenkt!""<*5>",,
+""Kommt was dazwischen!""<*5>",,
 0x114012,"<&0xc9e1>の
 デンワバンゴウをうしなった!<*5>",Lost <&0xcca3>'s phone number!<*5>,,<&0xcca3>s Handynummer verloren!<*5>,,
 0x114014,"けっかいがはられていて
 でんまリゅくが
 はつどうできない!!<*5>",Can't use Denma power due to the force field!!<*5>,,Kraftfeld verhindert Einsatz von Denma-Power!<*5>,,
 0x114016,"<&0xd4b1>が
-あらわれた!<*5>",<&0xd658> appeared!<*5>,,<&0xd658> kreuzt deinen Weg!<*5>,<&0xd658> taucht auf!<*5>,
+あらわれた!<*5>",<&0xd658> appeared!<*5>,,<&0xd658> kreuzt euren Weg!<*5>,<&0xd658> taucht auf!<*5>,
 0x114018,でんまリょく じゅうでんかいし!<*5>,Charging Denma power!<*5>,,Denma-Power wird aufgeladen!<*5>,,
 0x11401a,"<&0xd6a0>のこうげき!
 <&0xd4b1>!<*4>","<&0xd6a0><6> move!
-<&0xd658>!<*4>",,"<&0xd6a0> am Zug!
+<&0xd658>!<*4>",,"<&0xd6a0> ist am Zug!
 <&0xd658>!<*4>",,
 0x11401c,"よぶ デンジュウを
 せんたくしてください<*4>",Please select a Denjuu to call.<*4>,,"Wähle ein Denjuu aus, das du anrufen möchtest.<*4>",,
@@ -63,7 +63,7 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 こうげきしますか?<*5>",<S0>Which Denjuu will you attack?<*5>,,<S0>Welches Denjuu wirst du angreifen?<*5>,,
 0x11403a,"<&0xd460>のこうげき!
 <&0xd4b1>!<*4>","<&0xd6a0><6> move!
-<&0xd658>!<*4>",,"<&0xd6a0><6> am Zug!
+<&0xd658>!<*4>",,"<&0xd6a0> ist am Zug!
 <&0xd658>!<*4>",,
 0x11403c,"<S0>これでいいですか?
    はい    いいえ<*4>","<S0>Are you sure?
@@ -89,17 +89,17 @@ Denma-Power!<*5>",,
  Status<*4>",,"<S0> Kampf<0><0><0><0><0>Flucht
  Status<*4>",,
 0x11404e,"<&0xd460>の
-すばやさがアップした!<*5>",<&0xd6a0>'s speed went up!<*5>,,<&0xd6a0>s Tempo wurde erhöht!<*5>,,
+すばやさがアップした!<*5>",<&0xd6a0>'s speed went up!<*5>,,<&0xd6a0>s Tempo ist gestiegen!<*5>,,
 0x114050,"<&0xd460>の
-めいちゅうリつがアップした!<*5>",<&0xd6a0>'s accuracy went up!<*5>,,<&0xd6a0>s Genauigkeit wurde erhöht!<*5>,,
+めいちゅうリつがアップした!<*5>",<&0xd6a0>'s accuracy went up!<*5>,,<&0xd6a0>s Genauigkeit ist gestiegen!<*5>,,
 0x114052,"<&0xd460>の
-かいひリつがアップした!<*5>",<&0xd6a0>'s evasion went up!<*5>,,<&0xd6a0>s Fluchtwert erhöht!<*5>,,
+かいひリつがアップした!<*5>",<&0xd6a0>'s evasion went up!<*5>,,<&0xd6a0>s Fluchtwert ist gestiegen!<*5>,,
 0x114054,"<&0xd460>の
-こうげきリょくがアップした!<*5>",<&0xd6a0>'s attack power went up!<*5>,,<&0xd6a0>s Angriffskraft wurde erhöht!<*5>,,
+こうげきリょくがアップした!<*5>",<&0xd6a0>'s attack power went up!<*5>,,<&0xd6a0>s Angriff ist gestiegen!<*5>,,
 0x114056,"<&0xd460>の
-でんまリょくがアップした!<*5>",<&0xd6a0>'s Denma attack went up!<*5>,,<&0xd6a0>s Denma-Angriffskraft wurde erhöht!<*5>,,
+でんまリょくがアップした!<*5>",<&0xd6a0>'s Denma attack went up!<*5>,,<&0xd6a0>s Denma-Angriff ist gestiegen!<*5>,,
 0x114058,"<&0xd460>の
-ぼうぎょリょくがアップした!<*5>",<&0xd6a0>'s defense went up!<*5>,,<&0xd6a0>s Abwehr wurde erhöht!<*5>,,
+ぼうぎょリょくがアップした!<*5>",<&0xd6a0>'s defense went up!<*5>,,<&0xd6a0>s Abwehr ist gestiegen!<*5>,,
 0x11405a,"<&0xd460>の
 たいリょくがかいふくした!<*5>",<&0xd6a0> recovered HP!<*5>,,<&0xd6a0> hat LP wiederhergestellt!<*5>,,
 0x11405c,どくのダメージ!<*5>,Poison damage!<*5>,,Das Gift verursacht Schaden!<*5>,,

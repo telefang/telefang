@@ -1,31 +1,31 @@
 #,Japanese,English,Draft version,German,Draft version (German),Notes
-1,トロンコむら すいげん,Toronko Village Spring«0xe0»«0»,,,,The strings presented here are matched up with a mapping .csv in the Git project.
-2,オ-キッドなかのしま4かい,.«0xe0»«0»,,,,"Japanese strings presented here are for reference only,"
-3,クリノンむら ちか1かい,Kurinon Village B1F«0xe0»«0»,,,,"they do not match the Japanese version's string table,"
-4,クリノンむら ちか2かい,Kurinon Village B2F«0xe0»«0»,,,,as English and other patched versions have altered the order of these strings.
-5,クラフトけんきゅうじょ,Craft Research Center«0xe0»«0»,,,,
-6,ディメンザのやしき,Dimenza's Mansion«0xe0»«0»,,,,
-7,アンテナのき 1かい,Antenna Tree 1F«0xe0»«0»,,,,
-8,アンテナのき 2かい,Antenna Tree 2F«0xe0»«0»,,,,
-9,アンテナのき 3かい,Antenna Tree 3F«0xe0»«0»,,,,
-10,アンテナのき 4かい,Antenna Tree 4F«0xe0»«0»,,,,
-11,アンテナのき 5かい,Antenna Tree 5F«0xe0»«0»,,,,
-12,ペペリやま ふもと,Pepperi Mountain (Base)«0xe0»«0»,,,,
-13,ペペリやま ちゅうふく,Pepperi Mountain«0xe2»(Center)«0xe0»«0»,,,,
-16,ペペリやま さんちょう,Pepperi Mountain«0xe2»(Summit)«0xe0»«0»,,,,TODO: Make sure these fit on-screen.
-17,カクトスいせき,Cactos Ruins«0xe0»«0»,,,,
-25,ブリオン 1,Burion 1«0xe0»«0»,,,,
-26,ブリオン 2,Burion 2«0xe0»«0»,,,,
-27,ブリオン 3,Burion 3«0xe0»«0»,,,,
-28,ブリオン 4,Burion 4«0xe0»«0»,,,,
-29,ブリオン 5,Burion 5«0xe0»«0»,,,,
-30,ブリオン 6,Burion 6«0xe0»«0»,,,,
-31,ブリオン 7,Burion 7«0xe0»«0»,,,,
-32,ブリオン 8,Burion 8«0xe0»«0»,,,,
-33,ブリオン 9,Burion 9«0xe0»«0»,,,,
-34,1かい,1F«0xe0»«0»,,,,
-35,ちか1かい,B1F«0xe0»«0»,,,,
+1,トロンコむら すいげん,Tronco Village Spring,,,,The strings presented here are matched up with a mapping .csv in the Git project.
+2,オーキッドなかのしま4かい,.,Orchid Nakanoshima 4F (unused),,,"Japanese strings presented here are for reference only,"
+3,クリノンむら ちか1かい,Krinon Village B1F,,,,"they do not match the Japanese version's string table,"
+4,クリノンむら ちか2かい,Krinon Village B2F,,,,as English and other patched versions have altered the order of these strings.
+5,クラフトけんきゅうじょ,Craft Research Center,Craft Reseach Lab ?,,,
+6,ディメンザのやしき,Dimenza's Mansion,,,,TODO: Make sure these all fit on-screen.
+7,アンテナのき 1かい,Antenna Tree 1F,,,,
+8,アンテナのき 2かい,Antenna Tree 2F,,,,
+9,アンテナのき 3かい,Antenna Tree 3F,,,,
+10,アンテナのき 4かい,Antenna Tree 4F,,,,
+11,アンテナのき 5かい,Antenna Tree 5F,,,,
+12,ペペリやま ふもと,Mt. Peperi (Base),,,,
+13,ペペリやま ちゅうふく,Mt. Peperi (Center),,,,
+16,ペペリやま さんちょう,Mt. Peperi (Summit),,,,
+17,カクトスいせき,Cactos Ruins,,,,
+25,ブリオン 1,Bryon 1,,,,These should really be 1F or B1F to make the spacial arrangement of the dungeon a bit clearer.
+26,ブリオン 2,Bryon 2,,,,
+27,ブリオン 3,Bryon 3,,,,
+28,ブリオン 4,Bryon 4,,,,
+29,ブリオン 5,Bryon 5,,,,
+30,ブリオン 6,Bryon 6,,,,
+31,ブリオン 7,Bryon 7,,,,
+32,ブリオン 8,Bryon 8,,,,
+33,ブリオン 9,Bryon 9,,,,
+34,1かい,1F,,,,Couldn't hurt to be more specific with these too.
+35,ちか1かい,B1F,,,,
 36,ちか2かい,B2F,,,,
-37,みずのほこら,Water shrine,,,,These strings do not appear to be used.
-38,もリのほこら,Forest shrine,,,,
-39,すなのほこら,Desert shrine,,,,
+37,みずのほこら,.,Water Shrine (unused),,,These strings do not appear to be used. 
+38,もリのほこら,.,Forest Shrine (unused),,,"They were probably intended for the caves in Iris, Freesia, and south of Barran."
+39,すなのほこら,.,Desert Shrine (unused),,,

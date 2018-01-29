@@ -292,8 +292,9 @@ ScreenSaveDeletedGfxEnd
 
 SECTION "Menu - Unk Compressed GFX", ROMX[$7561], BANK[$3b]
 MenuUnkGfx:
-	; corrupted
-	INCBIN "gfx/unknown_trashbytes.bin"
+	dbw NOT_COMPRESSED, MenuUnkGfxEnd - MenuUnkGfx - 3
+	INCBIN "gfx/menu/unk.2bpp"
+MenuUnkGfxEnd
 
 SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$3b]
 MenuMiscSpritesGfx:

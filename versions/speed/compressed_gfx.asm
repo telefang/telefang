@@ -321,8 +321,8 @@ MenuMain2Gfx:
 MenuMain2GfxEnd
 
 MenuUnkGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/unk.malias"
+	dbw NOT_COMPRESSED, MenuUnkGfxEnd - MenuUnkGfx - 3
+	INCBIN "gfx/menu/unk.2bpp"
 MenuUnkGfxEnd
 
 MenuTotalGfx:
