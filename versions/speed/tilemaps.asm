@@ -32,17 +32,17 @@ Tilemap_BANK_0::
 	dw Tilemap_menu_empty_menu_tmap
 	dw Tilemap_menu_empty_expanded_option_tmap
 	dw Tilemap_titlemenu_time_input_screen
-	dw Tilemap_unknown_tilemap_0_13
-	dw Tilemap_unknown_tilemap_0_14
+	dw Tilemap_pausemenu_phoneime_hiragana_indicator_tmap
+	dw Tilemap_pausemenu_phoneime_katagana_indicator_tmap
 	dw Tilemap_pausemenu_resources_options_screen_tmap
 	dw Tilemap_unknown_tilemap_0_16
 	dw Tilemap_unknown_tilemap_0_17
 	dw Tilemap_phoneconversation_window_tmap
-	dw Tilemap_unknown_tilemap_0_19
+	dw Tilemap_pausemenu_phoneime_number_indicator_tmap
 	dw Tilemap_phoneconversation_monster_name_tmap
-	dw Tilemap_unknown_tilemap_0_1b
-	dw Tilemap_unknown_tilemap_0_1b
-	dw Tilemap_unknown_tilemap_0_1c
+	dw Tilemap_pausemenu_resources_scrolling_menu_1_tmap
+	dw Tilemap_pausemenu_resources_scrolling_menu_1_tmap
+	dw Tilemap_pausemenu_resources_scrolling_menu_2_tmap
 	dw Tilemap_pausemenu_resources_controls_hint_tmap
 	dw Tilemap_pausemenu_resources_controls_hint_2_tmap
 	dw Tilemap_pausemenu_resources_phone_window_tmap
@@ -69,7 +69,7 @@ Tilemap_BANK_0::
 	dw Tilemap_titlemenu_buttons_continue_tmap
 	dw Tilemap_titlemenu_buttons_soundtest_tmap
 	dw Tilemap_titlemenu_buttons_link_tmap
-	dw Tilemap_unknown_tilemap_0_37
+	dw Tilemap_titlemenu_screens_denjuu_nickname_tmap
 	dw Tilemap_titlemenu_sound_test_tmap
 	dw Tilemap_pausemenu_calls_screen_tmap
 	dw Tilemap_pausemenu_sms_select_tmap
@@ -99,7 +99,7 @@ Tilemap_BANK_0::
 	dw Tilemap_phoneconversation_backgrounds_ocean_tmap
 	dw Tilemap_phoneconversation_backgrounds_desert_tmap
 	dw Tilemap_menu_sms_contents_tmap
-	dw Tilemap_unknown_tilemap_0_4d
+	dw Tilemap_pausemenu_contact_ringtone_assign_tmap
 	dw Tilemap_unknown_tilemap_0_4e
 	dw Tilemap_titlemenu_save_overwrite_warning_tmap
 	dw Tilemap_unknown_tilemap_0_50
@@ -109,23 +109,23 @@ Tilemap_BANK_0::
 	dw Tilemap_menu_multiplayer_tmap
 	dw Tilemap_menu_multiplayer_tmap
 	dw Tilemap_menu_multiplayer_gameboys_tmap
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
-	dw Tilemap_unknown_tilemap_0_54
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
+	dw Tilemap_contactenlist_screen_tmap
 	dw Tilemap_unknown_tilemap_0_55
-	dw Tilemap_unknown_tilemap_0_56
+	dw Tilemap_screen_game_over_tmap
 	dw Tilemap_unknown_tilemap_0_57
 	dw Tilemap_unknown_tilemap_0_58
 	dw Tilemap_unknown_tilemap_0_58
@@ -199,7 +199,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_92
 	dw Tilemap_unknown_tilemap_0_93
 	dw Tilemap_unknown_tilemap_0_94
-	dw Tilemap_unknown_tilemap_0_95
+	dw Tilemap_linkbattle_vs_badge_tmap
 	dw Tilemap_menu_multiplayer_trade_tmap
 	dw Tilemap_menu_multiplayer_melody_transfer_tmap
 	dw Tilemap_menu_link_error_tmap
@@ -296,13 +296,13 @@ Tilemap_titlemenu_time_input_screen::
 	incbin "components/titlemenu/time_input_screen.tmap"
 Tilemap_titlemenu_time_input_screen_END
 
-Tilemap_unknown_tilemap_0_13::
-	incbin "gfx/unknown/tilemap_0/13.tmap"
-Tilemap_unknown_tilemap_0_13_END
+Tilemap_pausemenu_phoneime_hiragana_indicator_tmap::
+	incbin "components/pausemenu/phoneime/hiragana_indicator_tmap.tmap"
+Tilemap_pausemenu_phoneime_hiragana_indicator_tmap_END
 
-Tilemap_unknown_tilemap_0_14::
-	incbin "gfx/unknown/tilemap_0/14.tmap"
-Tilemap_unknown_tilemap_0_14_END
+Tilemap_pausemenu_phoneime_katagana_indicator_tmap::
+	incbin "components/pausemenu/phoneime/katagana_indicator_tmap.tmap"
+Tilemap_pausemenu_phoneime_katagana_indicator_tmap_END
 
 Tilemap_pausemenu_resources_options_screen_tmap::
 	incbin "components/pausemenu/resources/options_screen_tmap.tmap"
@@ -320,21 +320,21 @@ Tilemap_phoneconversation_window_tmap::
 	incbin "gfx/phoneconversation/window_tmap.tmap"
 Tilemap_phoneconversation_window_tmap_END
 
-Tilemap_unknown_tilemap_0_19::
-	incbin "gfx/unknown/tilemap_0/19.tmap"
-Tilemap_unknown_tilemap_0_19_END
+Tilemap_pausemenu_phoneime_number_indicator_tmap::
+	incbin "components/pausemenu/phoneime/number_indicator_tmap.tmap"
+Tilemap_pausemenu_phoneime_number_indicator_tmap_END
 
 Tilemap_phoneconversation_monster_name_tmap::
 	incbin "gfx/phoneconversation/monster_name_tmap.tmap"
 Tilemap_phoneconversation_monster_name_tmap_END
 
-Tilemap_unknown_tilemap_0_1b::
-	incbin "gfx/unknown/tilemap_0/1b.tmap"
-Tilemap_unknown_tilemap_0_1b_END
+Tilemap_pausemenu_resources_scrolling_menu_1_tmap::
+	incbin "components/pausemenu/resources/scrolling_menu_1_tmap.tmap"
+Tilemap_pausemenu_resources_scrolling_menu_1_tmap_END
 
-Tilemap_unknown_tilemap_0_1c::
-	incbin "gfx/unknown/tilemap_0/1c.tmap"
-Tilemap_unknown_tilemap_0_1c_END
+Tilemap_pausemenu_resources_scrolling_menu_2_tmap::
+	incbin "components/pausemenu/resources/scrolling_menu_2_tmap.tmap"
+Tilemap_pausemenu_resources_scrolling_menu_2_tmap_END
 
 Tilemap_pausemenu_resources_controls_hint_tmap::
 	incbin "components/pausemenu/resources/controls_hint_tmap.tmap"
@@ -440,9 +440,9 @@ Tilemap_titlemenu_buttons_link_tmap::
 	incbin "components/titlemenu/buttons/link_tmap.tmap"
 Tilemap_titlemenu_buttons_link_tmap_END
 
-Tilemap_unknown_tilemap_0_37::
-	incbin "gfx/unknown/tilemap_0/37.tmap"
-Tilemap_unknown_tilemap_0_37_END
+Tilemap_titlemenu_screens_denjuu_nickname_tmap::
+	incbin "components/titlemenu/screens/denjuu_nickname_tmap.tmap"
+Tilemap_titlemenu_screens_denjuu_nickname_tmap_END
 
 Tilemap_titlemenu_sound_test_tmap::
 	incbin "components/titlemenu/sound/test_tmap.tmap"
@@ -528,9 +528,9 @@ Tilemap_menu_sms_contents_tmap::
 	incbin "gfx/menu/sms/contents_tmap.tmap"
 Tilemap_menu_sms_contents_tmap_END
 
-Tilemap_unknown_tilemap_0_4d::
-	incbin "gfx/unknown/tilemap_0/4d.tmap"
-Tilemap_unknown_tilemap_0_4d_END
+Tilemap_pausemenu_contact_ringtone_assign_tmap::
+	incbin "components/pausemenu/contact/ringtone_assign_tmap.tmap"
+Tilemap_pausemenu_contact_ringtone_assign_tmap_END
 
 Tilemap_unknown_tilemap_0_4e::
 	incbin "gfx/unknown/tilemap_0/4e.tmap"
@@ -556,17 +556,17 @@ Tilemap_menu_multiplayer_gameboys_tmap::
 	incbin "gfx/menu/multiplayer/gameboys_tmap.tmap"
 Tilemap_menu_multiplayer_gameboys_tmap_END
 
-Tilemap_unknown_tilemap_0_54::
-	incbin "gfx/unknown/tilemap_0/54.tmap"
-Tilemap_unknown_tilemap_0_54_END
+Tilemap_contactenlist_screen_tmap::
+	incbin "components/contactenlist/screen_tmap.tmap"
+Tilemap_contactenlist_screen_tmap_END
 
 Tilemap_unknown_tilemap_0_55::
 	incbin "gfx/unknown/tilemap_0/55.tmap"
 Tilemap_unknown_tilemap_0_55_END
 
-Tilemap_unknown_tilemap_0_56::
-	incbin "versions/speed/gfx/unknown/tilemap_0/56.tmap"
-Tilemap_unknown_tilemap_0_56_END
+Tilemap_screen_game_over_tmap::
+	incbin "versions/speed/gfx/screen/game_over_tmap.tmap"
+Tilemap_screen_game_over_tmap_END
 
 Tilemap_unknown_tilemap_0_57::
 	incbin "gfx/unknown/tilemap_0/57.tmap"
@@ -816,9 +816,9 @@ Tilemap_unknown_tilemap_0_94::
 	incbin "gfx/unknown/tilemap_0/94.tmap"
 Tilemap_unknown_tilemap_0_94_END
 
-Tilemap_unknown_tilemap_0_95::
-	incbin "gfx/unknown/tilemap_0/95.tmap"
-Tilemap_unknown_tilemap_0_95_END
+Tilemap_linkbattle_vs_badge_tmap::
+	incbin "components/linkbattle/vs_badge_tmap.tmap"
+Tilemap_linkbattle_vs_badge_tmap_END
 
 Tilemap_menu_multiplayer_trade_tmap::
 	incbin "gfx/menu/multiplayer/trade_tmap.tmap"
