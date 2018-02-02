@@ -33,7 +33,7 @@ Tilemap_BANK_0::
 	dw Tilemap_menu_empty_expanded_option_tmap
 	dw Tilemap_titlemenu_time_input_screen
 	dw Tilemap_pausemenu_phoneime_hiragana_indicator_tmap
-	dw Tilemap_pausemenu_phoneime_katagana_indicator_tmap
+	dw Tilemap_pausemenu_phoneime_katakana_indicator_tmap
 	dw Tilemap_pausemenu_resources_options_screen_tmap
 	dw Tilemap_unknown_tilemap_0_16
 	dw Tilemap_unknown_tilemap_0_17
@@ -300,9 +300,9 @@ Tilemap_pausemenu_phoneime_hiragana_indicator_tmap::
 	incbin "components/pausemenu/phoneime/hiragana_indicator_tmap.tmap"
 Tilemap_pausemenu_phoneime_hiragana_indicator_tmap_END
 
-Tilemap_pausemenu_phoneime_katagana_indicator_tmap::
-	incbin "components/pausemenu/phoneime/katagana_indicator_tmap.tmap"
-Tilemap_pausemenu_phoneime_katagana_indicator_tmap_END
+Tilemap_pausemenu_phoneime_katakana_indicator_tmap::
+	incbin "components/pausemenu/phoneime/katakana_indicator_tmap.tmap"
+Tilemap_pausemenu_phoneime_katakana_indicator_tmap_END
 
 Tilemap_pausemenu_resources_options_screen_tmap::
 	incbin "components/pausemenu/resources/options_screen_tmap.tmap"
