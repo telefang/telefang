@@ -116,7 +116,7 @@ Pointer,Japanese,English,Draft version,Notes
 0x4006e,"<S0>ヘルメットにからだをすっぽリ
 いれて ダメージをかるくする<*4>",<S0>Mitigates damage by covering itself entirely with its helmet.<*4>,<S0>Mitigates damage by covering itself entirely with its helmet.<*4>,
 0x40070,"<S0>おこるとヒレをたて いかくし
-てきをひるませ こうげきする<*4>","<S0>When angered, its fins flare up to intimidate the foe. It attacks while they're startled.<*4>","<S0>When angered, its fins flare up to intimidate the foe. It attacks while they're startled.<*4>",
+てきをひるませ こうげきする<*4>","<S0>When angered, its fins fan out to intimidate the foe. It attacks while they're startled.<*4>","<S0>When angered, its fins fan out to intimidate the foe. It attacks while they're startled.<*4>",
 0x40072,"<S0>まるまって トゲのボールに
 すがたをかえて とっしんする<*4>",<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,
 0x40074,"<S0>からだが あなだらけなので
@@ -254,15 +254,15 @@ Pointer,Japanese,English,Draft version,Notes
 0x400f4,"<S0>ハネのようなものが せなかに
 あるが はたしてとベるのか?<*4>","<S0>It has wing-like plates on its back, but can it use them to fly?<*4>","<S0>It has wing-like plates on its back, but can it use them to fly?<*4>",
 0x400f6,"<S0>おおきなツバサを はばたかせ 
-こうそくで そらをとぶ<*4>",/0x400f6/<*4>,,
+こうそくで そらをとぶ<*4>",/0x400f6/<*4>,<S0>Swiftly takes to the skies with a flap of its large wings.<*4>,
 0x400f8,"<S0>しょくしゅを ばたつかせると
-すこしなら とベるらしい?<*4>",/0x400f8/<*4>,,
+すこしなら とベるらしい?<*4>",/0x400f8/<*4>,"<S0>If it flaps its wings, it might be able to fly just a little bit...?<*4>",
 0x400fa,"<S0>ナイフのような するどい
-シッポとツメで こうげきする<*4>",/0x400fa/<*4>,,
+シッポとツメで こうげきする<*4>",/0x400fa/<*4>,"<S0>Attacks using its sharp, knife-like tail and claws.<*4>",
 0x400fc,"<S0>くびの カバーを ひらいて
-ダメージを かるくする<*4>",/0x400fc/<*4>,,
+ダメージを かるくする<*4>",/0x400fc/<*4>,"<S0>By fanning out the shell on its neck, it defends against incoming damage.<*4>",
 0x400fe,"<S0>おおきくて リっぱなあしで
-てきを ふみつぶしてしまう<*4>",/0x400fe/<*4>,,
+てきを ふみつぶしてしまう<*4>",/0x400fe/<*4>,"<S0>Tramples all over its foes with its large, imposing feet.<*4>",
 0x40100,"<S0>まきついている ほうたいで
 トモダチを ちリょうする<*4>",/0x40100/<*4>,,
 0x40102,"<S0>おおきなハサミにつかまったら
