@@ -39,7 +39,7 @@ OBJS := components/compression/malias.o \
      components/pausemenu/inventory_utils.o components/pausemenu/indicators.o \
      components/pausemenu/save/statemachine.o components/pausemenu/save/input.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
-     components/melodyedit/spot_tilemaps.o \
+     components/melodyedit/ringtone_menu.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
      components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
