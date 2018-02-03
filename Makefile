@@ -93,6 +93,7 @@ OBJS := components/compression/malias.o \
      components/victory/ui_utils.o components/victory/game_statemachine.o \
      components/victory/defection_statemachine.o components/victory/contact_utils.o \
      components/linktrade/loss_statemachine.o \
+     components/zukan/completion_certificate_tmap.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
 	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
