@@ -21,6 +21,9 @@ SECTION "System Gameloop WRAM", WRAM0[$C3C0]
 W_FrameCounter:: ds 1
 W_FrameCompleted:: ds 1
 
+SECTION "System Gameloop WRAM 2", WRAM0[$CB2C]
+W_System_CountdownTimer:: ds 1
+
 ;Much of this corresponds with code that hasn't been imported into this
 ;project yet, so we're using EQUates for everything that's still missing
 SECTION "EntryPoint", ROM0[$0150]

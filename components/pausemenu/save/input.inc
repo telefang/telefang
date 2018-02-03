@@ -1,0 +1,1 @@
+M_PauseMenu_SaveAnimationDelay EQU $40
