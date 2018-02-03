@@ -15,12 +15,12 @@ MelodyEdit_DrawPageIndicator::
     ld a, [W_MelodyEdit_CurrentPage]
     inc a
     
-.decimalizeValue
+MelodyEdit_DrawIndicatorValue::
     push hl
     call Status_DecimalizeStatValue
     pop hl
     
-.drawDigits
+MelodyEdit_DrawDecodedIndicatorValue::
     ld a, [W_GenericRegPreserve]
     and $F0
     swap a
@@ -53,7 +53,7 @@ MelodyEdit_DrawTempoIndicator::
     inc hl
     ld a, [W_MelodyEdit_Tempo]
     inc a
-    jp MelodyEdit_DrawPageIndicator.decimalizeValue
+    jp MelodyEdit_DrawIndicatorValue
     
 MelodyEdit_DrawDataIndicator::
     call MelodyEdit_CountData
@@ -79,7 +79,7 @@ MelodyEdit_DrawDataIndicator::
     ld [hli], a
     ei
     
-    jp MelodyEdit_DrawPageIndicator.drawDigits
+    jp MelodyEdit_DrawDecodedIndicatorValue
     
 MelodyEdit_CountData::
     xor a

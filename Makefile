@@ -41,8 +41,10 @@ OBJS := components/compression/malias.o \
      components/pausemenu/phoneime_diacritics.o components/pausemenu/phoneime_glyph.o \
      components/pausemenu/contact_statemachine.o components/pausemenu/sms_statemachine.o \
      components/pausemenu/sms_utils.o components/pausemenu/inventory_statemachine.o \
-     components/pausemenu/inventory_utils.o \
+     components/pausemenu/inventory_utils.o components/pausemenu/indicators.o \
+     components/pausemenu/save/statemachine.o components/pausemenu/save/input.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
+     components/melodyedit/spot_tilemaps.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
      components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
@@ -86,6 +88,7 @@ OBJS := components/compression/malias.o \
 	  components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
      components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
      components/saveclock/initialize_save.o components/saveclock/integrity.o \
+     components/saveclock/persistence.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
