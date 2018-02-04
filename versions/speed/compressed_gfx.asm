@@ -259,7 +259,7 @@ MenuNumbersGfx:
 	INCBIN "gfx/menu/numbers.malias"
 MenuNumbersGfxEnd
 
-SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$37]
+SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$3B]
 MenuMiscSpritesGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/misc_sprites.malias"

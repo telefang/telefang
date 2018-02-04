@@ -234,6 +234,11 @@ TitleSpritesGfx:
 	INCBIN "gfx/title/sprites.2bpp"
 TitleSpritesGfxEnd
 
+MenuStatsGfx:
+	dbw NOT_COMPRESSED, MenuStatsGfxEnd - MenuStatsGfx - 3
+	INCBIN "gfx/menu/stats.2bpp"
+MenuStatsGfxEnd
+
 UnknownFontGfx:
 	db COMPRESSED
 	INCBIN "gfx/unknown_font.malias"
@@ -254,113 +259,98 @@ MenuNumbersGfx:
 	INCBIN "gfx/menu/numbers.malias"
 MenuNumbersGfxEnd
 
-SECTION "Battle Messages Compressed GFX", ROMX[$4417], BANK[$3b]
-BattleMessagesGfx:
-	db COMPRESSED
-	INCBIN "gfx/battle_messages.malias"
-BattleMessagesGfxEnd
-
-SECTION "Menu - Options Compressed GFX", ROMX[$665a], BANK[$3b]
-MenuOptionsGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/options.malias"
-MenuOptionsGfxEnd
-	INCBIN "gfx/menu/options_trashbytes.bin"
-
-SECTION "Cutscene - Connected1 Compressed GFX", ROMX[$4e54], BANK[$3b]
-CutsceneConnected1Gfx:
-	db COMPRESSED
-	INCBIN "gfx/cutscene/connected1.malias"
-CutsceneConnected1GfxEnd
-
-SECTION "Cutscene - Connected2 Compressed GFX", ROMX[$56c1], BANK[$3b]
-CutsceneConnected2Gfx:
-	db COMPRESSED
-	INCBIN "gfx/cutscene/connected2.malias"
-CutsceneConnected2GfxEnd
-
-SECTION "Evolve - Bg Compressed GFX", ROMX[$59fc], BANK[$3b]
-EvolveBgGfx:
-	db COMPRESSED
-	INCBIN "gfx/evolve/bg.malias"
-EvolveBgGfxEnd
-
-SECTION "Screen - Save Deleted Compressed GFX", ROMX[$483f], BANK[$3b]
-ScreenSaveDeletedGfx:
-	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
-	INCBIN "versions/power/gfx/screen/save_deleted.2bpp"
-ScreenSaveDeletedGfxEnd
-
-SECTION "Menu - Unk Compressed GFX", ROMX[$7561], BANK[$3b]
-MenuUnkGfx:
-	; corrupted
-	INCBIN "gfx/unknown_trashbytes.bin"
-
-SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$3b]
+SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$3B]
 MenuMiscSpritesGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/misc_sprites.malias"
 MenuMiscSpritesGfxEnd
 
-SECTION "Menu - Total Compressed GFX", ROMX[$7849], BANK[$3b]
-MenuTotalGfx:
+BattleMessagesGfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/total.malias"
-MenuTotalGfxEnd
-	INCBIN "gfx/menu/total_trashbytes.bin"
+	INCBIN "gfx/battle_messages.malias"
+BattleMessagesGfxEnd
 
-SECTION "Menu - Dmelo Compressed GFX", ROMX[$61cb], BANK[$3b]
-MenuDmeloGfx:
+ScreenSaveDeletedGfx:
+	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
+	INCBIN "versions/power/gfx/screen/save_deleted.2bpp"
+ScreenSaveDeletedGfxEnd
+
+CutsceneConnected1Gfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/dmelo.malias"
-MenuDmeloGfxEnd
-	INCBIN "gfx/menu/dmelo_trashbytes.bin"
+	INCBIN "gfx/cutscene/connected1.malias"
+CutsceneConnected1GfxEnd
 
-SECTION "Menu - Got Number Compressed GFX", ROMX[$5e86], BANK[$3b]
+CutsceneConnected2Gfx:
+	db COMPRESSED
+	INCBIN "gfx/cutscene/connected2.malias"
+CutsceneConnected2GfxEnd
+
+EvolveBgGfx:
+	db COMPRESSED
+	INCBIN "gfx/evolve/bg.malias"
+EvolveBgGfxEnd
+
 MenuGotNumberGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/got_number.malias"
 MenuGotNumberGfxEnd
 
-SECTION "Menu - Nickname Compressed GFX", ROMX[$7acc], BANK[$3b]
-MenuNicknameGfx:
+MenuDmeloGfx:
 	db COMPRESSED
-	INCBIN "gfx/menu/nickname.malias"
-MenuNicknameGfxEnd
-	INCBIN "gfx/menu/nickname_trashbytes.bin"
+	INCBIN "gfx/menu/dmelo.malias"
+MenuDmeloGfxEnd
 
-SECTION "Evolve - Bg2 Compressed GFX", ROMX[$69ba], BANK[$3b]
+MenuOptionsGfx:
+	db COMPRESSED
+	INCBIN "gfx/menu/options.malias"
+MenuOptionsGfxEnd
+
 EvolveBg2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg2.malias"
 EvolveBg2GfxEnd
 
-SECTION "Menu - Main1 Compressed GFX", ROMX[$6d56], BANK[$3b]
 MenuMain1Gfx:
 	dbw NOT_COMPRESSED, MenuMain1GfxEnd - MenuMain1Gfx - 3
 	INCBIN "components/pausemenu/resources/text1.2bpp"
 MenuMain1GfxEnd
 
-SECTION "Menu - Main2 Compressed GFX", ROMX[$720b], BANK[$3b]
 MenuMain2Gfx:
 	dbw NOT_COMPRESSED, MenuMain2GfxEnd - MenuMain2Gfx - 3
 	INCBIN "components/pausemenu/resources/text2.2bpp"
 MenuMain2GfxEnd
 
-SECTION "Evolve - Bg3 Compressed GFX", ROMX[$4000], BANK[$61]
+MenuUnkGfx:
+	db COMPRESSED
+	INCBIN "gfx/menu/unk.malias"
+MenuUnkGfxEnd
+
+MenuTotalGfx:
+	db COMPRESSED
+	INCBIN "gfx/menu/total.malias"
+MenuTotalGfxEnd
+
+MenuNicknameGfx:
+	db COMPRESSED
+	INCBIN "gfx/menu/nickname.malias"
+MenuNicknameGfxEnd
+
+MenuMetGfx:
+	db COMPRESSED
+	INCBIN "gfx/menu/met.malias"
+MenuMetGfxEnd
+
+SECTION "Evolve - Bg4 Compressed GFX", ROMX[$4000], BANK[$61]
 EvolveBg3Gfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg3.malias"
 EvolveBg3GfxEnd
 
-SECTION "Evolve - Bg4 Compressed GFX", ROMX[$4350], BANK[$61]
 EvolveBg4Gfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg4.malias"
 EvolveBg4GfxEnd
-	INCBIN "gfx/evolve/bg4_trashbytes.bin"
 
-SECTION "Evolve - Cannot Compressed GFX", ROMX[$46e3], BANK[$61]
 EvolveCannotGfx:
 	dbw NOT_COMPRESSED, EvolveCannotGfxEnd - EvolveCannotGfx - 3
 	INCBIN "gfx/evolve/cannot.2bpp"
@@ -535,13 +525,6 @@ ScreenGameOver2Gfx:
 	INCBIN "versions/power/gfx/screen/game_over2.malias"
 ScreenGameOver2GfxEnd
 
-SECTION "Menu - Met Compressed GFX", ROMX[$7d49], BANK[$3b]
-MenuMetGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/met.malias"
-MenuMetGfxEnd
-	INCBIN "gfx/menu/met_trashbytes.bin"
-
 SECTION "Cutscene - Antenna Tree Compressed GFX", ROMX[$6c7f], BANK[$39]
 CutsceneAntennaTreeGfx:
 	db COMPRESSED
@@ -598,11 +581,6 @@ MenuMetDMGGfx:
 	dbw NOT_COMPRESSED, MenuMetDMGGfxEnd - MenuMetDMGGfx - 3
 	INCBIN "gfx/menu/met_dmg.2bpp"
 MenuMetDMGGfxEnd
-
-MenuStatsGfx:
-	dbw NOT_COMPRESSED, MenuStatsGfxEnd - MenuStatsGfx - 3
-	INCBIN "gfx/menu/stats.2bpp"
-MenuStatsGfxEnd
 
 TitleSpritesSgbGfx:
 	dbw NOT_COMPRESSED, TitleSpritesSgbGfxEnd - TitleSpritesSgbGfx - 3
