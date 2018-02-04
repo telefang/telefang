@@ -844,7 +844,7 @@ Tilemap_unknown_tilemap_0_9b::
 	incbin "gfx/unknown/tilemap_0/9b.tmap"
 Tilemap_unknown_tilemap_0_9b_END
 
-SECTION "tilemap Bank 1", ROMX[$4000], BANK[$3f]
+SECTION "tilemap Bank 1", ROMX[$4000], BANK[$2D]
 Tilemap_BANK_1::
 	dw Tilemap_zukan_page_tmap
 	dw Tilemap_zukan_page_tmap
