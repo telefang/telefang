@@ -186,11 +186,13 @@ clean:
 
 %.2bpp: %.png
 	@echo "Building" $<
+	@./rip_scripts/is_nonindexed_png.sh $<
 	@rm -f $@
 	@rgbgfx -d 2 -o $@ $<
 
 %.1bpp: %.png
 	@echo "Building" $<
+	@./rip_scripts/is_nonindexed_png.sh $<
 	@rm -f $@
 	@rgbgfx -d 1 -o $@ $<
 
