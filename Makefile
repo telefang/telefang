@@ -95,7 +95,7 @@ OBJS := components/compression/malias.o \
      components/linktrade/loss_statemachine.o \
      components/zukan/completion_certificate_tmap.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
-	  gfx/statusbar.o \
+	  gfx/statusbar.o gfx/denjuu.o \
      script/mainscript.o script/stringtable.o
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
