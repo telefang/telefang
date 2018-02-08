@@ -194,7 +194,7 @@ clean:
 
 $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 	@rm -f $@
-	$(PYTHON) rip_scripts/mainscript_text.py make_tbl $(BASEROM_POWER) $(OBJS_MESSAGE)
+	$(PYTHON) rip_scripts/mainscript_text.py make_tbl --window_width=128 $(BASEROM_POWER) $(OBJS_MESSAGE)
 
 %.stringtbl: %.csv
 	@rm -f $@
