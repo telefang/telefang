@@ -44,7 +44,6 @@ def convert_to_wav(filenames=[], options={}):
 
         wave_file.close()
 
-
 def convert_to_pcm(filenames=[], options={}):
     """
     Converts a .wav file into 4-bit pcm data.
@@ -61,7 +60,7 @@ def convert_to_pcm(filenames=[], options={}):
         # Generate a list of clamped samples
         clamped_samples = []
         for sample in samples:
-            clamped_samples.append(int(math.floor(sample / peak_sample * 16)))
+            clamped_samples.append(int(math.floor(sample / peak_sample * 16)) & 0xF)
 
         # The pcm data must be a multiple of 2, so pad the clamped samples with 0.
         while len(clamped_samples) % 2 != 0:
