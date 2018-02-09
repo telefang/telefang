@@ -68,7 +68,7 @@ Victory_CopyIntoTableStaging::
 
 Victory_CopyIntoArg1::
     ld de, W_MainScript_MessageArg1
-    ld b, 9
+    ld b, M_MainScript_MessageArg1Size
     
 .copyLoop
     ld a, [hli]
