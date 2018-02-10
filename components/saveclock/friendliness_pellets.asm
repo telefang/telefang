@@ -44,11 +44,11 @@ SaveClock_IncrementFD::
 SaveClock_IncrementFD_storeFd::
     ld [hl], a
     ld c, a
-    ld a, [$C20B]
+    ld a, [W_PhoneConversation_IncomingCallerFD]
     ld b, a
     ld a, c
     sub b
-    ld [$C20E], a
+    ld [W_PhoneConversation_IncomingCallerFDOffset], a
     
     ld a, 0
     ld [REG_MBC3_SRAMENABLE], a
