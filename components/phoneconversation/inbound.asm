@@ -1,12 +1,8 @@
 INCLUDE "telefang.inc"
 
-W_PhoneConversation_IncomingCallerName EQU $C210
-W_PhoneConversation_IncomingCallerFD EQU $C20B
-W_PhoneConversation_IncomingCallerFDOffset EQU $C20E
-
 SECTION "Phone Conversation Incoming Caller States", ROMX[$5572], BANK[$29]
-PhoneConversation_StateDrawOutgoingCallScreen::
-    ld a, BANK(PhoneConversation_StateDrawOutgoingCallScreen)
+PhoneConversation_StateDrawIncomingCallScreen::
+    ld a, BANK(PhoneConversation_StateDrawIncomingCallScreen)
     ld [W_PreviousBank], a
     call Banked_PhoneConversation_DetermineSceneryType
     
@@ -47,7 +43,7 @@ PhoneConversation_StateDrawOutgoingCallScreen::
     ld a, 0
     ld [$C20F], a
     ld a, 0
-    ld [$C216], a
+    ld [W_PhoneConversation_IncomingCallerName + 6], a
     
     ld a, $38
     ld hl, $8F00
@@ -55,7 +51,7 @@ PhoneConversation_StateDrawOutgoingCallScreen::
     ld bc, $F0
     call Banked_LCDC_LoadTiles
     
-    ld a, BANK(PhoneConversation_StateDrawOutgoingCallScreen)
+    ld a, BANK(PhoneConversation_StateDrawIncomingCallScreen)
     ld [W_PreviousBank], a
     
     ;TODO: I don't know what this code is
@@ -112,7 +108,7 @@ PhoneConversation_DrawIncomingCallerName::
     dec b
     jr nz, .allocateTextArea
     
-    ld b, 8
+    ld b, M_PhoneConversation_IncomingCallerNameSize
     ld hl, $8B00
     ld de, W_PhoneConversation_IncomingCallerName
     
