@@ -47,7 +47,7 @@ TitleScreen_StateLoadGraphicsAndSound::
     call Banked_LoadMaliasGraphics
     
     xor a
-    ld [$C900], a
+    ld [W_Overworld_State], a
     
     ld a, 1
     call Sound_IndexMusicSetBySong
