@@ -89,9 +89,13 @@ PhoneConversation_DrawIncomingCallerName::
     ld hl, SaveClock_LoadDenjuuNicknameByIndex
     call CallBankedFunction_int
     
+    ld hl, $8B00
+    ld b, 8
+    call PhoneConversation_ADVICE_ClearInputTiles
+    
     ld hl, W_SaveClock_NicknameStaging
-    ld de, W_PhoneConversation_IncomingCallerName
-    call Banked_StringTable_PadCopyBuffer
+    ld de, W_MainScript_CenteredNameBuffer
+    call Banked_StringTable_ADVICE_PadCopyBuffer
     
     ld b, 8
     ld c, $B0
@@ -108,9 +112,9 @@ PhoneConversation_DrawIncomingCallerName::
     dec b
     jr nz, .allocateTextArea
     
-    ld b, M_PhoneConversation_IncomingCallerNameSize
+    ld b, M_StringTable_Load8AreaSize + 1
     ld hl, $8B00
-    ld de, W_PhoneConversation_IncomingCallerName
+    ld de, W_MainScript_CenteredNameBuffer
     
 .letterDrawingLoop
     ld a, [de]
@@ -122,15 +126,6 @@ PhoneConversation_DrawIncomingCallerName::
     
 .noTerminate
     jp PhoneConversation_ADVICE_DrawIncomingCallerName
-    
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     
 .adviceComefrom
     ld d, 1
@@ -352,3 +347,39 @@ PhoneConversation_ADVICE_DrawIncomingCallerName::
     jp nz, PhoneConversation_DrawIncomingCallerName.letterDrawingLoop
     jp PhoneConversation_DrawIncomingCallerName.adviceComefrom
 PhoneConversation_ADVICE_DrawIncomingCallerName_END::
+
+PhoneConversation_ADVICE_ClearInputTiles::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr nz, .dmgClear
+    jp .cgbClear
+    
+.dmgClear
+    ld d, $FF
+    ld e, 0
+    jr .clearLoop
+    
+.cgbClear
+    ld d, 0
+    ld e, $FF
+    
+.clearLoop
+    push bc
+    ld c, 8
+    
+.innerLoop
+    call YetAnotherWFB
+    ld a, d
+    ld [hli], a
+    ld a, e
+    call YetAnotherWFB
+    ld [hli], a
+    dec c
+    jr nz, .innerLoop
+    
+    pop bc
+    dec b
+    jr nz, .clearLoop
+    
+    ret
+PhoneConversation_ADVICE_ClearInputTiles_END
