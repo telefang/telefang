@@ -26,12 +26,14 @@ TitleMenu_StoreRTCValues::
     
     cp 0
     jr nz, .writeRTC
-	 
-    ld a, Banked_TitleMenu_ADVICE_PropagateSavedRTC & $FF
-    call PatchUtils_AuxCodeJmp
     
     jr .exitSram
-    
+	 
+    nop
+    nop
+    nop
+    nop
+    nop
     nop
     nop
     
@@ -154,15 +156,4 @@ TitleMenu_ADVICE_LoadRTCValues::
     push hl
     
     ret
-    
-TitleMenu_ADVICE_PropagateSavedRTC::
-    ld a, [W_SaveClock_RealTimeSeconds]
-    ld [W_Overworld_CurrentTimeSeconds], a
-    
-    ld a, [W_SaveClock_RealTimeMinutes]
-    ld [W_Overworld_CurrentTimeMinutes], a
-    
-    ld a, [W_SaveClock_RealTimeHours]
-    ld [W_Overworld_CurrentTimeHours], a
-
-TitleMenu_ADVICE_PropagateSavedRTC_END::
+TitleMenu_ADVICE_LoadRTCValues_END::
