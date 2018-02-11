@@ -59,7 +59,18 @@ memcpy::
 	jr nz, memcpy
 	ret
    
-SECTION "System Memory Copy (Banksafe)", ROM0[$2F7D]
+SECTION "System Memory Copy (Banksafe)", ROM0[$2F76]
+memfill::
+    push bc
+
+.fill_loop
+    ld [hli], a
+    dec b
+    jr nz, .fill_loop
+    
+    pop bc
+    ret
+
 Banked_Memcpy::
     ld a, [W_CurrentBank]
     
@@ -67,7 +78,7 @@ Banked_Memcpy::
     ld a, c
     rst $10
     
-    call .internal
+    call Banked_Memcpy_INTERNAL
     
     pop af
     
@@ -75,11 +86,11 @@ Banked_Memcpy::
     
     ret
     
-.internal
+Banked_Memcpy_INTERNAL::
     ld a, [hli]
     ld [de], a
     inc de
     dec b
-    jr nz, .internal
+    jr nz, Banked_Memcpy_INTERNAL
     
     ret

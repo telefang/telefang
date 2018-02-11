@@ -176,7 +176,7 @@ PauseMenu_SubStateInventoryListingIdle::
     
 .buttonAPressed
     ld a, 3
-    ld [$C900], a
+    ld [W_Overworld_State], a
     
     ld a, [W_PauseMenu_CurrentInventorySlot]
     call PauseMenu_ReadInventorySlotData

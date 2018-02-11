@@ -52,7 +52,7 @@ OBJS := components/compression/malias.o \
      components/mainscript/shop_item_window.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
-     components/overworld/power_antenna.o \
+     components/overworld/power_antenna.o components/overworld/new_save_init.o \
      components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
@@ -104,14 +104,16 @@ OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
      versions/power/gfx/sgb/attrfile.o \
      versions/power/components/titlemenu/state_machine.o \
      versions/power/components/saveclock/integrity.o \
-     versions/power/components/titlescreen/state_machine.o
+     versions/power/components/titlescreen/state_machine.o \
+     versions/power/components/overworld/new_save_init.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
      versions/speed/palettes.o versions/speed/gfx/sgb/border.o \
      versions/speed/gfx/sgb/attrfile.o \
      versions/speed/components/titlemenu/state_machine.o \
      versions/speed/components/saveclock/integrity.o \
-     versions/speed/components/titlescreen/state_machine.o
+     versions/speed/components/titlescreen/state_machine.o \
+     versions/speed/components/overworld/new_save_init.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/1.messages.csv script/story/1.messages.csv \

@@ -87,7 +87,7 @@ TitleMenu_StateDrawMenu::
 .jmp2
     xor a
     ld [W_SerIO_ConnectionState], a
-    ld [$C900], a
+    ld [W_Overworld_State], a
     
     call TitleMenu_ScrollMenu_refresh
     jp System_ScheduleNextSubState
@@ -346,7 +346,7 @@ TitleMenu_StateFadeToOverworldContinue::
     call $3768
     
     ld a, 1
-    ld [$C900], a
+    ld [W_Overworld_State], a
     
     ret
     
