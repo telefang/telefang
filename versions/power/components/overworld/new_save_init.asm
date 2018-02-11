@@ -192,7 +192,7 @@ Overworld_InitializeNewSaveFile::
     ld [W_PreviousBank], a
     ld a, 4
     ld [$C940], a
-    call $30A7
+    call Overworld_ADVICE_PropagateSavedRTC ;also calls $30A7
     
     ld e, a
     ld c, $C7 ; '¦'
