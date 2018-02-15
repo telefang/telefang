@@ -2,6 +2,7 @@ charmap "…", $07
 charmap "‼", $08
 charmap "🎵", $0D
 charmap "♫", $0D
+charmap "♪", $0D
 charmap "⚡", $0E
 charmap " ", $20
 charmap "!", $21
