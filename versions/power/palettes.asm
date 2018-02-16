@@ -295,10 +295,10 @@ LCDC_CGB_BGColorTable::
     dcolor 9, 25, 25
     dcolor 0, 22, 22
 ;Palette 24
-    dcolor 0, 0, 0
-    dcolor 0, 0, 0
-    dcolor 0, 0, 0
-    dcolor 0, 0, 0
+    dcolor 31, 31, 31
+    dcolor 22, 28, 30
+    dcolor 11, 24, 28
+    dcolor 0, 17, 26
 ;Palette 25
     dcolor 0, 0, 0
     dcolor 0, 0, 0
