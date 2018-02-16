@@ -266,8 +266,8 @@ MenuMiscSpritesGfx:
 MenuMiscSpritesGfxEnd
 
 BattleMessagesGfx:
-	db COMPRESSED
-	INCBIN "gfx/battle_messages.malias"
+	dbw NOT_COMPRESSED, BattleMessagesGfxEnd - BattleMessagesGfx - 3
+	INCBIN "gfx/battle_messages.2bpp"
 BattleMessagesGfxEnd
 
 ScreenSaveDeletedGfx:
