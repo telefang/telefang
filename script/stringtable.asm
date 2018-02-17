@@ -35,12 +35,14 @@ StringTable_map_dungeon_strings_old::
 	INCBIN "script/map/dungeon_strings_old.stringblk"
 StringTable_map_dungeon_strings_old_END
 
-SECTION "StringTable_map_location_strings Section", ROMX[$7da0], BANK[$2a]
+;If you need to relocate these, ALSO CHANGE stringtable_names.txt to point to
+;this section, or bad things will happen.
+SECTION "StringTable_map_location_strings Section", ROMX[$7d8b], BANK[$2a]
 StringTable_map_location_strings::
 	INCBIN "script/map/location_strings.stringblk"
 StringTable_map_location_strings_END
 
-SECTION "StringTable_map_dungeon_strings Section", ROMX[$7e65], BANK[$2a]
+SECTION "StringTable_map_dungeon_strings Section", ROMX[$7ea9], BANK[$2a]
 StringTable_map_dungeon_strings::
 	INCBIN "script/map/dungeon_strings.stringblk"
 StringTable_map_dungeon_strings_END

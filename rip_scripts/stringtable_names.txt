@@ -26,10 +26,10 @@ battle/items 1E2B80 table 68 16
 #denjuu/nicknames N/A table 22 8
 map/location_mapping AA875 index 256 map/location_strings
 map/location_strings_old AAA75 block 16
-map/location_strings ABDA0 block 16
+map/location_strings ABD8B block 16
 map/dungeon_mapping AAAFF index 53 map/dungeon_strings
 map/dungeon_strings_old AAB69 block 39
-map/dungeon_strings ABE65 block 27
+map/dungeon_strings ABEA9 block 27
 denjuu/species D0000 table 174 16
 battle/tfangers 1D6300 table 49 16
 battle/attacks 1D5890 table 138 16
