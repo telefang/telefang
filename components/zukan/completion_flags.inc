@@ -1,0 +1,2 @@
+M_Zukan_BaseSpeciesKnownFlag EQU $E00
+M_Zukan_BaseEntryObtainedFlag EQU $F00

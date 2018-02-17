@@ -44,6 +44,7 @@ OBJS := components/compression/malias.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
      components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
      components/titlemenu/time_entry.o \
+     components/titlelogo/state_machine.o \
      components/titlescreen/state_machine.o components/titlescreen/position_sprite.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
 	  components/mainscript/font.o components/mainscript/draw_text.o \
@@ -53,6 +54,7 @@ OBJS := components/compression/malias.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
      components/overworld/power_antenna.o components/overworld/new_save_init.o \
+     components/overworld/flags.o \
      components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
@@ -94,6 +96,7 @@ OBJS := components/compression/malias.o \
      components/victory/defection_statemachine.o components/victory/contact_utils.o \
      components/linktrade/loss_statemachine.o \
      components/zukan/completion_certificate_tmap.o \
+     components/zukan/completion_flags.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
 	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
@@ -160,7 +163,7 @@ $(OBJS_ASM): $$*.asm $$($$*_dep)
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
-	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG PW" $@
+	rgbfix -v -c -i BTXJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -t "TELEFANG PW" $@
 
 $(ROMS_SPEED): $(OBJS) $(OBJS_SPEED) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_SPEED:.gbc=.sym) -m $(ROMS_SPEED:.gbc=.map) -O $(BASEROM_SPEED) -o $@ $^
