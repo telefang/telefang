@@ -52,6 +52,7 @@ OBJS := components/compression/malias.o \
      components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
      components/titlemenu/time_entry.o \
      components/titlemenu/advice.o components/titlemenu/trash.o \
+     components/titlelogo/state_machine.o \
      components/titlescreen/state_machine.o components/titlescreen/position_sprite.o \
      components/titlescreen/advice.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
@@ -105,6 +106,7 @@ OBJS := components/compression/malias.o \
      components/victory/advice.o \
      components/linktrade/loss_statemachine.o \
      components/zukan/completion_certificate_tmap.o \
+     components/zukan/completion_status.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
 	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
@@ -177,7 +179,7 @@ $(OBJS_ASM): $$*.asm $$($$*_dep)
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
-	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG PW" $@
+	rgbfix -v -c -i BTXJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG PW" $@
 
 $(ROMS_SPEED): $(OBJS) $(OBJS_SPEED) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_SPEED:.gbc=.sym) -m $(ROMS_SPEED:.gbc=.map) -O $(BASEROM_SPEED) -o $@ $^
@@ -185,7 +187,7 @@ $(ROMS_SPEED): $(OBJS) $(OBJS_SPEED) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 
 $(ROMS_POWER_NORTC): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_POWER_NORTC:.gbc=.sym) -m $(ROMS_POWER_NORTC:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
-	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x13 -p 0 -r 3 -s -t "TELEFANG PW" $@
+	rgbfix -v -c -i BTXJ -k 2N -l 0x33 -m 0x13 -p 0 -r 3 -s -t "TELEFANG PW" $@
 
 $(ROMS_SPEED_NORTC): $(OBJS) $(OBJS_SPEED) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_SPEED_NORTC:.gbc=.sym) -m $(ROMS_SPEED_NORTC:.gbc=.map) -O $(BASEROM_SPEED) -o $@ $^
