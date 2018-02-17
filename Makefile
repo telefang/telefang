@@ -54,6 +54,7 @@ OBJS := components/compression/malias.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
      components/overworld/power_antenna.o components/overworld/new_save_init.o \
+     components/overworld/flags.o \
      components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
@@ -95,7 +96,6 @@ OBJS := components/compression/malias.o \
      components/victory/defection_statemachine.o components/victory/contact_utils.o \
      components/linktrade/loss_statemachine.o \
      components/zukan/completion_certificate_tmap.o \
-     components/zukan/completion_status.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
 	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
