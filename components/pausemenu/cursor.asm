@@ -238,3 +238,90 @@ PauseMenu_PositionCursor::
     ld a, c
     ld [hli], a
     ret
+    
+SECTION "Pause Menu Predefined Cursor Utils", ROMX[$7312], BANK[$4]
+PauseMenu_UpdateZukanOverviewCursorAnimations::
+    ld a, $40
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_XOffset], a
+    
+    ld a, 8
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_XOffset], a
+    
+    ld a, $60
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_YOffset], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_YOffset], a
+    
+    ld a, 1
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    
+    ld a, 0
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_Bank], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_Bank], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    jp Banked_PauseMenu_IterateCursorAnimation
+    
+PauseMenu_UpdateZukanPageCursorAnimations::
+    ld a, $90
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_XOffset], a
+    
+    ld a, 8
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_XOffset], a
+    
+    ld a, $60
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_YOffset], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_YOffset], a
+    
+    ld a, 1
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    
+    ld a, 0
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_Bank], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_Bank], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    jp Banked_PauseMenu_IterateCursorAnimation
+
+PauseMenu_UpdateItemScreenCursorAnimations::
+    ld a, $40
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_XOffset], a
+    
+    ld a, 8
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_XOffset], a
+    
+    ld a, $50
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_YOffset], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_YOffset], a
+    
+    ld a, 1
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    
+    ld a, [W_PauseMenu_ActiveInventoryCount]
+    dec a
+    cp 0
+    jr nz, .dontRemoveSprites
+    
+.removeSprites
+    xor a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+    
+.dontRemoveSprites
+    ld a, 0
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_Bank], a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_Bank], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    jp Banked_PauseMenu_IterateCursorAnimation
