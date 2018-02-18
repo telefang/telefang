@@ -3,7 +3,7 @@ INCLUDE "telefang.inc"
 SECTION "Fusion/Lab Evolution Name Copying", ROMX[$52A2], BANK[$2A]
 ;TODO: What do these entry points do differently?
 FusionLabEvo_LoadSpeciesNameEntryPointA::
-    ld de, W_MainScript_MessageArg3
+    ld de, W_MainScript_MessageArg3Old
     ld a, b
     jr FusionLabEvo_LoadSpeciesName
     
@@ -12,7 +12,7 @@ FusionLabEvo_LoadSpeciesNameEntryPointB::
     jr FusionLabEvo_LoadSpeciesName
     
 FusionLabEvo_LoadSpeciesNameEntryPointC::
-    ld de, W_MainScript_MessageArg3
+    ld de, W_MainScript_MessageArg3Old
     ld a, [$CAED]
     
 FusionLabEvo_LoadSpeciesName::
