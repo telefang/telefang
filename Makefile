@@ -45,6 +45,7 @@ OBJS := components/compression/malias.o \
      components/pausemenu/sms_utils.o components/pausemenu/inventory_statemachine.o \
      components/pausemenu/inventory_utils.o components/pausemenu/indicators.o \
      components/pausemenu/save/statemachine.o components/pausemenu/save/input.o \
+     components/pausemenu/screen_resources.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
      components/melodyedit/ringtone_menu.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
@@ -64,6 +65,7 @@ OBJS := components/compression/malias.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
      components/overworld/power_antenna.o components/overworld/new_save_init.o \
+     components/overworld/flags.o \
      components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
@@ -106,7 +108,9 @@ OBJS := components/compression/malias.o \
      components/victory/advice.o \
      components/linktrade/loss_statemachine.o \
      components/zukan/completion_certificate_tmap.o \
-     components/zukan/completion_status.o \
+     components/zukan/completion_flags.o components/zukan/draw_utils.o \
+     components/zukan/state_machine.o \
+     components/fusionlabevo/item_name_utils.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
 	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
