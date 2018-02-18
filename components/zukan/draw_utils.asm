@@ -111,8 +111,9 @@ Zukan_DrawSpeciesPageText::
     ld b, $11
     ld d, $A
     call Banked_MainScript_InitializeMenuText
-    call Banked_MainScriptMachine
-    jp Banked_MainScriptMachine
+    nop
+    ld a, Banked_Zukan_ADVICE_DrawSpeciesPageText & $FF
+    jp PatchUtils_AuxCodeJmp
     
 Zukan_UpdateOverviewCursorsNumbersAndNextState::
     ld e, $5C
@@ -135,3 +136,44 @@ Zukan_UpdateOverviewCursorsNumbersAndNextState::
     ld a, 1
     ld [W_OAM_SpritesReady], a
     jp System_ScheduleNextSubSubState
+
+SECTION "Zukan Draw Advice", ROMX[$43C0], BANK[$1]
+Zukan_ADVICE_DrawSpeciesPageText::
+    ld a, [W_PreviousBank]
+    push af
+    
+    ld a, BANK(Zukan_ADVICE_DrawSpeciesPageText)
+    ld [W_PreviousBank], a
+    
+    ld a, 14
+    ld [W_MainScript_VWFNewlineWidth], a
+    
+    ld a, 3
+    ld [W_MainScript_VWFWindowHeight], a
+    
+    ;TODO: Why is this not stopping on each line?
+.drawing_loop
+    push af
+    call Banked_MainScriptMachine
+    
+    ld a, [W_MainScript_State]
+    cp M_MainScript_StateTerminated
+    jr z, .text_exhausted
+    
+    pop af
+    dec a
+    jr nz, .drawing_loop
+    
+.text_exhausted
+    pop af
+    
+    ld a, M_MainScript_DefaultWindowWidth
+    ld [W_MainScript_VWFNewlineWidth], a
+    
+    ld a, M_MainScript_DefaultWindowHeight
+    ld [W_MainScript_VWFWindowHeight], a
+    
+    pop af
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    ret
