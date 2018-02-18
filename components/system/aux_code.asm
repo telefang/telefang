@@ -1,9 +1,10 @@
 SECTION "Patch Utilities - Auxiliary Code Trampolines", ROMX[$4000], BANK[$1]
-Banked_PatchUtils_StoreDefaultCharaName:
+Banked_PatchUtils_AdviceTable::
+Banked_PatchUtils_StoreDefaultCharaName::
 	jp PatchUtils_StoreDefaultCharaName
 	nop
 	
-Banked_PatchUtils_InitializeRelocatedCharaName:
+Banked_PatchUtils_InitializeRelocatedCharaName::
 	jp PatchUtils_InitializeRelocatedCharaName
 	nop
 	
@@ -29,6 +30,10 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
 
 Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 	jp TitleMenu_ADVICE_UnloadSGBFilesLink
+	nop
+   
+Banked_Zukan_ADVICE_DrawSpeciesPageText::
+	jp Zukan_ADVICE_DrawSpeciesPageText
 	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]

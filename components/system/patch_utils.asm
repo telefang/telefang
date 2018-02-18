@@ -24,7 +24,7 @@ PatchUtils_AuxCodeJmp::
 	ld a, [W_CurrentBank]
 	push af
 	
-	ld a, 1
+	ld a, BANK(Banked_PatchUtils_AdviceTable)
 	rst $10
 	
 	pop af
@@ -33,8 +33,10 @@ PatchUtils_AuxCodeJmp::
    di
 	
 	pop af
+
 	ld hl, PatchUtils_AuxCodeJmp_returnVec
 	push hl
+
 	ld l, a
 	ld h, $40
 	jp [hl]
