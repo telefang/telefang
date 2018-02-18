@@ -196,7 +196,9 @@ MainScript_LowControlCode::
 
 MainScript_EndOpcode:: ;2C2EA $42EA
 	call MainScript_Moveup
-	ld a, [W_MainScript_NumNewlines]
+	jp MainScript_ADVICE_EndOpcodeNewlineCheck
+	
+	;TODO: The following code until .checkIfSkipping is dead
 	cp 2
 	jr nc, .moreThan1Newline
 	jr MainScript_EndOpcode.checkIfSkipping
@@ -411,18 +413,41 @@ MainScript_ADVICE_NewlineVWFReset::
 	ld a, [W_MainScript_NumNewlines]
 	inc a
 	ld [W_MainScript_NumNewlines], a
-	
-   ;The moveup animation does not support nonstandard window widths
-   ;so we don't trigger it if that's the case.
-   
-	ld a, [W_MainScript_VWFNewlineWidth]
-	and a
-	jp z, MainScript_EndOpcode
-	cp M_MainScript_DefaultWindowWidth
-	jp z, MainScript_EndOpcode
-	jp MainScript_EndOpcode.skipNewlineCheck
-	
+	jp MainScript_EndOpcode
 MainScript_ADVICE_NewlineVWFReset_END::
+
+;The default EndOpcode code doesn't support variable height windows, so we added
+;support for it
+MainScript_ADVICE_EndOpcodeNewlineCheck::
+	ld a, [W_MainScript_VWFWindowHeight]
+	cp 0
+	jr nz, .window_height_selected
+	ld a, M_MainScript_DefaultWindowHeight
+	
+.window_height_selected
+	ld b, a
+	ld a, [W_MainScript_NumNewlines]
+	cp b
+	jr nc, .moreThan1Newline
+	jp MainScript_EndOpcode.checkIfSkipping
+	
+.moreThan1Newline
+	sub b
+	jr z, .run_idle_state
+	jr nc, .moreThan1Newline
+	ld a, [W_MainScript_FramesCount]
+	ld [W_MainScript_WaitFrames], a
+	ld a, 3
+	ld [W_MainScript_State], a
+	jp MainScript_EndOpcode.checkIfSkipping
+	
+.run_idle_state
+	ld a, 2
+	ld [W_MainScript_State], a
+	ld a, 0
+	ld [W_MainScript_WaitFrames], a
+	jp MainScript_EndOpcode.checkIfSkipping
+MainScript_ADVICE_EndOpcodeNewlineCheck_END::
 
 MainScript_ADVICE_AutomaticNewline::
 	ld a, [W_MainScript_VWFNewlineWidth]
