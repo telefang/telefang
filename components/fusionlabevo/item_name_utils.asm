@@ -1,21 +1,22 @@
 INCLUDE "telefang.inc"
 
 SECTION "Fusion/Lab Evolution Name Copying", ROMX[$52A2], BANK[$2A]
-FusionLab_NameCopyEntryPointA::
+;TODO: What do these entry points do differently?
+FusionLabEvo_LoadSpeciesNameEntryPointA::
     ld de, W_MainScript_MessageArg3
     ld a, b
-    jr FusionLab_NameCopyMain
+    jr FusionLabEvo_LoadSpeciesName
     
-FusionLab_NameCopyEntryPointB::
+FusionLabEvo_LoadSpeciesNameEntryPointB::
     ld de, $CA00
-    jr FusionLab_NameCopyMain
+    jr FusionLabEvo_LoadSpeciesName
     
-FusionLab_NameCopyEntryPointC::
+FusionLabEvo_LoadSpeciesNameEntryPointC::
     ld de, W_MainScript_MessageArg3
     ld a, [$CAED]
     
-FusionLab_NameCopyMain::
-    ld hl, $4000
+FusionLabEvo_LoadSpeciesName::
+    ld hl, StringTable_denjuu_species
     ld c, a
     ld b, $0
     sla c
@@ -25,7 +26,7 @@ FusionLab_NameCopyMain::
     sla c
     rl b
     add hl, bc
-    ld c, $75
+    ld c, BANK(StringTable_denjuu_species)
     ld b, $8
     call Banked_Memcpy
     ld a, $E0

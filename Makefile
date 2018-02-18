@@ -99,6 +99,7 @@ OBJS := components/compression/malias.o \
      components/zukan/completion_certificate_tmap.o \
      components/zukan/completion_flags.o components/zukan/draw_utils.o \
      components/zukan/state_machine.o \
+     components/fusionlabevo/item_name_utils.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
 	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
