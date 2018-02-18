@@ -213,7 +213,7 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     call Status_LoadEvolutionIndicatorBySpecies
     
     ld hl, $8C00
-    ld b, $20
+    ld b, $38
     call PauseMenu_ClearScreenTiles
     
     ld a, 1
@@ -429,7 +429,7 @@ Zukan_StateInnerviewSwitchPage:
     call Status_LoadEvolutionIndicatorBySpecies
     
     ld hl, $8C00
-    ld b, $20
+    ld b, $38
     call PauseMenu_ClearScreenTiles
     
     ld a, $C0
