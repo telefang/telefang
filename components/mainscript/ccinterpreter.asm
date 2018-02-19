@@ -372,6 +372,35 @@ MainScript_ADVICE_AdditionalOpcodes:
 MainScript_ADVICE_AdditionalOpcodes_END::
 
 SECTION "MainScript Patch Advice 4", ROMX[$7D60], BANK[$B]
+MainScript_ADVICE_GetWindowTileCount::
+	push bc
+	;First we need to compute the tile count of the window...
+	ld a, [W_MainScript_VWFNewlineWidth]
+	and a
+	jr nz, .compute_window_height
+	
+	ld a, M_MainScript_DefaultWindowWidth
+	
+.compute_window_height
+	ld b, a
+	ld a, [W_MainScript_VWFWindowHeight]
+	and a
+	jr nz, .compute_window_tilecount
+	
+	ld a, M_MainScript_DefaultWindowHeight
+	
+.compute_window_tilecount
+	ld c, a
+	xor a
+	
+.tilecount_mul_loop
+	add a, b
+	dec c
+	jr nz, .tilecount_mul_loop
+	
+	pop bc
+	ret
+
 MainScript_ADVICE_NewlineVWFReset::
 	call MainScript_ADVICE_VWFReset
 	
@@ -403,7 +432,12 @@ MainScript_ADVICE_NewlineVWFReset::
 	jr .mulLoop
 	
 .checkOverflow
-	cp $20
+	push af
+	call MainScript_ADVICE_GetWindowTileCount
+	ld b, a
+	pop af
+	
+	cp b
 	jr c, .noOverflow
 	xor a
 	
@@ -465,6 +499,8 @@ MainScript_ADVICE_AutomaticNewline::
 	and a
 	jr z, .noAutomaticNewline
 	
+	push af
+	
 	;Compute TilesDrawn % VWFNewlineWidth and use that to determine if we're on a
 	;newline or not...
 	
@@ -477,18 +513,44 @@ MainScript_ADVICE_AutomaticNewline::
 .doneDividing
 	add b
 	cp 0
-	jr nz, .noAutomaticNewline
-	ld a, [W_MainScript_NumNewlines]
-	inc a
-	ld [W_MainScript_NumNewlines], a
+	jr nz, .checkWraparound
+	;There used to be code to increment the newline count if we overflowed.
+	;It's gone now, because it doesn't really make sense with VWF...
 	
-.checkNonprintable
-	cp $1F
+.checkWraparound
+	
+	;First we need to compute the tile count of the window...
+	ld a, [W_MainScript_VWFNewlineWidth]
+	and a
+	jr nz, .compute_window_height
+	
+	ld a, M_MainScript_DefaultWindowWidth
+	
+.compute_window_height
+	ld b, a
+	ld a, [W_MainScript_VWFWindowHeight]
+	and a
+	jr nz, .compute_window_tilecount
+	
+	ld a, M_MainScript_DefaultWindowHeight
+	
+.compute_window_tilecount
+	ld d, a
+	xor a
+	
+.tilecount_mul_loop
+	add a, b
+	dec d
+	jr nz, .tilecount_mul_loop
+	
+	ld b, a
+	pop af
+	cp b
 	jr c, .noAutomaticNewline
 	call MainScript_LowControlCode
 	jr z, .noAutomaticNewline
 	
-.checkWraparound
+.is_wrapped_around
 	ld a, [W_MainScript_VWFWindowHeight]
 	and a
 	jr nz, .heightIsProperlySet
@@ -511,7 +573,7 @@ MainScript_ADVICE_AutomaticNewline::
 	cp M_MainScript_DefaultWindowWidth
 	jp z, MainScript_EndOpcode
 	
-	;Non-printables also do not trigger the newline machinery.
+	;Don't trigger the newline machinery if we're already full
 .noAutomaticNewline
 	jp MainScript_EndOpcode.skipNewlineCheck
 
