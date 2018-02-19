@@ -108,12 +108,17 @@ Zukan_DrawSpeciesPageText::
     ld c, $AE
     
 .draw_result
-    ld b, $11
-    ld d, $A
-    call Banked_MainScript_InitializeMenuText
-    nop
     ld a, Banked_Zukan_ADVICE_DrawSpeciesPageText & $FF
     jp PatchUtils_AuxCodeJmp
+    
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 Zukan_UpdateOverviewCursorsNumbersAndNextState::
     ld e, $5C
@@ -151,9 +156,25 @@ Zukan_ADVICE_DrawSpeciesPageText::
     ld a, 3
     ld [W_MainScript_VWFWindowHeight], a
     
-    ;TODO: Why is this not stopping on each line?
+    ld a, [W_MainScript_State]
+    cp 2
+    jr z, .text_idling
+    
+.text_not_running
+    ld b, $11
+    ld d, $A
+    call Banked_MainScript_InitializeMenuText
+    
+    jr .drawing_loop
+    
+.text_idling
+    ;We're in idle state. Normally, we'd just run MainScriptMachine some more,
+    ;but that will also trigger some text movement animation that won't work for
+    ;UI text in general and is broken on custom windows anyway. So we skip it.
+    ld a, M_MainScript_CCInterpreter
+    ld [W_MainScript_State], a
+    
 .drawing_loop
-    push af
     call Banked_MainScriptMachine
     
     ld a, [W_MainScript_State]
@@ -161,14 +182,9 @@ Zukan_ADVICE_DrawSpeciesPageText::
     jr z, .text_exhausted
     cp 2
     jr z, .text_exhausted
-    
-    pop af
-    dec a
-    jr nz, .drawing_loop
+    jr .drawing_loop
     
 .text_exhausted
-    pop af
-    
     ld a, M_MainScript_DefaultWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
     
@@ -179,3 +195,5 @@ Zukan_ADVICE_DrawSpeciesPageText::
     ld [W_PreviousBank], a
     ld [W_CurrentBank], a
     ret
+    
+Zukan_ADVICE_DrawSpeciesPageText_END::

@@ -35,6 +35,14 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 Banked_Zukan_ADVICE_DrawSpeciesPageText::
 	jp Zukan_ADVICE_DrawSpeciesPageText
 	nop
+   
+Banked_Zukan_ADVICE_StateInnerviewInputButtonPress::
+	jp Zukan_ADVICE_StateInnerviewInputButtonPress
+	nop
+   
+Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
+	jp Zukan_ADVICE_StateInnerviewInputSwitchSpecies
+	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:

@@ -256,24 +256,11 @@ Zukan_StateInnerviewInput::
     
     ld a, [W_FrameCounter]
     and 3
-    jr nz, .check_button_press
+    jr nz, .check_right_pressed
     
 .shift_background
     ld hl, $91B0
     call Status_ShiftBackgroundTiles
-    
-.check_button_press
-    ld a, [H_JPInput_Changed]
-    and 3
-    jr z, .check_right_pressed
-    
-.exit_inner_screen
-    ld a, 4
-    ld [W_Sound_NextSFXSelect], a
-    
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
-    jp System_ScheduleNextSubSubState
     
 .check_right_pressed
     ld a, [W_JPInput_TypematicBtns]
@@ -311,16 +298,19 @@ Zukan_StateInnerviewInput::
     jr .valid_increment_search
     
 .draw_new_species
-    ld a, 2
-    ld [W_Sound_NextSFXSelect], a
-    ld a, M_Zukan_StateInnerviewSwitchPage
-    ld [W_SystemSubSubState], a
+    ld a, Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies & $FF
+    call PatchUtils_AuxCodeJmp
     ret
+    nop
+    nop
+    nop
+    nop
+    nop
 
 .check_left_pressed
     ld a, [W_JPInput_TypematicBtns]
     and $20
-    jr z, .nothing_pressed
+    jr z, .check_button_press
     
 .decrement_selected
     ld a, [W_Zukan_SelectedSpecies]
@@ -348,6 +338,23 @@ Zukan_StateInnerviewInput::
     inc a
     ld [W_Zukan_SelectedSpecies], a
     jr .valid_decrement_search
+    
+.check_button_press
+    ld a, [H_JPInput_Changed]
+    and 3
+    jr z, .nothing_pressed
+    
+.run_button_advice
+    ld a, Banked_Zukan_ADVICE_StateInnerviewInputButtonPress & $FF
+    call PatchUtils_AuxCodeJmp
+    ret
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 .nothing_pressed
     ret
@@ -441,4 +448,105 @@ Zukan_StateInnerviewSwitchPage:
     
     ld a, M_Zukan_StateInnerviewInput
     ld [W_SystemSubSubState], a
+    ret
+
+SECTION "Zukan State Machine Advice", ROMX[$4440], BANK[$1]
+;cloned from PauseMenu_ClearScreenTiles 'cause I can't bankcall it
+Zukan_ADVICE_ClearScreenTiles::
+    push bc
+    ld c, $10
+    
+.loop1
+    xor a
+    call YetAnotherWFB
+    ld [hli], a
+    dec c
+    jr nz, .loop1
+    
+    pop bc
+    dec b
+    jr nz, Zukan_ADVICE_ClearScreenTiles
+    
+    ret
+
+Zukan_ADVICE_StateInnerviewInputButtonPress::
+    ld a, [W_PreviousBank]
+    push af
+    
+    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
+    
+    ld a, BANK(Zukan_ADVICE_StateInnerviewInputButtonPress)
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    
+.check_b_pressed
+    ld a, [H_JPInput_Changed]
+    and 2
+    jr z, .check_a_pressed
+    
+.exit_inner_screen
+    ld a, 0
+    ld [W_MainScript_State], a
+    
+    ld a, 4
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    call System_ScheduleNextSubSubState
+    jr .nothing_pressed
+    
+.check_a_pressed
+    ld a, [H_JPInput_Changed]
+    and 1
+    jr z, .nothing_pressed
+    
+    ld hl, $8C00
+    ld b, $38
+    call Zukan_ADVICE_ClearScreenTiles
+    
+    ;Evil hack: MainScriptMachine can NEVER KNOW that we're pressing A
+    ld a, [H_JPInput_Changed]
+    and $FE
+    ld [H_JPInput_Changed], a
+    
+    ld a, BANK(Zukan_DrawSpeciesPageText)
+    ld hl, Zukan_DrawSpeciesPageText
+    call CallBankedFunction_int
+    
+.nothing_pressed
+    pop af
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    ret
+    
+Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
+    ld a, [W_PreviousBank]
+    push af
+    
+    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
+    
+    ld a, BANK(Zukan_ADVICE_StateInnerviewInputButtonPress)
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    
+    ;Clear the page indicator
+    ld hl, $99D1
+    call YetAnotherWFB
+    xor a
+    ld [hl], a
+    
+    ;Reset script state (so we don't accidentally draw the next page)
+    ld [W_MainScript_State], a
+    
+    ;Everything else the original code did
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, M_Zukan_StateInnerviewSwitchPage
+    ld [W_SystemSubSubState], a
+    
+    pop af
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
     ret
