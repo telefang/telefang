@@ -473,11 +473,11 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     ld a, [W_PreviousBank]
     push af
     
-    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
-    
     ld a, BANK(Zukan_ADVICE_StateInnerviewInputButtonPress)
     ld [W_PreviousBank], a
     ld [W_CurrentBank], a
+    
+    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
     
 .check_b_pressed
     ld a, [H_JPInput_Changed]
@@ -524,11 +524,11 @@ Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
     ld a, [W_PreviousBank]
     push af
     
-    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
-    
     ld a, BANK(Zukan_ADVICE_StateInnerviewInputButtonPress)
     ld [W_PreviousBank], a
     ld [W_CurrentBank], a
+    
+    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
     
     ;Clear the page indicator
     ld hl, $99D1
