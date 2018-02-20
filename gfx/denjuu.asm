@@ -204,7 +204,3 @@ DenjuuSprites9::
     INCBIN "gfx/denjuu/172.2bpp"
     INCBIN "gfx/denjuu/173.2bpp"
     INCBIN "gfx/denjuu/174.2bpp"
-    INCBIN "gfx/denjuu/175.2bpp"
-    INCBIN "gfx/denjuu/176.2bpp"
-    INCBIN "gfx/denjuu/177.2bpp"
-    INCBIN "gfx/denjuu/178.2bpp"

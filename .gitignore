@@ -8,6 +8,7 @@
 *.o
 *.2bpp
 *.1bpp
+*.gbcpal
 *.pcm
 *.map
 *.sym
