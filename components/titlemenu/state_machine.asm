@@ -20,16 +20,23 @@ TitleMenu_StateTable
 SECTION "Title Menu State Machine 2", ROMX[$406E], BANK[$4]
 ; State 03 01, 03 1F
 TitleMenu_StateLoadGraphics
-    call ClearGBCTileMap0
-    call ClearGBCTileMap1
-    call LCDC_ClearMetasprites
-    call PauseMenu_LoadMainGraphics
+    ld a, Banked_TitleMenu_ADVICE_StateLoadGraphics & $FF
+    call PatchUtils_AuxCodeJmp
     
     ld bc, $11
     call Banked_LoadMaliasGraphics
     call PauseMenu_LoadPhoneGraphics
     call PauseMenu_LoadPhoneIMEGraphics
     jp System_ScheduleNextSubState
+    
+    ;Non-timing NOPs here if anyone wants the bytes...
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 ; State 03 02
 TitleMenu_StateLoadTMaps::

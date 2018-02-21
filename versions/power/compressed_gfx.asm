@@ -94,8 +94,8 @@ SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb BANK(MenuDmeloDMGGfx),	$9400, 0 ; $5a
 	dbwb BANK(MenuMetDMGGfx),	$8f00, 0 ; $5b
 	dbwb BANK(CmpGfx_TitleLogo_Tulunk),	$9000, 0 ; $5c (repurposed)
-	dbwb $29,	$9000, 0 ; $5d
-	dbwb $29,	$9000, 0 ; $5e
+	dbwb BANK(TitleMenuText1Gfx),	$9400, 0 ; $5d (repurposed)
+	dbwb BANK(TitleMenuText1DMGGfx),	$9400, 0 ; $5e (repurposed)
 	dbwb BANK(TitleSpritesSgbGfx),	$8000, 0 ; $5f (repurposed)
 
 SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
@@ -191,9 +191,15 @@ SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw MenuOptionsDMGGfx ; $59
 	dw MenuDmeloDMGGfx ; $5a
 	dw MenuMetDMGGfx ; $5b
+<<<<<<< HEAD
 	dw CmpGfx_TitleLogo_Tulunk ; $5c (repurposed)
 	dw $0000 ; $5d
 	dw $0000 ; $5e
+=======
+	dw $0000 ; $5c
+	dw TitleMenuText1Gfx ; $5d (repurposed)
+	dw TitleMenuText1DMGGfx ; $5e (repurposed)
+>>>>>>> 2120f3f... Implement andwhyisit's TitleMenu/PauseMenu graphics split as proposed in pull request #63. Issue #41 is now unblocked
    dw TitleSpritesSgbGfx ; $5f (repurposed)
 NOT_COMPRESSED EQU 0
 COMPRESSED EQU 1
@@ -558,6 +564,16 @@ MenuMain1DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain1DMGGfxEnd - MenuMain1DMGGfx - 3
 	INCBIN "components/pausemenu/resources/text1_dmg.2bpp"
 MenuMain1DMGGfxEnd
+
+TitleMenuText1Gfx:
+	dbw NOT_COMPRESSED, TitleMenuText1GfxEnd - TitleMenuText1Gfx - 3
+	INCBIN "components/titlemenu/resources/text1.2bpp"
+TitleMenuText1GfxEnd
+
+TitleMenuText1DMGGfx:
+	dbw NOT_COMPRESSED, TitleMenuText1GfxEnd - TitleMenuText1Gfx - 3
+	INCBIN "components/titlemenu/resources/text1_dmg.2bpp"
+TitleMenuText1DMGGfxEnd
 
 MenuMain2DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain2DMGGfxEnd - MenuMain2DMGGfx - 3

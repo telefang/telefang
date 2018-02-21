@@ -149,7 +149,43 @@ TitleMenu_ADVICE_IndexArray16::
     rl b
     ret
 
-SECTION "Title Menu SGB Advice", ROMX[$4300], BANK[$1]
+;TODO: Move all the above advice into this section
+SECTION "Title Menu Aux-Code Advice", ROMX[$4300], BANK[$1]
+TitleMenu_ADVICE_StateLoadGraphics::
+    ld a, [W_PreviousBank]
+    push af
+
+    ld a, BANK(TitleMenu_ADVICE_StateLoadGraphics)
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    
+    ei
+    
+    call ClearGBCTileMap0
+    call ClearGBCTileMap1
+    call LCDC_ClearMetasprites
+    
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .cgbGfx
+    
+.dmgGfx
+    ld bc, $5E
+    call Banked_LoadMaliasGraphics
+    ld bc, $55
+    jp Banked_LoadMaliasGraphics
+
+.cgbGfx
+    ld bc, $5D
+    call Banked_LoadMaliasGraphics
+    ld bc, $1B
+    call Banked_LoadMaliasGraphics
+    
+    pop af
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    ret
+
 TitleMenu_ADVICE_LoadSGBFiles::
     ld a, $32
     call Sound_IndexMusicSetBySong
