@@ -450,7 +450,7 @@ Zukan_StateInnerviewSwitchPage:
     ld [W_SystemSubSubState], a
     ret
 
-SECTION "Zukan State Machine Advice", ROMX[$4440], BANK[$1]
+SECTION "Zukan State Machine Advice", ROMX[$4480], BANK[$1]
 ;cloned from PauseMenu_ClearScreenTiles 'cause I can't bankcall it
 Zukan_ADVICE_ClearScreenTiles::
     push bc
