@@ -8,7 +8,7 @@ FusionLabEvo_LoadSpeciesNameEntryPointA::
     jr FusionLabEvo_LoadSpeciesName
     
 FusionLabEvo_LoadSpeciesNameEntryPointB::
-    ld de, $CA00
+    ld de, W_Map_LocationStaging
     jr FusionLabEvo_LoadSpeciesName
     
 FusionLabEvo_LoadSpeciesNameEntryPointC::
