@@ -17,23 +17,23 @@ MainScript_DrawStatusText::
 	xor a
 	ld [W_MainScript_StatusLettersDrawn], a
 	
-.loop
+MainScript_DrawStatusText_loop::
 	push bc
 	push de
 	push hl
 	ld a, [de]
 	cp $E0
-	jp z, .ret
+	jp z, MainScript_DrawStatusText_ret
 	pop hl
 	push hl
 	call Banked_MainScript_DrawLetter
 	pop hl
 	jp MainScript_ADVICE_DrawStatusText
 	
-.secondCompositeTile
+MainScript_DrawStatusText_secondCompositeTile::
 	add hl, bc
 	
-.firstCompositeTile
+MainScript_DrawStatusText_firstCompositeTile::
 	pop de
 	inc de
 	ld a, [W_MainScript_StatusLettersDrawn]
@@ -41,12 +41,12 @@ MainScript_DrawStatusText::
 	ld [W_MainScript_StatusLettersDrawn], a
 	pop bc
 	dec b
-	jp MainScript_ADVICE_DrawStatusText.enterSecondHalf
+	jp MainScript_ADVICE_DrawStatusText_enterSecondHalf
 	
-.ret
+MainScript_DrawStatusText_ret::
 	pop hl
 	pop de
-	jp MainScript_ADVICE_DrawStatusText.exitFromSecondHalf
+	jp MainScript_ADVICE_DrawStatusText_exitFromSecondHalf
 
 Encounter_WriteTileToVRAM::
 	di
@@ -237,28 +237,7 @@ MainScript_ADVICE_DrawHabitatString::
     ld bc, $9380
     jp MainScript_DrawShortName
 
-SECTION "Main Script Status Text Drawing Advice", ROM0[$0077]
-;Part of a function that replaces status text drawing with the VWF.
-MainScript_ADVICE_DrawStatusText::
-	ld bc, $10
-	ld a, [W_MainScript_VWFOldTileMode]
-	cp 1
-	jp z, MainScript_DrawStatusText.secondCompositeTile
-	jp MainScript_DrawStatusText.firstCompositeTile
-	
-.enterSecondHalf
-	jp nz, MainScript_DrawStatusText.loop
-	
-.resetVWFAndExit
-	ld a, 2
-	ld [W_MainScript_VWFOldTileMode], a
-	ld a, 0
-	ld [W_MainScript_VWFLetterShift], a
-	ret
-	
-.exitFromSecondHalf
-	pop bc
-	jr .resetVWFAndExit
+;MainScript_ADVICE_DrawStatusText has been moved to components/system/patch_utils.asm
 
 SECTION "Main Script Status Text Drawing 2", ROM0[$3D5C]
 MainScript_DrawEmptySpaces::

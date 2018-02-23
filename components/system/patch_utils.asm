@@ -9,8 +9,7 @@ PatchUtils_LimitBreak:: sla e
 	sla e
 	rl d
 	ret
-	
-SECTION "Patch Utilities 2", ROM0[$0096]
+   
 PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3::
 	ld a, BANK(MainScript_ADVICE_LoadItemNameAsArg3)
 	rst $10
@@ -47,9 +46,37 @@ PatchUtils_AuxCodeJmp_returnVec::
 	rst $10
 	pop af
 	reti
-
+   
+;TODO: FusionLabEvo_LoadSpeciesName uses this.
+;Can we make it use PatchUtils_LimitBreak instead?
+FusionLabEvo_Multiplier::
+    sla c
+    rl b
+    ret
+    
 ;TODO: Move these patches into the AuxCode area.
-SECTION "Patch Utilities 3", ROM0[$00BF]
+;Part of a function that replaces status text drawing with the VWF.
+MainScript_ADVICE_DrawStatusText::
+	ld bc, $10
+	ld a, [W_MainScript_VWFOldTileMode]
+	cp 1
+	jp z, MainScript_DrawStatusText_secondCompositeTile
+	jp MainScript_DrawStatusText_firstCompositeTile
+	
+MainScript_ADVICE_DrawStatusText_enterSecondHalf::
+	jp nz, MainScript_DrawStatusText_loop
+	
+MainScript_ADVICE_DrawStatusText_resetVWFAndExit::
+	ld a, 2
+	ld [W_MainScript_VWFOldTileMode], a
+	ld a, 0
+	ld [W_MainScript_VWFLetterShift], a
+	ret
+	
+MainScript_ADVICE_DrawStatusText_exitFromSecondHalf::
+	pop bc
+	jr MainScript_ADVICE_DrawStatusText_resetVWFAndExit
+
 Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArrayFixed::
 	rst $10
 	call SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArrayFixed

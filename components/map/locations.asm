@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Map Screen Location Loader WRAM", WRAM0[$CCC0]
-W_Map_LocationStaging: ds M_Map_LocationStagingSize
+W_Map_LocationStaging:: ds M_Map_LocationStagingSize
 
 SECTION "Map Screen Location Loader", ROMX[$4508], BANK[$2A]
 Map_LoadLocationName:
