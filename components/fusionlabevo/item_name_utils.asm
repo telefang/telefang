@@ -19,12 +19,10 @@ FusionLabEvo_LoadSpeciesName::
     ld hl, StringTable_denjuu_species
     ld c, a
     ld b, $0
-    sla c
-    rl b
-    sla c
-    rl b
-    sla c
-    rl b
+    call FusionLabEvo_Multiplier
+    call FusionLabEvo_Multiplier
+    call FusionLabEvo_Multiplier
+    call FusionLabEvo_Multiplier
     add hl, bc
     ld c, BANK(StringTable_denjuu_species)
     ld b, $8
@@ -32,3 +30,5 @@ FusionLabEvo_LoadSpeciesName::
     ld a, $E0
     ld [de], a
     ret
+    
+;FusionLabEvo_Multiplier is in components/system/patch_utils.asm
