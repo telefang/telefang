@@ -93,10 +93,10 @@ SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb BANK(MenuOptionsDMGGfx),	$9400, 0 ; $59
 	dbwb BANK(MenuDmeloDMGGfx),	$9400, 0 ; $5a
 	dbwb BANK(MenuMetDMGGfx),	$8f00, 0 ; $5b
-	dbwb $29,	$9000, 0 ; $5c
+	dbwb BANK(CmpGfx_TitleLogo_Tulunk),	$9000, 0 ; $5c (repurposed)
 	dbwb $29,	$9000, 0 ; $5d
 	dbwb $29,	$9000, 0 ; $5e
-	dbwb BANK(TitleSpritesSgbGfx),	$8000, 0 ; $5f (repurposed from an unused val...)
+	dbwb BANK(TitleSpritesSgbGfx),	$8000, 0 ; $5f (repurposed)
 
 SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw $0000 ; $00
@@ -191,7 +191,7 @@ SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw MenuOptionsDMGGfx ; $59
 	dw MenuDmeloDMGGfx ; $5a
 	dw MenuMetDMGGfx ; $5b
-	dw $0000 ; $5c
+	dw CmpGfx_TitleLogo_Tulunk ; $5c (repurposed)
 	dw $0000 ; $5d
 	dw $0000 ; $5e
    dw TitleSpritesSgbGfx ; $5f (repurposed)
@@ -588,3 +588,8 @@ TitleSpritesSgbGfx:
 	dbw NOT_COMPRESSED, TitleSpritesSgbGfxEnd - TitleSpritesSgbGfx - 3
 	INCBIN "gfx/title/sprites_sgb.2bpp"
 TitleSpritesSgbGfxEnd
+
+CmpGfx_TitleLogo_Tulunk:
+    dbw NOT_COMPRESSED, CmpGfx_TitleLogo_Tulunk_END - CmpGfx_TitleLogo_Tulunk - 3
+    INCBIN "components/titlelogo/tulunk.2bpp"
+CmpGfx_TitleLogo_Tulunk_END
