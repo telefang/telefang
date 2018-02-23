@@ -1,5 +1,5 @@
 Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
-#######,"Story Messages 1   -   253 strings   -   Shop text, and messages from start of game to Kurinon",,,,,
+#######,"Story Messages 1   -   253 strings   -   Shop text, and messages from start of game to Krinon",,,,,
 #######,105 strings   -   Shop text,,,,,
 0x120000,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,,Bezahlt wird an der Kasse rechts.,"Status: Translated 100%
@@ -10,7 +10,7 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 Alright?
 <0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,Shop 1 (Toronko)
+<0>Ja<0>Nein<*A>",,Shop 1 (Tronco)
 0x120004,<S0> <&0xca00>チル<*4>,<S0> <&0xca00>Ch.<*4>,,<S0> <&0xca00>Ch.<*4>,,
 0x120006,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -303,7 +303,7 @@ Ach, wenn ich doch nur dorthin könnte...
  ",,
 0x1200d4,"あ...あぶなかったぁ...
 ここまで ボールを とばせる
-ようなひとは ただひとリ..","Th-that was close!
+ようなひとは ただひとリ..","Th-That was close!
 There's only one guy I know who could hit a ball this far...",,"Woah, das war knapp!
 Ich kenne nur einen, der einen Ball so weit schlagen kann...",,
 0x1200d6,"じぶんでうって じぶんで
@@ -330,20 +330,20 @@ Well, whatever. I'm heading over there right now.
 You should go too if you start feeling lonely.
 Later then! Bye-bye!",,"Beruhig dich, war doch nur Spaß!
 Aber sag mal... Du und Matze, ihr seid als einzige noch nie in der Denjuu-Welt gewesen, oder?
-Naja, wie dem auch sei. Ich bin gerade auf dem Weg dorthin.
-Schau doch mal vorbei, falls du dich einsam fühlst. 
+Naja, wie auch immer. Ich bin gerade auf dem Weg dorthin.
+Schau doch mal vorbei, wenn du Lust hast! 
 Also bis dann! Tschüssi!
 ",,
 0x1200e0,"チクショー! なんだよアイツ!
 いきなリ からんで きやがって!","Ugh, what's with her!?
-She always shows up to bug me like that!",,"Was war das denn?!
+She always shows up to bug me like that!",,"Was sollte das denn?!
 Die kann einem echt auf den Wecker gehen...",,
 0x1200e2,"だまっとけば かわいい
 ヤツなのになぁ.....
 まぁいいや さっさと ボールを
 さがしにいこうっと","If she stayed quiet for once, she’d actually be kinda cute though...
 Oh well, better look for that ball.",,"Würde sie zur Abwechslung mal die Klappe halten, wäre sie eigentlich ganz süß...
-Ups, fast den Ball vergessen!",,
+Ups, fast hätte ich den Ball vergessen!",,
 0x1200e4,"お??マツキヨじゃん
 こんなところでなにしてるんだよ","Hm? Hey, Matsukiyo.
 What're you doing here?",,"Oh! Hey, Matze!
@@ -372,16 +372,16 @@ Komm, und spiel lieber 'ne Runde Baseball mit uns!",,
 なリたいのです!!","Aren't you a little bit interested in the Denjuu World, <&0xc92c>?
 They say it's a world hidden behind a curtain of darkness, full of living creatures known as ""Denjuu""...
 I'd like to become friends with as many of them as possible!",,"Interessiert dich die Welt der Denjuu denn gar nicht, <&0xc92c>?
-Eine Welt, verborgen im Schatten, bewohnt von uns unbekannten Lebewesen, sogenannten ""Denjuu""...
-Wir sollten uns mit so vielen Denjuu wie möglich anfreunden!",,
+Diese Welt, die verborgen im Schatten liegt, bewohnt von uns unbekannten Lebewesen, sogenannten ""Denjuu""...
+Ich will mich mit so vielen Denjuu wie möglich anfreunden!",,
 0x1200f0,"でも オレたち
 Dショット もってないじゃん
 Dショットが なかったら
 デンジュウカイにもいけないし
 デンジュウたちとも トモダチに
 なれないんだろ?","Yeah, but we don't have a D-Shot.
-Without a D-shot, we can't go to the Denjuu World, and you won't be able to make friends with any of them, right?",,"Aber wir haben doch gar kein D-Shot.
-Und ohne ein D-Shot kommen wir nicht in die Denjuu-Welt, also wird das wohl erstmal nichts.",,
+Without a D-shot, we can't go to the Denjuu World, and you won't be able to make friends with any of them, right?",,"Aber du hast doch gar kein D-Shot.
+Und ohne ein D-Shot kommst du nicht in die Denjuu-Welt, also wird das wohl erstmal nichts.",,
 0x1200f2,"ん?デンワが なっていますね
 あの きのしたからでしょうか?","Hm? I can hear a phone ringing...
 Is it coming from under that tree?",,"Hm? Da klingelt doch ein Telefon...
@@ -391,11 +391,11 @@ Kommt das von dem Baum da?",,
 <&0xc92c>くん....
 デンワに でてくださいよ","There's a cell phone on the ground, and what's more, it's a D-Shot...
 <&0xc92c>...
-Answer it.",,"Da liegt ein Handy. Und zwar nicht irgendeins, das ist ein D-Shot...
+Answer it.",,"Da liegt ein Handy. Und zwar nicht irgendein Handy, das ist ein D-Shot...
 Na los, <&0xc92c>...
 Geh schon ran.",,
 0x1200f6,な...なんでオレが..,Wh-Why me?...,,"W-was, wieso ich?",,
-0x1200f8,いいからはやく!!!,Just do it!!,,Mach's einfach!!,,
+0x1200f8,いいからはやく!!!,Just do it!!,,Jetzt mach schon!!,,
 0x1200fa,"わ わかったよ
 もしもし......?","A, Alright!
 Hello......?",,"O-Okay!
@@ -421,15 +421,15 @@ Mir dröhnt der Schädel...",,
 0x120102,"うるさいぐらいなんだっていうん
 ですか!
 それよリ いちだいじです!","How can you tell me to shut up at a time like this?!
-This is amazing!",,"Was los ist?! Das fragst du noch?!
+This is amazing!",,"Das fragst du noch?!
 Das ist einfach unglaublich!",,
 0x120104,なにが たいヘんなんだよ..?,"Fine, what is it?",,"Na gut, ich bin ganz Ohr. Also, was ist los?",,
 0x120106,いいですか よくきいてください,"Alright, listen to me.",,Ob du's mir glaubst oder nicht...,,
 0x120108,ここは デンジュウカイですよ!,We're in the Denjuu World!!,,Wir sind soeben in der Denjuu-Welt gelandet!!,,
 0x12010a,"なにーーーーー!!!!
 デンジュウカイだって!?","Whaaaat?!!
-The Denjuu World?!",,"Waaaaaas??!!
-Wir?! In der Denjuu-Welt?!",,
+The Denjuu World?!",,"Was??!! Wir...?!
+In der Denjuu-Welt?!",,
 0x12010c,"おそらく...
 そのDショットが げんいん
 でしょう...
@@ -471,22 +471,19 @@ Dショットは ふつうでは
 おちていたのか...
 ウーン きょうみぶかい!
 あとここは どこなのか
-しらベなくてはなリません!","It lets you send calls to the Denjuu World, and even allows humans to travel there!
+しらベなくてはなリません!","It lets you call the Denjuu World, and even allows humans to travel there!
 It's truly an amazing piece of technology!
 But it's strange...
 Normally, D-Shots are really difficult to get ahold of.
 So why would someone just leave one there...
-Hmmm, it's a mystery!
+Hmmm, mysterious!
 Now then, where are we?
-Let's start looking around!",,"Mit einem D-Shot kannst du nicht nur in die Denjuu-Welt telefonieren, mit ihm kannst du sogar dorthin reisen!
-Das Teil ist ein technologisches Wunderwerk!
+Let's start looking around!",,"Mit einem D-Shot kannst du nicht nur in die Denjuu-Welt telefonieren, du kannst sogar dorthin reisen! Das Teil ist ein technologisches Wunderwerk!
 Aber schon merkwürdig...
-Es ist nicht gerade leicht, an so ein D-Shot ranzukommen.
-Wieso sollte es jemand einfach so zurücklassen?
-Hmmm, sehr seltsam das Ganze!
-Zunächst sollten wir uns aber mal umsehen.
-Wo sind wir hier überhaupt gelandet?",,
-0x120110,ここは 『トロンコむら』じゃよ,"You are in ""Toronko Village"".",,"Im beschaulichen ""Strunkdorf"".",,
+Es ist nicht gerade leicht, an so ein D-Shot ranzukommen. Wieso sollte es jemand einfach so zurücklassen? Hmmm, sehr seltsam das Ganze!
+Zunächst sollten wir uns aber mal umsehen. Wo sind wir hier überhaupt gelandet?",,
+0x120110,ここは 『トロンコむら』じゃよ,"You are in
+Tronco Village.",,"Im beschaulichen ""Strunkdorf"".",,
 0x120112,"ほぉー げんきのイイ
 コドモじゃな
 オマエさんが えらばれたのか
@@ -596,11 +593,8 @@ Habt ihr soweit alles verstanden?
 He is always dozing off. Such a troublesome fellow....
 Netaro has the important job of carrying water for the village, but for the last few days we have been unable to contact him.
 If he stops bringing the water, it will trouble the villagers.
-That is why we want you to look for him.",,"Es gibt da ein Denjuu namens Netaro. Das lebt am Rande dieses Dorfes, innerhalb der Wasserwerke.
-Zu unser aller Nachteil hält diese Schlafmütze ständig ein Nickerchen...
-Ihr müsst wissen, Netaro ist mit der Aufgabe betraut, das Wasser von der Quelle ins Dorf zu schaffen. Leider erreichen wir ihn seit geraumer Zeit nicht mehr.
-Wenn die Wasserlieferung weiterhin ausbleibt, fangen die Dorfbewohner an, sich zu beschweren.
-Deshalb würden wir euch bitten, nach ihm zu suchen.",,
+That is why we want you to look for him.",,"Es gibt da ein Denjuu namens Netaro. Das lebt am Rande dieses Dorfes, innerhalb der Wasserwerke. Zu unser aller Nachteil hält diese Schlafmütze ständig ein Nickerchen...
+Ihr müsst wissen, Netaro ist mit der Aufgabe betraut, das Wasser von der Quelle ins Dorf zu schaffen. Leider erreichen wir ihn seit geraumer Zeit nicht mehr. Wenn die Wasserlieferung weiterhin ausbleibt, fangen die Dorfbewohner an, sich zu beschweren. Deshalb würden wir euch bitten, nach ihm zu suchen.",,
 0x12012c,"ただモンダイなのは ネタロの
 オトウトの ネジロじゃ
 ネジロもこまったヤツで
@@ -609,9 +603,7 @@ Deshalb würden wir euch bitten, nach ihm zu suchen.",,
 もしかしたらオマエさんに
 キガイをくわえるかもしれん","There is just one problem, and that is Netaro's younger brother, Nejiro.
 He is another troublemaker...
-He seems to have misunderstood the situation, and may try to hurt you.",,"Es gibt da nur ein Problem, und zwar Netaros jüngeren Bruder, Nejiro.
-Ein richtiger Unruhestifter ist das.
-Bei dem Versuch Netaro zu wecken, könnte er versuchen, euch wehzutun.",,
+He seems to have misunderstood the situation, and may try to hurt you.",,"Es gibt da nur ein Problem, und zwar Netaros jüngeren Bruder, Nejiro. Ein richtiger Unruhestifter ist das. Bei dem Versuch Netaro zu wecken, könnte er versuchen, euch wehzutun.",,
 0x12012e,"そこでオマエさんには
 いっぴき デンジュウをつける
 オマエさんのデンジュウカイでの
@@ -653,9 +645,7 @@ It is a ""Map"" of this world.
 It is blank right now, but you can use it to view the places you have been.
 I am sure it will be of use to you.
 You can view the Map by pressing the Start button.",,"Hier, nimm das.
-Das ist eine ""Karte"" unserer Welt.
-Noch ist sie leer, doch sie erweitert sich, je mehr Orte du bereist.
-Ich bin mir sicher, sie wird dir von Nutzen sein.
+Das ist eine ""Karte"" unserer Welt. Noch ist sie leer, doch sie erweitert sich, je mehr Orte du bereist. Ich bin mir sicher, sie wird dir von Nutzen sein.
 Einfach den START-Knopf drücken, und schon erscheint die Karte.",,
 0x12013a,『ちず』を てにいれた,Got the Map!,,Karte erhalten!,,
 0x12013c,"<&0xc92c>くん
@@ -676,9 +666,8 @@ Viel Glück!",,
 みせてあげよう","Hohoho.
 Well then, do be careful on your way.
 I will show you something interesting when you return.",,"Hohoho.
-Nun denn, gebt auf euch Acht.
-Wenn ihr wieder da seid, zeige ich euch etwas.",,
-#######,70 strings   -   Toronko Village story,,,,,
+Nun denn, gebt auf euch Acht. Wenn ihr wieder da seid, zeige ich euch etwas.",,
+#######,70 strings   -   Tronco Village story,,,,,
 0x120144,"したのひろばで
 カクザとう とうしゅ
 ネリカラさんの こうえんを
@@ -882,7 +871,7 @@ See you later, then!",,,,
 0x12017c,"ネジロの デンワバンゴウを
 てにいれた",Got Nejiro's phone number!,,,,
 0x12017e,"『トロンコむら すいげんち』
-『たちいリ キンシ』","""Toronko water source""
+『たちいリ キンシ』","""Tronco water source""
 ""No entry""",,,,
 0x120180,"『デンジュウカイ さいきょうの
 Tファンガーもとむ! 』","""Calling the world's strongest T-Fangers!""",,,,
@@ -954,7 +943,7 @@ Now I'll be able to build a wonderful curry shop, as I promised!",,,,
 あかるいミライをつくリます!
 カクザとう!カクザとうで
 ございます!","And with that, all of the Denjuu in this area will vote for me!
-First as chief of Toronko village, then as minister...
+First as chief of Tronco Village, then as minister...
 And then! As the first ""Prime Minister"" of the Denjuu World!
 My future is secure!
 Retirement will be a piece of cake!
@@ -1124,7 +1113,7 @@ Do you think that you can do it?",,,,
 じけんが おきているのじゃ
 むらのデンジュウたちのチカラになってやってくれ
 たのんだぞ!","Ah, thank you.
-Then, as your first task, go through this tree to Kurinon Village.
+Then, as your first task, go through this tree to Krinon Village.
 There has been trouble brewing, and the Denjuu there could use your strength.
 We are counting on you!",,,,
 0x1201c4,"わかった そのむらに
@@ -1161,11 +1150,11 @@ Hohoho.",,,,These two lines are for when you re-enter Musa's house before gettin
 0x1201ce,"<&0xc92c>くん
 トロンコむらの すいげんちは
 むらの きたのほうにあリます
-きをつけて いってください","<&0xc92c>, The Toronko Village spring is to the north.
+きをつけて いってください","<&0xc92c>, The Tronco Village spring is to the north.
 Please be careful.",,,,
-#######,72 strings   -   Kurinon Village story (partial),,,,,
+#######,72 strings   -   Krinon Village story (partial),,,,,
 0x1201d0,"ここははいれないダス
-はいっちゃいけないダス","You can't go in here. I won't let you, man.",,,,(More Kurinon strings at 0x14011c and 0x140134)
+はいっちゃいけないダス","You can't go in here. I won't let you, man.",,,,(More Krinon strings at 0x14011c and 0x140134)
 0x1201d2,"どうくつにはダレもいれないダス
 いれたらセンセイから 
 オシャレなキカイを もらえる
@@ -1256,8 +1245,8 @@ Sorry, but could you move?",,,,
 あー...いったいダレがカギを
 ぬすんだダスかー","The Antenna Tree key that I was entrusted with was stolen, man!
 Aaah... Who in the world could have done this?!",,,,
-#######,Story Messages 2   -   254 strings   -   Messages from Kurinon to Ion Island,,,,,
-#######,Kurinon Village story (cont'd),,,,,
+#######,Story Messages 2   -   254 strings   -   Messages from Krinon to Ion Island,,,,,
+#######,Krinon Village story (cont'd),,,,,
 0x12c000,"カギを ぬすんだ はんにんの
 こころあたリは ないの?",You can't think of anyone who might have stolen it?,,,,"Status: Translated 100%
 "
@@ -1319,7 +1308,7 @@ But I really don't know anything about that key, and there's nobody else around 
 ひとたちが なにかしている
 らしいです
 きをつけてくださいね!","Hello? It's me, Matsukiyo.
-I just heard it from Musa, but apparently those Kakuza Party people are up to something in Kurinon Village.
+I just heard it from Musa, but apparently those Kakuza Party people are up to something in Krinon Village.
 You'd best be careful!",,,,
 0x12c018,"あーあー
 なんで このネリカラさまが
@@ -1331,7 +1320,7 @@ Hm?!",,,,
 0x12c01a,"あっ! そこにみえるは
 トロンコむらであったチミ!
 チミ!ちょっとこっちに
-きなさい!","Ah! You're the kid who I met in Toronko Village!
+きなさい!","Ah! You're the kid who I met in Tronco Village!
 Hey, kid! Come over here!",,,,
 0x12c01c,"チミチミ!
 よくきてくれたね!
@@ -1385,8 +1374,8 @@ In exchange, all I ask for is your honest vote!",,,,
 せんきょでは たをよせつけない
 あっとうてきなひょうすうで
 いちいとうせんよー","Traa lalaa~~
-Finally, I've found it... The treasures of Kurinon Village!
-With this, we can buy out all of the Denjuu in this area and change ""Kurinon Village"" into ""Kakuza Party Village""!
+Finally, I've found it... The treasures of Krinon Village!
+With this, we can buy out all of the Denjuu in this area and change ""Krinon Village"" into ""Kakuza Party Village""!
 And once we have a foothold here, we can start spreading out into other towns!
 The polling stations will be flooded with our votes!",,,,
 0x12c028,"そーすればー ワタシはー
@@ -1406,7 +1395,7 @@ Kakuza Party! We are the Kakuza Party!",,,,
 ワタシたちのジャマをしてくれた
 <&name>くんね?
 ここでもハデに やってくれてる
-みたいだけど??","Hm? You're the one who got in our way at Toronko Village, <&name>, right?
+みたいだけど??","Hm? You're the one who got in our way at Tronco Village. <&name>, right?
 Though you're certainly acting like a big shot coming in here, aren't you?",,,,
 0x12c02c,"このタバスコさまを あまく
 みないでほしいわね?
@@ -1485,7 +1474,7 @@ I don't even need this stuff anymore, take it for all I care!!",,,,
 ことが おきているかも
 しれません
 がんばってください!
-<&name>くん","Hello? It's me, Matsukiyo. It looks like the Kakuza Party has fled Kurinon Village.
+<&name>くん","Hello? It's me, Matsukiyo. It looks like the Kakuza Party has fled Krinon Village.
 That's a relief...
 Similar things may be happening in other towns.
 Keep up the good work, <&name>!",,,,
@@ -1533,7 +1522,7 @@ They must not be home.",,,,
 0x12c062,"『たかピーのいえ 
  テレファングについて
  おしえるよ!』","""Taka-P's House
-I'll teach you all about Telefang!""",,,,These two lines are for when you approach Taka-P's house in Toronko.
+I'll teach you all about Telefang!""",,,,These two lines are for when you approach Taka-P's house in Tronco.
 0x12c064,"ふーん....
 『たかピー』ね...","Hmmm....
 ""Taka-P"", huh...",,,,
@@ -2753,7 +2742,7 @@ Please accept this new power.",,,,
 では これからも
 がんばるのじゃぞ!","I hope this power will be useful to you on your journeys ahead.
 Good luck to you!",,,,
-#######,47 strings   -   Paparuna Lake story,,,,,
+#######,47 strings   -   Paparouna Lake story,,,,,
 0x138050,"<&name>くん
 マツキヨです
 いまは どのあたリを たびして
@@ -3165,7 +3154,7 @@ Tファンガーならば
 ほこらから トリパむらヘ
 いくことが できます
 それでは おねがいしますよ",/0x138120/,,,,
-#######,Tripa Village story,,,,,
+#######,Toulipa Village story,,,,,
 0x138122,"やっと ニンゲンにあえた!
 キミ ボクをたすけてくれよ!
 デンジュウたちに つかまって
@@ -4089,7 +4078,7 @@ Tファンガーならば
 みんな まってます
 はやく トロンコむらに
 かえってきてください",/0x14011a/,,,,
-#######,Out of place text from Kurinon,,,,,
+#######,Out of place text from Krinon,,,,,
 0x14011c,"はやく カギをかえしに
 いかないと...",Better return the key quickly...,,,,
 0x14011e,"はやく カギをかえしに
@@ -4130,11 +4119,11 @@ You really saved me, man!!",,,,
 0x14012e,"おねがいだから はかせには
 ワタシの いばしょを
 おしえないで おいてくれ!!","Please, I'm begging you!
-Don't tell the professor where I am!",,,,From Paparuna Lake
+Don't tell the professor where I am!",,,,From Paparouna Lake
 0x140130,"はかせの ぼうそうを
 とめてくれたんだ!
 あリがとう!!","You stopped the professor's unethical research!
-Thank you!!",,,,From Paparuna Lake
+Thank you!!",,,,From Paparouna Lake
 0x140132,"『あたらしいDショット』
 をてにいれた","Obtained a ""New D-Shot""!",,,,Get a new D-Shot
 0x140134,"どんどん タバスコのジャマを
@@ -4194,7 +4183,7 @@ Tファンガーと いっても
 まだまだトモダチを ふやすぞ!
 みんな!
 オレと テレファングだ!",/0x14014c/,,,,
-#######,NPC: Umekichi (Toronko),,,,,
+#######,NPC: Umekichi (Tronco),,,,,
 0x14014e,"Dショットのことで
 わからないことがあるのか?
 オレが おしえてやるよ
@@ -4315,7 +4304,7 @@ Apparently there are a few different models besides the one you have.",,,,
 たくさんの デンジュウと
 トモダチに なれよ","Well then, good luck.
 Try to make friends with lots of Denjuu!",,,,
-#######,NPC: Erika (Kurinon),,,,,
+#######,NPC: Erika (Krinon),,,,,
 0x140182,"あら <&name>じゃん
 デンジュウカイについて
 ききたいの?
@@ -4444,7 +4433,7 @@ If you want to hear it again, just let me know.",,,,
 0x1401b4,"それじゃあ がんばって
 トモダチを ふやしてくれよな","Well, seeya around.
 Good luck meeting lots of Denjuu!",,,,
-#######,NPC: Human guy in Tripa,,,,,
+#######,NPC: Human guy in Toulipa,,,,,
 0x1401b6,"いまのボクには キミだけが
 たよリなんだ
 きのてっペんで クスリを
@@ -4479,7 +4468,7 @@ Good luck meeting lots of Denjuu!",,,,
 たびをつづけてくれよ",/0x1401c0/,,,,
 0x1401c2,"おう それじゃーな!
 おっさんもゲンキで!",/0x1401c2/,,,,
-#######,NPC: Taka-P (Toronko),,,,,
+#######,NPC: Taka-P (Tronco),,,,,
 0x1401c4,"ここでは テレファングを
 すすめる ほうほうを
 おしえてるんだ
@@ -4490,7 +4479,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 0x1401c6,"『いわやま』にすむ
 デンジュウが あいてのときに
 ついて ききたい?
- はい  いいえ<*A>","Would you like to learn the match-ups for ""Mountain"" Denjuu?
+ はい  いいえ<*A>","Would you like to learn the match-ups for Mountain Denjuu?
 <0>Yes<0>No<*A>",,,,
 0x1401c8,"『いわやま』にすむ
 デンジュウがあいてのときの
@@ -4505,7 +4494,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 0x1401ca,"つぎに 『そうげん』にすむ
 デンジュウが あいてのときに
 ついて ききたい?
- はい  いいえ<*A>","How about the match-ups for ""Field"" Denjuu?
+ はい  いいえ<*A>","How about the match-ups for Field Denjuu?
 <0>Yes<0>No<*A>",,,,
 0x1401cc,"『そうげん』にすむ
 デンジュウがあいてのときの
@@ -4520,7 +4509,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 0x1401ce,"つぎに 『しんリん』にすむ
 デンジュウが あいてのときに
 ついて ききたい?
- はい  いいえ<*A>","How about the match-ups for ""Forest"" Denjuu?
+ はい  いいえ<*A>","How about the match-ups for Forest Denjuu?
 <0>Yes<0>No<*A>",,,,
 0x1401d0,"『しんリん』にすむ
 デンジュウがあいてのときの
@@ -4535,7 +4524,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 0x1401d2,"つぎに 『みずベ』にすむ
 デンジュウが あいてのときに
 ついて ききたい?
- はい  いいえ<*A>","How about the match-ups for ""Water"" Denjuu?
+ はい  いいえ<*A>","How about the match-ups for Water Denjuu?
 <0>Yes<0>No<*A>",,,,
 0x1401d4,"『みずベ』にすむ
 デンジュウがあいてのときの
@@ -4550,7 +4539,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 0x1401d6,"つぎに 『そら』にすむ
 デンジュウが あいてのときに
 ついて ききたい?
- はい  いいえ<*A>","How about the match-ups for ""Sky"" Denjuu?
+ はい  いいえ<*A>","How about the match-ups for Sky Denjuu?
 <0>Yes<0>No<*A>",,,,
 0x1401d8,"『そら』にすむ
 デンジュウがあいてのときの
@@ -4565,7 +4554,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 0x1401da,"『さばく』にすむ
 デンジュウが あいてのときに
 ついて ききたい?
- はい  いいえ<*A>","How about the match-ups for ""Desert"" Denjuu?
+ はい  いいえ<*A>","How about the match-ups for Desert Denjuu?
 <0>Yes<0>No<*A>",,,,
 0x1401dc,"つぎに 『さばく』にすむ
 デンジュウがあいてのときの
@@ -4579,7 +4568,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 つかうと ふリになるんだ","Denjuu that live in the desert are weak against Denjuu that live near the water, and strong against Denjuu that live in fields!",,,,
 0x1401de,"がんばって トモダチ
 あつめてねー
-バイバーイ","Well then, good luck gathering friends! Bye-Bye!",,,,
+バイバーイ","Well then, good luck gathering friends! Bye-bye!",,,,
 #######,NPC: Matsukiyo in Musa's house (partial),,,,,
 0x1401e0,"『クリノンむら』の かたがたの
 チカラに なってあげてください

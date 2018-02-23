@@ -2,16 +2,16 @@ Pointer,Japanese,English,Draft version,Notes
 0x40000,"<S0>あたまは ヘルメットじょうの
 カバーで まもられている<*4>",<S0>Its head is protected by a helmet-like cover.<*4>,<S0>Its head is protected by a helmet-like cover.<*4>,Field guide entries.
 0x40002,"<S0>こまかい はで どんなもの
-でも かみきってしまう<*4>",<S0>Can't help but gnaw through everything it comes across using its small teeth.<*4>,<S0>Can't help but gnaw through everything it comes across using its small teeth.<*4>,"Status: Translated 1%
+でも かみきってしまう<*4>",<S0>Can't help but gnaw through everything it comes across using its small teeth.<*4>,<S0>Can't help but gnaw through anything and everything it comes across using its small teeth.<*4>,"Status: Translated 1%
 "
 0x40004,"<S0>からだをまるめて てきからの
 ダメージを かるくする<*4>",<S0>Rolls up in a ball to mitigate damage taken.<*4>,<S0>Rolls up in a ball to mitigate damage taken.<*4>,
 0x40006,"<S0>からだの いろを かえて
-すがたを かくすことができる<*4>",<S0>It can hide itself by changing color.<*4>,<S0>It can hide itself by changing color.<*4>,
+すがたを かくすことができる<*4>",<S0>It can conceal itself by changing color.<*4>,<S0>It can conceal itself by changing color.<*4>,
 0x40008,"<S0>なんでも きリさく かたい
 ツメで こうげきする<*4>",<S0>Attacks using tough claws that can cut through anything.<*4>,<S0>Attacks using tough claws that can cut through anything.<*4>,
 0x4000a,"<S0>おしリからでる ドクガスで
-ジワジワとダメージをあたえる<*4>","<S0>By emitting poison gas from its behind, it can cause damage over time.<*4>","<S0>By emitting poison gas from its behind, it can cause damage over time.<*4>",
+ジワジワとダメージをあたえる<*4>","<S0>With the poison gas emitted from its behind, it can cause damage bit by bit over time.<*4>","<S0>With the poison gas emitted from its behind, it can cause damage bit by bit over time.<*4>",
 0x4000c,"<S0>すばやさで てきをほんろうし
 ツノをつかって こうげきする<*4>",<S0>Taunts opponents with its agility. Attacks using its horn.<*4>,<S0>Taunts opponents with its agility. Attacks using its horn.<*4>,
 0x4000e,"<S0>どうたいがチョウチンみたいに
@@ -27,7 +27,7 @@ Pointer,Japanese,English,Draft version,Notes
 0x40018,"<S0>とてもするどい ツメとキバで 
 きリさきこうげきをする<*4>",<S0>Shreds its foes with razor-sharp claws and fangs.<*4>,<S0>Shreds its foes with razor-sharp claws and fangs.<*4>,
 0x4001a,"<S0>せなかに たくさんのタマゴが
-あるが なかには なにが?<*4>","<S0>It carries eggs on its back, but what is inside?<*4>","<S0>It carries eggs on its back, but what is inside?<*4>",
+あるが なかには なにが?<*4>","<S0>It carries eggs on its back, but what lies inside them?<*4>","<S0>It carries eggs on its back, but what lies inside them?<*4>",
 0x4001c,"<S0>あしのうらの きゅうばんで
 どんなところも いどうできる<*4>",<S0>The suction cups on its feet allow it to traverse any terrain.<*4>,<S0>The suction cups on its feet allow it to traverse any terrain.<*4>,
 0x4001e,"<S0>うつぶせの じょうたいで
@@ -39,20 +39,21 @@ Pointer,Japanese,English,Draft version,Notes
 0x40024,"<S0>リょうてのハサミと シッポの
 ドクバリで こうげきする<*4>",<S0>Attacks using its pincers and the stinger on its tail.<*4>,<S0>Attacks using its pincers and the stinger on its tail.<*4>,
 0x40026,"<S0>せなかにある かおのもようで
-てきを まどわせる<*4>",<S0>Confuses its adversaries using the face-like pattern on its back.<*4>,<S0>Confuses its adversaries using the face-like pattern on its back.<*4>,
+てきを まどわせる<*4>",<S0>Confuses adversaries using the face-like pattern on its back.<*4>,<S0>Confuses adversaries using the face-like pattern on its back.<*4>,
 #######,colspan=2 | '''Civilized Denjuu                                   ''',,,
 0x40028,"<S0>ハネで かぜを おこして
 するどいツメで こうげきする<*4>","<S0>Stirs up wind using its wings, and then attacks with its sharp claws.<*4>","<S0>Stirs up wind using its wings, and then attacks with its sharp claws.<*4>",
 0x4002a,"<S0>おおきなこぶしから くリだす
 パンチはデンジュウカイいち!<*4>",<S0>The punches it delivers with its enormous fists are unmatched in the Denjuu World!<*4>,<S0>The punches it delivers with its enormous fists are unmatched in the Denjuu World!<*4>,
 0x4002c,"<S0>うみの あさせに なかまと
-むれをつくって せいそくする<*4>","<S0>Gathers friends to make a pack, which then lives together in the shoals.<*4>","<S0>Gathers friends to make a pack, which then lives together in the shoals.<*4>",
+むれをつくって せいそくする<*4>","<S0>Gathered in packs, it lives together in sea shoals.<*4>","<S0>Gathered in packs, it lives together in sea shoals.<*4>",
 0x4002e,"<S0>ボウシが トレードマーク
-カオと オシリが ハートがた<*4>",<S0>Its hat is its trademark. Its face and butt are heart-shaped.<*4>,<S0>Its hat is its trademark. Its face and butt are heart-shaped.<*4>,
+カオと オシリが ハートがた<*4>",<S0>Its hat is its trademark. Its face and its butt are both heart-shaped.<*4>,<S0>Its hat is its trademark. Its face and its butt are both heart-shaped.<*4>,
 0x40030,"<S0>リょうかたのヒレを ひっしに
-はばたかせて ちゅうにうく<*4>",<S0>Hovers by frantically flapping its shoulder fins.<*4>,<S0>Hovers by frantically flapping its shoulder fins.<*4>,
+はばたかせて ちゅうにうく<*4>",<S0>Hovers by frantically flapping its shoulder fins.<*4>,"<S0>Hovers by frantically flapping its
+shoulder fins.<*4>",
 0x40032,"<S0>おしリのとっきからドクバリを
-とばして こうげきする<*4>",<S0>Attacks by shooting poison needles from the protrusion on its abdomen.<*4>,<S0>Attacks by shooting poison needles from the protrusion on its abdomen.<*4>,
+とばして こうげきする<*4>",<S0>Shoots poison needles from the protrusion on its abdomen.<*4>,<S0>Shoots poison needles from the protrusion on its abdomen.<*4>,
 0x40034,"<S0>やこうせいのため ひるまは
 かくれていることが おおい<*4>","<S0>Being a nocturnal creature, it often hides during the day.<*4>","<S0>Being a nocturnal creature, it often hides during the day.<*4>",
 0x40036,"<S0>すいちゅうに すんでいるが
@@ -62,7 +63,9 @@ Pointer,Japanese,English,Draft version,Notes
 0x4003a,"<S0>リっぱなあしと おなかにある
 なぞのポケットが とくちょう<*4>",<S0>Its most distinguishing features are its capable legs and the mysterious pouch on its stomach.<*4>,<S0>Its most distinguishing features are its capable legs and the mysterious pouch on its stomach.<*4>,
 0x4003c,"<S0>ながくひらベったい シッポを
-まるめて こうげきしてくる<*4>","<S0>Curls up its long, flat tail and uses it to attack.<*4>","<S0>Curls up its long, flat tail and uses it to attack.<*4>",
+まるめて こうげきしてくる<*4>","<S0>Curls up its long,
+flat tail and uses it to attack.<*4>","<S0>Curls up its long,
+flat tail and uses it to attack.<*4>",
 0x4003e,"<S0>2ほんあしで たっているが
 すばやく はしることができる<*4>","<S0>Despite standing on two legs, it can run at great speeds.<*4>","<S0>Despite standing on two legs, it can run at great speeds.<*4>",
 0x40040,"<S0>かんせつがない ながいうでを
@@ -70,12 +73,12 @@ Pointer,Japanese,English,Draft version,Notes
 0x40042,"<S0>ちょうおんぱのような こえで 
 てきを こんらんさせてしまう<*4>",<S0>Disorients its foes with an almost ultrasonic voice.<*4>,<S0>Disorients its foes with an almost ultrasonic voice.<*4>,
 0x40044,"<S0>せなかにある おおきなツメを
-のばして とっしんこうげき<*4>",<S0>Extends the large claws on its back and charges at its adversaries.<*4>,<S0>Extends the large claws on its back and charges at its adversaries.<*4>,
+のばして とっしんこうげき<*4>",<S0>Extends the large claws on its back and charges at its foes.<*4>,<S0>Extends the large claws on its back and charges at its foes.<*4>,
 #######,colspan=2 | '''Techno Denjuu                                      ''',,,
 0x40046,"<S0>ほのおのつばさで ひこうして
-てきの ようすを うかがう<*4>","<S0>Using its fiery wings, it takes flight and surveys the enemy from afar.<*4>","<S0>Using its fiery wings, it takes flight and surveys the enemy from afar.<*4>",
+てきの ようすを うかがう<*4>","<S0>Using its fiery wings, it takes to the skies. From up high, it surveys its enemies at a distance.<*4>","<S0>Using its fiery wings, it takes to the skies. From up high, it surveys its enemies at a distance.<*4>",
 0x40048,"<S0>てきを こんらん させてから
-あたまのツノで こうげきする<*4>","<S0>After disorienting the opponent, it attacks using the horn on its head.<*4>","<S0>After disorienting the opponent, it attacks using the horn on its head.<*4>",
+あたまのツノで こうげきする<*4>","<S0>After disorienting the opponent, it attacks using its horn.<*4>","<S0>After disorienting the opponent, it attacks using its horn.<*4>",
 0x4004a,"<S0>トレードマークの おおきな
 ドリルで とっしんこうげき<*4>",<S0>Charges at opponents with its trademark drill.<*4>,<S0>Charges at opponents with its trademark drill.<*4>,
 0x4004c,"<S0>からだじゅうの とっきから
@@ -87,13 +90,13 @@ Pointer,Japanese,English,Draft version,Notes
 0x40052,"<S0>せなかには きょうリょくな
 じゅうを そうびしている<*4>",<S0>It's equipped with a powerful gun on its back.<*4>,<S0>It's equipped with a powerful gun on its back.<*4>,
 0x40054,"<S0>かおはまさしく カバそのもの
-おおきなキバでてきにかみつく<*4>","<S0>While it undoubtedly has the face of a hippo, it also has large tusks to sink into opponents.<*4>","<S0>While it undoubtedly has the face of a hippo, it also has large tusks to sink into opponents.<*4>",
+おおきなキバでてきにかみつく<*4>","<S0>While it undoubtedly has the face of a hippo, it also has prominent tusks to sink into opponents.<*4>","<S0>While it undoubtedly has the face of a hippo, it also has prominent tusks to sink into opponents.<*4>",
 0x40056,"<S0>あたまについているカッターの
 はを かいてんさせて とぶ<*4>",<S0>It revolves the blades attached to its head in order to fly.<*4>,<S0>It revolves the blades attached to its head in order to fly.<*4>,
 0x40058,"<S0>せなかに たくさんついている 
-バクダンを むしってなげる<*4>",<S0>Can pick the countless bombs it carries on its back and throw them.<*4>,<S0>Can pick the countless bombs it carries on its back and throw them.<*4>,
+バクダンを むしってなげる<*4>",<S0>Can pick and throw the countless bombs it carries on its back.<*4>,<S0>Can pick and throw the countless bombs it carries on its back.<*4>,
 0x4005a,"<S0>ぶあついヒズメで どんなもの
-でもふみつけてペシャンコに!<*4>","<S0>By trampling it with its massive hooves, it is able to turn most everything to mush.<*4>","<S0>By trampling it with its massive hooves, it is able to turn most everything to mush.<*4>",
+でもふみつけてペシャンコに!<*4>","<S0>By trampling things with its massive hooves, it is able to turn most everything to an unidentifiable paste.<*4>","<S0>By trampling things with its massive hooves, it is able to turn most everything to an unidentifiable paste.<*4>",
 0x4005c,"<S0>からだじゅうにある トゲを
 てきにとばして しびれさせる<*4>",<S0>Paralyzes opponents by launching the spikes that cover its body.<*4>,<S0>Paralyzes opponents by launching the spikes that cover its body.<*4>,
 0x4005e,"<S0>ちょうろうのひとリ コウラ
@@ -101,40 +104,41 @@ Pointer,Japanese,English,Draft version,Notes
 0x40060,"<S0>フサフサの けのなかには
 ミサイルを かくしもっている<*4>",<S0>Conceals missiles under its shaggy hair.<*4>,,
 0x40062,"<S0>くうちゅうから ツメや
-マシンガンで こうげきする<*4>",<S0>Attacks from above using its claws and machine gun.<*4>,,
+マシンガンで こうげきする<*4>",<S0>Attacks from above using its claws and its machine gun.<*4>,,
 0x40064,"<S0>ワキから むすうのアシがでて
-ムカデのように はしれる<*4>","<S0>Countless legs sprout from its sides, letting it run like a centipede.<*4>","<S0>Countless legs sprout from its sides, letting it run like a centipede.<*4>",
+ムカデのように はしれる<*4>",<S0>Countless legs sprout from its sides. It runs like a centipede.<*4>,<S0>Countless legs sprout from its sides. It runs like a centipede.<*4>,
 0x40066,"<S0>さかだちじょうたいで ツノと
 シッポを つかって こうげき<*4>","<S0>Standing on its hands, it uses both its horn and its tail to attack.<*4>","<S0>Standing on its hands, it uses both its horn and its tail to attack.<*4>",
 0x40068,"<S0>きょうリょくな ほのおけいの
 こうげきを とくいとする<*4>",<S0>Powerful flame attacks are its specialty.<*4>,<S0>Powerful flame attacks are its specialty.<*4>,
 0x4006a,"<S0>そとからはみえないが かたに
-ボンベが ないぞうされている<*4>","<S0>Though they're not visible from the outside, its shoulders have gas cylinders built in.<*4>","<S0>Though they're not visible from the outside, its shoulders have gas cylinders built in.<*4>",
+ボンベが ないぞうされている<*4>","<S0>Although you can't tell from outside, its shoulders have gas cylinders built in.<*4>","<S0>Although you can't tell from outside, its shoulders have gas cylinders built in.<*4>",
 0x4006c,"<S0>おおきなツノで てきをはさみ 
-せなかのビームでこうげきする<*4>",<S0>Grabs foes with its large pincers and attacks by firing the beam mounted on its back.<*4>,<S0>Grabs foes with its large pincers and attacks by firing the beam mounted on its back.<*4>,
+せなかのビームでこうげきする<*4>",<S0>Grabs foes with its oversized pincers and attacks by firing the beam cannon mounted on its back.<*4>,<S0>Grabs foes with its oversized pincers and attacks by firing the beam cannon mounted on its back.<*4>,
 #######,colspan=2 | '''Big Denjuu                                      ''',,,
 0x4006e,"<S0>ヘルメットにからだをすっぽリ
-いれて ダメージをかるくする<*4>",<S0>Mitigates damage by covering itself entirely with its helmet.<*4>,<S0>Mitigates damage by covering itself entirely with its helmet.<*4>,
+いれて ダメージをかるくする<*4>",<S0>Mitigates damage by taking shelter within its helmet.<*4>,<S0>Mitigates damage by taking shelter within its helmet.<*4>,
 0x40070,"<S0>おこるとヒレをたて いかくし
-てきをひるませ こうげきする<*4>","<S0>When angered, its fins fan out to intimidate the foe. It attacks while they're startled.<*4>","<S0>When angered, its fins fan out to intimidate the foe. It attacks while they're startled.<*4>",
+てきをひるませ こうげきする<*4>","<S0>When angered, its fins fan out to intimidate the foe. It attacks while they're startled.<*4>","<S0>When angered, its fins fan out to intimidate the foe.
+It attacks while they're startled by its size.<*4>",
 0x40072,"<S0>まるまって トゲのボールに
-すがたをかえて とっしんする<*4>",<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,
+すがたをかえて とっしんする<*4>",<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,<S0>Curls up in a spiky ball and careens toward the opponent.<*4>,
 0x40074,"<S0>からだが あなだらけなので
 しっぽからふくとフエになる?<*4>",<S0>Covered in holes. Would blowing on its tail make it a flute?<*4>,<S0>Covered in holes. Would blowing on its tail make it a flute?<*4>,
 0x40076,"<S0>かたのパーツで ぼうぎょして
 するどいツメで こうげきする<*4>",<S0>Its shoulder plating protects it while it attacks with its sharp claws.<*4>,<S0>Its shoulder plating protects it while it attacks with its sharp claws.<*4>,
 0x40078,"<S0>だっぴちゅうのようだが...
-ぬいだらどうなるの?<*4>",<S0>It seems to be in the middle of shedding. How will it look when it's finished?<*4>,<S0>It seems to be in the middle of shedding. How will it look when it's finished?<*4>,
+ぬいだらどうなるの?<*4>",<S0>It seems to be in the middle of shedding. What do you think it'll look like when it's finished?<*4>,<S0>It seems to be in the middle of shedding. What do you think it'll look like when it's finished?<*4>,
 0x4007a,"<S0>からだのあちこちが するどい
-はもののようになっている<*4>","<S0>There are sharp, blade-like growths scattered all over its body.<*4>","<S0>There are sharp, blade-like growths scattered all over its body.<*4>",
+はもののようになっている<*4>","<S0>Sharp, blade-like growths stick out all over its body.<*4>","<S0>Sharp, blade-like growths stick out all over its body.<*4>",
 0x4007c,"<S0>ジャンプ ひとつで すごい
 じしんを おこすことができる<*4>",<S0>It can cause massive earthquakes simply by jumping.<*4>,<S0>It can cause massive earthquakes simply by jumping.<*4>,
 0x4007e,"<S0>しょくしゅの さきの トゲを
-つかい デンキこうげきをする<*4>",<S0>Unleashes electric attacks through the spikes on the ends of its tentacles.<*4>,<S0>Unleashes electric attacks through the spikes on the ends of its tentacles.<*4>,
+つかい デンキこうげきをする<*4>",<S0>Unleashes electric attacks through the conductive spikes on the ends of its tentacles.<*4>,<S0>Unleashes electric attacks through the conductive spikes on the ends of its tentacles.<*4>,
 0x40080,"<S0>ほうまんなボディーをつかって
 きょうリょくな タックル<*4>",<S0>Delivers powerful tackles with its corpulent body.<*4>,<S0>Delivers powerful tackles with its corpulent body.<*4>,
 0x40082,"<S0>すばやいうごきで すがたを
-みうしなわせ こうげきする<*4>",<S0>Opponents lose sight of it due to its swift movements. It attacks while they're confused.<*4>,<S0>Opponents lose sight of it due to its swift movements. It attacks while they're confused.<*4>,
+みうしなわせ こうげきする<*4>","<S0>With swift movements, it makes opponents lose sight of it. It strikes while they're still confused.<*4>","<S0>With swift movements, it makes opponents lose sight of it. It strikes while they're still confused.<*4>",
 0x40084,"<S0>なんと からだの うしろから 
 ほのおが ふきだしている<*4>",<S0>What in the world? There are flames spouting from its back!<*4>,<S0>What in the world? There are flames spouting from its back!<*4>,
 0x40086,"<S0>えものを とらえるように
@@ -142,71 +146,73 @@ Pointer,Japanese,English,Draft version,Notes
 0x40088,"<S0>タマゴのなかには いったい 
 なにが はいっているのかな?<*4>",<S0>Just what could be inside that egg?<*4>,<S0>Just what could be inside that egg?<*4>,
 0x4008a,"<S0>おおごえで さけび ひるんだ
-ところで なぐリかかってくる<*4>","<S0>Shouts loudly, and strikes while the opponent is reeling from the shock.<*4>","<S0>Shouts loudly, and strikes while the opponent is reeling from the shock.<*4>",
+ところで なぐリかかってくる<*4>","<S0>Lets out loud yells, and strikes while the opponent is reeling from the shock.<*4>","<S0>Lets out loud yells, and strikes while the opponent is reeling from the shock.<*4>",
 0x4008c,"<S0>うつぶせになって てきに
-きづかれずに せっきんする<*4>","<S0>Lies face-down, and then edges unnoticed toward its opponent.<*4>","<S0>Lies face-down, and then edges unnoticed toward its opponent.<*4>",
+きづかれずに せっきんする<*4>",<S0>Lies face-down and edges unnoticed toward its enemy.<*4>,<S0>Lies face-down and edges unnoticed toward its enemy.<*4>,
 0x4008e,"<S0>ひらひらしたマントの したの
-ボディは ひ.み.つ!<*4>","<S0>There is indeed a body under the fluttering cape, but what it looks like is a secret!<*4>","<S0>There is indeed a body under the fluttering cape, but what it looks like is a secret!<*4>",
+ボディは ひ.み.つ!<*4>","<S0>There is indeed a body hidden under the fluttering cape...
+But what it looks like is a secret!<*4>","<S0>There is indeed a body hidden under the fluttering cape...
+But what it looks like is a secret!<*4>",
 0x40090,"<S0>ひらいているカラを とじると
 ぼうぎょけいたいになる<*4>",<S0>Goes into defense mode by closing its shell.<*4>,<S0>Goes into defense mode by closing its shell.<*4>,
 0x40092,"<S0>ふたまたにわかれた シッポと 
 おおきなハサミが とくちょう<*4>",<S0>Its two-pronged tail and large pincers are its strong points.<*4>,<S0>Its two-pronged tail and large pincers are its strong points.<*4>,
 0x40094,"<S0>ひだリのツメで つかまえて
-みぎのサーベルで こうげき<*4>","<S0>Grabs opponents with its left claw, and attacks using the sabre on its right.<*4>","<S0>Grabs opponents with its left claw, and attacks using the sabre on its right.<*4>",
+みぎのサーベルで こうげき<*4>","<S0>Its left hand is a claw it uses to grab opponents, and its right is a sabre it then attacks them with.<*4>","<S0>Its left hand is a claw it uses to grab opponents, and its right is a sabre it then attacks them with.<*4>",
 #######,colspan=2 | '''Burst Denjuu                                      ''',,,
 0x40096,"<S0>うでの するどいブレードで
 どんなものでも きリさく<*4>","<S0>Using the sharp blades on its arms, it can cut through anything.<*4>","<S0>Using the sharp blades on its arms, it can cut through anything.<*4>",
 0x40098,"<S0>うでの とがったハンマーで
 てきを ふんさいする<*4>",<S0>Pulverizes opponents using the pointed hammers on its arms.<*4>,<S0>Pulverizes opponents using the pointed hammers on its arms.<*4>,
 0x4009a,"<S0>れいきを ふきかけて てきの
-ぼうぎょリょくを よわめる<*4>",<S0>Weakens its opponent's defenses by blowing intensely cold air at them.<*4>,<S0>Weakens its opponent's defenses by blowing intensely cold air at them.<*4>,
+ぼうぎょリょくを よわめる<*4>",<S0>Weakens its opponent's defenses by blowing ice-cold air at them.<*4>,<S0>Weakens its opponent's defenses by blowing ice-cold air at them.<*4>,
 0x4009c,"<S0>こもリうたを うたい てきを
-ねむらせて こうげきする<*4>","<S0>Puts foes to sleep by singing lullabies, and attacks when they're asleep.<*4>","<S0>Puts foes to sleep by singing lullabies, and attacks when they're asleep.<*4>",
+ねむらせて こうげきする<*4>","<S0>Puts foes to sleep by singing lullabies. While they're asleep, it can attack unhindered.<*4>","<S0>Puts foes to sleep by singing lullabies. While they're asleep, it can attack unhindered.<*4>",
 0x4009e,"<S0>せなかにドクロのマークがあリ
-シッポをならして いかくする<*4>",<S0>A skull-like pattern can be found on its back. Intimidates foes by rattling its tail.<*4>,<S0>A skull-like pattern can be found on its back. Intimidates foes by rattling its tail.<*4>,
+シッポをならして いかくする<*4>",<S0>A skull-like pattern can be found on its back. It intimidates opponents by rattling its tail.<*4>,<S0>A skull-like pattern can be found on its back. It intimidates opponents by rattling its tail.<*4>,
 0x400a0,"<S0>とっきぶつから れいきゃく
 ガスをだして こごえさせる<*4>","<S0>Shoots cooling gas from the protrusion on its abdomen, freezing everything it hits.<*4>","<S0>Shoots cooling gas from the protrusion on its abdomen, freezing everything it hits.<*4>",
 0x400a2,"<S0>ツメをつかってちょうおんぱを
 はっせいさせることができる<*4>",<S0>It is able to generate ultrasonic waves by swiping its claws.<*4>,<S0>It is able to generate ultrasonic waves by swiping its claws.<*4>,
 0x400a4,"<S0>からだのなかにデンキをためて
-いっきに ほうしゅつする<*4>",<S0>Builds up electricity within its body and releases it all at once.<*4>,<S0>Builds up electricity within its body and releases it all at once.<*4>,
+いっきに ほうしゅつする<*4>",<S0>Builds up electricity within its body and releases it in one go.<*4>,<S0>Builds up electricity within its body and releases it in one go.<*4>,
 0x400a6,"<S0>かぜが まるでリボンのように 
 からだを つつみこんでいる<*4>",<S0>Ribbon-like winds envelop its body.<*4>,<S0>Ribbon-like winds envelop its body.<*4>,
 0x400a8,"<S0>じょうぶな リょうあしで
-すばやく うごくことができる<*4>",<S0>Its sturdy legs allow it to move quite quickly.<*4>,<S0>Its sturdy legs allow it to move quite quickly.<*4>,
+すばやく うごくことができる<*4>",<S0>Its sturdy legs allow it to move fairly quickly.<*4>,<S0>Its sturdy legs allow it to move fairly quickly.<*4>,
 0x400aa,"<S0>とてもかたいトゲつきシッポを
 ふリまわして こうげきする<*4>",<S0>Attacks by swinging its thorny tail like a club.<*4>,<S0>Attacks by swinging its thorny tail like a club.<*4>,
 0x400ac,"<S0>あたまがおもいので しっぽで
 バランスを たもっている<*4>","<S0>Since its head is so heavy, it balances using its tail.<*4>","<S0>Since its head is so heavy, it balances using its tail.<*4>",
 0x400ae,"<S0>おこらせると ながいうでを
-ふリまわしてとっしんしてくる<*4>","<S0>When angered, it starts swinging its long arms and charges at its opponent.<*4>","<S0>When angered, it starts swinging its long arms and charges at its opponent.<*4>",
+ふリまわしてとっしんしてくる<*4>","<S0>When angered, it starts swinging its long arms about and charges wildly at its opponent.<*4>","<S0>When angered, it starts swinging its long arms about and charges wildly at its opponent.<*4>",
 0x400b0,"<S0>ふうせんのように おおきく
-ふくらみ どくガスこうげき<*4>","<S0>To attack, it first puffs up like a balloon, and then releases poison gas.<*4>","<S0>To attack, it first puffs up like a balloon, and then releases poison gas.<*4>",
+ふくらみ どくガスこうげき<*4>","<S0>To attack, it first puffs up like a balloon, and then blows poison gas at foes.<*4>","<S0>To attack, it first puffs up like a balloon, and then blows poison gas at foes.<*4>",
 0x400b2,"<S0>せなかにある 6つのツメを
-まえにのばし こうげきする<*4>",<S0>Extends the six large claws on its back and attacks.<*4>,<S0>Extends the six large claws on its back and attacks.<*4>,
+まえにのばし こうげきする<*4>",<S0>Extends the six large claws on its back before attacking.<*4>,<S0>Extends the six large claws on its back before attacking.<*4>,
 #######,colspan=2 | '''Explosion Denjuu                                      ''',,,
 0x400b4,"<S0>てのようにもみえる 2ほんの
 シッポをつかってこうげきする<*4>",<S0>Its tails look like hands. It uses both tails to attack.<*4>,<S0>Its tails look like hands. It uses both tails to attack.<*4>,
 0x400b6,"<S0>とおくのてきでも ハンマーを
-とばして いちげきふんさい!<*4>",<S0>It can throw its hammers. Not even faraway foes are safe from pulverization!<*4>,<S0>It can throw its hammers. Not even faraway foes are safe from pulverization!<*4>,
+とばして いちげきふんさい!<*4>",<S0>It can throw its hammers great distances. Not even faraway foes are safe from pulverization!<*4>,<S0>It can throw its hammers great distances. Not even faraway foes are safe from pulverization!<*4>,
 0x400b8,"<S0>スクリューじょうの シッポで
 すいちゅうを じゆうにうごく<*4>",<S0>It moves freely underwater using its propeller-shaped tail.<*4>,<S0>It moves freely underwater using its propeller-shaped tail.<*4>,
 0x400ba,"<S0>みみのさきを まえにたおして
-バルカンを うちまくる<*4>",<S0>It can turn the tips of its ears forward and fire them like gatling guns.<*4>,<S0>It can turn the tips of its ears forward and fire them like gatling guns.<*4>,
+バルカンを うちまくる<*4>",<S0>The tips of its ears turn forward and fire like gatling guns.<*4>,<S0>The tips of its ears turn forward and fire like gatling guns.<*4>,
 0x400bc,"<S0>ちかくのてきは しょくしゅで
-とおくのてきは ドクガスで<*4>","<S0>Nearby enemies get its tentacles, while those far away get its poison gas cannon.<*4>","<S0>Nearby enemies get its tentacles, while those far away get its poison gas cannon.<*4>",
+とおくのてきは ドクガスで<*4>","<S0>Nearby enemies meet its tentacles, while those far away get to feel the effects of its poison gas cannon.<*4>","<S0>Nearby enemies meet its tentacles, while those far away get to feel the effects of its poison gas cannon.<*4>",
 0x400be,"<S0>おしリの かいてんカッターで
-すベてを せつだんしてしまう<*4>",<S0>Cuts into anything and everything using the revolving blades on its abdomen.<*4>,<S0>Cuts into anything and everything using the revolving blades on its abdomen.<*4>,
+すベてを せつだんしてしまう<*4>",<S0>Everything in its path gets torn up by the fearsome revolving blades in its abdomen.<*4>,<S0>Everything in its path gets torn up by the fearsome revolving blades in its abdomen.<*4>,
 0x400c0,"<S0>あたまの ミサイルと うでの
-ニードルで こうげきする<*4>",<S0>Attacks using the missile launcher on its head and the needles on its arms.<*4>,<S0>Attacks using the missile launcher on its head and the needles on its arms.<*4>,
+ニードルで こうげきする<*4>","<S0>To attack, it uses both the missile launcher on its head and the spear-like needles on its arms.<*4>","<S0>To attack, it uses both the missile launcher on its head and the spear-like needles on its arms.<*4>",
 0x400c2,"<S0>たいないに ためた デンキを
-ビームに ヘんかんする<*4>","<S0>It stores electricity, concentrates it, and fires it in the form of a beam.<*4>","<S0>It stores electricity, concentrates it, and fires it in the form of a beam.<*4>",
+ビームに ヘんかんする<*4>","<S0>It stores electricity, concentrates it, and fires it as a beam.<*4>","<S0>It stores electricity, concentrates it, and fires it as a beam.<*4>",
 0x400c4,"<S0>かはんしんが ドリルのように
 かいてんして そらを とぶ<*4>",<S0>It flies by rotating its lower body like a drill.<*4>,<S0>It flies by rotating its lower body like a drill.<*4>,
 0x400c6,"<S0>あたまを まえに たおすと
 バズーカに はやがわリ<*4>",<S0>Quickly turns into a bazooka by pointing its head forward.<*4>,<S0>Quickly turns into a bazooka by pointing its head forward.<*4>,
 0x400c8,"<S0>ちょうろうのひとリ こぶが
-ひらくと おそろしいものが!<*4>",<S0>One of the elders. Something terrifying is concealed within its hump!<*4>,<S0>One of the elders. Something terrifying is concealed within its hump!<*4>,
+ひらくと おそろしいものが!<*4>",<S0>One of the elders. Within its hump lies something terrifying!<*4>,<S0>One of the elders. Within its hump lies something terrifying!<*4>,
 0x400ca,"<S0>サナエバに せいたいじっけん
 され こんなすがたになった<*4>",<S0>Its strange appearance is a result of experiments carried out by Sanaeba.<*4>,<S0>Its strange appearance is a result of experiments carried out by Sanaeba.<*4>,
 0x400cc,"<S0>ぜんぽうの おおきなあなから
@@ -214,7 +220,9 @@ Pointer,Japanese,English,Draft version,Notes
 0x400ce,"<S0>からだじゅうの あちこちに
 いくつもぶきがかくされている<*4>",<S0>A myriad of weapons are hidden everywhere on its body.<*4>,<S0>A myriad of weapons are hidden everywhere on its body.<*4>,
 0x400d0,"<S0>からだじゅうから おとをだす
-おんがくずきの ようきなヤツ<*4>",<S0>Sounds can be heard from all over its body. This cheerful Denjuu loves music.<*4>,<S0>Sounds can be heard from all over its body. This cheerful Denjuu loves music.<*4>,
+おんがくずきの ようきなヤツ<*4>","<S0>Sounds can be heard from all over its body.
+This cheerful Denjuu loves music.<*4>","<S0>Sounds can be heard from all over its body.
+This cheerful Denjuu loves music.<*4>",
 0x400d2,"<S0>ヨロイのように とてもかたい
 からだで とつげきしてくる<*4>","<S0>Charges at opponents with its tough, armor-like body.<*4>","<S0>Charges at opponents with its tough, armor-like body.<*4>",
 0x400d4,"<S0>さゆうの たてのようなもので
@@ -222,14 +230,14 @@ Pointer,Japanese,English,Draft version,Notes
 0x400d6,"<S0>ちょうろうのひとリ ネコがた
 サイボーグ デンジュウ<*4>",<S0>One of the elders. A cyborg Denjuu in the form of a cat.<*4>,<S0>One of the elders. A cyborg Denjuu in the form of a cat.<*4>,
 0x400d8,"<S0>からだじたいが Dショット!
-あしがないので てであるく<*4>","<S0>Its very body is a D-Shot! It has no legs, so it walks on its hands.<*4>","<S0>Its very body is a D-Shot! It has no legs, so it walks on its hands.<*4>",
+あしがないので てであるく<*4>","<S0>Its very body is a D-Shot! It has no legs, so it walks using its hands.<*4>","<S0>Its very body is a D-Shot! It has no legs, so it walks using its hands.<*4>",
 0x400da,"<S0>てのひらに そうびしている
-マシンガンで てきをうちぬく<*4>",<S0>Riddles its foes with bullets using the machine guns installed in its palms.<*4>,<S0>Riddles its foes with bullets using the machine guns installed in its palms.<*4>,
+マシンガンで てきをうちぬく<*4>",<S0>Riddles foes with bullets from the machine guns in its palms.<*4>,<S0>Riddles foes with bullets from the machine guns it has installed in its palms.<*4>,
 #######,colspan=2 | '''Super-Machine Denjuu                                      ''',,,
 0x400dc,"<S0>どんなに すばやくても この
 スピードキングにはかなわない<*4>","<S0>However fast they may be, no one comes close to beating this king of speed.<*4>","<S0>However fast they may be, no one comes close to beating this king of speed.<*4>",
 0x400de,"<S0>ムネにある マシンガンを
-うちだして こうげきする<*4>",<S0>Extends the machine gun embedded in its chest in order to attack.<*4>,<S0>Extends the machine gun embedded in its chest in order to attack.<*4>,
+うちだして こうげきする<*4>",<S0>Extends the machine gun embedded in its chest to attack.<*4>,<S0>Extends the machine gun embedded in its chest to attack.<*4>,
 0x400e0,"<S0>かたにそうびしたランチャーを
 まえにたおして しゃげきする<*4>",<S0>It directs its shoulder cannons forward to fire them at its foes.<*4>,<S0>It directs its shoulder cannons forward to fire them at its foes.<*4>,
 0x400e2,"<S0>かたいウロコで ガードして
@@ -237,7 +245,7 @@ Pointer,Japanese,English,Draft version,Notes
 0x400e4,"<S0>たくさんある しょくしゅは
 ふだんは たばねている<*4>",<S0>It usually keeps its many tentacles bundled up neatly.<*4>,<S0>It usually keeps its many tentacles bundled up neatly.<*4>,
 0x400e6,"<S0>するどいキバと シッポからの
-カエンホウシャはきょうリょく<*4>",<S0>Its main powers are sharp fangs and a flamethrower for a tail.<*4>,<S0>Its main powers are sharp fangs and a flamethrower for a tail.<*4>,
+カエンホウシャはきょうリょく<*4>",<S0>Main powers: sharp fangs and a flamethrower for a tail.<*4>,<S0>Main powers: sharp fangs and a flamethrower for a tail.<*4>,
 0x400e8,"<S0>かたいからだをもち シッポ
 から ミサイルをうちだす<*4>",<S0>It can take a beating. Shoots missiles from its tail.<*4>,<S0>It can take a beating. Shoots missiles from its tail.<*4>,
 0x400ea,"<S0>シッポに かくしもっている
