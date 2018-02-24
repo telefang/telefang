@@ -165,7 +165,7 @@ MainScript_ADVICE_CountTextWidth::
 .sizingLoop
     ld a, [bc]
     cp $E0
-    ret z
+    jr z, .finishMeasuring
     
     ;Index the font sizing array
     ld h, MainScript_ADVICE_DrawLetterTable >> 8
@@ -179,6 +179,13 @@ MainScript_ADVICE_CountTextWidth::
     inc bc
     dec d
     jr nz, .sizingLoop
+    
+.finishMeasuring
+    ; Remove the last post-letter 1-pixel space if there was any text
+    ld a, e
+    cp 0
+    jr z, .moveupTilePtr
+    dec e
     ret
 
 ;BC = Argument for Draw Empty Spaces
