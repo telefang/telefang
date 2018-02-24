@@ -501,6 +501,12 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     and 1
     jr z, .nothing_pressed
     
+    ;Check if we've drawn more than 3 lines of text.
+    ;If we haven't then don't redraw the text since it's not multipage.
+    ld a, [W_MainScript_NumNewlines]
+    cp 3
+    jr c, .nothing_pressed
+    
     ld hl, $8C00
     ld b, $38
     call Zukan_ADVICE_ClearScreenTiles
