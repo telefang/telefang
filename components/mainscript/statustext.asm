@@ -168,7 +168,7 @@ MainScript_ADVICE_DrawCenteredName75::
 .sizingLoop
     ld a, [bc]
     cp $E0
-    jr z, .moveupTilePtr
+    jr z, .finishMeasuring
     
     ;Index the font sizing array
     ld h, MainScript_ADVICE_DrawLetterTable >> 8
@@ -182,10 +182,17 @@ MainScript_ADVICE_DrawCenteredName75::
     inc bc
     dec d
     jr nz, .sizingLoop
-    
+
+.finishMeasuring
+    ; Remove the last post-letter 1-pixel space if there was any text
+    ld a, e
+    cp 0
+    jr z, .moveupTilePtr
+    dec e
+
+.moveupTilePtr
     ;At this point, e contains the total size of text we need to deal with.
     ;NOTE: This logic WILL NOT WORK with a wider than 8 tile window!
-.moveupTilePtr
     ld a, $40
     sub e
     jr c, .overwideStringFailsafe
