@@ -5930,8 +5930,8 @@ MetaSprite_19::
     dw MetaSprite_19_5fde
     dw MetaSprite_19_5ff3
     dw MetaSprite_19_6008
+    dw MetaSprite_zukan_denjuu_name
 
-SECTION "MetaSprite_19_4162", ROMX[$4162], BANK[$19]
 MetaSprite_19_4162::
     INCBIN "gfx/unknown/metasprite_19/4162.sprite.bin"
 MetaSprite_19_4162_END::
@@ -6448,5 +6448,6 @@ MetaSprite_19_5ff3_END::
 MetaSprite_19_6008::
     INCBIN "gfx/unknown/metasprite_19/6008.sprite.bin"
 MetaSprite_19_6008_END::
-
-
+MetaSprite_zukan_denjuu_name::
+    INCBIN "components/zukan/denjuu_name.sprite.bin"
+MetaSprite_zukan_denjuu_name_END::

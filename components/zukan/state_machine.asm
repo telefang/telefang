@@ -7,7 +7,7 @@ Zukan_StateMachine::
     ld a, [W_SystemSubSubState]
     ld hl, .state_table
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .state_table
     dw Zukan_StateOverviewDrawSubScreen
@@ -180,6 +180,7 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     ld bc, 3
     call Banked_CGBLoadObjectPalette
     
+    ; Tilemap 1 in bank 1 is the Field Guide background.
     ld bc, 0
     ld e, 1
     ld a, 1
@@ -204,17 +205,24 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     call Battle_LoadDenjuuPalettePartner
     
     ld a, [W_Zukan_SelectedSpecies]
-    ld de, StringTable_denjuu_species
-    ld bc, $9300
-    call MainScript_DrawCenteredName75
-    
-    ld a, [W_Zukan_SelectedSpecies]
     ld de, $9200
     call Status_LoadEvolutionIndicatorBySpecies
     
     ld hl, $8C00
     ld b, $38
     call PauseMenu_ClearScreenTiles
+    
+    ld a, [W_Zukan_SelectedSpecies]
+    ld de, StringTable_denjuu_species
+    ld bc, $8F00
+    call MainScript_DrawCenteredName75
+
+    ; The Denjuu name is broken out into sprites in order to
+    ; be able to center it properly on the pixel level.
+    ; The original plan was to center it vertically between two
+    ; tiles, but it seems like that might not be the case anymore.
+    ld a, Banked_Zukan_ADVICE_InitializeNameMetaSprite & $FF
+    call PatchUtils_AuxCodeJmp
     
     ld a, 1
     ld [W_Status_CalledFromContactScreen], a
@@ -301,11 +309,6 @@ Zukan_StateInnerviewInput::
     ld a, Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies & $FF
     call PatchUtils_AuxCodeJmp
     ret
-    nop
-    nop
-    nop
-    nop
-    nop
 
 .check_left_pressed
     ld a, [W_JPInput_TypematicBtns]
@@ -365,8 +368,8 @@ Zukan_StateInnerviewFadeOut:
     or a
     ret z
     
-    ld hl, $9400
-    ld b, $38
+    ld a, Banked_Zukan_ADVICE_ClearNameMetaSprite & $FF
+    call PatchUtils_AuxCodeJmp
     call PauseMenu_ClearScreenTiles
     call PauseMenu_LoadMenuResources
     
@@ -425,10 +428,10 @@ Zukan_StateInnerviewSwitchPage:
     
     ld a, [W_Zukan_SelectedSpecies]
     call Battle_LoadDenjuuPalettePartner
-    
+
     ld a, [W_Zukan_SelectedSpecies]
     ld de, $4000
-    ld bc, $9300
+    ld bc, $8F00
     call MainScript_DrawCenteredName75
     
     ld a, [W_Zukan_SelectedSpecies]
@@ -436,9 +439,9 @@ Zukan_StateInnerviewSwitchPage:
     call Status_LoadEvolutionIndicatorBySpecies
     
     ld hl, $8C00
-    ld b, $38
+    ld b, $30
     call PauseMenu_ClearScreenTiles
-    
+
     ld a, $C0
     ld [W_MainScript_TileBaseIdx], a
     call Zukan_DrawSpeciesPageText
@@ -451,6 +454,43 @@ Zukan_StateInnerviewSwitchPage:
     ret
 
 SECTION "Zukan State Machine Advice", ROMX[$4480], BANK[$1]
+Zukan_ADVICE_InitializeNameMetaSprite::
+    M_AdviceSetup
+
+    ld a, 1
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3 + M_LCDC_MetaSpriteConfig_HiAttribs], a
+
+    ; #177 in metasprite bank 8 is MetaSprite_zukan_denjuu_name.
+    ld a, $80
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3 + M_LCDC_MetaSpriteConfig_Bank], a
+    ld a, 177
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3 + M_LCDC_MetaSpriteConfig_Index], a
+    ld a, 80 + 3
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3 + M_LCDC_MetaSpriteConfig_XOffset], a
+    ld a, 5 * 8 - 1
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3 + M_LCDC_MetaSpriteConfig_YOffset], a
+
+    M_AdviceTeardown
+    ret
+
+Zukan_ADVICE_ClearNameMetaSprite::
+    M_AdviceSetup
+
+    xor a
+    ld hl, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+
+    ; Original 5 bytes
+    ld hl, $9400
+    ld b, $38
+
+    M_AdviceTeardown
+    ret
+
 ;cloned from PauseMenu_ClearScreenTiles 'cause I can't bankcall it
 Zukan_ADVICE_ClearScreenTiles::
     push bc
@@ -470,14 +510,7 @@ Zukan_ADVICE_ClearScreenTiles::
     ret
 
 Zukan_ADVICE_StateInnerviewInputButtonPress::
-    ld a, [W_PreviousBank]
-    push af
-    
-    ld a, BANK(Zukan_ADVICE_StateInnerviewInputButtonPress)
-    ld [W_PreviousBank], a
-    ld [W_CurrentBank], a
-    
-    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
+    M_AdviceSetup
     
 .check_b_pressed
     ld a, [H_JPInput_Changed]
@@ -502,7 +535,7 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     jr z, .nothing_pressed
     
     ld hl, $8C00
-    ld b, $38
+    ld b, $30
     call Zukan_ADVICE_ClearScreenTiles
     
     ;Evil hack: MainScriptMachine can NEVER KNOW that we're pressing A
@@ -515,20 +548,11 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     call CallBankedFunction_int
     
 .nothing_pressed
-    pop af
-    ld [W_PreviousBank], a
-    ld [W_CurrentBank], a
+    M_AdviceTeardown
     ret
     
 Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
-    ld a, [W_PreviousBank]
-    push af
-    
-    ld a, BANK(Zukan_ADVICE_StateInnerviewInputButtonPress)
-    ld [W_PreviousBank], a
-    ld [W_CurrentBank], a
-    
-    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
+    M_AdviceSetup
     
     ;Clear the page indicator
     ld hl, $99D1
@@ -546,7 +570,5 @@ Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
     ld a, M_Zukan_StateInnerviewSwitchPage
     ld [W_SystemSubSubState], a
     
-    pop af
-    ld [W_PreviousBank], a
-    ld [W_CurrentBank], a
+    M_AdviceTeardown
     ret
