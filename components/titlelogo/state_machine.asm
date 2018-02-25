@@ -10,8 +10,8 @@ TitleLogo_GameStateMachine::
 TitleLogo_StateTable::
     dw TitleLogo_StateLoadPalettes,TitleLogo_StateLoadGraphics,TitleLogo_StateSmilesoft,TitleLogo_StateFadeIn,TitleLogo_StateWaittime,TitleLogo_StateFadeOut,TitleLogo_StateBonBon,TitleLogo_StateFadeSetup
     dw TitleLogo_StateFadeIn,TitleLogo_StateWaittime,TitleLogo_StateFadeOut,TitleLogo_StateOpeningCredits,TitleLogo_StateFadeSetup,TitleLogo_StateFadeIn,TitleLogo_StateWaittime,TitleLogo_StateFadeOut
-    dw TitleLogo_StateNatsume,TitleLogo_StateFadeSetup,TitleLogo_StateFadeIn,TitleLogo_StateWaittime,TitleLogo_StateFadeOut,TitleLogo_StateToNext,TitleLogo_StateFadeSetup,TitleLogo_StateFadeOutToNext
-    dw TitleLogo_StateForreeeeevveeeeeerrrr,TitleLogo_StateForreeeeevveeeeeerrrr,TitleLogo_StateForreeeeevveeeeeerrrr,TitleLogo_StateForreeeeevveeeeeerrrr,TitleLogo_StateForreeeeevveeeeeerrrr,TitleLogo_StateForreeeeevveeeeeerrrr,TitleLogo_StateForreeeeevveeeeeerrrr,TitleLogo_StateForreeeeevveeeeeerrrr
+    dw TitleLogo_StateNatsume,TitleLogo_StateFadeSetup,TitleLogo_StateFadeIn,TitleLogo_JumpToTulunk,TitleLogo_StateFadeOut,TitleLogo_StateToNext,TitleLogo_StateFadeSetup,TitleLogo_StateFadeOutToNext
+    dw TitleLogo_StateWaittime,TitleLogo_StateFadeOut,TitleLogo_StateTulunk,TitleLogo_StateFadeSetup,TitleLogo_StateFadeIn,TitleLogo_StateWaittime,TitleLogo_StateFadeOut,TitleLogo_StateToNext
     dw TitleLogo_StateLoadPalettes,$54EE,$5503,$551F,TitleLogo_StateFadeSetup,TitleLogo_StateFadeIn,$5535,TitleLogo_StateFadeSetup
     dw TitleLogo_StateFadeOut,$5562,TitleLogo_StateMusicReset,TitleLogo_StateGameReset
     
@@ -271,3 +271,37 @@ TitleLogo_StateGameReset::
     ld b, $0
     call Banked_System_CGBToggleClockspeed
     ret
+    
+TitleLogo_JumpToTulunk::
+    ld a, $18
+    ld [W_SystemSubState], a
+    ret
+    
+TitleLogo_StateTulunk::
+    ld b, $1
+    ld c, $0
+    ld d, $0
+    ld e, $0
+    ld a, $0
+    call Banked_SGB_ConstructPaletteSetPacket
+    ld bc, $1406
+    xor a
+    ld hl, $9800
+    call $15CA
+    ld bc, $1404
+    ld a, $4
+    ld hl, $98C0
+    call $15CA
+    ld bc, $1408
+    xor a
+    ld hl, $9940
+    call $15CA
+    ld bc, $0
+    ld e, $10
+    ld a, $1
+    call Banked_RLEDecompressTMAP0
+    ld bc, $5C
+    call Banked_LoadMaliasGraphics
+    ld bc, $11
+    call Banked_CGBLoadBackgroundPalette
+    jp System_ScheduleNextSubState

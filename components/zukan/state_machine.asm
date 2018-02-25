@@ -206,7 +206,7 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     
     ld a, [W_Zukan_SelectedSpecies]
     ld de, $9200
-    call Status_LoadEvolutionIndicatorBySpecies
+    call Status_LoadEvolutionIndicatorBySpeciesZukan
     
     ld hl, $8C00
     ld b, $38
@@ -436,7 +436,7 @@ Zukan_StateInnerviewSwitchPage:
     
     ld a, [W_Zukan_SelectedSpecies]
     ld de, $9200
-    call Status_LoadEvolutionIndicatorBySpecies
+    call Status_LoadEvolutionIndicatorBySpeciesZukan
     
     ld hl, $8C00
     ld b, $30
@@ -533,6 +533,12 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     ld a, [H_JPInput_Changed]
     and 1
     jr z, .nothing_pressed
+    
+    ;Check if we've drawn more than 3 lines of text.
+    ;If we haven't then don't redraw the text since it's not multipage.
+    ld a, [W_MainScript_NumNewlines]
+    cp 3
+    jr c, .nothing_pressed
     
     ld hl, $8C00
     ld b, $30
