@@ -210,7 +210,7 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     
     ld a, [W_Zukan_SelectedSpecies]
     ld de, $9200
-    call Status_LoadEvolutionIndicatorBySpecies
+    call Status_LoadEvolutionIndicatorBySpeciesZukan
     
     ld hl, $8C00
     ld b, $38
@@ -433,7 +433,7 @@ Zukan_StateInnerviewSwitchPage:
     
     ld a, [W_Zukan_SelectedSpecies]
     ld de, $9200
-    call Status_LoadEvolutionIndicatorBySpecies
+    call Status_LoadEvolutionIndicatorBySpeciesZukan
     
     ld hl, $8C00
     ld b, $38

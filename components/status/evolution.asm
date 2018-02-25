@@ -2,6 +2,118 @@ INCLUDE "telefang.inc"
 
 SECTION "Status Evolution Indicator Loader", ROM0[$3D95]
 Status_LoadEvolutionIndicatorBySpecies::
+    call Status_LoadEvolutionIndicatorBySpeciesEntry
+    rst $18
+    ret
+
+Status_LoadEvolutionIndicatorBySpeciesZukan::
+    call Status_LoadEvolutionIndicatorBySpeciesEntryZukan
+    rst $18
+    ret
+
+Status_LoadEvolutionIndicatorBySpeciesEntry::
+    push de
+    push af
+    call Status_LoadDenjuuEvolutionIndicatorCommon
+    pop af
+    jp Status_LoadEvolutionIndicatorBySpeciesOffload
+
+Status_LoadEvolutionIndicatorBySpeciesEntryZukan::
+    push de
+    push af
+    call Status_LoadDenjuuEvolutionIndicatorCommon
+    pop af
+    jp Status_LoadEvolutionIndicatorBySpeciesOffloadZukan
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+    nop  
+
+SECTION "Status Evolution Indicator Loader Part 2", ROMX[$5EA0], BANK[$7D]
+Status_LoadEvolutionIndicatorBySpeciesOffload::
+    call Status_LoadEvolutionIndicatorBySpeciesOffloadCommon
+    jp Status_LoadDenjuuEvolutionIndicatorOffload
+
+Status_LoadEvolutionIndicatorBySpeciesOffloadZukan::
+    call Status_LoadEvolutionIndicatorBySpeciesOffloadCommon
+    jp Status_LoadDenjuuEvolutionIndicatorOffloadZukan
+
+Status_LoadEvolutionIndicatorBySpeciesOffloadCommon::
     cp $14
     jr c, .naturalDenjuu
     cp $23
@@ -82,4 +194,4 @@ Status_LoadEvolutionIndicatorBySpecies::
     ld a, M_Status_DevilDenjuuIcon
     
 .loadEvoIcon
-    jp Banked_Status_LoadDenjuuEvolutionIndicator
+    ret
