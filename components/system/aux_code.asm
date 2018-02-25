@@ -40,10 +40,6 @@ Banked_Zukan_ADVICE_InitializeNameMetaSprite::
 	jp Zukan_ADVICE_InitializeNameMetaSprite
 	nop
 
-Banked_Zukan_ADVICE_ClearNameMetaSprite::
-	jp Zukan_ADVICE_ClearNameMetaSprite
-	nop
-
 Banked_Zukan_ADVICE_StateInnerviewInputButtonPress::
 	jp Zukan_ADVICE_StateInnerviewInputButtonPress
 	nop

@@ -359,9 +359,6 @@ Zukan_StateInnerviewInput::
     nop
     nop
     nop
-    nop
-    nop
-    nop
     
 .nothing_pressed
     ret
@@ -372,8 +369,11 @@ Zukan_StateInnerviewFadeOut:
     or a
     ret z
     
-    ld a, Banked_Zukan_ADVICE_ClearNameMetaSprite & $FF
-    call PatchUtils_AuxCodeJmp
+    ; Added to clear the Denjuu name metasprite.
+    call LCDC_ClearMetasprites
+
+    ld hl, $9400
+    ld b, $38
     call PauseMenu_ClearScreenTiles
     call PauseMenu_LoadMenuResources
     
@@ -477,24 +477,6 @@ Zukan_ADVICE_InitializeNameMetaSprite::
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3 + M_LCDC_MetaSpriteConfig_XOffset], a
     ld a, 5 * 8 - 1
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3 + M_LCDC_MetaSpriteConfig_YOffset], a
-
-    M_AdviceTeardown
-    ret
-
-Zukan_ADVICE_ClearNameMetaSprite::
-    M_AdviceSetup
-
-    xor a
-    ld hl, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-
-    ; Original 5 bytes
-    ld hl, $9400
-    ld b, $38
 
     M_AdviceTeardown
     ret
