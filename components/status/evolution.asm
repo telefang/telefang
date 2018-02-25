@@ -194,5 +194,7 @@ Status_LoadEvolutionIndicatorBySpeciesOffloadCommon::
     ld a, M_Status_DevilDenjuuIcon
     
 .loadEvoIcon
+    and $F
+    swap a
     ld e, a
 	ret
