@@ -255,14 +255,14 @@ MenuBattle3Gfx:
 MenuBattle3GfxEnd
 
 MenuNumbersGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/numbers.malias"
+	dbw NOT_COMPRESSED, MenuNumbersGfxEnd - MenuNumbersGfx - 3
+	INCBIN "gfx/menu/numbers.2bpp"
 MenuNumbersGfxEnd
 
 SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$3B]
 MenuMiscSpritesGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/misc_sprites.malias"
+	dbw NOT_COMPRESSED, MenuMiscSpritesGfxEnd - MenuMiscSpritesGfx - 3
+	INCBIN "gfx/menu/misc_sprites.2bpp"
 MenuMiscSpritesGfxEnd
 
 BattleMessagesGfx:
@@ -290,36 +290,10 @@ EvolveBgGfx:
 	INCBIN "gfx/evolve/bg.malias"
 EvolveBgGfxEnd
 
-<<<<<<< HEAD
-SECTION "Screen - Save Deleted Compressed GFX", ROMX[$483f], BANK[$3b]
-ScreenSaveDeletedGfx:
-	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
-	INCBIN "versions/power/gfx/screen/save_deleted.2bpp"
-ScreenSaveDeletedGfxEnd
-
-SECTION "Menu - Unk Compressed GFX", ROMX[$7561], BANK[$3b]
-MenuUnkGfx:
-	dbw NOT_COMPRESSED, MenuUnkGfxEnd - MenuUnkGfx - 3
-	INCBIN "gfx/menu/unk.2bpp"
-MenuUnkGfxEnd
-
-SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$3b]
-MenuMiscSpritesGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/misc_sprites.malias"
-MenuMiscSpritesGfxEnd
-
-SECTION "Menu - Total Compressed GFX", ROMX[$7849], BANK[$3b]
-MenuTotalGfx:
-	dbw NOT_COMPRESSED, MenuTotalGfxEnd - MenuTotalGfx - 3
-	INCBIN "gfx/menu/total.2bpp"
-MenuTotalGfxEnd
-=======
 MenuGotNumberGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/got_number.malias"
+	dbw NOT_COMPRESSED, MenuGotNumberGfxEnd - MenuGotNumberGfx - 3
+	INCBIN "gfx/menu/got_number.2bpp"
 MenuGotNumberGfxEnd
->>>>>>> 1a53f7b... Reorganize Power Version's compressed graphics index so that we can add more tiles to things and relocate graphics if needs be. This also fixes corrupted phone graphics on Speed version that have been hanging around since we decompressed text1/text2.
 
 MenuDmeloGfx:
 	dbw NOT_COMPRESSED, MenuDmeloGfxEnd - MenuDmeloGfx - 3
@@ -327,8 +301,8 @@ MenuDmeloGfx:
 MenuDmeloGfxEnd
 
 MenuOptionsGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/options.malias"
+	dbw NOT_COMPRESSED, MenuOptionsGfxEnd - MenuOptionsGfx - 3
+	INCBIN "gfx/menu/options.2bpp"
 MenuOptionsGfxEnd
 
 EvolveBg2Gfx:
@@ -349,13 +323,13 @@ MenuMain2GfxEnd
 	INCBIN "gfx/menu/main2_trashbytes.bin"
 
 MenuUnkGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/unk.malias"
+	dbw NOT_COMPRESSED, MenuUnkGfxEnd - MenuUnkGfx - 3
+	INCBIN "gfx/menu/unk.2bpp"
 MenuUnkGfxEnd
 
 MenuTotalGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/total.malias"
+	dbw NOT_COMPRESSED, MenuTotalGfxEnd - MenuTotalGfx - 3
+	INCBIN "gfx/menu/total.2bpp"
 MenuTotalGfxEnd
 
 MenuNicknameGfx:
@@ -364,8 +338,8 @@ MenuNicknameGfx:
 MenuNicknameGfxEnd
 
 MenuMetGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/met.malias"
+	dbw NOT_COMPRESSED, MenuMetGfxEnd - MenuMetGfx - 3
+	INCBIN "gfx/menu/met.2bpp"
 MenuMetGfxEnd
 
 SECTION "Evolve - Bg4 Compressed GFX", ROMX[$4000], BANK[$61]
@@ -553,15 +527,6 @@ ScreenGameOver2Gfx:
 	INCBIN "versions/power/gfx/screen/game_over2.malias"
 ScreenGameOver2GfxEnd
 
-<<<<<<< HEAD
-SECTION "Menu - Met Compressed GFX", ROMX[$7d49], BANK[$3b]
-MenuMetGfx:
-	dbw NOT_COMPRESSED, MenuMetGfxEnd - MenuMetGfx - 3
-	INCBIN "gfx/menu/met.2bpp"
-MenuMetGfxEnd
-
-=======
->>>>>>> 1a53f7b... Reorganize Power Version's compressed graphics index so that we can add more tiles to things and relocate graphics if needs be. This also fixes corrupted phone graphics on Speed version that have been hanging around since we decompressed text1/text2.
 SECTION "Cutscene - Antenna Tree Compressed GFX", ROMX[$6c7f], BANK[$39]
 CutsceneAntennaTreeGfx:
 	db COMPRESSED

@@ -307,14 +307,14 @@ Ach, wenn ich doch nur dorthin könnte...
 There's only one guy I know who could hit a ball this far...",,"Woah, das war knapp!
 Ich kenne nur einen, der einen Ball so weit schlagen kann...",,
 0x1200d6,"じぶんでうって じぶんで
-ひろいにいくなんてなぁ...","Whoever hits it has to go get it, huh?",,Wo ist er denn nun hingeflogen...?,,
+ひろいにいくなんてなぁ...","Whoever hits it has to go get it, huh?",,Wo ist er denn nur hingeflogen...?,,
 0x1200d8,<&0xc92c> みーっけ!,"Hey there, <&0xc92c>!",,"Huhu, <&0xc92c>!",,
 0x1200da,"あれ? ひょっとして アンタ
 また やきゅうとかやってるの?",Huh? Are you seriously playing baseball again?,,"Nanu? Sag bloß, du spielst schon wieder Baseball...",,
 0x1200dc,"なんだよ ミヨ
 ベつにいいじゃないか!","Come on, Miyo, cut it out!
 What's so bad about that?",,"Heh, was soll das denn heißen?!
-Was hast du denn gegen Baseball?",,
+Hast du etwa was gegen Baseball, Mia?",,
 0x1200de,"はー.....
 いまどき デンジュウカイに
 いったことが ないコドモって
@@ -328,7 +328,7 @@ Was hast du denn gegen Baseball?",,
 You and Matsukiyo are the only kids who still haven't been to the Denjuu World, right?
 Well, whatever. I'm heading over there right now. 
 You should go too if you start feeling lonely.
-Later then! Bye-bye!",,"War doch nur Spaß!
+Later then! Bye-bye!",,"Beruhig dich, war doch nur Spaß!
 Aber sag mal... Du und Matze, ihr seid als einzige noch nie in der Denjuu-Welt gewesen, oder?
 Naja, wie dem auch sei. Ich bin gerade auf dem Weg dorthin.
 Schau doch mal vorbei, falls du dich einsam fühlst. 
@@ -336,30 +336,30 @@ Also bis dann! Tschüssi!
 ",,
 0x1200e0,"チクショー! なんだよアイツ!
 いきなリ からんで きやがって!","Ugh, what's with her!?
-She always shows up just to bug me like that!",,"Was sollte das denn?!
-Die geht mir echt auf'n Wecker...",,
+She always shows up just to bug me like that!",,"Was war das denn?!
+Die kann einem echt auf den Wecker gehen...",,
 0x1200e2,"だまっとけば かわいい
 ヤツなのになぁ.....
 まぁいいや さっさと ボールを
 さがしにいこうっと","If she stayed quiet for once, she’d actually be kinda cute though...
 Oh well, better look for that ball.",,"Würde sie zur Abwechslung mal die Klappe halten, wäre sie eigentlich ganz süß...
-Ups, fast den Ball vergessen.",,
+Ups, fast den Ball vergessen!",,
 0x1200e4,"お??マツキヨじゃん
 こんなところでなにしてるんだよ","Hm? Hey Matsukiyo.
 What're you doing here?",,"Oh! Hey, Matze!
 Was machst du denn hier?",,
 0x1200e6,"<&0xc92c>くん
-ボールを ここまでとばしたのはやっぱリ キミですか?",<&0xc92c>! So it really was you who hit the ball over here?,,"<&0xc92c>! Also warst das tatsächlich du, der den Ball hierher geschlagen hat!",,
-0x1200e8,おう!すげーだろ!,"Yup! Pretty awesome, huh?",,"So sieht's aus! Ziemlich abgefahren, was?",,
+ボールを ここまでとばしたのはやっぱリ キミですか?",<&0xc92c>! So it really was you who hit the ball over here?,,"<&0xc92c>! Also warst das wirklich du, der den Ball hierher geschlagen hat...",,
+0x1200e8,おう!すげーだろ!,"Yup! Pretty awesome, huh?",,"Schon mein zweiter Homerun heute! Krass, oder?",,
 0x1200ea,"あぶないじゃないですか!!
 もうすこしであたるところ
 でしたよ!!!","More like dangerous!!
-A little closer and it would have hit me!",,"Wohl eher ziemlich gefährlich!!
+A little closer and it would have hit me!",,"Ja, krass gefährlich!!
 Um ein Haar hätte mich der Ball erwischt!",,
 0x1200ec,"こまかいことは きにするなって
 それよリ オマエもみんなと
 いっしょに やきゅうやろうぜ","Don't worry so much.
-Y'know, you really should play baseball with us some time.",,"Mach dir nicht ins Hemd.
+Y'know, you really should play baseball with us some time.",,"Mach dir nicht ins Hemd!
 Komm, und spiel lieber 'ne Runde Baseball mit uns!",,
 0x1200ee,"<&0xc92c>くん
 キミは デンジュウカイに
@@ -372,28 +372,28 @@ Komm, und spiel lieber 'ne Runde Baseball mit uns!",,
 なリたいのです!!","Aren't you a little bit interested in the Denjuu World, <&0xc92c>?
 They say it's a world hidden behind a curtain of darkness, full of living creatures known as ""Denjuu""...
 I'd like to become friends with as many of them as possible!",,"Interessiert dich die Welt der Denjuu denn gar nicht, <&0xc92c>?
-Man sagt, sie liegt verborgen hinter einem Vorhang aus Dunkelheit, und, dass sie von Lebewesen bewohnt wird, die man ""Denjuu"" nennt...
-Ich hab vor, mich mit so vielen wie möglich von ihnen anzufreunden! ",,
+Eine Welt, verborgen im Schatten, bewohnt von uns unbekannten Lebewesen, sogenannten ""Denjuu""...
+Wir sollten uns mit so vielen Denjuu wie möglich anfreunden!",,
 0x1200f0,"でも オレたち
 Dショット もってないじゃん
 Dショットが なかったら
 デンジュウカイにもいけないし
 デンジュウたちとも トモダチに
 なれないんだろ?","Yeah, but we don't have a D-Shot.
-Without a D-shot, we can't go to the Denjuu World, and you won't be able to make friends with any of them, right?",,"Aber wir haben kein D-Shot.
-Und ohne ein D-Shot kommen wir nicht in die Denjuu-Welt, also wird das mit den neuen Freunden wohl leider nichts. ",,
+Without a D-shot, we can't go to the Denjuu World, and you won't be able to make friends with any of them, right?",,"Aber wir haben doch gar kein D-Shot.
+Und ohne ein D-Shot kommen wir nicht in die Denjuu-Welt, also wird das wohl erstmal nichts.",,
 0x1200f2,"ん?デンワが なっていますね
 あの きのしたからでしょうか?","Hm? I can hear a phone ringing...
 Is it coming from under that tree?",,"Hm? Da klingelt doch ein Telefon...
-Kommt das aus dem Baum da?",,
+Kommt das von dem Baum da?",,
 0x1200f4,"ケイタイデンワが おちてる
 しかもDショットだ...
 <&0xc92c>くん....
 デンワに でてくださいよ","There's a cell phone on the ground, and what's more, it's a D-Shot...
 <&0xc92c>...
 Answer it.",,"Da liegt ein Handy. Und zwar nicht irgendeins, das ist ein D-Shot...
-<&0xc92c>...
-Geh ran.",,
+Na los, <&0xc92c>...
+Geh schon ran.",,
 0x1200f6,な...なんでオレが..,Wh-Why me?...,,"W-was, wieso ich?",,
 0x1200f8,いいからはやく!!!,Just do it!!,,Mach's einfach!!,,
 0x1200fa,"わ わかったよ
@@ -413,23 +413,23 @@ Was ist passiert? ...",,
 <&0xc92c>!
 This is serious!!",,"<&0xc92c>!
 <&0xc92c>!!!
-Das wirst du nicht glauben!!",,
+Du wirst deinen Augen nicht trauen!!",,
 0x120100,"なんだよ うるさいなぁ!
 オレは アタマがイタイんだよ","Jeez, shut up!
-My head hurts!",,"Jetzt sei doch mal ruhig!
+My head hurts!",,"Mensch, was ist denn?
 Mir dröhnt der Schädel...",,
 0x120102,"うるさいぐらいなんだっていうん
 ですか!
 それよリ いちだいじです!","How can you tell me to shut up at a time like this?!
-This is amazing!",,"Wie soll ich denn ruhig bleiben können?!
-Das ist viel zu unglaublich!",,
-0x120104,なにが たいヘんなんだよ..?,"Fine, what is it?",,"Na gut, was ist denn?",,
+This is amazing!",,"Was los ist?! Das fragst du noch?!
+Das ist einfach unglaublich!",,
+0x120104,なにが たいヘんなんだよ..?,"Fine, what is it?",,"Na gut, ich bin ganz Ohr. Also, was ist los?",,
 0x120106,いいですか よくきいてください,"Alright, listen to me.",,Ob du's mir glaubst oder nicht...,,
-0x120108,ここは デンジュウカイですよ!,We're in the Denjuu World!!,,Wir sind in der Denjuu-Welt gelandet!!,,
+0x120108,ここは デンジュウカイですよ!,We're in the Denjuu World!!,,Wir sind soeben in der Denjuu-Welt gelandet!!,,
 0x12010a,"なにーーーーー!!!!
 デンジュウカイだって!?","Whaaaat?!!
 The Denjuu World?!",,"Waaaaaas??!!
-Wir sind hier in der Denjuu-Welt?!",,
+Wir?! In der Denjuu-Welt?!",,
 0x12010c,"おそらく...
 そのDショットが げんいん
 でしょう...
@@ -452,10 +452,11 @@ A cell phone with four bars of reception!
 That's what a D-Shot is!!",,"Sieht ganz so aus...
 Vermutlich hängt das mit dem D-Shot zusammen, das wir gefunden haben...
 Wirf mal einen Blick auf das D-Shot.
-Da sind vier Empfangsbalken zu sehen, oder?
+Da sind vier Empfangs-
+balken zu sehen, oder?
 Gewöhnliche Handys können nur bis zu drei anzeigen, aber dieses Handy empfängt sogar die Funksignale der Denjuu-Welt!
 Deshalb die vier Empfangsbalken!
-Sie sind das Markenzeichen eines D-Shots!!",,
+Sie sind so was wie das Markenzeichen eines D-Shots!!",,
 0x12010e,"そしてDショットから
 デンジュウカイにむけて
 デンワをかけると アラふしぎ!
@@ -477,15 +478,15 @@ Normally, D-Shots are really difficult to get ahold of.
 So why would someone just leave one there...
 Hmmm, it's a mystery!
 Now then, where are we?
-Let's start looking around!",,"Mit einem D-Shot kannst du nicht nur in die Denjuu-Welt telefonieren, du kannst mit ihm sogar dorthin reisen!
-Das Teil ist ein Wunderwerk der Technologie!
+Let's start looking around!",,"Mit einem D-Shot kannst du nicht nur in die Denjuu-Welt telefonieren, mit ihm kannst du sogar dorthin reisen!
+Das Teil ist ein technologisches Wunderwerk!
 Aber schon merkwürdig...
 Es ist nicht gerade leicht, an so ein D-Shot ranzukommen.
 Wieso sollte es jemand einfach so zurücklassen?
 Hmmm, sehr seltsam das Ganze!
-Nun denn, wo sind wir hier?
-Sehen wir uns gleich mal um!",,
-0x120110,ここは 『トロンコむら』じゃよ,"You are in ""Toronko Village"".",,"Ihr befindet euch hier im ""Strunkdorf"".",,
+Zunächst sollten wir uns aber mal umsehen.
+Wo sind wir hier überhaupt gelandet?",,
+0x120110,ここは 『トロンコむら』じゃよ,"You are in ""Toronko Village"".",,"Im beschaulichen ""Strunkdorf"".",,
 0x120112,"ほぉー げんきのイイ
 コドモじゃな
 オマエさんが えらばれたのか
@@ -496,11 +497,11 @@ Sehen wir uns gleich mal um!",,
 Could you be the chosen ones?
 Hohoho.
 No, nevermind.
-Come, why not take a rest in my house?",,"Ihr macht einen lebhaften Eindruck...
+Come, why not take a rest in my house?",,"Hoho, ihr macht einen lebhaften Eindruck...
 Ob ihr wohl die Auserwählten seid?
 Hohoho.
-Vergesst, was ich gesagt habe.
-Mein Haus ist gleich hier, wieso ruht ihr euch nicht erst einmal bei mir aus?",,
+Vergesst einfach, was ich gerade gesagt habe.
+Mein Haus ist gleich hier vorne, wieso ruht ihr euch nicht erst einmal bei mir aus?",,
 0x120114,"<&0xc92c>くん
 そうしましょう
 このデンジュウ わるいかたには
@@ -509,8 +510,8 @@ Mein Haus ist gleich hier, wieso ruht ihr euch nicht erst einmal bei mir aus?",,
 なにか わかるかもしれません","<&0xc92c>, let's go with him.
 This Denjuu doesn't look like a bad person.
 If we follow him, we might learn something.",,"Wir sollten das Angebot annehmen, <&0xc92c>.
-Ich glaube nicht, dass dieses Denjuu etwas im Schilde führt.
-Und vielleicht können wir so das ein oder andere über diese Welt erfahren. ",,
+Ich bezweifle, dass dieses Denjuu etwas im Schilde führt.
+Und wer weiß, vielleicht erfahren wir dabei ein wenig über diese Welt.",,
 0x120116,"ホッホッホッ
 こわがることはない
 なにも とってくったリしやせんわさて デンジュウカイに ついてしっておるかの?
@@ -521,10 +522,10 @@ Now then, are you familiar with the Denjuu World?
 <0>Yes  <0>No<*A>",,"Hohoho.
 Ihr braucht wirklich keine Angst zu haben.
 Ich werde euch schon nicht auffressen.
-Aber sagt, wisst ihr über die Denjuu-Welt Bescheid?
+Wisst ihr über unsere Welt überhaupt Bescheid?
 <0>Ja   <0>Nein<*A>",,
 0x120118,"ではまず デンジュウカイに
-ついて はなそうかの","Ah, then I suppose I should explain.",,"Nein? Gut, dann erkläre ich es euch.",,
+ついて はなそうかの","Ah, then I suppose I should explain.",,"Nein? Gut, dann lasst mich euch was darüber erzählen.",,
 0x12011a,"ニンゲンカイと デンジュウカイ
 このふたつのせかいは ふだん
 『やみのカーテン』で
@@ -532,20 +533,22 @@ Aber sagt, wisst ihr über die Denjuu-Welt Bescheid?
 しかしニンゲンのかがくしゃが
 『やみのカーテン』をすリぬける
 ほうほうを みつけだしたのじゃ","The Human World and the Denjuu World...
-The two worlds have always been separated by a ""curtain of darkness"", but human scientists have discovered a way to pass through it.",,,,
+The two worlds have always been separated by a ""curtain of darkness"", but human scientists have discovered a way to pass through it.",,"Die Welt der Menschen, und die Welt der Denjuu...
+Zwei Welten, die durch einen ""Dunklen Schleier"" von einander getrennt waren, bis Wissenenschaftler einen Weg hindurch fanden.",,
 0x12011c,"しかしこのデンジュウカイと
 いうばしょは いきるには
 たいヘんなせかいでな...
 そこでニンゲンはワシら
 デンジュウとトモダチに
 なることにしたんじゃ","The Denjuu World is a harsh place to live, however...
-Which is why the humans began to befriend us Denjuu.",,,,
+Which is why the humans began to befriend us Denjuu.",,"Doch die Denjuu-Welt ist ein hartes Pflaster...
+Deshalb fingen die Menschen, die hierher kamen, an, sich mit den Denjuu anzufreunden.",,
 0x12011e,"そのときに ニンゲンは
 ゆうこうのあかしに
 どこでもれんらくをとれる
-ケイタイデンワ『Dショット』をワシらに くれたんじゃ","As a sign of the friendship between us, the humans gave us the ""D-Shot"" mobile phones so that we could always contact each other.",,,,
+ケイタイデンワ『Dショット』をワシらに くれたんじゃ","As a sign of the friendship between us, the humans gave us the ""D-Shot"" mobile phones so that we could always contact each other.",,"Als ein Zeichen der Freundschaft, schenkten uns die Menschen sogenannte ""D-Shot""-Handys, mit denen wir uns jederzeit gegenseitig erreichen können.",,
 0x120120,"おぬしが きのしたで ひろった
-ケイタイが それじゃ",That is the type of phone you found underneath the tree.,,,,
+ケイタイが それじゃ",That is the type of phone you found underneath the tree.,,"Das Handy, das ihr unter dem Baum gefunden habt, ist ein solches D-Shot.",,
 0x120122,"ワシらも いきていくために
 だいじなトモダチとれんらくが
 とれるケイタイが きにいった
@@ -553,7 +556,8 @@ Which is why the humans began to befriend us Denjuu.",,,,
 なったらデンワバンゴウを
 こうかんするという ならわしが
 はじまったのじゃ","Phones that allow one to contact friends at any time are a great convenience to us, as well.
-Because of this, it has become customary to exchange phone numbers with any friends that we meet.",,,,
+Because of this, it has become customary to exchange phone numbers with any friends that we meet.",,"Ein Telefon, mit dem man seine Freunde jeder Zeit kontaktieren kann, ist eine große Bereicherung.
+Seit wir diese Handys haben, tauschen mit neuen Bekanntschaften sofort unsere Handynummer aus.",,
 0x120124,"しかし われわれデンジュウは
 しょうしょう きがあらいものが
 おおくてな
@@ -565,14 +569,18 @@ Because of this, it has become customary to exchange phone numbers with any frie
 それを『テレファング』と
 よぶのじゃ","However, among us Denjuu there are many who believe that strength is key, and refuse to see those weaker than them as their friends.
 In these cases, one must battle if they truly wish to befriend the other.
-These fights between Denjuu are known as ""Telefang"".",,,,
+These fights between Denjuu are known as ""Telefang"".",,"Jedoch gibt es unter uns Denjuu auch einige, die glauben, dass Stärke der Weg zum Erfolg ist, und es daher ablehnen, sich mit wem anzufreunden, der schwächer ist als sie selbst.
+Wenn man sich mit solch einem Denjuu anfreunden möchte, muss man es in einem Kampf besiegen.
+Diese Kämpfe, die ausschließlich zwischen Denjuu ausgefochten werden, bezeichnet man als ""Telefang"".",,
 0x120126,"どうじゃ?
 わかったかな?
  はい  いいえ<*A>","So?
 Do you understand now?
-<0>Yes  <0>No<*A>",,,,
+<0>Yes  <0>No<*A>",,"Und?
+Hast du alles verstanden?
+<0>Ja   <0>Nein<*A>",,
 0x120128,"では おぬしらを ここによんだ
-リゆうを はなそうかの",Then we shall discuss the reason you were called here.,,,,
+リゆうを はなそうかの",Then we shall discuss the reason you were called here.,,"Gut, dann sollten wir nun über das reden, weshalb ihr hierher gerufen wurdet.",,
 0x12012a,"このむらのすいげんに 
 ネタロというヤツがおる
 こいつは いねむリぐせのある
@@ -588,7 +596,11 @@ Do you understand now?
 He is always dozing off. Such a troublesome fellow....
 Netaro has the important job of carrying water for the village, but for the last few days we have been unable to contact him.
 If he stops bringing the water, it will trouble the villagers.
-That is why we want you to look for him.",,,,
+That is why we want you to look for him.",,"Es gibt da ein Denjuu namens Netaro. Das lebt am Rande dieses Dorfes, innerhalb der Wasserwerke.
+Zu unser aller Nachteil hält diese Schlafmütze ständig ein Nickerchen...
+Ihr müsst wissen, Netaro ist mit der Aufgabe betraut, das Wasser von der Quelle ins Dorf zu schaffen. Leider erreichen wir ihn seit geraumer Zeit nicht mehr.
+Wenn die Wasserlieferung weiterhin ausbleibt, fangen die Dorfbewohner an, sich zu beschweren.
+Deshalb würden wir euch bitten, nach ihm zu suchen.",,
 0x12012c,"ただモンダイなのは ネタロの
 オトウトの ネジロじゃ
 ネジロもこまったヤツで
@@ -597,29 +609,36 @@ That is why we want you to look for him.",,,,
 もしかしたらオマエさんに
 キガイをくわえるかもしれん","There is just one problem, and that is Netaro's younger brother, Nejiro.
 He is another troublemaker...
-He seems to have misunderstood the situation, and may try to hurt you.",,,,
+He seems to have misunderstood the situation, and may try to hurt you.",,"Es gibt da nur ein Problem, und zwar Netaros jüngeren Bruder, Nejiro.
+Ein richtiger Unruhestifter ist das.
+Bei dem Versuch Netaro zu wecken, könnte er versuchen, euch wehzutun.",,
 0x12012e,"そこでオマエさんには
 いっぴき デンジュウをつける
 オマエさんのデンジュウカイでの
 はじめてのトモダチになるじゃろ","For that reason, I am having you take this Denjuu along with you.
-Think of him as your first friend in the Denjuu World.",,,,
+Think of him as your first friend in the Denjuu World.",,"Aus diesem Grund, stelle ich euch dieses Denjuu zur Seite.
+Seht es als euren ersten Freund in der Denjuu-Welt.",,
 0x120130,"ワタシの ナマエはファンガスと
 いいます
 そして これがワタシの
 バンゴウです
 これからも よろしく!","Hello, my name is Fungus.
 Here is my phone number.
-It's nice to meet you!",,,,
+It's nice to meet you!",,"Hallo, ich heiße Fungus!
+Hier ist meine Handynummer.
+Nett, dich kennenzulernen!",,
 0x120132,"オレの ナマエはクリプトって
 いうんだ!
 そして これがオレのバンゴウだ
 これからもよろしくな!!","Hi! My name is Crypto!
 This is my phone number.
-Nice to meet ya!",,,,
+Nice to meet ya!",,"Hi, ich heiße Crypto!
+Das ist meine Nummer.
+Freut mich!",,
 0x120134,"ファンガスの デンワバンゴウを
-てにいれた",Got Fungus's phone number!,,,,
+てにいれた",Got Fungus's phone number!,,Fungus Handynummer erhalten!,,
 0x120136,"クリプトの デンワバンゴウを
-てにいれた",Got Crypto's phone number!,,,,
+てにいれた",Got Crypto's phone number!,,Cryptos Handynummer erhalten!,,
 0x120138,"そして これは このせかいの
 『ちず』じゃ
 いまは なにもかかれていないが
@@ -633,25 +652,32 @@ Nice to meet ya!",,,,
 It is a ""Map"" of this world.
 It is blank right now, but you can use it to view the places you have been.
 I am sure it will be of use to you.
-You can view the Map by pressing the Start button.",,,,
-0x12013a,『ちず』を てにいれた,Got the Map!,,,,
+You can view the Map by pressing the Start button.",,"Hier, nimm das.
+Das ist eine ""Karte"" unserer Welt.
+Noch ist sie leer, doch sie erweitert sich, je mehr Orte du bereist.
+Ich bin mir sicher, sie wird dir von Nutzen sein.
+Einfach den START-Knopf drücken, und schon erscheint die Karte.",,
+0x12013a,『ちず』を てにいれた,Got the Map!,,Karte erhalten!,,
 0x12013c,"<&0xc92c>くん
 ワタシは このむらで
 もうすこし しらベたいことが
 あリますので ここで
 まっています
 よろしくたのみましたよ","<&0xc92c>, I want to look around this village a bit more, so I'll wait here.
-Good luck!",,,,
+Good luck!",,"Hey, <&0xc92c>. Ich würde mich in diesem Dorf gerne ein wenig umsehen. Ich warte hier auf dich.
+Viel Glück!",,
 0x12013e,"さぁ はやくネタロをおこしに
-いきましょう!","Alright, let's go and wake up Netaro!",,,,
+いきましょう!","Alright, let's go and wake up Netaro!",,"Also dann, gehen wir und wecken Netaro auf!",,
 0x120140,"さぁはやくネタロをおこして
-やろうぜ!","Come on, let's hurry and wake up Netaro!",,,,
+やろうぜ!","Come on, let's hurry and wake up Netaro!",,"Los, beeilen wir uns und wecken Netaro auf!",,
 0x120142,"ホッホッホッ
 では きをつけていくのだぞ
 かえったら おもしろいものを
 みせてあげよう","Hohoho.
 Well then, do be careful on your way.
-I will show you something interesting when you return.",,,,
+I will show you something interesting when you return.",,"Hohoho.
+Nun denn, gebt auf euch Acht.
+Wenn ihr wieder da seid, zeige ich euch etwas.",,
 #######,70 strings   -   Toronko Village story,,,,,
 0x120144,"したのひろばで
 カクザとう とうしゅ
