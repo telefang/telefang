@@ -222,6 +222,21 @@ Banked_Status_LoadDenjuuTypeIconPalette::
     rst $18
     ret
 
+SECTION "Banked Call Helpers 5.6", ROM0[$05C1]
+Banked_SaveClock_RetrieveWorkingStateFromSaveData::
+    ld a, BANK(SaveClock_RetrieveWorkingStateFromSaveData)
+    rst $10
+    call SaveClock_RetrieveWorkingStateFromSaveData
+    rst $18
+    ret
+
+Banked_SaveClock_StoreWorkingStateToSaveData::
+    ld a, BANK(SaveClock_StoreWorkingStateToSaveData)
+    rst $10
+    call SaveClock_StoreWorkingStateToSaveData
+    rst $18
+    ret
+
 SECTION "Banked Call Helpers 6", ROM0[$05D9]
 Banked_Battle_LoadNextLevelExp::
     push af

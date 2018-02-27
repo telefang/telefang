@@ -41,13 +41,17 @@ OBJS := components/compression/malias.o \
      components/pausemenu/phoneime_diacritics.o components/pausemenu/phoneime_glyph.o \
      components/pausemenu/contact_statemachine.o components/pausemenu/sms_statemachine.o \
      components/pausemenu/sms_utils.o components/pausemenu/inventory_statemachine.o \
-     components/pausemenu/inventory_utils.o \
+     components/pausemenu/inventory_utils.o components/pausemenu/indicators.o \
+     components/pausemenu/save/statemachine.o components/pausemenu/save/input.o \
+     components/pausemenu/screen_resources.o \
      components/melodyedit/memory.o components/melodyedit/indicators.o \
+     components/melodyedit/ringtone_menu.o \
      components/titlemenu/state_machine.o components/titlemenu/name_input.o \
      components/titlemenu/nickname_editor.o components/titlemenu/sram.o \
      components/titlemenu/rtc.o components/titlemenu/menu_scroll.o \
      components/titlemenu/time_entry.o \
      components/titlemenu/advice.o components/titlemenu/trash.o \
+     components/titlelogo/state_machine.o \
      components/titlescreen/state_machine.o components/titlescreen/position_sprite.o \
      components/titlescreen/advice.o \
 	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
@@ -58,7 +62,8 @@ OBJS := components/compression/malias.o \
      components/mainscript/advice.o \
 	  components/map/locations.o \
      components/overworld/memory.o components/overworld/rtc.o \
-     components/overworld/power_antenna.o \
+     components/overworld/power_antenna.o components/overworld/new_save_init.o \
+     components/overworld/flags.o \
      components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
@@ -86,6 +91,7 @@ OBJS := components/compression/malias.o \
 	  components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
      components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
      components/saveclock/initialize_save.o components/saveclock/integrity.o \
+     components/saveclock/persistence.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
@@ -99,6 +105,10 @@ OBJS := components/compression/malias.o \
      components/victory/defection_statemachine.o components/victory/contact_utils.o \
      components/victory/advice.o \
      components/linktrade/loss_statemachine.o \
+     components/zukan/completion_certificate_tmap.o \
+     components/zukan/completion_flags.o components/zukan/draw_utils.o \
+     components/zukan/state_machine.o \
+     components/fusionlabevo/item_name_utils.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
 	  gfx/statusbar.o \
      script/mainscript.o script/stringtable.o
@@ -110,7 +120,8 @@ OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
      versions/power/gfx/sgb/palettes.o \
      versions/power/components/titlemenu/state_machine.o \
      versions/power/components/saveclock/integrity.o \
-     versions/power/components/titlescreen/state_machine.o
+     versions/power/components/titlescreen/state_machine.o \
+     versions/power/components/overworld/new_save_init.o
 OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
 	  versions/speed/tilemaps.o versions/speed/metasprite.o \
      versions/speed/palettes.o versions/speed/gfx/sgb/border.o \
@@ -118,7 +129,8 @@ OBJS_SPEED := versions/speed/compressed_gfx.o versions/speed/extra_gfx.o \
      versions/speed/gfx/sgb/palettes.o \
      versions/speed/components/titlemenu/state_machine.o \
      versions/speed/components/saveclock/integrity.o \
-     versions/speed/components/titlescreen/state_machine.o
+     versions/speed/components/titlescreen/state_machine.o \
+     versions/speed/components/overworld/new_save_init.o
 
 SRC_MESSAGE := script/battle/messages.messages.csv script/denjuu/sms.messages.csv \
 					script/npc/all.messages.csv script/npc/unused.messages.csv \
@@ -169,7 +181,7 @@ $(OBJS_ASM): $$*.asm $$($$*_dep)
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
-	rgbfix -v -c -i BXTJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG PW" $@
+	rgbfix -v -c -i BTXJ -k 2N -l 0x33 -m 0x10 -p 0 -r 3 -s -t "TELEFANG PW" $@
 
 $(ROMS_SPEED): $(OBJS) $(OBJS_SPEED) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
 	rgblink -n $(ROMS_SPEED:.gbc=.sym) -m $(ROMS_SPEED:.gbc=.map) -O $(BASEROM_SPEED) -o $@ $^
@@ -182,11 +194,13 @@ clean:
 
 %.2bpp: %.png
 	@echo "Building" $<
+	@./rip_scripts/is_nonindexed_png.sh $<
 	@rm -f $@
 	@rgbgfx -d 2 -o $@ $<
 
 %.1bpp: %.png
 	@echo "Building" $<
+	@./rip_scripts/is_nonindexed_png.sh $<
 	@rm -f $@
 	@rgbgfx -d 1 -o $@ $<
 

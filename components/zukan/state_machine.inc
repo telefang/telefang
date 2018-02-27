@@ -1,0 +1,13 @@
+M_Zukan_StateOverviewDrawSubScreen EQU 0
+M_Zukan_StateOverviewDrawSpecies EQU 1
+M_Zukan_StateOverviewDrawCursorsAndNumbers EQU 2
+M_Zukan_StateOverviewInput EQU 3
+M_Zukan_StateOverviewFadeOutAndDrawInner EQU 4
+M_Zukan_StateInnerviewFadeIn EQU 5
+M_Zukan_StateInnerviewInput EQU 6
+M_Zukan_StateInnerviewFadeOut EQU 7
+M_Zukan_StateOverviewFadeIn EQU 8
+M_Zukan_StateOverviewReturnToInput EQU 9
+M_Zukan_StateOverviewExit0 EQU $A
+M_Zukan_StateOverviewExit1 EQU $B
+M_Zukan_StateInnerviewSwitchPage EQU $C

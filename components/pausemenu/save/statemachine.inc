@@ -1,0 +1,6 @@
+M_PauseMenu_SubStateSaveLoadGraphics EQU $00
+M_PauseMenu_SubStateSaveInputHandler EQU $01
+M_PauseMenu_SubStateSaveAnimation EQU $02
+M_PauseMenu_SubStateSaveConfirm EQU $03
+M_PauseMenu_SubStateSaveExit1 EQU $04
+M_PauseMenu_SubStateSaveExit2 EQU $05

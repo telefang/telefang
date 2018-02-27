@@ -25,8 +25,8 @@ Tilemap_BANK_0::
 	dw Tilemap_encounter_backgrounds_base_tmap
 	dw Tilemap_title_bg_tmap
 	dw Tilemap_unknown_tilemap_0_c
-	dw Tilemap_unknown_tilemap_0_d
-	dw Tilemap_unknown_tilemap_0_d
+	dw Tilemap_battle_ui_partner_message_layer_tmap
+	dw Tilemap_battle_ui_partner_message_layer_tmap
 	dw Tilemap_menu_phone_left_tmap
 	dw Tilemap_pausemenu_resources_dshot_bottom_tmap
 	dw Tilemap_menu_empty_menu_tmap
@@ -81,7 +81,7 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_40
 	dw Tilemap_encounter_backgrounds_cave_tmap
 	dw Tilemap_encounter_backgrounds_ocean_tmap
-	dw Tilemap_unknown_tilemap_0_43
+	dw Tilemap_encounter_backgrounds_desert_tmap
 	dw Tilemap_unknown_tilemap_0_44
 	dw Tilemap_phoneconversation_backgrounds_field_tmap
 	dw Tilemap_phoneconversation_backgrounds_field_tmap
@@ -140,12 +140,12 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_5a
 	dw Tilemap_unknown_tilemap_0_5a
 	dw Tilemap_unknown_tilemap_0_5a
-	dw Tilemap_unknown_tilemap_0_5b
+	dw Tilemap_battle_ui_opponent_bars_tmap
 	dw Tilemap_unknown_tilemap_0_5c
 	dw Tilemap_unknown_tilemap_0_5d
 	dw Tilemap_unknown_tilemap_0_5e
 	dw Tilemap_unknown_tilemap_0_5f
-	dw Tilemap_unknown_tilemap_0_60
+	dw Tilemap_battle_ui_partner_bars_tmap
 	dw Tilemap_unknown_tilemap_0_61
 	dw Tilemap_battle_ui_attack_list_tmap
 	dw Tilemap_unknown_tilemap_0_63
@@ -154,15 +154,15 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_66
 	dw Tilemap_unknown_tilemap_0_67
 	dw Tilemap_unknown_tilemap_0_68
-	dw Tilemap_unknown_tilemap_0_69
+	dw Tilemap_battle_ui_clock_icon_tmap
 	dw Tilemap_unknown_tilemap_0_6a
 	dw Tilemap_unknown_tilemap_0_6b
 	dw Tilemap_unknown_tilemap_0_6c
-	dw Tilemap_unknown_tilemap_0_6d
+	dw Tilemap_battle_ui_hp_icon_tmap
 	dw Tilemap_unknown_tilemap_0_6e
 	dw Tilemap_unknown_tilemap_0_6f
 	dw Tilemap_unknown_tilemap_0_70
-	dw Tilemap_unknown_tilemap_0_71
+	dw Tilemap_encounter_ui_level_icon_tmap
 	dw Tilemap_unknown_tilemap_0_72
 	dw Tilemap_unknown_tilemap_0_73
 	dw Tilemap_unknown_tilemap_0_74
@@ -176,11 +176,11 @@ Tilemap_BANK_0::
 	dw Tilemap_unknown_tilemap_0_7c
 	dw Tilemap_unknown_tilemap_0_7d
 	dw Tilemap_unknown_tilemap_0_7e
-	dw Tilemap_unknown_tilemap_0_7f
-	dw Tilemap_unknown_tilemap_0_80
-	dw Tilemap_unknown_tilemap_0_81
-	dw Tilemap_unknown_tilemap_0_82
-	dw Tilemap_unknown_tilemap_0_83
+	dw Tilemap_summon_ui_level_icon_tmap
+	dw Tilemap_summon_ui_clock_icon_tmap
+	dw Tilemap_summon_ui_denjuu_name_first_tmap
+	dw Tilemap_summon_ui_denjuu_name_second_tmap
+	dw Tilemap_summon_ui_denjuu_name_third_tmap
 	dw Tilemap_unknown_tilemap_0_84
 	dw Tilemap_unknown_tilemap_0_85
 	dw Tilemap_unknown_tilemap_0_86
@@ -272,9 +272,9 @@ Tilemap_unknown_tilemap_0_c::
 	incbin "gfx/unknown/tilemap_0/c.tmap"
 Tilemap_unknown_tilemap_0_c_END
 
-Tilemap_unknown_tilemap_0_d::
-	incbin "gfx/unknown/tilemap_0/d.tmap"
-Tilemap_unknown_tilemap_0_d_END
+Tilemap_battle_ui_partner_message_layer_tmap::
+	incbin "components/battle/ui/partner_message_layer_tmap.tmap"
+Tilemap_battle_ui_partner_message_layer_tmap_END
 
 Tilemap_menu_phone_left_tmap::
 	incbin "gfx/menu/phone_left_tmap.tmap"
@@ -488,9 +488,9 @@ Tilemap_encounter_backgrounds_ocean_tmap::
 	incbin "components/encounter/backgrounds/ocean_tmap.tmap"
 Tilemap_encounter_backgrounds_ocean_tmap_END
 
-Tilemap_unknown_tilemap_0_43::
-	incbin "gfx/unknown/tilemap_0/43.tmap"
-Tilemap_unknown_tilemap_0_43_END
+Tilemap_encounter_backgrounds_desert_tmap::
+	incbin "components/encounter/backgrounds/desert_tmap.tmap"
+Tilemap_encounter_backgrounds_desert_tmap_END
 
 Tilemap_unknown_tilemap_0_44::
 	incbin "gfx/unknown/tilemap_0/44.tmap"
@@ -584,9 +584,9 @@ Tilemap_unknown_tilemap_0_5a::
 	incbin "gfx/unknown/tilemap_0/5a.tmap"
 Tilemap_unknown_tilemap_0_5a_END
 
-Tilemap_unknown_tilemap_0_5b::
-	incbin "gfx/unknown/tilemap_0/5b.tmap"
-Tilemap_unknown_tilemap_0_5b_END
+Tilemap_battle_ui_opponent_bars_tmap::
+	incbin "components/battle/ui/opponent_bars_tmap.tmap"
+Tilemap_battle_ui_opponent_bars_tmap_END
 
 Tilemap_unknown_tilemap_0_5c::
 	incbin "gfx/unknown/tilemap_0/5c.tmap"
@@ -604,9 +604,9 @@ Tilemap_unknown_tilemap_0_5f::
 	incbin "gfx/unknown/tilemap_0/5f.tmap"
 Tilemap_unknown_tilemap_0_5f_END
 
-Tilemap_unknown_tilemap_0_60::
-	incbin "gfx/unknown/tilemap_0/60.tmap"
-Tilemap_unknown_tilemap_0_60_END
+Tilemap_battle_ui_partner_bars_tmap::
+	incbin "components/battle/ui/partner_bars_tmap.tmap"
+Tilemap_battle_ui_partner_bars_tmap_END
 
 Tilemap_unknown_tilemap_0_61::
 	incbin "gfx/unknown/tilemap_0/61.tmap"
@@ -640,9 +640,9 @@ Tilemap_unknown_tilemap_0_68::
 	incbin "gfx/unknown/tilemap_0/68.tmap"
 Tilemap_unknown_tilemap_0_68_END
 
-Tilemap_unknown_tilemap_0_69::
-	incbin "gfx/unknown/tilemap_0/69.tmap"
-Tilemap_unknown_tilemap_0_69_END
+Tilemap_battle_ui_clock_icon_tmap::
+	incbin "components/battle/ui/clock_icon_tmap.tmap"
+Tilemap_battle_ui_clock_icon_tmap_END
 
 Tilemap_unknown_tilemap_0_6a::
 	incbin "gfx/unknown/tilemap_0/6a.tmap"
@@ -656,9 +656,9 @@ Tilemap_unknown_tilemap_0_6c::
 	incbin "gfx/unknown/tilemap_0/6c.tmap"
 Tilemap_unknown_tilemap_0_6c_END
 
-Tilemap_unknown_tilemap_0_6d::
-	incbin "gfx/unknown/tilemap_0/6d.tmap"
-Tilemap_unknown_tilemap_0_6d_END
+Tilemap_battle_ui_hp_icon_tmap::
+	incbin "components/battle/ui/hp_icon_tmap.tmap"
+Tilemap_battle_ui_hp_icon_tmap_END
 
 Tilemap_unknown_tilemap_0_6e::
 	incbin "gfx/unknown/tilemap_0/6e.tmap"
@@ -672,9 +672,9 @@ Tilemap_unknown_tilemap_0_70::
 	incbin "gfx/unknown/tilemap_0/70.tmap"
 Tilemap_unknown_tilemap_0_70_END
 
-Tilemap_unknown_tilemap_0_71::
-	incbin "gfx/unknown/tilemap_0/71.tmap"
-Tilemap_unknown_tilemap_0_71_END
+Tilemap_encounter_ui_level_icon_tmap::
+	incbin "components/encounter/ui/level_icon_tmap.tmap"
+Tilemap_encounter_ui_level_icon_tmap_END
 
 Tilemap_unknown_tilemap_0_72::
 	incbin "gfx/unknown/tilemap_0/72.tmap"
@@ -728,25 +728,25 @@ Tilemap_unknown_tilemap_0_7e::
 	incbin "gfx/unknown/tilemap_0/7e.tmap"
 Tilemap_unknown_tilemap_0_7e_END
 
-Tilemap_unknown_tilemap_0_7f::
-	incbin "gfx/unknown/tilemap_0/7f.tmap"
-Tilemap_unknown_tilemap_0_7f_END
+Tilemap_summon_ui_level_icon_tmap::
+	incbin "components/summon/ui/level_icon_tmap.tmap"
+Tilemap_summon_ui_level_icon_tmap_END
 
-Tilemap_unknown_tilemap_0_80::
-	incbin "gfx/unknown/tilemap_0/80.tmap"
-Tilemap_unknown_tilemap_0_80_END
+Tilemap_summon_ui_clock_icon_tmap::
+	incbin "components/summon/ui/clock_icon_tmap.tmap"
+Tilemap_summon_ui_clock_icon_tmap_END
 
-Tilemap_unknown_tilemap_0_81::
-	incbin "gfx/unknown/tilemap_0/81.tmap"
-Tilemap_unknown_tilemap_0_81_END
+Tilemap_summon_ui_denjuu_name_first_tmap::
+	incbin "components/summon/ui/denjuu_name_first_tmap.tmap"
+Tilemap_summon_ui_denjuu_name_first_tmap_END
 
-Tilemap_unknown_tilemap_0_82::
-	incbin "gfx/unknown/tilemap_0/82.tmap"
-Tilemap_unknown_tilemap_0_82_END
+Tilemap_summon_ui_denjuu_name_second_tmap::
+	incbin "components/summon/ui/denjuu_name_second_tmap.tmap"
+Tilemap_summon_ui_denjuu_name_second_tmap_END
 
-Tilemap_unknown_tilemap_0_83::
-	incbin "gfx/unknown/tilemap_0/83.tmap"
-Tilemap_unknown_tilemap_0_83_END
+Tilemap_summon_ui_denjuu_name_third_tmap::
+	incbin "components/summon/ui/denjuu_name_third_tmap.tmap"
+Tilemap_summon_ui_denjuu_name_third_tmap_END
 
 Tilemap_unknown_tilemap_0_84::
 	incbin "gfx/unknown/tilemap_0/84.tmap"
