@@ -23,7 +23,7 @@
 
 battle/items_old 2E652 table 68 8
 battle/items 1E2B80 table 68 16
-denjuu/nicknames 2F8FA table 48 4
+denjuu/nicknames 2F8FA table 32 6
 map/location_mapping AA875 index 256 map/location_strings
 map/location_strings_old AAA75 block 16
 map/location_strings ABD8B block 16
