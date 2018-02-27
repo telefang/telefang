@@ -1,9 +1,9 @@
 Pointer,Japanese,English,Draft version,Notes
-#######,NPC Messages 1   -   172 strings   -   Messages from Toronko to Barran,,,
-#######,34 strings   -   Toronko Village,,,
+#######,NPC Messages 1   -   172 strings   -   Messages from Tronco to Barran,,,
+#######,34 strings   -   Tronco Village,,,
 0x11c000,"ここはトロンコむらだプニ
 ここは ムサさまのきょかが
-ないと とおれないプニー","This is Toronko Village, puni.
+ないと とおれないプニー","This is Tronco Village, puni.
 You need Musa's permission to pass through here, puni!",,"Status: Translated 100%
 "
 0x11c002,"アンテナのきが つかえるように
@@ -46,7 +46,7 @@ They're sorted into 6 major groups: Mountain, Field, Forest, Aquatic, Sky, and D
 Weird humans showing up, Antenna Trees getting cut down...",,
 0x11c012,"トロンコむらは いつもどおリに
 もどったみたいだね
-よかったー","It looks like Toronko Village has returned to normal.
+よかったー","It looks like Tronco Village has returned to normal.
 I'm glad!",,
 0x11c014,"キミは 『Tファンガー』かい?
 『Tファンガー』ってのは
@@ -134,7 +134,7 @@ I think it's better to split the work 3 ways!",,
 0x11c032,"このドウクツは トロンコむらの
 すいげんに なってるんだ
 おくのほうに ネタロが
-いるはずなんだけど..","This cave is the water source for Toronko Village.
+いるはずなんだけど..","This cave is the water source for Tronco Village.
 Netaro should be further inside...",,
 0x11c034,"さっき ネタロがむらのほうヘ
 ミズをもっていくのをみたよ
@@ -198,9 +198,9 @@ I wonder what he wanted?
 Was it something to do with Netaro?",,
 0x11c042,"ネタロの いねむリぐせも
 こまったもんだよね",Netaro's constant napping is a real problem...,,
-#######,32 strings   -   Kurinon Village,,,
+#######,32 strings   -   Krinon Village,,,
 0x11c044,"ここは クリノンむらっていう
-ところだよ",This here is a place called Kurinon Village.,,
+ところだよ",This here is a place called Krinon Village.,,
 0x11c046,"クリノンむらは いまたいヘんに
 いそがしいんだ",The village is kind of in a mess right now.,,
 0x11c048,"もんだいかいけつだー!
@@ -217,7 +217,7 @@ Now we can't buy any fish from Iris...",,
 なったダスー","Now we can buy tasty fish from Iris again, man!",,
 0x11c050,"クリノンむらはちいさなむらなの
 アンテナのきが なくなると
-すごくこまるのよー",Kurinon is such a small village. We'd be in a lot of trouble if we lost the Antenna Tree...,,
+すごくこまるのよー",Krinon is such a small village. We'd be in a lot of trouble if we lost the Antenna Tree...,,
 0x11c052,"まったく ダレがアンテナのきを
 つかえなくしてしまったの?","Honestly, who would want to keep people from using the Antenna Tree?",,
 0x11c054,"はんにんは カクザとうとか
@@ -402,7 +402,7 @@ We saw eachother downstairs, so how come isn't he here yet???
 アイテムをてにいれるベく
 タバスコさまが おくのヘヤに
 いっていらっしゃる!
-ジャマするものはようしゃしない","Kurinon Village will become the Kakuza Party's base of operations!
+ジャマするものはようしゃしない","Krinon Village will become the Kakuza Party's base of operations!
 Lady Tabasco has gone further inside to search for the items we need.
 I won't allow anyone to get in her way! ",,
 0x11c08c,"クリノンむらは イーリスに
@@ -412,7 +412,7 @@ I won't allow anyone to get in her way! ",,
 とうせんかくじつだー!
 あかるいミライをつくリます!
 カクザとう!カクザとうで
-ございます!","Kurinon Village is an important area because of its connection to Iris.
+ございます!","Krinon Village is an important area because of its connection to Iris.
 If we can control it, we'll definitely have an upper hand in the next election!
 We will create a brighter future!
 Kakuza Party! We are the Kakuza Party!",,
@@ -496,7 +496,7 @@ The sea is so pretty here!",,
 もリのきも たいせつに!","We're the Forest Defence Force!
 The sea is important, but forests are precious too!",,
 0x11c0be,"トリパむらには このおくにある
-ほこらから いけるんだ",You can reach Tripa Village through a shrine in the forest up ahead.,,This line is used once you reach the Tripa chapter.
+ほこらから いけるんだ",You can reach Toulipa Village through a shrine in the forest up ahead.,,This line is used once you reach the Toulipa chapter.
 0x11c0c0,"ボクらは しんリんけいびたい!
 うみもだいじだけど
 もリのきも たいせつに!","We're the Forest Defence Force!
@@ -553,7 +553,7 @@ There are a lot of aquatic Denjuu who live there.",,
 まだないんだ...
 イナカのクリノンむらでさえ
 ショップが あるのに...","There still aren't any shops in Iris where you can buy machines...
-Even Kurinon has one, and they're way out in the sticks...",,
+Even Krinon has one, and they're way out in the sticks...",,
 0x11c0d8,"パームかいのはしのほうに
 キカイのまち フリジアにつづく
 アンテナのきがはえているよ","If you cross the Palm Sea, you'll reach an Antenna Tree that connects to the city of Freesia.",,
@@ -849,7 +849,7 @@ He fights against the Snake Clan day and night!",,
 なかなおリ できるなんて
 すごいよ!","The Bird Chief and Snake Chief are both amazing Denjuu!
 They managed to be friends again after all this time!",,
-#######,NPC Messages 2   -   253 strings   -   Messages from Barran to Tripa,,,
+#######,NPC Messages 2   -   253 strings   -   Messages from Barran to Toulipa,,,
 #######,Barran (cont'd),,,
 0x124000,"トリぐみサイコー!
 トリぐみが バーランにいる
@@ -1367,7 +1367,7 @@ Will I have to use force?",,
 なかったんだ
 もっと デンジュウを たいせつにしていたんだけど...","The professor didn't used to be like this...
 He used to treat Denjuu with more respect...",,
-#######,17 strings   -   Paparuna Lake,,,
+#######,17 strings   -   Paparouna Lake,,,
 0x124104,"あそこのやしきは なにかの
 けんきゅうじょみたいダ
 よく はくいの ひとたちが
@@ -1437,7 +1437,7 @@ W-What do you want?
 If it's nothing, then please leave me alone!",
 0x124124,"ここは デンジュウカイいち
 おおきい みずうみ
-『パパルナこ』 があるんだよ",/0x124124/,"Up ahead is ""Paparuna Lake"", the largest lake in the Denjuu World.",
+『パパルナこ』 があるんだよ",/0x124124/,"Up ahead is ""Paparouna Lake"", the largest lake in the Denjuu World.",
 #######,21 strings   -   Dimenza's Mansion,,,
 0x124126,"このさきには だいじなものが
 おいてあるんだ
@@ -1551,7 +1551,7 @@ Tファンガー<&name>
 0x124166,"ここのやしきは ふうさして
 ダレもはいれないように
 われわれがみはっておきます",/0x124166/,,
-#######,61 strings   -   Tripa Antenna Tree,,,
+#######,61 strings   -   Toulipa Antenna Tree,,,
 0x124168,"アンテナのきを こんなふうに
 しやがって!
 ゆるさないぞ!",/0x124168/,,
@@ -1786,7 +1786,7 @@ Tファンガー<&name>
 0x1241e0,"ただしいみちは.....
 やっぱリおしえない
 まだ ゆるしたわけじゃないからね",/0x1241e0/,,
-#######,26 strings   -   Tripa Village (partial),,,
+#######,26 strings   -   Toulipa Village (partial),,,
 0x1241e2,"たいヘんだー!!
 むらのアンテナのきが
 おかしくなっちゃったよー
@@ -1839,8 +1839,8 @@ Tファンガー<&name>
 あるな!
 ニンゲンもまだまだすてたもの
 じゃないね!",/0x1241f8/,,
-#######,NPC Messages 3   -   254 strings   -   Messages from Tripa to the end of the game,,,
-#######,Tripa Village (cont'd),,,
+#######,NPC Messages 3   -   254 strings   -   Messages from Toulipa to the end of the game,,,
+#######,Toulipa Village (cont'd),,,
 0x13c000,"あっ!ニンゲンだ!
 アンテナのきを おかしく
 しやがって!!
@@ -1901,9 +1901,10 @@ Tファンガーだよ!!",/0x13c012/,,
 0x13c01a,"ボクはトリパむらにのこって
 ここのデンジュウたちと
 アンテナのきをまもっていくよ
-それぐらいしかできないからね",/0x13c01a/,"I'm staying in Tripa. I'll keep protecting the Antenna Tree together with the Denjuu here.
+それぐらいしかできないからね","I'm staying in Toulipa. I'll keep protecting the Antenna Tree together with the Denjuu here.
+That's about all I can do!","I'm staying in Toulipa. I'll keep protecting the Antenna Tree together with the Denjuu here.
 That's about all I can do!",
-#######,36 strings   -   Flaura Village,,,
+#######,36 strings   -   Fraoula Village,,,
 0x13c01c,"ここは いろいろなものが
 はっくつされるむら
 フラウラむらだよ",/0x13c01c/,,
@@ -2025,7 +2026,7 @@ That's about all I can do!",
 おかしいんだけど ダレかが
 ふういんをやぶったんじゃない
 だろうなー?",/0x13c062/,,
-#######,59 strings   -   Pepperi Mountain,,,
+#######,59 strings   -   Mt. Peperi,,,
 0x13c064,"サナエバさまが いっていた
 コドモってのは コイツの
 ことか?
@@ -2033,7 +2034,7 @@ That's about all I can do!",
 おいださねば!",/0x13c064/,,
 0x13c066,"チカラずくで やられて
 しまった....",/0x13c066/,,"(Unused)
-Looks like all of the T-Fangers in Pepperi had unique lose quotes written, but the game uses the generic line (shit! remember it!) instead."
+Looks like all of the T-Fangers in Peperi had unique lose quotes written, but the game uses the generic line (shit! remember it!) instead."
 0x13c068,"ここの デンジュウは
 オレには ちょっと キツイなぁ
 でも オマエぐらいなら

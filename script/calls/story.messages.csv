@@ -1,5 +1,5 @@
 Pointer,Japanese,English,Draft version,Notes
-#######,Toronko,,,
+#######,Tronco,,,
 0x158000,"おっす <&name>
 オレだけど...
 オマエ ネリカラって ヤツに
@@ -29,7 +29,7 @@ That Nerikara guy kept talking about ""delicious curry"", but I've never had it.
 なにかやってるぞー
 なにやってるか みてきたほうが
 いいんじゃないか?<*2>","Hey, what's up?
-Those ""Kakuza Party"" guys are doing something at the Toronko Village spring...
+Those ""Kakuza Party"" guys are doing something at the Tronco Village spring...
 Don't you think we should check it out?<*2>",,
 0x158006,"<D50>なぁ <&name>
 ネジロって ほんとに
@@ -84,7 +84,7 @@ I hear he's never told anyone his phone number before...<*2>",,
 あったことは ないんだけどさ
 <*2>","<D48>Musa is one of the 4 elders of the Denjuu World. 
 I've never met any of the others though...<*2>",,
-#######,Kurinon,,,
+#######,Krinon,,,
 0x158014,"『カクザとう』って
 デンジュウカイの 
 だいとうリょうになって
@@ -137,17 +137,17 @@ There might be a lot of T-Fangers inside the cave now, so you'd better be carefu
 いないデンジュウなんだ!
 <&name>
 オマエは もうあったのか?
-<*2>","That Denjuu standing on the bridge isn't from around Kurinon village...
+<*2>","That Denjuu standing on the bridge isn't from around Krinon village...
 Have you talked to them yet, <&name>?<*2>",,
 0x158022,"クリノンむらのヤツらって
 みんなダスダスいってるだろ!
 なんかいいとおもわない?
 オレはすきなんだよなー
 なんとかダス!とか
-そうなんダス!とかいいよなー<*2>","The Denjuu in Kurinon village keep saying ""man"" all the time!
+そうなんダス!とかいいよなー<*2>","The Denjuu in Krinon village keep saying ""man"" all the time!
 Don't you think it's kind of cool? 
 I think it's great, like ""That's right, man!"" or ""I dunno, man!"" 
-So cool~<*2>",,
+So cool♪<*2>",,
 0x158024,"きいたぞ <&name>
 オマエ デンジュウカイで
 トモダチの おんなのこに
@@ -262,11 +262,11 @@ Maybe we could be friends with it?<*2>",,
 おねがいだよー
 たのむよー
 たのんだよー!
-<*2>","Man, I really wish I could buy one of the ""Game Machines"" that they sell in Toronko, but I just can't afford it...
+<*2>","Man, I really wish I could buy one of the ""Game Machines"" that they sell in Tronco, but I just can't afford it...
 Hey <&name>, think you could go buy one for me?
 Please?
 Pretty please??
-I'm counting on you!<*2>",,
+I'm counting on you!<*2>",,"Should be changed to ""Tronco."""
 0x15803a,"イーリスのむらに なんか
 ヘんなヤツがいるんだって
 なにしたいんだか
@@ -564,7 +564,7 @@ Talk to you later!<*2>",,
 あんまリいないんだ
 そういうヤツって なんとなく
 トモダチになリたいよなー<*2>",/0x158076/<*2>,,
-#######,Paparuna Lake,,,
+#######,Paparouna Lake,,,
 0x158078,"よう <&name>
 オマエが パパルナこに
 いってるっていうはなしを
@@ -743,7 +743,7 @@ Talk to you later!<*2>",,
 オレは オマエのことが
 しんぱいでしょうがないよ
 <*2>",/0x15809e/<*2>,,
-#######,Tripa,,,
+#######,Toulipa,,,
 0x1580a0,"トリパむらの はなしは
 きいたよー
 わるいニンゲンも
@@ -832,7 +832,7 @@ Talk to you later!<*2>",,
 こんなことしてるんだろう..
 なんか かなしくなってきたよ
 <*2>",/0x1580b2/<*2>,,
-#######,Flaura,,,
+#######,Fraoula,,,
 0x1580b4,"フラウラむらの デンジュウは
 いせきを はっくつして
 くらしてる むらなんだ
@@ -923,7 +923,7 @@ Talk to you later!<*2>",,
 デンワにでなくなったのかな!
 オレはどうすればいいんだー!
 <*2>",/0x1580c6/<*2>,,
-#######,Pepperi Mountain,,,
+#######,Mt. Peperi,,,
 0x1580c8,"おっ..おい!
 アクマデンジュウが
 ふっかつ するってはなしは
