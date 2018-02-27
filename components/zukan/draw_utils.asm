@@ -180,6 +180,8 @@ Zukan_ADVICE_DrawSpeciesPageText::
     ld a, [W_MainScript_State]
     cp M_MainScript_StateTerminated
     jr z, .text_exhausted
+    cp 5
+    jr z, .text_exhausted ;This happens if the text is only 1 or 2 lines long.
     cp 2
     jr z, .text_exhausted
     jr .drawing_loop
