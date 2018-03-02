@@ -86,7 +86,7 @@ EventScript_GetEventDenjuu::
     add hl, bc
     ld d, h
     ld e, l
-    ld hl, StringTable_denjuu_nicknames + M_StringTable_Load4AreaSize * $5
+    ld hl, StringTable_denjuu_nicknames + $6 * $5
     ld c, BANK(StringTable_denjuu_nicknames)
     ld b, $06
     call Banked_Memcpy
