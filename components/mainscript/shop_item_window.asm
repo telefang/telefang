@@ -186,7 +186,7 @@ MainScript_DrawQuantity::
     ld a, 99
     
 .decimalize
-    call Status_DecimalizeStatValue
+    call MainScript_DrawQuantity_Prepare
     
     ld a, $C7
     ld hl, $8C80
@@ -203,6 +203,19 @@ MainScript_DrawQuantity::
     and $F
     add a, $BB
     ld hl, $8CA0
-    call MainScript_DrawLetter
+    call MainScript_DrawQuantity_Finalise
     
+    ret
+    
+SECTION "Main Script Shop Item Window 5 Quantity Fix", ROMX[$7E42], BANK[$B]
+MainScript_DrawQuantity_Prepare::
+    call Status_DecimalizeStatValue
+    ld a,1
+    ld [W_MainScript_VWFDisable],a
+    ret
+    
+MainScript_DrawQuantity_Finalise::
+    call MainScript_DrawLetter
+    xor a
+    ld [W_MainScript_VWFDisable],a
     ret
