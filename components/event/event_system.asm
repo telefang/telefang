@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Event Sequence Pointer", WRAM0[$CD02]
-W_EventSystem_EventSequencePointer:: ds 2
+W_EventSystem_EventSequencePointerIndex:: ds 2
 
 SECTION "Event Arguments", WRAM0[$CD06]
 W_EventSystem_EventChainingOffset:: ds 2
@@ -20,9 +20,9 @@ EventSystem_LoadEvent::
     push af
     ld a, b
     rst $10
-    ld a, [W_EventSystem_EventSequencePointer]
+    ld a, [W_EventSystem_EventSequencePointerIndex]
     ld e, a
-    ld a, [W_EventSystem_EventSequencePointer + 1]
+    ld a, [W_EventSystem_EventSequencePointerIndex + 1]
     ld d, a
     add hl, de
     add hl, de
