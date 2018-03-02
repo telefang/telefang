@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Event Action - Get Event Denjuu", ROMX[$4D38], BANK[$F]
-EventAction_GetEventDenjuu::
+EventScript_GetEventDenjuu::
     
 ; SRAM plz.
     
@@ -14,7 +14,7 @@ EventAction_GetEventDenjuu::
     
     ld bc, $C01
     call Overworld_ResetFlag
-    call EventAction_GetEventDenjuu_FindEmptyDenjuuSlot
+    call EventScript_FindEmptyDenjuuSlot
     jr z, .eventDenjuuEmptySlotFound
     ld bc, $C01
     call Overworld_SetFlag
@@ -24,13 +24,13 @@ EventAction_GetEventDenjuu::
 
 ; Load Denjuu stats into SRAM.
 
-    ld a, [W_EventSystem_ParameterB]
+    ld a, [W_EventScript_ParameterB]
     ldi [hl], a
-    ld a, [W_EventSystem_ParameterC]
+    ld a, [W_EventScript_ParameterC]
     ldi [hl], a
-    ld a, [W_EventSystem_ParameterD]
+    ld a, [W_EventScript_ParameterD]
     ldi [hl], a
-    ld a, [W_EventSystem_ParameterE]
+    ld a, [W_EventScript_ParameterE]
     ldi [hl], a
     ld a, 0
     ldi [hl], a
@@ -41,7 +41,7 @@ EventAction_GetEventDenjuu::
 
 ; Parameter A is an identifier for the Event Denjuu.
 
-    ld a, [W_EventSystem_ParameterA]
+    ld a, [W_EventScript_ParameterA]
     ld c, a
     add hl, bc
     ld d, h
@@ -52,7 +52,7 @@ EventAction_GetEventDenjuu::
     ld a, d
     ldi [hl], a
     push hl
-    ld bc, $FFF8
+    ld bc, -8
     add hl, bc
     srl h
     rr l
@@ -74,7 +74,7 @@ EventAction_GetEventDenjuu::
 
 ; If the Event Denjuu in question is Noisy then read his name from the nickname table in the most untablelike way possible.
 
-    ld a, [W_EventSystem_ParameterA]
+    ld a, [W_EventScript_ParameterA]
     cp a, $5
     jr nz, .notNoisy
     ld b, 0
@@ -86,8 +86,8 @@ EventAction_GetEventDenjuu::
     add hl, bc
     ld d, h
     ld e, l
-    ld hl, $790E
-    ld c, $0B
+    ld hl, StringTable_denjuu_nicknames + M_StringTable_Load4AreaSize * $5
+    ld c, BANK(StringTable_denjuu_nicknames)
     ld b, $06
     call Banked_Memcpy
     
@@ -102,7 +102,7 @@ EventAction_GetEventDenjuu::
     ldi [hl], a
     ld a, [$C906]
     ldi [hl] ,a
-    ld a, [W_EventSystem_ParameterA]
+    ld a, [W_EventScript_ParameterA]
     ld c, a
     push hl
     ld a, $29
@@ -133,12 +133,12 @@ EventAction_GetEventDenjuu::
     ld a, 0
     ld [REG_MBC3_SRAMENABLE], a
     ld b, $6
-    call EventSystem_CalculateNextOffset
+    call EventScript_CalculateNextOffset
     xor a
     ret
 
 SECTION "Event Action - Get Event Denjuu - Find Empty Denjuu Slot", ROMX[$4FEF], BANK[$F]
-EventAction_GetEventDenjuu_FindEmptyDenjuuSlot::
+EventScript_FindEmptyDenjuuSlot::
     ld hl,$A001
     ld c,$FE
     ld de,$0010
