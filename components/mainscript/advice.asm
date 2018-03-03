@@ -7,6 +7,7 @@ W_MainScript_VWFMainScriptHack:: ds 1
 W_MainScript_VWFDisable:: ds 1
 W_MainScript_VWFNewlineWidth:: ds 1
 W_MainScript_VWFWindowHeight:: ds 1
+W_MainScript_ADVICE_FontToggle:: ds 1
 
 ;Actual patches exist in their own files due to RGBDS limitations.
 ;Here have some trashbytes instead

@@ -7,9 +7,6 @@ INCLUDE "registers.inc"
 SECTION "MainScript Text Drawing Options", WRAM0[$CDB1]
 W_MainScript_TextStyle:: ds 1
 
-SECTION "Main Script Narrow Font Switch", WRAMX[$DA00], BANK[$1]
-W_MainScript_FontToggle:: ds 1
-
 ;Draw the letter at A.
 ;The 1bpp font is turned into a 2bpp color
 SECTION "MainScript Text Drawing Routine", ROMX[$4E29], BANK[$B]
@@ -26,12 +23,12 @@ MainScript_DrawLetter::
 	sla a
 	rl b
 	ld c, a
-	call MainScript_FontAddress
+	call MainScript_ADVICE_FontAddress
 	add hl, bc
 	ld d, h
 	ld e, l
 	pop hl
-	call MainScript_FontSelector
+	call MainScript_ADVICE_FontSelector
 	ret
 	ds $5C
 
@@ -274,9 +271,9 @@ MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle::
 	pop bc
 	ret
 	
-SECTION "Main Script Font Selector", ROMX[$7E42], BANK[$B]
-MainScript_FontSelector::
-	ld a, [W_MainScript_FontToggle]
+SECTION "Main Script Font Selector", ROMX[$7E80], BANK[$B]
+MainScript_ADVICE_FontSelector::
+	ld a, [W_MainScript_ADVICE_FontToggle]
 	cp 1
 	jr z, .drawNarrowCharacter
 	call MainScript_ADVICE_DrawLetter
@@ -285,10 +282,16 @@ MainScript_FontSelector::
 	ld a,[W_PreviousBank]
 	push bc
 	push af
-	ld a, $B
+	ld a, BANK(MainScript_ADVICE_FontSelector)
 	ld [W_PreviousBank],a
-	ld a, BANK(MainScript_ADVICE_DrawNarrowLetter)
-	call Banked_MainScript_ADVICE_DrawNarrowLetter
+
+	push hl ;argument push
+
+	ld a, Banked_MainScript_ADVICE_DrawNarrowLetter & $FF
+	call PatchUtils_AuxCodeJmp
+
+	add sp, 2 ;un-push
+
 	ld b,a
 	pop af
 	ld [W_PreviousBank],a
@@ -296,8 +299,8 @@ MainScript_FontSelector::
 	pop bc
 	ret
 	
-MainScript_FontAddress::
-	ld a, [W_MainScript_FontToggle]
+MainScript_ADVICE_FontAddress::
+	ld a, [W_MainScript_ADVICE_FontToggle]
 	cp 1
 	jr z, .useNarrowCharacter
 	ld hl, MainScript_Font
@@ -305,17 +308,26 @@ MainScript_FontAddress::
 .useNarrowCharacter
 	ld hl, MainScript_NarrowFont
 	ret
-	
-SECTION "Main Script Font Selector", ROM0[$ED]
-Banked_MainScript_ADVICE_DrawNarrowLetter::
-	rst $10
-	call MainScript_ADVICE_DrawNarrowLetter
-	rst $18
-	ret
 
-SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7540], BANK[$1]
+SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7500], BANK[$1]
+;This is a copy of MainScript_ADVICE_DrawLetter for rendering a narrow font
+;because bank $B lacks room for the narrow font & other things.
 MainScript_ADVICE_DrawNarrowLetter::
-;This is a copy of MainScript_ADVICE_DrawLetter for rendering a narrow font because bank $B lacks room for what we need to do.
+	ld a, [W_PreviousBank]
+	push af
+
+	ld a, BANK(MainScript_ADVICE_DrawNarrowLetter)
+	ld [W_PreviousBank], a
+	ld [W_CurrentBank], a
+	
+	ei
+	
+	;Caller pushes HL to stack before calling, this is how you get it back.
+	ld hl, sp+6
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	
 	ld b, 8
 	ld a, $CF
 	ld [W_MainScript_VWFCompositeArea], a
@@ -458,6 +470,10 @@ MainScript_ADVICE_DrawNarrowLetter::
 	
 .noSecondTileShiftBack
 	ld [W_MainScript_VWFLetterShift], a
+	
+	pop af
+	ld [W_PreviousBank], a
+	ld [W_CurrentBank], a
 	ret
 	
 SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7D00], BANK[$1]
@@ -501,7 +517,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	jr z, .mode1
 	
 .mode3
-	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	ld a, [REG_STAT]
 	and 2
 	jr nz, .mode3
 	
@@ -512,7 +528,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	jr .end
 	
 .mode0
-	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	ld a, [REG_STAT]
 	and 2
 	jr nz, .mode0
 	
@@ -522,7 +538,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	jr .end
 	
 .mode1
-	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	ld a, [REG_STAT]
 	and 2
 	jr nz, .mode1
 	
@@ -538,7 +554,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	ld b, a
 	
 .mode2Loop
-	db $FA, $41, $FF ;ld a, [REG_STAT] - the long way
+	ld a, [REG_STAT]
 	and 2
 	jr nz, .mode2Loop
 	

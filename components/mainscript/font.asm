@@ -9,4 +9,4 @@ MainScript_Font::
 	
 SECTION "Main Script Narrow Font", ROMX[$7600], BANK[$1]
 MainScript_NarrowFont::
-	INCBIN "gfx/narrow_font.1bpp", 0, NUM_CHARACTERS * 8
+    INCBIN "gfx/narrow_font.1bpp", 0, NUM_CHARACTERS * 8
