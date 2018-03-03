@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 IMPORT SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
 
 SECTION "Patch Utilities", ROM0[$0063]
@@ -18,18 +20,18 @@ PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3::
 	ret
 	
 PatchUtils_AuxCodeJmp::
+   di
 	push af
 	
 	ld a, [W_CurrentBank]
 	push af
 	
 	ld a, BANK(Banked_PatchUtils_AdviceTable)
-	rst $10
+	ld [REG_MBC3_ROMBANK], a
+	ld [W_CurrentBank], a
 	
 	pop af
 	ld [W_CurrentBank], a
-   
-   di
 	
 	pop af
 
