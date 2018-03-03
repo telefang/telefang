@@ -44,8 +44,11 @@ Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
 	jp Zukan_ADVICE_StateInnerviewInputSwitchSpecies
 	nop
    
+;TODO: Does Shokupanda wants split TitleMenu/PauseMenu graphics or not?
 Banked_TitleMenu_ADVICE_StateLoadGraphics::
-	jp TitleMenu_ADVICE_StateLoadGraphics
+	nop ;jp TitleMenu_ADVICE_StateLoadGraphics
+	nop
+	nop
 	nop
    
 Banked_MainScript_ADVICE_DrawNarrowLetter::
