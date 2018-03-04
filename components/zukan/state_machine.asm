@@ -191,9 +191,13 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     call Banked_RLEDecompressAttribsTMAP0
     call PhoneConversation_OutboundConfigureScreen
     
-    ld a, [W_Zukan_SelectedSpecies]
-    ld [W_Status_SelectedDenjuuSpecies], a
-    call Banked_MainScript_DrawHabitatString
+    nop
+    nop
+    nop
+    nop
+    
+    ld a, Banked_Zukan_ADVICE_DrawRightAlignedHabitatName & $FF
+    call PatchUtils_AuxCodeJmp
     
     ld a, [W_Zukan_SelectedSpecies]
     ld c, 1
@@ -414,9 +418,13 @@ Zukan_StateOverviewReturnToInput:
     ret
 
 Zukan_StateInnerviewSwitchPage:
-    ld a, [W_Zukan_SelectedSpecies]
-    ld [W_Status_SelectedDenjuuSpecies], a
-    call Banked_MainScript_DrawHabitatString
+    nop
+    nop
+    nop
+    nop
+    
+    ld a, Banked_Zukan_ADVICE_DrawRightAlignedHabitatName & $FF
+    call PatchUtils_AuxCodeJmp
     
     ld a, [W_Zukan_SelectedSpecies]
     ld c, 1
@@ -467,6 +475,38 @@ Zukan_ADVICE_ClearScreenTiles::
     dec b
     jr nz, Zukan_ADVICE_ClearScreenTiles
     
+    ret
+    
+Zukan_ADVICE_DrawRightAlignedHabitatName::
+    ld a, [W_PreviousBank]
+    push af
+    
+    ld a, BANK(Zukan_ADVICE_StateInnerviewInputButtonPress)
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    
+    ei ;REMOVE THIS EI ON PAIN OF DEATH^WTERRIBLE EMULATOR BUGS
+    
+    ld a, [W_Zukan_SelectedSpecies]
+    ld [W_Status_SelectedDenjuuSpecies], a
+    
+    ;DrawHabitatString but inlined
+    ld a, [W_Status_SelectedDenjuuSpecies]
+    ld c, M_Battle_SpeciesType
+    call Banked_Battle_LoadSpeciesData
+    
+    ld a, [W_Battle_RetrSpeciesByte]
+    ld [W_StringTable_ROMTblIndex], a
+    
+    ld de, StringTable_denjuu_habitats
+    ld bc, $9380
+    ld a, BANK(MainScript_ADVICE_DrawRightAlignedHabitatName)
+    ld hl, MainScript_ADVICE_DrawRightAlignedHabitatName
+    rst $20 ;CallBankedFunction
+    
+    pop af
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
     ret
 
 Zukan_ADVICE_StateInnerviewInputButtonPress::
