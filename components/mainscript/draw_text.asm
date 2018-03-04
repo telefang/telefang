@@ -140,7 +140,7 @@ MainScript_ADVICE_DrawLetter:
 	jr nz, .tileShiftLoop
 	ld a, 0
 	ld [W_MainScript_VWFOldTileMode], a
-	ld b, $7B
+	ld b, MainScript_ADVICE_DrawLetterTable >> 8
 	ld a, [W_MainScript_VWFCurrentLetter]
 	ld c, a
 	ld a, [W_MainScript_VWFDisable]
@@ -271,7 +271,7 @@ MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle::
 	pop bc
 	ret
 	
-SECTION "Main Script Font Selector", ROMX[$7E80], BANK[$B]
+SECTION "Main Script Font Selector", ROMX[$7FC0], BANK[$B]
 MainScript_ADVICE_FontSelector::
 	ld a, [W_MainScript_ADVICE_FontToggle]
 	cp 1

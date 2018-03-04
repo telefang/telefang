@@ -207,7 +207,7 @@ MainScript_DrawQuantity::
     
     ret
     
-SECTION "Main Script Shop Item Window 5 Quantity Fix", ROMX[$7E42], BANK[$B]
+SECTION "Main Script Shop Item Window 5 Quantity Fix", ROMX[$7EA0], BANK[$B]
 MainScript_DrawQuantity_Prepare::
     call Status_DecimalizeStatValue
     ld a,1
