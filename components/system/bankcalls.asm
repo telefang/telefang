@@ -201,9 +201,9 @@ Banked_MainScript_DrawHabitatString::
     ret
 
 Banked_MainScript_DrawStatusEffectString::
-    ld a, $75
+    ld a, BANK(MainScript_ADVICE_DrawStatusEffectGfx)
     rst $10
-    call MainScript_DrawStatusEffectString
+    call MainScript_ADVICE_DrawStatusEffectGfx
     rst $18
     ret
     
