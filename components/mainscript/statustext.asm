@@ -155,20 +155,17 @@ MainScript_DrawStatusEffectString::
     jp MainScript_DrawShortName
 
 SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7D00], BANK[$B]
-;HL = Tile ptr
-;BC = Text string to draw
-;D = Text drawing limit (terminators also respected)
-;Centers the drawn text.
-MainScript_ADVICE_DrawCenteredName75::
-    push bc
-    push hl
-	 
+;BC = text string (presumed WRAM, not bankable)
+;D = string length (bytes)
+;Returns E = string length (pixels)
+;Clobbers a, hl, flags; arguments not preserved
+MainScript_ADVICE_CountTextWidth::
 	 ld e, 0
     
 .sizingLoop
     ld a, [bc]
     cp $E0
-    jr z, .finishMeasuring
+    ret z
     
     ;Index the font sizing array
     ld h, MainScript_ADVICE_DrawLetterTable >> 8
@@ -182,21 +179,84 @@ MainScript_ADVICE_DrawCenteredName75::
     inc bc
     dec d
     jr nz, .sizingLoop
+    ret
 
-.finishMeasuring
-    ; Remove the last post-letter 1-pixel space if there was any text
-    ld a, e
-    cp 0
-    jr z, .moveupTilePtr
-    dec e
+;BC = Argument for Draw Empty Spaces
+;DE = Argument for Load Denjuu Name
+;ROMTblIndex = Index of string to draw - THIS IS DIFFERENT FROM DrawCenteredName
+;              SO THAT YOU CAN USE RST $20. ORIGINAL FUNCTION USES A REGISTER
+;Draws the habitat name, but right-aligned. assumes habitat sized win
+MainScript_ADVICE_DrawRightAlignedHabitatName::
+    push bc
+    push de
+    ld hl, W_MainScript_CenteredNameBuffer
+    ld b, M_StringTable_Load4AreaSize + 1
+	
+.clearLoop
+    ld a, $E0
+    ld [hli], a
+    dec b
+    jr nz, .clearLoop
 
+    pop hl
+    call StringTable_LoadShortName
+    pop hl
+
+    ld d, M_StringTable_Load4AreaSize
+    ld bc, W_StringTable_StagingLocDbl
+   
+MainScript_ADVICE_DrawRightAlignedStagedString::
+    push bc
+    push de
+    push hl
+
+    ld a, 7
+    call MainScript_DrawEmptySpaces
+
+    pop hl ;tileptr
+    pop de ;text string
+    pop bc ;string size (bytes)
+    push bc
+    push hl
+    
+    call MainScript_ADVICE_CountTextWidth
+    
+    ;At this point, e contains the total size of text we need to deal with.
+    ;NOTE: This logic WILL NOT WORK with a wider than 7 tile window!
+    ;TODO: Use VWFNewlineWidth to determine window size.
 .moveupTilePtr
+    ld a, $38
+    sub e
+    jr c, .overwideStringFailsafe
+    jr MainScript_ADVICE_DrawCenteredName75.setupVwfOffset
+    
+    ;Used if the string being drawn is too wide, since we can't draw strings
+    ;before the selected tile
+.overwideStringFailsafe
+    pop hl
+    jr MainScript_ADVICE_DrawCenteredName75.drawString
+
+;HL = Tile ptr
+;BC = Text string to draw
+;D = Text drawing limit (terminators also respected)
+;Centers the drawn text.
+MainScript_ADVICE_DrawCenteredName75::
+    push bc
+    push hl
+    
+    call MainScript_ADVICE_CountTextWidth
+    
     ;At this point, e contains the total size of text we need to deal with.
     ;NOTE: This logic WILL NOT WORK with a wider than 8 tile window!
+    ;TODO: Use VWFNewlineWidth to determine window size.
+.moveupTilePtr
     ld a, $40
     sub e
     jr c, .overwideStringFailsafe
+    
     sra a
+    
+.setupVwfOffset
     push af
     and $7 ; Number of pixels to push the compositing area forward by
     ld [W_MainScript_VWFLetterShift], a

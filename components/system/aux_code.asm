@@ -51,6 +51,14 @@ Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
 Banked_TitleMenu_ADVICE_StateLoadGraphics::
 	jp TitleMenu_ADVICE_StateLoadGraphics
 	nop
+   
+Banked_MainScript_ADVICE_DrawNarrowLetter::
+	jp MainScript_ADVICE_DrawNarrowLetter
+   nop
+   
+Banked_Zukan_ADVICE_DrawRightAlignedHabitatName::
+	jp Zukan_ADVICE_DrawRightAlignedHabitatName
+	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:

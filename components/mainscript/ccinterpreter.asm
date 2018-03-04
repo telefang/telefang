@@ -371,7 +371,7 @@ MainScript_ADVICE_AdditionalOpcodes:
 	jp MainScript_EndOpcode.skipNewlineCheck
 MainScript_ADVICE_AdditionalOpcodes_END::
 
-SECTION "MainScript Patch Advice 4", ROMX[$7D60], BANK[$B]
+SECTION "MainScript Patch Advice 4", ROMX[$7DA0], BANK[$B]
 MainScript_ADVICE_GetWindowTileCount::
 	push bc
 	;First we need to compute the tile count of the window...
