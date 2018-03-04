@@ -1,10 +1,10 @@
 #,Japanese,English,Draft version,German,Draft version (German),Notes
 1,いわやま,Mountain,,Berg,,
-2,そうげん,Field«0»,,Feld,Gras,Field instead of grassland due to text constraints.
-3,しんリん,Forest«0»,,Wald,,
-4,すいせい,Water«0»,,Wasser,,
-5,そら,Sky«0»«0»,,Luft,Himmel,
-6,さばく,Desert«0»,,Wüste,,
+2,そうげん,Field,,Feld,Gras,Field instead of grassland due to text constraints.
+3,しんリん,Forest,,Wald,,
+4,すいせい,Water,,Wasser,,
+5,そら,Sky,,Luft,Himmel,
+6,さばく,Desert,,Wüste,,
 7,,INVALID,,INVALID,,
 8,,INVALID,,INVALID,,
 9,,INVALID,,INVALID,,

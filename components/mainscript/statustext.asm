@@ -165,7 +165,7 @@ MainScript_ADVICE_CountTextWidth::
 .sizingLoop
     ld a, [bc]
     cp $E0
-    jr z, .finishMeasuring
+    ret z
     
     ;Index the font sizing array
     ld h, MainScript_ADVICE_DrawLetterTable >> 8
