@@ -65,29 +65,32 @@ Status_LoadDenjuuTypeIconPalette::
 
 SECTION "Status Screen Evolution Indicator", ROMX[$5E78], BANK[$7D]
 Status_LoadDenjuuEvolutionIndicatorOffload::
+    ld bc, M_Status_DenjuuStageGfx_NumTiles * 16
     call Status_LoadDenjuuEvolutionIndicatorOffloadMultiply
     ld de, DenjuuStageGfx
-	jr Status_LoadDenjuuEvolutionIndicatorOffloadCommon
+    jr Status_LoadDenjuuEvolutionIndicatorOffloadCommon
 
 Status_LoadDenjuuEvolutionIndicatorOffloadZukan::
-	call Status_LoadDenjuuEvolutionIndicatorOffloadMultiply
-	ld de, DenjuuStageZukanGfx
+    ld bc, M_Zukan_DenjuuStageGfx_NumTiles * 16
+    call Status_LoadDenjuuEvolutionIndicatorOffloadMultiply
+    ld de, DenjuuStageZukanGfx
 	
 Status_LoadDenjuuEvolutionIndicatorOffloadCommon::
     add hl, de
     pop de
-    ld bc, M_DenjuuStageGfx_Stride
     jp LCDC_LoadGraphicIntoVRAM
 
 Status_LoadDenjuuEvolutionIndicatorOffloadMultiply::
-    ld d, 0
-    sla e
-    rl d
-    sla e
-    rl d
-    push de
-    sla e
-    rl d
-    pop hl
-    add hl, de
+    ld hl, 0
+    ld a, e
+    swap a ; Because for some reason, the index is in the upper nibble.
+    cp 0
+    ret z
+
+.nextStageGraphicLoop
+    add hl, bc
+    dec a
+    jr nz, .nextStageGraphicLoop
+    
     ret
+    nop
