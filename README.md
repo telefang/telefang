@@ -12,7 +12,7 @@ To play Telefang in English, let these simple steps lead you to success!
 
 1. Obtain a ROM for *Keitai Denjuu Telefang*, either *Power Version* or *Speed Version* depending on which one you want to play.
 2. Download the latest version of the translation patch from **[the releases page](https://github.com/telefang/telefang/releases)** – click the link that ends in `.ips` and corresponds to the version you have!
-3. Use a program like [Floating IPS](https://www.romhacking.net/utilities/1040/) to patch the original ROM with the IPS file.
+3. Use an IPS patching program (like [Floating IPS](https://www.romhacking.net/utilities/1040/), for example) to patch the original ROM with the IPS file.
 4. Play your English Telefang ROM on an emulator or a flash cart! Enjoy!
 
 Don't forget to tell people about the translation if you like it! Tweeting about it, telling friends about it, or lasering "CHECK OUT THE TELEFANG FAN TRANSLATION" into the moon's surface are all hugely appreciated.
