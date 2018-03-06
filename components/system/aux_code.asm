@@ -3,23 +3,23 @@ Banked_PatchUtils_AdviceTable::
 Banked_PatchUtils_StoreDefaultCharaName::
 	jp PatchUtils_StoreDefaultCharaName
 	nop
-	
+
 Banked_PatchUtils_InitializeRelocatedCharaName::
 	jp PatchUtils_InitializeRelocatedCharaName
 	nop
-	
+
 Banked_TitleMenu_ADVICE_LoadRTCValues::
 	jp TitleMenu_ADVICE_LoadRTCValues
 	nop
-   
+
 Banked_SaveClock_ADVICE_ValidateRTCFunction::
 	jp SaveClock_ADVICE_ValidateRTCFunction
 	nop
-	
+
 Banked_PauseMenu_ADVICE_DrawSMSFromMessages::
 	jp PauseMenu_ADVICE_DrawSMSFromMessages
 	nop
-   
+
 Banked_TitleMenu_ADVICE_LoadSGBFiles::
 	jp TitleMenu_ADVICE_LoadSGBFiles
 	nop
@@ -31,19 +31,23 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
 Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 	jp TitleMenu_ADVICE_UnloadSGBFilesLink
 	nop
-   
+
 Banked_Zukan_ADVICE_DrawSpeciesPageText::
 	jp Zukan_ADVICE_DrawSpeciesPageText
 	nop
-   
+
+Banked_Zukan_ADVICE_InitializeNameMetaSprite::
+	jp Zukan_ADVICE_InitializeNameMetaSprite
+	nop
+
 Banked_Zukan_ADVICE_StateInnerviewInputButtonPress::
 	jp Zukan_ADVICE_StateInnerviewInputButtonPress
 	nop
-   
+
 Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
 	jp Zukan_ADVICE_StateInnerviewInputSwitchSpecies
 	nop
-   
+
 Banked_TitleMenu_ADVICE_StateLoadGraphics::
 	jp TitleMenu_ADVICE_StateLoadGraphics
 	nop
@@ -93,5 +97,5 @@ PatchUtils_InitializeRelocatedCharaName:
 	dec b
 	jr nz, .secondEraseLoop
 	ret
-   
+
 PatchUtils_InitializeRelocatedCharaName_END::

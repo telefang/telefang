@@ -4837,7 +4837,7 @@ LCDC_CGB_OBPaletteTable::
     dpalette $10, $11, $12, $13, $14, $15, $16, $17
     dpalette $18, $19, $1A, $1B, $1C, $1D, $1E, $1F
     dpalette $30, $31, $32, $33, $34, $35, $36, $37
-    dpalette $1, $2, $0, $0, $0, $0, $0, $0
+    dpalette $1, $2, $7, $0, $0, $0, $0, $0 ; Field Guide
     dpalette $0, $0, $0, $3, $0, $0, $0, $0
     dpalette $20, $21, $22, $23, $24, $0, $0, $0
     dpalette $25, $26, $0, $0, $0, $0, $0, $0
@@ -4891,10 +4891,12 @@ LCDC_CGB_OBColorTable::
     dcolor 23, 23, 23
     dcolor 15, 15, 15
 ;Palette 7
-    dcolor 0, 0, 0
-    dcolor 0, 0, 0
-    dcolor 0, 0, 0
-    dcolor 0, 0, 0
+;Changed. Used to be all 0, now it's used for
+;sprite text on the Field Guide screen.
+    dcolor 31, 21, 4
+    dcolor 30, 30, 30
+    dcolor 15, 15, 15
+    dcolor 3, 3, 3
 ;Palette 8
     dcolor 0, 0, 0
     dcolor 0, 0, 0
