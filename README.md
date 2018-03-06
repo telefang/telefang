@@ -4,7 +4,7 @@ This is a partial disassembly of *[Keitai Denjuu Telefang](https://en.wikipedia.
 
 ## Fan Translation
 
-The English fan translation can be found [here](https://github.com/telefang/telefang/tree/patch), on the `patch` branch of this repository!
+The English fan translation can be found **[here](https://github.com/telefang/telefang/tree/patch)**, on the `patch` branch of this repository!
 
 ## Who are we?
 
@@ -18,7 +18,7 @@ If you find any problems with the disassembly, or there's something you'd like c
 
 ## Technical stuff
 
-## ROMs built
+### ROMs built
 
 This disassembly builds the following ROMs:
 * Keitai Denjuu Telefang: Power Version (`telefang_pw.gbc`, MD5 `04f7ea139fef2bc2e3f70b2c23933d2e`)
