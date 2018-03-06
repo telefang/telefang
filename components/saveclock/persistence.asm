@@ -8,7 +8,7 @@ SaveClock_StoreWorkingStateToSaveData::
     xor a
     ld [REG_MBC3_SRAMBANK], a
     
-    ld hl, $C900
+    ld hl, W_Overworld_State
     ld de, $A010
     ld bc, $80
     call memcpy
@@ -49,7 +49,7 @@ SaveClock_RetrieveWorkingStateFromSaveData::
     ld [REG_MBC3_SRAMBANK], a
     
     ld hl, $A010
-    ld de, $C900
+    ld de, W_Overworld_State
     ld bc, $80
     call memcpy
     

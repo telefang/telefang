@@ -56,7 +56,20 @@ PauseMenu_DrawTwoDigits::
     and $F
     jp PauseMenu_DrawDigit
 
-SECTION "Pause Menu Draw Functions 4", ROMX[$716D], BANK[$4]
+SECTION "Pause Menu Draw Functions 4", ROMX[$715B], BANK[$4]
+PauseMenu_DrawDecimalizedValue::
+    push hl
+    call Status_DecimalizeStatValue
+    pop hl
+    
+    ld a, [Malias_CmpSrcBank]
+    and $F
+    add a, $E0
+    di
+    call YetAnotherWFB
+    ld [hli], a
+    ei
+    
 PauseMenu_DrawBothDigits::
     ld a, [W_GenericRegPreserve]
     and $F0
