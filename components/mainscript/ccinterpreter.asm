@@ -34,12 +34,10 @@ MainScript_CCInterpreter::
 	jr nz, .localStateJumpCC
 	call MainScript_LoadFromBank
 	ld [W_MainScript_TilesDrawn], a
+	xor a
+	ld [W_MainScript_VWFLetterShift], a
 	call MainScript_Moveup
 	jp MainScript_EndOpcode.skipNewlineCheck
-	nop
-	nop
-	nop
-	nop
 	nop
 	nop
 	nop
