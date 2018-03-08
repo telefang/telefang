@@ -31,8 +31,8 @@ def rip_msprite(rom, offset = None):
     for i in range(0, msprite_len):
         oam_spr = {}
         
-        oam_spr["x"] = CHARA.unpack(rom.read(1))[0]
         oam_spr["y"] = CHARA.unpack(rom.read(1))[0]
+        oam_spr["x"] = CHARA.unpack(rom.read(1))[0]
         oam_spr["tile"] = CHARA.unpack(rom.read(1))[0]
         oam_spr["attrib_mode"] = CHARA.unpack(rom.read(1))[0]
         oam_spr["attribs"] = CHARA.unpack(rom.read(1))[0]
@@ -112,9 +112,9 @@ def rip_msprite_table(rom, offset = None):
             data_asmsrc += "    INCBIN \"" + binfile + "\"\n"
         data_asmsrc += symbol + "_END::\n"
         
-        files[file] = "X,Y,Tile Offset,Attribute Mixing,Attributes\n"
+        files[file] = "Y,X,Tile Offset,Attribute Mixing,Attributes\n"
         for spritecfg in val:
-            files[file] += "{0:x},{1:x},{2:x},{3},{4:x}\n".format(spritecfg['x'], spritecfg['y'], spritecfg['tile'], spritecfg['attrib_mode'], spritecfg['attribs'])
+            files[file] += "{0:x},{1:x},{2:x},{3},{4:x}\n".format(spritecfg['y'], spritecfg['x'], spritecfg['tile'], spritecfg['attrib_mode'], spritecfg['attribs'])
         
         last_ptrkey_end = ptrkey + 1 + len(val) * 5
     
