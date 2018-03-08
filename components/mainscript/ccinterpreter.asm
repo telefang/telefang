@@ -5,6 +5,7 @@ INCLUDE "telefang.inc"
 ;E2: Newline
 ;E3: Change text speed (1 byte follows)
 ;E5: Jump to new location (farptr follows)
+;ED: Change the value of W_MainScript_TilesDrawn mid-render (1 byte follows). Be careful though. If you set W_MainScript_TilesDrawn to a value that isn't on the current line of text then expect rendering weirdness.
 
 
 MainScript_StateOpcode EQU $45C8
@@ -28,24 +29,29 @@ MainScript_CCInterpreter::
 	jr nz, .localStateJumpCC
 	jp MainScript_ADVICE_NewlineVWFReset
 	
-	;TODO: This entire branch of code is now unused.
-	;Remove if feasible
-.COMEFROM_NewlineVWFReset
-	cp $10
-	jr nc, .earlyNewline
-	ld a, $10
+.cursorCC
+	cp $ED
+	jr nz, .localStateJumpCC
+	call MainScript_LoadFromBank
 	ld [W_MainScript_TilesDrawn], a
-	ld a, [W_MainScript_NumNewlines]
-	inc a
-	ld [W_MainScript_NumNewlines], a
-	jp MainScript_EndOpcode
-.earlyNewline
-	ld a, 0
-	ld [W_MainScript_TilesDrawn], a
-	ld a, [W_MainScript_NumNewlines]
-	inc a
-	ld [W_MainScript_NumNewlines], a
-	jp MainScript_EndOpcode
+	xor a
+	ld [W_MainScript_VWFLetterShift], a
+	call MainScript_Moveup
+	jp MainScript_EndOpcode.skipNewlineCheck
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 .localStateJumpCC
 	cp $E1
