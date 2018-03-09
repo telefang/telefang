@@ -21,6 +21,7 @@ PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3::
 	
 PatchUtils_AuxCodeJmp::
    di
+   push hl ;preserve hl. advice can get at it via M_AdviceSetup
 	push af
 	
 	ld a, [W_CurrentBank]
@@ -47,6 +48,7 @@ PatchUtils_AuxCodeJmp_returnVec::
 	ld a, [W_CurrentBank]
 	rst $10
 	pop af
+   add sp, 2 ;pop hl but don't actually pop hl
 	reti
    
 ;TODO: FusionLabEvo_LoadSpeciesName uses this.

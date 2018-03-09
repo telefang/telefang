@@ -288,12 +288,8 @@ MainScript_ADVICE_FontSelector::
 	ld a, BANK(MainScript_ADVICE_FontSelector)
 	ld [W_PreviousBank],a
 
-	push hl ;argument push
-
 	ld a, Banked_MainScript_ADVICE_DrawNarrowLetter & $FF
 	call PatchUtils_AuxCodeJmp
-
-	add sp, 2 ;un-push
 
 	ld b,a
 	pop af
@@ -324,12 +320,6 @@ MainScript_ADVICE_DrawNarrowLetter::
 	ld [W_CurrentBank], a
 	
 	ei
-	
-	;Caller pushes HL to stack before calling, this is how you get it back.
-	ld hl, sp+6
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 	
 	ld b, 8
 	ld a, $CF
