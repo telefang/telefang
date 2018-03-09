@@ -268,7 +268,7 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
     cp M_MainScript_StateTerminated
     jp nz, .waitForExhaustionLoop
     
-    ld a, M_MainScript_DefaultWindowWidth
+    ld a, M_MainScript_UndefinedWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
     
     ld a, M_MainScript_DefaultWindowHeight

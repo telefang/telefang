@@ -187,7 +187,7 @@ Zukan_ADVICE_DrawSpeciesPageText::
     jr .drawing_loop
     
 .text_exhausted
-    ld a, M_MainScript_DefaultWindowWidth
+    ld a, M_MainScript_UndefinedWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
     
     ld a, M_MainScript_DefaultWindowHeight

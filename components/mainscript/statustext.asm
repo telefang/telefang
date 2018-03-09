@@ -66,8 +66,8 @@ MainScript_DrawName75::
 	call StringTable_LoadName75
 	pop hl
 	push hl
-	ld a, 8
-	call MainScript_DrawEmptySpaces
+	ld a, Banked_MainScript_ADVICE_CondenseTableStringLong & $FF
+	call PatchUtils_AuxCodeJmp
 	pop hl
 	ld de, W_StringTable_StagingLocDbl
 	ld b, $16 ;likely incorrect.
@@ -101,8 +101,8 @@ MainScript_DrawCenteredStagedString::
 	push de
 	push hl
    
-	ld a, 8
-	call MainScript_DrawEmptySpaces
+	ld a, Banked_MainScript_ADVICE_CondenseTableStringLong & $FF
+	call PatchUtils_AuxCodeJmp
    
    pop hl
 	pop de
@@ -122,8 +122,8 @@ MainScript_DrawShortName::
     call StringTable_LoadShortName
     pop hl
     push hl
-    ld a, 3
-    call MainScript_DrawEmptySpaces
+    ld a, Banked_MainScript_ADVICE_CondenseTableStringShort & $FF
+    call PatchUtils_AuxCodeJmp
     pop hl
     ld de, W_StringTable_StagingLocDbl
     ld b, M_StringTable_Load4AreaSize
@@ -324,3 +324,101 @@ MainScript_DrawEmptySpaces::
 	dec a
 	jr nz, MainScript_DrawEmptySpaces
 	ret
+
+SECTION "Main Script Status Text AuxCode Advice", ROMX[$4600], BANK[$1]
+MainScript_ADVICE_CondenseTableStringShort::
+    M_AdviceSetup
+    
+    ;This is what the pointcut replaces in all table draw functions.
+    ;Do NOT replace any other code with your pointcut!
+    ld a, 3
+    call MainScript_DrawEmptySpaces
+    
+    ;Try and determine window width
+    ld a, [W_MainScript_VWFNewlineWidth]
+    and a
+    jr nz, .scaleWidth
+    
+.defaultWidth
+    ld a, 64
+	 jr .countWidth
+	 
+.scaleWidth
+    sla a
+    sla a
+    sla a
+    
+.countWidth
+    push af
+    
+    ld a, BANK(MainScript_ADVICE_CountTextWidth)
+    ld hl, MainScript_ADVICE_CountTextWidth
+    ld bc, W_StringTable_StagingLocDbl
+    ld d, M_StringTable_Load4AreaSize
+    call CallBankedFunction_int
+    
+    pop af
+    cp e
+    jr nc, .noTextOverflow
+    
+.textOverflow
+    ld a, 1
+    jr .exit
+    
+.noTextOverflow
+    ld a, 0
+    
+.exit
+    ld [W_MainScript_ADVICE_FontToggle], a
+    
+    M_AdviceTeardown
+    ret
+    
+MainScript_ADVICE_CondenseTableStringLong::
+    M_AdviceSetup
+    
+    ;This is what the pointcut replaces in all table draw functions.
+    ;Do NOT replace any other code with your pointcut!
+    ld a, 8
+    call MainScript_DrawEmptySpaces
+    
+    ;Try and determine window width
+    ld a, [W_MainScript_VWFNewlineWidth]
+    and a
+    jr nz, .scaleWidth
+    
+.defaultWidth
+    ld a, 64
+	 jr .countWidth
+	 
+.scaleWidth
+    sla a
+    sla a
+    sla a
+    
+.countWidth
+    push af
+    
+    ld a, BANK(MainScript_ADVICE_CountTextWidth)
+    ld hl, MainScript_ADVICE_CountTextWidth
+    ld bc, W_StringTable_StagingLocDbl
+    ld d, M_StringTable_Load8AreaSize
+    call CallBankedFunction_int
+    
+    pop af
+    cp e
+    jr nc, .noTextOverflow
+    
+.textOverflow
+    ld a, 1
+    jr .exit
+    
+.noTextOverflow
+    ld a, 0
+    
+.exit
+    ld [W_MainScript_ADVICE_FontToggle], a
+    
+    M_AdviceTeardown
+    ret
+MainScript_ADVICE_CondenseTableStringLong_END::

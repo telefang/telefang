@@ -1,4 +1,4 @@
-INCLUDE "registers.inc"
+INCLUDE "telefang.inc"
 
 ;Text-drawing routine present in Telefang.
 ;For some reason they actually draw text out rather than using tiles to do it
@@ -312,14 +312,7 @@ SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7500], BANK[$1]
 ;This is a copy of MainScript_ADVICE_DrawLetter for rendering a narrow font
 ;because bank $B lacks room for the narrow font & other things.
 MainScript_ADVICE_DrawNarrowLetter::
-	ld a, [W_PreviousBank]
-	push af
-
-	ld a, BANK(MainScript_ADVICE_DrawNarrowLetter)
-	ld [W_PreviousBank], a
-	ld [W_CurrentBank], a
-	
-	ei
+	M_AdviceSetup
 	
 	ld b, 8
 	ld a, $CF
@@ -464,9 +457,7 @@ MainScript_ADVICE_DrawNarrowLetter::
 .noSecondTileShiftBack
 	ld [W_MainScript_VWFLetterShift], a
 	
-	pop af
-	ld [W_PreviousBank], a
-	ld [W_CurrentBank], a
+	M_AdviceTeardown
 	ret
 	
 SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7D00], BANK[$1]
