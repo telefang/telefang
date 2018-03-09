@@ -10,9 +10,7 @@ StringTable_battle_items_old_END
 
 SECTION "StringTable_denjuu_nicknames Section", ROMX[$78fa], BANK[$b]
 StringTable_denjuu_nicknames::
-; Denjuu nicknames are unused and were not translated in the patch.
-; 
-;	INCBIN "script/denjuu/nicknames.stringtbl"
+	INCBIN "script/denjuu/nicknames.stringtbl"
 StringTable_denjuu_nicknames_END
 
 SECTION "StringTable_map_location_mapping Section", ROMX[$6875], BANK[$2a]
