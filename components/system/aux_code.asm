@@ -59,6 +59,14 @@ Banked_MainScript_ADVICE_DrawNarrowLetter::
 Banked_Zukan_ADVICE_DrawRightAlignedHabitatName::
 	jp Zukan_ADVICE_DrawRightAlignedHabitatName
 	nop
+   
+Banked_MainScript_ADVICE_CondenseTableStringShort::
+	jp MainScript_ADVICE_CondenseTableStringShort
+	nop
+   
+Banked_MainScript_ADVICE_CondenseTableStringLong::
+	jp MainScript_ADVICE_CondenseTableStringLong
+	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:

@@ -73,8 +73,9 @@ MainScript_ADVICE_DrawStatusText_enterSecondHalf::
 MainScript_ADVICE_DrawStatusText_resetVWFAndExit::
 	ld a, 2
 	ld [W_MainScript_VWFOldTileMode], a
-	ld a, 0
+	xor a
 	ld [W_MainScript_VWFLetterShift], a
+	ld [W_MainScript_ADVICE_FontToggle], a
 	ret
 	
 MainScript_ADVICE_DrawStatusText_exitFromSecondHalf::
@@ -127,7 +128,4 @@ Banked_PauseMenu_ADVICE_LoadName75::
 	rst $18
 	ret
 	
-PatchUtils_ResetGame: nop
-	nop
-	nop
-	nop ;Further execution hits the main vector of the rom header
+PatchUtils_ResetGame:: ;Further execution hits the main vector of the rom header
