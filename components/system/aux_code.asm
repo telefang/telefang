@@ -68,6 +68,10 @@ Banked_MainScript_ADVICE_CondenseTableStringLong::
 	jp MainScript_ADVICE_CondenseTableStringLong
 	nop
    
+Banked_MainScript_ADVICE_CondenseStagedTableStringLong::
+	jp MainScript_ADVICE_CondenseStagedTableStringLong
+	nop
+   
 Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
 	jp PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
 	nop
