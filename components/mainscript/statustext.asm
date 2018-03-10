@@ -101,7 +101,7 @@ MainScript_DrawCenteredStagedString::
 	push de
 	push hl
    
-	ld a, Banked_MainScript_ADVICE_CondenseTableStringLong & $FF
+	ld a, Banked_MainScript_ADVICE_CondenseStagedTableStringLong & $FF
 	call PatchUtils_AuxCodeJmp
    
    pop hl
@@ -329,8 +329,6 @@ SECTION "Main Script Status Text AuxCode Advice", ROMX[$4600], BANK[$1]
 MainScript_ADVICE_CondenseTableStringShort::
     M_AdviceSetup
     
-    push bc
-    
     ;This is what the pointcut replaces in all table draw functions.
     ;Do NOT replace any other code with your pointcut!
     ld a, 3
@@ -355,7 +353,7 @@ MainScript_ADVICE_CondenseTableStringShort::
     
     ld a, BANK(MainScript_ADVICE_CountTextWidth)
     ld hl, MainScript_ADVICE_CountTextWidth
-    pop bc
+    ld bc, W_StringTable_StagingLocDbl
     ld d, M_StringTable_Load4AreaSize
     call CallBankedFunction_int
     
@@ -378,8 +376,6 @@ MainScript_ADVICE_CondenseTableStringShort::
     
 MainScript_ADVICE_CondenseTableStringLong::
     M_AdviceSetup
-    
-    push bc
     
     ;This is what the pointcut replaces in all table draw functions.
     ;Do NOT replace any other code with your pointcut!
@@ -405,7 +401,7 @@ MainScript_ADVICE_CondenseTableStringLong::
     
     ld a, BANK(MainScript_ADVICE_CountTextWidth)
     ld hl, MainScript_ADVICE_CountTextWidth
-    pop bc
+    ld bc, W_StringTable_StagingLocDbl
     ld d, M_StringTable_Load8AreaSize
     call CallBankedFunction_int
     
@@ -425,4 +421,54 @@ MainScript_ADVICE_CondenseTableStringLong::
     
     M_AdviceTeardown
     ret
-MainScript_ADVICE_CondenseTableStringLong_END::
+    
+MainScript_ADVICE_CondenseStagedTableStringLong::
+    M_AdviceSetup
+    
+    push bc
+    
+    ;This is what the pointcut replaces in all table draw functions.
+    ;Do NOT replace any other code with your pointcut!
+    ld a, 8
+    call MainScript_DrawEmptySpaces
+    
+    ;Try and determine window width
+    ld a, [W_MainScript_VWFNewlineWidth]
+    and a
+    jr nz, .scaleWidth
+    
+.defaultWidth
+    ld a, 64
+	 jr .countWidth
+	 
+.scaleWidth
+    sla a
+    sla a
+    sla a
+    
+.countWidth
+    pop bc
+    push af
+    
+    ld a, BANK(MainScript_ADVICE_CountTextWidth)
+    ld hl, MainScript_ADVICE_CountTextWidth
+    ld d, M_StringTable_Load8AreaSize
+    call CallBankedFunction_int
+    
+    pop af
+    cp e
+    jr nc, .noTextOverflow
+    
+.textOverflow
+    ld a, 1
+    jr .exit
+    
+.noTextOverflow
+    ld a, 0
+    
+.exit
+    ld [W_MainScript_ADVICE_FontToggle], a
+    
+    M_AdviceTeardown
+    ret
+MainScript_ADVICE_CondenseStagedTableStringLong_END::
