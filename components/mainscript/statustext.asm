@@ -329,6 +329,8 @@ SECTION "Main Script Status Text AuxCode Advice", ROMX[$4600], BANK[$1]
 MainScript_ADVICE_CondenseTableStringShort::
     M_AdviceSetup
     
+    push bc
+    
     ;This is what the pointcut replaces in all table draw functions.
     ;Do NOT replace any other code with your pointcut!
     ld a, 3
@@ -353,7 +355,7 @@ MainScript_ADVICE_CondenseTableStringShort::
     
     ld a, BANK(MainScript_ADVICE_CountTextWidth)
     ld hl, MainScript_ADVICE_CountTextWidth
-    ld bc, W_StringTable_StagingLocDbl
+    pop bc
     ld d, M_StringTable_Load4AreaSize
     call CallBankedFunction_int
     
@@ -376,6 +378,8 @@ MainScript_ADVICE_CondenseTableStringShort::
     
 MainScript_ADVICE_CondenseTableStringLong::
     M_AdviceSetup
+    
+    push bc
     
     ;This is what the pointcut replaces in all table draw functions.
     ;Do NOT replace any other code with your pointcut!
@@ -401,7 +405,7 @@ MainScript_ADVICE_CondenseTableStringLong::
     
     ld a, BANK(MainScript_ADVICE_CountTextWidth)
     ld hl, MainScript_ADVICE_CountTextWidth
-    ld bc, W_StringTable_StagingLocDbl
+    pop bc
     ld d, M_StringTable_Load8AreaSize
     call CallBankedFunction_int
     
