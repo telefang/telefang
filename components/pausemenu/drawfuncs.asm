@@ -30,10 +30,14 @@ PauseMenu_CallsMenuDrawDenjuuNickname::
     ld b, 6
     call PauseMenu_ClearInputTiles
     
-    ld bc, W_SaveClock_NicknameStaging
-    ld d, M_StringTable_Load8AreaSize
-    ld hl, $9400
-    jp MainScript_DrawCenteredStagedString
+    ld a, Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname & $FF
+    jp PatchUtils_AuxCodeJmp
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 PauseMenu_ContactsMenuDrawDenjuuNickname::
     call PauseMenu_IndexContactArray
@@ -176,3 +180,21 @@ PauseMenu_LoadItemGraphic::
     ld a, [W_PauseMenu_CurrentItemGraphicBank]
     ld bc, $1E0
     jp Banked_LCDC_LoadTiles
+
+SECTION "Pause Menu Draw Functions AuxCode ADVICE", ROMX[$46A0], BANK[$1]
+PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
+    M_AdviceSetup
+    
+    ld a, 6
+    ld [W_MainScript_VWFNewlineWidth], a
+    
+    ld bc, W_SaveClock_NicknameStaging
+    ld d, M_StringTable_Load8AreaSize
+    ld hl, $9400
+    call MainScript_DrawCenteredStagedString
+    
+    ld a, M_MainScript_UndefinedWindowWidth
+    ld [W_MainScript_VWFNewlineWidth], a
+    
+    M_AdviceTeardown
+    ret
