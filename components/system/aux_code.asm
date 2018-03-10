@@ -67,6 +67,10 @@ Banked_MainScript_ADVICE_CondenseTableStringShort::
 Banked_MainScript_ADVICE_CondenseTableStringLong::
 	jp MainScript_ADVICE_CondenseTableStringLong
 	nop
+   
+Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
+	jp PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
+	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
