@@ -146,11 +146,7 @@ Zukan_UpdateOverviewCursorsNumbersAndNextState::
 
 SECTION "Zukan Draw Advice", ROMX[$4400], BANK[$1]
 Zukan_ADVICE_DrawSpeciesPageText::
-    ld a, [W_PreviousBank]
-    push af
-    
-    ld a, BANK(Zukan_ADVICE_DrawSpeciesPageText)
-    ld [W_PreviousBank], a
+    M_AdviceSetup
     
     ld a, 14
     ld [W_MainScript_VWFNewlineWidth], a
@@ -186,6 +182,13 @@ Zukan_ADVICE_DrawSpeciesPageText::
     jr z, .text_exhausted ;This happens if the text is only 1 or 2 lines long.
     cp 2
     jr z, .text_exhausted
+    cp 3
+    jr z, .force_no_scrollback
+    jr .drawing_loop
+    
+.force_no_scrollback
+    ld a, 1
+    ld [W_MainScript_State], a
     jr .drawing_loop
     
 .text_exhausted
@@ -195,9 +198,7 @@ Zukan_ADVICE_DrawSpeciesPageText::
     ld a, M_MainScript_DefaultWindowHeight
     ld [W_MainScript_VWFWindowHeight], a
     
-    pop af
-    ld [W_PreviousBank], a
-    ld [W_CurrentBank], a
+    M_AdviceTeardown
     ret
     
 Zukan_ADVICE_DrawSpeciesPageText_END::
