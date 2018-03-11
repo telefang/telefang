@@ -29,6 +29,8 @@ Zukan_DrawOverviewNumericalIndex::
     jp PauseMenu_DrawDecimalizedValue
 
 SECTION "Zukan Draw Utils 2", ROMX[$7E81], BANK[$4]
+;This function is (most likely) UNUSED, do not patch it.
+;See Zukan_ADVICE_DrawRightAlignedHabitatName for it's replacement
 Zukan_DrawSpeciesType::
     ld a, [W_Zukan_SelectedSpecies]
     ld b, 0
