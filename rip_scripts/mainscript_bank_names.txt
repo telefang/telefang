@@ -1,4 +1,4 @@
-#filename wikifang-addr rom-addr
+#filename wikifang-addr rom-addr bank-width
 battle/messages 114000 114000
 denjuu/sms 118000 118000
 npc/1 11C000 11C000
@@ -16,7 +16,7 @@ calls/denjuu/3 11507B 110000
 calls/denjuu/4 144000 144000
 calls/denjuu/5 145C9A 160000
 calls/denjuu/6 99068 94000
-denjuu/descriptions 40000 40000
+denjuu/descriptions 40000 40000 112
 calls/story 158000 158000
 calls/exp_item 15C000 15C000
 story/5 1281D9 10C000
