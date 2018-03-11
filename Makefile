@@ -95,6 +95,7 @@ OBJS := components/compression/malias.o \
      components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
      components/saveclock/initialize_save.o components/saveclock/integrity.o \
      components/saveclock/persistence.o \
+     components/encounter/late_denjuu_statemachine.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
