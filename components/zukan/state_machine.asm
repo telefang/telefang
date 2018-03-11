@@ -461,7 +461,7 @@ Zukan_StateInnerviewSwitchPage:
     ld [W_SystemSubSubState], a
     ret
 
-SECTION "Zukan State Machine Advice", ROMX[$4480], BANK[$1]
+SECTION "Zukan State Machine Advice", ROMX[$44C0], BANK[$1]
 Zukan_ADVICE_InitializeNameMetaSprite::
     M_AdviceSetup
 
@@ -504,6 +504,9 @@ Zukan_ADVICE_DrawRightAlignedHabitatName::
     
     ld a, [W_Zukan_SelectedSpecies]
     ld [W_Status_SelectedDenjuuSpecies], a
+
+    ld a, 7
+    ld [W_MainScript_VWFNewlineWidth], a
     
     ;DrawHabitatString but inlined
     ld a, [W_Status_SelectedDenjuuSpecies]
@@ -518,6 +521,9 @@ Zukan_ADVICE_DrawRightAlignedHabitatName::
     ld a, BANK(MainScript_ADVICE_DrawRightAlignedHabitatName)
     ld hl, MainScript_ADVICE_DrawRightAlignedHabitatName
     rst $20 ;CallBankedFunction
+
+    ld a, M_MainScript_UndefinedWindowWidth
+    ld [W_MainScript_VWFNewlineWidth], a
     
     M_AdviceTeardown
     ret

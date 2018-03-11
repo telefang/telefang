@@ -1,3 +1,10 @@
+;NOTE: Anyone adding new advice.
+;The order of these functions should represent the order of the actual advice
+;sections in code. That way, we can relocate sections when they conflict.
+;Convention is to increment conflicting sections to the next $40 byte area so
+;that we have some slack space in each section to hold additional code. Bank 1
+;is completely empty, so we aren't too worried about wasted space from
+;fragmented code.
 SECTION "Patch Utilities - Auxiliary Code Trampolines", ROMX[$4000], BANK[$1]
 Banked_PatchUtils_AdviceTable::
 Banked_PatchUtils_StoreDefaultCharaName::
@@ -20,6 +27,10 @@ Banked_PauseMenu_ADVICE_DrawSMSFromMessages::
 	jp PauseMenu_ADVICE_DrawSMSFromMessages
 	nop
 
+Banked_TitleMenu_ADVICE_StateLoadGraphics::
+	jp TitleMenu_ADVICE_StateLoadGraphics
+	nop
+
 Banked_TitleMenu_ADVICE_LoadSGBFiles::
 	jp TitleMenu_ADVICE_LoadSGBFiles
 	nop
@@ -32,10 +43,12 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 	jp TitleMenu_ADVICE_UnloadSGBFilesLink
 	nop
 
+;components/zukan/draw_utils.asm
 Banked_Zukan_ADVICE_DrawSpeciesPageText::
 	jp Zukan_ADVICE_DrawSpeciesPageText
 	nop
 
+;components/zukan/state_machine.asm
 Banked_Zukan_ADVICE_InitializeNameMetaSprite::
 	jp Zukan_ADVICE_InitializeNameMetaSprite
 	nop
@@ -60,6 +73,7 @@ Banked_Zukan_ADVICE_DrawRightAlignedHabitatName::
 	jp Zukan_ADVICE_DrawRightAlignedHabitatName
 	nop
    
+;components/mainscript/statustext.asm
 Banked_MainScript_ADVICE_CondenseTableStringShort::
 	jp MainScript_ADVICE_CondenseTableStringShort
 	nop
@@ -72,9 +86,21 @@ Banked_MainScript_ADVICE_CondenseStagedTableStringLong::
 	jp MainScript_ADVICE_CondenseStagedTableStringLong
 	nop
    
+;components/pausemenu/drawfuncs.asm
 Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
 	jp PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
 	nop
+
+;components/battle/status.asm (why is this in battle, it's a MainScript sym)
+;MainScript_ADVICE_DrawStatusEffectGfx lives around here.
+;It's HOME Bank advice so it doesn't get a trampoline; but we need to mark it on
+;the list.
+
+;Sections beyond this point are at the END of Bank 1 and likely not conflicting
+;with your section.
+Banked_MainScript_ADVICE_DrawNarrowLetter::
+	jp MainScript_ADVICE_DrawNarrowLetter
+   nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
