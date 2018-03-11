@@ -309,6 +309,40 @@ MainScript_ADVICE_FontAddress::
 	ret
 
 SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7500], BANK[$1]
+;BC = text string (presumed WRAM, not bankable)
+;D = string length (bytes)
+;Returns E = string length (pixels)
+;Clobbers a, hl, flags; arguments not preserved
+MainScript_ADVICE_CountNarrowTextWidth::
+	 ld e, 0
+    
+.sizingLoop
+    ld a, [bc]
+    cp $E0
+    jr z, .finishedMeasuring
+    
+    ;Index the font sizing array
+    ld h, MainScript_ADVICE_DrawNarrowLetterTable >> 8
+    ld l, a
+    ld a, [hl]
+    
+    inc a ;Widths are stored with implicit 1px between characters for... some reason
+    add e
+    ld e, a
+    
+    inc bc
+    dec d
+    jr nz, .sizingLoop
+
+.finishedMeasuring
+    ; Remove the last post-letter 1-pixel space if there was any text.
+    ld a, e
+    cp 0
+    ret z
+    dec e
+
+    ret
+
 ;This is a copy of MainScript_ADVICE_DrawLetter for rendering a narrow font
 ;because bank $B lacks room for the narrow font & other things.
 MainScript_ADVICE_DrawNarrowLetter::
