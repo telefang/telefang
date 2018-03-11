@@ -154,7 +154,7 @@ MainScript_DrawStatusEffectString::
     pop bc
     jp MainScript_DrawShortName
 
-SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7D00], BANK[$B]
+SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7EC0], BANK[$B]
 ;BC = text string (presumed WRAM, not bankable)
 ;D = string length (bytes)
 ;Returns E = string length (pixels)
@@ -227,13 +227,35 @@ MainScript_ADVICE_DrawRightAlignedStagedString::
     push bc
     push hl
     
+    ld a, [W_MainScript_ADVICE_FontToggle]
+    and a
+    jr z, .useRegularFont
+    
+.useNarrowFont
+    ld a, BANK(MainScript_ADVICE_CountNarrowTextWidth)
+    ld hl, MainScript_ADVICE_CountNarrowTextWidth
+    call CallBankedFunction_int
+    jr .moveupTilePtr
+    
+.useRegularFont
     call MainScript_ADVICE_CountTextWidth
     
     ;At this point, e contains the total size of text we need to deal with.
-    ;NOTE: This logic WILL NOT WORK with a wider than 7 tile window!
-    ;TODO: Use VWFNewlineWidth to determine window size.
 .moveupTilePtr
-    ld a, $38
+    ld a, [W_MainScript_VWFNewlineWidth]
+    and a
+    jr z, .useFallbackWidth
+    
+.useSpecifiedWidth
+    sla a
+    sla a
+    sla a
+    jr .checkStringOverflow
+    
+.useFallbackWidth
+    ld a, $40
+    
+.checkStringOverflow
     sub e
     jr c, .overwideStringFailsafe
     jr MainScript_ADVICE_DrawCenteredName75.setupVwfOffset
@@ -252,13 +274,37 @@ MainScript_ADVICE_DrawCenteredName75::
     push bc
     push hl
     
+    ld a, [W_MainScript_ADVICE_FontToggle]
+    and a
+    jr z, .useRegularFont
+    
+.useNarrowFont
+    ld a, BANK(MainScript_ADVICE_CountNarrowTextWidth)
+    ld hl, MainScript_ADVICE_CountNarrowTextWidth
+    call CallBankedFunction_int
+    jr .moveupTilePtr
+    
+.useRegularFont
     call MainScript_ADVICE_CountTextWidth
     
     ;At this point, e contains the total size of text we need to deal with.
     ;NOTE: This logic WILL NOT WORK with a wider than 8 tile window!
     ;TODO: Use VWFNewlineWidth to determine window size.
 .moveupTilePtr
+    ld a, [W_MainScript_VWFNewlineWidth]
+    and a
+    jr z, .useFallbackWidth
+    
+.useSpecifiedWidth
+    sla a
+    sla a
+    sla a
+    jr .checkStringOverflow
+    
+.useFallbackWidth
     ld a, $40
+    
+.checkStringOverflow
     sub e
     jr c, .overwideStringFailsafe
     
