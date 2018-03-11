@@ -6,9 +6,14 @@ INCLUDE "telefang.inc"
 ;E3: Change text speed (1 byte follows)
 ;E5: Jump to new location (farptr follows)
 ;ED: Change the value of W_MainScript_TilesDrawn mid-render (1 byte follows). Be careful though. If you set W_MainScript_TilesDrawn to a value that isn't on the current line of text then expect rendering weirdness.
+;EE: Makes the ED control code's value relative to the value of W_MainScript_TilesDrawn as it was during the EE code's last use.
+;EF: Makes the ED control code's value absolute again.
 
 
 MainScript_StateOpcode EQU $45C8
+
+SECTION "Main Script Relative Positioning Offset", WRAM0[$C7CC]
+W_MainScript_ADVICE_RelativePositionOffset:: ds 1
 
 SECTION "Main Script Control Code Interpreter", ROMX[$413C], BANK[$B]
 MainScript_CCInterpreter::
@@ -26,25 +31,28 @@ MainScript_CCInterpreter::
 	
 .newlineCC
 	cp $E2
-	jr nz, .localStateJumpCC
+	jr nz, .cursorCC
 	jp MainScript_ADVICE_NewlineVWFReset
 	
 .cursorCC
 	cp $ED
+	jr nz, .cursorRelativeOffsetCC
+	jp MainScript_ADVICE_RepositionCursorCC
+	
+.cursorRelativeOffsetCC
+	cp $EE
+	jr nz, .cursorResetRelativeOffsetCC
+	ld a, [W_MainScript_TilesDrawn]
+	jr .cursorSetRelativeOffset
+	
+.cursorResetRelativeOffsetCC
+	cp $EF
 	jr nz, .localStateJumpCC
-	call MainScript_LoadFromBank
-	ld [W_MainScript_TilesDrawn], a
 	xor a
-	ld [W_MainScript_VWFLetterShift], a
-	call MainScript_Moveup
+	
+.cursorRelativeOffset
+	ld [W_MainScript_ADVICE_RelativePositionOffset], a
 	jp MainScript_EndOpcode.skipNewlineCheck
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 	nop
 	nop
 	nop
@@ -584,3 +592,32 @@ MainScript_ADVICE_AutomaticNewline::
 	jp MainScript_EndOpcode.skipNewlineCheck
 
 MainScript_ADVICE_AutomaticNewline_END::
+
+SECTION "MainScript Patch Advice 5", ROMX[$7ED2], BANK[$B]
+MainScript_ADVICE_RepositionCursorByCC::
+	call MainScript_LoadFromBank
+	push bc
+	ld b, a
+	ld a, [W_MainScript_ADVICE_RelativePositionOffset]
+	add a, b
+	pop bc
+	ld [W_MainScript_TilesDrawn], a
+	xor a
+	ld [W_MainScript_VWFLetterShift], a
+	xor a
+	ld [W_MainScript_VWFCurrentLetter], a
+	push hl
+	ld hl, $CFD0
+	push bc
+	xor a
+	ld b, 10
+	
+.clearCompositeAreaLoop
+	ld [hli], a
+	dec b
+	jr nz, .clearCompositeAreaLoop
+	pop bc
+	pop hl
+	call MainScript_Moveup
+	jp MainScript_EndOpcode.skipNewlineCheck
+
