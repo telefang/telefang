@@ -37,7 +37,7 @@ MainScript_CCInterpreter::
 .cursorCC
 	cp $ED
 	jr nz, .cursorRelativeOffsetCC
-	jp MainScript_ADVICE_RepositionCursorCC
+	jp MainScript_ADVICE_RepositionCursorByCC
 	
 .cursorRelativeOffsetCC
 	cp $EE
@@ -50,7 +50,7 @@ MainScript_CCInterpreter::
 	jr nz, .localStateJumpCC
 	xor a
 	
-.cursorRelativeOffset
+.cursorSetRelativeOffset
 	ld [W_MainScript_ADVICE_RelativePositionOffset], a
 	jp MainScript_EndOpcode.skipNewlineCheck
 	nop
@@ -272,7 +272,7 @@ MainScript_ContinueWaiting::
 
 ;Stores all of the patches we added to the main script routines.
 ;"Advice" is a term from Aspect-Oriented Programming.
-SECTION "Main Script Patch Advice", ROMX[$7A88], BANK[$B]
+SECTION "Main Script Patch Advice", ROMX[$7D00], BANK[$B]
 MainScript_ADVICE_VWFReset:
 	push af
 	ld a, 0
@@ -299,7 +299,6 @@ MainScript_ADVICE_StoreCurrentLetter:
 ;Not ENTIRELY sure what this does.
 ;Appears to move us back 2 tiles, then move the graphics pointer back by like
 ;16 tiles.
-SECTION "MainScript Patch Advice 3", ROMX[$7C09], BANK[$B]
 MainScript_ADVICE_NewlineFixup:
 	ld a, [W_MainScript_VWFMainScriptHack]
 	cp 1
@@ -332,8 +331,7 @@ MainScript_ADVICE_VWFNextTile:
 	inc a
 	ld [W_MainScript_TilesDrawn], a
 	ret
-	
-SECTION "MainScript Patch Advice 2", ROMX[$7C89], BANK[$B]
+   
 MainScript_ADVICE_AdditionalOpcodes:
 	cp $E0
 	jp z, MainScript_CCInterpreter.COMEFROM_AdditionalOpcodes
@@ -383,9 +381,7 @@ MainScript_ADVICE_AdditionalOpcodes:
 	ld a, h
 	ld [W_MainScript_TextPtr + 1], a
 	jp MainScript_EndOpcode.skipNewlineCheck
-MainScript_ADVICE_AdditionalOpcodes_END::
-
-SECTION "MainScript Patch Advice 4", ROMX[$7DA0], BANK[$B]
+   
 MainScript_ADVICE_GetWindowTileCount::
 	push bc
 	;First we need to compute the tile count of the window...
@@ -591,9 +587,6 @@ MainScript_ADVICE_AutomaticNewline::
 .noAutomaticNewline
 	jp MainScript_EndOpcode.skipNewlineCheck
 
-MainScript_ADVICE_AutomaticNewline_END::
-
-SECTION "MainScript Patch Advice 5", ROMX[$7ED2], BANK[$B]
 MainScript_ADVICE_RepositionCursorByCC::
 	call MainScript_LoadFromBank
 	push bc
