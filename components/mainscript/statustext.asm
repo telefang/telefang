@@ -232,9 +232,18 @@ MainScript_ADVICE_DrawRightAlignedStagedString::
     jr z, .useRegularFont
     
 .useNarrowFont
+    ld a, [W_PreviousBank]
+    push af
+    
     ld a, BANK(MainScript_ADVICE_CountNarrowTextWidth)
     ld hl, MainScript_ADVICE_CountNarrowTextWidth
     call CallBankedFunction_int
+    
+    di
+    pop af
+    ld [W_PreviousBank], a
+    ei
+    
     jr .moveupTilePtr
     
 .useRegularFont
@@ -279,9 +288,18 @@ MainScript_ADVICE_DrawCenteredName75::
     jr z, .useRegularFont
     
 .useNarrowFont
+    ld a, [W_PreviousBank]
+    push af
+    
     ld a, BANK(MainScript_ADVICE_CountNarrowTextWidth)
     ld hl, MainScript_ADVICE_CountNarrowTextWidth
     call CallBankedFunction_int
+    
+    di
+    pop af
+    ld [W_PreviousBank], a
+    ei
+    
     jr .moveupTilePtr
     
 .useRegularFont
