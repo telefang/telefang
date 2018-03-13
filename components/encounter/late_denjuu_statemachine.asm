@@ -1,9 +1,9 @@
 INCLUDE "telefang.inc"
 
-SECTION "Late Denjuu Transition SubSubState", WRAMX[$D401], BANK[$1]
+SECTION "Late Denjuu SubSubState", WRAMX[$D401], BANK[$1]
 W_LateDenjuu_SubSubState:: ds 1
 
-SECTION "Late Denjuu Transition State Machine", ROMX[$57F7], BANK[$1C]
+SECTION "Late Denjuu State Machine", ROMX[$57F7], BANK[$1C]
 Encounter_LateDenjuuStateMachine::
 	ld a, [W_LateDenjuu_SubSubState]
 	ld hl, .table
@@ -82,7 +82,7 @@ LateDenjuu_BuildCallScreen:: ; 5831
 	call Banked_Battle_LoadDenjuuPortrait
 	pop af
 	call Battle_LoadDenjuuPalettePartner
-	ld hl, $9200
+	call LateDenjuu_ADVICE_NamePreparations
 	ld a, [$D43C]
 	call Status_DrawDenjuuNickname
 	ld a, [$D46E]
@@ -170,4 +170,23 @@ LateDenjuu_FadeFromScreen:: ; 5948
 	ld a, [W_LateDenjuu_SubSubState]
 	inc a
 	ld [W_LateDenjuu_SubSubState], a
+	ret
+	
+SECTION "Late Denjuu Advice Code", ROMX[$5A87], BANK[$1C]
+LateDenjuu_ADVICE_NamePreparations::
+	push bc
+	xor a
+	ld hl, $9200
+	ld b, $40
+	
+.clearLoop
+	di
+	call YetAnotherWFB
+	ld [hli], a
+	ld [hli], a
+	ei
+	dec b
+	jr nz, .clearLoop
+	pop bc
+	ld hl, $9200
 	ret
