@@ -4,7 +4,7 @@
 *.sav
 *.rtc
 
-;Prevent committing compiled object code
+;Prevent committing compiled object code.
 *.o
 *.2bpp
 *.1bpp
@@ -22,5 +22,8 @@
 *.sprite.bin
 *.atf
 
-;Prevent committing filesystem floatsam
+;Prevent committing build files.
+dependencies.d
+
+;Prevent committing filesystem flotsam.
 .DS_Store
