@@ -2,7 +2,6 @@
 
 .SUFFIXES:
 .SUFFIXES: .asm .o .gbc .png .wav .wikitext
-.SECONDEXPANSION:
 
 # Build Telefang.
 # We have two targets:
@@ -160,18 +159,6 @@ OBJS_ASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 # If your default python is 3, you may want to change this to python3.
 PYTHON := rip_scripts/find_python.sh
 
-$(foreach obj, $(OBJS), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
-
-$(foreach obj, $(OBJS_POWER), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
-
-$(foreach obj, $(OBJS_SPEED), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
-
 # Link objects together to build a rom.
 all: power speed
 
@@ -181,7 +168,7 @@ speed: $(ROMS_SPEED) $(ROMS_SPEED_NORTC)
 
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
-$(OBJS_ASM): $$*.asm $$($$*_dep)
+$(OBJS_ASM): %.o: %.asm
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
@@ -240,3 +227,6 @@ $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 %.atf: %.sgbattr.csv
 	@rm -f $@
 	@$(PYTHON) rip_scripts/rip_sgb_attrfile.py make_atf $< $@
+
+$(shell $(PYTHON) rip_scripts/scan_includes.py $(OBJS_ASM:.o=.asm) > dependencies.d)
+include dependencies.d
