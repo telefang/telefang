@@ -249,7 +249,7 @@ Encounter_SubStateDrawEncounterScreen::
     ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     ld [W_StringTable_ROMTblIndex], a
     ld hl, StringTable_denjuu_species
-    call StringTable_LoadName75
+    call Encounter_ADVICE_OpponentNameAndArticleLoader
     call Encounter_CopyStagedStringToArg2
     
     ld a, [W_Encounter_BattleType]
