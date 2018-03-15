@@ -228,5 +228,8 @@ $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 	@rm -f $@
 	@$(PYTHON) rip_scripts/rip_sgb_attrfile.py make_atf $< $@
 
-$(shell $(PYTHON) rip_scripts/scan_includes.py $(OBJS_ASM:.o=.asm) > dependencies.d)
+DEPENDENCY_SCAN_EXIT_STATUS := $(shell $(PYTHON) rip_scripts/scan_includes.py $(OBJS_ASM:.o=.asm) > dependencies.d; echo $$?)
+ifneq ($(DEPENDENCY_SCAN_EXIT_STATUS), 0)
+$(error Dependency scan failed)
+endif
 include dependencies.d
