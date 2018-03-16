@@ -13,6 +13,8 @@ from __future__ import unicode_literals
 import os
 import re
 import sys
+if sys.version_info[0] < 3:
+    from codecs import open
 
 INCLUDE_RE = re.compile(r"^\s*(INC(?:LUDE|BIN))", re.IGNORECASE)
 
@@ -32,7 +34,7 @@ def shallow_dependencies_of(asm_file_path):
     asm_dependencies = set()
     bin_dependencies = set()
 
-    with open(asm_file_path, 'r', encoding='utf8') as f:
+    with open(asm_file_path, 'r', encoding='utf-8') as f:
         for line in f:
             m = INCLUDE_RE.match(line)
             if m is None:

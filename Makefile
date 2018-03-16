@@ -157,8 +157,10 @@ OBJS_MESSAGE_BLOCKS := script/battle/messages.scripttbl script/denjuu/sms.script
 
 OBJS_ASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
-# If your default python is 3, you may want to change this to python3.
-PYTHON := rip_scripts/find_python.sh
+PYTHON := $(shell rip_scripts/find_python.sh)
+ifndef PYTHON
+$(error Couldn't find Python 3)
+endif
 
 # Link objects together to build a rom.
 all: power speed
