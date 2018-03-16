@@ -32,7 +32,7 @@ def shallow_dependencies_of(asm_file_path):
     asm_dependencies = set()
     bin_dependencies = set()
 
-    with open(asm_file_path, 'r') as f:
+    with open(asm_file_path, 'r', encoding='utf8') as f:
         for line in f:
             m = INCLUDE_RE.match(line)
             if m is None:
