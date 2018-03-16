@@ -33,6 +33,7 @@ specials['S'] = Special(0xe3, default=2)
 specials['*'] = Special(0xe1, end=True)
 specials['O'] = Special(0xec, bts=2, redirect=True)
 specials['D'] = Special(0xe9, base=10)
+specials['P'] = Special(0xed, base=10)
 
 #Used here for text extraction from the ROM.
 reverse_specials = {}
@@ -41,6 +42,7 @@ reverse_specials[0xE3] = "S"
 reverse_specials[0xE1] = "*"
 reverse_specials[0xEC] = "O"
 reverse_specials[0xE9] = "D"
+reverse_specials[0xED] = "P"
 
 CHARMAP_DELIM = 'charmap "'
 

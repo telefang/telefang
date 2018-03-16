@@ -79,6 +79,8 @@ charmap "~", $D2
 charmap "«END»", $E0
 charmap "«EOT»", $E1
 charmap "\n", $E2
+charmap "«REL»", $EE
+charmap "«ABS»", $EF
 
 charmap "…", $07
 charmap "‼", $08
