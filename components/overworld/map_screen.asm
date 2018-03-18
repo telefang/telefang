@@ -120,7 +120,7 @@ MapScreen_MainLoop::
 	cp a, 9
 	jr nz, .afterWindowRender
 
-; Determine the window position based on the cursor position.
+; Determine the window position based on the cursor position, this time in order to close the window.
 
 	ld b, 2
 	ld a, [W_MapScreen_CursorYPosBuffer]
@@ -130,6 +130,9 @@ MapScreen_MainLoop::
 
 .cursorOnBottomHalfRedux
 	ld c, 4
+
+; Close the window because MainScriptMachine is now inactive.
+
 	call $44C5
 
 ; This handles the blinking "you are here" dot's animation.
