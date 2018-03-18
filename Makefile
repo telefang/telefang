@@ -55,6 +55,7 @@ OBJS := components/compression/malias.o \
      components/overworld/memory.o components/overworld/rtc.o \
      components/overworld/power_antenna.o components/overworld/new_save_init.o \
      components/overworld/flags.o \
+     components/overworld/map_screen.o \
      components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
