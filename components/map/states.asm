@@ -1,13 +1,16 @@
 INCLUDE "telefang.inc"
 
+;These states are part of the Overworld state (05).
+
 SECTION "Map Cursor X Position Buffer", WRAM0[$C0A8]
-W_MapScreen_CursorXPosBuffer:: ds 1
+W_Map_CursorXPosBuffer:: ds 1
 
 SECTION "Map Cursor Y Position Buffer", WRAM0[$C0AC]
-W_MapScreen_CursorYPosBuffer:: ds 1
+W_Map_CursorYPosBuffer:: ds 1
 
 SECTION "Map Screen Display Loop", ROMX[$4210], BANK[$2A]
-MapScreen_MainLoop::
+;State 05 0F
+Map_StateMainLoop::
 
 ; Initial fade in.
 
@@ -33,11 +36,11 @@ MapScreen_MainLoop::
 
 ; Convert the buffered cursor position into something that Map_LoadLocationName can parse.
 
-	ld a, [W_MapScreen_CursorYPosBuffer]
+	ld a, [W_Map_CursorYPosBuffer]
 	sub a, $C
 	sla a
 	ld b, a
-	ld a, [W_MapScreen_CursorXPosBuffer]
+	ld a, [W_Map_CursorXPosBuffer]
 	sub a, $14
 	srl a
 	srl a
@@ -51,14 +54,14 @@ MapScreen_MainLoop::
 
 ; Check if the map location was visited at some point.
 
-	ld a, [W_MapScreen_CursorXPosBuffer]
+	ld a, [W_Map_CursorXPosBuffer]
 	sub a, $14
 	srl a
 	srl a
 	srl a
 	inc a
 	ld b, a
-	ld a, [W_MapScreen_CursorYPosBuffer]
+	ld a, [W_Map_CursorYPosBuffer]
 	sub a, $C
 	srl a
 	srl a
@@ -83,7 +86,7 @@ MapScreen_MainLoop::
 ; Determine the window position based on the cursor position.
 
 	ld d, 2
-	ld a, [W_MapScreen_CursorYPosBuffer]
+	ld a, [W_Map_CursorYPosBuffer]
 	cp a, $4C
 	jr nc, .cursorOnBottomHalf
 	ld d, $C
@@ -123,7 +126,7 @@ MapScreen_MainLoop::
 ; Determine the window position based on the cursor position, this time in order to close the window.
 
 	ld b, 2
-	ld a, [W_MapScreen_CursorYPosBuffer]
+	ld a, [W_Map_CursorYPosBuffer]
 	cp a, $4C
 	jr nc, .cursorOnBottomHalfRedux
 	ld b, $C
@@ -171,14 +174,14 @@ MapScreen_MainLoop::
 
 ; Check the stored cursor position against the right map boundary.
 
-	ld a, [W_MapScreen_CursorXPosBuffer]
+	ld a, [W_Map_CursorXPosBuffer]
 	cp a, $8C
 	jr nc, .skipRightPressAction
 
 ; Reposition the stored cursor position 8px rightwards.
 
 	add a, 8
-	ld [W_MapScreen_CursorXPosBuffer], a
+	ld [W_Map_CursorXPosBuffer], a
 	ld a, 2
 	ld [W_Sound_NextSFXSelect], a
 
@@ -191,14 +194,14 @@ MapScreen_MainLoop::
 
 ; Check the stored cursor position against the left map boundary.
 
-	ld a, [W_MapScreen_CursorXPosBuffer]
+	ld a, [W_Map_CursorXPosBuffer]
 	cp a, $1C
 	jr c, .skipLeftPressAction
 
 ; Reposition the stored cursor position 8px leftwards.
 
 	sub a, 8
-	ld [W_MapScreen_CursorXPosBuffer],a
+	ld [W_Map_CursorXPosBuffer],a
 	ld a, 2
 	ld [W_Sound_NextSFXSelect],a
 
@@ -211,14 +214,14 @@ MapScreen_MainLoop::
 
 ; Check the stored cursor position against the top map boundary.
 
-	ld a, [W_MapScreen_CursorYPosBuffer]
+	ld a, [W_Map_CursorYPosBuffer]
 	cp a, $14
 	jr c, .skipUpPressAction
 
 ; Reposition the stored cursor position 8px upwards.
 
 	sub a, 8
-	ld [W_MapScreen_CursorYPosBuffer], a
+	ld [W_Map_CursorYPosBuffer], a
 	ld a, 2
 	ld [W_Sound_NextSFXSelect], a
 
@@ -231,21 +234,21 @@ MapScreen_MainLoop::
 
 ; Check the stored cursor position against the bottom map boundary.
 
-	ld a, [W_MapScreen_CursorYPosBuffer]
+	ld a, [W_Map_CursorYPosBuffer]
 	cp a, $84
 	jr nc, .skipDownPressAction
 
 ; Reposition the stored cursor position 8px downwards.
 
 	add a, 8
-	ld [W_MapScreen_CursorYPosBuffer], a
+	ld [W_Map_CursorYPosBuffer], a
 	ld a, 2
 	ld [W_Sound_NextSFXSelect], a
 
 .skipDownPressAction
-	ld a, [W_MapScreen_CursorXPosBuffer]
+	ld a, [W_Map_CursorXPosBuffer]
 	ld [W_MetaSpriteConfig1 + M_LCDC_MetaSpriteConfig_XOffset], a
-	ld a, [W_MapScreen_CursorYPosBuffer]
+	ld a, [W_Map_CursorYPosBuffer]
 	ld [W_MetaSpriteConfig1 + M_LCDC_MetaSpriteConfig_YOffset], a
 
 ; Animate the background tiles.
