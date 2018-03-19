@@ -130,13 +130,13 @@ Battle_MessageNumbersToText::
 	ld b, 0
 	push de
 	ld c, 0
-	ld de, $D8F0
+	ld de, -10000
 
 .fifthDigitFromRightCalcLoop
 	inc c
 	add hl, de
 	jr c, .fifthDigitFromRightCalcLoop
-	ld de, $2710
+	ld de, 10000
 	add hl, de
 	pop de
 	ld a, c
@@ -151,13 +151,13 @@ Battle_MessageNumbersToText::
 .fifthDigitFromRightIsZeroSkip
 	push de
 	ld c, 0
-	ld de, $FC18
+	ld de, -1000
 
 .fourthDigitFromRightCalcLoop
 	inc c
 	add hl, de
 	jr c, .fourthDigitFromRightCalcLoop
-	ld de, $03E8
+	ld de, 1000
 	add hl, de
 	pop de
 	ld a, c
@@ -176,13 +176,13 @@ Battle_MessageNumbersToText::
 .fourthDigitFromRightIsZeroSkip
 	push de
 	ld c, 0
-	ld de, $FF9C
+	ld de, -100
 
 .thirdDigitFromRightCalcLoop
 	inc c
 	add hl, de
 	jr c, .thirdDigitFromRightCalcLoop
-	ld de, $64
+	ld de, 100
 	add hl, de
 	pop de
 	ld a, c
@@ -201,13 +201,13 @@ Battle_MessageNumbersToText::
 .thirdDigitFromRightIsZeroSkip
 	push de
 	ld c, 0
-	ld de, $FFF6
+	ld de, -10
 
 .secondDigitFromRightCalcLoop
 	inc c
 	add hl, de
 	jr c, .secondDigitFromRightCalcLoop
-	ld de, $A
+	ld de, 10
 	add hl, de
 	pop de
 	ld a, c
