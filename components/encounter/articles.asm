@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Temporary Article Pointer Table", ROMX[$5B00], BANK[$1C]
+SECTION "Temporary Article String Table", ROMX[$5B00], BANK[$1C]
 Encounter_ADVICE_ArticleTable::
 ; Temporary setup to be later replaced with a spreadsheet fed table.
 	dw .a, .a, .an, .a, .a, .a, .a, .a     ; 07
@@ -39,7 +39,7 @@ Encounter_ADVICE_ArticleTable::
 
 ; To replace "call StringTable_LoadName75" at 1C:4666
 
-SECTION "Temporary Article Pointer Table", ROMX[$5AB0], BANK[$1C]
+SECTION "Encounter Screen Article Table Advice", ROMX[$5AB0], BANK[$1C]
 Encounter_ADVICE_OpponentNameAndArticleLoader::
 	call StringTable_LoadName75
 	push af
