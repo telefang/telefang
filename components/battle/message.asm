@@ -3,6 +3,9 @@ INCLUDE "telefang.inc"
 SECTION "Battle Message Argument Memory", WRAMX[$D420], BANK[$1]
 W_Battle_TableStringStaging:: ds M_StringTable_Load8AreaSize
 
+SECTION "Battle Message Number Staging", WRAMX[$D448], BANK[$1]
+W_Battle_MessageNumbers_StagingLoc:: ds 6
+
 SECTION "Battle Message Argument Memory 3", WRAMX[$D4D0], BANK[$1]
 W_Battle_PhraseStagingBuffer:: ds M_StringTable_BattlePhraseAreaSize
 
@@ -119,3 +122,112 @@ Battle_QueueMessage::
     ld a, $60
     ld [W_MainScript_TileBaseIdx], a
     jp $0520
+	
+SECTION "Battle Message Numbers", ROM0[$3BD5]
+; Takes the 16-bit value in "hl" and stores it in W_Battle_MessageNumbers_StagingLoc as text. Used for battle messages.
+Battle_MessageNumbersToText::
+	ld de, W_Battle_MessageNumbers_StagingLoc
+	ld b, 0
+	push de
+	ld c, 0
+	ld de, $D8F0
+
+.fifthDigitFromRightCalcLoop
+	inc c
+	add hl, de
+	jr c, .fifthDigitFromRightCalcLoop
+	ld de, $2710
+	add hl, de
+	pop de
+	ld a, c
+	dec a
+	or a
+	jr z, .fifthDigitFromRightIsZeroSkip
+	add  a, $BB
+	ld [de], a
+	inc de
+	ld b, 1
+
+.fifthDigitFromRightIsZeroSkip
+	push de
+	ld c, 0
+	ld de, $FC18
+
+.fourthDigitFromRightCalcLoop
+	inc c
+	add hl, de
+	jr c, .fourthDigitFromRightCalcLoop
+	ld de, $03E8
+	add hl, de
+	pop de
+	ld a, c
+	dec a
+	bit 0, b
+	jr nz, .fourthDigitFromRightNotLeadingDigit
+	or a
+	jr z, .fourthDigitFromRightIsZeroSkip
+
+.fourthDigitFromRightNotLeadingDigit
+	add a, $BB
+	ld [de], a
+	inc de
+	ld b, 1
+
+.fourthDigitFromRightIsZeroSkip
+	push de
+	ld c, 0
+	ld de, $FF9C
+
+.thirdDigitFromRightCalcLoop
+	inc c
+	add hl, de
+	jr c, .thirdDigitFromRightCalcLoop
+	ld de, $64
+	add hl, de
+	pop de
+	ld a, c
+	dec a
+	bit 0, b
+	jr nz, .thirdDigitFromRightNotLeadingDigit
+	or a
+	jr z, .thirdDigitFromRightIsZeroSkip
+
+.thirdDigitFromRightNotLeadingDigit
+	add a, $BB
+	ld [de], a
+	inc de
+	ld b, 1
+
+.thirdDigitFromRightIsZeroSkip
+	push de
+	ld c, 0
+	ld de, $FFF6
+
+.secondDigitFromRightCalcLoop
+	inc c
+	add hl, de
+	jr c, .secondDigitFromRightCalcLoop
+	ld de, $A
+	add hl, de
+	pop de
+	ld a, c
+	dec a
+	bit 0, b
+	jr nz, .secondDigitFromRightNotLeadingDigit
+	or a
+	jr z, .secondDigitFromRightIsZeroSkip
+
+.secondDigitFromRightNotLeadingDigit
+	add a, $BB
+	ld [de], a
+	inc de
+	ld b, 1
+
+.secondDigitFromRightIsZeroSkip
+	ld a, l
+	add a, $BB
+	ld [de], a
+	inc de
+	ld a, $E0
+	ld [de], a
+	ret
