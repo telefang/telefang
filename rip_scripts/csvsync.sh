@@ -22,5 +22,6 @@ wget --no-check-certificate -O script/denjuu/statuses.csv https://docs.google.co
 wget --no-check-certificate -O script/denjuu/personalities.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1604251478
 wget --no-check-certificate -O script/denjuu/habitats.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1012117155
 wget --no-check-certificate -O script/denjuu/nicknames.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1018901251
+wget --no-check-certificate -O script/denjuu/article_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=642445015
 wget --no-check-certificate -O script/map/location_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=456069826
 wget --no-check-certificate -O script/map/dungeon_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=63277743
