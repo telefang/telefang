@@ -13,6 +13,16 @@ StringTable_denjuu_nicknames::
 	INCBIN "script/denjuu/nicknames.stringtbl"
 StringTable_denjuu_nicknames_END
 
+SECTION "StringTable_denjuu_article_mapping Section", ROMX[$5b00], BANK[$1c]
+Encounter_ADVICE_ArticleTable::
+	INCBIN "script/denjuu/article_mapping.stringidx"
+Encounter_ADVICE_ArticleTable_END
+
+SECTION "StringTable_denjuu_article_strings Section", ROMX[$5c60], BANK[$1c]
+StringTable_denjuu_article_strings::
+	INCBIN "script/denjuu/article_strings.stringblk"
+StringTable_denjuu_article_strings_END
+
 SECTION "StringTable_map_location_mapping Section", ROMX[$6875], BANK[$2a]
 StringTable_map_location_mapping::
 	INCBIN "script/map/location_mapping.stringidx"
