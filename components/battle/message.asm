@@ -126,8 +126,8 @@ Battle_QueueMessage::
 SECTION "Battle Message Numbers", ROM0[$3BD5]
 ; Takes the 16-bit value in "hl" and stores it in W_Battle_MessageNumbers_StagingLoc as text. Used for battle messages.
 Battle_MessageNumbersToText::
-	ld de, W_Battle_MessageNumbers_StagingLoc
-	ld b, 0
+	ld a, Banked_Battle_ADVICE_ParsePluralState & $FF
+	call PatchUtils_AuxCodeJmp
 	push de
 	ld c, 0
 	ld de, -10000

@@ -80,6 +80,7 @@ OBJS := components/compression/malias.o \
      components/battle/participant.o components/battle/meters_ui.o \
      components/battle/link_management.o \
      components/battle/status.o \
+     components/battle/plural.o \
 	 components/status/nickname.o components/status/stats.o \
      components/status/statetbl.o components/status/icons.o \
      components/status/tabs.o components/status/interface.o \
