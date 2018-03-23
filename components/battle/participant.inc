@@ -11,6 +11,7 @@ M_Battle_ParticipantArrivalTimeElapsed EQU $06
 M_Battle_ParticipantLocation EQU $07
 M_Battle_ParticipantMaxArrivalTime EQU $08
 M_Battle_ParticipantMaxDP EQU $09
+M_Battle_ParticipantPersonality EQU $0C
 M_Battle_ParticipantContactID EQU $0D
 M_Battle_ParticipantStatusCondition EQU $12
 
