@@ -2,7 +2,6 @@
 
 .SUFFIXES:
 .SUFFIXES: .asm .o .gbc .png .wav .wikitext
-.SECONDEXPANSION:
 
 # Build Telefang.
 ROMS_POWER := telefang_pw.gbc
@@ -52,7 +51,7 @@ OBJS := components/compression/malias.o \
      components/mainscript/statustext.o components/mainscript/window.o \
      components/mainscript/canned_initializer.o components/mainscript/message_args.o \
      components/mainscript/shop_item_window.o \
-	  components/map/locations.o \
+	  components/map/locations.o components/map/states.o \
      components/overworld/memory.o components/overworld/rtc.o \
      components/overworld/power_antenna.o components/overworld/new_save_init.o \
      components/overworld/flags.o \
@@ -84,6 +83,7 @@ OBJS := components/compression/malias.o \
      components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
      components/saveclock/initialize_save.o components/saveclock/integrity.o \
      components/saveclock/persistence.o \
+     components/encounter/late_denjuu_statemachine.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
@@ -139,20 +139,10 @@ OBJS_MESSAGE_BLOCKS := ${SRC_MESSAGE:.messages.csv=.scripttbl}
 
 OBJS_ASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
-# If your default python is 3, you may want to change this to python3.
-PYTHON := rip_scripts/find_python.sh
-
-$(foreach obj, $(OBJS), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
-
-$(foreach obj, $(OBJS_POWER), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
-
-$(foreach obj, $(OBJS_SPEED), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
+PYTHON := $(shell rip_scripts/find_python.sh)
+ifndef PYTHON
+$(error Couldn't find Python 3)
+endif
 
 # Link objects together to build a rom.
 all: power speed
@@ -163,7 +153,7 @@ speed: $(ROMS_SPEED) compare_speed
 
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
-$(OBJS_ASM): $$*.asm $$($$*_dep)
+$(OBJS_ASM): %.o: %.asm
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
@@ -228,3 +218,9 @@ $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 %.atf: %.sgbattr.csv
 	@rm -f $@
 	@$(PYTHON) rip_scripts/rip_sgb_attrfile.py make_atf $< $@
+
+DEPENDENCY_SCAN_EXIT_STATUS := $(shell $(PYTHON) rip_scripts/scan_includes.py $(OBJS_ASM:.o=.asm) > dependencies.d; echo $$?)
+ifneq ($(DEPENDENCY_SCAN_EXIT_STATUS), 0)
+$(error Dependency scan failed)
+endif
+include dependencies.d

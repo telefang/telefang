@@ -611,7 +611,7 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                     
                     word_data, word_px = b"", 0
                     
-                    if char in "\n" and len(line_data) > 0:
+                    if char in "\n":
                         text_data += line_data + bytes([0xE2])
                         line_data = b""
                         line_px = 0

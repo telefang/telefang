@@ -1,4 +1,4 @@
-X,Y,Tile Offset,Attribute Mixing,Attributes
+Y,X,Tile Offset,Attribute Mixing,Attributes
 ec,e8,0,ConfigPalette,11
 ec,f0,1,ConfigPalette,11
 ec,f8,2,ConfigPalette,11
