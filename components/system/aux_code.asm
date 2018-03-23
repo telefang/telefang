@@ -92,7 +92,10 @@ Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
 	jp MainScript_ADVICE_DrawNarrowLetter
-   nop
+	nop
+Banked_Battle_ADVICE_ParsePluralState::
+	jp Battle_ADVICE_ParsePluralState
+	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
