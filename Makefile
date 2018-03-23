@@ -77,6 +77,7 @@ OBJS := components/compression/malias.o \
 	  components/jpinput/jpinput.o \
 	  components/battle/statistics.o components/battle/species.o \
      components/battle/denjuu_portrait.o components/battle/message.o \
+     components/battle/attacks_statemachine.o \
      components/battle/attacks.o components/battle/screen_statemachine.o \
      components/battle/participant.o components/battle/meters_ui.o \
      components/battle/link_management.o \
@@ -100,6 +101,7 @@ OBJS := components/compression/malias.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
      components/encounter/scenery.o components/encounter/state_machine.o \
+     components/encounter/scripted_denjuu.o \
      components/summon/state_machine.o components/summon/index_utils.o \
      components/summon/draw_utils.o \
      components/victory/external_statemachine.o components/victory/participant_utils.o \
