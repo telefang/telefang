@@ -13,6 +13,9 @@ Status_LoadDenjuuEvolutionIndicatorCommon::
     ld a, BANK(DenjuuStageGfx)
     rst $10
     ret
+	
+;NOTE: Free Space
+	
     nop
     nop
     nop

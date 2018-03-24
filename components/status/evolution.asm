@@ -24,6 +24,9 @@ Status_LoadEvolutionIndicatorBySpeciesEntryZukan::
     call Status_LoadDenjuuEvolutionIndicatorCommon
     pop af
     jp Status_LoadEvolutionIndicatorBySpeciesOffloadZukan
+	
+;NOTE: Free Space
+	
     nop  
     nop  
     nop  
