@@ -2,6 +2,129 @@ INCLUDE "telefang.inc"
 	
 SECTION "Load Scripted Denjuu", ROM0[$3E45]
 Encounter_LoadScriptedDenjuu::
+	jp Encounter_LoadScriptedDenjuuRelocated
+	
+;NOTE: Free Space
+	
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	
+Encounter_LoadScriptedTFangerDenjuu::
+	jp Encounter_LoadScriptedTFangerDenjuuRelocated
+	
+;NOTE: Free Space
+	
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+
+SECTION "Load Scripted Denjuu Relocated", ROMX[$5510], BANK[$27]
+Encounter_LoadScriptedDenjuuRelocated::
 	ld hl, $4BFA
 	ld de, 5
 	ld a, [$D402]
@@ -25,7 +148,7 @@ Encounter_LoadScriptedDenjuu::
 	ld [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantPersonality], a
 	ret
 	
-Encounter_LoadScriptedTFangerDenjuu::
+Encounter_LoadScriptedTFangerDenjuuRelocated::
 	ld hl, $4E9D
 	ld de, $12
 	ld a, [$D402]
