@@ -4,8 +4,10 @@ IMPORT SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
 
 SECTION "Patch Utilities", ROM0[$0063]
 PatchUtils_ResetVector: jp PatchUtils_ResetGame
-	db "Denjuu" ;not sure what this is
-	ld [$FF00], a
+; The word "Denjuu" for use by E5 control codes. It is not currently in use.
+	db "Denjuu"
+	db $E0
+	nop
 PatchUtils_LimitBreak:: sla e
 	rl d
 	sla e
