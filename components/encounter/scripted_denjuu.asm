@@ -1,4 +1,7 @@
 INCLUDE "telefang.inc"
+
+SECTION "Script Denjuu Tracker", WRAM0[$CB45]
+W_Encounter_ScriptDenjuuTrackerForPatch:: ds 1
 	
 SECTION "Load Scripted Denjuu", ROM0[$3E45]
 Encounter_LoadScriptedDenjuu::
@@ -127,7 +130,7 @@ SECTION "Load Scripted Denjuu Relocated", ROMX[$5510], BANK[$27]
 Encounter_LoadScriptedDenjuuRelocated::
 	ld hl, $4BFA
 	ld de, 5
-	ld a, [$D402]
+	call Encounter_ADVICE_LoadScriptedDenjuuTableIndex
 	cp 0
 	jr z, .skipLoopOnZero
 	
@@ -195,4 +198,12 @@ Encounter_LoadScriptedTFangerDenjuuRelocated::
 	ld a, [hl]
 	ld [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantPersonality], a
 	ret
+	
+Encounter_ADVICE_LoadScriptedDenjuuTableIndex::
+	ld a, [$D402]
+	inc a
+	ld [W_Encounter_ScriptDenjuuTrackerForPatch], a
+	dec a
+	ret
+
 	
