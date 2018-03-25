@@ -263,7 +263,7 @@ Encounter_SubStateDrawEncounterScreen::
     
 .storyDenjuuMessage
     ld c, M_Battle_MessageStoryEncounter
-    call Battle_QueueMessage
+    call Encounter_ADVICE_ScriptedDenjuuQueueMessage
     jp .fadeAndNextState
     
 .unk
@@ -275,3 +275,64 @@ Encounter_SubStateDrawEncounterScreen::
     ld a, 4
     call Banked_LCDC_SetupPalswapAnimation
     jp Battle_IncrementSubSubState
+	
+SECTION "Battle Arrival Nickname Table", ROMX[$5D00], BANK[$1C]
+Encounter_ADVICE_ScriptedDenjuuNicknameTable::
+; A temporary table for nicknames in battle.
+	db "Noisy", $E0, $E0, $E0, $E0, $E0, $E0, $E0
+	db "Ganbanno", $E0, $E0, $E0, $E0
+	
+SECTION "Battle Arrival Text Preparation 1", ROMX[$5E00], BANK[$1C]
+Encounter_ADVICE_ScriptedDenjuuQueueMessage::
+	push bc ; C5
+	push de ; D5
+	push hl ; E5
+	push af ; F5
+	
+; Load nicknames in the X has challenged you message, because why not?
+	
+	ld a, [$D402] ; FA 02 D4
+	cp 4 ; FE 04
+	jr nz, .notGanbanno ; 20 08
+	ld hl, Encounter_ADVICE_ScriptedDenjuuNicknameTable + $C ; 21 0C 5D
+	call Encounter_ADVICE_ScriptedDenjuuLoadNickname ; CD 2A 5E
+	jr .notNoisy ; 18 0A
+	
+.notGanbanno
+	cp 6 ; FE 06
+	jr nz, .notNoisy ; 20 06
+	ld hl, Encounter_ADVICE_ScriptedDenjuuNicknameTable ; 21 00 5D
+	call Encounter_ADVICE_ScriptedDenjuuLoadNickname ; CD 2A 5E
+	
+.notNoisy
+	
+; Don't use articles here.
+	
+	ld a, $E0 ; 3E E0
+	ld [W_Map_LocationStaging], a ; EA C0 CC
+	pop af ; F1
+	pop hl ; E1
+	pop de ; D1
+	pop bc ; C1
+	call Battle_QueueMessage ; CD 02 3D
+	ret ; C9
+
+Encounter_ADVICE_ScriptedDenjuuLoadNickname::
+	ld de, W_MainScript_MessageArg2 ; 11 58 D6
+	ld b, $C ; 06 0C
+	
+.copyLoop
+	ld a, [hli] ; 2A
+	cp $E0 ; FE E0
+	jr z, .abandonLoop ; 28 05
+	ld [de], a ; 12
+	inc de ; 13
+	dec b ; 05
+	jr nz, .copyLoop ; 20 F6
+	
+.abandonLoop
+
+	ld a, $E0 ; 3E E0
+	ld [de], a ; 12
+	ret ; C9
+	
