@@ -2,11 +2,17 @@ INCLUDE "telefang.inc"
 
 ;The Sprite Prep routines store metasprite data in a number of standardized
 ;areas right after the DMA staging area. There are multiple staging areas all
-;of which are eventually poured into LoadMetasprite down below.
+;of which are eventually poured into LoadMetasprite down below. Also, they can
+;be turned off in case you wanna use the memory for something else. Hence why
+;they're zero-sized here.
 SECTION "LCDC Sprite Prep Data", WRAM0[$C0A0]
-W_MetaSpriteConfig1:: ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig1_Count
-W_MetaSpriteConfig3:: ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig3_Count
-W_MetaSpriteConfig2:: ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig2_Count
+W_MetaSpriteConfig1:: ds 0; ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig1_Count
+
+SECTION "LCDC Sprite Prep Data3", WRAM0[$C220]
+W_MetaSpriteConfig3:: ds 0; ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig3_Count
+
+SECTION "LCDC Sprite Prep Data2", WRAM0[$C2A0]
+W_MetaSpriteConfig2:: ds 0; ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig2_Count
 
 SECTION "LCDC Sprite Prep Vars", WRAM0[$C430]
 W_OAM_SpritesReady:: ds 1 ;Flag set to 1 when sprites need to be changed.

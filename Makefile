@@ -2,7 +2,6 @@
 
 .SUFFIXES:
 .SUFFIXES: .asm .o .gbc .png .wav .wikitext
-.SECONDEXPANSION:
 
 # Build Telefang.
 # We have two targets:
@@ -14,22 +13,22 @@ ROMS_SPEED := telefang_sp_german.gbc
 BASEROM_SPEED := baserom_sp.gbc
 OBJS := components/compression/malias.o \
      components/compression/rle_tilemap.o components/compression/rle_attribmap.o \
-	  components/lcdc/vblank_irq.o components/lcdc/hblank_irq.o \
-	  components/lcdc/oam_dma.o components/lcdc/shadow_regs.o \
-	  components/lcdc/sprite_compose.o components/lcdc/memory.o \
+	 components/lcdc/vblank_irq.o components/lcdc/hblank_irq.o \
+	 components/lcdc/oam_dma.o components/lcdc/shadow_regs.o \
+	 components/lcdc/sprite_compose.o components/lcdc/memory.o \
      components/lcdc/cgb_palette.o components/lcdc/tilemap_math.o \
-	  components/lcdc/load_tiles.o components/lcdc/fades.o \
+	 components/lcdc/load_tiles.o components/lcdc/fades.o \
      components/lcdc/fades_cgb.o components/lcdc/tile_index.o \
      components/lcdc/wraparound.o components/lcdc/init_attributes.o \
      components/lcdc/disable_lcd.o components/lcdc/dmg_palette.o \
-	  components/system/main.o components/system/state_machine.o \
-	  components/system/rst.o components/mainscript/state_machine.o \
-	  components/system/memory.o components/system/empty.o \
-	  components/system/entrypoints.o components/system/bankcalls.o \
-	  components/system/math.o components/system/bitmanip.o \
+	 components/system/main.o components/system/state_machine.o \
+	 components/system/rst.o components/mainscript/state_machine.o \
+	 components/system/memory.o components/system/empty.o \
+	 components/system/entrypoints.o components/system/bankcalls.o \
+	 components/system/math.o components/system/bitmanip.o \
      components/system/overclock.o \
-	  components/system/patch_utils.o components/system/patch_unknown.o \
-	  components/system/aux_code.o \
+	 components/system/patch_utils.o components/system/patch_unknown.o \
+	 components/system/aux_code.o \
      components/sgb/palettes.o components/sgb/detect.o \
      components/sgb/packets.o components/sgb/precomposed.o \
      components/pausemenu/contacts.o components/pausemenu/nameutil.o \
@@ -54,49 +53,52 @@ OBJS := components/compression/malias.o \
      components/titlelogo/state_machine.o \
      components/titlescreen/state_machine.o components/titlescreen/position_sprite.o \
      components/titlescreen/advice.o \
-	  components/mainscript/ccinterpreter.o components/mainscript/utility.o \
-	  components/mainscript/font.o components/mainscript/draw_text.o \
+	 components/mainscript/ccinterpreter.o components/mainscript/utility.o \
+	 components/mainscript/font.o components/mainscript/draw_text.o \
      components/mainscript/statustext.o components/mainscript/window.o \
      components/mainscript/canned_initializer.o components/mainscript/message_args.o \
      components/mainscript/shop_item_window.o \
      components/mainscript/advice.o \
-	  components/map/locations.o \
+	 components/map/locations.o components/map/states.o \
      components/overworld/memory.o components/overworld/rtc.o \
      components/overworld/power_antenna.o components/overworld/new_save_init.o \
      components/overworld/flags.o \
      components/phoneconversation/inbound.o components/phoneconversation/scenery.o \
      components/phoneconversation/ui.o components/phoneconversation/outbound.o \
      components/phoneconversation/data.o \
-	  components/sound/samples.o components/sound/indexing.o \
+	 components/sound/samples.o components/sound/indexing.o \
      components/sound/control.o \
-	  components/serio/driver.o components/serio/vssummon_statemachine.o \
+	 components/serio/driver.o components/serio/vssummon_statemachine.o \
      components/serio/game_statemachine.o components/serio/vssummon_utils.o \
      components/serio/battle_utils.o \
      components/linkmelody/cursor_utils.o \
-	  components/jpinput/jpinput.o \
-	  components/battle/statistics.o components/battle/species.o \
+	 components/jpinput/jpinput.o \
+	 components/battle/statistics.o components/battle/species.o \
      components/battle/denjuu_portrait.o components/battle/message.o \
+     components/battle/attacks_statemachine.o \
      components/battle/attacks.o components/battle/screen_statemachine.o \
      components/battle/participant.o components/battle/meters_ui.o \
      components/battle/link_management.o \
      components/battle/status.o \
-	  components/status/nickname.o components/status/stats.o \
+	 components/status/nickname.o components/status/stats.o \
      components/status/statetbl.o components/status/icons.o \
      components/status/tabs.o components/status/interface.o \
      components/status/draw_funcs.o components/status/evolution.o \
      components/status/shift_bg.o components/status/phone_number.o \
      components/status/ui_graphics.o components/status/digits.o \
-	  components/stringtable/load.o components/stringtable/table_banks.o \
-	  components/stringtable/padding.o \
+	 components/stringtable/load.o components/stringtable/table_banks.o \
+	 components/stringtable/padding.o \
      components/saveclock/sram_lock.o components/saveclock/save_format.o \
-	  components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
+	 components/saveclock/denjuu_nicknames.o components/saveclock/initialize_new.o \
      components/saveclock/friendliness_pellets.o components/saveclock/rtc.o \
      components/saveclock/initialize_save.o components/saveclock/integrity.o \
      components/saveclock/persistence.o \
+     components/encounter/late_denjuu_statemachine.o \
      components/encounter/string_utils.o components/encounter/select_indicator.o \
      components/encounter/opponent_display_machine.o components/encounter/tile_digits.o \
      components/encounter/tfanger_portraits.o components/encounter/signal_indicator.o \
      components/encounter/scenery.o components/encounter/state_machine.o \
+     components/encounter/scripted_denjuu.o \
      components/summon/state_machine.o components/summon/index_utils.o \
      components/summon/draw_utils.o \
      components/victory/external_statemachine.o components/victory/participant_utils.o \
@@ -155,20 +157,10 @@ OBJS_MESSAGE_BLOCKS := script/battle/messages.scripttbl script/denjuu/sms.script
 
 OBJS_ASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
-# If your default python is 3, you may want to change this to python3.
-PYTHON := rip_scripts/find_python.sh
-
-$(foreach obj, $(OBJS), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
-
-$(foreach obj, $(OBJS_POWER), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
-
-$(foreach obj, $(OBJS_SPEED), \
-	$(eval $(obj:.o=)_dep := $(shell $(PYTHON) rip_scripts/scan_includes.py $(obj:.o=.asm))) \
-)
+PYTHON := $(shell rip_scripts/find_python.sh)
+ifndef PYTHON
+$(error Couldn't find Python 3)
+endif
 
 # Link objects together to build a rom.
 all: power speed
@@ -179,7 +171,7 @@ speed: $(ROMS_SPEED)
 
 # Assemble source files into objects.
 # Use rgbasm -h to use halts without nops.
-$(OBJS_ASM): $$*.asm $$($$*_dep)
+$(OBJS_ASM): %.o: %.asm
 	rgbasm -h -o $@ $<
 
 $(ROMS_POWER): $(OBJS) $(OBJS_POWER) $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS)
@@ -230,3 +222,9 @@ $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 %.atf: %.sgbattr.csv
 	@rm -f $@
 	@$(PYTHON) rip_scripts/rip_sgb_attrfile.py make_atf $< $@
+
+DEPENDENCY_SCAN_EXIT_STATUS := $(shell $(PYTHON) rip_scripts/scan_includes.py $(OBJS_ASM:.o=.asm) > dependencies.d; echo $$?)
+ifneq ($(DEPENDENCY_SCAN_EXIT_STATUS), 0)
+$(error Dependency scan failed)
+endif
+include dependencies.d

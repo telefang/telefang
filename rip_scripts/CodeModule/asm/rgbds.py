@@ -3,50 +3,59 @@ from CodeModule.asm import linker
 from CodeModule.cmd import logged
 from CodeModule.asm.asmotor import _argfunc  #TODO: make patch execution generic
 
-class Rgb5LimitExpr(cmodel.Struct):
+class Rgb6LimitExpr(cmodel.Struct):
     lolimit = cmodel.LeS32
     hilimit = cmodel.LeS32
 
     __order__ = ["lolimit", "hilimit"]
 
-class Rgb5PatchExpr(cmodel.Union):
-    __tag__ = cmodel.Enum(cmodel.U8, "ADD", "SUB", "MUL", "DIV", "MOD", "UNSUB", "OR", "AND", "XOR", "UNNOT", "LOGAND", "LOGOR", "LOGUNNOT", "LOGEQ", "LOGNE", "LOGGT", "LOGLT", "LOGGE", "LOGLE", "SHL", "SHR", "BANK", "HRAM", ("CONST", 0x80), ("SYM", 0x81))
+class Rgb6PatchExpr(cmodel.Union):
+    __tag__ = cmodel.Enum(cmodel.U8,
+                          "ADD", "SUB", "MUL", "DIV", "MOD", "UNSUB",
+                          ("OR", 0x10), "AND", "XOR", "UNNOT",
+                          ("LOGAND", 0x21), "LOGOR", "LOGUNNOT",
+                          ("LOGEQ", 0x30), "LOGNE", "LOGGT", "LOGLT", "LOGGE", "LOGLE",
+                          ("SHL", 0x40), "SHR",
+                          ("BANK_SYM", 0x50), "BANK_SECT", "BANK_SELF",
+                          ("HRAM", 0x60),
+                          ("CONST", 0x80), "SYM")
 
-    RANGECHECK = Rgb5LimitExpr
+    RANGECHECK = Rgb6LimitExpr
     CONST = cmodel.LeU32
     SYM = cmodel.LeU32
-    BANK = cmodel.LeU32
+    BANK_SYM = cmodel.LeU32
+    BANK_SECT = cmodel.String("ascii")
 
-class Rgb5Patch(cmodel.Struct):
+class Rgb6Patch(cmodel.Struct):
     srcfile = cmodel.String("ascii")
     srcline = cmodel.LeU32
     patchoffset = cmodel.LeU32
     patchtype = cmodel.Enum(cmodel.U8, "BYTE", "LE16", "LE32", "BE16", "BE32")
 
     numpatchexprs = cmodel.LeU32
-    patchexprs = cmodel.Array(Rgb5PatchExpr, "numpatchexprs", countType = cmodel.BytesCount)
+    patchexprs = cmodel.Array(Rgb6PatchExpr, "numpatchexprs", countType = cmodel.BytesCount)
 
     __order__ = ["srcfile", "srcline", "patchoffset", "patchtype", "numpatchexprs", "patchexprs"]
 
-class Rgb5SectionData(cmodel.Struct):
+class Rgb6SectionData(cmodel.Struct):
     data = cmodel.Blob("datasize")
     numpatches = cmodel.LeU32
-    patches = cmodel.Array(Rgb5Patch, "numpatches")
+    patches = cmodel.Array(Rgb6Patch, "numpatches")
 
     __order__ = ["data", "numpatches", "patches"]
 
-class Rgb5Section(cmodel.Struct):
+class Rgb6Section(cmodel.Struct):
     name = cmodel.String("ascii") #utf-8 might be safe here...
     datasize = cmodel.LeU32
     sectype = cmodel.Enum(cmodel.U8, "WRAM0", "VRAM", "ROMX", "ROM0", "HRAM", "WRAMX", "SRAM", "OAM")
     org = cmodel.LeS32
     bank = cmodel.LeS32
     align = cmodel.LeS32
-    datsec = cmodel.If("sectype", lambda x: x in [2, 3], Rgb5SectionData)
+    datsec = cmodel.If("sectype", lambda x: x in [2, 3], Rgb6SectionData)
 
     __order__ = ["name", "datasize", "sectype", "org", "bank", "align", "datsec"]
 
-class Rgb5SymValue(cmodel.Struct):
+class Rgb6SymValue(cmodel.Struct):
     filename = cmodel.String("ascii")
     fileline = cmodel.LeU32
     sectionid = cmodel.LeU32
@@ -54,20 +63,20 @@ class Rgb5SymValue(cmodel.Struct):
 
     __order__ = ["filename", "fileline", "sectionid", "value"]
 
-class Rgb5Symbol(cmodel.Struct):
+class Rgb6Symbol(cmodel.Struct):
     name = cmodel.String("ascii")
     symtype = cmodel.Enum(cmodel.U8, "LOCAL", "IMPORT", "EXPORT")
-    value = cmodel.If("symtype", lambda x: x in [0, 2], Rgb5SymValue)
+    value = cmodel.If("symtype", lambda x: x not in [1], Rgb6SymValue)
 
     __order__ = ["name", "symtype", "value"]
 
-class Rgb5(cmodel.Struct):
-    magic = cmodel.Magic(b"RGB5")
+class Rgb6(cmodel.Struct):
+    magic = cmodel.Magic(b"RGB6")
     numsyms = cmodel.LeU32
     numsects = cmodel.LeU32
 
-    symbols = cmodel.Array(Rgb5Symbol, "numsyms")
-    sections = cmodel.Array(Rgb5Section, "numsects")
+    symbols = cmodel.Array(Rgb6Symbol, "numsyms")
+    sections = cmodel.Array(Rgb6Section, "numsects")
 
     __order__ = ["magic", "numsyms", "numsects", "symbols", "sections"]
 
@@ -152,7 +161,7 @@ class RGBDSLinker(linker.Linker):
     def loadTranslationUnit(logger, self, filename):
         """Load the translation music and attempt to add the data inside to the linker"""
         with open(filename, "rb") as fileobj:
-            objobj = Rgb5()
+            objobj = Rgb6()
             objobj.load(fileobj)
 
             logger.debug("Loading translation unit %(txl)r" % {"txl":objobj.core})
@@ -210,7 +219,7 @@ class RGBDSLinker(linker.Linker):
 
         for fileobj in fileslist:
             for symbol in fileobj.symbols:
-                if symbol.symtype is Rgb5Symbol.IMPORT:
+                if symbol.symtype is Rgb6Symbol.IMPORT:
                     for secidx, secdesc in files2sec[fileobj].items():
                         symList.append(linker.SymbolDescriptor(symbol.name, linker.Import, None, None, None, secdesc))
                 else:
@@ -225,7 +234,7 @@ class RGBDSLinker(linker.Linker):
                         pass
 
                     ourLimit = None
-                    if symbol.symtype is Rgb5Symbol.LOCAL:
+                    if symbol.symtype is Rgb6Symbol.LOCAL:
                         ourLimit = secdesc.srcname
 
                     symList.append(linker.SymbolDescriptor(symbol.name, linker.Export, ourLimit, bfix, symbol.value.value, secdesc))
@@ -256,20 +265,20 @@ class RGBDSLinker(linker.Linker):
             if not interpreter.complete:
                 raise InvalidPatch
 
-            if patch.patchtype is Rgb5Patch.BYTE:
+            if patch.patchtype is Rgb6Patch.BYTE:
                 secDesc.data[offset] = interpreter.value & 255
-            elif patch.patchtype is Rgb5Patch.LE16:
+            elif patch.patchtype is Rgb6Patch.LE16:
                 secDesc.data[offset] = interpreter.value & 255
                 secDesc.data[offset + 1] = (interpreter.value >> 8) & 255
-            elif patch.patchtype is Rgb5Patch.BE16:
+            elif patch.patchtype is Rgb6Patch.BE16:
                 secDesc.data[offset + 1] = interpreter.value & 255
                 secDesc.data[offset] = (interpreter.value >> 8) & 255
-            elif patch.patchtype is Rgb5Patch.LE32:
+            elif patch.patchtype is Rgb6Patch.LE32:
                 secDesc.data[offset] = interpreter.value & 255
                 secDesc.data[offset + 1] = (interpreter.value >> 8) & 255
                 secDesc.data[offset + 2] = (interpreter.value >> 16) & 255
                 secDesc.data[offset + 3] = (interpreter.value >> 24) & 255
-            elif patch.patchtype is Rgb5Patch.BE32:
+            elif patch.patchtype is Rgb6Patch.BE32:
                 secDesc.data[offset + 3] = interpreter.value & 255
                 secDesc.data[offset + 2] = (interpreter.value >> 8) & 255
                 secDesc.data[offset + 1] = (interpreter.value >> 16) & 255

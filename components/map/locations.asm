@@ -4,7 +4,7 @@ SECTION "Map Screen Location Loader WRAM", WRAM0[$CCC0]
 W_Map_LocationStaging:: ds M_Map_LocationStagingSize
 
 SECTION "Map Screen Location Loader", ROMX[$4508], BANK[$2A]
-Map_LoadLocationName:
+Map_LoadLocationName::
 	ld a, b
 	ld hl, StringTable_map_location_mapping
 	ld b, 0

@@ -100,7 +100,7 @@ Tilemap_BANK_0::
 	dw Tilemap_phoneconversation_backgrounds_desert_tmap
 	dw Tilemap_menu_sms_contents_tmap
 	dw Tilemap_pausemenu_contact_ringtone_assign_tmap
-	dw Tilemap_unknown_tilemap_0_4e
+	dw Tilemap_pausemenu_contact_delete_confirm_tmap
 	dw Tilemap_titlemenu_save_overwrite_warning_tmap
 	dw Tilemap_unknown_tilemap_0_50
 	dw Tilemap_unknown_tilemap_0_51
@@ -532,9 +532,9 @@ Tilemap_pausemenu_contact_ringtone_assign_tmap::
 	incbin "components/pausemenu/contact/ringtone_assign_tmap.tmap"
 Tilemap_pausemenu_contact_ringtone_assign_tmap_END
 
-Tilemap_unknown_tilemap_0_4e::
-	incbin "gfx/unknown/tilemap_0/4e.tmap"
-Tilemap_unknown_tilemap_0_4e_END
+Tilemap_pausemenu_contact_delete_confirm_tmap::
+	incbin "components/pausemenu/contact/delete_confirm_tmap.tmap"
+Tilemap_pausemenu_contact_delete_confirm_tmap_END
 
 Tilemap_titlemenu_save_overwrite_warning_tmap::
 	incbin "components/titlemenu/save_overwrite_warning_tmap.tmap"
