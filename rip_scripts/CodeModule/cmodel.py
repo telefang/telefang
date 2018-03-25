@@ -885,8 +885,8 @@ def Enum(storageType, *valueslist, **kwargs):
             iota = iotaUpdate(iota)
         else:
             #insert pre-specified enum values
-            iota = value[1]
-            valuesDict[value[0]] = iota
+            valuesDict[value[0]] = value[1]
+            iota = iotaUpdate(value[1])
     
     class EnumInstance(storageType):
         """Enum class that wraps a storageType.
