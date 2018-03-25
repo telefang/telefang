@@ -41,3 +41,21 @@ Encounter_ADVICE_OpponentNameAndArticleLoader::
 	pop bc
 	pop af
 	ret
+	
+SECTION "Battle Arrival Text Preparation", ROMX[$5D18], BANK[$1C]
+Encounter_ADVICE_TFangerArticleTable::
+; A temporary table for TFanger articles.
+	dw .nil, .nil, .nil, .nil, .nil, .nil, .nil, .nil ; 07
+	dw .nil, .nil, .nil, .nil, .nil, .nil, .nil, .nil ; 10
+	dw .nil, .nil, .nil, .nil, .nil, .nil, .nil, .nil ; 17
+	dw .nil, .nil, .nil, .nil, .nil, .nil, .nil, .nil ; 20
+	dw .nil, .nil, .nil, .nil, .nil, .nil, .the, .nil ; 27
+	dw .nil, .nil, .nil, .nil, .nil, .nil, .nil, .nil ; 30
+	dw .nil                                           ; 31
+	
+.nil
+	db $E0
+	
+.the
+	db "The "
+	db $E0
