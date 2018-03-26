@@ -191,15 +191,9 @@ SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw MenuOptionsDMGGfx ; $59
 	dw MenuDmeloDMGGfx ; $5a
 	dw MenuMetDMGGfx ; $5b
-<<<<<<< HEAD
 	dw CmpGfx_TitleLogo_Tulunk ; $5c (repurposed)
-	dw $0000 ; $5d
-	dw $0000 ; $5e
-=======
-	dw $0000 ; $5c
 	dw TitleMenuText1Gfx ; $5d (repurposed)
 	dw TitleMenuText1DMGGfx ; $5e (repurposed)
->>>>>>> 2120f3f... Implement andwhyisit's TitleMenu/PauseMenu graphics split as proposed in pull request #63. Issue #41 is now unblocked
    dw TitleSpritesSgbGfx ; $5f (repurposed)
 NOT_COMPRESSED EQU 0
 COMPRESSED EQU 1

@@ -60,10 +60,6 @@ Banked_Zukan_ADVICE_StateInnerviewInputButtonPress::
 Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
 	jp Zukan_ADVICE_StateInnerviewInputSwitchSpecies
 	nop
-	
-Banked_TitleMenu_ADVICE_StateLoadGraphics::
-	jp TitleMenu_ADVICE_StateLoadGraphics
-	nop
    
 Banked_MainScript_ADVICE_DrawNarrowLetter::
 	jp MainScript_ADVICE_DrawNarrowLetter
@@ -98,9 +94,6 @@ Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
 
 ;Sections beyond this point are at the END of Bank 1 and likely not conflicting
 ;with your section.
-Banked_MainScript_ADVICE_DrawNarrowLetter::
-	jp MainScript_ADVICE_DrawNarrowLetter
-	nop
 Banked_Battle_ADVICE_ParsePluralState::
 	jp Battle_ADVICE_ParsePluralState
 	nop

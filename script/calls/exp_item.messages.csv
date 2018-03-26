@@ -141,7 +141,7 @@ I heard fusing it with a ""gear"" would make it an itty bit stronger!<*2>",
 すごい こわいモノ
 ほしがるよねー
 なに かんがえてるんだろ..
-<*2>","<D20>If you fuse a Bubaria with a ""bazooka"", it won't evolve, but I hear they're into them. Scary thing to want, isn't it? Wonder what they're thinking...<*2>","<D20>If you fuse a Bubaria with a ""bazooka"", it won't evolve, but I hear they're into them. Scary thing to want, isn't it? Wonder what they're thinking...<*2>",
+<*2>","<D20>Bubaria won't evolve if fused with a ""bazooka"", but I hear it wants one. Scary thing to want, isn't it? Wonder what that's about...<*2>","<D20>Bubaria won't evolve if fused with a ""bazooka"", but I hear it wants one. Scary thing to want, isn't it? Wonder what that's about...<*2>",
 0x15c028,"<D21>アンジオスってデンジュウが
 いるじゃない?
 ボクはみたことが ないんだけど
@@ -477,7 +477,7 @@ Keep an eye out for it!",
 いいよ
 そして オレにもなにか
 プレゼントしてくれよなー
-<*2>",/0x15c086/<*2>,,
+<*2>",/0x15c086/<*2>,"Apparently ""cameras"" are Gaiurus's experience item. If you're friends with a Gaiurus, try fusing them! Give me a present too while you're at it, hm?",
 0x15c088,"<D69>ミドートルって
 『そうじき』が あいしょうの
 いいアイテムらしいんだ
@@ -485,14 +485,14 @@ Keep an eye out for it!",
 オレも みならわないと
 いけないよなー
 ってことで オレにも
-なにか ちょうだいねー<*2>",/0x15c088/<*2>,,
+なにか ちょうだいねー<*2>",/0x15c088/<*2>,"I hear ""vacuums"" are Midotor's favorite item. Bit of a clean freak, that Midotor! I could really learn from that... Anyway, give me something too!",
 0x15c08a,"<D70>オクトルの けいけんちが
 あがるアイテムって『クレーン』なんだろ?
 どっかの コウジゲンバで
 はたらいてるのかなー
 アイツって はたらきものっぽい
 カンジだからなー
-<*2>",/0x15c08a/<*2>,,
+<*2>",/0x15c08a/<*2>,"""Cranes"" are Octor's experience item, aren't they? I wonder if it works at a construction site. It seems like it'd be a hard worker.",
 0x15c08c,"<D71>『ゼンマイ』を くっつけると
 つよくなる ヒトデーイトって
 デンジュウは
