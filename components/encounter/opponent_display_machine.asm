@@ -276,7 +276,7 @@ Encounter_SubStateDrawEncounterScreen::
     call Banked_LCDC_SetupPalswapAnimation
     jp Battle_IncrementSubSubState
 	
-SECTION "Battle Arrival Nickname Table", ROMX[$5D00], BANK[$1C]
+SECTION "Battle Arrival Nickname Table", ROMX[$5F00], BANK[$1C]
 Encounter_ADVICE_ScriptedDenjuuNicknameTable::
 ; A temporary table for nicknames in battle.
 	db "Noisy", $E0, $E0, $E0, $E0, $E0, $E0, $E0
