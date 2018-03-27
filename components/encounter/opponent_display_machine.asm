@@ -284,10 +284,10 @@ Encounter_ADVICE_ScriptedDenjuuNicknameTable::
 	
 SECTION "Battle Arrival Text Preparation 1", ROMX[$5E00], BANK[$1C]
 Encounter_ADVICE_ScriptedDenjuuQueueMessage::
-	push bc ; C5
-	push de ; D5
-	push hl ; E5
-	push af ; F5
+	push bc
+	push de
+	push hl
+	push af
 	
 ; Load nicknames in the X has challenged you message, because why not?
 	

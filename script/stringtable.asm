@@ -18,7 +18,17 @@ Encounter_ADVICE_ArticleTable::
 	INCBIN "script/denjuu/article_mapping.stringidx"
 Encounter_ADVICE_ArticleTable_END
 
-SECTION "StringTable_denjuu_article_strings Section", ROMX[$5c60], BANK[$1c]
+SECTION "StringTable_tfanger_article_mapping_1 Section", ROMX[$5c60], BANK[$1c]
+Encounter_ADVICE_TFangerArticleTable::
+	INCBIN "script/battle/tfanger_articles_mapping_1.stringidx"
+Encounter_ADVICE_TFangerArticleTable_END
+
+SECTION "StringTable_tfanger_article_mapping_2 Section", ROMX[$5cc0], BANK[$1c]
+Encounter_ADVICE_TFangerArticleTableB::
+	INCBIN "script/battle/tfanger_articles_mapping_2.stringidx"
+Encounter_ADVICE_TFangerArticleTableB_END
+
+SECTION "StringTable_denjuu_article_strings Section", ROMX[$5d20], BANK[$1c]
 StringTable_denjuu_article_strings::
 	INCBIN "script/denjuu/article_strings.stringblk"
 StringTable_denjuu_article_strings_END
