@@ -1,3 +1,13 @@
+SECTION "StringTable_battle_singular Section", ROMX[$74f0], BANK[$1]
+Battle_SingularCharacterTable::
+	INCBIN "script/battle/singular.stringtbl"
+Battle_SingularCharacterTable_END
+
+SECTION "StringTable_battle_plural Section", ROMX[$74f8], BANK[$1]
+Battle_PluralCharacterTable::
+	INCBIN "script/battle/plural.stringtbl"
+Battle_PluralCharacterTable_END
+
 SECTION "StringTable_battle_items Section", ROMX[$6b80], BANK[$78]
 StringTable_battle_items::
 	INCBIN "script/battle/items.stringtbl"

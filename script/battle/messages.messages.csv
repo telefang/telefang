@@ -46,12 +46,12 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 0x114026,"たたかいに
 やぶれた!<*5>",You lost the battle!<*5>,,Du hast den Kampf verloren!<*5>,,
 0x114028,"<&0xd448>ポイントの
-ダメージ!<*4>",<&0xd448> points of damage!<*4>,,<&0xd448> Schadenspunkte!<*4>,,
+ダメージ!<*4>",<&0xd448> point<&0xccc0> of damage!<*4>,,<&0xd448> Schadenspunkte!<*4>,,
 0x11402a,てきをたおした!<*5>,Defeated the enemy!<*5>,,Herausforderer besiegt!<*5>,,
 0x11402c,みかたのこうげき!<*5>,Ally's attack!<*5>,,Mitstreiter greift an!<*5>,,
 0x11402e,"<&0xd460>は
 <&0xd448>ポイントの
-けいけんちをえた!<*5>",<&0xd6a0> got <&0xd448> experience points!<*5>,<&0xd6a0> got <&0xd448> experience points!<*5>,<&0xd6a0> erhält <&0xd448> Erfahrungspunkte!<*5>,,
+けいけんちをえた!<*5>",<&0xd6a0> got <&0xd448> experience point<&0xccc0>!<*5>,<&0xd6a0> got <&0xd448> experience points!<*5>,<&0xd6a0> erhält <&0xd448> Erfahrungspunkte!<*5>,,
 0x114030,"<&0xd460>は
 レベルアップした!<*5>",<&0xd6a0> leveled up!<*5>,,<&0xd6a0> ist im Level aufgestiegen!<*5>,,
 0x114032,"<&0xd460>は

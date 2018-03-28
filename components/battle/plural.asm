@@ -1,12 +1,4 @@
 INCLUDE "telefang.inc"
-
-SECTION "Single/Plural Character Tables", ROMX[$74F0], BANK[$1]
-; Temporary tables for now.
-Battle_SingularCharacterTable::
-	db $E0, $E0, $E0, $E0, $E0, $E0, $E0, $E0
-	
-Battle_PluralCharacterTable::
-	db "s", "e", $E0, $E0, $E0, $E0, $E0, $E0
 	
 SECTION "Battle Single/Plural Check", ROMX[$74A0], BANK[$1]
 Battle_ADVICE_ParsePluralState::

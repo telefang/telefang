@@ -21,6 +21,8 @@
 #The unused denjuu/nicknames and battle/message_unk tables were never relocated
 #or translated. Same for any table or block suffixed with "old".
 
+battle/singular 74F0 table 8 1
+battle/plural 74F8 table 8 1
 battle/items_old 2E652 table 68 8
 battle/items 1E2B80 table 68 16
 denjuu/nicknames 2F8FA table 32 6
