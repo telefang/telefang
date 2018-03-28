@@ -15,6 +15,7 @@ wget --no-check-certificate -O script/battle/attacks.csv https://docs.google.com
 wget --no-check-certificate -O script/battle/items.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1823319603
 wget --no-check-certificate -O script/battle/tfangers.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1306424810
 wget --no-check-certificate -O script/battle/ui_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1538855119
+wget --no-check-certificate -O script/battle/nicknames.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1784731430
 wget --no-check-certificate -O script/battle/singular.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=988937655
 wget --no-check-certificate -O script/battle/plural.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=863997244
 wget --no-check-certificate -O script/denjuu/descriptions.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=798105385

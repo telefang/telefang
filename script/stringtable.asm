@@ -1,3 +1,8 @@
+SECTION "StringTable_battle_nicknames Section", ROMX[$5f00], BANK[$1c]
+Encounter_ADVICE_ScriptedDenjuuNicknameTable::
+	INCBIN "script/battle/nicknames.stringtbl"
+Encounter_ADVICE_ScriptedDenjuuNicknameTable_END
+
 SECTION "StringTable_battle_singular Section", ROMX[$74f0], BANK[$1]
 Battle_SingularCharacterTable::
 	INCBIN "script/battle/singular.stringtbl"
