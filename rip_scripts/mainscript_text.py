@@ -888,7 +888,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             fixup.patchtype = Rgb6Patch.BYTE
 
             patchexpr = Rgb6PatchExpr()
-            patchexpr.BANK = symbol_id
+            patchexpr.BANK_SYM = symbol_id
 
             fixup.patchexprs.append(patchexpr)
             table_section.datsec.patches.append(fixup)

@@ -117,7 +117,7 @@ OBJS := components/compression/malias.o \
      components/eventscript/denjuu_opcodes.o \
      components/eventscript/interpreter.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
-	  gfx/statusbar.o \
+	  gfx/statusbar.o gfx/denjuu.o \
      script/mainscript.o script/stringtable.o
      
 OBJS_POWER := versions/power/compressed_gfx.o versions/power/extra_gfx.o \
@@ -189,7 +189,12 @@ clean:
 	rm -f $(ROMS_POWER) $(OBJS) $(OBJS_POWER) $(ROMS_POWER:.gbc=.sym) $(ROMS_POWER:.gbc=.map) $(ROMS_SPEED) $(OBJS_SPEED) $(ROMS_SPEED:.gbc=.sym) $(ROMS_SPEED:.gbc=.map) $(OBJS_MESSAGE)
 	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pcm' -o -iname '*.scripttbl' -o -iname '*.tmap' -o -iname '*.stringtbl' -o -iname '*.sprite.bin' -o -iname '*.atf' \) -exec rm {} +
 
-%.2bpp: %.png
+%.color.2bpp %.gbcpal: %.color.png
+	@echo "Building $*.color.2bpp and $*.gbcpal..."
+	@rm -f $@
+	rgbgfx -d 2 -p $*.gbcpal -o $*.color.2bpp $<
+
+$(filter-out %.color.2bpp,%.2bpp): %.png
 	@echo "Building" $<
 	@./rip_scripts/is_nonindexed_png.sh $<
 	@rm -f $@
