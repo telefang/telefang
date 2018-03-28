@@ -214,7 +214,7 @@ Encounter_SubStateDrawEncounterScreen::
     dec a
     ld [W_StringTable_ROMTblIndex], a
     ld hl, StringTable_battle_tfangers
-    call StringTable_LoadName75
+    call Encounter_ADVICE_TFangerNameAndArticleLoader
     call Encounter_CopyStagedStringToArg2
     
     ld c, $71
