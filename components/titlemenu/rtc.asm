@@ -89,16 +89,15 @@ TitleMenu_StoreRTCValues::
 TitleMenu_LoadRTCValues::
     ld a, Banked_TitleMenu_ADVICE_LoadRTCValues & $FF
     call PatchUtils_AuxCodeJmp
+    jp TitleMenu_ExitSRAM
+    
+    ;TODO: Free space for the rest of this symbol!
+    nop
     
     xor a
     ld [REG_MBC3_RTCLATCH], a
     ld a, 1
     ld [REG_MBC3_RTCLATCH], a
-    
-    nop
-    nop
-    nop
-    nop
     
 .readRTC
     ld a, 8
@@ -119,10 +118,9 @@ TitleMenu_LoadRTCValues::
 .exitSram
     jp TitleMenu_ExitSRAM
 
-SECTION "Title Menu Advice Block", ROMX[$4200], BANK[$1]
+SECTION "Title Menu Advice Block", ROMX[$4240], BANK[$1]
 TitleMenu_ADVICE_LoadRTCValues::
-    pop hl
-    pop hl
+    M_AdviceSetup
     
 ;This function opens SRAM, and latches RTC for us.
     call SaveClock_ADVICE_ValidateRTCFunction
@@ -130,11 +128,21 @@ TitleMenu_ADVICE_LoadRTCValues::
     cp 0
     jp z, .rtcNotPresent
     
-;For both return paths we need to falsify stack values.
 .rtcPresent
-    ld hl, TitleMenu_LoadRTCValues.readRTC
-    push hl
+    ld a, 8
+    ld [REG_MBC3_SRAMBANK], a
+    ld a, [$A000]
+    ld [W_SaveClock_RealTimeSeconds], a
     
+    ld a, 9
+    ld [REG_MBC3_SRAMBANK], a
+    ld a, [$A000]
+    ld [W_SaveClock_RealTimeMinutes], a
+    
+    ld a, $A
+    ld [REG_MBC3_SRAMBANK], a
+    ld a, [$A000]
+    ld [W_SaveClock_RealTimeHours], a
     jp .ret
     
 ;If there's no RTC we need to load the emulated RTC values.
@@ -148,12 +156,7 @@ TitleMenu_ADVICE_LoadRTCValues::
     ld a, [W_Overworld_CurrentTimeHours]
     ld [W_SaveClock_RealTimeHours], a
     
-    ld hl, TitleMenu_LoadRTCValues.exitSram
-    push hl
-    
 .ret
-    ld hl, PatchUtils_AuxCodeJmp_returnVec
-    push hl
-    
+    M_AdviceTeardown
     ret
 TitleMenu_ADVICE_LoadRTCValues_END::

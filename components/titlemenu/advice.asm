@@ -150,16 +150,9 @@ TitleMenu_ADVICE_IndexArray16::
     ret
 
 ;TODO: Move all the above advice into this section
-SECTION "Title Menu Aux-Code Advice", ROMX[$4300], BANK[$1]
+SECTION "Title Menu Aux-Code Advice", ROMX[$4340], BANK[$1]
 TitleMenu_ADVICE_StateLoadGraphics::
-    ld a, [W_PreviousBank]
-    push af
-
-    ld a, BANK(TitleMenu_ADVICE_StateLoadGraphics)
-    ld [W_PreviousBank], a
-    ld [W_CurrentBank], a
-    
-    ei
+    M_AdviceSetup
     
     call ClearGBCTileMap0
     call ClearGBCTileMap1
@@ -181,12 +174,12 @@ TitleMenu_ADVICE_StateLoadGraphics::
     ld bc, $1B
     call Banked_LoadMaliasGraphics
     
-    pop af
-    ld [W_PreviousBank], a
-    ld [W_CurrentBank], a
+    M_AdviceTeardown
     ret
 
 TitleMenu_ADVICE_LoadSGBFiles::
+    M_AdviceSetup
+    
     ld a, $32
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
@@ -217,14 +210,12 @@ TitleMenu_ADVICE_LoadSGBFiles::
     ld e, 8
     call Banked_SGB_ConstructPaletteSetPacket
     
-    pop af
-    ld [W_CurrentBank], a
-    pop af
-    ld [W_PreviousBank], a
-    
+    M_AdviceTeardown
     ret
     
 TitleMenu_ADVICE_UnloadSGBFilesOverworld::
+    M_AdviceSetup
+    
     ld a, 5
     ld [W_SystemState], a
     
@@ -248,9 +239,12 @@ TitleMenu_ADVICE_UnloadSGBFilesOverworld::
     pop af
     ld [W_PreviousBank], a
     
+    M_AdviceTeardown
     ret
     
 TitleMenu_ADVICE_UnloadSGBFilesLink::
+    M_AdviceSetup
+    
     ld a, $F
     ld [W_SystemState], a
     
@@ -274,6 +268,7 @@ TitleMenu_ADVICE_UnloadSGBFilesLink::
     pop af
     ld [W_PreviousBank], a
     
+    M_AdviceTeardown
     ret
     
 TitleMenu_ADVICE_UnloadSGBFilesLink_END

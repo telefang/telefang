@@ -181,7 +181,7 @@ PauseMenu_LoadItemGraphic::
     ld bc, $1E0
     jp Banked_LCDC_LoadTiles
 
-SECTION "Pause Menu Draw Functions AuxCode ADVICE", ROMX[$4700], BANK[$1]
+SECTION "Pause Menu Draw Functions AuxCode ADVICE", ROMX[$4780], BANK[$1]
 PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
     M_AdviceSetup
     

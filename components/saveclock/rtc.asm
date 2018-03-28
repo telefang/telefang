@@ -9,7 +9,7 @@ W_SaveClock_RealTimeDays:: ds 2
 SECTION "SaveClock RTC ADVICE Memory", WRAM0[$C3D2]
 W_SaveClock_ADVICE_RTCCheckStatus:: ds 1
 
-SECTION "SaveClock ADVICE - RTC Functional Validation", ROMX[$4140], BANK[$1]
+SECTION "SaveClock ADVICE - RTC Functional Validation", ROMX[$4180], BANK[$1]
 ;This code is called to check if a functional RTC circuit is installed.
 ;It checks for the presence of the save header in bank 8.
 ;If it's not present, we assume the RTC is active.

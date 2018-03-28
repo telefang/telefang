@@ -220,16 +220,9 @@ PauseMenu_ExitToCentralMenu2::
     
     ret
 
-SECTION "Pause Menu SMS Utils ADVICE", ROMX[$4240], BANK[$1]
+SECTION "Pause Menu SMS Utils ADVICE", ROMX[$42A0], BANK[$1]
 PauseMenu_ADVICE_DrawSMSFromMessages::
-    ld a, [W_CurrentBank]
-    push af
-    
-    ld a, [W_PreviousBank]
-    push af
-    
-    ld a, BANK(PauseMenu_ADVICE_DrawSMSFromMessages)
-    ld [W_PreviousBank], a
+    M_AdviceSetup
     
     ld a, M_PauseMenu_SMSWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
@@ -274,10 +267,5 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
     ld a, M_MainScript_DefaultWindowHeight
     ld [W_MainScript_VWFWindowHeight], a
     
-    pop af
-    ld [W_PreviousBank], a
-    
-    pop af
-    ld [W_CurrentBank], a
-    
+    M_AdviceTeardown
     ret

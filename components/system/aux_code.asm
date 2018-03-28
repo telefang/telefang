@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 ;NOTE: Anyone adding new advice.
 ;The order of these functions should represent the order of the actual advice
 ;sections in code. That way, we can relocate sections when they conflict.
@@ -15,18 +17,22 @@ Banked_PatchUtils_InitializeRelocatedCharaName::
 	jp PatchUtils_InitializeRelocatedCharaName
 	nop
 
-Banked_TitleMenu_ADVICE_LoadRTCValues::
-	jp TitleMenu_ADVICE_LoadRTCValues
-	nop
-
+;components/saveclock/rtc.asm - $4180
 Banked_SaveClock_ADVICE_ValidateRTCFunction::
 	jp SaveClock_ADVICE_ValidateRTCFunction
 	nop
 
+;components/titlemenu/rtc.asm - $4240
+Banked_TitleMenu_ADVICE_LoadRTCValues::
+	jp TitleMenu_ADVICE_LoadRTCValues
+	nop
+
+;components/pausemenu/sms_utils.asm - $4280
 Banked_PauseMenu_ADVICE_DrawSMSFromMessages::
 	jp PauseMenu_ADVICE_DrawSMSFromMessages
 	nop
 
+;components/titlemenu/advice.asm - $4340
 Banked_TitleMenu_ADVICE_StateLoadGraphics::
 	jp TitleMenu_ADVICE_StateLoadGraphics
 	nop
@@ -99,6 +105,8 @@ Banked_Battle_ADVICE_ParsePluralState::
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
+	M_AdviceSetup
+	
 	ld a, "S"
 	ld [$C3A9], a
 	ld a, "h"
@@ -113,9 +121,13 @@ PatchUtils_StoreDefaultCharaName:
 	ld [$C3AE], a
 	ld a, "i"
 	ld [$C3AF], a
+	
+	M_AdviceTeardown
 	ret
 
 PatchUtils_InitializeRelocatedCharaName:
+	M_AdviceSetup
+	
 	ld hl, $C3A9
 	ld de, $CC90
 	ld b, $11
@@ -133,6 +145,8 @@ PatchUtils_InitializeRelocatedCharaName:
 	ld [hli], a
 	dec b
 	jr nz, .secondEraseLoop
+	
+	M_AdviceTeardown
 	ret
 
 PatchUtils_InitializeRelocatedCharaName_END::
