@@ -1,20 +1,21 @@
-;Prevent sharing ROMs accidentally.
+# Prevent sharing ROMs accidentally.
 *.gb
 *.gbc
 *.sav
 *.rtc
 
-;Prevent committing compiled object code.
+# Prevent committing compiled object code.
 *.o
 *.2bpp
 *.1bpp
+*.gbcpal
 *.pcm
 *.map
 *.sym
 *.tmap
 *.pyc
 
-;Prevent committing compiled script data.
+# Prevent committing compiled script data.
 *.scripttbl
 *.stringtbl
 *.stringblk
@@ -22,8 +23,8 @@
 *.sprite.bin
 *.atf
 
-;Prevent committing build files.
+# Prevent committing build files.
 dependencies.d
 
-;Prevent committing filesystem flotsam.
+# Prevent committing filesystem flotsam.
 .DS_Store
