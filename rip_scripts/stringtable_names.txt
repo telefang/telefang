@@ -25,7 +25,9 @@ battle/items_old 2E652 table 68 8
 battle/items 1E2B80 table 68 16
 denjuu/nicknames 2F8FA table 32 6
 denjuu/article_mapping 71B00 index 176 denjuu/article_strings
-denjuu/article_strings 71C60 block 20
+battle/tfanger_articles_mapping_1 71C60 index 48 denjuu/article_strings
+battle/tfanger_articles_mapping_2 71CC0 index 48 denjuu/article_strings
+denjuu/article_strings 71D20 block 20
 map/location_mapping AA875 index 256 map/location_strings
 map/location_strings_old AAA75 block 16
 map/location_strings ABD8B block 16

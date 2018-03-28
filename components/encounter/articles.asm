@@ -41,3 +41,4 @@ Encounter_ADVICE_OpponentNameAndArticleLoader::
 	pop bc
 	pop af
 	ret
+	
