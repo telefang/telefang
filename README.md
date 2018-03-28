@@ -43,6 +43,6 @@ If your *Power Version* base ROM has an MD5 hash of `8b0a1b6667040a52f6957c0eeea
 The following needs to be installed in order to build:
 
 * Python (on Linux or Windows with the Linux subsystem, it'll most likely already be installed)
-* [RGBDS](https://github.com/rednex/rgbds#2-building-rgbds-from-source) version 0.3.5 (follow the instructions in the readme on the GitHub page to install)
+* [RGBDS](https://github.com/rednex/rgbds#2-building-rgbds-from-source) version 0.3.6 (follow the instructions in the readme on the GitHub page to install)
 
 Once that's all in order, just run `make` (or `make -j4` if you don't have all day), and the finished ROMs will be built.
