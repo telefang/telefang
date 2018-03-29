@@ -20,7 +20,7 @@ Encounter_ADVICE_OpponentNameAndArticleLoader::
 	ld b, a
 	push bc
 	pop hl
-	ld de, W_Map_LocationStaging
+	ld de, W_Map_LocationStaging + 1
 	ld b, $10
 	
 .copyLoop
@@ -36,7 +36,7 @@ Encounter_ADVICE_OpponentNameAndArticleLoader::
 
 	ld a, $E0
 	ld [de], a
-	ld de, W_Map_LocationStaging + $10
+	ld de, W_Map_LocationStaging + $11
 	ld [de], a
 	pop hl
 	pop de
@@ -66,7 +66,7 @@ Encounter_ADVICE_TFangerNameAndArticleLoader::
 	ld b, a
 	push bc
 	pop hl
-	ld de, W_Map_LocationStaging
+	ld de, W_Map_LocationStaging + 1
 	ld b, $F
 	
 .copyLoopA
@@ -91,7 +91,7 @@ Encounter_ADVICE_TFangerNameAndArticleLoader::
 	ld b, a
 	push bc
 	pop hl
-	ld de, W_Map_LocationStaging + $10
+	ld de, W_Map_LocationStaging + $11
 	ld b, $F
 	
 .copyLoopB

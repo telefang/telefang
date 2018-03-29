@@ -6,7 +6,7 @@ Battle_ADVICE_ParsePluralState::
 	push bc
 	push hl
 	ld b, 8
-	ld de, W_Map_LocationStaging
+	ld de, W_Map_LocationStaging + 1
 	ld a, h
 	cp 0
 	jr nz, .isPlural

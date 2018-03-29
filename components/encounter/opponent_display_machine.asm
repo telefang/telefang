@@ -303,7 +303,7 @@ Encounter_ADVICE_ScriptedDenjuuQueueMessage::
 ; Don't use articles here.
 	
 	ld a, $E0
-	ld [W_Map_LocationStaging], a
+	ld [W_Map_LocationStaging + 1], a
 	pop af
 	pop hl
 	pop de
