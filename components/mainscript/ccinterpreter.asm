@@ -47,7 +47,7 @@ MainScript_CCInterpreter::
 	
 .cursorResetRelativeOffsetCC
 	cp $EF
-	jr nz, .localStateJumpCC
+	jr nz, .arrowPositionCC
 	xor a
 	
 .cursorSetRelativeOffset
