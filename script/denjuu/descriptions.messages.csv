@@ -31,7 +31,7 @@ Pointer,Japanese,English,Draft version,Notes
 0x4001c,"<S0>あしのうらの きゅうばんで
 どんなところも いどうできる<*4>",<S0>The suction cups on its feet allow it to traverse any terrain.<*4>,<S0>The suction cups on its feet allow it to traverse any terrain.<*4>,
 0x4001e,"<S0>うつぶせの じょうたいで
-すんでいることが おおい<*4>",<S0>Commonly lives lying face-down.<*4>,<S0>Commonly lives lying face-down.<*4>,
+すんでいることが おおい<*4>",<S0>Commonly found lying face-down.<*4>,<S0>Commonly found lying face-down.<*4>,
 0x40020,"<S0>フサフサした たいもうのした
 には てあしがかくれている<*4>",<S0>Its legs are hidden under its bushy fur.<*4>,<S0>Its legs are hidden under its bushy fur.<*4>,
 0x40022,"<S0>おどろくと カイガラのなかに
@@ -52,7 +52,11 @@ in the sea shoals.<*4>","<S0>Gathered in packs,
 it lives together
 in the sea shoals.<*4>",
 0x4002e,"<S0>ボウシが トレードマーク
-カオと オシリが ハートがた<*4>",<S0>Its hat is its trademark. Its face and its butt are both heart-shaped.<*4>,<S0>Its hat is its trademark. Its face and its butt are both heart-shaped.<*4>,
+カオと オシリが ハートがた<*4>","<S0>Its hat is its trademark.
+
+Its face and its butt are both heart-shaped.<*4>","<S0>Its hat is its trademark.
+
+Its face and its butt are both heart-shaped.<*4>",
 0x40030,"<S0>リょうかたのヒレを ひっしに
 はばたかせて ちゅうにうく<*4>",<S0>Hovers by frantically flapping its shoulder fins.<*4>,"<S0>Hovers by frantically flapping its
 shoulder fins.<*4>",
@@ -61,7 +65,7 @@ shoulder fins.<*4>",
 0x40034,"<S0>やこうせいのため ひるまは
 かくれていることが おおい<*4>","<S0>Being a nocturnal creature, it often hides during the day.<*4>","<S0>Being a nocturnal creature, it often hides during the day.<*4>",
 0x40036,"<S0>すいちゅうに すんでいるが
-そらを とぶことも できる<*4>","<S0>Although it lives underwater, it is also capable of flight.<*4>","<S0>Although it lives underwater, it is also capable of flight.<*4>",
+そらを とぶことも できる<*4>","<S0>Although it lives underwater, it is capable of flight.<*4>","<S0>Although it lives underwater, it is capable of flight.<*4>",
 0x40038,"<S0>からだじたいを かいてんさせ
 たつまきを おこせる<*4>","<S0>By gyrating its own body, it can create whirlwinds.<*4>","<S0>By gyrating its own body, it can create whirlwinds.<*4>",
 0x4003a,"<S0>リっぱなあしと おなかにある
@@ -106,7 +110,7 @@ flat tail and uses it to attack.<*4>",
 0x4005e,"<S0>ちょうろうのひとリ コウラ
 には ぶきがつまっている<*4>",<S0>One of the elders. Its shell is covered in weapons.<*4>,,
 0x40060,"<S0>フサフサの けのなかには
-ミサイルを かくしもっている<*4>",<S0>Conceals missiles under its shaggy fur.<*4>,,
+ミサイルを かくしもっている<*4>",<S0>Conceals missiles under its shaggy fur.<*4>,<S0>Conceals missiles under its shaggy fur.<*4>,
 0x40062,"<S0>くうちゅうから ツメや
 マシンガンで こうげきする<*4>",<S0>Attacks from above using its claws and its machine gun.<*4>,,
 0x40064,"<S0>ワキから むすうのアシがでて
@@ -128,7 +132,9 @@ It attacks while they're startled by its size.<*4>",
 0x40072,"<S0>まるまって トゲのボールに
 すがたをかえて とっしんする<*4>",<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,<S0>Curls up in a spiky ball and careens toward the opponent.<*4>,
 0x40074,"<S0>からだが あなだらけなので
-しっぽからふくとフエになる?<*4>",<S0>Covered in holes. Would blowing on its tail make it a flute?<*4>,<S0>Covered in holes. Would blowing on its tail make it a flute?<*4>,
+しっぽからふくとフエになる?<*4>","<S0>Covered in holes.
+Would blowing on its tail make it a flute?<*4>","<S0>Covered in holes.
+Would blowing on its tail make it a flute?<*4>",
 0x40076,"<S0>かたのパーツで ぼうぎょして
 するどいツメで こうげきする<*4>",<S0>Its shoulder plating protects it while it attacks with its sharp claws.<*4>,<S0>Its shoulder plating protects it while it attacks with its sharp claws.<*4>,
 0x40078,"<S0>だっぴちゅうのようだが...
@@ -276,7 +282,7 @@ This cheerful Denjuu loves music.<*4>",
 0x400fe,"<S0>おおきくて リっぱなあしで
 てきを ふみつぶしてしまう<*4>","<S0>Tramples all over its foes with its large, imposing feet.<*4>","<S0>Tramples all over its foes with its large, imposing feet.<*4>",
 0x40100,"<S0>まきついている ほうたいで
-トモダチを ちリょうする<*4>",<S0>Tends to its friends' wounds using its bandages.<*4>,<S0>Tends to its friends' wounds using its bandages.<*4>,
+トモダチを ちリょうする<*4>",<S0>Uses its bandages to treat any wounds its friends may have.<*4>,<S0>Uses its bandages for treating its friends' wounds.<*4>,
 0x40102,"<S0>おおきなハサミにつかまったら
 もう にげることはできない<*4>","<S0>Once captured by its large claws, there's no way to escape.<*4>","<S0>Once captured by its large claws, there's no way to escape.<*4>",
 0x40104,"<S0>うでのカバーからしゅリけんを
@@ -311,11 +317,11 @@ This cheerful Denjuu loves music.<*4>",
 0x40120,"<S0>ざんぞうを のこすほどの 
 スピードで てきをかくらん<*4>",<S0>Its speed is great enough to leave afterimages behind. It confuses opponents by using this agility.<*4>,<S0>Its speed is great enough to leave afterimages behind. It confuses opponents by using this agility.<*4>,
 0x40122,"<S0>いつでも どんなときでも
-かならず おこっている<*4>","<S0>At any given point in time, you can be sure it'll be angry.<*4>","<S0>At any given point in time, you can be sure it'll be angry.<*4>",
+かならず おこっている<*4>","<S0>At any given time, you can be sure it'll be angry.<*4>","<S0>At any given time, you can be sure it'll be angry.<*4>",
 0x40124,"<S0>ふだんは おおきないわやまに
 ばけて せいそくしている<*4>",<S0>Ordinarily lives camouflaged as a great mountain.<*4>,<S0>Ordinarily lives camouflaged as a great mountain.<*4>,
 0x40126,"<S0>からだはちいさいが すごい
-ジャンプリょくとパワーをもつ<*4>","<S0>It may be small, but it jumps incredibly high and is surprisingly strong.<*4>","<S0>It may be small, but it jumps incredibly high and is surprisingly strong.<*4>",
+ジャンプリょくとパワーをもつ<*4>","<S0>Although small, it jumps incredibly high and is surprisingly strong.<*4>","<S0>Although small, it jumps incredibly high and is surprisingly strong.<*4>",
 0x40128,"<S0>ちょうろうのひとリ ストロー
 バリをだして てきのちをすう<*4>",<S0>One of the elders. Sucks the blood of its enemies using its proboscis.<*4>,<S0>One of the elders. Sucks the blood of its enemies using its proboscis.<*4>,
 0x4012a,"<S0>からだのおおきさや かたちを
@@ -337,18 +343,18 @@ This cheerful Denjuu loves music.<*4>",
 0x40138,"<S0>3ぼんのきょうリょくなツノで
 なんでんも くしざしにする<*4>",<S0>Its three powerful horns can skewer anything.<*4>,<S0>Its three powerful horns can skewer anything.<*4>,
 0x4013a,"<S0>せなかに かくれているハネを
-ひらけば そらもとベる<*4>",<S0>It can fly by spreading the wings hidden on its back.<*4>,<S0>It can fly by spreading the wings hidden on its back.<*4>,
+ひらけば そらもとベる<*4>",<S0>It can fly by spreading the wings it keeps concealed on its back.<*4>,<S0>It can fly by spreading the wings it keeps concealed on its back.<*4>,
 0x4013c,"<S0>マントのように まとっている
 ツバサをひろげて ぞらをとぶ<*4>","<S0>It wears its wings like a cape. By spreading them, it can fly.<*4>","<S0>It wears its wings like a cape. By spreading them, it can fly.<*4>",
 0x4013e,"<S0>はばたき とぶ そのすがたは
 まさに かみを おもわせる<*4>","<S0>When flying, it truly gives the impression of a god.<*4>","<S0>When flying, it truly gives the impression of a god.<*4>",
 #######,colspan=2 | '''God Denjuu                                      ''',,,
 0x40140,"<S0>せなかに くちがあリ せびれ
-のようなキバで かみくだく<*4>","<S0>It has a mouth on its back, which is surrounded by fin-like fangs.<*4>","<S0>It has a mouth on its back, which is surrounded by fin-like fangs.<*4>",
+のようなキバで かみくだく<*4>",<S0>On its back is a mouth surrounded by fin-like fangs.<*4>,<S0>On its back is a mouth surrounded by fin-like fangs.<*4>,
 0x40142,"<S0>からだじゅうに トゲがあリ
 ふれるものすベてにダメージ<*4>",<S0>Its body is covered in spikes. It damages anything it touches.<*4>,<S0>Its body is covered in spikes. It damages anything it touches.<*4>,
 0x40144,"<S0>みずを じざいに あやつる
-ふしぎな デンジュウ<*4>",<S0>Can freely manipulate water. A strange Denjuu indeed.<*4>,<S0>Can freely manipulate water. A strange Denjuu indeed.<*4>,
+ふしぎな デンジュウ<*4>",<S0>Can freely manipulate water. A mysterious Denjuu indeed.<*4>,<S0>Can freely manipulate water. A mysterious Denjuu indeed.<*4>,
 0x40146,"<S0>ながい てをつかい もリの
 なかを じざいにうごきまわる<*4>",<S0>Its long arms allows it to move effortlessly through the forest.<*4>,"<S0>Using its long arms, it moves effortlessly through the forest.<*4>",
 0x40148,"<S0>いつでも なにがあっても
@@ -360,19 +366,21 @@ This cheerful Denjuu loves music.<*4>",
 0x4014e,"<S0>ツバサを ひろげ そらから
 するどいツメで こうげきする<*4>",<S0>Swoops down from the skies to attack using its sharp claws.<*4>,<S0>Swoops down from the skies to attack using its sharp claws.<*4>,
 0x40150,"<S0>たくさんの かくれた くちを
-もっている とてもきょうぼう<*4>",<S0>It has countless hidden mouths. Extremely violent.<*4>,<S0>It has countless hidden mouths. Extremely violent.<*4>,
+もっている とてもきょうぼう<*4>",<S0>It has several mouths disguised as other parts of its body. Extremely violent.<*4>,<S0>It has several mouths disguised as other parts of its body. Extremely violent.<*4>,
 #######,colspan=2 | '''Devil Denjuu                                      ''',,,
 0x40152,"<S0>せなかに きょだいな ぶきの
-はっしゃこうをそうびしている<*4>",<S0>Its back is equipped with an enormous aperture from which it fires its weapons.<*4>,<S0>Its back is equipped with an enormous aperture from which it fires its weapons.<*4>,
+はっしゃこうをそうびしている<*4>",<S0>On its back is an enormous aperture from which its weapons fire.<*4>,<S0>On its back is an enormous aperture from which its weapons fire.<*4>,
 0x40154,"<S0>こうげきリょくぼうぎょリょく
 ともに のうリょくがたかい<*4>",<S0>Its attack and defense combined make for a very powerful Denjuu.<*4>,<S0>Its attack and defense combined make for a very powerful Denjuu.<*4>,
 0x40156,"<S0>カクヘイキなみの とても
-きょうリょくな そうびをもつ<*4>",<S0>Its equipment rivals nuclear weaponry in power.<*4>,<S0>Its equipment rivals nuclear weaponry in power.<*4>,
+きょうリょくな そうびをもつ<*4>",<S0>Its firepower rivals that of nuclear weapons.<*4>,<S0>Its firepower rivals that of nuclear weapons.<*4>,
 #######,colspan=2 | '''Dendel and Teletel                                      ''',,,
 0x40158,"<S0>あれー みつかっちゃったー?
 どうしてだろ? おかしーなー<*4>",<S0>Huh? You found me? What the?! Weeeird.<*4>,<S0>Huh? You found me? What the?! Weeeird.<*4>,
 0x4015a,"<S0>おやー みつかってしもーたわ
-どないしよー かなわんなー<*4>","<S0>Wah, ya found me! I can't belieeeve it!<*4>","<S0>Wah, ya found me! I can't belieeeve it!<*4>",
+どないしよー かなわんなー<*4>","<S0>Wah, ya found me!
+I can't belieeeve it!<*4>","<S0>Wah, ya found me!
+I can't belieeeve it!<*4>",
 #######,colspan=2 | '''Other                                        ''',,,
 0x4015c,"<S0>??????????????
 ??????????????<*4>","<S0>??????????????

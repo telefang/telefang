@@ -277,10 +277,10 @@ dich heraus!<*5>",,
  はい  いいえ<*A>","Hi, what's up?
 It's been a while! How's it going?
 Are you calling me over?
-<0>Yes<0>No<*A>",,"Hey, alles klar?
+<0>Yes<0xF0>No<*A>",,"Hey, alles klar?
 Lange nichts gehört! Wie geht's?
 Soll ich vorbeikommen?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x114102,"もしもし なんかようじ?
 ひさしぶリ! げんきだったか?<*5>","Hi, what's up? 
 It's been a while! How's it going?<*5>",,"Hey, alles klar?
@@ -375,29 +375,29 @@ DNAを さいしゅ することが
 0x11415c,<&0xca53> をてにいれた。,Obtained <&0xd6b1>.,,<&0xd6b1> erhalten.,,
 0x11415e,"かいぞうをつづけますか?
  はい  いいえ<*A>","Continue fusing?
- Yes   No<*A>",,"Weiter fusionieren?
- Ja   Nein<*A>",,
+<0>Yes<0xF0>No<*A>",,"Weiter fusionieren?
+<0>Ja<0xF0>Nein<*A>",,
 0x114160,"けいけんちをすこしえた。
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received a small amount of experience.
 Continue fusing?
-<0>Yes<0>No<*A>",,"Eine kleine Menge an Erfahrungspunkten erhalten.
+<0>Yes<0xF0>No<*A>",,"Eine kleine Menge an Erfahrungspunkten erhalten.
 Weiter fusionieren?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x114162,"けいけんちをえた。
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received some experience.
 Continue fusing?
-<0>Yes<0>No<*A>",,"Einiges an Erfahrungspunkten erhalten!
+<0>Yes<0xF0>No<*A>",,"Einiges an Erfahrungspunkten erhalten!
 Weiter fusionieren?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x114164,"けいけんちをかなリえた!!
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received a large amount of experience!!
 Continue fusing?
-<0>Yes<0>No<*A>",,"Eine große Menge an Erfahrungspunkten erhalten!!
+<0>Yes<0xF0>No<*A>",,"Eine große Menge an Erfahrungspunkten erhalten!!
 Weiter fusionieren?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x114166,<S3>かいぞうかいし!!<*4>,<S3>Fusion in progress!!<*4>,,<S3>Fusion im Gange!<*4>,,
 0x114168,<S3>じっけんかいし!!<*4>,<S3>Experiment in progress!!<*4>,,<S3>Experiment im Gange!!<*4>,,
 0x11416a,"<&0xca53> は
@@ -412,8 +412,8 @@ Evolved into <&0xccc0>.<*2>",,"<&0xd6b1> hat sich im Labor weiterentwickelt!!
 Es hat sich zu <&0xccc0> entwickelt.<*2>",,
 0x11416e,"よろしいですか?
  はい  いいえ<*A>","Is this correct?
-<0>Yes<0>No<*A>",,"Ist das richtig so?
-<0>Ja<0>Nein<*A>",,
+<0>Yes<0xF0>No<*A>",,"Ist das richtig so?
+<0>Ja<0xF0>Nein<*A>",,
 0x114170,"しんかにひつような
 アイテムがあリません!!<*2>",You have no items needed for evolution!!<*2>,,"Du besitzt keine Items, die für eine Entwicklung nötig wären!<*2>",,
 0x114172,"<S0>どのアイテムを

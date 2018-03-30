@@ -5,18 +5,18 @@ Pointer,Japanese,English,Draft version,Notes
 デンジュウクイズやる?
  やる やらない<*A>","Hey, long time no see!
 Wanna try a Denjuu Quiz?
-<0>Okay<0>No<*A>","Hey, long time no see!
+<0>Okay<0xF0>No<*A>","Hey, long time no see!
 Wanna try a Denjuu Quiz?
 Okay / No","Status: ?/200 questions complete.
 "
 0x130002,"デンジュウのシンカは
 なんとおリある?
  3とおリ 4とおリ<*A>","How many ways are there to evolve a Denjuu?
-<0>3 ways<0>4 ways<*A>","How many ways are there to evolve a Denjuu?
+<0>3 ways<0xF0>4 ways<*A>","How many ways are there to evolve a Denjuu?
 3 ways / 4 ways",
 0x130004,"クイズきらいなの?
  うん そんなことないよ<*A>","Do you hate quizzes?
-<0>Yes<0>I don't!<*A>","Do you hate quizzes?
+<0>Yes<0xF0>I don't!<*A>","Do you hate quizzes?
 Yes / I don't!","// means ""finish/correct later"". (Fix these before putting the convo in the patch.)"
 0x130006,"さすが <&name>だね
 せいかいだよ!<*2>","Well done, <&name>!
@@ -38,14 +38,14 @@ See ya later!",Question categories (hover)!
 デンジュウクイズやる?
  やる やらない<*A>","What's up?!
 Wanna try a Denjuu Quiz?
-<0>Sure<0>No thanks<*A>","What's up?!
+<0>Sure<0xF0>No thanks<*A>","What's up?!
 Wanna try a Denjuu Quiz?
 Sure / No thanks",(Questions 001-024 are Denjuu Quizzes)
 0x130010,"テレファングは2タイプ!
 パワーともう1つは?
  ハイパー スピード<*A>","There are 2 versions of Telefang!
 Power, and what else? 
-<0>Hyper<0>Speed<*A>","There are 2 versions of Telefang!
+<0>Hyper<0xF0>Speed<*A>","There are 2 versions of Telefang!
 Power, and what else? 
 Hyper / Speed",
 0x130012,"もしかしていまいそがしいの?
@@ -73,19 +73,19 @@ Jerk!",
 デンジュウクイズやらない?
  やる やらない<*A>","Are you bored?
 How about a Denjuu Quiz?
-<0>Sure<0>Nah<*A>","Are you bored?
+<0>Sure<0xF0>Nah<*A>","Are you bored?
 How about a Denjuu Quiz?
 Sure / Nah",
 0x13001e,"デンジュウつかいのことを
 なんていう?
  Tファンガー Bファンガー<*A>","What do you call a Denjuu user?
-<0>T-Fanger<0>B-Fanger<*A>","What do you call a Denjuu user?
+<0>T-Fanger<0xF0>B-Fanger<*A>","What do you call a Denjuu user?
 T-Fanger / B-Fanger",
 0x130020,"やらないってことは
 オレのことがきらいなのか?
  そんなことない じつは..<*A>","You don't want to?
 Is it because you hate me??
-<0>Of course not<0>Well...<*A>","You don't want to?
+<0>Of course not<0xF0>Well...<*A>","You don't want to?
 Is it because you hate me??
 Of course not / Well...",
 0x130022,"そのとおリ!
@@ -106,11 +106,11 @@ What did I do wrong?!<*2>",
 0x13002a,"ははーん!もしかして
 デンジュウクイズがやリたいな!
  やリたい やリたくない<*A>","Haha! I bet you really want to try a Denjuu Quiz right now!
-<0>Yeah!<0>Not really<*A>","A-ha! I bet you really want to try a Denjuu Quiz right now!
+<0>Yeah!<0xF0>Not really<*A>","A-ha! I bet you really want to try a Denjuu Quiz right now!
 Yeah! / Not really",
 0x13002c,"ダッシュは なにボタン?
  Aボタン Bボタン<*A>","What button do you press to dash?
-<0>A button<0>B button<*A>","What button do you press to dash?
+<0>A button<0xF0>B button<*A>","What button do you press to dash?
 A button / B button",
 0x13002e,"どうしても やリたくないの?
  どうしても つぎにするよ<*A>","Are you suuure you don't wanna try?
@@ -133,17 +133,17 @@ You'd better promise then!",
 デンジュウクイズだ!
  やる やらない<*A>","You picked up the phone!
 It's time for a Denjuu Quiz!
-<0>Okay<0>No thanks<*A>","You picked up the phone!
+<0>Okay<0xF0>No thanks<*A>","You picked up the phone!
 It's time for a Denjuu Quiz!
 Okay / No thanks",
 0x13003a,"デンジュウにはそれぞれ
 セイザがある?
  ほんと うそ<*A>","True or false? Denjuu have a different zodiac than humans.
-<0>True<0>False<*A>","True or false? Denjuu have a different zodiac than humans.
+<0>True<0xF0>False<*A>","True or false? Denjuu have a different zodiac than humans.
 True / False",
 0x13003c,"リゆうをいえ!リゆうを!
  つかれてる なんとなく<*A>","State your reason!
-<0>I'm tired<0>Whatever<*A>","State your reason!
+<0>I'm tired<0xF0>Whatever<*A>","State your reason!
 I'm tired / Whatever",
 0x13003e,"そのとおリだ!
 らくしょうだったな!<*2>",You got it! That was easy!<*2>,You got it! That was easy!,
@@ -156,11 +156,11 @@ I'm tired / Whatever",
 0x130046,"デンジュウクイズ
 ぜったいやるよな!
  やる やらない<*A>","I know! You wanna try a Denjuu Quiz, don't you?
-<0>Sure<0>Nope<*A>",,
+<0>Sure<0xF0>Nope<*A>",,
 0x130048,"テレファングとは
 いったいなんのことでしょうか!
  デンジュウのなまえ たたかい<*A>","What does the word ""Telefang"" refer to?
-<0>A Denjuu<0>A battle<*A>",,
+<0>A Denjuu<0xF0>A battle<*A>",,
 0x13004a,"やらない?オレのいうことを
 きかないつもリか?
  そうだ そうじゃない<*A>","You don't wanna? Don't you care what I have to say?
@@ -177,12 +177,12 @@ I'm tired / Whatever",
 0x130054,"もしよかっら
 デンジュウクイズしない?
  する しない<*A>","Hey, if you've got a moment, wanna try a Denjuu Quiz?
-<0>Sure<0>No thanks<*A>",,
+<0>Sure<0xF0>No thanks<*A>",,
 0x130056,"ニンゲンカイとデンジュウカイを
 さえぎっているのは
 なんのカーテン?
  やみ ひなた<*A>","What kind of curtain separates the Human World from the Denjuu World?
-<0>Darkness<0>Sunshine<*A>",,
+<0>Darkness<0xF0>Sunshine<*A>",,
 0x130058,"じしんがないの?
  そうじゃない やリたくない<*A>","Not feeling confident?
 <0>That's not it<0>Don't feel like it<*A>",,
@@ -198,11 +198,11 @@ I'm tired / Whatever",
 0x130062,"やあ いま ひまかな?
 デンジュウクイズやらない?
  やる やらない<*A>","Hey, are you freet? Wanna try a Denjuu Quiz?
-<0>Sure<0>No thanks<*A>",,
+<0>Sure<0xF0>No thanks<*A>",,
 0x130064,"ショップのなかには
 オカネをあずけるところがある?
  ある ない<*A>","Is there a place in the Shop to deposit your money?
-<0>Yes<0>No<*A>",,
+<0>Yes<0xF0>No<*A>",,
 0x130066,"きぶんがのらないの?
  そうじゃない そうなんだ<*A>","You don't like quizzes?
 <0>That's not it<0>I don't<*A>",,
@@ -217,15 +217,15 @@ I'm tired / Whatever",
 0x130070,"デンジュウクイズだ!
 やらないとはいわせないぞ!
  やる やらない<*A>","Denjuu Quiz! I won't let you say no!
-<0>Okay<0>No<*A>",,
+<0>Okay<0xF0>No<*A>",,
 0x130072,"よくいねむリしている
 デンジュウのなまえは?
  ネタロ ネジロ<*A>","What's the name of the Denjuu that nods off a lot?
-<0>Netaro<0>Nejiro<*A>",,
+<0>Netaro<0xF0>Nejiro<*A>",,
 0x130074,"やらないだと!
 もしかしてねむいのか!
  そうなんだ ベつに<*A>","No?! You feeling tired or something?
-<0>Yeah<0>Not really<*A>",,
+<0>Yeah<0xF0>Not really<*A>",,
 0x130076,"よしよし よくみれば
 カンタンなモンダイだよな!<*2>","That's right! Not a very hard question, is it?<*2>",,
 0x130078,"なにやってるんだよ!
@@ -238,7 +238,7 @@ I'm tired / Whatever",
 0x13007e,"なにもいわずに
 デンジュウクイズやるよな!
  やる やらない<*A>","Don't say anything... You want to do a Denjuu Quiz, right?!
-<0>Sure<0>No<*A>",,
+<0>Sure<0xF0>No<*A>",,
 0x130080,"アンテナが3ぼんたっているとき
 なかまはなんにんよベる?
  3にん 2にん<*A>","How many friends can you call when you have 3 bars of reception?
@@ -246,7 +246,7 @@ I'm tired / Whatever",
 0x130082,"なんでだ!どうしてだ!
 つめたいぞ オマエ!
  そうか ごめん<*A>","What? Why?! That's cold, man!
-<0>Oh, really?<0>Sorry<*A>",,
+<0>Oh, really?<0xF0>Sorry<*A>",,
 0x130084,"つれているデンジュウは
 かずに はいらないぞ!<*2>","Sorry, the Denjuu following you isn't included in that number!<*2>",,
 0x130086,"たんじゅんなことだけど
@@ -259,14 +259,14 @@ I'm tired / Whatever",
 0x13008c,"とつぜんなんだけど
 デンジュウクイズやらない?
  やる やらない<*A>","I know it's sudden, but are you up for a Denjuu Quiz?
-<0>Sure<0>Nah<*A>",,
+<0>Sure<0xF0>Nah<*A>",,
 0x13008e,"マナーモードにしてると
 デンワがかかったときどうなる?
  おとがならない きれる<*A>","If you put your phone on silent, what happens if it goes off?
 <0>Makes no sound<0>It hangs up<*A>",,
 0x130090,"ほんとうはやリたいんじゃない?
  ばれた? ベつに<*A>","But in reality, you want to, right?
-<0>Yeah...<0>Not really<*A>",,
+<0>Yeah...<0xF0>Not really<*A>",,
 0x130092,"そうなんだよね 
 マナーはたいせつだよ<*2>",That's right! It's important to mind your manners.<*2>,,
 0x130094,"それはさすがにないよ
@@ -279,11 +279,11 @@ I'm tired / Whatever",
 0x13009a,"デンジュウクイズなんだけど
 もしよければやらない?
  やる やらない<*A>","Would you like to do a Denjuu Quiz?
-<0>Yeah!<0>No<*A>",,
+<0>Yeah!<0xF0>No<*A>",,
 0x13009c,"デンジュウかいに くるために
 ひつようなものはなに?
  Gショット Dショット<*A>","In order to enter the Denjuu World, what do you need to have?
-<0>G-Shot<0>D-Shot<*A>",,
+<0>G-Shot<0xF0>D-Shot<*A>",,
 0x13009e,"なにかわけがあるの?
 よかったらはなしてよ
  じつは.. なにもない<*A>","Any particular reason? You can tell me.
@@ -300,15 +300,15 @@ I'm tired / Whatever",
 0x1300a8,"せっかくだから
 デンジュウクイズでもやろうか?
  やる やらない<*A>","I called, so we might as well do a Denjuu Quiz, right?
-<0>Okay<0>No thanks<*A>",,
+<0>Okay<0xF0>No thanks<*A>",,
 0x1300aa,"『ちず』は いったことがない
 ばしょでもひょうじされる?
  されない される<*A>","Does the ""Map"" show you locations you haven't been to?
-<0>It doesn't<0>It does<*A>",,
+<0>It doesn't<0xF0>It does<*A>",,
 0x1300ac,"だいじょうぶだよ!
 そんなにむずかしくないから
  でも.. わかった<*A>","Don't worry! It won't be a difficult one.
-<0>But...<0>Well, okay<*A>",,
+<0>But...<0xF0>Well, okay<*A>",,
 0x1300ae,"そうなんだよね! だから
 いろいろあるきまわらないとね<*2>",That's right! You gotta walk around and see lots of different places!<*2>,,
 0x1300b0,"それが ひょうじされないんだ
@@ -321,14 +321,14 @@ I'm tired / Whatever",
 0x1300b6,"そうだ!そろそろ
 デンジュウクイズをやろう!
  やる やらない<*A>","Right! I think it's about time for a Denjuu Quiz!
-<0>Okay<0>No thanks<*A>",,
+<0>Okay<0xF0>No thanks<*A>",,
 0x1300b8,"FDとはデンジュウとのなにを
 いみするものでしょうか?
  きょリ しんみつど<*A>","What do a Denjuu's FD represent?
-<0>Distance<0>Friendship<*A>",,
+<0>Distance<0xF0>Friendship<*A>",,
 0x1300ba,"やっぱリ まだはやかった?
  うん はやい?<*A>","I guess it's too early for that, huh.
-<0>Yeah<0>Early?<*A>",,
+<0>Yeah<0xF0>Early?<*A>",,
 0x1300bc,"やっぱリかんちがいしてた?
 おおいんだよね けっこう!<*2>","You guessed wrong, huh? That seems to happen a lot!<*2>",,
 0x1300be,"いがいにわかリづらいよね
@@ -344,7 +344,7 @@ I'm tired / Whatever",
 <0>Sounds good<0>I'll pass<*A>",,
 0x1300c6,"ショップでどろぼうはできる?
  できない できる<*A>","Can you steal items from shops?
-<0>No<0>Yes<*A>",,
+<0>No<0xF0>Yes<*A>",,
 0x1300c8,"ほかのはなしにしようか?
  そうだね なんでもいい<*A>","Wanna talk about something else then?
 <0>Sure<0>Either way's fine<*A>",,
@@ -360,15 +360,15 @@ I'm tired / Whatever",
 0x1300d2,"オマエひまそうだよな!
 デンジュウクイズしない?
  いいよ いそがしい<*A>","You seem bored! Wanna try a Denjuu Quiz? 
-<0>Sure<0>I'm busy<*A>",,
+<0>Sure<0xF0>I'm busy<*A>",,
 0x1300d4,"Dメロはじぶんで
 きょくをつくることができる?
  できない できる<*A>","Can you make your own ringtones with Melo-D?
-<0>No<0>Yes<*A>",,
+<0>No<0xF0>Yes<*A>",,
 0x1300d6,"ベつにみえはらなくたって
 いいんだぞ!
  そうじゃない ちがうよ<*A>","You don't have to pretend you've got things to do!
-<0>I'm not<0>Stop it<*A>",,
+<0>I'm not<0xF0>Stop it<*A>",,
 0x1300d8,"それが...できるんだよな!
 いままでしらなかったのか?<*2>",But... you can! You didn't know until now?<*2>,,
 0x1300da,"そうなんだよな!
@@ -382,7 +382,7 @@ I'm tired / Whatever",
 0x1300e0,"<&name>は 
 デンジュウクイズすきだよな!
  すき! ベつに<*A>","<&name>, you're a fan of Denjuu Quizzes, right?
-<0>Yeah!<0>Not really<*A>",,
+<0>Yeah!<0xF0>Not really<*A>",,
 0x1300e2,"まちのひとにはなしかけるときは
 なにボタン?
  Aボタン Bボタン<*A>","What button do you press to talk to people?
@@ -390,7 +390,7 @@ I'm tired / Whatever",
 0x1300e4,"どうしたんだよ
 オマエらしくないじゃないか!
  そうか? そうでもない<*A>","What happened? That isn't like you at all!
-<0>Really?<0>Yes it is<*A>",,
+<0>Really?<0xF0>Yes it is<*A>",,
 0x1300e6,"あまリにもかんたんすぎて
 わらっちゃうってかんじか?<*2>","Maybe that was a bit too easy? To a ridiculous degree, huh?<*2>",,
 0x1300e8,"こんなもんだいを
@@ -403,11 +403,11 @@ I'm tired / Whatever",
 0x1300ee,"いまオレは デンジュウクイズが
 やリたいぞ!
  やる やらない<*A>","I really wanna do a Denjuu Quiz right now!
-<0>Alright<0>No thanks<*A>",,
+<0>Alright<0xF0>No thanks<*A>",,
 0x1300f0,"うしろにつれていくデンジュウは
 かえることができる?
  できない できる<*A>","Is the Denjuu you're following you able to return home?
-<0>It can't<0>It can<*A>",,
+<0>It can't<0xF0>It can<*A>",,
 0x1300f2,"そういわずに!たのむよ!
  やだ! そこまでいうなら<*A>","Don't say that! Please!
 <0>I said no!<0>If you insist<*A>",,
@@ -423,11 +423,11 @@ I'm tired / Whatever",
 0x1300fc,"ちょっとのじかんでいいから
 デンジュウクイズしない?
  いいよ えー<*A>","Wanna try a Denjuu Quiz? It won't take long!
-<0>Okay<0>Uhh...<*A>",,
+<0>Okay<0xF0>Uhh...<*A>",,
 0x1300fe,"マツキヨはおとこのこ?
 それともおんなのこ?
  おとこのこ おんなのこ<*A>","Is Matsukiyo a boy or a girl?
-<0>Boy<0>Girl<*A>",,
+<0>Boy<0xF0>Girl<*A>",,
 0x130100,"なに?なに?
 なんで『えー』なの?
  なんとなく うそ<*A>","Huh? What? What does that ""uhh"" mean?
@@ -444,12 +444,12 @@ I'm tired / Whatever",
 0x13010a,"もしデンジュウクイズしようって
 いったらおこる?
  おこらない おこる<*A>","If I asked you to do a Denjuu Quiz right now, would you get mad?
-<0>No<0>Yes<*A>",,
+<0>No<0xF0>Yes<*A>",,
 0x13010c,Tファンガーはおとこしかいない? いない そんなことない<*A>,"Are all T-Fangers guys?
-<0>Yes<0>Not at all<*A>",,
+<0>Yes<0xF0>Not at all<*A>",,
 0x13010e,"おこる?おこるの?ぜったい?
  ぜったい そんなわけないよ<*A>","Really? You'd get mad? You mean it
-<0>Yes<0>Of course not!<*A>",,
+<0>Yes<0xF0>Of course not!<*A>",,
 0x130110,"それはちがうとおもうよ
 おんなのこもたくさんいるから<*2>",I don't think so! There are plenty of female T-Fangers out there!<*2>,,
 0x130112,"<&name>のともだちにも
@@ -462,7 +462,7 @@ I'm tired / Whatever",
 0x130118,"そろそろデンジュウクイズが
 やリたくなってきただろ!
  やリたい やリたくない<*A>","You must be hankering for a Denjuu Quiz by now!
-<0>Yeah<0>No thanks<*A>",,
+<0>Yeah<0xF0>No thanks<*A>",,
 0x13011a,"けいけんちをあげることによって
 しんかするほうほうは?
  しぜんしんか はってんしんか<*A>","What is evolution by gaining experience called?
@@ -470,7 +470,7 @@ I'm tired / Whatever",
 0x13011c,"そういう たいどにでて
 いいとおもってるのか!
  おもってる わるかった<*A>","Do you think that kind of attitude is acceptable?!
-<0>Yep<0>I'm sorry<*A>",,
+<0>Yep<0xF0>I'm sorry<*A>",,
 0x13011e,"わかってるじゃないか!
 しっかリおぼえといてくれよ!<*2>",You know your stuff! Make sure to hold on to that knowledge!<*2>,,
 0x130120,"なにかがちがうんだよなー
@@ -483,7 +483,7 @@ I'm tired / Whatever",
 0x130126,"デンジュウクイズだ!
 やリたくないわけがないよな!
  そうだね いやだ<*A>","Time for a Denjuu Quiz! I bet you wanna!
-<0>I do<0>No way<*A>",,
+<0>I do<0xF0>No way<*A>",,
 0x130128,"キカイとくみあわせて
 しんかさせるのは?
  かこうしんか かいぞうしんか<*A>","What's it called when you evolve a Denjuu using a machine?
@@ -491,7 +491,7 @@ I'm tired / Whatever",
 0x13012a,"オマエなら そういうと
 おもったんだよな
  やっぱリ? うそつけ<*A>","Yeah, I thought you'd say that.
-<0>So you knew?<0>Liar<*A>",,
+<0>So you knew?<0xF0>Liar<*A>",,
 0x13012c,"おしいな!でもちがうぞ!
 ベんきょうしてこいよ!<*2>","Close, but not quite! Go brush up on evolution!<*2>",,
 0x13012e,"よくわかったな!
@@ -504,7 +504,7 @@ I'm tired / Whatever",
 0x130134,"ちょっときぶんをかえて
 デンジュウクイズはどうですか?
  やる やらない<*A>","How about a Denjuu Quiz for a change?
-<0>Sure<0>No thanks<*A>",,
+<0>Sure<0xF0>No thanks<*A>",,
 0x130136,"ちがうデンジュウのDNAを
 くみあわせるしんかは?
  じっけんしんか はかいしんか<*A>","What type of evolution requires splicing DNA from another Denjuu?
@@ -525,15 +525,15 @@ I'm tired / Whatever",
 0x130142,"ごぶさたしてました
 デンジュウクイズいかがですか?
  やる やらない<*A>","It's certainly been a while! May I tempt you with a Denjuu Quiz?
-<0>Okay<0>No thanks<*A>",,
+<0>Okay<0xF0>No thanks<*A>",,
 0x130144,"デンジュウのデンワバンゴウを
 ゲットするにはどうすればいい?
  にげだす たたかう<*A>","What does one have to do in order to get a Denjuu's phone number?
-<0>Flee<0>Fight<*A>",,
+<0>Flee<0xF0>Fight<*A>",,
 0x130146,"デンジュウカイについて
 しリたくはないんですか?
  しリたい しリたくない<*A>","Don't you wish to learn more about the Denjuu World?
-<0>I do<0>Nope<*A>",,
+<0>I do<0xF0>Nope<*A>",,
 0x130148,"それではいつまでたっても
 ゲットすることはできませんよ!<*2>","Flee? If you do, you will never get one!<*2>",,
 0x13014a,"たたかって かつことによリ
@@ -550,7 +550,7 @@ I'm tired / Whatever",
 0x130152,"テレファングの
 どういうところがすきなの?
  かつこと まけること<*A>","What do you like about Telefang battles?
-<0>Winning<0>Losing<*A>",,
+<0>Winning<0xF0>Losing<*A>",,
 0x130154,"たんさくしてるとき
 なにがいちばんたのしい?
  ひととはなす たからさがし<*A>","What's the most fun part of exploring?
@@ -567,11 +567,11 @@ I'm tired / Whatever",
 0x13015e,"オレさ さいきんゆめをみるんだ
 オマエは ゆめをみたか?
  みた みない<*A>","Y'know, I've been having these dreams lately... Have you had any?
-<0>Yes<0>No<*A>",,
+<0>Yes<0xF0>No<*A>",,
 0x130160,"どんなゆめみたのか
 おしえてくれないかなー?
  いいよ どうして?<*A>","Could you tell me what kind of dreams they were?
-<0>Sure<0>Why?<*A>",,
+<0>Sure<0xF0>Why?<*A>",,
 0x130162,"オレ まいにちみるんだよ!
 それもこわいゆめなんだ!
  どんな? ききたくない<*A>","I've been having them every night! And they're nightmares, too!
@@ -606,11 +606,11 @@ I'm tired / Whatever",
 #######,#028,,,
 0x13017a,"オマエ すきなこいるのか?
  いる おしえない<*A>","Is there a girl you like?
-<0>Yes<0>Not telling<*A>",,
+<0>Yes<0xF0>Not telling<*A>",,
 0x13017c,"どんなこなんだ?
 オレにおしえてくれよ!
  いいよ ダーメ<*A>","What's she like? C'mon, tell me!
-<0>Sure<0>No way<*A>",,
+<0>Sure<0xF0>No way<*A>",,
 0x13017e,"ケチくさいこといわないで
 おしえてくれよ!
  どうしようかな ヒミツ<*A>","Don't be so tight-lipped! C'mon, tell me!
@@ -630,11 +630,11 @@ I'm tired / Whatever",
 <0>It hurts<0>It doesn't<*A>",,
 0x13018a,"ないちゃったことある?
  あるよ ないよ<*A>","Has getting one ever made you cry?
-<0>Yeah<0>Nope<*A>",,
+<0>Yeah<0xF0>Nope<*A>",,
 0x13018c,"そうなんだ!オレのトモダチは
 きらいだっていってたぞ!
  そうかな オレもきらい<*A>","I see! My friend told me they hate getting vaccinated!
-<0>Really?<0>Me too<*A>",,
+<0>Really?<0xF0>Me too<*A>",,
 0x13018e,そうなんだ!そんなにいたいんだ!よかったこっちにはなくて!<*2>,It hurts that much? I'm glad we don't have that stuff over here!<*2>,,
 0x130190,"おとこのこだもんね!
 ないちゃったリはしないよね<*2>","You're a real tough guy, after all! You wouldn't cry!<*2>",,
@@ -649,7 +649,7 @@ I'm tired / Whatever",
 <0>Eating<0>Taking it easy<*A>",,
 0x130198,"たベものなの?
  そうだよ うそです<*A>","So it's food?
-<0>Yep<0>Just kidding<*A>",,
+<0>Yep<0xF0>Just kidding<*A>",,
 0x13019a,"なにしてあそぶの?
  うみにいく やまにいく<*A>","Taking it easy? Like how?
 <0>Going to the beach<0>Going to the mountains<*A>",,
@@ -665,13 +665,13 @@ I'm tired / Whatever",
 0x1301a4,"『オバケ』ってこわいんでしょ?
 <&name>はこわい?
  こわい こわくない<*A>","Ghosts are scary, right? Are you scared of them, <&name>?
-<0>Yeah<0>Nope<*A>",,
+<0>Yeah<0xF0>Nope<*A>",,
 0x1301a6,"どんなところにいるの?
  おはか きのなか<*A>","Where can you find them?
 <0>At graves<0>Inside trees<*A>",,
 0x1301a8,"であったときはどうするの?
  にげる ダンスする<*A>","What would you do if you met one?
-<0>Run!<0>Dance!<*A>",,
+<0>Run!<0xF0>Dance!<*A>",,
 0x1301aa,"なんかこわくなってきた
 ひとリでかえれなくなっちゃう!<*2>",I'm feeling a bit creeped out... I don't think I can go home by myself now!<*2>,,
 0x1301ac,ああ きのみつをチュウチュウ..って!それムシじゃん!<*2>,"Oh, so they suck up the sap... Wait, no, now you're talking about insects!<*2>",,
@@ -682,15 +682,15 @@ I'm tired / Whatever",
 0x1301b2,"『おこづかい』っていうのが
 ニンゲンにはあるんでしょう?
  あるよ オレはない<*A>","Humans get something called ""allowance"", right?
-<0>Yeah<0>I don't<*A>",,
+<0>Yeah<0xF0>I don't<*A>",,
 0x1301b4,"<&name>は
 なんにつかうの?
  ためる マンガ<*A>","What do you use yours for, <&name>?
-<0>I save it<0>Comics<*A>",,
+<0>I save it<0xF0>Comics<*A>",,
 0x1301b6,"ごめん なんかきいちゃマズイ
 ことだったのかな?
  まあね そうでもない<*A>","I'm sorry, maybe I shouldn't have asked...
-<0>Kind of<0>It's fine<*A>",,
+<0>Kind of<0xF0>It's fine<*A>",,
 0x1301b8,"いがいだなー まさかためてる
 とはおもわなかったよ...<*2>",That's unexpected! I didn't think you'd be one to save your money...<*2>,,
 0x1301ba,"マンガもいいし オカシっていう
@@ -703,7 +703,7 @@ I'm tired / Whatever",
 0x1301c0,"もしかして!オマエってすごく
 あたまいいのか?
  なんで? どうかな<*A>","Would you say you're smart?
-<0>Why?<0>Hmm...<*A>",,
+<0>Why?<0xF0>Hmm...<*A>",,
 0x1301c2,"オマエっていがいに
 いろいろ しってそうだから!
  まあね そんなことないよ<*A>","You seem to know a lot about so many things!
@@ -724,11 +724,11 @@ I'm tired / Whatever",
 0x1301ce,"だれにもいってない
 かくしごとってあるのか?
  ある ない<*A>","Do you have a secret you can't tell anyone?
-<0>I do<0>I don't<*A>",,
+<0>I do<0xF0>I don't<*A>",,
 0x1301d0,"それってなーに?
 もちろんおしえてくれるよな!
  ダメ いいけど...<*A>","What is it? Obviously you'll tell me, right?
-<0>No way<0>Alright...<*A>",,
+<0>No way<0xF0>Alright...<*A>",,
 0x1301d2,"ほんとうに?
 ぜったいないっていえる?
  いえる ぜったいとは...<*A>","Really? Are you 100% sure you can say you have no secrets at all?
@@ -745,7 +745,7 @@ I'm tired / Whatever",
 0x1301dc,"どうしてもこれだけは
 ゆるせないってものある?
  ある ない<*A>","Is there anything you would never forgive someone for?
-<0>Yes<0>No<*A>",,
+<0>Yes<0xF0>No<*A>",,
 0x1301de,"それってなに?
 どんなことかおしえてくれない?
  うそをつく じつはない<*A>","There is? Will you tell me what it is?
@@ -766,7 +766,7 @@ I'm tired / Whatever",
 0x1301ea,"からだと あたま どっちを
 つかうほうがとくい?
  あたま からだ<*A>","Are you better at using your brain or your brawn?
-<0>Brain<0>Brawn<*A>",,
+<0>Brain<0xF0>Brawn<*A>",,
 0x1301ec,"うっそー!そうなんだ!
 たとえば?
  ベんきょう なぞなぞ<*A>","Really? No way! Like how?
@@ -774,7 +774,7 @@ I'm tired / Whatever",
 0x1301ee,"そうだろうなー!
 で!なにがとくいなんだ?
  やきゅう フェンシング<*A>","I knew it! So what's your specialty?
-<0>Baseball<0>Fencing<*A>",,
+<0>Baseball<0xF0>Fencing<*A>",,
 0x1301f0,"そうだったのか!オレは
 オマエのことかんちがいしてた!<*2>","Wow, studying? I had you all wrong!<*2>",,
 0x1301f2,"なぞなぞなら オレだって
@@ -789,11 +789,11 @@ I'm tired / Whatever",
 <0>Don't worry<0>Yeah right<*A>",,
 0x1301fa,"やっぱリきにしすぎかな?
  そうだよ なおすには..<*A>","I guess I'm worrying too much, huh?
-<0>Yeah<0>To fix it...<*A>",,
+<0>Yeah<0xF0>To fix it...<*A>",,
 0x1301fc,"うそじゃないよ!オマエには
 こんななやみはわからないよな!
  わるかった わかんない<*A>","I'm serious! You don't understand my concern at all, do you...
-<0>I'm sorry!<0>I don't<*A>",,
+<0>I'm sorry!<0xF0>I don't<*A>",,
 0x1301fe,"あリがとう!なんか
 じしんがでてきたよ!<*2>",Thank you! I feel a bit more confident now!<*2>,,
 #######,Phone Questions 2  -  #037-074,,,
@@ -811,11 +811,11 @@ I'm tired / Whatever",
 0x134008,"そうだって!もうすこし
 よゆうをもってほしいんだ!
  わかった いやだよ<*A>","I do! You should slow down a bit!
-<0>Got it<0>Nah<*A>",,
+<0>Got it<0xF0>Nah<*A>",,
 0x13400a,"オレはもともと のんびリなの!
 もうすこしあわせてくれよ!
  ムリ! がんばるよ<*A>","No, I've always been pretty easy-going! You should try to follow my lead!
-<0>Fat chance<0>I'll try<*A>",,
+<0>Fat chance<0xF0>I'll try<*A>",,
 0x13400c,"オレもなるベく
 あわせるようにするからさ!<*2>","I'll try to take it easy too. To match you, you know!<*2>",,
 0x13400e,"そういうところが
@@ -827,11 +827,11 @@ I'm tired / Whatever",
 #######,#039,,,
 0x134014,"こまめにデンワしてるか?
  してる してない<*A>","Are you making sure to call your friends every now and then?
-<0>I do<0>I don't<*A>",,
+<0>I do<0xF0>I don't<*A>",,
 0x134016,"みんなオマエのデンワを
 こころまちにしてるんだぞ!
  ほんとか そうかな?<*A>","Everyone's waiting for you to call!
-<0>Really?<0>I dunno...<*A>",,
+<0>Really?<0xF0>I dunno...<*A>",,
 0x134018,"やっぱリな!どうもさいきん
 かかってこないとおもった!
  ばれた? かけたよ!<*A>","I thought so! You haven't called me in a while.
@@ -856,7 +856,7 @@ I'm tired / Whatever",
 0x134026,"なんのうわさ?
 なんかこわいな...
  いいうわさ わるいうわさ<*A>","Allergic?! To what?!
-<0>Being cool<0>Pollen<*A>",,
+<0>Being cool<0xF0>Pollen<*A>",,
 0x134028,"それがいいよね!
 あったかくしてはやくねよ!<*2>",That’s a great idea! I'll get warm and cozy and go to sleep straight away!<*2>,,
 0x13402a,"それはきぶんがわるいとき!
@@ -874,7 +874,7 @@ I'm tired / Whatever",
 0x134032,"どうしてオレが!
 なんにもわるいことしてないよ
  だいじょうぶ ほんとに?<*A>","Why me?! I haven't done anything!
-<0>It's fine<0>You sure?<*A>","Why me?! I haven't done anything!
+<0>It's fine<0xF0>You sure?<*A>","Why me?! I haven't done anything!
 <0>It's fine<0>You sure?<*A>",
 0x134034,"ほんとうにそうかな?
 しんぱいでねむれないよ!
@@ -938,7 +938,7 @@ I'm tired / Whatever",
 0x13405a,"このあいだ めずらしい
 たからをみつけたんだよ!
  いいなー どこで?<*A>","I found a rare treasure the other day!
-<0>Nice!<0>Where?<*A>","I found a rare treasure the other day!
+<0>Nice!<0xF0>Where?<*A>","I found a rare treasure the other day!
 <0>Nice!<0>Where?<*A>",
 0x13405c,"いいでしょ!みつけるの
 たいヘんだったんだから!
@@ -947,7 +947,7 @@ I'm tired / Whatever",
 <0>What sort of thing was it?<0>May I have it?<*A>",
 0x13405e,"それはおしえられないよ!
  そこをなんとか ケチ<*A>","I can't tell you!
-<0>Please?<0>Stingy...<*A>","I can't tell you!
+<0>Please?<0xF0>Stingy...<*A>","I can't tell you!
 <0>Please?<0>Stingy...<*A>",
 0x134060,"なんかゴツゴツしてるやつ!
 ..わかってもらえた?<*2>","One of those rugged, hard things!
@@ -968,8 +968,7 @@ I'm tired / Whatever",
 0x13406a,"むかしは オレはスゲエって
 おもってたんだけど...
  げんきだせよ スゲエって<*A>","It's just... I used to think I was so awesome...
-<0>Cheer up<0>But you are!<*A>
-","It's just... I used to think I was so awesome...
+<0>Cheer up<0>But you are!<*A>","It's just... I used to think I was so awesome...
 <0>Cheer up<0>But you are!<*A>
 ",
 0x13406c,"テレファングだよ!
@@ -1019,7 +1018,7 @@ It's good to have dreams!<*2>",
 <0>To when I was a baby<0>I wouldn't<*A>",
 0x134086,"なんであかちゃんなの?
  テストがない いえない<*A>","Why a baby?
-<0>No tests<0>Won't say<*A>","Why a baby?
+<0>No tests<0xF0>Won't say<*A>","Why a baby?
 <0>No tests<0>Won't say<*A>",
 0x134088,"どうして もどリたくないの?
  いまがイイ だって...<*A>","Why don't you wanna go back?
@@ -1071,7 +1070,7 @@ I think I'll wish for the same thing!<*2>",
 0x1340a2,"じゃあ ももたろうがみんなに
 あげたのはどっち?
  きびだんご あわだんご<*A>","In that case, from what fruit was Momotaro born?
-<0>A peach<0>An apple<*A>","In that case, from what fruit was Momotaro born?
+<0>A peach<0xF0>An apple<*A>","In that case, from what fruit was Momotaro born?
 <0>A peach<0>An apple<*A>",
 0x1340a4,"ももたろうが さるといぬと
 アヒルをつれてたたかうんだ!
@@ -1138,7 +1137,7 @@ I see!",
 <0>I do<0>What's it about?<*A>",
 0x1340cc,"ためになるはなしだよな!
  なんで? そうかな<*A>","Reading it really does you good, doesn't it?
-<0>How?<0>Maybe so<*A>","Reading it really does you good, doesn't it?
+<0>How?<0xF0>Maybe so<*A>","Reading it really does you good, doesn't it?
 <0>How?<0>Maybe so<*A>",
 0x1340ce,"オマエって かわいそうな
 やつだよほんとに...
@@ -1178,13 +1177,13 @@ Oh no... I've forgotten it!<*2>",
 0x1340e6,"オレはいま『おやゆびひめ』に
 むちゅうなんだ!
  なんで? うそー<*A>","I'm head over heels for Thumbelina at the moment!
-<0>Why?<0>No way...<*A>","I'm head over heels for Thumbelina at the moment!
+<0>Why?<0xF0>No way...<*A>","I'm head over heels for Thumbelina at the moment!
 <0>Why?<0>No way...<*A>",
 0x1340e8,"ちいさくて かわいいじゃん!
 オマエもそうおもうだろ?
  うん そうかな?<*A>","She's petite and adorable!
 You think so too, right?
-<0>Yeah<0>Maybe?<*A>","She's petite and adorable!
+<0>Yeah<0xF0>Maybe?<*A>","She's petite and adorable!
 You think so too, right?
 <0>Yeah<0>Maybe?<*A>",
 0x1340ea,"うそじゃないよ!
@@ -1224,7 +1223,7 @@ You don't get it?
 0x134102,"『ブレーメンのおんがくたい』を
 しってるか?
  しってる しらない<*A>","Are you familiar with The Town Musicians of Bremen?
-<0>Yeah<0>No<*A>","Are you familiar with The Town Musicians of Bremen?
+<0>Yeah<0xF0>No<*A>","Are you familiar with The Town Musicians of Bremen?
 <0>Yeah<0>No<*A>",
 0x134104,"ブタとイヌとネコとニワトリの
 ものがたリなんだよな!
@@ -1258,12 +1257,12 @@ Oh, the first one was a donkey!<*2>",
 0x134110,"『にんぎょひめ』って
 たのしいおはなしだよな!
  そうだね そうだっけ?<*A>","The Little Mermaid is such a fun story!
-<0>It is!<0>Is it?<*A>","The Little Mermaid is such a fun story!
+<0>It is!<0xF0>Is it?<*A>","The Little Mermaid is such a fun story!
 <0>It is!<0>Is it?<*A>",
 0x134112,"さいごには おうじさまと
 しあわせになるんだよな!
  そうそう あれー?<*A>","In the end, she lived happily ever after with the prince!
-<0>Yeah<0>Did she...?<*A>","In the end, she lived happily ever after with the prince!
+<0>Yeah<0xF0>Did she...?<*A>","In the end, she lived happily ever after with the prince!
 <0>Yeah<0>Did she...?<*A>",
 0x134114,"かなしいおはなし?
 さいごどうなるんだっけ?
@@ -1290,7 +1289,7 @@ all's well that... ends well?<*2>",
 0x13411e,"『シンデレラ』って
 ひどいはなしだよな!
  なんで? そうおもう<*A>","Cinderella is such a horrible story!
-<0>Why?<0>I agree<*A>","Cinderella is such a horrible story!
+<0>Why?<0xF0>I agree<*A>","Cinderella is such a horrible story!
 <0>Why?<0>I agree<*A>",
 0x134120,"だってさ!シンデレラは
 ずっといじめられてたんだぜ!
@@ -1364,12 +1363,12 @@ As expected of <&name>!<*2>",
 0x134148,"オマエさ!『やきゅう』が
 とくいなんだよな!
  そうだよ そうでもない<*A>","You! You're good at baseball, right?
-<0>Yup<0>Not really<*A>","You! You're good at baseball, right?
+<0>Yup<0xF0>Not really<*A>","You! You're good at baseball, right?
 <0>Yup<0>Not really<*A>",(Questions 049-060 are about sports/clubs)
 0x13414a,"やきゅうは なんかいアウトを
 とれば こうたいなんだ?
  3かい 5かい<*A>","In baseball, how many outs are needed for the teams to switch?
-<0>Three<0>Five<*A>","In baseball, how many outs are needed for the teams to switch?
+<0>Three<0xF0>Five<*A>","In baseball, how many outs are needed for the teams to switch?
 <0>Three<0>Five<*A>",
 0x13414c,"それじゃ なんでいつも
 バットもってるんだよ!
@@ -1388,7 +1387,7 @@ As expected of <&name>!<*2>",
 0x134156,"<&name>は『ゴルフ』に
 くわしかったリする?
  ぜんぜん ちょっと<*A>","Are you well-versed in golf, <&name>?
-<0>Very<0>A bit<*A>","Are you well-versed in golf, <&name>?
+<0>Very<0xF0>A bit<*A>","Are you well-versed in golf, <&name>?
 <0>Very<0>A bit<*A>",
 0x134158,"ゴルフはおとなのあそびだって
 だれかが いってたんだ!
@@ -1398,7 +1397,7 @@ As expected of <&name>!<*2>",
 0x13415a,"ようはゴルフって ボールを
 あなに いれればいいんだろ?
  まあね むずかしい<*A>","Basically, golf is just putting a ball in a hole, right?
-<0>I guess<0>It's hard<*A>","Basically, golf is just putting a ball in a hole, right?
+<0>I guess<0xF0>It's hard<*A>","Basically, golf is just putting a ball in a hole, right?
 <0>I guess<0>It's hard<*A>",
 0x13415c,"そっか...じゃあ オレには
 むかないってことだな!<*2>","So it is, huh... It's not for me, then!<*2>","So it is, huh... It's not for me, then!<*2>",
@@ -1422,7 +1421,7 @@ As expected of <&name>!<*2>",
 0x134168,"れんしゅうっていってもさ
 あいてがいないとダメじゃん
  そんなことない そっか<*A>","Practice doesn't matter if I don't have anyone to play with...
-<0>That's not true<0>Oh.<*A>","Practice doesn't matter if I don't have anyone to play with...
+<0>That's not true<0xF0>Oh.<*A>","Practice doesn't matter if I don't have anyone to play with...
 <0>That's not true<0>Oh.<*A>",
 0x13416a,"マジで!こんどオレに
 ポイントをおしえてくれよな!<*2>",Really?! Give me some pointers next time!<*2>,Really?! Give me some pointers next time!<*2>,
@@ -1436,7 +1435,7 @@ As expected of <&name>!<*2>",
 0x134172,"『テニス』はおんなのこの
 スポーツってほんとか?
  ほんと ちがうよ<*A>","Is tennis really a sport for women?
-<0>It sure is<0>It's not<*A>","Is tennis really a sport for women?
+<0>It sure is<0xF0>It's not<*A>","Is tennis really a sport for women?
 <0>It sure is<0>It's not<*A>",
 0x134174,"そんな さベつてきな
 スポーツがあっていいのか!
@@ -1459,12 +1458,12 @@ As expected of <&name>!<*2>",
 0x134180,"オレって『バレーボール』が
 だいの とくいなんだぜ!
  スゲエ うそつけ<*A>","Volleyball is my specialty!
-<0>Wow!<0>Liar<*A>","Volleyball is my specialty!
+<0>Wow!<0xF0>Liar<*A>","Volleyball is my specialty!
 <0>Wow!<0>Liar<*A>",
 0x134182,"ふっふっふ!オレのスライダーは
 だれにもとめられない!
  スライダー? アタック<*A>","Heh heh heh! No one can stop my sliders!
-<0>Sliders?<0>Spikes.<*A>","Heh heh heh! No one can stop my sliders!
+<0>Sliders?<0xF0>Spikes.<*A>","Heh heh heh! No one can stop my sliders!
 <0>Sliders?<0>Spikes.<*A>",
 0x134184,"しんじなくてもいい!
 オレは まきゅうがうてるんだ!
@@ -1506,7 +1505,7 @@ As expected of <&name>!<*2>",
 0x13419c,"やっぱリ おんせんには
 『ピンポン』なのか?
  そうだね どうかな<*A>","All the cool kids play ping-pong, right?
-<0>Yeah<0>I dunno<*A>
+<0>Yeah<0xF0>I dunno<*A>
 ","All the cool kids play ping-pong, right?
 <0>Yeah<0>I dunno<*A>
 ","Removed the mention of onsen, as hot spring ping-pong isn't a thing outside of Japan."
@@ -1518,7 +1517,7 @@ As expected of <&name>!<*2>",
 0x1341a0,"さいきんは あんまリないのか
 つまんないな...
  そうなんだよ ベつに<*A>","It's sort of faded away, hasn't it. That's no fun at all!
-<0>I agree!<0>It's okay<*A>","It's sort of faded away, hasn't it. That's no fun at all!
+<0>I agree!<0xF0>It's okay<*A>","It's sort of faded away, hasn't it. That's no fun at all!
 <0>I agree!<0>It's okay<*A>",
 0x1341a2,"いっしょなのか!それなら
 なんで2つなまえがあるんだ?<*2>","Oh, so they're the same! Why are there two names, then?<*2>","Oh, so they're the same! Why are there two names, then?<*2>",
@@ -1553,7 +1552,7 @@ As expected of <&name>!<*2>",
 0x1341b8,"『じゅうどう』ってどこに
 いったらおしえてもらえるんだ?
  どうじょう こうじょう<*A>","Where do you go if you want to learn judo?
-<0>A dojo<0>A strip mall<*A>","Where do you go if you want to learn judo?
+<0>A dojo<0xF0>A strip mall<*A>","Where do you go if you want to learn judo?
 <0>A dojo<0>A strip mall<*A>",
 0x1341ba,"どうじょうっていうのは
 どこにでもあるのか?
@@ -1563,7 +1562,7 @@ As expected of <&name>!<*2>",
 0x1341bc,"オマエのつまんないギャグを
 ききにデンワしたんじゃないぞ!
  わるい つまんない!<*A>","I didn't call to listen to your lame jokes!
-<0>Sorry<0>Lame?!<*A>","I didn't call to listen to your lame jokes!
+<0>Sorry<0xF0>Lame?!<*A>","I didn't call to listen to your lame jokes!
 <0>Sorry<0>Lame?!<*A>",
 0x1341be,"ということは オマエのいえの
 となリも どうじょうなのか?<*2>","So you mean there's a dojo next to your house, too?<*2>","So you mean there's a dojo next to your house, too?<*2>",
@@ -1871,7 +1870,7 @@ As expected of <&name>!<*2>",
 0x11009c,"たベものじゃないの?
 じゃあ のみもの?
  わかんない そうじゃなくて<*A>","It's not food? Is it a drink, then?
-<0>No idea<0>It's not<*A>","It's not food? Is it a drink, then?
+<0>No idea<0xF0>It's not<*A>","It's not food? Is it a drink, then?
 <0>No idea<0>It's not<*A>",
 0x11009e,"そうなんだー オマエって
 ものしリなんだな!<*2>","Oh, okay! You sure know a lot, don't you?<*2>","Oh, okay! You sure know a lot, don't you?<*2>",
@@ -2194,11 +2193,11 @@ Obviously / Wow, really?
 こまったなー<*2>",/0x110192/<*2>,This fruit is bitter! I'm stumped on what to do!<*2>,
 #######,#103,,,
 0x110194,デンジュウカイでトモダチできた? はい いいえ<*A>,"Have you made any friends here in the Denjuu World?
-<0>Yes<0>No<*A>","Have you made any friends here in the Denjuu World?
+<0>Yes<0xF0>No<*A>","Have you made any friends here in the Denjuu World?
 <0>Yes<0>No<*A>",
 0x110196,"ふーん どのくらい?
  いっぱい まぁまぁ<*A>","Hmm... How many?
-<0>Lots<0>A few<*A>","Hmm... How many?
+<0>Lots<0xF0>A few<*A>","Hmm... How many?
 <0>Lots<0>A few<*A>",
 0x110198,"どうしてできないの?
  わかんない ベつにいらない<*A>","Why can't you make friends?
@@ -2215,7 +2214,7 @@ Obviously / Wow, really?
 #######,#104,,,
 0x1101a2,"オレたちってシンユウだよな!
  うん! そお?<*A>","We're pals, aren't we?
-<0>Yeah<0>Are we?<*A>","We're pals, aren't we?
+<0>Yeah<0xF0>Are we?<*A>","We're pals, aren't we?
 <0>Yeah<0>Are we?<*A>",
 0x1101a4,"これからもなかよしだぁー!
  モチロン! どうかな?<*A>","I'd say we're best friends, even!
@@ -2233,15 +2232,15 @@ Obviously / Wow, really?
 #######,#105,,,
 0x1101b0,"ねぇー ボンボンよんでる?
  もちろん! よんでない<*A>","Hey, do you read Comic BomBom?
-Of course! / No","Hey, do you read Comic BomBom?
+<0>Of course!<0xF0>No","Hey, do you read Comic BomBom?
 Of course! / No",
 0x1101b2,"まいつきよんでる?
  トーゼンじゃん! たまにね<*A>","Do you read it every month?
-Obviously! / Only sometimes","Do you read it every month?
+<0>Obviously!<0>Only sometimes","Do you read it every month?
 Obviously! / Only sometimes",
 0x1101b4,"ダメじゃん よまなきゃ
  ごめん これからよむよ<*A>","Come on, you gotta read it.
-Sorry... / I'll start","Come on, you gotta read it.
+<0>Sorry...<0xF0>I'll start","Come on, you gotta read it.
 Sorry... / I'll start",
 0x1101b6,"だよな!だよな!これからも
 まいつき よもうな!<*2>",Yeah! Let's keep reading it every month!<*2>,Yeah! Let's keep reading it every month!<*2>,
@@ -2267,7 +2266,7 @@ Sorry... / I'll start",
 こんどいっしょにかいにいこ!<*2>",/0x1101ca/<*2>,"Oh, so you do want a new one? Let's go shopping together next time!<*2>",
 #######,#107,,,
 0x1101cc,<&name>はヤキュウする? するよ しないなぁ<*A>,"Hey, <&name>, do you play baseball?
-<0>I do<0>Nah...<*A>","Hey, <&name>, do you play baseball?
+<0>I do<0xF0>Nah...<*A>","Hey, <&name>, do you play baseball?
 <0>I do<0>Nah...<*A>",
 0x1101ce,"こんどオレにおしえてね!
  オゥ! きがむいたらね<*A>","Teach me sometime!
@@ -2286,7 +2285,7 @@ Sorry... / I'll start",
 #######,#108,,,
 0x1101da,"デンジュウのなまえおぼえた?
  うん まだ<*A>","Have you learned a bunch of Denjuu names yet?
-<0>Yep<0>Not yet<*A>","Have you learned a bunch of Denjuu names yet?
+<0>Yep<0xF0>Not yet<*A>","Have you learned a bunch of Denjuu names yet?
 <0>Yep<0>Not yet<*A>",
 0x1101dc,"どのくらいおぼえたの?
  ぜんぶ トモダチはぜんぶ<*A>","How many, do you think?
@@ -2294,7 +2293,7 @@ Sorry... / I'll start",
 <0>All of them<0>All of my friends'<*A>",
 0x1101de,"オレのなまえは わかるよな?
  あたリまえじゃん アレ??<*A>","You know my name, right?
-<0>Obviously!<0>Uh...<*A>","You know my name, right?
+<0>Obviously!<0xF0>Uh...<*A>","You know my name, right?
 <0>Obviously!<0>Uh...<*A>",
 0x1101e0,おぉー!スゴイ<&name>!<*2>,"Whoa! That's amazing, <&name>!<*2>","Whoa! That's amazing, <&name>!<*2>",
 0x1101e2,"そっか ほかにもイッパイいるか
@@ -2322,11 +2321,11 @@ I forgot!! / Hahah...",
 0x1101f6,"オレ デンジュウアイドルになれ
 るかなぁ??
  なれるよ ムリでしょ<*A>","Think I could become a Denjuu pop star?
-<0>I think so!<0>No way<*A>","Think I could become a Denjuu pop star?
+<0>I think so!<0xF0>No way<*A>","Think I could become a Denjuu pop star?
 <0>I think so!<0>No way<*A>",
 0x1101f8,"そしたら マネージャーやって!
  それはチョット いいよ<*A>","When I do, you should be my manager!
-<0>I don't know...<0>Sure<*A>","When I do, you should be my manager!
+<0>I don't know...<0xF0>Sure<*A>","When I do, you should be my manager!
 <0>I don't know...<0>Sure<*A>",
 0x1101fa,"そんなことナイ!!なれるもん!
  ムリだって アハハハ<*A>","You're wrong! I totally can!
@@ -2362,11 +2361,11 @@ You bet / Nah, it suits you",
 0x144012,"トロンコむらにチョウロウが
 いたよねぇ??
  いたよ いたっけ?<*A>","There's an elder living in Tronco Village, right??
-<0>Right<0>You sure?<*A>","There's an elder living in Tronco Village, right?
+<0>Right<0xF0>You sure?<*A>","There's an elder living in Tronco Village, right?
 Right / You sure?",
 0x144014,"なんてなまえだったっけ?
  ムサだよ モサでしょ<*A>","What was his name again?
-<0>It's Musa<0>Mosa?<*A>","What was his name again?
+<0>It's Musa<0xF0>Mosa?<*A>","What was his name again?
 It's Musa / Mosa?",
 0x144016,"いたじゃん!わすれたの?
  しらないよ あぁいたね<*A>","There totally is! Did you forget already?
@@ -2383,7 +2382,7 @@ I didn't know / Ah, you're right",
 0x144020,"チョウロウのいえにいる
 おとこのこはキミのトモダチ?
  そうだよ しリあい<*A>","Hey, that guy staying at the elder's house, is he your friend?
-<0>Yep<0>Sort of<*A>","Hey, that guy staying at the elder's house, is he your friend?
+<0>Yep<0xF0>Sort of<*A>","Hey, that guy staying at the elder's house, is he your friend?
 Yep / Sort of",
 0x144022,"なかよしなの?
  シンユウさ! まあね<*A>","Do you guys get along?
@@ -2441,7 +2440,7 @@ Not really / It's so-so",
 あるんだ キミはおよげる?
  およげるよ およげない<*A>","There are oceans and rivers in the Denjuu World too.
 Can you swim?
-<0>Yep!<0>No, I can't<*A>","There are oceans and rivers in the Denjuu World too.
+<0>Yep!<0xF0>No, I can't<*A>","There are oceans and rivers in the Denjuu World too.
 Can you swim?
 Yep! / No, I can't",
 0x14404c,"じゃあウミのデンジュウとたくさんトモダチになれるかなぁ?
@@ -2482,15 +2481,15 @@ I'm learning / I'll figure it out",
 #######,#118,,,
 0x144066,"クルマってのったことある?
  あるよ ない<*A>","Have you ever been in a car?
-<0>Yes<0>No<*A>","Have you ever been in a car?
+<0>Yes<0xF0>No<*A>","Have you ever been in a car?
 <0>Yes<0>No<*A>",
 0x144068,"どんなの?オレよリはやい?
  はやいよ おそいよ<*A>","What sort of car? Was it faster than me?
-<0>Faster<0>Slower<*A>","What sort of car? Was it faster than me?
+<0>Faster<0xF0>Slower<*A>","What sort of car? Was it faster than me?
 <0>Faster<0>Slower<*A>",
 0x14406a,"のってみたいよな?
  うん やだよコワイ<*A>","I bet you wanna try it, then.
-<0>Yeah<0>No, too scary<*A>","I bet you wanna try it, then.
+<0>Yeah<0xF0>No, too scary<*A>","I bet you wanna try it, then.
 <0>Yeah<0>No, too scary<*A>",
 0x14406c,"そんなにはやいのか こんど
 キョウソウしてみたいなぁ<*2>",That fast? I'd like to try racing against one sometime...<*2>,That fast? I'd like to try racing against one sometime...<*2>,
@@ -2525,7 +2524,7 @@ I'm learning / I'll figure it out",
 <0>Tag along<0>No thanks<*A>",
 0x144084,"ニンゲンカイってたのしいの?
  たのしいよ ぜんぜん<*A>","Is it fun there?
-<0>It is<0>Not at all<*A>","Is it fun there?
+<0>It is<0xF0>Not at all<*A>","Is it fun there?
 <0>It is<0>Not at all<*A>",
 0x144086,"なんでだよ!!
  コワイところだから ヒミツ<*A>","Why not?!
@@ -2548,7 +2547,7 @@ I'm learning / I'll figure it out",
 0x144094,"そんなことないよ ホントに
 ぐあいがわるいんだから
  ゴメンゴメン ふーん<*A>","I'm not exaggerating! I'm really sick!
-<0>Sorry, sorry<0>Hmm...<*A>","I'm not exaggerating! I'm really sick!
+<0>Sorry, sorry<0xF0>Hmm...<*A>","I'm not exaggerating! I'm really sick!
 <0>Sorry, sorry<0>Hmm...<*A>",
 0x144096,アリガトウ もうねるねオヤスミ<*2>,Thanks... I need to sleep now. Good night.<*2>,Thanks... I need to sleep now. Good night.<*2>,
 0x144098,だってニガイんだもん<*2>,But it's bitter...!<*2>,But it's bitter...!<*2>,
@@ -2570,11 +2569,11 @@ I'm learning / I'll figure it out",
 0x1440ac,"<&name>ってアマイの
 とカライのどっちがスキなの?
  アマイの カライの<*A>","<&name>, do you prefer sweet or spicy food?
-<0>Sweet<0>Spicy<*A>","<Name>, do you prefer sweet or spicy food?
+<0>Sweet<0xF0>Spicy<*A>","<Name>, do you prefer sweet or spicy food?
 Sweet / Spicy",
 0x1440ae,"アマイのはうまいよな!
  うん チョーすき<*A>","Yeah, sweet stuff is great!
-<0>Yeah<0>I love it!<*A>","Yeah, sweet stuff is great!
+<0>Yeah<0xF0>I love it!<*A>","Yeah, sweet stuff is great!
 Yeah / I love it!",
 0x1440b0,"オレはカライのダメだなぁ
  なんで? コドモだなぁ<*A>","I can't handle spicy stuff...
@@ -2597,7 +2596,7 @@ It's hot... / It's cool here",
 Yeah, a bit / Way too hot",
 0x1440be,"いいなーそっちはすずしいんだ
  サムすぎ ちょうどいいよ<*A>","That must be nice... How cool is it?
-<0>Freezing<0>Just fine<*A>","That must be nice... How cool is it?
+<0>Freezing<0xF0>Just fine<*A>","That must be nice... How cool is it?
 Freezing / Just fine",
 0x1440c0,チョットくらいガマンしようよ<*2>,"We've just gotta hang on, I guess!<*2>","We've just gotta hang on, I guess!",
 0x1440c2,"こっちも ちょーアツイよー!
@@ -2621,7 +2620,7 @@ You'll never learn / You'll figure it out!
 ",
 0x1440cc,"だいたいつかえればいいよな?
  そうそう そんなことない!<*A>","I guess the basics are enough.
-<0>Yeah<0>Never!<*A>","I guess the basics are enough.
+<0>Yeah<0xF0>Never!<*A>","I guess the basics are enough.
 Yeah / Never!",
 0x1440ce,"む?なんだと!みてろよぜったい
 オマエよリカンペキになるぞ!<*2>",Excuse me?! Just you watch! I'll become better than you!<*2>,Excuse me?! Just you watch! I'll become better than you!,
@@ -2647,7 +2646,7 @@ Yeah / Never!",
 #######,#127,,,
 0x1440e4,"ねぇ コーヒーのめる?
  のめるよ のめない<*A>","Hey, do you drink coffee?
-<0>Yep<0>Nope<*A>","Hey, do you drink coffee?
+<0>Yep<0xF0>Nope<*A>","Hey, do you drink coffee?
 Yep / Nope",
 0x1440e6,"オレのめない だってニガイし
 くろいんだもん!
@@ -2758,12 +2757,12 @@ You should stop / Anything else? //",
 Totally fine! / It still hurts",
 0x14413a,"キミはホントじょうぶだね
  まぁね そうかな?<*A>","You're pretty tough, huh.
-<0>Yup<0>You think so?<*A>","You're pretty tough, huh.
+<0>Yup<0xF0>You think so?<*A>","You're pretty tough, huh.
 Yup / You think so?",
 0x14413c,"イタイんだったらイシャにみせな
 くっちゃダメだぞ!!
  いやだ うん<*A>","If it still hurts, you should go see a doctor!!
-<0>No way<0>Alright<*A>","If it still hurts, you should go see a doctor!!
+<0>No way<0xF0>Alright<*A>","If it still hurts, you should go see a doctor!!
 No way / Alright",
 0x14413e,ケンコウなことはイイことだ!<*2>,"Well, so long as you're alright!<*2>","Well, so long as you're alright!",
 0x144140,"そうだよ!オレもよくころぶけど
@@ -2904,11 +2903,11 @@ Alright! / You can do that?",
 0x1441b8,"じゃあセイザをおしえてよ!
 うーん キミはツノザっぽいな
  なにそれ? ちがうよ<*A>","Then I'll try to read your star sign! Hmm... You seem like a ""Claw""!
-<0>What's that?<0>Wrong!<*A>","Then I'll try to read your star sign! Hmm... You seem like a ""Claw""!. 
+<0>What's that?<0xF0>Wrong!<*A>","Then I'll try to read your star sign! Hmm... You seem like a ""Claw""!. 
 What's that? / Wrong!",
 0x1441ba,"しってるさ!よくアタルんだよ!
  ヘー うっそー?<*A>","You bet! It's pretty accurate too! 
-<0>Cool!<0>...Really?<*A>","You bet! It's pretty accurate too! 
+<0>Cool!<0xF0>...Really?<*A>","You bet! It's pretty accurate too! 
 Cool! / ...Really?",
 0x1441bc,"えっつ?あそっか ニンゲンカイ
 のセイザとはちがうんだ<*2>","Eh..? Oh I see, the zodiac is different in the Human World! <*2>","Eh..? Oh I see, your the is different in the Human World! ",
@@ -2942,7 +2941,7 @@ Cool! / ...Really?",
 Congrats! / What, again?",
 0x1441d4,"あリがとう いくつにみえる?
  3さい 45さい<*A>","Thanks! How old do I look?
-<0>3<0>45<*A>","Thanks! How old do I look?
+<0>3<0xF0>45<*A>","Thanks! How old do I look?
 3 / 45",
 0x1441d6,"あれ?そうだっけ?
  トボケるな! ちがうっけ?<*A>","Huh? You think I said that before?
@@ -3522,7 +3521,7 @@ It's huge / It's bald","""it has long eyelashes"" is a bit too long for this."
 #######,#185,,,
 0x94000,"モシモシ?デンワくれた?
  したよ してない<*A>","Hello? Did you just call me?
-<0>I did<0>Nope<*A>","Hello? Did you just call me?
+<0>I did<0xF0>Nope<*A>","Hello? Did you just call me?
 I did / Nope",Questions 185 to 200.
 0x94002,ゴメンきづかなかったよ<*2>,"Sorry, I didn't notice it ringing in time!<*2>","Sorry, I didn't notice it ringing in time!",
 0x94004,じゃあだれだろう?そんだけ<*2>,I wonder who it was then? Huh.<*2>,I wonder who it was then? Huh.,

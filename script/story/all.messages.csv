@@ -8,9 +8,9 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 よろしいですか?
  はい  いいえ<*A>","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
+<0>Yes<0xF0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,Shop 1 (Tronco)
+<0>Ja<0xF0>Nein<*A>",,Shop 1 (Tronco)
 0x120004,<S0> <&0xca00>チル<*4>,<S0> <&0xca00>Ch.<*4>,,<S0> <&0xca00>Ch.<*4>,,
 0x120006,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -28,9 +28,9 @@ Ist das OK?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
+<0>Yes<0xF0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x120010,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,<S0><&0xca00>Ch.<*4>,,
 0x120012,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -53,9 +53,9 @@ Ist das OK?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
+<0>Yes<0xF0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x120022,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,<S0><&0xca00>Ch.<*4>,,
 0x120024,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -78,9 +78,9 @@ Ist das OK?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
+<0>Yes<0xF0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x120034,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,<S0><&0xca00>Ch.<*4>,,
 0x120036,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -103,9 +103,9 @@ Ist das OK?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
+<0>Yes<0xF0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,(Unused)
+<0>Ja<0xF0>Nein<*A>",,(Unused)
 0x120046,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,<S0><&0xca00>Ch.<*4>,,(Unused)
 0x120048,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -129,9 +129,9 @@ Says permit instead of pass."
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
+<0>Yes<0xF0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x120058,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,<S0><&0xca00>Ch.<*4>,,
 0x12005a,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -154,9 +154,9 @@ Ist das OK?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,"Das macht dann <&0xca00> Chiru.
+<0>Yes<0xF0>No<*A>",,"Das macht dann <&0xca00> Chiru.
 Ist das OK?
-<0>Ja<0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x12006a,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,<S0><&0xca00>Ch.<*4>,,
 0x12006c,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -179,7 +179,7 @@ Ist das OK?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x12007c,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,,,
 0x12007e,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -201,7 +201,7 @@ Alright?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x12008e,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,,,
 0x120090,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -223,7 +223,7 @@ Alright?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1200a0,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,,,
 0x1200a2,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -245,7 +245,7 @@ Alright?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1200b2,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,,,
 0x1200b4,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -267,7 +267,7 @@ Alright?
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
 Alright?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1200c4,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,,,
 0x1200c6,"<S0>
 <&0xca00>チル<*4>","<S0>
@@ -299,22 +299,21 @@ Ob das wohl wahr ist?
 Die Welt der Denjuu...
 Ich wette, da gibt's so einiges zu erleben...
 Ach, wenn ich doch nur dorthin könnte...
-
- ",,
+",,
 0x1200d4,"あ...あぶなかったぁ...
 ここまで ボールを とばせる
 ようなひとは ただひとリ..","Th-That was close!
 There's only one guy I know who could hit a ball this far...",,"Woah, das war knapp!
 Ich kenne nur einen, der einen Ball so weit schlagen kann...",,
 0x1200d6,"じぶんでうって じぶんで
-ひろいにいくなんてなぁ...","Whoever hits it has to go get it, huh?",,Wo ist er denn nur hingeflogen...?,,
+ひろいにいくなんてなぁ...","Whoever hits it has to go get it, huh?",,Irgendwo hier muss er sein...,,
 0x1200d8,<&0xc92c> みーっけ!,"Hey there, <&0xc92c>!",,"Huhu, <&0xc92c>!",,
 0x1200da,"あれ? ひょっとして アンタ
 また やきゅうとかやってるの?",Huh? Are you seriously playing baseball again?,,"Nanu? Sag bloß, du spielst schon wieder Baseball...",,
 0x1200dc,"なんだよ ミヨ
 ベつにいいじゃないか!","Come on, Miyo, cut it out!
 What's so bad about that?",,"Heh, was soll das denn heißen?!
-Hast du etwa was gegen Baseball, Mia?",,
+Was hast du denn gegen Baseball, Mia?",,
 0x1200de,"はー.....
 いまどき デンジュウカイに
 いったことが ないコドモって
@@ -1564,7 +1563,7 @@ If you bring me one, I can make it so you can enter the sea if you want-ope!",,,
 おねがいだっペ!",Please find me a Game Machine-ope!,,,,
 0x12c076,"『ゲームマシン』をあげますか?
  はい  いいえ<*A>","Hand over the ""Game Machine""?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x12c078,"『ゲームマシン』だっペー!!
 あリがとうだっペ!
 やくそくどおリ うみにつれて
@@ -2237,7 +2236,7 @@ Now I can evolve even more kinds of Denjuu!",,,,
 It's us who should be thanking you.
 Now, good luck on your final errand!",,,,
 0x12c166,『ぬいぐるみ』を わたしますか? はい  いいえ<*A>,"Hand over the ""Plush Toy""?
-<0>Yes<0>No<*A><*A>",,,,
+<0>Yes<0xF0>No<*A><*A>",,,,
 0x12c168,"ワ ワシに くれるんじゃ
 ないのか??","Wh-What?
 You're not going to give it to me??",,,,
@@ -4189,7 +4188,7 @@ Tファンガーと いっても
 オレが おしえてやるよ
  はい  いいえ<*A>","Is there anything you don't understand about the D-Shot?
 I can teach you about it!
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x140150,"おっ <&name>
 デンジュウカイに きてたんだ","Oh, hi <&name>!
 I see you made it to the Denjuu World.",,,,
@@ -4202,14 +4201,14 @@ You came to this village too, huh?",,,,
 つかいかたしってるか??
  はい  いいえ<*A>","If you're here, that means you must have a D-Shot now.
 Are you familiar with how to use it?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x140156,"それじゃあ Dショットについて
 おしえてやるよ","Okay, then I'll explain the D-Shot's features.",,,,
 0x140158,"まず 『デンワちょう』からだ
 これについて ききたいか?
  はい  いいえ<*A>","First, let's start with ""Contacts"". 
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x14015a,"これは テレファングで
 トモダチになった デンジュウと
 れんらくをとるのに
@@ -4222,7 +4221,7 @@ You can easily call and switch between Denjuu here.",,,,
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Calls"".
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x14015e,"『ちゃくれき』は
 どのデンジュウから デンワが
 かかってきたかを みることが
@@ -4231,14 +4230,14 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Items"".
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x140162,"『アイテム』は デンジュウたちのシンカにつかう アイテムを
 みることが できるんだ","Here, you can view your items or give them as gifts. If you want to fuse items, you need to do it in a shop.",,,,
 0x140164,"つぎは『メール』だ
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Texts"".
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x140166,"『メール』は Dショットの
 でんげんを きっているあいだに
 かかってきた デンジュウの
@@ -4247,7 +4246,7 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Save"".
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x14016a,"『セーブ』は いまの
 しんこうじょうきょうを 
 ほぞんするのに つかうんだ",You can use this to record your current progress.,,,,
@@ -4255,7 +4254,7 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Options"".
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x14016e,"まず『マナーモード』
 これを『ON』にしておくと
 デンワがかかってきたときに
@@ -4280,7 +4279,7 @@ When this is turned off, attack animations won't be shown during battles.",,,,
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Melo-D"". 
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x140178,"これは デンワが かかって
 きたときになる おとを
 えらんだリ つくったリ
@@ -4289,7 +4288,7 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Index"". 
 Do you want an explanation?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x14017c,"これは トモダチになった
 デンジュウのことが 
 かいてあるんだ
@@ -4310,7 +4309,7 @@ Try to make friends with lots of Denjuu!",,,,
 ききたいの?
  はい  いいえ<*A>","Oh, hey <&name>.
 Did you want to hear about the Denjuu World?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x140184,"あーっ <&name>
 アンタ ここにきてたんだー","Aah, <&name>!
 I didn't know you were here.",,,,
@@ -4331,7 +4330,7 @@ So, what do you think of the Denjuu World so far?",,,,
  はい  いいえ<*A>","That's good.
 So anyway, how much do you know about the Denjuu World?
 Do you want me to tell you more about it?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x14018e,"それじゃ おしえてあげるわ
 このデンジュウカイはね
 さいしょに デンジュウカイを
@@ -4367,7 +4366,7 @@ Bye-bye!",,,,
 ことが できたのか?
  はい  いいえ<*A>","Hey! How's it going?
 Do you have any more questions about evolution?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x14019c,"オッス <&name>!
 オマエもついにデンジュウカイにくるようになったかー!","Yo <&name>!
 Glad to see you finally made it to the Denjuu World!",,,,
@@ -4388,11 +4387,11 @@ What do you mean??",,,,
 『シンカ』について おしえて
 やるよ
  はい  いいえ<*A>","Well, I can explain it for you if you want.
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401a6,"『しぜんシンカ』について
 ききたいか?
  はい  いいえ<*A>","Do you wanna hear about ""Natural evolution""?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401a8,"『しぜんシンカ』は
 テレファングをくリかえして
 けいけんを つむと シンカ
@@ -4404,7 +4403,7 @@ This type only happens with ""Natural Denjuu"", though.",,,,
 0x1401aa,"『かいぞうシンカ』について
 ききたいか?
  はい  いいえ<*A>","Do you wanna hear about ""Fusion evolution""?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401ac,"『かいぞうシンカ』は
 デンジュウとアイテムを
 ゴウセイすることで
@@ -4416,7 +4415,7 @@ This type works with both ""Natural"" and ""Cultivated"" Denjuu. ",,,,
 0x1401ae,"『じっけんシンカ』について
 ききたいか?
  はい  いいえ<*A>","Do you wanna hear about ""Lab evolution""?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401b0,"『じっけんシンカ』は 
 『しぜんデンジュウ』から
 とリだした DNAを
@@ -4480,7 +4479,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 デンジュウが あいてのときに
 ついて ききたい?
  はい  いいえ<*A>","Would you like to learn the match-ups for Mountain Denjuu?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401c8,"『いわやま』にすむ
 デンジュウがあいてのときの
 テレファングは
@@ -4495,7 +4494,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 デンジュウが あいてのときに
 ついて ききたい?
  はい  いいえ<*A>","How about the match-ups for Field Denjuu?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401cc,"『そうげん』にすむ
 デンジュウがあいてのときの
 テレファングは
@@ -4510,7 +4509,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 デンジュウが あいてのときに
 ついて ききたい?
  はい  いいえ<*A>","How about the match-ups for Forest Denjuu?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401d0,"『しんリん』にすむ
 デンジュウがあいてのときの
 テレファングは
@@ -4525,7 +4524,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 デンジュウが あいてのときに
 ついて ききたい?
  はい  いいえ<*A>","How about the match-ups for Water Denjuu?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401d4,"『みずベ』にすむ
 デンジュウがあいてのときの
 テレファングは
@@ -4540,7 +4539,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 デンジュウが あいてのときに
 ついて ききたい?
  はい  いいえ<*A>","How about the match-ups for Sky Denjuu?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401d8,"『そら』にすむ
 デンジュウがあいてのときの
 テレファングは
@@ -4555,7 +4554,7 @@ And I'm your professor, ""Taka-P""! Welcome!",,,,
 デンジュウが あいてのときに
 ついて ききたい?
  はい  いいえ<*A>","How about the match-ups for Desert Denjuu?
-<0>Yes<0>No<*A>",,,,
+<0>Yes<0xF0>No<*A>",,,,
 0x1401dc,"つぎに 『さばく』にすむ
 デンジュウがあいてのときの
 テレファングは
