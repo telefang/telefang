@@ -516,11 +516,11 @@ Und wer weiß, vielleicht erfahren wir dabei das ein oder andere über diese Wel
 There is nothing to be afraid of.
 I am not going to eat you, or any such thing.
 Now then, are you familiar with the Denjuu World?
-<0>Yes  <0>No<*A>",,"Hohoho.
+<0>Yes<0xF0>No<*A>",,"Hohoho.
 Ihr braucht wirklich keine Angst zu haben.
 Ich werde euch schon nicht auffressen.
 Wisst ihr über unsere Welt überhaupt Bescheid?
-<0>Ja   <0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x120118,"ではまず デンジュウカイに
 ついて はなそうかの","Ah, then I suppose I should explain.",,"Nein? Gut, dann lasst mich euch was darüber erzählen.",,
 0x12011a,"ニンゲンカイと デンジュウカイ
@@ -573,9 +573,9 @@ Diese Kämpfe, die ausschließlich zwischen Denjuu ausgefochten werden, bezeichn
 わかったかな?
  はい  いいえ<*A>","So?
 Do you understand now?
-<0>Yes  <0>No<*A>",,"Und?
+<0>Yes<0xF0>No<*A>",,"Und?
 Habt ihr soweit alles verstanden?
-<0>Ja   <0>Nein<*A>",,
+<0>Ja<0xF0>Nein<*A>",,
 0x120128,"では おぬしらを ここによんだ
 リゆうを はなそうかの",Then we shall discuss the reason you were called here.,,"Gut, dann sollten wir nun über das reden, weshalb ihr überhaupt hierher gerufen wurdet.",,
 0x12012a,"このむらのすいげんに 
