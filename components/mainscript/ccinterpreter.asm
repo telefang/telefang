@@ -53,13 +53,11 @@ MainScript_CCInterpreter::
 .cursorSetRelativeOffset
 	ld [W_MainScript_ADVICE_RelativePositionOffset], a
 	jp MainScript_EndOpcode.skipNewlineCheck
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
+	
+.arrowPositionCC
+	cp $F0
+	jr nz, .localStateJumpCC
+	jp MainScript_ADVICE_PositionSecondArrowByCC
 
 .localStateJumpCC
 	cp $E1
@@ -594,16 +592,21 @@ MainScript_ADVICE_RepositionCursorByCC::
 	ld a, [W_MainScript_ADVICE_RelativePositionOffset]
 	add a, b
 	pop bc
+	call MainScript_ADVICE_RepositionCursor
+	call MainScript_Moveup
+	jp MainScript_EndOpcode.skipNewlineCheck
+	
+MainScript_ADVICE_RepositionCursor::
 	ld [W_MainScript_TilesDrawn], a
 	xor a
 	ld [W_MainScript_VWFLetterShift], a
-	xor a
 	ld [W_MainScript_VWFCurrentLetter], a
+	
+.clearCompositeArea
 	push hl
 	ld hl, $CFD0
 	push bc
-	xor a
-	ld b, 10
+	ld b, $10
 	
 .clearCompositeAreaLoop
 	ld [hli], a
@@ -611,6 +614,13 @@ MainScript_ADVICE_RepositionCursorByCC::
 	jr nz, .clearCompositeAreaLoop
 	pop bc
 	pop hl
-	call MainScript_Moveup
+	ret
+	
+SECTION "Main Script Patch Advice 2", ROMX[$7C89], BANK[$B]
+MainScript_ADVICE_PositionSecondArrowByCC::
+	ld a, [W_MainScript_TilesDrawn]
+	inc a
+	ld [W_MainScript_SecondAnswerTile], a
+	inc a
+	call MainScript_ADVICE_RepositionCursor
 	jp MainScript_EndOpcode.skipNewlineCheck
-
