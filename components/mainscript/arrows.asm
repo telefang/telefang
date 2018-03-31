@@ -4,7 +4,7 @@ SECTION "Main Script Arrow Position Variable", WRAM0[$C9D7]
 W_MainScript_ArrowPosition:: ds 1
 
 SECTION "Main Script Arrow Display", ROMX[$4484], BANK[$B]
-MainScript_ArrowInput::
+MainScript_PositionArrow::
 
 ; Check if "left" was pressed.
 
