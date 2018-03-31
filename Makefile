@@ -51,6 +51,7 @@ OBJS := components/compression/malias.o \
      components/mainscript/statustext.o components/mainscript/window.o \
      components/mainscript/canned_initializer.o components/mainscript/message_args.o \
      components/mainscript/shop_item_window.o \
+     components/mainscript/arrows.o \
 	  components/map/locations.o components/map/states.o \
      components/overworld/memory.o components/overworld/rtc.o \
      components/overworld/power_antenna.o components/overworld/new_save_init.o \
