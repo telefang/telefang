@@ -119,3 +119,65 @@ MainScript_MapArrowTile::
 	ld [hl], b
 	ei
 	ret
+
+SECTION "Main Script Arrow Input Plus Input Indicator", ROMX[$4533], BANK[$B]
+MainScript_ArrowInputPlusInputIndicator::
+
+; Wait x frames then close if W_MainScript_WaitFrames is set.
+
+	ld a, [W_MainScript_WaitFrames]
+	or a
+	jr nz, .waitThenEnd
+
+; Calculate the mapped position of the button input indicator. For more information see the comments for MainScript_MapArrowTile.
+
+	ld a, [W_MainScript_WindowLocation]
+	add a, 4
+	call $4B68
+	ld c, $11
+	call $4C32
+
+; Map that shit. For register "c": $C is up, $D is down.
+
+	ld c, $C
+	ld a, [W_MainScript_FramesCount]
+	bit 4, a
+	jr nz, .upGfxPlz
+	ld c, $D
+
+.upGfxPlz
+	ld a, [W_Status_NumericalTileIndex]
+	add c
+	ld c, a
+	di
+	call WaitForBlanking
+	ld [hl],c
+	ei
+
+; If both A and B buttons are held down at the same time then power through dialogue like a boss.
+
+	ldh a,[H_JPInput_HeldDown]
+	and a, 3
+	cp a, 3
+	jr z, .end
+
+; Otherwise close the box by pressing a.
+
+	ldh a, [H_JPInput_Changed]
+	and a, 1
+	ret z
+
+.end
+	ld a, 0
+	ld [W_MainScript_ContinueBtnPressed], a
+	ld a, 9
+	ld [W_MainScript_State], a
+	or a
+	ret
+
+.waitThenEnd
+	dec a
+	jr z, .end
+	ld [W_MainScript_WaitFrames], a
+	xor a
+	ret
