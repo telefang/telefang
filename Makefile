@@ -60,6 +60,7 @@ OBJS := components/compression/malias.o \
      components/mainscript/statustext.o components/mainscript/window.o \
      components/mainscript/canned_initializer.o components/mainscript/message_args.o \
      components/mainscript/shop_item_window.o \
+     components/mainscript/arrows.o \
      components/mainscript/advice.o \
 	  components/map/locations.o components/map/states.o \
      components/overworld/memory.o components/overworld/rtc.o \
