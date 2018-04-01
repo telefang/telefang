@@ -5,15 +5,21 @@ INCLUDE "telefang.inc"
 ;E2: Newline
 ;E3: Change text speed (1 byte follows)
 ;E5: Jump to new location (farptr follows)
+;EA: Disable VWF.
+;EB: Enable VWF.
 ;ED: Change the value of W_MainScript_TilesDrawn mid-render (1 byte follows). Be careful though. If you set W_MainScript_TilesDrawn to a value that isn't on the current line of text then expect rendering weirdness.
 ;EE: Makes the ED control code's value relative to the value of W_MainScript_TilesDrawn as it was during the EE code's last use.
 ;EF: Makes the ED control code's value absolute again.
+;F0: If placed between the first and second question option it will automatically add the relevant space and second arrow position. Only use for short question options.
 
 
 MainScript_StateOpcode EQU $45C8
 
 SECTION "Main Script Relative Positioning Offset", WRAM0[$C7CC]
 W_MainScript_ADVICE_RelativePositionOffset:: ds 1
+
+SECTION "Main Script Arrow Mode", WRAM0[$CB45]
+W_MainScript_ADVICE_VerticalArrowEnabled:: ds 1
 
 SECTION "Main Script Control Code Interpreter", ROMX[$413C], BANK[$B]
 MainScript_CCInterpreter::
@@ -23,100 +29,47 @@ MainScript_CCInterpreter::
 	ld h, a
 	call MainScript_LoadFromBank
 	jp MainScript_ADVICE_StoreCurrentLetter
+	
+.table
+
+; This table represents control codes E0 to FF.
+; IMPORTANT: Every function called from this table must open with "pop hl" or shit will break.
+
+	dw MainScript_CCInterpreter_ReturnCC, MainScript_CCInterpreter_LocalStateJumpCC, MainScript_CCInterpreter_NewlineCC, MainScript_CCInterpreter_TextSpeedCC ; E0 to E3
+	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_JumpCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_OpcodeE7 ; E4 to E7
+	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_ThirdPersonCheckCC, MainScript_CCInterpreter_VWFdisableCC, MainScript_CCInterpreter_VWFenableCC ; E8 to EB
+	dw MainScript_CCInterpreter_FarJumpCC, MainScript_CCInterpreter_CursorCC, MainScript_CCInterpreter_CursorRelativeOffsetCC, MainScript_CCInterpreter_CursorResetRelativeOffsetCC ; EC to EF
+	dw MainScript_ADVICE_PositionSecondArrowByCC, MainScript_CCInterpreter_EnableVerticalArrowModeCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; F0 to F3
+	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; F4 to F7
+	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; F8 to FB
+	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; FC to FF
+	
 .COMEFROM_StoreCurrentLetter
 	push af
 	ld a, [W_MainScript_TilesDrawn]
 	ld [W_MainScript_SecondAnswerTile], a
 	pop af
 	
-.newlineCC
-	cp $E2
-	jr nz, .cursorCC
-	jp MainScript_ADVICE_NewlineVWFReset
-	
-.cursorCC
-	cp $ED
-	jr nz, .cursorRelativeOffsetCC
-	jp MainScript_ADVICE_RepositionCursorByCC
-	
-.cursorRelativeOffsetCC
-	cp $EE
-	jr nz, .cursorResetRelativeOffsetCC
-	ld a, [W_MainScript_TilesDrawn]
-	jr .cursorSetRelativeOffset
-	
-.cursorResetRelativeOffsetCC
-	cp $EF
-	jr nz, .arrowPositionCC
-	xor a
-	
-.cursorSetRelativeOffset
-	ld [W_MainScript_ADVICE_RelativePositionOffset], a
-	jp MainScript_EndOpcode.skipNewlineCheck
-	
-.arrowPositionCC
-	cp $F0
-	jr nz, .localStateJumpCC
-	jp MainScript_ADVICE_PositionSecondArrowByCC
-
-.localStateJumpCC
-	cp $E1
-	jr nz, .opcodeE7
-   
-.j2StateOpcode
-	jp MainScript_ADVICE_StateOpcode
-	
-.opcodeE7 ;Don't know what this does yet.
-	cp $E7
-	jr nz, .thirdPersonCheckCC
-	call $422F
-	jp MainScript_EndOpcode.checkIfSkipping
-	
-.thirdPersonCheckCC
-	cp $E9
-	jr nz, .textSpeedCC
-	call MainScript_Moveup
-	jp MainScript_EndOpcode.skipNewlineCheck
-	
-.textSpeedCC
-	cp $E3
-	jr nz, .jumpCC
-	call MainScript_LoadFromBank
-	ld [W_MainScript_TextSpeed], a
-	call MainScript_Moveup
-	jp MainScript_EndOpcode.skipNewlineCheck
-	
-.jumpCC
-	cp $E5
-	jr nz, .returnCC
-	ld a, [W_MainScript_TextPtr + 1]
-	ld [W_MainScript_CodePtrSpill + 1], a
-	ld a, [W_MainScript_TextPtr]
-	ld [W_MainScript_CodePtrSpill], a
-	call MainScript_Jump2Operand
-	ret
-	
-.returnCC
-	;cp $E0
-	;jr nz, .regularText
-	nop
-	jp MainScript_ADVICE_AdditionalOpcodes
-	
-.COMEFROM_AdditionalOpcodes
-	ld a, [W_MainScript_CodePtrSpill]
-	ld [W_MainScript_TextPtr], a
-	ld a, [W_MainScript_CodePtrSpill + 1]
-	ld [W_MainScript_TextPtr + 1], a
-	call MainScript_Moveup
-	call MainScript_Moveup
-	jp MainScript_EndOpcode.skipNewlineCheck
+.readTableAndJump
+	cp $E0
+	jr c, .regularText
+	push hl
+	push af
+	ld hl, .table
+	and $1F
+	add a, a
+	add a, l
+	ld l, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	pop af
+	jp [hl]
 
 .regularText
-	cp $E1
-	jp nc, MainScript_Moveup
 	ld a, [W_MainScript_WaitFrames]
 	or a
-	jp z, .noWaiting
+	jr z, .noWaiting
 	dec a
 	jp nz, MainScript_ContinueWaiting
 	
@@ -135,34 +88,86 @@ MainScript_CCInterpreter::
 	pop hl
 	call MainScript_ADVICE_VWFNextTile
 	jp MainScript_ADVICE_AutomaticNewline
-	
-	;TODO: All of this is dead code...
-	nop
-	cp $10
-	jr nz, .noAutomaticNewline
-	ld a, [W_MainScript_NumNewlines]
-	inc a
-	ld [W_MainScript_NumNewlines], a
-	jp MainScript_EndOpcode
-	
-.noAutomaticNewline
-	cp $1F
-	jr c, .isAsciiNonprintable
-	call MainScript_LowControlCode
-	jr z, .isAsciiNonprintable
-	ld a, [W_MainScript_NumNewlines]
-	inc a
-	ld [W_MainScript_NumNewlines], a
-	ld a, 0
-	ld [W_MainScript_TilesDrawn], a
-	jp MainScript_EndOpcode
 
-.isAsciiNonprintable
+MainScript_CCInterpreter_DefaultCC::
+; Fallback for unused control codes.
+	pop hl
+	jp MainScript_Moveup
+	
+MainScript_CCInterpreter_ReturnCC::
+; Control Code E0
+	pop hl
+	ld a, [W_MainScript_CodePtrSpill]
+	ld [W_MainScript_TextPtr], a
+	ld a, [W_MainScript_CodePtrSpill + 1]
+	ld [W_MainScript_TextPtr + 1], a
+	call MainScript_Moveup
+	call MainScript_Moveup
 	jp MainScript_EndOpcode.skipNewlineCheck
 
-.swapRegsThing ;Not sure WTF this does, only called from one place!
-	ld a, c
+MainScript_CCInterpreter_LocalStateJumpCC::
+; Control Code E1
+	pop hl
+   
+.j2StateOpcode
+	jp MainScript_ADVICE_StateOpcode
+	
+MainScript_CCInterpreter_NewlineCC::
+; Control Code E2
+	pop hl
+	jp MainScript_ADVICE_NewlineVWFReset
+	
+MainScript_CCInterpreter_TextSpeedCC::
+; Control Code E3
+	pop hl
+	call MainScript_LoadFromBank
+	ld [W_MainScript_TextSpeed], a
+	call MainScript_Moveup
+	jp MainScript_EndOpcode.skipNewlineCheck
+	
+MainScript_CCInterpreter_JumpCC::
+; Control Code E5
+	pop hl
+	ld a, [W_MainScript_TextPtr + 1]
+	ld [W_MainScript_CodePtrSpill + 1], a
+	ld a, [W_MainScript_TextPtr]
+	ld [W_MainScript_CodePtrSpill], a
+	call MainScript_Jump2Operand
 	ret
+	
+MainScript_CCInterpreter_OpcodeE7::
+; Control Code E7
+;Don't know what this does yet.
+	pop hl
+	call $422F
+	jp MainScript_EndOpcode.checkIfSkipping
+	
+MainScript_CCInterpreter_ThirdPersonCheckCC::
+; Control Code E9
+	pop hl
+	call MainScript_Moveup
+	jp MainScript_EndOpcode.skipNewlineCheck
+	
+MainScript_CCInterpreter_CursorCC::
+; Control Code ED
+	pop hl
+	jp MainScript_ADVICE_RepositionCursorByCC
+	
+MainScript_CCInterpreter_CursorRelativeOffsetCC::
+; Control Code EE
+	pop hl
+	ld a, [W_MainScript_TilesDrawn]
+	jr MainScript_CCInterpreter_CursorSetRelativeOffset
+	
+MainScript_CCInterpreter_CursorResetRelativeOffsetCC::
+; Control Code EF
+	pop hl
+	xor a
+	
+MainScript_CCInterpreter_CursorSetRelativeOffset::
+	ld [W_MainScript_ADVICE_RelativePositionOffset], a
+	jp MainScript_EndOpcode.skipNewlineCheck
+	
 
 ;Appears to be some kind of recovery routine.
 ;Gets jumped to for nonprintable ASCII, does some weird crap
@@ -182,7 +187,7 @@ MainScript_LowControlCode::
     ret
 
 .loc_42D1
-    call MainScript_CCInterpreter.j2StateOpcode
+    call MainScript_CCInterpreter_LocalStateJumpCC.j2StateOpcode
     xor a
     ret
     
@@ -291,7 +296,7 @@ MainScript_ADVICE_StateOpcode:
 MainScript_ADVICE_StoreCurrentLetter:
 	ld [W_MainScript_VWFCurrentLetter], a
 	or a
-	jp nz, MainScript_CCInterpreter.newlineCC
+	jp nz, MainScript_CCInterpreter.readTableAndJump
 	jp MainScript_CCInterpreter.COMEFROM_StoreCurrentLetter
 	
 ;Not ENTIRELY sure what this does.
@@ -329,43 +334,39 @@ MainScript_ADVICE_VWFNextTile:
 	inc a
 	ld [W_MainScript_TilesDrawn], a
 	ret
-   
-MainScript_ADVICE_AdditionalOpcodes:
-	cp $E0
-	jp z, MainScript_CCInterpreter.COMEFROM_AdditionalOpcodes
 	
-	;Disable variable-width font rendering.
-.VWFdisableCC
-	cp $EA
-	jr nz, .VWFenableCC
+MainScript_CCInterpreter_VWFdisableCC::
+; Control Code EA
+; Disable variable-width font rendering.
+	pop hl
 	ld a, 1
 	ld [W_MainScript_VWFDisable], a
 	jp MainScript_EndOpcode.skipNewlineCheck
 	
-	;Enable variable-width font rendering.
-.VWFenableCC
-	cp $EB
-	jp nz, .farJumpCC
+MainScript_CCInterpreter_VWFenableCC::
+; Control Code EB
+; Enable variable-width font rendering.
+	pop hl
 	xor a
 	ld [W_MainScript_VWFDisable], a
 	jp MainScript_EndOpcode.skipNewlineCheck
 	
-	;Jump to any string data in the ROM.
-   ;Format:
-   ; EC bb mm mm
-   ; 
-   ;  - where bb is the new ROM bank
-   ;  - where mm mm is the new text ptr.
-.farJumpCC
-	cp $EC
-	jp nz, MainScript_CCInterpreter.regularText
+MainScript_CCInterpreter_FarJumpCC::
+; Control Code EC
+; Jump to any string data in the ROM.
+; Format:
+; EC bb mm mm
+; 
+;  - where bb is the new ROM bank
+;  - where mm mm is the new text ptr.
+	pop hl
 	ld a, [W_MainScript_TextPtr]
 	ld l, a
 	ld a, [W_MainScript_TextPtr + 1]
 	ld h, a
 	inc hl
-   call MainScript_LoadFromBank
-   push af
+	call MainScript_LoadFromBank
+	push af
 	call MainScript_Jump2Operand
 	pop af
 	ld [W_MainScript_TextBank], a
@@ -379,6 +380,18 @@ MainScript_ADVICE_AdditionalOpcodes:
 	ld a, h
 	ld [W_MainScript_TextPtr + 1], a
 	jp MainScript_EndOpcode.skipNewlineCheck
+
+MainScript_CCInterpreter_EnableVerticalArrowModeCC::
+; Control Code F1
+	pop hl
+	ld a, 1
+	ld [W_MainScript_ADVICE_VerticalArrowEnabled], a
+	jp MainScript_EndOpcode.skipNewlineCheck
+	nop
+	nop
+	nop
+	nop
+	nop
    
 MainScript_ADVICE_GetWindowTileCount::
 	push bc
@@ -618,6 +631,7 @@ MainScript_ADVICE_RepositionCursor::
 	
 SECTION "Main Script Patch Advice 2", ROMX[$7C89], BANK[$B]
 MainScript_ADVICE_PositionSecondArrowByCC::
+	pop hl
 	ld a, [W_MainScript_TilesDrawn]
 	inc a
 	ld [W_MainScript_SecondAnswerTile], a
