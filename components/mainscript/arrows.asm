@@ -69,7 +69,7 @@ MainScript_PositionArrow::
 ; Map the relevant left arrow tile.
 
 	push bc
-	call MainScript_MapArrowTile
+	call MainScript_ADVICE_MapFirstArrowTile
 	pop bc
 	
 ; And now the right arrow position.
@@ -169,7 +169,7 @@ MainScript_ArrowInputPlusInputIndicator::
 
 .end
 	ld a, 0
-	ld [W_MainScript_ContinueBtnPressed], a
+	call MainScript_ADVICE_ArrowClearData
 	ld a, 9
 	ld [W_MainScript_State], a
 	or a
@@ -181,3 +181,18 @@ MainScript_ArrowInputPlusInputIndicator::
 	ld [W_MainScript_WaitFrames], a
 	xor a
 	ret
+	
+SECTION "Main Script Vertical Selector Advice", ROMX[$7C2D], BANK[$B]
+MainScript_ADVICE_ArrowClearData::
+	ld [W_MainScript_ContinueBtnPressed], a
+	ld [W_MainScript_ADVICE_VerticalArrowEnabled], a
+	ret
+
+MainScript_ADVICE_MapFirstArrowTile::
+	ld a, [W_MainScript_ADVICE_VerticalArrowEnabled]
+	or a
+	jr z, .defaultPosition
+	ld c, $A2
+	
+.defaultPosition
+	jp MainScript_MapArrowTile
