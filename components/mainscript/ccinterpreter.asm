@@ -1,4 +1,4 @@
-INCLUDE "components/jpinput/jpinput.inc"
+INCLUDE "telefang.inc"
 
 ;Control codes are as follows:
 ;E1: Local state change (1 byte follows)
