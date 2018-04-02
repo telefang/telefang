@@ -212,7 +212,7 @@ Status_StateUserJPInput:
     cp 1
     jr z, .tabScroll
     ld a, [W_JPInput_TypematicBtns]
-    and $40
+    and M_JPInput_Up
     jr z, .dupeDenjuuScrollFwd
     ld a, [W_Status_SelectedContactIndex]
     cp 0
@@ -229,7 +229,7 @@ Status_StateUserJPInput:
     
 .dupeDenjuuScrollFwd
     ld a, [W_JPInput_TypematicBtns]
-    and $80
+    and M_JPInput_Down
     jr z, .tabScroll
     ld a, [W_Status_NumDuplicateDenjuu]
     ld b, a
@@ -253,7 +253,7 @@ Status_StateUserJPInput:
 
 .tabScroll
     ld a, [W_JPInput_TypematicBtns]
-    and $10
+    and M_JPInput_Right
     jr z, .tabScrollBack
     ld a, [W_Status_CurrentTab]
     inc a
@@ -267,7 +267,7 @@ Status_StateUserJPInput:
 
 .tabScrollBack
     ld a, [W_JPInput_TypematicBtns]
-    and $20
+    and M_JPInput_Left
     jr z, .managementMenuEnter
     ld a, [W_Status_CurrentTab]
     cp 0
@@ -290,7 +290,7 @@ Status_StateUserJPInput:
     cp 0
     jp z, .statusScreenExit
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jr z, .statusScreenExit
     ld a, 2
     ld [W_Status_CalledFromContactScreen], a
@@ -301,7 +301,7 @@ Status_StateUserJPInput:
     cp 0
     jp z, .unchangedScreen
     ld a, [H_JPInput_Changed]
-    and 2
+    and M_JPInput_B
     jr z, .unchangedScreen
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
@@ -309,7 +309,7 @@ Status_StateUserJPInput:
     
 .unchangedScreen
     ld a, [H_JPInput_Changed]
-    and 3
+    and M_JPInput_A + M_JPInput_B
     ret z
     
 .gotoContactMgmtScreen

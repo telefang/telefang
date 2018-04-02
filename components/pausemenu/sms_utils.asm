@@ -6,7 +6,7 @@ W_PauseMenu_SMSArena:: ds M_PauseMenu_SMSArenaSize
 SECTION "Pause Menu SMS Utils", ROMX[$7028], BANK[$4]
 PauseMenu_SMSListingInputHandler::
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jr z, .checkBBtn
     
 .selectSMSText
@@ -37,7 +37,7 @@ PauseMenu_SMSListingInputHandler::
     
 .checkBBtn
     ld a, [H_JPInput_Changed]
-    and 2
+    and M_JPInput_B
     jr z, .listingNavCheck
     
 .dismissMenu
@@ -58,7 +58,7 @@ PauseMenu_SMSListingInputHandler::
     ret z
     
     ld a, [W_JPInput_TypematicBtns]
-    and $10
+    and M_JPInput_Right
     jr z, .prevTraverseCheck
     
 .moveToNext
@@ -81,7 +81,7 @@ PauseMenu_SMSListingInputHandler::
     
 .prevTraverseCheck
     ld a, [W_JPInput_TypematicBtns]
-    and $20
+    and M_JPInput_Left
     jr z, .idle
     
 .moveToPrev

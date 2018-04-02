@@ -54,7 +54,7 @@ PauseMenu_SubStateSaveAnimation::
 ;State 0C 14 03
 PauseMenu_SubStateSaveConfirm::
     ld a, [H_JPInput_Changed]
-    and 3
+    and M_JPInput_A + M_JPInput_B
     ret z
     
     ld e, $2D

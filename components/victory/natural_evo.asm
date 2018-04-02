@@ -32,7 +32,7 @@ Victory_SubStateNaturalEvoInput::
     
 .checkLeft
     ld a, [H_JPInput_Changed]
-    and $20
+    and M_JPInput_Left
     jr z, .checkRight
     
     ld a, [W_Victory_UserSelection]
@@ -45,7 +45,7 @@ Victory_SubStateNaturalEvoInput::
     
 .checkRight
     ld a, [H_JPInput_Changed]
-    and $10
+    and M_JPInput_Right
     jr z, .checkBButton
     
     ld a, [W_Victory_UserSelection]
@@ -62,7 +62,7 @@ Victory_SubStateNaturalEvoInput::
 
 .checkBButton
     ld a, [H_JPInput_Changed]
-    and 2
+    and M_JPInput_B
     jr z, .checkAButton
     
     ld a, 3
@@ -71,7 +71,7 @@ Victory_SubStateNaturalEvoInput::
     
 .checkAButton
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     ret z
     
     ld a, 3

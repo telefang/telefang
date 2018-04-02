@@ -350,7 +350,7 @@ Victory_SubStateStatWindowIdle::
     
 .inputCheck
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     ret z
     
     ld a, [W_Victory_LeveledUpParticipant]

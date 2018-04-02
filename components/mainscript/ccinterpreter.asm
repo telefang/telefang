@@ -218,10 +218,10 @@ MainScript_EndOpcode:: ;2C2EA $42EA
 	or a
 	jp nz, MainScriptMachine
 	ld a, [H_JPInput_HeldDown]
-	and 2
+	and M_JPInput_B
 	jp nz, MainScriptMachine
 	ld a, [H_JPInput_Changed]
-	and 1
+	and M_JPInput_A
 	jr z, .finished
 	ld a, 1
 	ld [W_MainScript_ContinueBtnPressed], a

@@ -69,7 +69,7 @@ Zukan_StateOverviewInput::
     ld [W_OAM_SpritesReady], a
     
     ld a, [W_JPInput_TypematicBtns]
-    and $10
+    and M_JPInput_Right
     jr z, .check_left_pressed
     
 .increment_selected
@@ -88,7 +88,7 @@ Zukan_StateOverviewInput::
 
 .check_left_pressed
     ld a, [W_JPInput_TypematicBtns]
-    and $20
+    and M_JPInput_Left
     jr z, .check_b_pressed
     
 .decrement_selected
@@ -119,7 +119,7 @@ Zukan_StateOverviewInput::
     
 .check_b_pressed
     ld a, [H_JPInput_Changed]
-    and 2
+    and M_JPInput_B
     jr z, .check_a_pressed
     
 .exit_zukan_subscreen
@@ -136,7 +136,7 @@ Zukan_StateOverviewInput::
     
 .check_a_pressed
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jr z, .nothing_pressed
     
 .check_view_zukan_page
@@ -264,7 +264,7 @@ Zukan_StateInnerviewInput::
     
 .check_button_press
     ld a, [H_JPInput_Changed]
-    and 3
+    and M_JPInput_A + M_JPInput_B
     jr z, .check_right_pressed
     
 .exit_inner_screen
@@ -277,7 +277,7 @@ Zukan_StateInnerviewInput::
     
 .check_right_pressed
     ld a, [W_JPInput_TypematicBtns]
-    and $10
+    and M_JPInput_Right
     jr z, .check_left_pressed
     
 .increment_selected
@@ -319,7 +319,7 @@ Zukan_StateInnerviewInput::
 
 .check_left_pressed
     ld a, [W_JPInput_TypematicBtns]
-    and $20
+    and M_JPInput_Left
     jr z, .nothing_pressed
     
 .decrement_selected

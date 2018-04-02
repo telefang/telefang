@@ -3,11 +3,11 @@ INCLUDE "telefang.inc"
 SECTION "Pause Menu Save Input", ROMX[$62EA], BANK[$4]
 PauseMenu_SaveInputHandler::
     ld a, [H_JPInput_Changed]
-    and 2 ;Button B
+    and M_JPInput_B ;Button B
     jr nz, .button_b_pressed
     
     ld a, [W_JPInput_TypematicBtns]
-    and $40 ;Up
+    and M_JPInput_Up ;Up
     jr z, .check_down_pressed
     
 .direction_pressed
@@ -21,13 +21,13 @@ PauseMenu_SaveInputHandler::
     
 .check_down_pressed
     ld a, [W_JPInput_TypematicBtns]
-    and $80 ; Down
+    and M_JPInput_Down ; Down
     jr z, .check_a_pressed
     jr .direction_pressed
     
 .check_a_pressed
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jr z, .nothing_pressed
     
     xor a

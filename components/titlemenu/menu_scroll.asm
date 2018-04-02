@@ -1,7 +1,7 @@
 SECTION "Title Menu Scroll", ROMX[$5913], BANK[$4]
 TitleMenu_ScrollMenu::
     ld a, [W_JPInput_TypematicBtns]
-    and $C0
+    and M_JPInput_Up + M_JPInput_Down
     jr nz, TitleMenu_ScrollMenu_noChange
     
 TitleMenu_ScrollMenu_change::

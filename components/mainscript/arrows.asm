@@ -9,7 +9,7 @@ MainScript_PositionArrow::
 ; Check if "left" was pressed.
 
 	ldh a, [H_JPInput_Changed]
-	and a, $20
+	and a, M_JPInput_Left
 	jr z, .skipLeftAction
 
 ; Check if the arrow is positioned to the right.
@@ -33,7 +33,7 @@ MainScript_PositionArrow::
 
 .skipLeftAction
 	ldh a, [H_JPInput_Changed]
-	and a, $12
+	and a, M_JPInput_B + M_JPInput_Right
 	jr z, .skipRightAction
 
 ; Check if the arrow is positioned to the left.
@@ -156,15 +156,15 @@ MainScript_ArrowInputPlusInputIndicator::
 
 ; If both A and B buttons are held down at the same time then power through dialogue like a boss.
 
-	ldh a,[H_JPInput_HeldDown]
-	and a, 3
-	cp a, 3
+	ldh a, [H_JPInput_HeldDown]
+	and a, M_JPInput_A + M_JPInput_B
+	cp a, M_JPInput_A + M_JPInput_B
 	jr z, .end
 
 ; Otherwise close the box by pressing a.
 
 	ldh a, [H_JPInput_Changed]
-	and a, 1
+	and a, M_JPInput_A
 	ret z
 
 .end

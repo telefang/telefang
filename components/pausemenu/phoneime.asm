@@ -219,7 +219,7 @@ PauseMenu_PhoneIMEPlaceCursor::
 SECTION "Title Menu Player Name Input 4", ROMX[$5B37], BANK[$4]
 PauseMenu_PhoneIMEWraparoundProcessing::
     ld a, [W_JPInput_TypematicBtns]
-    and $10
+    and M_JPInput_Right
     jr z, .checkLeftBtn
     
     ld a, $63
@@ -255,7 +255,7 @@ PauseMenu_PhoneIMEWraparoundProcessing::
     
 .checkLeftBtn
     ld a, [W_JPInput_TypematicBtns]
-    and $20
+    and M_JPInput_Left
     jr z, .checkUpBtn
     
     ld a, $63
@@ -291,7 +291,7 @@ PauseMenu_PhoneIMEWraparoundProcessing::
     
 .checkUpBtn
     ld a, [W_JPInput_TypematicBtns]
-    and $40
+    and M_JPInput_Up
     jr z, .checkDownBtn
     
     ld a, $63
@@ -337,7 +337,7 @@ PauseMenu_PhoneIMEWraparoundProcessing::
 
 .checkDownBtn
     ld a, [W_JPInput_TypematicBtns]
-    and $80
+    and M_JPInput_Down
     jr z, .return
     
     ld a, $63
