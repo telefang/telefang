@@ -5,7 +5,7 @@ TitleMenu_TimeEntryProcessing::
     call TitleMenu_DrawSelectedTimeFieldBlinking
     
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jr z, .checkBButton
     
 .aButton
@@ -33,7 +33,7 @@ TitleMenu_TimeEntryProcessing::
     
 .checkBButton
     ld a, [H_JPInput_Changed]
-    and 2
+    and M_JPInput_B
     jr z, .checkUpButton
     
 .bButton
@@ -50,7 +50,7 @@ TitleMenu_TimeEntryProcessing::
     
 .checkUpButton
     ld a, [W_JPInput_TypematicBtns]
-    and $40
+    and M_JPInput_Up
     jr z, .checkDownButton
     
 .upButton
@@ -89,7 +89,7 @@ TitleMenu_TimeEntryProcessing::
     
 .checkDownButton
     ld a, [W_JPInput_TypematicBtns]
-    and $80
+    and M_JPInput_Down
     jr z, .noInput
     
 .downButton

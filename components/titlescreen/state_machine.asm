@@ -133,7 +133,7 @@ TitleScreen_StateIdle::
     
 .dontBlinkSprite
     ld a, [H_JPInput_Changed]
-    and 9
+    and M_JPInput_A + M_JPInput_Start
     jr z, .checkAttractCountdown
     
 .buttonPressed
@@ -255,7 +255,7 @@ TitleScreen_StateCorruptSaveLoadTilemaps::
 ; State 01 0E
 TitleScreen_StateCorruptSaveIdle::
     ld a, [H_JPInput_Changed]
-    and 9
+    and M_JPInput_A + M_JPInput_Start
     ret z
     
     ld a, 4

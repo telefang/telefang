@@ -158,7 +158,7 @@ TitleMenu_StateMenuInputHandler::
     call TitleMenu_ScrollMenu
     
     ld a, [W_JPInput_TypematicBtns]
-    and $80
+    and M_JPInput_Down
     jr z, .checkUpPress
     
 .downPress
@@ -167,7 +167,7 @@ TitleMenu_StateMenuInputHandler::
     
 .checkUpPress
     ld a, [W_JPInput_TypematicBtns]
-    and $40
+    and M_JPInput_Up
     jr z, .checkAPress
     
 .upPress
@@ -181,7 +181,7 @@ TitleMenu_StateMenuInputHandler::
     
 .checkAPress
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jp z, .noInputToProcess
     
 .aPress

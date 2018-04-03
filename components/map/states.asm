@@ -169,7 +169,7 @@ Map_StateMainLoop::
 ; Check if the "right" button is pressed.
  
 	ld a, [W_JPInput_TypematicBtns]
-	and a, $10
+	and a, M_JPInput_Right
 	jr z, .skipRightPressAction
 
 ; Check the stored cursor position against the right map boundary.
@@ -189,7 +189,7 @@ Map_StateMainLoop::
 
 .skipRightPressAction
 	ld a, [W_JPInput_TypematicBtns]
-	and a, $20
+	and a, M_JPInput_Left
 	jr z, .skipLeftPressAction
 
 ; Check the stored cursor position against the left map boundary.
@@ -209,7 +209,7 @@ Map_StateMainLoop::
  
 .skipLeftPressAction
 	ld a, [W_JPInput_TypematicBtns]
-	and a, $40
+	and a, M_JPInput_Up
 	jr z, .skipUpPressAction
 
 ; Check the stored cursor position against the top map boundary.
@@ -229,7 +229,7 @@ Map_StateMainLoop::
  
 .skipUpPressAction
 	ld a, [W_JPInput_TypematicBtns]
-	and a, $80
+	and a, M_JPInput_Down
 	jr z, .skipDownPressAction
 
 ; Check the stored cursor position against the bottom map boundary.
@@ -263,7 +263,7 @@ Map_StateMainLoop::
 
 .notFourthFrame
 	ldh a, [H_JPInput_Changed]
-	and a, $A
+	and a, M_JPInput_B + M_JPInput_Start
 	jr z, .noExit
 	ld a, $11
 	ld [W_SystemSubState], a

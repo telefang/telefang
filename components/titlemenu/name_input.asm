@@ -63,7 +63,7 @@ SECTION "Title Menu Player Name Input 3", ROMX[$64A9], BANK[$4]
 TitleMenu_NameInputImpl::
     call PauseMenu_PhoneIMEWraparoundProcessing
     ld a, [H_JPInput_Changed]
-    and 2
+    and M_JPInput_B
     jr z, .noBButtonPress
     
 .backspaceProcessing
@@ -99,12 +99,12 @@ TitleMenu_NameInputImpl::
     
 .noBButtonPress
     ld a, [H_JPInput_Changed]
-    and 8
+    and M_JPInput_Start
     jr nz, .confirmIntent
     
 .noStartButtonPress
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jp z, .return
     
     call $66A1
@@ -211,7 +211,7 @@ TitleMenu_NicknameInputImpl::
     call PauseMenu_PhoneIMEWraparoundProcessing
     
     ld a, [H_JPInput_Changed]
-    and 2
+    and M_JPInput_B
     jr z, .noBButtonPress
     
 .backspaceProcessing
@@ -247,11 +247,11 @@ TitleMenu_NicknameInputImpl::
     
 .noBButtonPress
     ld a, [H_JPInput_Changed]
-    and 8
+    and M_JPInput_Start
     jr nz, .confirmIntent
     
     ld a, [H_JPInput_Changed]
-    and 1
+    and M_JPInput_A
     jp z, .return
     
     call $66A1

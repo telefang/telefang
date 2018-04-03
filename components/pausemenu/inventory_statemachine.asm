@@ -102,7 +102,7 @@ PauseMenu_SubStateInventoryListingIdle::
     ld [W_OAM_SpritesReady], a
     
     ld a, [W_JPInput_TypematicBtns]
-    and $10 ;Right
+    and M_JPInput_Right ;Right
     jr z, .checkLeft
     
 .rightPressed
@@ -130,7 +130,7 @@ PauseMenu_SubStateInventoryListingIdle::
     
 .checkLeft
     ld a, [W_JPInput_TypematicBtns]
-    and $20 ;Left
+    and M_JPInput_Left ;Left
     jr z, .checkButtonB
     
 .leftPressed
@@ -154,7 +154,7 @@ PauseMenu_SubStateInventoryListingIdle::
     
 .checkButtonB
     ld a, [H_JPInput_Changed]
-    and $02 ;Button B
+    and M_JPInput_B ;Button B
     jr z, .checkButtonA
     
 .buttonBPressed
@@ -171,7 +171,7 @@ PauseMenu_SubStateInventoryListingIdle::
     
 .checkButtonA
     ld a, [H_JPInput_Changed]
-    and $01 ;Button A
+    and M_JPInput_A ;Button A
     ret z
     
 .buttonAPressed
@@ -199,7 +199,7 @@ PauseMenu_SubStateInventoryListingIdle::
 ;State 0C 12 04
 PauseMenu_SubStateInventoryEmptyIdle::
     ld a, [H_JPInput_Changed]
-    and 3
+    and M_JPInput_A + M_JPInput_B
     ret z
     
     ld e, $2D
