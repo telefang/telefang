@@ -35,14 +35,38 @@ MainScript_CCInterpreter::
 ; This table represents control codes E0 to FF.
 ; IMPORTANT: Every function called from this table must open with "pop hl" or shit will break.
 
-	dw MainScript_CCInterpreter_ReturnCC, MainScript_CCInterpreter_LocalStateJumpCC, MainScript_CCInterpreter_NewlineCC, MainScript_CCInterpreter_TextSpeedCC ; E0 to E3
-	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_JumpCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_OpcodeE7 ; E4 to E7
-	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_ThirdPersonCheckCC, MainScript_CCInterpreter_VWFdisableCC, MainScript_CCInterpreter_VWFenableCC ; E8 to EB
-	dw MainScript_CCInterpreter_FarJumpCC, MainScript_CCInterpreter_CursorCC, MainScript_CCInterpreter_CursorRelativeOffsetCC, MainScript_CCInterpreter_CursorResetRelativeOffsetCC ; EC to EF
-	dw MainScript_ADVICE_PositionSecondArrowByCC, MainScript_CCInterpreter_EnableVerticalArrowModeCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; F0 to F3
-	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; F4 to F7
-	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; F8 to FB
-	dw MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC, MainScript_CCInterpreter_DefaultCC ; FC to FF
+	dw MainScript_CCInterpreter_ReturnCC ; E0
+	dw MainScript_CCInterpreter_LocalStateJumpCC ; E1
+	dw MainScript_CCInterpreter_NewlineCC ; E2
+	dw MainScript_CCInterpreter_TextSpeedCC ; E3
+	dw MainScript_ADVICE_ConditionalNewlineCC ; E4
+	dw MainScript_CCInterpreter_JumpCC ; E5
+	dw MainScript_CCInterpreter_DefaultCC ; E6
+	dw MainScript_CCInterpreter_OpcodeE7 ; E7
+	dw MainScript_CCInterpreter_DefaultCC ; E8
+	dw MainScript_CCInterpreter_ThirdPersonCheckCC ; E9
+	dw MainScript_CCInterpreter_VWFdisableCC ; EA
+	dw MainScript_CCInterpreter_VWFenableCC ; EB
+	dw MainScript_CCInterpreter_FarJumpCC ; EC
+	dw MainScript_CCInterpreter_CursorCC ; ED
+	dw MainScript_CCInterpreter_CursorRelativeOffsetCC ; EE
+	dw MainScript_CCInterpreter_CursorResetRelativeOffsetCC ; EF
+	dw MainScript_ADVICE_PositionSecondArrowByCC ; F0
+	dw MainScript_CCInterpreter_EnableVerticalArrowModeCC ; F1
+	dw MainScript_CCInterpreter_DefaultCC ; F2
+	dw MainScript_CCInterpreter_DefaultCC ; F3
+	dw MainScript_CCInterpreter_DefaultCC ; F4
+	dw MainScript_CCInterpreter_DefaultCC ; F5
+	dw MainScript_CCInterpreter_DefaultCC ; F6
+	dw MainScript_CCInterpreter_DefaultCC ; F7
+	dw MainScript_CCInterpreter_DefaultCC ; F8
+	dw MainScript_CCInterpreter_DefaultCC ; F9
+	dw MainScript_CCInterpreter_DefaultCC ; FA
+	dw MainScript_CCInterpreter_DefaultCC ; FB
+	dw MainScript_CCInterpreter_DefaultCC ; FC
+	dw MainScript_CCInterpreter_DefaultCC ; FD
+	dw MainScript_CCInterpreter_DefaultCC ; FE
+	dw MainScript_CCInterpreter_DefaultCC ; FF
 	
 .COMEFROM_StoreCurrentLetter
 	push af
@@ -386,7 +410,7 @@ MainScript_CCInterpreter_EnableVerticalArrowModeCC::
 	pop hl
 	ld a, 1
 	ld [W_MainScript_ADVICE_VerticalArrowEnabled], a
-	jp MainScript_EndOpcode.skipNewlineCheck
+	jp MainScript_ADVICE_ConditionalNewlineCC.checkIfFirstLine
 	nop
 	nop
 	nop
@@ -631,10 +655,21 @@ MainScript_ADVICE_RepositionCursor::
 	
 SECTION "Main Script Patch Advice 2", ROMX[$7C89], BANK[$B]
 MainScript_ADVICE_PositionSecondArrowByCC::
+; Control Code F0
 	pop hl
 	ld a, [W_MainScript_TilesDrawn]
 	inc a
 	ld [W_MainScript_SecondAnswerTile], a
 	inc a
 	call MainScript_ADVICE_RepositionCursor
+	jp MainScript_EndOpcode.skipNewlineCheck
+	
+MainScript_ADVICE_ConditionalNewlineCC::
+; Control Code E4
+	pop hl
+
+.checkIfFirstLine
+	ld a, [W_MainScript_TilesDrawn]
+	or a
+	jp nz, MainScript_ADVICE_NewlineVWFReset
 	jp MainScript_EndOpcode.skipNewlineCheck

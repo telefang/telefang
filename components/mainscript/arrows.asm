@@ -6,10 +6,10 @@ W_MainScript_ArrowPosition:: ds 1
 SECTION "Main Script Arrow Display", ROMX[$4484], BANK[$B]
 MainScript_PositionArrow::
 
-; Check if "left" was pressed.
+; Check if "left" or "up" was pressed.
 
 	ldh a, [H_JPInput_Changed]
-	and a, M_JPInput_Left
+	and a, M_JPInput_Left + M_JPInput_Up
 	jr z, .skipLeftAction
 
 ; Check if the arrow is positioned to the right.
@@ -29,11 +29,11 @@ MainScript_PositionArrow::
 	ld [W_Sound_NextSFXSelect], a
 	jr .skipRightAction
 
-; Check if "b" or "right" were pressed.
+; Check if "b", "right" or "down" were pressed.
 
 .skipLeftAction
 	ldh a, [H_JPInput_Changed]
-	and a, M_JPInput_B + M_JPInput_Right
+	and a, M_JPInput_B + M_JPInput_Right + M_JPInput_Down
 	jr z, .skipRightAction
 
 ; Check if the arrow is positioned to the left.
