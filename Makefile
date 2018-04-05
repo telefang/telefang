@@ -103,6 +103,7 @@ OBJS := components/compression/malias.o \
      components/zukan/completion_flags.o components/zukan/draw_utils.o \
      components/zukan/state_machine.o \
      components/fusionlabevo/item_name_utils.o \
+     components/eventscript/general_opcodes.o \
      components/eventscript/denjuu_opcodes.o \
      components/eventscript/interpreter.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
