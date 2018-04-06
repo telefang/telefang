@@ -3,6 +3,72 @@ INCLUDE "telefang.inc"
 SECTION "Event System MetaSprite Config Address Buffer", WRAM0[$C98A]
 W_EventScript_MetaspriteConfigAddressBuffer:: ds 1
 
+SECTION "Event Action - NPC Schedule Walk and Continue", ROMX[$4645], BANK[$F]
+EventScript_NPCScheduleWalkAndContinue::
+; Parameter A is used to find the metasprite config.
+; Parameter B represents where we are walking to. I honestly don't understand the format.
+; Parameter C represents walking speed. Lower is slower, higher is faster. Never set to 0.
+
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .configNotFound
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $14
+	ld l, a
+	ld a, [W_EventScript_ParameterB]
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $16
+	ld l, a
+	ld a, [W_EventScript_ParameterC]
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $1A
+	ld l, a
+	ld a, 2
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $17
+	ld l, a
+	ld a, $FF
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $19
+	ld l, a
+	ld a, [hl]
+	and a, $BF
+	ld [hl], a
+
+.configNotFound
+	ld b, 4
+	call EventScript_CalculateNextOffset
+	scf 
+	ret
+	
+SECTION "Event Action - NPC Wait Until Done Walking and Continue", ROMX[$4943], BANK[$F]
+EventScript_NPCWaitUntilDoneWalkingAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .endWaitPeriod
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $14
+	ld l, a
+	ld a, [hl]
+	cp a, $FF
+	jr z, .endWaitPeriod
+	xor a
+	ret
+
+.endWaitPeriod
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - NPC Schedule Hop and Continue", ROMX[$46ED], BANK[$F]
 EventScript_NPCScheduleHopAndContinue::
 	ld a, [W_EventScript_ParameterA]
