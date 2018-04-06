@@ -122,9 +122,9 @@ EventScript_GetEventDenjuuAndContinue::
     ld a, 2
     ld [hl], a
     call $2411
-    ld a, [$CD0A]
+    ld a, [W_EventScript_ParameterB]
     ld [$D480], a
-    ld a, [$CD0B]
+    ld a, [W_EventScript_ParameterC]
     ld [$D481], a
     ld a, $34
     ld [W_SystemSubState],a
