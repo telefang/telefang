@@ -104,6 +104,7 @@ OBJS := components/compression/malias.o \
      components/zukan/state_machine.o \
      components/fusionlabevo/item_name_utils.o \
      components/eventscript/general_opcodes.o \
+     components/eventscript/flag_opcodes.o \
      components/eventscript/animation_opcodes.o \
      components/eventscript/denjuu_opcodes.o \
      components/eventscript/interpreter.o \

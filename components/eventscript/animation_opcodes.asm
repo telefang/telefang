@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Event System MetaSprite Config Address Buffer", WRAM0[$C98A]
-W_EventScript_MetaspriteConfigAddressBuffer:: ds 1
+W_EventScript_MetaspriteConfigAddressBuffer:: ds 2
 
 SECTION "Event Action - NPC Schedule Walk and Continue", ROMX[$4645], BANK[$F]
 EventScript_NPCScheduleWalkAndContinue::
@@ -47,6 +47,21 @@ EventScript_NPCScheduleWalkAndContinue::
 	scf 
 	ret
 	
+SECTION "Event Action - Player Schedule Walk and Continue", ROMX[$43C7], BANK[$F]
+EventScript_PlayerScheduleWalkAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld [W_MetaSpriteConfigPlayer + $14], a
+	ld a, [W_EventScript_ParameterB]
+	ld [W_MetaSpriteConfigPlayer + $16], a
+	ld a, $15
+	ld [W_MetaSpriteConfigPlayer + $1A], a
+	ld a, $FF
+	ld [W_MetaSpriteConfigPlayer + $17], a
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - NPC Wait Until Done Walking and Continue", ROMX[$4943], BANK[$F]
 EventScript_NPCWaitUntilDoneWalkingAndContinue::
 	ld a, [W_EventScript_ParameterA]
@@ -68,6 +83,20 @@ EventScript_NPCWaitUntilDoneWalkingAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
+
+SECTION "Event Action - Player Wait Until Done Walking and Continue", ROMX[$4977], BANK[$F]
+EventScript_PlayerWaitUntilDoneWalkingAndContinue::
+	ld a, [W_MetaSpriteConfigPlayer + $14]
+	cp a, $FF
+	jr z, .endWaitPeriod
+	xor a
+	ret
+
+.endWaitPeriod
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf  
+	ret 
 
 SECTION "Event Action - NPC Schedule Hop and Continue", ROMX[$46ED], BANK[$F]
 EventScript_NPCScheduleHopAndContinue::
@@ -115,6 +144,31 @@ EventScript_NPCScheduleHopAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Player Schedule Hop and Continue", ROMX[$435E], BANK[$F]
+EventScript_PlayerScheduleHopAndContinue::
+	ld hl, W_MetaSpriteConfigPlayer + $A
+	ld a, 0
+	ld [hli], a
+	ld a, 0
+	ld [hl], a
+	ld hl, W_MetaSpriteConfigPlayer + $E
+	ld a, 0
+	ld [hli], a
+	ld a, 0
+	ld [hl], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	ld a, $10
+	ld [W_Sound_NextSFXSelect], a
+	ld a, 0
+	ld [W_MetaSpriteConfigPlayer + $16], a
+	ld a, $14
+	ld [W_MetaSpriteConfigPlayer + $1A], a
+	ld a, 0
+	ld [$C9EF], a
+	scf
+	ret
+
 SECTION "Event Action - NPC Face Player and Continue", ROMX[$4A06], BANK[$F]
 EventScript_NPCFacePlayerAndContinue::
 ; Do not ask me how this works, it just does.
@@ -147,6 +201,55 @@ EventScript_NPCFacePlayerAndContinue::
 	call EventScript_CalculateNextOffset
 	scf  
 	ret
+
+SECTION "Event Action - Player Face Direction and Continue", ROMX[$4314], BANK[$F]
+EventScript_PlayerFaceDirectionAndContinue::
+	ld d, 0
+	ld a, [W_EventScript_ParameterA]
+	ld b, a
+	or a
+	jr nz, .jpA
+	ld d, 1
+
+.jpA
+	ld a, d
+	ld [W_MetaSpriteConfigPlayer + 2], a
+	ld a, b
+	ld hl, .tableA
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hl]
+	ld [$C9F4], a
+	ld a, [W_MetaSpriteConfigPlayer + $19]
+	bit 2, a
+	jp z, .jpB
+	ld a, [$C9F4]
+	add a, $2D
+	ld [$C9F4], a
+
+.jpB
+	ld a, b
+	ld hl, .tableB
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hl]
+	ld [W_MetaSpriteConfigPlayer + $17], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.tableA
+	db 0,6,0,3
+
+.tableB
+	db 0,3,2,1
 
 SECTION "Event System - Find MetaSprite Config", ROMX[$45EF], BANK[$F]
 EventScript_FindMetaSpriteConfig::
