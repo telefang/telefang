@@ -246,7 +246,7 @@ EventScript_PlayerFaceDirectionAndContinue::
 	ret
 
 .tableA
-	db 0,6,0,3
+	db 6,0,6,3
 
 .tableB
 	db 0,3,2,1
