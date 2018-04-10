@@ -251,6 +251,35 @@ EventScript_PlayerFaceDirectionAndContinue::
 .tableB
 	db 0,3,2,1
 
+SECTION "Event Action - NPC Face Direction and Continue", ROMX[$461B], BANK[$F]
+EventScript_NPCFaceDirectionAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .configNotFound
+	ld a, [W_EventScript_ParameterB]
+	ld de, .table
+	add e
+	ld e, a
+	ld a, 0
+	adc d
+	ld d, a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $12
+	ld l, a
+	ld a, [de]
+	ld [hl], a
+
+.configNotFound
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+  
+.table
+	db 9,0,6,3
+
 SECTION "Event System - Find MetaSprite Config", ROMX[$45EF], BANK[$F]
 EventScript_FindMetaSpriteConfig::
 	ld b, 8
