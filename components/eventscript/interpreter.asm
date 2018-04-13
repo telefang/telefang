@@ -15,6 +15,9 @@ W_EventScript_ParameterF:: ds 1
 W_EventScript_ParameterG:: ds 1
 W_EventScript_WaitFrames:: ds 1
 
+SECTION "Event Multi Jump Conditional", WRAM0[$CD26]
+W_EventScript_MultiJumpConditional:: ds 1
+
 SECTION "Event System - Load Event", ROM0[$2F43]
 EventScript_LoadEvent::
     ld a, [W_CurrentBank]
@@ -104,8 +107,8 @@ EventScript_EventActionTable::
 	dw EventScript_CurrentEventFlag400S800RAndContinue ; 14
 	dw EventScript_CurrentEventFlag800RAndContinue ; 15
 	dw EventScript_EffectiveCurrentEventFlag400S800RAndContinue ; 16
-	dw $449C ; 17
-	dw $44A9 ; 18
+	dw EventScript_SetMultiJumpConditionalAndContinue ; 17
+	dw EventScript_IncrementMultiJumpConditionalAndContinue ; 18
 	dw EventScript_FuckingWeirdSequenceJumpAndContinue ; 19
 	dw $44D4 ; 1A
 	dw $44D4 ; 1B
@@ -122,13 +125,13 @@ EventScript_EventActionTable::
 	dw $46AA ; 26
 	dw EventScript_NPCScheduleHopAndContinue ; 27
 	dw EventScript_NPCScheduleHopAndContinue ; 28
-	dw $473A ; 29
+	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 29
 	dw EventScript_PlayerWaitUntilDoneWalkingAndContinue ; 2A
-	dw $473A ; 2B
+	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2B
 	dw $4987 ; 2C
-	dw $473A ; 2D
+	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2D
 	dw $49B4 ; 2E
-	dw $473A ; 2F
+	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2F
 	dw EventScript_RelativeLongJumpAndContinue ; 30
 	dw $476A ; 31
 	dw $476A ; 32
@@ -158,7 +161,7 @@ EventScript_EventActionTable::
 	dw $4822 ; 4A
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4B
 	dw $4B2A ; 4C
-	dw $4B46 ; 4D
+	dw EventScript_ExecuteCutsceneBehaviourAndContinue ; 4D
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4E
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4F
 	dw $485A ; 50

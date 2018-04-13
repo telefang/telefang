@@ -316,3 +316,85 @@ EventScript_FindMetaSpriteConfig::
 	ld [W_EventScript_MetaspriteConfigAddressBuffer], a
 	or a, 1
 	ret
+
+SECTION "Event Action - Execute Cutscene Behaviour and Continue", ROMX[$4B46], BANK[$F]
+EventScript_ExecuteCutsceneBehaviourAndContinue::
+; This one is super fun to toy around with. It handles a bunch of stuff like cutscene images, screens, and special animations.
+; 00 = Open menu
+; 01 = Open post item selection fusion screen
+; 02 = Ball animation from intro
+; 03 = Antenna tree cutscene image (post-tronco)
+; 04 = "This guy is one of my soldiers" cutscene image
+; 05 = Unused cutscene image
+; 09 = INDEX FULL! Congrats!
+; 0A = "Finally we are connected..." cutscene
+; 65 = Item obtained animation
+; 68 = Noisy's signal block animation.
+; 96 = Obtained starter denjuu number screen
+	ld a, [W_EventScript_ParameterA]
+	cp a, $14
+	jr c, .parameterIsValid
+	cp a, $32
+	jr nc, .parameterIsValid
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.parameterIsValid
+	ld a, [W_EventScript_ParameterA]
+	cp a, 0
+	jp z, $4C5E
+	cp a, 1
+	jp z, $4C6D
+	cp a, 2
+	jr z, EventScript_CutsceneBehaviour_BallAnimation
+	cp a, $64
+	jp z, $4C91
+	cp a, $65
+	jr z, EventScript_CutsceneBehaviour_ItemObtainedAnimation
+	cp a, $66
+	jr z, $4BC9
+	cp a, $67
+	jp z, $4C10
+	cp a, $68
+	jr z, .jpA
+	cp a, $96
+	jp z, $4C2F
+	cp a, 9
+	jp z, $4C7F
+	cp a, 3
+	jp nc, $4C47
+.jpA
+	ld a, [W_MetaSpriteConfigPartner + 3]
+	ld d, a
+	ld a, [W_MetaSpriteConfigPartner + 4]
+	sub a, 8
+	ld e, a
+	ld a, $C
+	ld hl, $775F
+	call CallBankedFunction_int
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+ 
+EventScript_CutsceneBehaviour_BallAnimation::
+	ld b, $1D
+	ld a, $C
+	ld hl, $7886
+	call CallBankedFunction_int
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf 
+	ret
+
+EventScript_CutsceneBehaviour_ItemObtainedAnimation::
+	ld b, $1E
+	ld a, $C
+	ld hl, $7886
+	call CallBankedFunction_int
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf 
+	ret

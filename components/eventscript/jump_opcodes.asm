@@ -86,3 +86,43 @@ EventScript_JumpIfFlagUnsetAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
+
+	
+SECTION "Event Action - Set Multi Jump Conditional", ROMX[$449C], BANK[$F]
+EventScript_SetMultiJumpConditionalAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld W_EventScript_MultiJumpConditional], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_IncrementMultiJumpConditionalAndContinue::
+	ld a, [W_EventScript_MultiJumpConditional]
+	inc a
+	ld [W_EventScript_MultiJumpConditional], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+	
+SECTION "Event Action - Jump Using MultiJumpConditional and Continue", ROMX[$473A], BANK[$F]
+EventScript_JumpUsingMultiJumpConditionalAndContinue::
+
+; W_EventScript_MultiJumpConditional represents which parameter we are grabbing our relative jump offset from.
+; Unfortunately this means that the length of this action can be anything from 2 bytes (1 parameter) to 8 bytes (7 parameters).
+; When it comes to dumping event sequences this action will be a pain.
+
+	ld a, [W_EventScript_MultiJumpConditional]
+	ld hl, W_EventScript_ParameterA
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hl]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
