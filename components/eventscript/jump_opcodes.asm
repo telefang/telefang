@@ -54,7 +54,7 @@ EventScript_JumpOnPlayerWinAndContinue::
 	ret
 
 
-SECTION "Event Action - Flag Jump Actions", ROMX[$4A8A], BANK[$F]
+SECTION "Event Action - Flag Jump Actions 2", ROMX[$4A8A], BANK[$F]
 EventScript_JumpIfFlagSetAndContinue::
 	ld a, [W_EventScript_ParameterB]
 	ld c, a
@@ -91,7 +91,7 @@ EventScript_JumpIfFlagUnsetAndContinue::
 SECTION "Event Action - Set Multi Jump Conditional", ROMX[$449C], BANK[$F]
 EventScript_SetMultiJumpConditionalAndContinue::
 	ld a, [W_EventScript_ParameterA]
-	ld W_EventScript_MultiJumpConditional], a
+	ld [W_EventScript_MultiJumpConditional], a
 	ld b, 2
 	call EventScript_CalculateNextOffset
 	scf

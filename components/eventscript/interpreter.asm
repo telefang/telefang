@@ -106,7 +106,7 @@ EventScript_EventActionTable::
 	dw EventScript_EventFlag400S800RAndContinue ; 13
 	dw EventScript_CurrentEventFlag400S800RAndContinue ; 14
 	dw EventScript_CurrentEventFlag800RAndContinue ; 15
-	dw EventScript_EffectiveCurrentEventFlag400S800RAndContinue ; 16
+	dw EventScript_EffectiveEventFlag400S800RAndContinue ; 16
 	dw EventScript_SetMultiJumpConditionalAndContinue ; 17
 	dw EventScript_IncrementMultiJumpConditionalAndContinue ; 18
 	dw EventScript_FuckingWeirdSequenceJumpAndContinue ; 19

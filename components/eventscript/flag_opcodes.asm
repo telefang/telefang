@@ -103,8 +103,8 @@ EventScript_CurrentEventFlag800RAndContinue::
 	scf
 	ret
 	
-EventScript_EffectiveCurrentEventFlag400S800RAndContinue::
-	jp EventScript_CurrentEventFlag400S800RAndContinue
+EventScript_EffectiveEventFlag400S800RAndContinue::
+	jp EventScript_EventFlag400S800RAndContinue
 
 SECTION "Event Action - Flag Actions 2", ROMX[$4A66], BANK[$F]
 EventScript_SetFlagAndContinue::

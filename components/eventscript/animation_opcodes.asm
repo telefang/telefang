@@ -354,7 +354,7 @@ EventScript_ExecuteCutsceneBehaviourAndContinue::
 	cp a, $65
 	jr z, EventScript_CutsceneBehaviour_ItemObtainedAnimation
 	cp a, $66
-	jr z, $4BC9
+	jr z, Loc_4BC9
 	cp a, $67
 	jp z, $4C10
 	cp a, $68
@@ -398,3 +398,7 @@ EventScript_CutsceneBehaviour_ItemObtainedAnimation::
 	call EventScript_CalculateNextOffset
 	scf 
 	ret
+
+Loc_4BC9:
+;TODO: Fill in what this code does. This label only exists 'cause rgbds won't
+;assemble jrs to absolute addresses.
