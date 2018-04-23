@@ -559,8 +559,8 @@ def Array(containedType, sizeParam, countType = EntriesCount, *args, **kwargs):
             item.reparent(itemname, container = self)
         
         def extend(self, otherlist):
-            for item in otherList:
-                self.append(self, item)
+            for item in otherlist:
+                self.append(item)
         
         def __add__(self, item):
             self.extend(item)
@@ -1277,7 +1277,7 @@ class Union(CField, metaclass = _Union):
                 return self.__fieldstorage.core
             else:
                 return self.__fieldstorage
-        elif name in self.__mapping.keys():
+        elif name in self.__tagstorage.EXPORTEDVALUES.keys():
             #naming a field will let you access that field, regardless of the
             #current tag
             if name not in self.__reverseValues[self.__tag__]:
