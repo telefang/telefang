@@ -915,7 +915,6 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
 def make_tbl(args):
     charmap = parse_charmap(args.charmap)
     banknames = parse_bank_names(args.banknames)
-    banknames = extract_metatable_from_rom(args.rom, charmap, banknames, args)
     
     overflow_bank_ids = []
     
