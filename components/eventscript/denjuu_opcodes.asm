@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
-SECTION "Event Action - Get Event Denjuu", ROMX[$4D38], BANK[$F]
-EventScript_GetEventDenjuu::
+SECTION "Event Action - Get Event Denjuu and Continue", ROMX[$4D38], BANK[$F]
+EventScript_GetEventDenjuuAndContinue::
     
 ; SRAM plz.
     
@@ -75,7 +75,7 @@ EventScript_GetEventDenjuu::
 ; If the Event Denjuu in question is Noisy then read his name from the nickname table in the most untablelike way possible.
 
     ld a, [W_EventScript_ParameterA]
-    cp a, $5
+    cp a, 5
     jr nz, .notNoisy
     ld b, 0
     sla c
@@ -88,7 +88,7 @@ EventScript_GetEventDenjuu::
     ld e, l
     ld hl, StringTable_denjuu_nicknames + $6 * $5
     ld c, BANK(StringTable_denjuu_nicknames)
-    ld b, $06
+    ld b, 6
     call Banked_Memcpy
     
 .notNoisy
@@ -118,45 +118,45 @@ EventScript_GetEventDenjuu::
     ld a, b
     ldi [hl], a
     ld a, [$CA69]
-    ldi [hl],a
-    ld a, $2
-    ld [hl],a
+    ldi [hl], a
+    ld a, 2
+    ld [hl], a
     call $2411
-    ld a,[$CD0A]
-    ld [$D480],a
-    ld a,[$CD0B]
-    ld [$D481],a
-    ld a,$34
+    ld a, [W_EventScript_ParameterB]
+    ld [$D480], a
+    ld a, [W_EventScript_ParameterC]
+    ld [$D481], a
+    ld a, $34
     ld [W_SystemSubState],a
     
 .eventDenjuuEmptySlotNotFound
     ld a, 0
     ld [REG_MBC3_SRAMENABLE], a
-    ld b, $6
+    ld b, 6
     call EventScript_CalculateNextOffset
     xor a
     ret
 
 SECTION "Event Action - Get Event Denjuu - Find Empty Denjuu Slot", ROMX[$4FEF], BANK[$F]
 EventScript_FindEmptyDenjuuSlot::
-    ld hl,$A001
-    ld c,$FE
-    ld de,$0010
+    ld hl, $A001
+    ld c, $FE
+    ld de, $10
     
 .emptySlotSearchLoop
     ld a, [hl]
     or a
     jr z, .emptySlotFound
-    add hl,de
+    add hl, de
     dec c
     jr nz, .emptySlotSearchLoop
-    or a, $01
+    or a, 1
     ret
     
 .emptySlotFound
-    dec  hl
+    dec hl
     push hl
-    ld b,$10
+    ld b, $10
     xor  a
     
 .emptySlotClear

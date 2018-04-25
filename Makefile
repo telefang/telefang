@@ -117,6 +117,10 @@ OBJS := components/compression/malias.o \
      components/zukan/completion_flags.o components/zukan/draw_utils.o \
      components/zukan/state_machine.o \
      components/fusionlabevo/item_name_utils.o \
+     components/eventscript/general_opcodes.o \
+     components/eventscript/flag_opcodes.o \
+     components/eventscript/jump_opcodes.o \
+     components/eventscript/animation_opcodes.o \
      components/eventscript/denjuu_opcodes.o \
      components/eventscript/interpreter.o \
 	  gfx/denjuu_stages.o gfx/phones/keypad_gfx.o gfx/samples.o gfx/items.o \
@@ -242,6 +246,10 @@ $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 %.atf: %.sgbattr.csv
 	@rm -f $@
 	@$(PYTHON) rip_scripts/rip_sgb_attrfile.py make_atf $< $@
+   
+%.metrics.bin: %.tffont.csv
+	@rm -f $@
+	@$(PYTHON) rip_scripts/tffontasm.py $< $@
 
 # Shoutout to SimpleFlips
 $(ROMS_POWER:.gbc=.ips): $(BASEROM_POWER) $(ROMS_POWER)

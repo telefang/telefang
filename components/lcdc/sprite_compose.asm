@@ -14,6 +14,12 @@ W_MetaSpriteConfig3:: ds 0; ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig3_Cou
 SECTION "LCDC Sprite Prep Data2", WRAM0[$C2A0]
 W_MetaSpriteConfig2:: ds 0; ds M_MetaSpriteConfig_Size * M_MetaSpriteConfig2_Count
 
+SECTION "LCDC Sprite Prep Data for Player", WRAM0[$C480]
+W_MetaSpriteConfigPlayer:: ds 0; ds M_MetaSpriteConfig_Size
+
+SECTION "LCDC Sprite Prep Data for Partner Denjuu", WRAM0[$C4A0]
+W_MetaSpriteConfigPartner:: ds 0; ds M_MetaSpriteConfig_Size
+
 SECTION "LCDC Sprite Prep Vars", WRAM0[$C430]
 W_OAM_SpritesReady:: ds 1 ;Flag set to 1 when sprites need to be changed.
 W_OAM_SpritesBrk:: ds 1 ;Number of sprites currently in the DMA area.
