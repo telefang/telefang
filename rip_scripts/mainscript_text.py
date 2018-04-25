@@ -6,6 +6,7 @@
 
 import argparse, errno, sys, os, os.path, struct, io, codecs, urllib.request, urllib.error, urllib.parse, json, csv
 from CodeModule.asm.rgbds import Rgb6, Rgb6Section, Rgb6SectionData, Rgb6Patch, Rgb6PatchExpr, Rgb6Symbol
+from FangTools.tffont.parser import parse_font_metrics
 
 def install_path(path):
     try:
@@ -151,17 +152,6 @@ def extract_metatable_from_rom(rom_filename, charmap, banknames, args):
             banks.append(bank)
 
     return banks
-
-def extract_metrics_from_rom(rom_filename, charmap, banknames, args):
-    metrics = []
-
-    with open(rom_filename, 'rb') as rom:
-        rom.seek(args.metrics_loc)
-
-        for i in range(255):
-            metrics.append(CHARA.unpack(rom.read(1))[0])
-
-    return metrics
 
 def flat(bank, addr):
     if (addr < 0x4000):
@@ -932,7 +922,8 @@ def make_tbl(args):
     if args.language == "Japanese":
         metrics = None
     else:
-        metrics = extract_metrics_from_rom(args.rom, charmap, banknames, args)
+        metrics_file = open(args.metrics, 'r')
+        metrics = parse_font_metrics(metrics_file)
 
     #Some CSV files in the patch branch are merged together.
     #We'll parse these first and add their row data to each individual bank...
@@ -1082,7 +1073,7 @@ def main():
     ap.add_argument('--language', type=str, default="Japanese")
     ap.add_argument('--output', type=str, default="script")
     ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
-    ap.add_argument('--metrics_loc', type=int, default=0x2FB00)
+    ap.add_argument('--metrics', type=str, default="components/mainscript/metrics.tffont.csv")
     ap.add_argument('--window_width', type=int, default=15 * 8) #15 tiles
     ap.add_argument('--overflow_bank', type=int, default=0x1E)
     ap.add_argument('rom', type=str)
