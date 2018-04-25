@@ -229,11 +229,11 @@ $(filter-out %.color.2bpp,%.2bpp): %.png
 
 $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 	@rm -f $@
-	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch.gbc $(SRC_MESSAGE) $(OBJS_MESSAGE) --language="English"
+	@$(PYTHON) rip_scripts/mainscript_text.py make_tbl baserom_patch_really.gbc $(SRC_MESSAGE) $(OBJS_MESSAGE) --language="English" --metrics="components/mainscript/font.tffont.csv"
 
 %.stringtbl: %.csv
 	@rm -f $@
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl baserom_patch.gbc --language="English"
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl baserom_patch_really.gbc --language="English"
 
 %.tmap: %.csv
 	@rm -f $@
