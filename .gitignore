@@ -23,6 +23,7 @@
 *.stringidx
 *.sprite.bin
 *.atf
+*.metrics.bin
 
 # Prevent committing build files.
 dependencies.d
