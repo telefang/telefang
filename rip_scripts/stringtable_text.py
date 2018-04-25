@@ -359,7 +359,6 @@ def main():
     ap.add_argument('--tablenames', type=str, default="rip_scripts/stringtable_names.txt")
     ap.add_argument('--language', type=str, default="Japanese")
     ap.add_argument('--output', type=str, default="script")
-    ap.add_argument('--metrics_loc', type=int, default=0x2FB00)
     ap.add_argument('--window_width', type=int, default=0x16 * 0x8) #16 tiles
     ap.add_argument('rom', type=str)
     ap.add_argument('filenames', type=str, nargs="*")
