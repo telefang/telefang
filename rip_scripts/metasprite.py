@@ -198,7 +198,7 @@ def make_spritebin(args):
     for filename in args.filenames:
         print("Compiling " + filename)
         
-        dst_filename = os.path.splitext(filename)[0] + ".bin"
+        dst_filename = os.path.join("build", os.path.splitext(filename)[0] + ".bin")
         
         with open(filename, 'r') as srcfile:
             csvreader = csv.reader(srcfile)

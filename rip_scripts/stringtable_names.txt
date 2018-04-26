@@ -21,39 +21,39 @@
 #The unused denjuu/nicknames and battle/message_unk tables were never relocated
 #or translated. Same for any table or block suffixed with "old".
 
-battle/nicknames 71F00 table 2 12
-battle/singular 74F0 table 8 1
-battle/plural 74F8 table 8 1
-battle/items_old 2E652 table 68 8
-battle/items 1E2B80 table 68 16
-denjuu/nicknames 2F8FA table 32 6
-denjuu/article_mapping 71B00 index 176 denjuu/article_strings
-battle/tfanger_articles_mapping_1 71C60 index 48 denjuu/article_strings
-battle/tfanger_articles_mapping_2 71CC0 index 48 denjuu/article_strings
-denjuu/article_strings 71D20 block 20
-map/location_mapping AA875 index 256 map/location_strings
-map/location_strings_old AAA75 block 16
-map/location_strings ABD8B block 16
-map/dungeon_mapping AAAFF index 53 map/dungeon_strings
-map/dungeon_strings_old AAB69 block 39
-map/dungeon_strings ABEA9 block 27
-denjuu/species D0000 table 174 16
-battle/tfangers 1D6300 table 49 16
-battle/attacks 1D5890 table 138 16
-denjuu/habitats 1D6200 table 14 8
-battle/arrive_phrases 1E0000 table 174 32
-battle/attack_phrases 1E15C0 table 174 32
-#battle/message_unk N/A table 174 32
-denjuu/personalities 1D6130 table 13 16
-denjuu/statuses 1D6270 table 18 8
-status/ui_strings_1 8BA7 table 1 10
-status/ui_strings_2 8BB1 table 1 6
-battle/ui_strings 1450D table 4 8
+script/battle/nicknames 71F00 table 2 12
+script/battle/singular 74F0 table 8 1
+script/battle/plural 74F8 table 8 1
+script/battle/items_old 2E652 table 68 8
+script/battle/items 1E2B80 table 68 16
+script/denjuu/nicknames 2F8FA table 32 6
+script/denjuu/article_mapping 71B00 index 176 script/denjuu/article_strings
+script/battle/tfanger_articles_mapping_1 71C60 index 48 script/denjuu/article_strings
+script/battle/tfanger_articles_mapping_2 71CC0 index 48 script/denjuu/article_strings
+script/denjuu/article_strings 71D20 block 20
+script/map/location_mapping AA875 index 256 script/map/location_strings
+script/map/location_strings_old AAA75 block 16
+script/map/location_strings ABD8B block 16
+script/map/dungeon_mapping AAAFF index 53 script/map/dungeon_strings
+script/map/dungeon_strings_old AAB69 block 39
+script/map/dungeon_strings ABEA9 block 27
+script/denjuu/species D0000 table 174 16
+script/battle/tfangers 1D6300 table 49 16
+script/battle/attacks 1D5890 table 138 16
+script/denjuu/habitats 1D6200 table 14 8
+script/battle/arrive_phrases 1E0000 table 174 32
+script/battle/attack_phrases 1E15C0 table 174 32
+#script/battle/message_unk N/A table 174 32
+script/denjuu/personalities 1D6130 table 13 16
+script/denjuu/statuses 1D6270 table 18 8
+script/status/ui_strings_1 8BA7 table 1 10
+script/status/ui_strings_2 8BB1 table 1 6
+script/battle/ui_strings 1450D table 4 8
 
 #TODO: Remove this data from the ROM
-denjuu/personalities_old 1D7928 table 12 8
-denjuu/statuses_old 1D7988 table 16 4
-denjuu/species_old 1D4000 table 175 8
-battle/attacks_old 1D46F8 table 138 8
-battle/tfangers_old 1D4578 table 48 8
-denjuu/habitats_old 1D5628 table 6 4
+script/denjuu/personalities_old 1D7928 table 12 8
+script/denjuu/statuses_old 1D7988 table 16 4
+script/denjuu/species_old 1D4000 table 175 8
+script/battle/attacks_old 1D46F8 table 138 8
+script/battle/tfangers_old 1D4578 table 48 8
+script/denjuu/habitats_old 1D5628 table 6 4

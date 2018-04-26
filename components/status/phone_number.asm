@@ -115,4 +115,4 @@ Status_LoadPhoneDigits::
     jp LCDC_LoadTiles
     
 Status_PhoneDigits:
-    INCBIN "components/status/phone_digits.2bpp"
+    INCBIN "build/components/status/phone_digits.2bpp"

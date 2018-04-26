@@ -167,8 +167,8 @@ def extract(args):
             except KeyError:
                 expected_ptrs = None
 
-            csvdir = os.path.join(args.output, table["basedir"])
-            csvpath = os.path.join(args.output, table["filename"])
+            csvdir = os.path.join(args.input, table["basedir"])
+            csvpath = os.path.join(args.input, table["filename"])
             mainscript_text.install_path(csvdir)
 
             with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
@@ -204,8 +204,8 @@ def extract(args):
             foreign_ptrs = tablenames[table["foreign_id"]]["reverse_entries"]
             rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
             
-            csvdir = os.path.join(args.output, table["basedir"])
-            csvpath = os.path.join(args.output, table["filename"])
+            csvdir = os.path.join(args.input, table["basedir"])
+            csvpath = os.path.join(args.input, table["filename"])
             mainscript_text.install_path(csvdir)
             
             with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
@@ -260,7 +260,7 @@ def make_tbl(args):
         print("Compiling " + table["filename"])
         
         #Open and parse the data
-        with open(os.path.join(args.output, table["filename"]), "r", encoding="utf-8") as csvfile:
+        with open(os.path.join(args.input, table["filename"]), "r", encoding="utf-8") as csvfile:
             csvreader = csv.reader(csvfile)
             headers = None
             rows = []
@@ -318,6 +318,9 @@ def make_tbl(args):
         table["reverse_entries"] = reverse_entries
         
         #Write the data out to the object files. We're done here!
+        if not os.path.exists(os.path.dirname(os.path.join(args.output, table["objname"]))):
+            os.makedirs(os.path.dirname(os.path.join(args.output, table["objname"])))
+        
         with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
             for line in packed_strings:
                 objfile.write(line)
@@ -340,7 +343,7 @@ def make_tbl(args):
         reverse_entries = {}
         
         #Open and parse the data
-        with open(os.path.join(args.output, table["filename"]), "r", encoding="utf-8") as csvfile:
+        with open(os.path.join(args.input, table["filename"]), "r", encoding="utf-8") as csvfile:
             csvreader = csv.reader(csvfile)
             
             for row in csvreader:
@@ -358,7 +361,8 @@ def main():
     ap.add_argument('--charmap', type=str, default="charmap.asm")
     ap.add_argument('--tablenames', type=str, default="rip_scripts/stringtable_names.txt")
     ap.add_argument('--language', type=str, default="Japanese")
-    ap.add_argument('--output', type=str, default="script")
+    ap.add_argument('--input', type=str, default="")
+    ap.add_argument('--output', type=str, default="build")
     ap.add_argument('--window_width', type=int, default=0x16 * 0x8) #16 tiles
     ap.add_argument('rom', type=str)
     ap.add_argument('filenames', type=str, nargs="*")

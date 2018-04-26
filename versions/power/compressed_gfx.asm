@@ -451,7 +451,7 @@ IntroCryptoShigeki1GfxEnd
 
 IntroCryptoShigeki2Gfx:
 	dbw NOT_COMPRESSED, IntroCryptoShigeki2GfxEnd - IntroCryptoShigeki2Gfx - 3
-	INCBIN "versions/power/gfx/intro/crypto_shigeki2.2bpp"
+	INCBIN "build/versions/power/gfx/intro/crypto_shigeki2.2bpp"
 IntroCryptoShigeki2GfxEnd
 
 IntroAngios1Gfx:

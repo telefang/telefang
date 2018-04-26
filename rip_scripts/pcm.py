@@ -79,7 +79,7 @@ def convert_to_pcm(filenames=[], options={}):
         # Open the output .pcm file, and write all 1-bit samples.
         name, extension = os.path.splitext(filename)
         pcm_filename = name + '.pcm'
-        with open(pcm_filename, 'wb') as out_file:
+        with open(os.path.join("build", pcm_filename), 'wb') as out_file:
             out_file.write(packed_samples)
 
 
