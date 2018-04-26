@@ -18,21 +18,21 @@
 #COUNT is how many strings there are in total.
 #FOREIGN_NAME is the name of the bank that the INDEX bank references.
 
-battle/items 2E652 table 68 8
-denjuu/nicknames 2F8FA table 48 4
-map/location_mapping AA875 index 256 map/location_strings
-map/location_strings AAA75 block 16
-map/dungeon_mapping AAAFF index 53 map/dungeon_strings
-map/dungeon_strings AAB69 block 39
-denjuu/species 1D4000 table 174 8
-battle/tfangers 1D4578 table 48 8
-battle/attacks 1D46F8 table 138 8
-denjuu/habitats 1D5628 table 6 4
-battle/arrive_phrases 1D5888 table 174 16
-battle/attack_phrases 1D6368 table 174 16
-battle/message_unk 1D6E48 table 174 16
-denjuu/personalities 1D7928 table 12 8
-denjuu/statuses 1D7988 table 16 4
-status/ui_strings_1 8BA7 table 1 10
-status/ui_strings_2 8BB1 table 1 6
-battle/ui_strings 1450D table 4 8
+script/battle/items 2E652 table 68 8
+script/denjuu/nicknames 2F8FA table 48 4
+script/map/location_mapping AA875 index 256 script/map/location_strings
+script/map/location_strings AAA75 block 16
+script/map/dungeon_mapping AAAFF index 53 script/map/dungeon_strings
+script/map/dungeon_strings AAB69 block 39
+script/denjuu/species 1D4000 table 174 8
+script/battle/tfangers 1D4578 table 48 8
+script/battle/attacks 1D46F8 table 138 8
+script/denjuu/habitats 1D5628 table 6 4
+script/battle/arrive_phrases 1D5888 table 174 16
+script/battle/attack_phrases 1D6368 table 174 16
+script/battle/message_unk 1D6E48 table 174 16
+script/denjuu/personalities 1D7928 table 12 8
+script/denjuu/statuses 1D7988 table 16 4
+script/status/ui_strings_1 8BA7 table 1 10
+script/status/ui_strings_2 8BB1 table 1 6
+script/battle/ui_strings 1450D table 4 8

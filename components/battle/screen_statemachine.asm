@@ -53,7 +53,7 @@ Battle_ScreenStateMachine::
     dw $454A,$4566,$561E,$5051,$50E0,$5416,$4F32,$5810 ;38-3F
 
 Battle_ScreenUIStrings::
-    INCBIN "script/battle/ui_strings.stringtbl"
+    INCBIN "build/script/battle/ui_strings.stringtbl"
 
 SECTION "Battle Screen State Machine - Status Warnings For Partners", ROMX[$4721], BANK[$5]
 Battle_SubStateStatusWarningPartner::

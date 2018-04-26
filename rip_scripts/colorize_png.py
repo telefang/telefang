@@ -99,7 +99,7 @@ def main():
         image_path = sys.argv[2]
     except IndexError:
         print("Usage: colorize_png.py <palette file> <PNG to colorize>")
-        print("For example: colorize_png.py fungus.gbcpal fungus.png")
+        print("For example: colorize_png.py fungus.color.gbcpal fungus.png")
         sys.exit(1)
     
     print("Colorizing {} using {}...".format(image_path, palette_path))

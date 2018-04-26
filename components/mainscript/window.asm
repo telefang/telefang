@@ -330,7 +330,7 @@ MainScript_LoadWindowBorderTileset::
     ret
     
 .windowBorderTiles
-    INCBIN "components/mainscript/window_border.2bpp"
+    INCBIN "build/components/mainscript/window_border.2bpp"
 
 MainScript_LoadWindowTiles::
     ld a, BANK(ScriptWindow)

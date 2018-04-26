@@ -106,12 +106,22 @@ def parse_bank_names(filename):
             bank["filename"] = os.path.join(*(parameters[0] + ".messages.csv").split("/"))
             bank["objname"] = os.path.join(*(parameters[0] + ".scripttbl").split("/"))
             bank["wikiname"] = parameters[1]
-            bank["symbol"] = "MainScript_" + parameters[0].replace("/", "_")
+            bank["symbol"] = "MainScript_" + "_".join(parameters[0].split("/")[1:])
 
             if len(parameters) > 2 and parameters[2] != "null":
                 #Parameter 3 is the flat address for the ROM
                 #If not present, location of table will be determined from ROM
                 flatattr = int(parameters[2], 16)
+
+                if (flatattr < 0x4000):
+                    bank["baseaddr"] = flatattr
+                    bank["basebank"] = 0
+                else:
+                    bank["baseaddr"] = flatattr % 0x4000 + 0x4000
+                    bank["basebank"] = flatattr // 0x4000
+            else:
+                #If there's no flat address, add one in
+                flatattr = int(parameters[1], 16)
 
                 if (flatattr < 0x4000):
                     bank["baseaddr"] = flatattr
@@ -402,8 +412,8 @@ def extract(args):
 
             wikitext = "\n".join(wikitext)
 
-            wikidir = os.path.join(args.output, bank["basedir"])
-            wikipath = os.path.join(args.output, bank["filename"])
+            wikidir = os.path.join(args.input, bank["basedir"])
+            wikipath = os.path.join(args.input, bank["filename"])
 
             install_path(wikidir)
             with open(wikipath, "w+", encoding="utf-8") as bank_wikitext:
@@ -951,7 +961,7 @@ def make_tbl(args):
         print("Compiling " + bank["filename"])
         #Open and parse the data
         if "textdata" not in bank.keys():
-            with open(os.path.join(args.output, bank["filename"]), "r", encoding='utf-8') as csvfile:
+            with open(os.path.join(args.input, bank["filename"]), "r", encoding='utf-8') as csvfile:
                 bank["textdata"] = parse_csv(csvfile, args.language)
 
         bank_window_width = args.window_width
@@ -1028,8 +1038,8 @@ def wikisync(args):
         
         for pageid in data["query"]["pages"]:
             if data["query"]["pages"][pageid]["title"] == full_wikiname:
-                wikidir = os.path.join(args.output, bank["basedir"])
-                wikipath = os.path.join(args.output, bank["filename"])
+                wikidir = os.path.join(args.input, bank["basedir"])
+                wikipath = os.path.join(args.input, bank["filename"])
                 
                 install_path(wikidir)
                 with open(wikipath, "w", encoding="utf-8") as bank_wikitext:
@@ -1044,7 +1054,7 @@ def update_data(args):
         #At the end of this conversion, the wikitext will be deleted and a CSV
         #will have been created. Existing CSV file will be deleted, if any.
         try:
-            with io.open(os.path.join(args.output, bank["legacy_filename"]), 'r', encoding="utf-8") as bank_wikifile:
+            with io.open(os.path.join(args.input, bank["legacy_filename"]), 'r', encoding="utf-8") as bank_wikifile:
                 rows, hdrs = parse_wikitext(bank_wikifile)
                 
                 with open(os.path.join(args.output, bank["filename"]), "w", encoding="utf-8") as bank_csvfile:
@@ -1070,7 +1080,8 @@ def main():
     ap.add_argument('--charmap', type=str, default="charmap.asm")
     ap.add_argument('--banknames', type=str, default="rip_scripts/mainscript_bank_names.txt")
     ap.add_argument('--language', type=str, default="Japanese")
-    ap.add_argument('--output', type=str, default="script")
+    ap.add_argument('--output', type=str, default="build")
+    ap.add_argument('--input', type=str, default="")
     ap.add_argument('--metatable_loc', type=int, default=METATABLE_LOC)
     ap.add_argument('--metrics', type=str, default="components/mainscript/metrics.tffont.csv")
     ap.add_argument('--window_width', type=int, default=15 * 8) #15 tiles

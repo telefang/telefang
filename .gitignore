@@ -29,3 +29,7 @@ dependencies.d
 
 # Prevent committing filesystem flotsam.
 .DS_Store
+
+# Prevent committing literally any build products.
+build
+baseroms

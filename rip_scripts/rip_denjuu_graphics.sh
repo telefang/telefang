@@ -24,9 +24,9 @@ if ((i % 18 == 17)); then
 fi
 
 # Palettes
-dd bs=1 skip=$((PALETTESSTART + 8 * i)) count=8 if=baserom_pw.gbc of=gfx/denjuu/$i.gbcpal >& /dev/null
+dd bs=1 skip=$((PALETTESSTART + 8 * i)) count=8 if=baserom_pw.gbc of=gfx/denjuu/$i.color.gbcpal >& /dev/null
 
 # Last but not least, colorize the PNG.
-rip_scripts/colorize_png.py gfx/denjuu/$i.gbcpal gfx/denjuu/$i.png > /dev/null
+rip_scripts/colorize_png.py gfx/denjuu/$i.color.gbcpal gfx/denjuu/$i.png > /dev/null
 
 done

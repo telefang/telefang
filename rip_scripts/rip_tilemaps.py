@@ -542,7 +542,7 @@ def make_maps(args):
     #We Are Number One but a python script compiles everything
     #YouTube: Our Cancer Has Cancer.
     for i, filename in enumerate(args.filenames):
-        objname = os.path.splitext(filename)[0] + ".tmap"
+        objname = os.path.join(args.output, os.path.splitext(filename)[0] + ".tmap")
         
         with open(filename, "r") as csvfile:
             csvreader = csv.reader(csvfile)
@@ -567,7 +567,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mode')
     ap.add_argument('--charmap', type=str, default="charmap.asm")
-    ap.add_argument('--output', type=str, default="gfx")
+    ap.add_argument('--output', type=str, default="build")
     ap.add_argument('--mapnames', type=str, default="rip_scripts/compressed_tilemap_names.txt")
     ap.add_argument('--metatable_loc', type=int, default=0x0B18)
     ap.add_argument('--metatable_loc_attribs', type=int, default=0x0C34)
