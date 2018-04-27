@@ -201,12 +201,12 @@ COMPRESSED EQU 1
 SECTION "Intro - Screens Compressed GFX", ROMX[$4000], BANK[$36]
 IntroScreensGfx:
 	dbw NOT_COMPRESSED, IntroScreensGfxEnd - IntroScreensGfx - 3
-	INCBIN "gfx/intro/screens.2bpp"
+	INCBIN "build/gfx/intro/screens.2bpp"
 IntroScreensGfxEnd
 
 IntroBonbonGfx:
 	dbw NOT_COMPRESSED, IntroBonbonGfxEnd - IntroBonbonGfx - 3
-	INCBIN "gfx/intro/bonbon.2bpp"
+	INCBIN "build/gfx/intro/bonbon.2bpp"
 IntroBonbonGfxEnd
 
 MenuEncounterGfx:
@@ -221,22 +221,22 @@ MenuBattleGfxEnd
 
 TitleTitle1Gfx:
 	dbw NOT_COMPRESSED, TitleTitle1GfxEnd - TitleTitle1Gfx - 3
-	INCBIN "versions/power/gfx/title/title1.2bpp"
+	INCBIN "build/versions/power/gfx/title/title1.2bpp"
 TitleTitle1GfxEnd
 
 TitleTitle2Gfx:
 	dbw NOT_COMPRESSED, TitleTitle2GfxEnd - TitleTitle2Gfx - 3
-	INCBIN "versions/power/gfx/title/title2.2bpp"
+	INCBIN "build/versions/power/gfx/title/title2.2bpp"
 TitleTitle2GfxEnd
 
 TitleSpritesGfx:
 	dbw NOT_COMPRESSED, TitleSpritesGfxEnd - TitleSpritesGfx - 3
-	INCBIN "gfx/title/sprites.2bpp"
+	INCBIN "build/gfx/title/sprites.2bpp"
 TitleSpritesGfxEnd
 
 MenuStatsGfx:
 	dbw NOT_COMPRESSED, MenuStatsGfxEnd - MenuStatsGfx - 3
-	INCBIN "gfx/menu/stats.2bpp"
+	INCBIN "build/gfx/menu/stats.2bpp"
 MenuStatsGfxEnd
 
 UnknownFontGfx:
@@ -267,12 +267,12 @@ MenuMiscSpritesGfxEnd
 
 BattleMessagesGfx:
 	dbw NOT_COMPRESSED, BattleMessagesGfxEnd - BattleMessagesGfx - 3
-	INCBIN "gfx/battle_messages.2bpp"
+	INCBIN "build/gfx/battle_messages.2bpp"
 BattleMessagesGfxEnd
 
 ScreenSaveDeletedGfx:
 	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
-	INCBIN "versions/power/gfx/screen/save_deleted.2bpp"
+	INCBIN "build/versions/power/gfx/screen/save_deleted.2bpp"
 ScreenSaveDeletedGfxEnd
 
 CutsceneConnected1Gfx:
@@ -312,12 +312,12 @@ EvolveBg2GfxEnd
 
 MenuMain1Gfx:
 	dbw NOT_COMPRESSED, MenuMain1GfxEnd - MenuMain1Gfx - 3
-	INCBIN "components/pausemenu/resources/text1.2bpp"
+	INCBIN "build/components/pausemenu/resources/text1.2bpp"
 MenuMain1GfxEnd
 
 MenuMain2Gfx:
 	dbw NOT_COMPRESSED, MenuMain2GfxEnd - MenuMain2Gfx - 3
-	INCBIN "components/pausemenu/resources/text2.2bpp"
+	INCBIN "build/components/pausemenu/resources/text2.2bpp"
 MenuMain2GfxEnd
 
 MenuUnkGfx:
@@ -353,7 +353,7 @@ EvolveBg4GfxEnd
 
 EvolveCannotGfx:
 	dbw NOT_COMPRESSED, EvolveCannotGfxEnd - EvolveCannotGfx - 3
-	INCBIN "gfx/evolve/cannot.2bpp"
+	INCBIN "build/gfx/evolve/cannot.2bpp"
 EvolveCannotGfxEnd
 
 SECTION "Tilemap - Overworld Compressed GFX", ROMX[$4000], BANK[$59]
@@ -507,12 +507,12 @@ UnusedClawGfxEnd
 
 MenuMultiplayerGfx:
 	dbw NOT_COMPRESSED, MenuMultiplayerGfxEnd - MenuMultiplayerGfx - 3
-	INCBIN "gfx/menu/multiplayer.2bpp"
+	INCBIN "build/gfx/menu/multiplayer.2bpp"
 MenuMultiplayerGfxEnd
 
 MenuMultiplayer2Gfx:
 	dbw NOT_COMPRESSED, MenuMultiplayer2GfxEnd - MenuMultiplayer2Gfx - 3
-	INCBIN "gfx/menu/multiplayer2.2bpp"
+	INCBIN "build/gfx/menu/multiplayer2.2bpp"
 MenuMultiplayer2GfxEnd
 
 ScreenGameOverGfx:
@@ -544,60 +544,60 @@ CutsceneUnusedGfxEnd
 SECTION "Menu - Dmelo DMG Compressed GFX", ROMX[$4000], BANK[$35]
 MenuDmeloDMGGfx:
 	dbw NOT_COMPRESSED, MenuDmeloDMGGfxEnd - MenuDmeloDMGGfx - 3
-	INCBIN "gfx/menu/dmelo_dmg.2bpp"
+	INCBIN "build/gfx/menu/dmelo_dmg.2bpp"
 MenuDmeloDMGGfxEnd
 
 MenuOptionsDMGGfx:
 	dbw NOT_COMPRESSED, MenuOptionsDMGGfxEnd - MenuOptionsDMGGfx - 3
-	INCBIN "gfx/menu/options_dmg.2bpp"
+	INCBIN "build/gfx/menu/options_dmg.2bpp"
 MenuOptionsDMGGfxEnd
 
 MenuMain1DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain1DMGGfxEnd - MenuMain1DMGGfx - 3
-	INCBIN "components/pausemenu/resources/text1_dmg.2bpp"
+	INCBIN "build/components/pausemenu/resources/text1_dmg.2bpp"
 MenuMain1DMGGfxEnd
 
 TitleMenuText1Gfx:
 	dbw NOT_COMPRESSED, TitleMenuText1GfxEnd - TitleMenuText1Gfx - 3
-	INCBIN "components/titlemenu/resources/text1.2bpp"
+	INCBIN "build/components/titlemenu/resources/text1.2bpp"
 TitleMenuText1GfxEnd
 
 TitleMenuText1DMGGfx:
 	dbw NOT_COMPRESSED, TitleMenuText1GfxEnd - TitleMenuText1Gfx - 3
-	INCBIN "components/titlemenu/resources/text1_dmg.2bpp"
+	INCBIN "build/components/titlemenu/resources/text1_dmg.2bpp"
 TitleMenuText1DMGGfxEnd
 
 MenuMain2DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain2DMGGfxEnd - MenuMain2DMGGfx - 3
-	INCBIN "components/pausemenu/resources/text2_dmg.2bpp"
+	INCBIN "build/components/pausemenu/resources/text2_dmg.2bpp"
 MenuMain2DMGGfxEnd
 
 MenuUnkDMGGfx:
 	dbw NOT_COMPRESSED, MenuUnkDMGGfxEnd - MenuUnkDMGGfx - 3
-	INCBIN "gfx/menu/unk_dmg.2bpp"
+	INCBIN "build/gfx/menu/unk_dmg.2bpp"
 MenuUnkDMGGfxEnd
 
 MenuTotalDMGGfx:
 	dbw NOT_COMPRESSED, MenuTotalDMGGfxEnd - MenuTotalDMGGfx - 3
-	INCBIN "gfx/menu/total_dmg.2bpp"
+	INCBIN "build/gfx/menu/total_dmg.2bpp"
 MenuTotalDMGGfxEnd
 
 MenuNicknameDMGGfx:
 	dbw NOT_COMPRESSED, MenuNicknameDMGGfxEnd - MenuNicknameDMGGfx - 3
-	INCBIN "gfx/menu/nickname_dmg.2bpp"
+	INCBIN "build/gfx/menu/nickname_dmg.2bpp"
 MenuNicknameDMGGfxEnd
 
 MenuMetDMGGfx:
 	dbw NOT_COMPRESSED, MenuMetDMGGfxEnd - MenuMetDMGGfx - 3
-	INCBIN "gfx/menu/met_dmg.2bpp"
+	INCBIN "build/gfx/menu/met_dmg.2bpp"
 MenuMetDMGGfxEnd
 
 TitleSpritesSgbGfx:
 	dbw NOT_COMPRESSED, TitleSpritesSgbGfxEnd - TitleSpritesSgbGfx - 3
-	INCBIN "gfx/title/sprites_sgb.2bpp"
+	INCBIN "build/gfx/title/sprites_sgb.2bpp"
 TitleSpritesSgbGfxEnd
 
 CmpGfx_TitleLogo_Tulunk:
     dbw NOT_COMPRESSED, CmpGfx_TitleLogo_Tulunk_END - CmpGfx_TitleLogo_Tulunk - 3
-    INCBIN "components/titlelogo/tulunk.2bpp"
+    INCBIN "build/components/titlelogo/tulunk.2bpp"
 CmpGfx_TitleLogo_Tulunk_END

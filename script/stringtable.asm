@@ -1,16 +1,16 @@
 SECTION "StringTable_battle_nicknames Section", ROMX[$5f00], BANK[$1c]
 Encounter_ADVICE_ScriptedDenjuuNicknameTable::
-	INCBIN "script/battle/nicknames.stringtbl"
+	INCBIN "build/script/battle/nicknames.stringtbl"
 Encounter_ADVICE_ScriptedDenjuuNicknameTable_END
 
 SECTION "StringTable_battle_singular Section", ROMX[$74f0], BANK[$1]
 Battle_SingularCharacterTable::
-	INCBIN "script/battle/singular.stringtbl"
+	INCBIN "build/script/battle/singular.stringtbl"
 Battle_SingularCharacterTable_END
 
 SECTION "StringTable_battle_plural Section", ROMX[$74f8], BANK[$1]
 Battle_PluralCharacterTable::
-	INCBIN "script/battle/plural.stringtbl"
+	INCBIN "build/script/battle/plural.stringtbl"
 Battle_PluralCharacterTable_END
 
 SECTION "StringTable_battle_items Section", ROMX[$6b80], BANK[$78]
@@ -20,7 +20,7 @@ StringTable_battle_items_END
 
 SECTION "StringTable_battle_items_old Section", ROMX[$6652], BANK[$b]
 StringTable_battle_items_old::
-	INCBIN "script/battle/items_old.stringtbl"
+	INCBIN "build/script/battle/items_old.stringtbl"
 StringTable_battle_items_old_END
 
 SECTION "StringTable_denjuu_nicknames Section", ROMX[$78fa], BANK[$b]
@@ -30,22 +30,22 @@ StringTable_denjuu_nicknames_END
 
 SECTION "StringTable_denjuu_article_mapping Section", ROMX[$5b00], BANK[$1c]
 Encounter_ADVICE_ArticleTable::
-	INCBIN "script/denjuu/article_mapping.stringidx"
+	INCBIN "build/script/denjuu/article_mapping.stringidx"
 Encounter_ADVICE_ArticleTable_END
 
 SECTION "StringTable_tfanger_article_mapping_1 Section", ROMX[$5c60], BANK[$1c]
 Encounter_ADVICE_TFangerArticleTable::
-	INCBIN "script/battle/tfanger_articles_mapping_1.stringidx"
+	INCBIN "build/script/battle/tfanger_articles_mapping_1.stringidx"
 Encounter_ADVICE_TFangerArticleTable_END
 
 SECTION "StringTable_tfanger_article_mapping_2 Section", ROMX[$5cc0], BANK[$1c]
 Encounter_ADVICE_TFangerArticleTableB::
-	INCBIN "script/battle/tfanger_articles_mapping_2.stringidx"
+	INCBIN "build/script/battle/tfanger_articles_mapping_2.stringidx"
 Encounter_ADVICE_TFangerArticleTableB_END
 
 SECTION "StringTable_denjuu_article_strings Section", ROMX[$5d20], BANK[$1c]
 StringTable_denjuu_article_strings::
-	INCBIN "script/denjuu/article_strings.stringblk"
+	INCBIN "build/script/denjuu/article_strings.stringblk"
 StringTable_denjuu_article_strings_END
 
 SECTION "StringTable_map_location_mapping Section", ROMX[$6875], BANK[$2a]
@@ -65,14 +65,14 @@ StringTable_map_dungeon_mapping_END
 
 SECTION "StringTable_map_dungeon_strings_old Section", ROMX[$6b69], BANK[$2a]
 StringTable_map_dungeon_strings_old::
-	INCBIN "script/map/dungeon_strings_old.stringblk"
+	INCBIN "build/script/map/dungeon_strings_old.stringblk"
 StringTable_map_dungeon_strings_old_END
 
 ;If you need to relocate these, ALSO CHANGE stringtable_names.txt to point to
 ;this section, or bad things will happen.
 SECTION "StringTable_map_location_strings Section", ROMX[$7d8b], BANK[$2a]
 StringTable_map_location_strings::
-	INCBIN "script/map/location_strings.stringblk"
+	INCBIN "build/script/map/location_strings.stringblk"
 StringTable_map_location_strings_END
 
 SECTION "StringTable_map_dungeon_strings Section", ROMX[$7ea9], BANK[$2a]
@@ -116,7 +116,7 @@ StringTable_battle_attacks_END
 
 SECTION "StringTable_denjuu_personalities Section", ROMX[$6130], BANK[$75]
 StringTable_denjuu_personalities::
-	INCBIN "script/denjuu/personalities.stringtbl"
+	INCBIN "build/script/denjuu/personalities.stringtbl"
 StringTable_denjuu_personalities_END
 
 SECTION "StringTable_denjuu_habitats Section", ROMX[$6200], BANK[$75]
@@ -126,12 +126,12 @@ StringTable_denjuu_habitats_END
 
 SECTION "StringTable_denjuu_statuses Section", ROMX[$6270], BANK[$75]
 StringTable_denjuu_statuses::
-	INCBIN "script/denjuu/statuses.stringtbl"
+	INCBIN "build/script/denjuu/statuses.stringtbl"
 StringTable_denjuu_statuses_END
 
 SECTION "StringTable_battle_tfangers Section", ROMX[$6300], BANK[$75]
 StringTable_battle_tfangers::
-	INCBIN "script/battle/tfangers.stringtbl"
+	INCBIN "build/script/battle/tfangers.stringtbl"
 StringTable_battle_tfangers_END
 
 ;1D6610
@@ -142,8 +142,8 @@ StringTable_battle_tfangers_END
 
 ;Flotsam in the ROM
 ;TODO: Remove
-    INCBIN "script/denjuu/personalities_old.stringtbl"
-    INCBIN "script/denjuu/statuses_old.stringtbl"
+    INCBIN "build/script/denjuu/personalities_old.stringtbl"
+    INCBIN "build/script/denjuu/statuses_old.stringtbl"
 
 ;1D79C8
     REPT $0638

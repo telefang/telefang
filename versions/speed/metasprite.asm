@@ -6449,5 +6449,5 @@ MetaSprite_19_6008::
     INCBIN "build/gfx/unknown/metasprite_19/6008.sprite.bin"
 MetaSprite_19_6008_END::
 MetaSprite_zukan_denjuu_name::
-    INCBIN "components/zukan/denjuu_name.sprite.bin"
+    INCBIN "build/components/zukan/denjuu_name.sprite.bin"
 MetaSprite_zukan_denjuu_name_END::

@@ -345,7 +345,7 @@ SECTION "MetaSprite_a Data Out Of Bank", ROMX[$5000], BANK[$a]
 ;This exists because five years ago I was too stupid to write a metasprite
 ;injector so I put it off the end of the ROM by like a lot
 MetaSprite_a_43a7::
-    INCBIN "versions/power/gfx/unknown/metasprite_a/5000.sprite.bin"
+    INCBIN "build/versions/power/gfx/unknown/metasprite_a/5000.sprite.bin"
 MetaSprite_a_43a7_END::
 
 SECTION "MetaSprite_e", ROMX[$4120], BANK[$e]
@@ -6456,5 +6456,5 @@ MetaSprite_19_6008::
     INCBIN "build/gfx/unknown/metasprite_19/6008.sprite.bin"
 MetaSprite_19_6008_END::
 MetaSprite_zukan_denjuu_name::
-    INCBIN "components/zukan/denjuu_name.sprite.bin"
+    INCBIN "build/components/zukan/denjuu_name.sprite.bin"
 MetaSprite_zukan_denjuu_name_END::

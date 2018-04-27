@@ -178,7 +178,7 @@ MainScript_ADVICE_DrawLetter:
 
 SECTION "Main Script Text Drawing Advice", ROMX[$7B00], BANK[$B]
 MainScript_ADVICE_DrawLetterTable::
-	INCBIN "components/mainscript/font.metrics.bin"
+	INCBIN "build/components/mainscript/font.metrics.bin"
 
 MainScript_ADVICE_StoreCurrentLetter:
 	ld [W_MainScript_VWFCurrentLetter], a
@@ -476,7 +476,7 @@ MainScript_ADVICE_DrawNarrowLetter::
 	
 SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7D00], BANK[$1]
 MainScript_ADVICE_DrawNarrowLetterTable::
-	INCBIN "components/mainscript/font_narrow.metrics.bin"
+	INCBIN "build/components/mainscript/font_narrow.metrics.bin"
 
 SECTION "MainScript Narrow Text Drawing Advice 2", ROMX[$7CB6], BANK[$1]
 MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::

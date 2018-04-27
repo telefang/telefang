@@ -24,7 +24,27 @@ OBJS_SPEED := $(patsubst %.asm,%.o,$(shell find versions/speed -type f -name "\*
 SRC_MESSAGE := $(shell find script -type f -name "\*.messages.csv")
 
 OBJS_MESSAGE := build/script/mainscript_data.o
-OBJS_MESSAGE_BLOCKS := ${SRC_MESSAGE:%.messages.csv=${BUILD_DIR}/%.scripttbl}
+OBJS_MESSAGE_BLOCKS := ${BUILD_DIR}/script/battle/messages.scripttbl \
+	${BUILD_DIR}/script/denjuu/sms.scripttbl \
+	${BUILD_DIR}/script/npc/1.scripttbl \
+	${BUILD_DIR}/script/story/1.scripttbl \
+	${BUILD_DIR}/script/npc/2.scripttbl \
+	${BUILD_DIR}/script/npc/unused.scripttbl \
+	${BUILD_DIR}/script/npc/postgame.scripttbl \
+	${BUILD_DIR}/script/calls/denjuu/1.scripttbl \
+	${BUILD_DIR}/script/calls/denjuu/2.scripttbl \
+	${BUILD_DIR}/script/story/2.scripttbl \
+	${BUILD_DIR}/script/story/3.scripttbl \
+	${BUILD_DIR}/script/npc/3.scripttbl \
+	${BUILD_DIR}/script/story/4.scripttbl \
+	${BUILD_DIR}/script/calls/denjuu/3.scripttbl \
+	${BUILD_DIR}/script/calls/denjuu/4.scripttbl \
+	${BUILD_DIR}/script/calls/denjuu/5.scripttbl \
+	${BUILD_DIR}/script/calls/denjuu/6.scripttbl \
+	${BUILD_DIR}/script/denjuu/descriptions.scripttbl \
+	${BUILD_DIR}/script/calls/story.scripttbl \
+	${BUILD_DIR}/script/calls/exp_item.scripttbl \
+	${BUILD_DIR}/script/story/5.scripttbl \
 
 OBJS_RGBASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
@@ -112,12 +132,12 @@ $(OBJS_MESSAGE) $(OBJS_MESSAGE_BLOCKS): $(SRC_MESSAGE)
 $(BUILD_DIR)/%.stringtbl: %.csv
 	@rm -f $@
 	mkdir -p $(dir $@)
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER)
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl /dev/null --language="English"
 
 $(BUILD_DIR)/%.stringidx: %.csv
 	@rm -f $@
 	@mkdir -p $(dir $@)
-	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl $(BASEROM_POWER)
+	@$(PYTHON) rip_scripts/stringtable_text.py make_tbl /dev/null --language="English"
 
 $(BUILD_DIR)/%.stringblk: %.csv
 	@rm -f $@

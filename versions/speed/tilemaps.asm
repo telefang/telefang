@@ -897,7 +897,7 @@ Tilemap_attractmode_scene6_fungus_tmap::
 Tilemap_attractmode_scene6_fungus_tmap_END
 
 Tilemap_titlelogo_tulunk_tmap::
-	incbin "components/titlelogo/tulunk_tmap.tmap"
+	INCBIN "build/components/titlelogo/tulunk_tmap.tmap"
 Tilemap_titlelogo_tulunk_tmap_END
 
 SECTION "attrib Bank 0", ROMX[$4000], BANK[$8]
