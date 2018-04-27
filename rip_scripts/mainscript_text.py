@@ -950,7 +950,7 @@ def make_tbl(args):
     bank_objects = {}
     
     for h, bank in enumerate(banknames):
-        if bank["filename"].startswith("overflow"):
+        if bank["filename"].startswith("script/overflow") or bank["filename"].startswith("script\\overflow"):
             #Don't attempt to compile the overflow bank. That's a separate pass
             overflow_bank_ids.append(h)
             continue
