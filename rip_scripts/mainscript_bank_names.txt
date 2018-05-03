@@ -20,6 +20,6 @@ script/denjuu/descriptions 40000 40000 112
 script/calls/story 158000 158000
 script/calls/exp_item 15C000 15C000
 script/story/5 1281D9 10C000
-overflow/1 78000 78000
-overflow/2 F0000 F0000
-overflow/3 F4000 F4000
+script/overflow/1 78000 78000
+script/overflow/2 F0000 F0000
+script/overflow/3 F4000 F4000
