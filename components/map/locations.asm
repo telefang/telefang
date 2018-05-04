@@ -16,31 +16,6 @@ Map_LoadLocationName::
 	ld h, [hl]
 	ld l, a
 	ld de, W_Map_LocationStaging
-	push hl
-	jp .noAddedSpaces
-
-;A bit of an explanation - the patch for this function is to just skip space
-;counting, but it overwrites part of the loop target. Hence the weird macro
-;down there. I'd like to avoid unnecessary byte changes.
-.lengthCountLoop
-	ld a, [hli]
-	cp $E0
-	jr nz, .lengthCountLoop - 1
-	
-	srl c
-	ld a, c
-	or a
-	jr z, .noAddedSpaces
-	
-	ld a, 0
-.spaceLoop
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .spaceLoop
-	
-.noAddedSpaces
-	pop hl
 	
 .copyLoop
 	ld a, [hli]
@@ -48,4 +23,24 @@ Map_LoadLocationName::
 	inc de
 	cp $E0
 	jr nz, .copyLoop
+	
+	ld a, BANK(MainScript_ADVICE_CountTextWidth)
+	ld hl, MainScript_ADVICE_CountTextWidth
+	ld bc, W_Map_LocationStaging
+	ld d, $FF
+	rst $20 ;call CallBankedFunction_int but smaller
+	
+	ld a, 128
+	cp e
+	ld a, 0
+	jr nc, .storeToggle
+	
+.textOverflow
+	inc a
+	
+.storeToggle
+	ld [W_MainScript_ADVICE_FontToggle], a
 	ret
+	
+	;TODO: FREE SPACE
+	nop
