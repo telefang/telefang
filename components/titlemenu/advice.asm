@@ -187,13 +187,13 @@ TitleMenu_ADVICE_LoadSGBFiles::
     ;Do nothing if no SGB detected.
     ld a, [W_SGB_DetectSuccess]
     or a
-    ret z
+    jr .return
     
     ;Do nothing if CGB hardware detected. This is possible if, say, we're in bgb
     ;or someone builds a Super Game Boy Color cart
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
-    ret z
+    jr .return
     
     ld a, [W_PreviousBank]
     push af
@@ -210,6 +210,7 @@ TitleMenu_ADVICE_LoadSGBFiles::
     ld e, 8
     call Banked_SGB_ConstructPaletteSetPacket
     
+.return
     M_AdviceTeardown
     ret
     
