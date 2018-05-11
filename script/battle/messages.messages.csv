@@ -67,7 +67,7 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 <&0xd658>!<*4>",,
 0x11403c,"<S0>これでいいですか?
    はい    いいえ<*4>","<S0>Are you sure?
-   Yes   No <*4>",,"<S0>Bist du sicher?
+<0><0><0xEE>Yes<P4>No<*4>",,"<S0>Bist du sicher?
    Ja   Nein <*4>",,
 0x11403e,"<&0xd460>は
 ゆうことをきかない!<*5>",<&0xd6a0> is ignoring orders!<*5>,,<&0xd6a0> ignoriert deine Befehle!<*5>,,
@@ -85,9 +85,9 @@ Denma-Power!<*5>",,
 0x11404a,"どのデンジュウの
 ステータスをみますか?<*5>",Which Denjuu's status will you check?<*5>,,Von welchem Denjuu den Status überprüfen?<*5>,,
 0x11404c,"<S0> たたかう    にげる
- ステータス      <*4>","<S0> Fight<0><0><0><0><0>Flee
- Status<*4>",,"<S0> Kampf<0><0><0><0><0>Flucht
- Status<*4>",,
+ ステータス      <*4>","<S0><0><0xEE>Fight<P8>Flee
+<0>Status<*4>",,"<S0><0>Kampf<0><0><0><0><0>Flucht
+<0>Status<*4>",,
 0x11404e,"<&0xd460>の
 すばやさがアップした!<*5>",<&0xd6a0>'s speed went up!<*5>,,<&0xd6a0>s Tempo ist gestiegen!<*5>,,
 0x114050,"<&0xd460>の
@@ -108,7 +108,7 @@ Denma-Power!<*5>",,
 0x114062,わざにかからなかった!<*5>,The move had no effect!<*5>,,Der Angriff ist wirkungslos!<*5>,,
 0x114064,"<S0>なかまをよびますか?
    よぶ    よばない<*4>","<S0>Call an ally?
-   Yes   No<*4>",,"<S0>Einen Mitstreiter anrufen?
+<0><0><0xEE>Yes<P4>No<*4>",,"<S0>Einen Mitstreiter anrufen?
    Ja   Nein<*4>",,
 0x114066,<S0>なかまはよベません!<*5>,<S0>Couldn't call anyone!<*5>,,<S0>Niemand zum anrufen!<*5>,,
 0x114068,"<&0xd460> のわざを
@@ -211,7 +211,7 @@ Denma-Power!<*5>",,
 こうげきリょくダウン!!<*5>",<&0xd6a0> was burned! Attack power down!!<*5>,,<&0xd6a0> wurde verbrannt! Angriffskraft fällt!!<*5>,,
 0x1140c6,"メモリーしますか?
    はい    いいえ<*4>","Save number?
-   Yes   No<*4>",,"Nummer einspeichern?
+<0><0><0xEE>Yes<P4>No<*4>",,"Nummer einspeichern?
    Ja   Nein<*4>",,
 0x1140c8,"<&0xd460>の
 デンワバンゴウをメモリーした!<*5>",<&0xd6a0>'s number was saved!<*5>,,<&0xd6a0>s Nummer wurde gespeichert!<*5>,,
@@ -303,19 +303,19 @@ Lange nichts gehört! Wie geht's?<*5>",,
 0x114118,<&0xd460>は しんかできるレベルになっています<*5>,<&0xd6a0> has reached a level where it can evolve.<*5>,,"<&0xd6a0> hat ein Level erreicht, auf dem es sich weiterentwickeln kann.<*5>",,
 0x11411a,"<S0>しんかさせますか?
    はい    いいえ<*4>","<S0>Will you let it evolve?
-   Yes   No<*4>",,"<S0>Lässt du die Entwicklung zu?
+<0><0><0xEE>Yes<P4>No<*4>",,"<S0>Lässt du die Entwicklung zu?
    Ja   Nein<*4>",,
 0x11411c,"<&0xd460>は
 しんかしなかった!<*5>",<&0xd6a0> didn't evolve!<*5>,,<&0xd6a0> hat sich nicht weiterentwickelt!<*5>,,
 0x11411e,"<S0>ニックネームをつけますか?
    はい    いいえ<*4>","<S0>Give it a nickname?
-   Yes   No<*4>",,"<S0>Einen Spitznamen geben?
+<0><0><0xEE>Yes<P4>No<*4>",,"<S0>Einen Spitznamen geben?
    Ja   Nein<*4>",,
 0x114120,クリティカル!!<*4>,Critical!!<*4>,,Kritischer Treffer!!<*4>,,
 0x114122,あいても このがめんにいることをかくにんしてください<*5>,Confirm that your partner is at this screen.<*5>,,"Stelle sicher, dass dein Gegenüber ""Verlinken"" ausgewählt hat.<*5>",,
 0x114124,"つうしんをかいししますか?
    はい    いいえ<*4>","Connect?
-   Yes   No<*4>",,"Verbinden?
+<0><0><0xEE>Yes<P4>No<*4>",,"Verbinden?
    Ja   Nein<*4>",,
 0x114126,<S0>   じゅしんちゅう!!<*4>,<S0>   Receiving!!<*4>,,<S0>   Empfängt...<*4>,,
 0x114128,"ターゲット
