@@ -474,6 +474,10 @@ MainScript_ADVICE_DrawNarrowLetter::
 	M_AdviceTeardown
 	ret
 	
+SECTION "Main Script Bold Text Drawing Advice", ROMX[$6D00], BANK[$1]
+MainScript_ADVICE_DrawBoldLetterTable::
+	INCBIN "build/components/mainscript/font_bold.metrics.bin"
+	
 SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7D00], BANK[$1]
 MainScript_ADVICE_DrawNarrowLetterTable::
 	INCBIN "build/components/mainscript/font_narrow.metrics.bin"
