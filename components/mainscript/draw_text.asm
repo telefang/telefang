@@ -178,6 +178,7 @@ MainScript_ADVICE_DrawLetter:
 
 SECTION "Main Script Text Drawing Advice", ROMX[$7B00], BANK[$B]
 MainScript_ADVICE_DrawLetterTable::
+; Should always be at the address XX00.
 	INCBIN "build/components/mainscript/font.metrics.bin"
 
 MainScript_ADVICE_StoreCurrentLetter:
@@ -474,8 +475,14 @@ MainScript_ADVICE_DrawNarrowLetter::
 	M_AdviceTeardown
 	ret
 	
+SECTION "Main Script Bold Text Drawing Advice", ROMX[$6C00], BANK[$1]
+MainScript_ADVICE_DrawBoldLetterTable::
+; Should always be at the address XX00.
+	INCBIN "build/components/mainscript/font_bold.metrics.bin"
+	
 SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7D00], BANK[$1]
 MainScript_ADVICE_DrawNarrowLetterTable::
+; Should always be at the address XX00.
 	INCBIN "build/components/mainscript/font_narrow.metrics.bin"
 
 SECTION "MainScript Narrow Text Drawing Advice 2", ROMX[$7CB6], BANK[$1]
