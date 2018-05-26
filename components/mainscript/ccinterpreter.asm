@@ -11,6 +11,9 @@ INCLUDE "telefang.inc"
 ;EE: Makes the ED control code's value relative to the value of W_MainScript_TilesDrawn as it was during the EE code's last use.
 ;EF: Makes the ED control code's value absolute again.
 ;F0: If placed between the first and second question option it will automatically add the relevant space and second arrow position. Only use for short question options.
+;F1: Used for enabling vertical option selection mode.
+;F2: Switches the font to bold. However this disables narrow font rendering.
+;F3: Switches the font to normal from either bold or narrow.
 
 
 MainScript_StateOpcode EQU $45C8
@@ -53,8 +56,8 @@ MainScript_CCInterpreter::
 	dw MainScript_CCInterpreter_CursorResetRelativeOffsetCC ; EF
 	dw MainScript_ADVICE_PositionSecondArrowByCC ; F0
 	dw MainScript_CCInterpreter_EnableVerticalArrowModeCC ; F1
-	dw MainScript_CCInterpreter_DefaultCC ; F2
-	dw MainScript_CCInterpreter_DefaultCC ; F3
+	dw MainScript_CCInterpreter_BoldFontCC ; F2
+	dw MainScript_CCInterpreter_FontResetCC ; F3
 	dw MainScript_CCInterpreter_DefaultCC ; F4
 	dw MainScript_CCInterpreter_DefaultCC ; F5
 	dw MainScript_CCInterpreter_DefaultCC ; F6
@@ -672,4 +675,20 @@ MainScript_ADVICE_ConditionalNewlineCC::
 	ld a, [W_MainScript_TilesDrawn]
 	or a
 	jp nz, MainScript_ADVICE_NewlineVWFReset
+	jp MainScript_EndOpcode.skipNewlineCheck
+
+SECTION "Main Script Patch Advice 3", ROMX[$7A81], BANK[$B]
+MainScript_CCInterpreter_BoldFontCC::
+; Control Code F2
+	pop hl
+	ld a, 2
+	jr MainScript_CCInterpreter_SetFont
+	
+MainScript_CCInterpreter_FontResetCC::
+; Control Code F3
+	pop hl
+	xor a
+	
+MainScript_CCInterpreter_SetFont::
+	ld [W_MainScript_ADVICE_FontToggle], a
 	jp MainScript_EndOpcode.skipNewlineCheck
