@@ -3,10 +3,81 @@ INCLUDE "telefang.inc"
 SECTION "Event System MetaSprite Config Address Buffer", WRAM0[$C98A]
 W_EventScript_MetaspriteConfigAddressBuffer:: ds 2
 
+SECTION "Event Action - Position Player and Continue", ROMX[$4AF0], BANK[$F]
+EventScript_PositionPlayerAndContinue::
+; Parameter A is the X and Y tile number offset (in 4-bit format) from the top-left corner. So for example a value of $43 means 4 tiles from the left and 3 tiles from the top.
+	ld hl, W_EventScript_MetaspriteConfigAddressBuffer
+	ld a, W_MetaSpriteConfigPlayer & $FF
+	ldi [hl], a
+	ld a, W_MetaSpriteConfigPlayer >> 8
+	ld [hl], a
+	ld hl, W_MetaSpriteConfigPlayer
+	ld de, W_EventScript_ParameterA
+	call $2D4C
+	ld de, W_MetaSpriteConfigPlayer + 3
+	ld hl, W_MetaSpriteConfigPlayer + 8
+	ldi a, [hl]
+	ld c, a
+	ldi a, [hl]
+	sla c
+	rl a
+	sla c
+	rl a
+	ld [de], a
+	inc de
+	inc hl
+	inc hl
+	ldi a, [hl]
+	ld c, a
+	ld a, [hl]
+	sla c
+	rl a
+	sla c
+	rl a
+	ld [de], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Position Partner and Continue", ROMX[$4ABC], BANK[$F]
+EventScript_PositionPartnerAndContinue::
+	ld hl, W_EventScript_MetaspriteConfigAddressBuffer
+	ld a, W_MetaSpriteConfigPartner & $FF
+	ldi [hl], a
+	ld a, W_MetaSpriteConfigPartner >> 8
+	ld [hl], a
+	ld hl, W_MetaSpriteConfigPartner
+	ld a, [W_EventScript_ParameterA]
+	ld b, a
+	inc a
+	ld c, a
+	and a, $F0
+	add a, 8
+	ld b, a
+	ld a, c
+	swap a
+	and a, $F0
+	ld c, a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, 3
+	ld l, a
+	ld a, b
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, 4
+	ld l, a
+	ld a, c
+	ld [hl], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - NPC Schedule Walk and Continue", ROMX[$4645], BANK[$F]
 EventScript_NPCScheduleWalkAndContinue::
 ; Parameter A is used to find the metasprite config.
-; Parameter B represents where we are walking to. I honestly don't understand the format.
+; Parameter B represents the X and Y co-ordinates we are walking to. See the notes for EventScript_PositionPlayerAndContinue for more info.
 ; Parameter C represents walking speed. Lower is slower, higher is faster. Never set to 0.
 
 	ld a, [W_EventScript_ParameterA]
@@ -279,6 +350,35 @@ EventScript_NPCFaceDirectionAndContinue::
   
 .table
 	db 9,0,6,3
+
+SECTION "Event Action - Initiate NPC and Continue", ROMX[$45C7], BANK[$F]
+EventScript_InitiateNPCAndContinue::
+; There's every chance that "initiate" is the wrong word to use here, but I'm going to run with it.
+; Parameter A is used to find the metasprite config.
+; Parameter B represents the graphic to be used for the NPC sprite.
+; Parameter C is the X and Y tile coordinate pair for the NPC sprite to be placed upon.
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr nz, .configNotFound
+	ld a, c
+	ld hl, $CA00
+	ldi [hl], a
+	ld a, [W_EventScript_ParameterC]
+	ldi [hl], a
+	ld a, [W_EventScript_ParameterB]
+	ldi [hl], a
+	xor a
+	ldi [hl], a
+	ld [hl], a
+	call $33F0
+	call $2E85
+.configNotFound
+	ld b, 4
+	call EventScript_CalculateNextOffset
+	scf
+	ret
 
 SECTION "Event System - Find MetaSprite Config", ROMX[$45EF], BANK[$F]
 EventScript_FindMetaSpriteConfig::

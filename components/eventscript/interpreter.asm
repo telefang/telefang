@@ -115,9 +115,9 @@ EventScript_EventActionTable::
 	dw $450A ; 1C
 	dw $4536 ; 1D
 	dw $4596 ; 1E
-	dw $45C7 ; 1F
-	dw $45C7 ; 20
-	dw $45C7 ; 21
+	dw EventScript_InitiateNPCAndContinue ; 1F
+	dw EventScript_InitiateNPCAndContinue ; 20
+	dw EventScript_InitiateNPCAndContinue ; 21
 	dw EventScript_NPCFaceDirectionAndContinue ; 22
 	dw EventScript_NPCScheduleWalkAndContinue ; 23
 	dw $4696 ; 24
@@ -146,8 +146,8 @@ EventScript_EventActionTable::
 	dw $47D6 ; 3B
 	dw $4A46 ; 3C
 	dw EventScript_NPCFacePlayerAndContinue ; 3D
-	dw $4AF0 ; 3E
-	dw $4ABC ; 3F
+	dw EventScript_PositionPlayerAndContinue ; 3E
+	dw EventScript_PositionPartnerAndContinue ; 3F
 	dw $47F0 ; 40
 	dw $47F0 ; 41
 	dw $47F0 ; 42
