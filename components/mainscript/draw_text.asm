@@ -258,8 +258,8 @@ MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle::
 SECTION "Main Script Font Selector", ROMX[$7FC0], BANK[$B]
 MainScript_ADVICE_FontSelector::
 	ld a, [W_MainScript_ADVICE_FontToggle]
-	cp 1
-	jr z, .drawNarrowCharacter
+	and a
+	jr nz, .drawNarrowCharacter
 	call MainScript_ADVICE_DrawLetter
 	ret
 .drawNarrowCharacter
@@ -283,11 +283,53 @@ MainScript_ADVICE_FontAddress::
 	ld a, [W_MainScript_ADVICE_FontToggle]
 	cp 1
 	jr z, .useNarrowCharacter
+	cp 2
+	jr z, .useBoldCharacter
 	ld hl, MainScript_Font
 	ret
+	
+.useBoldCharacter
+	ld a, [W_MainScript_VWFCurrentLetter]
+	cp $B8
+	jr nc, .useNarrowCharacter
+	ld hl, MainScript_BoldFont
+	ret
+	
 .useNarrowCharacter
 	ld hl, MainScript_NarrowFont
 	ret
+	
+SECTION "Main Script Bold Text Drawing Advice1", ROMX[$72C0], BANK[$1]
+MainScript_ADVICE_SelectFontTableMethodA::
+	ld l, a
+	push af
+	ld a, [W_MainScript_ADVICE_FontToggle]
+	cp 2
+	jr nz, .useNarrowCharacter
+	pop af
+	ld h, MainScript_ADVICE_DrawBoldLetterTable >> 8
+	ret
+	
+.useNarrowCharacter
+	pop af
+	ld h, MainScript_ADVICE_DrawNarrowLetterTable >> 8
+	ret
+	
+MainScript_ADVICE_SelectFontTableMethodB::
+	ld c, a
+	push af
+	ld a, [W_MainScript_ADVICE_FontToggle]
+	cp 2
+	jr nz, .useNarrowCharacterPopA
+	pop af
+	ld b, MainScript_ADVICE_DrawBoldLetterTable >> 8
+	ret
+	
+.useNarrowCharacter
+	pop af
+	ld b, MainScript_ADVICE_DrawNarrowLetterTable >> 8
+	ret
+	
 
 SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7500], BANK[$1]
 ;BC = text string (presumed WRAM, not bankable)
@@ -337,8 +379,7 @@ MainScript_ADVICE_DrawNarrowLetter::
 	push hl
 	push bc
 	ld a, [W_MainScript_VWFCurrentLetter]
-	ld h, MainScript_ADVICE_DrawNarrowLetterTable >> 8
-	ld l, a
+	call MainScript_ADVICE_SelectFontTableMethodA
 	xor a
 	ld b, [hl]
 	ld a, [W_MainScript_VWFLetterShift]
@@ -437,9 +478,8 @@ MainScript_ADVICE_DrawNarrowLetter::
 	jr nz, .tileShiftLoop
 	ld a, 0
 	ld [W_MainScript_VWFOldTileMode], a
-	ld b, MainScript_ADVICE_DrawNarrowLetterTable >> 8
 	ld a, [W_MainScript_VWFCurrentLetter]
-	ld c, a
+	call MainScript_ADVICE_SelectFontTableMethodB
 	ld a, [W_MainScript_VWFDisable]
 	or a
 	jr z, .useWidthTable
