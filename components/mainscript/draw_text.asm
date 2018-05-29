@@ -320,7 +320,7 @@ MainScript_ADVICE_SelectFontTableMethodB::
 	push af
 	ld a, [W_MainScript_ADVICE_FontToggle]
 	cp 2
-	jr nz, .useNarrowCharacterPopA
+	jr nz, .useNarrowCharacter
 	pop af
 	ld b, MainScript_ADVICE_DrawBoldLetterTable >> 8
 	ret
