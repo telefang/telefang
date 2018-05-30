@@ -66,6 +66,19 @@ EventScript_WaitForButtonPressAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
+	
+SECTION "Event Action - Set Reception and Continue", ROMX[$4EB6], BANK[$F]
+EventScript_SetReceptionAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld [W_Overworld_SignalStrength], a
+	ld b, 0
+	ld a, $29
+	ld hl, $503B
+	call CallBankedFunction_int
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
 
 SECTION "Event Action - Schedule SFX and Continue", ROMX[$4802], BANK[$F]
 EventScript_ScheduleSFXAndContinue::
