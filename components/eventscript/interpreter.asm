@@ -178,7 +178,7 @@ EventScript_EventActionTable::
 	dw $4E34 ; 5B
 	dw $4E70 ; 5C
 	dw $4E97 ; 5D
-	dw $4EB6 ; 5E
+	dw EventScript_SetReceptionAndContinue ; 5E
 	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F
 	dw EventScript_EventNPCSetPaletteRangeBAndContinue ; 60
 	dw $4F28 ; 61
