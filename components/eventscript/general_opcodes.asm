@@ -52,6 +52,30 @@ EventScript_WaitXFramesAndContinue::
 	xor a
 	ret
 
+SECTION "Event Action - Wait For Button Press and Continue", ROMX[$4254], BANK[$F]
+EventScript_WaitForButtonPressAndContinue::
+; Waits for buttons A or B to be pressed before continuing.
+	ldh a, [H_JPInput_Changed]
+	and a, 3
+	jr nz, .buttonPressed
+	xor a
+	ret
+
+.buttonPressed
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Schedule SFX and Continue", ROMX[$4802], BANK[$F]
+EventScript_ScheduleSFXAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld [W_Sound_NextSFXSelect], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Set Music and Continue", ROMX[$480F], BANK[$F]
 EventScript_SetMusicAndContinue::
 	ld a, [W_EventScript_ParameterA]

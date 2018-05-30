@@ -194,6 +194,8 @@ EventScript_NPCScheduleHopAndContinue::
 	ld [hl], a
 	ld b, 2
 	call EventScript_CalculateNextOffset
+
+.sharedJumpPoint
 	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
 	add a, $16
 	ld l, a
@@ -237,6 +239,82 @@ EventScript_PlayerScheduleHopAndContinue::
 	ld [W_MetaSpriteConfigPlayer + $1A], a
 	ld a, 0
 	ld [$C9EF], a
+	scf
+	ret
+
+SECTION "Event Action - NPC Remove Sprite and Continue", ROMX[$4696], BANK[$F]
+EventScript_NPCRemoveSpriteAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .configNotFound
+	xor a
+	ld [hl], a
+
+.configNotFound
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Shared NPC Direction Table 1", ROMX[$43B7], BANK[$F]
+EventScript_SharedTableA::
+; Temporary title until I disassemble the other actions that reference this table. 
+	db $40, $00, $00, $00
+	db $00, $00, $40, $00
+	db $C0, $FF, $00, $00
+	db $00, $00, $C0, $FF
+
+SECTION "Event Action - NPC Schedule Hop in Direction and Continue", ROMX[$49B4], BANK[$F]
+EventScript_NPCScheduleHopInDirectionAndContinue::
+; Parameter A is the NPC.
+; Parameter B is the direction.
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .configNotFound
+	ld a, $10
+	ld [W_Sound_NextSFXSelect], a
+	ld de, EventScript_SharedTableA
+	ld a, [W_EventScript_ParameterB]
+	sla a
+	sla a
+	add e
+	ld e, a
+	ld a, 0
+	adc d
+	ld d, a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $A
+	ld l, a
+	ld a, [de]
+	ld [hl], a
+	inc de
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $B
+	ld l, a
+	ld a, [de]
+	ld [hl], a
+	inc de
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $E
+	ld l, a
+	ld a, [de]
+	ld [hl], a
+	inc de
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $F
+	ld l, a
+	ld a, [de]
+	ld [hl], a
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	jp EventScript_NPCScheduleHopAndContinue.sharedJumpPoint
+.configNotFound
+	ld b, 3
+	call EventScript_CalculateNextOffset
 	scf
 	ret
 
@@ -379,6 +457,68 @@ EventScript_InitiateNPCAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
+	
+SECTION "Event Action - Event NPC Set Palette Range and Continue", ROMX[$4ECD], BANK[$F]
+EventScript_EventNPCSetPaletteRangeAAndContinue::
+	ld hl, $100
+	ld d, 3
+
+EventScript_EventNPCSetPaletteRangeHelper::
+	push de
+	ld a, [W_EventScript_ParameterA]
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, l
+	ld [$CDBA], a
+	ld a, h
+	ld [$CDBB], a
+	ld a, $F
+	ld [W_PreviousBank], a
+	ld c, l
+ 	ld b, h
+	pop de
+	ld a, d
+	call CGBLoadObjectPaletteBanked
+	ld a, [$CD20]
+	or a
+	jr z, .jpA
+	ld a, 1
+	ld [W_CGBPaletteStagedOBP],a
+
+.jpA
+	ld a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .configNotFound
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, 5
+	ld l, a
+	ld a, 3
+	ld [hl],a
+	jr .configNotFound ; Wut?
+
+.configNotFound
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+EventScript_EventNPCSetPaletteRangeBAndContinue::
+	ld hl, $28C
+	ld d, 3
+	jr EventScript_EventNPCSetPaletteRangeHelper
+
+EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftBAndContinue::
+; No seriously. WTF is this?! It sets the colours for palette slot OBJ2 then assigns the NPC to use palette slot OBJ3. Mostly useless.
+	ld hl, $28C
+	ld d, 2
+	jr EventScript_EventNPCSetPaletteRangeHelper
+
+EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue::
+; Same as above except it sets the colours for palette slot OBJ1 instead. My absurd naming scheme is completely justified.
+	ld hl, $28C
+	ld d, 1
+	jr EventScript_EventNPCSetPaletteRangeHelper
 
 SECTION "Event System - Find MetaSprite Config", ROMX[$45EF], BANK[$F]
 EventScript_FindMetaSpriteConfig::
