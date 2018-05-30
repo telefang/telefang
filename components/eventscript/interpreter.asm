@@ -89,7 +89,7 @@ EventScript_EventActionTable::
 	dw EventScript_OutputMessageAndContinue ; 02
 	dw $423D ; 03
 	dw EventScript_WaitXFramesAndContinue ; 04
-	dw $4254 ; 05
+	dw EventScript_WaitForButtonPressAndContinue ; 05
 	dw EventScript_StandardEnd ; 06
 	dw EventScript_WarpPlayerAndContinue ; 07
 	dw EventScript_WarpPlayerAndContinue ; 08
@@ -120,8 +120,8 @@ EventScript_EventActionTable::
 	dw EventScript_InitiateNPCAndContinue ; 21
 	dw EventScript_NPCFaceDirectionAndContinue ; 22
 	dw EventScript_NPCScheduleWalkAndContinue ; 23
-	dw $4696 ; 24
-	dw $4696 ; 25
+	dw EventScript_NPCRemoveSpriteAndContinue ; 24
+	dw EventScript_NPCRemoveSpriteAndContinue ; 25
 	dw $46AA ; 26
 	dw EventScript_NPCScheduleHopAndContinue ; 27
 	dw EventScript_NPCScheduleHopAndContinue ; 28
@@ -130,7 +130,7 @@ EventScript_EventActionTable::
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2B
 	dw $4987 ; 2C
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2D
-	dw $49B4 ; 2E
+	dw EventScript_NPCScheduleHopInDirectionAndContinue ; 2E
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2F
 	dw EventScript_RelativeLongJumpAndContinue ; 30
 	dw $476A ; 31
@@ -152,7 +152,7 @@ EventScript_EventActionTable::
 	dw $47F0 ; 41
 	dw $47F0 ; 42
 	dw $47F0 ; 43
-	dw $4802 ; 44
+	dw EventScript_ScheduleSFXAndContinue ; 44
 	dw EventScript_SetMusicAndContinue ; 45
 	dw $4822 ; 46
 	dw $4822 ; 47
@@ -178,15 +178,15 @@ EventScript_EventActionTable::
 	dw $4E34 ; 5B
 	dw $4E70 ; 5C
 	dw $4E97 ; 5D
-	dw $4EB6 ; 5E
-	dw $4ECD ; 5F
-	dw $4F13 ; 60
+	dw EventScript_SetReceptionAndContinue ; 5E
+	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F
+	dw EventScript_EventNPCSetPaletteRangeBAndContinue ; 60
 	dw $4F28 ; 61
 	dw $43E4 ; 62
 	dw $4687 ; 63
 	dw $4A32 ; 64
-	dw $4F1A ; 65
-	dw $4F21 ; 66
+	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftBAndContinue ; 65
+	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue ; 66
 	dw $4F44 ; 67
 	dw $42D9 ; 68
 	dw $4F54 ; 69
