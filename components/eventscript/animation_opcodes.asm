@@ -132,6 +132,22 @@ EventScript_PlayerScheduleWalkAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
+	
+SECTION "Event Action - Partner Schedule Walk and Continue", ROMX[$4A46], BANK[$F]
+EventScript_PartnerScheduleWalkAndContinue::
+	call EventScript_PartnerScheduleHopAndContinue.remoteJumpPoint
+	ld a, [W_EventScript_ParameterA]
+	ld [W_MetaSpriteConfigPartner + $14], a
+	ld a, [W_EventScript_ParameterB]
+	ld [W_MetaSpriteConfigPartner + $16], a
+	ld a, 9
+	ld [W_MetaSpriteConfigPartner + $1A], a
+	ld a, $FF
+	ld [W_MetaSpriteConfigPartner + $17], a
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
 
 SECTION "Event Action - NPC Wait Until Done Walking and Continue", ROMX[$4943], BANK[$F]
 EventScript_NPCWaitUntilDoneWalkingAndContinue::
@@ -168,6 +184,20 @@ EventScript_PlayerWaitUntilDoneWalkingAndContinue::
 	call EventScript_CalculateNextOffset
 	scf  
 	ret 
+	
+SECTION "Event Action - Partner Wait Until Done Walking and Continue", ROMX[$4962], BANK[$F]
+EventScript_PartnerWaitUntilDoneWalkingAndContinue::
+	ld a, [W_MetaSpriteConfigPartner + $14]
+	cp a, $FF
+	jr z, .endWaitPeriod
+	xor a
+	ret
+
+.endWaitPeriod
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
 
 SECTION "Event Action - NPC Schedule Hop and Continue", ROMX[$46ED], BANK[$F]
 EventScript_NPCScheduleHopAndContinue::
@@ -242,10 +272,90 @@ EventScript_PlayerScheduleHopAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Partner Schedule Hop and Continue", ROMX[$4536], BANK[$F]
+EventScript_PartnerScheduleHopAndContinue::
+	ld hl, W_MetaSpriteConfigPartner + $A
+	ld a, 0
+	ld [hli], a
+	ld a, 0
+	ld [hl], a
+	ld hl, W_MetaSpriteConfigPartner + $E
+	ld a, 0
+	ld [hli], a
+	ld a, 0
+	ld [hl], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	ld a, $10
+	ld [W_Sound_NextSFXSelect], a
+
+.remoteJumpPoint
+	ld hl, W_EventScript_MetaspriteConfigAddressBuffer
+	ld a, W_MetaSpriteConfigPartner & $FF
+	ld [hli], a
+	ld a, W_MetaSpriteConfigPartner >> 8
+	ld [hl], a
+	ld hl, W_MetaSpriteConfigPartner
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, 3
+	ld l, a
+	ld a, [hl]
+	call $2E76
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, 4
+	ld l, a
+	ld a, [hl]
+	call $2E67
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $1B
+	ld l, a
+	ld a, [$C98C]
+	cpl
+	inc a
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $1C
+	ld l, a
+	ld a, [$C98D]
+	cpl
+	inc a
+	ld [hl], a
+	ld a, 0
+	ld [W_MetaSpriteConfigPartner + $16], a
+	ld a, 7
+	ld [W_MetaSpriteConfigPartner + $1A], a
+	scf
+	ret
+
 SECTION "Event Action - NPC Remove Sprite and Continue", ROMX[$4696], BANK[$F]
 EventScript_NPCRemoveSpriteAndContinue::
 	ld a, [W_EventScript_ParameterA]
 	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .configNotFound
+	xor a
+	ld [hl], a
+
+.configNotFound
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+	
+SECTION "Event Action - NPC Remove General Sprite and Continue", ROMX[$4B2A], BANK[$F]
+EventScript_NPCRemoveGeneralSpriteAndContinue::
+; From what I can gather this is used for hiding non-event NPCs, though I could be wrong.
+	ld a, [W_EventScript_ParameterA]
+	cp a, 2
+	jr c, .inLowerRange
+	add a, 9
+	jr .inUpperRange
+
+.inLowerRange
+	add a, 0 ; What the...?
+
+.inUpperRange
 	ld c, a
 	call EventScript_FindMetaSpriteConfig
 	jr z, .configNotFound
@@ -349,6 +459,35 @@ EventScript_NPCFacePlayerAndContinue::
 	ld b, 2
 	call EventScript_CalculateNextOffset
 	scf  
+	ret
+	
+SECTION "Event Action - Partner Face Direction and Continue", ROMX[$450A], BANK[$F]
+EventScript_PartnerFaceDirectionAndContinue::
+	ld d, 2
+	ld a, [W_EventScript_ParameterA]
+	ld b, a
+	or a
+	jr nz, .jpA
+	ld d, 3
+
+.jpA
+	ld a, d
+	ld [W_MetaSpriteConfigPartner + 2], a
+	ld a, b
+	ld hl, EventScript_PlayerFaceDirectionAndContinue.tableA
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hl]
+	ld [$CA50], a
+	ld a, $FF
+	ld [$CA51], a
+	call $2CAA
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
 	ret
 
 SECTION "Event Action - Player Face Direction and Continue", ROMX[$4314], BANK[$F]
@@ -568,6 +707,7 @@ EventScript_ExecuteCutsceneBehaviourAndContinue::
 ; 05 = Unused cutscene image
 ; 09 = INDEX FULL! Congrats!
 ; 0A = "Finally we are connected..." cutscene
+; 64 = Shigeki falling animation
 ; 65 = Item obtained animation
 ; 68 = Noisy's signal block animation.
 ; 96 = Obtained starter denjuu number screen

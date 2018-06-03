@@ -112,8 +112,8 @@ EventScript_EventActionTable::
 	dw EventScript_FuckingWeirdSequenceJumpAndContinue ; 19
 	dw $44D4 ; 1A
 	dw $44D4 ; 1B
-	dw $450A ; 1C
-	dw $4536 ; 1D
+	dw EventScript_PartnerFaceDirectionAndContinue ; 1C
+	dw EventScript_PartnerScheduleHopAndContinue ; 1D
 	dw $4596 ; 1E
 	dw EventScript_InitiateNPCAndContinue ; 1F
 	dw EventScript_InitiateNPCAndContinue ; 20
@@ -144,7 +144,7 @@ EventScript_EventActionTable::
 	dw EventScript_JumpIfFlagUnsetAndContinue ; 39
 	dw $47BF ; 3A
 	dw $47D6 ; 3B
-	dw $4A46 ; 3C
+	dw EventScript_PartnerScheduleWalkAndContinue ; 3C
 	dw EventScript_NPCFacePlayerAndContinue ; 3D
 	dw EventScript_PositionPlayerAndContinue ; 3E
 	dw EventScript_PositionPartnerAndContinue ; 3F
@@ -160,19 +160,19 @@ EventScript_EventActionTable::
 	dw $4822 ; 49
 	dw $4822 ; 4A
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4B
-	dw $4B2A ; 4C
+	dw EventScript_NPCRemoveGeneralSpriteAndContinue ; 4C
 	dw EventScript_ExecuteCutsceneBehaviourAndContinue ; 4D
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4E
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4F
-	dw $485A ; 50
+	dw EventScript_ShopPriceMessageAndContinue ; 50
 	dw $4CD9 ; 51
 	dw $4CE7 ; 52
 	dw $4CF5 ; 53
 	dw $4D02 ; 54
 	dw $4D1D ; 55
-	dw $485A ; 56
+	dw EventScript_ShopPriceMessageAndContinue ; 56
 	dw EventScript_NPCWaitUntilDoneWalkingAndContinue ; 57
-	dw $4962 ; 58
+	dw EventScript_PartnerWaitUntilDoneWalkingAndContinue ; 58
 	dw EventScript_GetEventDenjuuAndContinue ; 59
 	dw $4E0F ; 5A
 	dw $4E34 ; 5B
