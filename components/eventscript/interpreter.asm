@@ -164,13 +164,13 @@ EventScript_EventActionTable::
 	dw EventScript_ExecuteCutsceneBehaviourAndContinue ; 4D
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4E
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4F
-	dw $485A ; 50
+	dw EventScript_ShopPriceMessageAndContinue ; 50
 	dw $4CD9 ; 51
 	dw $4CE7 ; 52
 	dw $4CF5 ; 53
 	dw $4D02 ; 54
 	dw $4D1D ; 55
-	dw $485A ; 56
+	dw EventScript_ShopPriceMessageAndContinue ; 56
 	dw EventScript_NPCWaitUntilDoneWalkingAndContinue ; 57
 	dw EventScript_PartnerWaitUntilDoneWalkingAndContinue ; 58
 	dw EventScript_GetEventDenjuuAndContinue ; 59
