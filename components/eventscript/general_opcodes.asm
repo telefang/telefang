@@ -1,14 +1,31 @@
 INCLUDE "telefang.inc"
 
-; Not sure where to put these two vars yet, so they can stay here for now.
+; Until I find a better place to put this it can stay here.
 
-SECTION "Shop Item Price Staging", WRAM0[$CADC]
-; This is the price of the shop item you are holding as a negative number.
-W_Shop_ItemPriceStaging:: ds 2
+SECTION "Phone Silent Mode", WRAM0[$C90A]
+W_Phone_SilentMode:: ds 2
 
-SECTION "Shop Player Total Chiru", WRAM0[$C910]
-; This is the price of the shop item you are holding as a negative number.
-W_Shop_PlayerTotalChiru:: ds 2
+SECTION "Event Action - Ring Ring and Continue", ROMX[$4E70], BANK[$F]
+EventScript_RingRingAndContinue::
+	ld a, [W_Phone_SilentMode]
+	or a
+	jr nz, .onSilent
+	ld a, 2
+	ld [$C917], a
+	call Sound_IndexMusicSetBySong
+	ld [W_Sound_NextBGMSelect], a
+	ld a, $54
+	ld [W_Sound_NextSFXSelect], a
+
+.onSilent
+	ld a, 4
+	ld [$C940], a
+	ld a, 1
+	ld [W_Overworld_PowerAntennaPattern], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
 
 SECTION "Event Action - Warp Player and Continue", ROMX[$428F], BANK[$F]
 EventScript_WarpPlayerAndContinue::
@@ -109,173 +126,59 @@ EventScript_SetMusicAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
-	
-SECTION "Event Action - Output Message and Continue", ROMX[$4222], BANK[$F]
-EventScript_OutputMessageAndContinue::
-	ld hl, W_EventScript_ParameterA
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	call $33C9
-	ld b, 3
+
+SECTION "Event Action - Initiate Battle and Continue", ROMX[$476A], BANK[$F]
+EventScript_InitiateBattleAndContinue::
+	ld a, [W_EventScript_ParameterB] ; Completely redundant line.
+	ld a, 1
+	ld [$C91D], a
+	ld a, [W_EventScript_ParameterA]
+	ld [$D402], a
+	ld a, [W_EventScript_ParameterB]
+	ld [W_Encounter_TFangerClass], a
+	ld a, [W_EventScript_ParameterC]
+	ld [W_Encounter_BattleType], a
+	ld b, 4
 	call EventScript_CalculateNextOffset
-	ld a, [W_EventScript_WaitFrames]
-	or a
-	jr nz, .weAreWaitingAlready
-	ld a, 8
-	ld [W_EventScript_WaitFrames], a
-	
-.weAreWaitingAlready
 	xor a
 	ret
 
-SECTION "Event Action - Shop Price Message and Continue", ROMX[$485A], BANK[$F]
-EventScript_ShopPriceMessageAndContinue::
-; Loads the message box with the specified message.
-	ld hl, W_EventScript_ParameterA
-	ld a, [hli]
+SECTION "Event Action - Manipulate Inventory and Continue", ROMX[$478B], BANK[$F]
+; Yet to verify, but it seems obvious at a glance.
+EventScript_IncreaseInventoryAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld hl, W_PauseMenu_InventoryQuantities
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [W_EventScript_ParameterB]
 	ld b, a
-	ld c, [hl]
-	call $33C9
-; Compares the item price to the player's total and sets or resets a flag to be used later.
-	ld a, [W_Shop_ItemPriceStaging]
-	cpl
-	ld e, a
-	ld a, [W_Shop_ItemPriceStaging + 1]
-	cpl
-	ld d, a
-	inc de
-	ld a, [W_Shop_PlayerTotalChiru + 1]
-	ld h, a
-	ld a, [W_Shop_PlayerTotalChiru]
-	ld l, a
-	add hl, de
-	jr c, .enoughChiru
-	ld bc, $C3B
-	call Overworld_SetFlag
-	jr .priceToString
-
-.enoughChiru
-	ld bc, $C3B
-	call Overworld_ResetFlag
-
-; Converts the item price to a string and stores it at $CA00 for use by the message.
-.priceToString
-	ld a, [W_Shop_ItemPriceStaging]
-	ld l, a
-	ld a, [W_Shop_ItemPriceStaging + 1]
-	ld h, a
-	call EventScript_ShopPriceNumbersToText
+	ld a, [hl]
+	add b
+	ld [hl], a
 	ld b, 3
 	call EventScript_CalculateNextOffset
 	scf
 	ret
 
-EventScript_ShopPriceNumbersToText::
-	ld de, $CA00
-	ld b, 0
-	push de
-	ld c, 0
-	ld de, -10000
-
-.fifthDigitFromRightCalcLoop
-	inc c
-	add hl, de
-	jr c, .fifthDigitFromRightCalcLoop
-	ld de, 10000
-	add hl, de
-	pop de
-	ld a, c
-	dec a
-	or a
-	jr z, .fifthDigitFromRightIsZeroSkip
-	add a, $BB
-	ld [de], a
-	inc de
-	ld b, 1
-
-.fifthDigitFromRightIsZeroSkip
-	push de
-	ld c, 0
-	ld de, -1000
-  
-.fourthDigitFromRightCalcLoop
-	inc c
-	add hl, de
-	jr c, .fourthDigitFromRightCalcLoop
-	ld de, 1000
-	add hl, de
-	pop de
-	ld a, c
-	dec a
-	bit 0, b
-	jr nz, .fourthDigitFromRightNotLeadingDigit
-	or a
-	jr z, .fourthDigitFromRightIsZeroSkip
-
-.fourthDigitFromRightNotLeadingDigit
-	add a, $BB
-	ld [de], a
-	inc de
-	ld b, 1
-
-.fourthDigitFromRightIsZeroSkip
-	push de
-	ld c, 0
-	ld de, -100
-
-.thirdDigitFromRightCalcLoop
-	inc c
-	add hl, de
-	jr c, .thirdDigitFromRightCalcLoop
-	ld de, 100
-	add hl, de
-	pop de
-	ld a, c
-	dec a
-	bit 0, b
-	jr nz, .thirdDigitFromRightNotLeadingDigit
-	or a
-	jr z, .thirdDigitFromRightIsZeroSkip
-
-.thirdDigitFromRightNotLeadingDigit
-	add a, $BB
-	ld [de], a
-	inc de
-	ld b, 1
-
-.thirdDigitFromRightIsZeroSkip
-	push de
-	ld c, 0
-	ld de, -10
-
-.secondDigitFromRightCalcLoop
-	inc c
-	add hl, de
-	jr c, .secondDigitFromRightCalcLoop
-	ld de, 10
-	add hl, de
-	pop de
-	ld a, c
-	dec a
-	bit 0, b
-	jr nz, .secondDigitFromRightNotLeadingDigit
-	or a
-	jr z, .secondDigitFromRightIsZeroSkip
-
-.secondDigitFromRightNotLeadingDigit
-	add a, $BB
-	ld [de], a
-	inc de
-	ld b, 1
-
-.secondDigitFromRightIsZeroSkip
-	ld a, l
-	add a, $BB
-	ld [de], a
-	inc de
-	ld a, $E0
-	ld [de], a
+EventScript_DecreaseInventoryAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld hl, W_PauseMenu_InventoryQuantities
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [W_EventScript_ParameterB]
+	ld b, a
+	ld a, [hl]
+	sub b
+	ld [hl], a
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
 	ret
 
 SECTION "Event Action - Standard End", ROMX[$4263], BANK[$F]

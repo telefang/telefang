@@ -122,7 +122,7 @@ EventScript_EventActionTable::
 	dw EventScript_NPCScheduleWalkAndContinue ; 23
 	dw EventScript_NPCRemoveSpriteAndContinue ; 24
 	dw EventScript_NPCRemoveSpriteAndContinue ; 25
-	dw $46AA ; 26
+	dw EventScript_FlickerNPCAndContinue ; 26
 	dw EventScript_NPCScheduleHopAndContinue ; 27
 	dw EventScript_NPCScheduleHopAndContinue ; 28
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 29
@@ -133,13 +133,13 @@ EventScript_EventActionTable::
 	dw EventScript_NPCScheduleHopInDirectionAndContinue ; 2E
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2F
 	dw EventScript_RelativeLongJumpAndContinue ; 30
-	dw $476A ; 31
-	dw $476A ; 32
-	dw $476A ; 33
+	dw EventScript_InitiateBattleAndContinue ; 31
+	dw EventScript_InitiateBattleAndContinue ; 32
+	dw EventScript_InitiateBattleAndContinue ; 33
 	dw EventScript_SetFlagAndContinue ; 34
 	dw EventScript_ResetFlagAndContinue ; 35
-	dw $478B ; 36
-	dw $47A5 ; 37
+	dw EventScript_IncreaseInventoryAndContinue ; 36
+	dw EventScript_DecreaseInventoryAndContinue ; 37
 	dw EventScript_JumpIfFlagSetAndContinue ; 38
 	dw EventScript_JumpIfFlagUnsetAndContinue ; 39
 	dw $47BF ; 3A
@@ -148,10 +148,10 @@ EventScript_EventActionTable::
 	dw EventScript_NPCFacePlayerAndContinue ; 3D
 	dw EventScript_PositionPlayerAndContinue ; 3E
 	dw EventScript_PositionPartnerAndContinue ; 3F
-	dw $47F0 ; 40
-	dw $47F0 ; 41
-	dw $47F0 ; 42
-	dw $47F0 ; 43
+	dw EventScript_BeginEarthquakeAndContinue ; 40
+	dw EventScript_BeginEarthquakeAndContinue ; 41
+	dw EventScript_BeginEarthquakeAndContinue ; 42
+	dw EventScript_BeginEarthquakeAndContinue ; 43
 	dw EventScript_ScheduleSFXAndContinue ; 44
 	dw EventScript_SetMusicAndContinue ; 45
 	dw $4822 ; 46
@@ -175,8 +175,8 @@ EventScript_EventActionTable::
 	dw EventScript_PartnerWaitUntilDoneWalkingAndContinue ; 58
 	dw EventScript_GetEventDenjuuAndContinue ; 59
 	dw $4E0F ; 5A
-	dw $4E34 ; 5B
-	dw $4E70 ; 5C
+	dw EventScript_DisplayMapLocationAndContinue ; 5B
+	dw EventScript_RingRingAndContinue ; 5C
 	dw $4E97 ; 5D
 	dw EventScript_SetReceptionAndContinue ; 5E
 	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F

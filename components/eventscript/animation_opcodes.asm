@@ -3,6 +3,65 @@ INCLUDE "telefang.inc"
 SECTION "Event System MetaSprite Config Address Buffer", WRAM0[$C98A]
 W_EventScript_MetaspriteConfigAddressBuffer:: ds 2
 
+SECTION "Event Action - Flicker NPC and Continue", ROMX[$46AA], BANK[$F]
+EventScript_FlickerNPCAndContinue::
+; Parameter B is the flicker state duration. The higher the number the slower the rate of flicker.
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, .configNotFound
+	ld a, [W_EventScript_ParameterB]
+	or a
+	jr z, .zeroFlickerDuration
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $15
+	ld l, a
+	ld a, 0
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $16
+	ld l, a
+	ld a, [W_EventScript_ParameterB]
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $1A
+	ld l, a
+	ld a, 3
+	ld [hl], a
+
+.configNotFound
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+; A value of 0 is a special case for obvious reasons. Sprite is visible for a number of seconds and then disappears.
+.zeroFlickerDuration
+	ld a, [hl]
+	or a, 1
+	ld [hl], a
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $1A
+	ld l, a
+	ld a, 1
+	ld [hl], a
+	jr .configNotFound
+
+SECTION "Event Action - Begin Earthquake and Continue", ROMX[$47F0], BANK[$F]
+EventScript_BeginEarthquakeAndContinue::
+; Parameter A is direction. 0 for vertical, 1 for horizontal.
+; Parameter B is severity. The higher the number the heavier the shaking.
+	ld a, [W_EventScript_ParameterA]
+	ld c, a
+	ld a, [W_EventScript_ParameterB]
+	ld b, a
+	call $341D
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Position Player and Continue", ROMX[$4AF0], BANK[$F]
 EventScript_PositionPlayerAndContinue::
 ; Parameter A is the X and Y tile number offset (in 4-bit format) from the top-left corner. So for example a value of $43 means 4 tiles from the left and 3 tiles from the top.
