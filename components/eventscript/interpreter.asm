@@ -99,7 +99,7 @@ EventScript_EventActionTable::
 	dw EventScript_PlayerFaceDirectionAndContinue ; 0C
 	dw EventScript_PlayerFaceDirectionAndContinue ; 0D
 	dw EventScript_PlayerScheduleHopAndContinue ; 0E
-	dw $438B ; 0F
+	dw EventScript_PlayerScheduleHopInDirectionAndContinue ; 0F
 	dw EventScript_PlayerScheduleWalkAndContinue ; 10
 	dw EventScript_EventFlag800SAndContinue ; 11
 	dw EventScript_EventFlag800SAndContinue ; 12
@@ -110,11 +110,11 @@ EventScript_EventActionTable::
 	dw EventScript_SetMultiJumpConditionalAndContinue ; 17
 	dw EventScript_IncrementMultiJumpConditionalAndContinue ; 18
 	dw EventScript_FuckingWeirdSequenceJumpAndContinue ; 19
-	dw $44D4 ; 1A
-	dw $44D4 ; 1B
+	dw EventScript_PartnerFacePlayerAndContinue ; 1A
+	dw EventScript_PartnerFacePlayerAndContinue ; 1B
 	dw EventScript_PartnerFaceDirectionAndContinue ; 1C
 	dw EventScript_PartnerScheduleHopAndContinue ; 1D
-	dw $4596 ; 1E
+	dw EventScript_FlickerPartnerAndContinue ; 1E
 	dw EventScript_InitiateNPCAndContinue ; 1F
 	dw EventScript_InitiateNPCAndContinue ; 20
 	dw EventScript_InitiateNPCAndContinue ; 21
@@ -128,7 +128,7 @@ EventScript_EventActionTable::
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 29
 	dw EventScript_PlayerWaitUntilDoneWalkingAndContinue ; 2A
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2B
-	dw $4987 ; 2C
+	dw EventScript_PartnerScheduleHopInDirectionAndContinue ; 2C
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2D
 	dw EventScript_NPCScheduleHopInDirectionAndContinue ; 2E
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2F
@@ -182,13 +182,13 @@ EventScript_EventActionTable::
 	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F
 	dw EventScript_EventNPCSetPaletteRangeBAndContinue ; 60
 	dw $4F28 ; 61
-	dw $43E4 ; 62
-	dw $4687 ; 63
+	dw EventScript_PlayerScheduleWalkBackwardsAndContinue ; 62
+	dw EventScript_NPCScheduleWalkBackwardsAndContinue ; 63
 	dw $4A32 ; 64
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftBAndContinue ; 65
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue ; 66
 	dw $4F44 ; 67
-	dw $42D9 ; 68
+	dw EventScript_Mode7WarpPlayerAndContinue ; 68
 	dw $4F54 ; 69
 	dw $4F93 ; 6A
 	dw $4FA6 ; 6B

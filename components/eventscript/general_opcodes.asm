@@ -66,6 +66,36 @@ EventScript_WarpPlayerAndContinue::
 	xor a
 	ret
 
+SECTION "Event Action - Mode7 Warp Player and Continue", ROMX[$42D9], BANK[$F]
+EventScript_Mode7WarpPlayerAndContinue::
+; Yes I know it isn't actually Mode 7. I couldn't think of a better name.
+	ld a, [W_Overworld_AcreType]
+	ld [$CA69], a
+	ld a, 0
+	ld [$C958], a
+	ld a, $32
+	ld hl, $59AC
+	call CallBankedFunction_int
+	ld a, [W_EventScript_ParameterA]
+	ld [W_Overworld_AcreType], a
+	ld a, [W_EventScript_ParameterB]
+	ld [$C906], a
+	ld a, [W_EventScript_ParameterC]
+	ld b, a
+	inc a
+	ld c, a
+	and a, $F0
+	add a, 8
+	ld [$C901], a
+	ld a, c
+	swap a
+	and a, $F0
+	ld [$C902], a
+	ld b, 4
+	call EventScript_CalculateNextOffset
+	xor a
+	ret
+
 SECTION "Event Action - Wait X Frames and Continue", ROMX[$4247], BANK[$F]
 EventScript_WaitXFramesAndContinue::
 	ld a, [W_EventScript_ParameterA]

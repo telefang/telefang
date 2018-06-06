@@ -3,9 +3,38 @@ INCLUDE "telefang.inc"
 SECTION "Event System MetaSprite Config Address Buffer", WRAM0[$C98A]
 W_EventScript_MetaspriteConfigAddressBuffer:: ds 2
 
+SECTION "Event Action - Flicker Partner and Continue", ROMX[$4596], BANK[$F]
+EventScript_FlickerPartnerAndContinue::
+; Parameter A is the flicker state duration. The higher the number the slower the rate of flicker. 0 means no flicker.
+	ld a, [W_EventScript_ParameterA]
+	or a
+	jr z, .zeroFlickerDuration
+	ld a, 0
+	ld [W_MetaSpriteConfigPartner + $15], a
+	ld a, [W_EventScript_ParameterA]
+	ld [W_MetaSpriteConfigPartner + $16], a
+	ld a, 8
+	ld [W_MetaSpriteConfigPartner + $1A], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+; A value of 0 is a special case for obvious reasons.
+.zeroFlickerDuration
+	ld a, [W_MetaSpriteConfigPartner]
+	or a, 1
+	ld [W_MetaSpriteConfigPartner], a
+	ld a, 1
+	ld [W_MetaSpriteConfigPartner + $1A], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Flicker NPC and Continue", ROMX[$46AA], BANK[$F]
 EventScript_FlickerNPCAndContinue::
-; Parameter B is the flicker state duration. The higher the number the slower the rate of flicker.
+; Parameter B is the flicker state duration. The higher the number the slower the rate of flicker. 0 means no flicker.
 	ld a, [W_EventScript_ParameterA]
 	add a, $10
 	ld c, a
@@ -36,7 +65,6 @@ EventScript_FlickerNPCAndContinue::
 	scf
 	ret
 
-; A value of 0 is a special case for obvious reasons. Sprite is visible for a number of seconds and then disappears.
 .zeroFlickerDuration
 	ld a, [hl]
 	or a, 1
@@ -192,6 +220,25 @@ EventScript_PlayerScheduleWalkAndContinue::
 	scf
 	ret
 	
+SECTION "Event Action - Player Schedule Walk Backwards and Continue", ROMX[$43E4], BANK[$F]
+EventScript_PlayerScheduleWalkBackwardsAndContinue::
+	ld a, [$C499]
+	or a, $20
+	ld [$C499], a
+	jr EventScript_PlayerScheduleWalkAndContinue
+	
+SECTION "Event Action - NPC Schedule Walk Backwards and Continue", ROMX[$4687], BANK[$F]
+EventScript_NPCScheduleWalkBackwardsAndContinue::
+	call EventScript_NPCScheduleWalkAndContinue
+	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
+	add a, $19
+	ld l, a
+	ld a, [hl]
+	or a, $20
+	ld [hl], a
+	scf
+	ret
+
 SECTION "Event Action - Partner Schedule Walk and Continue", ROMX[$4A46], BANK[$F]
 EventScript_PartnerScheduleWalkAndContinue::
 	call EventScript_PartnerScheduleHopAndContinue.remoteJumpPoint
@@ -320,6 +367,8 @@ EventScript_PlayerScheduleHopAndContinue::
 	ld [hl], a
 	ld b, 1
 	call EventScript_CalculateNextOffset
+
+.remoteJumpPoint
 	ld a, $10
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 0
@@ -435,6 +484,58 @@ EventScript_SharedTableA::
 	db $C0, $FF, $00, $00
 	db $00, $00, $C0, $FF
 
+SECTION "Event Action - Player Schedule Hop in Direction and Continue", ROMX[$438B], BANK[$F]
+EventScript_PlayerScheduleHopInDirectionAndContinue::
+; Parameter A is the direction.
+	ld hl, EventScript_SharedTableA
+	ld a, [W_EventScript_ParameterA]
+	sla a
+	sla a
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hli]
+	ld [W_MetaSpriteConfigPlayer + $A], a
+	ld a, [hli]
+	ld [W_MetaSpriteConfigPlayer + $B], a
+	ld a, [hli]
+	ld [W_MetaSpriteConfigPlayer + $E], a
+	ld a, [hl]
+	ld [W_MetaSpriteConfigPlayer + $F], a
+	ld a, $10
+	ld [W_Sound_NextSFXSelect], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	jr EventScript_PlayerScheduleHopAndContinue.remoteJumpPoint
+
+SECTION "Event Action - Partner Schedule Hop in Direction and Continue", ROMX[$4987], BANK[$F]
+EventScript_PartnerScheduleHopInDirectionAndContinue::
+; Parameter A is the direction.
+	ld hl, EventScript_SharedTableA
+	ld a, [W_EventScript_ParameterA]
+	sla a
+	sla a
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hli]
+	ld [W_MetaSpriteConfigPartner + $A], a
+	ld a, [hli]
+	ld [W_MetaSpriteConfigPartner + $B], a
+	ld a, [hli]
+	ld [W_MetaSpriteConfigPartner + $E], a
+	ld a, [hl]
+	ld [W_MetaSpriteConfigPartner + $F], a
+	ld a, $10
+	ld [W_Sound_NextSFXSelect], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	jp EventScript_PartnerScheduleHopAndContinue.remoteJumpPoint
+
 SECTION "Event Action - NPC Schedule Hop in Direction and Continue", ROMX[$49B4], BANK[$F]
 EventScript_NPCScheduleHopInDirectionAndContinue::
 ; Parameter A is the NPC.
@@ -483,6 +584,38 @@ EventScript_NPCScheduleHopInDirectionAndContinue::
 	jp EventScript_NPCScheduleHopAndContinue.sharedJumpPoint
 .configNotFound
 	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Partner Face Player and Continue", ROMX[$44D4], BANK[$F]
+EventScript_PartnerFacePlayerAndContinue::
+	ld hl, W_EventScript_MetaspriteConfigAddressBuffer
+	ld a, W_MetaSpriteConfigPartner & $FF
+	ld [hli], a
+	ld a, W_MetaSpriteConfigPartner >> 8
+	ld [hl], a
+	ld hl, W_MetaSpriteConfigPartner
+	call $2CB7
+	ld d, 2
+	ld a, b
+	cp a, 3
+	jr nz, .jpA
+	ld b, 2
+	ld d, 3
+
+.jpA
+	ld a, d
+	ld [W_MetaSpriteConfigPartner + 2], a
+	ld hl, EventScript_PlayerFaceDirectionAndContinue.tableA
+	ld a, b
+	add a
+	add b
+	ld [$CA50], a
+	ld a, $FF
+	ld [$CA51], a
+	call $2CAA
+	ld b, 1
 	call EventScript_CalculateNextOffset
 	scf
 	ret
