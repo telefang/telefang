@@ -99,7 +99,7 @@ EventScript_EventActionTable::
 	dw EventScript_PlayerFaceDirectionAndContinue ; 0C
 	dw EventScript_PlayerFaceDirectionAndContinue ; 0D
 	dw EventScript_PlayerScheduleHopAndContinue ; 0E
-	dw $438B ; 0F
+	dw EventScript_PlayerScheduleHopInDirectionAndContinue ; 0F
 	dw EventScript_PlayerScheduleWalkAndContinue ; 10
 	dw EventScript_EventFlag800SAndContinue ; 11
 	dw EventScript_EventFlag800SAndContinue ; 12
@@ -110,11 +110,11 @@ EventScript_EventActionTable::
 	dw EventScript_SetMultiJumpConditionalAndContinue ; 17
 	dw EventScript_IncrementMultiJumpConditionalAndContinue ; 18
 	dw EventScript_FuckingWeirdSequenceJumpAndContinue ; 19
-	dw $44D4 ; 1A
-	dw $44D4 ; 1B
+	dw EventScript_PartnerFacePlayerAndContinue ; 1A
+	dw EventScript_PartnerFacePlayerAndContinue ; 1B
 	dw EventScript_PartnerFaceDirectionAndContinue ; 1C
 	dw EventScript_PartnerScheduleHopAndContinue ; 1D
-	dw $4596 ; 1E
+	dw EventScript_FlickerPartnerAndContinue ; 1E
 	dw EventScript_InitiateNPCAndContinue ; 1F
 	dw EventScript_InitiateNPCAndContinue ; 20
 	dw EventScript_InitiateNPCAndContinue ; 21
@@ -122,24 +122,24 @@ EventScript_EventActionTable::
 	dw EventScript_NPCScheduleWalkAndContinue ; 23
 	dw EventScript_NPCRemoveSpriteAndContinue ; 24
 	dw EventScript_NPCRemoveSpriteAndContinue ; 25
-	dw $46AA ; 26
+	dw EventScript_FlickerNPCAndContinue ; 26
 	dw EventScript_NPCScheduleHopAndContinue ; 27
 	dw EventScript_NPCScheduleHopAndContinue ; 28
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 29
 	dw EventScript_PlayerWaitUntilDoneWalkingAndContinue ; 2A
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2B
-	dw $4987 ; 2C
+	dw EventScript_PartnerScheduleHopInDirectionAndContinue ; 2C
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2D
 	dw EventScript_NPCScheduleHopInDirectionAndContinue ; 2E
 	dw EventScript_JumpUsingMultiJumpConditionalAndContinue ; 2F
 	dw EventScript_RelativeLongJumpAndContinue ; 30
-	dw $476A ; 31
-	dw $476A ; 32
-	dw $476A ; 33
+	dw EventScript_InitiateBattleAndContinue ; 31
+	dw EventScript_InitiateBattleAndContinue ; 32
+	dw EventScript_InitiateBattleAndContinue ; 33
 	dw EventScript_SetFlagAndContinue ; 34
 	dw EventScript_ResetFlagAndContinue ; 35
-	dw $478B ; 36
-	dw $47A5 ; 37
+	dw EventScript_IncreaseInventoryAndContinue ; 36
+	dw EventScript_DecreaseInventoryAndContinue ; 37
 	dw EventScript_JumpIfFlagSetAndContinue ; 38
 	dw EventScript_JumpIfFlagUnsetAndContinue ; 39
 	dw $47BF ; 3A
@@ -148,10 +148,10 @@ EventScript_EventActionTable::
 	dw EventScript_NPCFacePlayerAndContinue ; 3D
 	dw EventScript_PositionPlayerAndContinue ; 3E
 	dw EventScript_PositionPartnerAndContinue ; 3F
-	dw $47F0 ; 40
-	dw $47F0 ; 41
-	dw $47F0 ; 42
-	dw $47F0 ; 43
+	dw EventScript_BeginEarthquakeAndContinue ; 40
+	dw EventScript_BeginEarthquakeAndContinue ; 41
+	dw EventScript_BeginEarthquakeAndContinue ; 42
+	dw EventScript_BeginEarthquakeAndContinue ; 43
 	dw EventScript_ScheduleSFXAndContinue ; 44
 	dw EventScript_SetMusicAndContinue ; 45
 	dw $4822 ; 46
@@ -175,20 +175,20 @@ EventScript_EventActionTable::
 	dw EventScript_PartnerWaitUntilDoneWalkingAndContinue ; 58
 	dw EventScript_GetEventDenjuuAndContinue ; 59
 	dw $4E0F ; 5A
-	dw $4E34 ; 5B
-	dw $4E70 ; 5C
+	dw EventScript_DisplayMapLocationAndContinue ; 5B
+	dw EventScript_RingRingAndContinue ; 5C
 	dw $4E97 ; 5D
 	dw EventScript_SetReceptionAndContinue ; 5E
 	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F
 	dw EventScript_EventNPCSetPaletteRangeBAndContinue ; 60
 	dw $4F28 ; 61
-	dw $43E4 ; 62
-	dw $4687 ; 63
+	dw EventScript_PlayerScheduleWalkBackwardsAndContinue ; 62
+	dw EventScript_NPCScheduleWalkBackwardsAndContinue ; 63
 	dw $4A32 ; 64
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftBAndContinue ; 65
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue ; 66
 	dw $4F44 ; 67
-	dw $42D9 ; 68
+	dw EventScript_Mode7WarpPlayerAndContinue ; 68
 	dw $4F54 ; 69
 	dw $4F93 ; 6A
 	dw $4FA6 ; 6B
