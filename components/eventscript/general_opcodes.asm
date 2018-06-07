@@ -3,7 +3,27 @@ INCLUDE "telefang.inc"
 ; Until I find a better place to put this it can stay here.
 
 SECTION "Phone Silent Mode", WRAM0[$C90A]
-W_Phone_SilentMode:: ds 2
+W_Phone_SilentMode:: ds 1
+
+SECTION "Event Action - Change Phone State and Continue", ROMX[$4FA6], BANK[$F]
+EventScript_ChangePhoneStateAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld [W_PauseMenu_PhoneState], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Play Credits and Continue", ROMX[$4F93], BANK[$F]
+EventScript_PlayCreditsAndContinue::
+	call $2411
+	ld a, $30
+	ld [W_SystemSubState], a
+	ld a, 4
+	call LCDC_SetupPalswapAnimation
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	ret
 
 SECTION "Event Action - Ring Ring and Continue", ROMX[$4E70], BANK[$F]
 EventScript_RingRingAndContinue::
@@ -212,7 +232,6 @@ EventScript_DecreaseInventoryAndContinue::
 	ret
 
 SECTION "Event Action - Standard End", ROMX[$4263], BANK[$F]
-; I may rename this later if I find other endcodes.
 EventScript_StandardEnd::
 	ld a, 0
 	ld [$C950], a
@@ -235,6 +254,12 @@ EventScript_StandardEnd::
 	ld a, [W_MetaSpriteConfigPlayer + $19]
 	and a, $FD
 	ld [W_MetaSpriteConfigPlayer + $19], a
+	xor a
+	ld [$CD00], a
+	ret
+
+SECTION "Event Action - Basic End", ROMX[$4972], BANK[$F]
+EventScript_BasicEnd::
 	xor a
 	ld [$CD00], a
 	ret
