@@ -18,6 +18,9 @@ W_EventScript_WaitFrames:: ds 1
 SECTION "Event Multi Jump Conditional", WRAM0[$CD26]
 W_EventScript_MultiJumpConditional:: ds 1
 
+SECTION "Event Jump Comparative", WRAM0[$CAD9]
+W_EventScript_JumpComparative:: ds 1
+
 SECTION "Event System - Load Event", ROM0[$2F43]
 EventScript_LoadEvent::
     ld a, [W_CurrentBank]
@@ -165,11 +168,11 @@ EventScript_EventActionTable::
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4E
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4F
 	dw EventScript_ShopPriceMessageAndContinue ; 50
-	dw $4CD9 ; 51
-	dw $4CE7 ; 52
-	dw $4CF5 ; 53
-	dw $4D02 ; 54
-	dw $4D1D ; 55
+	dw EventScript_IncrementComparativeAndContinue ; 51
+	dw EventScript_DecrementComparativeAndContinue ; 52
+	dw EventScript_SetComparativeAndContinue ; 53
+	dw EventScript_JumpIfMatchComparativeAndContinue ; 54
+	dw EventScript_JumpIfNotMatchComparativeAndContinue ; 55
 	dw EventScript_ShopPriceMessageAndContinue ; 56
 	dw EventScript_NPCWaitUntilDoneWalkingAndContinue ; 57
 	dw EventScript_PartnerWaitUntilDoneWalkingAndContinue ; 58
@@ -190,19 +193,19 @@ EventScript_EventActionTable::
 	dw $4F44 ; 67
 	dw EventScript_Mode7WarpPlayerAndContinue ; 68
 	dw $4F54 ; 69
-	dw $4F93 ; 6A
-	dw $4FA6 ; 6B
+	dw EventScript_PlayCreditsAndContinue ; 6A
+	dw EventScript_ChangePhoneStateAndContinue ; 6B
 	dw EventScript_EventFlag400R800RAndContinue ; 6C
-	dw $4FB3 ; 6D
+	dw EventScript_JumpOnSilentModeAndContinue ; 6D
 	dw $4FCA ; 6E
-	dw $4972 ; 6F
-	dw $4972 ; 70
-	dw $4972 ; 71
-	dw $4972 ; 72
-	dw $4972 ; 73
-	dw $4972 ; 74
-	dw $4972 ; 75
-	dw $4972 ; 76
-	dw $4972 ; 77
-	dw $4972 ; 78
+	dw EventScript_BasicEnd ; 6F
+	dw EventScript_BasicEnd ; 70
+	dw EventScript_BasicEnd ; 71
+	dw EventScript_BasicEnd ; 72
+	dw EventScript_BasicEnd ; 73
+	dw EventScript_BasicEnd ; 74
+	dw EventScript_BasicEnd ; 75
+	dw EventScript_BasicEnd ; 76
+	dw EventScript_BasicEnd ; 77
+	dw EventScript_BasicEnd ; 78
 	
