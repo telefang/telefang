@@ -1039,6 +1039,7 @@ def make_tbl(args):
         objfile.write(ovrflowdata.bytes)
     
     for filename, objdata in bank_objects.items():
+        install_path(os.path.dirname(os.path.join(args.output, filename)))
         with open(os.path.join(args.output, filename), "wb") as objfile:
             objfile.write(objdata.bytes)
 
