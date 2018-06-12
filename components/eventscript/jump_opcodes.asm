@@ -1,5 +1,88 @@
 INCLUDE "telefang.inc"
 
+SECTION "Event Action - Jump on Silent Mode and Continue", ROMX[$4FB3], BANK[$F]
+EventScript_JumpOnSilentModeAndContinue::
+	ld a, [W_Phone_SilentMode]
+	or a
+	jr nz, .phoneIsOnSilent
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.phoneIsOnSilent
+	ld a, [W_EventScript_ParameterA]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Comparative Jump and Continue", ROMX[$4CD9], BANK[$F]
+EventScript_IncrementComparativeAndContinue::
+	ld a, [W_EventScript_JumpComparative]
+	inc a
+	ld [W_EventScript_JumpComparative], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_DecrementComparativeAndContinue::
+	ld a, [W_EventScript_JumpComparative]
+	dec a
+	ld [W_EventScript_JumpComparative], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_SetComparativeAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld [W_EventScript_JumpComparative], a
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_JumpIfMatchComparativeAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld b, a
+	ld a, [W_EventScript_JumpComparative]
+	cp b
+	jr nz, .noMatch
+	ld a, [W_EventScript_ParameterB]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.noMatch
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_JumpIfNotMatchComparativeAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld b, a
+	ld a, [W_EventScript_JumpComparative]
+	cp b
+	jr z, .match
+	ld a, [W_EventScript_ParameterB]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf 
+	ret
+
+.match
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Fucking Weird Sequence Jump and Continue", ROMX[$44B7], BANK[$F]
 EventScript_FuckingWeirdSequenceJumpAndContinue::
 	ld a, 0
