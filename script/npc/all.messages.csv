@@ -1380,7 +1380,8 @@ You see folks in lab coats going in and out all the time.",
 The people here all have an odd air about them...",
 0x124108,"なんだか あのやしきに
 でいリするひとの ふんいきが
-かわったダ",/0x124108/,// lately the researchers here have had a different air about them.,
+かわったダ",/0x124108/,"The people going in and out of that place... The feeling I get from them has changed.
+ //",
 0x12410a,"きたのほうに はくいを 
 きたひとが はしっていったけど
 どうしたんダ?",/0x12410a/,"I saw a guy in a lab coat running to the north up ahead. 
@@ -1441,14 +1442,15 @@ If it's nothing, then please leave me alone!",
 #######,21 strings   -   Dimenza's Mansion,,,
 0x124126,"このさきには だいじなものが
 おいてあるんだ
-だからとおすことは できないな",/0x124126/,,
+だからとおすことは できないな",/0x124126/,"// What is/are the ""important thing(s)""?",
 0x124128,"これをとリにくるヤツは
 みんな てき...
-みんな てき...",/0x124128/,,
+みんな てき...",/0x124128/,"People who come to take this are all enemies...
+All... enemies. // Take what?",
 0x12412a,"ここはどこだー!?
-でぐちを おしえてー!",/0x12412a/,,
+でぐちを おしえてー!",/0x12412a/,What is this place?! Tell me where the exit is!,
 0x12412c,"どっちにいこう?
-まよっちゃうよー",/0x12412c/,,
+まよっちゃうよー",/0x12412c/,Which way should I go? I'll get lost for sure...,
 0x12412e,"オマエか?
 ディメンザさまと ゲームを
 してるヤツってのは?
@@ -1460,55 +1462,55 @@ If it's nothing, then please leave me alone!",
 くるヤツはぁ みんなぁ...
 たおすのぉ!",/0x124130/,,
 0x124132,"もういやー!
-どこにいったらでれるのー!?",/0x124132/,,
+どこにいったらでれるのー!?",/0x124132/,I can't take thiiis! Which way should I go to get out of here?!,
 0x124134,"いままで いっしょに いたヤツがどこかヘ いっちゃったんだ
-こわくて うごけないよー",/0x124134/,,
+こわくて うごけないよー",/0x124134/,Where did the guys I came here with go? I'm so scared I can't move!,
 0x124136,"ざんねんでしたー
 ここは いきどまリなんだな
-でも いいものが おいてあるんだあげないけどね!",/0x124136/,,
+でも いいものが おいてあるんだあげないけどね!",/0x124136/,"Too bad! Looks like this is a dead end. I found some stuff, but you can't have it!",
 0x124138,"いきなリ こんな ヘんなとこに
 つれてこられちゃったんだ
-なんで こんなこと されなくちゃいけないんだ?",/0x124138/,,
+なんで こんなこと されなくちゃいけないんだ?",/0x124138/,We were whisked away to this weird place all of a sudden. Why did this have to happen?,
 0x12413a,"いっしょに いたヤツが 
 どこかヘ いっちゃったんだ
 ついてきてると おもったのに
-こわくて うごけないー",/0x12413a/,,
+こわくて うごけないー",/0x12413a/,"Where'd my group run off to? I was gonna tag along, but I'm too scared to move!",
 0x12413c,"アイツが いったあとに オレも
 めのまえの ゆかを ふもうと
 おもうんだ
-はやく いかないかな?",/0x12413c/,,
+はやく いかないかな?",/0x12413c/,I thought I'd step onto that panel after they've// gone. Could they hurry up a bit?,
 0x12413e,"アイツが さきに いったら
 オレも ゆかをふんで
 ワープしようと おもってるのに
 アイツ いつまでたっても
-いかないんだよなぁ",/0x12413e/,,
-0x124140,やっと しってるヤツにあえたんだかんげきー!,/0x124140/,,
+いかないんだよなぁ",/0x12413e/,"I thought I'd warp along after those guys//, but... they're just standing around!",
+0x124140,やっと しってるヤツにあえたんだかんげきー!,/0x124140/,"Finally, some people I know! I'm getting emotional...!",
 0x124142,"ひとリじゃないって すごく
 いいことだな
 ずーっと ひとリぼっちで
 さみしかったんだ
-かんげきー!",/0x124142/,,
+かんげきー!",/0x124142/,I'm so glad I'm not alone anymore. I was all by myself for so long!,
 0x124144,"なんでオレたちが
 こんなめに あわされるんだ
 みつけたら テレファングで
-ギッタンギッタンに してやる",/0x124144/,,
+ギッタンギッタンに してやる",/0x124144/,"Who put us through this junk? When I find them, I'll clobber them in a Telefang!",
 0x124146,"みぎなのかな? ひだリなのかな?あぁー どっちになんて
-きめられないよー",/0x124146/,,
+きめられないよー",/0x124146/,"Should I go right? Or maybe left? Agh, I can't make my mind up!",
 0x124148,"ここは どこなんだろう?
-わかんないよー",/0x124148/,,
+わかんないよー",/0x124148/,What kind of place is this? I have no idea...,
 0x12414a,"さて どっちにいこうかな?
 さっき みた ヤツは
 まよわずに ゆかを ふんでたな
 みちを しってるのかな?
 このめいろには むらの
 デンジュウじゃない ヤツらが
-いるから きをつけなよ",/0x12414a/,,
+いるから きをつけなよ",/0x12414a/,"Very well; where to go now? The people I saw just now went onward with confidence. Perhaps they know the way? This maze is full of Denjuu not from the village, so take care.",
 0x12414c,"このめいろには むらの
 デンジュウじゃない ヤツらが
-いるから きをつけなよ",/0x12414c/,,"This actually points to the second half of the previous line, but we should be able to rewrite them in the patch."
+いるから きをつけなよ",/0x12414c/,"This maze is full of Denjuu not from the village, so take care.","This actually points to the second half of the previous line, but we should be able to rewrite them in the patch."
 0x12414e,"そこの こうしゅうデンワが
 すごく きになる....
-でも こわれてるんだよねー",/0x12414e/,,
+でも こわれてるんだよねー",/0x12414e/,"I'm a bit curious about that pay phone over there. Looks like it's broken, though...",
 #######,12 strings   -   Panses Village,,,
 0x124150,"よかったよー
 みんなたすかってー
@@ -2731,3 +2733,4 @@ Tファンガーとは ひとあじ
 0x13c1c6,"ここでは かいぞうシンカに
 ひつような アイテムを
 おうリ しています。",/0x13c1c6/,,
+#######,End,,,
