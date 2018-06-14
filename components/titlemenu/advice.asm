@@ -166,7 +166,8 @@ TitleMenu_ADVICE_StateLoadGraphics::
     ld bc, $5E
     call Banked_LoadMaliasGraphics
     ld bc, $55
-    jp Banked_LoadMaliasGraphics
+    call Banked_LoadMaliasGraphics
+    jr .advice_exit
 
 .cgbGfx
     ld bc, $5D
@@ -174,6 +175,7 @@ TitleMenu_ADVICE_StateLoadGraphics::
     ld bc, $1B
     call Banked_LoadMaliasGraphics
     
+.advice_exit
     M_AdviceTeardown
     ret
 
@@ -194,13 +196,6 @@ TitleMenu_ADVICE_LoadSGBFiles::
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
     jr z, .return
-    
-    ld a, [W_PreviousBank]
-    push af
-    ld a, [W_CurrentBank]
-    push af
-    ld a, BANK(TitleMenu_ADVICE_LoadSGBFiles)
-    ld [W_PreviousBank], a
     
     ;Load our ATF
     ld a, 3
