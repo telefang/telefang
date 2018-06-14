@@ -288,7 +288,7 @@ Credits_ADVICE_Newline::
 	ld [W_Credits_TextVerticalPosition], a
 	ld a, [hli]
 	cp $E2
-	jr z, .endCodeFound
+	jr z, .linebreakLoop
 	dec hl
 	call Credits_ADVICE_ClearFirstTile
 	ret
