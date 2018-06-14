@@ -15,6 +15,7 @@ PatchUtils_CommitStagedCGBToSGB::
     
     ld a, W_LCDC_CGBStagingBGPaletteArea & $FF
     swap b
+    srl b
     add a, b
     ld l, a
     ld a, W_LCDC_CGBStagingBGPaletteArea >> 8
@@ -29,9 +30,9 @@ PatchUtils_CommitStagedCGBToSGB::
     call PatchUtils_ColourToSGB
     
     ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0 + 0], a
-    ld a, e
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0 + 1], a
+    ld a, e
+    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0 + 0], a
     
     ld a, [hli]
     ld e, a
@@ -41,9 +42,9 @@ PatchUtils_CommitStagedCGBToSGB::
     call PatchUtils_ColourToSGB
     
     ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color1 + 0], a
-    ld a, e
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color1 + 1], a
+    ld a, e
+    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color1 + 0], a
     
     ld a, [hli]
     ld e, a
@@ -53,9 +54,9 @@ PatchUtils_CommitStagedCGBToSGB::
     call PatchUtils_ColourToSGB
     
     ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color2 + 0], a
-    ld a, e
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color2 + 1], a
+    ld a, e
+    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color2 + 0], a
     
     ld a, [hli]
     ld d, [hl]
@@ -64,12 +65,13 @@ PatchUtils_CommitStagedCGBToSGB::
     call PatchUtils_ColourToSGB
     
     ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color3 + 0], a
-    ld a, e
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color3 + 1], a
+    ld a, e
+    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color3 + 0], a
     
     ld a, c
     swap a
+    srl a
     add a, 2
     add a, W_LCDC_CGBStagingBGPaletteArea & $FF
     ld l, a
@@ -85,9 +87,9 @@ PatchUtils_CommitStagedCGBToSGB::
     call PatchUtils_ColourToSGB
     
     ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color1 + 0], a
-    ld a, e
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color1 + 1], a
+    ld a, e
+    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color1 + 0], a
     
     ld a, [hli]
     ld e, a
@@ -97,9 +99,9 @@ PatchUtils_CommitStagedCGBToSGB::
     call PatchUtils_ColourToSGB
     
     ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color2 + 0], a
-    ld a, e
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color2 + 1], a
+    ld a, e
+    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color2 + 0], a
     
     ld a, [hli]
     ld d, [hl]
@@ -108,12 +110,23 @@ PatchUtils_CommitStagedCGBToSGB::
     call PatchUtils_ColourToSGB
     
     ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color3 + 0], a
-    ld a, e
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color3 + 1], a
+    ld a, e
+    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color3 + 0], a
     
     xor a
     ld [W_SGB_SpotPalette + $F], a
+    
+    ld a, BANK(SGB_SendConstructedPaletteSetPacket)
+    ld hl, SGB_SendConstructedPaletteSetPacket
+    call CallBankedFunction_int
+    
+    di
+    ld a, BANK(PatchUtils_CommitStagedCGBToSGB)
+    ld [W_PreviousBank], a
+    ld [W_CurrentBank], a
+    ei
+    
     ret
 
 PatchUtils_ColourToSGB::
