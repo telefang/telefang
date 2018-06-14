@@ -4,7 +4,7 @@ SGB_AttrFileData::
     INCBIN "build/versions/power/gfx/sgb/attrfile/01.atf"
     INCBIN "build/versions/power/gfx/title/sgb.atf"
     INCBIN "build/gfx/menu/titlemenu.atf"
-    INCBIN "build/versions/power/gfx/sgb/attrfile/04.atf"
+    INCBIN "build/components/status/status_screen.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/05.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/06.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/07.atf"

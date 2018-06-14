@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Status Screen State Machine Vars", WRAMX[$D41F], BANK[1]
-W_Status_SubState: ds 1
+W_Status_SubState:: ds 1
 
 SECTION "Status Screen State Machine Vars 2", WRAMX[$D456], BANK[1]
 W_Status_UseDenjuuNickname:: ds 1
@@ -87,15 +87,17 @@ Status_StateInitGraphics:
     jp Status_IncrementSubState
 
 Status_StateInitTilemaps:
-    ld bc, 0
-    ld e, 1
+    ld a, Banked_Status_ADVICE_StateInitTilemaps & $FF
+    call PatchUtils_AuxCodeJmp
+    jp Status_IncrementSubState
+    
+    ;NOTE: Free space.
     ld a, 0
     call Banked_RLEDecompressTMAP0
     ld bc, 0
     ld e, 1
     ld a, 0
     call Banked_RLEDecompressAttribsTMAP0
-    jp Status_IncrementSubState
 
 Status_StateDrawDenjuu:
     ld a, [W_Status_SelectedDenjuuSpecies]
@@ -152,8 +154,8 @@ Status_StateDrawDenjuu:
     ld bc, 9
     ld a, 0
     call Banked_RLEDecompressAttribsTMAP0
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    ld a, Banked_Status_ADVICE_StateDrawDenjuu & $FF
+    call PatchUtils_AuxCodeJmp
     jp Status_IncrementSubState
 
 ; Execute fade processing. Once the screen has faded correctly, moves to the
@@ -387,14 +389,16 @@ Status_StateSwitchDenjuu:
     call Status_DrawDenjuuNickname
 
 .drawPersonality
-    ld a, [W_Status_SelectedDenjuuPersonality]
-    ld bc, $8D80
-    ld de, StringTable_denjuu_personalities
-    call MainScript_DrawCenteredName75
-    
+    ld a, Banked_Status_ADVICE_StateSwitchDenjuu & $FF
+    call PatchUtils_AuxCodeJmp
     call Banked_MainScript_DrawHabitatString
     call Status_DrawDenjuuMoves
     jp Status_IncrementSubState
+    
+    ;NOTE: Free space.
+    nop
+    ld de, StringTable_denjuu_personalities
+    call MainScript_DrawCenteredName75
 
 Status_StateSwitchDenjuuCleanup
     ld bc, $101
@@ -424,10 +428,9 @@ Status_StateExit
     ret z
     
 .exit
-    xor a
-    ld [W_Status_SubState], a
-    xor a
-    ld [W_MetaSpriteConfig1], a
+    ld a, Banked_Status_ADVICE_StateExit & $FF
+    call PatchUtils_AuxCodeJmp
+    
     ld a, 1
     ld [W_OAM_SpritesReady], a
     
@@ -441,6 +444,9 @@ Status_StateExit
     ld a, $C
     ld [W_SystemState], a
     ret ; Return to 0C 00 +1
+    
+    ;TODO: Free space
+    ld [W_MetaSpriteConfig1], a
 
 .noManagementScreen
     ld a, [W_SerIO_ConnectionState]

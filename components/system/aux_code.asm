@@ -94,6 +94,23 @@ Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
 ;It's HOME Bank advice so it doesn't get a trampoline; but we need to mark it on
 ;the list.
 
+;components/status/sgb.asm
+Banked_Status_ADVICE_StateInitTilemaps::
+	jp Status_ADVICE_StateInitTilemaps
+	nop
+
+Banked_Status_ADVICE_StateDrawDenjuu::
+	jp Status_ADVICE_StateDrawDenjuu
+	nop
+
+Banked_Status_ADVICE_StateSwitchDenjuu::
+	jp Status_ADVICE_StateSwitchDenjuu
+	nop
+
+Banked_Status_ADVICE_StateExit::
+	jp Status_ADVICE_StateExit
+	nop
+
 ;Sections beyond this point are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
