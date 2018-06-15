@@ -23,4 +23,4 @@ script/story/5 1281D9 10C000
 script/overflow/1 78000 78000
 script/overflow/2 F0000 F0000
 script/overflow/3 F4000 F4000
-components/credit/credit 3AD7A
+components/credit/credit 3AD7A 3AD7A

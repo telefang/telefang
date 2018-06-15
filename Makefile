@@ -45,6 +45,7 @@ OBJS_MESSAGE_BLOCKS := ${BUILD_DIR}/script/battle/messages.scripttbl \
 	${BUILD_DIR}/script/calls/story.scripttbl \
 	${BUILD_DIR}/script/calls/exp_item.scripttbl \
 	${BUILD_DIR}/script/story/5.scripttbl \
+	${BUILD_DIR}/components/credit/credit.scripttbl \
 
 OBJS_RGBASM := ${OBJS} ${OBJS_POWER} ${OBJS_SPEED}
 
