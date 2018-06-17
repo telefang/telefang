@@ -44,13 +44,10 @@ Credits_ADVICE_VWFNextTile:
 	jr c, .noIncrement
 	inc a
 	ld [W_MainScript_TilesDrawn], a
+	call Credits_ADVICE_ClearFutureTile
 	
 .noIncrement
 	ret
-	
-	nop
-	nop
-	nop
 	
 SECTION "Credits - Parse and Render Text", ROMX[$6286], BANK[$E]
 Credits_ParseAndRenderText::
@@ -296,23 +293,22 @@ Credits_ADVICE_Newline::
 	nop
 	nop
 	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
+	
+Credits_ADVICE_ClearFutureTile::
+	push hl
+	ld a, [W_MainScript_TilesDrawn]
+	ld b, a
+	ld a, [W_MainScript_TileBaseIdx]
+	add b
+	inc a
+	jr Credits_ADVICE_ClearFirstTile.beginClear
 
 Credits_ADVICE_ClearFirstTile::
 ; Clear the first tile on a line in case that line wasn't written to prior to a linebreak.
 	push hl
 	ld a, [W_MainScript_TileBaseIdx]
+
+.beginClear
 	call LCDC_TileIdx2Ptr
 	ld b, $10
 
