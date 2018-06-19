@@ -18,6 +18,7 @@ M_AdviceSetup: MACRO
 ENDM
 
 M_AdviceTeardown: MACRO
+    di
     pop af
     ld [W_CurrentBank], a
     pop af
