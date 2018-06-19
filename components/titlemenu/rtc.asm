@@ -123,7 +123,7 @@ TitleMenu_ADVICE_LoadRTCValues::
     M_AdviceSetup
     
 ;This function opens SRAM, and latches RTC for us.
-    call SaveClock_ADVICE_ValidateRTCFunction
+    call SaveClock_ADVICE_ValidateRTCFunctionInternal
     
     cp 0
     jp z, .rtcNotPresent

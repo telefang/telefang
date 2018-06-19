@@ -10,12 +10,22 @@ SECTION "SaveClock RTC ADVICE Memory", WRAM0[$C3D2]
 W_SaveClock_ADVICE_RTCCheckStatus:: ds 1
 
 SECTION "SaveClock ADVICE - RTC Functional Validation", ROMX[$4180], BANK[$1]
+;This exists 'cause the function right below it was originally being called
+;directly, despite not being banksafe.
+SaveClock_ADVICE_ValidateRTCFunction::
+    M_AdviceSetup
+    
+    call SaveClock_ADVICE_ValidateRTCFunctionInternal
+    
+    M_AdviceTeardown
+    ret
+
 ;This code is called to check if a functional RTC circuit is installed.
 ;It checks for the presence of the save header in bank 8.
 ;If it's not present, we assume the RTC is active.
 ;Sets a = 0 if RTC functionality failed to validate.
 ;Sets a = 1 if RTC functionality does validate.
-SaveClock_ADVICE_ValidateRTCFunction::
+SaveClock_ADVICE_ValidateRTCFunctionInternal::
     push hl
     push de
     push bc
@@ -95,7 +105,7 @@ SaveClock_ADVICE_ValidateRTCFunction::
     
     ret
 
-SaveClock_ADVICE_ValidateRTCFunction_END::
+SaveClock_ADVICE_ValidateRTCFunctionInternal_END::
 
 ;CAUTION: This increments the day counter.
 SaveClock_ADVICE_RTCExtendedValidation::
