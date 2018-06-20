@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Status Screen SGB Hotpatches", ROMX[$4800], BANK[$1]
+SECTION "Status Screen SGB Hotpatches", ROMX[$4A00], BANK[$1]
 ;Synchronize already-loaded status screen palettes with SGB mode.
 ;Not bank safe on it's own.
 Status_ADVICE_SyncUpSGBPalettes::
@@ -70,7 +70,7 @@ Status_ADVICE_StateExit::
     M_AdviceSetup
     
     ;Load neutral/grayscale ATF
-    ld a, 4
+    ld a, 0
     ld b, 0
     ld c, 0
     ld d, 0

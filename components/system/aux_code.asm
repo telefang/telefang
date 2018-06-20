@@ -62,6 +62,18 @@ Banked_Zukan_ADVICE_InitializeNameMetaSprite::
 Banked_Zukan_ADVICE_DrawRightAlignedHabitatName::
 	jp Zukan_ADVICE_DrawRightAlignedHabitatName
 	nop
+   
+Banked_Zukan_ADVICE_SetupSGBScreen::
+	jp Zukan_ADVICE_SetupSGBScreen
+	nop
+
+Banked_Zukan_ADVICE_RefreshSGBScreen::
+	jp Zukan_ADVICE_RefreshSGBScreen
+	nop
+
+Banked_Zukan_ADVICE_TeardownSGBScreenAndMetasprites::
+	jp Zukan_ADVICE_TeardownSGBScreenAndMetasprites
+	nop
 
 Banked_Zukan_ADVICE_StateInnerviewInputButtonPress::
 	jp Zukan_ADVICE_StateInnerviewInputButtonPress
@@ -83,16 +95,16 @@ Banked_MainScript_ADVICE_CondenseTableStringLong::
 Banked_MainScript_ADVICE_CondenseStagedTableStringLong::
 	jp MainScript_ADVICE_CondenseStagedTableStringLong
 	nop
-   
-;components/pausemenu/drawfuncs.asm
-Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
-	jp PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
-	nop
 
 ;components/battle/status.asm (why is this in battle, it's a MainScript sym)
 ;MainScript_ADVICE_DrawStatusEffectGfx lives around here.
 ;It's HOME Bank advice so it doesn't get a trampoline; but we need to mark it on
 ;the list.
+   
+;components/pausemenu/drawfuncs.asm
+Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
+	jp PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
+	nop
 
 ;components/status/sgb.asm
 Banked_Status_ADVICE_StateInitTilemaps::

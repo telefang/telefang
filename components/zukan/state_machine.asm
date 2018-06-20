@@ -191,11 +191,6 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     ld a, 1
     call Banked_RLEDecompressAttribsTMAP0
     call PhoneConversation_OutboundConfigureScreen
-    
-    nop
-    nop
-    nop
-    nop
 
     ld a, Banked_Zukan_ADVICE_DrawRightAlignedHabitatName & $FF
     call PatchUtils_AuxCodeJmp
@@ -250,6 +245,9 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     ld de, $C0E0
     call Banked_PauseMenu_InitializeCursor
     call PauseMenu_UpdateZukanPageCursorAnimations
+    
+    ld a, (Banked_Zukan_ADVICE_SetupSGBScreen & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld a, 1
     ld [W_OAM_SpritesReady], a
@@ -355,10 +353,6 @@ Zukan_StateInnerviewInput::
     ld a, Banked_Zukan_ADVICE_StateInnerviewInputButtonPress & $FF
     call PatchUtils_AuxCodeJmp
     ret
-    nop
-    nop
-    nop
-    nop
     
 .nothing_pressed
     ret
@@ -369,8 +363,9 @@ Zukan_StateInnerviewFadeOut:
     or a
     ret z
     
-    ; Added to clear the Denjuu name metasprite.
-    call LCDC_ClearMetasprites
+    ; Added to clear the Denjuu name metasprite and SGB palettes.
+    ld a, (Banked_Zukan_ADVICE_TeardownSGBScreenAndMetasprites & $FF)
+    call PatchUtils_AuxCodeJmp
 
     ld hl, $9400
     ld b, $38
@@ -421,11 +416,6 @@ Zukan_StateOverviewReturnToInput:
     ret
 
 Zukan_StateInnerviewSwitchPage:
-    nop
-    nop
-    nop
-    nop
-    
     ld a, Banked_Zukan_ADVICE_DrawRightAlignedHabitatName & $FF
     call PatchUtils_AuxCodeJmp
     
@@ -456,6 +446,9 @@ Zukan_StateInnerviewSwitchPage:
     
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
+    
+    ld a, Banked_Zukan_ADVICE_RefreshSGBScreen & $FF
+    call PatchUtils_AuxCodeJmp
     
     ld a, M_Zukan_StateInnerviewInput
     ld [W_SystemSubSubState], a
@@ -524,6 +517,60 @@ Zukan_ADVICE_DrawRightAlignedHabitatName::
 
     ld a, M_MainScript_UndefinedWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
+    
+    M_AdviceTeardown
+    ret
+    
+Zukan_ADVICE_SetupSGBScreen::
+    M_AdviceSetup
+    
+    ;Load SGB ATF.
+    ;We don't convert colors until after the denjuu is in place, so we just want
+    ;to get the status screen attributes in place.
+    ld a, 5
+    ld b, 0
+    ld c, 0
+    ld d, 0
+    ld e, 0
+    call Banked_SGB_ConstructPaletteSetPacket
+    
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld b, 0
+    ld c, 1
+    call PatchUtils_CommitStagedCGBToSGB
+    
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 6
+    call PatchUtils_CommitStagedCGBToSGB
+    
+    M_AdviceTeardown
+    ret
+    
+Zukan_ADVICE_RefreshSGBScreen::
+    M_AdviceSetup
+    
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 6
+    call PatchUtils_CommitStagedCGBToSGB
+    
+    M_AdviceTeardown
+    ret
+    
+Zukan_ADVICE_TeardownSGBScreenAndMetasprites::
+    M_AdviceSetup
+    
+    ;Remove the Denjuu name metasprite
+    call LCDC_ClearMetasprites
+    
+    ;Load neutral/grayscale ATF
+    ld a, 0
+    ld b, 0
+    ld c, 0
+    ld d, 0
+    ld e, 0
+    call Banked_SGB_ConstructPaletteSetPacket
     
     M_AdviceTeardown
     ret

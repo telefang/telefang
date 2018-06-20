@@ -389,7 +389,7 @@ MainScript_DrawEmptySpaces::
 	jr nz, MainScript_DrawEmptySpaces
 	ret
 
-SECTION "Main Script Status Text AuxCode Advice", ROMX[$4640], BANK[$1]
+SECTION "Main Script Status Text AuxCode Advice", ROMX[$4700], BANK[$1]
 MainScript_ADVICE_CondenseTableStringShort::
     M_AdviceSetup
     
