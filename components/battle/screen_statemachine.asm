@@ -184,7 +184,7 @@ Battle_SubStateStatusWarningPartner::
 .playStatusRemovalMessage
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantStatusCondition]
     call Battle_IndexStatusConditionRemovalMessage
-    call Battle_QueueMessage
+    call Battle_ADVICE_QueueMessage_WithoutArticle
     
     ld a, [W_Battle_PartnerDenjuuTurnOrder]
     cp 1
@@ -282,7 +282,7 @@ Battle_SubStateStatusWarningPartner::
     ld c, M_Battle_MessageDenjuuBattlePhraseAlias
     
 .queueMessage
-    call Battle_QueueMessage
+    call Battle_ADVICE_QueueMessage_WithoutArticle
     ld a, $3C
     ld [W_Battle_LoopIndex], a
     ld a, $27
@@ -419,7 +419,7 @@ Battle_SubStateStatusWarningOpponent::
 .playStatusRemovalMessage
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantStatusCondition]
     call Battle_IndexStatusConditionRemovalMessage
-    call Battle_QueueMessage
+    call Battle_ADVICE_QueueMessage_WithArticle
     
     ld a, [W_Battle_OpponentDenjuuTurnOrder]
     cp 1
@@ -515,7 +515,7 @@ Battle_SubStateStatusWarningOpponent::
     ld c, M_Battle_MessageDenjuuBattlePhraseAlias
     
 .queueMessage
-    call Battle_QueueMessage
+    call Battle_ADVICE_QueueMessage_WithArticle
     ld a, $3C
     ld [W_Battle_LoopIndex], a
     ld a, $29
