@@ -123,6 +123,15 @@ Banked_Status_ADVICE_StateExit::
 	jp Status_ADVICE_StateExit
 	nop
 
+;components/battle/articles.asm
+Banked_Battle_ADVICE_BattleNoArticle::
+	jp Battle_ADVICE_BattleNoArticle
+	nop
+
+Banked_Battle_ADVICE_BattleArticle::
+	jp Battle_ADVICE_BattleArticle
+	nop
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
@@ -131,15 +140,6 @@ Banked_MainScript_ADVICE_DrawNarrowLetter::
 
 Banked_Battle_ADVICE_ParsePluralState::
 	jp Battle_ADVICE_ParsePluralState
-	nop
-
-;components/battle/articles.asm
-Banked_Battle_ADVICE_BattleNoArticle::
-	jp Battle_ADVICE_BattleNoArticle
-	nop
-
-Banked_Battle_ADVICE_BattleArticle::
-	jp Battle_ADVICE_BattleArticle
 	nop
 
 SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]

@@ -12,7 +12,7 @@ Battle_ADVICE_QueueMessage_WithArticle::
 	call PatchUtils_AuxCodeJmp
 	jp Battle_QueueMessage
 
-SECTION "Patch Utilities - Battle Articles", ROMX[$4900], BANK[$1]
+SECTION "Patch Utilities - Battle Articles", ROMX[$4B00], BANK[$1]
 Battle_ADVICE_BattleNoArticle::
 	M_AdviceSetup
 	ld a, $E0
