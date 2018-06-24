@@ -609,6 +609,8 @@ def pack_string(string, charmap, metrics, window_width, do_not_terminate = False
                             word_px += 1*8
                         elif val == 0xccd1:
                             word_px += 1*8
+                        elif val == 0xccd9:
+                            word_px += 1*8
                         else:
                             word_px += 8*8
 
