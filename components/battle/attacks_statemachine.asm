@@ -91,7 +91,7 @@ Attack_PartnerFell::
 	call Battle_LoadDenjuuSpeciesAsMessageArg1
 	call Status_CopyLoadedDenjuuNickname
 	ld c, 5
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithoutArticle
 	ld a, [$D5C6]
 	ld b, a
 	ld a, [W_Battle_NumActivePartners]
@@ -156,7 +156,7 @@ Attack_OpponentFell::
 	ld a, [W_Battle_CurrentParticipant]
 	call Battle_LoadDenjuuSpeciesAsMessageArg1
 	ld c, 5
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithArticle
 	ld a, [W_Battle_NumActiveOpponents]
 	dec a
 	cp a, 0
@@ -207,7 +207,7 @@ Attack_PartnerFled::
 	call Battle_LoadDenjuuSpeciesAsMessageArg1
 	call Status_CopyLoadedDenjuuNickname
 	ld c, 7
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithoutArticle
 	ld a, $57
 	ld [W_Sound_NextSFXSelect], a
 	call $652B
@@ -244,7 +244,7 @@ Attack_OpponentFled::
 	ld a, [W_Battle_CurrentParticipant]
 	call Battle_LoadDenjuuSpeciesAsMessageArg1
 	ld c, 7
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithArticle
 	ld a, $57
 	ld [W_Sound_NextSFXSelect], a
 	ld a, [W_Battle_NumActiveOpponents]
@@ -283,7 +283,7 @@ Attack_PartnerWokeUpMessage::
 	call Status_CopyLoadedDenjuuNickname
 	call SaveClock_ExitSRAM
 	ld c, $4B
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithoutArticle
 	ld a, $24
 	ld [W_LateDenjuu_SubSubState], a
 	ret
@@ -300,7 +300,7 @@ Attack_PartnerCameToSensesMessage::
 	call Status_CopyLoadedDenjuuNickname
 	call SaveClock_ExitSRAM
 	ld c, $48
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithoutArticle
 	ld a, $24
 	ld [W_LateDenjuu_SubSubState], a
 	ret
@@ -311,7 +311,7 @@ Attack_OpponentWokeUpMessage::
 	ld a, [$D591]
 	call Battle_LoadDenjuuSpeciesAsMessageArg1
 	ld c, $4B
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithArticle
 	ld a, $24
 	ld [W_LateDenjuu_SubSubState], a
 	ret
@@ -320,7 +320,7 @@ Attack_OpponentCameToSensesMessage::
 	ld a, [$D591]
 	call Battle_LoadDenjuuSpeciesAsMessageArg1
 	ld c, $48
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithArticle
 	ld a, $24
 	ld [W_LateDenjuu_SubSubState], a
 	ret
@@ -332,12 +332,17 @@ Attack_HPRecoveryMessage::
 	call Battle_LoadDenjuuSpeciesAsMessageArg1
 	ld a, [W_Battle_CurrentParticipantTeam]
 	cp a, 1
-	jr z, .jpA
+	jr z, .isOpponent
 	call Status_CopyLoadedDenjuuNickname
-
-.jpA
 	ld c, $2D
-	call Battle_QueueMessage
+	call Battle_ADVICE_QueueMessage_WithoutArticle
+	jr .nextSubstate
+
+.isOpponent
+	ld c, $2D
+	call Battle_ADVICE_QueueMessage_WithArticle
+
+.nextSubstate
 	ld a, $25
 	ld [W_LateDenjuu_SubSubState], a
 	ret
