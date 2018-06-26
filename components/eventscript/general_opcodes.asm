@@ -231,6 +231,36 @@ EventScript_DecreaseInventoryAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Manipulate Chiru and Continue", ROMX[$47BF], BANK[$F]
+EventScript_AddChiruAndContinue::
+	ld a, [W_EventScript_ParameterB]
+	ld b, a
+	ld a, [W_EventScript_ParameterA]
+	ld c, a
+	ld a, $B
+	ld hl, $5ED9
+	call CallBankedFunction_int
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_SubtractChiruAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	cpl
+	ld c, a
+	ld a, [W_EventScript_ParameterB]
+	cpl
+	ld b, a
+	inc bc
+	ld a, $B
+	ld hl, $5ED9
+	call CallBankedFunction_int
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Standard End", ROMX[$4263], BANK[$F]
 EventScript_StandardEnd::
 	ld a, 0

@@ -209,3 +209,31 @@ EventScript_JumpUsingMultiJumpConditionalAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
+
+SECTION "Event Action - Jump on Player Direction and Continue", ROMX[$4822], BANK[$F]
+EventScript_JumpOnPlayerDirectionAndContinue::
+; Parameter A is the direction we are comparing with. 0=Right, 1=Up/Down, 2=Left.
+; Parameter B is the relative offset of where we are jumping to.
+	ld a, [W_EventScript_ParameterA]
+	ld b, a
+	ld a, [W_MetaSpriteConfigPlayer + $17]
+; Normally 3 represents down, but we want it to be the same value as up, which is 1.
+	bit 0, a
+	jr z, .isEven
+	xor a, 2
+
+.isEven
+	cp b
+	jr z, .makeTheJump
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.makeTheJump
+	ld a, [W_EventScript_ParameterB]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
