@@ -237,3 +237,80 @@ EventScript_JumpOnPlayerDirectionAndContinue::
 	call EventScript_CalculateNextOffset
 	scf
 	ret
+
+SECTION "Event Action - Jump on Species in Contacts and Continue", ROMX[$4F54], BANK[$F]
+EventScript_JumpOnSpeciesInContactsAndContinue::
+; Parameter A is the species index number to look for.
+; Parameter B is the relative offset of where we are jumping to.
+	ld a, [W_EventScript_ParameterA]
+	ld c, a
+	ld a, $A
+	ld [$0000], a
+	ld a, 2
+	ld [$4000], a
+	ld hl, $A001
+	ld de, $11
+	ld b, $FE
+
+.speciesSearchLoop
+	ld a, [hld]
+	or a
+	jr z, .slotIsEmpty
+	ld a, [hl]
+	cp c
+	jr z, .denjuuFound
+
+.slotIsEmpty
+	add hl, de
+	dec b
+	jr nz, .speciesSearchLoop
+	jr .denjuuNotFound
+
+.denjuuFound
+	ld a, 0
+	ld [$0000], a
+	ld a, [W_EventScript_ParameterB]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.denjuuNotFound
+	ld a, 0
+	ld [$0000], a
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Jump if Less Than or Equal to Inventory and Continue", ROMX[$4E0F], BANK[$F]
+EventScript_JumpIfLTEInventoryAndContinue::
+; Parameter A is the index of the item.
+; Parameter B is the number for comparison.
+; Parameter C is the relative offset of where we are jumping to.
+; If the value of parameter B is less than or equal to the quantity of the item, then the jump condition is met.
+	ld a, [W_EventScript_ParameterA]
+	ld hl, W_PauseMenu_InventoryQuantities
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [W_EventScript_ParameterB]
+	ld b, a
+	ld a, [hl]
+	cp b
+	jr c, .greaterThan
+	ld a, [W_EventScript_ParameterC]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.greaterThan
+	ld b, 4
+	call EventScript_CalculateNextOffset
+	scf
+	ret
