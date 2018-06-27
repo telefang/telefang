@@ -184,7 +184,7 @@ EventScript_EventActionTable::
 	dw EventScript_SetReceptionAndContinue ; 5E
 	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F
 	dw EventScript_EventNPCSetPaletteRangeBAndContinue ; 60
-	dw $4F28 ; 61
+	dw EventScript_JumpOnOverworldPartnerSpeciesAndContinue ; 61
 	dw EventScript_PlayerScheduleWalkBackwardsAndContinue ; 62
 	dw EventScript_NPCScheduleWalkBackwardsAndContinue ; 63
 	dw $4A32 ; 64

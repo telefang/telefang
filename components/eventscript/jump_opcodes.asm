@@ -238,6 +238,27 @@ EventScript_JumpOnPlayerDirectionAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Jump on Overworld Partner Species and Continue", ROMX[$4F28], BANK[$F]
+EventScript_JumpOnOverworldPartnerSpeciesAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	ld b, a
+	ld a, [W_Overworld_PartnerSpecies]
+	inc a
+	cp b
+	jr nz, .noMatch
+	ld a, [W_EventScript_ParameterB]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.noMatch
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Jump on Species in Contacts and Continue", ROMX[$4F54], BANK[$F]
 EventScript_JumpOnSpeciesInContactsAndContinue::
 ; Parameter A is the species index number to look for.
