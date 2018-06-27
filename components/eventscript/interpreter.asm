@@ -177,7 +177,7 @@ EventScript_EventActionTable::
 	dw EventScript_NPCWaitUntilDoneWalkingAndContinue ; 57
 	dw EventScript_PartnerWaitUntilDoneWalkingAndContinue ; 58
 	dw EventScript_GetEventDenjuuAndContinue ; 59
-	dw $4E0F ; 5A
+	dw EventScript_JumpIfLTEInventoryAndContinue ; 5A
 	dw EventScript_DisplayMapLocationAndContinue ; 5B
 	dw EventScript_RingRingAndContinue ; 5C
 	dw $4E97 ; 5D
@@ -192,7 +192,7 @@ EventScript_EventActionTable::
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue ; 66
 	dw $4F44 ; 67
 	dw EventScript_Mode7WarpPlayerAndContinue ; 68
-	dw $4F54 ; 69
+	dw EventScript_JumpOnSpeciesInContactsAndContinue ; 69
 	dw EventScript_PlayCreditsAndContinue ; 6A
 	dw EventScript_ChangePhoneStateAndContinue ; 6B
 	dw EventScript_EventFlag400R800RAndContinue ; 6C
