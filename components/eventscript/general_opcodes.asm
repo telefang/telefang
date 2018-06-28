@@ -47,6 +47,25 @@ EventScript_RingRingAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Stop Ringing and Continue", ROMX[$4E97], BANK[$F]
+EventScript_StopRingingAndContinue::
+	ld a, [W_Phone_SilentMode]
+	or a
+	jr nz, .phoneWasOnSilent
+	ld a, 1
+	ld [W_Sound_NextSFXSelect], a
+	ld a, $FF
+	ld [$C917], a
+	call $3435
+
+.phoneWasOnSilent
+	ld a, 0
+	ld [W_Overworld_PowerAntennaPattern], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Warp Player and Continue", ROMX[$428F], BANK[$F]
 EventScript_WarpPlayerAndContinue::
 	ld a, [W_EventScript_ParameterA]
@@ -226,6 +245,36 @@ EventScript_DecreaseInventoryAndContinue::
 	ld a, [hl]
 	sub b
 	ld [hl], a
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+SECTION "Event Action - Manipulate Chiru and Continue", ROMX[$47BF], BANK[$F]
+EventScript_AddChiruAndContinue::
+	ld a, [W_EventScript_ParameterB]
+	ld b, a
+	ld a, [W_EventScript_ParameterA]
+	ld c, a
+	ld a, $B
+	ld hl, $5ED9
+	call CallBankedFunction_int
+	ld b, 3
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_SubtractChiruAndContinue::
+	ld a, [W_EventScript_ParameterA]
+	cpl
+	ld c, a
+	ld a, [W_EventScript_ParameterB]
+	cpl
+	ld b, a
+	inc bc
+	ld a, $B
+	ld hl, $5ED9
+	call CallBankedFunction_int
 	ld b, 3
 	call EventScript_CalculateNextOffset
 	scf

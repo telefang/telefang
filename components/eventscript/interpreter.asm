@@ -90,7 +90,7 @@ EventScript_EventActionTable::
 	dw EventScript_StandardEnd ; 00
 	dw EventScript_OutputMessageAndContinue ; 01
 	dw EventScript_OutputMessageAndContinue ; 02
-	dw $423D ; 03
+	dw EventScript_ClearMessageWindowAndContinue ; 03
 	dw EventScript_WaitXFramesAndContinue ; 04
 	dw EventScript_WaitForButtonPressAndContinue ; 05
 	dw EventScript_StandardEnd ; 06
@@ -145,8 +145,8 @@ EventScript_EventActionTable::
 	dw EventScript_DecreaseInventoryAndContinue ; 37
 	dw EventScript_JumpIfFlagSetAndContinue ; 38
 	dw EventScript_JumpIfFlagUnsetAndContinue ; 39
-	dw $47BF ; 3A
-	dw $47D6 ; 3B
+	dw EventScript_AddChiruAndContinue ; 3A
+	dw EventScript_SubtractChiruAndContinue ; 3B
 	dw EventScript_PartnerScheduleWalkAndContinue ; 3C
 	dw EventScript_NPCFacePlayerAndContinue ; 3D
 	dw EventScript_PositionPlayerAndContinue ; 3E
@@ -157,11 +157,11 @@ EventScript_EventActionTable::
 	dw EventScript_BeginEarthquakeAndContinue ; 43
 	dw EventScript_ScheduleSFXAndContinue ; 44
 	dw EventScript_SetMusicAndContinue ; 45
-	dw $4822 ; 46
-	dw $4822 ; 47
-	dw $4822 ; 48
-	dw $4822 ; 49
-	dw $4822 ; 4A
+	dw EventScript_JumpOnPlayerDirectionAndContinue ; 46
+	dw EventScript_JumpOnPlayerDirectionAndContinue ; 47
+	dw EventScript_JumpOnPlayerDirectionAndContinue ; 48
+	dw EventScript_JumpOnPlayerDirectionAndContinue ; 49
+	dw EventScript_JumpOnPlayerDirectionAndContinue ; 4A
 	dw EventScript_JumpOnPlayerWinAndContinue ; 4B
 	dw EventScript_NPCRemoveGeneralSpriteAndContinue ; 4C
 	dw EventScript_ExecuteCutsceneBehaviourAndContinue ; 4D
@@ -177,27 +177,27 @@ EventScript_EventActionTable::
 	dw EventScript_NPCWaitUntilDoneWalkingAndContinue ; 57
 	dw EventScript_PartnerWaitUntilDoneWalkingAndContinue ; 58
 	dw EventScript_GetEventDenjuuAndContinue ; 59
-	dw $4E0F ; 5A
+	dw EventScript_JumpIfLTEInventoryAndContinue ; 5A
 	dw EventScript_DisplayMapLocationAndContinue ; 5B
 	dw EventScript_RingRingAndContinue ; 5C
-	dw $4E97 ; 5D
+	dw EventScript_StopRingingAndContinue ; 5D
 	dw EventScript_SetReceptionAndContinue ; 5E
 	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F
 	dw EventScript_EventNPCSetPaletteRangeBAndContinue ; 60
-	dw $4F28 ; 61
+	dw EventScript_JumpOnOverworldPartnerSpeciesAndContinue ; 61
 	dw EventScript_PlayerScheduleWalkBackwardsAndContinue ; 62
 	dw EventScript_NPCScheduleWalkBackwardsAndContinue ; 63
-	dw $4A32 ; 64
+	dw EventScript_NPCFaceAwayFromPlayerAndContinue ; 64
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftBAndContinue ; 65
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue ; 66
 	dw $4F44 ; 67
 	dw EventScript_Mode7WarpPlayerAndContinue ; 68
-	dw $4F54 ; 69
+	dw EventScript_JumpOnSpeciesInContactsAndContinue ; 69
 	dw EventScript_PlayCreditsAndContinue ; 6A
 	dw EventScript_ChangePhoneStateAndContinue ; 6B
 	dw EventScript_EventFlag400R800RAndContinue ; 6C
 	dw EventScript_JumpOnSilentModeAndContinue ; 6D
-	dw $4FCA ; 6E
+	dw EventScript_JumpIfZukanCompleteAndContinue ; 6E
 	dw EventScript_BasicEnd ; 6F
 	dw EventScript_BasicEnd ; 70
 	dw EventScript_BasicEnd ; 71

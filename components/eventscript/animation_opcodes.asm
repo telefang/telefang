@@ -629,6 +629,8 @@ EventScript_NPCFacePlayerAndContinue::
 	call EventScript_FindMetaSpriteConfig
 	jr z, .configNotFound
 	call $2CB7
+
+.extJp
 	ld a, [W_EventScript_MetaspriteConfigAddressBuffer]
 	add a, $10
 	ld l, a
@@ -652,6 +654,19 @@ EventScript_NPCFacePlayerAndContinue::
 	call EventScript_CalculateNextOffset
 	scf  
 	ret
+
+EventScript_NPCFaceAwayFromPlayerAndContinue::
+; This only works horizontally (if the player is to the left or right of the NPC), not vertically.
+	ld a, [W_EventScript_ParameterA]
+	add a, $10
+	ld c, a
+	call EventScript_FindMetaSpriteConfig
+	jr z, EventScript_NPCFacePlayerAndContinue.configNotFound
+	call $2CB7
+	ld a, b
+	xor 1
+	ld b, a
+	jr EventScript_NPCFacePlayerAndContinue.extJp
 	
 SECTION "Event Action - Partner Face Direction and Continue", ROMX[$450A], BANK[$F]
 EventScript_PartnerFaceDirectionAndContinue::
