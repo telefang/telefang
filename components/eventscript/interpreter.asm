@@ -180,14 +180,14 @@ EventScript_EventActionTable::
 	dw EventScript_JumpIfLTEInventoryAndContinue ; 5A
 	dw EventScript_DisplayMapLocationAndContinue ; 5B
 	dw EventScript_RingRingAndContinue ; 5C
-	dw $4E97 ; 5D
+	dw EventScript_StopRingingAndContinue ; 5D
 	dw EventScript_SetReceptionAndContinue ; 5E
 	dw EventScript_EventNPCSetPaletteRangeAAndContinue ; 5F
 	dw EventScript_EventNPCSetPaletteRangeBAndContinue ; 60
 	dw EventScript_JumpOnOverworldPartnerSpeciesAndContinue ; 61
 	dw EventScript_PlayerScheduleWalkBackwardsAndContinue ; 62
 	dw EventScript_NPCScheduleWalkBackwardsAndContinue ; 63
-	dw $4A32 ; 64
+	dw EventScript_NPCFaceAwayFromPlayerAndContinue ; 64
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftBAndContinue ; 65
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue ; 66
 	dw $4F44 ; 67
@@ -197,7 +197,7 @@ EventScript_EventActionTable::
 	dw EventScript_ChangePhoneStateAndContinue ; 6B
 	dw EventScript_EventFlag400R800RAndContinue ; 6C
 	dw EventScript_JumpOnSilentModeAndContinue ; 6D
-	dw $4FCA ; 6E
+	dw EventScript_JumpIfZukanCompleteAndContinue ; 6E
 	dw EventScript_BasicEnd ; 6F
 	dw EventScript_BasicEnd ; 70
 	dw EventScript_BasicEnd ; 71

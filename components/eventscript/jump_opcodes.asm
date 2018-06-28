@@ -305,6 +305,34 @@ EventScript_JumpOnSpeciesInContactsAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Jump if Zukan Complete and Continue", ROMX[$4FCA], BANK[$F]
+EventScript_JumpIfZukanCompleteAndContinue::
+	ld hl, $C6E0
+	ld b, $15
+
+.zukanMainVerifyLoop
+	ld a, [hli]
+	cp $FF
+	jr nz, .zukanIncomplete
+	dec b
+	jr nz, .zukanMainVerifyLoop
+	ld a, [hl]
+	and $3F
+	cp $3F
+	jr nz, .zukanIncomplete
+	ld a, [W_EventScript_ParameterA]
+	inc a
+	ld b, a
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+.zukanIncomplete
+	ld b, 2
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Jump if Less Than or Equal to Inventory and Continue", ROMX[$4E0F], BANK[$F]
 EventScript_JumpIfLTEInventoryAndContinue::
 ; Parameter A is the index of the item.

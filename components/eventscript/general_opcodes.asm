@@ -47,6 +47,25 @@ EventScript_RingRingAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Stop Ringing and Continue", ROMX[$4E97], BANK[$F]
+EventScript_StopRingingAndContinue::
+	ld a, [W_Phone_SilentMode]
+	or a
+	jr nz, .phoneWasOnSilent
+	ld a, 1
+	ld [W_Sound_NextSFXSelect], a
+	ld a, $FF
+	ld [$C917], a
+	call $3435
+
+.phoneWasOnSilent
+	ld a, 0
+	ld [W_Overworld_PowerAntennaPattern], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Warp Player and Continue", ROMX[$428F], BANK[$F]
 EventScript_WarpPlayerAndContinue::
 	ld a, [W_EventScript_ParameterA]
