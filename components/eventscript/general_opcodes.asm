@@ -280,6 +280,17 @@ EventScript_SubtractChiruAndContinue::
 	scf
 	ret
 
+SECTION "Event Action - Reset Overworld Interation and Continue", ROMX[$4F44], BANK[$F]
+EventScript_ResetOverworldInterationAndContinue::
+	call $2928
+	ldh a, [H_JPInput_Changed]
+	and a, $FE
+	ldh [H_JPInput_Changed], a
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Standard End", ROMX[$4263], BANK[$F]
 EventScript_StandardEnd::
 	ld a, 0

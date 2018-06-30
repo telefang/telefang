@@ -190,7 +190,7 @@ EventScript_EventActionTable::
 	dw EventScript_NPCFaceAwayFromPlayerAndContinue ; 64
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftBAndContinue ; 65
 	dw EventScript_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftAAndContinue ; 66
-	dw $4F44 ; 67
+	dw EventScript_ResetOverworldInterationAndContinue ; 67
 	dw EventScript_Mode7WarpPlayerAndContinue ; 68
 	dw EventScript_JumpOnSpeciesInContactsAndContinue ; 69
 	dw EventScript_PlayCreditsAndContinue ; 6A
