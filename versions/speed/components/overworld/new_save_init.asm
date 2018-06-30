@@ -124,7 +124,7 @@ Overworld_InitializeNewSaveFile::
     ld a, $A ; SPEED Version specific!!!
     ld [$A003], a
     ld a, 6 ; SPEED Version specific!!!
-    ld [$C912], a
+    ld [W_Overworld_PartnerSpecies], a
     
     ld hl, $A006
     ld a, 1 ; SPEED Version specific!!!

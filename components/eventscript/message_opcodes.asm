@@ -60,6 +60,15 @@ EventScript_OutputMessageAndContinue::
 	xor a
 	ret
 
+SECTION "Event Action - Clear Message Window and Continue", ROMX[$423D], BANK[$F]
+EventScript_ClearMessageWindowAndContinue::
+; Utterly useless because the message windows called by EventScript_OutputMessageAndContinue clear automatically after the message is finished.
+	call $2BA9
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
 SECTION "Event Action - Shop Price Message and Continue", ROMX[$485A], BANK[$F]
 EventScript_ShopPriceMessageAndContinue::
 ; Loads the message box with the specified message.
