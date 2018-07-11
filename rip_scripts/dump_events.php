@@ -68,7 +68,7 @@ foreach($addresspool as $addressindex => $address) {
 }
 $jumpno=1;
 foreach($jumpmatches as $jumpargumentindex => $jumplocation) {
-	if($labelused[$jumplocation]) {
+	if(isset($labelused[$jumplocation]) && $labelused[$jumplocation]) {
 		$jumplabel=$labelused[$jumplocation];
 	} else {
 		if($labelpoints[$jumplocation]) {
@@ -241,413 +241,413 @@ function dump_action(&$addressmatches,&$jumpmatches,&$labelpoints,&$scriptsblob,
 ';
 	switch($index) {
 		case 0:
-			$addressmatches[$currentaddress]='M_ES_StandardEnd_A'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_StandardEnd_A'.$nl;
 			break;
 		case 1:
-			$addressmatches[$currentaddress]='M_ES_OutputMessage_A ';
+			$addressmatches[$currentaddress]='    M_ES_OutputMessage_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 2:
-			$addressmatches[$currentaddress]='M_ES_OutputMessage_B ';
+			$addressmatches[$currentaddress]='    M_ES_OutputMessage_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 3:
-			$addressmatches[$currentaddress]='M_ES_ClearMessageWindow'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_ClearMessageWindow'.$nl;
 			break;
 		case 4:
-			$addressmatches[$currentaddress]='M_ES_WaitXFrames ';
+			$addressmatches[$currentaddress]='    M_ES_WaitXFrames ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 5:
-			$addressmatches[$currentaddress]='M_ES_WaitForButtonPress'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_WaitForButtonPress'.$nl;
 			break;
 		case 6:
-			$addressmatches[$currentaddress]='M_ES_StandardEnd_B'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_StandardEnd_B'.$nl;
 			break;
 		case 7:
-			$addressmatches[$currentaddress]='M_ES_WarpPlayer_A ';
+			$addressmatches[$currentaddress]='    M_ES_WarpPlayer_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 8:
-			$addressmatches[$currentaddress]='M_ES_WarpPlayer_B ';
+			$addressmatches[$currentaddress]='    M_ES_WarpPlayer_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 9:
-			$addressmatches[$currentaddress]='M_ES_WarpPlayer_C ';
+			$addressmatches[$currentaddress]='    M_ES_WarpPlayer_C ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 10:
-			$addressmatches[$currentaddress]='M_ES_WarpPlayer_D ';
+			$addressmatches[$currentaddress]='    M_ES_WarpPlayer_D ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 11:
-			$addressmatches[$currentaddress]='M_ES_WarpPlayer_E ';
+			$addressmatches[$currentaddress]='    M_ES_WarpPlayer_E ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 12:
-			$addressmatches[$currentaddress]='M_ES_PlayerFaceDirection_A ';
+			$addressmatches[$currentaddress]='    M_ES_PlayerFaceDirection_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 13:
-			$addressmatches[$currentaddress]='M_ES_PlayerFaceDirection_B ';
+			$addressmatches[$currentaddress]='    M_ES_PlayerFaceDirection_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 14:
-			$addressmatches[$currentaddress]='M_ES_PlayerScheduleHop'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_PlayerScheduleHop'.$nl;
 			break;
 		case 15:
-			$addressmatches[$currentaddress]='M_ES_PlayerScheduleHopInDirection ';
+			$addressmatches[$currentaddress]='    M_ES_PlayerScheduleHopInDirection ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 16:
-			$addressmatches[$currentaddress]='M_ES_PlayerScheduleWalk ';
+			$addressmatches[$currentaddress]='    M_ES_PlayerScheduleWalk ';
 			$addressmatches[$currentaddress+1]=format_nibble_pair($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 17:
-			$addressmatches[$currentaddress]='M_ES_EventFlag800S_A ';
+			$addressmatches[$currentaddress]='    M_ES_EventFlag800S_A ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 18:
-			$addressmatches[$currentaddress]='M_ES_EventFlag800S_B ';
+			$addressmatches[$currentaddress]='    M_ES_EventFlag800S_B ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 19:
-			$addressmatches[$currentaddress]='M_ES_EventFlag400S800R ';
+			$addressmatches[$currentaddress]='    M_ES_EventFlag400S800R ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 20:
-			$addressmatches[$currentaddress]='M_ES_CurrentEventFlag400S800R'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_CurrentEventFlag400S800R'.$nl;
 			break;
 		case 21:
-			$addressmatches[$currentaddress]='M_ES_CurrentEventFlag800R'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_CurrentEventFlag800R'.$nl;
 			break;
 		case 22:
-			$addressmatches[$currentaddress]='M_ES_EffectiveEventFlag400S800R ';
+			$addressmatches[$currentaddress]='    M_ES_EffectiveEventFlag400S800R ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 23:
-			$addressmatches[$currentaddress]='M_ES_SetMultiJumpConditional ';
+			$addressmatches[$currentaddress]='    M_ES_SetMultiJumpConditional ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 24:
-			$addressmatches[$currentaddress]='M_ES_IncrementMultiJumpConditional'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_IncrementMultiJumpConditional'.$nl;
 			break;
 		case 25:
-			$addressmatches[$currentaddress]='M_ES_FuckingWeirdSequenceJump ';
+			$addressmatches[$currentaddress]='    M_ES_FuckingWeirdSequenceJump ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 26:
-			$addressmatches[$currentaddress]='M_ES_PartnerFacePlayer_A'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_PartnerFacePlayer_A'.$nl;
 			break;
 		case 27:
-			$addressmatches[$currentaddress]='M_ES_PartnerFacePlayer_B'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_PartnerFacePlayer_B'.$nl;
 			break;
 		case 28:
-			$addressmatches[$currentaddress]='M_ES_PartnerFaceDirection ';
+			$addressmatches[$currentaddress]='    M_ES_PartnerFaceDirection ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 29:
-			$addressmatches[$currentaddress]='M_ES_PartnerScheduleHop'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_PartnerScheduleHop'.$nl;
 			break;
 		case 30:
-			$addressmatches[$currentaddress]='M_ES_FlickerPartner ';
+			$addressmatches[$currentaddress]='    M_ES_FlickerPartner ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 31:
-			$addressmatches[$currentaddress]='M_ES_InitiateNPC_A ';
+			$addressmatches[$currentaddress]='    M_ES_InitiateNPC_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_nibble_pair($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 32:
-			$addressmatches[$currentaddress]='M_ES_InitiateNPC_B ';
+			$addressmatches[$currentaddress]='    M_ES_InitiateNPC_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_nibble_pair($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 33:
-			$addressmatches[$currentaddress]='M_ES_InitiateNPC_C ';
+			$addressmatches[$currentaddress]='    M_ES_InitiateNPC_C ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_nibble_pair($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 34:
-			$addressmatches[$currentaddress]='M_ES_NPCFaceDirection ';
+			$addressmatches[$currentaddress]='    M_ES_NPCFaceDirection ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 35:
-			$addressmatches[$currentaddress]='M_ES_NPCScheduleWalk ';
+			$addressmatches[$currentaddress]='    M_ES_NPCScheduleWalk ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_nibble_pair($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 36:
-			$addressmatches[$currentaddress]='M_ES_NPCRemoveSprite_A ';
+			$addressmatches[$currentaddress]='    M_ES_NPCRemoveSprite_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 37:
-			$addressmatches[$currentaddress]='M_ES_NPCRemoveSprite_B ';
+			$addressmatches[$currentaddress]='    M_ES_NPCRemoveSprite_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 38:
-			$addressmatches[$currentaddress]='M_ES_FlickerNPC ';
+			$addressmatches[$currentaddress]='    M_ES_FlickerNPC ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 39:
-			$addressmatches[$currentaddress]='M_ES_NPCScheduleHop_A ';
+			$addressmatches[$currentaddress]='    M_ES_NPCScheduleHop_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 40:
-			$addressmatches[$currentaddress]='M_ES_NPCScheduleHop_B ';
+			$addressmatches[$currentaddress]='    M_ES_NPCScheduleHop_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 41:
 			break;
 		case 42:
-			$addressmatches[$currentaddress]='M_ES_PlayerWaitUntilDoneWalking'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_PlayerWaitUntilDoneWalking'.$nl;
 			break;
 		case 43:
 			break;
 		case 44:
-			$addressmatches[$currentaddress]='M_ES_PartnerScheduleHopInDirection ';
+			$addressmatches[$currentaddress]='    M_ES_PartnerScheduleHopInDirection ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 45:
 			break;
 		case 46:
-			$addressmatches[$currentaddress]='M_ES_NPCScheduleHopInDirection ';
+			$addressmatches[$currentaddress]='    M_ES_NPCScheduleHopInDirection ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 47:
 			break;
 		case 48:
-			$addressmatches[$currentaddress]='M_ES_RelativeLongJump ';
+			$addressmatches[$currentaddress]='    M_ES_RelativeLongJump ';
 			$addressmatches[$currentaddress+1]='[[JUMPP]]';
 			$addressmatches[$currentaddress+2]=$nl;
 			$jumpmatches[$currentaddress+1]=$currentaddress+$jlength;
 			break;
 		case 49:
-			$addressmatches[$currentaddress]='M_ES_InitiateBattle_A ';
+			$addressmatches[$currentaddress]='    M_ES_InitiateBattle_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 50:
-			$addressmatches[$currentaddress]='M_ES_InitiateBattle_B ';
+			$addressmatches[$currentaddress]='    M_ES_InitiateBattle_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 51:
-			$addressmatches[$currentaddress]='M_ES_InitiateBattle_C ';
+			$addressmatches[$currentaddress]='    M_ES_InitiateBattle_C ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 52:
-			$addressmatches[$currentaddress]='M_ES_SetFlag ';
+			$addressmatches[$currentaddress]='    M_ES_SetFlag ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 53:
-			$addressmatches[$currentaddress]='M_ES_ResetFlag ';
+			$addressmatches[$currentaddress]='    M_ES_ResetFlag ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 54:
-			$addressmatches[$currentaddress]='M_ES_IncreaseInventory ';
+			$addressmatches[$currentaddress]='    M_ES_IncreaseInventory ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 55:
-			$addressmatches[$currentaddress]='M_ES_DecreaseInventory ';
+			$addressmatches[$currentaddress]='    M_ES_DecreaseInventory ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 56:
-			$addressmatches[$currentaddress]='M_ES_JumpIfFlagSet ';
+			$addressmatches[$currentaddress]='    M_ES_JumpIfFlagSet ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=', ';
 			$addressmatches[$currentaddress+3]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+3]=$currentaddress+$jlength;
 			break;
 		case 57:
-			$addressmatches[$currentaddress]='M_ES_JumpIfFlagUnset ';
+			$addressmatches[$currentaddress]='    M_ES_JumpIfFlagUnset ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=', ';
 			$addressmatches[$currentaddress+3]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+3]=$currentaddress+$jlength;
 			break;
 		case 58:
-			$addressmatches[$currentaddress]='M_ES_AddChiru ';
+			$addressmatches[$currentaddress]='    M_ES_AddChiru ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+2],$scriptsblob[$currentaddress+1]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 59:
-			$addressmatches[$currentaddress]='M_ES_SubtractChiru ';
+			$addressmatches[$currentaddress]='    M_ES_SubtractChiru ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+2],$scriptsblob[$currentaddress+1]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 60:
-			$addressmatches[$currentaddress]='M_ES_PartnerScheduleWalk ';
+			$addressmatches[$currentaddress]='    M_ES_PartnerScheduleWalk ';
 			$addressmatches[$currentaddress+1]=format_nibble_pair($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 61:
-			$addressmatches[$currentaddress]='M_ES_NPCFacePlayer ';
+			$addressmatches[$currentaddress]='    M_ES_NPCFacePlayer ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 62:
-			$addressmatches[$currentaddress]='M_ES_PositionPlayer ';
+			$addressmatches[$currentaddress]='    M_ES_PositionPlayer ';
 			$addressmatches[$currentaddress+1]=format_nibble_pair($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 63:
-			$addressmatches[$currentaddress]='M_ES_PositionPartner ';
+			$addressmatches[$currentaddress]='    M_ES_PositionPartner ';
 			$addressmatches[$currentaddress+1]=format_nibble_pair($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 64:
-			$addressmatches[$currentaddress]='M_ES_BeginEarthquake_A ';
+			$addressmatches[$currentaddress]='    M_ES_BeginEarthquake_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 65:
-			$addressmatches[$currentaddress]='M_ES_BeginEarthquake_B ';
+			$addressmatches[$currentaddress]='    M_ES_BeginEarthquake_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 66:
-			$addressmatches[$currentaddress]='M_ES_BeginEarthquake_C ';
+			$addressmatches[$currentaddress]='    M_ES_BeginEarthquake_C ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 67:
-			$addressmatches[$currentaddress]='M_ES_BeginEarthquake_D ';
+			$addressmatches[$currentaddress]='    M_ES_BeginEarthquake_D ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 68:
-			$addressmatches[$currentaddress]='M_ES_ScheduleSFX ';
+			$addressmatches[$currentaddress]='    M_ES_ScheduleSFX ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 69:
-			$addressmatches[$currentaddress]='M_ES_SetMusic ';
+			$addressmatches[$currentaddress]='    M_ES_SetMusic ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 70:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerDirection_A ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerDirection_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 71:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerDirection_B ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerDirection_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 72:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerDirection_C ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerDirection_C ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 73:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerDirection_D ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerDirection_D ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 74:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerDirection_E ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerDirection_E ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 75:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerWin_A ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerWin_A ';
 			$addressmatches[$currentaddress+1]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+1]=$currentaddress+$jlength;
 			break;
 		case 76:
-			$addressmatches[$currentaddress]='M_ES_NPCRemoveGeneralSprite ';
+			$addressmatches[$currentaddress]='    M_ES_NPCRemoveGeneralSprite ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 77:
-			$addressmatches[$currentaddress]='M_ES_ExecuteCutsceneBehaviour ';
+			$addressmatches[$currentaddress]='    M_ES_ExecuteCutsceneBehaviour ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 78:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerWin_B ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerWin_B ';
 			$addressmatches[$currentaddress+1]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+1]=$currentaddress+$jlength;
 			break;
 		case 79:
-			$addressmatches[$currentaddress]='M_ES_JumpOnPlayerWin_C ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnPlayerWin_C ';
 			$addressmatches[$currentaddress+1]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+1]=$currentaddress+$jlength;
 			break;
 		case 80:
-			$addressmatches[$currentaddress]='M_ES_ShopPriceMessage_A ';
+			$addressmatches[$currentaddress]='    M_ES_ShopPriceMessage_A ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 81:
-			$addressmatches[$currentaddress]='M_ES_IncrementComparative'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_IncrementComparative'.$nl;
 			break;
 		case 82:
-			$addressmatches[$currentaddress]='M_ES_DecrementComparative'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_DecrementComparative'.$nl;
 			break;
 		case 83:
-			$addressmatches[$currentaddress]='M_ES_SetComparative ';
+			$addressmatches[$currentaddress]='    M_ES_SetComparative ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 84:
-			$addressmatches[$currentaddress]='M_ES_JumpIfMatchComparative ';
+			$addressmatches[$currentaddress]='    M_ES_JumpIfMatchComparative ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 85:
-			$addressmatches[$currentaddress]='M_ES_JumpIfNotMatchComparative ';
+			$addressmatches[$currentaddress]='    M_ES_JumpIfNotMatchComparative ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 86:
-			$addressmatches[$currentaddress]='M_ES_ShopPriceMessage_B ';
+			$addressmatches[$currentaddress]='    M_ES_ShopPriceMessage_B ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 87:
-			$addressmatches[$currentaddress]='M_ES_NPCWaitUntilDoneWalking ';
+			$addressmatches[$currentaddress]='    M_ES_NPCWaitUntilDoneWalking ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 88:
-			$addressmatches[$currentaddress]='M_ES_PartnerWaitUntilDoneWalking'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_PartnerWaitUntilDoneWalking'.$nl;
 			break;
 		case 89:
-			$addressmatches[$currentaddress]='M_ES_GetEventDenjuu ';
+			$addressmatches[$currentaddress]='    M_ES_GetEventDenjuu ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).', ';
@@ -655,129 +655,129 @@ function dump_action(&$addressmatches,&$jumpmatches,&$labelpoints,&$scriptsblob,
 			$addressmatches[$currentaddress+5]=format_byte($scriptsblob[$currentaddress+5]).$nl;
 			break;
 		case 90:
-			$addressmatches[$currentaddress]='M_ES_JumpIfLTEInventory ';
+			$addressmatches[$currentaddress]='    M_ES_JumpIfLTEInventory ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+3]=$currentaddress+$jlength;
 			break;
 		case 91:
-			$addressmatches[$currentaddress]='M_ES_DisplayMapLocation'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_DisplayMapLocation'.$nl;
 			break;
 		case 92:
-			$addressmatches[$currentaddress]='M_ES_RingRing ';
+			$addressmatches[$currentaddress]='    M_ES_RingRing ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 93:
-			$addressmatches[$currentaddress]='M_ES_StopRinging'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_StopRinging'.$nl;
 			break;
 		case 94:
-			$addressmatches[$currentaddress]='M_ES_SetReception ';
+			$addressmatches[$currentaddress]='    M_ES_SetReception ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 95:
-			$addressmatches[$currentaddress]='M_ES_EventNPCSetPaletteRangeA ';
+			$addressmatches[$currentaddress]='    M_ES_EventNPCSetPaletteRangeA ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 96:
-			$addressmatches[$currentaddress]='M_ES_EventNPCSetPaletteRangeB ';
+			$addressmatches[$currentaddress]='    M_ES_EventNPCSetPaletteRangeB ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 97:
-			$addressmatches[$currentaddress]='M_ES_JumpOnOverworldPartnerSpecies ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnOverworldPartnerSpecies ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 98:
-			$addressmatches[$currentaddress]='M_ES_PlayerScheduleWalkBackwards ';
+			$addressmatches[$currentaddress]='    M_ES_PlayerScheduleWalkBackwards ';
 			$addressmatches[$currentaddress+1]=format_nibble_pair($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).$nl;
 			break;
 		case 99:
-			$addressmatches[$currentaddress]='M_ES_NPCScheduleWalkBackwards ';
+			$addressmatches[$currentaddress]='    M_ES_NPCScheduleWalkBackwards ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_nibble_pair($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 100:
-			$addressmatches[$currentaddress]='M_ES_NPCFaceAwayFromPlayer ';
+			$addressmatches[$currentaddress]='    M_ES_NPCFaceAwayFromPlayer ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 101:
-			$addressmatches[$currentaddress]='M_ES_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftB ';
+			$addressmatches[$currentaddress]='    M_ES_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftB ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 102:
-			$addressmatches[$currentaddress]='M_ES_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftA ';
+			$addressmatches[$currentaddress]='    M_ES_EventNPCSetPaletteRangeBAndDontUseItWTFSmilesoftA ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 103:
-			$addressmatches[$currentaddress]='M_ES_ResetOverworldInteration'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_ResetOverworldInteration'.$nl;
 			break;
 		case 104:
-			$addressmatches[$currentaddress]='M_ES_Mode7WarpPlayer ';
+			$addressmatches[$currentaddress]='    M_ES_Mode7WarpPlayer ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]=format_byte($scriptsblob[$currentaddress+2]).', ';
 			$addressmatches[$currentaddress+3]=format_byte($scriptsblob[$currentaddress+3]).$nl;
 			break;
 		case 105:
-			$addressmatches[$currentaddress]='M_ES_JumpOnSpeciesInContacts ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnSpeciesInContacts ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).', ';
 			$addressmatches[$currentaddress+2]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+2]=$currentaddress+$jlength;
 			break;
 		case 106:
-			$addressmatches[$currentaddress]='M_ES_PlayCredits'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_PlayCredits'.$nl;
 			break;
 		case 107:
-			$addressmatches[$currentaddress]='M_ES_ChangePhoneState ';
+			$addressmatches[$currentaddress]='    M_ES_ChangePhoneState ';
 			$addressmatches[$currentaddress+1]=format_byte($scriptsblob[$currentaddress+1]).$nl;
 			break;
 		case 108:
-			$addressmatches[$currentaddress]='M_ES_EventFlag400R800R ';
+			$addressmatches[$currentaddress]='    M_ES_EventFlag400R800R ';
 			$addressmatches[$currentaddress+1]=format_word($scriptsblob[$currentaddress+1],$scriptsblob[$currentaddress+2]);
 			$addressmatches[$currentaddress+2]=$nl;
 			break;
 		case 109:
-			$addressmatches[$currentaddress]='M_ES_JumpOnSilentMode ';
+			$addressmatches[$currentaddress]='    M_ES_JumpOnSilentMode ';
 			$addressmatches[$currentaddress+1]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+1]=$currentaddress+$jlength;
 			break;
 		case 110:
-			$addressmatches[$currentaddress]='M_ES_JumpIfZukanComplete ';
+			$addressmatches[$currentaddress]='    M_ES_JumpIfZukanComplete ';
 			$addressmatches[$currentaddress+1]='[[JUMPP]]'.$nl;
 			$jumpmatches[$currentaddress+1]=$currentaddress+$jlength;
 			break;
 		case 111:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_A'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_A'.$nl;
 			break;
 		case 112:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_B'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_B'.$nl;
 			break;
 		case 113:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_C'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_C'.$nl;
 			break;
 		case 114:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_D'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_D'.$nl;
 			break;
 		case 115:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_E'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_E'.$nl;
 			break;
 		case 116:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_F'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_F'.$nl;
 			break;
 		case 117:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_G'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_G'.$nl;
 			break;
 		case 118:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_H'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_H'.$nl;
 			break;
 		case 119:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_I'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_I'.$nl;
 			break;
 		case 120:
-			$addressmatches[$currentaddress]='M_ES_BasicEnd_J'.$nl;
+			$addressmatches[$currentaddress]='    M_ES_BasicEnd_J'.$nl;
 			break;
 	}
 }
