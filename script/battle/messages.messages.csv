@@ -15,10 +15,10 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 ""<&0xd658>""<*5>",,"<&0xd6a0>
 ""<&0xd658>""<*5>",,
 0x11400a,"<&0xd460>は
-たおれた!<*5>",<&0xd6a0> fell!<*5>,,<&0xd6a0> ist am Boden!<*5>,,
+たおれた!<*5>",<&0xccd1><&0xd6a0> fell!<*5>,,<&0xd6a0> ist am Boden!<*5>,,
 0x11400c,『コイツはかなわないや!』<*5>,"""I'm no match for this guy!""<*5>",,"""Keine Chance... Ich mach die Biege!""<*5>",,
 0x11400e,"<&0xd460>は
-にげだした!<*5> ",<&0xd6a0> fled!<*5>,,<&0xd6a0> ist geflohen!<*5>,,
+にげだした!<*5> ",<&0xccd1><&0xd6a0> fled!<*5>,,<&0xd6a0> ist geflohen!<*5>,,
 0x114010,"<&0xd460>
 『みちくさをしている!』<*5>","<&0xd6a0>
 ""I got distracted!""<*5>",,"<&0xd6a0>
@@ -89,19 +89,19 @@ Denma-Power!<*5>",,
 <0>Status<*4>",,"<S0><0>Kampf<0><0><0><0><0>Flucht
 <0>Status<*4>",,
 0x11404e,"<&0xd460>の
-すばやさがアップした!<*5>",<&0xd6a0>'s speed went up!<*5>,,<&0xd6a0>s Tempo ist gestiegen!<*5>,,
+すばやさがアップした!<*5>",<&0xccd1><&0xd6a0>'s speed went up!<*5>,,<&0xd6a0>s Tempo ist gestiegen!<*5>,,
 0x114050,"<&0xd460>の
-めいちゅうリつがアップした!<*5>",<&0xd6a0>'s accuracy went up!<*5>,,<&0xd6a0>s Genauigkeit ist gestiegen!<*5>,,
+めいちゅうリつがアップした!<*5>",<&0xccd1><&0xd6a0>'s accuracy went up!<*5>,,<&0xd6a0>s Genauigkeit ist gestiegen!<*5>,,
 0x114052,"<&0xd460>の
-かいひリつがアップした!<*5>",<&0xd6a0>'s evasion went up!<*5>,,<&0xd6a0>s Fluchtwert ist gestiegen!<*5>,,
+かいひリつがアップした!<*5>",<&0xccd1><&0xd6a0>'s evasion went up!<*5>,,<&0xd6a0>s Fluchtwert ist gestiegen!<*5>,,
 0x114054,"<&0xd460>の
-こうげきリょくがアップした!<*5>",<&0xd6a0>'s attack power went up!<*5>,,<&0xd6a0>s Angriff ist gestiegen!<*5>,,
+こうげきリょくがアップした!<*5>",<&0xccd1><&0xd6a0>'s attack power went up!<*5>,,<&0xd6a0>s Angriff ist gestiegen!<*5>,,
 0x114056,"<&0xd460>の
-でんまリょくがアップした!<*5>",<&0xd6a0>'s Denma attack went up!<*5>,,<&0xd6a0>s Denma-Angriff ist gestiegen!<*5>,,
+でんまリょくがアップした!<*5>",<&0xccd1><&0xd6a0>'s Denma attack went up!<*5>,,<&0xd6a0>s Denma-Angriff ist gestiegen!<*5>,,
 0x114058,"<&0xd460>の
-ぼうぎょリょくがアップした!<*5>",<&0xd6a0>'s defense went up!<*5>,,<&0xd6a0>s Abwehr ist gestiegen!<*5>,,
+ぼうぎょリょくがアップした!<*5>",<&0xccd1><&0xd6a0>'s defense went up!<*5>,,<&0xd6a0>s Abwehr ist gestiegen!<*5>,,
 0x11405a,"<&0xd460>の
-たいリょくがかいふくした!<*5>",<&0xd6a0> recovered HP!<*5>,,<&0xd6a0> hat LP wiederhergestellt!<*5>,,
+たいリょくがかいふくした!<*5>",<&0xccd1><&0xd6a0> recovered HP!<*5>,,<&0xd6a0> hat LP wiederhergestellt!<*5>,,
 0x11405c,どくのダメージ!<*5>,Poison damage!<*5>,,Das Gift verursacht Schaden!<*5>,,
 0x11405e,しっぱい!!<*4>,Failed!!<*4>,,Fehlgeschlagen!<*4>,,
 0x114060,<S0><&0xc3a0><*4>,<S0><&0xcc90><*4>,,<S0><&0xcc90><*4>,,
@@ -118,97 +118,97 @@ Denma-Power!<*5>",,
 ""I'm lost!""<*5>",,"<&0xd6a0>
 ""Hab mich verlaufen!""<*5>",,
 0x11406c,"<&0xd460>は
-かくれている!<*5>",<&0xd6a0> is hiding!<*5>,,<&0xd6a0> tarnt sich!<*5>,,
+かくれている!<*5>",<&0xccd1><&0xd6a0> is hiding!<*5>,,<&0xd6a0> tarnt sich!<*5>,,
 0x11406e,"<&0xd460>は
-じゃんぷしている!<*5>",<&0xd6a0> is jumping!<*5>,,<&0xd6a0> springt!<*5>,,
+じゃんぷしている!<*5>",<&0xccd1><&0xd6a0> is jumping!<*5>,,<&0xd6a0> springt!<*5>,,
 0x114070,"<&0xd460>は
-ひこうしている!<*5>",<&0xd6a0> is flying!<*5>,,<&0xd6a0> fliegt!<*5>,,
+ひこうしている!<*5>",<&0xccd1><&0xd6a0> is flying!<*5>,,<&0xd6a0> fliegt!<*5>,,
 0x114072,"<&0xd460>は
-こんらんしている!<*5>",<&0xd6a0> is confused!<*5>,,<&0xd6a0> ist verwirrt!<*5>,,
+こんらんしている!<*5>",<&0xccd1><&0xd6a0> is confused!<*5>,,<&0xd6a0> ist verwirrt!<*5>,,
 0x114074,"<&0xd460>は
-まひしている!<*5>",<&0xd6a0> is paralyzed!<*5>,,<&0xd6a0> ist gelähmt!<*5>,,
+まひしている!<*5>",<&0xccd1><&0xd6a0> is paralyzed!<*5>,,<&0xd6a0> ist gelähmt!<*5>,,
 0x114076,"<&0xd460>は
-のろわれている!<*5>",<&0xd6a0> is cursed!<*5>,,<&0xd6a0> ist verflucht!<*5>,,
+のろわれている!<*5>",<&0xccd1><&0xd6a0> is cursed!<*5>,,<&0xd6a0> ist verflucht!<*5>,,
 0x114078,"<&0xd460>は
-ねむっている!<*5>",<&0xd6a0> is sleeping!<*5>,,<&0xd6a0> schläft!<*5>,,
+ねむっている!<*5>",<&0xccd1><&0xd6a0> is sleeping!<*5>,,<&0xd6a0> schläft!<*5>,,
 0x11407a,"<&0xd460>は
-ひるんでいる!<*5>",<&0xd6a0> is flinching!<*5>,,<&0xd6a0> schreckt zurück!<*5>,,
+ひるんでいる!<*5>",<&0xccd1><&0xd6a0> is flinching!<*5>,,<&0xd6a0> schreckt zurück!<*5>,,
 0x11407c,"<&0xd460>は
-けむリにつつまれている!<*5>",<&0xd6a0> is covered in smoke!<*5>,,<&0xd6a0> ist in Rauch gehüllt!<*5>,,
+けむリにつつまれている!<*5>",<&0xccd1><&0xd6a0> is covered in smoke!<*5>,,<&0xd6a0> ist in Rauch gehüllt!<*5>,,
 0x11407e,"<&0xd460>は
-どくにおかされている!<*5>",<&0xd6a0> is poisoned!<*5>,,<&0xd6a0> ist vergiftet!<*5>,,
+どくにおかされている!<*5>",<&0xccd1><&0xd6a0> is poisoned!<*5>,,<&0xd6a0> ist vergiftet!<*5>,,
 0x114080,"<&0xd460>は
-めのまえがみえない!<*5>",<&0xd6a0> can't see!<*5>,,<&0xd6a0> kann nichts sehen!<*5>,,
+めのまえがみえない!<*5>",<&0xccd1><&0xd6a0> can't see!<*5>,,<&0xd6a0> kann nichts sehen!<*5>,,
 0x114082,"<&0xd460>は
-バリアをはっている!<*5>",<&0xd6a0> is forming a barrier!<*5>,,<&0xd6a0> bildet eine Barriere!<*5>,,
+バリアをはっている!<*5>",<&0xccd1><&0xd6a0> is forming a barrier!<*5>,,<&0xd6a0> bildet eine Barriere!<*5>,,
 0x114084,"<&0xd460>は
-けっかいをはられている!<*5>",<&0xd6a0> is forming a force field!<*5>,,<&0xd6a0> bildet ein Kraftfeld!<*5>,,
+けっかいをはられている!<*5>",<&0xccd1><&0xd6a0> is forming a force field!<*5>,,<&0xd6a0> bildet ein Kraftfeld!<*5>,,
 0x114086,"<&0xd460>は
-しもやけになっている!<*5>",<&0xd6a0> is frostbitten!<*5>,,<&0xd6a0> ist eingefroren!<*5>,,
+しもやけになっている!<*5>",<&0xccd1><&0xd6a0> is frostbitten!<*5>,,<&0xd6a0> ist eingefroren!<*5>,,
 0x114088,"<&0xd460>は
-やけどをおっている!<*5>",<&0xd6a0> is burned!<*5>,,<&0xd6a0> erleidet Verbrennungen!<*5>,,
+やけどをおっている!<*5>",<&0xccd1><&0xd6a0> is burned!<*5>,,<&0xd6a0> erleidet Verbrennungen!<*5>,,
 0x11408a,"<&0xd460>は
-すがたをあらわした!<*5>",<&0xd6a0> became visible!<*5>,,<&0xd6a0> ist wieder sichtbar!<*5>,,
+すがたをあらわした!<*5>",<&0xccd1><&0xd6a0> became visible!<*5>,,<&0xd6a0> ist wieder sichtbar!<*5>,,
 0x11408c,"<&0xd460>は
-ちゃくちした!<*5>",<&0xd6a0> came down!<*5>,,<&0xd6a0> kommt wieder runter!<*5>,,
+ちゃくちした!<*5>",<&0xccd1><&0xd6a0> came down!<*5>,,<&0xd6a0> kommt wieder runter!<*5>,,
 0x11408e,"<&0xd460>は
-まいおリた!<*5>",<&0xd6a0> landed!<*5>,,<&0xd6a0> ist gelandet!<*5>,,
+まいおリた!<*5>",<&0xccd1><&0xd6a0> landed!<*5>,,<&0xd6a0> ist gelandet!<*5>,,
 0x114090,"<&0xd460>は
-こんらんからさめた!<*5>",<&0xd6a0> came to its senses!<*5>,,<&0xd6a0> kommt wieder zu sich!<*5>,,
+こんらんからさめた!<*5>",<&0xccd1><&0xd6a0> came to its senses!<*5>,,<&0xd6a0> kommt wieder zu sich!<*5>,,
 0x114092,"<&0xd460>の
-まひがなおった!<*5>",<&0xd6a0> recovered from paralysis!<*5>,,<&0xd6a0> ist nicht länger gelähmt!<*5>,,
+まひがなおった!<*5>",<&0xccd1><&0xd6a0> recovered from paralysis!<*5>,,<&0xd6a0> ist nicht länger gelähmt!<*5>,,
 0x114094,"<&0xd460>の
-のろいがとけた!<*5>",<&0xd6a0>'s curse was lifted!<*5>,,<&0xd6a0>s Fluch wurde aufgehoben!<*5>,,
+のろいがとけた!<*5>",<&0xccd1><&0xd6a0>'s curse was lifted!<*5>,,<&0xd6a0>s Fluch wurde aufgehoben!<*5>,,
 0x114096,"<&0xd460>は
-ねむリからさめた!<*5>",<&0xd6a0> woke up!<*5>,,<&0xd6a0> wacht auf!<*5>,,
+ねむリからさめた!<*5>",<&0xccd1><&0xd6a0> woke up!<*5>,,<&0xd6a0> wacht auf!<*5>,,
 0x114098,"<&0xd460>は
-こうげきたいせいにもどった!<*5>",<&0xd6a0> can attack again!<*5>,,<&0xd6a0> kann wieder angreifen!<*5>,,
+こうげきたいせいにもどった!<*5>",<&0xccd1><&0xd6a0> can attack again!<*5>,,<&0xd6a0> kann wieder angreifen!<*5>,,
 0x11409a,"<&0xd460>の
-まわリのけむリがなくなった!<*5>",The smoke around <&0xd6a0> cleared!<*5>,,Der Rauch um <&0xd6a0> lichtet sich!<*5>,,
+まわリのけむリがなくなった!<*5>",The smoke around <&0xccd9><&0xd6a0> cleared!<*5>,,Der Rauch um <&0xd6a0> lichtet sich!<*5>,,
 0x11409c,"<&0xd460>の
-どくがきえた!<*5>",<&0xd6a0>'s poison faded!<*5>,,Das Gift in <&0xd6a0> schwindet!<*5>,,
+どくがきえた!<*5>",<&0xccd1><&0xd6a0>'s poison faded!<*5>,,Das Gift in <&0xd6a0> schwindet!<*5>,,
 0x11409e,"<&0xd460>は
-めのまえがみえるようになった!<*5>",<&0xd6a0> can see again!<*5>,,<&0xd6a0> kann wieder sehen!<*5>,,
+めのまえがみえるようになった!<*5>",<&0xccd1><&0xd6a0> can see again!<*5>,,<&0xd6a0> kann wieder sehen!<*5>,,
 0x1140a0,"<&0xd460>の
-バリアのこうかがなくなった!<*5>",<&0xd6a0>'s barrier faded!<*5>,,<&0xd6a0>s Barriere schwindet!<*5>,,
+バリアのこうかがなくなった!<*5>",<&0xccd1><&0xd6a0>'s barrier faded!<*5>,,<&0xd6a0>s Barriere schwindet!<*5>,,
 0x1140a2,"<&0xd460>の
-けっかいがきえた!<*5>",<&0xd6a0>'s force field faded!<*5>,,<&0xd6a0>s Kraftfeld schwindet!<*5>,,
+けっかいがきえた!<*5>",<&0xccd1><&0xd6a0>'s force field faded!<*5>,,<&0xd6a0>s Kraftfeld schwindet!<*5>,,
 0x1140a4,"<&0xd460>の
-しもやけがなおった!<*5>",<&0xd6a0> recovered from frostbite!<*5>,,<&0xd6a0> ist aufgetaut!<*5>,,
+しもやけがなおった!<*5>",<&0xccd1><&0xd6a0> recovered from frostbite!<*5>,,<&0xd6a0> ist aufgetaut!<*5>,,
 0x1140a6,"<&0xd460>の
-やけどがなおった!<*5>",<&0xd6a0> recovered from its burn!<*5>,,<&0xd6a0> ist abgekühlt!<*5>,,
+やけどがなおった!<*5>",<&0xccd1><&0xd6a0> recovered from its burn!<*5>,,<&0xd6a0> ist abgekühlt!<*5>,,
 0x1140a8,"<&0xd460>は
-みをかくした!<*5>",<&0xd6a0> hid itself!<*5>,,<&0xd6a0> tarnt sich!<*5>,,
+みをかくした!<*5>",<&0xccd1><&0xd6a0> hid itself!<*5>,,<&0xd6a0> tarnt sich!<*5>,,
 0x1140aa,"<&0xd460>は
-たかくとびあがった!<*5>",<&0xd6a0> jumped up high!<*5>,,<&0xd6a0> springt hoch hinauf!<*5>,,
+たかくとびあがった!<*5>",<&0xccd1><&0xd6a0> jumped up high!<*5>,,<&0xd6a0> springt hoch hinauf!<*5>,,
 0x1140ac,"<&0xd460>は
-おおぞらにまいあがった!<*5>",<&0xd6a0> flew up high!<*5>,,<&0xd6a0> fliegt hoch hinauf!<*5>,,
+おおぞらにまいあがった!<*5>",<&0xccd1><&0xd6a0> flew up high!<*5>,,<&0xd6a0> fliegt hoch hinauf!<*5>,,
 0x1140ae,"<&0xd460>は
-こんらんした!<*5>",<&0xd6a0> was confused!<*5>,,<&0xd6a0> wurde verwirrt!<*5>,,
+こんらんした!<*5>",<&0xccd1><&0xd6a0> was confused!<*5>,,<&0xd6a0> wurde verwirrt!<*5>,,
 0x1140b0,"<&0xd460>は
-まひした!<*5>",<&0xd6a0> was paralyzed!<*5>,,<&0xd6a0> wurde gelähmt!<*5>,,
+まひした!<*5>",<&0xccd1><&0xd6a0> was paralyzed!<*5>,,<&0xd6a0> wurde gelähmt!<*5>,,
 0x1140b2,"<&0xd460>は
-のろわれた!<*5>",<&0xd6a0> was cursed!<*5>,,<&0xd6a0> wurde verflucht!<*5>,,
+のろわれた!<*5>",<&0xccd1><&0xd6a0> was cursed!<*5>,,<&0xd6a0> wurde verflucht!<*5>,,
 0x1140b4,"<&0xd460>は
-ねむリだした!<*5>",<&0xd6a0> was put to sleep!<*5>,,<&0xd6a0> wurde in Schlaf versetzt!<*5>,,
+ねむリだした!<*5>",<&0xccd1><&0xd6a0> was put to sleep!<*5>,,<&0xd6a0> wurde in Schlaf versetzt!<*5>,,
 0x1140b6,"<&0xd460>は
-ひるんだ!<*5>",<&0xd6a0> flinched!<*5>,,<&0xd6a0> ist zurückgeschreckt!<*5>,,
+ひるんだ!<*5>",<&0xccd1><&0xd6a0> flinched!<*5>,,<&0xd6a0> ist zurückgeschreckt!<*5>,,
 0x1140b8,"<&0xd460>は
-けむリにつつまれた!<*5>",<&0xd6a0> was covered in smoke!<*5>,,<&0xd6a0> wurde in Rauch gehüllt!<*5>,,
+けむリにつつまれた!<*5>",<&0xccd1><&0xd6a0> was covered in smoke!<*5>,,<&0xd6a0> wurde in Rauch gehüllt!<*5>,,
 0x1140ba,"<&0xd460>は
-どくにおかされた!<*5>",<&0xd6a0> was poisoned!<*5>,,<&0xd6a0> wurde vergiftet!<*5>,,
+どくにおかされた!<*5>",<&0xccd1><&0xd6a0> was poisoned!<*5>,,<&0xd6a0> wurde vergiftet!<*5>,,
 0x1140bc,"<&0xd460>は
-めをつむった!<*5>",<&0xd6a0> covered its eyes!<*5>,,<&0xd6a0> schließt seine Augen!<*5>,,
+めをつむった!<*5>",<&0xccd1><&0xd6a0> covered its eyes!<*5>,,<&0xd6a0> schließt seine Augen!<*5>,,
 0x1140be,"<&0xd460>は
-バリアをはった!<*5>",<&0xd6a0> put up a barrier!<*5>,,<&0xd6a0> hat eine Barriere gebildet!<*5>,,
+バリアをはった!<*5>",<&0xccd1><&0xd6a0> put up a barrier!<*5>,,<&0xd6a0> hat eine Barriere gebildet!<*5>,,
 0x1140c0,"<&0xd460>は
-けっかいをはられた!<*5>",<&0xd6a0> put up a force field!<*5>,,<&0xd6a0> hat ein Kraftfeld gebildet!<*5>,,
+けっかいをはられた!<*5>",<&0xccd1><&0xd6a0> put up a force field!<*5>,,<&0xd6a0> hat ein Kraftfeld gebildet!<*5>,,
 0x1140c2,"<&0xd460>は
 しもやけになった!
-しゅびリょくダウン!!<*5>",<&0xd6a0> was frostbitten! Defense down!!<*5>,,<&0xd6a0> wurde eingefroren! Abwehr fällt!!<*5>,,
+しゅびリょくダウン!!<*5>",<&0xccd1><&0xd6a0> was frostbitten! Defense down!!<*5>,,<&0xd6a0> wurde eingefroren! Abwehr fällt!!<*5>,,
 0x1140c4,"<&0xd460>は
 やけどをおった!
-こうげきリょくダウン!!<*5>",<&0xd6a0> was burned! Attack power down!!<*5>,,<&0xd6a0> wurde verbrannt! Angriffskraft fällt!!<*5>,,
+こうげきリょくダウン!!<*5>",<&0xccd1><&0xd6a0> was burned! Attack power down!!<*5>,,<&0xd6a0> wurde verbrannt! Angriffskraft fällt!!<*5>,,
 0x1140c6,"メモリーしますか?
    はい    いいえ<*4>","Save number?
 <0><0><0xEE>Yes<P4>No<*4>",,"Nummer einspeichern?
