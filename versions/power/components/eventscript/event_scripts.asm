@@ -123,7 +123,7 @@ EventSystem_EventScript_Table_A::
     dw EventSystem_EventScript_47 ; 76
     dw EventSystem_EventScript_48 ; 77
     dw EventSystem_EventScript_49 ; 78
-    dw EventSystem_EventScript_4A ; 79
+    dw EventSystem_EventScript_DoNothing ; 79
     dw EventSystem_EventScript_4B ; 7A
     dw EventSystem_EventScript_4C ; 7B
     dw EventSystem_EventScript_4C ; 7C
@@ -355,9 +355,13 @@ EventSystem_EventScript_1::
     M_ES_ShopPriceMessage_B 3, 1
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_1.jp4AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_1.jp3AG
     M_ES_OutputMessage_A 3, 4
     M_ES_RelativeLongJump EventSystem_EventScript_1.jp3AG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp4AG
     M_ES_SetFlag $C3B
@@ -403,9 +407,13 @@ EventSystem_EventScript_4::
     M_ES_ShopPriceMessage_B 3, 7
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_4.jp8AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_4.jp7AG
     M_ES_OutputMessage_A 3, $A
     M_ES_RelativeLongJump EventSystem_EventScript_4.jp7AG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp8AG
     M_ES_SetFlag $C3B
@@ -474,9 +482,13 @@ EventSystem_EventScript_7::
     M_ES_ShopPriceMessage_B 3, $10
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_7.jp10AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_7.jpFAG
     M_ES_OutputMessage_A 3, $13
     M_ES_RelativeLongJump EventSystem_EventScript_7.jpFAG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp10AG
     M_ES_SetFlag $C3B
@@ -545,9 +557,13 @@ EventSystem_EventScript_A::
     M_ES_ShopPriceMessage_B 3, $19
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_A.jp18AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_A.jp17AG
     M_ES_OutputMessage_A 3, $1C
     M_ES_RelativeLongJump EventSystem_EventScript_A.jp17AG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp18AG
     M_ES_SetFlag $C3B
@@ -616,9 +632,13 @@ EventSystem_EventScript_D::
     M_ES_ShopPriceMessage_B 3, $22
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_D.jp20AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_D.jp1FAG
     M_ES_OutputMessage_A 3, $25
     M_ES_RelativeLongJump EventSystem_EventScript_D.jp1FAG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp20AG
     M_ES_SetFlag $C3B
@@ -687,9 +707,13 @@ EventSystem_EventScript_10::
     M_ES_ShopPriceMessage_B 3, $2B
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_10.jp28AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_10.jp27AG
     M_ES_OutputMessage_A 3, $2E
     M_ES_RelativeLongJump EventSystem_EventScript_10.jp27AG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp28AG
     M_ES_SetFlag $C3B
@@ -758,9 +782,13 @@ EventSystem_EventScript_13::
     M_ES_ShopPriceMessage_B 3, $34
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_13.jp30AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_13.jp2FAG
     M_ES_OutputMessage_A 3, $37
     M_ES_RelativeLongJump EventSystem_EventScript_13.jp2FAG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp30AG
     M_ES_SetFlag $C3B
@@ -829,9 +857,13 @@ EventSystem_EventScript_16::
     M_ES_ShopPriceMessage_B 3, $3D
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_16.jp38AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_16.jp37AG
     M_ES_OutputMessage_A 3, $40
     M_ES_RelativeLongJump EventSystem_EventScript_16.jp37AG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp38AG
     M_ES_SetFlag $C3B
@@ -900,9 +932,13 @@ EventSystem_EventScript_19::
     M_ES_ShopPriceMessage_B 3, $46
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_19.jp40AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_19.jp3FAG
     M_ES_OutputMessage_A 3, $49
     M_ES_RelativeLongJump EventSystem_EventScript_19.jp3FAG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp40AG
     M_ES_SetFlag $C3B
@@ -971,9 +1007,13 @@ EventSystem_EventScript_1C::
     M_ES_ShopPriceMessage_B 3, $4F
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_1C.jp48AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_1C.jp47AG
     M_ES_OutputMessage_A 3, $52
     M_ES_RelativeLongJump EventSystem_EventScript_1C.jp47AG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp48AG
     M_ES_SetFlag $C3B
@@ -1042,9 +1082,13 @@ EventSystem_EventScript_1F::
     M_ES_ShopPriceMessage_B 3, $58
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_1F.jp50AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_1F.jp4FAG
     M_ES_OutputMessage_A 3, $5B
     M_ES_RelativeLongJump EventSystem_EventScript_1F.jp4FAG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp50AG
     M_ES_SetFlag $C3B
@@ -1113,9 +1157,13 @@ EventSystem_EventScript_22::
     M_ES_ShopPriceMessage_B 3, $61
     M_ES_WaitXFrames 8
     M_ES_JumpIfFlagUnset $C3E, EventSystem_EventScript_22.jp58AG
+    M_ES_JumpIfShopItemInventoryFull .noInventory
     M_ES_JumpIfFlagUnset $C3B, EventSystem_EventScript_22.jp57AG
     M_ES_OutputMessage_A 3, $64
     M_ES_RelativeLongJump EventSystem_EventScript_22.jp57AG
+	
+.noInventory
+    M_ES_ScheduleSFX 5
 
 .jp58AG
     M_ES_SetFlag $C3B
@@ -2554,7 +2602,9 @@ EventSystem_EventScript_48::
     M_ES_WaitXFrames $A
     M_ES_OutputMessage_A 9, $2E
     M_ES_StandardEnd_B
-    M_ES_StandardEnd_B ; This second end code is unreachable and completely redundant.
+
+EventSystem_EventScript_DoNothing::
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_49::
     M_ES_WaitXFrames $A

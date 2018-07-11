@@ -1009,7 +1009,9 @@ M_ES_BasicEnd_I: MACRO
 ENDM
 
 ; Event Action 78
-; Argmap: -
-M_ES_BasicEnd_J: MACRO
+; Argmap: w
+M_ES_JumpIfShopItemInventoryFull: MACRO
 	db $78
+.ea78JumpOrigin\@
+	db ((\1)-(.ea78JumpOrigin\@)) & $FF
 ENDM
