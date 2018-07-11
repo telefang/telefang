@@ -56,7 +56,7 @@ $i=EVENTDUMP_POINTER_TABLE_LENGTH;
 $c=EVENTDUMP_DATA_LENGTH;
 while($i<$c) {
 	if(empty($addressmatches[$i])) {
-		$addressmatches[$i]='db '.format_byte($scriptsblob[$i]).$nl;
+		$addressmatches[$i]='    db '.format_byte($scriptsblob[$i]).$nl;
 	}
 	$i++;
 }
@@ -92,7 +92,7 @@ $i=0;
 $c=EVENTDUMP_POINTER_TABLE_LENGTH;
 while($i<$c) {
 	$vala=$scriptsblob[$i];
-	$addressmatches[$i]='dw ';
+	$addressmatches[$i]='    dw ';
 	$pointerindex=strtoupper(dechex($i/2));
 	$i++;
 	$valb=$scriptsblob[$i];
