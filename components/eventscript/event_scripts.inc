@@ -527,7 +527,7 @@ M_ES_RelativeLongJump: MACRO
 	db $30
 .ea30JumpOrigin\@
 	db (((\1)-(.ea30JumpOrigin\@)) >> 8) & $FF
-	db ((\1)-(.ea30JumpOrigin\@) & $FF
+	db ((\1)-(.ea30JumpOrigin\@)) & $FF
 ENDM
 
 ; Event Action 31
