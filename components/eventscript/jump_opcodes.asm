@@ -366,7 +366,7 @@ EventScript_JumpIfLTEInventoryAndContinue::
 
 SECTION "Event Action - Jump if Shop Item Inventory Full and Continue", ROMX[$7FDD], BANK[$F]
 EventScript_ADVICE_JumpIfShopItemInventoryFullAndContinue::
-	ld hl, [$C218]
+	ld hl, $C218
 	ld a, [hl]
 	ld hl, W_PauseMenu_InventoryQuantities
 	add l
