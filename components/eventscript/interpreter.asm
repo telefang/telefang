@@ -207,5 +207,5 @@ EventScript_EventActionTable::
 	dw EventScript_BasicEnd ; 75
 	dw EventScript_BasicEnd ; 76
 	dw EventScript_BasicEnd ; 77
-	dw EventScript_BasicEnd ; 78
+	dw EventScript_ADVICE_JumpIfShopItemInventoryFullAndContinue ; 78
 	
