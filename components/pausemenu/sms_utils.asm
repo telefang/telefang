@@ -326,6 +326,9 @@ PauseMenu_ADVICE_SMSCountLines::
 	jr z, .exitLoop
 	cp $E2
 	jr nz, .notNewLine
+	ld a, b
+	cp $FE
+	jr z, .exitLoop
 	inc b
 	
 .notNewLine
