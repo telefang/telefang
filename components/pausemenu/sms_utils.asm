@@ -3,6 +3,13 @@ INCLUDE "telefang.inc"
 SECTION "Pause Menu SMS Arena", WRAM0[$CD90]
 W_PauseMenu_SMSArena:: ds M_PauseMenu_SMSArenaSize
 
+SECTION "SMS Patch Bookkeeping Variables", WRAM0[$CB46]
+W_PauseMenu_SMSLineCount:: ds 1
+W_PauseMenu_SMSScrollPos:: ds 1
+W_PauseMenu_SMSScrollMax:: ds 1
+W_PauseMenu_SMSOriginPtr:: ds 2
+W_PauseMenu_SMSDrawAddressBuffer:: ds 2
+
 SECTION "Pause Menu SMS Utils", ROMX[$7028], BANK[$4]
 PauseMenu_SMSListingInputHandler::
     ld a, [H_JPInput_Changed]
@@ -222,50 +229,278 @@ PauseMenu_ExitToCentralMenu2::
 
 SECTION "Pause Menu SMS Utils ADVICE", ROMX[$42A0], BANK[$1]
 PauseMenu_ADVICE_DrawSMSFromMessages::
-    M_AdviceSetup
-    
-    ld a, M_PauseMenu_SMSWindowWidth
-    ld [W_MainScript_VWFNewlineWidth], a
-    
-    ld a, M_PauseMenu_SMSWindowHeight
-    ld [W_MainScript_VWFWindowHeight], a
-    
-    ld a, [W_MelodyEdit_DataCurrent]
-    ld b, a
-    
-    ld a, [W_MelodyEdit_DataCount]
-    dec a
-    sub b
-    
-    ld e, a
-    ld d, 0
-    sla e
-    rl d
-    sla e
-    rl d
-    ld hl, W_PauseMenu_SMSArena
-    add hl, de
-    
-    inc hl
-    inc hl
-    inc hl
-    ld a, [hl]
-    ld c, a
-    ld b, 1
-    ld d, $C
-    call Banked_MainScript_InitializeMenuText
-    
-.waitForExhaustionLoop
-    call Banked_MainScriptMachine
-    ld a, [W_MainScript_State]
-    cp M_MainScript_StateTerminated
-    jp nz, .waitForExhaustionLoop
-    
-    ld a, M_MainScript_UndefinedWindowWidth
-    ld [W_MainScript_VWFNewlineWidth], a
-    
-    ld a, M_MainScript_DefaultWindowHeight
-    ld [W_MainScript_VWFWindowHeight], a
-    
-    M_AdviceTeardown
-    ret
+	M_AdviceSetup
+	
+	call PauseMenu_ADVICE_SMSLocateMessage
+	call PauseMenu_ADVICE_SMSCountLines
+	call PauseMenu_ADVICE_SMSDrawArrows
+	ld c, 0
+	call PauseMenu_ADVICE_SMSFirstDrawHelper
+	ld c, 1
+	call PauseMenu_ADVICE_SMSFirstDrawHelper
+	ld c, 2
+	call PauseMenu_ADVICE_SMSFirstDrawHelper
+	ld c, 3
+	call PauseMenu_ADVICE_SMSFirstDrawHelper
+	ld c, 4
+	call PauseMenu_ADVICE_SMSFirstDrawHelper
+	ld c, 5
+	call PauseMenu_ADVICE_SMSFirstDrawHelper
+	
+	M_AdviceTeardown
+	ret
+
+SECTION "Pause Menu SMS Utils First Draw Helper ADVICE", ROMX[$4E00], BANK[$1]
+PauseMenu_ADVICE_SMSFirstDrawHelper::
+	call PauseMenu_ADVICE_SMSLocateLine
+	ld a, c
+	call PauseMenu_ADVICE_SMSFindLineForDrawing
+	call PauseMenu_ADVICE_SMSDrawLine
+	ret
+
+SECTION "Pause Menu SMS Utils Locate Message ADVICE", ROMX[$4DB0], BANK[$1]
+PauseMenu_ADVICE_SMSLocateMessage::
+	ld a, [W_MelodyEdit_DataCurrent]
+	ld b, a
+	ld a, [W_MelodyEdit_DataCount]
+	dec a
+	sub b
+	ld e, a
+	ld d, 0
+	call PatchUtils_LimitBreak
+	ld hl, W_PauseMenu_SMSArena
+	add hl, de
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	ld c, a
+	ld b, 1
+	ld d, $C
+	call Banked_MainScript_InitializeMenuText
+	ld a, [W_MainScript_TextPtr]
+	ld [W_PauseMenu_SMSOriginPtr], a
+	ld a, [W_MainScript_TextPtr + 1]
+	ld [W_PauseMenu_SMSOriginPtr + 1], a
+	ret
+
+SECTION "Pause Menu SMS Utils Locate Line ADVICE", ROMX[$4D70], BANK[$1]
+PauseMenu_ADVICE_SMSLocateLine::
+; c is the line number we are searching for.
+	call PauseMenu_ADVICE_SMSGetOriginPointer
+	ld b, 0
+
+.searchLoop
+	ld a, c
+	cp b
+	jr z, .exitLoop
+
+	push bc
+	call MainScript_LoadFromBank
+	pop bc
+
+	cp $E1
+	jr z, .endCodeFound
+	cp $E2 ; FE E2
+	jr nz, .notNewLine
+	inc b
+	
+.notNewLine
+	jr .searchLoop
+
+.endCodeFound
+	dec hl
+
+.exitLoop
+	call PauseMenu_ADVICE_SMSSetPointer
+	ret
+
+SECTION "Pause Menu SMS Utils Count Lines ADVICE", ROMX[$4D20], BANK[$1]
+PauseMenu_ADVICE_SMSCountLines::
+	call PauseMenu_ADVICE_SMSGetOriginPointer
+	ld b, 0
+
+.searchLoop
+	call MainScript_LoadFromBank
+	cp $E1
+	jr z, .exitLoop
+	cp $E2
+	jr nz, .notNewLine
+	inc b
+	
+.notNewLine
+	jr .searchLoop
+
+.exitLoop
+	inc b
+	ld a, b
+	ld [W_PauseMenu_SMSLineCount], a
+	cp 7
+	jr nc, .canScroll
+	xor a
+	jr .storeMaxScroll
+
+.canScroll
+	ld b, 6
+	sub b
+
+.storeMaxScroll
+	ld [W_PauseMenu_SMSScrollMax], a
+	xor a
+	ld [W_PauseMenu_SMSScrollPos], a
+	ret
+
+SECTION "Pause Menu SMS Utils Find Line for Drawing ADVICE", ROMX[$4CF0], BANK[$1]
+PauseMenu_ADVICE_SMSFindLineForDrawing::
+	ld hl, $9400
+	ld de, $60
+	
+.mathLoop
+	or a
+	jr z, .exitLoop
+	add hl, de
+	dec a
+	jr .mathLoop
+
+.exitLoop
+	call PauseMenu_ADVICE_SMSSetDrawAddress
+	ret
+
+SECTION "Pause Menu SMS Utils Draw Line ADVICE", ROMX[$4C50], BANK[$1]
+PauseMenu_ADVICE_SMSDrawLine::
+	xor a
+	ld [W_MainScript_VWFLetterShift], a
+	ld [W_MainScript_VWFCurrentLetter], a
+	ld [W_MainScript_ADVICE_FontToggle], a
+	ld hl, $CFD0
+	ld b, $60
+
+.clearCompositeAreaLoop
+	ld [hli], a
+	dec b
+	jr nz, .clearCompositeAreaLoop
+	call PauseMenu_ADVICE_SMSGetDrawAddress
+	ld b, $30
+	call PauseMenu_ADVICE_SMSClearTiles
+	call PauseMenu_ADVICE_SMSGetPointer
+
+.nextCharacter
+	call MainScript_LoadFromBank
+	cp $D3
+	jr nc, .endRead
+	ld c, a
+	call PauseMenu_ADVICE_SMSGetDrawAddress
+	ld a, c
+	call Banked_MainScript_DrawLetter
+	ld a, [W_MainScript_VWFOldTileMode]
+	cp 1
+	jr c, .noIncrement
+	call PauseMenu_ADVICE_SMSNextTile
+
+.noIncrement
+	call PauseMenu_ADVICE_SMSGetPointer
+	inc hl
+	call PauseMenu_ADVICE_SMSSetPointer
+	jr .nextCharacter
+	
+.endRead
+	ret
+
+SECTION "Pause Menu SMS Utils Draw Arrows ADVICE", ROMX[$4C00], BANK[$1]
+PauseMenu_ADVICE_SMSDrawArrows::
+	ld b, $20
+	ld hl, $97B0
+	call PauseMenu_ADVICE_SMSClearTiles
+	ld bc, $404
+	ld l, $B4
+	ld de, PauseMenu_ADVICE_SMSArrows
+	ld a, [W_MainScript_TextStyle]
+	cp 1
+	jr z, .loopA
+	inc hl
+
+.loopA
+	ld a, [de]
+	call vmempoke
+	inc hl
+	inc de
+	dec b
+	jr nz, .loopA
+	ld b, 8
+
+.loopB
+	inc hl
+	dec b
+	jr nz, .loopB
+	dec c
+	ld b, 4
+	jr nz, .loopA
+	ret
+	
+
+SECTION "Pause Menu SMS Utils Common Helper ADVICE", ROMX[$6B99], BANK[$1]
+PauseMenu_ADVICE_SMSArrows::
+	INCBIN "build/components/pausemenu/sms_arrows.1bpp", 0, 16
+
+PauseMenu_ADVICE_SMSClearTiles::
+	ld a, [W_MainScript_TextStyle]
+	cp 1
+	jr nz, .gbTiles
+	xor a
+	call vmempoke
+	ld a, $FF
+	call vmempoke
+	jr .nextLine
+
+.gbTiles
+	ld a, $FF
+	call vmempoke
+	xor a
+	call vmempoke
+
+.nextLine
+	dec b
+	jr nz, PauseMenu_ADVICE_SMSClearTiles
+	ret
+
+PauseMenu_ADVICE_SMSNextTile::
+	call PauseMenu_ADVICE_SMSGetDrawAddress
+	ld de, $10
+	add hl, de
+	call PauseMenu_ADVICE_SMSSetDrawAddress
+	ret
+
+PauseMenu_ADVICE_SMSGetOriginPointer::
+	ld a, [W_PauseMenu_SMSOriginPtr]
+	ld l, a
+	ld a, [W_PauseMenu_SMSOriginPtr + 1]
+	ld h, a
+	ret
+
+PauseMenu_ADVICE_SMSGetPointer::
+	ld a, [W_MainScript_TextPtr]
+	ld l, a
+	ld a, [W_MainScript_TextPtr + 1]
+	ld h, a
+	ret
+
+PauseMenu_ADVICE_SMSSetPointer::
+	ld a, l
+	ld [W_MainScript_TextPtr], a
+	ld a, h
+	ld [W_MainScript_TextPtr + 1], a
+	ret
+
+PauseMenu_ADVICE_SMSGetDrawAddress::
+	ld a, [W_PauseMenu_SMSDrawAddressBuffer]
+	ld l, a
+	ld a, [W_PauseMenu_SMSDrawAddressBuffer + 1]
+	ld h, a
+	ret
+
+PauseMenu_ADVICE_SMSSetDrawAddress::
+	ld a, l
+	ld [W_PauseMenu_SMSDrawAddressBuffer], a
+	ld a, h
+	ld [W_PauseMenu_SMSDrawAddressBuffer + 1], a
+	ret
