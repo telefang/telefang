@@ -376,7 +376,7 @@ PauseMenu_ADVICE_SMSDrawLine::
 	ld [W_MainScript_VWFCurrentLetter], a
 	ld [W_MainScript_ADVICE_FontToggle], a
 	ld hl, $CFD0
-	ld b, $60
+	ld b, $10
 
 .clearCompositeAreaLoop
 	ld [hli], a
