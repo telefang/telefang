@@ -301,7 +301,7 @@ PauseMenu_ADVICE_SMSLocateLine::
 
 	cp $E1
 	jr z, .endCodeFound
-	cp $E2 ; FE E2
+	cp $E2
 	jr nz, .notNewLine
 	inc b
 	
