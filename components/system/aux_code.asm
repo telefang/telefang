@@ -132,6 +132,11 @@ Banked_Battle_ADVICE_BattleArticle::
 	jp Battle_ADVICE_BattleArticle
 	nop
 
+;components/pausemenu/sms_utils.asm
+Banked_PauseMenu_ADVICE_SMSMapTiles::
+	jp PauseMenu_ADVICE_SMSMapTiles
+	nop
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

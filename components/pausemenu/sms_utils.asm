@@ -440,6 +440,63 @@ PauseMenu_ADVICE_SMSDrawArrows::
 	jr nz, .loopA
 	ret
 	
+SECTION "Pause Menu SMS Map Tiles", ROMX[$4E40], BANK[$1]
+PauseMenu_ADVICE_SMSMapTiles::
+	M_AdviceSetup
+	ld e, $57
+	ld bc, $106
+	xor a
+	push de
+	call Banked_RLEDecompressTMAP0
+	pop de
+	ld bc, $106
+	xor a
+	call Banked_RLEDecompressAttribsTMAP0
+	call PauseMenu_ADVICE_SMSMapArrows
+	M_AdviceTeardown
+	ret
+
+SECTION "Pause Menu SMS Map Arrows", ROMX[$4CB0], BANK[$1]
+PauseMenu_ADVICE_SMSMapArrows::
+	ld a, [W_PauseMenu_SMSScrollPos]
+	or a
+	jr z, .cantScrollUp
+	ld de, $7B01
+	jr .mapTopArrow
+
+.cantScrollUp
+	ld de, $D000
+
+.mapTopArrow
+	ld hl, $98E4
+	call PauseMenu_ADVICE_SMSMapArrow
+	ld a, [W_PauseMenu_SMSScrollMax]
+	ld b, a
+	ld a, [W_PauseMenu_SMSScrollPos]
+	cp b
+	jr z, .cantScrollDown
+	ld de, $7D01
+	jr .mapBottomArrow
+
+.cantScrollDown
+	ld de, $D000
+
+.mapBottomArrow
+	ld hl, $9A04
+	call PauseMenu_ADVICE_SMSMapArrow
+	ret
+
+SECTION "Pause Menu SMS Map Arrow", ROMX[$4E20], BANK[$1]
+PauseMenu_ADVICE_SMSMapArrow::
+	call WaitForBlanking
+	ld [hl], d
+	inc hl
+	ld a, d
+	add e
+	ld d, a
+	call WaitForBlanking
+	ld [hl], d
+	ret
 
 SECTION "Pause Menu SMS Utils Common Helper ADVICE", ROMX[$6B99], BANK[$1]
 PauseMenu_ADVICE_SMSArrows::
