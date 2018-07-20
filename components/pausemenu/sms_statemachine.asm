@@ -167,8 +167,8 @@ PauseMenu_SubStateSMSListingIdle::
     
 ;State 0C 13 05
 PauseMenu_SubStateSMSContentsInit::
-    ld e, $57
-    call PauseMenu_LoadMenuMap0
+    ld a, Banked_PauseMenu_ADVICE_SMSMapTiles & $FF
+    call PatchUtils_AuxCodeJmp
     jp System_ScheduleNextSubSubState
     
 ;State 0C 13 06
