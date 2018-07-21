@@ -136,6 +136,10 @@ Banked_Battle_ADVICE_BattleArticle::
 Banked_PauseMenu_ADVICE_SMSMapTiles::
 	jp PauseMenu_ADVICE_SMSMapTiles
 	nop
+	
+Banked_PauseMenu_ADVICE_SMSContentsCheckInput::
+	jp PauseMenu_ADVICE_SMSContentsCheckInput
+	nop
 
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.

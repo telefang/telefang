@@ -173,12 +173,13 @@ PauseMenu_SubStateSMSContentsInit::
     
 ;State 0C 13 06
 PauseMenu_SubStateSMSContentsIdle::
-    ld a, [H_JPInput_Changed]
-    and M_JPInput_A
+    ld a, Banked_PauseMenu_ADVICE_SMSContentsCheckInput & $FF
+    call PatchUtils_AuxCodeJmp
+    ld a, b
+    or a
     ret z
-    
-    ld e, $2D
-    call PauseMenu_LoadMenuMap0
+    nop
+    nop
     
     ld hl, $9400
     ld b, 6

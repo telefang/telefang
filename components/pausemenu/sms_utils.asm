@@ -498,6 +498,140 @@ PauseMenu_ADVICE_SMSMapArrow::
 	ld [hl], d
 	ret
 
+SECTION "Pause Menu SMS Contents Check Input", ROMX[$4FD0], BANK[$1]
+PauseMenu_ADVICE_SMSContentsCheckInput::
+	M_AdviceSetup
+	call PauseMenu_ADVICE_SMSScrollCheck
+	ldh a, [H_JPInput_Changed]
+	and M_JPInput_A
+	jr z, .noExit
+	ld e, $2D
+	ld bc, $106
+	xor a
+	push de
+	call Banked_RLEDecompressTMAP0
+	pop de
+	ld bc, $106
+	xor a
+	call Banked_RLEDecompressAttribsTMAP0
+
+.noExit
+	ld b, a
+	M_AdviceTeardown
+	ret
+
+SECTION "Pause Menu SMS Scroll Check", ROMX[$4FA0], BANK[$1]
+PauseMenu_ADVICE_SMSScrollCheck::
+	ld a, [W_JPInput_TypematicBtns]
+	and M_JPInput_Up + M_JPInput_Down
+	cp M_JPInput_Up
+	jr nz, .checkDown
+	call PauseMenu_ADVICE_SMSScrollUp
+	jr .postScroll
+
+.checkDown
+	cp M_JPInput_Down
+	jr nz, .postScroll
+	call PauseMenu_ADVICE_SMSScrollDown
+
+.postScroll
+	ret
+
+SECTION "Pause Menu SMS Scroll Up", ROMX[$4EF0], BANK[$1]
+PauseMenu_ADVICE_SMSScrollUp::
+	ld a, [W_PauseMenu_SMSScrollPos]
+	or a
+	ret z
+	call PauseMenu_ADVICE_SMSMoveDownOldLines
+	ld hl, $9640
+	call PauseMenu_ADVICE_SMSSetDrawAddress
+	ld a, [W_PauseMenu_SMSScrollPos]
+	dec a
+	ld [W_PauseMenu_SMSScrollPos], a
+	ld c, a
+	call PauseMenu_ADVICE_SMSLocateLine
+	call PauseMenu_ADVICE_SMSDrawLine
+	ld hl, $9640
+	ld de, $9400
+	ld b, $60
+
+.tileCopyLoop
+	di
+	call WaitForBlanking
+	ld a, [hli]
+	ld [de], a
+	ei
+	inc de
+	dec b
+	jr nz, .tileCopyLoop
+	call PauseMenu_ADVICE_SMSMapArrows
+	ld a, 2
+	ld [W_Sound_NextSFXSelect], a
+	ret
+
+SECTION "Pause Menu SMS Scroll Down", ROMX[$4F50], BANK[$1]
+PauseMenu_ADVICE_SMSScrollDown::
+	ld a, [W_PauseMenu_SMSScrollMax]
+	ld b, a
+	ld a, [W_PauseMenu_SMSScrollPos]
+	cp b
+	ret z
+	cp $FA
+	ret z
+	call PauseMenu_ADVICE_SMSMoveUpOldLines
+	ld hl, $95E0
+	call PauseMenu_ADVICE_SMSSetDrawAddress
+	ld a, [W_PauseMenu_SMSScrollPos]
+	inc a
+	ld [W_PauseMenu_SMSScrollPos], a
+	ld c, 5
+	add c
+	ld c, a
+	call PauseMenu_ADVICE_SMSLocateLine
+	call PauseMenu_ADVICE_SMSDrawLine
+	call PauseMenu_ADVICE_SMSMapArrows
+	ld a, 2
+	ld [W_Sound_NextSFXSelect], a
+	ret
+
+SECTION "Pause Menu SMS Move Down Old Lines", ROMX[$4EC0], BANK[$1]
+PauseMenu_ADVICE_SMSMoveUpOldLines::
+	ld hl, $9460
+	ld de, $9400
+	ld bc, $1E0
+
+.tileCopyLoop
+	di
+	call WaitForBlanking
+	ld a, [hli]
+	ld [de], a
+	ei
+	inc de
+	dec bc
+	ld a, b
+	or c
+	jr nz, .tileCopyLoop
+	ret
+
+SECTION "Pause Menu SMS Move Down Old Lines", ROMX[$4E90], BANK[$1]
+PauseMenu_ADVICE_SMSMoveDownOldLines::
+	ld hl, $95DF
+	ld de, $963F
+	ld bc, $1E0
+
+.tileCopyLoop
+	di
+	call WaitForBlanking
+	ld a, [hld]
+	ld [de], a
+	ei
+	dec de
+	dec bc
+	ld a, b
+	or c
+	jr nz, .tileCopyLoop
+	ret
+
 SECTION "Pause Menu SMS Utils Common Helper ADVICE", ROMX[$6B99], BANK[$1]
 PauseMenu_ADVICE_SMSArrows::
 	INCBIN "build/components/pausemenu/sms_arrows.1bpp", 0, 16
