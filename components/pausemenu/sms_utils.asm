@@ -613,7 +613,8 @@ PauseMenu_ADVICE_SMSMoveUpOldLines::
 	jr nz, .tileCopyLoop
 	ret
 
-SECTION "Pause Menu SMS Move Down Old Lines", ROMX[$4E90], BANK[$1]
+;TODO: Can we merge this and the previous section?
+SECTION "Pause Menu SMS Move Down Old Lines 2", ROMX[$4E90], BANK[$1]
 PauseMenu_ADVICE_SMSMoveDownOldLines::
 	ld hl, $95DF
 	ld de, $963F
