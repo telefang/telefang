@@ -215,6 +215,7 @@ def extract(args):
     with open(args.rom, 'rb') as rom:
         for bank in banknames:
             wikitext = ["{|", "|-", "!Pointer", "!" + args.language]
+            csvdata = [["Pointer", args.language]]
 
             rom.seek(flat(bank["basebank"], bank["baseaddr"]))
 
@@ -248,6 +249,7 @@ def extract(args):
             old_loc = None
             
             for i in range(tbl_length):
+                csvrow = ["0x{0:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2))]
                 wikitext.append("|-")
                 wikitext.append("|0x{0:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2)))
 
@@ -268,6 +270,7 @@ def extract(args):
                 for j in range(i):
                     if read_ptr == PTR.unpack(rom.read(2))[0]:
                         #Aliased pointer!
+                        csvrow.append("<ALIAS ROW 0x{0:x}>".format(j))
                         wikitext.append("|«ALIAS ROW 0x{0:x}»".format(j))
                         print("Pointer at 0x{0:x} fully aliases pointer 0x{1:x}".format(flat(bank["basebank"], bank["baseaddr"] + i * 2), flat(bank["basebank"], bank["baseaddr"] + j * 2)))
                         break
@@ -279,6 +282,7 @@ def extract(args):
                     #overflow code, so disable it if so.
                     if i > 0 and read_ptr < last_end - 1 and not redirected:
                         print("Pointer at 0x{0:x} partially aliases previous pointer".format(rom.tell() - 2))
+                        csvrow.append("<ALIAS ROW 0x{0:x} INTO 0x{1:x}>".format(last_nonaliasing_row, read_ptr - last_start))
                         wikitext.append("|«ALIAS ROW 0x{0:x} INTO 0x{1:x}»".format(last_nonaliasing_row, read_ptr - last_start))
                         continue
 
@@ -374,14 +378,18 @@ def extract(args):
                                 #Disassemble the next string.
                                 print("Inaccessible data found at 0x{0:x}".format(flat(bank["basebank"], read_ptr)))
 
+                                csvrow.append("".join(string))
                                 wikitext.append("|" + "".join(string))
                                 string = []
-
+                                
+                                csvdata.append(csvrow)
+                                csvrow = ["(No pointer)"]
                                 wikitext.append("|-")
                                 wikitext.append("|(No pointer)")
 
                                 read_length += 1
-
+                    
+                    csvrow.append("".join(string))
                     wikitext.append("|" + "".join(string))
                     string = []
 
@@ -389,18 +397,27 @@ def extract(args):
                     last_start = read_ptr
                     last_end = read_ptr + read_length
                     last_nonaliasing_row = i
-
+            
+                csvdata.append(csvrow)
+            
             wikitext.append("|-")
             wikitext.append("|}")
 
             wikitext = "\n".join(wikitext)
 
             wikidir = os.path.join(args.input, bank["basedir"])
-            wikipath = os.path.join(args.input, bank["filename"])
+            wikipath = os.path.join(args.input, bank["legacy_filename"])
+            csvpath = os.path.join(args.input, bank["filename"])
 
             install_path(wikidir)
-            with open(wikipath, "w+", encoding="utf-8") as bank_wikitext:
-                bank_wikitext.write(wikitext)
+            #with open(wikipath, "w+", encoding="utf-8") as bank_wikitext:
+                #bank_wikitext.write(wikitext)
+            
+            with open(csvpath, "w+", encoding="utf-8") as bank_csvtext:
+                csvwriter = csv.writer(bank_csvtext)
+                
+                for csvrow in csvdata:
+                    csvwriter.writerow(csvrow)
 
 def asm(args):
     """Generate the ASM for the metatable and each section.
@@ -823,6 +840,7 @@ def make_tbl(args):
         objfile.write(ovrflowdata.bytes)
     
     for filename, objdata in bank_objects.items():
+        install_path(os.path.dirname(os.path.join(args.output, filename)))
         with open(os.path.join(args.output, filename), "wb") as objfile:
             objfile.write(objdata.bytes)
 

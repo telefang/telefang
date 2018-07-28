@@ -20,3 +20,4 @@ script/denjuu/descriptions 40000
 script/calls/story 158000
 script/calls/exp_item 15C000
 script/story/5 1281D9 1281D9
+components/credit/credit 3A2DD
