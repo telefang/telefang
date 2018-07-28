@@ -1,3 +1,5 @@
+import struct
+
 #Used by the original text injector script to represent special codes.
 class Special():
     def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False, base=16):
@@ -37,7 +39,7 @@ def encode_string(string, charmap):
             print("Warning: Character 0x{0:x} does not exist in current ROM.\n".format(ord(char)))
             encoded_string.append(charmap["?"])
 
-    return b"".join(encoded_string)
+    return bytes(encoded_string)
 
 def parse_string(string, known_tokens):
     """Given text with formatting opcodes, tokenize it.
@@ -100,7 +102,6 @@ def parse_string(string, known_tokens):
 
                     s = known_tokens[token]
                     val = special[1:]
-                    word_data += bytes([s.byte])
 
                     for value, name in list(s.names.items()):
                         if name == val:
@@ -118,7 +119,7 @@ def parse_string(string, known_tokens):
                     if s.end:
                         end_sentinel = True
 
-                    if val is not null && val != "":
+                    if val is not None and val != "":
                         tokenstream.append((token, s, val))
                     else:
                         tokenstream.append((token, s))
@@ -185,14 +186,14 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
 
     line_px = 0
     newline_count = 0
-    is_final_line = newline_count % window_height === (window_height - 1)
+    is_final_line = newline_count % window_height == (window_height - 1)
     max_px = window_width - 8 if is_final_line else window_width
 
     #TODO: Should these be class methods instead of closures?
     def increment_line():
         line_px = 0
         newline_count += 1
-        is_final_line = newline_count % window_height === (window_height - 1)
+        is_final_line = newline_count % window_height == (window_height - 1)
         max_px = window_width - 8 if is_final_line else window_width
 
     def process_word(encoded_word):
@@ -209,7 +210,7 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
             line_px += encoded_word_px + encoded_space_px
 
     for token in tokenstream:
-        if type(token) === string:
+        if type(token) == string:
             #Divide the string into lines and words; encode them; add them to
             #the wordbuffer. We have to split by lines so that manual newlines
             #reset the automatic formatting logic.
@@ -221,7 +222,7 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
                 for word in line.split(" "):
                     encoded_word = encode_string(word, charmap)
                     process_word(encoded_word)
-        else if type(token) === bytes:
+        elif type(token) == bytes:
             #We've been given an already encoded bytestream. Perhaps we've been
             #fed our own output, or this is just an encoded control code.
             #Either way, we should treat it normally.
@@ -232,10 +233,10 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
 
                 for encoded_word in line.split(encoded_space):
                     process_word(encoded_word)
-        else if type(token) === tuple:
+        elif type(token) == tuple:
             #Okay, this is an actual control code.
             cctoken = token[0]
-            if cctoken = "&": #Memory buffer reference
+            if cctoken == "&": #Memory buffer reference
                 if token[2] in memory_widths:
                     word_px += memory_widths[token[2]]
                 else:
@@ -247,25 +248,27 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
 
 def pack_text(string, known_tokens, charmap, metrics, window_width, window_height, memory_widths, do_not_terminate = False):
     tokenstream = parse_string(string, known_tokens)
-    tokenstream = format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths)
-
+    
+    if metrics:
+        tokenstream = format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths)
+    
     encstream = []
     stream_is_terminated = do_not_terminate
 
     for token in tokenstream:
-        if type(token) === string:
+        if type(token) == str:
             encstream.append(encode_string(token, charmap))
-        elif type(token) === bytes:
+        elif type(token) == bytes:
             encstream.append(token)
         else:
             encstream.append(bytes([token[1].byte]))
 
-            if s.bts:
-                fmt = "<" + ("", "B", "H")[s.bts]
-                encstream.append(struct.pack(fmt, val))
+            if token[1].bts and len(token) > 2:
+                fmt = "<" + ("", "B", "H")[token[1].bts]
+                encstream.append(struct.pack(fmt, token[2]))
 
-            if s.end:
-                stream_is_terminated = true
+            if token[1].end:
+                stream_is_terminated = True
 
     if not stream_is_terminated:
         encstream.append(b"\xe1\x00")

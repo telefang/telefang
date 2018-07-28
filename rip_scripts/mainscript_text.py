@@ -597,7 +597,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
             table.append(baseaddr)
 
-            packed = pack_text("/0x{0:X}/".format(table_idx), specials, charmap, metrics, bank_window_width, 2, memory_widths)
+            packed = pack_text("/0x{0:X}/".format(table_idx), specials, charmap[0], metrics, bank_window_width, 2, memory_widths)
 
             baseaddr += len(packed)
             packed_strings[table_idx] = packed
@@ -618,7 +618,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             #aliasing at the same time, so don't.
             last_aliased_row = table_idx
         else:
-            packed = pack_text(row[str_col], specials, charmap, metrics, bank_window_width, 2, memory_widths, row[ptr_col] == "(No pointer)")
+            packed = pack_text(row[str_col], specials, charmap[0], metrics, bank_window_width, 2, memory_widths, row[ptr_col] == "(No pointer)")
             packed_strings[table_idx] += packed #We concat here in case of nopointer rows
 
             if row[ptr_col] != "(No pointer)":
