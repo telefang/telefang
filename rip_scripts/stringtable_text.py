@@ -1,5 +1,6 @@
 # coding=utf-8
 
+from FangTools.tfmessage.pack import pack_text, specials, memory_widths
 import mainscript_text
 import argparse, io, os.path, csv, math, struct
 
@@ -292,7 +293,7 @@ def make_tbl(args):
                 packed_strings.append(b"")
                 continue
             
-            packed = mainscript_text.pack_string(row[str_col], charmap, None, args.window_width, True)
+            packed = mainscript_text.pack_text(row[str_col], known_tokens, charmap, None, args.window_width, 1, memoty_widths, True)
             
             if "stride" in table:
                 if len(packed) > table["stride"]:
