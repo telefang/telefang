@@ -247,6 +247,13 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
     return new_tokenstream
 
 def pack_text(string, known_tokens, charmap, metrics, window_width, window_height, memory_widths, do_not_terminate = False):
+    #Sanity check: Empty strings indicate aliases.
+    #TODO: Should we more explicitly notate these, instead of just specialcasing
+    #them? There's precisely one table in Telefang that has about 10 messages
+    #with no content that just point to the end of the block.
+    if string == "":
+        return b""
+    
     tokenstream = parse_string(string, known_tokens)
     
     if metrics:
