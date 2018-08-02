@@ -19,12 +19,37 @@ specials['O'] = Special(0xec, bts=2, redirect=True)
 specials['D'] = Special(0xe9, base=10)
 specials['P'] = Special(0xed, base=10) #not present in base ROM
 
-def measure_string(encoded_string, metrics):
-    """Given an encoded string, return a measure of it's width."""
+def measure_string(encoded_string, metrics, memory_widths):
+    """Given an encoded string or tokenstream, return a measure of it's width."""
     measure = 0
-
+    
     for encbyte in encoded_string:
-        measure += metrics[encbyte]
+        if type(encbyte) == bytes:
+            measure += measure_string(encbyte, metrics, memory_widths)
+            continue
+        
+        if type(encbyte) == tuple:
+            cctoken = encbyte[0]
+            if cctoken == "&": #Memory buffer reference
+                if encbyte[2] in memory_widths:
+                    measure += memory_widths[encbyte[2]]
+                else:
+                    measure += 8*8
+            continue
+        
+        if encbyte >= 0xe0:
+            #TODO: handle measuring already encoded control codes?
+            continue
+        
+        #HACK/BUG: Special case \x00 as 7, even though we should count it as 8.
+        #This is to maintain parity with a previous version of the encoder,
+        #which measured literal tokens without adding the 1px of spacing between
+        #characters.
+        if encbyte == 0:
+            measure += 7
+            continue
+        
+        measure += metrics[encbyte] + 1
 
     return measure
 
@@ -88,7 +113,7 @@ def parse_string(string, known_tokens):
                         print("Warning: Invalid literal special {} (0x{:3x})".format(special_num, special_num))
                         continue
 
-                    tokenstream.append(bytes([special_num]))
+                    tokenstream.append((special_num))
                 else:
                     token = special[0]
                     if token not in list(known_tokens.keys()):
@@ -162,6 +187,7 @@ memory_widths[0xcccb] = 1*8
 memory_widths[0xcccd] = 1*8
 memory_widths[0xcccf] = 1*8
 memory_widths[0xccd1] = 1*8
+memory_widths[0xccd9] = 1*8 #BUG: Not actually true, but it matches the pre-rewrite code behavior
 
 def format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths):
     """Given a tokenstream, modify it such that no line exceeds a maximum width.
@@ -182,67 +208,112 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
 
     encoded_space = encode_string(" ", charmap)
     encoded_newline = encode_string("\n", charmap)
-    encoded_space_px = measure_string(encoded_space, metrics)
+    encoded_space_px = measure_string(encoded_space, metrics, memory_widths)
 
     line_px = 0
     newline_count = 0
-    is_final_line = newline_count % window_height == (window_height - 1)
-    max_px = window_width - 8 if is_final_line else window_width
+    is_final_line = (newline_count % window_height) == (window_height - 1)
+    max_px = (window_width - 8) if is_final_line else window_width
 
     #TODO: Should these be class methods instead of closures?
     def increment_line():
+        nonlocal line_px, newline_count, is_final_line, max_px
         line_px = 0
         newline_count += 1
-        is_final_line = newline_count % window_height == (window_height - 1)
-        max_px = window_width - 8 if is_final_line else window_width
+        is_final_line = (newline_count % window_height) == (window_height - 1)
+        max_px = (window_width - 8) if is_final_line else window_width
+    
+    def replace_emitted_space():
+        nonlocal new_tokenstream
+        
+        last_space = None
+        
+        #Reparse our old tokenstream to determine if we just emitted a space.
+        for index, token in reversed(list(enumerate(new_tokenstream))):
+            if type(token) is not bytes:
+                break
+            
+            if len(token) == 0:
+                continue
+            
+            if token[-1] == ord(encoded_space):
+                last_space = index
+                break
+        
+        if last_space is not None:
+            new_tokenstream[last_space] = new_tokenstream[last_space][:-1]
+    
+    current_word_ts = []
+    
+    for index, token in enumerate(tokenstream):
+        if type(token) == str:
+            token = encode_string(token, charmap)
+        
+        if type(token) == bytes:
+            current_word = b""
+            for char in token:
+                char = bytes([char])
+                
+                if char in (encoded_space, encoded_newline):
+                    current_word_px = measure_string(current_word_ts + [current_word, char], metrics, memory_widths)
+                    
+                    if len(current_word) > 0 and (line_px + current_word_px) > max_px:
+                        replace_emitted_space()
+                        new_tokenstream.append(encoded_newline)
+                        increment_line()
+                    
+                    if len(current_word_ts) > 0:
+                        new_tokenstream += current_word_ts
+                        current_word_ts = []
+                    
+                    new_tokenstream.append(current_word)
+                    new_tokenstream.append(char)
+                    line_px += current_word_px
+                    current_word = b""
 
-    def process_word(encoded_word):
-        encoded_word_px = measure_string(encoded_word, metrics)
-
-        new_tokenstream.append(encoded_word)
-
-        if (line_px + encoded_word_px + encoded_space_px) > max_px:
-            #Insert a newline.
-            new_tokenstream.append(encoded_newline)
-            increment_line()
-        else:
-            new_tokenstream.append(encoded_space)
-            line_px += encoded_word_px + encoded_space_px
-
-    for token in tokenstream:
-        if type(token) == string:
-            #Divide the string into lines and words; encode them; add them to
-            #the wordbuffer. We have to split by lines so that manual newlines
-            #reset the automatic formatting logic.
-            for index, line in token.split("\n").enumerate():
-                if index > 0:
-                    new_tokenstream.append(encoded_newline)
-                    increment_line()
-
-                for word in line.split(" "):
-                    encoded_word = encode_string(word, charmap)
-                    process_word(encoded_word)
-        elif type(token) == bytes:
-            #We've been given an already encoded bytestream. Perhaps we've been
-            #fed our own output, or this is just an encoded control code.
-            #Either way, we should treat it normally.
-            for index, line in token.split(encoded_newline).enumerate():
-                if index > 0:
-                    new_tokenstream.append(encoded_newline)
-                    increment_line()
-
-                for encoded_word in line.split(encoded_space):
-                    process_word(encoded_word)
+                    if char == encoded_newline:
+                        increment_line()
+                else:
+                    current_word += char
+            
+            #Save the current word for processing alongside the next token.
+            if len(current_word) > 0:
+                current_word_ts.append(current_word)
+        elif type(token) == int:
+            #Literal control code
+            #TODO: Detect nonstandard newline
+            current_word_ts.append(token)
         elif type(token) == tuple:
             #Okay, this is an actual control code.
             cctoken = token[0]
+            token_px = 0
             if cctoken == "&": #Memory buffer reference
                 if token[2] in memory_widths:
-                    word_px += memory_widths[token[2]]
+                    token_px += memory_widths[token[2]]
                 else:
-                    word_px += 8*8
-
-            new_tokenstream.append(token)
+                    token_px += 8*8
+                
+                #This only triggers on a memory reference so that control codes
+                #aren't inadvertently treated as spaces.
+                #TODO: This functionality should only be triggered on space or
+                #newline and the measure function should handle memory widths.
+                if (line_px + token_px) > max_px:
+                    replace_emitted_space()
+                    new_tokenstream.append(encoded_newline)
+                    increment_line()
+            
+            current_word_ts.append(token)
+    
+    if len(current_word_ts) > 0:
+        current_word_px = measure_string(current_word_ts, metrics, memory_widths)
+        
+        if (line_px + current_word_px) > max_px:
+            replace_emitted_space()
+            new_tokenstream.append(encoded_newline)
+            increment_line()
+        
+        new_tokenstream += current_word_ts
+        current_word_ts = []
 
     return new_tokenstream
 
@@ -267,6 +338,8 @@ def pack_text(string, known_tokens, charmap, metrics, window_width, window_heigh
             encstream.append(encode_string(token, charmap))
         elif type(token) == bytes:
             encstream.append(token)
+        elif type(token) == int:
+            encstream.append(bytes([token]))
         else:
             encstream.append(bytes([token[1].byte]))
 
