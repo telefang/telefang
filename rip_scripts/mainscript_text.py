@@ -7,6 +7,7 @@
 import argparse, errno, sys, os, os.path, struct, io, codecs, urllib.request, urllib.error, urllib.parse, json, csv
 from CodeModule.asm.rgbds import Rgb6, Rgb6Section, Rgb6SectionData, Rgb6Patch, Rgb6PatchExpr, Rgb6Symbol
 from FangTools.tffont.parser import parse_font_metrics
+from FangTools.tfmessage.pack import pack_text, specials, memory_widths
 
 def install_path(path):
     try:
@@ -16,25 +17,6 @@ def install_path(path):
             pass
         else:
             raise
-
-#Used by the original text injector script to represent special codes.
-class Special():
-    def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False, base=16):
-        self.byte = byte
-        self.default = default
-        self.bts = bts
-        self.end = end
-        self.redirect = redirect
-        self.base = base
-        self.names = names if names else {}
-
-specials = {}
-specials["&"] = Special(0xe5, bts=2, names={0xc92c: "name", 0xd448: "num"})
-specials['S'] = Special(0xe3, default=2)
-specials['*'] = Special(0xe1, end=True)
-specials['O'] = Special(0xec, bts=2, redirect=True)
-specials['D'] = Special(0xe9, base=10)
-specials['P'] = Special(0xed, base=10)
 
 #Used here for text extraction from the ROM.
 reverse_specials = {}
@@ -468,209 +450,6 @@ def asm(args):
         print(bank["symbol"] + '_END')
         print('')
 
-def pack_string(string, charmap, metrics, window_width, do_not_terminate = False):
-    """Given a string, encode it as ROM table data.
-
-    This function, if provided with metrics, will also automatically insert a
-    newline after window_width pixels."""
-
-    text_data = b""
-    line_data = b""
-    line_px = 0
-    word_data = b""
-    word_px = 0
-
-    special = ""
-    skip_sentinel = False
-    end_sentinel = do_not_terminate
-
-    even_line = True
-
-    #This closure necessary to ensure proper newline handling
-    def encode(char):
-        try:
-            return charmap[0][char]
-        except KeyError:
-            print("Warning: Character 0x{0:x} does not exist in current ROM.\n".format(ord(char)))
-            return charmap[0]["?"]
-
-    #Empty strings indicate text strings that alias to the next string in
-    #sequence.
-    if string == "":
-        return b""
-    
-    #Remove nowiki tags
-    string = string.replace("<nowiki>", "")
-    string = string.replace("</nowiki>", "")
-
-    #Remove comments
-    string = string.split("//")[0]
-
-    for char in string:
-        if skip_sentinel:
-            skip_sentinel = False
-            continue
-
-        if special:
-            if char in ">»": #End of a control code.
-                special = special[1:]
-                is_literal = True
-
-                try:
-                    special_num = int(special, 16)
-                except ValueError:
-                    is_literal = False
-
-                if is_literal and special_num == 0xE2:
-                    #Nonstandard newline
-                    word_data += bytes([special_num])
-
-                    if metrics:
-                        word_px += metrics[special_num]
-
-                    max_px = window_width if even_line else window_width - 8
-                    if len(line_data) > 0 and line_px + word_px > max_px:
-                        #Next word will overflow, so inject a newline.
-                        text_data += line_data[:-1] + bytes([0xE2])
-                        line_data, line_px = word_data, word_px
-                        even_line = not even_line
-                    else:
-                        #Flush the word to the line with no injected newline.
-                        line_data += word_data
-                        line_px += word_px
-
-                    word_data, word_px = b"", 0
-
-                    text_data += line_data
-                    line_data, line_px = b"", 0
-                    even_line = not even_line
-                elif is_literal and not special.startswith("D"):
-                    if special_num > 255:
-                        print("Warning: Invalid literal special {} (0x{:3x})".format(special_num, special_num))
-                        continue
-
-                    word_data += bytes([special_num])
-
-                    if metrics:
-                        word_px += metrics[special_num]
-                else:
-                    ctrl_code = special[0]
-                    if ctrl_code not in list(specials.keys()):
-                        print("Warning: Invalid control code: ")
-                        for char in ctrl_code:
-                            print("{0:x}".format(ord(char)))
-                        print("\n")
-                        print("Found in line " + string + "\n")
-                        special = ""
-                        continue
-
-                    s = specials[ctrl_code]
-                    val = special[1:]
-                    word_data += bytes([s.byte])
-
-                    for value, name in list(s.names.items()):
-                        if name == val:
-                            val = value
-                            break
-                    else:
-                        if val[:2] == "0x":
-                            val = int(val[2:], 16)
-                        else:
-                            val = int(val, s.base)
-
-                    if val == "":
-                        val = s.default
-
-                    if s.bts:
-                        fmt = "<" + ("", "B", "H")[s.bts]
-                        word_data += struct.pack(fmt, val)
-
-                    if s.end:
-                        end_sentinel = True
-
-                    if special[0] == "&":
-                        if val == 0xd448:
-                            word_px += 3*8
-                        elif val == 0xccc1:
-                            word_px += 2*8
-                        elif val == 0xccc3:
-                            word_px += 1*8
-                        elif val == 0xccc5:
-                            word_px += 1*8
-                        elif val == 0xccc7:
-                            word_px += 1*8
-                        elif val == 0xccc9:
-                            word_px += 1*8
-                        elif val == 0xcccb:
-                            word_px += 1*8
-                        elif val == 0xcccd:
-                            word_px += 1*8
-                        elif val == 0xcccf:
-                            word_px += 1*8
-                        elif val == 0xccd1:
-                            word_px += 1*8
-                        elif val == 0xccd9:
-                            word_px += 1*8
-                        else:
-                            word_px += 8*8
-
-                special = ""
-            else:
-                special += char
-        else:
-            if char == "\\":
-                skip_sentinel = True
-
-            if char in "<«":
-                special = char
-            else:
-                if char in "\r":
-                    #Fix CRLF-based files parsed on LF operating systems.
-                    #NOTE: Breaks on Mac OS 9 and lower. Who cares?
-                    continue
-                
-                if char not in "\n":
-                    enc_char = encode(char)
-                    word_data += bytes([enc_char])
-                    
-                    if metrics:
-                        word_px += metrics[enc_char] + 1
-                
-                if char in (" ", "\n"):
-                    max_px = window_width if even_line else window_width - 8
-                    if len(line_data) > 0 and line_px + word_px > max_px:
-                        #Next word will overflow, so inject a newline.
-                        text_data += line_data[:-1] + bytes([0xE2])
-                        line_data, line_px = word_data, word_px
-                        even_line = not even_line
-                    else:
-                        #Flush the word to the line with no injected newline.
-                        line_data += word_data
-                        line_px += word_px
-                    
-                    word_data, word_px = b"", 0
-                    
-                    if char in "\n":
-                        text_data += line_data + bytes([0xE2])
-                        line_data = b""
-                        line_px = 0
-                        even_line = not even_line
-
-    #Slight alteration: Don't inject a newline if there's no line data that
-    #needs to have it injected.
-    line_window_width = (window_width if even_line else window_width - 8)
-    if len(line_data) > 0 and line_px + word_px > line_window_width:
-        text_data += line_data[:-1] + bytes([0xE2])
-        line_data = word_data
-    else:
-        line_data += word_data
-    text_data += line_data
-
-    if not end_sentinel:
-        text_data += b"\xe1\x00" #Null terminator
-
-    return text_data
-
 def parse_wikitext(wikifile):
     wikitext = wikifile.read()
     tbl_start = wikitext.find("{|")
@@ -818,7 +597,8 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
         if str_col >= len(row):
             print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
             table.append(baseaddr)
-            packed = pack_string("/0x{0:X}/".format(table_idx), charmap, metrics, bank_window_width)
+
+            packed = pack_text("/0x{0:X}/".format(table_idx), specials, charmap[0], metrics, bank_window_width, 2, memory_widths)
 
             baseaddr += len(packed)
             packed_strings[table_idx] = packed
@@ -839,7 +619,7 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             #aliasing at the same time, so don't.
             last_aliased_row = table_idx
         else:
-            packed = pack_string(row[str_col], charmap, metrics, bank_window_width, row[ptr_col] == "(No pointer)")
+            packed = pack_text(row[str_col], specials, charmap[0], metrics, bank_window_width, 2, memory_widths, row[ptr_col] == "(No pointer)")
             packed_strings[table_idx] += packed #We concat here in case of nopointer rows
 
             if row[ptr_col] != "(No pointer)":
