@@ -187,7 +187,7 @@ memory_widths[0xcccb] = 1*8
 memory_widths[0xcccd] = 1*8
 memory_widths[0xcccf] = 1*8
 memory_widths[0xccd1] = 1*8
-memory_widths[0xccd9] = 1*8 #BUG: Not actually true, but it matches the pre-rewrite code behavior
+memory_widths[0xccd9] = 1*8
 
 def format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths):
     """Given a tokenstream, modify it such that no line exceeds a maximum width.
