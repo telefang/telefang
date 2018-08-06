@@ -354,14 +354,14 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
                 #question. If the sum of both lines' widths exceeds the width of
                 #a line, we instead emit a multi-line question.
                 arg1 = []
-                for subtoken in cctoken[-2]:
+                for subtoken in token[-2]:
                     if type(subtoken) == str:
                         arg1.append(encode_string(subtoken, charmap))
                     else:
                         arg1.append(subtoken)
                 
                 arg2 = []
-                for subtoken in cctoken[-1]:
+                for subtoken in token[-1]:
                     if type(subtoken) == str:
                         arg2.append(encode_string(subtoken, charmap))
                     else:
