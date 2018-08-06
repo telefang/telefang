@@ -1,4 +1,4 @@
-import struct
+import struct, math
 
 QUESTION_FORMATTING_WRAPPER = "QUESTION_FORMATTING_WRAPPER"
 WRAPPED_STREAM_SEPARATOR = "WRAPPED_STREAM_SEPARATOR"
@@ -371,7 +371,7 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
                 arg2px = measure_string(arg2, metrics, memory_widths)
                 
                 #TODO: Can we make these hardcoded sequences more configurable?
-                if (arg1px + arg2px + 16) > max_px:
+                if (math.floor(arg1px / 8) * 8 + arg2px + 24) > max_px:
                     new_tokenstream.append(b"\xf1\x00")
                     new_tokenstream += arg1
                     new_tokenstream.append(encoded_newline)
