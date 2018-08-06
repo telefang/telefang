@@ -1,8 +1,11 @@
 import struct
 
+QUESTION_FORMATTING_WRAPPER = "QUESTION_FORMATTING_WRAPPER"
+WRAPPED_STREAM_SEPARATOR = "WRAPPED_STREAM_SEPARATOR"
+
 #Used by the original text injector script to represent special codes.
 class Special():
-    def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False, base=16):
+    def __init__(self, byte, default=0, bts=1, end=False, names=None, redirect=False, base=16, wrapper=False, purpose=None):
         self.byte = byte
         self.default = default
         self.bts = bts
@@ -10,6 +13,8 @@ class Special():
         self.redirect = redirect
         self.base = base
         self.names = names if names else {}
+        self.wrapper = wrapper
+        self.purpose = purpose
 
 specials = {}
 specials["&"] = Special(0xe5, bts=2, names={0xc92c: "name", 0xd448: "num"})
@@ -18,6 +23,8 @@ specials['*'] = Special(0xe1, end=True)
 specials['O'] = Special(0xec, bts=2, redirect=True)
 specials['D'] = Special(0xe9, base=10)
 specials['P'] = Special(0xed, base=10) #not present in base ROM
+specials['Q'] = Special(None, default=None, wrapper=True, purpose=QUESTION_FORMATTING_WRAPPER)
+specials['|'] = Special(None, default=None, purpose=WRAPPED_STREAM_SEPARATOR)
 
 def measure_string(encoded_string, metrics, memory_widths):
     """Given an encoded string or tokenstream, return a measure of it's width."""
@@ -83,8 +90,13 @@ def parse_string(string, known_tokens):
     first item is the control code token, and whose remaining tokens are
     arguments. Control code arguments may consist of integers, strings, or
     nested tokenstreams."""
-
+    
+    #Current list of parsed tokens.
     tokenstream = []
+    
+    #Stack of parent tokenstreams. These are used when a wrapper has finished
+    #consuming symbols.
+    wrapper_stack = []
 
     special = ""
     unspecial = []
@@ -99,7 +111,12 @@ def parse_string(string, known_tokens):
             if char in ">»": #End of a control code.
                 special = special[1:]
                 is_literal = True
-
+                end_wrapper = False
+                
+                if special.startswith("/"):
+                    end_wrapper = True
+                    special = special[1:]
+                
                 try:
                     special_num = int(special, 16)
                 except ValueError:
@@ -127,24 +144,50 @@ def parse_string(string, known_tokens):
 
                     s = known_tokens[token]
                     val = special[1:]
-
-                    for value, name in list(s.names.items()):
-                        if name == val:
-                            val = value
-                            break
-                    else:
-                        if val[:2] == "0x":
-                            val = int(val[2:], 16)
-                        else:
-                            val = int(val, s.base)
-
+                    
                     if val == "":
                         val = s.default
-
+                    else:
+                        for value, name in list(s.names.items()):
+                            if name == val:
+                                val = value
+                                break
+                        else:
+                            if val[:2] == "0x":
+                                val = int(val[2:], 16)
+                            else:
+                                val = int(val, s.base)
+                    
                     if s.end:
                         end_sentinel = True
-
-                    if val is not None and val != "":
+                    
+                    if s.wrapper and not end_wrapper:
+                        wrapper_stack.append(tokenstream)
+                        tokenstream = []
+                    
+                    if s.wrapper and end_wrapper:
+                        #Subtle note: The starting token gets added into the
+                        #child tokenstream, so we have to dig it out and then
+                        #append the rest of the stream as a variable to it.
+                        starttoken = tokenstream[0]
+                        argstream = tokenstream[1:]
+                        tokenargs = []
+                        cur_tokenarg = []
+                        
+                        for token in argstream:
+                            if type(token) == tuple and token[1].purpose == WRAPPED_STREAM_SEPARATOR:
+                                tokenargs.append(cur_tokenarg)
+                                cur_tokenarg = []
+                            else:
+                                cur_tokenarg.append(token)
+                        
+                        tokenargs.append(cur_tokenarg)
+                        
+                        starttoken += tuple(tokenargs)
+                        
+                        tokenstream = wrapper_stack.pop()
+                        tokenstream.append(starttoken)
+                    elif val is not None and val != "":
                         tokenstream.append((token, s, val))
                     else:
                         tokenstream.append((token, s))
@@ -286,23 +329,59 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
         elif type(token) == tuple:
             #Okay, this is an actual control code.
             cctoken = token[0]
-            token_px = 0
-            if cctoken == "&": #Memory buffer reference
-                if token[2] in memory_widths:
-                    token_px += memory_widths[token[2]]
-                else:
-                    token_px += 8*8
-                
-                #This only triggers on a memory reference so that control codes
-                #aren't inadvertently treated as spaces.
-                #TODO: This functionality should only be triggered on space or
-                #newline and the measure function should handle memory widths.
-                if (line_px + token_px) > max_px:
-                    replace_emitted_space()
-                    new_tokenstream.append(encoded_newline)
-                    increment_line()
+            special = token[1]
             
-            current_word_ts.append(token)
+            if special.purpose is None:
+                token_px = 0
+                if cctoken == "&": #Memory buffer reference
+                    if token[2] in memory_widths:
+                        token_px += memory_widths[token[2]]
+                    else:
+                        token_px += 8*8
+
+                    #This only triggers on a memory reference so that control codes
+                    #aren't inadvertently treated as spaces.
+                    #TODO: This functionality should only be triggered on space or
+                    #newline and the measure function should handle memory widths.
+                    if (line_px + token_px) > max_px:
+                        replace_emitted_space()
+                        new_tokenstream.append(encoded_newline)
+                        increment_line()
+
+                current_word_ts.append(token)
+            elif special.purpose == QUESTION_FORMATTING_WRAPPER:
+                #Questions can be formatted as a single-line or multi-line
+                #question. If the sum of both lines' widths exceeds the width of
+                #a line, we instead emit a multi-line question.
+                arg1 = []
+                for subtoken in token[-2]:
+                    if type(subtoken) == str:
+                        arg1.append(encode_string(subtoken, charmap))
+                    else:
+                        arg1.append(subtoken)
+                
+                arg2 = []
+                for subtoken in token[-1]:
+                    if type(subtoken) == str:
+                        arg2.append(encode_string(subtoken, charmap))
+                    else:
+                        arg2.append(subtoken)
+                
+                arg1px = measure_string(arg1, metrics, memory_widths)
+                arg2px = measure_string(arg2, metrics, memory_widths)
+                
+                #TODO: Can we make these hardcoded sequences more configurable?
+                if (arg1px + arg2px + 16) > max_px:
+                    new_tokenstream.append(b"\xf1\x00")
+                    new_tokenstream += arg1
+                    new_tokenstream.append(encoded_newline)
+                    new_tokenstream.append(b"\x00")
+                    new_tokenstream += arg2
+                else:
+                    new_tokenstream.append(b"\x00")
+                    new_tokenstream += arg1
+                    new_tokenstream.append(b"\xf0")
+                    new_tokenstream += arg2
     
     if len(current_word_ts) > 0:
         current_word_px = measure_string(current_word_ts, metrics, memory_widths)
