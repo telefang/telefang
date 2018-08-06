@@ -329,23 +329,59 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
         elif type(token) == tuple:
             #Okay, this is an actual control code.
             cctoken = token[0]
-            token_px = 0
-            if cctoken == "&": #Memory buffer reference
-                if token[2] in memory_widths:
-                    token_px += memory_widths[token[2]]
-                else:
-                    token_px += 8*8
-                
-                #This only triggers on a memory reference so that control codes
-                #aren't inadvertently treated as spaces.
-                #TODO: This functionality should only be triggered on space or
-                #newline and the measure function should handle memory widths.
-                if (line_px + token_px) > max_px:
-                    replace_emitted_space()
-                    new_tokenstream.append(encoded_newline)
-                    increment_line()
+            special = token[1]
             
-            current_word_ts.append(token)
+            if special.purpose is None:
+                token_px = 0
+                if cctoken == "&": #Memory buffer reference
+                    if token[2] in memory_widths:
+                        token_px += memory_widths[token[2]]
+                    else:
+                        token_px += 8*8
+
+                    #This only triggers on a memory reference so that control codes
+                    #aren't inadvertently treated as spaces.
+                    #TODO: This functionality should only be triggered on space or
+                    #newline and the measure function should handle memory widths.
+                    if (line_px + token_px) > max_px:
+                        replace_emitted_space()
+                        new_tokenstream.append(encoded_newline)
+                        increment_line()
+
+                current_word_ts.append(token)
+            elif special.purpose == QUESTION_FORMATTING_WRAPPER:
+                #Questions can be formatted as a single-line or multi-line
+                #question. If the sum of both lines' widths exceeds the width of
+                #a line, we instead emit a multi-line question.
+                arg1 = []
+                for subtoken in cctoken[-2]:
+                    if type(subtoken) == str:
+                        arg1.append(encode_string(subtoken, charmap))
+                    else:
+                        arg1.append(subtoken)
+                
+                arg2 = []
+                for subtoken in cctoken[-1]:
+                    if type(subtoken) == str:
+                        arg2.append(encode_string(subtoken, charmap))
+                    else:
+                        arg2.append(subtoken)
+                
+                arg1px = measure_string(arg1, metrics, memory_widths)
+                arg2px = measure_string(arg2, metrics, memory_widths)
+                
+                #TODO: Can we make these hardcoded sequences more configurable?
+                if (arg1px + arg2px + 16) > max_px:
+                    new_tokenstream.append(b"\xf1\x00")
+                    new_tokenstream += arg1
+                    new_tokenstream.append(encoded_newline)
+                    new_tokenstream.append(b"\x00")
+                    new_tokenstream += arg2
+                else:
+                    new_tokenstream.append(b"\x00")
+                    new_tokenstream += arg1
+                    new_tokenstream.append(b"\xf0")
+                    new_tokenstream += arg2
     
     if len(current_word_ts) > 0:
         current_word_px = measure_string(current_word_ts, metrics, memory_widths)
