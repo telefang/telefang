@@ -119,7 +119,7 @@ I heard fusing it with a ""gear"" would make it an itty bit stronger!<*2>",
 すごいモノ ほしがるよねー
 もってるんだったら
 くっつけてあげなよー
-<*2>",/0x15c020/<*2>,"<D17>Someone told me they wanted to fuse a Myrtus with a ""propeller engine"". Tall order, right //? If you get the chance, try fusing them!<*2>",
+<*2>",/0x15c020/<*2>,"<D17>Someone told me they wanted to fuse a Myrtus with a ""propeller engine"". Tall order, right? If you get the chance, try fusing them!<*2>",
 0x15c022,"<D18>リクニスって
 『ドリル』だいすきデンジュウ
 らしいよ
@@ -232,15 +232,15 @@ I hear they like ""mixers"". I get it, I think. They both move the same way!<*2>
 じつは キカイをつかわせると
 すごかったリして...
 そんなことはないかなー
-<*2>",/0x15c03a/<*2>,"<D30>Good things happen if you fuse a Lycoris with a ""computer"", right?
-No idea what ""すごかったりして"" is supposed to mean//<*2>",
+<*2>",/0x15c03a/<*2>,"<D30>Good things happen if you fuse a Lycoris with a ""computer"", right? It might be cool to set it up with a machine like that! Or maybe not.<*2>",
 0x15c03c,"<D31>おーう <&name>
 ビバーナムがな『ビデオ』を
 つけたいって いってたぜ
 でも あいつ テレビは
 どうなんだろうな?
 <*2>","/0x15c03c/<*2>
-","<D31>Yo, <&name>! Viburnum was saying it wants to be fused with a ""video camera"". I dunno how Viburnum would look on TV, though...//<*2>",
+","<D31>Yo, <&name>! Viburnum was saying it wants to be fused with a ""video camera"".
+...Think it knows how to use a TV?<*2>",
 0x15c03e,"<D32>ファンネルってデンジュウさぁ
 『ノコギリ』さがしてるんだって
 つけてあげたら きっと
@@ -309,8 +309,7 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",,
 つよくなるらしいんだよ
 あいつ...とぶきかよ..
 じつはもう とベたリして..
-<*2>",/0x15c050/<*2>,"<D41>I heard you can make Shellstera stronger using a ""jet engine"".
-Couldn't tell you what とぶきか or じつはもうとべたりして is meant to mean, though.//<*2>",
+<*2>",/0x15c050/<*2>,"<D41>I heard you can make Shellstera stronger using a ""jet engine"". Does it wanna fly or something?! Maybe it can fly without one, actually...<*2>",
 0x15c052,"<D42>ファンガイストって
 『ガトリング』がいいんだぜー
 これは オレしか しらないかも
@@ -323,7 +322,7 @@ Couldn't tell you what とぶきか or じつはもうとべたりして is mean
 0x15c056,"<D44>ブレニカって カワイイかおして
 『ランス』をつけると ちょっと
 つよくなるんだってねー
-わかんないもんだよねー<*2>",/0x15c056/<*2>,Who does the kawaii kao? Punica or the player? //,
+わかんないもんだよねー<*2>",/0x15c056/<*2>,"Even though Burenica looks all cute, it gets a bit stronger if you fuse it with a ""lance""! Pretty weird, huh?",
 0x15c058,"<D45>『シュリケン』をくっつけたがる
 ゲーロンって
 いったいナニモノなんだろうな?

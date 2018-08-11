@@ -699,7 +699,7 @@ I've been waiting for ages! Well, it's nice to meet you!<*5>",,
 <*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,
 0x1181fc,"オレをよんでくれるのか?
  はい  いいえ<*A>","Are you calling me over?
-<0>Yes<0xF0>No<*A>",,
+<Q>Yes<|>No</Q><*A>",,
 0x1181fe,"もしもし なんかようじ?
 ひさしぶリ! ゲンキだったか?<*5>","Hi, what's up? 
 It's been a while! How's it going?<*5>",,
