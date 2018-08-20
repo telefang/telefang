@@ -2939,7 +2939,7 @@ Video games / Football",
 You, glasses? / Why not",
 0x144172,"なんだよわるいかよぉ!!
  ベつに そんなことはないけど<*A>","What! What's wrong with that?!
-<Q>Nothing...<|>Nothing!<Q><*A>","What! What's wrong with that?!
+<Q>Nothing...<|>Nothing!</Q><*A>","What! What's wrong with that?!
 Nothing... / Nothing!",
 0x144174,"そうかなぁ?にあうかなぁ?
  にあうよ! フフフフッ<*A>","Think I'd look good in glasses?
@@ -3365,7 +3365,7 @@ Many / No idea",
 0x160090,"たくさんか?チョーオシャレな
 ケイタイもあるんだろ?
  あるよ どうかな?<*A>","Then there are probably super stylish ones too, right?
-<Q>Yeah<|>I dunno<Q><*A>","Then there are probably super stylish ones too, right?
+<Q>Yeah<|>I dunno</Q><*A>","Then there are probably super stylish ones too, right?
 Yeah / I dunno",
 0x160092,<&name>はもってないの? もってるよ もってない<*A>,"You don't have one?
 <Q>I do<|>I don't</Q><*A>","You don't have one?
