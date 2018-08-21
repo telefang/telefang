@@ -103,7 +103,7 @@ MainScript_MapArrowTile::
 ; Add "c" to "hl", except "c" is treated as signed. This is awesome for obvious reasons. If "c" is set to $A2 before calling MainScript_MapArrowTile then it will position the arrow (or blank space for said arrow) at the start of the first line if you ever wanted to... *coughverticalselection*cough*
 
 	push bc
-	call $4C32
+	call MainScript_ADVICE_FindFirstArrowTile
 	pop bc
 
 ; Calculate the tile index being mapped.
@@ -182,7 +182,14 @@ MainScript_ArrowInputPlusInputIndicator::
 	xor a
 	ret
 	
-SECTION "Main Script Vertical Selector Advice", ROMX[$7C2D], BANK[$B]
+SECTION "Main Script Vertical Selector Advice", ROMX[$7C24], BANK[$B]
+MainScript_ADVICE_FindFirstArrowTile::
+	bit 7, c
+	jp z, $4C32
+	ld b, $FF
+	add hl, bc
+	ret
+
 MainScript_ADVICE_ArrowClearData::
 	ld [W_MainScript_ContinueBtnPressed], a
 	ld [W_MainScript_ADVICE_VerticalArrowEnabled], a
@@ -192,7 +199,7 @@ MainScript_ADVICE_MapFirstArrowTile::
 	ld a, [W_MainScript_ADVICE_VerticalArrowEnabled]
 	or a
 	jr z, .defaultPosition
-	ld c, $A2
+	ld c, $C2
 	
 .defaultPosition
 	jp MainScript_MapArrowTile
