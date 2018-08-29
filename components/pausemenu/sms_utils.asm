@@ -9,6 +9,7 @@ W_PauseMenu_SMSScrollPos:: ds 1
 W_PauseMenu_SMSScrollMax:: ds 1
 W_PauseMenu_SMSOriginPtr:: ds 2
 W_PauseMenu_SMSDrawAddressBuffer:: ds 2
+W_PauseMenu_SMSArrowAnimationStage:: ds 1
 
 SECTION "Pause Menu SMS Utils", ROMX[$7028], BANK[$4]
 PauseMenu_SMSListingInputHandler::
@@ -234,6 +235,7 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
 	call PauseMenu_ADVICE_SMSLocateMessage
 	call PauseMenu_ADVICE_SMSCountLines
 	call PauseMenu_ADVICE_SMSDrawArrows
+	call PauseMenu_ADVICE_SMSDrawArrowBob
 	ld c, 0
 	call PauseMenu_ADVICE_SMSFirstDrawHelper
 	ld c, 1
@@ -458,9 +460,13 @@ PauseMenu_ADVICE_SMSMapTiles::
 
 SECTION "Pause Menu SMS Map Arrows", ROMX[$4CB0], BANK[$1]
 PauseMenu_ADVICE_SMSMapArrows::
+	xor a
+	ld [W_PauseMenu_SMSArrowAnimationStage], a
 	ld a, [W_PauseMenu_SMSScrollPos]
 	or a
 	jr z, .cantScrollUp
+	ld b, $40
+	call PauseMenu_ADVICE_SMSSetArrowState
 	ld de, $7B01
 	jr .mapTopArrow
 
@@ -468,13 +474,14 @@ PauseMenu_ADVICE_SMSMapArrows::
 	ld de, $D000
 
 .mapTopArrow
-	ld hl, $98E4
-	call PauseMenu_ADVICE_SMSMapArrow
+	call PauseMenu_ADVICE_SMSMapTopArrow
 	ld a, [W_PauseMenu_SMSScrollMax]
 	ld b, a
 	ld a, [W_PauseMenu_SMSScrollPos]
 	cp b
 	jr z, .cantScrollDown
+	ld b, $80
+	call PauseMenu_ADVICE_SMSSetArrowState
 	ld de, $7D01
 	jr .mapBottomArrow
 
@@ -482,8 +489,7 @@ PauseMenu_ADVICE_SMSMapArrows::
 	ld de, $D000
 
 .mapBottomArrow
-	ld hl, $9A04
-	call PauseMenu_ADVICE_SMSMapArrow
+	call PauseMenu_ADVICE_SMSMapBottomArrow
 	ret
 
 SECTION "Pause Menu SMS Map Arrow", ROMX[$4E20], BANK[$1]
@@ -524,6 +530,8 @@ SECTION "Pause Menu SMS Scroll Check", ROMX[$4FA0], BANK[$1]
 PauseMenu_ADVICE_SMSScrollCheck::
 	ld a, [W_JPInput_TypematicBtns]
 	and M_JPInput_Up + M_JPInput_Down
+	or a
+	jr z, .animateArrows
 	cp M_JPInput_Up
 	jr nz, .checkDown
 	call PauseMenu_ADVICE_SMSScrollUp
@@ -533,6 +541,10 @@ PauseMenu_ADVICE_SMSScrollCheck::
 	cp M_JPInput_Down
 	jr nz, .postScroll
 	call PauseMenu_ADVICE_SMSScrollDown
+	jr .postScroll
+
+.animateArrows
+	call PauseMenu_ADVICE_SMSAnimateArrows
 
 .postScroll
 	ret
@@ -554,16 +566,7 @@ PauseMenu_ADVICE_SMSScrollUp::
 	ld hl, $9640
 	ld de, $9400
 	ld b, $60
-
-.tileCopyLoop
-	di
-	call WaitForBlanking
-	ld a, [hli]
-	ld [de], a
-	ei
-	inc de
-	dec b
-	jr nz, .tileCopyLoop
+	call PauseMenu_ADVICE_SMSBasicTileCopy
 	call PauseMenu_ADVICE_SMSMapArrows
 	ld a, 2
 	ld [W_Sound_NextSFXSelect], a
@@ -594,7 +597,7 @@ PauseMenu_ADVICE_SMSScrollDown::
 	ld [W_Sound_NextSFXSelect], a
 	ret
 
-SECTION "Pause Menu SMS Move Down Old Lines", ROMX[$4EC0], BANK[$1]
+SECTION "Pause Menu SMS Move Up Old Lines", ROMX[$4EC0], BANK[$1]
 PauseMenu_ADVICE_SMSMoveUpOldLines::
 	ld hl, $9460
 	ld de, $9400
@@ -613,8 +616,7 @@ PauseMenu_ADVICE_SMSMoveUpOldLines::
 	jr nz, .tileCopyLoop
 	ret
 
-;TODO: Can we merge this and the previous section?
-SECTION "Pause Menu SMS Move Down Old Lines 2", ROMX[$4E90], BANK[$1]
+SECTION "Pause Menu SMS Move Down Old Lines", ROMX[$4E90], BANK[$1]
 PauseMenu_ADVICE_SMSMoveDownOldLines::
 	ld hl, $95DF
 	ld de, $963F
@@ -631,6 +633,135 @@ PauseMenu_ADVICE_SMSMoveDownOldLines::
 	ld a, b
 	or c
 	jr nz, .tileCopyLoop
+	ret
+
+SECTION "Pause Menu SMS Draw Arrow Animation Tiles", ROMX[$5160], BANK[$1]
+PauseMenu_ADVICE_SMSDrawArrowBob::
+	ld b, $40
+	ld hl, $9730
+	call PauseMenu_ADVICE_SMSClearTiles
+	ld hl, $97B4
+	ld de, $9772
+	ld b, $18
+	call PauseMenu_ADVICE_SMSBasicTileCopy
+	ld l, $D4
+	ld e, $96
+	ld b, $18
+	call PauseMenu_ADVICE_SMSBasicTileCopy
+	ld l, $B4
+	ld e, $36
+	ld b, $18
+	call PauseMenu_ADVICE_SMSBasicTileCopy
+	ld l, $D4
+	ld e, $52
+	ld b, $18
+	call PauseMenu_ADVICE_SMSBasicTileCopy
+	ret
+
+SECTION "Pause Menu SMS Basic Tile Copy", ROMX[$5140], BANK[$1]
+PauseMenu_ADVICE_SMSBasicTileCopy::
+	di
+	call WaitForBlanking
+	ld a, [hli]
+	ld [de], a
+	ei
+	inc de
+	dec b
+	jr nz, PauseMenu_ADVICE_SMSBasicTileCopy
+	ret
+
+SECTION "Pause Menu SMS Set Arrow State", ROMX[$5120], BANK[$1]
+PauseMenu_ADVICE_SMSSetArrowState::
+	ld a, [W_PauseMenu_SMSArrowAnimationStage]
+	add b
+	ld [W_PauseMenu_SMSArrowAnimationStage], a
+	ret
+
+SECTION "Pause Menu SMS Arrow Animation", ROMX[$50F0], BANK[$1]
+PauseMenu_ADVICE_SMSAnimateArrows::
+	ld a, [W_PauseMenu_SMSArrowAnimationStage]
+	ld c, a
+	and $3F
+	cp $28
+	jp z, PauseMenu_ADVICE_SMSAnimateStageA
+	cp $18
+	jp z, PauseMenu_ADVICE_SMSAnimateStageB
+	cp $20
+	jp z, PauseMenu_ADVICE_SMSAnimateStageC
+	ld a, c
+	inc a
+	ld [W_PauseMenu_SMSArrowAnimationStage], a
+	ret
+
+SECTION "Pause Menu SMS Arrow Animation Stage 1", ROMX[$5060], BANK[$1]
+PauseMenu_ADVICE_SMSAnimateStageA::
+	bit 6, c
+	jr z, .skipTopArrow
+	ld de, $7B01
+	call PauseMenu_ADVICE_SMSMapTopArrow
+
+.skipTopArrow
+	bit 7, c
+	jr z, .skipBottomArrow
+	ld de, $7D01
+	call PauseMenu_ADVICE_SMSMapBottomArrow
+
+.skipBottomArrow
+	ld a, c
+	and $C0
+	ld c, $10
+	add c
+	ld [W_PauseMenu_SMSArrowAnimationStage], a
+	ret
+
+SECTION "Pause Menu SMS Arrow Animation Stage 2", ROMX[$5090], BANK[$1]
+PauseMenu_ADVICE_SMSAnimateStageB::
+	bit 6, c
+	jr z, .skipTopArrow
+	ld de, $7701
+	call PauseMenu_ADVICE_SMSMapTopArrow
+
+.skipTopArrow
+	bit 7, c
+	jr z, .skipBottomArrow
+	ld de, $7901
+	call PauseMenu_ADVICE_SMSMapBottomArrow
+
+.skipBottomArrow
+	ld a, c
+	inc a
+	ld [W_PauseMenu_SMSArrowAnimationStage], a
+	ret
+
+SECTION "Pause Menu SMS Arrow Animation Stage 3", ROMX[$50C0], BANK[$1]
+PauseMenu_ADVICE_SMSAnimateStageC::
+	bit 6, c
+	jr z, .skipTopArrow
+	ld de, $7301
+	call PauseMenu_ADVICE_SMSMapTopArrow
+
+.skipTopArrow
+	bit 7, c
+	jr z, .skipBottomArrow
+	ld de, $7501
+	call PauseMenu_ADVICE_SMSMapBottomArrow
+
+.skipBottomArrow
+	ld a, c
+	inc a
+	ld [W_PauseMenu_SMSArrowAnimationStage], a
+	ret
+
+SECTION "Pause Menu SMS Map Arrow Shorthand", ROMX[$5040], BANK[$1]
+PauseMenu_ADVICE_SMSMapTopArrow::
+	ld hl, $98E4
+	jr PauseMenu_ADVICE_SMSMapBottomArrow.remoteJp
+
+PauseMenu_ADVICE_SMSMapBottomArrow::
+	ld hl, $9A04
+
+.remoteJp
+	call PauseMenu_ADVICE_SMSMapArrow
 	ret
 
 SECTION "Pause Menu SMS Utils Common Helper ADVICE", ROMX[$6B99], BANK[$1]
