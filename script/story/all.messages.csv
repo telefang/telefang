@@ -1685,9 +1685,9 @@ Well, there's no use worrying about it for now!
 <&name>, you should pass through that Antenna Tree and go on to the next town!",,
 #######,32 strings   -   Freesia story,,,
 0x12c0ba,"こんにちは
-Tファンガーの かたですか?","Hello, are you a T-Fanger?",,
+Tファンガーの かたですか?",Greetings! Are you a T-Fanger?,,
 0x12c0bc,"ここ きかいのまち フリジアでは『Tファンガーたいかい』を
-かいさいして いますよ",Freesia is holding a T-Fanger tournament right now.,,
+かいさいして いますよ",Freesia is currently holding a T-Fanger tournament.,,
 0x12c0be,"Tファンガーたいかい!
 なんかおもしろそーじゃん!
 それって どんなルールなの?","A T-Fanger tournament?!
@@ -1698,7 +1698,7 @@ How does it work?",,
 かちぬきせんの テレファングを
 おこなってもらいます
 そして もリの つきあたリにあるほこらから しょうひんを
-とってきて いただきます","Well, we're using the forest to the west of town for an elimination-style Telefang tournament.
+とってきて いただきます","An elimination-style Telefang tournament is being held in the forest west of town.
 The winner will pick up their prize from the shrine at the far end of the forest.",,
 0x12c0c2,でる! オレ それにでるよ!,Count me in! I am so doing this!,,
 0x12c0c4,"わかリました
@@ -1706,31 +1706,27 @@ The winner will pick up their prize from the shrine at the far end of the forest
 ... ... ... ...
 ... ... ... ...
 <&name>さま..っと
-たしかに うけたまわリました","Alright, then we just need your name...
-...............
-...............
-Mr. <&name>... 
-Okay, you've been entered.",,
+たしかに うけたまわリました","Understood. Your name, please.
+...
+Mr. <&name>? Very well.",,
 0x12c0c6,"うおー!
 どんなデンジュウが 
-でてくるんだろう たのしみー!","Alright!!
+でてくるんだろう たのしみー!","Alright!
 I can't wait to see what kinds of Denjuu show up!",,
 0x12c0c8,"フリジアのまちで たいかいの
 じょうほうを あつめておいた
 ほうが よろしいですよ
 それでは とうろくしておきます
-がんばってくださいね","It might be a good idea to look around town and gather some information.
-Well, you're all entered now, so good luck!",,
+がんばってくださいね","I recommend you look around town and gather some information.
+You are now registered for the tournament. Good luck!",,
 0x12c0ca,"...............
 ...............
 あのひと どっかで みたことが
 あるようなきが....
-まぁ いいか!","...............
-...............
-Come to think of it, haven't I seen that guy somewhere before...?
+まぁ いいか!","...Come to think of it, haven't I seen that guy somewhere before?
 Well, whatever! ",,
 0x12c0cc,"いくぞ!1かいせん
-オレと テレファングだ!","Let's go! For the first round, you'll be fighting me! Telefang!",,
+オレと テレファングだ!","Let's go! For the first round, you'll be fighting me! Let's telefang!",,
 0x12c0ce,"なかなか やるね!
 2かいせんも がんばって!","Hey, not bad!
 Good luck with round 2!",,
@@ -1738,7 +1734,7 @@ Good luck with round 2!",,
 あいてですわ
 テレファング いきますわよ","I'll be your opponent for the second round.
 Now, let's Telefang!",,
-0x12c0d2,すばらしい テレファングですわ!3かいせんも がんばって!,"That was an excellent battle!
+0x12c0d2,すばらしい テレファングですわ!3かいせんも がんばって!,"That was a wonderful battle!
 Good luck with the next round!",,
 0x12c0d4,"いくぞ!3かいせん
 ワタシが あいてよっ!","Here we go, round 3!
@@ -1750,7 +1746,7 @@ Good luck in round 4!",,
 I'm as fast as the wind! Go, go!!",,
 0x12c0da,"やるな! オマエになら
 まけても くいはない!
-つぎもがんばるんだぜ!","Not bad! I have no regrets losing to one such as you!
+つぎもがんばるんだぜ!","Not bad! I can't feel bad about losing to someone like you.
 Good luck with the next one!",,
 0x12c0dc,"おっ!
 オマエTファンガーだな!
@@ -1758,8 +1754,8 @@ Good luck with the next one!",,
 ゆうしょうこうほナンバーワンの
 スゴウデTファンガーさまの
 コブンさまだ! エッヘン!","Oho!
-You're a T-Fanger, aren't you?
-Well, we're the Leading #1 Amazing T-Fanger's trusted lackies! Hahaha!",,
+You're a T-Fanger, I see!
+Well, we're the Leading #1 Amazing T-Fanger's trusted lackeys! Hahaha!",,
 0x12c0de,"スゴウデTファンガーさまは
 ゆうしょうしょうひんを
 うけとリに このさきにある

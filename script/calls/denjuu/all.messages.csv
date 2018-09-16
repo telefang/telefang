@@ -247,7 +247,7 @@ I'm tired / Reasons.",
  そうか ごめん<*A>","What? Why?! That's cold, man!
 <Q>Oh, really?<|>Sorry</Q><*A>",,
 0x130084,"つれているデンジュウは
-かずに はいらないぞ!<*2>","Sorry, the Denjuu following you isn't included in that number!<*2>",,
+かずに はいらないぞ!<*2>","Nah, the Denjuu following you doesn't count!<*2>",,
 0x130086,"たんじゅんなことだけど
 たいせつだよな!<*2>","It's such a simple little fact, but it's important to remember!<*2>",,
 0x130088,"くー!!もう あったまきた!
@@ -323,7 +323,7 @@ I'm tired / Reasons.",
 <Q>Okay<|>No thanks</Q><*A>",,
 0x1300b8,"FDとはデンジュウとのなにを
 いみするものでしょうか?
- きょリ しんみつど<*A>","What do a Denjuu's FD represent?
+ きょリ しんみつど<*A>","What does a Denjuu's FD represent?
 <Q>Distance<|>Friendship</Q><*A>",,
 0x1300ba,"やっぱリ まだはやかった?
  うん はやい?<*A>","I guess it's too early for that, huh.
@@ -1760,21 +1760,27 @@ As expected of <&name>!<*2>",
 #######,#078,,,
 0x110036,"『めだかのがっこう』だけどさ
 あれはどこにあるの?
- しらない きまってない<*A>",/0x110036/<*A>,,
+ しらない きまってない<*A>","So... where's this ""school of fish"" I've been hearing about?
+<Q>Dunno<|>Nowhere specific</Q><*A>","So... where's this ""school of fish"" I've been hearing about?
+Dunno / Nowhere specific","Preserved most of the content of the discussion by changing a reference to the children's song ""Medaka no Gakkō"" to a reference to a common English expression."
 0x110038,"ぜったいどっかにあると
 オレはおもうんだけどね!
- そうかな ないよ<*A>",/0x110038/<*A>,,
+ そうかな ないよ<*A>","It's gotta be somewhere, though, right?
+<Q>I guess<|>No</Q><*A>","It's gotta be somewhere, though, right?
+I guess / No",
 0x11003a,"それじゃあ どこにでも
 あるっていうのか?
- あるんじゃん かぎられてる<*A>",/0x11003a/<*A>,,
+ あるんじゃん かぎられてる<*A>","So you're saying there could be a school of fish anywhere?
+<Q>Anywhere!<|>Well, mostly</Q><*A>","So you're saying there could be a school of fish anywhere?
+Anywhere! / Well, mostly",
 0x11003c,"そうだよ!こんどオマエも
-さがしてみろよ!<*2>",/0x11003c/<*2>,,
+さがしてみろよ!<*2>","Right! Help me look for it sometime, hm?<*2>","Right! Help me look for it sometime, hm?",
 0x11003e,"いや!オレはあきらめないぞ!
-みたってやつをさがしてやる!<*2>",/0x11003e/<*2>,,
+みたってやつをさがしてやる!<*2>",No way! I'm not giving up! There's gotta be someone who's seen it!<*2>,No way! I'm not giving up! There's gotta be someone who's seen it!,
 0x110040,"それじゃあ つまらないな
-どこにでもあるのか...<*2>",/0x110040/<*2>,,
+どこにでもあるのか...<*2>","That's no fun. Anywhere, huh...<*2>","That's no fun. Anywhere, huh...",
 0x110042,"みずがきれいじゃないと
-いけないのか..なるほどな!<*2>",/0x110042/<*2>,,
+いけないのか..なるほどな!<*2>",Only in clean waters? I see!<*2>,Only in clean waters? I see!,
 #######,#079,,,
 0x110044,"なんかさ クリスマスのうたって
 すきなんだよねー
@@ -1826,55 +1832,81 @@ Totally! / Also...",
 #######,#081,,,
 0x110060,"オレの18ばん しってるか?
 『かえるのうた』なんだ! 
- マジで! ダサい<*A>",/0x110060/<*A>,,
+ マジで! ダサい<*A>","Know what my favorite party trick is? Singing ""Itsy Bitsy Spider""!
+<Q>Really?<|>Lame...</Q><*A>","Know what my favorite party trick is? Singing ""Itsy Bitsy Spider""!
+Really? / Lame...",
 0x110062,"マジだよ!オレのうたをきいて
 ないたやつがいるくらいさ!
- おかしくて? かんどうして?<*A>",/0x110062/<*A>,,
+ おかしくて? かんどうして?<*A>","Yeah! It's even brought some people to tears!
+<Q>Tears of laughter?<|>Were they moved?</Q><*A>","Yeah! It's even brought some people to tears!
+Tears of laughter? / Were they moved?",
 0x110064,"ダサいとはなんだ!
 いまはこれがはやってるの!
- ほんと しらなかった<*A>",/0x110064/<*A>,,
+ ほんと しらなかった<*A>","Whaddaya mean, ""lame""?! It's all the rage lately!
+<Q>Really?<|>I had no idea</Q><*A>","Whaddaya mean, ""lame""?! It's all the rage lately!
+Really? / I had no idea",
 0x110066,"しつれいなやつだな!
-あまリのうまさにだよ!<*2>",/0x110066/<*2>,,
+あまリのうまさにだよ!<*2>","Ow, rude! Of course not. It's because I'm too good at singing!<*2>","Ow, rude! Of course not. It's because I'm too good at singing!",
 0x110068,"そう!かんどうして
-オレがないてたくらいだからな!<*2>",/0x110068/<*2>,,
+オレがないてたくらいだからな!<*2>",Yeah! I've even made myself cry a few times.<*2>,Yeah! I've even made myself cry a few times.,
 0x11006a,"しらないオマエのほうが
-よっぽどダサいとおもうぜ!<*2>",/0x11006a/<*2>,,
+よっぽどダサいとおもうぜ!<*2>","If you didn't even know that, I think you're the lame one!<*2>","If you didn't even know that, I think you're the lame one!",
 0x11006c,"もうすこし よのなかの
-ながれをよんだほうがいいぜ!<*2>",/0x11006c/<*2>,,
+ながれをよんだほうがいいぜ!<*2>",You gotta keep an eye on what's hip and happening!<*2>,You gotta keep an eye on what's hip and happening!,
 #######,#082,,,
 0x11006e,"『こいのぼリ』っていう うたを
 さいきん おぼえたんだ!
- そうなの ふむふむ<*A>",/0x11006e/<*A>,,
+ そうなの ふむふむ<*A>","I recently learned a song called ""Auld Lang Syne""!
+<Q>Nice!<|>Uh-huh</Q><*A>","I recently learned a song called ""Auld Lang Syne""!
+Nice! / Uh-huh",Koinobori → Auld Lang Syne
 0x110070,"およいでるってことは
 ほんものの さかななんだよね?
- ほんもの ちょっとちがう<*A>",/0x110070/<*A>,,
+ ほんもの ちょっとちがう<*A>","What does ""auld lang syne"" mean?
+<Q>Old long sign<|>Old times</Q><*A>","What does ""auld lang syne"" mean?
+Old long sign / Old times",
 0x110072,"こいのぼリってなに?
- しらないのか ういてるやつ<*A>",/0x110072/<*A>,,
+ しらないのか ういてるやつ<*A>","What language is that, even...?
+<Q>You don't know?<|>Almost English</Q><*A>","What language is that, even...?
+You don't know? / Almost English",
 0x110074,"やねよリたかいところを
-およぐってさかなっているの?<*2>",/0x110074/<*2>,,
+およぐってさかなっているの?<*2>","They liked using long words back then, didn't they. It makes sense that their signs would be long.<*2>","They liked using long words back then, didn't they. It makes sense that their signs would be long.",
 0x110076,"さかなのかたちをしてるだけ
-なんだ!みてみたいなー<*2>",/0x110076/<*2>,,
+なんだ!みてみたいなー<*2>","Oh, I see! So it's like... ""for old times' sake"". That's beautiful.<*2>","Oh, I see! So it's like... ""for old times' sake"". That's beautiful.",
 0x110078,"そうなんだよ しらないで
-ずっと うたってたんだよな!<*2>",/0x110078/<*2>,,
+ずっと うたってたんだよな!<*2>","Nope! I sing it all the time, but I have no idea what it means.<*2>","Nope! I sing it all the time, but I have no idea what it means.",
 0x11007a,"ああ あのういてるやつ...
-って わかるか ボケ!<*2>",/0x11007a/<*2>,,
+って わかるか ボケ!<*2>","Aha, almost English, huh.
+...
+That doesn't tell me anything!<*2>","Aha, almost English, huh.
+...
+That doesn't tell me anything!",
 #######,#083,,,
 0x11007c,"あめ あめ ふれ ふれ
 かあさんが~ってうたしってる?
- しってる ちょっとだけ<*A>",/0x11007c/<*A>,,
+ しってる ちょっとだけ<*A>","Jack and Jill♪
+Went up the hilll♪
+Do you know that old nursery rhyme?
+<Q>Yes<|>Vaguely</Q><*A>","Jack and Jill♪
+Went up the hilll♪
+Do you know that old nursery rhyme?
+Yes / Vaguely",Ame ame fure fure → Jack and Jill
 0x11007e,"そのあとのジャノメでおむかえ
 のジャノメってなに?
- ヘびのめ カサ<*A>",/0x11007e/<*A>,,
+ ヘびのめ カサ<*A>","After that part, they go fetch a ""pail"". What's a pail...?
+<Q>A painful nail<|>A bucket</Q><*A>","After that part, they go fetch a ""pail"". What's a pail...?
+A painful nail / A bucket","Janome → pail, snake eye → painful nail"
 0x110080,"あのうたさ 2ばんとかあるの?
- あるよ しらない<*A>",/0x110080/<*A>,,
+ あるよ しらない<*A>","Is there another verse...?
+<Q>Yeah!<|>No idea</Q><*A>","Is there another verse...?
+Yeah! / No idea",
 0x110082,"ヘびのめなんかもって
-どうするの?こわいよー!<*2>",/0x110082/<*2>,,
+どうするの?こわいよー!<*2>",Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!<*2>,Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!,
 0x110084,"カサのことなんだ!
-わからなかったよー!<*2>",/0x110084/<*2>,,
+わからなかったよー!<*2>","Oh, a bucket! I had no idea!<*2>","Oh, a bucket! I had no idea!",
 0x110086,"あるんだ!こんどかみに
-かいてちょうだい!<*2>",/0x110086/<*2>,,
+かいてちょうだい!<*2>","Huh! Write it down for me next time, please!<*2>","Huh! Write it down for me next time, please!",
 0x110088,"けっこう そういうのあるよね
-サビしか わからないとかね!<*2>",/0x110088/<*2>,,
+サビしか わからないとかね!<*2>",I guess that's how most people are with nursery rhymes... It's like only knowing the chorus of a song!<*2>,I guess that's how most people are with nursery rhymes... It's like only knowing the chorus of a song!,
 #######,#084,,,
 0x11008a,"『ほたるのひかリ』は どんな
 ときにうたうものなの?
@@ -1900,7 +1932,7 @@ Happy birthday to you!♪
 0x110094,"オマエだって だましたろ!
 どうざいだよね!!<*2>","Yeah, but then you tried to fool me, so we're even!<*2>","Yeah, but then you tried to fool me, so we're even!<*2>",
 0x110096,"すなおにあやまったから
-ゆるしてあげるよ...<*2>","Alright, alright, I forgive you...<*2>","Alright, alright, I forgive you...<*2>",
+ゆるしてあげるよ...<*2>","Alright, alright, I forgive you...<*2>",-,
 #######,#085,,,
 0x110098,"ねーアーティストって
 しってる?おいしい?
