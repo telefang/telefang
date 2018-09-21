@@ -16,12 +16,12 @@ BASEROM_POWER := ${BASE_DIR}/baserom_pw.gbc
 ROMS_SPEED := ${BUILD_DIR}/telefang_sp_english.gbc
 ROMS_SPEED_NORTC := ${BUILD_DIR}/telefang_sp_english_nortc.gbc
 BASEROM_SPEED := ${BASE_DIR}/baserom_sp.gbc
-OBJS := $(patsubst %.asm,%.o,$(shell find components gfx script -type f -name "\*.asm"))
+OBJS := $(patsubst %.asm,%.o,$(shell find components gfx script -type f -name "*.asm"))
 
-OBJS_POWER := $(patsubst %.asm,%.o,$(shell find versions/power -type f -name "\*.asm"))
-OBJS_SPEED := $(patsubst %.asm,%.o,$(shell find versions/speed -type f -name "\*.asm"))
+OBJS_POWER := $(patsubst %.asm,%.o,$(shell find versions/power -type f -name "*.asm"))
+OBJS_SPEED := $(patsubst %.asm,%.o,$(shell find versions/speed -type f -name "*.asm"))
 
-SRC_MESSAGE := $(shell find script -type f -name "\*.messages.csv") $(shell find components -type f -name "\*.messages.csv")
+SRC_MESSAGE := $(shell find script -type f -name "*.messages.csv") $(shell find components -type f -name "*.messages.csv")
 
 OBJS_MESSAGE := build/script/mainscript_data.o
 OBJS_MESSAGE_BLOCKS := ${BUILD_DIR}/script/battle/messages.scripttbl \
