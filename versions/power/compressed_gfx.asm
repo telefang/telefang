@@ -296,8 +296,8 @@ MenuGotNumberGfx:
 MenuGotNumberGfxEnd
 
 MenuDmeloGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/dmelo.malias"
+	dbw NOT_COMPRESSED, MenuDmeloGfxEnd - MenuDmeloGfx - 3
+	INCBIN "build/gfx/menu/dmelo.2bpp"
 MenuDmeloGfxEnd
 
 MenuOptionsGfx:
@@ -321,8 +321,8 @@ MenuMain2Gfx:
 MenuMain2GfxEnd
 
 MenuUnkGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/unk.malias"
+	dbw NOT_COMPRESSED, MenuUnkGfxEnd - MenuUnkGfx - 3
+	INCBIN "build/gfx/menu/unk.2bpp"
 MenuUnkGfxEnd
 
 MenuTotalGfx:
@@ -331,8 +331,8 @@ MenuTotalGfx:
 MenuTotalGfxEnd
 
 MenuNicknameGfx:
-	db COMPRESSED
-	INCBIN "gfx/menu/nickname.malias"
+	dbw NOT_COMPRESSED, MenuNicknameGfxEnd - MenuNicknameGfx - 3
+	INCBIN "build/gfx/menu/nickname.2bpp"
 MenuNicknameGfxEnd
 
 MenuMetGfx:
