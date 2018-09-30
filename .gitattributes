@@ -1,9 +1,9 @@
-#Because macOS
+# Cross-platform, baybee!
 
 *.asm text
 *.inc text
 *.py text
-*.sh text
+*.sh text eof=lf
 *.txt text
 *.md text
 *.wikitext text
