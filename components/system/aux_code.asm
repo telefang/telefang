@@ -140,6 +140,10 @@ Banked_PauseMenu_ADVICE_SMSMapTiles::
 Banked_PauseMenu_ADVICE_SMSContentsCheckInput::
 	jp PauseMenu_ADVICE_SMSContentsCheckInput
 	nop
+	
+Banked_Battle_ADVICE_StatusInflictionArticle::
+	jp Battle_ADVICE_StatusInflictionArticle
+	nop
 
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.

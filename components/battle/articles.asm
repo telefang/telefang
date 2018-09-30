@@ -12,6 +12,17 @@ Battle_ADVICE_QueueMessage_WithArticle::
 	call PatchUtils_AuxCodeJmp
 	jp Battle_QueueMessage
 
+SECTION "Patch Utilities - Status Infliction Articles", ROMX[$5200], BANK[$1]
+Battle_ADVICE_StatusInflictionArticle::
+	M_AdviceSetup
+
+	call SaveClock_EnterSRAM2
+	ld a, [W_Battle_CurrentParticipantTeam]
+	ld h, a
+	and a
+	jp z, Battle_ADVICE_BattleArticle.postSetup
+	jp Battle_ADVICE_BattleNoArticle.postSetup
+
 SECTION "Patch Utilities - Battle Articles", ROMX[$4B00], BANK[$1]
 Battle_ADVICE_BattleNoArticle::
 	M_AdviceSetup
@@ -24,6 +35,8 @@ Battle_ADVICE_BattleNoArticle::
 
 Battle_ADVICE_BattleArticle::
 	M_AdviceSetup
+	
+.postSetup
 	ld a, [W_Battle_OpponentUsingLinkCable]
 	cp 1
 	jr z, .articlesNeeded
