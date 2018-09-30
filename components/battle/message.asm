@@ -231,3 +231,31 @@ Battle_MessageNumbersToText::
 	ld a, $E0
 	ld [de], a
 	ret
+
+SECTION "Battle - Get Negative Status Inflicted Denjuu Name", ROMX[$79D7], BANK[$5]
+Battle_GetNegativeStatusInflictedDenjuuName::
+	call SaveClock_EnterSRAM2
+	ld a, [W_Battle_CurrentParticipantTeam]
+	and a
+	jr z, .forOpponent
+	ld a, [W_Battle_PartnerDenjuuTurnOrder]
+	call Battle_StagePartnerStats
+	ld a, [$D591]
+	ld hl, $A006
+	call Battle_IndexStatisticsArray
+	push hl
+	pop de
+	call Banked_SaveClock_LoadDenjuuNicknameByStatPtr
+	call SaveClock_EnterSRAM2
+	call Status_CopyLoadedDenjuuNickname
+	jr .exit
+
+.forOpponent
+	ld a, [W_Battle_OpponentDenjuuTurnOrder]
+	call Battle_StageOpponentStats
+	ld a, [W_Battle_CurrentParticipant]
+	call Battle_LoadDenjuuSpeciesAsMessageArg1
+
+.exit
+	call SaveClock_ExitSRAM
+	ret
