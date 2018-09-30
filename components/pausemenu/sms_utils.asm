@@ -300,7 +300,7 @@ PauseMenu_ADVICE_SMSLocateLineRelativeToCache::
 	ld a, b
 	cp c
 	jr z, .exit
-	jr c, .forwardloop
+	jr c, .forwardLoop
 
 .reverseLoop
 	ld a, c
