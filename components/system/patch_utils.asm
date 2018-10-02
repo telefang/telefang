@@ -2,6 +2,17 @@ INCLUDE "telefang.inc"
 
 IMPORT SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
 
+SECTION "Draw FWF Letter", ROM0[$3E4D]
+PatchUtils_Banked_DrawFWFLetter::
+	push af
+	ld a, 1
+	ld [W_MainScript_VWFDisable], a
+	pop af
+	call Banked_MainScript_DrawLetter
+	xor a
+	ld [W_MainScript_VWFDisable], a
+	ret
+
 SECTION "Patch Utilities", ROM0[$0063]
 PatchUtils_ResetVector: jp PatchUtils_ResetGame
 ; The word "Denjuu" for use by E5 control codes. It is not currently in use.

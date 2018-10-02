@@ -11,21 +11,6 @@ Encounter_LoadScriptedDenjuu::
 	nop
 	nop
 	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 	
 SECTION "Load Scripted T-Fanger Denjuu", ROM0[$3E68]
 Encounter_LoadScriptedTFangerDenjuu::
