@@ -205,6 +205,16 @@ TitleMenu_ADVICE_LoadSGBFiles::
     ld e, 8
     call Banked_SGB_ConstructPaletteSetPacket
     
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld b, 0
+    ld c, 2
+    call PatchUtils_CommitStagedCGBToSGB
+    
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 6
+    call PatchUtils_CommitStagedCGBToSGB
+    
 .return
     M_AdviceTeardown
     ret
