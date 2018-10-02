@@ -41,6 +41,10 @@ Banked_TitleMenu_ADVICE_LoadSGBFiles::
 	jp TitleMenu_ADVICE_LoadSGBFiles
 	nop
 
+Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest::
+	jp TitleMenu_ADVICE_LoadSGBFilesSoundTest
+	nop
+
 Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
 	jp TitleMenu_ADVICE_UnloadSGBFilesOverworld
 	nop

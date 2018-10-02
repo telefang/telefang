@@ -6,7 +6,7 @@ SGB_AttrFileData::
     INCBIN "build/gfx/menu/titlemenu.atf"
     INCBIN "build/components/status/status_screen.atf"
     INCBIN "build/components/zukan/zukan_screen.atf"
-    INCBIN "build/versions/speed/gfx/sgb/attrfile/06.atf"
+    INCBIN "build/gfx/menu/titlemenu_inapp.atf"
     INCBIN "build/versions/speed/gfx/sgb/attrfile/07.atf"
     INCBIN "build/versions/speed/gfx/sgb/attrfile/08.atf"
     INCBIN "build/versions/speed/gfx/sgb/attrfile/09.atf"

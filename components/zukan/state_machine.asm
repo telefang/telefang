@@ -454,7 +454,7 @@ Zukan_StateInnerviewSwitchPage:
     ld [W_SystemSubSubState], a
     ret
 
-SECTION "Zukan State Machine Advice", ROMX[$4500], BANK[$1]
+SECTION "Zukan State Machine Advice", ROMX[$4540], BANK[$1]
 Zukan_ADVICE_InitializeNameMetaSprite::
     M_AdviceSetup
 
