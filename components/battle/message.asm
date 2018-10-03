@@ -234,8 +234,9 @@ Battle_MessageNumbersToText::
 
 SECTION "Battle - Get Negative Status Inflicted Denjuu Name", ROMX[$79D7], BANK[$5]
 Battle_GetNegativeStatusInflictedDenjuuName::
-	call SaveClock_EnterSRAM2
-	ld a, [W_Battle_CurrentParticipantTeam]
+	ld a, Banked_Battle_ADVICE_StatusInflictionArticle & $FF
+	call PatchUtils_AuxCodeJmp
+	ld a, h
 	and a
 	jr z, .forOpponent
 	ld a, [W_Battle_PartnerDenjuuTurnOrder]
