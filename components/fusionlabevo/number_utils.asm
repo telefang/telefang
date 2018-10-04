@@ -153,7 +153,7 @@ FusionLabEvo_DecimalizeExp::
 	ld h, d
 	ld l, e
 	ld [Malias_CmpSrcBank], a
-	ld bc, -100
+	ld bc, -10
 	ld a, -1
 
 .jpB
