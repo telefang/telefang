@@ -2,15 +2,11 @@ INCLUDE "telefang.inc"
 
 IMPORT SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
 
-SECTION "Draw FWF Letter", ROM0[$3E4D]
-PatchUtils_Banked_DrawFWFLetter::
-	push af
-	ld a, 1
-	ld [W_MainScript_VWFDisable], a
-	pop af
-	call Banked_MainScript_DrawLetter
-	xor a
-	ld [W_MainScript_VWFDisable], a
+SECTION "Shorthand for Draw Shop Number Gfx Auxcode", ROM0[$3E55]
+PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
+	ld e, a
+	ld a, Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx & $FF
+	call PatchUtils_AuxCodeJmp
 	ret
 
 SECTION "Patch Utilities", ROM0[$0063]
