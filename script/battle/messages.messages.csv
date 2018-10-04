@@ -357,7 +357,7 @@ Auf geht's! Telefang!<*2>",,
 とどいています。",You received 4 text messages.,,Du hast 4 SMS erhalten.,,
 0x11414c,"<S2>
 <&0xca00>","<S2>
-<&0xccc0>",,"<S2>
+<&0xccc0><0xF3>",,"<S2>
 <&0xccc0>",,
 0x11414e,"<&0xca53> の <&0xc9e1>
 から デンワが かかってきた!<*3>",Got a call from <&0xca53>'s <&0xcca3>!<*3>,,Einen Anruf von <&0xca53>s <&0xcca3>!<*3>,,
@@ -421,11 +421,11 @@ Es hat sich zu <&0xccc0> entwickelt.<*2>",,
 0x114174,<S0><&0xca53><*4>,<S0><&0xd6b1><*4>,,<S0><&0xd6b1><*4>,,
 0x114176,"<S2>
 <&0xca00><*4>","<S2>
-<&0xccc0><*4>",,"<S2>
+<&0xccc0><0xF3><*4>",,"<S2>
 <&0xccc0><*4>",,
 0x114178,"<S2>
 <&0xca00><*2>","<S2>
-<&0xccc0><*2>",,"<S2>
+<&0xccc0><0xF3><*2>",,"<S2>
 <&0xccc0><*2>",,
 0x11417a,カギをつかった。,You used the key.,,Du setzt den Schlüssel ein.,,
 0x11417c,カギがかかっている。,It's locked.,,Ist verschlossen.,,

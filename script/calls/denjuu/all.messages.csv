@@ -1883,12 +1883,8 @@ That doesn't tell me anything!",
 #######,#083,,,
 0x11007c,"あめ あめ ふれ ふれ
 かあさんが~ってうたしってる?
- しってる ちょっとだけ<*A>","Jack and Jill♪
-Went up the hilll♪
-Do you know that old nursery rhyme?
-<Q>Yes<|>Vaguely</Q><*A>","Jack and Jill♪
-Went up the hilll♪
-Do you know that old nursery rhyme?
+ しってる ちょっとだけ<*A>","Jack and Jill went up the hill... Do you know that old nursery rhyme?
+Yes / Vaguely","Jack and Jill went up the hill... Do you know that old nursery rhyme?
 Yes / Vaguely",Ame ame fure fure → Jack and Jill
 0x11007e,"そのあとのジャノメでおむかえ
 のジャノメってなに?
@@ -1900,7 +1896,7 @@ A painful nail / A bucket","Janome → pail, snake eye → painful nail"
 <Q>Yeah!<|>No idea</Q><*A>","Is there another verse...?
 Yeah! / No idea",
 0x110082,"ヘびのめなんかもって
-どうするの?こわいよー!<*2>",Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!<*2>,Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!,
+どうするの?こわいよー!<*2>",Is that some kinda weapon?! That's pretty hardcore for a nursery rhyme!<*2>,Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!,
 0x110084,"カサのことなんだ!
 わからなかったよー!<*2>","Oh, a bucket! I had no idea!<*2>","Oh, a bucket! I had no idea!",
 0x110086,"あるんだ!こんどかみに
@@ -1932,7 +1928,7 @@ Happy birthday to you!♪
 0x110094,"オマエだって だましたろ!
 どうざいだよね!!<*2>","Yeah, but then you tried to fool me, so we're even!<*2>","Yeah, but then you tried to fool me, so we're even!<*2>",
 0x110096,"すなおにあやまったから
-ゆるしてあげるよ...<*2>","Alright, alright, I forgive you...<*2>",-,
+ゆるしてあげるよ...<*2>","Alright, alright, I forgive you...<*2>","Alright, alright, I forgive you...<*2>",
 #######,#085,,,
 0x110098,"ねーアーティストって
 しってる?おいしい?
