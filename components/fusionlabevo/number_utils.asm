@@ -6,6 +6,32 @@ W_FusionLabEvo_SelectedItem:: ds 1
 SECTION "Fusion/Lab Evolution Scroll State", WRAM0[$CAEB]
 W_FusionLabEvo_ScrollState:: ds 1
 
+SECTION "Shop Number Gfx Table", ROMX[$6B00], BANK[$1]
+ShopNumberGfx::
+	INCBIN "build/components/fusionlabevo/shop_numbers.1bpp"
+	
+SECTION "Draw Shop Number Gfx", ROMX[$5240], BANK[$1]
+FusionLabEvo_ADVICE_DrawShopNumberGfx::
+	M_AdviceSetup
+	
+	ld d, ShopNumberGfx >> 8
+	sla e
+	sla e
+	sla e
+	ld b, 8
+
+.numberWriteLoop
+	ld a, [de]
+	di
+	call YetAnotherWFB
+	ld [hli], a
+	ld [hli], a
+	ei
+	inc de
+	dec b
+	jr nz, .numberWriteLoop
+	jp Battle_ADVICE_BattleArticle.teardown
+
 SECTION "Fusion/Lab Evolution Draw Item Data", ROMX[$510F], BANK[$2A]
 FusionLabEvo_DrawItemData::
 	ld a, [W_FusionLabEvo_ScrollState]
@@ -62,21 +88,24 @@ FusionLabEvo_DrawItemData::
 	ld h, a
 	ld a, [hl]
 	call Status_DecimalizeStatValue
-	ld a, $C7
+	ld a, $A
 	ld hl, $8B80
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld a, [W_GenericRegPreserve]
 	swap a
 	and a, $F
-	add a, $BB
 	ld hl, $8B90
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld a, [W_GenericRegPreserve]
 	and a, $F
-	add a, $BB
 	ld hl, $8BA0
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ret
+	
+	nop
+	nop
+	nop
+	nop
 
 SECTION "Fusion/Lab Evolution Draw Partner Stats", ROMX[$52D1], BANK[$2A]
 FusionLabEvo_DrawPartnerStats::
