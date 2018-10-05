@@ -119,14 +119,12 @@ FusionLabEvo_DrawPartnerStats::
 	ld a, [W_GenericRegPreserve]
 	swap a
 	and a, $F
-	add a, $BB
 	ld hl, $8900
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld a, [W_GenericRegPreserve]
 	and a, $F
-	add a, $BB
 	ld hl, $8910
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	pop de
 	ld a, d
 	cp a, 99
@@ -136,17 +134,17 @@ FusionLabEvo_DrawPartnerStats::
 	
 	add sp, 2
 	ld hl, $8920
-	ld a, 0
-	call Banked_MainScript_DrawLetter
+	ld a, $B
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld hl, $8930
-	ld a, $AA
-	call Banked_MainScript_DrawLetter
+	ld a, $C
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld hl, $8940
-	ld a, $9E
-	call Banked_MainScript_DrawLetter
+	ld a, $D
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld hl, $8950
-	ld a, $B5
-	jp Banked_MainScript_DrawLetter
+	ld a, $E
+	jp PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 
 .notMaxLevel
 	pop hl
@@ -155,19 +153,27 @@ FusionLabEvo_DrawPartnerStats::
 	call FusionLabEvo_DecimalizeExp
 	ld hl, $8920
 	ld a, [Malias_CmpSrcBank]
-	add a, $BB
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld hl, $8930
 	ld a, [W_GenericRegPreserve]
-	add a, $BB
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld hl, $8940
 	ld a, [Malias_DeCmpDst]
-	add a, $BB
-	call Banked_MainScript_DrawLetter
+	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld hl, $8950
 	ld a, 0
 	jp Banked_MainScript_DrawLetter
+
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 FusionLabEvo_DecimalizeExp::
 	ld bc, -100
