@@ -30,7 +30,7 @@ FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	inc de
 	dec b
 	jr nz, .numberWriteLoop
-	jp Battle_ADVICE_BattleArticle.teardown
+	jp Battle_ADVICE_BattleArticle_teardown
 
 SECTION "Fusion/Lab Evolution Draw Item Data", ROMX[$510F], BANK[$2A]
 FusionLabEvo_DrawItemData::

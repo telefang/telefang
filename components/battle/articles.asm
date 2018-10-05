@@ -31,7 +31,7 @@ Battle_ADVICE_BattleNoArticle::
 	ld a, $E0
 	ld [W_Map_LocationStaging + $11], a
 	ld [W_Map_LocationStaging + $19], a
-	jp Battle_ADVICE_BattleArticle.teardown
+	jp Battle_ADVICE_BattleArticle_teardown
 
 Battle_ADVICE_BattleArticle::
 	M_AdviceSetup
@@ -65,7 +65,7 @@ Battle_ADVICE_BattleArticle::
 	push hl
 	push de
 	ld de, W_Map_LocationStaging + $11
-	ld hl, .the
+	ld hl, Battle_ADVICE_BattleArticle_articles.the
 	ld b, $F
 	
 .copyLoopA
@@ -81,7 +81,7 @@ Battle_ADVICE_BattleArticle::
 	ld a, $E0
 	ld [de], a
 	ld de, W_Map_LocationStaging + $19
-	ld hl, .thelower
+	ld hl, Battle_ADVICE_BattleArticle_articles.thelower
 	ld b, $F
 	
 .copyLoopB
@@ -99,12 +99,14 @@ Battle_ADVICE_BattleArticle::
 	pop de
 	pop hl
 
-.teardown
+;used in fusionlabevo/number_utils.asm
+Battle_ADVICE_BattleArticle_teardown::
 	M_AdviceTeardown
 	ret
 
 ; I am not going to bother making a speadsheet for just one word.
 
+Battle_ADVICE_BattleArticle_articles::
 .the
 	db "The "
 	db $E0
