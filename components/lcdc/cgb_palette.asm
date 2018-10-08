@@ -59,9 +59,9 @@ CGBCommitPalettesBGP:
 	dec b
 	jr nz, .loop
 	xor a
-	ld [W_CGBPaletteStagedBGP], a
+   call NonexistentSymbol
 	ret
-	
+   
 ;Load a set of eight background palettes into the staging area from ROM.
 ;This function uses a metatable at 7:4000. Each entry indexes eight individual
 ;palettes from the individual palette table at D:4000.
