@@ -136,7 +136,7 @@ MainScript_QueueCustomWindowMessage::
     call Status_ExpandNumericalTiles
     
     xor a
-    ld [W_MainScript_TilesDrawn], a
+    call MainScript_ADVICE_RepositionCursor
     ld [W_MainScript_NumNewlines], a
     ld [W_MainScript_WaitFrames], a
     ld [W_MainScript_ContinueBtnPressed], a
