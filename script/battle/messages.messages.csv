@@ -372,38 +372,38 @@ Auf geht's! Telefang!<*2>",,
 0x11415a,"が...<&0xc9e1> からは
 DNAを さいしゅ することが
 できない。",But... You couldn't get any DNA from <&0xcca3>.,,Leider konnte aus <&0xcca3> keine DNA gewonnen werden.,,
-0x11415c,<&0xca53> をてにいれた。,Obtained <&0xd6b1>.,,<&0xd6b1> erhalten.,,
+0x11415c,<&0xca53> をてにいれた。,Obtained <bold><&0xd6b1><normal>.,,<&0xd6b1> erhalten.,,
 0x11415e,"かいぞうをつづけますか?
- はい  いいえ<*A>","Continue fusing?
+ はい  いいえ<*A>","Continue augmentation?
 <Q>Yes<|>No</Q><*A>",,"Weiter fusionieren?
 <0>Ja<0xF0>Nein<*A>",,
 0x114160,"けいけんちをすこしえた。
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received a small amount of experience.
-Continue fusing?
+Continue augmentation?
 <Q>Yes<|>No</Q><*A>",,"Eine kleine Menge an Erfahrungspunkten erhalten.
 Weiter fusionieren?
 <0>Ja<0xF0>Nein<*A>",,
 0x114162,"けいけんちをえた。
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received some experience.
-Continue fusing?
+Continue augmentation?
 <Q>Yes<|>No</Q><*A>",,"Einiges an Erfahrungspunkten erhalten!
 Weiter fusionieren?
 <0>Ja<0xF0>Nein<*A>",,
 0x114164,"けいけんちをかなリえた!!
 かいぞうをつづけますか?
  はい  いいえ<*A>","Received a large amount of experience!!
-Continue fusing?
+Continue augmentation?
 <Q>Yes<|>No</Q><*A>",,"Eine große Menge an Erfahrungspunkten erhalten!!
 Weiter fusionieren?
 <0>Ja<0xF0>Nein<*A>",,
-0x114166,<S3>かいぞうかいし!!<*4>,<S3>Fusion in progress!!<*4>,,<S3>Fusion im Gange!<*4>,,
+0x114166,<S3>かいぞうかいし!!<*4>,<S3>Augmentation in progress!!<*4>,,<S3>Fusion im Gange!<*4>,,
 0x114168,<S3>じっけんかいし!!<*4>,<S3>Experiment in progress!!<*4>,,<S3>Experiment im Gange!!<*4>,,
 0x11416a,"<&0xca53> は
 かいぞうしんか した!!
-<&0xca00> になった。<*2>","<&0xd6b1> has Fusion evolved!!
-Evolved into <&0xccc0>.<*2>",,"<&0xd6b1> hat sich durch Fusion weiterentwickelt!!
+<&0xca00> になった。<*2>","Bionic evolution! <&0xd6b1>
+evolved into <&0xccc0>.<*2>",,"<&0xd6b1> hat sich durch Fusion weiterentwickelt!!
 Es hat sich zu <&0xccc0> entwickelt!<*2>",,
 0x11416c,"<&0xca53> は
 じっけんしんか した!!
@@ -430,7 +430,7 @@ Es hat sich zu <&0xccc0> entwickelt.<*2>",,
 0x11417a,カギをつかった。,You used the key.,,Du setzt den Schlüssel ein.,,
 0x11417c,カギがかかっている。,It's locked.,,Ist verschlossen.,,
 0x11417e,"<S15> <S1>『<&0xca53>』を
-<S0>        <S2> てにいれた。","<S1>""<&0xca53>"" <S2>obtained.",,"<S15> <S1>""<&0xca53>""
+<S0>        <S2> てにいれた。",<S1><bold><&0xca53><normal> <S2>obtained.,,"<S15> <S1>""<&0xca53>""
 <S0>        <S2> erhalten<S2>.",,
 0x114180,"あれ? <&name>?
 ほかのトモダチと
