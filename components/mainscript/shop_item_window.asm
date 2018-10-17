@@ -136,7 +136,7 @@ MainScript_QueueCustomWindowMessage::
     call Status_ExpandNumericalTiles
     
     xor a
-    ld [W_MainScript_TilesDrawn], a
+    call MainScript_ADVICE_RepositionCursor
     ld [W_MainScript_NumNewlines], a
     ld [W_MainScript_WaitFrames], a
     ld [W_MainScript_ContinueBtnPressed], a
@@ -186,36 +186,26 @@ MainScript_DrawQuantity::
     ld a, 99
     
 .decimalize
-    call MainScript_DrawQuantity_Prepare
+    call Status_DecimalizeStatValue
     
-    ld a, $C7
+    ld a, $A
     ld hl, $8C80
-    call MainScript_DrawLetter
+    call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
     
     ld a, [W_GenericRegPreserve]
     swap a
     and $F
-    add a, $BB
     ld hl, $8C90
-    call MainScript_DrawLetter
+    call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
     
     ld a, [W_GenericRegPreserve]
     and $F
-    add a, $BB
     ld hl, $8CA0
-    call MainScript_DrawQuantity_Finalise
+    call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
     
     ret
-    
-SECTION "Main Script Shop Item Window 5 Quantity Fix", ROMX[$7FA0], BANK[$B]
-MainScript_DrawQuantity_Prepare::
-    call Status_DecimalizeStatValue
-    ld a,1
-    ld [W_MainScript_VWFDisable],a
-    ret
-    
-MainScript_DrawQuantity_Finalise::
-    call MainScript_DrawLetter
-    xor a
-    ld [W_MainScript_VWFDisable],a
-    ret
+	
+    nop
+    nop
+    nop
+    nop

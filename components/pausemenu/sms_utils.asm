@@ -10,6 +10,8 @@ W_PauseMenu_SMSScrollMax:: ds 1
 W_PauseMenu_SMSOriginPtr:: ds 2
 W_PauseMenu_SMSDrawAddressBuffer:: ds 2
 W_PauseMenu_SMSArrowAnimationStage:: ds 1
+W_PauseMenu_SMSLineAddressCache:: ds 2
+W_PauseMenu_SMSLineNumberCache:: ds 1
 
 SECTION "Pause Menu SMS Utils", ROMX[$7028], BANK[$4]
 PauseMenu_SMSListingInputHandler::
@@ -236,6 +238,7 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
 	call PauseMenu_ADVICE_SMSCountLines
 	call PauseMenu_ADVICE_SMSDrawArrows
 	call PauseMenu_ADVICE_SMSDrawArrowBob
+	call PauseMenu_ADVICE_SMSLineSetInitialCache
 	ld c, 0
 	call PauseMenu_ADVICE_SMSFirstDrawHelper
 	ld c, 1
@@ -254,7 +257,7 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
 
 SECTION "Pause Menu SMS Utils First Draw Helper ADVICE", ROMX[$4E00], BANK[$1]
 PauseMenu_ADVICE_SMSFirstDrawHelper::
-	call PauseMenu_ADVICE_SMSLocateLine
+	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
 	ld a, c
 	call PauseMenu_ADVICE_SMSFindLineForDrawing
 	call PauseMenu_ADVICE_SMSDrawLine
@@ -286,34 +289,58 @@ PauseMenu_ADVICE_SMSLocateMessage::
 	ld [W_PauseMenu_SMSOriginPtr + 1], a
 	ret
 
-SECTION "Pause Menu SMS Utils Locate Line ADVICE", ROMX[$4D70], BANK[$1]
-PauseMenu_ADVICE_SMSLocateLine::
+SECTION "Pause Menu SMS Utils Locate Line ADVICE", ROMX[$4D60], BANK[$1]
+PauseMenu_ADVICE_SMSLocateLineRelativeToCache::
 ; c is the line number we are searching for.
-	call PauseMenu_ADVICE_SMSGetOriginPointer
-	ld b, 0
+	call PauseMenu_ADVICE_SMSGetCachedLine
+	ld b, a
+	ld a, c
+	or a
+	jr z, .originPlz
+	ld a, b
+	cp c
+	jr z, .exit
+	jr c, .forwardLoop
 
-.searchLoop
+.reverseLoop
 	ld a, c
 	cp b
-	jr z, .exitLoop
-
+	jr z, .exit
+	dec hl
+	dec hl
 	push bc
 	call MainScript_LoadFromBank
 	pop bc
+	cp $E2
+	jr nz, .reverseLoop
+	dec b
+	jr .reverseLoop
 
+.originPlz
+	call PauseMenu_ADVICE_SMSGetOriginPointer
+	ld b, 0
+	jr .exit
+
+.forwardLoop
+	ld a, c
+	cp b
+	jr z, .exit
+	push bc
+	call MainScript_LoadFromBank
+	pop bc
 	cp $E1
 	jr z, .endCodeFound
 	cp $E2
-	jr nz, .notNewLine
+	jr nz, .forwardLoop
 	inc b
-	
-.notNewLine
-	jr .searchLoop
+	jr .forwardLoop
 
 .endCodeFound
 	dec hl
 
-.exitLoop
+.exit
+	ld a, b
+	call PauseMenu_ADVICE_SMSSetCachedLine
 	call PauseMenu_ADVICE_SMSSetPointer
 	ret
 
@@ -561,7 +588,7 @@ PauseMenu_ADVICE_SMSScrollUp::
 	dec a
 	ld [W_PauseMenu_SMSScrollPos], a
 	ld c, a
-	call PauseMenu_ADVICE_SMSLocateLine
+	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
 	call PauseMenu_ADVICE_SMSDrawLine
 	ld hl, $9640
 	ld de, $9400
@@ -590,7 +617,7 @@ PauseMenu_ADVICE_SMSScrollDown::
 	ld c, 5
 	add c
 	ld c, a
-	call PauseMenu_ADVICE_SMSLocateLine
+	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
 	call PauseMenu_ADVICE_SMSDrawLine
 	call PauseMenu_ADVICE_SMSMapArrows
 	ld a, 2
@@ -764,7 +791,28 @@ PauseMenu_ADVICE_SMSMapBottomArrow::
 	call PauseMenu_ADVICE_SMSMapArrow
 	ret
 
-SECTION "Pause Menu SMS Utils Common Helper ADVICE", ROMX[$6B99], BANK[$1]
+SECTION "Pause Menu SMS Utils Common Helper ADVICE", ROMX[$6B7D], BANK[$1]
+PauseMenu_ADVICE_SMSGetCachedLine::
+	ld a, [W_PauseMenu_SMSLineAddressCache]
+	ld l, a
+	ld a, [W_PauseMenu_SMSLineAddressCache + 1]
+	ld h, a
+	ld a, [W_PauseMenu_SMSLineNumberCache]
+	ret
+
+PauseMenu_ADVICE_SMSLineSetInitialCache::
+	call PauseMenu_ADVICE_SMSGetOriginPointer
+	xor a
+	; This continues into PauseMenu_ADVICE_SMSSetCachedLine because it saves 3 to 4 bytes of code.
+
+PauseMenu_ADVICE_SMSSetCachedLine::
+	ld [W_PauseMenu_SMSLineNumberCache], a
+	ld a, l
+	ld [W_PauseMenu_SMSLineAddressCache], a
+	ld a, h
+	ld [W_PauseMenu_SMSLineAddressCache + 1], a
+	ret
+
 PauseMenu_ADVICE_SMSArrows::
 	INCBIN "build/components/pausemenu/sms_arrows.1bpp", 0, 16
 

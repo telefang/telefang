@@ -18,7 +18,7 @@ Alright?
 ひだリがわの カウンターで
 『じっけんシンカ』か
 『かいぞうシンカ』を
-おこなうことができます","In other shops, you can perform ""Fusion"" and ""Lab"" evolution at the left counter.",,
+おこなうことができます","In other shops, you can perform <bold>Bionic<normal> and <bold>Lab evolution<normal> at the left counter.",,
 0x12000c,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 2
 0x12000e,"<&0xca00>チルになリます。
@@ -35,12 +35,12 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120018,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます","You can evolve your Denjuu through ""Fusion"" here.",,
+できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
 0x12001a,"『かいぞうしよう』を
-みせてください。","Let me see your ""Fusion pass"".",,
+みせてください。",Let me see your Augment Pass.,,
 0x12001c,"この『かいぞうしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Fusion pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,
 0x12001e,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 3
 0x120020,"<&0xca00>チルになリます。
@@ -59,10 +59,10 @@ Alright?
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu using the laboratory here.,,
 0x12002c,"『じっけんしよう』を
-みせてください。","Let me see your ""Lab pass"".",,
+みせてください。",Let me see your Lab Pass.,,
 0x12002e,"この『じっけんしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Lab pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,
 0x120030,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 4
 0x120032,"<&0xca00>チルになリます。
@@ -81,10 +81,10 @@ Alright?
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu using the laboratory here.,,
 0x12003e,"『じっけんしよう』を
-みせてください。","Let me see your ""Lab pass"".",,
+みせてください。",Let me see your Lab Pass.,,
 0x120040,"この『じっけんしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Lab pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,
 0x120042,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 5 (Unused)
 0x120044,"<&0xca00>チルになリます。
@@ -101,9 +101,9 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,(Unused)
 0x12004e,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます","You can evolve your Denjuu through ""Fusion"" here.",,(Unused)
+できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,(Unused)
 0x120050,"『かいぞうしよう』を
-みせてください。","Let me see your ""Fusion pass"".",,(Unused)
+みせてください。",Let me see your Augment Pass.,,(Unused)
 0x120052,"この『きょかしょう』では
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this permit.,,"(Unused)
@@ -126,10 +126,10 @@ Alright?
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu using the laboratory here.,,
 0x120062,"『じっけんしよう』を
-みせてください。","Let me see your ""Lab pass"".",,
+みせてください。",Let me see your Lab Pass.,,
 0x120064,"この『じっけんしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Lab pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,
 0x120066,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 7
 0x120068,"<&0xca00>チルになリます。
@@ -146,12 +146,12 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120072,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます","You can evolve your Denjuu through ""Fusion"" here.",,
+できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
 0x120074,"『かいぞうしよう』を
-みせてください。","Let me see your ""Fusion pass"".",,
+みせてください。",Let me see your Augment Pass.,,
 0x120076,"この『かいぞうしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Fusion pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,
 0x120078,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 8
 0x12007a,"<&0xca00>チルになリます。
@@ -168,12 +168,12 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120084,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます","You can evolve your Denjuu through ""Fusion"" here.",,
+できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
 0x120086,"『かいぞうしよう』を
-みせてください。","Let me see your ""Fusion pass"".",,
+みせてください。",Let me see your Augment Pass.,,
 0x120088,"この『かいぞうしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Fusion pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,
 0x12008a,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 9
 0x12008c,"<&0xca00>チルになリます。
@@ -190,12 +190,12 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120096,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます","You can evolve your Denjuu through ""Fusion"" here.",,
+できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
 0x120098,"『かいぞうしよう』を
-みせてください。","Let me see your ""Fusion pass"".",,
+みせてください。",Let me see your Augment Pass.,,
 0x12009a,"この『かいぞうしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Fusion pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,
 0x12009c,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 10
 0x12009e,"<&0xca00>チルになリます。
@@ -214,10 +214,10 @@ Alright?
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu using the laboratory here.,,
 0x1200aa,"『じっけんしよう』を
-みせてください。","Let me see your ""Lab pass"".",,
+みせてください。",Let me see your Lab Pass.,,
 0x1200ac,"この『じっけんしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Lab pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,
 0x1200ae,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 11
 0x1200b0,"<&0xca00>チルになリます。
@@ -234,12 +234,12 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x1200ba,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます","You can evolve your Denjuu through ""Fusion"" here.",,
+できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
 0x1200bc,"『かいぞうしよう』を
-みせてください。","Let me see your ""Fusion pass"".",,
+みせてください。",Let me see your Augment Pass.,,
 0x1200be,"この『かいぞうしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Fusion pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,
 0x1200c0,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 12
 0x1200c2,"<&0xca00>チルになリます。
@@ -256,12 +256,12 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x1200cc,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます","You can evolve your Denjuu through ""Fusion"" here.",,
+できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
 0x1200ce,"『かいぞうしよう』を
-みせてください。","Let me see your ""Fusion pass"".",,
+みせてください。",Let me see your Augment Pass.,,
 0x1200d0,"この『かいぞうしよう』では
 あなたのつれているデンジュウを
-シンカさせることができません。",You can't evolve your current Denjuu with this Fusion pass.,,
+シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,
 #######,57 strings   -   Intro story,,,
 0x1200d2,"この おおきな きから
 デンジュウカイヘ いけるという
@@ -555,11 +555,11 @@ Nice to meet ya!",,
 あるじゃろう
 『ちず』は スタートボタンを
 おすとみられるぞ","Take this as well.
-It is a ""Map"" of this world.
+It is a <bold>Map<normal> of this world.
 It is blank right now, but you can use it to view the places you have been.
 I am sure it will be of use to you.
-You can view the Map by pressing the Start button.",,
-0x12013a,『ちず』を てにいれた,Got the Map!,,
+You can view the Map by pressing <bold>the Start Button<normal>.",,
+0x12013a,『ちず』を てにいれた,Got the <bold>Map<normal>!,,
 0x12013c,"<&0xc92c>くん
 ワタシは このむらで
 もうすこし しらベたいことが
@@ -1268,7 +1268,7 @@ Here, I'll give it to you! As a present!
 No, no! It's perfectly fine!
 Just take it with you and don't say a word!
 In exchange, all I ask for is your honest vote!",,
-0x12c022,『どうくつのカギ』をてにいれた!,"Obtained ""Cavern Key""!",,
+0x12c022,『どうくつのカギ』をてにいれた!,Obtained the <bold>Cavern Key<normal>!,,
 0x12c024,カギをあけた,Used the key.,,
 0x12c026,"たーリらリらー
 とうとうクリノンむらの
@@ -1370,9 +1370,9 @@ I don't even need this stuff anymore, take it for all I care!!",,
 0x12c03c,"『アンテナのきのカギ』を
 とリもどした!","Retrieved ""Antenna Tree Key""!",,
 0x12c03e,"『リボルバーガン』を4つ
-てにいれた!","Got 4 ""Revolvers""!",,
+てにいれた!",Got <bold>4 Revolvers<normal>!,,
 0x12c040,"『テレカ』を4まい
-てにいれた!","Got 4 ""Phone Cards""!",,
+てにいれた!",Got <bold>4 Phone Cards<normal>!,,
 0x12c042,"カクザとうも おいだしたし
 ここからでようぜ!",The Kakuza Party is gone. Let's get out of here!,,
 0x12c044,"もしもし?マツキヨですけど?
@@ -1897,7 +1897,7 @@ Tell that to the chief when you see him, too.",,
 0x12c104,"..オマエとは えんがあったら
 また あいたいな...
 オイラのナマエは『ガンバンオー』じゃあ またな!","...Hey, if you're in the area, feel free to drop by.
-My name is ""Ganbanno"". Seeya!",,
+My name is ""Ganbanno"". See ya!",,
 0x12c106,"... ... ... ...
 はなしだけでも おさに
 きいてみるか
@@ -2019,7 +2019,7 @@ Hmm, yes...",,
 それを もってきてもらおうか
 トリぐみの おさが もっている
 はずじゃ","I've got it!
-Lately I've been wanting to own a ""Plush Toy"".
+Lately I've been wanting to own a <bold>Plush Toy<normal>.
 How about you bring one to me?
 The chief of the Bird Clan should have one.",,
 0x12c130,"『ぬいぐるみ』を もってきたら
@@ -2027,16 +2027,16 @@ The chief of the Bird Clan should have one.",,
 するんだな
 わかった!
 トリぐみの おさに いって
-もらってくるよ","So if I bring you a ""Plush Toy"", you'll make peace with the Bird Clan?
+もらってくるよ","So if I bring you a Plush Toy, you'll make peace with the Bird Clan?
 Alright!
 I'll go talk to the Bird Chief and bring it back here!",,
 0x12c132,"トリぐみのおさがもっている
 『ぬいぐるみ』をもってこないと
-なかなおリは できないぞ!","Go ask the chief of the Bird Clan for his ""Plush Toy"" and bring it back to me.
+なかなおリは できないぞ!","Go ask the chief of the Bird Clan for his <bold>Plush Toy<normal> and bring it back to me.
 If you do, I will agree to stop the fighting!",,
 0x12c134,"どうじゃった?
 .....『ぬいぐるみ』とな?はて...どこにやったかの?","How did it go?
-....A ""Plush Toy"", eh?
+....A Plush Toy, eh?
 Alright then, hmmm... Where did I leave it?",,
 0x12c136,"そうじゃ!
 ガンバンオーのヤツが もって
@@ -2052,7 +2052,7 @@ Sorry to ask you this, but could you find him and ask for it back?
 Thank you! Good luck!",,
 0x12c13a,"フリジアで ガンバンオーを
 さがしだして 『ぬいぐるみ』を
-もってきてくれ!","Please, find Ganbanno in Freesia and bring back the ""Plush Toy""!",,
+もってきてくれ!","Please, find Ganbanno in Freesia and bring back the <bold>Plush Toy<normal>!",,
 0x12c13c,"あーーーーーっ!
 このまえあった ニンゲンじゃん
 わざわざたずねてきてくれたんだ!ウレシー!!","Wow! If it isn't the human that I met before!
@@ -2068,8 +2068,8 @@ Even when things were so bad before...?
 What do you mean they ""might"" though?
 Is there a problem?",,
 0x12c142,"ヘビぐみの おさが 
-『ぬいぐるみ』をもってこいっていってるんだ","Well, the chief of the Snake Clan is asking us to bring him a ""Plush Toy""...",,
-0x12c144,『ぬいぐるみ』...,"A ""Plush Toy""...",,
+『ぬいぐるみ』をもってこいっていってるんだ","Well, the chief of the Snake Clan is asking us to bring him a Plush Toy...",,
+0x12c144,『ぬいぐるみ』...,A Plush Toy...,,
 0x12c146,"ひょっとして オイラがもってる
 これのことかい?","Oh, you mean like this one here?",,
 0x12c148,"それ!それがあれば
@@ -2086,7 +2086,7 @@ Telefang me!",,
 0x12c14c,"アイタタ...キミ つよいね!
 はい やくそくだったね","Yowch... You're pretty strong!
 Alright, as promised, here you go!",,
-0x12c14e,『ぬいぐるみ』をてにいれた!,"Got the ""Plush Toy""!",,
+0x12c14e,『ぬいぐるみ』をてにいれた!,Got the <bold>Plush Toy<normal>!,,
 0x12c150,"あっ! ってことは
 オイラが まちをでたリゆうが
 なくなっちゃったんだ
@@ -2106,7 +2106,7 @@ I'm sure they'd be happy to see you!",,
 じゃあ またこんど!","Well, when you put it that way...
 Alright!
 You go ahead first, I'll head back to town in a little while.
-Seeya later!",,
+See ya later!",,
 0x12c156,"さきに もどっていてよ
 オイラもあとから もどるからさ",Go on! I'll head back to town later.,,
 0x12c158,"おぉ!!!
@@ -2114,7 +2114,7 @@ Seeya later!",,
 きてくれたのか!
 これで ヘビぐみのデンジュウと
 なかなおリができるの!!","Oho, well done!
-I see you managed to find the ""Plush Toy""!
+I see you managed to find the Plush Toy!
 With this the Snake Chief should agree to make amends!",,
 0x12c15a,"ヘっ! これぐらいカンタンだぜ!んじゃ あとは これを
 ヘビぐみの おさに
@@ -2128,9 +2128,9 @@ Now all that's left is to take it over to the Snake Chief!",,
 First I must reward you for all you have done.
 Here, please take this.",,
 0x12c15e,"『かいぞうしよう2』
-をてにいれた","Got ""Fusion Pass 2"".",,
+をてにいれた",Got <bold>Augment Pass 2<normal>.,,
 0x12c160,"『じっけんしよう2』
-をてにいれた","Got ""Lab Pass 2"".",,
+をてにいれた",Got <bold>Lab Pass 2<normal>.,,
 0x12c162,"ほんとに これくれるの?
 サンキュー! これで
 いろんなデンジュウを シンカ
@@ -2142,19 +2142,19 @@ Now I can evolve even more kinds of Denjuu!",,
 たのむぞ!","Hahaha, think nothing of it.
 It's us who should be thanking you.
 Now, good luck on your final errand!",,
-0x12c166,『ぬいぐるみ』を わたしますか? はい  いいえ<*A>,"Hand over the ""Plush Toy""?
+0x12c166,『ぬいぐるみ』を わたしますか? はい  いいえ<*A>,"Hand over the <bold>Plush Toy<normal>?
 <Q>Yes<|>No</Q><*A>",,
 0x12c168,"ワ ワシに くれるんじゃ
 ないのか??","Wh-What?
 You're not going to give it to me??",,
-0x12c16a,『ぬいぐるみ』を わたした,"Gave away the ""Plush Toy"".",,
+0x12c16a,『ぬいぐるみ』を わたした,Gave away the Plush Toy.,,
 0x12c16c,"おぉ!『ぬいぐるみ』じゃ
 やくそくどおリ トリぐみとは
 なかなおリを しよう
 そのあかしに アンテナのきの
 とびらのカギを あけておくぞ
 これで トリぐみと 
-なかなおリじゃー!","Yes, here it is! A ""Plush Toy""! 
+なかなおリじゃー!","Yes, here it is! A Plush Toy! 
 Then, as promised, I will call a truce between us and the Bird Clan!
 As proof, I'll give the order to unlock the Antenna Tree gates immediately.
 That should settle everything!",,
@@ -3996,9 +3996,9 @@ Tファンガーならば
 Thank you!!
 Please take these as a token of my thanks, man!",,
 0x140122,"『かいぞうしよう1』
-をてにいれた","Got ""Fusion Pass 1"".",,
+をてにいれた",Got <bold>Augment Pass 1<normal>.,,
 0x140124,"『じっけんしよう1』
-をてにいれた","Got ""Lab Pass 1"".",,
+をてにいれた",Got <bold>Lab Pass 1<normal>.,,
 0x140126,"うわっ! これって
 デンジュウを シンカさせるのに
 ぜったいいる アイテムじゃん
@@ -4031,7 +4031,7 @@ Don't tell the professor where I am!",,From Paparouna Lake
 あリがとう!!","You stopped the professor's unethical research!
 Thank you!!",,From Paparouna Lake
 0x140132,"『あたらしいDショット』
-をてにいれた","Obtained a ""New D-Shot""!",,Get a new D-Shot
+をてにいれた",Obtained a <bold>new D-Shot<normal>!,,Get a new D-Shot
 0x140134,"どんどん タバスコのジャマを
 したまえ!
 どんどんな どんどん!","Let's mess her plans right up, now! Right up!",,Talk to Nerikara in Northeast Cavern
@@ -4139,7 +4139,7 @@ Do you want an explanation?
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x140162,"『アイテム』は デンジュウたちのシンカにつかう アイテムを
-みることが できるんだ","Here, you can view your items or give them as gifts. If you want to fuse items, you need to do it in a shop.",,
+みることが できるんだ","Here, you can view your items or give them as gifts. If you want to augment Denjuu using your items, you need to go to a shop.",,
 0x140164,"つぎは『メール』だ
 これについて ききたいか?
  はい  いいえ<*A>","Next is ""Texts"".
@@ -4263,7 +4263,7 @@ Kids like us are allowed to go to the Denjuu World whenever we want, but adults 
 Thanks for telling me about it, though!",,
 0x140196,"んじゃがんばって トモダチ
 ふやせよな!","Well then, good luck making friends!
-Seeya later!",,
+See ya later!",,
 0x140198,"うん <&name>もね!
 じゃ バイバーイ","Yeah, you too <&name>!
 Bye-bye!",,
@@ -4309,7 +4309,7 @@ What do you mean??",,
 This type only happens with ""Natural Denjuu"", though.",,
 0x1401aa,"『かいぞうシンカ』について
 ききたいか?
- はい  いいえ<*A>","Do you wanna hear about ""Fusion evolution""?
+ はい  いいえ<*A>","Do you wanna hear about ""Bionic evolution""?
 <Q>Yes<|>No</Q><*A>",,
 0x1401ac,"『かいぞうシンカ』は
 デンジュウとアイテムを
@@ -4317,8 +4317,8 @@ This type only happens with ""Natural Denjuu"", though.",,
 シンカさせることが できるんだ
 これは『しぜんデンジュウ』
 『ぶんめいデンジュウ』で
-おこなうことができるんだ","Fusion evolution is where you combine a Denjuu with an item in order to get it to evolve.
-This type works with both ""Natural"" and ""Cultivated"" Denjuu. ",,
+おこなうことができるんだ","Bionic evolution is when you combine a Denjuu with an item in order to get it to evolve.
+This method works with Natural and Cultivated Denjuu.",,
 0x1401ae,"『じっけんシンカ』について
 ききたいか?
  はい  いいえ<*A>","Do you wanna hear about ""Lab evolution""?
@@ -4330,14 +4330,14 @@ This type works with both ""Natural"" and ""Cultivated"" Denjuu. ",,
 かけあわせることによって
 おこなうことが できる
 シンカなんだ
-これは『ぶんめいデンジュウ』がおこなえる シンカなんだ","Lab evolution involves taking DNA from an evolved ""Natural"" Denjuu and combining it with the DNA of a ""Cultivated"" Denjuu.
+これは『ぶんめいデンジュウ』がおこなえる シンカなんだ","Lab evolution involves taking DNA from an evolved Natural Denjuu and combining it with the DNA of a Cultivated Denjuu.
 This method only works for Cultivated Denjuu.",,
 0x1401b2,"シンカのこと わかったかな?
 わからなかったら また
 こえを かけてくれよ","So, do you get how evolution works now?
 If you want to hear it again, just let me know.",,
 0x1401b4,"それじゃあ がんばって
-トモダチを ふやしてくれよな","Well, seeya around.
+トモダチを ふやしてくれよな","Well, see ya around.
 Good luck meeting lots of Denjuu!",,
 #######,NPC: Human guy in Toulipa,,,
 0x1401b6,"いまのボクには キミだけが

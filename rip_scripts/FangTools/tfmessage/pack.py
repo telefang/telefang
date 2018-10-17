@@ -117,6 +117,12 @@ def parse_string(string, known_tokens):
                     end_wrapper = True
                     special = special[1:]
                 
+                #Aliases for Bold and Normal font
+                if special == "bold":
+                    special = "0xF2"
+                elif special == "normal":
+                    special = "0xF3"
+                
                 try:
                     special_num = int(special, 16)
                 except ValueError:

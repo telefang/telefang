@@ -111,8 +111,8 @@ What did I do wrong?!<*2>",
 Yeah! / Not really",
 0x13002c,"ダッシュは なにボタン?
  Aボタン Bボタン<*A>","What button do you hold to run?
-<Q>A Button<|>B Button</Q><*A>","What button do you hold to run?
-A Button / B Button",
+<Q>The A Button<|>The B Button</Q><*A>","What button do you hold to run?
+The A Button / The B Button",
 0x13002e,"どうしても やリたくないの?
  どうしても つぎにするよ<*A>","Are you suuure you don't wanna try?
 <Q>In your dreams<|>Maybe next time</Q><*A>","Are you suuure you don't wanna try?
@@ -486,7 +486,7 @@ I'm tired / Reasons.",
 0x130128,"キカイとくみあわせて
 しんかさせるのは?
  かこうしんか かいぞうしんか<*A>","What's it called when you evolve a Denjuu using a machine?
-<Q>Assembly evolution<|>Fusion evolution</Q><*A>",,
+<Q>Assembly evolution<|>Bionic evolution</Q><*A>",,
 0x13012a,"オマエなら そういうと
 おもったんだよな
  やっぱリ? うそつけ<*A>","Yeah, I thought you'd say that.
@@ -1883,12 +1883,8 @@ That doesn't tell me anything!",
 #######,#083,,,
 0x11007c,"あめ あめ ふれ ふれ
 かあさんが~ってうたしってる?
- しってる ちょっとだけ<*A>","Jack and Jill♪
-Went up the hilll♪
-Do you know that old nursery rhyme?
-<Q>Yes<|>Vaguely</Q><*A>","Jack and Jill♪
-Went up the hilll♪
-Do you know that old nursery rhyme?
+ しってる ちょっとだけ<*A>","Jack and Jill went up the hill... Do you know that old nursery rhyme?
+Yes / Vaguely","Jack and Jill went up the hill... Do you know that old nursery rhyme?
 Yes / Vaguely",Ame ame fure fure → Jack and Jill
 0x11007e,"そのあとのジャノメでおむかえ
 のジャノメってなに?
@@ -1900,7 +1896,7 @@ A painful nail / A bucket","Janome → pail, snake eye → painful nail"
 <Q>Yeah!<|>No idea</Q><*A>","Is there another verse...?
 Yeah! / No idea",
 0x110082,"ヘびのめなんかもって
-どうするの?こわいよー!<*2>",Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!<*2>,Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!,
+どうするの?こわいよー!<*2>",Is that some kinda weapon?! That's pretty hardcore for a nursery rhyme!<*2>,Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!,
 0x110084,"カサのことなんだ!
 わからなかったよー!<*2>","Oh, a bucket! I had no idea!<*2>","Oh, a bucket! I had no idea!",
 0x110086,"あるんだ!こんどかみに
@@ -1932,7 +1928,7 @@ Happy birthday to you!♪
 0x110094,"オマエだって だましたろ!
 どうざいだよね!!<*2>","Yeah, but then you tried to fool me, so we're even!<*2>","Yeah, but then you tried to fool me, so we're even!<*2>",
 0x110096,"すなおにあやまったから
-ゆるしてあげるよ...<*2>","Alright, alright, I forgive you...<*2>",-,
+ゆるしてあげるよ...<*2>","Alright, alright, I forgive you...<*2>","Alright, alright, I forgive you...<*2>",
 #######,#085,,,
 0x110098,"ねーアーティストって
 しってる?おいしい?
@@ -2361,7 +2357,7 @@ Sorry... / I'll start",
 0x1101c8,"そっかーいまのがすごくきに
 いってるんだねー<*2>",Now I really wanna know what phone you already have...<*2>,Now I really wanna know what phone you already have...<*2>,
 0x1101ca,"なんだ ほしいのかぁ じゃあ
-こんどいっしょにかいにいこ!<*2>","Oh, so you do want a new one? Let's go shopping together next time!<*2>","Oh, so you do want a new one? Let's go shopping together next time!<*2>",
+こんどいっしょにかいにいこ!<*2>","Oh, so you do want a new one? Let's go shopping sometime!<*2>","Oh, so you do want a new one? Let's go shopping sometime!<*2>",
 #######,#107,,,
 0x1101cc,<&name>はヤキュウする? するよ しないなぁ<*A>,"Hey, <&name>, do you play baseball?
 <Q>I do<|>Nah...</Q><*A>","Hey, <&name>, do you play baseball?
@@ -3446,7 +3442,7 @@ Just kidding / You could!",
 0x1600b0,"アリガト
 あとはじぶんでやってみる<*2>",Thanks! I'll try for myself later!<*2>,Thanks! I'll try for myself later!,
 0x1600b2,"なんだ<&name>も
-わかってないんじゃないか!<*2>","Haha! You don't know either, <&name>?!<*2>","Haha! You don't know either, <&name>?!",
+わかってないんじゃないか!<*2>","Hah! You don't know either, <&name>?!<*2>","Hah! You don't know either, <&name>?!",
 0x1600b4,うそなのー?ヒドイよー!<*2>,Huh? That's mean! I believed you!<*2>,Huh? That's mean! I believed you!,
 0x1600b6,"よし じゃあやってみるよ!!
 むむむうう<*2>","Alright, then I'll try right now!
@@ -3526,8 +3522,8 @@ Yeah! / It's hard, though!",
 0x1600e6,"しゅうじか でもオレ
 カンジがかけないからなぁ
  そうか ソロバンは?<*A>","My handwriting's terrible, though...
-<Q>Oh.<|>Quick math, then?</Q><*A>","My handwriting's terrible, though...
-Oh. / Quick math, then?","Kanji ain't no English thing! Also, abacuses aren't a cultural phenomenon. Changes ahoy."
+<Q>Oh.<|>Mental math, then?</Q><*A>","My handwriting's terrible, though...
+Oh. / Mental math, then?","Kanji ain't no English thing! Also, abacuses aren't a cultural phenomenon. Changes ahoy."
 0x1600e8,よーし ピアノならうぞ!<*2>,"Okay, I'll go for piano, then!<*2>","Okay, I'll go for piano, then!",
 0x1600ea,むずかしいのはイヤダ やーめた<*2>,Nevermind then. I don't like difficult things.<*2>,Nevermind then. I don't like difficult things.,
 0x1600ec,まずはじのベんきょうからだ!<*2>,I guess I'll start by improving my handwriting!<*2>,I guess I'll start by improving my handwriting!,

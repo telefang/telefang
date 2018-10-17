@@ -2,6 +2,13 @@ INCLUDE "telefang.inc"
 
 IMPORT SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
 
+SECTION "Shorthand for Draw Shop Number Gfx Auxcode", ROM0[$3E55]
+PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
+	ld e, a
+	ld a, Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx & $FF
+	call PatchUtils_AuxCodeJmp
+	ret
+
 SECTION "Patch Utilities", ROM0[$0063]
 PatchUtils_ResetVector: jp PatchUtils_ResetGame
 ; The word "Denjuu" for use by E5 control codes. It is not currently in use.

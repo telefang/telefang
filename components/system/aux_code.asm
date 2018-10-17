@@ -41,6 +41,10 @@ Banked_TitleMenu_ADVICE_LoadSGBFiles::
 	jp TitleMenu_ADVICE_LoadSGBFiles
 	nop
 
+Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest::
+	jp TitleMenu_ADVICE_LoadSGBFilesSoundTest
+	nop
+
 Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
 	jp TitleMenu_ADVICE_UnloadSGBFilesOverworld
 	nop
@@ -139,6 +143,14 @@ Banked_PauseMenu_ADVICE_SMSMapTiles::
 	
 Banked_PauseMenu_ADVICE_SMSContentsCheckInput::
 	jp PauseMenu_ADVICE_SMSContentsCheckInput
+	nop
+	
+Banked_Battle_ADVICE_StatusInflictionArticle::
+	jp Battle_ADVICE_StatusInflictionArticle
+	nop
+	
+Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
+	jp FusionLabEvo_ADVICE_DrawShopNumberGfx
 	nop
 
 ;The next two are at the END of Bank 1 and likely not conflicting

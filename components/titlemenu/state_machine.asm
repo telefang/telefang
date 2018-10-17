@@ -234,8 +234,8 @@ TitleMenu_StateMenuInputHandler::
     ld [W_Status_NumericalTileIndex], a
     call Status_ExpandNumericalTiles
     
-    ld a, M_TitleMenu_StateLoadSoundTestScreen
-    ld [W_SystemSubState], a
+    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest & $FF)
+    call PatchUtils_AuxCodeJmp
     jp $6CD3
     
 .continueSelected
