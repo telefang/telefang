@@ -1,0 +1,16 @@
+{
+  "timeZone": "Europe/Paris",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "sheets": {
+    "macros": [{
+      "menuName": "Update font metrics sheet",
+      "functionName": "updateMetricSheet"
+    }, {
+      "menuName": "Auto-format selected rows (currently SMS and Field Guide only)",
+      "functionName": "formatSelectedRows",
+      "defaultShortcut": "Ctrl+Alt+Shift+1"
+    }]
+  }
+}
