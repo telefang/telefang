@@ -1,28 +1,43 @@
 "use strict";
 
-var METRIC_SHEET_NAME = "Font metrics";
+var FONT_METRIC_SHEET_NAME = "Font metrics";
 
 var CHARMAP_URL = "https://raw.githubusercontent.com/telefang/telefang/patch/charmap.asm";
 var FONT_NAMES = ["normal", "bold", "narrow"];
-var METRIC_CSV_URLS = {
+var FONT_METRIC_CSV_URLS = {
   normal: "https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font.tffont.csv",
   bold: "https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_bold.tffont.csv",
   narrow: "https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_narrow.tffont.csv"
 };
 
-function updateMetricSheet() {
-  var sheet = getMetricSheet();
-  
+function updateFontSheets() {
+  var charmap = fetchCharmap();
+  var metrics = fetchFontMetrics();
+  populateFontMetricSheet(charmap, metrics);
+}
+
+function fetchCharmap() {
   var r = UrlFetchApp.fetch(CHARMAP_URL);
   var charmap = r.getContentText('utf-8');
   charmap = parseCharmap(charmap);
+  return charmap;
+}
+
+function fetchFontMetrics() {
+  var metrics = {};
   
-  var width_lists = [];
   for (var i = 0; i < FONT_NAMES.length; i++) {
-    r = UrlFetchApp.fetch(METRIC_CSV_URLS[FONT_NAMES[i]]);
+    var font_name = FONT_NAMES[i];
+    r = UrlFetchApp.fetch(FONT_METRIC_CSV_URLS[font_name]);
     var widths = parseMetricCsv(r.getContentText('utf-8'));
-    width_lists.push(widths);
+    metrics[font_name] = widths;;
   }
+  
+  return metrics;
+}
+
+function populateFontMetricSheet(charmap, metrics) {
+  var sheet = getFontMetricSheet();
   
   var values = []
   for (var i = 0; i < charmap.length; i++) {
@@ -31,8 +46,8 @@ function updateMetricSheet() {
     if (char[0] === '=' || char[0] === '\'') {char = '\'' + char;}
     var code = charmap[i][1];
     var row = [char];
-    for (var j = 0; j < width_lists.length; j++) {
-      row.push(width_lists[j][code]);
+    for (var j = 0; j < FONT_NAMES.length; j++) {
+      row.push(metrics[FONT_NAMES[j]][code]);
     }
     values.push(row);
   }
@@ -46,13 +61,14 @@ function updateMetricSheet() {
   
   // And some formatting as the cherry on top.
   var textRange = sheet.getRange(range.getRow(), range.getColumn(), range.getNumRows(), 1);
+  
   var numRange = sheet.getRange(range.getRow(), range.getColumn() + 1, range.getNumRows(), range.getNumColumns() - 1);
   textRange.setNumberFormat('@');
   numRange.setNumberFormat('#');
 }
 
 function getFontMetrics() {
-  var sheet = getMetricSheet();
+  var sheet = getFontMetricSheet();
   var dataRange = sheet.getDataRange();
   var totalRows = dataRange.getLastRow();
   var frozenRows = sheet.getFrozenRows();
@@ -77,7 +93,7 @@ function getChars(sheet, totalRows, frozenRows, frozenCols) {
       typeof totalRows === 'undefined' ||
       typeof frozenRows === 'undefined' ||
       typeof frozenCols === 'undefined') {
-    sheet = getMetricSheet();
+    sheet = getFontMetricSheet();
     var dataRange = sheet.getDataRange();
     totalRows = dataRange.getLastRow();
     frozenRows = sheet.getFrozenRows();
@@ -89,9 +105,13 @@ function getChars(sheet, totalRows, frozenRows, frozenCols) {
   return chars;
 }
 
-function getMetricSheet() {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(METRIC_SHEET_NAME);
-  if (!sheet) {throw "Sheet \"" + METRIC_SHEET_NAME + "\" not found.";}
+function getFontMetricSheet() {
+  return tryGetSheet(FONT_METRIC_SHEET_NAME);
+}
+
+function tryGetSheet(name) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(name);
+  if (!sheet) {throw "Sheet \"" + name + "\" not found.";}
   return sheet;
 }
 
