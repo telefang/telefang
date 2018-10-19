@@ -25,21 +25,6 @@ for (var i = 0; i < BREAK_CHARS_ARR.length; i++) {
   BREAK_CHARS[BREAK_CHARS_ARR[i]] = true;
 }
 
-// Currently only works for the SMS and Field Guide sheet.
-// Formatting parameters only lightly configurable at the moment.
-// Would need extension to support more complex formatting (e.g. questions).
-var SHEET_PARAMS = {
-  "script/denjuu/sms.messages.csv": {
-    width: 6 * 8,
-    prelude: '',
-    envoi: '<*4>'
-  },
-  "script/denjuu/descriptions.messages.csv": {
-    width: 14 * 8,
-    prelude: '<S0>',
-    envoi: '<*4>'
-  }
-}
 function formatSelectedRows() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var sheetName = sheet.getName();

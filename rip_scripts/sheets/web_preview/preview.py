@@ -5,6 +5,7 @@ import os
 import re
 import requests
 from io import BytesIO, open
+from math import ceil
 from PIL import Image
 
 from flask import Flask, request, Response
@@ -50,23 +51,37 @@ def preview():
     text = request.args['text']
     scale = int(request.args.get('scale', 2))
     padding = int(request.args.get('padding', 0))
+    spacing = int(request.args.get('spacing', 0))
+    page_lines = request.args.get('lines-per-page')
+    page_lines = int(page_lines) if page_lines else None
 
-    image = preview_image(text, width, scale, padding)
+    image = preview_image(text, width, scale, padding, spacing, page_lines)
     png_data = BytesIO()
     image.save(png_data, format='PNG')
 
     return Response(png_data.getvalue(), mimetype='image/png')
 
-def preview_image(text, width, scale=1, padding=0):
+def preview_image(text, width, scale=1, padding=0, spacing=0, page_lines=None):
     # No text formatting, since the JavaScript part takes care of that.
-    lines = text.split('\n')
-    image = Image.new('RGBA',
-                      (padding * 2 + width, padding * 2 + len(lines) * 8),
-                      BACKGROUND_COLOR)
+    num_lines = text.count('\n') + 1
+    page_lines = num_lines if page_lines is None else page_lines
+    
+    num_pages = ceil(num_lines / page_lines)
+    page_height = 2 * padding + page_lines * 8 + (page_lines - 1) * spacing * 8
+    page_spacing = 8
+    image = Image.new(
+        'RGBA',
+        (
+            padding * 2 + width,
+            num_pages * (page_height + page_spacing) - page_spacing
+        ),
+        BACKGROUND_COLOR
+    )
 
     font = app.fonts['normal']
     text_len = len(text)
     i = 0
+    line_num = 0
     x = padding
     y = padding
     while i < text_len:
@@ -84,6 +99,13 @@ def preview_image(text, width, scale=1, padding=0):
         if char == '\n':
             x = padding
             y += 8
+            line_num += 1
+            if line_num % page_lines == 0:
+                y += padding
+                image.paste((0, 0, 0, 0), (0, y, image.width, y + 8))
+                y += 8 + padding
+            else:
+                y += 8 * spacing
         else:
             glyph_width = font['metrics'][code]
             glyph = font['glyphs'][code]
@@ -98,7 +120,6 @@ def preview_image(text, width, scale=1, padding=0):
         image = image.resize((image.width * scale, image.height * scale))
 
     return image
-
 
 @app.route('/update', methods=('POST',))
 def update():
@@ -142,7 +163,7 @@ def update():
             'glyphs': load_glyphs(BytesIO(image[1]))
         }
     
-    return "Nice yeah sure it's all cool", 200
+    return Response()
 
 def load():
     """Load font data from disk."""
