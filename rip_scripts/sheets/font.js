@@ -1,7 +1,6 @@
 "use strict";
 
 var FONT_METRIC_SHEET_NAME = "Font metrics";
-var FONT_IMAGE_SHEET_NAME = "Font graphics";
 
 var CHARMAP_URL = 'https://raw.githubusercontent.com/telefang/telefang/patch/charmap.asm';
 var FONT_NAMES = ['normal', 'bold', 'narrow'];
@@ -10,18 +9,14 @@ var FONT_METRIC_CSV_URLS = {
   bold: 'https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_bold.tffont.csv',
   narrow: 'https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_narrow.tffont.csv'
 };
-var FONT_IMAGE_URLS = {
-  normal: 'https://raw.githubusercontent.com/telefang/telefang/patch/gfx/font.png',
-  bold: 'https://raw.githubusercontent.com/telefang/telefang/patch/gfx/bold_font.png',
-  narrow: 'https://raw.githubusercontent.com/telefang/telefang/patch/gfx/narrow_font.png'
-};
+var PREVIEW_SERVICE_URL = 'http://obskyr.io:6739/preview';
+var PREVIEW_SERVICE_UPDATE_URL = 'http://obskyr.io:6739/update';
 
-function updateFontSheets() {
+function updateFontData() {
   var charmap = fetchCharmap();
   var metrics = fetchFontMetrics();
-  var images = fetchFontImages();
+  UrlFetchApp.fetch(PREVIEW_SERVICE_UPDATE_URL, {method: 'POST'});
   populateFontMetricSheet(charmap, metrics);
-  populateFontImageSheet(images);
 }
 
 function fetchCharmap() {
@@ -44,17 +39,15 @@ function fetchFontMetrics() {
   return metrics;
 }
 
-function fetchFontImages() {
-  var image_blobs = {};
-  
-  for (var i = 0; i < FONT_NAMES.length; i++) {
-    var font_name = FONT_NAMES[i];
-    r = UrlFetchApp.fetch(FONT_IMAGE_URLS[font_name]);
-    var blob = r.getAs('image/png');
-    image_blobs[font_name] = blob;
-  }
-  
-  return image_blobs;
+function fetchImagePreview(text, width) {
+  // Apparently, Google Apps Script doesn't support canvas –
+  // or any other sort of image manipulation. It sucks, but
+  // if we want preview images there's no reasonable choice
+  // but to outsource it to another server.
+  text = encodeURIComponent(text);
+  var r = UrlFetchApp.fetch(PREVIEW_SERVICE_URL + '?scale=2&padding=4&width=' + width + '&text=' + text);
+  var blob = r.getAs('image/png');
+  return blob;
 }
 
 function populateFontMetricSheet(charmap, metrics) {
@@ -86,24 +79,6 @@ function populateFontMetricSheet(charmap, metrics) {
   var numRange = sheet.getRange(range.getRow(), range.getColumn() + 1, range.getNumRows(), range.getNumColumns() - 1);
   textRange.setNumberFormat('@');
   numRange.setNumberFormat('#');
-}
-
-function populateFontImageSheet(images) {
-  var sheet = getFontImageSheet();
-  
-  var values = [[]];
-  for (var i = 0; i < FONT_NAMES.length; i++) {
-    var encoded = Utilities.base64Encode(images[FONT_NAMES[i]].getBytes());
-    values[0].push(encoded);
-  }
-  
-  var numRows = sheet.getFrozenRows() + values.length;
-  var numCols = sheet.getFrozenColumns() + values[0].length;
-  setSheetDimensions(sheet, numRows, numCols);
-  
-  var range = sheet.getRange(sheet.getFrozenRows() + 1, sheet.getFrozenColumns() + 1, values.length, values[0].length);
-  range.setValues(values);
-  range.setNumberFormat('@');
 }
 
 function getChars(sheet, totalRows, frozenRows, frozenCols) {
@@ -144,28 +119,8 @@ function getFontMetrics() {
   return fonts;
 }
 
-function getFontImages() {
-  var sheet = getFontImageSheet();
-  var frozenRows = sheet.getFrozenRows();
-  var frozenCols = sheet.getFrozenColumns();
-  
-  var images = {};
-  for (var i = 0; i < FONT_NAMES.length; i++) {
-    var encoded = sheet.getRange(frozenRows + 1 + i, frozenCols + 1).getValue();
-    images[FONT_NAMES[i]] = Utilities.newBlob(Utilities.base64Decode(encoded), 'image/png');
-  }
-  
-  Logger.log(images);
-  
-  return images;
-}
-
 function getFontMetricSheet() {
   return tryGetSheet(FONT_METRIC_SHEET_NAME);
-}
-
-function getFontImageSheet() {
-  return tryGetSheet(FONT_IMAGE_SHEET_NAME);
 }
 
 function tryGetSheet(name) {

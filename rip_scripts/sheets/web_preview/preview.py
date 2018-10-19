@@ -141,6 +141,8 @@ def update():
             'metrics': parse_metric_csv(csv[1]),
             'glyphs': load_glyphs(BytesIO(image[1]))
         }
+    
+    return "Nice yeah sure it's all cool", 200
 
 def load():
     """Load font data from disk."""
@@ -215,4 +217,4 @@ def load_glyphs(f):
     return glyphs
 
 if __name__ == '__main__':
-    app.run()
+    app.run('localhost', debug=True)
