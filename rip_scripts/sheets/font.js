@@ -1,19 +1,27 @@
 "use strict";
 
 var FONT_METRIC_SHEET_NAME = "Font metrics";
+var FONT_IMAGE_SHEET_NAME = "Font graphics";
 
-var CHARMAP_URL = "https://raw.githubusercontent.com/telefang/telefang/patch/charmap.asm";
-var FONT_NAMES = ["normal", "bold", "narrow"];
+var CHARMAP_URL = 'https://raw.githubusercontent.com/telefang/telefang/patch/charmap.asm';
+var FONT_NAMES = ['normal', 'bold', 'narrow'];
 var FONT_METRIC_CSV_URLS = {
-  normal: "https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font.tffont.csv",
-  bold: "https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_bold.tffont.csv",
-  narrow: "https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_narrow.tffont.csv"
+  normal: 'https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font.tffont.csv',
+  bold: 'https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_bold.tffont.csv',
+  narrow: 'https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_narrow.tffont.csv'
+};
+var FONT_IMAGE_URLS = {
+  normal: 'https://raw.githubusercontent.com/telefang/telefang/patch/gfx/font.png',
+  bold: 'https://raw.githubusercontent.com/telefang/telefang/patch/gfx/bold_font.png',
+  narrow: 'https://raw.githubusercontent.com/telefang/telefang/patch/gfx/narrow_font.png'
 };
 
 function updateFontSheets() {
   var charmap = fetchCharmap();
   var metrics = fetchFontMetrics();
+  var images = fetchFontImages();
   populateFontMetricSheet(charmap, metrics);
+  populateFontImageSheet(images);
 }
 
 function fetchCharmap() {
@@ -30,10 +38,23 @@ function fetchFontMetrics() {
     var font_name = FONT_NAMES[i];
     r = UrlFetchApp.fetch(FONT_METRIC_CSV_URLS[font_name]);
     var widths = parseMetricCsv(r.getContentText('utf-8'));
-    metrics[font_name] = widths;;
+    metrics[font_name] = widths;
   }
   
   return metrics;
+}
+
+function fetchFontImages() {
+  var image_blobs = {};
+  
+  for (var i = 0; i < FONT_NAMES.length; i++) {
+    var font_name = FONT_NAMES[i];
+    r = UrlFetchApp.fetch(FONT_IMAGE_URLS[font_name]);
+    var blob = r.getAs('image/png');
+    image_blobs[font_name] = blob;
+  }
+  
+  return image_blobs;
 }
 
 function populateFontMetricSheet(charmap, metrics) {
@@ -67,6 +88,41 @@ function populateFontMetricSheet(charmap, metrics) {
   numRange.setNumberFormat('#');
 }
 
+function populateFontImageSheet(images) {
+  var sheet = getFontImageSheet();
+  
+  var values = [[]];
+  for (var i = 0; i < FONT_NAMES.length; i++) {
+    var encoded = Utilities.base64Encode(images[FONT_NAMES[i]].getBytes());
+    values[0].push(encoded);
+  }
+  
+  var numRows = sheet.getFrozenRows() + values.length;
+  var numCols = sheet.getFrozenColumns() + values[0].length;
+  setSheetDimensions(sheet, numRows, numCols);
+  
+  var range = sheet.getRange(sheet.getFrozenRows() + 1, sheet.getFrozenColumns() + 1, values.length, values[0].length);
+  range.setValues(values);
+  range.setNumberFormat('@');
+}
+
+function getChars(sheet, totalRows, frozenRows, frozenCols) {
+  if (typeof sheet === 'undefined' ||
+      typeof totalRows === 'undefined' ||
+      typeof frozenRows === 'undefined' ||
+      typeof frozenCols === 'undefined') {
+    sheet = getFontMetricSheet();
+    var dataRange = sheet.getDataRange();
+    totalRows = dataRange.getLastRow();
+    frozenRows = sheet.getFrozenRows();
+    frozenCols = sheet.getFrozenColumns();
+  }
+  
+  var chars = sheet.getRange(frozenRows + 1, frozenCols + 1, totalRows - frozenRows).getValues();
+  chars = chars.map(function(x) {return x[0];});
+  return chars;
+}
+
 function getFontMetrics() {
   var sheet = getFontMetricSheet();
   var dataRange = sheet.getDataRange();
@@ -88,25 +144,28 @@ function getFontMetrics() {
   return fonts;
 }
 
-function getChars(sheet, totalRows, frozenRows, frozenCols) {
-  if (typeof sheet === 'undefined' ||
-      typeof totalRows === 'undefined' ||
-      typeof frozenRows === 'undefined' ||
-      typeof frozenCols === 'undefined') {
-    sheet = getFontMetricSheet();
-    var dataRange = sheet.getDataRange();
-    totalRows = dataRange.getLastRow();
-    frozenRows = sheet.getFrozenRows();
-    frozenCols = sheet.getFrozenColumns();
+function getFontImages() {
+  var sheet = getFontImageSheet();
+  var frozenRows = sheet.getFrozenRows();
+  var frozenCols = sheet.getFrozenColumns();
+  
+  var images = {};
+  for (var i = 0; i < FONT_NAMES.length; i++) {
+    var encoded = sheet.getRange(frozenRows + 1 + i, frozenCols + 1).getValue();
+    images[FONT_NAMES[i]] = Utilities.newBlob(Utilities.base64Decode(encoded), 'image/png');
   }
   
-  var chars = sheet.getRange(frozenRows + 1, frozenCols + 1, totalRows - frozenRows).getValues();
-  chars = chars.map(function(x) {return x[0];});
-  return chars;
+  Logger.log(images);
+  
+  return images;
 }
 
 function getFontMetricSheet() {
   return tryGetSheet(FONT_METRIC_SHEET_NAME);
+}
+
+function getFontImageSheet() {
+  return tryGetSheet(FONT_IMAGE_SHEET_NAME);
 }
 
 function tryGetSheet(name) {
