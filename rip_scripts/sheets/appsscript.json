@@ -1,0 +1,20 @@
+{
+  "timeZone": "Europe/Paris",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "sheets": {
+    "macros": [{
+      "menuName": "Update font data (used for formatting and preview)",
+      "functionName": "updateFontData"
+    }, {
+      "menuName": "Auto-format selected rows (currently SMS and Field Guide only)",
+      "functionName": "formatSelectedRows",
+      "defaultShortcut": "Ctrl+Alt+Shift+1"
+    }, {
+      "menuName": "Preview selected cell (currently SMS and Field Guide only)",
+      "functionName": "previewSelectedCell",
+      "defaultShortcut": "Ctrl+Alt+Shift+2"
+    }]
+  }
+}
