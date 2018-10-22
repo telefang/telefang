@@ -54,16 +54,22 @@ def preview():
     spacing = int(request.args.get('spacing', 0))
     page_lines = request.args.get('lines-per-page')
     page_lines = int(page_lines) if page_lines else None
+    min_lines = int(request.args.get('minimum-lines', 0))
 
-    image = preview_image(text, width, scale, padding, spacing, page_lines)
+    image = preview_image(text, width, scale, padding, spacing, page_lines, min_lines)
     png_data = BytesIO()
     image.save(png_data, format='PNG')
 
     return Response(png_data.getvalue(), mimetype='image/png')
 
-def preview_image(text, width, scale=1, padding=0, spacing=0, page_lines=None):
+def preview_image(text, width,
+                  scale=1, padding=0,
+                  spacing=0, page_lines=None, min_lines=0):
     # No text formatting, since the JavaScript part takes care of that.
     num_lines = text.count('\n') + 1
+    if min_lines and num_lines < min_lines:
+        text += '\n' * (min_lines - num_lines)
+        num_lines += min_lines - num_lines
     page_lines = num_lines if page_lines is None else page_lines
     
     num_pages = ceil(num_lines / page_lines)
