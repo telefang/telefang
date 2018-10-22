@@ -45,23 +45,48 @@ def setup():
     except IOError:
         update()
 
+class ArgumentError(Exception):
+    def __init__(self, message, *args, **kwargs):
+        super(ArgumentError, self).__init__(message, *args, **kwargs)
+        self.message = message
+
+def get_query_arg(name,
+                  transformer=lambda x: x,
+                  validator=lambda x: True,
+                  default=None, required=False):
+    try:
+        arg = request.args[name]
+        if not arg:
+            raise KeyError(name)
+    except KeyError:
+        if required:
+            raise ArgumentError("Missing required argument: {}".format(name))
+        else:
+            return default
+    try:
+        arg = transformer(arg)
+        assert validator(arg)
+    except (ValueError, AssertionError):
+        raise ArgumentError("Argument invalid: {}".format(name))
+    return arg
+
+def bounds(lowest, highest):
+    def is_within_bounds(n):
+        return lowest <= n <= highest
+    return is_within_bounds
+
 @app.route('/preview')
 def preview():
-    width = min(int(request.args['width']), 32 * 8)
-    text = request.args['text']
-    scale = int(request.args.get('scale', 2))
-    padding = int(request.args.get('padding', 0))
-    spacing = int(request.args.get('spacing', 0))
-    page_lines = request.args.get('lines-per-page')
-    page_lines = int(page_lines) if page_lines else None
-    min_lines = int(request.args.get('minimum-lines', 0))
-
-    assert 1 <= width <= 512
-    assert 1 <= scale <= 8
-    assert 0 <= padding <= 128
-    assert 0 <= spacing <= 16
-    assert page_lines is None or 1 <= page_lines <= 256
-    assert 0 <= min_lines <= 256
+    try:
+        width = get_query_arg('width', int, bounds(1, 1024), required=True)
+        text = get_query_arg('text', required=True)
+        scale = get_query_arg('scale', int, bounds(1, 8), default=2)
+        padding = get_query_arg('padding', int, bounds(0, 128), default=0)
+        spacing = get_query_arg('spacing', int, bounds(0, 16), default=0)
+        page_lines = get_query_arg('lines-per-page', int, bounds(1, 256), default=None)
+        min_lines = get_query_arg('minimum-lines', int, bounds(0, 256), default=0)
+    except ArgumentError as e:
+        return Response(e.message, 400)
 
     image = preview_image(text, width, scale, padding, spacing, page_lines, min_lines)
     png_data = BytesIO()
