@@ -56,6 +56,13 @@ def preview():
     page_lines = int(page_lines) if page_lines else None
     min_lines = int(request.args.get('minimum-lines', 0))
 
+    assert 1 <= width <= 512
+    assert 1 <= scale <= 8
+    assert 0 <= padding <= 128
+    assert 0 <= spacing <= 16
+    assert page_lines is None or 1 <= page_lines <= 256
+    assert 0 <= min_lines <= 256
+
     image = preview_image(text, width, scale, padding, spacing, page_lines, min_lines)
     png_data = BytesIO()
     image.save(png_data, format='PNG')
