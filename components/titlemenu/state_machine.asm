@@ -12,7 +12,7 @@ TitleMenu_StateTable
     dw TitleMenu_StateSetupPalettes, TitleMenu_StateLoadGraphics, TitleMenu_StateLoadTMaps, TitleMenu_StateDrawMenu, TitleMenu_StatePositionMenuHalves, TitleMenu_StateCommitMenuPalettes, TitleMenu_StatePlayMenuBGM, TitleMenu_StateAnimateMenuHalvesIn ;07
     dw TitleMenu_StateMenuInputHandler, TitleMenu_StateAnimateMenuScrollUpOne, TitleMenu_StateAnimateMenuScrollUpTwo, TitleMenu_StateAnimateMenuScrollFinish, TitleMenu_StateAnimateMenuScrollDownOne, TitleMenu_StateAnimateMenuScrollDownTwo, TitleMenu_StateFadeToOverworldContinue, TitleMenu_StateLoadTimeInputScreen ;0F
     dw TitleMenu_StateResetTimeDrawWidget, TitleMenu_StateTimeInputHandler, TitleMenu_StateLoadNameInputScreen, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, TitleMenu_StateInitNewGame, TitleMenu_StateFadeToOverworldNewGame ;17
-    dw TitleMenu_StateLoadSoundTestScreen, TitleMenu_StateSoundTestInputHandler, TitleMenu_StateSoundTestExit, $43E2, $4400, $440E, $4424, TitleMenu_StateSaveOverwriteExitLoadGraphics ;1F
+    dw TitleMenu_StateLoadSoundTestScreen, TitleMenu_StateSoundTestInputHandler, TitleMenu_StateSoundTestExit, TitleMenu_StateSaveOverwriteEnter, TitleMenu_StateSaveOverwriteInputHandler, TitleMenu_StateSaveOverwriteConfirmed, TitleMenu_StateSaveOverwriteCancelled, TitleMenu_StateSaveOverwriteExitLoadGraphics ;1F
     dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
     
 ; State 03 00 is version-specific.
@@ -572,9 +572,79 @@ TitleMenu_StateSoundTestExit::
     ld a, M_TitleMenu_StateMenuInputHandler
     ld [W_SystemSubState], a
     ret
-; TODO: Disassemble states 03 1B thru 03 20. (that's 5 states)
+    
+;State 03 1B
+TitleMenu_StateSaveOverwriteEnter::
+    ld bc, $104
+    ld e, $5A
+    call PauseMenu_LoadMap0
+    
+    ld a, 4
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_InitializeCursor
+    
+    ld a, 1
+    ld [W_MelodyEdit_DataCount], a
+    call TitleMenu_PositionSaveOverwriteCursor
+    jp System_ScheduleNextSubState
+    
+;State 03 1C
+TitleMenu_StateSaveOverwriteInputHandler::
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    jp TitleMenu_SaveOverwriteInputHandler
+    
+;State 03 1D
+TitleMenu_StateSaveOverwriteConfirmed::
+    ld bc, $1B
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .load_graphics
+    
+.select_dmg_graphics
+    ld bc, $55
+    
+.load_graphics
+    call Banked_LoadMaliasGraphics
+    
+    ld a, M_TitleMenu_StateResetTimeDrawWidget
+    ld [W_SystemSubState], a
+    ret
+    
+;State 03 1E
+TitleMenu_StateSaveOverwriteCancelled::
+    ld bc, $1B
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .load_graphics
+    
+.select_dmg_graphics
+    ld bc, $55
+    
+.load_graphics
+    call Banked_LoadMaliasGraphics
+    
+    ld bc, 0
+    ld e, $10
+    call PauseMenu_LoadMap0
+    
+    ld e, $12
+    call PauseMenu_LoadMenuMap0
+    
+    ld bc, $30F
+    ld e, $20
+    call PauseMenu_LoadMap0
+    call TitleMenu_ScrollMenu_refresh
+    
+    ld a, M_TitleMenu_StateMenuInputHandler
+    ld [W_SystemSubState], a
+    ret
 
-SECTION "Title Menu State Machine - Denjuu Nickname Input", ROMX[$4452], BANK[$4]
 ; State 03 20
 TitleMenu_StateInitNickname::
     ld bc, $17
