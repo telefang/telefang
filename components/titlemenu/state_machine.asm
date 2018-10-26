@@ -806,3 +806,44 @@ TitleMenu_StateSaveNickname::
     
     call TitleMenu_SaveDenjuuNicknameFromBuffer
     jp System_ScheduleNextSubState
+
+;State 03 24
+TitleMenu_StateReturnToOverworld::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    
+    ld a, $C3
+    ld [W_ShadowREG_LCDC], a
+    xor a
+    ld [W_ShadowREG_SCX], a
+    ld [W_ShadowREG_SCY], a
+    ld [W_ShadowREG_WX], a
+    ld [W_ShadowREG_WY], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_MainScript_TextStyle], a
+    
+    ld a, [W_SerIO_ConnectionState]
+    cp 0
+    jr z, .enter_overworld
+    
+.enter_link
+    ld b, 0
+    call Banked_System_CGBToggleClockspeed
+    call Banked_SaveClock_StoreWorkingStateToSaveData
+    
+    xor a
+    ld [W_SystemSubState], a
+    ret
+    
+.enter_overworld
+    ld b, 1
+    call Banked_System_CGBToggleClockspeed
+    
+    ld a, 5
+    ld [W_SystemState], a
+    
+    ld a, $A
+    ld [W_SystemSubState], a
+    ret
