@@ -12,14 +12,15 @@ TitleMenu_StateTable
     dw TitleMenu_StateSetupPalettes, TitleMenu_StateLoadGraphics, TitleMenu_StateLoadTMaps, TitleMenu_StateDrawMenu, TitleMenu_StatePositionMenuHalves, TitleMenu_StateCommitMenuPalettes, TitleMenu_StatePlayMenuBGM, TitleMenu_StateAnimateMenuHalvesIn ;07
     dw TitleMenu_StateMenuInputHandler, TitleMenu_StateAnimateMenuScrollUpOne, TitleMenu_StateAnimateMenuScrollUpTwo, TitleMenu_StateAnimateMenuScrollFinish, TitleMenu_StateAnimateMenuScrollDownOne, TitleMenu_StateAnimateMenuScrollDownTwo, TitleMenu_StateFadeToOverworldContinue, TitleMenu_StateLoadTimeInputScreen ;0F
     dw TitleMenu_StateResetTimeDrawWidget, TitleMenu_StateTimeInputHandler, TitleMenu_StateLoadNameInputScreen, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, TitleMenu_StateInitNewGame, TitleMenu_StateFadeToOverworldNewGame ;17
-    dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E ;1F
+    dw TitleMenu_StateLoadSoundTestScreen, TitleMenu_StateSoundTestInputHandler, TitleMenu_StateSoundTestExit, $43E2, $4400, $440E, $4424, TitleMenu_StateSaveOverwriteExitLoadGraphics ;1F
     dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
     
 ; State 03 00 is version-specific.
     
 SECTION "Title Menu State Machine 2", ROMX[$406E], BANK[$4]
 ; State 03 01, 03 1F
-TitleMenu_StateLoadGraphics
+TitleMenu_StateLoadGraphics::
+TitleMenu_StateSaveOverwriteExitLoadGraphics::
     call ClearGBCTileMap0
     call ClearGBCTileMap1
     call LCDC_ClearMetasprites
@@ -226,7 +227,7 @@ TitleMenu_StateMenuInputHandler::
     
     ld a, M_TitleMenu_StateLoadSoundTestScreen
     ld [W_SystemSubState], a
-    jp $6CD3
+    jp TitleMenu_DrawSoundTestNumbersAndCursors
     
 .continueSelected
     ld a, [$C434]
@@ -513,7 +514,65 @@ TitleMenu_StateFadeToOverworldNewGame::
     call SaveClock_WriteDefaultSaveFile
     jp TitleMenu_StoreRTCValues
     
-; TODO: Disassemble states 03 18 thru 03 20. (that's 8 states)
+; State 03 18
+TitleMenu_StateLoadSoundTestScreen::
+    ld a, 4
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_InitializeCursor
+    
+    ld a, 3
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    call Banked_PauseMenu_InitializeCursor
+    
+    xor a
+    ld [W_TitleMenu_SoundMenuTrackSelect], a
+    ld [W_TitleMenu_SoundMenuEffectSelect], a
+    ld [W_TitleMenu_SoundMenuOption], a
+    call TitleMenu_DrawSoundTestNumbersAndCursors
+    jp System_ScheduleNextSubState
+
+; State 03 19
+TitleMenu_StateSoundTestInputHandler::
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    call Banked_PauseMenu_IterateCursorAnimation
+    jp TitleMenu_SoundTestInputHandler
+    
+;State 03 1A
+TitleMenu_StateSoundTestExit::
+    ld bc, $1B
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .load_graphics_pack
+    
+.select_dmg_graphics
+    ld bc, $55
+
+.load_graphics_pack
+    call Banked_LoadMaliasGraphics
+    
+    ld e, $12
+    call PauseMenu_LoadMenuMap0
+    
+    ld bc, $30F
+    ld e, $20
+    call PauseMenu_LoadMap0
+    
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    call TitleMenu_ScrollMenu_refresh
+    
+    ld a, M_TitleMenu_StateMenuInputHandler
+    ld [W_SystemSubState], a
+    ret
+; TODO: Disassemble states 03 1B thru 03 20. (that's 5 states)
 
 SECTION "Title Menu State Machine - Denjuu Nickname Input", ROMX[$4452], BANK[$4]
 ; State 03 20
