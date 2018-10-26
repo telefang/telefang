@@ -13,7 +13,7 @@ TitleMenu_StateTable
     dw TitleMenu_StateMenuInputHandler, TitleMenu_StateAnimateMenuScrollUpOne, TitleMenu_StateAnimateMenuScrollUpTwo, TitleMenu_StateAnimateMenuScrollFinish, TitleMenu_StateAnimateMenuScrollDownOne, TitleMenu_StateAnimateMenuScrollDownTwo, TitleMenu_StateFadeToOverworldContinue, TitleMenu_StateLoadTimeInputScreen ;0F
     dw TitleMenu_StateResetTimeDrawWidget, TitleMenu_StateTimeInputHandler, TitleMenu_StateLoadNameInputScreen, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, TitleMenu_StateInitNewGame, TitleMenu_StateFadeToOverworldNewGame ;17
     dw TitleMenu_StateLoadSoundTestScreen, TitleMenu_StateSoundTestInputHandler, TitleMenu_StateSoundTestExit, TitleMenu_StateSaveOverwriteEnter, TitleMenu_StateSaveOverwriteInputHandler, TitleMenu_StateSaveOverwriteConfirmed, TitleMenu_StateSaveOverwriteCancelled, TitleMenu_StateSaveOverwriteExitLoadGraphics ;1F
-    dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
+    dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, TitleMenu_StateReturnToOverworld ;24
     
 ; State 03 00 is version-specific.
     
