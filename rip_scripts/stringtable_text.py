@@ -320,7 +320,10 @@ def make_tbl(args):
         
         #Write the data out to the object files. We're done here!
         if not os.path.exists(os.path.dirname(os.path.join(args.output, table["objname"]))):
-            os.makedirs(os.path.dirname(os.path.join(args.output, table["objname"])))
+            try:
+                os.makedirs(os.path.dirname(os.path.join(args.output, table["objname"])))
+            except FileExistsError:
+                pass
         
         with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
             for line in packed_strings:
