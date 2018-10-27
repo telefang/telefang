@@ -153,6 +153,10 @@ Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	jp FusionLabEvo_ADVICE_DrawShopNumberGfx
 	nop
 
+Banked_PatchUtils_CommitStagedCGBToSGB_CBE::
+	jp PatchUtils_CommitStagedCGBToSGB_CBE
+	nop
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

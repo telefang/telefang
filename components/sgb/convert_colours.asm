@@ -192,6 +192,12 @@ PatchUtils_ColourToSGB_LookupTable::
 	ld a, [bc]
 	ld c, a
 	ret
+	
+PatchUtils_CommitStagedCGBToSGB_CBE::
+	M_AdviceSetup
+	ld a, d
+	call PatchUtils_CommitStagedCGBToSGB
+	jp Battle_ADVICE_BattleArticle_teardown
 
 SECTION "GBC Colour To SGB Colour Table", ROMX[$7480], BANK[$1]
 
