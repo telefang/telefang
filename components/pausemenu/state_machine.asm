@@ -10,8 +10,8 @@ PauseMenu_GameStateMachine::
 .state_list
     dw PauseMenu_StateLoadGraphics,PauseMenu_StateLoadMenuHalves,PauseMenu_StateLoadPalettes,PauseMenu_StateLoadDMGCompatibility,PauseMenu_StateAnimateMenuHalvesIn,$4681,$4743,$47D9; 0
     dw $47EE,$4807,$482E,$484E,$4866,$4872,$4883,$489C; 8
-    dw $4A49,$4E5B,$4EE7,$52E3,$5023,$507E,$50EE,$48AB; 16
-    dw $5417,$48CB,$4907,$4936,$4953,$4969,$49A8,$49A9; 24
+    dw PauseMenu_ContactSubstate,$4E5B,PauseMenu_InventoryStateMachine,PauseMenu_SMSStateMachine,PauseMenu_SaveStateMachine,$507E,$50EE,$48AB; 16
+    dw Zukan_StateMachine,$48CB,$4907,$4936,$4953,$4969,$49A8,$49A9; 24
     dw $49AA,$49DC,$49F3,$4A09
 
 ;State 0C 00
