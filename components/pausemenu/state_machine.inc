@@ -1,0 +1,5 @@
+M_PauseMenu_StateLoadGraphics EQU $00
+M_PauseMenu_StateLoadMenuHalves EQU $01
+M_PauseMenu_StateLoadPalettes EQU $02
+M_PauseMenu_StateLoadDMGCompatibility EQU $03
+M_PauseMenu_StateAnimateMenuHalvesIn EQU $04
