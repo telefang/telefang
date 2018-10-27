@@ -34,12 +34,22 @@ M_TitleMenu_StateFadeToOverworldNewGame EQU $17
 
 ;Sound test
 M_TitleMenu_StateLoadSoundTestScreen EQU $18
+M_TitleMenu_StateSoundTestInputHandler EQU $19
+M_TitleMenu_StateSoundTestExit EQU $1A
+
+;Save Overwrite Warning
+M_TitleMenu_StateSaveOverwriteEnter EQU $1B
+M_TitleMenu_StateSaveOverwriteInputHandler EQU $1C
+M_TitleMenu_StateSaveOverwriteConfirmed EQU $1D
+M_TitleMenu_StateSaveOverwriteCancelled EQU $1E
+M_TitleMenu_StateSaveOverwriteExitLoadGraphics EQU $1F
 
 ;Name input (denjuu)
 M_TitleMenu_StateInitNickname EQU $20
 M_TitleMenu_StateFadeNickname EQU $21
 M_TitleMenu_StateNickname EQU $22
 M_TitleMenu_StateSaveNickname EQU $23
+M_TitleMenu_StateReturnToOverworld EQU $24
 
 ;Menu items
 M_TitleMenu_ItemContinue EQU 0

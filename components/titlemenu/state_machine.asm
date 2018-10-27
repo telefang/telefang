@@ -12,14 +12,15 @@ TitleMenu_StateTable
     dw TitleMenu_StateSetupPalettes, TitleMenu_StateLoadGraphics, TitleMenu_StateLoadTMaps, TitleMenu_StateDrawMenu, TitleMenu_StatePositionMenuHalves, TitleMenu_StateCommitMenuPalettes, TitleMenu_StatePlayMenuBGM, TitleMenu_StateAnimateMenuHalvesIn ;07
     dw TitleMenu_StateMenuInputHandler, TitleMenu_StateAnimateMenuScrollUpOne, TitleMenu_StateAnimateMenuScrollUpTwo, TitleMenu_StateAnimateMenuScrollFinish, TitleMenu_StateAnimateMenuScrollDownOne, TitleMenu_StateAnimateMenuScrollDownTwo, TitleMenu_StateFadeToOverworldContinue, TitleMenu_StateLoadTimeInputScreen ;0F
     dw TitleMenu_StateResetTimeDrawWidget, TitleMenu_StateTimeInputHandler, TitleMenu_StateLoadNameInputScreen, TitleMenu_StateClearNameInput, TitleMenu_StateNameInput, TitleMenu_StateStorePlayerName, TitleMenu_StateInitNewGame, TitleMenu_StateFadeToOverworldNewGame ;17
-    dw $437F, $43A5, $43B4, $43E2, $4400, $440E, $4424, $406E ;1F
-    dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, $457D ;24
+    dw TitleMenu_StateLoadSoundTestScreen, TitleMenu_StateSoundTestInputHandler, TitleMenu_StateSoundTestExit, TitleMenu_StateSaveOverwriteEnter, TitleMenu_StateSaveOverwriteInputHandler, TitleMenu_StateSaveOverwriteConfirmed, TitleMenu_StateSaveOverwriteCancelled, TitleMenu_StateSaveOverwriteExitLoadGraphics ;1F
+    dw TitleMenu_StateInitNickname, TitleMenu_StateFadeNickname, TitleMenu_StateNickname, TitleMenu_StateSaveNickname, TitleMenu_StateReturnToOverworld ;24
     
 ; State 03 00 is version-specific.
     
 SECTION "Title Menu State Machine 2", ROMX[$406E], BANK[$4]
 ; State 03 01, 03 1F
-TitleMenu_StateLoadGraphics
+TitleMenu_StateLoadGraphics::
+TitleMenu_StateSaveOverwriteExitLoadGraphics::
     ld a, Banked_TitleMenu_ADVICE_StateLoadGraphics & $FF
     call PatchUtils_AuxCodeJmp
     
@@ -236,7 +237,7 @@ TitleMenu_StateMenuInputHandler::
     
     ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest & $FF)
     call PatchUtils_AuxCodeJmp
-    jp $6CD3
+    jp TitleMenu_DrawSoundTestNumbersAndCursors
     
 .continueSelected
     ld a, [$C434]
@@ -523,9 +524,137 @@ TitleMenu_StateFadeToOverworldNewGame::
     call SaveClock_WriteDefaultSaveFile
     jp TitleMenu_StoreRTCValues
     
-; TODO: Disassemble states 03 18 thru 03 20. (that's 8 states)
+; State 03 18
+TitleMenu_StateLoadSoundTestScreen::
+    ld a, 4
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_InitializeCursor
+    
+    ld a, 3
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    call Banked_PauseMenu_InitializeCursor
+    
+    xor a
+    ld [W_TitleMenu_SoundMenuTrackSelect], a
+    ld [W_TitleMenu_SoundMenuEffectSelect], a
+    ld [W_TitleMenu_SoundMenuOption], a
+    call TitleMenu_DrawSoundTestNumbersAndCursors
+    jp System_ScheduleNextSubState
 
-SECTION "Title Menu State Machine - Denjuu Nickname Input", ROMX[$4452], BANK[$4]
+; State 03 19
+TitleMenu_StateSoundTestInputHandler::
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2
+    call Banked_PauseMenu_IterateCursorAnimation
+    jp TitleMenu_SoundTestInputHandler
+    
+;State 03 1A
+TitleMenu_StateSoundTestExit::
+    ld bc, $1B
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .load_graphics_pack
+    
+.select_dmg_graphics
+    ld bc, $55
+
+.load_graphics_pack
+    call Banked_LoadMaliasGraphics
+    
+    ld e, $12
+    call PauseMenu_LoadMenuMap0
+    
+    ld bc, $30F
+    ld e, $20
+    call PauseMenu_LoadMap0
+    
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    call TitleMenu_ScrollMenu_refresh
+    
+    ld a, M_TitleMenu_StateMenuInputHandler
+    ld [W_SystemSubState], a
+    ret
+    
+;State 03 1B
+TitleMenu_StateSaveOverwriteEnter::
+    ld bc, $104
+    ld e, $5A
+    call PauseMenu_LoadMap0
+    
+    ld a, 4
+    ld [W_PauseMenu_SelectedCursorType], a
+    
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_InitializeCursor
+    
+    ld a, 1
+    ld [W_MelodyEdit_DataCount], a
+    call TitleMenu_PositionSaveOverwriteCursor
+    jp System_ScheduleNextSubState
+    
+;State 03 1C
+TitleMenu_StateSaveOverwriteInputHandler::
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
+    call Banked_PauseMenu_IterateCursorAnimation
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    jp TitleMenu_SaveOverwriteInputHandler
+    
+;State 03 1D
+TitleMenu_StateSaveOverwriteConfirmed::
+    ld bc, $1B
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .load_graphics
+    
+.select_dmg_graphics
+    ld bc, $55
+    
+.load_graphics
+    call Banked_LoadMaliasGraphics
+    
+    ld a, M_TitleMenu_StateResetTimeDrawWidget
+    ld [W_SystemSubState], a
+    ret
+    
+;State 03 1E
+TitleMenu_StateSaveOverwriteCancelled::
+    ld bc, $1B
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .load_graphics
+    
+.select_dmg_graphics
+    ld bc, $55
+    
+.load_graphics
+    call Banked_LoadMaliasGraphics
+    
+    ld bc, 0
+    ld e, $10
+    call PauseMenu_LoadMap0
+    
+    ld e, $12
+    call PauseMenu_LoadMenuMap0
+    
+    ld bc, $30F
+    ld e, $20
+    call PauseMenu_LoadMap0
+    call TitleMenu_ScrollMenu_refresh
+    
+    ld a, M_TitleMenu_StateMenuInputHandler
+    ld [W_SystemSubState], a
+    ret
+
 ; State 03 20
 TitleMenu_StateInitNickname::
     ld bc, $17
@@ -689,3 +818,44 @@ TitleMenu_StateSaveNickname::
     
     call TitleMenu_SaveDenjuuNicknameFromBuffer
     jp System_ScheduleNextSubState
+
+;State 03 24
+TitleMenu_StateReturnToOverworld::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    
+    ld a, $C3
+    ld [W_ShadowREG_LCDC], a
+    xor a
+    ld [W_ShadowREG_SCX], a
+    ld [W_ShadowREG_SCY], a
+    ld [W_ShadowREG_WX], a
+    ld [W_ShadowREG_WY], a
+    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_MainScript_TextStyle], a
+    
+    ld a, [W_SerIO_ConnectionState]
+    cp 0
+    jr z, .enter_overworld
+    
+.enter_link
+    ld b, 0
+    call Banked_System_CGBToggleClockspeed
+    call Banked_SaveClock_StoreWorkingStateToSaveData
+    
+    xor a
+    ld [W_SystemSubState], a
+    ret
+    
+.enter_overworld
+    ld b, 1
+    call Banked_System_CGBToggleClockspeed
+    
+    ld a, 5
+    ld [W_SystemState], a
+    
+    ld a, $A
+    ld [W_SystemSubState], a
+    ret

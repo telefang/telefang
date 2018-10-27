@@ -39,19 +39,21 @@ function fetchFontMetrics() {
   return metrics;
 }
 
-function fetchImagePreview(text, width, line_spacing, lines_per_page) {
+function fetchImagePreview(text, width, line_spacing, lines_per_page, min_lines) {
   // Apparently, Google Apps Script doesn't support canvas –
   // or any other sort of image manipulation. It sucks, but
   // if we want preview images there's no reasonable choice
   // but to outsource it to another server.
   line_spacing = typeof line_spacing !== 'undefined' ? line_spacing : 1;
   lines_per_page = typeof lines_per_page !== 'undefined' ? lines_per_page : '';
+  min_lines = typeof min_lines !== 'undefined' ? min_lines : '';
   
   text = encodeURIComponent(text);
   var r = UrlFetchApp.fetch(PREVIEW_SERVICE_URL + '?scale=2&padding=4' +
                             '&width=' + width +
                             '&spacing=' + line_spacing +
                             '&lines-per-page=' + lines_per_page +
+                            '&minimum-lines=' + min_lines +
                             '&text=' + text);
   var blob = r.getAs('image/png');
   return blob;
