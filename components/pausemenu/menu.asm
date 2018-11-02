@@ -7,7 +7,22 @@ W_PauseMenu_ScrollAnimationTimer:: ds 1
 SECTION "Pause Menu WRAM 2", WRAM0[$CD22]
 W_PauseMenu_SelectedMenuTilemap:: ds 1
 
-SECTION "Pause Menu Animation Utils", ROMX[$59CD], BANK[$4]
+SECTION "Pause Menu Animation Utils", ROMX[$59B9], BANK[$4]
+PauseMenu_ManageScrollAnimation::
+    ld a, [W_JPInput_TypematicBtns]
+    and $C0 ; Up / Down
+    jr nz, PauseMenu_ResetAnimation
+    
+    ld a, [W_PauseMenu_ScrollAnimationTimer]
+    cp $10
+    ret z
+    
+    inc a
+    ld [W_PauseMenu_ScrollAnimationTimer], a
+    
+    cp $10
+    ret nz
+    
 PauseMenu_DrawMenuItemsAndFrame::
     ld bc, $109
     ld e, $13

@@ -85,3 +85,141 @@ PauseMenu_StateAnimateMenuHalvesIn::
     ld [W_ShadowREG_SCX], a
     
     jp System_ScheduleNextSubState
+
+;State 0C 05
+PauseMenu_StateInputHandler::
+    call PauseMenu_ManageScrollAnimation
+    call PauseMenu_DrawClockSprites
+    
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    
+    ld a, [W_JPInput_TypematicBtns]
+    and $80
+    jr z, .test_up_pressed
+    
+.down_pressed
+    ld a, M_PauseMenu_StateAnimateMenuScrollUpOne
+    jr .trigger_menu_animation
+    
+.test_up_pressed
+    ld a, [W_JPInput_TypematicBtns]
+    and $40
+    jr z, .test_a_pressed
+    
+.up_pressed
+    ld a, M_PauseMenu_StateAnimateMenuScrollDownOne
+    
+.trigger_menu_animation
+    ld [W_SystemSubState], a
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ret
+    
+.test_a_pressed
+    ld a, [H_JPInput_Changed]
+    and 1
+    jr z, .test_b_pressed
+    
+.a_pressed
+    ld a, [W_PauseMenu_SelectedMenuTilemap] ;this name probably needs a refactor
+    cp M_PauseMenu_MenuItemContacts
+    jr z, .trigger_contact_state
+    cp M_PauseMenu_MenuItemCalls
+    jr z, .trigger_calls_state
+    cp M_PauseMenu_MenuItemMeloD
+    jr z, .trigger_common_subscreen_state
+    cp M_PauseMenu_MenuItemInventory
+    jr z, .trigger_common_subscreen_state
+    cp M_PauseMenu_MenuItemSMS
+    jr z, .trigger_common_subscreen_state
+    cp M_PauseMenu_MenuItemSave
+    jr z, .trigger_common_subscreen_state
+    cp M_PauseMenu_MenuItemOptions
+    jr z, .trigger_common_subscreen_state
+    cp M_PauseMenu_MenuItemExit
+    jr z, .trigger_exit
+    
+.trigger_zukan
+    ld a, M_PauseMenu_StateZukanSubscreen
+    jr .trigger_subscreen_state
+    
+.trigger_calls_state
+    ld a, M_PauseMenu_StateCallsSubscreen
+    jr .trigger_subscreen_state
+
+    ;This relies on most of the subscreen enumeration matching the order of the
+    ;substate enumeration. However, they could have saved a few bytes if they
+    ;reordered the substates to completely match the screen enumeration.
+.trigger_common_subscreen_state
+    add a, (M_PauseMenu_StateMeloDSubscreen - M_PauseMenu_MenuItemMeloD)
+    jr .trigger_subscreen_state
+
+.trigger_contact_state
+    ld a, M_PauseMenu_StateContactSubscreen
+    
+.trigger_subscreen_state
+    ld [W_SystemSubState], a
+    
+    xor a
+    ld [W_SystemSubSubState], a
+    
+    ld e, $2D
+    call PauseMenu_LoadMenuMap0
+    
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ret
+    
+.test_b_pressed
+    ld a, [H_JPInput_Changed]
+    and 2
+    jr z, .test_select_pressed
+    
+.b_pressed
+.trigger_exit
+    ld a, 4
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    
+    ld a, M_PauseMenu_StateExitToOverworld
+    ld [W_SystemSubState], a
+    ret
+    
+.test_select_pressed
+    ld a, [H_JPInput_Changed]
+    and 4
+    jr z, .nothing_pressed
+    
+.select_pressed
+    ld a, M_PhoneMenu_Button1
+    ld [W_PauseMenu_PhoneIMEButton], a
+    
+    ld a, $FF
+    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    call PauseMenu_PhoneIMEPlaceCursor
+    
+    ld a, 1
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ;TODO: Symbolize.
+    ;These memory locations alias other bits of memory that are used for other purposes.
+    ld bc, $D
+    ld hl, $D000
+    call memclr
+    
+    ld bc, $D
+    ld hl, $D200
+    call memclr
+    
+    xor a
+    ld [W_PauseMenu_PhoneNumberLength], a
+    ld [W_PauseMenu_NumberCallStatus], a
+    ld [W_PauseMenu_ScrollAnimationTimer], a
+    jp System_ScheduleNextSubState
+    
+.nothing_pressed
+    ret

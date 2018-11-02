@@ -13,10 +13,13 @@ W_PauseMenu_PhoneIMEPressCount:: ds 1
 
 SECTION "Pause Menu IME WRAM3", WRAM0[$CB28]
 W_PauseMenu_NextPhoneIME:: ds 1
-    ds 1 ; ???
+W_PauseMenu_PhoneNumberLength:: ds 1
 W_PauseMenu_CurrentPhoneIME:: ds 1
 
-SECTION "Pause Menu IME WRAM4", WRAM0[$CB65]
+SECTION "Pause Menu IME WRAM4", WRAM0[$CB43]
+W_PauseMenu_NumberCallStatus:: ds 1
+
+SECTION "Pause Menu IME WRAM5", WRAM0[$CB65]
 W_MelodyEdit_State::
 W_PauseMenu_PhoneIMEButton:: ds 1
 W_PauseMenu_PhoneIMELastPressedButton:: ds 1
