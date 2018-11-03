@@ -4,7 +4,7 @@ SECTION "Pause Menu Phone IME 'sync' functions", ROMX[$6794], BANK[$4]
 
 ;Back-copies the name buffer into the centered output buffer, terminating it
 ;with the MainScript terminator in the process. Sized for player names.
-PauseMenu_PhoneIMESyncPlayerName::
+PhoneIME_SyncPlayerName::
     ld hl, W_MainScript_CenteredNameBuffer + M_MainScript_PlayerNameSize - 1
     ld de, W_TitleMenu_NameBuffer + M_MainScript_PlayerNameSize - 1
     ld b, M_MainScript_PlayerNameSize
@@ -43,7 +43,7 @@ PauseMenu_PhoneIMESyncPlayerName::
 
 ;Back-copies the name buffer into the centered output buffer, terminating it
 ;with the MainScript terminator in the process. Sized for denjuu nicknames.
-PauseMenu_PhoneIMESyncDenjuuNickname::
+PhoneIME_SyncDenjuuNickname::
     ld hl, W_MainScript_CenteredNameBuffer + M_SaveClock_DenjuuNicknameSize - 1
     ld de, W_TitleMenu_NameBuffer + M_SaveClock_DenjuuNicknameSize - 1
     ld b, M_SaveClock_DenjuuNicknameSize

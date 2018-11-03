@@ -8,8 +8,8 @@ TitleMenu_StateSetupPalettes::
     ld [W_CGBPaletteStagedBGP], a
     
     xor a
-    ld [W_PauseMenu_NextPhoneIME], a
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_PhoneIME_NextIME], a
+    ld [W_PhoneIME_CurrentIME], a
     
     ld a, 0
     ld [W_PauseMenu_PhoneState], a

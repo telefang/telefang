@@ -1,24 +1,24 @@
 INCLUDE "telefang.inc"
 
 SECTION "Phone IME Glyph Processing", ROMX[$66C0], BANK[$4]
-PauseMenu_PhoneIMEPlayerNameGlyph::
-    ld a, [W_PauseMenu_PhoneIMELastPressedButton]
+PhoneIME_PlayerNameGlyph::
+    ld a, [W_PhoneIME_LastPressedButton]
     cp $FF
     jr z, .setCharacter
     
     ld b, a
-    ld a, [W_PauseMenu_PhoneIMEButton]
+    ld a, [W_PhoneIME_Button]
     cp b
     jr nz, .gotoNextGlyph
     
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     inc a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     jr .setCharacter
     
 .gotoNextGlyph
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
     ld a, [W_PauseMenu_SelectedMenuItem]
     cp M_MainScript_PlayerNameSize - 1
@@ -29,17 +29,17 @@ PauseMenu_PhoneIMEPlayerNameGlyph::
     ld [W_PauseMenu_SelectedMenuItem], a
     
 .setCharacter
-    ld a, [W_PauseMenu_PhoneIMEButton]
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld a, [W_PhoneIME_Button]
+    ld [W_PhoneIME_LastPressedButton], a
     
-    ld a, [W_PauseMenu_CurrentPhoneIME]
-    ld hl, PauseMenu_PhoneIMEData
+    ld a, [W_PhoneIME_CurrentIME]
+    ld hl, PhoneIME_Data
     call PauseMenu_IndexPtrTable
     ld a, [hli]
     ld h, [hl]
     ld l, a ;HL now points to the IME-specific mapping table
     
-    ld a, [W_PauseMenu_PhoneIMEButton]
+    ld a, [W_PhoneIME_Button]
     sub 4
     call PauseMenu_IndexPtrTable
     ld a, [hli]
@@ -48,13 +48,13 @@ PauseMenu_PhoneIMEPlayerNameGlyph::
     
     ld a, [hli]
     ld b, a
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp b
     jr nz, .noPressCountOverflow
     
 .pressCountOverflow
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
 .noPressCountOverflow
     ld e, a
@@ -71,27 +71,27 @@ PauseMenu_PhoneIMEPlayerNameGlyph::
     pop af
     ld [hl], a ;Set the current character
     
-    call PauseMenu_PhoneIMESyncPlayerName
+    call PhoneIME_SyncPlayerName
     jp PauseMenu_DrawCenteredNameBufferNoVWF
 
-PauseMenu_PhoneIMEDenjuuNicknameGlyph::
-    ld a, [W_PauseMenu_PhoneIMELastPressedButton]
+PhoneIME_DenjuuNicknameGlyph::
+    ld a, [W_PhoneIME_LastPressedButton]
     cp $FF
     jr z, .setCharacter
     
     ld b, a
-    ld a, [W_PauseMenu_PhoneIMEButton]
+    ld a, [W_PhoneIME_Button]
     cp b
     jr nz, .gotoNextGlyph
     
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     inc a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     jr .setCharacter
     
 .gotoNextGlyph
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
     ld a, [W_PauseMenu_SelectedMenuItem]
     cp M_SaveClock_DenjuuNicknameSize - 1
@@ -102,17 +102,17 @@ PauseMenu_PhoneIMEDenjuuNicknameGlyph::
     ld [W_PauseMenu_SelectedMenuItem], a
     
 .setCharacter
-    ld a, [W_PauseMenu_PhoneIMEButton]
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld a, [W_PhoneIME_Button]
+    ld [W_PhoneIME_LastPressedButton], a
     
-    ld a, [W_PauseMenu_CurrentPhoneIME]
-    ld hl, PauseMenu_PhoneIMEData
+    ld a, [W_PhoneIME_CurrentIME]
+    ld hl, PhoneIME_Data
     call PauseMenu_IndexPtrTable
     ld a, [hli]
     ld h, [hl]
     ld l, a ;HL now points to the IME-specific mapping table
     
-    ld a, [W_PauseMenu_PhoneIMEButton]
+    ld a, [W_PhoneIME_Button]
     sub 4
     call PauseMenu_IndexPtrTable
     ld a, [hli]
@@ -121,13 +121,13 @@ PauseMenu_PhoneIMEDenjuuNicknameGlyph::
     
     ld a, [hli]
     ld b, a
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp b
     jr nz, .noPressCountOverflow
     
 .pressCountOverflow
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
 .noPressCountOverflow
     ld e, a
@@ -144,5 +144,5 @@ PauseMenu_PhoneIMEDenjuuNicknameGlyph::
     pop af
     ld [hl], a ;Set the current character
     
-    call PauseMenu_PhoneIMESyncDenjuuNickname
+    call PhoneIME_SyncDenjuuNickname
     jp PauseMenu_DrawCenteredNameBufferNoVWF

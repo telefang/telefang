@@ -1,5 +1,5 @@
 SECTION "Phone IME button mapping data", ROMX[$680D], BANK[$4]
-PauseMenu_PhoneIMEData::
+PhoneIME_Data::
     dw .latinUpperTable
     dw .latinLowerTable
     dw .numeralsTable
