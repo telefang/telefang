@@ -1,0 +1,12 @@
+M_ContactEnlist_PhoneSymbol0 EQU $60
+M_ContactEnlist_PhoneSymbol1 EQU $62
+M_ContactEnlist_PhoneSymbol2 EQU $64
+M_ContactEnlist_PhoneSymbol3 EQU $66
+M_ContactEnlist_PhoneSymbol4 EQU $68
+M_ContactEnlist_PhoneSymbol5 EQU $6A
+M_ContactEnlist_PhoneSymbol6 EQU $6C
+M_ContactEnlist_PhoneSymbol7 EQU $6E
+M_ContactEnlist_PhoneSymbol8 EQU $70
+M_ContactEnlist_PhoneSymbol9 EQU $72
+M_ContactEnlist_PhoneSymbolHashtag EQU $78
+M_ContactEnlist_PhoneSymbolStar EQU $7C

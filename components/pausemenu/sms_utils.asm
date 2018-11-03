@@ -191,7 +191,15 @@ PauseMenu_CountActiveSMS::
     jr nz, .countLoop
     ret
 
-SECTION "Pause Menu SMS Utils 3", ROMX[$77A1], BANK[$4]
+SECTION "Pause Menu SMS Utils 3", ROMX[$7798], BANK[$4]
+PauseMenu_InitMultiMetaspriteField::
+    ld [hl], a
+    ld de, M_MetaSpriteConfig_Size
+    add hl, de
+    dec b
+    jr nz, PauseMenu_InitMultiMetaspriteField
+    ret
+
 PauseMenu_LoadMsgsGraphic::
     ld hl, PhoneScreenNewTextsGfx
     ld de, $9400

@@ -11,6 +11,9 @@ SECTION "Pause Menu IME WRAM2", WRAM0[$CB3D]
 W_PauseMenu_CursorBlinkState:: ds 1
 W_PauseMenu_PhoneIMEPressCount:: ds 1
 
+SECTION "Pause Menu IME WRAM 2.5", WRAM0[$CB22]
+W_PauseMenu_PhoneDigitIterator:: ds 1
+
 SECTION "Pause Menu IME WRAM3", WRAM0[$CB28]
 W_PauseMenu_NextPhoneIME:: ds 1
 W_PauseMenu_PhoneNumberLength:: ds 1
@@ -220,7 +223,7 @@ PauseMenu_PhoneIMEPlaceCursor::
     dw $7068, $7080, $7098
 
 SECTION "Title Menu Player Name Input 4", ROMX[$5B37], BANK[$4]
-PauseMenu_PhoneIMEWraparoundProcessing::
+PauseMenu_PhoneIMEInputProcessing::
     ld a, [W_JPInput_TypematicBtns]
     and M_JPInput_Right
     jr z, .checkLeftBtn

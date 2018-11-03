@@ -68,7 +68,7 @@ TitleMenu_ClearCharaName::
 
 SECTION "Title Menu Player Name Input 3", ROMX[$64A9], BANK[$4]
 TitleMenu_NameInputImpl::
-    call PauseMenu_PhoneIMEWraparoundProcessing
+    call PauseMenu_PhoneIMEInputProcessing
     ld a, [H_JPInput_Changed]
     and M_JPInput_B
     jr z, .noBButtonPress
@@ -208,7 +208,7 @@ TitleMenu_NameInputImpl::
     ret
 
 TitleMenu_NicknameInputImpl::
-    call PauseMenu_PhoneIMEWraparoundProcessing
+    call PauseMenu_PhoneIMEInputProcessing
     
     ld a, [H_JPInput_Changed]
     and M_JPInput_B

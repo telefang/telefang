@@ -1,0 +1,2 @@
+M_PauseMenu_PhoneIMEDisplayedSpriteCount EQU $C
+M_PauseMenu_PhoneIMEDisplayedNumberSize EQU $D

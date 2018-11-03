@@ -345,6 +345,21 @@ Banked_MainScript_DrawLetter::
     rst $10
     ret
     
+SECTION "Banked Call Helpers For Contact Enlist", ROM0[$3720]
+Banked_ContactEnlist_DecodePhoneNumber::
+    ld a, [W_CurrentBank]
+    
+    push af
+    
+    ld a, BANK(ContactEnlist_DecodePhoneNumber)
+    rst $10
+    call ContactEnlist_DecodePhoneNumber
+    
+    pop af
+    
+    rst $10
+    ret
+    
 SECTION "Banked Call Helpers That Dont Actually Work", ROM0[$3768]
 Banked_System_CGBToggleClockspeed::
     ld a, [W_CurrentBank]
