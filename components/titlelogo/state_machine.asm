@@ -61,14 +61,11 @@ TitleLogo_StateLoadGraphics::
     jp System_ScheduleNextSubState
     
 TitleLogo_StateSmilesoft::
-    ld b, $1
-    ld c, $A
-    ld d, $0
-    ld e, $0
-    ld a, $1
-    call Banked_SGB_ConstructPaletteSetPacket
     ld bc, $11
     call Banked_CGBLoadBackgroundPalette
+    ld a, 1
+    ld bc, 1
+    call Title_Logo_SGBColourLogic
     ld a, $1
     ld [W_RLEAttribMapsEnabled],a
     ld bc, $1412
@@ -90,6 +87,11 @@ TitleLogo_StateSmilesoft::
     xor a
     ld [$C475], a
     jp System_ScheduleNextSubState
+    nop
+    nop
+    nop
+    nop
+    nop
     
 TitleLogo_StateWaittime::
     ldh a, [$FF8D]
@@ -137,12 +139,6 @@ TitleLogo_StateBonBon::
     jp System_ScheduleNextSubState
 
 TitleLogo_StateOpeningCredits::
-    ld b, $1
-    ld c, $0
-    ld d, $0
-    ld e, $0
-    ld a, $0
-    call Banked_SGB_ConstructPaletteSetPacket
     ld bc, $1412
     ld a, $0
     ld hl, $9800
@@ -157,15 +153,17 @@ TitleLogo_StateOpeningCredits::
     ld [$C475], a
     ld bc, $11
     call Banked_CGBLoadBackgroundPalette
+    ld a, 0
+    ld bc, 0
+    call Title_Logo_SGBColourLogic
     jp System_ScheduleNextSubState
+    nop
+    nop
+    nop
+    nop
+    nop
 
 TitleLogo_StateNatsume::
-    ld b, $1
-    ld c, $C
-    ld d, $0
-    ld e, $0
-    ld a, $1
-    call Banked_SGB_ConstructPaletteSetPacket
     ld bc, $0
     ld e, $7
     ld a, $0
@@ -180,7 +178,15 @@ TitleLogo_StateNatsume::
     ld [$C475], a
     ld bc, $11
     call Banked_CGBLoadBackgroundPalette
+    ld a, 1
+    ld bc, 3
+    call Title_Logo_SGBColourLogic
     jp System_ScheduleNextSubState
+	nop
+	nop
+	nop
+	nop
+	nop
 
 TitleLogo_StateToNext::
     ld b, $0
@@ -278,12 +284,6 @@ TitleLogo_JumpToTulunk::
     ret
     
 TitleLogo_StateTulunk::
-    ld b, $1
-    ld c, $0
-    ld d, $0
-    ld e, $0
-    ld a, $0
-    call Banked_SGB_ConstructPaletteSetPacket
     ld bc, $1406
     xor a
     ld hl, $9800
@@ -304,4 +304,18 @@ TitleLogo_StateTulunk::
     call Banked_LoadMaliasGraphics
     ld bc, $11
     call Banked_CGBLoadBackgroundPalette
+    ld a, 1
+    ld bc, 4
+    call Title_Logo_SGBColourLogic
     jp System_ScheduleNextSubState
+	
+Title_Logo_SGBColourLogic::
+    push bc
+    ld bc, 0
+    ld de, 0
+    call Banked_SGB_ConstructPaletteSetPacket
+    pop bc
+    ld d, M_SGB_Pal01 << 3 + 1
+    ld a, Banked_PatchUtils_CommitStagedCGBToSGB_CBE & $FF
+    call PatchUtils_AuxCodeJmp
+    ret
