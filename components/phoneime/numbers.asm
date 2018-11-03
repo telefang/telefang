@@ -1,26 +1,26 @@
 INCLUDE "telefang.inc"
 
 SECTION "Pause Menu Phone IME Number Utilities RAM", WRAMX[$D200], BANK[1]
-W_PauseMenu_PhoneIMEDisplayedNumber:: ds M_PauseMenu_PhoneIMEDisplayedNumberSize
+W_PhoneIME_DisplayedNumber:: ds M_PhoneIME_DisplayedNumberSize
 
 SECTION "Pause Menu Phone IME Number Utilities", ROMX[$7474], BANK[$4]
-PauseMenu_PhoneIMEStoreNumber::
+PhoneIME_StoreNumber::
     ld a, [W_PauseMenu_ScrollAnimationTimer]
     cp $D
     ret z
     
-    ld a, [W_PauseMenu_PhoneIMEButton]
-    cp M_PhoneMenu_Button1
+    ld a, [W_PhoneIME_Button]
+    cp M_PhoneIME_Button1
     ret c
     
-    sub M_PhoneMenu_Button1
+    sub M_PhoneIME_Button1
     ld e, a
     ld d, 0
-    ld hl, PauseMenu_PhoneIMEDigitCharsMapping
+    ld hl, PhoneIME_DigitCharsMapping
     add hl, de
     ld a, [hl]
     ld b, a
-    ld hl, PauseMenu_PhoneIMEDigitSpriteMapping
+    ld hl, PhoneIME_DigitSpriteMapping
     add hl, de
     ld a, [hl]
     ld c, a
@@ -32,7 +32,7 @@ PauseMenu_PhoneIMEStoreNumber::
     ld a, b
     ld [hl], a
     
-    ld hl, W_PauseMenu_PhoneIMEDisplayedNumber
+    ld hl, W_PhoneIME_DisplayedNumber
     add hl, de
     ld a, c
     ld [hl], a
@@ -41,12 +41,12 @@ PauseMenu_PhoneIMEStoreNumber::
     inc a
     ld [W_PauseMenu_ScrollAnimationTimer], a
     
-PauseMenu_PhoneIMEDrawNumber::
+PhoneIME_DrawNumber::
     ld a, 1
     ld [W_OAM_SpritesReady], a
     
     xor a
-    ld b, M_PauseMenu_PhoneIMEDisplayedSpriteCount
+    ld b, M_PhoneIME_DisplayedSpriteCount
     ld hl, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call PauseMenu_InitMultiMetaspriteField
     
@@ -56,7 +56,7 @@ PauseMenu_PhoneIMEDrawNumber::
     
     dec a
     ld b, a
-    ld a, M_PauseMenu_PhoneIMEDisplayedSpriteCount
+    ld a, M_PhoneIME_DisplayedSpriteCount
     sub b
     ld c, a
     ld b, 0
@@ -68,7 +68,7 @@ PauseMenu_PhoneIMEDrawNumber::
     ld a, [W_PauseMenu_ScrollAnimationTimer]
     ld b, a
     xor a
-    ld [W_PauseMenu_PhoneDigitIterator], a
+    ld [W_PhoneIME_PhoneDigitIterator], a
     
 .sprite_config_loop
     push bc
@@ -87,8 +87,8 @@ PauseMenu_PhoneIMEDrawNumber::
     
     push hl
     
-    ld hl, W_PauseMenu_PhoneIMEDisplayedNumber
-    ld a, [W_PauseMenu_PhoneDigitIterator]
+    ld hl, W_PhoneIME_DisplayedNumber
+    ld a, [W_PhoneIME_PhoneDigitIterator]
     ld e, a
     ld d, 0
     add hl, de
@@ -102,9 +102,9 @@ PauseMenu_PhoneIMEDrawNumber::
     
     ld de, M_MetaSpriteConfig_Size
     add hl, de
-    ld a, [W_PauseMenu_PhoneDigitIterator]
+    ld a, [W_PhoneIME_PhoneDigitIterator]
     inc a
-    ld [W_PauseMenu_PhoneDigitIterator], a
+    ld [W_PhoneIME_PhoneDigitIterator], a
     
     pop bc
     dec b
@@ -155,7 +155,7 @@ PauseMenu_PhoneIMEDrawNumber::
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 12 + M_LCDC_MetaSpriteConfig_XOffset], a
     
     ld a, 0
-    ld b, M_PauseMenu_PhoneIMEDisplayedSpriteCount
+    ld b, M_PhoneIME_DisplayedSpriteCount
     ld hl, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_Bank
     call PauseMenu_InitMultiMetaspriteField
     
@@ -173,44 +173,44 @@ PauseMenu_PhoneIMEDrawNumber::
     ld [W_System_CountdownTimer], a
     jp System_ScheduleNextSubState
     
-PauseMenu_PhoneIMEDigitCharsMapping:
+PhoneIME_DigitCharsMapping:
     db $62, $64, $66, $68, $6A, $6C, $6E, $70, $72, $7C, $60, $78
-PauseMenu_PhoneIMEDigitSpriteMapping:
+PhoneIME_DigitSpriteMapping:
     db $21, $22, $23, $24, $25, $26, $27, $28, $29, $2E, $20, $2C
     
-PauseMenu_ReformatEnteredPhoneNumber::
+PhoneIME_ReformatEnteredPhoneNumber::
     ld a, [$D000 + 0]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 0], a
+    ld [W_PhoneIME_DisplayedNumber + 0], a
     ld a, [$D000 + 1]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 1], a
+    ld [W_PhoneIME_DisplayedNumber + 1], a
     ld a, [$D000 + 2]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 2], a
+    ld [W_PhoneIME_DisplayedNumber + 2], a
     ld a, $7A
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 3], a
+    ld [W_PhoneIME_DisplayedNumber + 3], a
     ld a, [$D000 + 3]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 4], a
+    ld [W_PhoneIME_DisplayedNumber + 4], a
     ld a, [$D000 + 4]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 5], a
+    ld [W_PhoneIME_DisplayedNumber + 5], a
     ld a, [$D000 + 5]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 6], a
+    ld [W_PhoneIME_DisplayedNumber + 6], a
     ld a, [$D000 + 6]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 7], a
+    ld [W_PhoneIME_DisplayedNumber + 7], a
     ld a, $7A
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 8], a
+    ld [W_PhoneIME_DisplayedNumber + 8], a
     ld a, [$D000 + 7]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 9], a
+    ld [W_PhoneIME_DisplayedNumber + 9], a
     ld a, [$D000 + 8]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 10], a
+    ld [W_PhoneIME_DisplayedNumber + 10], a
     ld a, [$D000 + 9]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 11], a
+    ld [W_PhoneIME_DisplayedNumber + 11], a
     ld a, [$D000 + 10]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 12], a
+    ld [W_PhoneIME_DisplayedNumber + 12], a
     ld a, [$D000 + 11]
-    ld [W_PauseMenu_PhoneIMEDisplayedNumber + 13], a
+    ld [W_PhoneIME_DisplayedNumber + 13], a
     ret
 
-PauseMenu_PositionPhoneIMECursor::
-    ld b, M_PauseMenu_PhoneIMEDisplayedSpriteCount
+PhoneIME_PositionCursor::
+    ld b, M_PhoneIME_DisplayedSpriteCount
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     
 .cursor_position_loop
@@ -234,15 +234,3 @@ PauseMenu_PositionPhoneIMECursor::
     ld a, 1
     ld [W_OAM_SpritesReady], a
     ret
-
-PauseMenu_StoreDialedContact::
-    xor a
-    ld [W_PauseMenu_NumberCallStatus], a
-    ld [$CB03], a
-    ld [W_PauseMenu_PhoneDigitIterator], a
-    call PauseMenu_ReformatEnteredPhoneNumber
-    
-    ld hl, W_PauseMenu_PhoneIMEDisplayedNumber
-    call Banked_ContactEnlist_DecodePhoneNumber
-    
-    ;TODO: Disassemble this last bit

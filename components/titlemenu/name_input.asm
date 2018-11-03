@@ -68,17 +68,17 @@ TitleMenu_ClearCharaName::
 
 SECTION "Title Menu Player Name Input 3", ROMX[$64A9], BANK[$4]
 TitleMenu_NameInputImpl::
-    call PauseMenu_PhoneIMEInputProcessing
+    call PhoneIME_InputProcessing
     ld a, [H_JPInput_Changed]
     and M_JPInput_B
     jr z, .noBButtonPress
     
 .backspaceProcessing
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld [W_PhoneIME_LastPressedButton], a
     
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
     ld hl, $9780
     ld b, M_MainScript_PlayerNameSize
@@ -91,7 +91,7 @@ TitleMenu_NameInputImpl::
     add hl, de
     ld [hl], 0
     
-    call PauseMenu_PhoneIMESyncPlayerName
+    call PhoneIME_SyncPlayerName
     call PauseMenu_DrawCenteredNameBuffer
     
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -115,52 +115,52 @@ TitleMenu_NameInputImpl::
     jp z, .return
     
     call $66A1
-    ld a, [W_PauseMenu_PhoneIMEButton]
-    cp M_PhoneMenu_ButtonNote
+    ld a, [W_PhoneIME_Button]
+    cp M_PhoneIME_ButtonNote
     jp z, .cycleNextIME
-    cp M_PhoneMenu_ButtonLeft
+    cp M_PhoneIME_ButtonLeft
     jp z, .leftKeypadPress
-    cp M_PhoneMenu_ButtonRight
+    cp M_PhoneIME_ButtonRight
     jp z, .rightKeypadPress
-    cp M_PhoneMenu_ButtonConfirm
+    cp M_PhoneIME_ButtonConfirm
     jp z, .confirmIntent
-    cp M_PhoneMenu_ButtonStar
+    cp M_PhoneIME_ButtonStar
     jp z, .diacriticIntent
-    cp M_PhoneMenu_ButtonPound
+    cp M_PhoneIME_ButtonPound
     jp z, .diacriticIntent
-    jp PauseMenu_PhoneIMEPlayerNameGlyph
+    jp PhoneIME_PlayerNameGlyph
     
 ;Cycle to the next IME mode.
 .cycleNextIME ;12519
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
-    ld a, [W_PauseMenu_CurrentPhoneIME]
+    ld a, [W_PhoneIME_CurrentIME]
     inc a
-    cp M_PhoneMenu_IMEEND
+    cp M_PhoneIME_IMEEND
     jr nz, .storeNextIME
     
     xor a
 .storeNextIME
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_PhoneIME_CurrentIME], a
     
     add a, 1
-    cp M_PhoneMenu_IMEEND
+    cp M_PhoneIME_IMEEND
     jr nz, .storePhoneIME
     
     xor a
 .storePhoneIME
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld [W_PhoneIME_NextIME], a
     
-    call PauseMenu_LoadPhoneIMEGraphics
-    jp PauseMenu_LoadPhoneIMETilemap
+    call PhoneIME_LoadGraphicsForIME
+    jp PhoneIME_LoadTilemapForIME
     
 ;If the name is empty, write the default name.
 ;Otherwise, confirm the player name.
 .confirmIntent ;12539
     ld a, 3
     ld [W_Sound_NextSFXSelect], a
-    call PauseMenu_PhoneIMESyncPlayerName
+    call PhoneIME_SyncPlayerName
     cp 0
     jr nz, .playerNameConfirmed
     
@@ -175,14 +175,14 @@ TitleMenu_NameInputImpl::
     ld a, 3
     ld [W_PauseMenu_SelectedMenuItem], a
     
-    call PauseMenu_PhoneIMESyncPlayerName
+    call PhoneIME_SyncPlayerName
     jp PauseMenu_DrawCenteredNameBuffer
     
 .playerNameConfirmed
     jp System_ScheduleNextSubState
     
 .diacriticIntent
-    jp PauseMenu_PhoneIMEPlayerNameDiacritic
+    jp PhoneIME_PlayerNameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -200,15 +200,15 @@ TitleMenu_NameInputImpl::
 .cursorChange
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld [W_PhoneIME_LastPressedButton], a
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
 
 .return
     ret
 
 TitleMenu_NicknameInputImpl::
-    call PauseMenu_PhoneIMEInputProcessing
+    call PhoneIME_InputProcessing
     
     ld a, [H_JPInput_Changed]
     and M_JPInput_B
@@ -216,10 +216,10 @@ TitleMenu_NicknameInputImpl::
     
 .backspaceProcessing
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld [W_PhoneIME_LastPressedButton], a
     
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
     ld hl, $9780
     ld b, M_SaveClock_DenjuuNicknameSize
@@ -232,7 +232,7 @@ TitleMenu_NicknameInputImpl::
     add hl, de
     ld [hl], 0
     
-    call PauseMenu_PhoneIMESyncDenjuuNickname
+    call PhoneIME_SyncDenjuuNickname
     call PauseMenu_DrawCenteredNameBuffer
     
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -255,56 +255,56 @@ TitleMenu_NicknameInputImpl::
     jp z, .return
     
     call $66A1
-    ld a, [W_PauseMenu_PhoneIMEButton]
-    cp M_PhoneMenu_ButtonNote
+    ld a, [W_PhoneIME_Button]
+    cp M_PhoneIME_ButtonNote
     jp z, .cycleNextIME
-    cp M_PhoneMenu_ButtonLeft
+    cp M_PhoneIME_ButtonLeft
     jp z, .leftKeypadPress
-    cp M_PhoneMenu_ButtonRight
+    cp M_PhoneIME_ButtonRight
     jp z, .rightKeypadPress
-    cp M_PhoneMenu_ButtonConfirm
+    cp M_PhoneIME_ButtonConfirm
     jp z, .confirmIntent
-    cp M_PhoneMenu_ButtonStar
+    cp M_PhoneIME_ButtonStar
     jp z, .diacriticIntent
-    cp M_PhoneMenu_ButtonPound
+    cp M_PhoneIME_ButtonPound
     jp z, .diacriticIntent
-    jp PauseMenu_PhoneIMEDenjuuNicknameGlyph
+    jp PhoneIME_DenjuuNicknameGlyph
     
 ;Cycle to the next IME mode.
 .cycleNextIME
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
-    ld a, [W_PauseMenu_CurrentPhoneIME]
+    ld a, [W_PhoneIME_CurrentIME]
     inc a
-    cp M_PhoneMenu_IMEEND
+    cp M_PhoneIME_IMEEND
     jr nz, .storeNextIME
     
     xor a
 .storeNextIME
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_PhoneIME_CurrentIME], a
     
     add a, 1
-    cp M_PhoneMenu_IMEEND
+    cp M_PhoneIME_IMEEND
     jr nz, .storePhoneIME
     
     xor a
 .storePhoneIME
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld [W_PhoneIME_NextIME], a
     
-    call PauseMenu_LoadPhoneIMEGraphics
-    jp PauseMenu_LoadPhoneIMETilemap
+    call PhoneIME_LoadGraphicsForIME
+    jp PhoneIME_LoadTilemapForIME
     
 .confirmIntent
     ld a, 3
     ld [W_Sound_NextSFXSelect], a
-    call PauseMenu_PhoneIMESyncDenjuuNickname
+    call PhoneIME_SyncDenjuuNickname
     cp 0
     jr nz, .playerNameConfirmed
     
     ld a, [$D4A7]
     call TitleMenu_LoadDenjuuNicknameIntoBuffer
-    call PauseMenu_PhoneIMESyncPlayerName
+    call PhoneIME_SyncPlayerName
     
     ld d, $C
     jp PauseMenu_DrawCenteredNameBuffer
@@ -313,7 +313,7 @@ TitleMenu_NicknameInputImpl::
     jp System_ScheduleNextSubState
     
 .diacriticIntent
-    jp PauseMenu_PhoneIMEDenjuuNicknameDiacritic
+    jp PhoneIME_DenjuuNicknameDiacritic
     
 .leftKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -324,10 +324,10 @@ TitleMenu_NicknameInputImpl::
     ld [W_PauseMenu_SelectedMenuItem], a
     
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld [W_PhoneIME_LastPressedButton], a
     
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     ret
     
 .rightKeypadPress
@@ -339,10 +339,10 @@ TitleMenu_NicknameInputImpl::
     ld [W_PauseMenu_SelectedMenuItem], a
     
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld [W_PhoneIME_LastPressedButton], a
     
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     
 .return
     ret

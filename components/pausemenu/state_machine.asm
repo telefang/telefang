@@ -194,12 +194,12 @@ PauseMenu_StateInputHandler::
     jr z, .nothing_pressed
     
 .select_pressed
-    ld a, M_PhoneMenu_Button1
-    ld [W_PauseMenu_PhoneIMEButton], a
+    ld a, M_PhoneIME_Button1
+    ld [W_PhoneIME_Button], a
     
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
-    call PauseMenu_PhoneIMEPlaceCursor
+    ld [W_PhoneIME_LastPressedButton], a
+    call PhoneIME_PlaceCursor
     
     ld a, 1
     call Sound_IndexMusicSetBySong
@@ -207,16 +207,16 @@ PauseMenu_StateInputHandler::
     
     ;TODO: Symbolize.
     ;These memory locations alias other bits of memory that are used for other purposes.
-    ld bc, M_PauseMenu_PhoneIMEDisplayedNumberSize
+    ld bc, M_PhoneIME_DisplayedNumberSize
     ld hl, $D000
     call memclr
     
-    ld bc, M_PauseMenu_PhoneIMEDisplayedNumberSize
-    ld hl, W_PauseMenu_PhoneIMEDisplayedNumber
+    ld bc, M_PhoneIME_DisplayedNumberSize
+    ld hl, W_PhoneIME_DisplayedNumber
     call memclr
     
     xor a
-    ld [W_PauseMenu_PhoneNumberLength], a
+    ld [W_PhoneIME_CurrentNumberLength], a
     ld [W_PauseMenu_NumberCallStatus], a
     ld [W_PauseMenu_ScrollAnimationTimer], a
     jp System_ScheduleNextSubState
@@ -226,7 +226,7 @@ PauseMenu_StateInputHandler::
 
 ;State 0C 06
 PauseMenu_StatePhoneIMEInputHandler::
-    ld a, [W_PauseMenu_PhoneNumberLength]
+    ld a, [W_PhoneIME_CurrentNumberLength]
     cp 0
     call z, PauseMenu_DrawClockSprites
     
@@ -235,7 +235,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     jr z, .test_ime_input
     
 .select_pressed
-    ld a, [W_PauseMenu_PhoneNumberLength]
+    ld a, [W_PhoneIME_CurrentNumberLength]
     cp 0
     jr z, .switch_to_menu_substate
     
@@ -244,7 +244,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     
     ld bc, $307
     call PauseMenu_DrawMenuItems
-    call PauseMenu_PositionPhoneIMECursor
+    call PhoneIME_PositionCursor
     
 .switch_to_menu_substate
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 0
@@ -259,21 +259,21 @@ PauseMenu_StatePhoneIMEInputHandler::
     ret
     
 .test_ime_input
-    call PauseMenu_PhoneIMEInputProcessing
+    call PhoneIME_InputProcessing
     ld a, [H_JPInput_Changed]
     and 1
     jr z, .test_b_pressed
     
 .a_pressed
     call PauseMenu_PlayPhoneButtonSFX
-    ld a, [W_PauseMenu_PhoneIMEButton]
-    cp M_PhoneMenu_ButtonNote
+    ld a, [W_PhoneIME_Button]
+    cp M_PhoneIME_ButtonNote
     ret z
-    cp M_PhoneMenu_ButtonLeft
+    cp M_PhoneIME_ButtonLeft
     ret z
-    cp M_PhoneMenu_ButtonRight
+    cp M_PhoneIME_ButtonRight
     ret z
-    cp M_PhoneMenu_ButtonConfirm
+    cp M_PhoneIME_ButtonConfirm
     jr nz, .numerical_btn_pressed
     
 .confirm_btn_pressed
@@ -284,19 +284,19 @@ PauseMenu_StatePhoneIMEInputHandler::
     jp System_ScheduleNextSubState
     
 .numerical_btn_pressed
-    ld a, [W_PauseMenu_PhoneNumberLength]
+    ld a, [W_PhoneIME_CurrentNumberLength]
     cp 0
     jr nz, .store_number
     
     ld a, 1
-    ld [W_PauseMenu_PhoneNumberLength], a
+    ld [W_PhoneIME_CurrentNumberLength], a
     
     ld e, $2D
     call PauseMenu_LoadMenuMap0
     call PauseMenu_ClearClockSprites
     
 .store_number
-    jp PauseMenu_PhoneIMEStoreNumber
+    jp PhoneIME_StoreNumber
     
 .test_b_pressed
     ld a, [H_JPInput_Changed]
@@ -320,7 +320,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
-    jp PauseMenu_PhoneIMEDrawNumber
+    jp PhoneIME_DrawNumber
     
 .nothing_pressed
     ret

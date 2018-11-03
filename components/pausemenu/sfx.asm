@@ -1,6 +1,6 @@
 SECTION "PauseMenu Phone IME SFX", ROMX[$66A1], BANK[$4]
 PauseMenu_PlayPhoneButtonSFX::
-    ld a, [W_PauseMenu_PhoneIMEButton]
+    ld a, [W_PhoneIME_Button]
     ld e, a
     ld d, 0
     ld hl, .sfx_table

@@ -29,7 +29,7 @@ TitleMenu_StateSaveOverwriteExitLoadGraphics::
     ld bc, $11
     call Banked_LoadMaliasGraphics
     call PauseMenu_LoadPhoneGraphics
-    call PauseMenu_LoadPhoneIMEGraphics
+    call PhoneIME_LoadGraphicsForIME
     jp System_ScheduleNextSubState
     
 ; State 03 02
@@ -333,7 +333,7 @@ TitleMenu_StateFadeToOverworldContinue::
     ld [W_ShadowREG_SCY], a
     ld [W_ShadowREG_WX], a
     ld [W_ShadowREG_WY], a
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_PhoneIME_CurrentIME], a
     
     ld a, 5
     ld [W_SystemState], a
@@ -393,7 +393,7 @@ TitleMenu_StateResetTimeDrawWidget::
     call Banked_PauseMenu_InitializeCursor
     
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     call TitleMenu_DrawTimeSetWidget
     jp System_ScheduleNextSubState
 
@@ -415,7 +415,7 @@ TitleMenu_StateLoadNameInputScreen::
     
     ld a, 1
     ld [W_OAM_SpritesReady], a
-    call PauseMenu_PhoneIMEPlaceCursor
+    call PhoneIME_PlaceCursor
     jp System_ScheduleNextSubState
 
 ; State 03 13
@@ -429,26 +429,26 @@ TitleMenu_StateClearNameInput::
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     ld [W_PauseMenu_SelectedMenuItem], a
-    ld a, M_PhoneMenu_IMEKatakana
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld a, M_PhoneIME_IMEKatakana
+    ld [W_PhoneIME_CurrentIME], a
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld [W_PhoneIME_LastPressedButton], a
     call TitleMenu_PositionNameCursor
     ld a, 2
     ld [W_PauseMenu_SelectedCursorType], a
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
-    ld a, M_PhoneMenu_IMENumerals
-    ld [W_PauseMenu_NextPhoneIME], a
-    call PauseMenu_LoadPhoneIMEGraphics
+    ld a, M_PhoneIME_IMENumerals
+    ld [W_PhoneIME_NextIME], a
+    call PhoneIME_LoadGraphicsForIME
     call TitleMenu_ClearCharaName
     call PauseMenu_DrawCenteredNameBuffer
     ld bc, $104
     ld e, $35
     call PauseMenu_LoadMap0
-    call PauseMenu_LoadPhoneIMETilemap
+    call PhoneIME_LoadTilemapForIME
     jp System_ScheduleNextSubState
 
 ; State 03 14
@@ -498,7 +498,7 @@ TitleMenu_StateFadeToOverworldNewGame::
     ld [W_ShadowREG_SCY], a
     ld [W_ShadowREG_WX], a
     ld [W_ShadowREG_WY], a
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_PhoneIME_CurrentIME], a
     ld [W_MainScript_TextStyle], a
     
     ld a, 5
@@ -684,10 +684,10 @@ TitleMenu_StateInitNickname::
     call TitleMenu_ClearCharaName
     
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, $FF
-    ld [W_PauseMenu_PhoneIMELastPressedButton], a
+    ld [W_PhoneIME_LastPressedButton], a
     call TitleMenu_PositionNameCursor
     
     ld a, 2
@@ -695,12 +695,12 @@ TitleMenu_StateInitNickname::
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
     
-    ld a, M_PhoneMenu_IMENumerals
-    ld [W_PauseMenu_NextPhoneIME], a
-    call PauseMenu_LoadPhoneIMEGraphics
+    ld a, M_PhoneIME_IMENumerals
+    ld [W_PhoneIME_NextIME], a
+    call PhoneIME_LoadGraphicsForIME
     
-    ld a, M_PhoneMenu_IMEKatakana
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld a, M_PhoneIME_IMEKatakana
+    ld [W_PhoneIME_CurrentIME], a
     
     call PauseMenu_CGBLoadPalettes
     xor a
@@ -763,11 +763,11 @@ TitleMenu_StateInitNickname::
     
     ld a, [$D4A7]
     call TitleMenu_LoadDenjuuNicknameIntoBuffer
-    call PauseMenu_PhoneIMESyncDenjuuNickname
+    call PhoneIME_SyncDenjuuNickname
     
     ld d, $C
     call PauseMenu_DrawCenteredNameBuffer
-    call PauseMenu_LoadPhoneIMETilemap
+    call PhoneIME_LoadTilemapForIME
     
     ld a, 4
     call Banked_LCDC_SetupPalswapAnimation
@@ -821,7 +821,7 @@ TitleMenu_StateReturnToOverworld::
     ld [W_ShadowREG_SCY], a
     ld [W_ShadowREG_WX], a
     ld [W_ShadowREG_WY], a
-    ld [W_PauseMenu_CurrentPhoneIME], a
+    ld [W_PhoneIME_CurrentIME], a
     ld [W_MainScript_TextStyle], a
     
     ld a, [W_SerIO_ConnectionState]

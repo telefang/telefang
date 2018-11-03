@@ -46,6 +46,6 @@ PauseMenu_LoadMenuResources::
     call Banked_LoadMaliasGraphics
     
     xor a
-    ld [W_PauseMenu_NextPhoneIME], a
+    ld [W_PhoneIME_NextIME], a
     call PauseMenu_LoadPhoneGraphics
-    jp PauseMenu_LoadPhoneIMEGraphics
+    jp PhoneIME_LoadGraphicsForIME

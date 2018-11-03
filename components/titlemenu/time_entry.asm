@@ -1,5 +1,8 @@
 INCLUDE "telefang.inc"
 
+SECTION "Title Menu Time Entry WRAM", WRAM0[$CB3D]
+W_TitleMenu_CursorBlinkState:: ds 1
+
 SECTION "Title Menu Time Entry", ROMX[$57EF], BANK[$4]
 TitleMenu_TimeEntryProcessing::
     call TitleMenu_DrawSelectedTimeFieldBlinking
@@ -12,7 +15,7 @@ TitleMenu_TimeEntryProcessing::
     ld a, 3
     ld [W_Sound_NextSFXSelect], a
     
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp 0
     jr z, .gotoNextField
     
@@ -26,9 +29,9 @@ TitleMenu_TimeEntryProcessing::
     jp System_ScheduleNextSubState
     
 .gotoNextField
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     inc a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     jp TitleMenu_DrawSelectedTimeFieldSolid
     
 .checkBButton
@@ -37,7 +40,7 @@ TitleMenu_TimeEntryProcessing::
     jr z, .checkUpButton
     
 .bButton
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp 0
     ret z
     
@@ -45,7 +48,7 @@ TitleMenu_TimeEntryProcessing::
     ld [W_Sound_NextSFXSelect], a
     
     xor a
-    ld [W_PauseMenu_PhoneIMEPressCount], a
+    ld [W_PhoneIME_PressCount], a
     jp TitleMenu_DrawSelectedTimeFieldSolid
     
 .checkUpButton
@@ -57,7 +60,7 @@ TitleMenu_TimeEntryProcessing::
     ld a, 2
     ld [W_Sound_NextSFXSelect], a
     
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp 1
     jr z, .minutesFieldIncrement
     
@@ -96,7 +99,7 @@ TitleMenu_TimeEntryProcessing::
     ld a, 2
     ld [W_Sound_NextSFXSelect], a
     
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp 1
     jr z, .minutesFieldDecrement
     
@@ -153,7 +156,7 @@ TitleMenu_DrawRTCMinute::
     
 TitleMenu_DrawTimeSetCursor::
     ld b, $15
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp 0
     jr z, .cursorIsAtHours
     
@@ -175,15 +178,15 @@ TitleMenu_DrawSelectedTimeFieldBlinking::
     and $F
     ret nz
     
-    ld a, [W_PauseMenu_CursorBlinkState]
+    ld a, [W_TitleMenu_CursorBlinkState]
     xor 1
-    ld [W_PauseMenu_CursorBlinkState], a
+    ld [W_TitleMenu_CursorBlinkState], a
     
     cp 1
     jr z, .makeInputHidden
     
 .makeInputVisible
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp 0
     jr nz, .makeMinutesVisible
     
@@ -195,7 +198,7 @@ TitleMenu_DrawSelectedTimeFieldBlinking::
     
 .makeInputHidden
     ld bc, $20D
-    ld a, [W_PauseMenu_PhoneIMEPressCount]
+    ld a, [W_PhoneIME_PressCount]
     cp 0
     jr z, .makeHoursHidden
     

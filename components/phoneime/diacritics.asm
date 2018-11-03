@@ -1,5 +1,5 @@
 SECTION "Phone IME Diacritics", ROMX[$73AB], BANK[$4]
-PauseMenu_PhoneIMEApplyDiacritic::
+PhoneIME_ApplyDiacritic::
     ld hl, .searchTable
     ld de, .replacementTable
     ld c, (.replacementTable - .searchTable)
