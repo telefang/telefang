@@ -33,11 +33,11 @@ PauseMenu_GameStateMachine::
     dw $50EE
     dw PauseMenu_StateExitToOverworld
     dw Zukan_StateMachine
-    dw $48CB
-    dw $4907
-    dw $4936
-    dw $4953
-    dw $4969
+    dw PauseMenu_StateTransitionToOutgoingCall
+    dw PauseMenu_StateLoadOutgoingContactCallGraphics
+    dw PauseMenu_StateFadeInAndQueueContactMessage
+    dw PauseMenu_StateDeliverContactMessage
+    dw PauseMenu_StateTransitionOutOfOutboundContactCall
     dw $49A8
     dw $49A9
     dw $49AA
@@ -526,3 +526,146 @@ PauseMenu_StateExitToOverworld::
     ld [W_Status_CalledFromContactScreen], a
     ld [W_MainScript_TextStyle], a
     ret
+
+;State 0C 19
+PauseMenu_StateTransitionToOutgoingCall::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    call PhoneIME_PositionCursor
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 1
+    jr z, .start_known_contact_call
+    
+.secret_denjuu_call
+    call ContactEnlist_CheckContactLimit
+    cp 0
+    jr nz, .known_contact_call
+    
+    ld a, M_PauseMenu_StateLoadOutgoingSecretCallGraphics
+    ld [W_SystemSubState], a
+    ret
+
+.known_contact_call
+    ld a, [$CB01]
+    ld e, a
+    ld d, 0
+    sla e
+    rl d
+    sla e
+    rl d
+    ld hl, $7C0D       ; TODO: table of predetermined messages
+    add hl, de
+    ld a, [hli]
+    ld [$CB01], a
+    
+    ld a, 3
+    ld [W_PauseMenu_NumberCallStatus], a
+    
+.start_known_contact_call
+    jp System_ScheduleNextSubState
+
+;State 0C 1A
+PauseMenu_StateLoadOutgoingContactCallGraphics::
+    call LCDC_ClearMetasprites
+    
+    ld a, [$CB01]
+    call PhoneConversation_DrawOutboundCallScreen
+    
+    xor a
+    ld [W_CGBPaletteStagedBGP], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    call PhoneConversation_OutboundConfigureScreen
+    
+    ld a, $F0
+    ld [W_Status_NumericalTileIndex], a
+    call Status_ExpandNumericalTiles
+    
+    ld a, $85
+    ld [W_MainScript_WindowBorderAttribs], a
+    
+    ld a, $A0
+    ld [W_MainScript_TileBaseIdx], a
+    
+    ld a, 2
+    ld [W_Overworld_PowerAntennaPattern], a
+    jp System_ScheduleNextSubState
+
+;State 0C 1B
+;TODO: What do these unknown functions do?
+PauseMenu_StateFadeInAndQueueContactMessage::
+    ld a, 0
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    call $7C53
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 3
+    jr nz, .exit
+    
+    ld c, $FD
+    ld b, 1
+    
+.exit
+    ld d, $C
+    call $520
+    jp System_ScheduleNextSubState
+
+;State 0C 1C
+PauseMenu_StateDeliverContactMessage::
+    call Banked_MainScriptMachine
+    
+    ld a, [W_MainScript_State]
+    cp M_MainScript_StateTerminated
+    ret nz
+    
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp System_ScheduleNextSubState
+
+;State 0C 1D
+PauseMenu_StateTransitionOutOfOutboundContactCall::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    xor a
+    ld [W_Overworld_PowerAntennaPattern], a
+    call PauseMenu_LoadMenuResources
+    call PauseMenu_LoadPhoneHalves
+    call PauseMenu_CGBLoadPalettes
+    call PauseMenu_ConfigureScreen
+    call PauseMenu_DrawMenuItemsAndFrame
+    call LCDC_DMGSetupDirectPalette
+    
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    ld [W_CGBPaletteStagedOBP], a
+    
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
+    
+    xor a
+    ld [W_SystemSubSubState], a
+    ld [W_MainScript_TextStyle], a
+    
+    ld a, [W_PhoneConversation_CalledDenjuu]
+    jp PhoneConversation_OutboundIncrementFD
