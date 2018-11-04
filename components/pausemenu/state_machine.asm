@@ -31,7 +31,7 @@ PauseMenu_GameStateMachine::
     dw PauseMenu_SaveStateMachine
     dw $507E
     dw $50EE
-    dw $48AB
+    dw PauseMenu_StateExitToOverworld
     dw Zukan_StateMachine
     dw $48CB
     dw $4907
@@ -501,4 +501,28 @@ PauseMenu_StateAnimateMenuScrollDownTwo::
     
     ld a, M_PauseMenu_StateAnimateMenuScrollFinish
     ld [W_SystemSubState], a
+    ret
+
+;State 0C 17
+PauseMenu_StateExitToOverworld::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    xor a
+    ld [W_Overworld_PowerAntennaPattern], a
+    
+    ld a, 5
+    ld [W_SystemState], a
+    
+    ld a, $A
+    ld [W_SystemSubState], a
+    
+    call PhoneConversation_OutboundConfigureScreen
+    
+    xor a
+    ld [W_Status_CalledFromContactScreen], a
+    ld [W_MainScript_TextStyle], a
     ret
