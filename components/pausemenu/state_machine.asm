@@ -324,3 +324,81 @@ PauseMenu_StatePhoneIMEInputHandler::
     
 .nothing_pressed
     ret
+    
+;State 0C 07
+PauseMenu_StatePlayOutCallSFX::
+    ld a, [W_System_CountdownTimer]
+    dec a
+    ld [W_System_CountdownTimer], a
+    
+    cp 0
+    ret nz
+    
+    ld a, 1
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    jp System_ScheduleNextSubState
+    
+;State 0C 08
+PauseMenu_StatePlayCallSFX2::
+    ld a, $65
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 0
+    jr z, .no_sound_effect
+    
+.use_failed_sound_effect
+    ld a, $66
+    ld [W_Sound_NextSFXSelect], a
+    
+.no_sound_effect
+    ld a, $80
+    ld [W_System_CountdownTimer], a
+    jp System_ScheduleNextSubState
+
+;State 0C 09
+PauseMenu_StateCheckCallStatusAndTransition::
+    ld a, [W_System_CountdownTimer]
+    dec a
+    ld [W_System_CountdownTimer], a
+    
+    cp 0
+    ret nz
+    
+    ld a, 1
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 0
+    jr z, .invalid_number
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    
+    ld a, M_PauseMenu_StateTransitionToOutgoingCall
+    ld [W_SystemSubState], a
+    ret
+    
+.invalid_number
+    jp System_ScheduleNextSubState
+
+;State 0C 0A
+PauseMenu_StateExitPhoneIME::
+    call PauseMenu_LoadPhoneControlHint
+    
+    ld bc, $307
+    call PauseMenu_DrawMenuItems
+    call PhoneIME_PositionCursor
+    
+    ld de, $C0A0
+    call LCDC_ClearSingleMetasprite
+    
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
+    ret
