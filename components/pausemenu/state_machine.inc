@@ -25,6 +25,7 @@ M_PauseMenu_StateMeloDSubscreen EQU $11
 M_PauseMenu_StateInventorySubscreen EQU $12
 M_PauseMenu_StateSMSSubscreen EQU $13
 M_PauseMenu_StateSaveSubscreen EQU $14
+M_PauseMenu_StateOptionsSubscreen EQU $15
 M_PauseMenu_StateCallsSubscreen EQU $16
 M_PauseMenu_StateExitToOverworld EQU $17
 M_PauseMenu_StateZukanSubscreen EQU $18
