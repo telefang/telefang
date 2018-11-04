@@ -19,11 +19,11 @@ PauseMenu_GameStateMachine::
     dw PauseMenu_StatePlayCallSFX2
     dw PauseMenu_StateCheckCallStatusAndTransition
     dw PauseMenu_StateExitPhoneIME
-    dw $484E
-    dw $4866
-    dw $4872
-    dw $4883
-    dw $489C
+    dw PauseMenu_StateAnimateMenuScrollUpOne
+    dw PauseMenu_StateAnimateMenuScrollUpTwo
+    dw PauseMenu_StateAnimateMenuScrollFinish
+    dw PauseMenu_StateAnimateMenuScrollDownOne
+    dw PauseMenu_StateAnimateMenuScrollDownTwo
     dw PauseMenu_ContactSubstate
     dw $4E5B
     dw PauseMenu_InventoryStateMachine
@@ -431,5 +431,74 @@ PauseMenu_StateExitPhoneIME::
     ld [W_Sound_NextBGMSelect], a
     
     ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
+    ret
+    
+;State 0C 0B
+PauseMenu_StateAnimateMenuScrollUpOne::
+    call PauseMenu_LoadScrollAnimationFrameD2
+    
+    ld bc, $306
+    call PauseMenu_DrawMenuItems
+    
+    ld a, [W_PauseMenu_SelectedMenuTilemap]
+    inc a
+    cp (M_PauseMenu_MenuItemZukan + 1)
+    jr nz, .no_menu_wrap
+    
+.menu_wrap
+    xor a
+    
+.no_menu_wrap
+    ld [W_PauseMenu_SelectedMenuTilemap], a
+    jp System_ScheduleNextSubState
+
+;State 0C 0C
+PauseMenu_StateAnimateMenuScrollUpTwo::
+    call PauseMenu_LoadScrollAnimationFrameD1
+    
+    ld bc, $308
+    call PauseMenu_DrawMenuItems
+    jp System_ScheduleNextSubState
+
+;State 0C 0D
+PauseMenu_StateAnimateMenuScrollFinish::
+    ld e, $12
+    call PauseMenu_LoadMenuMap0
+    
+    ld bc, $307
+    call PauseMenu_DrawMenuItems
+    
+    ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
+    ret
+
+;State 0C 0E
+PauseMenu_StateAnimateMenuScrollDownOne::
+    call PauseMenu_LoadScrollAnimationFrameD1
+    
+    ld bc, $308
+    call PauseMenu_DrawMenuItems
+    
+    ld a, [W_PauseMenu_SelectedMenuTilemap]
+    dec a
+    cp (M_PauseMenu_MenuItemContacts - 1)
+    jr nz, .no_menu_wrap
+    
+.menu_wrap
+    ld a, M_PauseMenu_MenuItemZukan
+    
+.no_menu_wrap
+    ld [W_PauseMenu_SelectedMenuTilemap], a
+    jp System_ScheduleNextSubState
+
+;State 0C 0F
+PauseMenu_StateAnimateMenuScrollDownTwo::
+    call PauseMenu_LoadScrollAnimationFrameD2
+    
+    ld bc, $306
+    call PauseMenu_DrawMenuItems
+    
+    ld a, M_PauseMenu_StateAnimateMenuScrollFinish
     ld [W_SystemSubState], a
     ret
