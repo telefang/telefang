@@ -8,11 +8,42 @@ PauseMenu_GameStateMachine::
     jp [hl]
     
 .state_list
-    dw PauseMenu_StateLoadGraphics,PauseMenu_StateLoadMenuHalves,PauseMenu_StateLoadPalettes,PauseMenu_StateLoadDMGCompatibility,PauseMenu_StateAnimateMenuHalvesIn,$4681,$4743,$47D9; 0
-    dw $47EE,$4807,$482E,$484E,$4866,$4872,$4883,$489C; 8
-    dw PauseMenu_ContactSubstate,$4E5B,PauseMenu_InventoryStateMachine,PauseMenu_SMSStateMachine,PauseMenu_SaveStateMachine,$507E,$50EE,$48AB; 16
-    dw Zukan_StateMachine,$48CB,$4907,$4936,$4953,$4969,$49A8,$49A9; 24
-    dw $49AA,$49DC,$49F3,$4A09
+    dw PauseMenu_StateLoadGraphics
+    dw PauseMenu_StateLoadMenuHalves
+    dw PauseMenu_StateLoadPalettes
+    dw PauseMenu_StateLoadDMGCompatibility
+    dw PauseMenu_StateAnimateMenuHalvesIn
+    dw PauseMenu_StateInputHandler
+    dw PauseMenu_StatePhoneIMEInputHandler
+    dw PauseMenu_StatePlayOutCallSFX
+    dw PauseMenu_StatePlayCallSFX2
+    dw PauseMenu_StateCheckCallStatusAndTransition
+    dw PauseMenu_StateExitPhoneIME
+    dw $484E
+    dw $4866
+    dw $4872
+    dw $4883
+    dw $489C
+    dw PauseMenu_ContactSubstate
+    dw $4E5B
+    dw PauseMenu_InventoryStateMachine
+    dw PauseMenu_SMSStateMachine
+    dw PauseMenu_SaveStateMachine
+    dw $507E
+    dw $50EE
+    dw $48AB
+    dw Zukan_StateMachine
+    dw $48CB
+    dw $4907
+    dw $4936
+    dw $4953
+    dw $4969
+    dw $49A8
+    dw $49A9
+    dw $49AA
+    dw $49DC
+    dw $49F3
+    dw $4A09
 
 ;State 0C 00
 PauseMenu_StateLoadGraphics::
