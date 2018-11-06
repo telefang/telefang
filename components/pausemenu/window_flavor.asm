@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION "Pause Menu Window Flavor WRAM", WRAM0[$CDB3]
 W_PauseMenu_WindowFlavor:: ds 1
 
@@ -10,11 +12,11 @@ PauseMenu_CGBStageFlavorPalette::
     ld c, a
     add hl, bc
     ld a, [W_PauseMenu_WindowFlavor]
-    cp 1
+    cp M_PauseMenu_WindowFlavorMint
     jr z, .mintFlavoredWindows
-    cp 2
+    cp M_PauseMenu_WindowFlavorStrawberry
     jr z, .strawberryFlavoredWindows
-    cp 3
+    cp M_PauseMenu_WindowFlavorMango
     jr z, .mangoFlavoredWindows
     
 ; Plain flavor
