@@ -2,7 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Event Action - Jump on Silent Mode and Continue", ROMX[$4FB3], BANK[$F]
 EventScript_JumpOnSilentModeAndContinue::
-	ld a, [W_Phone_SilentMode]
+	ld a, [W_Overworld_MannerMode]
 	or a
 	jr nz, .phoneIsOnSilent
 	ld b, 2

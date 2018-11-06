@@ -5,6 +5,7 @@ W_Overworld_CurrentTimeSeconds:: ds 1
 W_Overworld_CurrentTimeMinutes:: ds 1
 W_Overworld_CurrentTimeHours:: ds 1
 W_Overworld_CurrentTimeDays:: ds 2
+W_Overworld_ClockDisplay:: ds 1
 
 SECTION "Overworld RTC", ROMX[$5060], BANK[$29]
 Overworld_ReadRTCTime::
