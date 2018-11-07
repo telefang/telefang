@@ -183,7 +183,7 @@ Tilemap_BANK_0::
 	dw Tilemap_summon_ui_denjuu_name_third_tmap
 	dw Tilemap_unknown_tilemap_0_84
 	dw Tilemap_unknown_tilemap_0_85
-	dw Tilemap_unknown_tilemap_0_86
+	dw Tilemap_pausemenu_contact_questionmark_tmap
 	dw Tilemap_contactenlist_bg_tmap
 	dw Tilemap_unknown_tilemap_0_88
 	dw Tilemap_unknown_tilemap_0_89
@@ -756,9 +756,9 @@ Tilemap_unknown_tilemap_0_85::
 	INCBIN "build/gfx/unknown/tilemap_0/85.tmap"
 Tilemap_unknown_tilemap_0_85_END
 
-Tilemap_unknown_tilemap_0_86::
-	INCBIN "build/gfx/unknown/tilemap_0/86.tmap"
-Tilemap_unknown_tilemap_0_86_END
+Tilemap_pausemenu_contact_questionmark_tmap::
+	INCBIN "build/components/pausemenu/contact/questionmark_tmap.tmap"
+Tilemap_pausemenu_contact_questionmark_tmap_END
 
 Tilemap_contactenlist_bg_tmap::
 	INCBIN "build/components/contactenlist/bg_tmap.tmap"
