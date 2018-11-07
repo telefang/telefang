@@ -22,16 +22,15 @@ PatchUtils_CommitStagedCGBToSGB::
     adc a, 0
     ld h, a
     
+    ;Color 0 is forcibly set to white.
+    ;Setting it to any other color will demonstrably harm the SHVC side's
+    ;palette set.
     ld a, [hli]
-    ld e, a
     ld a, [hli]
-    ld d, a
     
-    call PatchUtils_ColourToSGB
-    
-    ld a, d
+    ld a, $7F
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0 + 1], a
-    ld a, e
+    ld a, $FF
     ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0 + 0], a
     
     ld a, [hli]
