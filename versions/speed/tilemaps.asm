@@ -757,7 +757,7 @@ Tilemap_unknown_tilemap_0_85::
 Tilemap_unknown_tilemap_0_85_END
 
 Tilemap_pausemenu_contact_questionmark_tmap::
-	INCBIN "build/components/pausemenu/contact/questionmark_tmap.csv"
+	INCBIN "build/components/pausemenu/contact/questionmark_tmap.tmap"
 Tilemap_pausemenu_contact_questionmark_tmap_END
 
 Tilemap_contactenlist_bg_tmap::
