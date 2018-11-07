@@ -29,7 +29,7 @@ PauseMenu_GameStateMachine::
     dw PauseMenu_InventoryStateMachine
     dw PauseMenu_SMSStateMachine
     dw PauseMenu_SaveStateMachine
-    dw $507E
+    dw OptionsMenu_StateMachine
     dw $50EE
     dw PauseMenu_StateExitToOverworld
     dw Zukan_StateMachine
