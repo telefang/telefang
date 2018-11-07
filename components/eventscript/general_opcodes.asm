@@ -1,10 +1,5 @@
 INCLUDE "telefang.inc"
 
-; Until I find a better place to put this it can stay here.
-
-SECTION "Phone Silent Mode", WRAM0[$C90A]
-W_Phone_SilentMode:: ds 1
-
 SECTION "Event Action - Change Phone State and Continue", ROMX[$4FA6], BANK[$F]
 EventScript_ChangePhoneStateAndContinue::
 	ld a, [W_EventScript_ParameterA]
@@ -27,7 +22,7 @@ EventScript_PlayCreditsAndContinue::
 
 SECTION "Event Action - Ring Ring and Continue", ROMX[$4E70], BANK[$F]
 EventScript_RingRingAndContinue::
-	ld a, [W_Phone_SilentMode]
+	ld a, [W_Overworld_MannerMode]
 	or a
 	jr nz, .onSilent
 	ld a, 2
@@ -49,7 +44,7 @@ EventScript_RingRingAndContinue::
 
 SECTION "Event Action - Stop Ringing and Continue", ROMX[$4E97], BANK[$F]
 EventScript_StopRingingAndContinue::
-	ld a, [W_Phone_SilentMode]
+	ld a, [W_Overworld_MannerMode]
 	or a
 	jr nz, .phoneWasOnSilent
 	ld a, 1

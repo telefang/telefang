@@ -177,7 +177,7 @@ Overworld_InitializeNewSaveFile::
     call $2C57
     
     ld a, 1
-    ld [$C93E], a
+    ld [W_Overworld_ClockDisplay], a
     
     ld hl, $C910
     ld a, $F4 ; '('
@@ -185,9 +185,9 @@ Overworld_InitializeNewSaveFile::
     ld a, 1
     ld [hl], a
     ld a, 0
-    ld [$C90A], a
+    ld [W_Overworld_MannerMode], a
     ld a, 1
-    ld [$CD27], a
+    ld [W_Battle_AnimationPlayback], a
     ld a, $E
     ld [W_PreviousBank], a
     ld a, 4

@@ -8,11 +8,42 @@ PauseMenu_GameStateMachine::
     jp [hl]
     
 .state_list
-    dw PauseMenu_StateLoadGraphics,PauseMenu_StateLoadMenuHalves,PauseMenu_StateLoadPalettes,PauseMenu_StateLoadDMGCompatibility,PauseMenu_StateAnimateMenuHalvesIn,$4681,$4743,$47D9; 0
-    dw $47EE,$4807,$482E,$484E,$4866,$4872,$4883,$489C; 8
-    dw PauseMenu_ContactSubstate,$4E5B,PauseMenu_InventoryStateMachine,PauseMenu_SMSStateMachine,PauseMenu_SaveStateMachine,$507E,$50EE,$48AB; 16
-    dw Zukan_StateMachine,$48CB,$4907,$4936,$4953,$4969,$49A8,$49A9; 24
-    dw $49AA,$49DC,$49F3,$4A09
+    dw PauseMenu_StateLoadGraphics
+    dw PauseMenu_StateLoadMenuHalves
+    dw PauseMenu_StateLoadPalettes
+    dw PauseMenu_StateLoadDMGCompatibility
+    dw PauseMenu_StateAnimateMenuHalvesIn
+    dw PauseMenu_StateInputHandler
+    dw PauseMenu_StatePhoneIMEInputHandler
+    dw PauseMenu_StatePlayOutCallSFX
+    dw PauseMenu_StatePlayCallSFX2
+    dw PauseMenu_StateCheckCallStatusAndTransition
+    dw PauseMenu_StateExitPhoneIME
+    dw PauseMenu_StateAnimateMenuScrollUpOne
+    dw PauseMenu_StateAnimateMenuScrollUpTwo
+    dw PauseMenu_StateAnimateMenuScrollFinish
+    dw PauseMenu_StateAnimateMenuScrollDownOne
+    dw PauseMenu_StateAnimateMenuScrollDownTwo
+    dw PauseMenu_ContactSubstate
+    dw $4E5B
+    dw PauseMenu_InventoryStateMachine
+    dw PauseMenu_SMSStateMachine
+    dw PauseMenu_SaveStateMachine
+    dw OptionsMenu_StateMachine
+    dw $50EE
+    dw PauseMenu_StateExitToOverworld
+    dw Zukan_StateMachine
+    dw PauseMenu_StateTransitionToOutgoingCall
+    dw PauseMenu_StateLoadOutgoingContactCallGraphics
+    dw PauseMenu_StateFadeInAndQueueContactMessage
+    dw PauseMenu_StateDeliverContactMessage
+    dw PauseMenu_StateTransitionOutOfOutboundContactCall
+    dw PauseMenu_State1E
+    dw PauseMenu_State1F
+    dw PauseMenu_StateLoadOutgoingSecretCallGraphics
+    dw PauseMenu_StateFadeInAndQueueSecretMessage
+    dw PauseMenu_StateDeliverSecretMessage
+    dw PauseMenu_StateTransitionOutOfOutboundSecretCall
 
 ;State 0C 00
 PauseMenu_StateLoadGraphics::
@@ -323,4 +354,422 @@ PauseMenu_StatePhoneIMEInputHandler::
     jp PhoneIME_DrawNumber
     
 .nothing_pressed
+    ret
+    
+;State 0C 07
+PauseMenu_StatePlayOutCallSFX::
+    ld a, [W_System_CountdownTimer]
+    dec a
+    ld [W_System_CountdownTimer], a
+    
+    cp 0
+    ret nz
+    
+    ld a, 1
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    jp System_ScheduleNextSubState
+    
+;State 0C 08
+PauseMenu_StatePlayCallSFX2::
+    ld a, $65
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 0
+    jr z, .no_sound_effect
+    
+.use_failed_sound_effect
+    ld a, $66
+    ld [W_Sound_NextSFXSelect], a
+    
+.no_sound_effect
+    ld a, $80
+    ld [W_System_CountdownTimer], a
+    jp System_ScheduleNextSubState
+
+;State 0C 09
+PauseMenu_StateCheckCallStatusAndTransition::
+    ld a, [W_System_CountdownTimer]
+    dec a
+    ld [W_System_CountdownTimer], a
+    
+    cp 0
+    ret nz
+    
+    ld a, 1
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 0
+    jr z, .invalid_number
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    
+    ld a, M_PauseMenu_StateTransitionToOutgoingCall
+    ld [W_SystemSubState], a
+    ret
+    
+.invalid_number
+    jp System_ScheduleNextSubState
+
+;State 0C 0A
+PauseMenu_StateExitPhoneIME::
+    call PauseMenu_LoadPhoneControlHint
+    
+    ld bc, $307
+    call PauseMenu_DrawMenuItems
+    call PhoneIME_PositionCursor
+    
+    ld de, $C0A0
+    call LCDC_ClearSingleMetasprite
+    
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
+    ret
+    
+;State 0C 0B
+PauseMenu_StateAnimateMenuScrollUpOne::
+    call PauseMenu_LoadScrollAnimationFrameD2
+    
+    ld bc, $306
+    call PauseMenu_DrawMenuItems
+    
+    ld a, [W_PauseMenu_SelectedMenuTilemap]
+    inc a
+    cp (M_PauseMenu_MenuItemZukan + 1)
+    jr nz, .no_menu_wrap
+    
+.menu_wrap
+    xor a
+    
+.no_menu_wrap
+    ld [W_PauseMenu_SelectedMenuTilemap], a
+    jp System_ScheduleNextSubState
+
+;State 0C 0C
+PauseMenu_StateAnimateMenuScrollUpTwo::
+    call PauseMenu_LoadScrollAnimationFrameD1
+    
+    ld bc, $308
+    call PauseMenu_DrawMenuItems
+    jp System_ScheduleNextSubState
+
+;State 0C 0D
+PauseMenu_StateAnimateMenuScrollFinish::
+    ld e, $12
+    call PauseMenu_LoadMenuMap0
+    
+    ld bc, $307
+    call PauseMenu_DrawMenuItems
+    
+    ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
+    ret
+
+;State 0C 0E
+PauseMenu_StateAnimateMenuScrollDownOne::
+    call PauseMenu_LoadScrollAnimationFrameD1
+    
+    ld bc, $308
+    call PauseMenu_DrawMenuItems
+    
+    ld a, [W_PauseMenu_SelectedMenuTilemap]
+    dec a
+    cp (M_PauseMenu_MenuItemContacts - 1)
+    jr nz, .no_menu_wrap
+    
+.menu_wrap
+    ld a, M_PauseMenu_MenuItemZukan
+    
+.no_menu_wrap
+    ld [W_PauseMenu_SelectedMenuTilemap], a
+    jp System_ScheduleNextSubState
+
+;State 0C 0F
+PauseMenu_StateAnimateMenuScrollDownTwo::
+    call PauseMenu_LoadScrollAnimationFrameD2
+    
+    ld bc, $306
+    call PauseMenu_DrawMenuItems
+    
+    ld a, M_PauseMenu_StateAnimateMenuScrollFinish
+    ld [W_SystemSubState], a
+    ret
+
+;State 0C 17
+PauseMenu_StateExitToOverworld::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    xor a
+    ld [W_Overworld_PowerAntennaPattern], a
+    
+    ld a, 5
+    ld [W_SystemState], a
+    
+    ld a, $A
+    ld [W_SystemSubState], a
+    
+    call PhoneConversation_OutboundConfigureScreen
+    
+    xor a
+    ld [W_Status_CalledFromContactScreen], a
+    ld [W_MainScript_TextStyle], a
+    ret
+
+;State 0C 19
+PauseMenu_StateTransitionToOutgoingCall::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    call PhoneIME_PositionCursor
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 1
+    jr z, .start_known_contact_call
+    
+.secret_denjuu_call
+    call ContactEnlist_CheckContactLimit
+    cp 0
+    jr nz, .known_contact_call
+    
+    ld a, M_PauseMenu_StateLoadOutgoingSecretCallGraphics
+    ld [W_SystemSubState], a
+    ret
+
+.known_contact_call
+    ld a, [$CB01]
+    ld e, a
+    ld d, 0
+    sla e
+    rl d
+    sla e
+    rl d
+    ld hl, $7C0D       ; TODO: table of predetermined messages
+    add hl, de
+    ld a, [hli]
+    ld [$CB01], a
+    
+    ld a, 3
+    ld [W_PauseMenu_NumberCallStatus], a
+    
+.start_known_contact_call
+    jp System_ScheduleNextSubState
+
+;State 0C 1A
+PauseMenu_StateLoadOutgoingContactCallGraphics::
+    call LCDC_ClearMetasprites
+    
+    ld a, [$CB01]
+    call PhoneConversation_DrawOutboundCallScreen
+    
+    xor a
+    ld [W_CGBPaletteStagedBGP], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    call PhoneConversation_OutboundConfigureScreen
+    
+    ld a, $F0
+    ld [W_Status_NumericalTileIndex], a
+    call Status_ExpandNumericalTiles
+    
+    ld a, $85
+    ld [W_MainScript_WindowBorderAttribs], a
+    
+    ld a, $A0
+    ld [W_MainScript_TileBaseIdx], a
+    
+    ld a, 2
+    ld [W_Overworld_PowerAntennaPattern], a
+    jp System_ScheduleNextSubState
+
+;State 0C 1B
+;TODO: What do these unknown functions do?
+PauseMenu_StateFadeInAndQueueContactMessage::
+    ld a, 0
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    call $7C53
+    
+    ld a, [W_PauseMenu_NumberCallStatus]
+    cp 3
+    jr nz, .exit
+    
+    ld c, $FD
+    ld b, 1
+    
+.exit
+    ld d, $C
+    call $520
+    jp System_ScheduleNextSubState
+
+;State 0C 1C
+PauseMenu_StateDeliverContactMessage::
+    call Banked_MainScriptMachine
+    
+    ld a, [W_MainScript_State]
+    cp M_MainScript_StateTerminated
+    ret nz
+    
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp System_ScheduleNextSubState
+
+;State 0C 1D
+PauseMenu_StateTransitionOutOfOutboundContactCall::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    xor a
+    ld [W_Overworld_PowerAntennaPattern], a
+    call PauseMenu_LoadMenuResources
+    call PauseMenu_LoadPhoneHalves
+    call PauseMenu_CGBLoadPalettes
+    call PauseMenu_ConfigureScreen
+    call PauseMenu_DrawMenuItemsAndFrame
+    call LCDC_DMGSetupDirectPalette
+    
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    ld [W_CGBPaletteStagedOBP], a
+    
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
+    
+    xor a
+    ld [W_SystemSubSubState], a
+    ld [W_MainScript_TextStyle], a
+    
+    ld a, [W_PhoneConversation_CalledDenjuu]
+    jp PhoneConversation_OutboundIncrementFD
+
+;State 0C 1E
+PauseMenu_State1E::
+    ret
+
+;State 0C 1F
+PauseMenu_State1F::
+    ret
+
+;State 0C 20
+PauseMenu_StateLoadOutgoingSecretCallGraphics::
+    call LCDC_ClearMetasprites
+    
+    ld a, [$CB01]
+    call $7C7E
+    call PhoneConversation_DrawOutboundCallScreen
+    
+    xor a
+    ld [W_CGBPaletteStagedBGP], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    call PhoneConversation_OutboundConfigureScreen
+    
+    ld a, $F0
+    ld [W_Status_NumericalTileIndex], a
+    call Status_ExpandNumericalTiles
+    
+    ld a, $85
+    ld [W_MainScript_WindowBorderAttribs], a
+    
+    ld a, $A0
+    ld [W_MainScript_TileBaseIdx], a
+    
+    ld a, 2
+    ld [W_Overworld_PowerAntennaPattern], a
+    jp System_ScheduleNextSubState
+
+;State 0C 21
+PauseMenu_StateFadeInAndQueueSecretMessage::
+    ld a, 0
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    ld a, [$CB01]
+    add a, $80
+    ld c, a
+    ld b, 1
+    ld d, $C
+    call $520
+    jp System_ScheduleNextSubState
+
+;State 0C 22
+PauseMenu_StateDeliverSecretMessage::
+    call Banked_MainScriptMachine
+    
+    ld a, [W_MainScript_State]
+    cp M_MainScript_StateTerminated
+    ret nz
+    
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp System_ScheduleNextSubState
+
+;State 0C 23
+PauseMenu_StateTransitionOutOfOutboundSecretCall::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    
+    or a
+    ret z
+    
+    xor a
+    ld [W_Overworld_PowerAntennaPattern], a
+    call PauseMenu_LoadMenuResources
+    call PauseMenu_LoadPhoneHalves
+    call PauseMenu_CGBLoadPalettes
+    call PauseMenu_ConfigureScreen
+    call PauseMenu_DrawMenuItemsAndFrame
+    call LCDC_DMGSetupDirectPalette
+    
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    ld [W_CGBPaletteStagedOBP], a
+    
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    
+    ld a, 5
+    ld [W_SystemSubState], a
+    
+    xor a
+    ld [W_SystemSubSubState], a
+    ld [W_MainScript_TextStyle], a
+    
+    ld a, [$CB01]
+    call $7B79
     ret
