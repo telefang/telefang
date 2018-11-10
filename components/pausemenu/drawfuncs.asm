@@ -29,6 +29,7 @@ PauseMenu_CallsMenuDrawDenjuuNickname::
 PauseMenu_ContactsMenuDrawDenjuuNickname::
     call PauseMenu_IndexContactArray
     
+PauseMenu_ContactsMenuDrawSelectedDenjuu::
     ld c, a
     call Banked_SaveClock_LoadDenjuuNicknameByIndex
     
