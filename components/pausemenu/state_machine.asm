@@ -30,7 +30,7 @@ PauseMenu_GameStateMachine::
     dw PauseMenu_SMSStateMachine
     dw PauseMenu_SaveStateMachine
     dw OptionsMenu_StateMachine
-    dw $50EE
+    dw CallsMenu_StateMachine
     dw PauseMenu_StateExitToOverworld
     dw Zukan_StateMachine
     dw PauseMenu_StateTransitionToOutgoingCall
