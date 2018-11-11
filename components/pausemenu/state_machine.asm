@@ -24,7 +24,7 @@ PauseMenu_GameStateMachine::
     dw PauseMenu_StateAnimateMenuScrollFinish
     dw PauseMenu_StateAnimateMenuScrollDownOne
     dw PauseMenu_StateAnimateMenuScrollDownTwo
-    dw PauseMenu_ContactSubstate
+    dw ContactMenu_StateMachine
     dw $4E5B
     dw PauseMenu_InventoryStateMachine
     dw PauseMenu_SMSStateMachine

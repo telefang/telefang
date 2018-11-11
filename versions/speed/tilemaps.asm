@@ -57,7 +57,7 @@ Tilemap_BANK_0::
 	dw Tilemap_pausemenu_buttons_options_tmap
 	dw Tilemap_pausemenu_buttons_cancel_tmap
 	dw Tilemap_unknown_tilemap_0_2a
-	dw Tilemap_pausemenu_contact_select_screen_tmap
+	dw Tilemap_contactmenu_select_screen_tmap
 	dw Tilemap_unknown_tilemap_0_2c
 	dw Tilemap_melodyedit_ringtone_select_tmap
 	dw Tilemap_pausemenu_resources_inventory_tmap
@@ -73,7 +73,7 @@ Tilemap_BANK_0::
 	dw Tilemap_titlemenu_sound_test_tmap
 	dw Tilemap_pausemenu_calls_screen_tmap
 	dw Tilemap_pausemenu_sms_select_tmap
-	dw Tilemap_pausemenu_contact_option_tmap
+	dw Tilemap_contactmenu_option_tmap
 	dw Tilemap_cutscene_shigeki_connected_tmap
 	dw Tilemap_encounter_backgrounds_field_tmap
 	dw Tilemap_encounter_backgrounds_forest_tmap
@@ -99,8 +99,8 @@ Tilemap_BANK_0::
 	dw Tilemap_phoneconversation_backgrounds_ocean_tmap
 	dw Tilemap_phoneconversation_backgrounds_desert_tmap
 	dw Tilemap_menu_sms_contents_tmap
-	dw Tilemap_pausemenu_contact_ringtone_assign_tmap
-	dw Tilemap_pausemenu_contact_delete_confirm_tmap
+	dw Tilemap_contactmenu_ringtone_assign_tmap
+	dw Tilemap_contactmenu_delete_confirm_tmap
 	dw Tilemap_titlemenu_save_overwrite_warning_tmap
 	dw Tilemap_unknown_tilemap_0_50
 	dw Tilemap_unknown_tilemap_0_51
@@ -183,7 +183,7 @@ Tilemap_BANK_0::
 	dw Tilemap_summon_ui_denjuu_name_third_tmap
 	dw Tilemap_unknown_tilemap_0_84
 	dw Tilemap_unknown_tilemap_0_85
-	dw Tilemap_pausemenu_contact_questionmark_tmap
+	dw Tilemap_contactmenu_questionmark_tmap
 	dw Tilemap_contactenlist_bg_tmap
 	dw Tilemap_unknown_tilemap_0_88
 	dw Tilemap_unknown_tilemap_0_89
@@ -392,9 +392,9 @@ Tilemap_unknown_tilemap_0_2a::
 	INCBIN "build/gfx/unknown/tilemap_0/2a.tmap"
 Tilemap_unknown_tilemap_0_2a_END
 
-Tilemap_pausemenu_contact_select_screen_tmap::
-	INCBIN "build/components/pausemenu/contact/select_screen_tmap.tmap"
-Tilemap_pausemenu_contact_select_screen_tmap_END
+Tilemap_contactmenu_select_screen_tmap::
+	INCBIN "build/components/contactmenu/select_screen_tmap.tmap"
+Tilemap_contactmenu_select_screen_tmap_END
 
 Tilemap_unknown_tilemap_0_2c::
 	INCBIN "build/gfx/unknown/tilemap_0/2c.tmap"
@@ -456,9 +456,9 @@ Tilemap_pausemenu_sms_select_tmap::
 	INCBIN "build/components/pausemenu/sms/select_tmap.tmap"
 Tilemap_pausemenu_sms_select_tmap_END
 
-Tilemap_pausemenu_contact_option_tmap::
-	INCBIN "build/components/pausemenu/contact/option_tmap.tmap"
-Tilemap_pausemenu_contact_option_tmap_END
+Tilemap_contactmenu_option_tmap::
+	INCBIN "build/components/contactmenu/option_tmap.tmap"
+Tilemap_contactmenu_option_tmap_END
 
 Tilemap_cutscene_shigeki_connected_tmap::
 	INCBIN "build/gfx/cutscene/shigeki_connected_tmap.tmap"
@@ -528,13 +528,13 @@ Tilemap_menu_sms_contents_tmap::
 	INCBIN "build/gfx/menu/sms/contents_tmap.tmap"
 Tilemap_menu_sms_contents_tmap_END
 
-Tilemap_pausemenu_contact_ringtone_assign_tmap::
-	INCBIN "build/components/pausemenu/contact/ringtone_assign_tmap.tmap"
-Tilemap_pausemenu_contact_ringtone_assign_tmap_END
+Tilemap_contactmenu_ringtone_assign_tmap::
+	INCBIN "build/components/contactmenu/ringtone_assign_tmap.tmap"
+Tilemap_contactmenu_ringtone_assign_tmap_END
 
-Tilemap_pausemenu_contact_delete_confirm_tmap::
-	INCBIN "build/components/pausemenu/contact/delete_confirm_tmap.tmap"
-Tilemap_pausemenu_contact_delete_confirm_tmap_END
+Tilemap_contactmenu_delete_confirm_tmap::
+	INCBIN "build/components/contactmenu/delete_confirm_tmap.tmap"
+Tilemap_contactmenu_delete_confirm_tmap_END
 
 Tilemap_titlemenu_save_overwrite_warning_tmap::
 	INCBIN "build/components/titlemenu/save_overwrite_warning_tmap.tmap"
@@ -756,9 +756,9 @@ Tilemap_unknown_tilemap_0_85::
 	INCBIN "build/gfx/unknown/tilemap_0/85.tmap"
 Tilemap_unknown_tilemap_0_85_END
 
-Tilemap_pausemenu_contact_questionmark_tmap::
-	INCBIN "build/components/pausemenu/contact/questionmark_tmap.tmap"
-Tilemap_pausemenu_contact_questionmark_tmap_END
+Tilemap_contactmenu_questionmark_tmap::
+	INCBIN "build/components/contactmenu/questionmark_tmap.tmap"
+Tilemap_contactmenu_questionmark_tmap_END
 
 Tilemap_contactenlist_bg_tmap::
 	INCBIN "build/components/contactenlist/bg_tmap.tmap"
