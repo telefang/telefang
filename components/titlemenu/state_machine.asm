@@ -235,8 +235,8 @@ TitleMenu_StateMenuInputHandler::
     ld [W_Status_NumericalTileIndex], a
     call Status_ExpandNumericalTiles
     
-    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest & $FF)
-    call PatchUtils_AuxCodeJmp
+    ld a, M_TitleMenu_StateLoadSoundTestScreen
+    ld [W_SystemSubState], a
     jp TitleMenu_DrawSoundTestNumbersAndCursors
     
 .continueSelected
@@ -526,8 +526,8 @@ TitleMenu_StateFadeToOverworldNewGame::
     
 ; State 03 18
 TitleMenu_StateLoadSoundTestScreen::
-    ld a, 4
-    ld [W_PauseMenu_SelectedCursorType], a
+    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -576,11 +576,12 @@ TitleMenu_StateSoundTestExit::
     
     ld a, $32
     call Sound_IndexMusicSetBySong
+    
     ld [W_Sound_NextBGMSelect], a
     call TitleMenu_ScrollMenu_refresh
     
-    ld a, M_TitleMenu_StateMenuInputHandler
-    ld [W_SystemSubState], a
+    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest & $FF)
+    call PatchUtils_AuxCodeJmp
     ret
     
 ;State 03 1B

@@ -23,7 +23,7 @@ Battle_ADVICE_StatusInflictionArticle::
 	jp z, Battle_ADVICE_BattleArticle.postSetup
 	jp Battle_ADVICE_BattleNoArticle.postSetup
 
-SECTION "Patch Utilities - Battle Articles", ROMX[$4B00], BANK[$1]
+SECTION "Patch Utilities - Battle Articles", ROMX[$4B40], BANK[$1]
 Battle_ADVICE_BattleNoArticle::
 	M_AdviceSetup
 	

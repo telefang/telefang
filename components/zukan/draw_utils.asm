@@ -144,7 +144,7 @@ Zukan_UpdateOverviewCursorsNumbersAndNextState::
     ld [W_OAM_SpritesReady], a
     jp System_ScheduleNextSubSubState
 
-SECTION "Zukan Draw Advice", ROMX[$44C0], BANK[$1]
+SECTION "Zukan Draw Advice", ROMX[$4500], BANK[$1]
 Zukan_ADVICE_DrawSpeciesPageText::
     M_AdviceSetup
     

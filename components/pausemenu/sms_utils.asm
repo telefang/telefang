@@ -263,7 +263,7 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
 	M_AdviceTeardown
 	ret
 
-SECTION "Pause Menu SMS Utils First Draw Helper ADVICE", ROMX[$4E00], BANK[$1]
+SECTION "Pause Menu SMS Utils ADVICE 2", ROMX[$4C40], BANK[$1]
 PauseMenu_ADVICE_SMSFirstDrawHelper::
 	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
 	ld a, c
@@ -271,7 +271,6 @@ PauseMenu_ADVICE_SMSFirstDrawHelper::
 	call PauseMenu_ADVICE_SMSDrawLine
 	ret
 
-SECTION "Pause Menu SMS Utils Locate Message ADVICE", ROMX[$4DB0], BANK[$1]
 PauseMenu_ADVICE_SMSLocateMessage::
 	ld a, [W_MelodyEdit_DataCurrent]
 	ld b, a
@@ -297,7 +296,6 @@ PauseMenu_ADVICE_SMSLocateMessage::
 	ld [W_PauseMenu_SMSOriginPtr + 1], a
 	ret
 
-SECTION "Pause Menu SMS Utils Locate Line ADVICE", ROMX[$4D60], BANK[$1]
 PauseMenu_ADVICE_SMSLocateLineRelativeToCache::
 ; c is the line number we are searching for.
 	call PauseMenu_ADVICE_SMSGetCachedLine
@@ -352,7 +350,6 @@ PauseMenu_ADVICE_SMSLocateLineRelativeToCache::
 	call PauseMenu_ADVICE_SMSSetPointer
 	ret
 
-SECTION "Pause Menu SMS Utils Count Lines ADVICE", ROMX[$4D20], BANK[$1]
 PauseMenu_ADVICE_SMSCountLines::
 	call PauseMenu_ADVICE_SMSGetOriginPointer
 	ld b, 0
@@ -389,8 +386,7 @@ PauseMenu_ADVICE_SMSCountLines::
 	xor a
 	ld [W_PauseMenu_SMSScrollPos], a
 	ret
-
-SECTION "Pause Menu SMS Utils Find Line for Drawing ADVICE", ROMX[$4CF0], BANK[$1]
+   
 PauseMenu_ADVICE_SMSFindLineForDrawing::
 	ld hl, $9400
 	ld de, $60
@@ -406,7 +402,6 @@ PauseMenu_ADVICE_SMSFindLineForDrawing::
 	call PauseMenu_ADVICE_SMSSetDrawAddress
 	ret
 
-SECTION "Pause Menu SMS Utils Draw Line ADVICE", ROMX[$4C50], BANK[$1]
 PauseMenu_ADVICE_SMSDrawLine::
 	xor a
 	ld [W_MainScript_VWFLetterShift], a
@@ -446,7 +441,6 @@ PauseMenu_ADVICE_SMSDrawLine::
 .endRead
 	ret
 
-SECTION "Pause Menu SMS Utils Draw Arrows ADVICE", ROMX[$4C00], BANK[$1]
 PauseMenu_ADVICE_SMSDrawArrows::
 	ld b, $20
 	ld hl, $97B0
@@ -477,7 +471,6 @@ PauseMenu_ADVICE_SMSDrawArrows::
 	jr nz, .loopA
 	ret
 	
-SECTION "Pause Menu SMS Map Tiles", ROMX[$4E40], BANK[$1]
 PauseMenu_ADVICE_SMSMapTiles::
 	M_AdviceSetup
 	ld e, $57
@@ -493,7 +486,6 @@ PauseMenu_ADVICE_SMSMapTiles::
 	M_AdviceTeardown
 	ret
 
-SECTION "Pause Menu SMS Map Arrows", ROMX[$4CB0], BANK[$1]
 PauseMenu_ADVICE_SMSMapArrows::
 	xor a
 	ld [W_PauseMenu_SMSArrowAnimationStage], a
@@ -527,7 +519,6 @@ PauseMenu_ADVICE_SMSMapArrows::
 	call PauseMenu_ADVICE_SMSMapBottomArrow
 	ret
 
-SECTION "Pause Menu SMS Map Arrow", ROMX[$4E20], BANK[$1]
 PauseMenu_ADVICE_SMSMapArrow::
 	call WaitForBlanking
 	ld [hl], d
@@ -539,7 +530,6 @@ PauseMenu_ADVICE_SMSMapArrow::
 	ld [hl], d
 	ret
 
-SECTION "Pause Menu SMS Contents Check Input", ROMX[$4FD0], BANK[$1]
 PauseMenu_ADVICE_SMSContentsCheckInput::
 	M_AdviceSetup
 	call PauseMenu_ADVICE_SMSScrollCheck
@@ -561,7 +551,6 @@ PauseMenu_ADVICE_SMSContentsCheckInput::
 	M_AdviceTeardown
 	ret
 
-SECTION "Pause Menu SMS Scroll Check", ROMX[$4FA0], BANK[$1]
 PauseMenu_ADVICE_SMSScrollCheck::
 	ld a, [W_JPInput_TypematicBtns]
 	and M_JPInput_Up + M_JPInput_Down
@@ -584,7 +573,6 @@ PauseMenu_ADVICE_SMSScrollCheck::
 .postScroll
 	ret
 
-SECTION "Pause Menu SMS Scroll Up", ROMX[$4EF0], BANK[$1]
 PauseMenu_ADVICE_SMSScrollUp::
 	ld a, [W_PauseMenu_SMSScrollPos]
 	or a
@@ -607,7 +595,6 @@ PauseMenu_ADVICE_SMSScrollUp::
 	ld [W_Sound_NextSFXSelect], a
 	ret
 
-SECTION "Pause Menu SMS Scroll Down", ROMX[$4F50], BANK[$1]
 PauseMenu_ADVICE_SMSScrollDown::
 	ld a, [W_PauseMenu_SMSScrollMax]
 	ld b, a
@@ -632,7 +619,6 @@ PauseMenu_ADVICE_SMSScrollDown::
 	ld [W_Sound_NextSFXSelect], a
 	ret
 
-SECTION "Pause Menu SMS Move Up Old Lines", ROMX[$4EC0], BANK[$1]
 PauseMenu_ADVICE_SMSMoveUpOldLines::
 	ld hl, $9460
 	ld de, $9400
@@ -651,7 +637,6 @@ PauseMenu_ADVICE_SMSMoveUpOldLines::
 	jr nz, .tileCopyLoop
 	ret
 
-SECTION "Pause Menu SMS Move Down Old Lines", ROMX[$4E90], BANK[$1]
 PauseMenu_ADVICE_SMSMoveDownOldLines::
 	ld hl, $95DF
 	ld de, $963F
@@ -670,7 +655,6 @@ PauseMenu_ADVICE_SMSMoveDownOldLines::
 	jr nz, .tileCopyLoop
 	ret
 
-SECTION "Pause Menu SMS Draw Arrow Animation Tiles", ROMX[$5160], BANK[$1]
 PauseMenu_ADVICE_SMSDrawArrowBob::
 	ld b, $40
 	ld hl, $9730
@@ -693,7 +677,6 @@ PauseMenu_ADVICE_SMSDrawArrowBob::
 	call PauseMenu_ADVICE_SMSBasicTileCopy
 	ret
 
-SECTION "Pause Menu SMS Basic Tile Copy", ROMX[$5140], BANK[$1]
 PauseMenu_ADVICE_SMSBasicTileCopy::
 	di
 	call WaitForBlanking
@@ -705,14 +688,12 @@ PauseMenu_ADVICE_SMSBasicTileCopy::
 	jr nz, PauseMenu_ADVICE_SMSBasicTileCopy
 	ret
 
-SECTION "Pause Menu SMS Set Arrow State", ROMX[$5120], BANK[$1]
 PauseMenu_ADVICE_SMSSetArrowState::
 	ld a, [W_PauseMenu_SMSArrowAnimationStage]
 	add b
 	ld [W_PauseMenu_SMSArrowAnimationStage], a
 	ret
 
-SECTION "Pause Menu SMS Arrow Animation", ROMX[$50F0], BANK[$1]
 PauseMenu_ADVICE_SMSAnimateArrows::
 	ld a, [W_PauseMenu_SMSArrowAnimationStage]
 	ld c, a
@@ -728,7 +709,6 @@ PauseMenu_ADVICE_SMSAnimateArrows::
 	ld [W_PauseMenu_SMSArrowAnimationStage], a
 	ret
 
-SECTION "Pause Menu SMS Arrow Animation Stage 1", ROMX[$5060], BANK[$1]
 PauseMenu_ADVICE_SMSAnimateStageA::
 	bit 6, c
 	jr z, .skipTopArrow
@@ -749,7 +729,6 @@ PauseMenu_ADVICE_SMSAnimateStageA::
 	ld [W_PauseMenu_SMSArrowAnimationStage], a
 	ret
 
-SECTION "Pause Menu SMS Arrow Animation Stage 2", ROMX[$5090], BANK[$1]
 PauseMenu_ADVICE_SMSAnimateStageB::
 	bit 6, c
 	jr z, .skipTopArrow
@@ -768,7 +747,6 @@ PauseMenu_ADVICE_SMSAnimateStageB::
 	ld [W_PauseMenu_SMSArrowAnimationStage], a
 	ret
 
-SECTION "Pause Menu SMS Arrow Animation Stage 3", ROMX[$50C0], BANK[$1]
 PauseMenu_ADVICE_SMSAnimateStageC::
 	bit 6, c
 	jr z, .skipTopArrow
@@ -787,7 +765,6 @@ PauseMenu_ADVICE_SMSAnimateStageC::
 	ld [W_PauseMenu_SMSArrowAnimationStage], a
 	ret
 
-SECTION "Pause Menu SMS Map Arrow Shorthand", ROMX[$5040], BANK[$1]
 PauseMenu_ADVICE_SMSMapTopArrow::
 	ld hl, $98E4
 	jr PauseMenu_ADVICE_SMSMapBottomArrow.remoteJp
@@ -799,7 +776,6 @@ PauseMenu_ADVICE_SMSMapBottomArrow::
 	call PauseMenu_ADVICE_SMSMapArrow
 	ret
 
-SECTION "Pause Menu SMS Utils Common Helper ADVICE", ROMX[$6B7D], BANK[$1]
 PauseMenu_ADVICE_SMSGetCachedLine::
 	ld a, [W_PauseMenu_SMSLineAddressCache]
 	ld l, a

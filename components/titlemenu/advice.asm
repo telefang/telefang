@@ -222,12 +222,29 @@ TitleMenu_ADVICE_LoadSGBFiles::
 TitleMenu_ADVICE_LoadSGBFilesSoundTest::
     M_AdviceSetup
     
-    ld a, M_TitleMenu_StateLoadSoundTestScreen
-    ld [W_SystemSubState], a
+    ld a, 4
+    ld [W_PauseMenu_SelectedCursorType], a
     
     ld a, $16 << 3 + 1 ;ATTR_SET
     ld [W_SGB_SpotPalette], a
     ld a, $06
+    ld [W_SGB_SpotPalette + 1], a
+    ld a, BANK(SGB_SendConstructedPaletteSetPacket)
+    ld hl, SGB_SendConstructedPaletteSetPacket
+    call CallBankedFunction_int
+    
+    M_AdviceTeardown
+    ret
+    
+TitleMenu_ADVICE_UnloadSGBFilesSoundTest::
+    M_AdviceSetup
+    
+    ld a, M_TitleMenu_StateMenuInputHandler
+    ld [W_SystemSubState], a
+    
+    ld a, $16 << 3 + 1 ;ATTR_SET
+    ld [W_SGB_SpotPalette], a
+    ld a, $03
     ld [W_SGB_SpotPalette + 1], a
     ld a, BANK(SGB_SendConstructedPaletteSetPacket)
     ld hl, SGB_SendConstructedPaletteSetPacket
