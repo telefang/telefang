@@ -311,6 +311,15 @@ Banked_SaveClock_LoadDenjuuNicknameByStatPtr::
     rst $10
     ret
 
+Banked_Status_CalculatePhoneNumber::
+    push af
+    ld a, BANK(Status_CalculatePhoneNumber)
+    rst $10
+    pop af
+    call Status_CalculatePhoneNumber
+    rst $18
+    ret
+
 SECTION "Banked Call Helpers 67", ROM0[$069C]
 Banked_SaveClock_LoadDenjuuNicknameByIndex::
     ld a, BANK(SaveClock_LoadDenjuuNicknameByIndex)

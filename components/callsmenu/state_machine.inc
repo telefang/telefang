@@ -1,0 +1,13 @@
+M_CallsMenu_StateInitCallsHistory EQU $00
+M_CallsMenu_StateDrawNoMessageIndicator EQU $01
+M_CallsMenu_StateNoMessageIndicatorIdle EQU $02
+M_CallsMenu_StateDrawHistoryEntry EQU $03
+M_CallsMenu_StateEntryListingIdle EQU $04
+M_CallsMenu_StateDialQueuedPhoneNumber EQU $05
+M_CallsMenu_StateFadeToOutboundCallScreen EQU $06
+M_CallsMenu_StateDrawOutboundCallScreen EQU $07
+M_CallsMenu_StateFadeInOutboundCall EQU $08
+M_CallsMenu_StateOutboundCallScriptIdle EQU $09
+M_CallsMenu_StateFadeBackToEntryListing EQU $0A
+M_CallsMenu_StateDie EQU $0B
+M_CallsMenu_StateReturnToPauseMenu EQU $0C

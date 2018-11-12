@@ -1,0 +1,2 @@
+M_CallsMenu_CallHistoryEntrySize EQU 4
+M_CallsMenu_CallHistoryEntryCount EQU 8

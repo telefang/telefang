@@ -106,6 +106,8 @@ Status_DrawBottomOfDigits::
     jr nz, .twoByteLoop
     
     ret
+    
+Status_CalculatePhoneNumber::
 
 SECTION "Status Phone Number Graphic", ROMX[$49B8], BANK[$29]
 Status_LoadPhoneDigits::
