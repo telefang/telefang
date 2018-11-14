@@ -694,7 +694,7 @@ MainScript_CCInterpreter_SetFont::
 	ld [W_MainScript_ADVICE_FontToggle], a
 	jp MainScript_EndOpcode.skipNewlineCheck
 
-SECTION "Main Script Patch Advice 3", ROMX[$4E95], BANK[$B]
+SECTION "Main Script Patch Advice 4", ROMX[$4E95], BANK[$B]
 MainScript_CCInterpreter_NarrowPhraseCC::
 ; Control Code F4
     ; Traditional opening pop hl deferred until later (saves two bytes).
