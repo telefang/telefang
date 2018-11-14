@@ -260,3 +260,28 @@ Battle_GetNegativeStatusInflictedDenjuuName::
 .exit
 	call SaveClock_ExitSRAM
 	ret
+
+SECTION "MainScript ADVICE Auto Narrow Battle Phrases", ROMX[$5300], BANK[$1]
+MainScript_ADVICE_AutoNarrowPhrase::
+    M_AdviceSetup
+    ld a, BANK(MainScript_ADVICE_CountTextWidth)
+    ld hl, MainScript_ADVICE_CountTextWidth
+    ld bc, W_MainScript_MessageArg2
+    ld d, $20
+    call CallBankedFunction_int
+    ld a, e
+    cp $70
+    jr c, .noTextOverflow
+    
+.textOverflow
+    ld a, 1
+    jr .exit
+    
+.noTextOverflow
+    xor a
+    
+.exit
+    ld [W_MainScript_ADVICE_FontToggle], a
+    
+    M_AdviceTeardown
+    ret
