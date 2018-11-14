@@ -160,6 +160,10 @@ Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
 Banked_PatchUtils_CommitStagedCGBToSGB_CBE::
 	jp PatchUtils_CommitStagedCGBToSGB_CBE
 	nop
+	
+Banked_MainScript_ADVICE_AutoNarrowPhrase::
+	jp MainScript_ADVICE_AutoNarrowPhrase
+	nop
 
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.

@@ -14,6 +14,7 @@ INCLUDE "telefang.inc"
 ;F1: Used for enabling vertical option selection mode.
 ;F2: Switches the font to bold. However this disables narrow font rendering.
 ;F3: Switches the font to normal from either bold or narrow.
+;F4: Switches the font to narrow or normal based on the rendered length of the currently loaded battle phrase.
 
 
 MainScript_StateOpcode EQU $45C8
@@ -58,7 +59,7 @@ MainScript_CCInterpreter::
 	dw MainScript_CCInterpreter_EnableVerticalArrowModeCC ; F1
 	dw MainScript_CCInterpreter_BoldFontCC ; F2
 	dw MainScript_CCInterpreter_FontResetCC ; F3
-	dw MainScript_CCInterpreter_DefaultCC ; F4
+	dw MainScript_CCInterpreter_NarrowPhraseCC ; F4
 	dw MainScript_CCInterpreter_DefaultCC ; F5
 	dw MainScript_CCInterpreter_DefaultCC ; F6
 	dw MainScript_CCInterpreter_DefaultCC ; F7
@@ -692,3 +693,14 @@ MainScript_CCInterpreter_FontResetCC::
 MainScript_CCInterpreter_SetFont::
 	ld [W_MainScript_ADVICE_FontToggle], a
 	jp MainScript_EndOpcode.skipNewlineCheck
+
+SECTION "Main Script Patch Advice 3", ROMX[$4E95], BANK[$B]
+MainScript_CCInterpreter_NarrowPhraseCC::
+; Control Code F4
+    ; Traditional opening pop hl deferred until later (saves two bytes).
+    push af
+    ld a, Banked_MainScript_ADVICE_AutoNarrowPhrase & $FF
+    call PatchUtils_AuxCodeJmp
+    pop af
+    pop hl
+    jp MainScript_EndOpcode.skipNewlineCheck

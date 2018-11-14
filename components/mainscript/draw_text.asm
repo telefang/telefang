@@ -30,7 +30,7 @@ MainScript_DrawLetter::
 	pop hl
 	call MainScript_ADVICE_FontSelector
 	ret
-	ds $5C
+	ds $51
 
 SECTION "MainScript Text Drawing Advice 2", ROMX[$79C1], BANK[$B]
 MainScript_ADVICE_DrawLetter:
