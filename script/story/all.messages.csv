@@ -18,7 +18,7 @@ Alright?
 ひだリがわの カウンターで
 『じっけんシンカ』か
 『かいぞうシンカ』を
-おこなうことができます","In other shops, you can perform <bold>Bionic<normal> and <bold>Lab evolution<normal> at the left counter.",,
+おこなうことができます","In other shops, you can perform <bold>Augment<normal> and <bold>DNA evolution<normal> at the left counter.",,
 0x12000c,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,Shop 2
 0x12000e,"<&0xca00>チルになリます。
@@ -35,7 +35,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120018,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
+できます",You can evolve your Denjuu through Augment evolution here.,,
 0x12001a,"『かいぞうしよう』を
 みせてください。",Let me see your Augment Pass.,,
 0x12001c,"この『かいぞうしよう』では
@@ -57,7 +57,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x12002a,"ここでは デンジュウを
 『じっけんシンカ』させることが
-できます",You can evolve your Denjuu using the laboratory here.,,
+できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,
 0x12002c,"『じっけんしよう』を
 みせてください。",Let me see your Lab Pass.,,
 0x12002e,"この『じっけんしよう』では
@@ -79,7 +79,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x12003c,"ここでは デンジュウを
 『じっけんシンカ』させることが
-できます",You can evolve your Denjuu using the laboratory here.,,
+できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,
 0x12003e,"『じっけんしよう』を
 みせてください。",Let me see your Lab Pass.,,
 0x120040,"この『じっけんしよう』では
@@ -101,7 +101,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,(Unused)
 0x12004e,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,(Unused)
+できます",You can evolve your Denjuu through Augment evolution here.,,(Unused)
 0x120050,"『かいぞうしよう』を
 みせてください。",Let me see your Augment Pass.,,(Unused)
 0x120052,"この『きょかしょう』では
@@ -124,7 +124,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120060,"ここでは デンジュウを
 『じっけんシンカ』させることが
-できます",You can evolve your Denjuu using the laboratory here.,,
+できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,
 0x120062,"『じっけんしよう』を
 みせてください。",Let me see your Lab Pass.,,
 0x120064,"この『じっけんしよう』では
@@ -146,7 +146,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120072,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
+できます",You can evolve your Denjuu through Augment evolution here.,,
 0x120074,"『かいぞうしよう』を
 みせてください。",Let me see your Augment Pass.,,
 0x120076,"この『かいぞうしよう』では
@@ -168,7 +168,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120084,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
+できます",You can evolve your Denjuu through Augment evolution here.,,
 0x120086,"『かいぞうしよう』を
 みせてください。",Let me see your Augment Pass.,,
 0x120088,"この『かいぞうしよう』では
@@ -190,7 +190,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x120096,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
+できます",You can evolve your Denjuu through Augment evolution.,,
 0x120098,"『かいぞうしよう』を
 みせてください。",Let me see your Augment Pass.,,
 0x12009a,"この『かいぞうしよう』では
@@ -212,7 +212,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x1200a8,"ここでは デンジュウを
 『じっけんシンカ』させることが
-できます",You can evolve your Denjuu using the laboratory here.,,
+できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,
 0x1200aa,"『じっけんしよう』を
 みせてください。",Let me see your Lab Pass.,,
 0x1200ac,"この『じっけんしよう』では
@@ -234,7 +234,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x1200ba,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
+できます",You can evolve your Denjuu through Augment evolution.,,
 0x1200bc,"『かいぞうしよう』を
 みせてください。",Let me see your Augment Pass.,,
 0x1200be,"この『かいぞうしよう』では
@@ -256,7 +256,7 @@ Alright?
 おかいもとめ ください。",Please purchase your items at the right counter.,,
 0x1200cc,"ここでは デンジュウを
 『かいぞうシンカ』させることが
-できます",You can evolve your Denjuu through Bionic evolution by performing augmentation here.,,
+できます",You can evolve your Denjuu through Augment evolution.,,
 0x1200ce,"『かいぞうしよう』を
 みせてください。",Let me see your Augment Pass.,,
 0x1200d0,"この『かいぞうしよう』では
@@ -4309,7 +4309,7 @@ What do you mean??",,
 This type only happens with ""Natural Denjuu"", though.",,
 0x1401aa,"『かいぞうシンカ』について
 ききたいか?
- はい  いいえ<*A>","Do you wanna hear about ""Bionic evolution""?
+ はい  いいえ<*A>","Do you wanna hear about ""Augment evolution""?
 <Q>Yes<|>No</Q><*A>",,
 0x1401ac,"『かいぞうシンカ』は
 デンジュウとアイテムを
@@ -4317,11 +4317,11 @@ This type only happens with ""Natural Denjuu"", though.",,
 シンカさせることが できるんだ
 これは『しぜんデンジュウ』
 『ぶんめいデンジュウ』で
-おこなうことができるんだ","Bionic evolution is when you combine a Denjuu with an item in order to get it to evolve.
+おこなうことができるんだ","Augment evolution is when you combine a Denjuu with an item in order to get it to evolve.
 This method works with Natural and Cultivated Denjuu.",,
 0x1401ae,"『じっけんシンカ』について
 ききたいか?
- はい  いいえ<*A>","Do you wanna hear about ""Lab evolution""?
+ はい  いいえ<*A>","Do you wanna hear about ""DNA evolution""?
 <Q>Yes<|>No</Q><*A>",,
 0x1401b0,"『じっけんシンカ』は 
 『しぜんデンジュウ』から
@@ -4330,7 +4330,7 @@ This method works with Natural and Cultivated Denjuu.",,
 かけあわせることによって
 おこなうことが できる
 シンカなんだ
-これは『ぶんめいデンジュウ』がおこなえる シンカなんだ","Lab evolution involves taking DNA from an evolved Natural Denjuu and combining it with the DNA of a Cultivated Denjuu.
+これは『ぶんめいデンジュウ』がおこなえる シンカなんだ","DNA evolution involves taking DNA from an evolved Natural Denjuu and combining it with the DNA of a Cultivated Denjuu.
 This method only works for Cultivated Denjuu.",,
 0x1401b2,"シンカのこと わかったかな?
 わからなかったら また

@@ -2,7 +2,10 @@ Pointer,Japanese,English,Draft version,Notes
 0x40000,"<S0>あたまは ヘルメットじょうの
 カバーで まもられている<*4>",<S0>Its head is protected by a helmet-like cover.<*4>,<S0>Its head is protected by a helmet-like cover.<*4>,Field Guide entries.
 0x40002,"<S0>こまかい はで どんなもの
-でも かみきってしまう<*4>",<S0>Can't help but gnaw through everything it comes across using its small teeth.<*4>,<S0>Can't help but gnaw through anything and everything it comes across using its small teeth.<*4>,"Status: Translated 100%! Good job, me!
+でも かみきってしまう<*4>","<S0>Can't help but gnaw
+through everything it
+comes across
+using its small teeth.<*4>",<S0>Can't help but gnaw through everything it comes across using its small teeth.<*4>,"Status: Translated 100%! Good job, me!
 "
 0x40004,"<S0>からだをまるめて てきからの
 ダメージを かるくする<*4>",<S0>Rolls up in a ball to mitigate damage taken.<*4>,<S0>Rolls up in a ball to mitigate damage taken.<*4>,
@@ -130,7 +133,7 @@ flat tail and uses it to attack.<*4>",
 てきをひるませ こうげきする<*4>","<S0>When angered, its fins fan out to intimidate the foe. It attacks while they're startled.<*4>","<S0>When angered, its fins fan out to intimidate the foe.
 It attacks while they're startled by its size.<*4>",
 0x40072,"<S0>まるまって トゲのボールに
-すがたをかえて とっしんする<*4>",<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,<S0>Curls up in a spiky ball and careens toward the opponent.<*4>,
+すがたをかえて とっしんする<*4>",<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,<S0>Curls up in a spiky ball and careens toward its opponent.<*4>,
 0x40074,"<S0>からだが あなだらけなので
 しっぽからふくとフエになる?<*4>","<S0>Covered in holes.
 Would blowing on its tail make it a flute?<*4>","<S0>Covered in holes.
@@ -242,7 +245,7 @@ This cheerful Denjuu loves music.<*4>",
 0x400d8,"<S0>からだじたいが Dショット!
 あしがないので てであるく<*4>","<S0>Its very body is a D-Shot! It has no legs, so it walks using its hands.<*4>","<S0>Its very body is a D-Shot! It has no legs, so it walks using its hands.<*4>",
 0x400da,"<S0>てのひらに そうびしている
-マシンガンで てきをうちぬく<*4>",<S0>Riddles foes with bullets from the machine guns in its palms.<*4>,<S0>Riddles foes with bullets from the machine guns it has installed in its palms.<*4>,
+マシンガンで てきをうちぬく<*4>",<S0>Riddles foes with bullets from the machine guns in its palms.<*4>,<S0>Riddles foes with bullets from the machine guns in its palms.<*4>,
 #######,colspan=2 | '''Super-Machine Denjuu                                      ''',,,
 0x400dc,"<S0>どんなに すばやくても この
 スピードキングにはかなわない<*4>","<S0>However fast they may be, no one comes close to beating this king of speed.<*4>","<S0>However fast they may be, no one comes close to beating this king of speed.<*4>",
@@ -282,7 +285,7 @@ This cheerful Denjuu loves music.<*4>",
 0x400fe,"<S0>おおきくて リっぱなあしで
 てきを ふみつぶしてしまう<*4>","<S0>Tramples all over its foes with its large, imposing feet.<*4>","<S0>Tramples all over its foes with its large, imposing feet.<*4>",
 0x40100,"<S0>まきついている ほうたいで
-トモダチを ちリょうする<*4>",<S0>Uses its bandages to treat any wounds its friends may have.<*4>,<S0>Uses its bandages for treating its friends' wounds.<*4>,
+トモダチを ちリょうする<*4>",<S0>Uses its bandages to treat any wounds its friends may have.<*4>,<S0>Uses its bandages to treat any wounds its friends may have.<*4>,
 0x40102,"<S0>おおきなハサミにつかまったら
 もう にげることはできない<*4>","<S0>Once captured by its large claws, there's no way to escape.<*4>","<S0>Once captured by its large claws, there's no way to escape.<*4>",
 0x40104,"<S0>うでのカバーからしゅリけんを
@@ -311,7 +314,7 @@ This cheerful Denjuu loves music.<*4>",
 0x4011a,"<S0>からだじゅうに トゲトゲした 
 とっきぶつを もっている<*4>",<S0>Thorn-like protrusions cover its body.<*4>,<S0>Thorn-like protrusions cover its body.<*4>,
 0x4011c,"<S0>みためは かわいいが はなつ
-デンキは とてもきょうリょく<*4>","<S0>It looks cute, but its electric shocks aren't to be trifled with.<*4>","<S0>It looks cute, but the electricity it releases isn't to be trifled with.<*4>",
+デンキは とてもきょうリょく<*4>","<S0>It looks cute, but its electric shocks aren't to be trifled with.<*4>","<S0>It looks cute, but its electric shocks aren't to be trifled with.<*4>",
 0x4011e,"<S0>ツメは ムチのように のびて
 とおくのてきにも こうかあリ<*4>","<S0>Its claws extend like whips. With them, it can reach foes that are far away.<*4>","<S0>Its claws extend like whips. With them, it can reach foes that are far away.<*4>",
 0x40120,"<S0>ざんぞうを のこすほどの 
@@ -356,7 +359,7 @@ This cheerful Denjuu loves music.<*4>",
 0x40144,"<S0>みずを じざいに あやつる
 ふしぎな デンジュウ<*4>",<S0>Can freely manipulate water. A mysterious Denjuu indeed.<*4>,<S0>Can freely manipulate water. A mysterious Denjuu indeed.<*4>,
 0x40146,"<S0>ながい てをつかい もリの
-なかを じざいにうごきまわる<*4>",<S0>Its long arms allows it to move effortlessly through the forest.<*4>,"<S0>Using its long arms, it moves effortlessly through the forest.<*4>",
+なかを じざいにうごきまわる<*4>",<S0>Its long arms allow it to move effortlessly through the forest.<*4>,<S0>Its long arms allow it to move effortlessly through the forest.<*4>,
 0x40148,"<S0>いつでも なにがあっても
 ぜったい おこっている<*4>","<S0>No matter when, what, or where – this Denjuu is always angry.<*4>","<S0>No matter when, what, or where – this Denjuu is always angry.<*4>",
 0x4014a,"<S0>しんしゅくじざいのブレードで

@@ -447,10 +447,10 @@ I'm tired / Reasons.",
 0x13010c,Tファンガーはおとこしかいない? いない そんなことない<*A>,"Are all T-Fangers guys?
 <Q>Yes<|>Not at all</Q><*A>",,
 0x13010e,"おこる?おこるの?ぜったい?
- ぜったい そんなわけないよ<*A>","Really? You'd get mad? You mean it
+ ぜったい そんなわけないよ<*A>","Really? You'd get mad? You mean it?
 <Q>Yes<|>Of course not!</Q><*A>",,
 0x130110,"それはちがうとおもうよ
-おんなのこもたくさんいるから<*2>",I don't think so! There are plenty of female T-Fangers out there!<*2>,,
+おんなのこもたくさんいるから<*2>",I don't think so! There are plenty of T-Fanger girls out there!<*2>,,
 0x130112,"<&name>のともだちにも
 おんなのこがいるもんね!<*2>","After all, there are girls even among your own T-Fanger friends, right?<*2>",,
 0x130114,"そうなの?そうなの?
@@ -485,8 +485,8 @@ I'm tired / Reasons.",
 <Q>I do<|>No way</Q><*A>",,
 0x130128,"キカイとくみあわせて
 しんかさせるのは?
- かこうしんか かいぞうしんか<*A>","What's it called when you evolve a Denjuu using a machine?
-<Q>Assembly evolution<|>Bionic evolution</Q><*A>",,
+ かこうしんか かいぞうしんか<*A>","What's it called when you evolve a Denjuu by combining it with a doohickey?
+<Q>Assembly evolution<|>Augment evolution</Q><*A>",,
 0x13012a,"オマエなら そういうと
 おもったんだよな
  やっぱリ? うそつけ<*A>","Yeah, I thought you'd say that.
@@ -507,13 +507,13 @@ I'm tired / Reasons.",
 0x130136,"ちがうデンジュウのDNAを
 くみあわせるしんかは?
  じっけんしんか はかいしんか<*A>","What type of evolution requires splicing DNA from another Denjuu?
-<Q>Lab evolution<|>Genetic evolution</Q><*A>",,
+<Q>DNA evolution<|>Genetic evolution</Q><*A>",,
 0x130138,"のリきでないのなら
 しかたがないですね...
  やっぱリやる ごめん<*A>","Well, if you really don't feel like it...
 <Q>I guess I'll do it<|>Sorry</Q><*A>",,
 0x13013a,"セイカイ!じっけんしんかは
-なかなかできないんだよね!<*2>","Correct! Lab evolution isn't simple to do, is it?<*2>",,
+なかなかできないんだよね!<*2>","Correct! DNA evolution isn't simple to do, is it?<*2>",,
 0x13013c,"もしかしてまだしらない?
 それじゃ しょうがないけど..<*2>",Maybe you don't actually know about it yet? I suppose you wouldn't know the answer then...<*2>,,
 0x13013e,"そうくるとおもってましたよ!
@@ -676,7 +676,7 @@ I'm tired / Reasons.",
 0x1301ac,ああ きのみつをチュウチュウ..って!それムシじゃん!<*2>,"Oh, so they suck up the sap... Wait, no, now you're talking about insects!<*2>",,
 0x1301ae,"それがいちばんってことか
 でもにげきれなかったら...<*2>","So that's what you'd do? If you can't get away, though... Brrrr!<*2>",,
-0x1301b0,さあ いっしょにおどリましょう!って!あし ないんでしょ?<*2>,You can do a nice little dance together! Wait... ghosts don't have legs!<*2>,,
+0x1301b0,さあ いっしょにおどリましょう!って!あし ないんでしょ?<*2>,You can do a nice little dance together! Wait... Ghosts don't have legs!<*2>,,
 #######,#032,,,
 0x1301b2,"『おこづかい』っていうのが
 ニンゲンにはあるんでしょう?

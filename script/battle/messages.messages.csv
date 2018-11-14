@@ -6,7 +6,7 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 "
 0x114004,"<&0xd460>
 『<&0xd4b1>』<*5>","<&0xd6a0>
-""<&0xd658>""<*5>",,"<&0xd6a0>
+<0xF4>""<&0xd658>""<0xF3><*5>",,"<&0xd6a0>
 ""<&0xd658>""<*5>",,
 0x114006,"<&0xd460>の
 デンワバンゴウをゲットした!<*5>",Got <&0xd6a0>'s phone number!<*5>,,<&0xd6a0>s Handynummer bekommen!<*5>,,
@@ -402,12 +402,12 @@ Weiter fusionieren?
 0x114168,<S3>じっけんかいし!!<*4>,<S3>Experiment in progress!!<*4>,,<S3>Experiment im Gange!!<*4>,,
 0x11416a,"<&0xca53> は
 かいぞうしんか した!!
-<&0xca00> になった。<*2>","Bionic evolution! <&0xd6b1>
+<&0xca00> になった。<*2>","Augment evolution! <&0xd6b1>
 evolved into <&0xccc0>.<*2>",,"<&0xd6b1> hat sich durch Fusion weiterentwickelt!!
 Es hat sich zu <&0xccc0> entwickelt!<*2>",,
 0x11416c,"<&0xca53> は
 じっけんしんか した!!
-<&0xca00> になった。<*2>","<&0xd6b1> has Lab evolved!
+<&0xca00> になった。<*2>","<&0xd6b1> has DNA evolved!
 Evolved into <&0xccc0>.<*2>",,"<&0xd6b1> hat sich im Labor weiterentwickelt!!
 Es hat sich zu <&0xccc0> entwickelt.<*2>",,
 0x11416e,"よろしいですか?
