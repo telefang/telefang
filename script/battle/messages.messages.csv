@@ -12,7 +12,7 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 デンワバンゴウをゲットした!<*5>",Got <&0xd6a0>'s phone number!<*5>,,<&0xd6a0>s Handynummer bekommen!<*5>,,
 0x114008,"<&0xd460>
 『<&0xd4b1>』<*5>","<&0xd6a0>
-""<&0xd658>""<*5>",,"<&0xd6a0>
+<0xF4>""<&0xd658>""<0xF3><*5>",,"<&0xd6a0>
 ""<&0xd658>""<*5>",,
 0x11400a,"<&0xd460>は
 たおれた!<*5>",<&0xccd1><&0xd6a0> fell!<*5>,,<&0xd6a0> ist am Boden!<*5>,,
@@ -220,7 +220,7 @@ Denma-Power!<*5>",,
 0x1140cc,"『ちょっと よリみちするから
  すこし おくれるね!』<*4>","""I got distracted, so I'll be a bit late!""<*4>",,"""Kam was dazwischen, wird ein bisschen später!""<*4>",,
 0x1140ce,"『ごめん!まよっちゃった!
- すこし おくれそう!』<*4>","""Sorry! I got lost! I'll be a bit longer!""<*4>",,"""Sorry! Hab mich verlaufen, wird etwas später!""<*4>",,
+ すこし おくれそう!』<*4>","""Sorry, I got lost! I'll be a bit longer!""<*4>",,"""Sorry! Hab mich verlaufen, wird etwas später!""<*4>",,
 0x1140d0,<&0xd448>チル ゲット!<*5>,Got <&0xd448> Chiru!<*5>,,<&0xd448> Chiru erhalten!<*5>,,
 0x1140d2,"てきのなかまは
 おくれているようだ!<*4>",The enemy's ally is late to battle!<*4>,,Mitstreiter vom Herausforderer verspätet sich!<*4>,,

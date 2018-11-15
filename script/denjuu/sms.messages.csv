@@ -62,7 +62,6 @@ such good
 friends,
 am I
 right?
-
 Let's hang
 out again
 soon!
@@ -109,8 +108,9 @@ Good?
 All's good
 with me.<*4>","Hey, how you feeling lately? Good?
 All's good with me.",Selfish,
-0x11801e,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"Pardon me
-asking,
+0x11801e,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"I hope you
+don't mind
+me asking,
 but...
 
 What's up?<*4>","I hope you don't mind me asking, but...
@@ -122,14 +122,16 @@ you been
 as of
 late?
 
-
 As for me,
 I am doing
 just fine.<*4>","How have you been as of late?
 
-
 As for me, I am doing just fine.",Sincere,
-0x118024,オレ なんかキミのことがすごいきらいになったみたいなんだよね<*4>,/0x118024/<*4>,,Carefree,
+0x118024,オレ なんかキミのことがすごいきらいになったみたいなんだよね<*4>,"I've
+started
+liking you
+less and
+less.<*4>",I've started liking you less and less.,Carefree,
 0x118026,さいきんのオマエは なんかすごくイヤなカンジだぜ まったく!<*4>,"Gotta say,
 you're
 kinda the
@@ -149,12 +151,14 @@ kind of bad
 vibes from
 you lately.<*4>","Um...
 I've been getting kind of bad vibes from you lately.",Timid,
-0x11802c,うぉーーー キミなんかきらいだーたまには でんわ してよー<*4>,"ugh I
-hate u
-why u
+0x11802c,うぉーーー キミなんかきらいだーたまには でんわ してよー<*4>,"Argh!
+I hate
+you!
+Why do you
 never
-call
-me??<*4>",,Irritable,
+call?!<*4>","Argh!
+I hate you!
+Why do you never call?!",Irritable,
 0x11802e,さいきんのキミは ちょっとつめたいとおもうのですが どうですか?<*4>,"I can't
 help but
 feel that
@@ -162,21 +166,52 @@ you've
 been
 somewhat
 cold lately.
-
 Is some-
 thing the
 matter?<*4>",I can't help but feel that you've been somewhat cold lately. Is something the matter?,Sincere,
-0x118030,オマエ さいきんちょうしがわるいみたいだけど がんばってね!<*4>,/0x118030/<*4>,,Carefree,
-0x118032,オマエ さいきんちょうしがよくないんだろ? むリするなよな!<*4>,/0x118032/<*4>,,Absentminded,
-0x118034,ちょうしわるいときって つらいよなーオマエもきをつけるんだぞ<*4>,/0x118034/<*4>,,Selfish,
-0x118036,あのぉ...ちょうしわるいんですか?がんばってくださいね!<*4>,"Umm...
-are u
-feelin
-OK?
-keep
-it up!<*4>",,Timid,
-0x118038,なんだか さいきんちょうしがわるいんだな!もっとがんばれよ!<*4>,/0x118038/<*4>,,Irritable,
-0x11803a,なかなかれんらくがこないのでしんぱいしています!メールください!<*4>,/0x11803a/<*4>,,Sincere,
+0x118030,オマエ さいきんちょうしがわるいみたいだけど がんばってね!<*4>,"You don't
+seem to be
+doing too
+well lately...
+but hang in
+there!<*4>",You don't seem to be doing too well lately... but hang in there!,Carefree,
+0x118032,オマエ さいきんちょうしがよくないんだろ? むリするなよな!<*4>,"You're not
+doing so
+hot lately,
+right?
+Don't push
+yourself!<*4>","You're not doing so hot lately, right? Don't push yourself!",Absentminded,
+0x118034,ちょうしわるいときって つらいよなーオマエもきをつけるんだぞ<*4>,"Down in
+the dumps,
+huh? That
+sucks.
+
+Take care!<*4>","Down in the dumps, huh? That sucks.
+
+Take care!",Selfish,
+0x118036,あのぉ...ちょうしわるいんですか?がんばってくださいね!<*4>,"Um... Are
+you feeling
+okay?
+Hang in
+there!<*4>",Um... Are you feeling okay? Hang in there!,Timid,
+0x118038,なんだか さいきんちょうしがわるいんだな!もっとがんばれよ!<*4>,"You've
+been off
+your game
+recently,
+haven't
+you? You
+should
+work
+harder!<*4>","You've been off your game recently, haven't you? You should work harder!",Irritable,
+0x11803a,なかなかれんらくがこないのでしんぱいしています!メールください!<*4>,"I haven't
+heard
+from you
+lately,
+which
+worries me!
+Please
+send me a
+text.<*4>","I haven't heard from you lately, which worries me! Please send me a text.",Sincere,
 0x11803c,ひさしぶリ!ゲンキか? オレじつは メールにがてなんだよな!<*4>,"Long time
 no see! I'm
 not too
@@ -189,34 +224,33 @@ reception
 before
 every
 Telefang!<*4>",You gotta check your reception before every Telefang!,Absentminded,
-0x118040,デンワをまめにかけると デンジュウとなかよくなれるらしいぜ!<*4>,/0x118040/<*4>,"To get closer to us Denjuu, put your phone to good use!",Selfish,
+0x118040,デンワをまめにかけると デンジュウとなかよくなれるらしいぜ!<*4>,"To get
+closer to
+us Denjuu,
+put your
+phone to
+good use!<*4>","To get closer to us Denjuu, put your phone to good use!",Selfish,
 0x118042,デンジュウのせいかくを よくみてからデンワでよんだほうがいいぜ!<*4>,"Before
 calling a
 Denjuu
 over to a
 Telefang,
-
 you should
 always
 think
 about its
 person-
-ality!<*4>","Before calling a Denjuu over to a Telefang,
-
-you should always think about its person-ality!",Timid,
+ality!<*4>","Before calling a Denjuu over to a Telefang, you should always think about its person-ality!",Timid,
 0x118044,たたかいにくるジカンは デンジュウのせいかくにかんけいしてるぞ!<*4>,"How long a
 Denjuu
 takes to
 arrive
 in battle
-
 depends on
 what its
 person-
 ality is!<*4>","How long a Denjuu takes to arrive
-in battle
-
-depends on what its person-ality is!",Irritable,
+in battle depends on what its person-ality is!",Irritable,
 0x118046,デンジュウは くさのところで よく しゅつげんするらしいぞ!<*4>,"Denjuu
 appear
 quite
@@ -237,7 +271,14 @@ won't
 appear
 near
 houses!<*4>",Apparently Denjuu won't appear near houses!,Absentminded,
-0x11804c,デンジュウは とくいなヤツとふとくいなヤツがいるんだってさ!<*4>,/0x11804c/<*4>,,Selfish,
+0x11804c,デンジュウは とくいなヤツとふとくいなヤツがいるんだってさ!<*4>,"Don't
+forget:
+Denjuu
+each have
+their own
+strengths
+and weak-
+nesses!<*4>",Don't forget: Denjuu each have their own strengths and weak-nesses!,Selfish,
 0x11804e,つかれたデンジュウは じっとしてればかいふくするんだってさ!<*4>,"To heal
 weary
 Denjuu,
@@ -347,21 +388,38 @@ w/ my
 frends
 lately
 ....u?<*4>",Haven't been see-ing friends much lately... You?,Selfish,
-0x118066,デンワは マメにしないと ダメだぞ トモダチなくすからな! <*4>,"phone
-ppl or
-youll
-lose
+0x118066,デンワは マメにしないと ダメだぞ トモダチなくすからな! <*4>,"Phone
+people or
+you'll lose
 your
-frends
-<*4>",,Timid,
-0x118068,デンワがかかってきたとき テキトウにこたえると あとがたいヘん!<*4>,/0x118068/<*4>,,Irritable,
-0x11806a,このメールいつみてるんだ? もしヨルだったら さっさとねろよ<*4>,/0x11806a/<*4>,,Sincere,
+friends!<*4>",Phone people or you'll lose your friends!,Timid,
+0x118068,デンワがかかってきたとき テキトウにこたえると あとがたいヘん!<*4>,"When
+someone
+calls you
+to ask a
+question,
+if you
+answer
+without
+thinking,
+you'll make
+trouble
+for
+yourself!<*4>","When someone calls you to ask a question, if you answer without thinking, you'll make trouble for yourself!",Irritable,
+0x11806a,このメールいつみてるんだ? もしヨルだったら さっさとねろよ<*4>,"What time
+is it when
+you're
+reading
+this? If
+it's night,
+go to bed
+ASAP!<*4>","What time is it when you're reading this? If it's night, go to bed ASAP!",Sincere,
 0x11806c,おはよー..って これみてるのがヨルだったらさ まぬけだよな<*4>,"mornin
 ...oh
 unless
 its 
 nite 4
-u haha<*4>",,Carefree,
+u haha<*4>","Mornin'! ...Unless it's night when you read this, heh.",Carefree,
 0x11806e,テレファングのときは あいしょうを かんがえて よんでくれよ<*4>,/0x11806e/<*4>,,Absentminded,
 0x118070,ダイデンジュウとバクデンジュウのDNAは ちがうんだってさ!<*4>,/0x118070/<*4>,,Selfish,
 0x118072,ボクを テレファングのときに よんでよー デンワまってるから<*4>,/0x118072/<*4>,,Timid,
