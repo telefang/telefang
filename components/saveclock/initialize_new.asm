@@ -74,13 +74,13 @@ sub_A412E::
     add hl, bc
     ld b, h
     ld c, l
-    call $2C57 ;TODO: WTF does this DO!?
+    call Overworld_SetFlag ;TODO: WTF does this DO!?
     
     ld bc, $FF00
     add hl, bc
     ld b, h
     ld c, l
-    call $2C57
+    call Overworld_SetFlag
     
     pop hl
     pop bc

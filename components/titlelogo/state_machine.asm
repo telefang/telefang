@@ -74,11 +74,11 @@ TitleLogo_StateSmilesoft::
     ld bc, $1412
     ld a, $0
     ld hl, $9800
-    call $15CA
+    call LCDC_SetTileAttribsSquare
     ld bc, $2006
     ld a, $1
     ld hl, $98E0
-    call $15CA
+    call LCDC_SetTileAttribsSquare
     ld bc, $0
     ld e, $7
     ld a, $0
@@ -123,7 +123,7 @@ TitleLogo_StateBonBon::
     ld bc, $1412
     ld a, $2
     ld hl, $9800
-    call $15CA
+    call LCDC_SetTileAttribsSquare
     ld bc, $0
     ld e, $8
     ld a, $0
@@ -146,7 +146,7 @@ TitleLogo_StateOpeningCredits::
     ld bc, $1412
     ld a, $0
     ld hl, $9800
-    call $15CA
+    call LCDC_SetTileAttribsSquare
     ld bc, $0
     ld e, $A
     ld a, $0

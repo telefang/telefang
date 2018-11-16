@@ -171,10 +171,10 @@ Overworld_InitializeNewSaveFile::
     ld [$C955], a
     
     ld bc, $C00
-    call $2C57
+    call Overworld_SetFlag
     
     ld bc, $1DD
-    call $2C57
+    call Overworld_SetFlag
     
     ld a, 1
     ld [W_Overworld_ClockDisplay], a
