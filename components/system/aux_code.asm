@@ -135,10 +135,6 @@ Banked_Status_ADVICE_StateExit::
 	jp Status_ADVICE_StateExit
 	nop
 
-Banked_Status_ADVICE_InitializeHabitatMetaSprite::
-	jp Status_ADVICE_InitializeHabitatMetaSprite
-	nop
-
 ;components/battle/articles.asm
 Banked_Battle_ADVICE_BattleNoArticle::
 	jp Battle_ADVICE_BattleNoArticle

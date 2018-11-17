@@ -157,13 +157,3 @@ Status_ADVICE_StateExit::
     
     M_AdviceTeardown
     ret
-
-Status_ADVICE_InitializeHabitatMetaSprite::
-    M_AdviceSetup
-
-    ; Original replaced code
-    ld bc, $E
-    call Banked_LoadMaliasGraphics
-
-    M_AdviceTeardown
-    ret

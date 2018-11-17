@@ -40,9 +40,8 @@ Status_TextTable_UnkMove:: ;4BB1
 
 SECTION "Status Screen State Implementations", ROMX[$4C81], BANK[$02]
 Status_StateInitGraphics:
-    ld a, Banked_Status_ADVICE_InitializeHabitatMetaSprite & $FF
-    call PatchUtils_AuxCodeJmp
-
+    ld bc, $E
+    call Banked_LoadMaliasGraphics
     ld a, $F0
     ld [$C91E], a
     call Status_ExpandNumericalTiles
