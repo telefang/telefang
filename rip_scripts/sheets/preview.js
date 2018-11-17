@@ -18,6 +18,6 @@ function previewSelectedCell() {
     text = wrap(text, params.width);
   }
   
-  var image = fetchImagePreview(text, params.width, params.line_spacing, params.lines_per_page);
+  var image = fetchImagePreview(text, params.width, params.line_spacing, params.lines_per_page, params.min_lines);
   sheet.insertImage(image, cell.getColumn(), cell.getRow(), sheet.getColumnWidth(cell.getColumn()) + 1, 0);
 }

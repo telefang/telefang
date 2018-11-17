@@ -14,8 +14,21 @@ Summon_StateMachine::
     jp [hl]
     
 .stateTable
-    dw $4B53, $4BB6, $4BCA, $4D22, $4D39, $4D63, $4D81, $4FFD
-    dw $5033, $506C, $5097, $50AE, $51CF, $51D9, $7F5C
+    dw $4B53
+    dw Summon_StateFadeOutIntoSummonScreen
+    dw Summon_StateEnter
+    dw $4D22
+    dw $4D39
+    dw $4D63
+    dw $4D81
+    dw $4FFD
+    dw $5033
+    dw $506C
+    dw $5097
+    dw $50AE
+    dw $51CF
+    dw $51D9
+    dw $7F5C
 
 Summon_PrivateStrings::
 ;る - $4B25
@@ -44,3 +57,73 @@ Summon_PrivateStrings::
 ;$4B50
 .outOf
     db 0, " /"
+
+Section "Summon Screen State 1 and Forward", ROMX[$4BB6], BANK[$1C]
+; This state is used when fading out from the encounter screen and
+; the check-your-own-Denjuu status screen into the summon screen.
+Summon_StateFadeOutIntoSummonScreen::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    ; Apparently this is a "JoJoke", if kmeist's comment in the
+    ; status screen state machine code is to be believed.
+    or a
+    ret z
+
+    ld a, [W_Encounter_AlreadyInitialized]
+    or a
+    jp z, .encounterInitialized
+
+    call $52C9 ; Initializes the encounter, I presume.
+
+.encounterInitialized
+    jp Battle_IncrementSubSubState
+
+Summon_StateEnter::
+    ld bc, $12
+    call Banked_CGBLoadBackgroundPalette
+    ld a, $28
+    call PauseMenu_CGBStageFlavorPalette
+    ld bc, $15
+    call Banked_LoadMaliasGraphics
+    ld hl, $8800
+    call $57C8 ; Loads the phone border tiles to [hl].
+
+    ld a, [W_PauseMenu_PhoneState]
+    ld e, a
+    ld d, 0
+    ld hl, $0390
+    add hl, de
+    push hl
+    
+    pop bc
+    xor a
+    call CGBLoadBackgroundPaletteBanked
+
+    ld hl, $9400
+    ld a, 32
+    call MainScript_DrawEmptySpaces
+
+    ld bc, 0
+    ld e, $0D
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    ld bc, 0
+    ld e, $0D
+    ld a, 0
+    call Banked_RLEDecompressAttribsTMAP0
+
+    ld bc, 0
+    ld e, $B7
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+
+    ld hl, $9882
+    ld a, [W_Overworld_SignalStrength]
+    call Encounter_DrawSignalIndicator
+
+    ld a, $F0
+    ld [W_Status_NumericalTileIndex], a
+    call Status_ExpandNumericalTiles
+
+    ; There's a *lot* still left of this state. Hoo boy.
+    ; ...

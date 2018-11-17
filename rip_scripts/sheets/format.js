@@ -44,7 +44,6 @@ function formatSelectedRows() {
   rows.sort(function(x, y) {return x - y;});
   
   for (var i = 0; i < rows.length; i++) {
-    Logger.log("rowy");
     var row = rows[i];
     var pointerVal = sheet.getRange(row, 1).getValue();
     if (pointerVal[0] === '#') {continue;}
@@ -66,9 +65,12 @@ function formatSelectedRows() {
 
 var CharType = {
   WORD:       0,
-  BREAK_CHAR: 1,
-  WHITESPACE: 2,
-  NEWLINE:    3
+  // Break chars right before a word shouldn't be broken after.
+  // For example, "...Hey!" shouldn't be split up into "..." and "Hey!".
+  LEADING_BREAK_CHAR: 1,
+  BREAK_CHAR: 2,
+  WHITESPACE: 3,
+  NEWLINE:    4
 };
 
 function wrap(text, width, font) {
@@ -124,16 +126,20 @@ function wrap(text, width, font) {
       curLineWidth += charWidth;
       
       if (WHITESPACE_CHARS.indexOf(char) !== -1) {curCharType = CharType.WHITESPACE;}
-      else if (BREAK_CHARS[char]) {curCharType = CharType.BREAK_CHAR;}
+      else if (BREAK_CHARS[char]) {
+        if (prevCharType === CharType.WORD || prevCharType === CharType.BREAK_CHAR) {curCharType = CharType.BREAK_CHAR}
+        else {curCharType = CharType.LEADING_BREAK_CHAR}
+      }
       else if (char === '\n') {curCharType = CharType.NEWLINE; charWidth = 0;}
       else {curCharType = CharType.WORD;}
     }
     
     // Transitions that trigger a word end.
-    if ((prevCharType === CharType.WORD       && curCharType === CharType.WHITESPACE) ||
-        (prevCharType === CharType.BREAK_CHAR && curCharType !== CharType.BREAK_CHAR) ||
-        (prevCharType !== CharType.WHITESPACE && curCharType === CharType.NEWLINE) ||
-        (prevCharType !== CharType.WHITESPACE && curCharType === CharType.EOF))
+    if ((prevCharType === CharType.WORD               && curCharType === CharType.WHITESPACE) ||
+        (prevCharType === CharType.LEADING_BREAK_CHAR && curCharType === CharType.WHITESPACE) ||
+        (prevCharType === CharType.BREAK_CHAR         && curCharType !== CharType.BREAK_CHAR) ||
+        (prevCharType !== CharType.WHITESPACE         && curCharType === CharType.NEWLINE) ||
+        (prevCharType !== CharType.WHITESPACE         && curCharType === CharType.EOF))
     {
       lastWordEnd = i;
       // -1 to strip off the last post-letter 1px space.
@@ -142,7 +148,8 @@ function wrap(text, width, font) {
     // Transitions that trigger a word start.
     if ((
            (prevCharType === CharType.WHITESPACE || prevCharType === CharType.NEWLINE) &&
-           (curCharType === CharType.WORD || curCharType === CharType.BREAK_CHAR)
+           // Add BREAK_CHAR here if they're ever made to be able to come at the start of a word.
+           (curCharType === CharType.WORD || curCharType === CharType.LEADING_BREAK_CHAR)
         ) ||
         (prevCharType === CharType.BREAK_CHAR && curCharType === CharType.WORD))
     {
