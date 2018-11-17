@@ -4022,7 +4022,7 @@ LCDC_CGB_OBColorTable::
     dcolor 15, 15, 15
 ;Palette 7
 ;Changed. Used to be all 0, now it's used for
-;sprite text on the Field Guide screen.
+;sprite text on the Field Guide and status screens.
     dcolor 31, 21, 4
     dcolor 30, 30, 30
     dcolor 15, 15, 15

@@ -40,8 +40,9 @@ Status_TextTable_UnkMove:: ;4BB1
 
 SECTION "Status Screen State Implementations", ROMX[$4C81], BANK[$02]
 Status_StateInitGraphics:
-    ld bc, $E
-    call Banked_LoadMaliasGraphics
+    ld a, Banked_Status_ADVICE_InitializeHabitatMetaSprite & $FF
+    call PatchUtils_AuxCodeJmp
+
     ld a, $F0
     ld [$C91E], a
     call Status_ExpandNumericalTiles
@@ -108,7 +109,7 @@ Status_StateDrawDenjuu:
     ld a, [W_Status_SelectedDenjuuPersonality]
     call Banked_Status_LoadDenjuuTypeIconPalette
     ld hl, $9300
-    ld a, 13 ;This clears both the denjuu name AND the habitat we plan to draw
+    ld a, 8
     call MainScript_DrawEmptySpaces
     ld a, [W_Status_UseDenjuuNickname]
     cp 1
@@ -130,11 +131,12 @@ Status_StateDrawDenjuu:
     call MainScript_DrawCenteredName75
     
 .drawDenjuuWithProgressionTab:
-    ld a, [W_Status_SelectedDenjuuPersonality]
     ld bc, $8D80
     ld de, StringTable_denjuu_personalities
-    call MainScript_DrawCenteredName75
-    call Banked_MainScript_DrawHabitatString
+    
+    ld a, Banked_Status_ADVICE_DrawRightAlignedHabitatName & $FF
+    call PatchUtils_AuxCodeJmp
+
     call Status_DrawDenjuuMoves
     ld de, Status_TextTable
     ld hl, $8E00
@@ -391,11 +393,16 @@ Status_StateSwitchDenjuu:
 .drawPersonality
     ld a, Banked_Status_ADVICE_StateSwitchDenjuu & $FF
     call PatchUtils_AuxCodeJmp
-    call Banked_MainScript_DrawHabitatString
     call Status_DrawDenjuuMoves
     jp Status_IncrementSubState
     
     ;NOTE: Free space.
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     nop
     ld de, StringTable_denjuu_personalities
     call MainScript_DrawCenteredName75

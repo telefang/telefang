@@ -218,6 +218,8 @@ MainScript_ADVICE_DrawRightAlignedStagedString::
     push de
     push hl
 
+    ; Currently hardcoded to a 7-tile-wide window. If this routine is needed
+    ; elsewhere, this should be factored out into a parameter of some sort.
     ld a, 7
     call MainScript_DrawEmptySpaces
 
@@ -262,7 +264,7 @@ MainScript_ADVICE_DrawRightAlignedStagedString::
     jr .checkStringOverflow
     
 .useFallbackWidth
-    ld a, $40
+    ld a, 8 * 8 ; Defaults to 8 tiles.
     
 .checkStringOverflow
     sub e
@@ -359,7 +361,7 @@ MainScript_ADVICE_DrawCenteredName75::
     jp MainScript_DrawStatusText
 
 MainScript_ADVICE_DrawHabitatString::
-    ld hl, $9380
+    ld hl, $8780
     ld a, 6
     
 .loopSpaces
@@ -373,7 +375,7 @@ MainScript_ADVICE_DrawHabitatString::
     
     ld a, [$D45F]
     ld de, StringTable_denjuu_habitats
-    ld bc, $9380
+    ld bc, $8780
     jp MainScript_DrawShortName
 
 ;MainScript_ADVICE_DrawStatusText has been moved to components/system/patch_utils.asm

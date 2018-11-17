@@ -263,7 +263,7 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
 	M_AdviceTeardown
 	ret
 
-SECTION "Pause Menu SMS Utils ADVICE 2", ROMX[$4C40], BANK[$1]
+SECTION "Pause Menu SMS Utils ADVICE 2", ROMX[$4C90], BANK[$1]
 PauseMenu_ADVICE_SMSFirstDrawHelper::
 	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
 	ld a, c
