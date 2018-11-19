@@ -210,8 +210,8 @@ Battle_SubStateStatusWarningPartner::
     ld [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantArrivalTimeElapsed], a
 
 .doneResetting
-    ld hl, $9180
-    ld a, 4
+    ld hl, $9160
+    ld a, 5
     call MainScript_DrawEmptySpaces
     
     ld a, [W_Battle_OpponentUsingLinkCable]
@@ -445,8 +445,8 @@ Battle_SubStateStatusWarningOpponent::
     ld [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantArrivalTimeElapsed], a
 
 .doneResetting
-    ld hl, $91C0
-    ld a, 4
+    ld hl, $91B0
+    ld a, 5
     call MainScript_DrawEmptySpaces
     
     ld a, [W_Battle_OpponentUsingLinkCable]
@@ -838,7 +838,21 @@ Battle_SubStateParticipantArrivalProcessing::
     ld a, $22
     ld [W_Battle_SubSubState], a
     ret
-    
+
+SECTION "Clear Status Effect Graphics on Partner Arrival Hack", ROMX[$622F], BANK[$05]
+    ; Part of a much larger battle system function.
+    ; Runs when one of your Denjuu arrives.
+    ld hl, $9160
+    ld a, 5
+    call MainScript_DrawEmptySpaces
+
+SECTION "Clear Status Effect Graphics on Opponent Arrival Hack", ROMX[$6255], BANK[$05]
+    ; Part of a much larger battle system function.
+    ; *Presumably* runs when one of the opponent's Denjuu arrives.
+    ld hl, $91B0
+    ld a, 5
+    call MainScript_DrawEmptySpaces
+
 SECTION "Battle State - Denjuu Arrival Phrases", ROMX[$6289], BANK[$5]
 Battle_SubStateDenjuuArrivalPhrase::
     ld a, [W_Battle_LoopIndex]
@@ -886,3 +900,48 @@ Battle_SubStateDenjuuArrivalPhrase::
     ld a, $12
     ld [W_Battle_SubSubState], a
     ret
+
+SECTION "Battle Status Effect Display Update Functions", ROMX[$643A], BANK[$05]
+Battle_DrawPartnerStatusEffect::
+    ld a, [W_Battle_PartnerDenjuuTurnOrder] ; Active Denjuu
+    call Battle_StagePartnerStats
+
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantStatusCondition]
+    ld b, a
+    ld hl, $9160
+    call Banked_MainScript_DrawStatusEffectString
+
+    ld bc, $0100
+    ld e, $BA ; Partner status effect tilemap
+    ld a, $00
+    jp Banked_RLEDecompressTMAP0
+
+REPT 13
+    nop
+ENDR
+
+Battle_DrawOpponentStatusEffect::
+    ld a, [W_Battle_OpponentDenjuuTurnOrder] ; Active Denjuu
+    call Battle_StageOpponentStats
+
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantStatusCondition]
+    ld b, a
+    ld hl, $91B0
+    call Banked_MainScript_DrawStatusEffectString
+
+    ld bc, $0108
+    ld e, $BB ; Opponent status effect tilemap
+    xor a
+    jp Banked_RLEDecompressTMAP1
+
+REPT 13
+    nop
+ENDR
+
+SECTION "Clear Status Effect Graphics During Attack Hack", ROMX[$7630], BANK[$05]
+    ; Part of a much larger battle system function.
+    ; Clears both participants' status effect graphics.
+    ld hl, $9160
+    ld a, 10
+    call MainScript_DrawEmptySpaces
+    

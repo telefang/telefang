@@ -104,6 +104,11 @@ Banked_MainScript_ADVICE_CondenseStagedTableStringLong::
 	jp MainScript_ADVICE_CondenseStagedTableStringLong
 	nop
 
+;components/battle/advice.asm
+Banked_Battle_ADVICE_ClearStatusEffectTilemaps::
+	jp Battle_ADVICE_ClearStatusEffectTilemaps
+	nop
+
 ;components/battle/status.asm (why is this in battle, it's a MainScript sym)
 ;MainScript_ADVICE_DrawStatusEffectGfx lives around here.
 ;It's HOME Bank advice so it doesn't get a trampoline; but we need to mark it on

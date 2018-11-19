@@ -6,7 +6,7 @@ W_FusionLabEvo_SelectedItem:: ds 1
 SECTION "Fusion/Lab Evolution Scroll State", WRAM0[$CAEB]
 W_FusionLabEvo_ScrollState:: ds 1
 
-SECTION "Shop Number Gfx Table", ROMX[$6B00], BANK[$1]
+SECTION "Shop Number Gfx Table", ROMX[$6A00], BANK[$1]
 ShopNumberGfx::
 	INCBIN "build/components/fusionlabevo/shop_numbers.1bpp"
 	
