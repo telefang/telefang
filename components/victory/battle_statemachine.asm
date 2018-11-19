@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION "Victory On Battle Screen State Machine", ROMX[$4243], BANK[$1D]
 Victory_BattleScreenStateMachine::
     ld a, [W_Battle_4thOrderSubState]
