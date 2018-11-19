@@ -54,12 +54,12 @@ Status_ADVICE_StateDrawDenjuu::
     ld [W_LCDC_MetaspriteAnimationBank], a
     ld a, 178
     ld [W_LCDC_MetaspriteAnimationIndex], a
-    ld a, 3
+    ld a, 5
     ld [W_LCDC_NextMetaspriteSlot], a
     ld a, 11 * 8
-    ld [W_LCDC_MetaspriteAnimationXOffsets + 3], a
+    ld [W_LCDC_MetaspriteAnimationXOffsets + 5], a
     ld a, 5 * 8 + 4
-    ld [W_LCDC_MetaspriteAnimationYOffsets + 3], a
+    ld [W_LCDC_MetaspriteAnimationYOffsets + 5], a
     call LCDC_BeginMetaspriteAnimation
 
     ld a, 2 ; Object palette 0
@@ -145,7 +145,7 @@ Status_ADVICE_StateExit::
     cp 0
     jr z, .doNotRemoveHabitatYet
 
-    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 5
     call LCDC_ClearSingleMetasprite
 .doNotRemoveHabitatYet
 

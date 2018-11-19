@@ -8,7 +8,7 @@ Summon_ADVICE_ExitIntoSummonScreen::
     ; This will be run when going from the encounter screen to the
     ; the summon screen too, which is superfluous, but no sprites
     ; carry over between the two screens - so it doesn't do any harm.
-    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 3
+    ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 5
     call LCDC_ClearSingleMetasprite
     
     ; Original replaced code (modified to use the
