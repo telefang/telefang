@@ -903,7 +903,7 @@ Battle_SubStateDenjuuArrivalPhrase::
 
 SECTION "Battle Status Effect Display Update Functions", ROMX[$643A], BANK[$05]
 Battle_DrawPartnerStatusEffect::
-    ld a, [W_Battle_PartnerDenjuuTurnOrder] ; Active Denjuu
+    ld a, [W_Battle_PartnerDenjuuTurnOrder] ; Active Denjuu.
     call Battle_StagePartnerStats
 
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantStatusCondition]
@@ -912,7 +912,7 @@ Battle_DrawPartnerStatusEffect::
     call Banked_MainScript_DrawStatusEffectString
 
     ld bc, $0100
-    ld e, $BA ; Partner status effect tilemap
+    ld e, $BA ; Partner status effect tilemap.
     ld a, $00
     jp Banked_RLEDecompressTMAP0
 
@@ -921,7 +921,7 @@ REPT 13
 ENDR
 
 Battle_DrawOpponentStatusEffect::
-    ld a, [W_Battle_OpponentDenjuuTurnOrder] ; Active Denjuu
+    ld a, [W_Battle_OpponentDenjuuTurnOrder] ; Active Denjuu.
     call Battle_StageOpponentStats
 
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantStatusCondition]
@@ -930,7 +930,7 @@ Battle_DrawOpponentStatusEffect::
     call Banked_MainScript_DrawStatusEffectString
 
     ld bc, $0108
-    ld e, $BB ; Opponent status effect tilemap
+    ld e, $BB ; Opponent status effect tilemap.
     xor a
     jp Banked_RLEDecompressTMAP1
 

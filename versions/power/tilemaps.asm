@@ -197,8 +197,8 @@ Tilemap_BANK_0::
 	dw Tilemap_summon_screen_tmap
 	dw Tilemap_unknown_tilemap_0_91
 	dw Tilemap_unknown_tilemap_0_92
-	dw Tilemap_unknown_tilemap_0_93
-	dw Tilemap_unknown_tilemap_0_94
+	dw Tilemap_battle_status_effect_partner_tmap
+	dw Tilemap_battle_status_effect_opponent_tmap
 	dw Tilemap_linkbattle_vs_badge_tmap
 	dw Tilemap_menu_multiplayer_trade_tmap
 	dw Tilemap_menu_multiplayer_melody_transfer_tmap
@@ -808,13 +808,13 @@ Tilemap_unknown_tilemap_0_92::
 	INCBIN "build/gfx/unknown/tilemap_0/92.tmap"
 Tilemap_unknown_tilemap_0_92_END
 
-Tilemap_unknown_tilemap_0_93::
-	INCBIN "build/gfx/unknown/tilemap_0/93.tmap"
-Tilemap_unknown_tilemap_0_93_END
+Tilemap_battle_status_effect_partner_tmap::
+	INCBIN "build/components/battle/status_effect_partner.tmap"
+Tilemap_battle_status_effect_partner_tmap_END
 
-Tilemap_unknown_tilemap_0_94::
-	INCBIN "build/gfx/unknown/tilemap_0/94.tmap"
-Tilemap_unknown_tilemap_0_94_END
+Tilemap_battle_status_effect_opponent_tmap::
+	INCBIN "build/components/battle/status_effect_opponent.tmap"
+Tilemap_battle_status_effect_opponent_tmap_END
 
 Tilemap_linkbattle_vs_badge_tmap::
 	INCBIN "build/components/linkbattle/vs_badge_tmap.tmap"
