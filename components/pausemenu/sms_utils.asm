@@ -402,7 +402,7 @@ PauseMenu_ADVICE_SMSFindLineForDrawing::
 	call PauseMenu_ADVICE_SMSSetDrawAddress
 	ret
 
-PauseMenu_ADVICE_SMSDrawLine::
+PauseMenu_ADVICE_SMSResetLine::
 	xor a
 	ld [W_MainScript_VWFLetterShift], a
 	ld [W_MainScript_VWFCurrentLetter], a
@@ -414,6 +414,10 @@ PauseMenu_ADVICE_SMSDrawLine::
 	ld [hli], a
 	dec b
 	jr nz, .clearCompositeAreaLoop
+	ret
+
+PauseMenu_ADVICE_SMSDrawLine::
+	call PauseMenu_ADVICE_SMSResetLine
 	call PauseMenu_ADVICE_SMSGetDrawAddress
 	ld b, $30
 	call PauseMenu_ADVICE_SMSClearTiles
@@ -545,6 +549,9 @@ PauseMenu_ADVICE_SMSContentsCheckInput::
 	ld bc, $106
 	xor a
 	call Banked_RLEDecompressAttribsTMAP0
+	push af
+	call PauseMenu_ADVICE_SMSResetLine
+	pop af
 
 .noExit
 	ld b, a
