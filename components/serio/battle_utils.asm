@@ -38,7 +38,7 @@ SerIO_BattleCopyTableString::
     
 SerIO_CopyIntoArg1::
     ld de, W_MainScript_MessageArg1
-    ld b, 9
+    ld b, $11
     
 .copyLoop
     ld a, [hli]
