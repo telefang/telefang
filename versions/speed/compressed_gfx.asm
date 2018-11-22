@@ -74,7 +74,7 @@ SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb $29,	$9000, 0 ; $46
 	dbwb $29,	$9000, 0 ; $47
 	dbwb BANK(MenuMetGfx),	$8f00, 0 ; $48
-	dbwb $29,	$9000, 0 ; $49
+	dbwb BANK(MenuStatsHabitatGfx), $8700, 0 ; $49 (repurposed)
 	dbwb $29,	$9000, 0 ; $4a
 	dbwb $29,	$9000, 0 ; $4b
 	dbwb $29,	$9000, 0 ; $4c
@@ -172,7 +172,7 @@ SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw $0000 ; $46
 	dw $0000 ; $47
 	dw MenuMetGfx ; $48
-	dw $0000 ; $49
+	dw MenuStatsHabitatGfx ; $49 (repurposed)
 	dw $0000 ; $4a
 	dw $0000 ; $4b
 	dw $0000 ; $4c
@@ -194,7 +194,7 @@ SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
 	dw CmpGfx_TitleLogo_Tulunk ; $5c (repurposed)
 	dw TitleMenuText1Gfx ; $5d (repurposed)
 	dw TitleMenuText1DMGGfx ; $5e (repurposed)
-   dw TitleSpritesSgbGfx ; $5f (repurposed)
+	dw TitleSpritesSgbGfx ; $5f (repurposed)
 NOT_COMPRESSED EQU 0
 COMPRESSED EQU 1
 
@@ -411,6 +411,11 @@ TilemapHumanAntennaGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/human_antenna.malias"
 TilemapHumanAntennaGfxEnd
+
+MenuStatsHabitatGfx:
+	dbw NOT_COMPRESSED, MenuStatsHabitatGfx_END - MenuStatsHabitatGfx - 3
+	INCBIN "build/gfx/menu/stats_habitat.2bpp"
+MenuStatsHabitatGfx_END
 
 SECTION "Tilemap - Human2 Compressed GFX", ROMX[$6d29], BANK[$29]
 TilemapHuman2Gfx:

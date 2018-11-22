@@ -27,9 +27,9 @@ Attack_PartnerFell::
 	ld e, $85
 	ld a, 0
 	call Banked_RLEDecompressTMAP0
-	ld hl, $9180
-	ld a, 4
-	call MainScript_DrawEmptySpaces
+	ld hl, $9160
+	ld b, 0
+	call Banked_MainScript_DrawStatusEffectString
 	ld a, [W_Battle_PartnerDenjuuTurnOrder]
 	cp a, 1
 	jr z, .jpB
@@ -129,9 +129,9 @@ Attack_OpponentFell::
 	ld e, $85
 	ld a, 0
 	call Banked_RLEDecompressTMAP1
-	ld hl, $91C0
-	ld a, 4
-	call MainScript_DrawEmptySpaces
+	ld hl, $91B0
+	ld b, 0
+	call Banked_MainScript_DrawStatusEffectString
 	ld a, [W_Battle_OpponentDenjuuTurnOrder]
 	cp a, 1
 	jr z, .jpA
@@ -198,9 +198,9 @@ Attack_PartnerFled::
 	ld e, $85
 	ld a, 0
 	call Banked_RLEDecompressTMAP0
-	ld hl, $9180
-	ld a, 4
-	call MainScript_DrawEmptySpaces
+	ld hl, $9160
+	ld b, 0
+	call Banked_MainScript_DrawStatusEffectString
 	ld a, [W_Battle_PartnerDenjuuTurnOrder]
 	call Battle_StagePartnerStats
 	ld a, [W_Battle_CurrentParticipant]
@@ -236,9 +236,9 @@ Attack_OpponentFled::
 	ld e, $85
 	ld a, 0
 	call Banked_RLEDecompressTMAP1
-	ld hl, $91C0
-	ld a, $4
-	call MainScript_DrawEmptySpaces
+	ld hl, $91B0
+	ld b, 0
+	call Banked_MainScript_DrawStatusEffectString
 	ld a, [W_Battle_OpponentDenjuuTurnOrder]
 	call Battle_StageOpponentStats
 	ld a, [W_Battle_CurrentParticipant]

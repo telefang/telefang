@@ -104,6 +104,11 @@ Banked_MainScript_ADVICE_CondenseStagedTableStringLong::
 	jp MainScript_ADVICE_CondenseStagedTableStringLong
 	nop
 
+;components/battle/advice.asm
+Banked_Battle_ADVICE_ClearStatusEffectTilemaps::
+	jp Battle_ADVICE_ClearStatusEffectTilemaps
+	nop
+
 ;components/battle/status.asm (why is this in battle, it's a MainScript sym)
 ;MainScript_ADVICE_DrawStatusEffectGfx lives around here.
 ;It's HOME Bank advice so it doesn't get a trampoline; but we need to mark it on
@@ -114,7 +119,7 @@ Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
 	jp PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
 	nop
 
-;components/status/sgb.asm
+;components/status/advice.asm
 Banked_Status_ADVICE_StateInitTilemaps::
 	jp Status_ADVICE_StateInitTilemaps
 	nop
@@ -125,6 +130,10 @@ Banked_Status_ADVICE_StateDrawDenjuu::
 
 Banked_Status_ADVICE_StateSwitchDenjuu::
 	jp Status_ADVICE_StateSwitchDenjuu
+	nop
+
+Banked_Status_ADVICE_DrawRightAlignedHabitatName::
+	jp Status_ADVICE_DrawRightAlignedHabitatName
 	nop
 
 Banked_Status_ADVICE_StateExit::
@@ -163,6 +172,11 @@ Banked_PatchUtils_CommitStagedCGBToSGB_CBE::
 	
 Banked_MainScript_ADVICE_AutoNarrowPhrase::
 	jp MainScript_ADVICE_AutoNarrowPhrase
+	nop
+
+;components/summon/advice.asm
+Banked_Summon_ADVICE_ExitIntoSummonScreen::
+	jp Summon_ADVICE_ExitIntoSummonScreen
 	nop
 
 ;The next two are at the END of Bank 1 and likely not conflicting

@@ -34,3 +34,18 @@ Victory_BattleScreenPrivateStrings_denmaAtk::
 ;D.Def - $428D
 Victory_BattleScreenPrivateStrings_denmaDef::
     db $F, "Def"
+
+SECTION "Clear Status Effects Hack", ROMX[$4296], BANK[$1D]
+    ; Part of a much larger battle system function.
+    ; If we don't clear the status effect tilemaps, since they're extended by
+    ; one tile each, the battle end graphics will be shown in their place.
+    nop
+    ld a, Banked_Battle_ADVICE_ClearStatusEffectTilemaps & $FF
+    call PatchUtils_AuxCodeJmp
+
+SECTION "Clear Status Effects Hack (Link Battles)", ROMX[$5B75], BANK[$1F]
+    ; Part of a much larger battle system function.
+    ; Same as the previous section, except... duplicated for link battles.
+    nop
+    ld a, Banked_Battle_ADVICE_ClearStatusEffectTilemaps & $FF
+    call PatchUtils_AuxCodeJmp

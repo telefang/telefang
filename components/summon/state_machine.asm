@@ -69,13 +69,12 @@ Summon_StateFadeOutIntoSummonScreen::
     or a
     ret z
 
-    ld a, [W_Encounter_AlreadyInitialized]
-    or a
-    jp z, .encounterInitialized
+    ld a, Banked_Summon_ADVICE_ExitIntoSummonScreen & $FF
+    call PatchUtils_AuxCodeJmp
 
     call $52C9 ; Initializes the encounter, I presume.
 
-.encounterInitialized
+.encounterInitialized::
     jp Battle_IncrementSubSubState
 
 Summon_StateEnter::

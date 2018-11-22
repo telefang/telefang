@@ -5938,6 +5938,7 @@ MetaSprite_19::
     dw MetaSprite_19_5ff3
     dw MetaSprite_19_6008
     dw MetaSprite_zukan_denjuu_name
+    dw MetaSprite_stats_habitat
 
 MetaSprite_19_4162::
     INCBIN "build/gfx/unknown/metasprite_19/4162.sprite.bin"
@@ -6458,3 +6459,6 @@ MetaSprite_19_6008_END::
 MetaSprite_zukan_denjuu_name::
     INCBIN "build/components/zukan/denjuu_name.sprite.bin"
 MetaSprite_zukan_denjuu_name_END::
+MetaSprite_stats_habitat::
+    INCBIN "build/gfx/menu/stats_habitat.sprite.bin"
+MetaSprite_stats_habitat_END::

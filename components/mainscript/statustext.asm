@@ -193,12 +193,12 @@ MainScript_ADVICE_CountTextWidth::
 ;DE = Argument for Load Denjuu Name
 ;ROMTblIndex = Index of string to draw - THIS IS DIFFERENT FROM DrawCenteredName
 ;              SO THAT YOU CAN USE RST $20. ORIGINAL FUNCTION USES A REGISTER
-;Draws the habitat name, but right-aligned. assumes habitat sized win
+;Draws the habitat name, but right-aligned. Assumes habitat-sized window.
 MainScript_ADVICE_DrawRightAlignedHabitatName::
     push bc
     push de
     ld hl, W_MainScript_CenteredNameBuffer
-    ld b, M_StringTable_Load4AreaSize + 1
+    ld b, M_StringTable_Load8AreaSize + 1
 	
 .clearLoop
     ld a, $E0
@@ -207,10 +207,10 @@ MainScript_ADVICE_DrawRightAlignedHabitatName::
     jr nz, .clearLoop
 
     pop hl
-    call StringTable_LoadShortName
+    call StringTable_LoadName75
     pop hl
 
-    ld d, M_StringTable_Load4AreaSize
+    ld d, M_StringTable_Load8AreaSize
     ld bc, W_StringTable_StagingLocDbl
    
 MainScript_ADVICE_DrawRightAlignedStagedString::
@@ -218,6 +218,8 @@ MainScript_ADVICE_DrawRightAlignedStagedString::
     push de
     push hl
 
+    ; Currently hardcoded to a 7-tile-wide window. If this routine is needed
+    ; elsewhere, this should be factored out into a parameter of some sort.
     ld a, 7
     call MainScript_DrawEmptySpaces
 
@@ -262,7 +264,7 @@ MainScript_ADVICE_DrawRightAlignedStagedString::
     jr .checkStringOverflow
     
 .useFallbackWidth
-    ld a, $40
+    ld a, 8 * 8 ; Defaults to 8 tiles.
     
 .checkStringOverflow
     sub e
@@ -358,9 +360,11 @@ MainScript_ADVICE_DrawCenteredName75::
     ld b, $16 ;Incorrect. TODO: Switch back to symbolic representation
     jp MainScript_DrawStatusText
 
+; Not actually used anywhere at the moment. Everywhere the habitat
+; is displayed currently uses the right-aligned version.
 MainScript_ADVICE_DrawHabitatString::
-    ld hl, $9380
-    ld a, 6
+    ld hl, $8780
+    ld a, 7
     
 .loopSpaces
     push af
@@ -373,8 +377,8 @@ MainScript_ADVICE_DrawHabitatString::
     
     ld a, [$D45F]
     ld de, StringTable_denjuu_habitats
-    ld bc, $9380
-    jp MainScript_DrawShortName
+    ld bc, $8780
+    jp MainScript_DrawName75
 
 ;MainScript_ADVICE_DrawStatusText has been moved to components/system/patch_utils.asm
 

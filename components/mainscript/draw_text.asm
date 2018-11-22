@@ -299,7 +299,7 @@ MainScript_ADVICE_FontAddress::
 	ld hl, MainScript_NarrowFont
 	ret
 	
-SECTION "Main Script Bold Text Drawing Advice1", ROMX[$72C0], BANK[$1]
+SECTION "Main Script Bold Text Drawing Advice1", ROMX[$71C0], BANK[$1]
 MainScript_ADVICE_SelectFontTableMethodA::
 	ld l, a
 	push af
@@ -331,7 +331,7 @@ MainScript_ADVICE_SelectFontTableMethodB::
 	ret
 	
 
-SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7500], BANK[$1]
+SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7400], BANK[$1]
 ;BC = text string (presumed WRAM, not bankable)
 ;D = string length (bytes)
 ;Returns E = string length (pixels)
@@ -515,17 +515,17 @@ MainScript_ADVICE_DrawNarrowLetter::
 	M_AdviceTeardown
 	ret
 	
-SECTION "Main Script Bold Text Drawing Advice", ROMX[$6C00], BANK[$1]
+SECTION "Main Script Bold Text Drawing Advice", ROMX[$6B00], BANK[$1]
 MainScript_ADVICE_DrawBoldLetterTable::
 ; Should always be at the address XX00.
 	INCBIN "build/components/mainscript/font_bold.metrics.bin"
 	
-SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7D00], BANK[$1]
+SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7C00], BANK[$1]
 MainScript_ADVICE_DrawNarrowLetterTable::
 ; Should always be at the address XX00.
 	INCBIN "build/components/mainscript/font_narrow.metrics.bin"
 
-SECTION "MainScript Narrow Text Drawing Advice 2", ROMX[$7CB6], BANK[$1]
+SECTION "MainScript Narrow Text Drawing Advice 2", ROMX[$7BB6], BANK[$1]
 MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 ;This is a copy of MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle intended to ba called by MainScript_ADVICE_DrawNarrowLetter.
 	push bc
