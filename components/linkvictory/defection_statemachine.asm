@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION "Link Battle Defection State Machine", ROMX[$611A], BANK[$1F]
 LinkVictory_DefectionStateMachine::
 	ld a, [W_LateDenjuu_SubSubState]
