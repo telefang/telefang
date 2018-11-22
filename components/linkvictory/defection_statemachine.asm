@@ -3,20 +3,20 @@ INCLUDE "telefang.inc"
 SECTION "Link Battle Defection State Machine", ROMX[$611A], BANK[$1F]
 LinkVictory_DefectionStateMachine::
 	ld a, [W_LateDenjuu_SubSubState]
-	cp a, 4
+	cp 4
 	jr z, .jumpToState
-	cp a, 5
+	cp 5
 	jr z, .jumpToState
-	cp a, 7
+	cp 7
 	jr z, .jumpToState
-	cp a, 8
+	cp 8
 	jr z, .jumpToState
-	cp a, $A
+	cp $A
 	jr z, .jumpToState
-	cp a, $B
+	cp $B
 	jr z, .jumpToState
 	ld a, [$D4AC]
-	cp a, 1
+	cp 1
 	jr z, .jumpToState
 	call $461B
 	ld a, [Malias_CmpSrcBank]
@@ -80,7 +80,7 @@ LinkVictory_SubStateDrawDefectionScreen::
     jr z, .migrateContactId
     
 .deindexLostContact
-    call Victory_DeleteContact
+    call $06C4
     jr .processContactLoss
     
 .migrateContactId
