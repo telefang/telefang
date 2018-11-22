@@ -4,7 +4,7 @@
 var SHEET_PARAMS = {
   "script/denjuu/sms.messages.csv": {
     width: 6 * 8,
-    lines_per_page: 6,
+    min_lines: 6,
     line_spacing: 0,
     prelude: '',
     envoi: '<*4>'

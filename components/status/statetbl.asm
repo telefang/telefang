@@ -189,7 +189,7 @@ Status_StateFadeScreen:
     call LCDC_BeginMetaspriteAnimation
     ld a, 0
     ld bc, 4
-    call $1196
+    call CGBLoadObjectPaletteBanked
     ld a, 1
     ld [W_CGBPaletteStagedOBP], a
 

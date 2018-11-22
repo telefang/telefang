@@ -351,10 +351,10 @@ TitleMenu_StateFadeToOverworldContinue::
     xor a
     ld [W_SystemSubState], a
     
-    call $5C1
+    call Banked_SaveClock_RetrieveWorkingStateFromSaveData
     
     ld b, 1
-    call $3768
+    call Banked_System_CGBToggleClockspeed
     
     ld a, 1
     ld [W_Overworld_State], a
@@ -518,7 +518,7 @@ TitleMenu_StateFadeToOverworldNewGame::
     ld [W_SystemSubState], a
     
     ld b, 1
-    call $3768
+    call Banked_System_CGBToggleClockspeed
     call SaveClock_EraseSaveData
     call SaveClock_EraseLoadedSave
     call SaveClock_WriteDefaultSaveFile
