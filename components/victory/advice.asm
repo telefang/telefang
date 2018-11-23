@@ -1,12 +1,15 @@
 INCLUDE "telefang.inc"
 
+SECTION "Defection Memory for Advice Code", WRAM0[$CCBF]
+W_Victory_DefectedSpeciesForNickname:: ds 1
+
 SECTION "Victory Advice Code", ROMX[$598A], BANK[$1D]
 Victory_ADVICE_SubStateDrawDefectionScreen::
     ld a, [hl]
     
     push de
     
-    ld de, $CCBF
+    ld de, W_Victory_DefectedSpeciesForNickname
     ld [de], a
     
     pop de
