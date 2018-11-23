@@ -126,14 +126,11 @@ LinkVictory_SubStateDrawDefectionScreen::
     ld [W_Victory_DefectedContactLevel], a
     
     pop hl
-    
-    ld a, M_SaveClock_DenjuuStatSize
-    
-.eraseLoop
-    ld [hl], 0
-    inc hl
-    dec a
-    jr nz, .eraseLoop
+	
+	ld a, [hl]
+	ld [W_Victory_DefectedSpeciesForNickname], a
+	call LinkVictory_ADVICE_SubStateDrawDefectionScreen
+	nop
     
     call SaveClock_ExitSRAM
     

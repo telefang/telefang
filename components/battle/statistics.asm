@@ -13,8 +13,7 @@ Battle_IndexStatisticsArray::
 	
 SECTION "Battle Statistics Advice", ROMX[$7E1D], BANK[$34]
 ;Given a denjuu statistics array, return what denjuu ID it is.
-;TODO: Returns some value in $CCBF if denjuu is null.
-;Figure out what fills that and such.
+;If denjuu is null it will look for the denjuu ID in W_Victory_DefectedSpeciesForNickname.
 Battle_ADVICE_GetDenjuuSpeciesFromStatistics::
 	push af
 	push hl
@@ -33,7 +32,7 @@ Battle_ADVICE_GetDenjuuSpeciesFromStatistics::
 	pop bc
 	pop hl
 	pop af
-	ld hl, $CCBF ;TODO: Figure out what this holds.
+	ld hl, W_Victory_DefectedSpeciesForNickname
 	ld e, [hl]
 	ld d, 0
 	ret
