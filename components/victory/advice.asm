@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Defection Memory for Advice Code", WRAMX[$CCBF], BANK[$1]
+SECTION "Defection Memory for Advice Code", WRAM0[$CCBF]
 W_Victory_DefectedSpeciesForNickname:: ds 1
 
 SECTION "Victory Advice Code", ROMX[$598A], BANK[$1D]
