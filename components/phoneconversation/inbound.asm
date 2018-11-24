@@ -132,7 +132,7 @@ PhoneConversation_DrawIncomingCallerName::
     ld bc, 8
     ld hl, $9866
     ld a, 1
-    call $377B
+    call PhoneConversation_ADVICE_DrawIncomingCallerName_ResetVWFVariables
     
     ret
     
@@ -383,3 +383,31 @@ PhoneConversation_ADVICE_ClearInputTiles::
     
     ret
 PhoneConversation_ADVICE_ClearInputTiles_END
+
+SECTION "PhoneConversation Incoming Caller Name Draw Advice 2", ROMX[$7A00], BANK[$29]
+PhoneConversation_ADVICE_DrawIncomingCallerName_ResetVWFVariables::
+	call LCDC_InitAttributesSquare
+	call PhoneConversation_ADVICE_ResetVWFVariables
+	ret
+
+PhoneConversation_ADVICE_ResetVWFVariables::
+	xor  a
+	ld [W_MainScript_TilesDrawn], a
+	ld [W_MainScript_VWFLetterShift], a
+	ld [W_MainScript_VWFCurrentLetter], a
+	ld [W_MainScript_NumNewlines], a
+	ld [W_MainScript_VWFMainScriptHack], a
+
+.clearCompositeArea
+	push hl
+	ld hl, $CFD0
+	push bc
+	ld b, $10
+
+.clearCompositeAreaLoop
+	ldi [hl], a
+	dec b
+	jr nz, .clearCompositeAreaLoop
+	pop bc
+	pop hl
+	ret
