@@ -112,20 +112,10 @@ PhoneConversation_DrawIncomingCallerName::
     dec b
     jr nz, .allocateTextArea
     
-    ld b, M_StringTable_Load8AreaSize + 1
+    ld d, M_StringTable_Load8AreaSize
+    ld bc, W_SaveClock_NicknameStaging
     ld hl, $8B00
-    ld de, W_MainScript_CenteredNameBuffer
-    
-.letterDrawingLoop
-    ld a, [de]
-    cp $E0
-    jr nz, .noTerminate
-    
-.terminate
-    ld a, 0
-    
-.noTerminate
-    jp PhoneConversation_ADVICE_DrawIncomingCallerName
+    call MainScript_DrawCenteredStagedString
     
 .adviceComefrom
     ld d, 1
@@ -135,6 +125,14 @@ PhoneConversation_DrawIncomingCallerName::
     call PhoneConversation_ADVICE_DrawIncomingCallerName_ResetVWFVariables
     
     ret
+	
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 PhoneConversation_DrawFDDisplay::
     di
