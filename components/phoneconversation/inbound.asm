@@ -315,37 +315,7 @@ PhoneConversation_DrawInboundCallScreen::
     
     ret
     
-SECTION "PhoneConversation Incoming Caller Name Draw Advice", ROMX[$786A], BANK[$29]
-PhoneConversation_ADVICE_DrawIncomingCallerName::
-    inc de
-    push bc
-    push de
-    push hl
-    call Banked_MainScript_DrawLetter
-    pop hl
-    pop de
-    pop bc
-    
-    ld a, [W_MainScript_VWFOldTileMode]
-    dec a
-    jr nz, .noAdjustment
-    
-.adjustment
-    push de
-    
-    ld d, 0
-    ld e, $10
-    add hl, de
-    
-    pop de
-    
-    dec b
-
-.noAdjustment
-    jp nz, PhoneConversation_DrawIncomingCallerName.letterDrawingLoop
-    jp PhoneConversation_DrawIncomingCallerName.adviceComefrom
-PhoneConversation_ADVICE_DrawIncomingCallerName_END::
-
+SECTION "PhoneConversation Incoming Caller Name Draw Advice", ROMX[$7888], BANK[$29]
 PhoneConversation_ADVICE_ClearInputTiles::
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
