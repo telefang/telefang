@@ -97,3 +97,41 @@ Status_LoadDenjuuEvolutionIndicatorOffloadMultiply::
     
     ret
     nop
+
+SECTION "Status Screen Zukan Evolution Indicator for SGB", ROMX[$5F1A], BANK[$7D]
+Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jp z, Status_LoadDenjuuEvolutionIndicatorOffloadZukan
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    jp z, Status_LoadDenjuuEvolutionIndicatorOffloadZukan
+    ld bc, M_Zukan_DenjuuStageGfx_NumTiles * 16
+    call Status_LoadDenjuuEvolutionIndicatorOffloadMultiply
+    ld b, $90
+    ld de, DenjuuStageZukanGfx
+    add hl, de
+    pop de
+
+.drawloop
+    ld a, [hli]
+    ld c, a
+    inc de
+    di
+
+.wfb
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, [hli]
+    ld [de], a
+    dec e
+    xor c
+    cpl
+    ld [de], a
+    ei
+    inc de
+    inc de
+    dec b
+    jr nz, .drawloop
+    ret
