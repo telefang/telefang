@@ -114,7 +114,7 @@ Status_LoadEvolutionIndicatorBySpeciesOffload::
 
 Status_LoadEvolutionIndicatorBySpeciesOffloadZukan::
     call Status_LoadEvolutionIndicatorBySpeciesOffloadCommon
-    jp Status_LoadDenjuuEvolutionIndicatorOffloadZukan
+    jp Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport
 
 Status_LoadEvolutionIndicatorBySpeciesOffloadCommon::
     cp $14

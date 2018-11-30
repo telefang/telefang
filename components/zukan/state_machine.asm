@@ -207,15 +207,14 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     ld de, $9200
     call Status_LoadEvolutionIndicatorBySpeciesZukan
     
-    ld hl, $8C00
-    ld b, $38
-    call PauseMenu_ClearScreenTiles
+    ld a, Banked_Zukan_ADVICE_ClearMessageForSGB & $FF
+    call PatchUtils_AuxCodeJmp
     
-    ld a, [W_Zukan_SelectedSpecies]
-    ld de, StringTable_denjuu_species
-    ld bc, $8F00
-    call MainScript_DrawCenteredName75
-
+    xor a
+    ld [W_MainScript_TextStyle], a
+    ld a, Banked_Zukan_ADVICE_DrawDenjuuName & $FF
+    call PatchUtils_AuxCodeJmp
+    
     ; The Denjuu name is broken out into sprites in order to
     ; be able to center it properly on the pixel level.
     ; The original plan was to center it vertically between two
@@ -252,6 +251,12 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     ld a, 1
     ld [W_OAM_SpritesReady], a
     jp System_ScheduleNextSubSubState
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 ;yes this does fadein for both the inner view and returning to the outer view
 Zukan_StateFadeIn::
@@ -426,19 +431,18 @@ Zukan_StateInnerviewSwitchPage:
     
     ld a, [W_Zukan_SelectedSpecies]
     call Battle_LoadDenjuuPalettePartner
-
-    ld a, [W_Zukan_SelectedSpecies]
-    ld de, $4000
-    ld bc, $8F00
-    call MainScript_DrawCenteredName75
+    
+    xor a
+    ld [W_MainScript_TextStyle], a
+    ld a, Banked_Zukan_ADVICE_DrawDenjuuName & $FF
+    call PatchUtils_AuxCodeJmp
     
     ld a, [W_Zukan_SelectedSpecies]
     ld de, $9200
     call Status_LoadEvolutionIndicatorBySpeciesZukan
     
-    ld hl, $8C00
-    ld b, $30
-    call PauseMenu_ClearScreenTiles
+    ld a, Banked_Zukan_ADVICE_ClearMessageForSGB & $FF
+    call PatchUtils_AuxCodeJmp
 
     ld a, $C0
     ld [W_MainScript_TileBaseIdx], a
@@ -453,6 +457,12 @@ Zukan_StateInnerviewSwitchPage:
     ld a, M_Zukan_StateInnerviewInput
     ld [W_SystemSubSubState], a
     ret
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 SECTION "Zukan State Machine Advice", ROMX[$4580], BANK[$1]
 Zukan_ADVICE_InitializeNameMetaSprite::
@@ -496,7 +506,7 @@ Zukan_ADVICE_DrawRightAlignedHabitatName::
     M_AdviceSetup
     
     ld a, [W_Zukan_SelectedSpecies]
-    ld [W_Status_SelectedDenjuuSpecies], a
+    call Zukan_ADVICE_DrawRightAlignedHabitatName_SGBTextStyle
 
     ld a, 7
     ld [W_MainScript_VWFNewlineWidth], a
@@ -532,7 +542,7 @@ Zukan_ADVICE_SetupSGBScreen::
     ld c, 0
     ld d, 0
     ld e, 0
-    call Banked_SGB_ConstructPaletteSetPacket
+    call Zukan_ADVICE_SetupSGBScreen_RedrawForSGB
     
     ld a, M_SGB_Pal01 << 3 + 1
     ld b, 0
@@ -570,7 +580,7 @@ Zukan_ADVICE_TeardownSGBScreenAndMetasprites::
     ld c, 0
     ld d, 0
     ld e, 0
-    call Banked_SGB_ConstructPaletteSetPacket
+    call Zukan_ADVICE_TeardownSGBScreenAndMetasprites_ResetSGBTextStyle
     
     M_AdviceTeardown
     ret
@@ -606,9 +616,7 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     cp 3
     jr c, .nothing_pressed
     
-    ld hl, $8C00
-    ld b, $30
-    call Zukan_ADVICE_ClearScreenTiles
+    call Zukan_ADVICE_ClearMessageForSGB_Direct
     
     ;Evil hack: MainScriptMachine can NEVER KNOW that we're pressing A
     ld a, [H_JPInput_Changed]
@@ -622,6 +630,11 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
 .nothing_pressed
     M_AdviceTeardown
     ret
+    nop
+    nop
+    nop
+    nop
+    nop
     
 Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
     M_AdviceSetup
@@ -642,5 +655,160 @@ Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
     ld a, M_Zukan_StateInnerviewSwitchPage
     ld [W_SystemSubSubState], a
     
+    M_AdviceTeardown
+    ret
+
+SECTION "Zukan SGB Recolour Window Advice", ROMX[$5360], BANK[$1]
+Zukan_ADVICE_TileLightColourReverse::
+    ld d, h
+    ld e, l
+
+.drawloop
+    di
+
+.wfb
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, [hli]
+    ld c, a
+    ld a, [hli]
+    xor c
+    cpl
+    ld [de], a
+    ei
+    inc de
+    inc de
+    dec b
+    jr nz, .drawloop
+    ret
+
+Zukan_ADVICE_TileLowByteBlanketFill::
+    ld c, $FF
+
+.drawloop
+    di
+
+.wfb
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, c
+    ld [hli], a
+    inc hl
+    ld a, c
+    ld [hli], a
+    ei
+    inc hl
+    dec b
+    jr nz, .drawloop
+    ret
+
+Zukan_ADVICE_FixPaletteForSGB::
+    ld hl, W_LCDC_CGBStagingBGPaletteArea
+
+.skipHLSet
+    ld a, [hli]
+    ld b, a
+    ld a, [hli]
+    ld c, a
+    ld a, b
+    ld [hli], a
+    ld a, c
+    ld [hli], a
+    ret
+
+Zukan_ADVICE_CheckSGB::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret
+
+Zukan_ADVICE_SetupSGBScreen_RedrawForSGB::
+    call Banked_SGB_ConstructPaletteSetPacket
+    call Zukan_ADVICE_CheckSGB
+    ret z
+    ld hl, $9000
+    ld b, $50
+    call Zukan_ADVICE_TileLightColourReverse
+    call Zukan_ADVICE_FixPaletteForSGB
+    ld hl, $9530
+    ld b, $20
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ld hl, $8FE0
+    ld b, 4
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ret
+
+Zukan_ADVICE_TeardownSGBScreenAndMetasprites_ResetSGBTextStyle::
+    call Banked_SGB_ConstructPaletteSetPacket
+    call Zukan_ADVICE_CheckSGB
+    ret z
+    xor a
+    ld [W_MainScript_TextStyle], a
+    ret
+
+Zukan_ADVICE_DrawRightAlignedHabitatName_SGBTextStyle::
+    ld [W_Status_SelectedDenjuuSpecies], a
+    call Zukan_ADVICE_CheckSGB
+    ret z
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+    ret
+
+Zukan_ADVICE_ClearMessageForSGB::
+    M_AdviceSetup
+    call Zukan_ADVICE_ClearMessageForSGB_Direct
+    M_AdviceTeardown
+    ret
+
+Zukan_ADVICE_ClearMessageForSGB_Direct::
+    ld hl, $8C00
+    ld b, $E0
+    call Zukan_ADVICE_CheckSGB
+    jr z, .notsgb
+    ld de, $FF
+    jr .clearloop
+
+.notsgb
+    ld d, 0
+    ld e, d
+
+.clearloop
+    di
+
+.wfb
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, e
+    ld [hli], a
+    ld a, d
+    ld [hli], a
+    ld a, e
+    ld [hli], a
+    ei
+    ld e, d
+    ld d, a
+    dec b
+    jr nz, .clearloop
+    ret
+
+Zukan_ADVICE_DrawDenjuuName::
+    M_AdviceSetup
+    
+    ld a, [W_Zukan_SelectedSpecies]
+    ld de, StringTable_denjuu_species
+    ld bc, $8F00
+    call MainScript_DrawCenteredName75
+    
+    call Zukan_ADVICE_CheckSGB
+    jr z, .notsgb
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+
+.notsgb
     M_AdviceTeardown
     ret

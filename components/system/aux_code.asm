@@ -179,6 +179,15 @@ Banked_Summon_ADVICE_ExitIntoSummonScreen::
 	jp Summon_ADVICE_ExitIntoSummonScreen
 	nop
 
+;components/zukan/state_machine.asm
+Banked_Zukan_ADVICE_ClearMessageForSGB::
+	jp Zukan_ADVICE_ClearMessageForSGB
+	nop
+
+Banked_Zukan_ADVICE_DrawDenjuuName::
+	jp Zukan_ADVICE_DrawDenjuuName
+	nop
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
