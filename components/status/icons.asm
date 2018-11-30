@@ -1,4 +1,4 @@
-INCLUDE "gfx/denjuu_stages.inc"
+INCLUDE "telefang.inc"
 
 SECTION "Status Screen Icon Loading", ROM0[$18E6]
 Status_LoadDenjuuEvolutionIndicator::
