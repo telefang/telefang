@@ -91,7 +91,7 @@ Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport::
     add hl, de
     pop de
 
-.drawloop
+Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop::
     ld a, [hli]
     ld c, a
     inc de
@@ -111,5 +111,5 @@ Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport::
     inc de
     inc de
     dec b
-    jr nz, .drawloop
+    jr nz, Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop
     ret

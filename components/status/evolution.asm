@@ -215,4 +215,4 @@ Status_LoadEvolutionIndicatorBySpeciesOffloadStatus::
     ld de, DenjuuStageGfx
     add hl, de
     pop de
-    jp Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport.drawloop
+    jp Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop
