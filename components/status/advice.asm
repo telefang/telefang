@@ -175,6 +175,8 @@ Status_ADVICE_StateInitGraphics::
     ld de, $8800
     
     M_AdviceTeardown
+	
+	ld a, [W_Status_SelectedDenjuuSpecies]
     ret
 
 Status_ADVICE_SGBRedrawInit::
