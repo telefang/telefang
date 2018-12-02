@@ -118,5 +118,5 @@ Status_LoadPhoneDigits::
     ld bc, $200 ;This is a LIE. It's actually $1E0 bytes...
     jp LCDC_LoadTiles
     
-Status_PhoneDigits:
+Status_PhoneDigits::
     INCBIN "build/components/status/phone_digits.2bpp"
