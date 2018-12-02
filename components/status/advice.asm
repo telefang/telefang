@@ -228,7 +228,7 @@ SECTION "Status Screen Phone Number for Patch", ROMX[$796B], BANK[$29]
 Status_DrawPhoneNumberForStatus::
     push hl
     call $42E5
-    jp Status_DrawPhoneNumber.skipLoadDigits
+    jp Status_DrawPhoneNumber_SkipLoadDigits
 
 Status_LoadPhoneDigits_NowWithSGBSupport::
     ld a, [W_GameboyType]

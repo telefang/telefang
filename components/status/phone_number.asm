@@ -48,7 +48,7 @@ Status_DrawPhoneNumber::
     call Status_LoadPhoneDigits
     pop de
     
-.skipLoadDigits
+Status_DrawPhoneNumber_SkipLoadDigits::
     pop hl
     push hl
     push de
