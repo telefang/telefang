@@ -13,31 +13,9 @@ Status_LoadDenjuuEvolutionIndicatorCommon::
     ld a, BANK(DenjuuStageGfx)
     rst $10
     ret
-	
-;NOTE: Free Space
-	
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     nop
     
+SECTION "Status Screen Icon Loading 2", ROM0[$190B]
 Status_LoadDenjuuTypeIcon::
     and $F
     swap a

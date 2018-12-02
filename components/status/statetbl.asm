@@ -77,8 +77,8 @@ Status_StateInitGraphics:
 .placeDenjuuGraphic:
     ld a, [W_Status_SelectedDenjuuSpecies]
     push af
-    ld c, 1
-    ld de, $8800
+    ld a, Banked_Status_ADVICE_StateInitGraphics & $FF
+    call PatchUtils_AuxCodeJmp
     call Banked_Battle_LoadDenjuuPortrait
     pop af
     call Battle_LoadDenjuuPalettePartner
@@ -91,7 +91,6 @@ Status_StateInitTilemaps:
     call PatchUtils_AuxCodeJmp
     jp Status_IncrementSubState
     
-    ;NOTE: Free space.
     ld a, 0
     call Banked_RLEDecompressTMAP0
     ld bc, 0
@@ -102,7 +101,7 @@ Status_StateInitTilemaps:
 Status_StateDrawDenjuu:
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld de, $9200
-    call Status_LoadEvolutionIndicatorBySpecies
+    call Status_LoadEvolutionIndicatorBySpeciesStatus
     ld a, [W_Status_SelectedDenjuuPersonality]
     call Banked_Status_LoadDenjuuTypeIcon
     ld a, [W_Status_SelectedDenjuuPersonality]
@@ -363,7 +362,7 @@ Status_StateSwitchDenjuu:
     
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld de, $9200
-    call Status_LoadEvolutionIndicatorBySpecies
+    call Status_LoadEvolutionIndicatorBySpeciesStatus
     
     ld a, [W_Status_SelectedDenjuuPersonality]
     call Banked_Status_LoadDenjuuTypeIcon

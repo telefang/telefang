@@ -27,7 +27,7 @@ Status_DrawDenjuuPhoneNumber::
     ld b, a
     ld a, [hl]
     ld hl, $9984
-    call Banked_Status_DrawPhoneNumber
+    call Banked_Status_DrawPhoneNumberForStatus
     jr .exitSRAM
     
 .specialUnknownNumber
@@ -47,6 +47,8 @@ Status_DrawPhoneNumber::
     push de
     call Status_LoadPhoneDigits
     pop de
+    
+.skipLoadDigits
     pop hl
     push hl
     push de
