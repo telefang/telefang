@@ -202,13 +202,15 @@ Status_LoadEvolutionIndicatorBySpeciesOffloadCommon::
 
 SECTION "Status Evolution Indicator Loader Part 3", ROMX[$5F4D], BANK[$7D]
 Status_LoadEvolutionIndicatorBySpeciesOffloadStatus::
-    call Status_LoadEvolutionIndicatorBySpeciesOffloadCommon
+    push af
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
-    jp z, Status_LoadEvolutionIndicatorBySpeciesOffload
+    jr z, .nosgb
     ld a, [W_SGB_DetectSuccess]
     or a
-    jp z, Status_LoadEvolutionIndicatorBySpeciesOffload
+    jr z, .nosgb
+    pop af
+    call Status_LoadEvolutionIndicatorBySpeciesOffloadCommon
     ld bc, M_Status_DenjuuStageGfx_NumTiles * 16
     call Status_LoadDenjuuEvolutionIndicatorOffloadMultiply
     ld b, $60
@@ -216,3 +218,7 @@ Status_LoadEvolutionIndicatorBySpeciesOffloadStatus::
     add hl, de
     pop de
     jp Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop
+
+.nosgb
+    pop af
+    jp Status_LoadEvolutionIndicatorBySpeciesOffload
