@@ -391,3 +391,22 @@ Banked_Battle_IncrementCurrentParticipantByte::
     call Battle_IncrementCurrentParticipantByte
     rst $18
     ret
+
+SECTION "Banked Call Helpers for Status Screen Number Rendering", ROM0[$18F7]
+Banked_Status_DrawPhoneNumberForStatus::
+    push af
+    ld a, BANK(Status_DrawPhoneNumberForStatus)
+    rst $10
+    pop af
+    call Status_DrawPhoneNumberForStatus
+    rst $18
+    ret
+
+Banked_Status_LoadPhoneDigits_NowWithSGBSupport::
+    push af
+    ld a, BANK(Status_LoadPhoneDigits_NowWithSGBSupport)
+    rst $10
+    pop af
+    call Status_LoadPhoneDigits_NowWithSGBSupport
+    rst $18
+    ret

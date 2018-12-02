@@ -13,31 +13,9 @@ Status_LoadDenjuuEvolutionIndicatorCommon::
     ld a, BANK(DenjuuStageGfx)
     rst $10
     ret
-	
-;NOTE: Free Space
-	
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     nop
     
+SECTION "Status Screen Icon Loading 2", ROM0[$190B]
 Status_LoadDenjuuTypeIcon::
     and $F
     swap a
@@ -113,7 +91,7 @@ Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport::
     add hl, de
     pop de
 
-.drawloop
+Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop::
     ld a, [hli]
     ld c, a
     inc de
@@ -133,5 +111,5 @@ Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport::
     inc de
     inc de
     dec b
-    jr nz, .drawloop
+    jr nz, Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop
     ret

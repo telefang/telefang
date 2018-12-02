@@ -109,6 +109,8 @@ Status_ADVICE_DrawRightAlignedHabitatNameInner::
     ld a, [W_Status_SelectedDenjuuSpecies]
     ld c, $D
     call Banked_Battle_LoadSpeciesData
+    xor a
+    ld [W_MainScript_TextStyle], a
     ld a, [W_Battle_RetrSpeciesByte]
     ld [W_StringTable_ROMTblIndex], a
 
@@ -125,6 +127,10 @@ Status_ADVICE_DrawRightAlignedHabitatNameInner::
 
     pop af
     ld [W_MainScript_VWFNewlineWidth], a
+    call Zukan_ADVICE_CheckSGB
+    ret z
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
     ret
 
 Status_ADVICE_StateExit::
@@ -152,8 +158,110 @@ Status_ADVICE_StateExit::
     ;Original replaced code
     xor a
     ld [W_Status_SubState], a
-    xor a
     ld [W_MetaSpriteConfig1], a
+    ld [W_MainScript_TextStyle], a
     
     M_AdviceTeardown
+    ret
+
+SECTION "Status SGB Recolour Window Advice 1", ROMX[$54A0], BANK[$1]
+Status_ADVICE_StateInitGraphics::
+    M_AdviceSetup
+    
+    call Zukan_ADVICE_CheckSGB
+    call nz, Status_ADVICE_SGBRedrawInit
+    call Banked_Status_LoadPhoneDigits_NowWithSGBSupport
+    ld c, 1
+    ld de, $8800
+    
+    M_AdviceTeardown
+	
+	ld a, [W_Status_SelectedDenjuuSpecies]
+    ret
+
+Status_ADVICE_SGBRedrawInit::
+    ; Numbers
+    ld hl, $8F00
+    ld b, $28
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    
+    ; Window
+    ld hl, $9000
+    ld b, $50
+    call Zukan_ADVICE_TileLightColourReverse
+    
+    ; Icons (Exp,FD,etc)
+    ld b, $30
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    
+    ; Bottom-right corner of tab
+    ld l, $F0
+    ld b, 8
+    call Zukan_ADVICE_TileLightColourReverse
+    
+    ; Questionmark
+    ld hl, $93E0
+    ld b, 4
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    
+    ; "Speed"/"Attack"/"Defense"
+    ld hl, $9400
+    ld b, $30
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    
+    ; Related odds and ends
+    ld hl, $9500
+    ld b, $C
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    
+    ; "Denma"
+    ld l, $D0
+    ld b, $C
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    
+    call Zukan_ADVICE_FixPaletteForSGB
+    
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+    
+    ret
+
+SECTION "Status Screen Phone Number for Patch", ROMX[$796B], BANK[$29]
+Status_DrawPhoneNumberForStatus::
+    push hl
+    call $42E5
+    jp Status_DrawPhoneNumber_SkipLoadDigits
+
+Status_LoadPhoneDigits_NowWithSGBSupport::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jp z, Status_LoadPhoneDigits
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    jp z, Status_LoadPhoneDigits
+    ld hl, Status_PhoneDigits
+    ld de, $9600
+    ld b, $F0
+
+.drawloop
+    ld a, [hli]
+    ld c, a
+    inc de
+    di
+
+.wfb
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, [hli]
+    ld [de], a
+    dec e
+    xor c
+    cpl
+    ld [de], a
+    ei
+    inc de
+    inc de
+    dec b
+    jr nz, .drawloop
     ret

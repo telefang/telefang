@@ -188,6 +188,11 @@ Banked_Zukan_ADVICE_DrawDenjuuName::
 	jp Zukan_ADVICE_DrawDenjuuName
 	nop
 
+;components/status/advice.asm
+Banked_Status_ADVICE_StateInitGraphics::
+	jp Status_ADVICE_StateInitGraphics
+	nop
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

@@ -25,22 +25,20 @@ Status_LoadEvolutionIndicatorBySpeciesEntryZukan::
     pop af
     jp Status_LoadEvolutionIndicatorBySpeciesOffloadZukan
 	
+Status_LoadEvolutionIndicatorBySpeciesStatus::
+    call Status_LoadEvolutionIndicatorBySpeciesEntryStatus
+    rst $18
+    ret
+
+Status_LoadEvolutionIndicatorBySpeciesEntryStatus::
+    push de
+    push af
+    call Status_LoadDenjuuEvolutionIndicatorCommon
+    pop af
+    jp Status_LoadEvolutionIndicatorBySpeciesOffloadStatus
+
 ;NOTE: Free Space
 	
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
     nop  
     nop  
     nop  
@@ -200,4 +198,27 @@ Status_LoadEvolutionIndicatorBySpeciesOffloadCommon::
     and $F
     swap a
     ld e, a
-	ret
+    ret
+
+SECTION "Status Evolution Indicator Loader Part 3", ROMX[$5F4D], BANK[$7D]
+Status_LoadEvolutionIndicatorBySpeciesOffloadStatus::
+    push af
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .nosgb
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    jr z, .nosgb
+    pop af
+    call Status_LoadEvolutionIndicatorBySpeciesOffloadCommon
+    ld bc, M_Status_DenjuuStageGfx_NumTiles * 16
+    call Status_LoadDenjuuEvolutionIndicatorOffloadMultiply
+    ld b, $60
+    ld de, DenjuuStageGfx
+    add hl, de
+    pop de
+    jp Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop
+
+.nosgb
+    pop af
+    jp Status_LoadEvolutionIndicatorBySpeciesOffload
