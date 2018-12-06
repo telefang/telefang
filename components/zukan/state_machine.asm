@@ -41,8 +41,9 @@ Zukan_StateOverviewDrawSubScreen::
     call Zukan_CalculateTotals
     
     ld bc, $48
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphic
     
 .select_dmg_graphic

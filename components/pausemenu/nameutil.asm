@@ -39,21 +39,6 @@ PauseMenu_CenterPreppedName::
     ld bc, W_StringTable_StagingLocDbl
     ld d, M_StringTable_Load8AreaSize
     jp MainScript_DrawCenteredStagedString
-    
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
 
 SECTION "Pause Menu Names Util ADVICE", ROMX[$7F10], BANK[$34]
 PauseMenu_ADVICE_LoadName75::

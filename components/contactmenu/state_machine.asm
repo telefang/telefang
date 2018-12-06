@@ -22,8 +22,9 @@ ContactMenu_StateMachine::
 sub_10A86:
     call $636B
     ld bc, $12
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     
 .use_dmg_graphic
