@@ -91,8 +91,9 @@ PauseMenu_SubStateSMSGraphicIdle::
 PauseMenu_SubStateSMSListingInit::
     ld bc, $1A
     
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .isCgb
     
 .isDmg
@@ -206,8 +207,9 @@ PauseMenu_SubStateSMSExit2::
     jp $5B27
 
 PauseMenu_LoadMainGraphics::
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .cgbGfx
     
 .dmgGfx

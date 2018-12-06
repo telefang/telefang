@@ -131,8 +131,9 @@ PauseMenu_ClearArrowMetasprites::
     jp LCDC_ClearSingleMetasprite
     
 PauseMenu_ClearInputTiles::
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr nz, .dmgClear
     jp PauseMenu_CGBClearInputTiles
     
@@ -140,8 +141,9 @@ PauseMenu_ClearInputTiles::
     jp PauseMenu_DMGClearInputTiles
     
 PauseMenu_SelectTextStyle::
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr nz, .selectDMGStyle
     ld a, 1
     jr .setTextStyle

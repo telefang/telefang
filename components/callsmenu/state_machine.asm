@@ -93,8 +93,9 @@ CallsMenu_StateNoMessageIndicatorIdle::
 ;State 0C 16 03
 CallsMenu_StateDrawHistoryEntry::
     ld bc, $1A
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .cgb_resource
     
 .dmg_resource

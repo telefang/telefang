@@ -67,8 +67,9 @@ PhoneIME_DenjuuNicknameDiacritic::
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PhoneIME_LoadGraphicsForIME::
     ld hl, .imeGraphicsTableCGB
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .tableSelected
     ld hl, .imeGraphicsTableDMG
     
@@ -85,8 +86,9 @@ PhoneIME_LoadGraphicsForIME::
     ld h, [hl]
     ld l, a
     
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .selectCGBBank
     ld a, BANK(PhoneKeypadGfx)
     jr .bankSelected

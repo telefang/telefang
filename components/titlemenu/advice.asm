@@ -1,5 +1,18 @@
 INCLUDE "telefang.inc"
 
+SECTION "TitleMenu Check If Either SGB or CGB", ROMX[$5A8B], BANK[$4]
+TitleMenu_ADVICE_CanUseCGBTiles::
+; Sets the z flag if in CGB or SGB mode.
+    ld a, [W_SGB_DetectSuccess]
+    dec a
+    ret z
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret
+    nop
+    nop
+    nop
+
 SECTION "Title Menu Advice Code", ROMX[$7D14], BANK[$34]
 TitleMenu_ADVICE_SplitNickAndSpeciesNamesBrokenCallsite::
     REPT $B7
@@ -158,8 +171,9 @@ TitleMenu_ADVICE_StateLoadGraphics::
     call ClearGBCTileMap1
     call LCDC_ClearMetasprites
     
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles_Alt
     jr z, .cgbGfx
     
 .dmgGfx
@@ -311,4 +325,11 @@ TitleMenu_ADVICE_UnloadSGBFilesLink::
     M_AdviceTeardown
     ret
     
-TitleMenu_ADVICE_UnloadSGBFilesLink_END
+TitleMenu_ADVICE_CanUseCGBTiles_Alt::
+; A bank 1 copy of TitleMenu_ADVICE_CanUseCGBTiles.
+    ld a, [W_SGB_DetectSuccess]
+    dec a
+    ret z
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret

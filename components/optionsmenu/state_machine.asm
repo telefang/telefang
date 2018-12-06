@@ -40,8 +40,9 @@ OptionsMenu_StatePositionCursors::
 ;State 0C 15 01
 OptionsMenu_StateDrawOptions::
     ld bc, 5
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .cgb_graphics
     
 .dmg_graphics

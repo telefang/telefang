@@ -371,8 +371,9 @@ TitleMenu_StateLoadTimeInputScreen::
     jr nz, .skipTilemapLoad
     
     ld bc, $D
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .useCGBTmap
     
 .useDMGTmap
@@ -557,8 +558,9 @@ TitleMenu_StateSoundTestInputHandler::
 ;State 03 1A
 TitleMenu_StateSoundTestExit::
     ld bc, $1B
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphics_pack
     
 .select_dmg_graphics
@@ -613,8 +615,9 @@ TitleMenu_StateSaveOverwriteInputHandler::
 ;State 03 1D
 TitleMenu_StateSaveOverwriteConfirmed::
     ld bc, $1B
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphics
     
 .select_dmg_graphics
@@ -630,8 +633,9 @@ TitleMenu_StateSaveOverwriteConfirmed::
 ;State 03 1E
 TitleMenu_StateSaveOverwriteCancelled::
     ld bc, $1B
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphics
     
 .select_dmg_graphics
