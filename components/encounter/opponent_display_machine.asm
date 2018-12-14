@@ -24,7 +24,7 @@ Encounter_OpponentDisplayStateMachine::
     jp [hl]
     
 .stateTable
-    dw Encounter_SubStateNull,Encounter_SubStateSetupThemeGraphics,Encounter_SubStateDrawEncounterScreen,$4693,$46B6,$4724,$4730,$4755
+    dw Encounter_SubStateNull,Encounter_SubStateSetupThemeGraphics,Encounter_SubStateDrawEncounterScreen,Encounter_SubStateFadeIn,Encounter_SubStateDenjuuOrTFangerAppearedMessage,Encounter_SubStateGoDenjuuMessage,$4730,$4755
     dw $4857,$48C2,$491D,$4929,$4945,$4957,$4961
 
 ; State 06 01 00
@@ -274,4 +274,87 @@ Encounter_SubStateDrawEncounterScreen::
 .fadeAndNextState
     ld a, 4
     call Banked_LCDC_SetupPalswapAnimation
+    jp Battle_IncrementSubSubState
+
+Encounter_SubStateFadeIn::
+; This is designed to progress to the next substate (substate 4) after the fade in when first displaying the encounter screen,
+; however it is also designed to skip to substate 6 when returning from the status screen.
+; This is because we only want to display encounter messages once.
+
+    ld a, [W_Encounter_AlreadyInitialized]
+    cp 0
+    jr z, .initialFadeIn
+    ld a, 0
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    ld a, 0
+    ld [W_Encounter_AlreadyInitialized], a
+    ld a, 6
+    ld [W_Battle_SubSubState], a
+    ret
+
+.initialFadeIn
+    ld a, 2
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    jp Battle_IncrementSubSubState
+
+Encounter_SubStateDenjuuOrTFangerAppearedMessage::
+    call Banked_MainScriptMachine
+    ld a, [W_MainScript_State]
+    cp 9
+    ret nz
+    ld a, [W_Encounter_BattleType]
+    cp 0
+    jp z, .notTFanger
+    cp 2
+    jp z, .notTFanger
+
+; If it is a TFanger then we need to load the Denjuu to the screen and queue the relevant message.
+
+    ld a, [W_Battle_OpponentParticipants]
+    call Battle_LoadDenjuuPaletteOpponent
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    ld bc, $605
+    ld e, $96
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    ld a,[W_Battle_OpponentParticipants]
+    ld de,Encounter_GameStateMachine
+    ld bc, $9500
+    call MainScript_DrawCenteredName75
+    ld bc, $B01
+    ld e, $97
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    ld a, [$D543]
+    ld hl, $984B
+    ld c, 1
+    call Encounter_DrawTileDigits
+    ld a, [W_Battle_OpponentParticipants]
+    ld [W_StringTable_ROMTblIndex], a
+    ld hl, Encounter_GameStateMachine
+    call StringTable_LoadName75
+    call Encounter_CopyStagedStringToArg2
+    ld c, $23
+    call Battle_QueueMessage
+    ld a, $52
+    ld [W_Sound_NextSFXSelect], a
+    jp Battle_IncrementSubSubState
+
+.notTFanger
+    ld a, 6
+    ld [W_Battle_SubSubState], a
+    ret
+
+Encounter_SubStateGoDenjuuMessage::
+; This is skipped if the opponent isn't a TFanger.
+
+    call Banked_MainScriptMachine
+    ld a, [W_MainScript_State]
+    cp a, 9
+    ret nz
     jp Battle_IncrementSubSubState
