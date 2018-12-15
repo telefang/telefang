@@ -13,6 +13,9 @@ W_Encounter_BattleType:: ds 1
 SECTION "Encounter Memory 3", WRAMX[$D406], BANK[$1]
 W_Encounter_TFangerClass:: ds 1
 
+SECTION "Encounter Vertical Selection", WRAMX[$D40E], BANK[$1]
+W_Encounter_UserVerticalSelection:: ds 1
+
 SECTION "Encounter Memory 1", WRAMX[$D43A], BANK[$1]
 W_Encounter_AlreadyInitialized:: ds 1
 
@@ -24,8 +27,8 @@ Encounter_OpponentDisplayStateMachine::
     jp [hl]
     
 .stateTable
-    dw Encounter_SubStateNull,Encounter_SubStateSetupThemeGraphics,Encounter_SubStateDrawEncounterScreen,Encounter_SubStateFadeIn,Encounter_SubStateDenjuuOrTFangerAppearedMessage,Encounter_SubStateGoDenjuuMessage,$4730,$4755
-    dw $4857,$48C2,$491D,$4929,$4945,$4957,$4961
+    dw Encounter_SubStateNull,Encounter_SubStateSetupThemeGraphics,Encounter_SubStateDrawEncounterScreen,Encounter_SubStateFadeIn,Encounter_SubStateDenjuuOrTFangerAppearedMessage,Encounter_SubStateGoDenjuuMessage,Encounter_SubStateFightFleeStatus,Encounter_SubStateInputHandler
+    dw Encounter_SubStateEnterOpponentStatusScreen,Encounter_SubStateFuckThisImOuttaHere,Encounter_SubStateButYouCouldntEscapeMessage,$4929,$4945,$4957,$4961
 
 ; State 06 01 00
 Encounter_SubStateNull::
@@ -314,7 +317,7 @@ Encounter_SubStateDenjuuOrTFangerAppearedMessage::
 
 ; If it is a TFanger then we need to load the Denjuu to the screen and queue the relevant message.
 
-    ld a, [W_Battle_OpponentParticipants]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     call Battle_LoadDenjuuPaletteOpponent
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
@@ -322,19 +325,19 @@ Encounter_SubStateDenjuuOrTFangerAppearedMessage::
     ld e, $96
     ld a, 0
     call Banked_RLEDecompressTMAP0
-    ld a,[W_Battle_OpponentParticipants]
-    ld de,Encounter_GameStateMachine
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
+    ld de, Encounter_GameStateMachine
     ld bc, $9500
     call MainScript_DrawCenteredName75
     ld bc, $B01
     ld e, $97
     ld a, 0
     call Banked_RLEDecompressTMAP0
-    ld a, [$D543]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantLevel]
     ld hl, $984B
     ld c, 1
     call Encounter_DrawTileDigits
-    ld a, [W_Battle_OpponentParticipants]
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
     ld [W_StringTable_ROMTblIndex], a
     ld hl, Encounter_GameStateMachine
     call StringTable_LoadName75
@@ -356,5 +359,264 @@ Encounter_SubStateGoDenjuuMessage::
     call Banked_MainScriptMachine
     ld a, [W_MainScript_State]
     cp a, 9
+    ret nz
+    jp Battle_IncrementSubSubState
+
+Encounter_SubStateFightFleeStatus::
+    ld c, $26
+    call Battle_QueueMessage
+    ld a, 0
+    call Banked_Status_LoadUIGraphics
+    ld a, 0
+    ld bc, 4
+    call CGBLoadObjectPaletteBanked
+    ld a, 1
+    ld [W_CGBPaletteStagedOBP], a
+    call $4ACA
+    ld a, 0
+    ld [W_PauseMenu_SelectedCursorType], a
+    call LCDC_BeginAnimationComplex
+    jp Battle_IncrementSubSubState
+
+Encounter_SubStateInputHandler::
+    call LCDC_IterateAnimationComplex
+    call Banked_MainScriptMachine
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Up
+    jr z, .upNotPressed
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Encounter_UserVerticalSelection]
+    cp 0
+    jr z, .moveCursorToStatus
+    ld a, 0
+    ld [W_Encounter_UserVerticalSelection], a
+    jp $4ACA
+
+.moveCursorToStatus
+    ld a, [W_Victory_UserSelection]
+    cp a, 1
+
+; Do nothing if cursor is next to "Flee".
+
+    jr z, .upNotPressed
+    ld a, 1
+    ld [W_Encounter_UserVerticalSelection], a
+    jp $4ACA
+
+.upNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Down
+    jr z, .downNotPressed
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Encounter_UserVerticalSelection]
+    cp a, 1
+    jr z, .moveCursorUpToFight
+    ld a, [W_Victory_UserSelection]
+    cp a, 1
+    jr nz, .cursorPositionNotFlee
+    ld a, 0
+    ld [W_Victory_UserSelection], a
+
+.cursorPositionNotFlee
+    ld a, 1
+    ld [W_Encounter_UserVerticalSelection], a
+    jp $4ACA
+
+.moveCursorUpToFight
+    ld a, 0
+    ld [W_Encounter_UserVerticalSelection], a
+    jp $4ACA
+
+.downNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Left
+    jr z, .leftNotPressed
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Victory_UserSelection]
+    cp a, 0
+    jr z, .moveCursorRightToFlee
+    ld a, 0
+    ld [W_Victory_UserSelection], a
+    jp $4ACA
+
+.moveCursorRightToFlee
+    ld a, [W_Encounter_UserVerticalSelection]
+    cp 1
+
+; Do nothing if cursor is next to "Status".
+
+    jr z, .leftNotPressed
+    ld a, 1
+    ld [W_Victory_UserSelection], a
+    jp $4ACA
+
+.leftNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Right
+    jr z, .rightNotPressed
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Victory_UserSelection]
+    cp 1
+    jr z, .moveCursorLeftToFight
+    ld a, 1
+    ld [W_Victory_UserSelection], a
+    ld a, 0
+    ld [W_Encounter_UserVerticalSelection], a
+    jp $4ACA
+
+.moveCursorLeftToFight
+    ld a, 0
+    ld [W_Victory_UserSelection], a
+    jp $4ACA
+
+.rightNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_A
+    jr z, .aNotPressed
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    xor a
+    ld [W_MetaSpriteConfig1], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    ld a, [W_Encounter_UserVerticalSelection]
+    cp 1
+    jr z, .statusSelected
+    ld a, [W_Victory_UserSelection]
+    cp 1
+    jr z, .fleeSelected
+    ld a, $B
+    ld [W_Battle_SubSubState], a
+    ret
+
+.statusSelected
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp Battle_IncrementSubSubState
+
+.aNotPressed
+    ldh a,[H_JPInput_Changed]
+    and M_JPInput_B
+    jr z, .bNotPressed
+
+.fleeSelected
+    ld a, $57
+    ld [W_Sound_NextSFXSelect], a
+    xor a
+    ld [W_MetaSpriteConfig1], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    ld a, $1E
+    ld [W_Battle_LoopIndex], a
+    ld c, $11
+    call Battle_QueueMessage
+    ld a, 9
+    ld [W_Battle_SubSubState], a
+    ret
+
+.bNotPressed
+    ret
+
+Encounter_SubStateEnterOpponentStatusScreen::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantSpecies]
+    ld [$D5B6], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantLevel]
+    ld [$D5B7], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantPersonality]
+    ld [$D5B8], a
+    ld a, 1
+    ld [W_Status_NumDuplicateDenjuu], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantLevel]
+    cp 0
+    jr z, .noMoreDenjuu
+    ld  a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantSpecies]
+    ld [$D5B9], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantLevel]
+    ld [$D5BA], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantPersonality]
+    ld [$D5BB],a
+    ld a, [W_Status_NumDuplicateDenjuu]
+    inc a
+    ld [W_Status_NumDuplicateDenjuu], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantLevel]
+    cp 0
+    jr z, .noMoreDenjuu
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantSpecies]
+    ld [$D5BC], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantLevel]
+    ld [$D5BD], a
+    ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantPersonality]
+    ld [$D5BE], a
+    ld a, [W_Status_NumDuplicateDenjuu]
+    inc a
+    ld [W_Status_NumDuplicateDenjuu], a
+
+.noMoreDenjuu
+    xor a
+    ld [W_Status_SubState], a
+    ld [W_Status_SelectedContactIndex], a
+    ld a, 9
+    ld [W_SystemState], a
+    ret
+
+Encounter_SubStateFuckThisImOuttaHere::
+    xor a
+    ld [W_MetaSpriteConfig1], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    ld a,[W_Battle_LoopIndex]
+    dec a
+    ld [W_Battle_LoopIndex], a
+    cp 0
+    jr z, .finishedPrintingMessage
+    jp Banked_MainScriptMachine
+
+.finishedPrintingMessage
+    ld a, [W_SerIO_ConnectionState]
+    cp 1
+    jr z, .couldntEscape
+    ld a, [W_Encounter_BattleType]
+    cp 0
+    jr nz, .couldntEscape
+    call $4A99
+    cp 0
+    jr z, .couldntEscape
+    call SaveClock_EnterSRAM2
+    ld hl, $A002
+    ld a, [W_PauseMenu_DeletedContact]
+    call Battle_IndexStatisticsArray
+    ld a, [hl]
+    cp 1
+    jr c, .fdIsRockBottom
+    sub 1
+    ld [hl], a
+
+.fdIsRockBottom
+    call SaveClock_ExitSRAM
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, $10
+    ld [$CF96], a
+    ld a, $D
+    ld [W_Battle_SubSubState], a
+    ret
+
+.couldntEscape
+    ld c, $12
+    call Battle_QueueMessage
+    jp Battle_IncrementSubSubState
+
+Encounter_SubStateButYouCouldntEscapeMessage::
+    call Banked_MainScriptMachine
+    ld a, [W_MainScript_State]
+    cp 9
     ret nz
     jp Battle_IncrementSubSubState
