@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Status Screen State Machine Vars", WRAMX[$D41F], BANK[1]
-W_Status_SubState: ds 1
+W_Status_SubState:: ds 1
 
 SECTION "Status Screen State Machine Vars 2", WRAMX[$D456], BANK[1]
 W_Status_UseDenjuuNickname:: ds 1
