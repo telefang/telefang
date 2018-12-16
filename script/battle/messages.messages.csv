@@ -27,7 +27,7 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 デンワバンゴウをうしなった!<*5>",Lost <&0xcca3>'s phone number!<*5>,,<&0xcca3>s Handynummer verloren!<*5>,,
 0x114014,"けっかいがはられていて
 でんまリゅくが
-はつどうできない!!<*5>",Can't use Denma power due to the force field!!<*5>,,Kraftfeld verhindert Einsatz von Denma-Power!<*5>,,
+はつどうできない!!<*5>",The seal prevents you from using Denma powers!<*5>,,Kraftfeld verhindert Einsatz von Denma-Power!<*5>,,
 0x114016,"<&0xd4b1>が
 あらわれた!<*5>",<&0xccc1><&0xd658> appeared!<*5>,,<&0xd658> taucht auf!<*5>,,
 0x114018,でんまリょく じゅうでんかいし!<*5>,Charging Denma power!<*5>,,Denma-Power wird aufgeladen!<*5>,,
@@ -75,9 +75,7 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 かってにこうげきした!<*4>",<&0xd6a0> attacked on its own!<*4>,,<&0xd6a0> greift von selbst an!<*4>,,
 0x114042,"バリアがでんまリゅくを
 はじきとばした!!<*5>",The barrier blocked the Denma power!<*5>,,Die Barriere verhindert Denma-Power!<*5>,,
-0x114044,<ALIAS ROW 0x21>,"The barrier
-blocked the
-Denma power!<*5>",,"Die Barriere
+0x114044,<ALIAS ROW 0x21>,The barrier blocked the Denma power!<*5>,,"Die Barriere
 verhindert
 Denma-Power!<*5>",,
 0x114046,いけ! <&0xd4b1>!<*5>,Go! <&0xd658>!<*5>,,Auf geht's! <&0xd658>!<*5>,,
@@ -142,7 +140,7 @@ Denma-Power!<*5>",,
 0x114082,"<&0xd460>は
 バリアをはっている!<*5>",<&0xccd1><&0xd6a0> is forming a barrier!<*5>,,<&0xd6a0> bildet eine Barriere!<*5>,,
 0x114084,"<&0xd460>は
-けっかいをはられている!<*5>",<&0xccd1><&0xd6a0> is forming a force field!<*5>,,<&0xd6a0> bildet ein Kraftfeld!<*5>,,
+けっかいをはられている!<*5>",<&0xccd1><&0xd6a0>'s Denma powers are being sealed!<*5>,,<&0xd6a0> bildet ein Kraftfeld!<*5>,,
 0x114086,"<&0xd460>は
 しもやけになっている!<*5>",<&0xccd1><&0xd6a0> is frostbitten!<*5>,,<&0xd6a0> ist eingefroren!<*5>,,
 0x114088,"<&0xd460>は
@@ -172,7 +170,7 @@ Denma-Power!<*5>",,
 0x1140a0,"<&0xd460>の
 バリアのこうかがなくなった!<*5>",<&0xccd1><&0xd6a0>'s barrier faded!<*5>,,<&0xd6a0>s Barriere schwindet!<*5>,,
 0x1140a2,"<&0xd460>の
-けっかいがきえた!<*5>",<&0xccd1><&0xd6a0>'s force field faded!<*5>,,<&0xd6a0>s Kraftfeld schwindet!<*5>,,
+けっかいがきえた!<*5>",<&0xccd1><&0xd6a0>'s Denma powers were unsealed again!<*5>,,<&0xd6a0>s Kraftfeld schwindet!<*5>,,
 0x1140a4,"<&0xd460>の
 しもやけがなおった!<*5>",<&0xccd1><&0xd6a0> recovered from frostbite!<*5>,,<&0xd6a0> ist aufgetaut!<*5>,,
 0x1140a6,"<&0xd460>の
@@ -202,7 +200,7 @@ Denma-Power!<*5>",,
 0x1140be,"<&0xd460>は
 バリアをはった!<*5>",<&0xccd1><&0xd6a0> put up a barrier!<*5>,,<&0xd6a0> hat eine Barriere gebildet!<*5>,,
 0x1140c0,"<&0xd460>は
-けっかいをはられた!<*5>",<&0xccd1><&0xd6a0> put up a force field!<*5>,,<&0xd6a0> hat ein Kraftfeld gebildet!<*5>,,
+けっかいをはられた!<*5>",<&0xccd1><&0xd6a0>'s Denma powers were sealed!<*5>,,<&0xd6a0> hat ein Kraftfeld gebildet!<*5>,,
 0x1140c2,"<&0xd460>は
 しもやけになった!
 しゅびリょくダウン!!<*5>",<&0xccd1><&0xd6a0> was frostbitten! Defense down!!<*5>,,<&0xd6a0> wurde eingefroren! Abwehr fällt!!<*5>,,
@@ -342,7 +340,7 @@ Lange nichts gehört! Wie geht's?<*5>",,
 0x114142,"コイツが オレの『ヘいたい』だ
 オレの じゃまをするヤツには
 ようしゃしない!
-いくぞ! テレファングだ!<*2>","This guy is one of my ""soldiers"". 
+いくぞ! テレファングだ!<*2>","This guy is one of my soldiers. 
 He'll show no mercy for people who get in my way. 
 Let's go! Telefang!<*2>",,"Der hier gehört zu meinen Soldaten.
 Wer mir in die Quere kommt, kriegt's mit ihm zutun. 

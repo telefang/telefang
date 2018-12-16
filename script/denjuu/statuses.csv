@@ -1,9 +1,9 @@
 #,Japanese,English,Draft version,German,Draft version (German),Notes
-1,ふつう,Normal,,Normal,,Could use some work.
-2,かくれる,Hidden,,Verst.,,
-3,ジャンプ,Jump,,Sprung,,
+1,ふつう,,,Normal,,These strings are no longer used in the patch!
+2,かくれる,Hidden,,Verst.,,(They were limited to 6 chars so we used small text graphics instead)
+3,ジャンプ,Jump,,Sprung,,The icons that are used reside in components/battle/status.png.
 4,ひこう,Fly,,Fliegt,,
-5,こんらん,Confue,,Konfus,,:/
+5,こんらん,Confused,,Konfus,,
 6,まひ,Stun,,Geläh.,,
 7,のろい,Curse,,Fluch,,
 8,ねむリ,Sleep,,Schlaf,,
@@ -11,9 +11,9 @@
 10,けむリ,Smoke,,Rauch,,
 11,どく,Poison,,Gift,,
 12,みえない,Blind,,Blind,,
-13,バリア,Barrier,,Schild,,
-14,けっかい,Force,,Kraftf.,,
-15,しもやけ,Frosted,,Frost,,
+13,バリア,Barrier,,Schild,,Not actually displayed in the Japanese game.
+14,けっかい,Seal,,Kraftf.,,Changed in the patch to get around the MAGIC ZONE nature of けっかい
+15,しもやけ,Frostbite,,Frost,,
 16,やけど,Burn,,Brand,,
 17,,INVALID,,INVALID,,
 18,,INVALID,,INVALID,,
