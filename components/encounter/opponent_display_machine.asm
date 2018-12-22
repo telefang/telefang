@@ -27,8 +27,21 @@ Encounter_OpponentDisplayStateMachine::
     jp [hl]
     
 .stateTable
-    dw Encounter_SubStateNull,Encounter_SubStateSetupThemeGraphics,Encounter_SubStateDrawEncounterScreen,Encounter_SubStateFadeIn,Encounter_SubStateDenjuuOrTFangerAppearedMessage,Encounter_SubStateGoDenjuuMessage,Encounter_SubStateFightFleeStatus,Encounter_SubStateInputHandler
-    dw Encounter_SubStateEnterOpponentStatusScreen,Encounter_SubStateFuckThisImOuttaHere,Encounter_SubStateButYouCouldntEscapeMessage,$4929,$4945,$4957,$4961
+    dw Encounter_SubStateNull ; 00
+    dw Encounter_SubStateSetupThemeGraphics ; 01
+    dw Encounter_SubStateDrawEncounterScreen ; 02
+    dw Encounter_SubStateFadeIn ; 03
+    dw Encounter_SubStateDenjuuOrTFangerAppearedMessage ; 04
+    dw Encounter_SubStateGoDenjuuMessage ; 05
+    dw Encounter_SubStateFightFleeStatus ; 06
+    dw Encounter_SubStateInputHandler ; 07
+    dw Encounter_SubStateEnterOpponentStatusScreen ; 08
+    dw Encounter_SubStateFuckThisImOuttaHere ; 09
+    dw Encounter_SubStateButYouCouldntEscapeMessage ; 0A
+    dw Encounter_SubStateAccessingPhoneMemory ; 0B
+    dw Encounter_SubStateEnterSummonScreen ; 0C
+    dw Encounter_SuccessfulFleeFade ; 0D
+    dw Encounter_SuccessfulFleeExitToOverworld ; 0E
 
 ; State 06 01 00
 Encounter_SubStateNull::
@@ -620,3 +633,46 @@ Encounter_SubStateButYouCouldntEscapeMessage::
     cp 9
     ret nz
     jp Battle_IncrementSubSubState
+
+Encounter_SubStateAccessingPhoneMemory::
+; If the player's contact list contains 80 or more Denjuu, then the game displays the "Accessing phone memory!".
+; The game does this because more contacts means more delay before the summon screen can be shown.
+    ld a, [W_Victory_ContactsPresent]
+    cp 80
+    jr c, .smallContactList
+    ld a, 1
+    ld [W_Battle_LoopIndex], a
+    ld c, $96
+    call Battle_QueueMessage
+    jp Battle_IncrementSubSubState
+.smallContactList
+    ld a, 1
+    ld [W_Battle_LoopIndex], a
+    jp Battle_IncrementSubSubState
+
+Encounter_SubStateEnterSummonScreen::
+; If the "Accessing phone memory!" message is queued then this displays it.
+; However if no mesage was queued then this exploits a behavioural trait of MainScriptMachine to display no message.
+; The W_MainScript_TextPtr and W_MainScript_TextBank left over from printing the last message will always contain the address of the E1 code used to end the message.
+    call Banked_MainScriptMachine
+    ld a, [W_Battle_LoopIndex]
+    dec a
+    ld [W_Battle_LoopIndex], a
+    ret nz
+    xor a
+    ld [W_Battle_SubSubState], a
+    jp System_ScheduleNextSubState
+
+Encounter_SuccessfulFleeFade::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    jp Battle_IncrementSubSubState
+
+Encounter_SuccessfulFleeExitToOverworld::
+    xor a
+    ld [W_Battle_SubSubState], a
+    ld a, 4
+    ld [W_SystemSubState], a
+    ret
