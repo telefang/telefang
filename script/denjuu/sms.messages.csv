@@ -1,4 +1,4 @@
-Pointer,Japanese,English,Draft version,Personality,Notes
+Pointer,Japanese,English,Draft version,Personality / Denjuu,Notes
 #######,SMS messages,,,,
 0x118000,さいきんなんか キミからのデンワが すくないような きがする<*4>,"I feel
 like you
@@ -6,7 +6,9 @@ haven't
 called me
 much
 lately…<*4>","I feel
-like you haven't called me much lately…",Carefree,SMS messages and secret Denjuu calls.
+like you haven't called me much lately…",Carefree,"SMS messages and secret Denjuu calls.
+
+The first 30 messages correspond character-wise to personalities, but... that doesn't actually make a difference in-game. It seems that the developers meant to implement different texts based on personality, but despite writing them like it they never put that feature in."
 0x118002,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"Is it just
 me, or
 have you
@@ -16,7 +18,7 @@ lately?
 Are you
 mad at me
 or some-
-thing?<*4>","Is it just me, or have you been calling less lately? Are you mad at me or something?",Absentminded,"Status: Needs a full rewrite.
+thing?<*4>","Is it just me, or have you been calling less lately? Are you mad at me or something?",Absentminded,"Status: 100%!!! Slam! Bam! WOW!!!
 "
 0x118004,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"C'mon, call
 me more!
@@ -72,13 +74,18 @@ real
 fun dude!
 Phone me
 sometime!<*4>","Man, you're a real
-fun dude! Phone me sometime!",Selfish,"Ayyy, you're a real honker of a guy, you know that? Gimme a ringadingaling!"
+fun dude! Phone me sometime!",Selfish,"Ayyy, you're a real honker of a guy, you know that? Gimme a ringadingaling!
+^ (vetoed)"
 0x118012,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"Time al-
 ways goes
 by so fast
 when I'm
 with you!<*4>",Time al-ways goes by so fast when I'm with you!,Timid,
-0x118014,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,Redo<*4>,,Irritable,
+0x118014,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"Listen, you
+and I are
+friends.
+You got
+that?!<*4>","Listen, you and I are friends. You got that?!",Irritable,
 0x118016,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"I hope
 that we
 meet
@@ -98,9 +105,9 @@ I care about you, you know!",Carefree,
 0x11801a,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"Heyo!
 What's up?
 You gotta
-dial me up
+call me up
 once in a
-while!<*4>",Heyo! What's up? You gotta dial me up once in a while!,Absentminded,
+while!<*4>",Heyo! What's up? You gotta call me up once in a while!,Absentminded,
 0x11801c,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"Hey, how
 you feeling
 lately?
@@ -116,7 +123,12 @@ but...
 What's up?<*4>","I hope you don't mind me asking, but...
 
 What's up?",Timid,
-0x118020,オマエ いまなにやってるんだ?からだには きをつけるんだぜ!<*4>,Redo<*4>,,Irritable,
+0x118020,オマエ いまなにやってるんだ?からだには きをつけるんだぜ!<*4>,"Hey you,
+what are
+you up to?
+Take care
+of your-
+self!<*4>","Hey you, what are you up to? Take care of your-self!",Irritable,
 0x118022,そのご おかわリ あリませんか?ワタシはゲンキでやっています<*4>,"How have
 you been
 as of
@@ -203,33 +215,33 @@ you? You
 should
 work
 harder!<*4>","You've been off your game recently, haven't you? You should work harder!",Irritable,
-0x11803a,なかなかれんらくがこないのでしんぱいしています!メールください!<*4>,"I haven't
+0x11803a,なかなかれんらくがこないのでしんぱいしています!メールください!<*4>,"It worries
+me that I
+haven't
 heard
 from you
-lately,
-which
-worries me!
+lately!
 Please
 send me a
-text.<*4>","I haven't heard from you lately, which worries me! Please send me a text.",Sincere,
+text.<*4>",It worries me that I haven't heard from you lately! Please send me a text.,Sincere,
 0x11803c,ひさしぶリ!ゲンキか? オレじつは メールにがてなんだよな!<*4>,"Long time
 no see! I'm
 not too
 good at
 keeping up
-via text.<*4>",Long time no see! I'm not too good at keeping up via text.,Carefree,
+via text.<*4>",Long time no see! I'm not too good at keeping up via text.,,
 0x11803e,テレファングするまえに かならずアンテナのかずをよくみろよ!<*4>,"You gotta
 check your
 reception
 before
 every
-Telefang!<*4>",You gotta check your reception before every Telefang!,Absentminded,
+Telefang!<*4>",You gotta check your reception before every Telefang!,,
 0x118040,デンワをまめにかけると デンジュウとなかよくなれるらしいぜ!<*4>,"To get
 closer to
 us Denjuu,
 put your
 phone to
-good use!<*4>","To get closer to us Denjuu, put your phone to good use!",Selfish,
+good use!<*4>","To get closer to us Denjuu, put your phone to good use!",,
 0x118042,デンジュウのせいかくを よくみてからデンワでよんだほうがいいぜ!<*4>,"Before
 calling a
 Denjuu
@@ -240,7 +252,7 @@ always
 think
 about its
 person-
-ality!<*4>","Before calling a Denjuu over to a Telefang, you should always think about its person-ality!",Timid,
+ality!<*4>","Before calling a Denjuu over to a Telefang, you should always think about its person-ality!",,
 0x118044,たたかいにくるジカンは デンジュウのせいかくにかんけいしてるぞ!<*4>,"How long a
 Denjuu
 takes to
@@ -250,27 +262,27 @@ depends on
 what its
 person-
 ality is!<*4>","How long a Denjuu takes to arrive
-in battle depends on what its person-ality is!",Irritable,
+in battle depends on what its person-ality is!",,
 0x118046,デンジュウは くさのところで よく しゅつげんするらしいぞ!<*4>,"Denjuu
 appear
 quite
 often in
 the grass,
 I hear!<*4>","Denjuu appear quite often in the grass,
-I hear!",Sincere,
+I hear!",,
 0x118048,デンジュウは みずのところで よく しゅつげんするらしいぞ!<*4>,"Denjuu
 appear
 quite
 often in
 the water,
 I hear!<*4>","Denjuu appear quite often in the water,
-I hear!",Carefree,
+I hear!",,
 0x11804a,デンジュウは いえのちかくではしゅつげんしないらしいぞ!<*4>,"Apparently
 Denjuu
 won't
 appear
 near
-houses!<*4>",Apparently Denjuu won't appear near houses!,Absentminded,
+houses!<*4>",Apparently Denjuu won't appear near houses!,,
 0x11804c,デンジュウは とくいなヤツとふとくいなヤツがいるんだってさ!<*4>,"Don't
 forget:
 Denjuu
@@ -278,20 +290,20 @@ each have
 their own
 strengths
 and weak-
-nesses!<*4>",Don't forget: Denjuu each have their own strengths and weak-nesses!,Selfish,
+nesses!<*4>","Don't forget: based on habitat, Denjuu each have their own strengths and weak-nesses!",,Added a little bit of detail. A little bit.
 0x11804e,つかれたデンジュウは じっとしてればかいふくするんだってさ!<*4>,"To heal
 weary
 Denjuu,
 just stand
 still for
 a while!<*4>","To heal weary Denjuu, just stand still for
-a while!",Timid,
+a while!",,
 0x118050,アイテムをあげると そのデンジュウのけいけんちがあがるかも?<*4>,"Give a
 Denjuu an
 item, and
 maybe it'll
 gain expe-
-rience...?<*4>","Give a Denjuu an item, and maybe it'll gain expe-rience...?",Irritable,
+rience...?<*4>","Give a Denjuu an item, and maybe it'll like you more?",,
 0x118052,じっけんしていろいろなしんかをさせてみることが たいせつだぞ<*4>,"It's
 important
 to try
@@ -303,7 +315,7 @@ make all
 sorts of
 evolutions
 happen
-there!<*4>",It's important to try experi-menting in the lab. You can make all sorts of evolutions happen there!,Sincere,
+there!<*4>",It's important to try experi-menting in the lab. You can make all sorts of evolutions happen there!,,
 0x118054,いつか あるモノを もてるようになるかも? あるモノはヒミツだよ<*4>,"Someday
 you might
 be able to
@@ -317,7 +329,7 @@ you ask?
 It's a
 secret!<*4>","Someday you might be able to pick up a certain something. What's ""some-thing"",
 you ask?
-It's a secret!",Carefree,
+It's a secret!",,
 0x118056,いつか あるモノを おせるようになるかも? あるモノはヒミツだよ<*4>,"Someday
 you might
 be able to
@@ -331,7 +343,7 @@ you ask?
 It's a
 secret!<*4>","Someday you might be able to push a certain something. What's ""some-thing"",
 you ask?
-It's a secret!",Absentminded,
+It's a secret!",,
 0x118058,メールは 8けんまでしか ほかんできないから たまにはみてね<*4>,"You can
 only have
 8 texts
@@ -349,23 +361,23 @@ at any
 one time.
 
 So make sure to check
-your texts every once in a while!",Selfish,
+your texts every once in a while!",,
 0x11805a,デンジュウをそだてていくと あらたなワザを おぼえるらしいぞ<*4>,"Apparently
 Denjuu get
 new moves
 if you take
 care of
-'em!<*4>",Apparently Denjuu get new moves if you take care of 'em!,Timid,
+'em!<*4>",Apparently Denjuu get new moves if you take care of 'em!,,
 0x11805c,オレ いますぐオマエに あいたいんだけど オマエはどうなの?<*4>,"I wanna
 see you
 right now!
 How about
-you?<*4>",I wanna see you right now! How about you?,Irritable,
+you?<*4>",I wanna see you right now! How about you?,,
 0x11805e,おーっす きょうもいちにち おたがいがんばろうなー!!<*4>,"Hey, man.
 Let's do
 our best
 today!<*4>","Hey, man.
-Let's do our best today!",Sincere,
+Let's do our best today!",,
 0x118060,なぁなぁ オレもしんかできるのかな?ためしてみてくれよな!!<*4>,"Bro, do
 you think...
 do you
@@ -376,23 +388,23 @@ See if you
 can help
 me out!!!<*4>","Bro, do you think...
 do you think I could evol-ve too?
-See if you can help me out!!!",Carefree,
+See if you can help me out!!!",,
 0x118062,いつになったらオレを よんでくれるんだよ!まってるんだぞ!!<*4>,"Call me
 over
 sometime!!!
 I'll be
-waiting!<*4>",Call me over sometime!!! I'll be waiting!,Absentminded,
-0x118064,ここさいきん トモダチとあそんでないんだけど オマエはどう?<*4>,"havent
-played
-w/ my
-frends
-lately
-....u?<*4>",Haven't been see-ing friends much lately... You?,Selfish,
+waiting!<*4>",Call me over sometime!!! I'll be waiting!,,
+0x118064,ここさいきん トモダチとあそんでないんだけど オマエはどう?<*4>,"Haven't
+been see-
+ing friends
+much
+lately...
+You?<*4>",I haven't been see-ing friends much lately... You?,,
 0x118066,デンワは マメにしないと ダメだぞ トモダチなくすからな! <*4>,"Phone
 people or
 you'll lose
 your
-friends!<*4>",Phone people or you'll lose your friends!,Timid,
+friends!<*4>",Phone people or you'll lose your friends!,,
 0x118068,デンワがかかってきたとき テキトウにこたえると あとがたいヘん!<*4>,"When
 someone
 calls you
@@ -404,8 +416,8 @@ without
 thinking,
 you'll make
 trouble
-for
-yourself!<*4>","When someone calls you to ask a question, if you answer without thinking, you'll make trouble for yourself!",Irritable,
+for your-
+self!<*4>","When someone calls you to ask a question, if you answer without thinking, you'll make trouble for your-self!",,
 0x11806a,このメールいつみてるんだ? もしヨルだったら さっさとねろよ<*4>,"What time
 is it when
 you're
@@ -413,382 +425,661 @@ reading
 this? If
 it's night,
 go to bed
-ASAP!<*4>","What time is it when you're reading this? If it's night, go to bed ASAP!",Sincere,
-0x11806c,おはよー..って これみてるのがヨルだったらさ まぬけだよな<*4>,"mornin
-...oh
-unless
-its 
-nite 4
-u haha<*4>","Mornin'! ...Unless it's night when you read this, heh.",Carefree,
-0x11806e,テレファングのときは あいしょうを かんがえて よんでくれよ<*4>,/0x11806e/<*4>,,Absentminded,
-0x118070,ダイデンジュウとバクデンジュウのDNAは ちがうんだってさ!<*4>,/0x118070/<*4>,,Selfish,
-0x118072,ボクを テレファングのときに よんでよー デンワまってるから<*4>,/0x118072/<*4>,,Timid,
-0x118074,ボンボンよんでるか? いろんなじょうほうが かいてあるらしいぜ!<*4>,"Do u
+ASAP!<*4>","What time is it when you're reading this? If it's night, go to bed ASAP!",,
+0x11806c,おはよー..って これみてるのがヨルだったらさ まぬけだよな<*4>,"Mornin'!
+...Unless
+it's night
+when you
+read this,
+heh.<*4>","Mornin'! ...Unless it's night when you read this, heh.",,
+0x11806e,テレファングのときは あいしょうを かんがえて よんでくれよ<*4>,"Think
+about a
+Denjuu's
+habitat
+before
+calling it
+to a fight!
+It's what
+decides
+strengths
+and weak-
+nesses.<*4>",Think about a Denjuu's habitat before calling it to a fight! It's what decides strengths and weak-nesses.,,
+0x118070,ダイデンジュウとバクデンジュウのDNAは ちがうんだってさ!<*4>,"I heard
+Big Denjuu
+and Burst
+Denjuu
+have
+different
+DNA!<*4>",I heard Big Denjuu and Burst Denjuu have different DNA!,,
+0x118072,ボクを テレファングのときに よんでよー デンワまってるから<*4>,"C'mon, call
+me over to
+a Tele-
+fang! I'm
+chomping
+at the bit!<*4>","C'mon, call me over to a Tele-fang! I'm chomping at the bit!",,
+0x118074,ボンボンよんでるか? いろんなじょうほうが かいてあるらしいぜ!<*4>,"Do you
 read
-BomBom
-? its
-good 4
-info!<*4>",,Irritable,
-0x118076,ボクたちをよぶときは とうちゃくするジカンも かんがえてよね<*4>,/0x118076/<*4>,,Sincere,
-0x118078,ボクって わすれさられた そんざいになってないよね?ね?ね?<*4>,/0x118078/<*4>,,Carefree,
-0x11807a,ショップに うってないアイテムもあるらしいよ よくさがしてね<*4>,/0x11807a/<*4>,,Absentminded,
-0x11807c,Dショットは つかいこなしてる?デンワかけるだけじゃないんだぜ!<*4>,/0x11807c/<*4>,,Selfish,
-0x11807e,すベてのデンジュウと あえたの?まだだったら がんばれよな!<*4>,"Have u
-seen
-every
-denjuu
-yet?
-good
-luck!<*4>",,Timid,
-0x118080,テキのステータスはちゃんとみてくれよオレはまけたくないからね<*4>,"always
-look at
-enemy
-stats!
-i dont
+BomBom?
+It's got
+loads of
+good info!<*4>",Do you read Comic BomBom? It's got loads of good info!,,
+0x118076,ボクたちをよぶときは とうちゃくするジカンも かんがえてよね<*4>,"When you
+call a Den-
+juu to a
+Telefang,
+think
+about how
+long it'll
+take for it
+to arrive!<*4>","When you call a Den-juu to a Telefang, think about how long it'll take for it to arrive!",,
+0x118078,ボクって わすれさられた そんざいになってないよね?ね?ね?<*4>,"You
+haven't
+forgotten
+about me,
+right?
+Right?
+Right?<*4>","You haven't forgotten about me, right? Right? Right?",,
+0x11807a,ショップに うってないアイテムもあるらしいよ よくさがしてね<*4>,"I heard
+not all
+items can
+be found in
+shops! So...
+leave no
+stone un-
+turned!<*4>",I heard not all items can be found in shops! So... leave no stone un-turned!,,
+0x11807c,Dショットは つかいこなしてる?デンワかけるだけじゃないんだぜ!<*4>,"Gotten
+used to
+your D-
+Shot yet?
+It does
+much more
+than just
+phone
+calls!<*4>",Gotten used to your D-Shot yet? It does much more than just phone calls!,,
+0x11807e,すベてのデンジュウと あえたの?まだだったら がんばれよな!<*4>,"Have you
+seen every
+Denjuu
+yet? If
+not, keep
+at it!<*4>","Have you seen every Denjuu yet? If not, keep at it!",,
+0x118080,テキのステータスはちゃんとみてくれよオレはまけたくないからね<*4>,"Always
+check your
+enemy's
+stats,
+'cause I
+don't
 wanna
-lose<*4>",,Irritable,
-0x118082,ちゃんとかんがえて テレファングすると ラクにかてるようになるよ<*4>,"if u
-battle 
+lose!<*4>","Always check your enemy's stats, 'cause I don't wanna lose!",,
+0x118082,ちゃんとかんがえて テレファングすると ラクにかてるようになるよ<*4>,"If you
+battle
 smart,
-winnin
-g is
-easy!<*4>",,Sincere,
-0x118084,なかがいいヤツほど バンゴウをうしないにくいんだ しってた?<*4>,/0x118084/<*4>,,Carefree,
-0x118086,ちょくせつ デンワをかけないとナカマにならないヤツもいるらしいよ<*4>,/0x118086/<*4>,,Absentminded,
-0x118088,ケイタイにも いろいろあるんだ!そのうち てにはいるかもね!<*4>,/0x118088/<*4>,,Selfish,
-0x11808a,オレ オマエのかおを おもいだせないんだ!ごめん どうしよう<*4>,/0x11808a/<*4>,,Timid,
-0x11808c,キミにとってたいせつなモノってなに?ボクは トモダチなんだ!<*4>,/0x11808c/<*4>,,Irritable,
-0x11808e,テレファングで まけないでね デンワバンゴウ なくなるからさ<*4>,/0x11808e/<*4>,,Sincere,
-0x118090,オリジナルのDメロってつくった?まだならつくってみたらどう?<*4>,/0x118090/<*4>,,Carefree,
-0x118092,なにかオレに アイテムをかってよ! つよそうヤツがいいな!<*4>,/0x118092/<*4>,,Absentminded,
-0x118094,プレゼントはどんなものだったとしてもやっぱリうれしいよな!<*4>,/0x118094/<*4>,,Selfish,
-0x118096,きょういちにち たのしいことが あるといいな きっとあるよね<*4>,/0x118096/<*4>,,Timid,
-0x118098,またこんど デンジュウクイズやろうぜデンワするからさ!! <*4>,/0x118098/<*4>,,Irritable,
-0x11809a,つよいヤツと テレファングしたいぞーやるときはよんでくれよ!<*4>,/0x11809a/<*4>,,Sincere,
-0x11809c,オレもたまにはよんでくれよ ほったらかしにすると..なくぞ!<*4>,/0x11809c/<*4>,,Carefree,
-0x11809e,ニンゲンカイについてきいたときは..ほんとのことをおしえてね<*4>,/0x11809e/<*4>,,Absentminded,
-0x1180a0,いまからトモダチのところヘ あそびにいってくるからねー<*4>,/0x1180a0/<*4>,,Selfish,
-0x1180a2,しばらくたびにでてくるから なにか あったら デンワください<*4>,/0x1180a2/<*4>,,Timid,
-0x1180a4,デンワつながらなかったから メールをいれとくぜ デンワくれよ<*4>,/0x1180a4/<*4>,,Irritable,
-0x1180a6,このメールをみたら すぐオレのとこにデンワしてくれよな!!<*4>,/0x1180a6/<*4>,,Sincere,
-0x1180a8,たいリょくが もどらないあいだはさ テレファングはしないでね<*4>,/0x1180a8/<*4>,,Carefree,
-0x1180aa,ゲンキにしてますか? さびしくなったときはデンワくださいね!<*4>,/0x1180aa/<*4>,,Absentminded,
-0x1180ac,オマエの トモダチとも テレファングしたいぞ やらないのか?<*4>,/0x1180ac/<*4>,,Selfish,
-0x1180ae,Dメロいっぱいつくってさ オマエの トモダチにくばっちゃえ!<*4>,/0x1180ae/<*4>,,Timid,
-0x1180b0,こんど テレファングするときには  ぜったい よんでくれよ!<*4>,/0x1180b0/<*4>,,Irritable,
-0x1180b2,キカイは みてるだけで たのしいよなってことで なにかくれ!<*4>,/0x1180b2/<*4>,,Sincere,
-0x1180b4,オレの チカラを ためしてみようと おもうだろ!おもわない?<*4>,/0x1180b4/<*4>,,Carefree,
-0x1180b6,あーヒマでヒマでしょうがないぜ!たのむから あそんでくれよー<*4>,/0x1180b6/<*4>,,Absentminded,
-0x1180b8,テレファングのとちゅうで にげたリ するとキライになるぞ!!<*4>,/0x1180b8/<*4>,,Selfish,
-0x1180ba,Tファンガーとテレファングするときはきをひきしめていくんだぞ<*4>,/0x1180ba/<*4>,,Timid,
-0x1180bc,オレたちデンジュウと ニンゲンはトモダチだよな?そうだよな?<*4>,/0x1180bc/<*4>,,Irritable,
-0x1180be,オレは かいぞうシンカできるのか? しらベてみてくれよな!!<*4>,/0x1180be/<*4>,,Sincere,
+winning is a
+breeze!<*4>","If you battle smart, winning is a breeze!",,
+0x118084,なかがいいヤツほど バンゴウをうしないにくいんだ しってた?<*4>,"Did you
+know that
+you're less
+likely to
+lose the
+number of
+a Denjuu
+you're
+good
+friends
+with?<*4>",Did you know that you're less likely to lose the number of a Denjuu you're good friends with?,,
+0x118086,ちょくせつ デンワをかけないとナカマにならないヤツもいるらしいよ<*4>,"There are
+Denjuu you
+can only
+befriend
+by calling
+them
+directly!
+...I think!<*4>",There are Denjuu you can only befriend by calling them directly! ...I think!,,
+0x118088,ケイタイにも いろいろあるんだ!そのうち てにはいるかもね!<*4>,"There are
+a bunch of
+models of
+D-Shot!
+Maybe
+you'll get a
+new one at
+some point.<*4>",There are a bunch of models of D-Shot! Maybe you'll get a new one at some point.,,
+0x11808a,オレ オマエのかおを おもいだせないんだ!ごめん どうしよう<*4>,"I can't
+remember
+your face!
+What
+should I
+do?! Sorry!<*4>","I can't remember your face!
+What should I do?! Sorry!",,
+0x11808c,キミにとってたいせつなモノってなに?ボクは トモダチなんだ!<*4>,"What's the
+most
+important
+thing to
+you? For
+me, it's
+friends!<*4>","What's the most important thing to you? For me, it's friends!",,
+0x11808e,テレファングで まけないでね デンワバンゴウ なくなるからさ<*4>,"Don't lose
+in a
+Telefang,
+alright?
+You're
+gonna your
+contacts!<*4>","Don't lose in a Telefang, alright? Your friends will leave you!",,
+0x118090,オリジナルのDメロってつくった?まだならつくってみたらどう?<*4>,"Made your
+own Melo-D
+yet? If
+not, give it
+a shot!<*4>","Made your own Melo-D yet? If not, then give it a shot!",,
+0x118092,なにかオレに アイテムをかってよ! つよそうヤツがいいな!<*4>,"C'mon, buy
+me an item!
+I want
+something
+cool!<*4>","C'mon, buy me an item! I want something cool!",,
+0x118094,プレゼントはどんなものだったとしてもやっぱリうれしいよな!<*4>,"Man, even
+if it's
+something
+small,
+getting a
+present
+always
+cheers
+you up!<*4>","Man, even if it's something small, getting a present always cheers
+you up!",,
+0x118096,きょういちにち たのしいことが あるといいな きっとあるよね<*4>,"I hope
+something
+fun
+happens
+today.
+Let's hope!<*4>",Maybe something fun will happen today. Let's hope!,,
+0x118098,またこんど デンジュウクイズやろうぜデンワするからさ!! <*4>,"Hey, let's
+do a
+Denjuu quiz
+soon! I'll
+phone ya!<*4>","Hey, let's do a Denjuu quiz soon! I'll phone ya!",,
+0x11809a,つよいヤツと テレファングしたいぞーやるときはよんでくれよ!<*4>,"I wanna
+Telefang
+with some-
+one who's
+strong!
+Call me
+next time
+you're up
+against
+someone
+like that!<*4>",I wanna Telefang with some-one who's strong! Call me next time you're up against someone like that!,,
+0x11809c,オレもたまにはよんでくれよ ほったらかしにすると..なくぞ!<*4>,"Call me to
+a Telefang
+sometime...
+If you
+don't,
+I'm... I'm
+gonna cry!<*4>","Call me to a Telefang sometime... If you don't, I'm... I'm gonna cry!",,
+0x11809e,ニンゲンカイについてきいたときは..ほんとのことをおしえてね<*4>,"When I ask
+you about
+the Human
+World... Tell
+the truth,
+alright?!<*4>","When I ask you about the Human World... Tell the truth, alright?!",,
+0x1180a0,いまからトモダチのところヘ あそびにいってくるからねー<*4>,"I'm going
+to a
+friend's
+place ♪
+See ya!<*4>","I'm going to a friend's place ♪
+See ya!",,
+0x1180a2,しばらくたびにでてくるから なにか あったら デンワください<*4>,"I'm going
+on a trip
+for a
+while, so if
+you need
+me, call!<*4>","I'm going on a trip for a while, so if you need me, call!",,
+0x1180a4,デンワつながらなかったから メールをいれとくぜ デンワくれよ<*4>,"Couldn't
+reach you
+on the
+phone, so
+I'll send
+this text
+instead!
+Call me!<*4>","Couldn't reach you on the phone, so I'll send this text instead! Call me!",,
+0x1180a6,このメールをみたら すぐオレのとこにデンワしてくれよな!!<*4>,"When you
+see this
+text, call
+me ASAP!!!<*4>","When you see this text, call me ASAP!!!",,
+0x1180a8,たいリょくが もどらないあいだはさ テレファングはしないでね<*4>,"While your
+Denjuu's
+HP is still
+low, don't
+go getting
+in a Tele-
+fang!<*4>","When your Denjuu's HP is still low, don't go getting into a Telefang!",,
+0x1180aa,ゲンキにしてますか? さびしくなったときはデンワくださいね!<*4>,"How's it
+going? If
+you get
+lonely,
+call me!<*4>","How's it hanging? If you get lonely,
+call me!",,
+0x1180ac,オマエの トモダチとも テレファングしたいぞ やらないのか?<*4>,"I wanna
+Telefang
+with your
+friends,
+too! How
+about it?<*4>","I wanna Telefang with your friends, too! How about it?",,
+0x1180ae,Dメロいっぱいつくってさ オマエの トモダチにくばっちゃえ!<*4>,"Make some
+Melo-Ds
+and send
+'em to
+your
+friends!
+Do it!<*4>","Make some Melo-Ds and send 'em to your friends!
+Do it!",,
+0x1180b0,こんど テレファングするときには  ぜったい よんでくれよ!<*4>,"Next time
+you're in a
+Telefang,
+you gotta
+call me
+over!<*4>","Next time you're in a Telefang, you gotta call me over!",,
+0x1180b2,キカイは みてるだけで たのしいよなってことで なにかくれ!<*4>,"Even just
+looking at
+machines is
+fun, so...
+Gimme
+something!<*4>","Even just looking at machines is fun, so... Gimme something!",,
+0x1180b4,オレの チカラを ためしてみようと おもうだろ!おもわない?<*4>,"I bet
+you're
+dying to
+try me out
+in a
+Telefang!
+Aren't
+you?<*4>",I bet you're dying to try me out in a Telefang! Aren't you?,,
+0x1180b6,あーヒマでヒマでしょうがないぜ!たのむから あそんでくれよー<*4>,"Ughhh, I'm
+booored!
+I'm dying
+here! Call
+me over
+and let's
+play or
+something!<*4>","Ughhh, I'm booored! I'm dying here! Call me over and let's play or something!",,
+0x1180b8,テレファングのとちゅうで にげたリ するとキライになるぞ!!<*4>,"If you run
+from a
+Telefang,
+your
+Denjuu
+friends
+are gonna
+like you
+less!<*4>","If you run from a Telefang, your Denjuu friends are gonna like you less!",,
+0x1180ba,Tファンガーとテレファングするときはきをひきしめていくんだぞ<*4>,"When you
+Telefang
+with
+another
+T-Fanger,
+you really
+gotta give
+it your all!<*4>","When you Telefang with another T-Fanger, you really gotta give it your all!",,
+0x1180bc,オレたちデンジュウと ニンゲンはトモダチだよな?そうだよな?<*4>,"We Denjuu
+and you
+humans
+are
+friends,
+right?
+...Right?<*4>","We Denjuu and you humans are friends, right? ...Right?",,
+0x1180be,オレは かいぞうシンカできるのか? しらベてみてくれよな!!<*4>,"Think I
+could
+evolve
+through
+augmen-
+tation...?
+Please find
+out for me!<*4>",Think I could evolve through augmen-tation...? Please find out for me!,,
 #######,Some messages repeat...?,,,,
 0x1180c0,さいきんなんか キミからのデンワが すくないような きがする<*4>,"I feel
-like u
-r call
-ing me
-less<*4>",,,
-0x1180c2,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"r u
-callin
-less?
-did i
-make u
-mad?<*4>",,,
-0x1180c4,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"call
-me
-more!
-its so
-boring
-when u
-don't<*4>",,,
-0x1180c6,あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>,"hey...
-havent
-heard
-from u
-lately
-..what
-'s up?<*4>",,,
-0x1180c8,もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>,"no one
-calls
-me...
-i'm so
-lonely
->:(<*4>",,,
-0x1180ca,さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>,"hey u
-havent
-called
-lately
-r u
-busy?<*4>",,,
-0x1180cc,キミといると なんだかとってもたのしいよ またあそうぼうね<*4>,"ur fun
-2 be 
-around
-lets
-play
-again!<*4>",,,
-0x1180ce,オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>,"ur my
-best
-frend!
-lets
-play
-again!<*4>",,,
-0x1180d0,オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>,"ur a
-cool
-guy!
-call
-me bac
-k soon<*4>",,,
-0x1180d2,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"time
-flies
-when
-i'm 
-with
-u! :D<*4>",,,
-0x1180d4,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"hey!!
-u and
-me r
-frends
-rite? :)<*4>",,,
-0x1180d6,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"lets
-play
-togeth
-er som
-time,
-call
-me!<*4>",,,
-0x1180d8,あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>,"hey, r
-u doin
-well?
-i'm
-knd of
-woried<*4>",,,
-0x1180da,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"heyy
-how r 
-u doin
-? call
-me som
-time!<*4>",,,
-0x1180dc,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"hi how
-r u 
-doin?
-i'm
-doin
-just
-fine!<*4>",,,
-0x1180de,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"umm...
-sry 2
-sound
-creepy
-but r
-u okay
-???<*4>",,,
+like you
+haven't
+called me
+much
+lately…<*4>","I feel
+like you haven't called me much lately…",Carefree,
+0x1180c2,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"Is it just
+me, or
+have you
+been
+calling less
+lately?
+Are you
+mad at me
+or some-
+thing?<*4>","Is it just me, or have you been calling less lately? Are you mad at me or something?",Absentminded,
+0x1180c4,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"C'mon, call
+me more!
+When you
+don't, I
+have noth-
+ing to do!<*4>","C'mon, call me more! When you don't, I got noth-ing to do!",Selfish,
+0x1180c6,あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>,"Um... has it
+been a
+while since
+you called?
+Maybe it's
+just me...<*4>",Um... has it been a while since you called? Maybe it's just me...,Timid,
+0x1180c8,もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>,"Argh!!! You
+never call!
+I get
+lonely too,
+ya know!<*4>","Argh!!! You never call! I get lonely too, ya know!",Irritable,
+0x1180ca,さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>,"My tele-
+phone isn't
+ringing
+as of late.
+Are you
+busy,
+perhaps?
+I will be
+awaiting
+your call.
+
+Regards.<*4>","My telephone isn't ringing as of late. Are you busy, perhaps? I'll be awaiting your call. Regards.",Sincere,
+0x1180cc,キミといると なんだかとってもたのしいよ またあそうぼうね<*4>,"Hanging
+out with
+you is
+always so
+much fun.
+
+Let's do
+something
+again
+soon, hm?<*4>","Hanging out with you is always so much fun. Let's do something again soon, hm?",Carefree,
+0x1180ce,オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>,"Man, we're
+such good
+friends,
+am I
+right?
+Let's hang
+out again
+soon!
+Can't wait!<*4>","Man, we're such good friends. Let's hang out again soon! Can't wait!",Absentminded,
+0x1180d0,オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>,"Man,
+you're a
+real
+fun dude!
+Phone me
+sometime!<*4>","Man, you're a real
+fun dude! Phone me sometime!",Selfish,
+0x1180d2,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"Time al-
+ways goes
+by so fast
+when I'm
+with you!<*4>",Time al-ways goes by so fast when I'm with you!,Timid,
+0x1180d4,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"You and
+I are
+friends,
+y'hear?
+You got
+that?!<*4>","You and
+I are friends, y'hear? You got that?!",Irritable,
+0x1180d6,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"I hope
+that we
+meet
+again! I
+will await
+your call.<*4>",I hope that we meet again! I will await your call.,Sincere,
+0x1180d8,あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>,"Hey, is
+everything
+alright
+with you
+lately?
+
+I care
+about you,
+you know!<*4>","Hey, is everything alright with you lately?
+I care about you, you know!",Carefree,
+0x1180da,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"Heyo!
+What's up?
+You gotta
+dial me up
+once in a
+while!<*4>",Heyo! What's up? You gotta dial me up once in a while!,Absentminded,
+0x1180dc,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"Hey, how
+you feeling
+lately?
+Good?
+All's good
+with me.<*4>","Hey, how you feeling lately? Good?
+All's good with me.",Selfish,
+0x1180de,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"I hope you
+don't mind
+me asking,
+but...
+
+What's up?<*4>","I hope you don't mind me asking, but...
+
+What's up?",Timid,
 #######,And again...,,,,
 0x1180e0,さいきんなんか キミからのデンワが すくないような きがする<*4>,"I feel
-like u
-r call
-ing me
-less<*4>",,,
-0x1180e2,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"r u
-callin
-less?
-did i
-make u
-mad?<*4>",,,
-0x1180e4,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"call
-me
-more!
-its so
-boring
-when u
-don't<*4>",,,
-0x1180e6,あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>,"hey...
-havent
-heard
-from u
-lately
-..what
-'s up?<*4>",,,
-0x1180e8,もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>,"no one
-calls
-me...
-i'm so
-lonely
->:(<*4>",,,
-0x1180ea,さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>,"hey u
-havent
-called
-lately
-r u
-busy?<*4>",,,
-0x1180ec,キミといると なんだかとってもたのしいよ またあそうぼうね<*4>,"ur fun
-2 be 
-around
-lets
-play
-again!<*4>",,,
-0x1180ee,オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>,"ur my
-best
-frend!
-lets
-play
-again!<*4>",,,
-0x1180f0,オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>,"ur a
-cool
-guy!
-call
-me bac
-k soon<*4>",,,
-0x1180f2,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"time
-flies
-when
-i'm 
-with
-u! :D<*4>",,,
-0x1180f4,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"hey!!
-u and
-me r
-frends
-rite? :)<*4>",,,
-0x1180f6,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"lets
-play
-togeth
-er som
-time,
-call
-me!<*4>",,,
-0x1180f8,あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>,"hey, r
-u doin
-well?
-i'm
-knd of
-woried<*4>",,,
-0x1180fa,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"heyy
-how r 
-u doin
-? call
-me som
-time!<*4>",,,
-0x1180fc,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"hi how
-r u 
-doin?
-i'm
-doin
-just
-fine!<*4>",,,
-0x1180fe,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"umm...
-sry 2
-sound
-creepy
-but r
-u okay
-???<*4>",,,
+like you
+haven't
+called me
+much
+lately…<*4>","I feel
+like you haven't called me much lately…",Carefree,
+0x1180e2,さいきんデンワ すくなくない?おこるようなこと したかな?<*4>,"Is it just
+me, or
+have you
+been
+calling less
+lately?
+Are you
+mad at me
+or some-
+thing?<*4>","Is it just me, or have you been calling less lately? Are you mad at me or something?",Absentminded,
+0x1180e4,もっとデンワを かけてこいよーかけてこないと ヒマなんだよ<*4>,"C'mon, call
+me more!
+When you
+don't, I
+have noth-
+ing to do!<*4>","C'mon, call me more! When you don't, I got noth-ing to do!",Selfish,
+0x1180e6,あのさー..さいきんずっとれんらくしてこないよね きのせい?<*4>,"Um... has it
+been a
+while since
+you called?
+Maybe it's
+just me...<*4>",Um... has it been a while since you called? Maybe it's just me...,Timid,
+0x1180e8,もーー ぜんぜんデンワかかってこないぞー さみしいぞぉー!!<*4>,"Argh!!! You
+never call!
+I get
+lonely too,
+ya know!<*4>","Argh!!! You never call! I get lonely too, ya know!",Irritable,
+0x1180ea,さいきんデンワ かけてきませんがいそがしいですか?まってます<*4>,"My tele-
+phone isn't
+ringing
+as of late.
+Are you
+busy,
+perhaps?
+I will be
+awaiting
+your call.
+
+Regards.<*4>","My telephone isn't ringing as of late. Are you busy, perhaps? I'll be awaiting your call. Regards.",Sincere,
+0x1180ec,キミといると なんだかとってもたのしいよ またあそうぼうね<*4>,"Hanging
+out with
+you is
+always so
+much fun.
+
+Let's do
+something
+again
+soon, hm?<*4>","Hanging out with you is always so much fun. Let's do something again soon, hm?",Carefree,
+0x1180ee,オマエとオレは しんゆうだよなまたあそぼうぜ まってるぞ!<*4>,"Man, we're
+such good
+friends,
+am I
+right?
+Let's hang
+out again
+soon!
+Can't wait!<*4>","Man, we're such good friends. Let's hang out again soon! Can't wait!",Absentminded,
+0x1180f0,オマエってさすっごくおもしろいヤツだよな またれんらくしてくれよ<*4>,"Man,
+you're a
+real
+fun dude!
+Phone me
+sometime!<*4>","Man, you're a real
+fun dude! Phone me sometime!",Selfish,
+0x1180f2,キミといっしょにいると じかんのたつのが とってもはやいんだ!<*4>,"Time al-
+ways goes
+by so fast
+when I'm
+with you!<*4>",Time al-ways goes by so fast when I'm with you!,Timid,
+0x1180f4,いいかぁ オマエとオレはトモダチだ わかったなー!<*4>,"You and
+I are
+friends,
+y'hear?
+You got
+that?!<*4>","You and
+I are friends, y'hear? You got that?!",Irritable,
+0x1180f6,またいっしょに あそベたらいいですねれんらくくださいまってます!<*4>,"I hope
+that we
+meet
+again! I
+will await
+your call.<*4>",I hope that we meet again! I will await your call.,Sincere,
+0x1180f8,あのさぁ キミ さいきんゲンキにしてるの? しんぱいなんだぞ<*4>,"Hey, is
+everything
+alright
+with you
+lately?
+
+I care
+about you,
+you know!<*4>","Hey, is everything alright with you lately?
+I care about you, you know!",Carefree,
+0x1180fa,おーす オマエ ゲンキにしてるのか?たまにはれんらくしろよ!<*4>,"Heyo!
+What's up?
+You gotta
+dial me up
+once in a
+while!<*4>",Heyo! What's up? You gotta dial me up once in a while!,Absentminded,
+0x1180fc,よう さいきんちょうしはどうだ?ゲンキか? オレはゲンキだぜ<*4>,"Hey, how
+you feeling
+lately?
+Good?
+All's good
+with me.<*4>","Hey, how you feeling lately? Good?
+All's good with me.",Selfish,
+0x1180fe,あのぉ... つかぬことを うかがいますが ゲンキですか?<*4>,"I hope you
+don't mind
+me asking,
+but...
+
+What's up?<*4>","I hope you don't mind me asking, but...
+
+What's up?",Timid,
 #######,Secret Denjuu (first call),,,,
 0x118100,"ホッホッホッ よくこのバンゴウが
 わかったのぉ
 これで ワシもオマエと たびを
 することができるわい<*5>","Hohoho, I am impressed you found this number...
-Now I can join you in your travels.<*5>",,,
+Now I can join you in your travels.<*5>",,Musa,
 0x118102,"このバンゴウをみつけるとはな
 ジジイを あまリこきつかわないでくれよ
-あー...コシが...<*5>",/0x118102/<*5>,,,
+あー...コシが...<*5>","To think that you would find this number! Don't work an old man like me too hard, now. Agh... My back...<*5>",,Hiyu,
 0x118104,"ホェホェホェ このデンワを
 まっておったぞ
 ジジイといって あなどるでないぞこれからも たのむぞ<*5>","Hweh heh heh... I've been waiting for this call.
-Don't take me lightly just because I'm old. I'm counting on you.<*5>",,,
+Don't take me lightly just because I'm old. I'm counting on you.<*5>",,Zea,
 0x118106,"なんだっ! なんで バンゴウを
 オマエがしっているのだ!
 チッ まぁいい なにかあったら
-よぶんだな!<*5>",/0x118106/<*5>,,,
+よぶんだな!<*5>","What! How do YOU know my number?! Tch... Well, whatever. If you need me for something, feel free to call!<*5>",,Kaya,
 0x118108,"よく デンワをしてきてくれたな
-オレといっしょに いろんなヤツとテレファングを していこうぜ!<*5>",/0x118108/<*5>,,,
+オレといっしょに いろんなヤツとテレファングを していこうぜ!<*5>",So you finally call! Let's go out there together and Telefang the world!<*5>,,Beebalm,
 0x11810a,"このバンゴウに デンワを
 してくるとは.......
 いいだろう ワタシのチカラを
-オマエにかそう!<*5>",/0x11810a/<*5>,,,
+オマエにかそう!<*5>",So you found this number... Very well. I shall lend you my power!<*5>,,Ruscus,
 0x11810c,"あっ デンワが かかってきたぞ
 これから よろしくな!
 ところでキミの かいいん
-バンゴウは なんばんだい??<*5>",/0x11810c/<*5>,,,
+バンゴウは なんばんだい??<*5>","Oh, my phone rang! Nice to meetcha! By the way, what's your membership number?<*5>",,Enishida,
 0x11810e,"あーい もしもし..?
 オラのバンゴウを しってるって
 いうことは....フフッ
-んじゃ またよんでくれよな<*5>",/0x11810e/<*5>,,,
+んじゃ またよんでくれよな<*5>","Yes, hello? So you know my number, huh... Heheh. Alright, call me sometime!<*5>",,Denfare,
 0x118110,"おー デンワがかかってきたぞ!
-オマエがなんで オレのバンゴウをしってるかを オレはしってるんだこれからも よろしくな!<*5>","Oooh, I'm here!
+オマエがなんで オレのバンゴウをしってるかを オレはしってるんだこれからも よろしくな!<*5>","Oooh, a phonecall!
 I already know why you have my number, see! 
-Nice to meet you! <*5>",,,
+Nice to meet you! <*5>",,Gaultheria,
 0x118112,"あははー みつけられちったぁ
 よくこのバンゴウが わかったね
 でも これで キミといっしょに
-いることができるよ よろしくね<*5>","Ahaha, you found me!
-Good job finding this number! Now you and I can travel together!<*5>",,,
+いることができるよ よろしくね<*5>","Ahaha, looks like you found me!
+Good job finding this number! Now you and I can travel together!<*5>",,Hagumanoki,
 0x118114,"あん??なんでこのバンゴウを
 オマエが しってるんだよ?
 ...まあいい オマエのたびに
 ついていってやるよ<*5>","Eh?? How did you find my number?
-...Well, whatever. I'll join you on this journey of yours.<*5>",,,
+...Well, whatever. I'll join you on this journey of yours.<*5>",,Salal,
 0x118116,"うわー このバンゴウをしっているなんて...まさかストーカー?
 あははっ ウソだよ!
 これで ボクとキミはトモダチだ<*5>","Whoa, how did you know my number? ...Could you be a stalker?
 Haha, just kidding!
-Now you and me are friends!<*5>",,,
+We're friends now!<*5>",,Gamuru,
 0x118118,"デンワをくれて あリがとう
 このデンワを まっていたよ!
 いっしょに デンジュウカイを
 たびしよう!<*5>","Thank you for calling me. I've been waiting!
-Let's travel the Denjuu World together!<*5>",,,
+Let's travel the Denjuu World together!<*5>",,Kanzou,
 0x11811a,"おせーよ! もっとはやくに
 デンワくれよな!
 ずいぶんとまったぜ!
 まぁ これからも よろしくな!<*5>","You're late!! You should have called me earlier! 
-I've been waiting for ages! Well, it's nice to meet you!<*5>",,,
+I've been waiting for ages! Well, it's nice to meet you!<*5>",,Ornithogalum,
 #######,Secret Denjuu (second call),,,,
 0x11811c,"ワシの バンゴウは もう
 もっておるじゃろうが
 
-ワシのバンゴウを なんどいれてもワシしか でないぞ<*5>",/0x11811c/<*5>,,,
+ワシのバンゴウを なんどいれてもワシしか でないぞ<*5>","Oho! You already have my number, don't you?<*5>",,Musa,"In the Japanese version, these second-time-around calls are pointed to all wrong! Musa speaks his own and Hiyu's lines, Hiyu speaks Zea's and Kaya's lines, and from that point on every line is offset by 2. We fix that in the patch."
 0x11811e,"そのバンゴウは ワシしか
 でないぞえ ホェホェホェ
 
 なんだ? ひょっとして おなじ
 デンワバンゴウを いれたのか?
 そのバンゴウは ワシしか
-でないんだよ<*5>",/0x11811e/<*5>,,,
+でないんだよ<*5>","No matter how many times you call this number, only I will answer!<*5>",,Hiyu,
 0x118120,"なんだ?なんだ?
 ひょっとして まえにいれた
 オレのバンゴウをいれたのか?
-それには オレしか でないよ<*5>",/0x118120/<*5>,,,
+それには オレしか でないよ<*5>",There's no one at this number but ME! Hweh heh heh!<*5>,,Zea,
 0x118122,"ようじが あるなら 
-デンワちょうから ダイヤルしろ<*5>",/0x118122/<*5>,,,
+デンワちょうから ダイヤルしろ<*5>","What's this, now? Did you by any chance enter the same number twice? I'm the only one here.<*5>",,Kaya,
 0x118124,"オレといっしょに たびを
 したいなら デンワちょうから
-かけてきてくれよ<*5>",/0x118124/<*5>,,,
+かけてきてくれよ<*5>","Whaaat? Did you enter my number twice? I'm the only one here, y'know.<*5>",,Beebalm,
 0x118126,"....もしもし?きみが オラのデンワバンゴウを しってるのは
 わかったから デンワちょうから
-ダイヤルしてくれよな<*5>",/0x118126/<*5>,,,
+ダイヤルしてくれよな<*5>","If my assistance is required, call me from your contacts.<*5>",,Ruscus,
 0x118128,"おー またデンワが かかって
 きたぞ!
 オレと たびをしたければ
-デンワちょうから かけてきて<*5>",/0x118128/<*5>,,,
+デンワちょうから かけてきて<*5>","If you wanna travel with me, call me from the contacts list!<*5>",,Enishida,
 0x11812a,"あははー またデンワを かけて
 きたんだねー
 こんどは デンワちょうから
-かけてきてよねー よろしくー<*5>",/0x11812a/<*5>,,,
-0x11812c,あん??こっちからかけてくるなよデンワちょうから かけてこい!<*5>,/0x11812c/<*5>,,,
+かけてきてよねー よろしくー<*5>","...Hello? I get it, you know my number. Call me from the contacts list, man!<*5>",,Denfare,
+0x11812c,あん??こっちからかけてくるなよデンワちょうから かけてこい!<*5>,"Oooh, another phonecall! If you want me to tag along, call me from the contacts list!<*5>",,Gaultheria,
 0x11812e,"うわー ちょくせつダイヤルして
 くるなんて ひょっとして
 イヤガラセ???
 アハハッ!ウソだよー
-デンワちょうから かけてきてよ<*5>",/0x11812e/<*5>,,,
+デンワちょうから かけてきてよ<*5>","Ahaha, you called me again, huh! Next time, call me from the contacts list! I'll be waiting!<*5>",,Hagumanoki,
 0x118130,"ちょくせつダイヤルしたらダメだよデンワちょうを つかって
-かけてこないとね<*5>",/0x118130/<*5>,,,
+かけてこないとね<*5>","...Eh? Don't call me from there. Use the contacts list, duh!<*5>",,Salal,
 0x118132,"なんだよ?
 ちょくせつダイヤルしても
 オレは よベないんだよ
-デンワちょうから よんでくれ<*5>",/0x118132/<*5>,,,
-0x118134,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,/0x118134/<*5>,,,
-0x118136,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,/0x118136/<*5>,,,
+デンワちょうから よんでくれ<*5>","Wagh! You're calling me manually? Could this be... harassment?
+Hahah! Just kidding! Seriously, though, call me from the contacts list.<*5>",,Gamuru,
+0x118134,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,You can't call me directly like this! You have to use the contacts list.<*5>,,Kanzou,
+0x118136,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Huh? You can't call me over by calling my number directly. Use the contacts list, alright?<*5>",,Ornithogalum,
 #######,Extra placeholders,,,,
 0x118138,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,,
 0x11813a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,,
@@ -878,7 +1169,7 @@ I've been waiting for ages! Well, it's nice to meet you!<*5>",,,
 0x1181e0,"よくうしろを みてみろよ!
 うしろにいるよ!<*5>",Take a look behind you! I'm right here!<*5>,,,
 0x1181e2,"HPがまんたんでないと
-デンジュウをかえれないよ!<*5>",You can't switch Denjuu if their HP isn't full!<*5>,,,
+デンジュウをかえれないよ!<*5>",You can't switch out the Denjuu following you when its HP isn't full!,,,
 0x1181e4,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません

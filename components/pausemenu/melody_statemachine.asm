@@ -23,8 +23,9 @@ MelodyMenu_StatePlaceholder::
 
 MelodyMenu_StateLoadGraphics::
     ld bc, $13
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     ld bc, $5A
 
