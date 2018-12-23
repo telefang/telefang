@@ -168,8 +168,6 @@ Summon_StateEnter::
     ld [W_Status_NumericalTileIndex], a
     call Status_ExpandNumericalTiles
 
-    ld h, [hl]
-    dec [hl]
     ld a, [W_Victory_ContactsPresent]
     cp 1
     jp z, .noContactsAvailable
