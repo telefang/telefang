@@ -17,10 +17,10 @@ Summon_StateMachine::
     jp [hl]
     
 .stateTable
-    dw $4B53
+    dw Summon_StateInitialiseVariables
     dw Summon_StateFadeOutIntoSummonScreen
     dw Summon_StateEnter
-    dw $4D22
+    dw Summon_StateFadeInAndDrawArrows
     dw $4D39
     dw $4D63
     dw $4D81
@@ -294,3 +294,17 @@ Summon_StateEnter::
     ld a, 1
     call Banked_LCDC_SetupPalswapAnimation
     jp Battle_IncrementSubSubState
+
+Summon_StateFadeInAndDrawArrows::
+    ld a, 0
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    call Encounter_LoadSelectedIndicatorResources
+    ld a, [W_Summon_MaxPages]
+    cp 1
+    jr c, .noArrowsRequired
+    call $52AA
+
+.noArrowsRequired
+    jp   Battle_IncrementSubSubState
