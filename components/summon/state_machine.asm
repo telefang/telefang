@@ -119,6 +119,8 @@ Summon_StateFadeOutIntoSummonScreen::
 
 .encounterInitialized::
     jp Battle_IncrementSubSubState
+    nop
+    nop
 
 Summon_StateEnter::
     ld bc, $12
