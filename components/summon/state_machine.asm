@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION "Summon Memory 1", WRAMX[$D413], BANK[1]
 W_Summon_SelectedPageCount:: ds 1
 W_Summon_SelectedPageContact:: ds 1
