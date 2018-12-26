@@ -9,6 +9,12 @@ W_Summon_MaxPages:: ds 1
 SECTION "Summon Memory 3", WRAMX[$D404], BANK[1]
 W_Summon_BattleMaxParticipants:: ds 1
 
+SECTION "Summon Memory 4", WRAMX[$D429], BANK[1]
+W_Summon_RemainingParticipantsForSelection:: ds 1
+
+SECTION "Summon Memory 5", WRAMX[$D42B], BANK[1]
+W_Summon_MaxRemainingParticipantsForSelection
+
 SECTION "Summon Screen State Machine", ROMX[$4AFD], BANK[$1C]
 Summon_StateMachine::
     ld a, [W_Battle_SubSubState]
@@ -17,21 +23,21 @@ Summon_StateMachine::
     jp [hl]
     
 .stateTable
-    dw Summon_StateInitialiseVariables
-    dw Summon_StateFadeOutIntoSummonScreen
-    dw Summon_StateEnter
-    dw Summon_StateFadeInAndDrawArrows
-    dw $4D39
-    dw $4D63
-    dw $4D81
-    dw $4FFD
-    dw $5033
-    dw $506C
-    dw $5097
-    dw $50AE
-    dw $51CF
-    dw $51D9
-    dw $7F5C
+    dw Summon_StateInitialiseVariables ; 00
+    dw Summon_StateFadeOutIntoSummonScreen ; 01
+    dw Summon_StateEnter ; 02
+    dw Summon_StateFadeInAndDrawArrows ; 03
+    dw Summon_StateContactAvailabilityJumpAndDrawArrowSelector ; 04
+    dw Summon_StateSkipToBattle ; 05
+    dw Summon_StateInputHandler ; 06
+    dw $4FFD ; 07
+    dw $5033 ; 08
+    dw $506C ; 09
+    dw $5097 ; 0A
+    dw $50AE ; 0B
+    dw $51CF ; 0C
+    dw $51D9 ; 0D
+    dw $7F5C ; 0E
 
 Summon_PrivateStrings::
 ;る - $4B25
@@ -182,17 +188,17 @@ Summon_StateEnter::
 
     ld a, [W_Status_NumDuplicateDenjuu]
     ld b, a
-    ld a, [$D429]
+    ld a, [W_Summon_RemainingParticipantsForSelection]
     cp b
     jr c, .jpA
     ld a, [W_Status_NumDuplicateDenjuu]
-    ld [$D42B], a
-    ld a, [$D42B]
-    ld [$D429], a
+    ld [W_Summon_MaxRemainingParticipantsForSelection], a
+    ld a, [W_Summon_MaxRemainingParticipantsForSelection]
+    ld [W_Summon_RemainingParticipantsForSelection], a
 
 .jpA
     ld h, 0
-    ld a, [$D42B]
+    ld a, [W_Summon_MaxRemainingParticipantsForSelection]
     ld l, a
     call Battle_MessageNumbersToText
     ld c, $6A
@@ -306,3 +312,348 @@ Summon_StateFadeInAndDrawArrows::
 
 .noArrowsRequired
     jp   Battle_IncrementSubSubState
+
+Summon_StateContactAvailabilityJumpAndDrawArrowSelector::
+    ld a, [W_Victory_ContactsPresent]
+    cp 1
+    jr z, .noContactsAvailable
+    ld a, [W_Summon_BattleMaxParticipants]
+    cp 1
+    jr z, .noContactsAvailable
+    ld a, [W_Status_NumDuplicateDenjuu]
+    cp 0
+    jp z, .noContactsAvailable
+    call $53DE
+    ld a, 0
+    ld [W_PauseMenu_SelectedCursorType], a
+    call LCDC_BeginAnimationComplex
+    ld a, 6
+    ld [W_Battle_SubSubState], a
+    ret
+
+.noContactsAvailable
+    jp Battle_IncrementSubSubState
+
+Summon_StateSkipToBattle::
+    call Banked_MainScriptMachine
+    ld a, [W_MainScript_State]
+    cp 9
+    ret nz
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, $10
+    ld [$CF96], a
+    ld a, $C
+    ld [W_Battle_SubSubState], a
+    ret
+
+Summon_StateInputHandler::
+    call Banked_MainScriptMachine
+    call LCDC_IterateAnimationComplex
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Left
+    jr z, .leftNotPressed
+
+    ld a, [W_Summon_MaxPages]
+    cp 0
+    jp z, .noPageInteraction
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Summon_CurrentPage]
+    cp 0
+    jr z, .onFirstPage
+    dec a
+    ld [W_Summon_CurrentPage], a
+    jr .pagePossiblyChanged
+
+.onFirstPage
+    ld a, [W_Summon_MaxPages]
+    ld [W_Summon_CurrentPage], a
+    jr .pagePossiblyChanged
+
+.leftNotPressed
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Right
+    jp z, .noPageInteraction
+    ld a, [W_Summon_MaxPages]
+    cp 0
+    jp z, .noPageInteraction
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Summon_MaxPages]
+    ld b, a
+    ld a, [W_Summon_CurrentPage]
+    cp b
+    jr z, .onLastPage
+    inc a
+    ld [W_Summon_CurrentPage], a
+    jr .pagePossiblyChanged
+
+.onLastPage
+    ld a, 0
+    ld [W_Summon_CurrentPage], a
+
+.pagePossiblyChanged
+    xor a
+    ld [W_Summon_SelectedPageContact], a
+    ld a, 0
+    ld [W_MetaSpriteConfig1], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    ld hl, $9400
+    ld a, $18
+    call MainScript_DrawEmptySpaces
+    call $531F
+    call $5301
+    call $5374
+    call $55CE
+    call Summon_DrawPageContactNames
+    call SaveClock_ExitSRAM
+    xor a
+    ld [$D47C], a
+    ld [$D47D], a
+    ld [$D47E], a
+    call $5467
+    call $52C9
+    ld a, 7
+    ld [W_Battle_SubSubState], a
+    ret
+
+.noPageInteraction
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Up
+    jr z, .upNotPressed
+    ld a, [W_Summon_SelectedPageContact]
+    cp 0
+    jr z, .upNotPressed
+    dec a
+    ld [W_Summon_SelectedPageContact], a
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, 7
+    ld [W_Battle_SubSubState], a
+    ret
+
+.upNotPressed
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Down
+    jp z, .downNotPressed
+    ld a, [W_Summon_SelectedPageCount]
+    sub 1
+    ld b, a
+    ld a, [W_Summon_SelectedPageContact]
+    cp b
+    jp z, .downNotPressed
+    inc a
+    ld [W_Summon_SelectedPageContact], a
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, 7
+    ld [W_Battle_SubSubState], a
+    ret
+
+.downNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_A
+    jp z, .aNotPressed
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Victory_ContactsPresent]
+    cp 1
+    jr nz, .contactCheckPassed
+    ld a, [W_Summon_RemainingParticipantsForSelection]
+    cp 0
+    jr nz, .contactCheckPassed
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, $10
+    ld [$CF96], a
+    ld a, 4
+    ld [W_Battle_SubSubState], a
+    ret
+
+.contactCheckPassed
+    ld a, 1
+    ld [$D4BA], a
+    ld a, [W_Summon_CurrentPage]
+    ld [$D4BB], a
+    ld a, [W_Summon_SelectedPageContact]
+    ld [$D4BC], a
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, [W_Summon_SelectedPageContact]
+    cp 0
+    jp z, .contactAOfPageSelected
+    cp 1
+    jp z, .contactBOfPageSelected
+    cp 2
+    jp z, .contactCOfPageSelected
+
+.contactAOfPageSelected
+    ld a, [$D47C]
+    cp 1
+    jp z, .queueConfirmationMessage
+    ld a, 1
+    ld [$D47C], a
+    ld a, 0
+    call $5446
+    ld a, [$CB00]
+    ld [W_Status_SelectedContactIndex], a
+    ld a, [W_Summon_RemainingParticipantsForSelection]
+    dec a
+    ld [W_Summon_RemainingParticipantsForSelection], a
+    call $5477
+    ld a, [$D42E]
+    inc a
+    ld [$D42E], a
+    jp .repositionSelectorArrow
+
+.contactBOfPageSelected
+    ld a, [$D47D]
+    cp 1
+    jp z, .queueConfirmationMessage
+    ld a, 1
+    ld [$D47D], a
+    ld a, 1
+    call $5446
+    ld a, [$CB00]
+    ld [W_Status_SelectedContactIndex], a
+    ld a, [W_Summon_RemainingParticipantsForSelection]
+    dec a
+    ld [W_Summon_RemainingParticipantsForSelection], a
+    call $5477
+    ld a, [$D42E]
+    inc a
+    ld [$D42E], a
+    jp .repositionSelectorArrow
+
+.contactCOfPageSelected
+    ld a, [$D47E]
+    cp 1
+    jp z, .queueConfirmationMessage
+    ld a, 1
+    ld [$D47E], a
+    ld a, 2
+    call $5446
+    ld a, [$CB00]
+    ld [W_Status_SelectedContactIndex], a
+    ld a, [W_Summon_RemainingParticipantsForSelection]
+    dec a
+    ld [W_Summon_RemainingParticipantsForSelection], a
+    call $5477
+    ld a, [$D42E]
+    inc a
+    ld [$D42E], a
+
+.repositionSelectorArrow
+    ld a, [W_Summon_RemainingParticipantsForSelection]
+    cp 0
+    jp z, .queueConfirmationMessage
+    ld a, [W_Summon_SelectedPageCount]
+    cp 1
+    jr z, .dontReposition
+    cp 2
+    jr z, .repositionIfNotSecond
+    cp 3
+    jr z, .repositionIfNotThird
+
+.repositionIfNotSecond
+    ld a, [W_Summon_SelectedPageContact]
+    cp 1
+    jr z, .dontReposition
+    jr .doReposition
+
+.repositionIfNotThird
+    ld a, [W_Summon_SelectedPageContact]
+    cp 2
+    jr z, .dontReposition
+
+.doReposition
+    ld a, [W_Summon_SelectedPageContact]
+    inc a
+    ld [W_Summon_SelectedPageContact], a
+    ld a, 7
+    ld [W_Battle_SubSubState], a
+
+.dontReposition
+    ret
+
+.aNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_B
+    jr z, .bNotPressed
+    ld a, 4
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [$D42E]
+    cp 1
+    jp z, .queueConfirmationMessage
+    ld a, 0
+    ld [$D51D], a
+    ld [$D533], a
+    ld a, 1
+    ld [$D42E], a
+    xor a
+    ld [$D47C], a
+    ld [$D47D], a
+    ld [$D47E], a
+    call $5467
+    xor a
+    ld [$D4BA], a
+    ld [$D4BB], a
+    ld [$D4BC], a
+    ld c, $6A
+    call Battle_QueueMessage
+    ld a, [W_Summon_RemainingParticipantsForSelection]
+    cp 1
+    jr nz, .deselectByBConditionNotValid
+    ld a, [W_Summon_MaxRemainingParticipantsForSelection]
+    cp 1
+    jr z, .deselectByBConditionNotValid
+    ld a, 0
+    ld [W_PauseMenu_SelectedCursorType], a
+    call LCDC_BeginAnimationComplex
+    ld a, [W_Summon_RemainingParticipantsForSelection]
+    inc a
+    ld [W_Summon_RemainingParticipantsForSelection], a
+
+.deselectByBConditionNotValid
+    ret
+
+.bNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Start
+    jp z, .startNotPressed
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    jr .queueConfirmationMessage
+
+.startNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Select
+    jp z, .selectNotPressed
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, 9
+    ld [W_Battle_SubSubState], a
+    ret
+
+.selectNotPressed
+    call Banked_MainScriptMachine
+    ret
+
+.queueConfirmationMessage
+    ld c, $1E
+    call Battle_QueueMessage
+    xor a
+    ld [W_Victory_UserSelection], a
+    call Encounter_PlaceSelectIndicator
+    ld a, 0
+    ld [W_PauseMenu_SelectedCursorType], a
+    call LCDC_BeginAnimationComplex
+    ld a, $A
+    ld [W_Battle_SubSubState], a
+    ret
