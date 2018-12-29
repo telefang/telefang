@@ -44,11 +44,10 @@ Summon_StateMachine::
     dw Summon_StateConfirmationInputHandler ; 0B
     dw Summon_StateFadeOut ; 0C
     dw Summon_StateEnterBattle ; 0D
-    dw $7F5C ; 0E
 
 Summon_PrivateStrings::
-;る - $4B25
-    db $5E
+;よべる - $4B23
+    db $5C, $7F, $5E
 
 ;でんじゃうがいません! - $4B26
     db $94, $63, $8D, $6B, $3A, $87, $39, $55, $45, $63, $B9, 0, 0
