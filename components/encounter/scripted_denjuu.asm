@@ -3,20 +3,6 @@ INCLUDE "telefang.inc"
 SECTION "Load Scripted Denjuu", ROM0[$3E45]
 Encounter_LoadScriptedDenjuu::
 	jp Encounter_LoadScriptedDenjuuRelocated
-	
-;NOTE: Free Space
-	
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 	nop
 	nop
 	
