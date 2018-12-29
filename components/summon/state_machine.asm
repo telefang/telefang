@@ -15,7 +15,12 @@ SECTION "Summon Memory 4", WRAMX[$D429], BANK[1]
 W_Summon_RemainingParticipantsForSelection:: ds 1
 
 SECTION "Summon Memory 5", WRAMX[$D42B], BANK[1]
-W_Summon_MaxRemainingParticipantsForSelection
+W_Summon_MaxRemainingParticipantsForSelection:: ds 1
+
+SECTION "Summon Memory 6", WRAMX[$D47C], BANK[1]
+W_Summon_ContactAOfCurrentPageSelected:: ds 1
+W_Summon_ContactBOfCurrentPageSelected:: ds 1
+W_Summon_ContactCOfCurrentPageSelected:: ds 1
 
 SECTION "Summon Screen State Machine", ROMX[$4AFD], BANK[$1C]
 Summon_StateMachine::
@@ -32,13 +37,13 @@ Summon_StateMachine::
     dw Summon_StateContactAvailabilityJumpAndDrawArrowSelector ; 04
     dw Summon_StateSkipToBattle ; 05
     dw Summon_StateInputHandler ; 06
-    dw $4FFD ; 07
-    dw $5033 ; 08
-    dw $506C ; 09
-    dw $5097 ; 0A
-    dw $50AE ; 0B
-    dw $51CF ; 0C
-    dw $51D9 ; 0D
+    dw Summon_StateDrawSelectedContactPortrait ; 07
+    dw Summon_StateDisplaySelectedContactPortrait ; 08
+    dw Summon_StateEnterStatusScreen ; 09
+    dw Summon_StatePrintConfirmationDialogue ; 0A
+    dw Summon_StateConfirmationInputHandler ; 0B
+    dw Summon_StateFadeOut ; 0C
+    dw Summon_StateEnterBattle ; 0D
     dw $7F5C ; 0E
 
 Summon_PrivateStrings::
@@ -76,9 +81,9 @@ Summon_StateInitialiseVariables::
     jp z, .exit
     xor a
     ld [W_Summon_SelectedPageContact], a
-    ld [$D47C], a
-    ld [$D47D], a
-    ld [$D47E], a
+    ld [W_Summon_ContactAOfCurrentPageSelected], a
+    ld [W_Summon_ContactBOfCurrentPageSelected], a
+    ld [W_Summon_ContactCOfCurrentPageSelected], a
     ld [$D408], a
     ld [$CB00], a
     ld [$D44E], a
@@ -414,9 +419,9 @@ Summon_StateInputHandler::
     call Summon_DrawPageContactNames
     call SaveClock_ExitSRAM
     xor a
-    ld [$D47C], a
-    ld [$D47D], a
-    ld [$D47E], a
+    ld [W_Summon_ContactAOfCurrentPageSelected], a
+    ld [W_Summon_ContactBOfCurrentPageSelected], a
+    ld [W_Summon_ContactCOfCurrentPageSelected], a
     call $5467
     call $52C9
     ld a, 7
@@ -494,11 +499,11 @@ Summon_StateInputHandler::
     jp z, .contactCOfPageSelected
 
 .contactAOfPageSelected
-    ld a, [$D47C]
+    ld a, [W_Summon_ContactAOfCurrentPageSelected]
     cp 1
     jp z, .queueConfirmationMessage
     ld a, 1
-    ld [$D47C], a
+    ld [W_Summon_ContactAOfCurrentPageSelected], a
     ld a, 0
     call $5446
     ld a, [$CB00]
@@ -513,11 +518,11 @@ Summon_StateInputHandler::
     jp .repositionSelectorArrow
 
 .contactBOfPageSelected
-    ld a, [$D47D]
+    ld a, [W_Summon_ContactBOfCurrentPageSelected]
     cp 1
     jp z, .queueConfirmationMessage
     ld a, 1
-    ld [$D47D], a
+    ld [W_Summon_ContactBOfCurrentPageSelected], a
     ld a, 1
     call $5446
     ld a, [$CB00]
@@ -532,11 +537,11 @@ Summon_StateInputHandler::
     jp .repositionSelectorArrow
 
 .contactCOfPageSelected
-    ld a, [$D47E]
+    ld a, [W_Summon_ContactCOfCurrentPageSelected]
     cp 1
     jp z, .queueConfirmationMessage
     ld a, 1
-    ld [$D47E], a
+    ld [W_Summon_ContactCOfCurrentPageSelected], a
     ld a, 2
     call $5446
     ld a, [$CB00]
@@ -597,9 +602,9 @@ Summon_StateInputHandler::
     ld a, 1
     ld [$D42E], a
     xor a
-    ld [$D47C], a
-    ld [$D47D], a
-    ld [$D47E], a
+    ld [W_Summon_ContactAOfCurrentPageSelected], a
+    ld [W_Summon_ContactBOfCurrentPageSelected], a
+    ld [W_Summon_ContactCOfCurrentPageSelected], a
     call $5467
     xor a
     ld [$D4BA], a
@@ -659,3 +664,293 @@ Summon_StateInputHandler::
     ld a, $A
     ld [W_Battle_SubSubState], a
     ret
+
+Summon_StateDrawSelectedContactPortrait::
+    ld bc, $105
+    ld e, $8B
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    call SaveClock_EnterSRAM2
+    ld a, [W_Summon_SelectedPageContact]
+    ld d, a
+    call Summon_GetContactIDForCurrentPage
+    ld hl, S_SaveClock_StatisticsArray
+    call Battle_IndexStatisticsArray
+    ld a, [hl]
+    ld [$D490], a
+    push af
+    ld c, 1
+    ld de, $8B80
+    call Banked_Battle_LoadDenjuuPortrait
+    pop af
+    call Battle_LoadDenjuuPalettePartner
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    call SaveClock_ExitSRAM
+    jp Battle_IncrementSubSubState
+
+Summon_StateDisplaySelectedContactPortrait::
+    ld bc, $105
+    ld e, $92
+    ld a, 0
+    call Banked_RLEDecompressTMAP0
+    ld bc, $105
+    ld e, $8C
+    ld a, 0
+    call Banked_RLEDecompressAttribsTMAP0
+    ld a, [W_Victory_ContactsPresent]
+    cp 1
+    jr z, .skipToBattle
+    ld a, [W_Summon_BattleMaxParticipants]
+    cp 1
+    jr z, .skipToBattle
+    ld a, [W_Status_NumDuplicateDenjuu]
+    cp 0
+    jp z, .skipToBattle
+    call $53DE
+    ld a, 6
+    ld [W_Battle_SubSubState], a
+    ret
+
+.skipToBattle
+    ld a, 5
+    ld [W_Battle_SubSubState], a
+    ret
+
+Summon_StateEnterStatusScreen::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    ld a, 0
+    ld [W_MetaSpriteConfig1], a
+    ld [$C120], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    call $5467
+    ld a, [W_Summon_SelectedPageContact]
+    ld d, a
+    call Summon_IndexCursorToContactSlotID
+    ld [W_Status_SelectedContactIndex], a
+    xor a
+    ld [W_Status_SubState], a
+    ld a, 9
+    ld [W_SystemState], a
+    ret
+
+Summon_StatePrintConfirmationDialogue::
+    call Banked_MainScriptMachine
+    ld a, [W_Battle_LoopIndex]
+    inc a
+    ld [W_Battle_LoopIndex], a
+    cp $A
+    ret c
+    xor a
+    ld [W_Battle_LoopIndex], a
+    ld a, $B
+    ld [W_Battle_SubSubState], a
+    ret
+Summon_StateConfirmationInputHandler:: ;50AE
+    call LCDC_IterateAnimationComplex
+    call Banked_MainScriptMachine
+ 
+; Lets double-check that those "OK!" sprites are all displaying correctly.
+ 
+    ld a, [W_Summon_ContactAOfCurrentPageSelected]
+    cp 1
+    jr nz, .contactANotSelected
+    ld a, 0
+    call $5446
+
+.contactANotSelected
+    ld a, [W_Summon_ContactBOfCurrentPageSelected]
+    cp 1
+    jr nz, .contactBNotSelected
+    ld a, 1
+    call $5446
+
+.contactBNotSelected
+    ld a, [W_Summon_ContactCOfCurrentPageSelected]
+    cp 1
+    jr nz, .contactCNotSelected
+    ld a, 2
+    call $5446
+
+.contactCNotSelected
+    ld a, [W_Summon_MaxRemainingParticipantsForSelection]
+    cp 0
+    jp z, .noDenjuu
+
+    ld a, [W_Victory_ContactsPresent]
+    cp 0
+    jp z, .noDenjuu
+
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Left
+    jr z, .leftNotPressed
+    ld a, [W_Victory_UserSelection]
+    cp 0
+    jr z, .arrowRightOnLeft
+    ld a, 0
+    ld [W_Victory_UserSelection], a
+    jr .moveArrow
+
+.arrowRightOnLeft
+    ld a, 1
+    ld [W_Victory_UserSelection], a
+    jr .moveArrow
+
+.leftNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_Right
+    jr z, .rightNotPressed
+    ld a, [W_Victory_UserSelection]
+    cp 1
+    jr z, .arrowLeftOnRight
+    ld a, 1
+    ld [W_Victory_UserSelection], a
+    jr .moveArrow
+
+.arrowLeftOnRight
+    ld a, 0
+    ld [W_Victory_UserSelection], a
+
+.moveArrow
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    jp Encounter_PlaceSelectIndicator
+
+.rightNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_B
+    jr z, .bNotPressed
+    jr .noSelected
+
+.bNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_A
+    ret z
+    ld a, [W_Victory_UserSelection]
+    cp 1
+    jr z, .noSelected
+    jp .yesSelected
+
+.noSelected
+    ld a, 4
+    ld [W_Sound_NextSFXSelect], a
+    call $53DE
+    ld a, 0
+    ld [$D51D], a
+    ld [$D533], a
+    ld a, 1
+    ld [$D42E], a
+    xor a
+    ld [$D4BA], a
+    ld [$D4BB], a
+    ld [$D4BC], a
+    ld [W_Summon_ContactAOfCurrentPageSelected], a
+    ld [W_Summon_ContactBOfCurrentPageSelected], a
+    ld [W_Summon_ContactCOfCurrentPageSelected], a
+    call $5467
+    ld a, [W_Summon_MaxRemainingParticipantsForSelection]
+    ld [W_Summon_RemainingParticipantsForSelection], a
+    ld c, $6A
+    call Battle_QueueMessage
+    ld a, 6
+    ld [W_Battle_SubSubState], a
+    ret
+
+; Fires in the impossible (in terms of standard gameplay) situation where no Denjuu can be summoned into battle.
+
+.noDenjuu
+    ldh a, [H_JPInput_Changed]
+    and 3
+    ret z
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_Victory_UserSelection]
+    cp 1
+    jr z, .noSelected
+
+.yesSelected
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [$D42E]
+    cp 1
+    jr z, .jpC
+    cp 2
+    jr z, .jpA
+    cp 3
+    jr z, .jpB
+
+.jpA
+    ld a, 1
+    ld [$D51D], a
+    jr .jpC
+
+.jpB
+    ld a, 1
+    ld [$D51D], a
+    ld [$D533], a
+
+.jpC
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    xor a
+    ld [W_MetaSpriteConfig1], a
+    ld [$C120], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    call $5467
+    ld a, $10
+    ld [$CF96], a
+    ld a, $C
+    ld [W_Battle_SubSubState], a
+    ret
+
+Summon_StateFadeOut::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    jp Battle_IncrementSubSubState
+
+Summon_StateEnterBattle::
+    ld a, [$D42E]
+    ld [$D5C6], a
+
+    ld hl, W_Battle_PartnerParticipants
+    call $5550
+    ld a, [$D517]
+    cp 0
+    jr z, .jpA
+    ld hl, $D516
+    call $5550
+    ld a, [$D52D]
+    cp 0
+    jr z, .jpA
+    ld hl, $D52C
+    call $5550
+
+.jpA
+    ld hl, W_Battle_OpponentParticipants
+    call $5550
+    ld a, [$D559]
+    cp 0
+    jr z, .jpB
+    ld hl, $D558
+    call $5550
+    ld a, [$D56F]
+    cp 0
+    jr z, .jpB
+    ld hl, $D56E
+    call $5550
+
+.jpB
+    ld a, [$C955]
+    ld [$D502], a
+    xor a
+    ld [W_Battle_SubSubState], a
+    jp System_ScheduleNextSubState
