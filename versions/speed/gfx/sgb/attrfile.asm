@@ -1,4 +1,4 @@
-SECTION "SGB Attribute Data (Speed Version)", ROMX[$6ED8], BANK[$3]
+SECTION "SGB Attribute Data (Speed Version)", ROMX[$5000], BANK[$77]
 SGB_AttrFileData::
     INCBIN "build/versions/speed/gfx/sgb/attrfile/00.atf"
     INCBIN "build/versions/speed/gfx/sgb/attrfile/01.atf"

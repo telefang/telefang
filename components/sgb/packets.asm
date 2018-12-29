@@ -95,6 +95,7 @@ SGB_SendPacketsWithVRAM::
     ld bc, $1000
     call SGB_CopyVRAMPacketData
     
+SGB_SendPacketsWithVRAM_externalEntry::
     ld hl, $9800
     ld de, $C
     ld a, $80

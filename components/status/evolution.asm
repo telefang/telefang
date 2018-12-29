@@ -98,12 +98,6 @@ Status_LoadEvolutionIndicatorBySpeciesEntryStatus::
     nop  
     nop  
     nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
-    nop  
 
 SECTION "Status Evolution Indicator Loader Part 2", ROMX[$5EA0], BANK[$7D]
 Status_LoadEvolutionIndicatorBySpeciesOffload::

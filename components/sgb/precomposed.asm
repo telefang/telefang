@@ -59,7 +59,7 @@ SGB_InstallBorderAndHotpatches::
     
     ld hl, SGB_AttrFileData
     ld de, SGB_PacketAttrTransfer
-    call SGB_SendPacketsWithVRAM
+    call Banked_SGB_ADVICE_SendATFPacketsWithVRAM
     
     ld hl, SGB_BorderTileData
     ld de, SGB_PacketTileTransferLow
