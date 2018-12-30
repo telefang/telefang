@@ -212,12 +212,8 @@ TitleMenu_ADVICE_LoadSGBFiles::
     jr z, .return
     
     ;Load our ATF
-    ld a, 3
-    ld b, 5
-    ld c, 6
-    ld d, 7
-    ld e, 8
-    call Banked_SGB_ConstructPaletteSetPacket
+    ld c, 3
+    call Banked_SGB_ConstructATFSetPacket
     
     ld a, M_SGB_Pal01 << 3 + 1
     ld b, 0
@@ -232,6 +228,14 @@ TitleMenu_ADVICE_LoadSGBFiles::
 .return
     M_AdviceTeardown
     ret
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 TitleMenu_ADVICE_LoadSGBFilesSoundTest::
     M_AdviceSetup
