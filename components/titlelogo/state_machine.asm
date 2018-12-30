@@ -311,9 +311,8 @@ TitleLogo_StateTulunk::
 	
 Title_Logo_SGBColourLogic::
     push bc
-    ld bc, 0
-    ld de, 0
-    call Banked_SGB_ConstructPaletteSetPacket
+    ld c, a
+    call Banked_SGB_ConstructATFSetPacket
     pop bc
     ld d, M_SGB_Pal01 << 3 + 1
     ld a, Banked_PatchUtils_CommitStagedCGBToSGB_CBE & $FF
