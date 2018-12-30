@@ -41,6 +41,48 @@ SGB_ClearOldAttrFileData::
 	
 ;NOTE: Free Space
 
-    REPT $6AE
+    REPT $68B
     nop
     ENDR
+
+SECTION "SGB Packet Advice 4", ROMX[$7563], BANK[$3]
+SGB_ConstructATFSetPacket::
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    jr nz, .constructPacket
+
+.noSgb
+    ret
+
+.constructPacket
+    ld a, $B1 ;ATTR_SET
+    ld hl, W_SGB_SpotPalette
+    ld [hli], a
+    ld a, c
+    add a, $40
+    ld [hli], a
+    xor a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hl], a
+    jp SGB_SendConstructedPaletteSetPacket
+
+SECTION "SGB Packet Advice 5", ROM0[$3DF2]
+Banked_SGB_ConstructATFSetPacket::
+	
+    ld a, BANK(SGB_ConstructATFSetPacket)
+    rst $10
+    call SGB_ConstructATFSetPacket
+    rst $18
+    ret
