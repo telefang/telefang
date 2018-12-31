@@ -204,7 +204,7 @@ PauseMenu_SubStateSMSExit1::
     jp PauseMenu_ExitToCentralMenu
     
 PauseMenu_SubStateSMSExit2::
-    jp $5B27
+    jp PauseMenu_ExitToCentralMenu2
 
 PauseMenu_LoadMainGraphics::
     nop
