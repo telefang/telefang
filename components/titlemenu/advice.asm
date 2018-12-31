@@ -199,6 +199,8 @@ TitleMenu_ADVICE_LoadSGBFiles::
     ld a, $32
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
+	
+TitleMenu_ADVICE_LoadSGBFiles_externalEntry::
 	 
     ;Do nothing if no SGB detected.
     ld a, [W_SGB_DetectSuccess]

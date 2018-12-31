@@ -25,7 +25,7 @@ PauseMenu_GameStateMachine::
     dw PauseMenu_StateAnimateMenuScrollDownOne
     dw PauseMenu_StateAnimateMenuScrollDownTwo
     dw ContactMenu_StateMachine
-    dw $4E5B
+    dw MelodyMenu_StateMachine
     dw PauseMenu_InventoryStateMachine
     dw PauseMenu_SMSStateMachine
     dw PauseMenu_SaveStateMachine
@@ -83,12 +83,14 @@ PauseMenu_StateLoadDMGCompatibility::
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
     ld [W_CGBPaletteStagedOBP], a
-    
-    ld a, $32
-    call Sound_IndexMusicSetBySong
-    
-    ld [W_Sound_NextBGMSelect], a
+
+    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFiles & $FF)
+    call PatchUtils_AuxCodeJmp
+
     jp System_ScheduleNextSubState
+    nop
+    nop
+    nop
 
 ;State 0C 04
 PauseMenu_StateAnimateMenuHalvesIn::
@@ -514,8 +516,8 @@ PauseMenu_StateExitToOverworld::
     xor a
     ld [W_Overworld_PowerAntennaPattern], a
     
-    ld a, 5
-    ld [W_SystemState], a
+    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld a, $A
     ld [W_SystemSubState], a

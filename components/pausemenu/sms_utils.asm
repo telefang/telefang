@@ -227,11 +227,11 @@ PauseMenu_ExitToCentralMenu::
     jp System_ScheduleNextSubSubState
     
 PauseMenu_ExitToCentralMenu2::
-    call $7E37
-    call $59CD
+    call PauseMenu_LoadPhoneControlHint
+    call PauseMenu_DrawMenuItemsAndFrame
     
-    ld a, 5
-    ld [W_SystemSubState], a
+    ld a, (Banked_Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
+    call PatchUtils_AuxCodeJmp
     
     xor a
     ld [W_SystemSubSubState], a

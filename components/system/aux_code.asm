@@ -193,6 +193,11 @@ Banked_Status_ADVICE_StateInitGraphics::
 	jp Status_ADVICE_StateInitGraphics
 	nop
 
+;components/pausemenu/advice.asm
+Banked_Banked_PauseMenu_ADVICE_LoadSGBFiles::
+	jp Banked_PauseMenu_ADVICE_LoadSGBFiles
+	nop
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
