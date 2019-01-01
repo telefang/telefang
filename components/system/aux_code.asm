@@ -198,6 +198,11 @@ Banked_Banked_PauseMenu_ADVICE_LoadSGBFiles::
 	jp Banked_PauseMenu_ADVICE_LoadSGBFiles
 	nop
 
+;components/titlemenu/advice.asm
+Banked_TitleMenu_ADVICE_LoadSGBFilesTimeInput::
+	jp TitleMenu_ADVICE_LoadSGBFilesTimeInput
+	nop
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

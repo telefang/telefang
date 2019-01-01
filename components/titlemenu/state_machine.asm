@@ -397,8 +397,8 @@ TitleMenu_StateResetTimeDrawWidget::
     call PauseMenu_LoadMap0
     call TitleMenu_ResetRTC
     
-    ld a, 5
-    ld [W_PauseMenu_SelectedCursorType], a
+    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesTimeInput & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
@@ -592,8 +592,8 @@ TitleMenu_StateSaveOverwriteEnter::
     ld e, $5A
     call PauseMenu_LoadMap0
     
-    ld a, 4
-    ld [W_PauseMenu_SelectedCursorType], a
+    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -656,8 +656,8 @@ TitleMenu_StateSaveOverwriteCancelled::
     call PauseMenu_LoadMap0
     call TitleMenu_ScrollMenu_refresh
     
-    ld a, M_TitleMenu_StateMenuInputHandler
-    ld [W_SystemSubState], a
+    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest & $FF)
+    call PatchUtils_AuxCodeJmp
     ret
 
 ; State 03 20
