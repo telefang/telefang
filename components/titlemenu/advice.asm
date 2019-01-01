@@ -244,6 +244,8 @@ TitleMenu_ADVICE_LoadSGBFilesSoundTest::
     
     ld a, 4
     ld [W_PauseMenu_SelectedCursorType], a
+	
+TitleMenu_ADVICE_LoadSGBFilesSoundTest_externalEntry::
     
     ld a, $16 << 3 + 1 ;ATTR_SET
     ld [W_SGB_SpotPalette], a
@@ -339,3 +341,10 @@ TitleMenu_ADVICE_CanUseCGBTiles_Alt::
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
     ret
+
+SECTION "Title Menu Aux-Code Advice 2", ROMX[$5560], BANK[$1]
+TitleMenu_ADVICE_LoadSGBFilesTimeInput::
+    M_AdviceSetup
+    ld a, 5
+    ld [W_PauseMenu_SelectedCursorType], a
+    jp TitleMenu_ADVICE_LoadSGBFilesSoundTest_externalEntry
