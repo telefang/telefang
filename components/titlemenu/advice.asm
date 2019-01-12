@@ -230,14 +230,6 @@ TitleMenu_ADVICE_LoadSGBFiles_externalEntry::
 .return
     M_AdviceTeardown
     ret
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     
 TitleMenu_ADVICE_LoadSGBFilesSoundTest::
     M_AdviceSetup
@@ -247,13 +239,8 @@ TitleMenu_ADVICE_LoadSGBFilesSoundTest::
 	
 TitleMenu_ADVICE_LoadSGBFilesSoundTest_externalEntry::
     
-    ld a, $16 << 3 + 1 ;ATTR_SET
-    ld [W_SGB_SpotPalette], a
-    ld a, $06
-    ld [W_SGB_SpotPalette + 1], a
-    ld a, BANK(SGB_SendConstructedPaletteSetPacket)
-    ld hl, SGB_SendConstructedPaletteSetPacket
-    call CallBankedFunction_int
+    ld c, 6
+    call Banked_SGB_ConstructATFSetPacket
     
     M_AdviceTeardown
     ret
@@ -264,13 +251,8 @@ TitleMenu_ADVICE_UnloadSGBFilesSoundTest::
     ld a, M_TitleMenu_StateMenuInputHandler
     ld [W_SystemSubState], a
     
-    ld a, $16 << 3 + 1 ;ATTR_SET
-    ld [W_SGB_SpotPalette], a
-    ld a, $03
-    ld [W_SGB_SpotPalette + 1], a
-    ld a, BANK(SGB_SendConstructedPaletteSetPacket)
-    ld hl, SGB_SendConstructedPaletteSetPacket
-    call CallBankedFunction_int
+    ld c, 3
+    call Banked_SGB_ConstructATFSetPacket
     
     M_AdviceTeardown
     ret
@@ -281,13 +263,6 @@ TitleMenu_ADVICE_UnloadSGBFilesOverworld::
     ld a, 5
     ld [W_SystemState], a
     
-    ld a, [W_PreviousBank]
-    push af
-    ld a, [W_CurrentBank]
-    push af
-    ld a, BANK(TitleMenu_ADVICE_UnloadSGBFilesOverworld)
-    ld [W_PreviousBank], a
-    
     ;Load a neutral ATF
     ld a, 0
     ld b, 0
@@ -295,11 +270,6 @@ TitleMenu_ADVICE_UnloadSGBFilesOverworld::
     ld d, 0
     ld e, 0
     call Banked_SGB_ConstructPaletteSetPacket
-    
-    pop af
-    ld [W_CurrentBank], a
-    pop af
-    ld [W_PreviousBank], a
     
     M_AdviceTeardown
     ret
@@ -310,13 +280,6 @@ TitleMenu_ADVICE_UnloadSGBFilesLink::
     ld a, $F
     ld [W_SystemState], a
     
-    ld a, [W_PreviousBank]
-    push af
-    ld a, [W_CurrentBank]
-    push af
-    ld a, BANK(TitleMenu_ADVICE_UnloadSGBFilesLink)
-    ld [W_PreviousBank], a
-    
     ;Load a neutral ATF
     ld a, 0
     ld b, 0
@@ -324,11 +287,6 @@ TitleMenu_ADVICE_UnloadSGBFilesLink::
     ld d, 0
     ld e, 0
     call Banked_SGB_ConstructPaletteSetPacket
-    
-    pop af
-    ld [W_CurrentBank], a
-    pop af
-    ld [W_PreviousBank], a
     
     M_AdviceTeardown
     ret

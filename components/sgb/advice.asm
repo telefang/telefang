@@ -45,7 +45,7 @@ SGB_ClearOldAttrFileData::
     nop
     ENDR
 
-SECTION "SGB Packet Advice 4", ROMX[$7563], BANK[$3]
+SECTION "SGB Packet Advice 4", ROMX[$7572], BANK[$3]
 SGB_ConstructATFSetPacket::
     ld a, [W_SGB_DetectSuccess]
     or a
@@ -61,21 +61,6 @@ SGB_ConstructATFSetPacket::
     ld a, c
     add a, $40
     ld [hli], a
-    xor a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hli], a
-    ld [hl], a
     jp SGB_SendConstructedPaletteSetPacket
 
 SECTION "SGB Packet Advice 5", ROM0[$3DF2]
