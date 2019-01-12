@@ -14,8 +14,6 @@ PauseMenu_ADVICE_LoadSGBFilesMelody::
     ld a, 4
     ld [W_PauseMenu_SelectedCursorType], a
 
-    ld a, 1
-    ld [W_PreviousBank], a
     ld c, 7
     call Banked_SGB_ConstructATFSetPacket
 
