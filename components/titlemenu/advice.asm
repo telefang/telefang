@@ -281,10 +281,6 @@ TitleMenu_ADVICE_UnloadSGBFilesOverworld::
     ld a, 5
     ld [W_SystemState], a
     
-    ld a, [W_PreviousBank]
-    push af
-    ld a, [W_CurrentBank]
-    push af
     ld a, BANK(TitleMenu_ADVICE_UnloadSGBFilesOverworld)
     ld [W_PreviousBank], a
     
@@ -296,11 +292,6 @@ TitleMenu_ADVICE_UnloadSGBFilesOverworld::
     ld e, 0
     call Banked_SGB_ConstructPaletteSetPacket
     
-    pop af
-    ld [W_CurrentBank], a
-    pop af
-    ld [W_PreviousBank], a
-    
     M_AdviceTeardown
     ret
     
@@ -310,10 +301,6 @@ TitleMenu_ADVICE_UnloadSGBFilesLink::
     ld a, $F
     ld [W_SystemState], a
     
-    ld a, [W_PreviousBank]
-    push af
-    ld a, [W_CurrentBank]
-    push af
     ld a, BANK(TitleMenu_ADVICE_UnloadSGBFilesLink)
     ld [W_PreviousBank], a
     
@@ -324,11 +311,6 @@ TitleMenu_ADVICE_UnloadSGBFilesLink::
     ld d, 0
     ld e, 0
     call Banked_SGB_ConstructPaletteSetPacket
-    
-    pop af
-    ld [W_CurrentBank], a
-    pop af
-    ld [W_PreviousBank], a
     
     M_AdviceTeardown
     ret
