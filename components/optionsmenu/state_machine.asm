@@ -20,8 +20,8 @@ OptionsMenu_StateMachine::
     
 ;State 0C 15 00
 OptionsMenu_StatePositionCursors::
-    ld a, 4
-    ld [W_PauseMenu_SelectedCursorType], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelody & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor

@@ -53,8 +53,8 @@ MelodyMenu_StateInitScreen::
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
     ld [$CB6E], a
-    ld a, 4
-    ld [W_PauseMenu_SelectedCursorType], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelody & $FF)
+    call PatchUtils_AuxCodeJmp
     ld de, $C0C0
     call Banked_PauseMenu_InitializeCursor
     call $5FE9
