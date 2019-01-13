@@ -164,6 +164,12 @@ Banked_TitleMenu_ADVICE_LoadSGBFilesTimeInput::
 Banked_PauseMenu_ADVICE_LoadSGBFilesMelody::
 	jp PauseMenu_ADVICE_LoadSGBFilesMelody
 
+Banked_PauseMenu_ADVICE_LoadSGBFilesInventory::
+	jp PauseMenu_ADVICE_LoadSGBFilesInventory
+
+Banked_PauseMenu_ADVICE_LoadSGBPalettesInventory::
+	jp PauseMenu_ADVICE_LoadSGBPalettesInventory
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
