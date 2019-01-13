@@ -39,9 +39,9 @@ PauseMenu_ADVICE_LoadSGBFilesInventory::
     ld c, 8
     call Banked_SGB_ConstructATFSetPacket
 
-    ld a, M_SGB_Pal01 << 3 + 1
-    ld b, 0
-    ld c, 5
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 6
     call PatchUtils_CommitStagedCGBToSGB
 
 .return
@@ -64,8 +64,8 @@ PauseMenu_ADVICE_LoadSGBPalettesInventory::
     cp M_BIOS_CPU_CGB
     jr z, .return
 
-    ld a, M_SGB_Pal23 << 3 + 1
-    ld b, 6
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld b, 0
     ld c, 7
     call PatchUtils_CommitStagedCGBToSGB
 
