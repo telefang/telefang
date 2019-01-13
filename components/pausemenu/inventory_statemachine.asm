@@ -21,8 +21,8 @@ PauseMenu_InventoryStateMachine::
     
 ;State 0C 12 00
 PauseMenu_SubStateInventoryCheck::
-    xor a
-    ld [W_PauseMenu_CurrentInventorySlot], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesInventory & $FF)
+    call PatchUtils_AuxCodeJmp
     call PauseMenu_CompactItemInventory
     
     ld a, [W_PauseMenu_ActiveInventoryCount]
@@ -36,8 +36,8 @@ PauseMenu_SubStateInventoryCheck::
     
 .noItems
     ld c, $43
-    ld hl, $9400
-    call Banked_PauseMenu_LoadItemGraphic
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBPalettesInventory & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld b, $43
     call PauseMenu_LoadItemPalette
@@ -59,10 +59,11 @@ PauseMenu_SubStateInventoryLoadGraphic::
     call PauseMenu_ReadInventorySlotData
     
     ld c, b
-    ld hl, $9400
-    call Banked_PauseMenu_LoadItemGraphic
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBPalettesInventory & $FF)
+    call PatchUtils_AuxCodeJmp
     call PauseMenu_LoadCurrentSlotItemPalette
     jp System_ScheduleNextSubSubState
+    nop
     
 ;State 0C 12 02
 PauseMenu_SubStateInventoryDrawNameQty::
