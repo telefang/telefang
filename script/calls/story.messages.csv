@@ -309,7 +309,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 もしも ゆうしょうするような
 ことがあったら
 どんなモノ もらったか
-みせてくれよなー<*2>",/0x158040/<*2>,,
+みせてくれよなー<*2>","Apparently the tournament on in Freesia right now has a real good prize... If you happen to win it or something, show me what you get, huh!<*2>","Apparently the tournament on in Freesia right now has a real good prize... If you happen to win it or something, show me what you get, huh!<*2>",
 0x158042,"フリジアで
 『Tファンガーたいかい』っての
 やってるみたいだけど
@@ -319,7 +319,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 いいモノが もらえるんだったら
 そんなことは どうでもいいか!
 まぁ がんばれよ
-<*2>",/0x158042/<*2>,,
+<*2>","Have you heard of this ""T-Fanger Tournament"" on in Freesia right now? The gang in charge of that give me kind of shady vibes. Buy hey, a prize is a prize, so I guess that doesn't matter. Good luck, huh?<*2>","Have you heard of this ""T-Fanger Tournament"" on in Freesia right now? The gang in charge of that give me kind of shady vibes. Buy hey, a prize is a prize, so I guess that doesn't matter. Good luck, huh?",
 0x158044,"このまえさー トロンコむらの
 トモダチから ヘんなヤツらの
 うわさを きいたんだけど
@@ -331,7 +331,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 で...じっさいのとこ
 どうなんだ?
 こんどおしえてくれよなー
-<*2>",/0x158044/<*2>,,
+<*2>","Hey, so, the other day I was talking to a friend from Tronco, and they told me about some shady gang hanging around there... Those guys and the people holding the T-Fanger Tournament in Freesia – don't you think they sound similar? Wonder what the deal is there. Lemme know if you find anything out!<*2>","Hey, so, the other day I was talking to a friend from Tronco, and they told me about some shady gang hanging around there... Those guys and the people holding the T-Fanger Tournament in Freesia – don't you think they sound similar? Wonder what the deal is there. Lemme know if you find anything out!",
 0x158046,"よう <&name>
 いま フリジアにいるんだって?
 そのまちは キカイが
@@ -341,7 +341,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ばしょだぜ
 ってことで きがむいたら
 オレも よんでくれよな!
-<*2>",/0x158046/<*2>,,
+<*2>","Yo, <&name>! You in Freesia? A bunch of different machines are sold there! If you wanna augment us Denjuu, it's the place to be! Anyway, call me over if you feel like it!<*2>","Yo, <&name>! You in Freesia? A bunch of different machines are sold there! If you wanna augment us Denjuu, it's the place to be! Anyway, call me over if you feel like it!",
 0x158048,"なぁ <&name>
 いま オマエがいる
 『フリジア』っていうまちは
@@ -351,7 +351,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 そうすれば テレファングのとき
 もっとがんばるぜ!
 かんがえといてくれよな!
-<*2>",/0x158048/<*2>,,
+<*2>","Hey, <&name>! They sell a lot of machines in Freesia, where you are now, right? Buy me somethin'! If you do, I'll work harder in Telefangs! Think about it!<*2>","Hey, <&name>! They sell a lot of machines in Freesia, where you are now, right? Buy me somethin'! If you do, I'll work harder in Telefangs! Think about it!",
 0x15804a,"ねーねー
 『フリジア』ってとこは
 デンジュウカイで イチバン
@@ -359,7 +359,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 なんでしょー
 ボクもそこにいってみたいなー
 よんでくれよー
-おねがいだよー<*2>",/0x15804a/<*2>,,
+おねがいだよー<*2>","Heyyy! Freesia sells the most machines of anywhere in the Denjuu World, right? I'd love to go there sometime... Call me over, pleeease!<*2>","Heyyy! Freesia sells the most machines of anywhere in the Denjuu World, right? I'd love to go there sometime... Call me over, pleeease!",
 0x15804c,"なぁなぁ <&name>
 あたらしいケイタイの
 じょうほうを しいれたから
@@ -371,7 +371,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 そしたら もっと トモダチが
 ふやせるってことだよなー
 ほしいよなー!
-<*2>",/0x15804c/<*2>,,
+<*2>","<&name>! Hey! I got ahold of some juicy cell phone info! Here, I'll tell you. Apparently, newer models can hold more contacts. That means you can make more friends! Really makes you want a new phone, huh?<*2>","<&name>! Hey! I got ahold of some juicy cell phone info! Here, I'll tell you. Apparently, newer models can hold more contacts. That means you can make more friends! Really makes you want a new phone, huh?",
 0x15804e,"もしもし <&name>?
 オレさー そろそろ あたらしい
 ケイタイがほしいんだよー
@@ -379,7 +379,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 はなしもきいたしさー
 もし てにいれたら
 みせてくれよー
-おねがいだよ<*2>",/0x15804e/<*2>,,
+おねがいだよ<*2>","Hello, <&name>? It's about time I get a new cell phone! A friend told me there's a new model out, too... If you get one, please show it to me!<*2>","Hello, <&name>? It's about time I get a new cell phone! A friend told me there's a new model out, too... If you get one, please show it to me!",
 #######,Barran,,,
 0x158050,"<&name>
 いまどこいるんだ??

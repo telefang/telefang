@@ -1142,7 +1142,7 @@ That's not right... / That's right!",
 『ウサギとカメ』っていうはなし
  しってるさ なにそれ<*A>","Do you perhaps know the story called ""The Tortoise and the Hare""?
 <Q>I do<|>What's it about?</Q><*A>","Do you perhaps know the story called ""The Tortoise and the Hare""?
-<0>I do<0>What's it about?<*A>",
+<0>I do<0>What's that?<*A>",
 0x1340cc,"ためになるはなしだよな!
  なんで? そうかな<*A>","Reading it really does you good, doesn't it?
 <Q>How?<|>Maybe so</Q><*A>","Reading it really does you good, doesn't it?
