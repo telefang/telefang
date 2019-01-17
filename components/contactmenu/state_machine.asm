@@ -21,9 +21,8 @@ ContactMenu_StateMachine::
 
 sub_10A86:
     call $636B
-    ld bc, $12
-    nop
-    nop
+    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
+    call PatchUtils_AuxCodeJmp
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     
@@ -54,8 +53,8 @@ sub_10A9C:
     ld a, [W_PauseMenu_CurrentContact]
     call PauseMenu_IndexedContactArrayLoad
     call Battle_LoadDenjuuPaletteOpponent
-    ld a, 1
-    ld [W_CGBPaletteStagedBGP], a
+    ld a, Banked_Zukan_ADVICE_LoadSGBPalettesOverview & $FF
+    call PatchUtils_AuxCodeJmp
     ld a, [W_PauseMenu_CurrentContact]
     call PauseMenu_IndexedContactArrayLoad
     call PauseMenu_ContactPrepName

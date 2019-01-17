@@ -9,7 +9,7 @@ SGB_AttrFileData::
     INCBIN "build/gfx/menu/titlemenu_inapp.atf"
     INCBIN "build/gfx/menu/pausemenu_inapp.atf"
     INCBIN "build/gfx/menu/pausemenu_inventory.atf"
-    INCBIN "build/versions/power/gfx/sgb/attrfile/09.atf"
+    INCBIN "build/components/zukan/zukan_overview.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/0a.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/0b.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/0c.atf"

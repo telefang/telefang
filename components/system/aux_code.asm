@@ -46,11 +46,10 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
 Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 	jp TitleMenu_ADVICE_UnloadSGBFilesLink
 
-;components/zukan/draw_utils.asm
+;components/zukan/advice.asm
 Banked_Zukan_ADVICE_DrawSpeciesPageText::
 	jp Zukan_ADVICE_DrawSpeciesPageText
 
-;components/zukan/state_machine.asm
 Banked_Zukan_ADVICE_InitializeNameMetaSprite::
 	jp Zukan_ADVICE_InitializeNameMetaSprite
    
@@ -141,7 +140,7 @@ Banked_MainScript_ADVICE_AutoNarrowPhrase::
 Banked_Summon_ADVICE_ExitIntoSummonScreen::
 	jp Summon_ADVICE_ExitIntoSummonScreen
 
-;components/zukan/state_machine.asm
+;components/zukan/advice.asm
 Banked_Zukan_ADVICE_ClearMessageForSGB::
 	jp Zukan_ADVICE_ClearMessageForSGB
 
@@ -169,6 +168,20 @@ Banked_PauseMenu_ADVICE_LoadSGBFilesInventory::
 
 Banked_PauseMenu_ADVICE_LoadSGBPalettesInventory::
 	jp PauseMenu_ADVICE_LoadSGBPalettesInventory
+
+;components/contactmenu/advice.asm
+Banked_ContactMenu_ADVICE_LoadSGBFilesOverview:: ; 90
+	jp ContactMenu_ADVICE_LoadSGBFilesOverview
+
+;components/zukan/advice.asm
+Banked_Zukan_ADVICE_LoadSGBFilesOverview:: ; 93
+	jp Zukan_ADVICE_LoadSGBFilesOverview
+
+Banked_Zukan_ADVICE_LoadSGBPalettesOverview:: ; 96
+	jp Zukan_ADVICE_LoadSGBPalettesOverview
+
+Banked_Zukan_ADVICE_ReloadSGBPalettesOverview:: ; 99
+	jp Zukan_ADVICE_ReloadSGBPalettesOverview
 
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
