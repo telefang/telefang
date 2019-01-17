@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Contact Menu SGB Recolour Overview Advice", ROMX[$5625], BANK[$1]
+SECTION "Contact Menu SGB Recolour Overview Advice", ROMX[$5630], BANK[$1]
 ContactMenu_ADVICE_LoadSGBFilesOverview_Common::
     ;Do nothing if no SGB detected.
     ld a, [W_SGB_DetectSuccess]

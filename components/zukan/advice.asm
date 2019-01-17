@@ -408,7 +408,7 @@ Zukan_ADVICE_DrawDenjuuName::
     M_AdviceTeardown
     ret
 
-SECTION "Zukan SGB Recolour Overview Advice", ROMX[$5666], BANK[$1]
+SECTION "Zukan SGB Recolour Overview Advice", ROMX[$5680], BANK[$1]
 Zukan_ADVICE_LoadSGBFilesOverview::
     M_AdviceSetup
 
