@@ -477,8 +477,8 @@ PauseMenu_ADVICE_SMSDrawArrows::
 	
 PauseMenu_ADVICE_SMSMapTiles::
 	M_AdviceSetup
-	ld e, $57
-	ld bc, $106
+    call PauseMenu_ADVICE_SMSMapTiles_LoadSGBFiles
+    ld e, $57
 	xor a
 	push de
 	call Banked_RLEDecompressTMAP0

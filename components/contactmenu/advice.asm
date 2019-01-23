@@ -2,14 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Contact Menu SGB Recolour Overview Advice", ROMX[$5630], BANK[$1]
 ContactMenu_ADVICE_LoadSGBFilesOverview_Common::
-    ;Do nothing if no SGB detected.
-    ld a, [W_SGB_DetectSuccess]
-    or a
-    jr z, .return
-
-    ;Do nothing if CGB hardware detected.
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
     ld c, 9

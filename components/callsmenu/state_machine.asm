@@ -51,8 +51,8 @@ CallsMenu_StateDrawNoMessageIndicator::
 .load_indicator_graphic
     call PauseMenu_LoadMsgsGraphic
     
-    ld e, 6
-    call PauseMenu_LoadMenuMap0
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages & $FF)
+    call PatchUtils_AuxCodeJmp
     call PauseMenu_DrawSMSMessageCount
     jp System_ScheduleNextSubSubState
 
@@ -115,8 +115,8 @@ CallsMenu_StateDrawHistoryEntry::
     ld a, [W_MelodyEdit_DataCurrent]
     call CallsMenu_DrawCallHistoryEntry
     
-    ld a, 4
-    ld [W_PauseMenu_SelectedCursorType], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor

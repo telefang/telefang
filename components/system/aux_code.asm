@@ -170,18 +170,25 @@ Banked_PauseMenu_ADVICE_LoadSGBPalettesInventory::
 	jp PauseMenu_ADVICE_LoadSGBPalettesInventory
 
 ;components/contactmenu/advice.asm
-Banked_ContactMenu_ADVICE_LoadSGBFilesOverview:: ; 90
+Banked_ContactMenu_ADVICE_LoadSGBFilesOverview::
 	jp ContactMenu_ADVICE_LoadSGBFilesOverview
 
 ;components/zukan/advice.asm
-Banked_Zukan_ADVICE_LoadSGBFilesOverview:: ; 93
+Banked_Zukan_ADVICE_LoadSGBFilesOverview::
 	jp Zukan_ADVICE_LoadSGBFilesOverview
 
-Banked_Zukan_ADVICE_LoadSGBPalettesOverview:: ; 96
+Banked_Zukan_ADVICE_LoadSGBPalettesOverview::
 	jp Zukan_ADVICE_LoadSGBPalettesOverview
 
-Banked_Zukan_ADVICE_ReloadSGBPalettesOverview:: ; 99
+Banked_Zukan_ADVICE_ReloadSGBPalettesOverview::
 	jp Zukan_ADVICE_ReloadSGBPalettesOverview
+
+;components/pausemenu/advice.asm
+Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages::
+	jp PauseMenu_ADVICE_LoadSGBFilesNumMessages
+
+Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages::
+	jp PauseMenu_ADVICE_LoadSGBFilesListMessages
 
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
