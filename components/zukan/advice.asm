@@ -425,14 +425,7 @@ Zukan_ADVICE_LoadSGBPalettesOverview::
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
 
-    ;Do nothing if no SGB detected.
-    ld a, [W_SGB_DetectSuccess]
-    or a
-    jr z, .return
-
-    ;Do nothing if CGB hardware detected.
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
     ld a, M_SGB_Pal23 << 3 + 1
@@ -450,14 +443,7 @@ Zukan_ADVICE_ReloadSGBPalettesOverview::
     ld a, 4
     call Banked_LCDC_SetupPalswapAnimation
 
-    ;Do nothing if no SGB detected.
-    ld a, [W_SGB_DetectSuccess]
-    or a
-    jr z, .return
-
-    ;Do nothing if CGB hardware detected.
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
     ld c, 9

@@ -202,15 +202,7 @@ TitleMenu_ADVICE_LoadSGBFiles::
 	
 TitleMenu_ADVICE_LoadSGBFiles_externalEntry::
 	 
-    ;Do nothing if no SGB detected.
-    ld a, [W_SGB_DetectSuccess]
-    or a
-    jr z, .return
-    
-    ;Do nothing if CGB hardware detected. This is possible if, say, we're in bgb
-    ;or someone builds a Super Game Boy Color cart
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    call PauseMenu_ADVICE_CheckSGB
     jr z, .return
     
     ;Load our ATF
