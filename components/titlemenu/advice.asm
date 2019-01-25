@@ -23,7 +23,7 @@ TitleMenu_ADVICE_SplitNickAndSpeciesNames::
     ld hl, W_MainScript_CenteredNameBuffer
     ld bc, $CCB5
     
-.searchLoop
+.compareLoop
     ld a, [bc]
     cp [hl]
     jp nz, .normalCopy
@@ -31,20 +31,20 @@ TitleMenu_ADVICE_SplitNickAndSpeciesNames::
     inc hl
     inc bc
     ld a, l
-    cp $96
-    jp c, .searchLoop
+    cp (W_MainScript_CenteredNameBuffer + M_SaveClock_DenjuuNicknameSize) & $FF
+    jp c, .compareLoop
     
     ld a, $E6
     ld [W_MainScript_CenteredNameBuffer], a
     
     ld hl, (W_MainScript_CenteredNameBuffer + 1)
     
-.searchLoopTwo
+.terminateLoop
     ld [hl], $E0
     inc hl
     ld a, l
     cp $A1
-    jp c, .searchLoopTwo
+    jp c, .terminateLoop
     
 .normalCopy
     ld hl, W_MainScript_CenteredNameBuffer

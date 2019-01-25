@@ -1,10 +1,5 @@
 INCLUDE "telefang.inc"
 
-;omfg why
-IMPORT TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer
-IMPORT S_SaveClock_NicknameArray
-IMPORT TitleMenu_ADVICE_SplitNickAndSpeciesNames
-
 SECTION "Title Menu Nickname Loader", ROMX[$7D8C], BANK[$4]
 TitleMenu_LoadDenjuuNicknameIntoBuffer::
     ld c, a
