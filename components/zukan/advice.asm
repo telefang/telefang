@@ -302,7 +302,7 @@ Zukan_ADVICE_TileLowByteBlanketFill::
 Zukan_ADVICE_FixPaletteForSGB::
     ld hl, W_LCDC_CGBStagingBGPaletteArea
 
-.skipHLSet
+Zukan_ADVICE_FixPaletteForSGB_skipHLSet::
     ld a, [hli]
     ld b, a
     ld a, [hli]
