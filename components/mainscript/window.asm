@@ -34,8 +34,8 @@ MainScript_ClearWindowTiles::
     jr z, .drawColorZero
     cp 1
     jr z, .drawColorTwo
-    cp 2
-    jr z, .drawColorThree
+    jp MainScript_ADVICE_ClearWindowTiles_DrawColorOneMaybe
+    nop
     
 .drawColorZero
     di
@@ -89,6 +89,33 @@ MainScript_ClearWindowTiles::
     ei
     dec b
     jr nz, .drawColorThree
+    
+    ret
+
+SECTION "Main Script Clear Window Tiles Text Style 3 Fix", ROMX[$4E44], BANK[$B]
+; This fixes it so that MainScript_ClearWindowTiles works for text style 3.
+MainScript_ADVICE_ClearWindowTiles_DrawColorOneMaybe::
+    cp 2
+    jp z, MainScript_ClearWindowTiles.drawColorThree
+    cp 3
+    jp nz, MainScript_ClearWindowTiles.drawColorZero
+
+.drawColorOne
+    di
+    
+.dct_blanking
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .dct_blanking
+    
+    ld a, $FF
+    ld [hli], a
+    xor a
+    ld [hli], a
+    
+    ei
+    dec b
+    jr nz, .drawColorOne
     
     ret
 
