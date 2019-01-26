@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Calls Menu Dial Tone Queue", ROMX[$57F0], BANK[$1]
+SECTION "Calls Menu Advice Code 1", ROMX[$57F0], BANK[$1]
 PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
     M_AdviceSetup
 
