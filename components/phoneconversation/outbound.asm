@@ -37,8 +37,8 @@ PhoneConversation_SubStateCallOutDrawScreen:: ;State 0C 10 0C
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld a, 2
     ld [W_Overworld_PowerAntennaPattern], a
@@ -64,8 +64,8 @@ PhoneConversation_SubStateCallOutFadeScreenIn:: ;State 0C 10 0D
     
     call $70C
     
-    ld d, $C
-    call $520
+    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     
     jp System_ScheduleNextSubSubState
 
@@ -77,8 +77,8 @@ PhoneConversation_SubStateCallOutConvoScriptProcessing:: ;State 0C 10 0E
     
     ld c, $FE
     ld b, 1
-    ld d, $C
-    call $520
+    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     
     jp System_ScheduleNextSubSubState
 
@@ -146,9 +146,9 @@ PhoneConversation_SubStateCallOutFadeToContactMenu::
     ld [W_Overworld_PowerAntennaPattern], a
     call LCDC_ClearMetasprites
     call PauseMenu_LoadMenuResources
-    ld bc, $12
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
+    call PatchUtils_AuxCodeJmp
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
 
 .use_dmg_graphic

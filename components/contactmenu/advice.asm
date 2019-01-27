@@ -25,3 +25,29 @@ ContactMenu_ADVICE_LoadSGBFilesOverview::
 
     M_AdviceTeardown
     ret
+
+SECTION "Contact Menu SGB Recolour Overview Advice 2", ROMX[$58A0], BANK[$1]
+ContactMenu_ADVICE_LoadSGBFilesActionScreen::
+    M_AdviceSetup
+	
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+	
+    ld c, 7
+    call Banked_SGB_ConstructATFSetPacket
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld b, 0
+    ld c, 2
+    call PatchUtils_CommitStagedCGBToSGB
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 6
+    call PatchUtils_CommitStagedCGBToSGB
+    
+.return
+	ld bc, $1A
+	
+    M_AdviceTeardown
+    ret
