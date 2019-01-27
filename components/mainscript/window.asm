@@ -118,6 +118,9 @@ MainScript_ADVICE_ClearWindowTiles_DrawColorOneMaybe::
     jr nz, .drawColorOne
     
     ret
+	
+	;Note: Free Space
+	ds $36
 
 SECTION "Main Script Draw Window Tilemaps", ROMX[$4A5C], BANK[$B]
 MainScript_DrawWindowBorder::
