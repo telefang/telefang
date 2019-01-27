@@ -12,7 +12,7 @@ SGB_AttrFileData::
     INCBIN "build/components/zukan/zukan_overview.atf"
     INCBIN "build/gfx/menu/pausemenu_messagecount.atf"
     INCBIN "build/gfx/menu/pausemenu_messagelist.atf"
-    INCBIN "build/versions/power/gfx/sgb/attrfile/0c.atf"
+    INCBIN "build/gfx/menu/pausemenu_outgoingcall.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/0d.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/0e.atf"
     INCBIN "build/versions/power/gfx/sgb/attrfile/0f.atf"

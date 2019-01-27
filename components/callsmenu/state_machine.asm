@@ -213,8 +213,8 @@ CallsMenu_StateDrawOutboundCallScreen::
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld a, 2
     ld [W_Overworld_PowerAntennaPattern], a
@@ -239,8 +239,8 @@ CallsMenu_StateFadeInOutboundCall::
     ld [W_MainScript_TileBaseIdx], a
     call $70C
     
-    ld d, $C
-    call $520
+    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     jp System_ScheduleNextSubSubState
     
 ;State 0C 16 09

@@ -190,6 +190,13 @@ Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages::
 Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages::
 	jp PauseMenu_ADVICE_LoadSGBFilesListMessages
 
+;components/callsmenu/advice.asm
+Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
+	jp PauseMenu_ADVICE_LoadSGBFilesOutboundCall
+
+Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall::
+	jp PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
