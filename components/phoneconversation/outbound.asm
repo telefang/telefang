@@ -3,7 +3,10 @@ INCLUDE "telefang.inc"
 SECTION "Phone Convo Outbound RAM", WRAM0[$CB04]
 W_PhoneConversation_CalledDenjuu:: ds 1
 
-SECTION "Phone Convo Outbound States", ROMX[$4C4A], BANK[$4]
+SECTION "Phone Convo Outbound States", ROMX[$4C47], BANK[$4]
+PhoneConversation_SubStateDialNumber::
+    jp sub_12B2B
+
 PhoneConversation_SubStateCallOutDrawScreen:: ;State 0C 10 0C
     ld a, 1
     call Banked_LCDC_PaletteFade
@@ -80,7 +83,117 @@ PhoneConversation_SubStateCallOutConvoScriptProcessing:: ;State 0C 10 0E
     jp System_ScheduleNextSubSubState
 
 PhoneConversation_SubStateCallOutSwitchScriptProcessing:: ;State 0C 10 0F
-    ;TODO: disassemble
+    call Banked_MainScriptMachine
+    ld a, [W_MainScript_State]
+    cp a, 9
+    ret nz
+    ld bc, $C3E
+    call Overworld_CheckFlagValue
+    jr nz, .yesSelected
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp System_ScheduleNextSubSubState
+
+.yesSelected
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    call $06D4
+    ld a, [$C955]
+    cp c
+    jr nz, .hpIsntFull
+    call PauseMenu_IndexContactArray
+    ld b, a
+    ld a, [W_PauseMenu_DeletedContact]
+    cp b
+    jr z, .alreadyFollowing
+    ld a, b
+    ld [W_PauseMenu_DeletedContact], a
+    call PhoneConversation_GetCalledDenjuuSpecies
+    ld [W_Overworld_PartnerSpecies], a
+    ld a, 8
+    ld [W_Overworld_State], a
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, $17
+    ld [W_SystemSubState], a
+    xor a
+    ld [W_SystemSubSubState], a
+    ret
+
+.alreadyFollowing
+    ld c, $F0
+    jr .queueMessage
+
+.hpIsntFull
+    ld c, $F1
+
+.queueMessage
+    ld b, 1
+    ld d, $C
+    call $0520
+    ld a, $15
+    ld [W_SystemSubSubState], a
+    ret
+
+PhoneConversation_SubStateCallOutFadeToContactMenu::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    xor a
+    ld [W_Overworld_PowerAntennaPattern], a
+    call LCDC_ClearMetasprites
+    call PauseMenu_LoadMenuResources
+    ld bc, $12
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .use_cgb_graphic
+
+.use_dmg_graphic
+    ld bc, $57
+
+.use_cgb_graphic
+    call Banked_LoadMaliasGraphics
+    ld bc, 0
+    ld e, $10
+    call PauseMenu_LoadMap0
+    ld bc, 0
+    ld e, $11
+    call PauseMenu_LoadMap1
+    call PauseMenu_CGBLoadPalettes
+    call PauseMenu_ConfigureScreen
+    call LCDC_DMGSetupDirectPalette
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    ld [W_CGBPaletteStagedOBP], a
+    ld a, $32
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    xor a
+    ld [W_Status_CalledFromContactScreen], a
+    ld a, 1
+    ld [W_SystemSubSubState], a
+    jp $636B
+
+SECTION "Phone Convo Outbound States 2", ROMX[$4E45], BANK[$4]
+PhoneConversation_SubStateCallOutNoSwitchMessage::
+    call Banked_MainScriptMachine
+    ld a, [W_MainScript_State]
+    cp 9
+    ret nz
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, $10
+    ld [W_SystemSubSubState], a
+    ret
+
+PhoneConversation_SubStateCallOutForeveeeeerrrr::
+    ret
+
+PhoneConversation_SubStateCallOutForeveeeeerrrrB::
+    ret
 
 SECTION "Phone Conversation Outbound 2", ROMX[$771C], BANK[$4]
 PhoneConversation_DrawOutboundCallScreen::
