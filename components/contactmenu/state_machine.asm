@@ -174,9 +174,9 @@ ContactMenu_StateInputHandler::
     ret
 
 ContactMenu_StateEnterActionScreen::
-    ld bc, $1A
-    ld a, [W_GameboyType]
-    cp $11
+    ld a, (Banked_ContactMenu_ADVICE_LoadSGBFilesActionScreen & $FF)
+    call PatchUtils_AuxCodeJmp
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     
 .use_dmg_graphic
@@ -241,9 +241,9 @@ ContactMenu_StateExitStatus::
     ld a, [W_Status_CalledFromContactScreen]
     cp 1
     jr nz, .jpA
-    ld bc, $12
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
+    call PatchUtils_AuxCodeJmp
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .cgb_resource
 
 .dmg_resource
@@ -318,8 +318,9 @@ ContactMenu_StateExitRingtoneScreen::
     ret nz
     ld e, $2D
     call PauseMenu_LoadMenuMap0
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
 
 .use_dmg_graphic
