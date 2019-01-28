@@ -354,6 +354,84 @@ ContactMenu_StateDeleteScreen::
     call Banked_PauseMenu_IterateCursorAnimation
     ld a, 1
     ld [W_OAM_SpritesReady], a
-    jp $796D
+    jp ContactMenu_DeleteScreenInputHandler
 
+
+SECTION "Pause Menu Contacts 3", ROMX[$796D], BANK[$4]
+ContactMenu_DeleteScreenInputHandler::
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_A
+    jr z, .aNotPressed
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_MelodyEdit_DataCount]
+    cp 0
+    jr nz, .abortAbort
+    call PauseMenu_IndexContactArray
+    call $647C
+    call $636B
+    ld e, $2D
+    call PauseMenu_LoadMenuMap0
+    ld a, 1
+    ld [W_SystemSubSubState], a
+    ld bc, $12
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .use_cgb_graphic
+
+.use_dmg_graphic
+    ld bc, $57
+
+.use_cgb_graphic
+    call Banked_LoadMaliasGraphics
+    ld de, $C0C0
+    jp LCDC_ClearSingleMetasprite
+
+.aNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_B
+    jr z, .bNotPressed
+    ld a, 4
+    ld [W_Sound_NextSFXSelect],a
+
+.abortAbort
+    ld de, $C0C0
+    call LCDC_ClearSingleMetasprite
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    ld a, 4
+    ld [W_SystemSubSubState], a
+    ret
+
+.bNotPressed
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Up
+    jp z, .upNotPressed
+    jr .upOrDownPressed
+
+.upNotPressed
+    ld a,[W_JPInput_TypematicBtns]
+    and M_JPInput_Down
+    jp z, .exitAndLoop
+
+.upOrDownPressed
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_MelodyEdit_DataCount]
+    xor 1
+    ld [W_MelodyEdit_DataCount], a
+    jp .repositionArrow
+
+.exitAndLoop
+    ret
+
+.repositionArrow
+    ld b, $10
+    ld a, [W_MelodyEdit_DataCount]
+    sla a
+    sla a
+    sla a
+    sla a
+    add $68
+    jp TitleMenu_PositionFirstCursor
 
