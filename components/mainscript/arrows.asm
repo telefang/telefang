@@ -120,6 +120,46 @@ MainScript_MapArrowTile::
 	ei
 	ret
 
+MainScript_DrawArrowFrame::
+	ld a, [W_MainScript_FramesCount]
+	and 3
+	ret nz
+
+	ld a, [W_MainScript_FramesCount]
+	srl a
+	srl a
+	and a, 7
+	ld hl, .table
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hl]
+	swap a
+	ld de, $4B08 ; Arrow gfx location at bank $38.
+	add e
+	ld e, a
+	ld a, 0
+	adc d
+	ld d, a
+	ld a, [W_Status_NumericalTileIndex]
+	cp $E0
+	jr nz, .jpA
+	ld hl, $8EE0
+	jr .jpB
+
+.jpA
+	ld hl, $8FE0
+
+.jpB
+	ld a, $38
+	ld bc, $10
+	jp Banked_LCDC_LoadTiles
+
+.table
+	db $00, $01, $02, $02, $02, $02, $01, $00
+
 SECTION "Main Script Arrow Input Plus Input Indicator", ROMX[$4533], BANK[$B]
 MainScript_ArrowInputPlusInputIndicator::
 
