@@ -131,8 +131,8 @@ PhoneConversation_SubStateCallOutSwitchScriptProcessing:: ;State 0C 10 0F
 
 .queueMessage
     ld b, 1
-    ld d, $C
-    call $0520
+    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     ld a, $15
     ld [W_SystemSubSubState], a
     ret
