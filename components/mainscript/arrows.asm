@@ -132,33 +132,37 @@ MainScript_DrawArrowFrame::
 	ld hl, .table
 	add l
 	ld l, a
-	ld a, 0
-	adc h
-	ld h, a
 	ld a, [hl]
 	swap a
-	ld de, $4B08 ; Arrow gfx location at bank $38.
+	ld d, MainScript_ArrowTableGfx >> 8
+	ld e, a
+	ld a, [W_MainScript_TextStyle]
+	and 3
+	swap a
+	ld b, a
+	add a
+	add b
 	add e
 	ld e, a
-	ld a, 0
-	adc d
-	ld d, a
+	ld hl, $8FE0
 	ld a, [W_Status_NumericalTileIndex]
 	cp $E0
 	jr nz, .jpA
-	ld hl, $8EE0
-	jr .jpB
+	ld h, $8E
 
 .jpA
-	ld hl, $8FE0
-
-.jpB
-	ld a, $38
+	ld a, BANK(MainScript_ArrowTableGfx)
 	ld bc, $10
 	jp Banked_LCDC_LoadTiles
+	nop
 
 .table
 	db $00, $01, $02, $02, $02, $02, $01, $00
+
+SECTION "Mainscript Arrow Gfx Table", ROMX[$4100], BANK[$77]
+; Must be located at address $XX00
+MainScript_ArrowTableGfx::
+	INCBIN "build/components/mainscript/arrow_table.2bpp"
 
 SECTION "Main Script Arrow Input Plus Input Indicator", ROMX[$4533], BANK[$B]
 MainScript_ArrowInputPlusInputIndicator::

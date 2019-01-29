@@ -375,9 +375,9 @@ ContactMenu_DeleteScreenInputHandler::
     call PauseMenu_LoadMenuMap0
     ld a, 1
     ld [W_SystemSubSubState], a
-    ld bc, $12
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
+    call PatchUtils_AuxCodeJmp
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
 
 .use_dmg_graphic
