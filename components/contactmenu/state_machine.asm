@@ -435,3 +435,145 @@ ContactMenu_DeleteScreenInputHandler::
     add $68
     jp TitleMenu_PositionFirstCursor
 
+SECTION "Action Screen Input Handler 1", ROMX[$71A0], BANK[$4]
+ContactMenu_ActionScreenInputHandler::
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Up
+    jp z, .upNotPressed
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_MelodyEdit_DataCurrent]
+    cp 0
+    jr nz, .notFirst
+    ld a, 3
+
+.notFirst
+    dec a
+    ld [W_MelodyEdit_DataCurrent], a
+    jp ContactMenu_ActionScreenInputHandler_PositionFirstCursor
+
+.upNotPressed
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Down
+    jp z, .downNotPressed
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    ld a, [W_MelodyEdit_DataCurrent]
+    cp 2
+    jr nz, .notLast
+    ld a, $FF
+
+.notLast
+    inc a
+    ld [W_MelodyEdit_DataCurrent], a
+    jp ContactMenu_ActionScreenInputHandler_PositionFirstCursor
+
+.downNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_B
+    jp z, .bNotPressed
+    ld a, 4
+    ld [W_Sound_NextSFXSelect], a
+    ld e, $2D
+    call PauseMenu_LoadMenuMap0
+    ld bc, $12
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .use_cgb_graphic
+    ld bc, $57
+
+.use_cgb_graphic
+    call Banked_LoadMaliasGraphics
+    ld de, $C0C0
+    call LCDC_ClearSingleMetasprite
+    ld a, 1
+    ld [W_SystemSubSubState], a
+    jp $636B
+
+.bNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_A
+    jp z, .aNotPressed
+    ld a, [W_MelodyEdit_DataCurrent]
+    cp 0
+    jp z, .callPlz
+    cp 1
+    jp z, .deletePlz
+
+.meloDPlz
+    ld de, $C0C0
+    call LCDC_ClearSingleMetasprite
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld e, $2D
+    call PauseMenu_LoadMenuMap0
+    ld bc, $13
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .use_cgb_graphic
+    ld bc, $5A
+
+.use_cgb_graphic
+    call Banked_LoadMaliasGraphics
+    ld a, $11
+    ld [W_SystemSubSubState], a
+    ret
+
+.callPlz
+    call PauseMenu_IndexContactArray
+    call CallsMenu_QueuePhoneNumberSFXForContact
+    xor a
+    ld [W_MelodyEdit_DataCurrent], a
+    ld a, $10
+    ld [W_System_CountdownTimer], a
+    ld a, 1
+    call Sound_IndexMusicSetBySong
+    ld [W_Sound_NextBGMSelect], a
+    ld a, 9
+    ld [W_SystemSubSubState], a
+    ret
+
+.orphanedCode
+    ld a, 5
+    ld [W_Sound_NextSFXSelect], a
+    ret
+
+.aNotPressed
+    ret
+
+.deletePlz
+    call $718A
+    cp 0
+    jr z, .canDelete
+    ld a, 5
+    ld [W_Sound_NextSFXSelect], a
+    ret
+
+.canDelete
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    ld bc, $109
+    ld e, $59
+    call PauseMenu_LoadMap0
+    ld a, 4
+    ld [W_PauseMenu_SelectedCursorType], a
+    ld de, $C0C0
+    call Banked_PauseMenu_InitializeCursor
+    ld a, 1
+    ld [W_MelodyEdit_DataCount], a
+    call ContactMenu_DeleteScreenInputHandler.repositionArrow
+    ld a, $14
+    ld [W_SystemSubSubState], a
+    ret
+
+SECTION "Action Screen Input Handler 2", ROMX[$729A], BANK[$4]
+ContactMenu_ActionScreenInputHandler_PositionFirstCursor::
+    ld b, $10
+    ld a, [W_MelodyEdit_DataCurrent]
+    sla a
+    sla a
+    sla a
+    sla a
+    add $58
+; Continues into TitleMenu_PositionFirstCursor
+; Make sure that any code modifications in patch keep the same byte length to prevent execution of junk bytes.
