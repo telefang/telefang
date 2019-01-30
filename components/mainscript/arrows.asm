@@ -125,6 +125,7 @@ MainScript_DrawArrowFrame::
 	and 3
 	ret nz
 
+MainScript_DrawArrowFrame_ImmediateDraw::
 	ld a, [W_MainScript_FramesCount]
 	srl a
 	srl a
