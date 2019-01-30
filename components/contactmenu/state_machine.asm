@@ -203,7 +203,7 @@ ContactMenu_StateActionScreenInputHandler::
     call Banked_PauseMenu_IterateCursorAnimation
     ld a, 1
     ld [W_OAM_SpritesReady], a
-    jp $71A0
+    jp ContactMenu_ActionScreenInputHandler
 
 ContactMenu_StateEnterStatus::
     ld a, 1
