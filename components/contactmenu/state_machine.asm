@@ -510,10 +510,10 @@ ContactMenu_ActionScreenInputHandler::
     ld bc, $13
     ld a, [W_GameboyType]
     cp M_BIOS_CPU_CGB
-    jr z, .use_cgb_graphic
+    jr z, .use_cgb_gfx
     ld bc, $5A
 
-.use_cgb_graphic
+.use_cgb_gfx
     call Banked_LoadMaliasGraphics
     ld a, $11
     ld [W_SystemSubSubState], a
