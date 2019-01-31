@@ -144,19 +144,19 @@ PauseMenu_ADVICE_SMSMapTiles_LoadSGBFiles::
 
 SECTION "Pause Menu Load SGB Files 4", ROMX[$5950], BANK[$1]
 PauseMenu_ADVICE_LoadSGBFilesPhoneIME::
-    M_AdviceSetup ; FA 23 C4 F5 FA 25 C4 F5 3E 01 EA 23 C4 EA 25 C4 FB F8 06 2A 66 6F
+    M_AdviceSetup
 
-    ld a, 1 ; 3E 01
-    ld [W_PhoneIME_CurrentNumberLength], a ; EA 29 CB
+    ld a, 1
+    ld [W_PhoneIME_CurrentNumberLength], a
 
-    call PauseMenu_ADVICE_CheckSGB ; CD 15 56
-    jr z, .return ; 28 08
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
 
-    ld a, M_SGB_Pal23 << 3 + 1 ; 3E 09
-    ld b, 5 ; 06 05
-    ld c, b ; 48
-    call PatchUtils_CommitStagedCGBToSGB ; CD 00 72
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, b
+    call PatchUtils_CommitStagedCGBToSGB
 
 .return
-    M_AdviceTeardown ; F3 F1 EA 25 C4 F1 EA 23 C4
-    ret ; C9
+    M_AdviceTeardown
+    ret

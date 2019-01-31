@@ -287,8 +287,8 @@ PauseMenu_StatePhoneIMEInputHandler::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF) ; 3E 7B
-    call PatchUtils_AuxCodeJmp ; CD 7F 00
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
+    call PatchUtils_AuxCodeJmp
     ret
     
 .test_ime_input
@@ -321,8 +321,8 @@ PauseMenu_StatePhoneIMEInputHandler::
     cp 0
     jr nz, .store_number
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME & $FF) ; 3E B1
-    call PatchUtils_AuxCodeJmp ; CD 7F 00
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME & $FF)
+    call PatchUtils_AuxCodeJmp
     
     ld e, $2D
     call PauseMenu_LoadMenuMap0
@@ -432,8 +432,8 @@ PauseMenu_StateExitPhoneIME::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF) ; 3E 7B
-    call PatchUtils_AuxCodeJmp ; CD 7F 00
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
+    call PatchUtils_AuxCodeJmp
     ret
     
 ;State 0C 0B
