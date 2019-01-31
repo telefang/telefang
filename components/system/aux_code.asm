@@ -152,8 +152,8 @@ Banked_Status_ADVICE_StateInitGraphics::
 	jp Status_ADVICE_StateInitGraphics
 
 ;components/pausemenu/advice.asm
-Banked_Banked_PauseMenu_ADVICE_LoadSGBFiles::
-	jp Banked_PauseMenu_ADVICE_LoadSGBFiles
+Banked_PauseMenu_ADVICE_LoadSGBFiles::
+	jp PauseMenu_ADVICE_LoadSGBFiles
 
 ;components/titlemenu/advice.asm
 Banked_TitleMenu_ADVICE_LoadSGBFilesTimeInput::
@@ -200,6 +200,16 @@ Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall::
 ;components/contactmenu/advice.asm
 Banked_ContactMenu_ADVICE_LoadSGBFilesActionScreen::
 	jp ContactMenu_ADVICE_LoadSGBFilesActionScreen
+
+Banked_ContactMenu_ADVICE_LoadSGBFilesRingtone::
+	jp ContactMenu_ADVICE_LoadSGBFilesRingtone
+
+Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit::
+	jp ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit
+
+;components/pausemenu/advice.asm
+Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME::
+	jp PauseMenu_ADVICE_LoadSGBFilesPhoneIME
 
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
