@@ -201,6 +201,12 @@ Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall::
 Banked_ContactMenu_ADVICE_LoadSGBFilesActionScreen::
 	jp ContactMenu_ADVICE_LoadSGBFilesActionScreen
 
+Banked_ContactMenu_ADVICE_LoadSGBFilesRingtone::
+	jp ContactMenu_ADVICE_LoadSGBFilesRingtone
+
+Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit::
+	jp ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

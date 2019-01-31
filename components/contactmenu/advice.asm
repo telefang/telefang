@@ -51,3 +51,37 @@ ContactMenu_ADVICE_LoadSGBFilesActionScreen::
 	
     M_AdviceTeardown
     ret
+
+ContactMenu_ADVICE_LoadSGBFilesRingtone::
+    M_AdviceSetup
+	
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, b
+    call PatchUtils_CommitStagedCGBToSGB
+    
+.return
+	ld bc, $13
+	
+    M_AdviceTeardown
+    ret
+
+ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit::
+    M_AdviceSetup
+
+    push de
+    ld bc, $106
+    xor a
+    call Banked_RLEDecompressTMAP0
+    pop de
+    ld bc, $106
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+
+    call ContactMenu_ADVICE_LoadSGBFilesOverview_Common
+
+    M_AdviceTeardown
+    ret

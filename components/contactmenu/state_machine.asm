@@ -317,9 +317,8 @@ ContactMenu_StateExitRingtoneScreen::
     cp 0
     ret nz
     ld e, $2D
-    call PauseMenu_LoadMenuMap0
-    nop
-    nop
+    ld a, (Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit & $FF)
+    call PatchUtils_AuxCodeJmp
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
 
@@ -477,9 +476,9 @@ ContactMenu_ActionScreenInputHandler::
     ld [W_Sound_NextSFXSelect], a
     ld e, $2D
     call PauseMenu_LoadMenuMap0
-    ld bc, $12
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
+    call PatchUtils_AuxCodeJmp
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     ld bc, $57
 
@@ -508,9 +507,9 @@ ContactMenu_ActionScreenInputHandler::
     ld [W_Sound_NextSFXSelect], a
     ld e, $2D
     call PauseMenu_LoadMenuMap0
-    ld bc, $13
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    ld a, (Banked_ContactMenu_ADVICE_LoadSGBFilesRingtone & $FF)
+    call PatchUtils_AuxCodeJmp
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_gfx
     ld bc, $5A
 
