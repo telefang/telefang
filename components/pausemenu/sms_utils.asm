@@ -230,7 +230,7 @@ PauseMenu_ExitToCentralMenu2::
     call PauseMenu_LoadPhoneControlHint
     call PauseMenu_DrawMenuItemsAndFrame
     
-    ld a, (Banked_Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
     call PatchUtils_AuxCodeJmp
     
     xor a

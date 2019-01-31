@@ -287,8 +287,8 @@ PauseMenu_StatePhoneIMEInputHandler::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, M_PauseMenu_StateInputHandler
-    ld [W_SystemSubState], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF) ; 3E 7B
+    call PatchUtils_AuxCodeJmp ; CD 7F 00
     ret
     
 .test_ime_input
@@ -321,8 +321,8 @@ PauseMenu_StatePhoneIMEInputHandler::
     cp 0
     jr nz, .store_number
     
-    ld a, 1
-    ld [W_PhoneIME_CurrentNumberLength], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME & $FF) ; 3E B1
+    call PatchUtils_AuxCodeJmp ; CD 7F 00
     
     ld e, $2D
     call PauseMenu_LoadMenuMap0
@@ -432,8 +432,8 @@ PauseMenu_StateExitPhoneIME::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, M_PauseMenu_StateInputHandler
-    ld [W_SystemSubState], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF) ; 3E 7B
+    call PatchUtils_AuxCodeJmp ; CD 7F 00
     ret
     
 ;State 0C 0B
@@ -581,8 +581,8 @@ PauseMenu_StateLoadOutgoingContactCallGraphics::
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     call PhoneConversation_OutboundConfigureScreen
     
     ld a, $F0
@@ -618,8 +618,8 @@ PauseMenu_StateFadeInAndQueueContactMessage::
     ld b, 1
     
 .exit
-    ld d, $C
-    call $520
+    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     jp System_ScheduleNextSubState
 
 ;State 0C 1C
@@ -662,8 +662,8 @@ PauseMenu_StateTransitionOutOfOutboundContactCall::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, M_PauseMenu_StateInputHandler
-    ld [W_SystemSubState], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
+    call PatchUtils_AuxCodeJmp
     
     xor a
     ld [W_SystemSubSubState], a
@@ -691,8 +691,8 @@ PauseMenu_StateLoadOutgoingSecretCallGraphics::
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     call PhoneConversation_OutboundConfigureScreen
     
     ld a, $F0
@@ -721,8 +721,8 @@ PauseMenu_StateFadeInAndQueueSecretMessage::
     add a, $80
     ld c, a
     ld b, 1
-    ld d, $C
-    call $520
+    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
+    call PatchUtils_AuxCodeJmp
     jp System_ScheduleNextSubState
 
 ;State 0C 22
@@ -765,8 +765,8 @@ PauseMenu_StateTransitionOutOfOutboundSecretCall::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, 5
-    ld [W_SystemSubState], a
+    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
+    call PatchUtils_AuxCodeJmp
     
     xor a
     ld [W_SystemSubSubState], a

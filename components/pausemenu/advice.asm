@@ -1,9 +1,9 @@
 INCLUDE "telefang.inc"
 
 SECTION "Pause Menu Load SGB Files", ROMX[$5540], BANK[$1]
-Banked_PauseMenu_ADVICE_LoadSGBFiles::
+PauseMenu_ADVICE_LoadSGBFiles::
     M_AdviceSetup
-    ld a, 5
+    ld a, M_PauseMenu_StateInputHandler
     ld [W_SystemSubState], a
     jp TitleMenu_ADVICE_LoadSGBFiles_externalEntry
 
@@ -141,3 +141,22 @@ PauseMenu_ADVICE_SMSMapTiles_LoadSGBFiles::
 .return
     ld bc, $106
     ret
+
+SECTION "Pause Menu Load SGB Files 4", ROMX[$5950], BANK[$1]
+PauseMenu_ADVICE_LoadSGBFilesPhoneIME::
+    M_AdviceSetup ; FA 23 C4 F5 FA 25 C4 F5 3E 01 EA 23 C4 EA 25 C4 FB F8 06 2A 66 6F
+
+    ld a, 1 ; 3E 01
+    ld [W_PhoneIME_CurrentNumberLength], a ; EA 29 CB
+
+    call PauseMenu_ADVICE_CheckSGB ; CD 15 56
+    jr z, .return ; 28 08
+
+    ld a, M_SGB_Pal23 << 3 + 1 ; 3E 09
+    ld b, 5 ; 06 05
+    ld c, b ; 48
+    call PatchUtils_CommitStagedCGBToSGB ; CD 00 72
+
+.return
+    M_AdviceTeardown ; F3 F1 EA 25 C4 F1 EA 23 C4
+    ret ; C9
