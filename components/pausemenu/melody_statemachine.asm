@@ -65,10 +65,10 @@ MelodyMenu_StateInitScreen::
 MelodyMenu_StateInputHandler::
 	ld de, $C0C0
 	call Banked_PauseMenu_IterateCursorAnimation
-	jp $608B
+	jp MelodyMenu_InputHandler
 
 MelodyMenu_StateMelodyEdit::
-	jp $5AAF
+	jp MelodyMenu_MelodyEditInputHandler
 
 MelodyMenu_StateMelodyEditKeyAction::
 	call $5C1D
