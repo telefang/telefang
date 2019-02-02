@@ -171,7 +171,9 @@ MelodyMenu_InputHandler::
 .musicNotPlaying
 	ld a, [W_System_GenericCounter]
 	add $81
-	db $EA, $A2, $FF ; This is "ld [$FFA2], a" converted to bytes so that rgbds doesn't try to convert it to "ldh [$FFA2], a"
+	 ; This db and dw is "ld [W_Sound_NextRingtoneSelect], a" converted to bytes so that rgbds doesn't try to convert it to "ldh [W_Sound_NextRingtoneSelect], a"
+	db $EA
+	dw W_Sound_NextRingtoneSelect
 	ld a, 4
 	ld [W_Sound_MusicSet], a
 	ret
