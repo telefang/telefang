@@ -209,15 +209,8 @@ TitleMenu_ADVICE_LoadSGBFiles_externalEntry::
     ld c, 3
     call Banked_SGB_ConstructATFSetPacket
     
-    ld a, M_SGB_Pal01 << 3 + 1
-    ld b, 0
-    ld c, 2
-    call PatchUtils_CommitStagedCGBToSGB
-    
-    ld a, M_SGB_Pal23 << 3 + 1
-    ld b, 5
-    ld c, 6
-    call PatchUtils_CommitStagedCGBToSGB
+    call PauseMenu_ADVICE_CGBToSGB02Shorthand
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
     
 .return
     M_AdviceTeardown

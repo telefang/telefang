@@ -211,6 +211,12 @@ Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit::
 Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME::
 	jp PauseMenu_ADVICE_LoadSGBFilesPhoneIME
 
+Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEdit::
+	jp PauseMenu_ADVICE_LoadSGBFilesMelodyEdit
+
+Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit::
+	jp PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

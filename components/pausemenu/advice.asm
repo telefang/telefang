@@ -32,10 +32,7 @@ PauseMenu_ADVICE_LoadSGBFilesInventory::
     ld c, 8
     call Banked_SGB_ConstructATFSetPacket
 
-    ld a, M_SGB_Pal23 << 3 + 1
-    ld b, 5
-    ld c, 6
-    call PatchUtils_CommitStagedCGBToSGB
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
 
 .return
     M_AdviceTeardown
@@ -112,15 +109,8 @@ PauseMenu_ADVICE_LoadSGBFilesListMessages::
     ld c, $B
     call Banked_SGB_ConstructATFSetPacket
 
-    ld a, M_SGB_Pal01 << 3 + 1
-    ld b, 0
-    ld c, 2
-    call PatchUtils_CommitStagedCGBToSGB
-
-    ld a, M_SGB_Pal23 << 3 + 1
-    ld b, 5
-    ld c, 6
-    call PatchUtils_CommitStagedCGBToSGB
+    call PauseMenu_ADVICE_CGBToSGB02Shorthand
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
 
 .return
     M_AdviceTeardown
@@ -133,10 +123,7 @@ PauseMenu_ADVICE_SMSMapTiles_LoadSGBFiles::
     ld c, $A
     call Banked_SGB_ConstructATFSetPacket
 
-    ld a, M_SGB_Pal23 << 3 + 1
-    ld b, 5
-    ld c, b
-    call PatchUtils_CommitStagedCGBToSGB
+    call PauseMenu_ADVICE_CGBToSGB55Shorthand
 
 .return
     ld bc, $106
@@ -149,13 +136,55 @@ PauseMenu_ADVICE_LoadSGBFilesPhoneIME::
     ld a, 1
     ld [W_PhoneIME_CurrentNumberLength], a
 
+.extEntry
     call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
+    call PauseMenu_ADVICE_CGBToSGB55Shorthand
+
+.return
+    M_AdviceTeardown
+    ret
+
+PauseMenu_ADVICE_CGBToSGB02Shorthand::
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld b, 0
+    ld c, 2
+    call PatchUtils_CommitStagedCGBToSGB
+    ret
+
+PauseMenu_ADVICE_CGBToSGB55Shorthand::
     ld a, M_SGB_Pal23 << 3 + 1
     ld b, 5
     ld c, b
     call PatchUtils_CommitStagedCGBToSGB
+    ret
+
+PauseMenu_ADVICE_CGBToSGB56Shorthand::
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 6
+    call PatchUtils_CommitStagedCGBToSGB
+    ret
+
+PauseMenu_ADVICE_LoadSGBFilesMelodyEdit::
+    M_AdviceSetup
+
+    ld a, 4
+    ld [W_MelodyEdit_State], a
+
+    jp PauseMenu_ADVICE_LoadSGBFilesPhoneIME.extEntry
+
+PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit::
+    M_AdviceSetup
+
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
 
 .return
     M_AdviceTeardown

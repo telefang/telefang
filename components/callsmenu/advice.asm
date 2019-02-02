@@ -61,10 +61,7 @@ PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
     ld c, 4
     call PatchUtils_CommitStagedCGBToSGB
 
-    ld a, M_SGB_Pal23 << 3 + 1
-    ld b, 5
-    ld c, 6
-    call PatchUtils_CommitStagedCGBToSGB
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
 
 .return
     M_AdviceTeardown
