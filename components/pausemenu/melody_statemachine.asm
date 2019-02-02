@@ -188,8 +188,8 @@ MelodyMenu_InputHandler::
 	xor a
 	ld [W_MelodyEdit_DataCurrent], a
 	ld [W_MelodyEdit_CurrentPage], a
-	ld a, 4
-	ld [W_MelodyEdit_State], a
+	ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEdit & $FF)
+	call PatchUtils_AuxCodeJmp
 	ld a, $FF
 	ld [W_PhoneIME_LastPressedButton], a
 	ld a, 3
@@ -250,8 +250,8 @@ MelodyMenu_MelodyEditInputHandler::
 	call Banked_RLEDecompressTMAP0
 	ld bc, $106
 	ld e, $35
-	ld a, 0
-	call Banked_RLEDecompressAttribsTMAP0
+	ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit & $FF)
+	call PatchUtils_AuxCodeJmp
 	call $1BD1
 	call $5EE9
 	ld a, 3
