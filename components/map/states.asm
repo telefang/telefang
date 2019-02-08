@@ -8,7 +8,303 @@ W_Map_CursorXPosBuffer:: ds 1
 SECTION "Map Cursor Y Position Buffer", WRAM0[$C0AC]
 W_Map_CursorYPosBuffer:: ds 1
 
-SECTION "Map Screen Display Loop", ROMX[$4210], BANK[$2A]
+SECTION "Map Acre Completion Data", WRAM0[$C960]
+W_Map_AcreCompletionData:: ds $20
+
+SECTION "Map Screen Display Loop", ROMX[$4046], BANK[$2A]
+Map_StateDrawScreen::
+	ld a, BANK(MapAcreGfxA)
+	ld hl, $9000
+	ld de, MapAcreGfxA
+	ld bc, $800
+	call Banked_LCDC_LoadTiles
+	ld a, BANK(MapAcreGfxB)
+	ld hl, $8800
+	ld de, MapAcreGfxB
+	ld bc, $260
+	call Banked_LCDC_LoadTiles
+	ld a, $38
+	ld hl, $8000
+	ld de, $67C4
+	ld bc, $490
+	call Banked_LCDC_LoadTiles
+	ld a, $38
+	ld hl, $8C00
+	ld de, $6ED4
+	ld bc, $C0
+	call Banked_LCDC_LoadTiles
+	call $41A2
+	ld a, 3
+	ld [W_MetaSpriteConfig1], a
+	ld a, $10
+	ld [$C0A1], a
+	ld a, $38
+	ld [$C0A2], a
+	ld a, 6
+	ld [$C0A5], a
+	ld a, [$C913]
+	srl a
+	srl a
+	srl a
+	ld e, a
+	ld a, [$C913]
+	and 7
+	ld d, a
+	sla a
+	sla a
+	sla a
+	ld b, a
+	ld a, [$C914]
+	cp 6
+	jr c, .jpA
+	sub 4
+
+.jpA
+	ld c, a
+	and 1
+	jr z, .jpB
+	ld a, 8
+	add d
+	ld d, a
+	ld a, $40
+
+.jpB
+	add b
+	add $14
+	ld [W_Map_CursorXPosBuffer], a
+	ld [$C0A3], a
+	ld a, [$C913]
+	and $F8
+	ld b, a
+	ld a, c
+	and 4
+	jr z, .jpC
+	ld a, 8
+	add e
+	ld e, a
+	ld a, $40
+
+.jpC
+	add b
+	add $C
+	ld [W_Map_CursorYPosBuffer], a
+	ld [$C0A4], a
+	ld hl, W_MetaSpriteConfig1
+	ld de, $C0C0
+	ld b, $20
+	call Banked_Memcpy_INTERNAL
+	ld a, $41
+	ld [$C0C2], a
+	ld a, 0
+	ld [$C0C5], a
+	ld bc, 8
+	call Banked_CGBLoadBackgroundPalette
+	ld bc, $10
+	call Banked_CGBLoadObjectPalette
+	ld b, 7
+	call $33AF
+	jp System_ScheduleNextSubState
+
+Map_MapSingleAcre::
+	call Map_CanMapAcre
+	ret z
+	ld hl, $9822
+	ld de, MapAcreTilemap
+	ld a, c
+	swap a
+	add e
+	ld e, a
+	ld a, 0
+	adc d
+	ld d, a
+	ld a, b
+	add e
+	ld e, a
+	ld a, 0
+	adc d
+	ld d, a
+	ld a, c
+	swap a
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, c
+	swap a
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, b
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	push hl
+	push de
+
+; Map single acre tile.
+	ld a, $38
+	ld bc, 1
+	call Banked_LCDC_LoadTiles
+	pop de
+	ld hl, $100
+	add hl, de
+	ld d, h
+	ld e, l
+	pop hl
+	ld a, [W_GameboyType]
+	cp M_BIOS_CPU_CGB
+	ret nz
+
+; Map single acre attrib.
+	ld a, 1
+	ldh [REG_VBK], a
+	ld a, $38
+	ld bc, 1
+	call Banked_LCDC_LoadTiles
+	ld a, 0
+	ldh [REG_VBK], a
+	ret
+
+Map_CanMapAcre::
+	dec b
+	dec c
+	ld d, 0
+	ld a, b
+	cp 8
+	jr c, .jpA
+	inc d
+
+.jpA
+	ld a, c
+	cp 8
+	jr c, .jpB
+	inc d
+	inc d
+
+.jpB
+	ld a, d
+	sla a
+	sla a
+	sla a
+	ld hl, W_Map_AcreCompletionData
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, c
+	and 7
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, b
+	and 7
+	ld d, 1
+	or a
+	jr z, .skipLoop
+
+.bitSelectionLoop
+	sla d
+	dec a
+	jr nz, .bitSelectionLoop
+
+.skipLoop
+	ld a, [hl]
+	and d
+	ret
+
+Map_MapScreenTiles::
+	ld hl, $9800
+	ld de, $59FC
+	ld b, $12
+
+.tileMappingLoop
+	push bc
+	push hl
+	ld bc, $14
+	ld a, $38
+
+; Don't be fooled, this is being used to map tiles, not draw them.
+	call Banked_LCDC_LoadTiles
+	pop hl
+	ld a, $20
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	pop bc
+	dec b
+	jr nz, .tileMappingLoop
+
+	ld a, [W_GameboyType]
+	cp M_BIOS_CPU_CGB
+	jr nz, .dmgGameboy
+
+	ld hl, $9800
+	ld b, $12
+	ld a, 1
+	ldh [REG_VBK], a
+
+.attribmapWriteLoop
+	ld c, $14
+
+.attribmapWriteLine
+	di
+
+.waitforblank
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .waitforblank
+
+	ld a, 6
+	ldi [hl], a
+	ei
+	dec c
+	jr nz, .attribmapWriteLine
+	ld a, $C
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	dec b
+	jr nz, .attribmapWriteLoop
+
+	ld a, 0
+	ldh [REG_VBK], a
+
+.dmgGameboy
+	ld c, $10
+
+.acreWriteLoop
+	ld b, $10
+
+.acreWriteLine
+	push bc
+	call Map_MapSingleAcre
+	pop bc
+	dec b
+	jr nz, .acreWriteLine
+	dec c
+	jr nz, .acreWriteLoop
+	ret
+
+Map_StateFadeIn::
+	ld bc, 0
+	ld a, 4
+	call Banked_LCDC_SetupPalswapAnimation
+	ld a, 9
+	ld [W_MainScript_State], a
+	jp System_ScheduleNextSubState
+
 ;State 05 0F
 Map_StateMainLoop::
 
