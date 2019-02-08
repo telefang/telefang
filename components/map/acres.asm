@@ -36,7 +36,7 @@ MapAcreAttribmap::
 	db 1,1,1,3,5,5,5,5,4,1,1,5,3,3,3,3
 
 MapAcreGfxA::
-	INCBIN "build/gfx/denjuu_stages.2bpp"
+	INCBIN "components/map/acre_tiles1.2bpp"
 
 MapAcreGfxB::
-	INCBIN "build/gfx/denjuu_types.2bpp"
+	INCBIN "components/map/acre_tiles2.2bpp"
