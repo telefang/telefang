@@ -36,7 +36,7 @@ MapAcreAttribmap::
 	db 1,1,1,3,5,5,5,5,4,1,1,5,3,3,3,3
 
 MapAcreGfxA::
-	INCBIN "components/map/acre_tiles1.2bpp"
+	INCBIN "build/components/map/acre_tiles1.2bpp"
 
 MapAcreGfxB::
-	INCBIN "components/map/acre_tiles2.2bpp"
+	INCBIN "build/components/map/acre_tiles2.2bpp"
