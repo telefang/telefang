@@ -568,3 +568,14 @@ Map_StateMainLoop::
 
 .noExit
 	ret
+
+Map_StateFadeToOverworld::
+	ld a, 1
+	call Banked_LCDC_PaletteFade
+	or a
+	ret z
+	ld a, 0
+	ld [W_byte_C9CF], a
+	ld a, $A
+	ld [W_SystemSubState], a
+	ret
