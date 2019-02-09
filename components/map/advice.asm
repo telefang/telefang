@@ -102,7 +102,7 @@ Map_ADVICE_LoadSGBFiles::
 	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 2) + (M_LCDC_CGBColorSize * 2)], a
 
 	ld a, $49
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 2) + (M_LCDC_CGBColorSize * 2)], a
+	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 2) + (M_LCDC_CGBColorSize * 2) + 1], a
 
 	ld c, $D
 	call Banked_SGB_ConstructATFSetPacket
