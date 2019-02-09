@@ -207,6 +207,16 @@ Banked_ContactMenu_ADVICE_LoadSGBFilesRingtone::
 Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit::
 	jp ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit
 
+;components/map/advice.asm
+Banked_Map_ADVICE_DrawScreen::
+	jp Map_ADVICE_DrawScreen
+
+Banked_Map_ADVICE_LoadSGBFiles::
+	jp Map_ADVICE_LoadSGBFiles
+
+Banked_Map_ADVICE_UnloadSGBFiles::
+	jp Map_ADVICE_UnloadSGBFiles
+
 ;components/pausemenu/advice.asm
 Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME::
 	jp PauseMenu_ADVICE_LoadSGBFilesPhoneIME

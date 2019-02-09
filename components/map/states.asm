@@ -13,26 +13,8 @@ W_Map_AcreCompletionData:: ds $20
 
 SECTION "Map Screen Display Loop", ROMX[$4046], BANK[$2A]
 Map_StateDrawScreen::
-	ld a, BANK(MapAcreGfxA)
-	ld hl, $9000
-	ld de, MapAcreGfxA
-	ld bc, $800
-	call Banked_LCDC_LoadTiles
-	ld a, BANK(MapAcreGfxB)
-	ld hl, $8800
-	ld de, MapAcreGfxB
-	ld bc, $280
-	call Banked_LCDC_LoadTiles
-	ld a, BANK(MapCursorGfx)
-	ld hl, $8000
-	ld de, MapCursorGfx
-	ld bc, $490
-	call Banked_LCDC_LoadTiles
-	ld a, BANK(MapBackgroundGfx)
-	ld hl, $8C00
-	ld de, MapBackgroundGfx
-	ld bc, $C0
-	call Banked_LCDC_LoadTiles
+	ld a, (Banked_Map_ADVICE_DrawScreen & $FF)
+	call PatchUtils_AuxCodeJmp
 	call Map_MapScreenTiles
 	ld a, 3
 	ld [W_MetaSpriteConfig1], a
@@ -101,9 +83,62 @@ Map_StateDrawScreen::
 	call Banked_CGBLoadBackgroundPalette
 	ld bc, $10
 	call Banked_CGBLoadObjectPalette
-	ld b, 7
-	call $33AF
+	ld a, (Banked_Map_ADVICE_LoadSGBFiles & $FF)
+	call PatchUtils_AuxCodeJmp
 	jp System_ScheduleNextSubState
+	
+	; Note: Free Space
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 Map_MapSingleAcre::
 	call Map_CanMapAcre
@@ -574,8 +609,8 @@ Map_StateFadeToOverworld::
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
-	ld a, 0
-	ld [W_byte_C9CF], a
+	ld a, (Banked_Map_ADVICE_UnloadSGBFiles & $FF)
+	call PatchUtils_AuxCodeJmp
 	ld a, $A
 	ld [W_SystemSubState], a
 	ret
