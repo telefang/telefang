@@ -21,7 +21,7 @@ Map_StateDrawScreen::
 	ld a, BANK(MapAcreGfxB)
 	ld hl, $8800
 	ld de, MapAcreGfxB
-	ld bc, $260
+	ld bc, $280
 	call Banked_LCDC_LoadTiles
 	ld a, BANK(MapCursorGfx)
 	ld hl, $8000
