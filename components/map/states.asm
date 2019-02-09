@@ -364,7 +364,7 @@ Map_StateMainLoop::
 	srl a
 	inc a
 	ld c, a
-	call $4168
+	call Map_CanMapAcre
 	jr nz, .openWindow
 
 ; If the map location has never been visited then throw an error sound at the user.
