@@ -40,3 +40,14 @@ MapAcreGfxA::
 
 MapAcreGfxB::
 	INCBIN "build/components/map/acre_tiles2.2bpp"
+
+MapCursorGfx::
+	INCBIN "build/components/map/cursor.2bpp"
+
+MapIndicatorGfx::
+	INCBIN "build/components/map/indicator.2bpp"
+
+SECTION "Map Background Gfx", ROMX[$6ED4], BANK[$38]
+MapBackgroundGfx::
+	INCBIN "build/components/map/background_tiles.2bpp"
+
