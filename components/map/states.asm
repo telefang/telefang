@@ -23,17 +23,17 @@ Map_StateDrawScreen::
 	ld de, MapAcreGfxB
 	ld bc, $260
 	call Banked_LCDC_LoadTiles
-	ld a, $38
+	ld a, BANK(MapCursorGfx)
 	ld hl, $8000
-	ld de, $67C4
+	ld de, MapCursorGfx
 	ld bc, $490
 	call Banked_LCDC_LoadTiles
-	ld a, $38
+	ld a, BANK(MapBackgroundGfx)
 	ld hl, $8C00
-	ld de, $6ED4
+	ld de, MapBackgroundGfx
 	ld bc, $C0
 	call Banked_LCDC_LoadTiles
-	call $41A2
+	call Map_MapScreenTiles
 	ld a, 3
 	ld [W_MetaSpriteConfig1], a
 	ld a, $10
