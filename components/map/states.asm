@@ -86,26 +86,20 @@ Map_StateDrawScreen::
 	ld a, (Banked_Map_ADVICE_LoadSGBFiles & $FF)
 	call PatchUtils_AuxCodeJmp
 	jp System_ScheduleNextSubState
-	
+
+Map_ADVICE_StateMainLoop_OpenWindow::
+	call CallBankedFunction_int
+	ld a, (Banked_Map_ADVICE_WindowLoadSGBFiles & $FF)
+	call PatchUtils_AuxCodeJmp
+	ret
+
+Map_ADVICE_StateMainLoop_CloseWindow::
+	call $44C5
+	ld a, (Banked_Map_ADVICE_WindowUnloadSGBFiles & $FF)
+	call PatchUtils_AuxCodeJmp
+	ret
+
 	; Note: Free Space
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 	nop
 	nop
 	nop
@@ -434,7 +428,7 @@ Map_StateMainLoop::
 	ld c, $BC
 	ld a, $B
 	ld hl, $47B9
-	call CallBankedFunction_int
+	call Map_ADVICE_StateMainLoop_OpenWindow
 	ld a, [W_MainScript_WindowLocation]
 	dec a
 	ld [W_MainScript_WindowLocation], a
@@ -467,7 +461,7 @@ Map_StateMainLoop::
 
 ; Close the window because MainScriptMachine is now inactive.
 
-	call $44C5
+	call Map_ADVICE_StateMainLoop_CloseWindow
 
 ; This handles the blinking "you are here" dot's animation.
 

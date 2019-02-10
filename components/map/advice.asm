@@ -87,22 +87,35 @@ Map_ADVICE_LoadSGBFiles::
 	call PauseMenu_ADVICE_CheckSGB
 	jr z, .noSGB
 
-	ld a, $48
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 0) + (M_LCDC_CGBColorSize * 3) + 1], a
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 1) + (M_LCDC_CGBColorSize * 3) + 1], a
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 2) + (M_LCDC_CGBColorSize * 3) + 1], a
+	ld b, M_LCDC_CGBStagingAreaStride * 3
 	
-	ld a, [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7) + (M_LCDC_CGBColorSize * 0)]
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7) + (M_LCDC_CGBColorSize * 1)], a
+	ld de, .colourTable
+	ld hl, W_LCDC_CGBStagingBGPaletteArea
+	ld b, 3
+	
+.paletteLoop
+	inc hl
+	inc hl
+	ld c, 6
+	
+.colourLoop
+	ld a, [de]
+	ld [hli], a
+	inc de
+	
+	dec c
+	jr nz, .colourLoop
+	dec b
+	jr nz, .paletteLoop
 
-	ld a, [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7) + (M_LCDC_CGBColorSize * 0) + 1]
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7) + (M_LCDC_CGBColorSize * 1) + 1], a
-
-	ld a, $32
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 2) + (M_LCDC_CGBColorSize * 2)], a
-
-	ld a, $49
-	ld [W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 2) + (M_LCDC_CGBColorSize * 2) + 1], a
+	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7) + (M_LCDC_CGBColorSize * 0)
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	inc hl
+	ld [hld], a
+	ld a, b
+	ld [hl], a
 
 	ld c, $D
 	call Banked_SGB_ConstructATFSetPacket
@@ -119,6 +132,55 @@ Map_ADVICE_LoadSGBFiles::
 
 	ld a, 3
 	ld [W_MainScript_TextStyle], a
+
+.noSGB
+	M_AdviceTeardown
+	ret
+
+.colourTable
+	dw $1DD2, $00CE, $48C6
+	dw $1DD2, $0A43, $48C6
+	dw $1DD2, $4932, $48C6
+
+Map_ADVICE_WindowUnloadSGBFiles::
+	M_AdviceSetup
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld c, $D
+	call Banked_SGB_ConstructATFSetPacket
+
+.noSGB
+	M_AdviceTeardown
+	ret
+
+Map_ADVICE_WindowLoadSGBFiles::
+	M_AdviceSetup
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld a, [W_Map_CursorYPosBuffer]
+	ld c, $E
+	cp $4C
+	jr nc, .cursorOnBottomHalf
+	inc c
+
+.cursorOnBottomHalf
+	call Banked_SGB_ConstructATFSetPacket
+
+	ld hl, $8F00
+	ld b, $28
+	call Zukan_ADVICE_TileLightColourReverse
+
+	ld l, $60
+	ld b, $28
+	call Zukan_ADVICE_TileLightColourReverse
+
+	ld l, $C0
+	ld b, 8
+	call Zukan_ADVICE_TileLowByteBlanketFill
 
 .noSGB
 	M_AdviceTeardown
