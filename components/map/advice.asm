@@ -93,12 +93,12 @@ Map_ADVICE_LoadSGBFiles::
 	ld hl, W_LCDC_CGBStagingBGPaletteArea
 	ld b, 3
 	
-	.paletteLoop
+.paletteLoop
 	inc hl
 	inc hl
 	ld c, 6
 	
-	.colourLoop
+.colourLoop
 	ld a, [de]
 	ld [hli], a
 	inc de
