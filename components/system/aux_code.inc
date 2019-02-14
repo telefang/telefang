@@ -1,3 +1,12 @@
+M_PrepAuxJmp: MACRO
+    ld a, \1 & $FF
+ENDM
+
+M_AuxJmp: MACRO
+    ld a, \1 & $FF
+    call PatchUtils_AuxCodeJmp
+ENDM
+
 M_AdviceSetup: MACRO
     ld a, [W_PreviousBank]
     push af

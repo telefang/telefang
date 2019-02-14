@@ -22,8 +22,7 @@ PauseMenu_SubStateSaveLoadGraphics::
     ld e, $32
     call PauseMenu_LoadMenuMap0
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelody & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesMelody
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
     

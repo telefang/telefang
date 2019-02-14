@@ -315,6 +315,5 @@ Title_Logo_SGBColourLogic::
     call Banked_SGB_ConstructATFSetPacket
     pop bc
     ld d, M_SGB_Pal01 << 3 + 1
-    ld a, Banked_PatchUtils_CommitStagedCGBToSGB_CBE & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PatchUtils_CommitStagedCGBToSGB_CBE
     ret

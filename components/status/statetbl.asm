@@ -77,8 +77,7 @@ Status_StateInitGraphics:
 .placeDenjuuGraphic:
     ld a, [W_Status_SelectedDenjuuSpecies]
     push af
-    ld a, Banked_Status_ADVICE_StateInitGraphics & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Status_ADVICE_StateInitGraphics
     call Banked_Battle_LoadDenjuuPortrait
     pop af
     call Battle_LoadDenjuuPalettePartner
@@ -87,8 +86,7 @@ Status_StateInitGraphics:
     jp Status_IncrementSubState
 
 Status_StateInitTilemaps:
-    ld a, Banked_Status_ADVICE_StateInitTilemaps & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Status_ADVICE_StateInitTilemaps
     jp Status_IncrementSubState
     
     ld a, 0
@@ -132,8 +130,7 @@ Status_StateDrawDenjuu:
     ld bc, $8D80
     ld de, StringTable_denjuu_personalities
     
-    ld a, Banked_Status_ADVICE_DrawRightAlignedHabitatName & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Status_ADVICE_DrawRightAlignedHabitatName
 
     call Status_DrawDenjuuMoves
     ld de, Status_TextTable
@@ -154,8 +151,7 @@ Status_StateDrawDenjuu:
     ld bc, 9
     ld a, 0
     call Banked_RLEDecompressAttribsTMAP0
-    ld a, Banked_Status_ADVICE_StateDrawDenjuu & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Status_ADVICE_StateDrawDenjuu
     jp Status_IncrementSubState
 
 ; Execute fade processing. Once the screen has faded correctly, moves to the
@@ -389,8 +385,7 @@ Status_StateSwitchDenjuu:
     call Status_DrawDenjuuNickname
 
 .drawPersonality
-    ld a, Banked_Status_ADVICE_StateSwitchDenjuu & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Status_ADVICE_StateSwitchDenjuu
     call Status_DrawDenjuuMoves
     jp Status_IncrementSubState
     
@@ -433,8 +428,7 @@ Status_StateExit
     ret z
     
 .exit
-    ld a, Banked_Status_ADVICE_StateExit & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Status_ADVICE_StateExit
     
     ld a, 1
     ld [W_OAM_SpritesReady], a

@@ -124,8 +124,7 @@ Summon_StateFadeOutIntoSummonScreen::
     or a
     ret z
 
-    ld a, Banked_Summon_ADVICE_ExitIntoSummonScreen & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Summon_ADVICE_ExitIntoSummonScreen
 
     call $52C9 ; Initializes the encounter, I presume.
 

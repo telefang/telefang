@@ -126,8 +126,7 @@ Battle_QueueMessage::
 SECTION "Battle Message Numbers", ROM0[$3BD5]
 ; Takes the 16-bit value in "hl" and stores it in W_Battle_MessageNumbers_StagingLoc as text. Used for battle messages.
 Battle_MessageNumbersToText::
-	ld a, Banked_Battle_ADVICE_ParsePluralState & $FF
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_Battle_ADVICE_ParsePluralState
 	push de
 	ld c, 0
 	ld de, -10000
@@ -234,8 +233,7 @@ Battle_MessageNumbersToText::
 
 SECTION "Battle - Get Negative Status Inflicted Denjuu Name", ROMX[$79D7], BANK[$5]
 Battle_GetNegativeStatusInflictedDenjuuName::
-	ld a, Banked_Battle_ADVICE_StatusInflictionArticle & $FF
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_Battle_ADVICE_StatusInflictionArticle
 	ld a, h
 	and a
 	jr z, .forOpponent

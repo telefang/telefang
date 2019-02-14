@@ -53,8 +53,7 @@ SECTION "Title Menu Player Name Input 2", ROMX[$6488], BANK[$4]
 TitleMenu_ClearCharaName::
     push af
     push hl
-    ld a, Banked_PatchUtils_InitializeRelocatedCharaName & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PatchUtils_InitializeRelocatedCharaName
     pop hl
     pop af
     ret
@@ -157,8 +156,7 @@ TitleMenu_NameInputImpl::
     
     push af
     push hl
-    ld a, Banked_PatchUtils_StoreDefaultCharaName & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PatchUtils_StoreDefaultCharaName
     pop hl
     pop af
     

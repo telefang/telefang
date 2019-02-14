@@ -56,8 +56,7 @@ MelodyMenu_StateInitScreen::
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
     ld [$CB6E], a
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelody & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesMelody
     ld de, $C0C0
     call Banked_PauseMenu_InitializeCursor
     call $5FE9
@@ -188,8 +187,7 @@ MelodyMenu_InputHandler::
 	xor a
 	ld [W_MelodyEdit_DataCurrent], a
 	ld [W_MelodyEdit_CurrentPage], a
-	ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEdit & $FF)
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEdit
 	ld a, $FF
 	ld [W_PhoneIME_LastPressedButton], a
 	ld a, 3
@@ -250,8 +248,7 @@ MelodyMenu_MelodyEditInputHandler::
 	call Banked_RLEDecompressTMAP0
 	ld bc, $106
 	ld e, $35
-	ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit & $FF)
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit
 	call $1BD1
 	call $5EE9
 	ld a, 3

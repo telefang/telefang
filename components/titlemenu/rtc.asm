@@ -21,8 +21,7 @@ TitleMenu_ResetRTC::
     nop
 
 TitleMenu_StoreRTCValues::
-    ld a, Banked_SaveClock_ADVICE_ValidateRTCFunction & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_SaveClock_ADVICE_ValidateRTCFunction
     
     cp 0
     jr nz, .writeRTC
@@ -87,8 +86,7 @@ TitleMenu_StoreRTCValues::
     jp TitleMenu_ExitSRAM
     
 TitleMenu_LoadRTCValues::
-    ld a, Banked_TitleMenu_ADVICE_LoadRTCValues & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_LoadRTCValues
     jp TitleMenu_ExitSRAM
     
     ;TODO: Free space for the rest of this symbol!

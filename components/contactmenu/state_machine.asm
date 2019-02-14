@@ -36,8 +36,7 @@ ContactMenu_StateMachine::
 
 ContactMenu_StateInit::
     call $636B
-    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesOverview
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     
@@ -68,8 +67,7 @@ ContactMenu_StateDrawContactDenjuu::
     ld a, [W_PauseMenu_CurrentContact]
     call PauseMenu_IndexedContactArrayLoad
     call Battle_LoadDenjuuPaletteOpponent
-    ld a, Banked_Zukan_ADVICE_LoadSGBPalettesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_LoadSGBPalettesOverview
     ld a, [W_PauseMenu_CurrentContact]
     call PauseMenu_IndexedContactArrayLoad
     call PauseMenu_ContactPrepName
@@ -174,8 +172,7 @@ ContactMenu_StateInputHandler::
     ret
 
 ContactMenu_StateEnterActionScreen::
-    ld a, (Banked_ContactMenu_ADVICE_LoadSGBFilesActionScreen & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesActionScreen
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     
@@ -241,8 +238,7 @@ ContactMenu_StateExitStatus::
     ld a, [W_Status_CalledFromContactScreen]
     cp 1
     jr nz, .jpA
-    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesOverview
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .cgb_resource
 
@@ -317,8 +313,7 @@ ContactMenu_StateExitRingtoneScreen::
     cp 0
     ret nz
     ld e, $2D
-    ld a, (Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
 
@@ -374,8 +369,7 @@ ContactMenu_DeleteScreenInputHandler::
     call PauseMenu_LoadMenuMap0
     ld a, 1
     ld [W_SystemSubSubState], a
-    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesOverview
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
 
@@ -476,8 +470,7 @@ ContactMenu_ActionScreenInputHandler::
     ld [W_Sound_NextSFXSelect], a
     ld e, $2D
     call PauseMenu_LoadMenuMap0
-    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesOverview
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
     ld bc, $57
@@ -507,8 +500,7 @@ ContactMenu_ActionScreenInputHandler::
     ld [W_Sound_NextSFXSelect], a
     ld e, $2D
     call PauseMenu_LoadMenuMap0
-    ld a, (Banked_ContactMenu_ADVICE_LoadSGBFilesRingtone & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesRingtone
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_gfx
     ld bc, $5A

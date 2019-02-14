@@ -37,8 +37,7 @@ PhoneConversation_SubStateCallOutDrawScreen:: ;State 0C 10 0C
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall
     
     ld a, 2
     ld [W_Overworld_PowerAntennaPattern], a
@@ -64,8 +63,7 @@ PhoneConversation_SubStateCallOutFadeScreenIn:: ;State 0C 10 0D
     
     call $70C
     
-    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
     
     jp System_ScheduleNextSubSubState
 
@@ -77,8 +75,7 @@ PhoneConversation_SubStateCallOutConvoScriptProcessing:: ;State 0C 10 0E
     
     ld c, $FE
     ld b, 1
-    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
     
     jp System_ScheduleNextSubSubState
 
@@ -131,8 +128,7 @@ PhoneConversation_SubStateCallOutSwitchScriptProcessing:: ;State 0C 10 0F
 
 .queueMessage
     ld b, 1
-    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
     ld a, $15
     ld [W_SystemSubSubState], a
     ret
@@ -146,8 +142,7 @@ PhoneConversation_SubStateCallOutFadeToContactMenu::
     ld [W_Overworld_PowerAntennaPattern], a
     call LCDC_ClearMetasprites
     call PauseMenu_LoadMenuResources
-    ld a, Banked_ContactMenu_ADVICE_LoadSGBFilesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_ContactMenu_ADVICE_LoadSGBFilesOverview
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .use_cgb_graphic
 

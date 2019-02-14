@@ -21,8 +21,7 @@ SECTION "Title Menu State Machine 2", ROMX[$406E], BANK[$4]
 ; State 03 01, 03 1F
 TitleMenu_StateLoadGraphics::
 TitleMenu_StateSaveOverwriteExitLoadGraphics::
-    ld a, Banked_TitleMenu_ADVICE_StateLoadGraphics & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_StateLoadGraphics
     
     ld bc, $11
     call Banked_LoadMaliasGraphics
@@ -119,8 +118,7 @@ TitleMenu_StateCommitMenuPalettes::
     
 ; State 03 06
 TitleMenu_StatePlayMenuBGM::
-    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFiles & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFiles
 	 
     nop
     nop
@@ -215,8 +213,7 @@ TitleMenu_StateMenuInputHandler::
     ld [W_SystemSubState], a
     ld [W_Battle_SubSubState], a
     
-    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesLink & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesLink
     ret
     
 .soundTestSelected
@@ -345,8 +342,7 @@ TitleMenu_StateFadeToOverworldContinue::
     ld [W_ShadowREG_WY], a
     ld [W_PhoneIME_CurrentIME], a
     
-    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld
     
     xor a
     ld [W_SystemSubState], a
@@ -397,8 +393,7 @@ TitleMenu_StateResetTimeDrawWidget::
     call PauseMenu_LoadMap0
     call TitleMenu_ResetRTC
     
-    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesTimeInput & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFilesTimeInput
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
@@ -512,8 +507,7 @@ TitleMenu_StateFadeToOverworldNewGame::
     ld [W_PhoneIME_CurrentIME], a
     ld [W_MainScript_TextStyle], a
     
-    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld
     
     xor a
     ld [W_SystemSubState], a
@@ -527,8 +521,7 @@ TitleMenu_StateFadeToOverworldNewGame::
     
 ; State 03 18
 TitleMenu_StateLoadSoundTestScreen::
-    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -582,8 +575,7 @@ TitleMenu_StateSoundTestExit::
     ld [W_Sound_NextBGMSelect], a
     call TitleMenu_ScrollMenu_refresh
     
-    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest
     ret
     
 ;State 03 1B
@@ -592,8 +584,7 @@ TitleMenu_StateSaveOverwriteEnter::
     ld e, $5A
     call PauseMenu_LoadMap0
     
-    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -656,8 +647,7 @@ TitleMenu_StateSaveOverwriteCancelled::
     call PauseMenu_LoadMap0
     call TitleMenu_ScrollMenu_refresh
     
-    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest
     ret
 
 ; State 03 20

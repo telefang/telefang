@@ -51,8 +51,7 @@ CallsMenu_StateDrawNoMessageIndicator::
 .load_indicator_graphic
     call PauseMenu_LoadMsgsGraphic
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages
     call PauseMenu_DrawSMSMessageCount
     jp System_ScheduleNextSubSubState
 
@@ -115,8 +114,7 @@ CallsMenu_StateDrawHistoryEntry::
     ld a, [W_MelodyEdit_DataCurrent]
     call CallsMenu_DrawCallHistoryEntry
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -213,8 +211,7 @@ CallsMenu_StateDrawOutboundCallScreen::
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall
     
     ld a, 2
     ld [W_Overworld_PowerAntennaPattern], a
@@ -239,8 +236,7 @@ CallsMenu_StateFadeInOutboundCall::
     ld [W_MainScript_TileBaseIdx], a
     call $70C
     
-    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
     jp System_ScheduleNextSubSubState
     
 ;State 0C 16 09

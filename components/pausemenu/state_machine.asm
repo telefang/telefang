@@ -84,8 +84,7 @@ PauseMenu_StateLoadDMGCompatibility::
     ld [W_CGBPaletteStagedBGP], a
     ld [W_CGBPaletteStagedOBP], a
 
-    ld a, (Banked_TitleMenu_ADVICE_LoadSGBFiles & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFiles
 
     jp System_ScheduleNextSubState
     nop
@@ -287,8 +286,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
     ret
     
 .test_ime_input
@@ -321,8 +319,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     cp 0
     jr nz, .store_number
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME
     
     ld e, $2D
     call PauseMenu_LoadMenuMap0
@@ -432,8 +429,7 @@ PauseMenu_StateExitPhoneIME::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
     ret
     
 ;State 0C 0B
@@ -516,8 +512,7 @@ PauseMenu_StateExitToOverworld::
     xor a
     ld [W_Overworld_PowerAntennaPattern], a
     
-    ld a, (Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld
     
     ld a, $A
     ld [W_SystemSubState], a
@@ -581,8 +576,7 @@ PauseMenu_StateLoadOutgoingContactCallGraphics::
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall
     call PhoneConversation_OutboundConfigureScreen
     
     ld a, $F0
@@ -618,8 +612,7 @@ PauseMenu_StateFadeInAndQueueContactMessage::
     ld b, 1
     
 .exit
-    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
     jp System_ScheduleNextSubState
 
 ;State 0C 1C
@@ -662,8 +655,7 @@ PauseMenu_StateTransitionOutOfOutboundContactCall::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
     
     xor a
     ld [W_SystemSubSubState], a
@@ -691,8 +683,7 @@ PauseMenu_StateLoadOutgoingSecretCallGraphics::
     xor a
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall
     call PhoneConversation_OutboundConfigureScreen
     
     ld a, $F0
@@ -721,8 +712,7 @@ PauseMenu_StateFadeInAndQueueSecretMessage::
     add a, $80
     ld c, a
     ld b, 1
-    ld a, (Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
     jp System_ScheduleNextSubState
 
 ;State 0C 22
@@ -765,8 +755,7 @@ PauseMenu_StateTransitionOutOfOutboundSecretCall::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
     
     xor a
     ld [W_SystemSubSubState], a

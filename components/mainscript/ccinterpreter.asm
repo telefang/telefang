@@ -699,8 +699,7 @@ MainScript_CCInterpreter_NarrowPhraseCC::
 ; Control Code F4
     ; Traditional opening pop hl deferred until later (saves two bytes).
     push af
-    ld a, Banked_MainScript_ADVICE_AutoNarrowPhrase & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_MainScript_ADVICE_AutoNarrowPhrase
     pop af
     pop hl
     jp MainScript_EndOpcode.skipNewlineCheck

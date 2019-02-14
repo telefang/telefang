@@ -268,8 +268,7 @@ MainScript_ADVICE_FontSelector::
 	ld a, BANK(MainScript_ADVICE_FontSelector)
 	ld [W_PreviousBank],a
 
-	ld a, Banked_MainScript_ADVICE_DrawNarrowLetter & $FF
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_MainScript_ADVICE_DrawNarrowLetter
 
 	ld b,a
 	pop af
