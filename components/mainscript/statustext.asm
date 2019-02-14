@@ -66,8 +66,7 @@ MainScript_DrawName75::
 	call StringTable_LoadName75
 	pop hl
 	push hl
-	ld a, Banked_MainScript_ADVICE_CondenseTableStringLong & $FF
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_MainScript_ADVICE_CondenseTableStringLong
 	pop hl
 	ld de, W_StringTable_StagingLocDbl
 	ld b, $16 ;likely incorrect.
@@ -101,8 +100,7 @@ MainScript_DrawCenteredStagedString::
 	push de
 	push hl
    
-	ld a, Banked_MainScript_ADVICE_CondenseStagedTableStringLong & $FF
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_MainScript_ADVICE_CondenseStagedTableStringLong
    
    pop hl
 	pop de
@@ -122,8 +120,7 @@ MainScript_DrawShortName::
     call StringTable_LoadShortName
     pop hl
     push hl
-    ld a, Banked_MainScript_ADVICE_CondenseTableStringShort & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_MainScript_ADVICE_CondenseTableStringShort
     pop hl
     ld de, W_StringTable_StagingLocDbl
     ld b, M_StringTable_Load4AreaSize

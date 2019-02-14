@@ -2,11 +2,11 @@ INCLUDE "telefang.inc"
 
 SECTION "Patch Utilities - Queue Message and Articles", ROM0[$3E5C]
 Battle_ADVICE_QueueMessage_WithoutArticle::
-	ld a, Banked_Battle_ADVICE_BattleNoArticle & $FF
+	M_PrepAuxJmp Banked_Battle_ADVICE_BattleNoArticle
 	jr Battle_ADVICE_QueueMessage_WithArticle.remJumpP
 
 Battle_ADVICE_QueueMessage_WithArticle::
-	ld a, Banked_Battle_ADVICE_BattleArticle & $FF
+	M_PrepAuxJmp Banked_Battle_ADVICE_BattleArticle
 
 .remJumpP
 	call PatchUtils_AuxCodeJmp

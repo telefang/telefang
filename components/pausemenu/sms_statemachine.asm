@@ -44,8 +44,7 @@ PauseMenu_SubStateSMSInit:
     
 ;State 0C 13 01
 PauseMenu_SubStateSMSGraphicInit::
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages
     call PauseMenu_LoadMsgsGraphic
     call PauseMenu_CountActiveSMS
     call PauseMenu_DrawSMSMessageCount
@@ -112,8 +111,7 @@ PauseMenu_SubStateSMSListingInit::
     ld a, [W_MelodyEdit_DataCurrent]
     call PauseMenu_DrawSMSListingEntry
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -168,14 +166,12 @@ PauseMenu_SubStateSMSListingIdle::
     
 ;State 0C 13 05
 PauseMenu_SubStateSMSContentsInit::
-    ld a, Banked_PauseMenu_ADVICE_SMSMapTiles & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_SMSMapTiles
     jp System_ScheduleNextSubSubState
     
 ;State 0C 13 06
 PauseMenu_SubStateSMSContentsIdle::
-    ld a, Banked_PauseMenu_ADVICE_SMSContentsCheckInput & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_SMSContentsCheckInput
     ld a, b
     or a
     ret z

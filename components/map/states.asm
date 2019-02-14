@@ -13,8 +13,7 @@ W_Map_AcreCompletionData:: ds $20
 
 SECTION "Map Screen Display Loop", ROMX[$4046], BANK[$2A]
 Map_StateDrawScreen::
-	ld a, (Banked_Map_ADVICE_DrawScreen & $FF)
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_Map_ADVICE_DrawScreen
 	call Map_MapScreenTiles
 	ld a, 3
 	ld [W_MetaSpriteConfig1], a
@@ -83,20 +82,17 @@ Map_StateDrawScreen::
 	call Banked_CGBLoadBackgroundPalette
 	ld bc, $10
 	call Banked_CGBLoadObjectPalette
-	ld a, (Banked_Map_ADVICE_LoadSGBFiles & $FF)
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_Map_ADVICE_LoadSGBFiles
 	jp System_ScheduleNextSubState
 
 Map_ADVICE_StateMainLoop_OpenWindow::
 	call CallBankedFunction_int
-	ld a, (Banked_Map_ADVICE_WindowLoadSGBFiles & $FF)
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_Map_ADVICE_WindowLoadSGBFiles
 	ret
 
 Map_ADVICE_StateMainLoop_CloseWindow::
 	call $44C5
-	ld a, (Banked_Map_ADVICE_WindowUnloadSGBFiles & $FF)
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_Map_ADVICE_WindowUnloadSGBFiles
 	ret
 
 	; Note: Free Space
@@ -603,8 +599,7 @@ Map_StateFadeToOverworld::
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
-	ld a, (Banked_Map_ADVICE_UnloadSGBFiles & $FF)
-	call PatchUtils_AuxCodeJmp
+	M_AuxJmp Banked_Map_ADVICE_UnloadSGBFiles
 	ld a, $A
 	ld [W_SystemSubState], a
 	ret

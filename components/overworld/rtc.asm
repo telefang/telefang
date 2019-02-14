@@ -13,8 +13,7 @@ Overworld_ReadRTCTime::
     and 3
     ret nz
     
-    ld a, (Banked_SaveClock_ADVICE_ValidateRTCFunction & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_SaveClock_ADVICE_ValidateRTCFunction
 
     cp 0
     jr z, .exitSram

@@ -30,7 +30,7 @@ PauseMenu_CallsMenuDrawDenjuuNickname::
     ld b, 6
     call PauseMenu_ClearInputTiles
     
-    ld a, Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname & $FF
+    M_PrepAuxJmp Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
     jp PatchUtils_AuxCodeJmp
     nop
     nop

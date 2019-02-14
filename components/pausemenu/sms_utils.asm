@@ -218,7 +218,7 @@ PauseMenu_LoadMsgsGraphic::
     jp Banked_LCDC_LoadGraphicIntoVRAM
     
 PauseMenu_DrawSMSFromMessages::
-    ld a, (Banked_PauseMenu_ADVICE_DrawSMSFromMessages & $FF)
+    M_PrepAuxJmp Banked_PauseMenu_ADVICE_DrawSMSFromMessages
     jp PatchUtils_AuxCodeJmp
 
 SECTION "Pause Menu SMS Utils 4", ROMX[$5B21], BANK[$4]
@@ -230,8 +230,7 @@ PauseMenu_ExitToCentralMenu2::
     call PauseMenu_LoadPhoneControlHint
     call PauseMenu_DrawMenuItemsAndFrame
     
-    ld a, (Banked_PauseMenu_ADVICE_LoadSGBFiles & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
     
     xor a
     ld [W_SystemSubSubState], a

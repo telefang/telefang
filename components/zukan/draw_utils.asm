@@ -110,7 +110,7 @@ Zukan_DrawSpeciesPageText::
     ld c, $AE
     
 .draw_result
-    ld a, Banked_Zukan_ADVICE_DrawSpeciesPageText & $FF
+    M_PrepAuxJmp Banked_Zukan_ADVICE_DrawSpeciesPageText
     jp PatchUtils_AuxCodeJmp
     
     nop

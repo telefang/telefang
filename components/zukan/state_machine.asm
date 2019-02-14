@@ -40,8 +40,7 @@ Zukan_StateOverviewDrawSubScreen::
     ld [W_MainScript_TileBaseIdx], a
     call Zukan_CalculateTotals
     
-    ld a, Banked_Zukan_ADVICE_LoadSGBFilesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_LoadSGBFilesOverview
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphic
     
@@ -55,8 +54,7 @@ Zukan_StateOverviewDrawSubScreen::
 Zukan_StateOverviewDrawSpecies::
     call Zukan_LoadSpeciesPortraitAndNameIfKnown
     
-    ld a, Banked_Zukan_ADVICE_LoadSGBPalettesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_LoadSGBPalettesOverview
     jp System_ScheduleNextSubSubState
     
 Zukan_StateOverviewDrawCursorsAndNumbers::
@@ -192,8 +190,7 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     call Banked_RLEDecompressAttribsTMAP0
     call PhoneConversation_OutboundConfigureScreen
 
-    ld a, Banked_Zukan_ADVICE_DrawRightAlignedHabitatName & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_DrawRightAlignedHabitatName
     
     ld a, [W_Zukan_SelectedSpecies]
     ld c, 1
@@ -207,20 +204,17 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     ld de, $9200
     call Status_LoadEvolutionIndicatorBySpeciesZukan
     
-    ld a, Banked_Zukan_ADVICE_ClearMessageForSGB & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_ClearMessageForSGB
     
     xor a
     ld [W_MainScript_TextStyle], a
-    ld a, Banked_Zukan_ADVICE_DrawDenjuuName & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_DrawDenjuuName
     
     ; The Denjuu name is broken out into sprites in order to
     ; be able to center it properly on the pixel level.
     ; The original plan was to center it vertically between two
     ; tiles, but it seems like that might not be the case anymore.
-    ld a, Banked_Zukan_ADVICE_InitializeNameMetaSprite & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_InitializeNameMetaSprite
     
     ld a, 1
     ld [W_Status_CalledFromContactScreen], a
@@ -245,8 +239,7 @@ Zukan_StateOverviewFadeOutAndDrawInner::
     call Banked_PauseMenu_InitializeCursor
     call PauseMenu_UpdateZukanPageCursorAnimations
     
-    ld a, (Banked_Zukan_ADVICE_SetupSGBScreen & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_SetupSGBScreen
     
     ld a, 1
     ld [W_OAM_SpritesReady], a
@@ -313,8 +306,7 @@ Zukan_StateInnerviewInput::
     jr .valid_increment_search
     
 .draw_new_species
-    ld a, Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies
     ret
 
 .check_left_pressed
@@ -355,8 +347,7 @@ Zukan_StateInnerviewInput::
     jr z, .nothing_pressed
     
 .run_button_advice
-    ld a, Banked_Zukan_ADVICE_StateInnerviewInputButtonPress & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_StateInnerviewInputButtonPress
     ret
     
 .nothing_pressed
@@ -369,8 +360,7 @@ Zukan_StateInnerviewFadeOut:
     ret z
     
     ; Added to clear the Denjuu name metasprite and SGB palettes.
-    ld a, (Banked_Zukan_ADVICE_TeardownSGBScreenAndMetasprites & $FF)
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_TeardownSGBScreenAndMetasprites
 
     ld hl, $9400
     ld b, $38
@@ -406,8 +396,7 @@ Zukan_StateInnerviewFadeOut:
     call Zukan_LoadSpeciesPortraitAndNameIfKnown
     call Zukan_UpdateOverviewCursorsNumbersAndNextState
     
-    ld a, Banked_Zukan_ADVICE_ReloadSGBPalettesOverview & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_ReloadSGBPalettesOverview
     ret
 
 Zukan_StateOverviewReturnToInput:
@@ -421,8 +410,7 @@ Zukan_StateOverviewReturnToInput:
     ret
 
 Zukan_StateInnerviewSwitchPage:
-    ld a, Banked_Zukan_ADVICE_DrawRightAlignedHabitatName & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_DrawRightAlignedHabitatName
     
     ld a, [W_Zukan_SelectedSpecies]
     ld c, 1
@@ -434,15 +422,13 @@ Zukan_StateInnerviewSwitchPage:
     
     xor a
     ld [W_MainScript_TextStyle], a
-    ld a, Banked_Zukan_ADVICE_DrawDenjuuName & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_DrawDenjuuName
     
     ld a, [W_Zukan_SelectedSpecies]
     ld de, $9200
     call Status_LoadEvolutionIndicatorBySpeciesZukan
     
-    ld a, Banked_Zukan_ADVICE_ClearMessageForSGB & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_ClearMessageForSGB
 
     ld a, $C0
     ld [W_MainScript_TileBaseIdx], a
@@ -451,8 +437,7 @@ Zukan_StateInnerviewSwitchPage:
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
     
-    ld a, Banked_Zukan_ADVICE_RefreshSGBScreen & $FF
-    call PatchUtils_AuxCodeJmp
+    M_AuxJmp Banked_Zukan_ADVICE_RefreshSGBScreen
     
     ld a, M_Zukan_StateInnerviewInput
     ld [W_SystemSubSubState], a
