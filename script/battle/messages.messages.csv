@@ -40,9 +40,9 @@ Pointer,Japanese,English,Draft version,German,Draft version (German),Notes
 0x11401e,ゲームオーバー<*5>,Game Over<*5>,,Spiel Ende<*5>,,
 0x114020,"てきのデンジュウを
 やっつけた!<*5>",You defeated the enemy Denjuu!<*5>,,Du hast das gegnerische Denjuu besiegt!<*5>,,
-0x114022,にげだした!<*5>,Ran away!<*5>,,"""Hauen wir ab!""<*5>",,
+0x114022,にげだした!<*5>,Turned tail and ran!<*5>,,"""Hauen wir ab!""<*5>",,
 0x114024,"されど
-にげられなかった!<*5>",...But couldn't escape!<*5>,,...Flucht gescheitert!<*5>,,
+にげられなかった!<*5>",...But you couldn't escape!<*5>,,...Flucht gescheitert!<*5>,,
 0x114026,"たたかいに
 やぶれた!<*5>",You lost the battle!<*5>,,Du hast den Kampf verloren!<*5>,,
 0x114028,"<&0xd448>ポイントの

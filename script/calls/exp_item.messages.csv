@@ -232,7 +232,7 @@ I hear they like <bold>mixers<normal>. I get it, I think. They both move the sam
 じつは キカイをつかわせると
 すごかったリして...
 そんなことはないかなー
-<*2>",/0x15c03a/<*2>,"<D30>Good things happen if you fit a Lycoris with a <bold>computer<normal>, right? It might turn out to be real cool if you set it up with a machine like that! Or maybe not.<*2>",
+<*2>",/0x15c03a/<*2>,"<D30>It'd be a good idea to fit a Lycoris with a <bold>computer<normal>, right? It might turn out to be real cool //(""jitsu wa"" makes it sound like a contrast) if you set it up with a machine like that! Or maybe not.<*2>",
 0x15c03c,"<D31>おーう <&name>
 ビバーナムがな『ビデオ』を
 つけたいって いってたぜ
@@ -341,7 +341,7 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 つけると けいけんちアップって
 はなししってる??
 みためからして とがったモノを
-とばすの すきそうだもんなー<*2>",/0x15c05c/<*2>,"Hey, have you seen the Denjuu called Nigella? Did you know it gains experience if fitted with an <bold>archery set<normal>? You can tell just by looking that it likes shooting pointy things.",
+とばすの すきそうだもんなー<*2>",/0x15c05c/<*2>,"Hey, have you seen the Denjuu called Nigella? Did you know it gains experience if fitted with an <bold>archery set<normal>? You can tell just by looking at it that it likes shooting pointy things.",
 0x15c05e,"<D48>ちょうろうの ムサさまが
 いるじゃん
 このまえ ムサさまが
@@ -353,7 +353,7 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 のんびリしてて なにも
 かんがえてなさそうだけど
 そういうモノって あるんだなー
-<*2>",/0x15c060/<*2>,"That Netaro guy wants a <bold>sabre<normal>! Seems a bit irresponsible if you ask me, but that's what I heard. //",
+<*2>",/0x15c060/<*2>,"That Netaro guy wants a <bold>sabre<normal>! He seems like a really chill guy, but I guess there's another side of him.",
 0x15c062,"<D50>やっほー <&name>
 ネジロがさー
 『ボム』をくっつけてほしいって
@@ -506,13 +506,13 @@ Keep an eye out for it!",
 あるんだってさ
 ごっついヤツは ごっつい
 アイテムにきょうみが
-あるんだろうねー<*2>",/0x15c08e/<*2>,"So there's a rough 'n' tumble-looking Denjuu called Ghosboar, right? I heard it's interested in <bold>axes<normal>. I guess it makes sense that rough guys like tumbly items.",
+あるんだろうねー<*2>",/0x15c08e/<*2>,"So there's a rough-'n'-tumble-looking Denjuu called Ghosboar, right? I heard it's interested in <bold>axes<normal>. I guess it makes sense that rough guys like tumbly items.",
 0x15c090,"<D73>ラセンマイってデンジュウねー
 『ネジ』をみるのが
 すきなんだってー
 あれって ながめるモノなのかなボクは つかいかたを
 よくしらないんだけどさー<*2>",/0x15c090/<*2>,"So about the Denjuu Rasenmai...
-I heard it likes looking at <bold>screws<normal>. Are those really meant for staring at? I'm not sure how they're supposed to be used.",
+I heard they like looking at <bold>screws<normal>. Are those really meant for contemplation? I'm not sure how they're supposed to be used.",
 0x15c092,"<D74>スコーピルっていう
 デンジュウがねー
 『アンテナ』をくっつけて
@@ -520,7 +520,7 @@ I heard it likes looking at <bold>screws<normal>. Are those really meant for sta
 トモダチに このデンジュウが
 いたら くっつけてあげてよー
 うるさくって かなわないやー
-<*2>",/0x15c092/<*2>,//,
+<*2>",/0x15c092/<*2>,"Heard of the Denjuu Scorpil? It's been chewing my ear off about wanting an <bold>antenna<normal>. If you're friends with a Scorpil, try augmenting it with one. I can't stand all the nagging!",
 0x15c094,"<D75>アームクラブってデンジュウが
 『マウス』を つけたいって
 いってるらしいんだけど...
@@ -528,7 +528,7 @@ I heard it likes looking at <bold>screws<normal>. Are those really meant for sta
 どうするんだろうねー
 あれって『レンジ』がないと
 だめなんでしょー?
-ヘっヘー オレってものしリ!<*2>",/0x15c094/<*2>,"So, Armcrab was saying it wants to have a <bold>computer mouse<normal> installed... but how is it gonna use it? It's not like you can use a mouse without a microwave oven, right?
+ヘっヘー オレってものしリ!<*2>",/0x15c094/<*2>,"So, Armcrab was saying it wants to have a <bold>computer mouse<normal> installed... but how's it gonna use it? It's not like you can use a mouse without a microwave oven, right?
 Heh. I'm smart, I know.",
 0x15c096,"<D76>アンジオーンって『アイロン』に
 きょうみしんしんって ほんと?
@@ -537,7 +537,7 @@ Heh. I'm smart, I know.",
 なにするモノなのー?
 こんどよんでくれたときにでも
 おしえてよねー
-<*2>",/0x15c096/<*2>,,
+<*2>",/0x15c096/<*2>,"Is it true that Angiorn is obsessed with <bold>irons<normal>? I did not expect that! Um, by the way, what are irons even for? Explain 'em for me sometime, maybe!",
 0x15c098,"<D77>『アンテナ』がけいけんちアップのデンジュウって けっこう
 いるんだけど ヂムレースっていうデンジュウも そうなんだー<*2>",/0x15c098/<*2>,,
 0x15c09a,"<D78>リリオンプってデンジュウは
