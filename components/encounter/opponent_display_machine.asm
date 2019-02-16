@@ -288,8 +288,7 @@ Encounter_SubStateDrawEncounterScreen::
     ld [$D45E], a
     
 .fadeAndNextState
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    M_AuxJmp Banked_Encounter_ADVICE_LoadSGBFiles
     jp Battle_IncrementSubSubState
 
 Encounter_SubStateFadeIn::
@@ -661,14 +660,14 @@ Encounter_SubStateEnterSummonScreen::
     ret nz
     xor a
     ld [W_Battle_SubSubState], a
-    jp System_ScheduleNextSubState
+    jp Encounter_ADVICE_UnloadSGBFiles
 
 Encounter_SuccessfulFleeFade::
     ld a, 1
     call Banked_LCDC_PaletteFade
     or a
     ret z
-    jp Battle_IncrementSubSubState
+    jp Encounter_ADVICE_UnloadSGBFilesOnFlee
 
 Encounter_SuccessfulFleeExitToOverworld::
     xor a

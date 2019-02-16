@@ -233,6 +233,10 @@ Banked_Map_ADVICE_WindowLoadSGBFiles::
 Banked_Map_ADVICE_WindowUnloadSGBFiles::
 	jp Map_ADVICE_WindowUnloadSGBFiles
 
+;components/encounter/advice.asm
+Banked_Encounter_ADVICE_LoadSGBFiles::
+	jp Encounter_ADVICE_LoadSGBFiles
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
