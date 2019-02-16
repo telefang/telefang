@@ -22,6 +22,22 @@ PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
     ; Create this label
     call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
 
+    call PauseMenu_ADVICE_FixSGBSceneryPalette
+    ld c, $C
+    call Banked_SGB_ConstructATFSetPacket
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld b, 0
+    ld c, 4
+    call PatchUtils_CommitStagedCGBToSGB
+
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
+
+.return
+    M_AdviceTeardown
+    ret
+
+PauseMenu_ADVICE_FixSGBSceneryPalette::
     ld a, [W_Encounter_SceneryType]
     cp 5
     jr nz, .notsky
@@ -53,19 +69,7 @@ PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
     ld [de], a
 
 .notfield
-    ld c, $C
-    call Banked_SGB_ConstructATFSetPacket
-
-    ld a, M_SGB_Pal01 << 3 + 1
-    ld b, 0
-    ld c, 4
-    call PatchUtils_CommitStagedCGBToSGB
-
-    call PauseMenu_ADVICE_CGBToSGB56Shorthand
-
-.return
-    M_AdviceTeardown
-    ret
+	ret
 
 PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall::
     M_AdviceSetup
