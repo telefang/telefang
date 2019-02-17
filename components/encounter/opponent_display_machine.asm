@@ -146,7 +146,7 @@ Encounter_SubStateDrawEncounterScreen::
     ld bc, $201
     ld e, $84
     ld a, 0
-    call Banked_RLEDecompressTMAP0
+    call Encounter_ADVICE_DecompressNameTmap
     
     ld hl, $9850
     ld a, [W_Overworld_SignalStrength]
