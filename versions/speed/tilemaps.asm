@@ -143,7 +143,7 @@ Tilemap_BANK_0::
 	dw Tilemap_battle_ui_opponent_bars_tmap
 	dw Tilemap_unknown_tilemap_0_5c
 	dw Tilemap_unknown_tilemap_0_5d
-	dw Tilemap_unknown_tilemap_0_5e
+	dw Tilemap_encounter_ui_name_tmap
 	dw Tilemap_unknown_tilemap_0_5f
 	dw Tilemap_battle_ui_partner_bars_tmap
 	dw Tilemap_unknown_tilemap_0_61
@@ -596,9 +596,9 @@ Tilemap_unknown_tilemap_0_5d::
 	INCBIN "build/gfx/unknown/tilemap_0/5d.tmap"
 Tilemap_unknown_tilemap_0_5d_END
 
-Tilemap_unknown_tilemap_0_5e::
-	INCBIN "build/gfx/unknown/tilemap_0/5e.tmap"
-Tilemap_unknown_tilemap_0_5e_END
+Tilemap_encounter_ui_name_tmap::
+	INCBIN "build/components/encounter/ui/name_tmap.tmap"
+Tilemap_encounter_ui_name_tmap_END
 
 Tilemap_unknown_tilemap_0_5f::
 	INCBIN "build/gfx/unknown/tilemap_0/5f.tmap"
