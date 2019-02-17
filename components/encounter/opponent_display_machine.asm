@@ -146,7 +146,7 @@ Encounter_SubStateDrawEncounterScreen::
     ld bc, $201
     ld e, $84
     ld a, 0
-    call Banked_RLEDecompressTMAP0
+    call Encounter_ADVICE_DecompressNameTmap
     
     ld hl, $9850
     ld a, [W_Overworld_SignalStrength]
@@ -343,8 +343,7 @@ Encounter_SubStateDenjuuOrTFangerAppearedMessage::
     call MainScript_DrawCenteredName75
     ld bc, $B01
     ld e, $97
-    ld a, 0
-    call Banked_RLEDecompressTMAP0
+    M_AuxJmp Banked_Encounter_ADVICE_MapTFangerDenjuu
     ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 0 + M_Battle_ParticipantLevel]
     ld hl, $984B
     ld c, 1
@@ -355,7 +354,7 @@ Encounter_SubStateDenjuuOrTFangerAppearedMessage::
     call StringTable_LoadName75
     call Encounter_CopyStagedStringToArg2
     ld c, $23
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     ld a, $52
     ld [W_Sound_NextSFXSelect], a
     jp Battle_IncrementSubSubState
@@ -376,7 +375,7 @@ Encounter_SubStateGoDenjuuMessage::
 
 Encounter_SubStateFightFleeStatus::
     ld c, $26
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     ld a, 0
     call Banked_Status_LoadUIGraphics
     ld a, 0
@@ -525,7 +524,7 @@ Encounter_SubStateInputHandler::
     ld a, $1E
     ld [W_Battle_LoopIndex], a
     ld c, $11
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     ld a, 9
     ld [W_Battle_SubSubState], a
     ret
@@ -623,7 +622,7 @@ Encounter_SubStateFuckThisImOuttaHere::
 
 .couldntEscape
     ld c, $12
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     jp Battle_IncrementSubSubState
 
 Encounter_SubStateButYouCouldntEscapeMessage::
@@ -642,7 +641,7 @@ Encounter_SubStateAccessingPhoneMemory::
     ld a, 1
     ld [W_Battle_LoopIndex], a
     ld c, $96
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     jp Battle_IncrementSubSubState
 .smallContactList
     ld a, 1
