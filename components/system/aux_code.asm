@@ -237,6 +237,9 @@ Banked_Map_ADVICE_WindowUnloadSGBFiles::
 Banked_Encounter_ADVICE_LoadSGBFiles::
 	jp Encounter_ADVICE_LoadSGBFiles
 
+Banked_Encounter_ADVICE_MapTFangerDenjuu::
+	jp Encounter_ADVICE_MapTFangerDenjuu
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

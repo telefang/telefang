@@ -54,7 +54,60 @@ Encounter_ADVICE_LoadSGBFiles::
     M_AdviceTeardown
     ret
 
-SECTION "Encounter Screen Advice Code 2", ROMX[$7FDA], BANK[$1C]
+Encounter_ADVICE_MapTFangerDenjuu::
+    M_AdviceSetup
+
+    xor a
+	call Banked_RLEDecompressTMAP0
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+	
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 7
+    call PatchUtils_CommitStagedCGBToSGB
+
+.return
+    M_AdviceTeardown
+    ret
+
+SECTION "Encounter Screen Advice Code 2", ROMX[$7FB3], BANK[$1C]
+Encounter_ADVICE_QueueMessage::
+	call Battle_QueueMessage
+
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret z
+
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z ; C8
+	
+	ld hl, $8F00
+	ld b, $40
+	; Continues into Encounter_ADVICE_TileLowByteBlanketFill
+
+Encounter_ADVICE_TileLowByteBlanketFill::
+	ld c, $FF
+
+.drawloop
+	di
+
+.wfb
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+	ld a, c
+	ld [hli], a
+	inc hl
+	ld a, c
+	ld [hli], a
+	ei
+	inc hl
+	dec b
+	jr nz, .drawloop
+	ret
 
 Encounter_ADVICE_UnloadSGBFilesOnFlee::
 	call Encounter_ADVICE_UnloadSGBFiles_Common
