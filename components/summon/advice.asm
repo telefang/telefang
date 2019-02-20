@@ -54,13 +54,13 @@ Summon_ADVICE_LoadSGBFiles::
     ld c, 1
     call PatchUtils_CommitStagedCGBToSGB
 
+    ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 5)
+    call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
+
     call PauseMenu_ADVICE_CGBToSGB56Shorthand
 
     ld c, $11
     call Banked_SGB_ConstructATFSetPacket
-
-    ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 5)
-    call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
 
 	ld bc, $CFF
 	ld e, $16
@@ -108,13 +108,90 @@ Summon_ADVICE_LoadSGBFiles::
 	call vmempoke
 	ld l, $12
 	call vmempoke
+	ld a, $10
+	ld hl, $982B
+	call vmempoke
+	inc a
+	call vmempoke
+	inc a
+	call vmempoke
+	ld a, $15
+	ld l, $30
+	call vmempoke
 
 .return
 
     M_AdviceTeardown
     ret
 
-SECTION "Summon Screen Advice Code 3", ROMX[$7F4C], BANK[$1C]
+SECTION "gfx/menu/battle_contact_select_sgb.2bpp", ROMX[$4200], BANK[$77]
+BattleContactSelectSgb::
+	INCBIN "build/gfx/menu/battle_contact_select_sgb.2bpp"
+
+SECTION "Summon Screen Advice Code 3", ROMX[$7EF3], BANK[$1C]
+Summon_ADVICE_ClearDenjuuPortrait::
+	push af
+	xor a
+	ld [W_MainScript_TextStyle], a
+	pop af
+	call MainScript_DrawEmptySpaces
+	ld a, [W_SGB_DetectSuccess]
+	or a
+	ret z
+	ld a, [W_GameboyType]
+	cp M_BIOS_CPU_CGB
+	ret z
+	ld a, 3
+	ld [W_MainScript_TextStyle], a
+	ld hl, $9180
+	ld a, 8
+	jp MainScript_DrawEmptySpaces
+
+Summon_ADVICE_DrawDenjuuIndicators::
+	call $5374
+
+	ld a, [W_SGB_DetectSuccess]
+	or a
+	ret z
+
+	ld a, [W_GameboyType]
+	cp M_BIOS_CPU_CGB
+	ret z
+
+	ld a, [W_Summon_SelectedPageCount]
+	cp 2
+	jr z, .oneempty
+	cp 1
+	jr z, .twoempty
+	ret
+
+.twoempty
+	ld hl, $98EB
+	call Summon_ADVICE_ClearDenjuuIndicators
+
+.oneempty
+	ld hl, $994B
+	jp Summon_ADVICE_ClearDenjuuIndicators
+
+Summon_ADVICE_ClearDenjuuIndicators::
+	ld bc, $4FF
+
+.loop
+	di
+
+.wfb
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+
+	ld a, c
+	ld [hli], a
+	ld [hli], a
+	ei
+	dec b
+	jr nz, .loop
+	ret
+
 Summon_ADVICE_PrepareTextStyle::
 	ld hl, $9400
 	

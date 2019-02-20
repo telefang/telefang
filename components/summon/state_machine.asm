@@ -241,7 +241,7 @@ Summon_StateEnter::
     ld [W_Status_SelectedContactIndex], a
     call $5301
     call $531F
-    call $5374
+    call Summon_ADVICE_DrawDenjuuIndicators
     call $55CE
     call Summon_DrawPageContactNames
     jr .drawPagination
@@ -252,7 +252,7 @@ Summon_StateEnter::
 .noContactsAvailable
     ld hl, $8B80
     ld a, $38
-    call MainScript_DrawEmptySpaces
+    call Summon_ADVICE_ClearDenjuuPortrait
     ld bc, $B06
     ld e, $83
     ld a, 0
@@ -412,7 +412,7 @@ Summon_StateInputHandler::
     call MainScript_DrawEmptySpaces
     call $531F
     call $5301
-    call $5374
+    call Summon_ADVICE_DrawDenjuuIndicators
     call $55CE
     call Summon_DrawPageContactNames
     call SaveClock_ExitSRAM
@@ -951,4 +951,4 @@ Summon_StateEnterBattle::
     ld [$D502], a
     xor a
     ld [W_Battle_SubSubState], a
-    jp System_ScheduleNextSubState
+    jp Encounter_ADVICE_UnloadSGBFiles
