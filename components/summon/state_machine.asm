@@ -154,14 +154,13 @@ Summon_StateEnter::
     xor a
     call CGBLoadBackgroundPaletteBanked
 
-    ld hl, $9400
+    call Summon_ADVICE_PrepareTextStyle
     ld a, 32
     call MainScript_DrawEmptySpaces
 
     ld bc, 0
     ld e, $0D
-    ld a, 0
-    call Banked_RLEDecompressTMAP0
+    M_AuxJmp Banked_Summon_ADVICE_LoadSGBFiles
     ld bc, 0
     ld e, $0D
     ld a, 0
@@ -208,7 +207,7 @@ Summon_StateEnter::
     ld l, a
     call Battle_MessageNumbersToText
     ld c, $6A
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     ld bc, 0
     ld e, $95
     ld a, 0
@@ -226,7 +225,7 @@ Summon_StateEnter::
     ld de, $8B80
     call Banked_Battle_LoadDenjuuPortrait
     pop af
-    call Battle_LoadDenjuuPalettePartner
+    call Summon_ADVICE_LoadDenjuuPalette
     ld a, [W_Status_NumDuplicateDenjuu]
     dec a
     ld b, 0
@@ -242,7 +241,7 @@ Summon_StateEnter::
     ld [W_Status_SelectedContactIndex], a
     call $5301
     call $531F
-    call $5374
+    call Summon_ADVICE_DrawDenjuuIndicators
     call $55CE
     call Summon_DrawPageContactNames
     jr .drawPagination
@@ -253,7 +252,7 @@ Summon_StateEnter::
 .noContactsAvailable
     ld hl, $8B80
     ld a, $38
-    call MainScript_DrawEmptySpaces
+    call Summon_ADVICE_ClearDenjuuPortrait
     ld bc, $B06
     ld e, $83
     ld a, 0
@@ -280,7 +279,7 @@ Summon_StateEnter::
     ld c, $6B
 
 .queueMessage
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
 
 ; This section of code is common to both contact and no contact screens, it draws the page numbers.
 
@@ -310,7 +309,7 @@ Summon_StateFadeInAndDrawArrows::
     call Banked_LCDC_PaletteFade
     or a
     ret z
-    call Encounter_LoadSelectedIndicatorResources
+    call Summon_ADVICE_DrawOkIndicator
     ld a, [W_Summon_MaxPages]
     cp 1
     jr c, .noArrowsRequired
@@ -413,7 +412,7 @@ Summon_StateInputHandler::
     call MainScript_DrawEmptySpaces
     call $531F
     call $5301
-    call $5374
+    call Summon_ADVICE_DrawDenjuuIndicators
     call $55CE
     call Summon_DrawPageContactNames
     call SaveClock_ExitSRAM
@@ -610,7 +609,7 @@ Summon_StateInputHandler::
     ld [$D4BB], a
     ld [$D4BC], a
     ld c, $6A
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     ld a, [W_Summon_RemainingParticipantsForSelection]
     cp 1
     jr nz, .deselectByBConditionNotValid
@@ -653,7 +652,7 @@ Summon_StateInputHandler::
 
 .queueConfirmationMessage
     ld c, $1E
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     xor a
     ld [W_Victory_UserSelection], a
     call Encounter_PlaceSelectIndicator
@@ -682,7 +681,7 @@ Summon_StateDrawSelectedContactPortrait::
     ld de, $8B80
     call Banked_Battle_LoadDenjuuPortrait
     pop af
-    call Battle_LoadDenjuuPalettePartner
+    call Summon_ADVICE_LoadDenjuuPalette
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
     call SaveClock_ExitSRAM
@@ -854,7 +853,7 @@ Summon_StateConfirmationInputHandler:: ;50AE
     ld a, [W_Summon_MaxRemainingParticipantsForSelection]
     ld [W_Summon_RemainingParticipantsForSelection], a
     ld c, $6A
-    call Battle_QueueMessage
+    call Encounter_ADVICE_QueueMessage
     ld a, 6
     ld [W_Battle_SubSubState], a
     ret
@@ -952,4 +951,4 @@ Summon_StateEnterBattle::
     ld [$D502], a
     xor a
     ld [W_Battle_SubSubState], a
-    jp System_ScheduleNextSubState
+    jp Encounter_ADVICE_UnloadSGBFiles

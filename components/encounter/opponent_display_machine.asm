@@ -659,7 +659,7 @@ Encounter_SubStateEnterSummonScreen::
     ret nz
     xor a
     ld [W_Battle_SubSubState], a
-    jp Encounter_ADVICE_UnloadSGBFiles
+    jp System_ScheduleNextSubState
 
 Encounter_SuccessfulFleeFade::
     ld a, 1

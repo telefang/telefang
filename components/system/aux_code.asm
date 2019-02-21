@@ -240,6 +240,10 @@ Banked_Encounter_ADVICE_LoadSGBFiles::
 Banked_Encounter_ADVICE_MapTFangerDenjuu::
 	jp Encounter_ADVICE_MapTFangerDenjuu
 
+;components/summon/advice.asm
+Banked_Summon_ADVICE_LoadSGBFiles::
+	jp Summon_ADVICE_LoadSGBFiles
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::
