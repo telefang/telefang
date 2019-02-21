@@ -128,7 +128,25 @@ SECTION "gfx/menu/battle_contact_select_sgb.2bpp", ROMX[$4200], BANK[$77]
 BattleContactSelectSgb::
 	INCBIN "build/gfx/menu/battle_contact_select_sgb.2bpp"
 
-SECTION "Summon Screen Advice Code 3", ROMX[$7EF3], BANK[$1C]
+
+SECTION "Summon Screen Advice Code 3", ROMX[$7ED7], BANK[$1C]
+Summon_ADVICE_DrawOkIndicator::
+	call Encounter_LoadSelectedIndicatorResources
+
+	ld a, [W_SGB_DetectSuccess]
+	or a
+	ret z
+
+	ld a, [W_GameboyType]
+	cp M_BIOS_CPU_CGB
+	ret z
+
+	ld a, BANK(BattleContactSelectSgb)
+	ld hl, $8370
+	ld de, BattleContactSelectSgb
+	ld bc, $90
+	jp Banked_LCDC_LoadTiles
+
 Summon_ADVICE_ClearDenjuuPortrait::
 	push af
 	xor a

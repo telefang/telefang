@@ -309,7 +309,7 @@ Summon_StateFadeInAndDrawArrows::
     call Banked_LCDC_PaletteFade
     or a
     ret z
-    call Encounter_LoadSelectedIndicatorResources
+    call Summon_ADVICE_DrawOkIndicator
     ld a, [W_Summon_MaxPages]
     cp 1
     jr c, .noArrowsRequired
