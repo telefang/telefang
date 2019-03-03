@@ -49,7 +49,7 @@ The following needs to be installed in order to build:
 
 #### Windows 8 and Lower
 
-[Download and install Cgywin](http://cygwin.com/install.html) with `make`, `git`, `gcc-core` and `python3`.
+[Download and install Cygwin](http://cygwin.com/install.html) with `make`, `git`, `gcc-core` and `python3`.
 
 [Download the Windows release of RGBDS](https://github.com/rednex/rgbds/releases/) and copy the exe and dll files into `C:\cygwin64\usr\local\bin`.
 
