@@ -5,7 +5,7 @@ TitleMenu_GameStateMachine::
     ld a, [W_SystemSubState]
     ld hl, TitleMenu_StateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 ;TODO: disassemble
 TitleMenu_StateTable

@@ -5,7 +5,7 @@ Victory_BattleScreenStateMachine::
     ld a, [W_Battle_4thOrderSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw $4291,$42C4,$42F6,$47D7

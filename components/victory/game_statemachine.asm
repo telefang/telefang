@@ -8,7 +8,7 @@ Victory_GameStateMachine::
     ld a, [W_Battle_SubSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw Victory_StateBattleScreen,Victory_StateBranchWinner,Victory_StatePlayerWin,$4142

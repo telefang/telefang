@@ -80,7 +80,7 @@ CallBankedFunction_int::
 	ei
 
 IndirectFunctionCall:
-	jp [hl]
+	jp hl
 
 BankSwitch_int:
 	di

@@ -20,7 +20,7 @@ Status_GameStateMachine::
     ld a, [W_Status_SubState]
     ld hl, Status_GameStateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
 
 Status_GameStateTable:
     dw Status_StateInitGraphics
