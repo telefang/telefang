@@ -8,7 +8,7 @@ Encounter_LateDenjuuStateMachine::
 	ld a, [W_LateDenjuu_SubSubState]
 	ld hl, .table
 	call System_IndexWordList
-	jp [hl]
+	jp hl
 .table
 	dw LateDenjuu_SetupFade, LateDenjuu_FadeOutOfBattle, LateDenjuu_BuildCallScreen, LateDenjuu_FadeIntoScreen, LateDenjuu_DrawMessage, LateDenjuu_AwaitButtonPress, LateDenjuu_FadeFromScreen, $5957
 	dw $59E0, $5A11

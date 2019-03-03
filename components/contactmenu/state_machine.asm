@@ -6,7 +6,7 @@ ContactMenu_StateMachine::
     ld a, [W_SystemSubSubState]
     ld hl, .state_table
     call System_IndexWordList
-    jp [hl]
+    jp hl
 
 .state_table
     dw ContactMenu_StateInit ; 00

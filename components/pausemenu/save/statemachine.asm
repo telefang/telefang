@@ -7,7 +7,7 @@ PauseMenu_SaveStateMachine::
     ld a, [W_SystemSubSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw PauseMenu_SubStateSaveLoadGraphics
