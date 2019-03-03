@@ -26,9 +26,7 @@ This disassembly builds the following ROMs:
 
 ### How to build
 
-This project uses a bunch of Linux tools to build, so if you're on Windows, you'll first of all have to [install and use the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
-
-To build the finished ROMs, three base ROMs are required: `baserom_pw.gbc` (*Power Version*), `baserom_sp.gbc` (*Speed Version*), and `baserom_patch.gbc`. The latter is the latest version of the patch, which you can get by copying either a *Power* or *Speed* ROM and patching it with the latest IPS. Eventually, `baserom_patch` won't be required... but for the moment, that's the way this imperfect world works.
+To build the finished ROMs, two base ROMs are required: `baserom_pw.gbc` (*Power Version*), `baserom_sp.gbc` (*Speed Version*).
 
 After placing them in the top-level directory, you can check their hashes to make sure you've got the right files:
 
@@ -40,9 +38,21 @@ ebfe05828463cc004898e6a95ee57fea  baserom_sp.gbc
 
 If your *Power Version* base ROM has an MD5 hash of `8b0a1b6667040a52f6957c0eeea1dbd7`, it's a known bad dump. In that case, replace it with a correct dump from a legitimate Keitai Denjuu Telefang Power Version cartridge.
 
+#### Windows 10 and Linux
+
+If you're on Windows 10 or higher, you'll first of all have to [install and use the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+
 The following needs to be installed in order to build:
 
 * Python (on Linux or Windows with the Linux subsystem, it'll most likely already be installed)
 * [RGBDS](https://github.com/rednex/rgbds#2-building-rgbds-from-source) version 0.3.6 (follow the instructions in the readme on the GitHub page to install)
+
+#### Windows 8 and Lower
+
+[Download and install Cgywin](http://cygwin.com/install.html) with `make`, `git`, `gcc-core` and `python3`.
+
+[Download the Windows release of RGBDS](https://github.com/rednex/rgbds/releases/) and copy the exe and dll files into `C:\cygwin64\usr\local\bin`.
+
+#### Build
 
 Once that's all in order, just run `make` (or `make -j4` if you don't have all day), and the finished ROMs will be built.
