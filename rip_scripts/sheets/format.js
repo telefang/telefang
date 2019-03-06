@@ -73,7 +73,8 @@ var CharType = {
   NEWLINE:    4
 };
 
-function wrap(text, width, font) {
+function wrap(text, width, promptPageLines, font) {
+  prompts = typeof promptPageLines !== 'undefined';
   // To support changing fonts in the middle of text,
   // control code support will have to be added.
   // Perhaps an object-oriented restructuring could help
@@ -86,6 +87,8 @@ function wrap(text, width, font) {
   
   // "Word" here being an unbreakable unit.
   // For example, "big-time" is two words: "big-" and "time".
+  var curLineNum = 0;
+  var curLineMaxWidth = promptPageLines === 1 ? width - 8 : width;
   var curLineWidth = 0;
   var curLineStart = 0;
   var curWordWidth = 0;
@@ -166,12 +169,15 @@ function wrap(text, width, font) {
     // * a word that needs to be put on the next line has been started,
     // * a newline character has been encountered, or
     // * we've reached the end of the text.
-    if ((curLineWidth > width && lastWordStart >= lastWordEnd && lastWordStart !== curLineStart) ||
+    if ((curLineWidth > curLineMaxWidth && lastWordStart >= lastWordEnd && lastWordStart !== curLineStart) ||
         (curCharType === CharType.NEWLINE) ||
         (curCharType === CharType.EOF))
     {
       lines.push(text.slice(curLineStart, lastWordEnd));
-      if (prevWordWidth > width) {lines[lines.length - 1] += " // Word too wide";}
+      if (prevWordWidth > curLineMaxWidth) {lines[lines.length - 1] += " // Word too wide";}
+      curLineNum++;
+      // End-of-line prompts only appear on the last line of a page, and are 8 pixels wide.
+      curLineMaxWidth = prompts && (curLineNum + 1) % promptPageLines === 0 ? width - 8 : width;
       
       if (curCharType === CharType.NEWLINE) {
         // So lastWordStart doesn't trigger another line break on the next character.

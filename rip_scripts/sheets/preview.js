@@ -1,7 +1,7 @@
 function previewSelectedCell() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var sheetName = sheet.getName();
-  if (!SHEET_PARAMS.hasOwnProperty(sheetName)) {throw "Only the SMS and Field Guide sheets are supported at the moment.";}
+  if (!SHEET_PARAMS.hasOwnProperty(sheetName)) {throw "This sheet isn't supported at the moment.";}
   var params = SHEET_PARAMS[sheetName];
   
   var cell = sheet.getActiveCell();
@@ -15,9 +15,9 @@ function previewSelectedCell() {
   }
   
   if (cell.getColumn() == 4) { // Draft column (in the currently supported sheets, at least).
-    text = wrap(text, params.width);
+    text = wrap(text, params.width, params.prompts ? params.lines_per_page : undefined);
   }
   
-  var image = fetchImagePreview(text, params.width, params.line_spacing, params.lines_per_page, params.min_lines);
+  var image = fetchImagePreview(text, params.width, params.line_spacing, params.lines_per_page, params.prompts, params.min_lines);
   sheet.insertImage(image, cell.getColumn(), cell.getRow(), sheet.getColumnWidth(cell.getColumn()) + 1, 0);
 }
