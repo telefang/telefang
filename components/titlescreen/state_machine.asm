@@ -8,7 +8,7 @@ TitleScreen_StateMachine::
     ld a, [W_SystemSubState]
     ld hl, .stateTbl
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTbl
     dw TitleScreen_StateLoadGraphicsAndSound

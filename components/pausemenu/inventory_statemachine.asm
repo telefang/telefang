@@ -6,7 +6,7 @@ PauseMenu_InventoryStateMachine::
     ld a, [W_SystemSubSubState]
     ld hl, .stateTbl
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTbl
     dw PauseMenu_SubStateInventoryCheck

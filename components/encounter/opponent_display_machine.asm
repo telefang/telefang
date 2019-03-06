@@ -24,7 +24,7 @@ Encounter_OpponentDisplayStateMachine::
     ld a, [W_Battle_SubSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw Encounter_SubStateNull ; 00

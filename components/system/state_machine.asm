@@ -47,7 +47,7 @@ GameStateMachine::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jp [hl]
+	jp hl
 
 GameStateMachineTable:
 	dw GameState00, GameState01, GameState02, GameState03

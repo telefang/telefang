@@ -29,7 +29,7 @@ LinkVictory_DefectionStateMachine::
 	ld a, [W_LateDenjuu_SubSubState]
 	ld hl, .stateTable
 	call System_IndexWordList
-	jp [hl]
+	jp hl
     
 .stateTable
 	dw $61A5, $62E9, $62FC, $6319

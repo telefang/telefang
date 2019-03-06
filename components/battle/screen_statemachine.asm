@@ -40,7 +40,7 @@ Battle_ScreenStateMachine::
     ld a, [W_Battle_SubSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
 
 .stateTable
     dw $457D,$45A9,$45F5,$463E,$4681,$4B07,$4BC6,$4C34 ;00-07

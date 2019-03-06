@@ -27,7 +27,7 @@ Summon_StateMachine::
     ld a, [W_Battle_SubSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw Summon_StateInitialiseVariables ; 00

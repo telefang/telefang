@@ -5,7 +5,7 @@ PauseMenu_GameStateMachine::
     ld a, [W_SystemSubState]
     ld hl, .state_list
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .state_list
     dw PauseMenu_StateLoadGraphics

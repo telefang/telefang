@@ -8,7 +8,7 @@ SerIO_GameStateMachine::
     ld a, [W_SystemSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw $4019, $401C, $401F, $4022

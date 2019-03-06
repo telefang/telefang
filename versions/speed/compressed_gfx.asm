@@ -98,7 +98,7 @@ SECTION "Compressed gfx pointer table", ROMX[$4000], BANK[$6]
 	dbwb BANK(TitleMenuText1DMGGfx),	$9400, 0 ; $5e (repurposed)
 	dbwb BANK(TitleSpritesSgbGfx),	$8000, 0 ; $5f (repurposed)
 
-SECTION "Compressed gfx pointer table 2", HOME[$1DE1]
+SECTION "Compressed gfx pointer table 2", ROM0[$1DE1]
 	dw $0000 ; $00
 	dw BattleMessagesGfx ; $01
 	dw UnknownFontGfx ; $02

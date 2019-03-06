@@ -5,7 +5,7 @@ Battle_AttackStateMachine::
 	ld a, [W_LateDenjuu_SubSubState]
 	ld hl, .table
 	call System_IndexWordList
-	jp [hl]
+	jp hl
 	
 .table
 	dw $66A5, $6709, $6724, $68D6, $6C11, $6C6E, Attack_PartnerFell, $6F47

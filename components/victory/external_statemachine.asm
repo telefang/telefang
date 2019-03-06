@@ -5,7 +5,7 @@ Victory_ExternalStateMachine::
     ld a, [W_SystemSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw Victory_ExStateVictoryScreen, Victory_ExStateOverworldReturn

@@ -59,7 +59,7 @@ EventScript_FireEventAction::
     ldi a, [hl]
     ld h, [hl]
     ld l, a
-    jp [hl]
+    jp hl
 
 SECTION "Event System - Calculate Offset", ROMX[$4112], BANK[$F]
 EventScript_CalculateNextOffset::

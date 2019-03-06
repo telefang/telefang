@@ -5,7 +5,7 @@ LinkTrade_LossStateMachine::
     ld a, [W_Battle_4thOrderSubState]
     ld hl, .stateTbl
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTbl
     dw LinkTrade_SubStateInitLossScreen

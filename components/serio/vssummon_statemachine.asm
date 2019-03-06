@@ -24,7 +24,7 @@ SerIO_VsSummonStateMachine::
     ld a, [W_Battle_4thOrderSubState]
     ld hl, .stateTable
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 .stateTable
     dw $4947,$4B81,$4BBE,$4BD4

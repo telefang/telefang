@@ -5,7 +5,7 @@ TitleLogo_GameStateMachine::
     ld a, [W_SystemSubState]
     ld hl,$530A
     call System_IndexWordList
-    jp [hl]
+    jp hl
     
 TitleLogo_StateTable::
     dw TitleLogo_StateLoadPalettes,TitleLogo_StateLoadGraphics,TitleLogo_StateSmilesoft,TitleLogo_StateFadeIn,TitleLogo_StateWaittime,TitleLogo_StateFadeOut,TitleLogo_StateBonBon,TitleLogo_StateFadeSetup

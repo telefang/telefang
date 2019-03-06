@@ -85,10 +85,12 @@ def preview():
         spacing = get_query_arg('spacing', int, bounds(0, 16), default=0)
         page_lines = get_query_arg('lines-per-page', int, bounds(1, 256), default=None)
         min_lines = get_query_arg('minimum-lines', int, bounds(0, 256), default=0)
+        prompts = bool(get_query_arg('prompts', int, bounds(0, 1), default=0))
     except ArgumentError as e:
         return Response(e.message, 400)
 
-    image = preview_image(text, width, scale, padding, spacing, page_lines, min_lines)
+    image = preview_image(text, width, scale, padding, spacing, page_lines,
+                          min_lines, prompts)
     png_data = BytesIO()
     image.save(png_data, format='PNG')
 
@@ -96,7 +98,8 @@ def preview():
 
 def preview_image(text, width,
                   scale=1, padding=0,
-                  spacing=0, page_lines=None, min_lines=0):
+                  spacing=0, page_lines=None, min_lines=0,
+                  prompts=False):
     # No text formatting, since the JavaScript part takes care of that.
     num_lines = text.count('\n') + 1
     if min_lines and num_lines < min_lines:
@@ -139,6 +142,9 @@ def preview_image(text, width,
             y += 8
             line_num += 1
             if line_num % page_lines == 0:
+                if prompts:
+                    image.alpha_composite(app.prompt_continue,
+                                          (image.width - padding - 8, y - 8))
                 y += padding
                 image.paste((0, 0, 0, 0), (0, y, image.width, y + 8))
                 y += 8 + padding
@@ -154,6 +160,12 @@ def preview_image(text, width,
 
         i += char_len
 
+    if prompts:
+        image.alpha_composite(
+            app.prompt_end,
+            (image.width - padding - 8, image.height - padding - 8)
+        )
+
     if scale != 1:
         image = image.resize((image.width * scale, image.height * scale))
 
@@ -164,6 +176,8 @@ def update():
     """Update font data from online and save to disk."""
     # Split up into three steps to minimize the risk of files being
     # desynced in relation to each other if any part errors out.
+    # Prompt tiles aren't updated dynamically at the moment - they're
+    # unlikely to change, and it'd just be a pain.
 
     # Fetch resources.
     r = requests.get(CHARMAP_URL)
@@ -208,6 +222,7 @@ def load():
     with open(os.path.join(DATA_DIR, 'charmap.asm'), 'r', encoding='utf-8') as f:
         app.charmap = parse_charmap(f.read())
         app.descending_char_lengths = descending_char_lengths_of(app.charmap)
+    
     app.fonts = {}
     for font_name in FONTS.keys():
         with open(os.path.join(DATA_DIR, 'font_{}.ttfont.csv'.format(font_name)), 'r', encoding='utf-8') as f:
@@ -218,6 +233,11 @@ def load():
             'metrics': metrics,
             'glyphs': glyphs
         }
+    
+    with open(os.path.join(DATA_DIR, 'prompt_continue.png'), 'rb') as f:
+        app.prompt_continue = load_glyphs(f)[0]
+    with open(os.path.join(DATA_DIR, 'prompt_end.png'), 'rb') as f:
+        app.prompt_end = load_glyphs(f)[0]
 
 # The """ charmap is actually incorrect RGBDS code, but exists
 # in Telefang's charmap file since it goes through a Python
