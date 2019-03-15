@@ -2652,10 +2652,10 @@ Good luck to you!",,
 0x138050,"<&name>くん
 マツキヨです
 いまは どのあたリを たびして
-おられるのですか??",/0x138050/,,*
+おられるのですか??",/0x138050/,"Hello, <&name>? It's Matsukiyo. What are your current whereabouts?",*
 0x138052,"なんだか でっかい みずうみが
 めのまえに あるけど
-どこだかわかんないよ",/0x138052/,,
+どこだかわかんないよ",/0x138052/,"I dunno! There's a huge lake in front of me, I guess?",
 0x138054,"<&name>くん
 そこにある おおきな
 みずうみは 『パパルナこ』
@@ -2663,11 +2663,11 @@ Good luck to you!",,
 たくさんの さかなが
 つれるそうなので
 つリでも たのしんでみては
-いかがでしょう?",/0x138054/,,
+いかがでしょう?",/0x138054/,"Aha! From what I gather, that vast lake there is <bold>Paparouna Lake<normal>. The lake is supposedly teeming with fish – perhaps you can indulge in a spot of fishing?",
 0x138056,"おや あまリみかけない
 かおだね
 この みずうみに くるのは
-はじめてかい?",/0x138056/,Now there's a face I haven't seen before! Is this your first time visiting this lake?,
+はじめてかい?",/0x138056/,Oho! There's a face I haven't seen before! Is this your first time visiting this lake?,
 0x138058,"おう はじめてここにきたんだ
 おっさんは ここで なにを
 してるんだ?",/0x138058/,"Yeah, I've never been here before! What are you up to, gramps?",
@@ -2685,15 +2685,16 @@ Good luck to you!",,
 キミは Tファンガーなのか?
 ならば すこし はなしを
 きかせては もらえない
-だろうか?",/0x13805e/,,
+だろうか?",/0x13805e/,"By golly! So you're a T-Fanger, is that right?
+In that case, could I bend your ear for a bit?",
 0x138060,"いいぜ
-なんでもきいてくれよ",/0x138060/,,
+なんでもきいてくれよ",/0x138060/,Sure! Hit me!,
 0x138062,"キミは 『シンデンジュウ』
 という そんざいを 
-しっておるかね?",/0x138062/,,
+しっておるかね?",/0x138062/,Have you perhaps heard of the <bold>Divine Denjuu<normal>?,
 0x138064,"おっさん!
 『シンデンジュウ』ってなにか
-しってるのか??",/0x138064/,,
+しってるのか??",/0x138064/,"Oh! Do you know something about the Divine Denjuu, old man?!",
 0x138066,"『シンデンジュウ』とは
 デンジュウカイの シンワに
 でてくる デンジュウで
@@ -2707,13 +2708,17 @@ Good luck to you!",,
 けんきゅうを しておるのだよ
 Tファンガーならば 
 みたことが あるかと
-おもったのだが....",/0x138066/,,
+おもったのだが....",/0x138066/,"You see, the Divine Denjuu appears in the legends of this here Denjuu World.
+It's said that it can only be summoned in ancient Denjuu rituals.
+Therefore, I am researching the possibility of bringing it forth by human hands.
+A T-Fanger like you...
+Might you have seen it?",
 0x138068,"『シンデンジュウ』ってコトバは
 きいたことがあるんだけど...
-やくにたてなくて ごめんな",/0x138068/,,
+やくにたてなくて ごめんな",/0x138068/,I've only heard people mention it... Sorry.,
 0x13806a,"いやいや ベつにかまわんよ
 やはリ シンワのなかだけの
-はなしかも しれんしのぉ",/0x13806a/,,
+はなしかも しれんしのぉ",/0x13806a/,"Oh, it's perfectly alright. Perhaps it is just a myth after all.",
 0x13806c,"ところで はなしは
 かわるのだが
 ひとつ たのみごとを 
@@ -2724,30 +2729,33 @@ Tファンガーならば
 まだ このあたリにいると
 おもうのじゃが...
 みかけたら こえをかけて
-おいてくれんかの?",/0x13806c/,,
+おいてくれんかの?",/0x13806c/,"On a different subject... I'd like to ask something of you, boy. One of the aides at my laboratory seems to have wandered off around here...
+If you see him, give a holler, won't you?",
 0x13806e,"わかった
 はかせが さがしてたって
-つたえておくよ",/0x13806e/,,
+つたえておくよ",/0x13806e/,Gotcha. I'll tell him you're looking for him.,
 0x138070,"では おねがいするとしよう
-よろしく たのんだぞ",/0x138070/,,
+よろしく たのんだぞ",/0x138070/,"I'm depending on you, now! Good luck!",
 0x138072,"ひっ!
-な なにかようじですか?",/0x138072/,,
+な なにかようじですか?",/0x138072/,Eek! Wh- what do you want?,
 0x138074,"けんきゅういんの ひとだよな
 クラフトはかせが 
-さがしてたぜ",/0x138074/,,
+さがしてたぜ",/0x138074/,"You're from the lab, aren't ya?
+The professor's been looking for you!",
 0x138076,"あぁ やっぱリ はかせからは
 にげれないのか
-もうあきらめよう..",/0x138076/,,
+もうあきらめよう..",/0x138076/,"Man... I can't escape the professor, huh.
+I'm at the end of my line here...",
 0x138078,"にげる?
 なんで あのはかせから
 にげる ひつようが
-あるんだよ?",/0x138078/,,
+あるんだよ?",/0x138078/,Escape? Why in the world would anyone wanna run away from the professor?,
 0x13807a,"キミは あのはかせの
 ほんしょうを しらないから
 そんなことがいえるんだ!
 はかせは もともと
 『サナエバグループ』の 
-ニンゲンだったんだ",/0x13807a/,,
+ニンゲンだったんだ",/0x13807a/,"Easy for you to say... You don't know who he really is! You see, Professor Craft used to be a member of the Sanaeba Group.",
 0x13807c,"『サナエバグループ』って
 デンジュウカイを 
 いちばんさいしょに みつけた
@@ -4113,7 +4121,7 @@ Are you familiar with how to use it?
 おしえてやるよ","Okay, then I'll explain the D-Shot's features.",,
 0x140158,"まず 『デンワちょう』からだ
 これについて ききたいか?
- はい  いいえ<*A>","First, let's start with ""Contacts"". 
+ はい  いいえ<*A>","First, you've got your <bold>Contacts<normal>. 
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x14015a,"これは テレファングで
@@ -4126,7 +4134,7 @@ Do you want an explanation?
 You can easily call and switch between Denjuu here.",,
 0x14015c,"つぎは『ちゃくれき』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is ""Calls"".
+ はい  いいえ<*A>","Next is <bold>Calls<normal>.
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x14015e,"『ちゃくれき』は
@@ -4135,14 +4143,14 @@ Do you want an explanation?
 できるんだ",Here you can check which Denjuu you've received calls from recently.,,
 0x140160,"つぎは『アイテム』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is ""Items"".
+ はい  いいえ<*A>","Next is <bold>Items<normal>.
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x140162,"『アイテム』は デンジュウたちのシンカにつかう アイテムを
 みることが できるんだ","Here, you can view your items or give them as gifts. If you want to augment Denjuu using your items, you need to go to a shop.",,
 0x140164,"つぎは『メール』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is ""Texts"".
+ はい  いいえ<*A>","Next is <bold>Texts<normal>.
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x140166,"『メール』は Dショットの
@@ -4151,7 +4159,7 @@ Do you want an explanation?
 メッセージが はいってるんだ",This lets you view the text messages you've received from Denjuu while the D-Shot's power was off.,,
 0x140168,"つぎは『セーブ』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is ""Save"".
+ はい  いいえ<*A>","Next is <bold>Save<normal>.
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x14016a,"『セーブ』は いまの
@@ -4159,32 +4167,32 @@ Do you want an explanation?
 ほぞんするのに つかうんだ",You can use this to record your current progress.,,
 0x14016c,"つぎは 『オプション』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is ""Options"".
+ はい  いいえ<*A>","Next is <bold>Options<normal>.
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x14016e,"まず『マナーモード』
 これを『ON』にしておくと
 デンワがかかってきたときに
-ちゃくしんおんが ならないんだ","The first option is ""Silent mode"".
+ちゃくしんおんが ならないんだ","The first option is <bold>Silent mode<normal>.
 When it's set to ON, ringtones won't play when someone calls you.",,
 0x140170,"つぎに『とけいひょうじ』
 これを『ON』にしておくと
 がめんじょうに とけいが
-ひょうじされるんだ","Next, ""Clock display"".
+ひょうじされるんだ","Then there's <bold>Clock display<normal>.
 When it's set to ON, the current time is displayed at the bottom of the screen.",,
 0x140172,"つぎに『カラー』
 これはバックライトのいろが
-かわるんだ","Next, ""Color"".
+かわるんだ","After that is <bold>Color<normal>.
 You can change the color of the backlight with this.",,
 0x140174,"さいごに『せんとうアニメ』
 これをオフにしておくと
 テレファングちゅうの
 こうげきエフェクトを
-みなくていいんだ","Lastly, ""Battle anim.""
+みなくていいんだ","Lastly, <bold>Battle anim.<normal>
 When this is turned off, attack animations won't be shown during battles.",,
 0x140176,"つぎは『Dメロ』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is ""Melo-D"". 
+ はい  いいえ<*A>","Next is <bold>Melo-D<normal>. 
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x140178,"これは デンワが かかって
@@ -4193,7 +4201,7 @@ Do you want an explanation?
 することができるんだ",Here you can view and create ringtones that play when a Denjuu calls you.,,
 0x14017a,"つぎは『ずかん』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is ""Index"". 
+ はい  いいえ<*A>","Next is the <bold>Field Guide<normal>.
 Do you want an explanation?
 <Q>Yes<|>No</Q><*A>",,
 0x14017c,"これは トモダチになった
@@ -4205,7 +4213,7 @@ It's a pretty big deal if you can complete it!",,
 0x14017e,"Dショットで できることって
 これぐらいかな
 いまもっている きしゅいがいにもいろいろと あるらしいぜ","That pretty much covers the D-Shot's features.
-Apparently there are a few different models besides the one you have.",,
+Apparently there are a few different models besides the one you have!",,
 0x140180,"それじゃ がんばって
 たくさんの デンジュウと
 トモダチに なれよ","Well then, good luck.
@@ -4214,7 +4222,7 @@ Try to make friends with lots of Denjuu!",,
 0x140182,"あら <&name>じゃん
 デンジュウカイについて
 ききたいの?
- はい  いいえ<*A>","Oh, hey <&name>.
+ はい  いいえ<*A>","Oh, hey, <&name>.
 Did you want to hear about the Denjuu World?
 <Q>Yes<|>No</Q><*A>",,
 0x140184,"あーっ <&name>
