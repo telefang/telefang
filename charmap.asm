@@ -69,7 +69,6 @@ charmap "『", $C9
 charmap "』", $CA
 charmap "╱", $CB
 charmap "▼", $CC
-charmap "–", $CD
 charmap "ー", $CD
 charmap "<", $CE
 charmap ">", $CF
@@ -88,6 +87,7 @@ charmap "🎵", $0D
 charmap "♫", $0D
 charmap "♪", $0D
 charmap "⚡", $0E
+charmap "–", $1D
 charmap " ", $20
 charmap "!", $21
 charmap """, $22
