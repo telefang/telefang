@@ -294,7 +294,7 @@ TitleMenu_ADVICE_LoadSGBFilesTimeInput::
 
 SECTION "Title Menu Aux-Code Advice 3", ROMX[$5D30], BANK[$1]
 TitleMenu_ADVICE_Nickname_RedrawTiles::
-	di ; F3
+	di
 
 .wfb
 	ldh a, [REG_STAT]
