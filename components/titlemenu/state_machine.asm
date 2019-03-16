@@ -653,8 +653,9 @@ TitleMenu_StateSaveOverwriteCancelled::
 ; State 03 20
 TitleMenu_StateInitNickname::
     ld bc, $17
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    nop
+    nop
+    call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .loadGraphic
     
 .dmgGraphic
@@ -776,8 +777,7 @@ TitleMenu_StateInitNickname::
     call PauseMenu_DrawCenteredNameBufferNoVWF
     call PhoneIME_LoadTilemapForIME
     
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFiles_Nickname
     jp System_ScheduleNextSubState
     
 ;State 03 21
@@ -848,8 +848,7 @@ TitleMenu_StateReturnToOverworld::
     ld b, 1
     call Banked_System_CGBToggleClockspeed
     
-    ld a, 5
-    ld [W_SystemState], a
+    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld
     
     ld a, $A
     ld [W_SystemSubState], a

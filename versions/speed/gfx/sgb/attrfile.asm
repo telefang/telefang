@@ -18,4 +18,4 @@ SGB_AttrFileData::
     INCBIN "build/components/map/bottom_window.atf" ; 0F
     INCBIN "build/components/encounter/encounter.atf" ; 10
     INCBIN "build/components/summon/summon.atf" ; 11
-    INCBIN "build/versions/speed/gfx/sgb/attrfile/12.atf"
+    INCBIN "build/gfx/menu/titlemenu_nicknames.atf" ; 12
