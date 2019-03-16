@@ -291,3 +291,118 @@ TitleMenu_ADVICE_LoadSGBFilesTimeInput::
     ld a, 5
     ld [W_PauseMenu_SelectedCursorType], a
     jp TitleMenu_ADVICE_LoadSGBFilesSoundTest_externalEntry
+
+SECTION "Title Menu Aux-Code Advice 3", ROMX[$5D30], BANK[$1]
+TitleMenu_ADVICE_Nickname_RedrawTiles::
+	di
+
+.wfb
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+
+	ld a, [hli]
+	ld [hli], a
+	ld a, [hli]
+	ld [hli], a
+	ei
+	dec b
+	jr nz, TitleMenu_ADVICE_Nickname_RedrawTiles
+	ret
+
+TitleMenu_ADVICE_Nickname_RemapBlankTiles::
+	ld hl, $9921
+	ld de, $FF18
+	ld c, 3
+
+.rowloop
+	ld b, 8
+
+.maploop
+	di
+
+.wfb
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+
+	ld a, [hl]
+	cp $D0
+	jr nz, .ignore
+
+	ld a, d
+	ld [hl], a
+
+.ignore
+	ei ; FB
+	inc hl
+	dec b
+	jr nz, .maploop
+
+	ld a, e
+	add l
+	ld l, a
+	dec c
+	jr nz, .rowloop
+	ret
+
+TitleMenu_ADVICE_Nickname_RemapTilesToBlank::
+	ld bc, $4FF
+
+.maploop
+	di
+
+.wfb
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+	
+	ld a, c
+	ld [hli], a
+	ld [hli], a
+	ei
+	dec b
+	jr nz, .maploop
+	ret
+
+TitleMenu_ADVICE_LoadSGBFiles_Nickname::
+	M_AdviceSetup
+
+	ld a, 4
+	call Banked_LCDC_SetupPalswapAnimation
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .return
+
+	ld hl, $98E1
+	call TitleMenu_ADVICE_Nickname_RemapTilesToBlank
+	ld hl, $9901
+	call TitleMenu_ADVICE_Nickname_RemapTilesToBlank
+	ld l, $81
+	call TitleMenu_ADVICE_Nickname_RemapTilesToBlank
+	call TitleMenu_ADVICE_Nickname_RemapBlankTiles
+
+	ld hl, $8E50
+	ld b, $14
+	call TitleMenu_ADVICE_Nickname_RedrawTiles
+	ld hl, $95C0
+	ld b, $C
+	call TitleMenu_ADVICE_Nickname_RedrawTiles
+	ld hl, $9700
+	ld b, $20
+	call TitleMenu_ADVICE_Nickname_RedrawTiles
+	
+	ld c, $12
+	call Banked_SGB_ConstructATFSetPacket
+	
+	ld a, M_SGB_Pal01 << 3 + 1
+	ld b, 0
+	ld c, $C
+	call PatchUtils_CommitStagedCGBToSGB
+
+	call PauseMenu_ADVICE_CGBToSGB56Shorthand
+
+.return
+
+	M_AdviceTeardown
+	ret
