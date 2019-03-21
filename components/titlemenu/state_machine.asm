@@ -741,9 +741,7 @@ TitleMenu_StateInitNickname::
     call StringTable_LoadName75
     
     ld d, $C
-    nop
-    nop
-    nop
+    call PauseMenu_CenterPreppedNameForNicknameScreen
     
     ld a, [$D480]
     call $7D46

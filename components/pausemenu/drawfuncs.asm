@@ -32,12 +32,10 @@ PauseMenu_CallsMenuDrawDenjuuNickname::
     
     M_PrepAuxJmp Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
     jp PatchUtils_AuxCodeJmp
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
+
+PauseMenu_CenterPreppedNameForNicknameScreen::
+    ld hl, $9700
+    jp PauseMenu_CenterPreppedName_skipHL
 
 PauseMenu_ContactsMenuDrawDenjuuNickname::
     call PauseMenu_IndexContactArray

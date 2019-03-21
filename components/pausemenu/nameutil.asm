@@ -36,6 +36,8 @@ PauseMenu_ItemPrepName::
     
 PauseMenu_CenterPreppedName::
     ld hl, $9780
+
+PauseMenu_CenterPreppedName_skipHL::
     ld bc, W_StringTable_StagingLocDbl
     ld d, M_StringTable_Load8AreaSize
     jp MainScript_DrawCenteredStagedString
