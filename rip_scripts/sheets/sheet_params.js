@@ -17,8 +17,7 @@ var SHEET_PARAMS = {
   },
   "script/story/all.messages.csv": {
     width: 16 * 8,
-    lines_per_page: 2,
-    line_spacing: 1,
-    prompts: true
+    lines_per_prompt: 2,
+    line_spacing: 1
   }
 }

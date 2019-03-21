@@ -15,9 +15,9 @@ function previewSelectedCell() {
   }
   
   if (cell.getColumn() == 4) { // Draft column (in the currently supported sheets, at least).
-    text = wrap(text, params.width, params.prompts ? params.lines_per_page : undefined);
+    text = wrap(text, params.width, params.lines_per_prompt);
   }
   
-  var image = fetchImagePreview(text, params.width, params.line_spacing, params.lines_per_page, params.prompts, params.min_lines);
+  var image = fetchImagePreview(text, params.width, params.line_spacing, params.lines_per_page, params.lines_per_prompt, params.min_lines);
   sheet.insertImage(image, cell.getColumn(), cell.getRow(), sheet.getColumnWidth(cell.getColumn()) + 1, 0);
 }
