@@ -74,14 +74,40 @@ var CharType = {
 };
 
 function wrap(text, width, promptPageLines, font) {
-  prompts = typeof promptPageLines !== 'undefined';
+  var prompts = typeof promptPageLines !== 'undefined';
+  
+  var lines = _wrap(text, width, promptPageLines, font);
+  Logger.log(lines);
+  
+  // The last line in dialogue always has a prompt on it.
+  // The last line returned by _wrap may exceed the "with prompt" width,
+  // so if that's the case, rewrapping the last line is necessary.
+  // This could be done within the wrapping algorithm, but it'd require keeping
+  // track of a whole lot of extra data and just bungle up the code structure in general.
+  // Note that it shouldn't be rewrapped if it's wider than the normal line width,
+  // since that means it's a word that couldn't be wrapped, and rewrapping it
+  // would thus wrap the "word too wide" disclaimer too.
+  var lastLineWidth = lines[lines.length - 1][1];
+  if (prompts && lines.length % promptPageLines !== 0 && lines.length > promptPageLines &&
+      lastLineWidth > width - 8 && lastLineWidth <= width) {
+    var lastLine = lines.pop();
+    var lastLineStartingFont = lastLine[0];
+    var lastLineText = lastLine[2];
+    lines.push.apply(lines, _wrap(lastLineText, width, 1, lastLineStartingFont));
+  }
+  
+  return lines.map(function(line) {return line[2];}).join('\n');
+}
+
+function _wrap(text, width, promptPageLines, font) {
+  var prompts = typeof promptPageLines !== 'undefined';
   // To support changing fonts in the middle of text,
   // control code support will have to be added.
   // Perhaps an object-oriented restructuring could help
   // with that (so control code functions can do things
   // like set font state and add to the word width)?
-  font = typeof font !== 'undefined' ? font : "normal";
-  font = FONTS[font];
+  var fontName = typeof font !== 'undefined' ? font : "normal";
+  font = FONTS[fontName];
   
   var lines = [];
   
@@ -173,8 +199,11 @@ function wrap(text, width, promptPageLines, font) {
         (curCharType === CharType.NEWLINE) ||
         (curCharType === CharType.EOF))
     {
-      lines.push(text.slice(curLineStart, lastWordEnd));
-      if (prevWordWidth > curLineMaxWidth) {lines[lines.length - 1] += " // Word too wide";}
+      // The line width value stored here is incorrect for any line not ending in a newline or
+      // an EOF, but since wrap() only checks it for the last line (which is guaranteed to end
+      // in an EOF), it's totes fine.
+      lines.push([fontName, curLineWidth === 0 ? 0 : curLineWidth - 1, text.slice(curLineStart, lastWordEnd)]);
+      if (prevWordWidth > curLineMaxWidth) {lines[lines.length - 1][2] += " // Word too wide";}
       curLineNum++;
       // End-of-line prompts only appear on the last line of a page, and are 8 pixels wide.
       curLineMaxWidth = prompts && (curLineNum + 1) % promptPageLines === 0 ? width - 8 : width;
@@ -196,6 +225,5 @@ function wrap(text, width, promptPageLines, font) {
 
     i += charLength;
   }
-  
-  return lines.join('\n');
+  return lines;
 }

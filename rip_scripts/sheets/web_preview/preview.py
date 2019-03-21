@@ -84,13 +84,14 @@ def preview():
         padding = get_query_arg('padding', int, bounds(0, 128), default=0)
         spacing = get_query_arg('spacing', int, bounds(0, 16), default=0)
         page_lines = get_query_arg('lines-per-page', int, bounds(1, 256), default=None)
+        prompt_page_lines = get_query_arg('lines-per-prompt', int, bounds(1, 256), default=None)
         min_lines = get_query_arg('minimum-lines', int, bounds(0, 256), default=0)
-        prompts = bool(get_query_arg('prompts', int, bounds(0, 1), default=0))
     except ArgumentError as e:
         return Response(e.message, 400)
 
-    image = preview_image(text, width, scale, padding, spacing, page_lines,
-                          min_lines, prompts)
+    image = preview_image(text, width, scale, padding,
+                          spacing, page_lines, prompt_page_lines,
+                          min_lines)
     png_data = BytesIO()
     image.save(png_data, format='PNG')
 
@@ -98,10 +99,12 @@ def preview():
 
 def preview_image(text, width,
                   scale=1, padding=0,
-                  spacing=0, page_lines=None, min_lines=0,
-                  prompts=False):
+                  spacing=0, page_lines=None, prompt_page_lines=None,
+                  min_lines=0):
     # No text formatting, since the JavaScript part takes care of that.
     num_lines = text.count('\n') + 1
+    if prompt_page_lines is not None and prompt_page_lines > min_lines:
+        min_lines = prompt_page_lines
     if min_lines and num_lines < min_lines:
         text += '\n' * (min_lines - num_lines)
         num_lines += min_lines - num_lines
@@ -141,10 +144,10 @@ def preview_image(text, width,
             x = padding
             y += 8
             line_num += 1
+            if prompt_page_lines and line_num % prompt_page_lines == 0:
+                image.alpha_composite(app.prompt_continue,
+                                      (image.width - padding - 8, y - 8))
             if line_num % page_lines == 0:
-                if prompts:
-                    image.alpha_composite(app.prompt_continue,
-                                          (image.width - padding - 8, y - 8))
                 y += padding
                 image.paste((0, 0, 0, 0), (0, y, image.width, y + 8))
                 y += 8 + padding
@@ -160,7 +163,7 @@ def preview_image(text, width,
 
         i += char_len
 
-    if prompts:
+    if prompt_page_lines:
         image.alpha_composite(
             app.prompt_end,
             (image.width - padding - 8, image.height - padding - 8)
