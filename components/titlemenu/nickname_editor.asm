@@ -14,7 +14,7 @@ TitleMenu_LoadDenjuuNicknameIntoBuffer::
     ld b, BANK(S_SaveClock_NicknameArray)
     call TitleMenu_EnterSRAM
     
-    ld de, W_TitleMenu_NameBuffer
+    ld hl, W_MainScript_CenteredNameBuffer
     ld bc, M_SaveClock_DenjuuNicknameSize
     call memcpy
     
@@ -67,12 +67,8 @@ TitleMenu_SaveDenjuuNicknameFromBuffer::
     ld b, BANK(S_SaveClock_NicknameArray)
     call TitleMenu_EnterSRAM
     
-    push af
-    ld a, BANK(TitleMenu_ADVICE_SplitNickAndSpeciesNames)
-    call Banked_TitleMenu_ADVICE_SplitNickAndSpeciesNames
-    pop af
-    
-    nop
-    nop
+    ld hl, W_MainScript_CenteredNameBuffer
+    ld bc, M_SaveClock_DenjuuNicknameSize
+    call memcpy
     
     jp TitleMenu_ExitSRAM

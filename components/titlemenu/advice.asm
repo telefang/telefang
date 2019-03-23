@@ -365,7 +365,7 @@ TitleMenu_ADVICE_Nickname_RemapTilesToBlank::
 	jr nz, .maploop
 	ret
 
-TitleMenu_ADVICE_LoadSGBFiles_Nickname::
+TitleMenu_ADVICE_InitNickname::
 	M_AdviceSetup
 
 	ld a, 4
