@@ -297,16 +297,22 @@ TitleMenu_NicknameInputImpl::
     call PhoneIME_SyncDenjuuNickname
     and a
     jr nz, .playerNameConfirmed
-    
-    ld a, [$D4A7]
-    call TitleMenu_LoadDenjuuNicknameIntoBuffer
-    call PhoneIME_SyncPlayerName
-    
-    ld d, $C
-    jp PauseMenu_DrawCenteredNameBufferNoVWF
+
+    inc de
+    ld a, $E6
+    ld [de], a
+    call PhoneIME_SyncDenjuuNickname
     
 .playerNameConfirmed
     jp System_ScheduleNextSubState
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 .diacriticIntent
     ld a, [W_PhoneIME_CurrentIME]

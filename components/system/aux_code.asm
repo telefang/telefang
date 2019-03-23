@@ -245,8 +245,8 @@ Banked_Summon_ADVICE_LoadSGBFiles::
 	jp Summon_ADVICE_LoadSGBFiles
 
 ;components/titlemenu/advice.asm
-Banked_TitleMenu_ADVICE_LoadSGBFiles_Nickname::
-	jp TitleMenu_ADVICE_LoadSGBFiles_Nickname
+Banked_TitleMenu_ADVICE_InitNickname::
+	jp TitleMenu_ADVICE_InitNickname
 
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.

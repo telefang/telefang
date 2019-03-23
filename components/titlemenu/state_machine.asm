@@ -766,17 +766,21 @@ TitleMenu_StateInitNickname::
     ld [W_MainScript_TileBaseIdx], a
     
     call TitleMenu_ClearCharaName
-    
-    ld a, [$D4A7]
-    call TitleMenu_LoadDenjuuNicknameIntoBuffer
     call PhoneIME_SyncDenjuuNickname
     
     ld d, $C
     call PauseMenu_DrawCenteredNameBufferNoVWF
     call PhoneIME_LoadTilemapForIME
     
-    M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFiles_Nickname
+    M_AuxJmp Banked_TitleMenu_ADVICE_InitNickname
     jp System_ScheduleNextSubState
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 ;State 03 21
 TitleMenu_StateFadeNickname::
