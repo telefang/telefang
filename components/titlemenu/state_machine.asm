@@ -29,15 +29,6 @@ TitleMenu_StateSaveOverwriteExitLoadGraphics::
     call PhoneIME_LoadGraphicsForIME
     jp System_ScheduleNextSubState
     
-    ;Non-timing NOPs here if anyone wants the bytes...
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    
 ; State 03 02
 TitleMenu_StateLoadTMaps::
     ld a, 1
@@ -119,10 +110,6 @@ TitleMenu_StateCommitMenuPalettes::
 ; State 03 06
 TitleMenu_StatePlayMenuBGM::
     M_AuxJmp Banked_TitleMenu_ADVICE_LoadSGBFiles
-	 
-    nop
-    nop
-    nop
     jp System_ScheduleNextSubState
     
 ; State 03 07
@@ -367,8 +354,6 @@ TitleMenu_StateLoadTimeInputScreen::
     jr nz, .skipTilemapLoad
     
     ld bc, $D
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .useCGBTmap
     
@@ -434,8 +419,7 @@ TitleMenu_StateClearNameInput::
     call PauseMenu_SelectTextStyle
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, M_PhoneIME_IMELatinUpper
     ld [W_PhoneIME_CurrentIME], a
@@ -551,8 +535,6 @@ TitleMenu_StateSoundTestInputHandler::
 ;State 03 1A
 TitleMenu_StateSoundTestExit::
     ld bc, $1B
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphics_pack
     
@@ -606,8 +588,6 @@ TitleMenu_StateSaveOverwriteInputHandler::
 ;State 03 1D
 TitleMenu_StateSaveOverwriteConfirmed::
     ld bc, $1B
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphics
     
@@ -624,8 +604,6 @@ TitleMenu_StateSaveOverwriteConfirmed::
 ;State 03 1E
 TitleMenu_StateSaveOverwriteCancelled::
     ld bc, $1B
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .load_graphics
     
@@ -653,8 +631,6 @@ TitleMenu_StateSaveOverwriteCancelled::
 ; State 03 20
 TitleMenu_StateInitNickname::
     ld bc, $17
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .loadGraphic
     
@@ -689,8 +665,7 @@ TitleMenu_StateInitNickname::
     
     call TitleMenu_ClearCharaName
     
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
@@ -774,13 +749,6 @@ TitleMenu_StateInitNickname::
     
     M_AuxJmp Banked_TitleMenu_ADVICE_InitNickname
     jp System_ScheduleNextSubState
-
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     
 ;State 03 21
 TitleMenu_StateFadeNickname::

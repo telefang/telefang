@@ -92,7 +92,7 @@ MainScript_CCInterpreter::
 	ld h, [hl]
 	ld l, a
 	pop af
-	jp [hl]
+	jp hl
 
 .regularText
 	ld a, [W_MainScript_WaitFrames]

@@ -49,7 +49,7 @@ PatchUtils_AuxCodeJmp::
 
 	ld l, a
 	ld h, $40
-	jp [hl]
+	jp hl
 
 PatchUtils_AuxCodeJmp_returnVec::
 	push af

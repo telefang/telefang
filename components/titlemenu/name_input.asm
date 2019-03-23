@@ -69,8 +69,7 @@ TitleMenu_NameInputImpl::
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
     
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     
     ld hl, $9780
     ld b, M_MainScript_PlayerNameSize
@@ -104,7 +103,7 @@ TitleMenu_NameInputImpl::
 .noStartButtonPress
     ld a, [H_JPInput_Changed]
     and M_JPInput_A
-    jp z, .return
+    jp z, .checktimer
     
     call $66A1
     ld a, [W_PhoneIME_Button]
@@ -122,8 +121,7 @@ TitleMenu_NameInputImpl::
     
 ;Cycle to the next IME mode.
 .cycleNextIME ;12519
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     
     ld a, [W_PhoneIME_CurrentIME]
     inc a
@@ -165,7 +163,6 @@ TitleMenu_NameInputImpl::
     nop
     nop
     nop
-    nop
     
     ld a, 7
     ld [W_PauseMenu_SelectedMenuItem], a
@@ -189,6 +186,10 @@ TitleMenu_NameInputImpl::
     dec a
     jr .cursorChange
     
+.checktimer
+    call PhoneIME_ADVICE_CheckTimer
+    ret nz
+
 .rightKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
     cp M_MainScript_PlayerNameSize - 1
@@ -199,8 +200,7 @@ TitleMenu_NameInputImpl::
     ld [W_PauseMenu_SelectedMenuItem], a
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
 
 .return
     ret
@@ -216,8 +216,7 @@ TitleMenu_NicknameInputImpl::
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
     
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     
     ld hl, $9780
     ld b, M_SaveClock_DenjuuNicknameSize
@@ -250,7 +249,7 @@ TitleMenu_NicknameInputImpl::
     
     ld a, [H_JPInput_Changed]
     and M_JPInput_A
-    jp z, .return
+    jp z, .checktimer
     
     call $66A1
     ld a, [W_PhoneIME_Button]
@@ -268,8 +267,7 @@ TitleMenu_NicknameInputImpl::
     
 ;Cycle to the next IME mode.
 .cycleNextIME
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     
     ld a, [W_PhoneIME_CurrentIME]
     inc a
@@ -331,10 +329,13 @@ TitleMenu_NicknameInputImpl::
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
     
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     ret
     
+.checktimer
+    call PhoneIME_ADVICE_CheckTimer
+    ret nz
+
 .rightKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
     cp M_SaveClock_DenjuuNicknameSize - 1
@@ -346,8 +347,7 @@ TitleMenu_NicknameInputImpl::
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
     
-    xor a
-    ld [W_PhoneIME_PressCount], a
+    call PhoneIME_ADVICE_ResetTimer
     
 .return
     ret
