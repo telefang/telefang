@@ -2,7 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Phone IME Glyph Processing", ROMX[$66C0], BANK[$4]
 PhoneIME_PlayerNameGlyph::
-    ld a, [W_PhoneIME_LastPressedButton]
+    call PhoneIME_ADVICE_StartTimer
     cp $FF
     jr z, .setCharacter
     
@@ -75,7 +75,7 @@ PhoneIME_PlayerNameGlyph::
     jp PauseMenu_DrawCenteredNameBufferNoVWF
 
 PhoneIME_DenjuuNicknameGlyph::
-    ld a, [W_PhoneIME_LastPressedButton]
+    call PhoneIME_ADVICE_StartTimer
     cp $FF
     jr z, .setCharacter
     
