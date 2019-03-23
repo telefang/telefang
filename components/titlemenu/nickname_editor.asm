@@ -14,7 +14,7 @@ TitleMenu_LoadDenjuuNicknameIntoBuffer::
     ld b, BANK(S_SaveClock_NicknameArray)
     call TitleMenu_EnterSRAM
     
-    ld hl, W_MainScript_CenteredNameBuffer
+    ld de, W_TitleMenu_NameBuffer
     ld bc, M_SaveClock_DenjuuNicknameSize
     call memcpy
     
