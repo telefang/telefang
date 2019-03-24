@@ -22,19 +22,22 @@ W_PhoneIME_LastPressedButton:: ds 1
 
 SECTION "Pause menu IME stuff", ROMX[$665A], BANK[$4]
 PhoneIME_LoadTilemapForIME::
-    ld e, $15
     ld a, [W_PhoneIME_CurrentIME]
-    cp 0
-    jr z, .loadTmap
-    ld e, $1B
-    cp 1
-    jr z, .loadTmap
-    ld e, $16
-    
-.loadTmap
-    ld bc, $111
-    ld a, 0
-    jp Banked_RLEDecompressTMAP0
+    add a
+    ld l, $F4
+    add l
+    ld hl, $9A21
+    call vmempoke
+    inc a
+    jp vmempoke
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 PhoneIME_PlayerNameDiacritic::
     ld hl, W_TitleMenu_NameBuffer
@@ -67,8 +70,6 @@ PhoneIME_DenjuuNicknameDiacritic::
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PhoneIME_LoadGraphicsForIME::
     ld hl, .imeGraphicsTableCGB
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .tableSelected
     ld hl, .imeGraphicsTableDMG
@@ -81,13 +82,12 @@ PhoneIME_LoadGraphicsForIME::
     ld l, a
     
     ld a, [W_PhoneIME_NextIME]
+    call PhoneIME_GetIMEGraphicsID
     call PauseMenu_IndexPtrTable
     ld a, [hli]
     ld h, [hl]
     ld l, a
     
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .selectCGBBank
     ld a, BANK(PhoneKeypadGfx)
@@ -100,6 +100,7 @@ PhoneIME_LoadGraphicsForIME::
     ld de, $8A00
     ld bc, $400
     jp Banked_LCDC_LoadGraphicIntoVRAM
+    nop
     
 ;TODO: These are all offsets of PhoneKeypadGfx
 .imeGraphicsTableCGB
