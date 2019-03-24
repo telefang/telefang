@@ -32,7 +32,7 @@ PhoneIME_PlayerNameGlyph::
     ld a, [W_PhoneIME_Button]
     ld [W_PhoneIME_LastPressedButton], a
     
-    ld a, [W_PhoneIME_CurrentIME]
+    call PhoneIME_GetIMEID
     ld hl, PhoneIME_Data
     call PauseMenu_IndexPtrTable
     ld a, [hli]
@@ -105,7 +105,7 @@ PhoneIME_DenjuuNicknameGlyph::
     ld a, [W_PhoneIME_Button]
     ld [W_PhoneIME_LastPressedButton], a
     
-    ld a, [W_PhoneIME_CurrentIME]
+    call PhoneIME_GetIMEID
     ld hl, PhoneIME_Data
     call PauseMenu_IndexPtrTable
     ld a, [hli]

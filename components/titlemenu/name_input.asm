@@ -117,15 +117,16 @@ TitleMenu_NameInputImpl::
     jp z, .confirmIntent
     cp M_PhoneIME_ButtonStar
     jp z, .diacriticIntent
-    jp PhoneIME_PlayerNameGlyph
+    jp PhoneIME_PlayerNameGlyphWithIMEAutoSwitch
     
 ;Cycle to the next IME mode.
 .cycleNextIME ;12519
-    call PhoneIME_ADVICE_ResetTimer
+    xor a
+    ld [W_PhoneIME_PressCount], a
     
     ld a, [W_PhoneIME_CurrentIME]
     inc a
-    cp M_PhoneIME_IMEEND
+    cp M_PhoneIME_IMEExtendedEND
     jr nz, .storeNextIME
     
     xor a
@@ -133,7 +134,7 @@ TitleMenu_NameInputImpl::
     ld [W_PhoneIME_CurrentIME], a
     
     add a, 1
-    cp M_PhoneIME_IMEEND
+    cp M_PhoneIME_IMEExtendedEND
     jr nz, .storePhoneIME
     
     xor a
@@ -158,12 +159,6 @@ TitleMenu_NameInputImpl::
     pop hl
     pop af
     
-    nop
-    nop
-    nop
-    nop
-    nop
-    
     ld a, 7
     ld [W_PauseMenu_SelectedMenuItem], a
     
@@ -175,7 +170,7 @@ TitleMenu_NameInputImpl::
     
 .diacriticIntent
     ld a, [W_PhoneIME_CurrentIME]
-    cp M_PhoneIME_IMENumerals
+    cp M_PhoneIME_IMEExtendedNumerals
     jp z, PhoneIME_PlayerNameGlyph
     jp PhoneIME_PlayerNameDiacritic
     
@@ -198,12 +193,17 @@ TitleMenu_NameInputImpl::
     
 .cursorChange
     ld [W_PauseMenu_SelectedMenuItem], a
-    ld a, $FF
-    ld [W_PhoneIME_LastPressedButton], a
     call PhoneIME_ADVICE_ResetTimer
+    call PhoneIME_CheckIMEAutoSwitch
+    jr z, .cycleNextIME
 
 .return
     ret
+    
+    nop
+    nop
+    nop
+    nop
 
 TitleMenu_NicknameInputImpl::
     call PhoneIME_InputProcessing
@@ -263,15 +263,16 @@ TitleMenu_NicknameInputImpl::
     jp z, .confirmIntent
     cp M_PhoneIME_ButtonStar
     jp z, .diacriticIntent
-    jp PhoneIME_DenjuuNicknameGlyph
+    jp PhoneIME_DenjuuNicknameGlyphWithIMEAutoSwitch
     
 ;Cycle to the next IME mode.
 .cycleNextIME
-    call PhoneIME_ADVICE_ResetTimer
+    xor a
+    ld [W_PhoneIME_PressCount], a
     
     ld a, [W_PhoneIME_CurrentIME]
     inc a
-    cp M_PhoneIME_IMEEND
+    cp M_PhoneIME_IMEExtendedEND
     jr nz, .storeNextIME
     
     xor a
@@ -279,7 +280,7 @@ TitleMenu_NicknameInputImpl::
     ld [W_PhoneIME_CurrentIME], a
     
     add a, 1
-    cp M_PhoneIME_IMEEND
+    cp M_PhoneIME_IMEExtendedEND
     jr nz, .storePhoneIME
     
     xor a
@@ -303,18 +304,10 @@ TitleMenu_NicknameInputImpl::
     
 .playerNameConfirmed
     jp System_ScheduleNextSubState
-
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     
 .diacriticIntent
     ld a, [W_PhoneIME_CurrentIME]
-    cp M_PhoneIME_IMENumerals
+    cp M_PhoneIME_IMEExtendedNumerals
     jp z, PhoneIME_DenjuuNicknameGlyph
     jp PhoneIME_DenjuuNicknameDiacritic
     
@@ -326,10 +319,10 @@ TitleMenu_NicknameInputImpl::
     dec a
     ld [W_PauseMenu_SelectedMenuItem], a
     
-    ld a, $FF
-    ld [W_PhoneIME_LastPressedButton], a
-    
     call PhoneIME_ADVICE_ResetTimer
+    call PhoneIME_CheckIMEAutoSwitch
+    jr z, .cycleNextIME
+    
     ret
     
 .checktimer
@@ -344,10 +337,29 @@ TitleMenu_NicknameInputImpl::
     inc a
     ld [W_PauseMenu_SelectedMenuItem], a
     
-    ld a, $FF
-    ld [W_PhoneIME_LastPressedButton], a
-    
     call PhoneIME_ADVICE_ResetTimer
+    call PhoneIME_CheckIMEAutoSwitch
+    jr z, .cycleNextIME
     
 .return
     ret
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
+SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]
+
+PhoneIME_PlayerNameGlyphWithIMEAutoSwitch::
+    call PhoneIME_CheckIMEAutoSwitchOnGlyphInput
+    call nz, TitleMenu_NameInputImpl.cycleNextIME
+    jp PhoneIME_PlayerNameGlyph
+
+PhoneIME_DenjuuNicknameGlyphWithIMEAutoSwitch::
+    call PhoneIME_CheckIMEAutoSwitchOnGlyphInput
+    call nz, TitleMenu_NicknameInputImpl.cycleNextIME
+    jp PhoneIME_DenjuuNicknameGlyph
+

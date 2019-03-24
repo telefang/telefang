@@ -421,7 +421,7 @@ TitleMenu_StateClearNameInput::
     ld [W_MainScript_TileBaseIdx], a
     call PhoneIME_ADVICE_ResetTimer
     ld [W_PauseMenu_SelectedMenuItem], a
-    ld a, M_PhoneIME_IMELatinUpper
+    ld a, M_PhoneIME_IMEExtendedLatinUpperLower
     ld [W_PhoneIME_CurrentIME], a
     ld a, $FF
     ld [W_PhoneIME_LastPressedButton], a
@@ -430,7 +430,7 @@ TitleMenu_StateClearNameInput::
     ld [W_PauseMenu_SelectedCursorType], a
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
-    ld a, M_PhoneIME_IMELatinLower
+    ld a, M_PhoneIME_IMEExtendedLatinLower
     ld [W_PhoneIME_NextIME], a
     call PhoneIME_LoadGraphicsForIME
     call TitleMenu_ClearCharaName
@@ -676,11 +676,11 @@ TitleMenu_StateInitNickname::
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size
     call Banked_PauseMenu_InitializeCursor
     
-    ld a, M_PhoneIME_IMELatinLower
+    ld a, M_PhoneIME_IMEExtendedLatinLower
     ld [W_PhoneIME_NextIME], a
     call PhoneIME_LoadGraphicsForIME
     
-    ld a, M_PhoneIME_IMELatinUpper
+    ld a, M_PhoneIME_IMEExtendedLatinUpperLower
     ld [W_PhoneIME_CurrentIME], a
     
     call PauseMenu_CGBLoadPalettes

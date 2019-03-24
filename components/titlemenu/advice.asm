@@ -334,7 +334,7 @@ TitleMenu_ADVICE_Nickname_RemapBlankTiles::
 	ld [hl], a
 
 .ignore
-	ei ; FB
+	ei
 	inc hl
 	dec b
 	jr nz, .maploop
