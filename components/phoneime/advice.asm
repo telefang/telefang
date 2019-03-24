@@ -27,9 +27,10 @@ PhoneIME_CheckIMEAutoSwitchOnGlyphInput::
     ld b, a
     ld a, [W_PhoneIME_Button]
     cp b
-    ret
+    ret z
+    jp PhoneIME_CheckIMEAutoSwitch_Alt
 
-SECTION "Phone IME Translate ID", ROMX[$7DBA], BANK[$4]
+SECTION "Phone IME Translate ID", ROMX[$7DBD], BANK[$4]
 PhoneIME_GetIMEID::
     ld a, [W_PhoneIME_CurrentIME]
     cp M_PhoneIME_IMEExtendedLatinUpper
@@ -43,9 +44,14 @@ PhoneIME_GetIMEID::
 .asIs
     ret
 	nop
-	nop
-	nop
-	nop
+
+SECTION "Phone IME Abc Mode 2", ROMX[$666B], BANK[$4]
+PhoneIME_CheckIMEAutoSwitch_Alt::
+    ld a, [W_PhoneIME_CurrentIME]
+    dec a
+    and $80
+    ret
+    nop
 
 SECTION "Phone IME Character Input Timer", ROMX[$45A4], BANK[$4]
 PhoneIME_ADVICE_StartTimer::

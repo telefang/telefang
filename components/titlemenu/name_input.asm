@@ -351,7 +351,7 @@ TitleMenu_NicknameInputImpl::
     nop
     nop
 
-SECTION "Phone IME Auto Switch", ROMX[$7DA8], BANK[$4]
+SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]
 
 PhoneIME_PlayerNameGlyphWithIMEAutoSwitch::
     call PhoneIME_CheckIMEAutoSwitchOnGlyphInput

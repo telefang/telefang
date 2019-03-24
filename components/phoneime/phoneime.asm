@@ -30,15 +30,8 @@ PhoneIME_LoadTilemapForIME::
     call vmempoke
     inc a
     jp vmempoke
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     
+SECTION "Pause menu IME Diacritic stuff", ROMX[$6673], BANK[$4]
 PhoneIME_PlayerNameDiacritic::
     ld hl, W_TitleMenu_NameBuffer
     ld a, [W_PauseMenu_SelectedMenuItem]
