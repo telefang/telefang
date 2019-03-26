@@ -344,13 +344,6 @@ TitleMenu_NicknameInputImpl::
 .return
     ret
 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-
 SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]
 
 PhoneIME_PlayerNameGlyphWithIMEAutoSwitch::

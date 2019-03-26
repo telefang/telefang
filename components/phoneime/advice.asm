@@ -45,6 +45,13 @@ PhoneIME_GetIMEID::
     ret
 	nop
 
+SECTION "Phone IME Diacritic Timer Reset", ROMX[$6654], BANK[$4]
+PhoneIME_ADVICE_ResetTimerForDiacritics::
+    ld e, a
+    xor a
+    ld d, a
+    jp PhoneIME_ADVICE_ResetTimer_extJP
+
 SECTION "Phone IME Abc Mode 2", ROMX[$666B], BANK[$4]
 PhoneIME_CheckIMEAutoSwitch_Alt::
     ld a, [W_PhoneIME_CurrentIME]
@@ -63,6 +70,8 @@ PhoneIME_ADVICE_StartTimer::
 PhoneIME_ADVICE_ResetTimer::
     xor a
     ld [W_PhoneIME_PressCount], a
+
+PhoneIME_ADVICE_ResetTimer_extJP::
     ld [W_PhoneIME_NextCharTimer], a
     ret
 
