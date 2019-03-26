@@ -35,8 +35,7 @@ SECTION "Pause menu IME Diacritic stuff", ROMX[$6673], BANK[$4]
 PhoneIME_PlayerNameDiacritic::
     ld hl, W_TitleMenu_NameBuffer
     ld a, [W_PauseMenu_SelectedMenuItem]
-    ld e, a
-    ld d, 0
+    call PhoneIME_ADVICE_ResetTimerForDiacritics
     add hl, de
     ld a, [hl]
     push hl
@@ -49,8 +48,7 @@ PhoneIME_PlayerNameDiacritic::
 PhoneIME_DenjuuNicknameDiacritic::
     ld hl, W_TitleMenu_NameBuffer
     ld a, [W_PauseMenu_SelectedMenuItem]
-    ld e, a
-    ld d, 0
+    call PhoneIME_ADVICE_ResetTimerForDiacritics
     add hl, de
     ld a, [hl]
     push hl
