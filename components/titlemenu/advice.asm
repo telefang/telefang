@@ -402,7 +402,7 @@ TitleMenu_ADVICE_InitNickname::
 	ld c, a
 	ld a, b
 	ld [hld], a
-	ld a. c
+	ld a, c
 	ld [hl], a
 	
 	ld a, M_SGB_Pal01 << 3 + 1
