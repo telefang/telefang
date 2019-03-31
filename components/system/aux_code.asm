@@ -248,6 +248,9 @@ Banked_Summon_ADVICE_LoadSGBFiles::
 Banked_TitleMenu_ADVICE_InitNickname::
 	jp TitleMenu_ADVICE_InitNickname
 
+Banked_TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer::
+	jp TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer
+
 ;The next two are at the END of Bank 1 and likely not conflicting
 ;with your section.
 Banked_MainScript_ADVICE_DrawNarrowLetter::

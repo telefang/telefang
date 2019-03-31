@@ -40,7 +40,7 @@ TitleMenu_PositionNicknameCursor::
     sla a
     sla a
     sla a
-    add a, $10
+    add a, 8
     ld b, a
     ld c, $70
     ld de, $C0C0 ;TODO: Cursor structure
@@ -219,7 +219,7 @@ TitleMenu_NicknameInputImpl::
     call PhoneIME_ADVICE_ResetTimer
     
     ld hl, $9780
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld b, M_SaveClock_DenjuuNicknameEntrySize
     call PauseMenu_ClearInputTiles
     
     ld hl, W_TitleMenu_NameBuffer
@@ -331,7 +331,7 @@ TitleMenu_NicknameInputImpl::
 
 .rightKeypadPress
     ld a, [W_PauseMenu_SelectedMenuItem]
-    cp M_SaveClock_DenjuuNicknameSize - 1
+    cp M_SaveClock_DenjuuNicknameEntrySize - 1
     ret z
     
     inc a

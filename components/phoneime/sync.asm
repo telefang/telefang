@@ -44,9 +44,9 @@ PhoneIME_SyncPlayerName::
 ;Back-copies the name buffer into the centered output buffer, terminating it
 ;with the MainScript terminator in the process. Sized for denjuu nicknames.
 PhoneIME_SyncDenjuuNickname::
-    ld hl, W_MainScript_CenteredNameBuffer + M_SaveClock_DenjuuNicknameSize - 1
-    ld de, W_TitleMenu_NameBuffer + M_SaveClock_DenjuuNicknameSize - 1
-    ld b, M_SaveClock_DenjuuNicknameSize
+    ld hl, W_MainScript_CenteredNameBuffer + M_SaveClock_DenjuuNicknameEntrySize - 1
+    ld de, W_TitleMenu_NameBuffer + M_SaveClock_DenjuuNicknameEntrySize - 1
+    ld b, M_SaveClock_DenjuuNicknameEntrySize
     
     ld c, 0
     

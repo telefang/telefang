@@ -4,37 +4,45 @@ SECTION "Save Clock Denjuu Initialization Utils", ROMX[$40EF], BANK[$29]
 SaveClock_InitializeNewDenjuu::
     call sub_A412E
     call SaveClock_MarkSlotInUse47
-    
-    ld b, 0
-    sla c
-    rl b
-    
-    ld hl, S_SaveClock_NicknameArray
-    add hl, bc
-    add hl, bc
-    add hl, bc
-    
-    push hl
-    
-    ld hl, StringTable_denjuu_species
-    ld a, [Malias_CmpSrcBank]
-    ld c, a
-    ld b, 0
-    
-    sla c
-    rl b
-    sla c
-    rl b
-    sla c
-    rl b
-    add hl, bc
-    
-    call SaveClock_ADVICE_RelocateCopyBank
-    nop
-    pop de
-    call SaveClock_ADVICE_TerminateDenjuuNickname
+
+    ld h, S_SaveClock_NicknameExtensionIndicatorArray >> 8
+    ld l, c
+    ld [hl], 1
+
+    ld h, 0
+    add hl, hl
+	push hl
+    add hl, hl
+    ld a, h
+    add S_SaveClock_NicknameExtensionArray >> 8
+    ld h, a
+
+    ld d, M_SaveClock_DenjuuNicknameExtensionSize
+    call SaveClock_ADVICE_InitializeNewDenjuuCopyLoop
+
+	pop hl
+    ld d, h
+    ld e, l
+    add hl, hl
+    add hl, de
+    ld a, h
+    add S_SaveClock_NicknameArray >> 8
+    ld h, a
+    ld a, $E6
+    ld [hli], a
+    ld d, M_SaveClock_DenjuuNicknameSize - 1
+    ; Continue into SaveClock_ADVICE_InitializeNewDenjuuCopyLoop
+
+SaveClock_ADVICE_InitializeNewDenjuuCopyLoop::
+    ld a, $E0
+
+.loop
+    ld [hli], a
+    dec d
+    jr nz, .loop
     ret
-    
+    nop
+
 SaveClock_MarkSlotInUse47::
     ld a, c
     ld hl, $B800 ;TODO: What function does this array serve?
@@ -87,67 +95,3 @@ sub_A412E::
     
     ret
     
-SECTION "Save Clock Denjuu Initialization Utils ADVICE", ROMX[$79A0], BANK[$29]
-SaveClock_ADVICE_TerminateDenjuuNickname::
-    push af
-    
-    ld a, $E6
-    ld [de], a
-    inc de
-    dec b
-    
-.terminateLoop
-    ld a, $E0
-    ld [de], a
-    inc de
-    dec b
-    
-    jp nz, .terminateLoop
-    
-    pop af
-    
-    ret
-    
-    nop
-    nop
-    nop
-    
-SaveClock_ADVICE_RelocateCopyBank::
-    push af
-    
-    ld a, $40
-    cp h
-    jp z, .bank34
-    jp nc, $7F38 ;TODO: This is a nop slide to nowhere! I think they meant .bank75
-    
-    ld a, $45
-    cp h
-    jp c, .bank75
-    jp nz, .bank34
-    
-    ld a, $78
-    cp l
-    jp nc, .bank34
-    
-.bank75
-    ld c, $75
-    pop af
-    ld b, M_SaveClock_DenjuuNicknameSize
-    ret
-    
-.bank34
-    ld c, $34
-    add hl, hl
-    
-    ld b, $40
-    
-    ld a, h
-    sub b
-    ld h, a
-    
-    pop af
-    
-    ld b, M_SaveClock_DenjuuNicknameSize
-    ret
-    
-SaveClock_ADVICE_RelocateCopyBank_END::
