@@ -94,7 +94,7 @@ PhoneIME_DenjuuNicknameGlyph::
     ld [W_PhoneIME_PressCount], a
     
     ld a, [W_PauseMenu_SelectedMenuItem]
-    cp M_SaveClock_DenjuuNicknameSize - 1
+    cp M_SaveClock_DenjuuNicknameEntrySize - 1
     jr z, .setCharacter
     
     ld a, [W_PauseMenu_SelectedMenuItem]

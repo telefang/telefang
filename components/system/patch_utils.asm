@@ -96,19 +96,19 @@ Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr_indexNicknameArrayFixed::
 	rst $10
 	ret
 	
-;C5
-Banked_TitleMenu_ADVICE_SplitNickAndSpeciesNames::
-	rst $10
-	call TitleMenu_ADVICE_SplitNickAndSpeciesNames
-	rst $18
-	ret
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 	
-;CB
-Banked_TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer::
-	rst $10
-	call TitleMenu_ADVICE_LoadDenjuuNicknameIntoBuffer
-	rst $18
-	ret
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 	
 ;D1
 Banked_SaveClock_ADVICE_LoadDenjuuNicknameByStatPtr::
