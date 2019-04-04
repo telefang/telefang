@@ -355,8 +355,6 @@ Victory_SubStateRecruitmentExit::
     ld [W_Battle_SubSubState], a
     ret
 
-; 1D:52F1
-
 Victory_SubStateRecruitmentGiveNicknameMessageAndInputHandler::
     call LCDC_IterateAnimationComplex
     call Banked_MainScriptMachine
