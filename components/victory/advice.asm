@@ -86,3 +86,129 @@ Victory_ADVICE_BattleScreenPrivateStrings_denmaAtk::
     
 Victory_ADVICE_BattleScreenPrivateStrings_denmaDef::
     db "Def.    "
+
+SECTION "Victory Advice Code 2", ROMX[$5A06], BANK[$1D]
+Victory_ADVICE_UnloadSGBFiles::
+    ld [W_LateDenjuu_SubSubState], a
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    jr z, .noSGB
+
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .noSGB
+
+    xor a
+    ld b, a
+    ld c, a
+    ld d, a
+    ld e, a
+    ld [W_MainScript_TextStyle], a
+    call Banked_SGB_ConstructPaletteSetPacket
+.noSGB
+    ret
+
+Victory_ADVICE_QueueMessage::
+    call Battle_QueueMessage
+
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret z
+
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z
+	
+	ld hl, $8F00
+	ld b, $40
+	; Continues into Encounter_ADVICE_TileLowByteBlanketFill
+
+Victory_ADVICE_TileLowByteBlanketFill::
+	ld c, $FF
+
+.drawloop
+	di
+
+.wfb
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+	ld a, c
+	ld [hli], a
+	inc hl
+	ld a, c
+	ld [hli], a
+	ei
+	inc hl
+	dec b
+	jr nz, .drawloop
+	ret
+
+Victory_ADVICE_DrawPhoneNumber::
+    push hl
+    push bc
+    push de
+    call Banked_Status_LoadPhoneDigits_NowWithSGBSupport
+    pop de
+    ld a, $FF
+    ld hl, $99C2
+    call vmempoke
+    ld l, $D1
+    call vmempoke
+    ld b, $10
+    ld hl, $9A02
+
+.loop
+    call vmempoke
+    dec b
+    jr nz, .loop
+    pop bc
+    pop hl
+    jp Banked_Status_DrawPhoneNumberForStatus
+
+SECTION "Recruitment Advice Code", ROMX[$5E50], BANK[$1]
+Victory_ADVICE_LoadSGBFilesRecruitment::
+    M_AdviceSetup
+
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld hl, $9010
+    ld b, $68
+    call Zukan_ADVICE_TileLightColourReverse
+
+    ld hl, $8F00
+    ld b, $40
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld hl, $90E0
+    ld b, $48
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld hl, $9580
+    ld b, $A0
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+
+    ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 5)
+    call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
+
+    ld c, $10
+    call Banked_SGB_ConstructATFSetPacket
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld bc, 4
+    call PatchUtils_CommitStagedCGBToSGB
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld bc, $507
+    call PatchUtils_CommitStagedCGBToSGB
+
+.return
+    M_AdviceTeardown
+    ret

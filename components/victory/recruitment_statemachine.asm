@@ -86,8 +86,7 @@ Victory_SubStateDrawRecruitmentScreen::
     call Encounter_DrawTileDigits
     ld a, 0
     call $5456
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
     ld a, [W_LateDenjuu_SubSubState]
     inc a
     ld [W_LateDenjuu_SubSubState], a
@@ -116,7 +115,7 @@ Victory_SubStateRecruitmentFadeInAndMemoryMarker::
 
 .tfangerDefection
     ld c, 3
-    call Battle_QueueMessage
+    call Victory_ADVICE_QueueMessage
     ld a, 2
     ld [W_LateDenjuu_SubSubState], a
     ret
@@ -127,7 +126,7 @@ Victory_SubStateRecruitmentWowYoureStrongMessage::
     cp 9
     ret nz
     ld c, 3
-    call Battle_QueueMessage
+    call Victory_ADVICE_QueueMessage
     ld a, 2
     ld [W_LateDenjuu_SubSubState], a
     ret
@@ -182,7 +181,7 @@ Victory_SubStateRecruitmentCheckCapacityAndDrawNumber::
     ld b, a
     ld a, [hl]
     ld hl, $99C3
-    call Banked_Status_DrawPhoneNumber
+    call Victory_ADVICE_DrawPhoneNumber
     call SaveClock_ExitSRAM
     ld a, [W_LateDenjuu_SubSubState]
     inc a
@@ -191,7 +190,7 @@ Victory_SubStateRecruitmentCheckCapacityAndDrawNumber::
 
 .insufficientMemoryAtThisTime
     ld c, $6E
-    call Battle_QueueMessage
+    call Victory_ADVICE_QueueMessage
     ld a, $A
     ld [W_LateDenjuu_SubSubState], a
     ret
@@ -214,7 +213,7 @@ Victory_SubStateRecruitmentHideNumberOnInput::
     ld a, 3
     ld [W_Sound_NextSFXSelect], a
     ld c, $63
-    call Battle_QueueMessage
+    call Victory_ADVICE_QueueMessage
     xor a
     ld [W_Victory_UserSelection], a
     call Victory_PlaceChoiceCursor
@@ -296,7 +295,7 @@ Victory_SubStateRecruitmentSaveNumberMessageAndInputHandler::
     ld c, $65
 
 .yesSelected
-    call Battle_QueueMessage
+    call Victory_ADVICE_QueueMessage
     ld a, 0
     ld [W_MetaSpriteConfig1], a
     ld a, 1
@@ -315,7 +314,7 @@ Victory_SubStateRecruitmentSaveNumberParseResponse::
     cp 0
     jr nz, .noSelected
     ld c, $8F
-    call Battle_QueueMessage
+    call Victory_ADVICE_QueueMessage
     xor a
     ld [W_Victory_UserSelection], a
     call Victory_PlaceChoiceCursor
@@ -345,8 +344,8 @@ Victory_SubStateRecruitmentFadeOutForExit::
     ld [W_ShadowREG_HBlankSecondMode], a
     ld a, [W_LateDenjuu_SubSubState]
     inc a
-    ld [W_LateDenjuu_SubSubState], a
-    ret
+    jp Victory_ADVICE_UnloadSGBFiles
+    nop
 
 Victory_SubStateRecruitmentExit::
     xor a
