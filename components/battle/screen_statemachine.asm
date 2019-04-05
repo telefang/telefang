@@ -43,7 +43,7 @@ Battle_ScreenStateMachine::
     jp hl
 
 .stateTable
-    dw $457D,$45A9,$45F5,$463E,$4681,$4B07,$4BC6,$4C34 ;00-07
+    dw Battle_SubStateInitGraphics,Battle_SubStateInitTilemaps,$45F5,$463E,$4681,$4B07,$4BC6,$4C34 ;00-07
     dw $4D1F,$4DDD,$4F81,$510A,$545C,$545F,$57FB,$59BC ;08-0F
     dw $5F2D,$5F57,$62CD,$6348,$6360,$63FE,$6416,$46E2 ;10-17
     dw $46F2,$4707,$48E9,$48FC,$4911,$464B,Battle_SubStateParticipantArrivalProcessing,Battle_SubStateDenjuuArrivalPhrase ;18-1F
@@ -54,6 +54,46 @@ Battle_ScreenStateMachine::
 
 Battle_ScreenUIStrings::
     INCBIN "build/script/battle/ui_strings.stringtbl"
+
+SECTION "Battle Screen State Machine - Init", ROMX[$457D], BANK[$5]
+Battle_SubStateInitGraphics::
+    ld bc, 1
+    call Banked_LoadMaliasGraphics
+    ld bc, $17
+    call Banked_CGBLoadBackgroundPalette
+    ld a, $28
+    call PauseMenu_CGBStageFlavorPalette
+    ld bc, 4
+    call Banked_CGBLoadObjectPalette
+    ld bc, $10
+    call Banked_LoadMaliasGraphics
+    ld a, $20
+    ld [W_LCDC_MetaspriteAnimationBank], a
+    xor a
+    ld [$D417], a
+    ld [W_Summon_SelectedPageContact], a
+    jp Battle_IncrementSubSubState
+
+Battle_SubStateInitTilemaps::
+    ld bc, 0
+    ld e, $F
+    xor a
+    call Banked_RLEDecompressTMAP0
+    ld bc, 0
+    ld e, $F
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+    ld bc, 0
+    ld e, $71
+    xor a
+    call Banked_RLEDecompressTMAP1
+    ld bc, 0
+    ld e, $71
+    xor a
+    call Banked_RLEDecompressAttribsTMAP1
+    call $45D6
+    call Battle_ExpandNumericalTiles
+    jp Battle_IncrementSubSubState
 
 SECTION "Battle Screen State Machine - Status Warnings For Partners", ROMX[$4721], BANK[$5]
 Battle_SubStateStatusWarningPartner::

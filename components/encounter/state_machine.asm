@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION "Encounter State Machine", ROMX[$4000], BANK[$1C]
 Encounter_GameStateMachine::
     ld a, [W_SystemSubState]
