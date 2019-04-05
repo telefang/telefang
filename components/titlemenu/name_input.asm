@@ -105,7 +105,7 @@ TitleMenu_NameInputImpl::
     and M_JPInput_A
     jp z, .checktimer
     
-    call $66A1
+    call PauseMenu_PlayPhoneButtonSFX
     ld a, [W_PhoneIME_Button]
     cp M_PhoneIME_ButtonNote
     jp z, .cycleNextIME
@@ -251,7 +251,7 @@ TitleMenu_NicknameInputImpl::
     and M_JPInput_A
     jp z, .checktimer
     
-    call $66A1
+    call PauseMenu_PlayPhoneButtonSFX
     ld a, [W_PhoneIME_Button]
     cp M_PhoneIME_ButtonNote
     jp z, .cycleNextIME

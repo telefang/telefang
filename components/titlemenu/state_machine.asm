@@ -701,7 +701,7 @@ TitleMenu_StateInitNickname::
     ld [W_MelodyEdit_State], a
     
     call TitleMenu_PositionNicknameCursor
-    call $5D40
+    call PhoneIME_PlaceCursor
     
     ld hl, $9700
     ld b, $10
@@ -758,7 +758,7 @@ TitleMenu_StateFadeNickname::
     ret z
     
     ld a, $32
-    call $15F5
+    call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
     jp System_ScheduleNextSubState
