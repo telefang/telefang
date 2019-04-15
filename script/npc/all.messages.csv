@@ -1095,7 +1095,9 @@ Maybe I should pay a visit to the Bird Chief sometime...",,
 デンジュウたちが しゅぎょうを
 する ばしょです...が
 なんだか ようすが
-ヘんなんです....",/0x124068/,"This is Ion Island, a place for Denjuu to train themselves... But lately things have gotten strange...",This line is used in the Sanaeba's Lab chapter.
+ヘんなんです....","This is Ion Island, a place for Denjuu to train...
+But lately, things have gotten strange.","This is Ion Island, a place for Denjuu to train...
+But lately, things have gotten strange.",This line is used in the Sanaeba's Lab chapter.
 0x12406a,"まえは しずかなしまだったけど
 いまは デンワガイシャの
 あらそいが おこっているんだ","This used to be a peaceful island, but now there's a big fight going on between the phone companies...",,
@@ -1106,7 +1108,11 @@ Now we can continue our training!",,
 0x12406e,"じつは ボク けんきゅうじょに
 さらわれていたんだ
 キミのおかげで たすかったよ
-あリがとう",/0x12406e/,,This line is used in the Sanaeba's Lab chapter.
+あリがとう","I was kidnapped and taken to this laboratory.
+Thanks to you, I'm saved!
+I can't thank you enough!","I was kidnapped and taken to this laboratory.
+Thanks to you, I'm saved!
+I can't thank you enough!",This line is used in the Sanaeba's Lab chapter.
 0x124070,"オマエのケイタイは
 どこのメーカーだ?",What brand is your cell phone?!,,
 0x124072,"オマエらの カイシャで
@@ -1365,152 +1371,294 @@ Will I have to use force?",,
 0x124102,"むかしの はかせは 
 いまみたいな カンジでは
 なかったんだ
-もっと デンジュウを たいせつにしていたんだけど...","The professor didn't used to be like this...
+もっと デンジュウを たいせつにしていたんだけど...","The professor wasn't always like this.
 He used to treat Denjuu with more respect...",,
 #######,17 strings   -   Paparouna Lake,,,
 0x124104,"あそこのやしきは なにかの
 けんきゅうじょみたいダ
 よく はくいの ひとたちが
-でいリしてるダ",/0x124104/,"It looks like they're using this building for some kind of research. 
-You see folks in lab coats going in and out all the time.",
+でいリしてるダ","It looks like they're using
+this building for some kind of
+research.
+You see folks in lab coats
+going in and out all the time.
+","It looks like they're using this building for some kind of research. 
+You see folks in lab coats going in and out all the time.
+",These strings have all been manually formatted!
 0x124106,"あそこのやしきでは いったい
 なにをけんきゅうしてるダか?
 なんだか みんな ヘんな
-ふんいきの ひとばかリダ",/0x124106/,"I wonder what kind of research they're doing inside? 
-The people here all have an odd air about them...",
+ふんいきの ひとばかリダ","I wonder what kind of
+research they're doing?
+Those scientists all have an
+odd air about them...","I wonder what kind of research they're doing? 
+Those scientists all have an odd air about them...",
 0x124108,"なんだか あのやしきに
 でいリするひとの ふんいきが
-かわったダ",/0x124108/,"The people going in and out of that place... The feeling I get from them has changed.
- //",
+かわったダ","The people going in and out
+of that place...
+They somehow seem
+different from before.","The people going in and out of that place...
+They somehow seem different from before.",
 0x12410a,"きたのほうに はくいを 
 きたひとが はしっていったけど
-どうしたんダ?",/0x12410a/,"I saw a guy in a lab coat running to the north up ahead. 
+どうしたんダ?","I saw a guy in a lab coat
+running for his life
+just north of here.
+I wonder what happened?","I saw a guy in a lab coat running for his life
+just north of here.
 I wonder what happened?",
 0x12410c,"うえのほうに はしっていったひとひどく おびえていたみたい
-だったダけど?",/0x12410c/,That guy looked like he was scared of something...,
+だったダけど?","The guy hobbling along up
+ahead looked like he was
+scared of something...",The guy hobbling along up ahead looked like he was scared of something...,
 0x12410e,"みずうみの さわぎが おさまったみたいダね
 いったいなんだったんダ?
-また だれかに きいてみよっと",/0x12410e/,//,
+また だれかに きいてみよっと","The brouhaha about the lake
+seems to have calmed down.
+What was that about?
+I should ask someone.","The brouhaha about the lake seems to have calmed down. What was that about?
+I should ask someone.",
 0x124110,"このみずうみに ちかづいたら
 きけんダ
 なにか ヘんな いきものが
-いるダよ",/0x124110/,"It’s dangerous to approach the lake. 
+いるダよ","It’s dangerous to approach
+the lake.
+It seems there’s some kind
+of strange creature living in
+it.","It’s dangerous to approach the lake. 
 It seems there’s some kind of strange creature living in it. ",(Unused)
 0x124112,"ちかづいたら くろいかげに
 たベられて しまうダよ
-ちかづいたらダメダ",/0x124112/,"If you get too close, that big shadow in the water might try to eat you!
+ちかづいたらダメダ","If you get too close, that
+big shadow in the water
+might try to eat you!
+
+I wouldn’t risk it if I were
+you.","If you get too close, that big shadow in the water might try to eat you!
+
 I wouldn’t risk it if I were you.",(Unused)
 0x124114,"みずうみが しずかになったダ
-きけんは さったダかね?",/0x124114/,"The lake has been calmer lately.
+きけんは さったダかね?","The lake has been calmer
+lately.
+Has the danger passed?","The lake has been calmer lately.
 Has the danger passed?",(Unused)
 0x124116,"このみずうみで おおきな
 くろいかげを みたダ!
 アレは キョウリュウに
-ちがいないダ!",/0x124116/,"I saw a big shadow moving in the lake!
-It must have been a dinosaur!",
+ちがいないダ!","I saw a big shadow moving
+around in the lake!
+It's gotta be a dinosaur!
+I just know it!","I saw a big shadow moving around in the lake!
+It's gotta be a dinosaur!
+I just know it!",
 0x124118,"デンジュウカイに キョウリュウがいるんダか?
-うーん......",/0x124118/,"Are there dinosaurs in the Denjuu World?
+うーん......","Are there dinosaurs in the
+Denjuu World?
+Hmmm...","Are there dinosaurs in the Denjuu World?
 Hmmm...",
 0x12411a,"あのくろいかげの しょうたいは
 デンジュウだったダね
-なんだか ユメがないダねぇ",/0x12411a/,"In the end, the shadow in the lake was just another Denjuu. 
+なんだか ユメがないダねぇ","In the end, the shadow
+swimming around in the lake
+was just another Denjuu.
+How boring...","In the end, the shadow swimming around in the lake was just another Denjuu. 
 How boring...",
 0x12411c,"みずうみに ヘんな いきものが
 いるダ
 これはスクープになるダ
-テレビきょくを よぶダよー",/0x12411c/,"There's a mysterious creature living in the lake...
+テレビきょくを よぶダよー","There's a mysterious
+creature living in the lake...
+This'll be a huge scoop!
+Call the TV stations!","There's a mysterious creature living in the lake...
 This'll be a huge scoop!
 Call the TV stations!",
 0x12411e,"ヘんな いきものを しゅざいしにテレビきょくがきたら
-このイナカにも ひとが たくさんくるようになるダー",/0x12411e/,I bet this place would get a lot more visitors if a TV show came to cover a real lake monster!,
+このイナカにも ひとが たくさんくるようになるダー","I bet this place would get a
+lot more visitors if a TV
+show came to cover a real
+lake monster!",I bet this place would get a lot more visitors if a TV show came to cover a real lake monster!,
 0x124120,"ヘんな いきものが
 デンジュウだなんて
 スクープじゃなくなったダよー
 まぁ しずかなままでも
-いいダけどね",/0x124120/,"The monster in the lake was just a Denjuu… 
+いいダけどね","The monster in the lake was
+just a Denjuu…
+So much for our 15 seconds
+of fame!
+Oh well. Can’t say I mind the
+peace and quiet.","The monster in the lake was just a Denjuu… 
 So much for our 15 seconds of fame!
-Oh well, can’t say I mind the peace and quiet.",
+Oh well. Can’t say I mind the peace and quiet.",
 0x124122,"ひっ!
 な なにかようじ?
 ようじがなければ あっちヘ
-いってくれよ!",/0x124122/,"...Eek!
+いってくれよ!","...Eek!
+W-What do you want?
+If it's nothing, then please
+leave me alone!","...Eek!
 W-What do you want?
 If it's nothing, then please leave me alone!",
 0x124124,"ここは デンジュウカイいち
 おおきい みずうみ
-『パパルナこ』 があるんだよ",/0x124124/,"Up ahead is ""Paparouna Lake"", the largest lake in the Denjuu World.",
+『パパルナこ』 があるんだよ","Up ahead is <bold>Paparouna
+Lake<normal>, the largest lake
+in the Denjuu World.","Up ahead is <bold>Paparouna Lake<normal>, the largest lake
+in the Denjuu World.",
 #######,21 strings   -   Dimenza's Mansion,,,
 0x124126,"このさきには だいじなものが
 おいてあるんだ
-だからとおすことは できないな",/0x124126/,"// What is/are the ""important thing(s)""?",
+だからとおすことは できないな","Past here's some real
+valuable treasure.
+So I can't let you through,
+y'understand?","Past here's some real valuable treasure.
+So I can't let you through, y'understand?","These strings have all been manually formatted!
+
+As for this specific line: confirm that it is, in fact, treasure."
 0x124128,"これをとリにくるヤツは
 みんな てき...
-みんな てき...",/0x124128/,"People who come to take this are all enemies...
-All... enemies. // Take what?",
+みんな てき...","People who come to take the
+treasure are all enemies...
+All... enemies...","People who come to take the treasure are all enemies...
+All... enemies...",- || -
 0x12412a,"ここはどこだー!?
-でぐちを おしえてー!",/0x12412a/,What is this place?! Tell me where the exit is!,
+でぐちを おしえてー!","What is this place?!
+Tell me where the exit is!","What is this place?!
+Tell me where the exit is!",
 0x12412c,"どっちにいこう?
-まよっちゃうよー",/0x12412c/,Which way should I go? I'll get lost for sure...,
+まよっちゃうよー","Which way should I go?
+I'll get lost for sure...","Which way should I go?
+I'll get lost for sure...",
 0x12412e,"オマエか?
 ディメンザさまと ゲームを
 してるヤツってのは?
 どれほどの ものか オレが
-みてやろう",/0x12412e/,,
+みてやろう","So you're the one who's
+playing games with Master
+Dimenza? You don't look like
+you're all that.
+I think I'll put you to the
+test myself.","So you're the one who's playing games with Master Dimenza? You don't look like you're all that.
+I think I'll put you to the test myself.",
 0x124130,"オイラはぁ たからのぉ
 みはリばぁん
 だからぁ これをぉ とリにぃ
 くるヤツはぁ みんなぁ...
-たおすのぉ!",/0x124130/,,
+たおすのぉ!","QUIVER IN FEAR!
+For I (yours truly!) am
+the guardian...
+of the treasure!
+Those who come to take it
+shall all be defeated...
+by my own hand!","QUIVER IN FEAR!
+For I (yours truly!) am
+the guardian...
+of the treasure!
+Those who come to take it shall all be defeated...
+by my own hand!",
 0x124132,"もういやー!
-どこにいったらでれるのー!?",/0x124132/,I can't take thiiis! Which way should I go to get out of here?!,
+どこにいったらでれるのー!?","I can't take thiiis!
+Which way is the exit?!","I can't take thiiis!
+Which way is the exit?!",
 0x124134,"いままで いっしょに いたヤツがどこかヘ いっちゃったんだ
-こわくて うごけないよー",/0x124134/,Where did the guys I came here with go? I'm so scared I can't move!,
+こわくて うごけないよー","Where did the guys I came
+here with go?
+I'm so scared I can't move!","Where did the guys I came here with go?
+I'm so scared I can't move!",
 0x124136,"ざんねんでしたー
 ここは いきどまリなんだな
-でも いいものが おいてあるんだあげないけどね!",/0x124136/,"Too bad! Looks like this is a dead end. I found some stuff, but you can't have it!",
+でも いいものが おいてあるんだあげないけどね!","Too bad! Looks like this is a
+dead end.
+I found some stuff, but you
+can't have it!","Too bad! Looks like this is a dead end.
+I found some stuff, but you can't have it!",
 0x124138,"いきなリ こんな ヘんなとこに
 つれてこられちゃったんだ
-なんで こんなこと されなくちゃいけないんだ?",/0x124138/,We were whisked away to this weird place all of a sudden. Why did this have to happen?,
+なんで こんなこと されなくちゃいけないんだ?","We were whisked away to
+this weird place all of a
+sudden. Why did this have to
+happen?",We were whisked away to this weird place all of a sudden. Why did this have to happen?,
 0x12413a,"いっしょに いたヤツが 
 どこかヘ いっちゃったんだ
 ついてきてると おもったのに
-こわくて うごけないー",/0x12413a/,"Where'd my group run off to? I was gonna tag along, but I'm too scared to move!",
+こわくて うごけないー","Where'd my group run off
+to?
+I was gonna tag along, but
+I'm too scared to move!","Where'd my group run off to?
+I was gonna tag along, but I'm too scared to move!",
 0x12413c,"アイツが いったあとに オレも
 めのまえの ゆかを ふもうと
 おもうんだ
-はやく いかないかな?",/0x12413c/,I thought I'd step onto that panel after they've// gone. Could they hurry up a bit?,
+はやく いかないかな?","I thought I'd let them step
+onto the panel first.
+Could they hurry up a bit?","I thought I'd let them step onto the panel first.
+Could they hurry up a bit?",
 0x12413e,"アイツが さきに いったら
 オレも ゆかをふんで
 ワープしようと おもってるのに
 アイツ いつまでたっても
-いかないんだよなぁ",/0x12413e/,"I thought I'd warp along after those guys//, but... they're just standing around!",
-0x124140,やっと しってるヤツにあえたんだかんげきー!,/0x124140/,"Finally, some people I know! I'm getting emotional...!",
+いかないんだよなぁ","I thought I'd warp along
+after those guys, but...
+they're just standing
+around!","I thought I'd warp along after those guys, but... they're just standing around!",
+0x124140,やっと しってるヤツにあえたんだかんげきー!,"Finally, some people I know!
+I'm getting emotional...!","Finally, some people I know!
+I'm getting emotional...!",
 0x124142,"ひとリじゃないって すごく
 いいことだな
 ずーっと ひとリぼっちで
 さみしかったんだ
-かんげきー!",/0x124142/,I'm so glad I'm not alone anymore. I was all by myself for so long!,
+かんげきー!","I'm so glad I'm not alone
+anymore.
+I was all by myself for so
+long!","I'm so glad I'm not alone anymore.
+I was all by myself for so long!",
 0x124144,"なんでオレたちが
 こんなめに あわされるんだ
 みつけたら テレファングで
-ギッタンギッタンに してやる",/0x124144/,"Who put us through this junk? When I find them, I'll clobber them in a Telefang!",
+ギッタンギッタンに してやる","Who put us through this
+junk?
+When I find 'em, I'll proper
+clobber 'em in a Telefang!","Who put us through this junk?
+When I find 'em, I'll proper clobber 'em in a Telefang!",
 0x124146,"みぎなのかな? ひだリなのかな?あぁー どっちになんて
-きめられないよー",/0x124146/,"Should I go right? Or maybe left? Agh, I can't make my mind up!",
+きめられないよー","Should I go right?
+Or maybe left?
+Agh, I can't make my mind
+up!","Should I go right?
+Or maybe left?
+Agh, I can't make my mind up!",
 0x124148,"ここは どこなんだろう?
-わかんないよー",/0x124148/,What kind of place is this? I have no idea...,
+わかんないよー","Where are we?
+I have no idea...","Where are we?
+I have no idea...",
 0x12414a,"さて どっちにいこうかな?
 さっき みた ヤツは
 まよわずに ゆかを ふんでたな
 みちを しってるのかな?
 このめいろには むらの
 デンジュウじゃない ヤツらが
-いるから きをつけなよ",/0x12414a/,"Very well; where to go now? The people I saw just now went onward with confidence. Perhaps they know the way? This maze is full of Denjuu not from the village, so take care.",
+いるから きをつけなよ","Very well; where to go now?
+The people who were here a
+moment ago went onward
+with confidence.
+Perhaps they know the way?
+This maze is full of Denjuu
+from outside the village,
+so take care.","Very well; where to go now? The people who were here a moment ago went onward with confidence.
+Perhaps they know the way? This maze is full of Denjuu from outside the village,
+so take care.",
 0x12414c,"このめいろには むらの
 デンジュウじゃない ヤツらが
-いるから きをつけなよ",/0x12414c/,"This maze is full of Denjuu not from the village, so take care.","This actually points to the second half of the previous line, but we should be able to rewrite them in the patch."
+いるから きをつけなよ","This maze is full of Denjuu
+from outside the village,
+so take care.","This maze is full of Denjuu from outside the village,
+so take care.","This actually points to the second half of the previous line, but we should be able to rewrite them in the patch."
 0x12414e,"そこの こうしゅうデンワが
 すごく きになる....
-でも こわれてるんだよねー",/0x12414e/,"I'm a bit curious about that pay phone over there. Looks like it's broken, though...",
+でも こわれてるんだよねー","I'm a bit curious about that
+payphone over there. Looks
+like it's broken, though...","I'm a bit curious about that payphone over there. Looks like it's broken, though...",
 #######,12 strings   -   Panses Village,,,
 0x124150,"よかったよー
 みんなたすかってー
