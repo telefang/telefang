@@ -19,7 +19,7 @@ PhoneIME_Data::
     dw .latinLowerButtonPound
     
 .latinLowerButton1
-    db $A, ".,:;'", $22, "!?", "-"
+    db 9, ".,:;'", $22, "!?", "-"
 .latinLowerButton2
     db 3, "abc"
 .latinLowerButton3
@@ -39,7 +39,7 @@ PhoneIME_Data::
 .latinLowerButtonStar
     db $FF
 .latinLowerButton0
-    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC
+    db 1, $20, $C5, $C6, $C7, $C9, $CA, $CC
 .latinLowerButtonPound
     db 6, "<>()[]"
     
@@ -58,7 +58,7 @@ PhoneIME_Data::
     dw .latinUpperButtonPound
     
 .latinUpperButton1
-    db $A, ".,:;'", $22, "!?", "-"
+    db 9, ".,:;'", $22, "!?", "-"
 .latinUpperButton2
     db 3, "ABC"
 .latinUpperButton3
@@ -78,7 +78,7 @@ PhoneIME_Data::
 .latinUpperButtonStar
     db $FF
 .latinUpperButton0
-    db 7, $20, $C5, $C6, $C7, $C9, $CA, $CC ;space, arrows, and 「」
+    db 1, $20, $C5, $C6, $C7, $C9, $CA, $CC ;space, arrows, and 「」
 .latinUpperButtonPound
     db 6, "<>()[]"
 

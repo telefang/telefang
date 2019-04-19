@@ -102,14 +102,16 @@ MainScript_DrawCenteredStagedString::
    
 	M_AuxJmp Banked_MainScript_ADVICE_CondenseStagedTableStringLong
    
-   pop hl
+	pop hl
 	pop de
 	pop bc
+
+MainScript_DrawCenteredStagedString_skipCondenseLogic::
 	ld a, BANK(MainScript_ADVICE_DrawCenteredName75)
-   rst $10
+	rst $10
 	call MainScript_ADVICE_DrawCenteredName75
-   rst $18
-   ret
+	rst $18
+	ret
    
 ;3B09
 MainScript_DrawShortName::
@@ -496,7 +498,15 @@ MainScript_ADVICE_CondenseStagedTableStringLong::
     ;Do NOT replace any other code with your pointcut!
     ld a, 8
     call MainScript_DrawEmptySpaces
+	
+    pop bc
     
+    call MainScript_ADVICE_CondenseStagedTableStringLong_CommonLogic
+    
+    M_AdviceTeardown
+    ret
+
+MainScript_ADVICE_CondenseStagedTableStringLong_CommonLogic::
     ;Try and determine window width
     ld a, [W_MainScript_VWFNewlineWidth]
     and a
@@ -504,7 +514,7 @@ MainScript_ADVICE_CondenseStagedTableStringLong::
     
 .defaultWidth
     ld a, 64
-	 jr .countWidth
+    jr .countWidth
 	 
 .scaleWidth
     sla a
@@ -512,7 +522,6 @@ MainScript_ADVICE_CondenseStagedTableStringLong::
     sla a
     
 .countWidth
-    pop bc
     push af
     
     ld a, BANK(MainScript_ADVICE_CountTextWidth)
@@ -529,11 +538,10 @@ MainScript_ADVICE_CondenseStagedTableStringLong::
     jr .exit
     
 .noTextOverflow
-    ld a, 0
+    xor a
     
 .exit
     ld [W_MainScript_ADVICE_FontToggle], a
-    
-    M_AdviceTeardown
     ret
-MainScript_ADVICE_CondenseStagedTableStringLong_END::
+
+MainScript_ADVICE_CondenseStagedTableStringLong_CommonLogic_END::

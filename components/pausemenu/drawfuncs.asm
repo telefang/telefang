@@ -20,18 +20,30 @@ PauseMenu_DrawCenteredNameBuffer::
     
 SECTION "Pause Menu Draw Functions 2", ROMX[$7EF6], BANK[$4]
 PauseMenu_CallsMenuDrawDenjuuNickname::
-    call Banked_SaveClock_LoadDenjuuNicknameByIndex
-    
-    ld hl, W_SaveClock_NicknameStaging
-    ld de, W_MainScript_CenteredNameBuffer
-    call Banked_StringTable_ADVICE_PadCopyBuffer
-    
-    ld hl, $9400
-    ld b, 6
-    call PauseMenu_ClearInputTiles
-    
     M_PrepAuxJmp Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
     jp PatchUtils_AuxCodeJmp
+    
+    ; Note: Free Space (because you need all the free space you can get in this overstuffed bank). 
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 PauseMenu_CenterPreppedNameForNicknameScreen::
     ld hl, $9700
@@ -183,17 +195,159 @@ PauseMenu_LoadItemGraphic::
 SECTION "Pause Menu Draw Functions AuxCode ADVICE", ROMX[$4900], BANK[$1]
 PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
     M_AdviceSetup
-    
-    ld a, 6
+
+; Fetch Denjuu nickname.
+
+    call Banked_SaveClock_LoadDenjuuNicknameByIndex
+
+; Remap border tiles to prevent flicker.
+
+    ld de, $D4D5
+    call PauseMenu_ADVICE_CallsMenuBorderPreserver
+
+; Clear Denjuu nickname.
+
+    ld hl, $9400
+    ld b, $40
+
+    call TitleMenu_ADVICE_CanUseCGBTiles_Alt
+    jr z, .cgbBg
+
+.dmgBg
+    ld de, $FF00
+    jr .clearloop
+
+.cgbBg
+    ld de, $FF
+
+.clearloop
+    di
+
+.wfb
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+
+    ld a, d
+    ld [hli], a
+    ld a, e
+    ld [hli], a
+    ei
+
+    dec b
+    jr nz, .clearloop
+
+; Clear some stuff to prevent possible rendering issues.
+	
+    call PauseMenu_ADVICE_SMSResetLine
+	
+; Nicknames should in this case autocondense if they are wider than 7 tiles.
+; However, the names are being centred on an 8-tile region.
+; This requires that the autocondense logic be done separately.
+
+    ld a, 7
     ld [W_MainScript_VWFNewlineWidth], a
-    
+    ld bc, W_SaveClock_NicknameStaging
+    call MainScript_ADVICE_CondenseStagedTableStringLong_CommonLogic
+	
+; That last call clobbered W_PreviousBank, so lets fix that.
+
+    di
+    ld a, BANK(PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname)
+    ld [W_PreviousBank], a
+    ei
+
+; Draw Denjuu nickname.
+
+    ld a, 8
+    ld [W_MainScript_VWFNewlineWidth], a
+
+    ld hl, $9400
     ld bc, W_SaveClock_NicknameStaging
     ld d, M_StringTable_Load8AreaSize
-    ld hl, $9400
-    call MainScript_DrawCenteredStagedString
-    
+    call MainScript_DrawCenteredStagedString_skipCondenseLogic
+
     ld a, M_MainScript_UndefinedWindowWidth
     ld [W_MainScript_VWFNewlineWidth], a
-    
+
+; Draw borders.
+
+    ld l, 0
+    ld de, $A0A0
+    ld bc, $81F
+
+    call PauseMenu_ADVICE_CallsMenuNameBorder
+
+    ld bc, $8F8
+    ld l, $70
+    call TitleMenu_ADVICE_CanUseCGBTiles_Alt
+    jr z, .cgbGfx
+
+.dmgGfx
+    ld de, $507
+    jr .drawborderb
+
+.cgbGfx
+    ld de, $705
+
+.drawborderb
+    call PauseMenu_ADVICE_CallsMenuNameBorder
+
+; Restore border tiles to display long names.
+
+    ld de, $4047
+    call PauseMenu_ADVICE_CallsMenuBorderPreserver
+
     M_AdviceTeardown
+    ret
+
+PauseMenu_ADVICE_CallsMenuBorderPreserver::
+    ld hl, $99A1
+    ld b, $A8
+    di
+
+.wfb
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+
+    ld [hl], d
+    ld l, b
+    ld [hl], e
+    ei
+    ret
+
+PauseMenu_ADVICE_CallsMenuNameBorder::
+    di
+
+.wfbA
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfbA
+
+    ld a, [hl]
+    and c
+    or d
+    ld [hli], a
+    ei
+
+; Just in case nop.
+
+    nop
+
+    di
+
+.wfbB
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfbB
+
+    ld a, [hl]
+    and c
+    or e
+    ld [hli], a
+    ei
+
+    dec b
+    jr nz, PauseMenu_ADVICE_CallsMenuNameBorder
     ret
