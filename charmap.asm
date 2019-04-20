@@ -24,6 +24,12 @@ charmap "Û", $93
 charmap "Ÿ", $94
 charmap "Ç", $95
 charmap "Ñ", $96
+charmap "Å", $97
+charmap "Æ", $98
+charmap "Œ", $99
+charmap "å", $9D
+charmap "æ", $9E
+charmap "œ", $9F
 charmap "á", $A0
 charmap "é", $A1
 charmap "í", $A2
