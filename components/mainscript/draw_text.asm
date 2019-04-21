@@ -262,43 +262,67 @@ MainScript_ADVICE_FontSelector::
 	call MainScript_ADVICE_DrawLetter
 	ret
 .drawNarrowCharacter
-	ld a,[W_PreviousBank]
-	push bc
-	push af
-	ld a, BANK(MainScript_ADVICE_FontSelector)
-	ld [W_PreviousBank],a
-
-	M_AuxJmp Banked_MainScript_ADVICE_DrawNarrowLetter
-
-	ld b,a
-	pop af
-	ld [W_PreviousBank],a
+	call Banked_MainScript_ADVICE_DrawNarrowLetter
 	ld a,b
-	pop bc
 	ret
 	
 MainScript_ADVICE_FontAddress::
 	ld a, [W_MainScript_ADVICE_FontToggle]
-	cp 1
-	jr z, .useNarrowCharacter
-	cp 2
-	jr z, .useBoldCharacter
+	
+	or a
+	jr nz, .useExtraFont
 	ld hl, MainScript_Font
 	ret
 	
-.useBoldCharacter
-	ld a, [W_MainScript_VWFCurrentLetter]
-	cp $B8
-	jr nc, .useNarrowCharacter
-	ld hl, MainScript_BoldFont
+.useExtraFont
+	ld hl, 0
 	ret
 	
-.useNarrowCharacter
-	ld hl, MainScript_NarrowFont
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+
+SECTION "Main Script Alternate Font Drawing Advice Bankcall", ROM0[$3DEA]
+Banked_MainScript_ADVICE_DrawNarrowLetter::
+	ld a, BANK(MainScript_ADVICE_DrawNarrowLetter)
+	rst $10
+	call MainScript_ADVICE_DrawNarrowLetter
+	rst $10
 	ret
-	
-SECTION "Main Script Bold Text Drawing Advice1", ROMX[$71C0], BANK[$1]
-MainScript_ADVICE_SelectFontTableMethodA::
+
+SECTION "Main Script Alternate Font Drawing Advice", ROMX[$4000], BANK[$62]
+MainScript_ADVICE_SelectFontTable::
 	ld l, a
 	push af
 	ld a, [W_MainScript_ADVICE_FontToggle]
@@ -313,23 +337,138 @@ MainScript_ADVICE_SelectFontTableMethodA::
 	ld h, MainScript_ADVICE_DrawNarrowLetterTable >> 8
 	ret
 	
-MainScript_ADVICE_SelectFontTableMethodB::
+SECTION "Main Script Alternate Font Drawing Advice 2", ROMX[$4080], BANK[$62]
+MainScript_ADVICE_GetCharacterWidthByFont::
 	ld c, a
-	push af
+	ld a, [W_MainScript_VWFDisable]
+	or a
+	jr nz, .fullWidth
 	ld a, [W_MainScript_ADVICE_FontToggle]
+	cp 3
+	jr z, .entryFont
 	cp 2
 	jr nz, .useNarrowCharacter
-	pop af
 	ld b, MainScript_ADVICE_DrawBoldLetterTable >> 8
-	ret
+	jr .useWidthTable
 	
 .useNarrowCharacter
-	pop af
 	ld b, MainScript_ADVICE_DrawNarrowLetterTable >> 8
+
+.useWidthTable
+	ld a, [bc]
+	inc a
+	ret
+
+.fullWidth
+	ld a, 8
+	ret
+
+.entryFont
+	ld a, 6
 	ret
 	
 
-SECTION "Main Script Narrow Text Drawing Advice1", ROMX[$7400], BANK[$1]
+
+	
+SECTION "Main Script Alternate Font Table", ROMX[$4100], BANK[$62]
+; Should always be at the address XX00.
+MainScript_ADVICE_FontAddressTable::
+	dw MainScript_NarrowFont
+	dw MainScript_NarrowFont
+	dw MainScript_BoldFont
+	dw MainScript_EntryFont
+	
+SECTION "Main Script Alternate Font Drawing Advice 3", ROMX[$4180], BANK[$62]
+MainScript_ADVICE_SelectFontAddress::
+	push hl
+	ld a, [W_MainScript_VWFCurrentLetter]
+	cp $B8
+	ld a, [W_MainScript_ADVICE_FontToggle]
+	jr c, .notSystemChar
+	xor a
+
+.notSystemChar
+	add a
+	ld h, MainScript_ADVICE_FontAddressTable >> 8
+	ld l, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	add hl, de
+	ld e, l
+	ld d, h
+	pop hl
+	ret
+
+SECTION "Main Script Alternate Font Drawing Advice 4", ROMX[$4300], BANK[$62]
+MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
+;This is a copy of MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle intended to be called by MainScript_ADVICE_DrawNarrowLetter.
+	push bc
+	ld b, a
+	ld a, [W_MainScript_TextStyle]
+	
+	bit 0, a
+	jr nz, .bit0One
+	
+.bit0Zero
+	bit 1, a
+	jr z, .mode0
+	jr nz, .mode2
+	
+.bit0One
+	bit 1, a
+	jr z, .mode1
+	
+.mode3
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .mode3
+	
+	ld a, $FF
+	ld [hli], a
+	ld a, b
+	ld [hli], a
+	jr .end
+	
+.mode0
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .mode0
+	
+	ld a, b
+	ld [hli], a
+	ld [hli], a
+	jr .end
+	
+.mode1
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .mode1
+	
+	ld a, b
+	ld [hli], a
+	ld a, $FF
+	ld [hli], a
+	jr .end
+	
+.mode2
+	ld a, b
+	cpl
+	ld b, a
+	
+.mode2Loop
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .mode2Loop
+	
+	ld a, b
+	ld [hli], a
+	ld [hli], a
+	
+.end
+	pop bc
+	ret
+
 ;BC = text string (presumed WRAM, not bankable)
 ;D = string length (bytes)
 ;Returns E = string length (pixels)
@@ -367,7 +506,7 @@ MainScript_ADVICE_CountNarrowTextWidth::
 ;This is a copy of MainScript_ADVICE_DrawLetter for rendering a narrow font
 ;because bank $B lacks room for the narrow font & other things.
 MainScript_ADVICE_DrawNarrowLetter::
-	M_AdviceSetup
+	call MainScript_ADVICE_SelectFontAddress
 	
 	ld b, 8
 	ld a, $CF
@@ -377,7 +516,7 @@ MainScript_ADVICE_DrawNarrowLetter::
 	push hl
 	push bc
 	ld a, [W_MainScript_VWFCurrentLetter]
-	call MainScript_ADVICE_SelectFontTableMethodA
+	call MainScript_ADVICE_SelectFontTable
 	xor a
 	ld b, [hl]
 	ld a, [W_MainScript_VWFLetterShift]
@@ -474,19 +613,10 @@ MainScript_ADVICE_DrawNarrowLetter::
 	inc de
 	dec b
 	jr nz, .tileShiftLoop
-	ld a, 0
+	xor a
 	ld [W_MainScript_VWFOldTileMode], a
 	ld a, [W_MainScript_VWFCurrentLetter]
-	call MainScript_ADVICE_SelectFontTableMethodB
-	ld a, [W_MainScript_VWFDisable]
-	or a
-	jr z, .useWidthTable
-	ld a, 8
-	jr .addWidth
-	
-.useWidthTable
-	ld a, [bc]
-	inc a
+	call MainScript_ADVICE_GetCharacterWidthByFont
 	
 .addWidth
 	ld b, a
@@ -509,85 +639,16 @@ MainScript_ADVICE_DrawNarrowLetter::
 	
 .noSecondTileShiftBack
 	ld [W_MainScript_VWFLetterShift], a
-	
-	M_AdviceTeardown
+	ld b, a
+	ld a, BANK(MainScript_ADVICE_DrawLetter)
 	ret
 	
-SECTION "Main Script Bold Text Drawing Advice", ROMX[$6B00], BANK[$1]
+SECTION "Main Script Bold Text Drawing Advice", ROMX[$7E00], BANK[$62]
 MainScript_ADVICE_DrawBoldLetterTable::
 ; Should always be at the address XX00.
 	INCBIN "build/components/mainscript/font_bold.metrics.bin"
 	
-SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7C00], BANK[$1]
+SECTION "Main Script Narrow Text Drawing Advice", ROMX[$7F00], BANK[$62]
 MainScript_ADVICE_DrawNarrowLetterTable::
 ; Should always be at the address XX00.
 	INCBIN "build/components/mainscript/font_narrow.metrics.bin"
-
-SECTION "MainScript Narrow Text Drawing Advice 2", ROMX[$7BB6], BANK[$1]
-MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
-;This is a copy of MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle intended to ba called by MainScript_ADVICE_DrawNarrowLetter.
-	push bc
-	ld b, a
-	ld a, [W_MainScript_TextStyle]
-	
-	bit 0, a
-	jr nz, .bit0One
-	
-.bit0Zero
-	bit 1, a
-	jr z, .mode0
-	jr nz, .mode2
-	
-.bit0One
-	bit 1, a
-	jr z, .mode1
-	
-.mode3
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .mode3
-	
-	ld a, $FF
-	ld [hli], a
-	ld a, b
-	ld [hli], a
-	jr .end
-	
-.mode0
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .mode0
-	
-	ld a, b
-	ld [hli], a
-	ld [hli], a
-	jr .end
-	
-.mode1
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .mode1
-	
-	ld a, b
-	ld [hli], a
-	ld a, $FF
-	ld [hli], a
-	jr .end
-	
-.mode2
-	ld a, b
-	cpl
-	ld b, a
-	
-.mode2Loop
-	ld a, [REG_STAT]
-	and 2
-	jr nz, .mode2Loop
-	
-	ld a, b
-	ld [hli], a
-	ld [hli], a
-	
-.end
-	pop bc
-	ret
