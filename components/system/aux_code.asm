@@ -255,10 +255,8 @@ Banked_TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer::
 Banked_Victory_ADVICE_LoadSGBFilesRecruitment::
 	jp Victory_ADVICE_LoadSGBFilesRecruitment
 
-;The next two are at the END of Bank 1 and likely not conflicting
+;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
-Banked_MainScript_ADVICE_DrawNarrowLetter::
-	jp MainScript_ADVICE_DrawNarrowLetter
 
 Banked_Battle_ADVICE_ParsePluralState::
 	jp Battle_ADVICE_ParsePluralState
