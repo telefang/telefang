@@ -43,7 +43,6 @@ PhoneIME_GetIMEID::
 
 .asIs
     ret
-	nop
 
 SECTION "Phone IME Diacritic Timer Reset", ROMX[$6654], BANK[$4]
 PhoneIME_ADVICE_ResetTimerForDiacritics::

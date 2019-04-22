@@ -1,53 +1,65 @@
 INCLUDE "telefang.inc"
 
 SECTION "Title Menu Player Name WRAM", WRAM0[$C3A9]
-W_TitleMenu_NameBuffer:: ds M_MainScript_PlayerNameSize + 1
+W_TitleMenu_NameBuffer:: ds M_SaveClock_DenjuuNicknameEntrySize + 1
 
 SECTION "Title Menu Player Name Input", ROMX[$68FF], BANK[$4]
 TitleMenu_PositionNameCursor::
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    ld e, a
-    ld d, 0
-    ld hl, .cursorPositionList
-    add hl, de
-    ld a, [hl]
-    
+    call TitleMenu_PositionNameCursor_GetPosition
+    add 8
     ld b, a
     ld c, $68
-    ld de, $C0C0 ;TODO: This is the cursor structure
-    call PauseMenu_PositionCursor
-    ld a, 1
-    ld [W_OAM_SpritesReady], a
+    jp TitleMenu_PositionNicknameCursor.common
+
+TitleMenu_PositionNameCursor_GetPosition::
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld hl, .cursorPositionList
+    add l
+    ld l, a
+    ld a, [hl]
     ret
     
 .cursorPositionList
     db $08
-    db $10
-    db $18
+    db $0E
+    db $14
+    db $1A
     db $20
-    db $28
-    db $30
+    db $26
+    db $2C
+    db $32
     db $38
-    db $40
+    db $3E
+	
+	; Note: Free space.
+	nop
+	nop
+	nop
     
 ;Nearly identical function to the above...
-;It doesn't use a lookup table, but instead calculates the X coordinate in the
-;same way, all for an 8 pixel offset...
 ;Anyway, it's called by state 03 20, which I -think- has something to do with
 ;nicknaming denjuu obtained through link communications.
 TitleMenu_PositionNicknameCursor::
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    sla a
-    sla a
-    sla a
-    add a, 8
+    call TitleMenu_PositionNameCursor_GetPosition
     ld b, a
     ld c, $70
+
+.common
     ld de, $C0C0 ;TODO: Cursor structure
     call PauseMenu_PositionCursor
     ld a, 1
     ld [W_OAM_SpritesReady], a
     ret
+	
+	; Note: Free space.
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 SECTION "Title Menu Player Name Input 2", ROMX[$6488], BANK[$4]
 TitleMenu_ClearCharaName::
@@ -219,7 +231,7 @@ TitleMenu_NicknameInputImpl::
     call PhoneIME_ADVICE_ResetTimer
     
     ld hl, $9780
-    ld b, M_SaveClock_DenjuuNicknameEntrySize
+    ld b, M_MainScript_PlayerNameSize
     call PauseMenu_ClearInputTiles
     
     ld hl, W_TitleMenu_NameBuffer

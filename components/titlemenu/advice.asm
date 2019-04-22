@@ -1,5 +1,26 @@
 INCLUDE "telefang.inc"
 
+SECTION "Menu - Name Entry Underscore Gfx", ROMX[$4200], BANK[$62]
+TitleMenu_UnderscoreGfx::
+    INCBIN "build/components/titlemenu/resources/text_entry_underscores.2bpp"
+
+TitleMenu_UnderscoreDMGGfx::
+    INCBIN "build/components/titlemenu/resources/text_entry_underscores_dmg.2bpp"
+
+SECTION "Title Menu Underscore Gfx Loader", ROMX[$7DD2], BANK[$4]
+TitleMenu_ADVICE_LoadUnderscoreGfx::
+    call PauseMenu_SelectTextStyle
+    ld hl, $9600
+    ld de, TitleMenu_UnderscoreGfx
+    call TitleMenu_ADVICE_CanUseCGBTiles
+    jr z, .loadGraphic
+    ld e, TitleMenu_UnderscoreDMGGfx & $FF
+
+.loadGraphic
+    ld a, BANK(TitleMenu_UnderscoreGfx)
+    ld bc, $40
+    jp Banked_LCDC_LoadTiles
+
 SECTION "TitleMenu Check If Either SGB or CGB", ROMX[$5A8B], BANK[$4]
 TitleMenu_ADVICE_CanUseCGBTiles::
 ; Sets the z flag if in CGB or SGB mode.
@@ -293,13 +314,8 @@ TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer::
 	ld a, S_SaveClock_NicknameExtensionArray >> 8
 	add d
 	ld d, a
-	inc b
-	inc b
+	ld b, 4
 	call Banked_Memcpy_INTERNAL
-	ld a, $E0
-	ld [de], a
-	inc de
-	ld [de], a
 
 	M_AdviceTeardown
 	ret

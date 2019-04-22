@@ -286,8 +286,8 @@ PatchUtils_StoreDefaultCharaName:
 PatchUtils_InitializeRelocatedCharaName:
 	M_AdviceSetup
 	
-	ld hl, $C3A9
-	ld de, $CC90
+	ld hl, W_TitleMenu_NameBuffer
+	ld de, W_MainScript_CenteredNameBuffer
 	ld b, $11
 	
 .eraseLoop
@@ -297,12 +297,15 @@ PatchUtils_InitializeRelocatedCharaName:
 	dec b
 	jr nz, .eraseLoop
 	
-	ld b, 9
+	ld b, $A
 .secondEraseLoop
 	xor a
 	ld [hli], a
 	dec b
 	jr nz, .secondEraseLoop
+	
+	ld a, $E0
+	ld [hli], a
 	
 	M_AdviceTeardown
 	ret
