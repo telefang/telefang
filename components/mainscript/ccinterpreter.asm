@@ -60,7 +60,7 @@ MainScript_CCInterpreter::
 	dw MainScript_CCInterpreter_BoldFontCC ; F2
 	dw MainScript_CCInterpreter_FontResetCC ; F3
 	dw MainScript_CCInterpreter_NarrowPhraseCC ; F4
-	dw MainScript_CCInterpreter_DefaultCC ; F5
+	dw MainScript_CCInterpreter_EntryFontCC ; F5
 	dw MainScript_CCInterpreter_DefaultCC ; F6
 	dw MainScript_CCInterpreter_DefaultCC ; F7
 	dw MainScript_CCInterpreter_DefaultCC ; F8
@@ -703,3 +703,10 @@ MainScript_CCInterpreter_NarrowPhraseCC::
     pop af
     pop hl
     jp MainScript_EndOpcode.skipNewlineCheck
+
+SECTION "Main Script Patch Advice 5", ROMX[$7FFA], BANK[$B]
+MainScript_CCInterpreter_EntryFontCC::
+; Control Code F5
+	pop hl
+	ld a, 3
+	jp MainScript_CCInterpreter_SetFont

@@ -306,12 +306,6 @@ MainScript_ADVICE_FontAddress::
 	nop
 	nop
 	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 
 SECTION "Main Script Alternate Font Drawing Advice Bankcall", ROM0[$3DEA]
 Banked_MainScript_ADVICE_DrawNarrowLetter::

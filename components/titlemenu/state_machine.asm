@@ -416,7 +416,7 @@ TitleMenu_StateClearNameInput::
     call PauseMenu_ClearInputTiles
     xor a
     ld [W_MainScript_WindowBorderAttribs], a
-    call PauseMenu_SelectTextStyle
+    call TitleMenu_ADVICE_LoadUnderscoreGfx
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
     call PhoneIME_ADVICE_ResetTimer
@@ -658,7 +658,7 @@ TitleMenu_StateInitNickname::
     xor a
     ld [W_MainScript_WindowBorderAttribs], a
     
-    call PauseMenu_SelectTextStyle
+    call TitleMenu_ADVICE_LoadUnderscoreGfx
     
     ld a, $78
     ld [W_MainScript_TileBaseIdx], a
