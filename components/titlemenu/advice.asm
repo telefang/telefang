@@ -18,7 +18,7 @@ TitleMenu_ADVICE_LoadUnderscoreGfx::
 
 .loadGraphic
     ld a, BANK(TitleMenu_UnderscoreGfx)
-    ld bc, $40
+    ld bc, $50
     jp Banked_LCDC_LoadTiles
 
 SECTION "TitleMenu Check If Either SGB or CGB", ROMX[$5A8B], BANK[$4]

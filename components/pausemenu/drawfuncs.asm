@@ -15,6 +15,8 @@ PauseMenu_DrawCenteredNameBuffer::
 .selectTargetTile
     ld d, $C
     call Banked_MainScript_InitializeMenuText
+
+.draw
     call Banked_MainScriptMachine
     jp Banked_MainScriptMachine
     
@@ -23,23 +25,13 @@ PauseMenu_CallsMenuDrawDenjuuNickname::
     M_PrepAuxJmp Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
     jp PatchUtils_AuxCodeJmp
     
-    ; Note: Free Space (because you need all the free space you can get in this overstuffed bank). 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
+PauseMenu_DrawCenteredNameBufferNoVWFWithOffset::
+    ld bc, $D0
+    ld d, $C
+    call Banked_MainScript_InitializeMenuText
+    ld a, 2
+    ld [W_MainScript_VWFLetterShift], a
+    jp PauseMenu_DrawCenteredNameBuffer.draw
     nop
     nop
     nop

@@ -6,7 +6,7 @@ W_TitleMenu_NameBuffer:: ds M_SaveClock_DenjuuNicknameEntrySize + 1
 SECTION "Title Menu Player Name Input", ROMX[$68FF], BANK[$4]
 TitleMenu_PositionNameCursor::
     call TitleMenu_PositionNameCursor_GetPosition
-    add 8
+    add 6
     ld b, a
     ld c, $68
     jp TitleMenu_PositionNicknameCursor.common
@@ -20,16 +20,16 @@ TitleMenu_PositionNameCursor_GetPosition::
     ret
     
 .cursorPositionList
-    db $08
-    db $0E
-    db $14
-    db $1A
-    db $20
-    db $26
-    db $2C
-    db $32
-    db $38
-    db $3E
+    db $0A
+    db $10
+    db $16
+    db $1C
+    db $22
+    db $28
+    db $2E
+    db $34
+    db $3A
+    db $40
 	
 	; Note: Free space.
 	nop
@@ -82,10 +82,6 @@ TitleMenu_NameInputImpl::
     ld [W_PhoneIME_LastPressedButton], a
     
     call PhoneIME_ADVICE_ResetTimer
-    
-    ld hl, $9780
-    ld b, M_MainScript_PlayerNameSize
-    call PauseMenu_ClearInputTiles
     
     ld hl, W_TitleMenu_NameBuffer
     ld a, [W_PauseMenu_SelectedMenuItem]
@@ -211,7 +207,15 @@ TitleMenu_NameInputImpl::
 
 .return
     ret
-    
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     nop
     nop
     nop
@@ -230,10 +234,6 @@ TitleMenu_NicknameInputImpl::
     
     call PhoneIME_ADVICE_ResetTimer
     
-    ld hl, $9780
-    ld b, M_MainScript_PlayerNameSize
-    call PauseMenu_ClearInputTiles
-    
     ld hl, W_TitleMenu_NameBuffer
     ld a, [W_PauseMenu_SelectedMenuItem]
     ld e, a
@@ -242,7 +242,7 @@ TitleMenu_NicknameInputImpl::
     ld [hl], 0
     
     call PhoneIME_SyncDenjuuNickname
-    call PauseMenu_DrawCenteredNameBufferNoVWF
+    call PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
     
     ld a, [W_PauseMenu_SelectedMenuItem]
     and a
@@ -355,6 +355,15 @@ TitleMenu_NicknameInputImpl::
     
 .return
     ret
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]
 

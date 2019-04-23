@@ -56,7 +56,7 @@ PhoneIME_DenjuuNicknameDiacritic::
     pop hl
     ld [hl], a
     call PhoneIME_SyncDenjuuNickname
-    jp PauseMenu_DrawCenteredNameBufferNoVWF
+    jp PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
 
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PhoneIME_LoadGraphicsForIME::
