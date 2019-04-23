@@ -744,7 +744,7 @@ TitleMenu_StateInitNickname::
     call PhoneIME_SyncDenjuuNickname
     
     ld d, $C
-    call PauseMenu_DrawCenteredNameBufferNoVWF
+    call PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
     call PhoneIME_LoadTilemapForIME
     
     M_AuxJmp Banked_TitleMenu_ADVICE_InitNickname

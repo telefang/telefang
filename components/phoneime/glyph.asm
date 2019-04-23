@@ -145,4 +145,4 @@ PhoneIME_DenjuuNicknameGlyph::
     ld [hl], a ;Set the current character
     
     call PhoneIME_SyncDenjuuNickname
-    jp PauseMenu_DrawCenteredNameBufferNoVWF
+    jp PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
