@@ -33,30 +33,31 @@ PhoneIME_LoadTilemapForIME::
     
 SECTION "Pause menu IME Diacritic stuff", ROMX[$6673], BANK[$4]
 PhoneIME_PlayerNameDiacritic::
-    ld hl, W_TitleMenu_NameBuffer
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    call PhoneIME_ADVICE_ResetTimerForDiacritics
-    add hl, de
-    ld a, [hl]
-    push hl
-    call PhoneIME_ApplyDiacritic
-    pop hl
-    ld [hl], a
+    call PhoneIME_ADVICE_NameDiacriticCommon
     call PhoneIME_SyncPlayerName
     jp PauseMenu_DrawCenteredNameBufferNoVWF
+
+	; Note: Free space.
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 PhoneIME_DenjuuNicknameDiacritic::
-    ld hl, W_TitleMenu_NameBuffer
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    call PhoneIME_ADVICE_ResetTimerForDiacritics
-    add hl, de
-    ld a, [hl]
-    push hl
-    call PhoneIME_ApplyDiacritic
-    pop hl
-    ld [hl], a
+    call PhoneIME_ADVICE_NameDiacriticCommon
     call PhoneIME_SyncDenjuuNickname
     jp PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
+    nop
 
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PhoneIME_LoadGraphicsForIME::

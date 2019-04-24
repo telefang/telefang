@@ -78,17 +78,7 @@ TitleMenu_NameInputImpl::
     jr z, .noBButtonPress
     
 .backspaceProcessing
-    ld a, $FF
-    ld [W_PhoneIME_LastPressedButton], a
-    
-    call PhoneIME_ADVICE_ResetTimer
-    
-    ld hl, W_TitleMenu_NameBuffer
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    ld e, a
-    ld d, 0
-    add hl, de
-    ld [hl], 0
+    call TitleMenu_NameInputImpl_backspaceProcessingCommon
     
     call PhoneIME_SyncPlayerName
     call PauseMenu_DrawCenteredNameBufferNoVWF
@@ -208,19 +198,6 @@ TitleMenu_NameInputImpl::
 .return
     ret
 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-
 TitleMenu_NicknameInputImpl::
     call PhoneIME_InputProcessing
     
@@ -229,17 +206,7 @@ TitleMenu_NicknameInputImpl::
     jr z, .noBButtonPress
     
 .backspaceProcessing
-    ld a, $FF
-    ld [W_PhoneIME_LastPressedButton], a
-    
-    call PhoneIME_ADVICE_ResetTimer
-    
-    ld hl, W_TitleMenu_NameBuffer
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    ld e, a
-    ld d, 0
-    add hl, de
-    ld [hl], 0
+    call TitleMenu_NameInputImpl_backspaceProcessingCommon
     
     call PhoneIME_SyncDenjuuNickname
     call PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
@@ -329,13 +296,8 @@ TitleMenu_NicknameInputImpl::
     ret z
     
     dec a
-    ld [W_PauseMenu_SelectedMenuItem], a
     
-    call PhoneIME_ADVICE_ResetTimer
-    call PhoneIME_CheckIMEAutoSwitch
-    jr z, .cycleNextIME
-    
-    ret
+    jr .cursorChange
     
 .checktimer
     call PhoneIME_ADVICE_CheckTimer
@@ -347,6 +309,8 @@ TitleMenu_NicknameInputImpl::
     ret z
     
     inc a
+
+.cursorChange
     ld [W_PauseMenu_SelectedMenuItem], a
     
     call PhoneIME_ADVICE_ResetTimer
@@ -356,14 +320,19 @@ TitleMenu_NicknameInputImpl::
 .return
     ret
 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
+TitleMenu_NameInputImpl_backspaceProcessingCommon::
+    ld a, $FF
+    ld [W_PhoneIME_LastPressedButton], a
+    
+    call PhoneIME_ADVICE_ResetTimer
+    
+    ld hl, W_TitleMenu_NameBuffer
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    ld e, a
+    ld d, 0
+    add hl, de
+    ld [hl], 0
+    ret
 
 SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]
 
