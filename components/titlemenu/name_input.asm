@@ -331,7 +331,7 @@ TitleMenu_NameInputImpl_backspaceProcessingCommon::
     ld e, a
     ld d, 0
     add hl, de
-    ld [hl], 0
+    ld [hl], $20
     ret
 
 SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]

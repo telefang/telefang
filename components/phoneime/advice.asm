@@ -44,15 +44,6 @@ PhoneIME_GetIMEID::
 .asIs
     ret
 
-SECTION "Phone IME Diacritic Whitespace Check", ROMX[$6654], BANK[$4]
-PhoneIME_NameDiacriticCheckWhitespace::
-    ld a, [hl]
-    or a
-    ret z
-    cp $20
-    ret
-
-
 SECTION "Pause menu IME Diacritic patch stuff", ROMX[$6629], BANK[$4]
 PhoneIME_ADVICE_NameDiacriticCommon::
     ld hl, W_TitleMenu_NameBuffer
@@ -66,7 +57,8 @@ PhoneIME_ADVICE_NameDiacriticCommon::
     jr z, .skipLeftCheck
 
 .loop
-    call PhoneIME_NameDiacriticCheckWhitespace
+    ld a, [hl]
+    cp $20
     jr nz, .exitLoop
     dec hl
     dec e
@@ -84,18 +76,6 @@ PhoneIME_ADVICE_NameDiacriticCommon::
     pop hl
     ld [hl], a
     pop de
-    jp PhoneIME_ADVICE_NameDiacriticCommon_OnCharacterChanged
-
-    ; Note: Free space.
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-
-SECTION "Pause menu IME Diacritic patch stuff 2", ROMX[$6694], BANK[$4]
-PhoneIME_ADVICE_NameDiacriticCommon_OnCharacterChanged::
     cp d
     ret z
     ld a, $48
@@ -103,6 +83,8 @@ PhoneIME_ADVICE_NameDiacriticCommon_OnCharacterChanged::
     ld a, $10
     ld [W_PhoneIME_LastPressedButton], a
     ret
+    nop
+    nop
 
 SECTION "Phone IME Abc Mode 2", ROMX[$666B], BANK[$4]
 PhoneIME_CheckIMEAutoSwitch_Alt::
