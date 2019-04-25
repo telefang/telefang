@@ -117,3 +117,24 @@ PhoneIME_ADVICE_CheckTimer::
     ld [W_PhoneIME_NextCharTimer], a
     or a
     ret
+
+SECTION "Phone IME Backspace Fix", ROMX[$67C2], BANK[$4]
+TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus::
+    ld [W_PauseMenu_SelectedMenuItem], a
+    ld hl, W_TitleMenu_NameBuffer
+    add l
+    ld l, a
+    ld a, [hl]
+    cp $20
+    ret z
+    ld a, $10
+    ld [W_PhoneIME_LastPressedButton], a
+    ret
+
+    ; Note: Free Space
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop

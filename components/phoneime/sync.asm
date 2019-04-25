@@ -50,29 +50,3 @@ PhoneIME_SyncDenjuuNickname::
     ld b, M_SaveClock_DenjuuNicknameEntrySize
     
     jp PhoneIME_SyncPlayerName.common
-	
-	; Note: Free Space
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop

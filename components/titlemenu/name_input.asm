@@ -88,7 +88,7 @@ TitleMenu_NameInputImpl::
     ret z
     
     dec a
-    ld [W_PauseMenu_SelectedMenuItem], a
+    call TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
     ret
@@ -216,7 +216,7 @@ TitleMenu_NicknameInputImpl::
     ret z
     
     dec a
-    ld [W_PauseMenu_SelectedMenuItem], a
+    call TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
     ret
