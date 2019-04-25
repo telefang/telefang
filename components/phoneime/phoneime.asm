@@ -57,6 +57,21 @@ PhoneIME_DenjuuNicknameDiacritic::
     call PhoneIME_ADVICE_NameDiacriticCommon
     call PhoneIME_SyncDenjuuNickname
     jp PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
+
+	; Note: Free space.
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     nop
 
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]

@@ -9,6 +9,7 @@ PhoneIME_SyncPlayerName::
     ld de, W_TitleMenu_NameBuffer + M_MainScript_PlayerNameSize - 1
     ld b, M_MainScript_PlayerNameSize
     
+.common
     ld c, 0
     
 .copyAndTerminateLoop
@@ -17,7 +18,7 @@ PhoneIME_SyncPlayerName::
     jr nz, .copyNextChara
     
     ld a, [de]
-    cp 0
+    cp $20
     jr nz, .setTerminateFlag
     
 .terminateString
@@ -48,34 +49,4 @@ PhoneIME_SyncDenjuuNickname::
     ld de, W_TitleMenu_NameBuffer + M_SaveClock_DenjuuNicknameEntrySize - 1
     ld b, M_SaveClock_DenjuuNicknameEntrySize
     
-    ld c, 0
-    
-.copyAndTerminateLoop
-    ld a, c
-    cp 0
-    jr nz, .copyNextChara
-    
-    ld a, [de]
-    cp 0
-    jr nz, .setTerminateFlag
-    
-.terminateString
-    ld a, $E0
-    ld [hld], a
-    jr .loopDecrement
-    
-.setTerminateFlag
-    ld c, 1
-    
-.copyNextChara
-    ld a, [de]
-    ld [hld], a
-    
-.loopDecrement
-    dec de
-    dec b
-    
-    jr nz, .copyAndTerminateLoop
-    
-    ld a, c
-    ret
+    jp PhoneIME_SyncPlayerName.common

@@ -290,16 +290,18 @@ PatchUtils_InitializeRelocatedCharaName:
 	ld de, W_MainScript_CenteredNameBuffer
 	ld b, $11
 	
-.eraseLoop
 	ld a, $E0
+
+.eraseLoop
 	ld [de], a
 	inc de
 	dec b
 	jr nz, .eraseLoop
 	
 	ld b, $A
+	ld a, $20
+
 .secondEraseLoop
-	xor a
 	ld [hli], a
 	dec b
 	jr nz, .secondEraseLoop

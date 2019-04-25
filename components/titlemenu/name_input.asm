@@ -88,7 +88,7 @@ TitleMenu_NameInputImpl::
     ret z
     
     dec a
-    ld [W_PauseMenu_SelectedMenuItem], a
+    call TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
     ret
@@ -216,7 +216,7 @@ TitleMenu_NicknameInputImpl::
     ret z
     
     dec a
-    ld [W_PauseMenu_SelectedMenuItem], a
+    call TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
     ret
@@ -331,7 +331,7 @@ TitleMenu_NameInputImpl_backspaceProcessingCommon::
     ld e, a
     ld d, 0
     add hl, de
-    ld [hl], 0
+    ld [hl], $20
     ret
 
 SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]
