@@ -98,35 +98,35 @@ PhoneIME_Data::
     
 .numeralsButton1
     db 1
-    db $BC
+    db "1"
 .numeralsButton2
     db 1
-    db $BD
+    db "2"
 .numeralsButton3
     db 1
-    db $BE
+    db "3"
 .numeralsButton4
     db 1
-    db $BF
+    db "4"
 .numeralsButton5
     db 1
-    db $C0
+    db "5"
 .numeralsButton6
     db 1
-    db $C1
+    db "6"
 .numeralsButton7
     db 1
-    db $C2
+    db "7"
 .numeralsButton8
     db 1
-    db $C3
+    db "8"
 .numeralsButton9
     db 1
-    db $C4
+    db "9"
 .numeralsButtonStar
     db $6, "*+-%$="
 .numeralsButton0
     db 1
-    db $BB
+    db "0"
 .numeralsButtonPound
     db $5, "#_/|\\"
