@@ -27,6 +27,9 @@ charmap "Ñ", $96
 charmap "Å", $97
 charmap "Æ", $98
 charmap "Œ", $99
+charmap "Ø", $9A
+charmap "ů", $9B
+charmap "ø", $9C
 charmap "å", $9D
 charmap "æ", $9E
 charmap "œ", $9F
@@ -89,11 +92,21 @@ charmap "«ABS»", $EF
 
 charmap "…", $07
 charmap "‼", $08
+charmap "Č", $09
+charmap "Ž", $0A
+charmap "Ř", $0B
+charmap "Š", $0C
 charmap "🎵", $0D
 charmap "♫", $0D
 charmap "♪", $0D
 charmap "⚡", $0E
+charmap "č", $19
+charmap "ž", $1A
+charmap "ř", $1B
+charmap "š", $1C
 charmap "–", $1D
+charmap "ě", $1E
+charmap "ý", $1F
 charmap " ", $20
 charmap "!", $21
 charmap """, $22
