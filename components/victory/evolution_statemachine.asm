@@ -66,8 +66,7 @@ Victory_SubStateDrawEvolutionScreen::
 	ld a, $C
 	ld hl, $9100
 	call MainScript_DrawEmptySpaces
-	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_Victory_ADVICE_EvolutionLoadSGBFiles
 	ld a, [W_LateDenjuu_SubSubState]
 	inc a
 	ld [W_LateDenjuu_SubSubState], a
@@ -119,7 +118,7 @@ Victory_SubStateEvolutionDrawDenjuu::
 	call Victory_LoadSpeciesNameAsArg1
 	ld a, [W_Battle_CurrentParticipant]
 	ld de, $9100
-	call Status_LoadEvolutionIndicatorBySpecies
+	call Victory_ADVICE_LoadEvolutionIndicatorBySpecies
 	ld bc, $605
 	ld e, $8B
 	ld a, 0
@@ -165,7 +164,7 @@ Victory_SubStateEvolutionDrawDenjuu::
 	ld c, l
 	call Overworld_SetFlag
 	ld a, 7
-	ld [W_LateDenjuu_SubSubState], a
+	call Victory_ADVICE_LoadUnevolvedPalette
 	ret
 
 Victory_SubStateEvolutionMapDenjuu::
@@ -274,9 +273,9 @@ Victory_SubStateDrawEvolvedDenjuuInfo::
 	ld a, [W_Battle_RetrSpeciesByte]
 	dec a
 	ld de, $9100
-	call Status_LoadEvolutionIndicatorBySpecies
+	call Victory_ADVICE_LoadEvolutionIndicatorBySpecies
 	ld a, 9
-	ld [W_LateDenjuu_SubSubState], a
+	call Victory_ADVICE_LoadEvolvedPalette
 	ret
 
 Victory_SubStateEvolutionSuccessScreen::
@@ -299,7 +298,7 @@ Victory_SubStateEvolutionSuccessScreen::
 	ld a, $15
 	ld [W_Sound_NextSFXSelect], a
 	ld c, $1A
-	call Battle_QueueMessage
+	call Victory_ADVICE_QueueMessage
 	ld a, 2
 	ld [W_LateDenjuu_SubSubState], a
 	ret
@@ -408,7 +407,7 @@ Victory_SubStateEvolutionExit::
 	ld [$D4CF], a
 	ld [hl], a
 	xor a
-	ld [W_LateDenjuu_SubSubState], a
+	call Victory_ADVICE_UnloadSGBFiles
 	jp Battle_IncrementSubSubState
 
 Victory_EvolutionRemoveLightParticles::

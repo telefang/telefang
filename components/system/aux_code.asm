@@ -255,6 +255,9 @@ Banked_TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer::
 Banked_Victory_ADVICE_LoadSGBFilesRecruitment::
 	jp Victory_ADVICE_LoadSGBFilesRecruitment
 
+Banked_Victory_ADVICE_EvolutionLoadSGBFiles::
+	jp Victory_ADVICE_EvolutionLoadSGBFiles
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 
