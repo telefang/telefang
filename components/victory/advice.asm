@@ -166,6 +166,53 @@ Victory_ADVICE_DrawPhoneNumber::
     pop hl
     jp Banked_Status_DrawPhoneNumberForStatus
 
+Victory_ADVICE_LoadEvolutionIndicatorBySpecies::
+    call Status_LoadEvolutionIndicatorBySpecies
+
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret z
+
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z
+	
+    ld hl, $9100
+    ld b, $30
+    jp Victory_ADVICE_TileLowByteBlanketFill
+
+Victory_ADVICE_LoadUnevolvedPalette::
+    ld [W_LateDenjuu_SubSubState], a
+
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret z
+
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z
+
+    ld d, M_SGB_Pal23 << 3 + 1
+    ld bc, $506
+    M_PrepAuxJmp Banked_PatchUtils_CommitStagedCGBToSGB_CBE
+	jp PatchUtils_AuxCodeJmp
+
+Victory_ADVICE_LoadEvolvedPalette::
+    ld [W_LateDenjuu_SubSubState], a
+
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret z
+
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z
+
+    ld d, M_SGB_Pal23 << 3 + 1
+    ld bc, $507
+    M_PrepAuxJmp Banked_PatchUtils_CommitStagedCGBToSGB_CBE
+	jp PatchUtils_AuxCodeJmp
+
 SECTION "Recruitment Advice Code", ROMX[$5E50], BANK[$1]
 Victory_ADVICE_LoadSGBFilesRecruitment::
     M_AdviceSetup
@@ -208,6 +255,51 @@ Victory_ADVICE_LoadSGBFilesRecruitment::
     ld a, M_SGB_Pal23 << 3 + 1
     ld bc, $507
     call PatchUtils_CommitStagedCGBToSGB
+
+.return
+    M_AdviceTeardown
+    ret
+
+SECTION "Victory Evolution Advice Code 1", ROMX[$5F00], BANK[$1]
+Victory_ADVICE_EvolutionLoadSGBFiles::
+    M_AdviceSetup
+
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld hl, $9010
+    ld b, $78
+    call Zukan_ADVICE_TileLightColourReverse
+
+    ld hl, $8F00
+    ld b, $40
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld hl, $9100
+    ld b, $30
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld hl, $9580
+    ld b, $20
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+
+    ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 5)
+    call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
+
+    ld c, $10
+    call Banked_SGB_ConstructATFSetPacket
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld bc, $404 
+    call PatchUtils_CommitStagedCGBToSGB
+
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
 
 .return
     M_AdviceTeardown
