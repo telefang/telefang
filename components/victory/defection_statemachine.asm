@@ -84,11 +84,6 @@ Victory_SubStateDrawDefectionScreen::
     pop hl
     
     call Victory_ADVICE_SubStateDrawDefectionScreen
-    nop
-    nop
-    nop
-    nop
-    nop
     
     call SaveClock_ExitSRAM
     
@@ -136,13 +131,18 @@ Victory_SubStateDrawDefectionScreen::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
     
     ld a, [W_Battle_4thOrderSubState]
     inc a
     ld [W_Battle_4thOrderSubState], a
     ret
+
+    nop
+    nop
+    nop
+    nop
+    nop
     
 Victory_SubStateFadeInDefectionScreen::
     ld a, 0
@@ -191,7 +191,7 @@ Victory_SubStateFadeOutDefectionScreen::
     
 Victory_SubStateExitDefectionScreen::
     xor a
-    ld [W_Battle_4thOrderSubState], a
+    call Victory_ADVICE_UnloadSGBFiles
     ld a, 9
     ld [W_Battle_SubSubState], a
     ret
