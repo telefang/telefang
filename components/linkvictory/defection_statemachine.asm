@@ -71,7 +71,7 @@ LinkVictory_DefectionConnectionClosedFadeOut::
 
 LinkVictory_DefectionConnectionExitToTitlemenu::
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkVictory_ADVICE_OnExit
 	ld [W_Battle_SubSubState], a
 	ld [W_SystemSubState], a
 	ld a, 3
@@ -228,8 +228,7 @@ LinkVictory_SubStateDrawDefectionScreen::
 	call Sound_IndexMusicSetBySong
 	ld [W_Sound_NextBGMSelect], a
 	
-	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
 	
 	xor a
 	ld [W_Battle_LoopIndex], a
@@ -329,7 +328,7 @@ LinkVictory_DefectionFadeOut::
 
 LinkVictory_DefectionExitToTitlemenu::
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkVictory_ADVICE_OnExit
 	ld [W_Battle_SubSubState], a
 	ld [W_SystemSubState], a
 	ld a, 3

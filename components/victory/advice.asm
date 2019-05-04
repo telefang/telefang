@@ -121,7 +121,7 @@ Victory_ADVICE_QueueMessage::
 	
 	ld hl, $8F00
 	ld b, $40
-	; Continues into Encounter_ADVICE_TileLowByteBlanketFill
+	; Continues into Victory_ADVICE_TileLowByteBlanketFill
 
 Victory_ADVICE_TileLowByteBlanketFill::
 	ld c, $FF

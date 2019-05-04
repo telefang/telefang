@@ -78,7 +78,7 @@ LinkVictory_SubStateRecruitmentLostConnectionFadeOut::
 LinkVictory_SubStateRecruitmentLostConnectionExitToTitlemenu::
 	call Banked_SaveClock_StoreWorkingStateToSaveData
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkVictory_ADVICE_OnExit
 	ld [W_Battle_SubSubState], a
 	ld [W_SystemSubState], a
 	ld a, 3
@@ -283,8 +283,7 @@ LinkVictory_SubStateDrawRecruitmentScreen::
 	ld b, h
 	ld c, l
 	call Overworld_SetFlag
-	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
 	ld a, 1
 	ld [W_Battle_4thOrderSubState], a
 	ret
@@ -310,7 +309,7 @@ LinkVictory_SubStateRecruitmentFadeInAndMemoryMarker::
 
 LinkVictory_DefectionQueueGotNumberMessage::
 	ld c, 3
-	call Battle_QueueMessage
+	call LinkVictory_ADVICE_QueueMessage
 	ld a, 2
 	ld [W_Battle_4thOrderSubState], a
 	ret
@@ -345,7 +344,7 @@ LinkVictory_SubStateRecruitmentDrawNumber::
 	ld b, a
 	ld a, [hl]
 	ld hl, $99C3
-	call Banked_Status_DrawPhoneNumber
+	call LinkVictory_ADVICE_DrawPhoneNumber
 	call SaveClock_EnterSRAM2
 	ld a, [$D4A7]
 	ld hl, $B800
@@ -363,7 +362,7 @@ LinkVictory_SubStateRecruitmentHideNumberOnInput::
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld c, $63
-	call Battle_QueueMessage
+	call LinkVictory_ADVICE_QueueMessage
 	xor a
 	ld [W_Victory_UserSelection], a
 	call SerIO_PlaceChoiceCursor
@@ -448,7 +447,7 @@ LinkVictory_SubStateRecruitmentSaveNumberMessageAndInputHandler::
 	ld c, $65
 
 .yesSelected
-	call Battle_QueueMessage
+	call LinkVictory_ADVICE_QueueMessage
 	xor a
 	ld [W_MetaSpriteConfig1], a
 	ld a, 1
@@ -465,7 +464,7 @@ LinkVictory_SubStateRecruitmentSaveNumberParseResponse::
 	cp 0
 	jr nz, .noSelected
 	ld c, $8F
-	call Battle_QueueMessage
+	call LinkVictory_ADVICE_QueueMessage
 	xor a
 	ld [W_Victory_UserSelection], a
 	call SerIO_PlaceChoiceCursor
@@ -493,7 +492,7 @@ LinkVictory_SubStateRecruitmentFadeOutForExit::
 LinkVictory_SubStateRecruitmentExitToTitleMenu::
 	call Banked_SaveClock_StoreWorkingStateToSaveData
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkVictory_ADVICE_OnExit
 	ld [W_Battle_SubSubState], a
 	ld [W_SystemSubState], a
 	ld a, 3
@@ -587,7 +586,7 @@ LinkVictory_SubStateRecruitmentOpenNicknameScreen::
 	or a
 	ret z
 	xor a
-	ld [W_LateDenjuu_SubSubState], a
+	call LinkVictory_ADVICE_OnExit
 	ld [W_Battle_SubSubState], a
 	ld a, $1F
 	ld [W_SystemSubState], a
