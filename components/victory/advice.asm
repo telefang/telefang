@@ -108,21 +108,6 @@ Victory_ADVICE_UnloadSGBFiles::
 .noSGB
     ret
 
-Victory_ADVICE_QueueMessage::
-    call Battle_QueueMessage
-
-    ld a, [W_SGB_DetectSuccess]
-    or a
-    ret z
-
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
-    ret z
-	
-	ld hl, $8F00
-	ld b, $40
-	; Continues into Victory_ADVICE_TileLowByteBlanketFill
-
 Victory_ADVICE_TileLowByteBlanketFill::
 	ld c, $FF
 

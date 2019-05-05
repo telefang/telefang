@@ -207,7 +207,7 @@ Summon_StateEnter::
     ld l, a
     call Battle_MessageNumbersToText
     ld c, $6A
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld bc, 0
     ld e, $95
     ld a, 0
@@ -279,7 +279,7 @@ Summon_StateEnter::
     ld c, $6B
 
 .queueMessage
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
 
 ; This section of code is common to both contact and no contact screens, it draws the page numbers.
 
@@ -609,7 +609,7 @@ Summon_StateInputHandler::
     ld [$D4BB], a
     ld [$D4BC], a
     ld c, $6A
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, [W_Summon_RemainingParticipantsForSelection]
     cp 1
     jr nz, .deselectByBConditionNotValid
@@ -652,7 +652,7 @@ Summon_StateInputHandler::
 
 .queueConfirmationMessage
     ld c, $1E
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     xor a
     ld [W_Victory_UserSelection], a
     call Encounter_PlaceSelectIndicator
@@ -853,7 +853,7 @@ Summon_StateConfirmationInputHandler:: ;50AE
     ld a, [W_Summon_MaxRemainingParticipantsForSelection]
     ld [W_Summon_RemainingParticipantsForSelection], a
     ld c, $6A
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, 6
     ld [W_Battle_SubSubState], a
     ret

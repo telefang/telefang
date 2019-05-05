@@ -265,3 +265,68 @@ Status_LoadPhoneDigits_NowWithSGBSupport::
     dec b
     jr nz, .drawloop
     ret
+
+SECTION "Status Screen Numerical Tiles Loader Advice Code", ROMX[$7D00], BANK[$38]
+; This removes excess code from bank 0, optimises the loop, and adds logic for text style 3 (for coloured screens in SGB mode).
+Status_ADVICE_ExpandNumericalTiles::
+    ld a, [W_MainScript_TextStyle]
+    cp 2
+    jr z, .invertedTextLoop
+    cp 3
+    jr z, .lightBgTextLoop
+
+.normalTextLoop
+    di
+
+.waitForBlankingNormal
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .waitForBlankingNormal
+
+    ld a, [de]
+    ld [hli], a
+    ld [hli], a
+
+    ei ; FB
+    inc de
+    dec b
+    jr nz, .normalTextLoop
+    ret
+
+.invertedTextLoop
+    di
+
+.waitForBlankingInverted
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .waitForBlankingInverted
+
+    ld a, [de]
+    cpl
+    ld [hli], a
+    ld [hli], a
+
+    ei
+    inc de
+    dec b
+    jr nz, .invertedTextLoop
+    ret
+
+.lightBgTextLoop
+    di
+
+.waitForBlankingLightBg
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .waitForBlankingLightBg
+
+    ld a, $FF
+    ld [hli], a
+    ld a, [de]
+    ld [hli], a
+
+    ei
+    inc de
+    dec b
+    jr nz, .lightBgTextLoop
+    ret

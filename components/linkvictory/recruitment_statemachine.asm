@@ -309,7 +309,7 @@ LinkVictory_SubStateRecruitmentFadeInAndMemoryMarker::
 
 LinkVictory_DefectionQueueGotNumberMessage::
 	ld c, 3
-	call LinkVictory_ADVICE_QueueMessage
+	call Battle_QueueMessage
 	ld a, 2
 	ld [W_Battle_4thOrderSubState], a
 	ret
@@ -362,7 +362,7 @@ LinkVictory_SubStateRecruitmentHideNumberOnInput::
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld c, $63
-	call LinkVictory_ADVICE_QueueMessage
+	call Battle_QueueMessage
 	xor a
 	ld [W_Victory_UserSelection], a
 	call SerIO_PlaceChoiceCursor
@@ -447,7 +447,7 @@ LinkVictory_SubStateRecruitmentSaveNumberMessageAndInputHandler::
 	ld c, $65
 
 .yesSelected
-	call LinkVictory_ADVICE_QueueMessage
+	call Battle_QueueMessage
 	xor a
 	ld [W_MetaSpriteConfig1], a
 	ld a, 1
@@ -464,7 +464,7 @@ LinkVictory_SubStateRecruitmentSaveNumberParseResponse::
 	cp 0
 	jr nz, .noSelected
 	ld c, $8F
-	call LinkVictory_ADVICE_QueueMessage
+	call Battle_QueueMessage
 	xor a
 	ld [W_Victory_UserSelection], a
 	call SerIO_PlaceChoiceCursor

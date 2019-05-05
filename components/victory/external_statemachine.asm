@@ -44,7 +44,6 @@ Victory_ExStateOverworldReturn::
     
     ld a, $A
     ld [W_SystemSubState], a
-    ld a, M_System_GameStateOverworld
-    ld [W_SystemState], a
+    M_AuxJmp Banked_Battle_ADVICE_ExitToOverworld
     
     ret

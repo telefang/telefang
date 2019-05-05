@@ -115,7 +115,7 @@ Victory_SubStateRecruitmentFadeInAndMemoryMarker::
 
 .tfangerDefection
     ld c, 3
-    call Victory_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, 2
     ld [W_LateDenjuu_SubSubState], a
     ret
@@ -126,7 +126,7 @@ Victory_SubStateRecruitmentWowYoureStrongMessage::
     cp 9
     ret nz
     ld c, 3
-    call Victory_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, 2
     ld [W_LateDenjuu_SubSubState], a
     ret
@@ -190,7 +190,7 @@ Victory_SubStateRecruitmentCheckCapacityAndDrawNumber::
 
 .insufficientMemoryAtThisTime
     ld c, $6E
-    call Victory_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, $A
     ld [W_LateDenjuu_SubSubState], a
     ret
@@ -213,7 +213,7 @@ Victory_SubStateRecruitmentHideNumberOnInput::
     ld a, 3
     ld [W_Sound_NextSFXSelect], a
     ld c, $63
-    call Victory_ADVICE_QueueMessage
+    call Battle_QueueMessage
     xor a
     ld [W_Victory_UserSelection], a
     call Victory_PlaceChoiceCursor
@@ -295,7 +295,7 @@ Victory_SubStateRecruitmentSaveNumberMessageAndInputHandler::
     ld c, $65
 
 .yesSelected
-    call Victory_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, 0
     ld [W_MetaSpriteConfig1], a
     ld a, 1
@@ -314,7 +314,7 @@ Victory_SubStateRecruitmentSaveNumberParseResponse::
     cp 0
     jr nz, .noSelected
     ld c, $8F
-    call Victory_ADVICE_QueueMessage
+    call Battle_QueueMessage
     xor a
     ld [W_Victory_UserSelection], a
     call Victory_PlaceChoiceCursor

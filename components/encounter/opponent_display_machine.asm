@@ -354,7 +354,7 @@ Encounter_SubStateDenjuuOrTFangerAppearedMessage::
     call StringTable_LoadName75
     call Encounter_CopyStagedStringToArg2
     ld c, $23
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, $52
     ld [W_Sound_NextSFXSelect], a
     jp Battle_IncrementSubSubState
@@ -375,7 +375,7 @@ Encounter_SubStateGoDenjuuMessage::
 
 Encounter_SubStateFightFleeStatus::
     ld c, $26
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, 0
     call Banked_Status_LoadUIGraphics
     ld a, 0
@@ -524,7 +524,7 @@ Encounter_SubStateInputHandler::
     ld a, $1E
     ld [W_Battle_LoopIndex], a
     ld c, $11
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     ld a, 9
     ld [W_Battle_SubSubState], a
     ret
@@ -622,7 +622,7 @@ Encounter_SubStateFuckThisImOuttaHere::
 
 .couldntEscape
     ld c, $12
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     jp Battle_IncrementSubSubState
 
 Encounter_SubStateButYouCouldntEscapeMessage::
@@ -641,7 +641,7 @@ Encounter_SubStateAccessingPhoneMemory::
     ld a, 1
     ld [W_Battle_LoopIndex], a
     ld c, $96
-    call Encounter_ADVICE_QueueMessage
+    call Battle_QueueMessage
     jp Battle_IncrementSubSubState
 .smallContactList
     ld a, 1

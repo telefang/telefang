@@ -298,7 +298,7 @@ Victory_SubStateEvolutionSuccessScreen::
 	ld a, $15
 	ld [W_Sound_NextSFXSelect], a
 	ld c, $1A
-	call Victory_ADVICE_QueueMessage
+	call Battle_QueueMessage
 	ld a, 2
 	ld [W_LateDenjuu_SubSubState], a
 	ret

@@ -85,6 +85,9 @@ Banked_MainScript_ADVICE_CondenseStagedTableStringLong::
 Banked_Battle_ADVICE_ClearStatusEffectTilemaps::
 	jp Battle_ADVICE_ClearStatusEffectTilemaps
 
+Banked_Battle_ADVICE_ExitToOverworld::
+	jp Battle_ADVICE_ExitToOverworld
+
 ;components/battle/status.asm (why is this in battle, it's a MainScript sym)
 ;MainScript_ADVICE_DrawStatusEffectGfx lives around here.
 ;It's HOME Bank advice so it doesn't get a trampoline; but we need to mark it on
