@@ -36,6 +36,16 @@ FONTS = {
     }
 }
 
+CONTROL_CODES = {
+    '<bold>': {'font': 'bold'},
+    '<normal>': {'font': 'normal'}
+}
+
+REPLACE_CODES = {
+    '<&name>': "Shigeki"
+}
+REPLACE_CODE_RE = re.compile('|'.join(REPLACE_CODES.keys()))
+
 app = Flask(__name__)
 
 @app.before_first_request
@@ -53,10 +63,10 @@ class ArgumentError(Exception):
 def get_query_arg(name,
                   transformer=lambda x: x,
                   validator=lambda x: True,
-                  default=None, required=False):
+                  default=None, required=False, accept_empty=False):
     try:
         arg = request.args[name]
-        if not arg:
+        if not accept_empty and not arg:
             raise KeyError(name)
     except KeyError:
         if required:
@@ -75,11 +85,17 @@ def bounds(lowest, highest):
         return lowest <= n <= highest
     return is_within_bounds
 
+def one_of(*values):
+    def is_among_values(x):
+        return x in values
+    return is_among_values
+
 @app.route('/preview')
 def preview():
     try:
+        text = get_query_arg('text', required=True, accept_empty=True)
         width = get_query_arg('width', int, bounds(1, 1024), required=True)
-        text = get_query_arg('text', required=True)
+        font = get_query_arg('font', str, one_of('normal', 'bold'), default='normal')
         scale = get_query_arg('scale', int, bounds(1, 8), default=2)
         padding = get_query_arg('padding', int, bounds(0, 128), default=0)
         spacing = get_query_arg('spacing', int, bounds(0, 16), default=0)
@@ -89,7 +105,7 @@ def preview():
     except ArgumentError as e:
         return Response(e.message, 400)
 
-    image = preview_image(text, width, scale, padding,
+    image = preview_image(text, width, font, scale, padding,
                           spacing, page_lines, prompt_page_lines,
                           min_lines)
     png_data = BytesIO()
@@ -97,7 +113,7 @@ def preview():
 
     return Response(png_data.getvalue(), mimetype='image/png')
 
-def preview_image(text, width,
+def preview_image(text, width, font='normal',
                   scale=1, padding=0,
                   spacing=0, page_lines=None, prompt_page_lines=None,
                   min_lines=0):
@@ -122,7 +138,10 @@ def preview_image(text, width,
         BACKGROUND_COLOR
     )
 
-    font = app.fonts['normal']
+    text = REPLACE_CODE_RE.sub(lambda m: REPLACE_CODES[m.group()], text)
+
+    font_name = font
+    font = app.fonts[font_name]
     text_len = len(text)
     i = 0
     line_num = 0
@@ -131,6 +150,17 @@ def preview_image(text, width,
     while i < text_len:
         for char_len in app.descending_char_lengths:
             char = text[i:i + char_len]
+
+            try:
+                code_effects = CONTROL_CODES[char]
+            except LookupError:
+                pass
+            else:
+                font_name = code_effects.get('font', font_name)
+                font = app.fonts[font_name]
+                i += char_len
+                continue
+            
             try:
                 code = app.charmap[char]
             except LookupError:
@@ -224,7 +254,7 @@ def load():
     """Load font data from disk."""
     with open(os.path.join(DATA_DIR, 'charmap.asm'), 'r', encoding='utf-8') as f:
         app.charmap = parse_charmap(f.read())
-        app.descending_char_lengths = descending_char_lengths_of(app.charmap)
+        app.descending_char_lengths = descending_char_lengths_of(app.charmap, CONTROL_CODES)
     
     app.fonts = {}
     for font_name in FONTS.keys():
@@ -262,13 +292,14 @@ def parse_charmap(s):
         charmap[char] = code
     return charmap
 
-def descending_char_lengths_of(charmap):
+def descending_char_lengths_of(*charsets):
     """Return a list of the different character lengths
     (e.g. "x" has a length of 1; "<code>" is 6) in descending order.
     """
     lengths = set()
-    for char in charmap:
-        lengths.add(len(char))
+    for charset in charsets:
+        for char in charset:
+            lengths.add(len(char))
     return sorted(lengths, reverse=True)
 
 def parse_metric_csv(s):

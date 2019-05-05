@@ -1,7 +1,32 @@
-"use strict";
+ "use strict";
+
+var CharType = {
+  WORD:       0,
+  // Break chars right before a word shouldn't be broken after.
+  // For example, "...Hey!" shouldn't be split up into "..." and "Hey!".
+  LEADING_BREAK_CHAR: 1,
+  BREAK_CHAR: 2,
+  WHITESPACE: 3,
+  NEWLINE:    4
+};
 
 var FONTS = getFontMetrics();
 var CHARS = getChars();
+var CONTROL_CODES = {
+  // This isn't particularly pretty, but refactoring this to be state-based would require
+  // an object-oriented rewrite of the whole script, which would be a pain and a half.
+  "<normal>": {font: "normal"},
+  "<bold>": {font: "bold"},
+  // This "width" approach doesn't take the font into account, but since this is the widest
+  // possible for 8 tiles anyway, it doesn't matter for <&name>. The general way to handle
+  // this would be to get the widest character in every font and assign a separate width
+  // for each font. This is good enough for this case, though!
+  "<&name>": {charType: CharType.WORD, width: 8 * 8 - 1}
+};
+for (var code in CONTROL_CODES) {
+  if (!CONTROL_CODES.hasOwnProperty(code)) {continue;}
+  CHARS.push(code);
+}
 var CHARSET = {};
 for (var i = 0; i < CHARS.length; i++) {
   CHARSET[CHARS[i]] = true;
@@ -28,7 +53,7 @@ for (var i = 0; i < BREAK_CHARS_ARR.length; i++) {
 function formatSelectedRows() {
   var sheet = SpreadsheetApp.getActiveSheet();
   var sheetName = sheet.getName();
-  if (!SHEET_PARAMS.hasOwnProperty(sheetName)) {throw "Only the SMS and Field Guide sheets are supported at the moment.";}
+  if (!SHEET_PARAMS.hasOwnProperty(sheetName)) {throw "This sheet isn't supported at the moment.";}
   var params = SHEET_PARAMS[sheetName];
   
   var ranges = sheet.getActiveRangeList().getRanges();
@@ -63,21 +88,10 @@ function formatSelectedRows() {
   }
 }
 
-var CharType = {
-  WORD:       0,
-  // Break chars right before a word shouldn't be broken after.
-  // For example, "...Hey!" shouldn't be split up into "..." and "Hey!".
-  LEADING_BREAK_CHAR: 1,
-  BREAK_CHAR: 2,
-  WHITESPACE: 3,
-  NEWLINE:    4
-};
-
 function wrap(text, width, promptPageLines, font) {
   var prompts = typeof promptPageLines !== 'undefined';
   
   var lines = _wrap(text, width, promptPageLines, font);
-  Logger.log(lines);
   
   // The last line in dialogue always has a prompt on it.
   // The last line returned by _wrap may exceed the "with prompt" width,
@@ -151,16 +165,30 @@ function _wrap(text, width, promptPageLines, font) {
       }
       if (!char) {throw "Character not in charset: \"" + curTestChar + "\"";}
       
-      charWidth = font[char];
-      curLineWidth += charWidth;
-      
-      if (WHITESPACE_CHARS.indexOf(char) !== -1) {curCharType = CharType.WHITESPACE;}
-      else if (BREAK_CHARS[char]) {
-        if (prevCharType === CharType.WORD || prevCharType === CharType.BREAK_CHAR) {curCharType = CharType.BREAK_CHAR}
-        else {curCharType = CharType.LEADING_BREAK_CHAR}
+      if (typeof CONTROL_CODES[char] !== 'undefined') {
+        var codeEffects = CONTROL_CODES[char];
+        fontName = codeEffects.font || fontName;
+        font = FONTS[fontName];
+        if (typeof codeEffects.charType === 'undefined' || typeof codeEffects.width === 'undefined') {
+          i += charLength;
+          continue;
+        } else {
+          curCharType = codeEffects.charType;
+          charWidth = codeEffects.width;
+          curLineWidth += charWidth;
+        }
+      } else {
+        charWidth = font[char];
+        curLineWidth += charWidth;
+        
+        if (WHITESPACE_CHARS.indexOf(char) !== -1) {curCharType = CharType.WHITESPACE;}
+        else if (BREAK_CHARS[char]) {
+          if (prevCharType === CharType.WORD || prevCharType === CharType.BREAK_CHAR) {curCharType = CharType.BREAK_CHAR}
+          else {curCharType = CharType.LEADING_BREAK_CHAR}
+        }
+        else if (char === '\n') {curCharType = CharType.NEWLINE; charWidth = 0;}
+        else {curCharType = CharType.WORD;}
       }
-      else if (char === '\n') {curCharType = CharType.NEWLINE; charWidth = 0;}
-      else {curCharType = CharType.WORD;}
     }
     
     // Transitions that trigger a word end.
@@ -226,4 +254,9 @@ function _wrap(text, width, promptPageLines, font) {
     i += charLength;
   }
   return lines;
+}
+
+function testo() {
+  Logger.log(wrap("<bold>Hello <&name>", 91));
+  Logger.log(wrap("<bold>Hello <&name>", 90));
 }
