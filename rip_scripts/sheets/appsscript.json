@@ -13,7 +13,7 @@
       "defaultShortcut": "Ctrl+Alt+Shift+1"
     }, {
       "menuName": "Preview selected cell (currently SMS and Field Guide only)",
-      "functionName": "previewSelectedCell",
+      "functionName": "previewSelectedCells",
       "defaultShortcut": "Ctrl+Alt+Shift+2"
     }]
   }
