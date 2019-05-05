@@ -34,44 +34,46 @@ Status_ExpandNumericalTiles::
     ld b, $80
     
 .loop
-    di
-    ld a, [W_MainScript_TextStyle]
-    cp 2
-    jr z, .waitForBlankingInverted
-    
-.waitForBlanking
-    ld a, [REG_STAT]
-    and 2
-    jr nz, .waitForBlanking
-    
-    ld a, [de]
-    ld [hli], a
-    ld [hli], a
-    
-    ei
-    inc de
-    dec b
-    jr nz, .loop
-    
+    call Status_ADVICE_ExpandNumericalTiles
     pop af
     rst $10
     ret
-    
-.waitForBlankingInverted
-    ld a, [REG_STAT]
-    and 2
-    jr nz, .waitForBlankingInverted
-    
-    ld a, [de]
-    cpl
-    ld [hli], a
-    ld [hli], a
-    
-    ei
-    inc de
-    dec b
-    jr nz, .loop
-    
-    pop af
-    rst $10
-    ret
+
+; Note: Free space.
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop

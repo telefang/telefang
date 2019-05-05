@@ -32,3 +32,28 @@ Battle_ADVICE_ClearStatusEffectTilemaps::
 
     M_AdviceTeardown
     ret
+
+SECTION "Direct Battle Screen Exit To Overworld Advice Code", ROMX[$5100], BANK[$1]
+Battle_ADVICE_ExitToOverworld::
+    M_AdviceSetup
+    ld a, M_System_GameStateOverworld
+    ld [W_SystemState], a
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    jr z, .noSGB
+
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    jr z, .noSGB
+
+    xor a
+    ld b, a
+    ld c, a
+    ld d, a
+    ld e, a
+    ld [W_MainScript_TextStyle], a
+    call Banked_SGB_ConstructPaletteSetPacket
+
+.noSGB
+    M_AdviceTeardown
+    ret
