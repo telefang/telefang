@@ -19,5 +19,20 @@ var SHEET_PARAMS = {
     width: 16 * 8,
     lines_per_prompt: 2,
     line_spacing: 1
+  },
+  "script/npc/all.messages.csv": {
+    width: 16 * 8,
+    lines_per_prompt: 2,
+    line_spacing: 1
+  },
+  "script/calls/story.messages.csv": {
+    width: 16 * 8,
+    lines_per_prompt: 2,
+    line_spacing: 1
+  },
+  "script/calls/exp_item.messages.csv": {
+    width: 16 * 8,
+    lines_per_prompt: 2,
+    line_spacing: 1
   }
 }
