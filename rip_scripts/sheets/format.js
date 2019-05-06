@@ -1,13 +1,13 @@
  "use strict";
 
 var CharType = {
-  WORD:       0,
+  WORD:               0,
   // Break chars right before a word shouldn't be broken after.
   // For example, "...Hey!" shouldn't be split up into "..." and "Hey!".
   LEADING_BREAK_CHAR: 1,
-  BREAK_CHAR: 2,
-  WHITESPACE: 3,
-  NEWLINE:    4
+  BREAK_CHAR:         2,
+  WHITESPACE:         3,
+  NEWLINE:            4
 };
 
 var FONTS = getFontMetrics();
@@ -135,8 +135,8 @@ function _wrap(text, width, promptPageLines, font) {
   var prevWordWidth = 0;
   var lastWordStart = 0;
   var lastWordEnd = 0;
-  var prevCharType = CharType.WORD;
-  var curCharType = CharType.WORD;
+  var prevCharType = CharType.LEADING_BREAK_CHAR;
+  var curCharType = CharType.LEADING_BREAK_CHAR;
   var i = 0;
   // Run an iteration when the text has been exhausted too, so a
   // "to EOF" transition happens and the last line gets pushed.
@@ -170,8 +170,15 @@ function _wrap(text, width, promptPageLines, font) {
         fontName = codeEffects.font || fontName;
         font = FONTS[fontName];
         if (typeof codeEffects.charType === 'undefined' || typeof codeEffects.width === 'undefined') {
-          i += charLength;
-          continue;
+          // If control codes take on the CharType of the character before (unless it's whitespace),
+          // they should be wrapped more or less satisfactorily, and still allow things like "leading break char"
+          // to pass through even if a control code is placed in the middle of a run of leading break chars.
+          // It'd be even nicer if control codes took on the CharType of the *next* character, since for example
+          // "blah-<bold>blah" would wrap to "blah-\n<bold>blah" instead of "blah-<bold>\nblah", but the current
+          // code structure doesn't very well allow peeking the next character. That's a rare edge case anyway!
+          if (prevCharType === CharType.WORD || prevCharType === CharType.BREAK_CHAR) {curCharType = prevCharType;}
+          else {curCharType = CharType.LEADING_BREAK_CHAR;}
+          charWidth = 0;
         } else {
           curCharType = codeEffects.charType;
           charWidth = codeEffects.width;
@@ -217,7 +224,9 @@ function _wrap(text, width, promptPageLines, font) {
     // Width is added even on non-word characters, but it shouldn't matter,
     // since curWordWidth is reset on word starts and newlines, and thus
     // never used when curWordWidth includes whitespace characters.
-    curWordWidth += charWidth + 1;
+    if (charWidth !== 0) {
+      curWordWidth += charWidth + 1;
+    }
     
     // Add a line if:
     // * a word that needs to be put on the next line has been started,
@@ -254,9 +263,4 @@ function _wrap(text, width, promptPageLines, font) {
     i += charLength;
   }
   return lines;
-}
-
-function testo() {
-  Logger.log(wrap("<bold>Hello <&name>", 91));
-  Logger.log(wrap("<bold>Hello <&name>", 90));
 }
