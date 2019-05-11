@@ -825,12 +825,14 @@ def make_tbl(args):
             break_after_adding = True
         
         overflow_section = Rgb6Section()
-        overflow_section.name = "Overflow Bank"
+        overflow_section.name = "Overflow Bank %(bank)02X" % {"bank":banknames[overflow_bank_id]["basebank"]}
         overflow_section.sectype = Rgb6Section.ROMX
         overflow_section.org = 0x4000
-        overflow_section.bank = args.overflow_bank
+        overflow_section.bank = banknames[overflow_bank_id]["basebank"]
         overflow_section.align = 0
         overflow_section.datsec.data = b"".join(overflow_bytes)
+
+        print(overflow_section.name)
         
         ovrflowdata.sections.append(overflow_section)
         
