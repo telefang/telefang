@@ -653,9 +653,8 @@ DungeonMap_StateDrawScreen::
 	ld c, $14
 	ld a, 2
 	call $33FD
-	ld hl, StringTable_map_dungeon_mapping
-	ld a, [W_Overworld_AcreType]
-	call Map_LoadLocationName_extEnt
+	ld a, BANK(DungeonMap_LoadLocationName)
+	call Banked_DungeonMap_LoadLocationName
 	ld d, 2
 	ld b, 0
 	ld c, $BB
@@ -728,6 +727,10 @@ DungeonMap_StateDrawScreen::
 	ld a, 1
 	call CGBLoadBackgroundPaletteBanked
 	jp System_ScheduleNextSubState
+	nop
+	nop
+	nop
+	nop
 
 DungeonMap_MapAcres::
 	ld b, 0

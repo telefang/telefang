@@ -58,10 +58,17 @@ StringTable_map_location_strings_old::
 	INCBIN "build/script/map/location_strings_old.stringblk"
 StringTable_map_location_strings_old_END
 
-SECTION "StringTable_map_dungeon_mapping Section", ROMX[$6aff], BANK[$2a]
+SECTION "StringTable_map_dungeon_mapping Section", ROMX[$6800], BANK[$62]
 StringTable_map_dungeon_mapping::
 	INCBIN "build/script/map/dungeon_mapping.stringidx"
 StringTable_map_dungeon_mapping_END
+
+SECTION "StringTable_map_dungeon_mapping Old Section", ROMX[$6aff], BANK[$2a]
+StringTable_map_dungeon_mapping_old::
+	REPT $6A
+		db 0
+	ENDR
+StringTable_map_dungeon_mapping_old_END
 
 SECTION "StringTable_map_dungeon_strings_old Section", ROMX[$6b69], BANK[$2a]
 StringTable_map_dungeon_strings_old::
@@ -75,7 +82,7 @@ StringTable_map_location_strings::
 	INCBIN "build/script/map/location_strings.stringblk"
 StringTable_map_location_strings_END
 
-SECTION "StringTable_map_dungeon_strings Section", ROMX[$7ea9], BANK[$2a]
+SECTION "StringTable_map_dungeon_strings Section", ROMX[$686a], BANK[$62]
 StringTable_map_dungeon_strings::
 	INCBIN "build/script/map/dungeon_strings.stringblk"
 StringTable_map_dungeon_strings_END
