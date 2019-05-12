@@ -7,6 +7,8 @@ SECTION "Map Screen Location Loader", ROMX[$4508], BANK[$2A]
 Map_LoadLocationName::
 	ld a, b
 	ld hl, StringTable_map_location_mapping
+
+Map_LoadLocationName_extEnt::
 	ld b, 0
 	ld c, a
 	sla c
