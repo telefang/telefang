@@ -11,7 +11,7 @@ W_Map_CursorYPosBuffer:: ds 1
 SECTION "Map Acre Completion Data", WRAM0[$C960]
 W_Map_AcreCompletionData:: ds $20
 
-SECTION "Map Screen Display Loop", ROMX[$4046], BANK[$2A]
+SECTION "Map Screen States", ROMX[$4046], BANK[$2A]
 Map_StateDrawScreen::
 	M_AuxJmp Banked_Map_ADVICE_DrawScreen
 	call Map_MapScreenTiles
@@ -600,6 +600,306 @@ Map_StateFadeToOverworld::
 	or a
 	ret z
 	M_AuxJmp Banked_Map_ADVICE_UnloadSGBFiles
+	ld a, $A
+	ld [W_SystemSubState], a
+	ret
+
+SECTION "Dungeon Map Screen States", ROMX[$47E7], BANK[$2A]
+DungeonMap_StateDrawScreen::
+	ld hl, $5F9F
+	ld a, [W_Overworld_AcreType]
+	sub $A
+	cp $28
+	jr c, .jpA
+	sub 7
+
+.jpA
+	add a
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	call $2FE4
+	ld h, b
+	ld l, c
+	ld a, d
+	cpl
+	inc a
+	ld b, a
+	ld a, e
+	cpl
+	inc a
+	ld c, a
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld a, $28
+	ld hl, $9000
+	call Banked_LCDC_LoadTiles
+	ld a, $38
+	ld hl, $8000
+	ld de, $67C4
+	ld bc, $490
+	call Banked_LCDC_LoadTiles
+	ld a, $38
+	ld hl, $9400
+	ld de, $6ED4
+	ld bc, $C0
+	call Banked_LCDC_LoadTiles
+	ld de, $6FA4
+	ld hl, $9800
+	ld b, $12
+	ld c, $14
+	ld a, 2
+	call $33FD
+	ld a, BANK(DungeonMap_LoadLocationName)
+	call Banked_DungeonMap_LoadLocationName
+	ld d, 2
+	ld b, 0
+	ld c, $BB
+	ld a, $B
+	ld hl, $47B9
+	call CallBankedFunction_int
+	ld a, [W_MainScript_WindowLocation]
+	dec a
+	ld [W_MainScript_WindowLocation], a
+	ld a, [W_MainScript_WindowLocation]
+	dec a
+	ld [W_MainScript_WindowLocation], a
+	call $2CC4
+	ld a, 3
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_HiAttribs], a
+	ld a, $10
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_Bank], a
+	ld a, $41
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_Index], a
+	ld a, 0
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_LoAttribs], a
+	ld a, [$C906]
+	ld b, a
+	and 7
+	swap a
+	srl a
+	add $34
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_XOffset], a
+	ld a, b
+	and $F8
+	add $44
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_YOffset], a
+	ld a, [W_Overworld_AcreType]
+	sub $A
+	cp $28
+	jr c, .jpB
+	sub $07
+
+.jpB
+	ld c, $40
+	ld e, a
+	call System_Multiply8
+	ld hl, $5FE9
+	add hl, de
+	ld d, h
+	ld e, l
+	call $48DD
+	ld a, $2A
+	ld [W_PreviousBank], a
+	ld bc, 9
+	call Banked_CGBLoadBackgroundPalette
+	ld bc, $10
+	call Banked_CGBLoadObjectPalette
+	ld b, 7
+	call $33AF
+	ld bc, $225
+	ld a, [W_Overworld_AcreType]
+	sub $A
+	cp $28
+	jr c, .jpC
+	sub 7
+
+.jpC
+	add c
+	ld c, a
+	jr nc, .skipPseudoAdc
+	inc b
+
+.skipPseudoAdc
+	ld a, 1
+	call CGBLoadBackgroundPaletteBanked
+	jp System_ScheduleNextSubState
+	nop
+	nop
+	nop
+	nop
+
+DungeonMap_MapAcres::
+	ld b, 0
+
+.loopRows
+	ld c, 0
+
+.loopAcres
+	push bc
+	call DungeonMap_CanMapAcre
+	pop bc
+	jr z, .doNotMapAcre
+	push de
+	push bc
+	ld a, c
+	swap a
+	srl a
+	add b
+	add e
+	ld e, a
+	ld a, 0
+	adc d
+	ld d, a
+	pop bc
+	push bc
+	ld hl, $9906
+	ld a, c
+	swap a
+	sla a
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, b
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, $29
+	ld bc, 1
+	push hl
+	call Banked_LCDC_LoadTiles
+	pop hl
+	ld a, [W_GameboyType]
+	cp $11
+	jr nz, .notGBC
+	ld a, 1
+	ldh [REG_VBK], a
+	call WaitForBlanking
+	ld a, 1
+	ld [hl], a
+	ld a, 0
+	ldh [REG_VBK], a
+
+.notGBC
+	pop bc
+	pop de
+
+.doNotMapAcre
+	inc c
+	ld a, 8
+	cp c
+	jr nz, .loopAcres
+	inc b
+	ld a, 8
+	cp b
+	jr nz, .loopRows
+	ret
+
+DungeonMap_CanMapAcre::
+	push de
+	ld a, c
+	ld hl, $B000
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld d, 1
+	ld a, b
+	or a
+	jr z, .skipLoop
+
+.loop
+	sla d
+	dec a
+	jr nz, .loop
+
+.skipLoop
+	ld a, [W_Overworld_AcreType]
+	sub $A
+	cp $28
+	jr c, .jpA
+	sub 7
+
+.jpA
+	ld c, a
+	ld b, 0
+	sla c
+	rl b
+	sla c
+	rl b
+	sla c
+	rl b
+	add hl, bc
+	ld a, $A
+	ld [REG_MBC3_SRAMENABLE], a
+	ld a, 2
+	ld [REG_MBC3_SRAMBANK], a
+	ld a, [hl]
+	and d
+	pop de
+	push af
+	ld a, 0
+	ld [REG_MBC3_SRAMENABLE], a
+	pop af
+	ret
+
+DungeonMap_StatePrepareFadeIn::
+	ld a, 1
+	ld [W_OAM_SpritesReady], a
+	ld bc, 0
+	ld a, 4
+	call Banked_LCDC_SetupPalswapAnimation
+	jp System_ScheduleNextSubState
+
+DungeonMap_StateFadeInAndIdle::
+	ld a, 1
+	ld [W_OAM_SpritesReady], a
+	ld a, 0
+	call Banked_LCDC_PaletteFade
+	or a
+	ret z
+	call $2CC4
+	ld b, 3
+	ld a, [$C984]
+	and 8
+	jr z, .jpA
+	ld b, 2
+
+.jpA
+	ld a, b
+	ld [W_MetaSpriteConfig1], a
+ 	ld a, [W_FrameCounter]
+ 	and 3
+ 	jr nz, .dontAnimateBgThisFrame
+ 	ld hl, $9400
+ 	call Status_ShiftBackgroundTiles
+
+.dontAnimateBgThisFrame
+	ldh a, [H_JPInput_Changed]
+	and M_JPInput_B + M_JPInput_Select + M_JPInput_Start
+	jr z, .buttonNotPressed
+	ld a, 4
+	call Banked_LCDC_SetupPalswapAnimation
+	jp System_ScheduleNextSubState
+
+.buttonNotPressed
+	ret
+
+DungeonMap_StateFadeToOverworld::
+	ld a, 1
+	call Banked_LCDC_PaletteFade
+	or a
+	ret z
+	ld a, 0
+	ld [W_byte_C9CF], a
 	ld a, $A
 	ld [W_SystemSubState], a
 	ret

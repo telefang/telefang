@@ -34,9 +34,9 @@ script/denjuu/article_strings 71D20 block 20
 script/map/location_mapping AA875 index 256 script/map/location_strings
 script/map/location_strings_old AAA75 block 16
 script/map/location_strings ABD8B block 16
-script/map/dungeon_mapping AAAFF index 53 script/map/dungeon_strings
+script/map/dungeon_mapping 18A800 index 53 script/map/dungeon_strings
 script/map/dungeon_strings_old AAB69 block 39
-script/map/dungeon_strings ABEA9 block 27
+script/map/dungeon_strings 18A86A block 27
 script/denjuu/species D0000 table 174 16
 script/battle/tfangers 1D6300 table 49 16
 script/battle/attacks 1D5890 table 138 16
