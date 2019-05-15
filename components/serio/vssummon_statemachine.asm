@@ -844,9 +844,11 @@ VsSummon_StateWaitForOpponent::
     add hl, bc
     ld a, [hl]
     cp 0
-    jr nz, $4FA9
+    jr nz, .loc_4FA9
     call Banked_MainScriptMachine
     ret
+
+.loc_4FA9
     ld a, [hl]
     ld [$D42F], a
     ld [$D5C7], a
@@ -1014,7 +1016,7 @@ VsSummon_StateReceiveOpponentTeamStats::
     ldi a, [hl]
     ld [W_Battle_OpponentParticipants + (M_Battle_ParticipantSize * 1) + M_Battle_ParticipantLevel], a
     cp 0
-    jr z, $5120
+    jr z, .loc_5120
     ld a, 1
     ld [W_Battle_OpponentParticipants + (M_Battle_ParticipantSize * 1) + M_Battle_ParticipantLocation], a
     dec [hl]
@@ -1034,7 +1036,7 @@ VsSummon_StateReceiveOpponentTeamStats::
     ldi a, [hl]
     ld [W_Battle_OpponentParticipants + (M_Battle_ParticipantSize * 2) + M_Battle_ParticipantLevel], a
     cp 0
-    jr z, $5120
+    jr z, .loc_5120
     ld a, 1
     ld [W_Battle_OpponentParticipants + (M_Battle_ParticipantSize * 2) + M_Battle_ParticipantLocation], a
     dec [hl]
@@ -1047,6 +1049,8 @@ VsSummon_StateReceiveOpponentTeamStats::
     inc hl
     ld a, $20
     ld [W_Battle_OpponentParticipants + (M_Battle_ParticipantSize * 2) + M_Battle_ParticipantMaxArrivalTime], a
+
+.loc_5120
     ld a, [W_Battle_NextSerIOByteIn]
     add $F
     inc a
