@@ -155,7 +155,7 @@ VsSummon_StateInitialiseVariables::
     ld [$D431], a
     ld [$D432], a
     ld [$D433], a
-    ld a, [W_Encounter_AlreadyInitialized]
+    call VsSummon_ADVICE_ExitStatusScreen
     cp 1
     jp z, .skipInitialisation
     xor a
@@ -245,16 +245,15 @@ VsSummon_StateFadeOutAndDrawScreen::
     xor a
     call CGBLoadBackgroundPaletteBanked
     ld a, 0
-    call Banked_Status_LoadUIGraphics
+    call VsSummon_ADVICE_DrawOkIndicator
     ld a, 5
     ld [$CA65], a
-    ld hl, $9400
+    call VsSummon_ADVICE_PrepareTextStyle
     ld a, $20
     call MainScript_DrawEmptySpaces
     ld bc, 0
     ld e, $D
-    ld a, 0
-    call Banked_RLEDecompressTMAP0
+    M_AuxJmp Banked_Summon_ADVICE_LoadSGBFiles
     ld bc, 0
     ld e, $D
     ld a, 0
@@ -279,7 +278,7 @@ VsSummon_StateFadeOutAndDrawScreen::
     ld hl, $9831
     ld c, 1
     call Encounter_DrawTileDigits
-    call $5694
+    call VsSummon_ADVICE_DrawDenjuuIndicators
     call $5796
     call SerIO_SummonDrawNicknames
     call $5905
@@ -296,7 +295,7 @@ VsSummon_StateFadeOutAndDrawScreen::
     ld de, $8B80
     call Banked_Battle_LoadDenjuuPortrait
     pop af
-    call Battle_LoadDenjuuPalettePartner
+    call VsSummon_ADVICE_LoadDenjuuPalette
     call SaveClock_ExitSRAM
     ld a, $13
     call Sound_IndexMusicSetBySong
@@ -450,7 +449,7 @@ VsSummon_StateInputHandler::
     call MainScript_DrawEmptySpaces
     call $555F
     call $5602
-    call $5694
+    call VsSummon_ADVICE_DrawDenjuuIndicators
     call $5796
     call SerIO_SummonDrawNicknames
     call SaveClock_ExitSRAM
@@ -684,7 +683,7 @@ VsSummon_StateDrawSelectedContactPortrait::
     ld de, $8B80
     call Banked_Battle_LoadDenjuuPortrait
     pop af
-    call Battle_LoadDenjuuPalettePartner
+    call VsSummon_ADVICE_LoadDenjuuPalette
     ld a, 1
     ld [W_CGBPaletteStagedBGP], a
     call SaveClock_ExitSRAM
@@ -1124,7 +1123,7 @@ VsSummon_StateEnterBattle::
     ld [W_Battle_SubSubState], a
     ld [W_Battle_4thOrderSubState], a
     ld a, 7
-    ld [W_SystemState], a
+    call VsSummon_ADVICE_UnloadSGBFiles
     ret
 
 VsSummon_StateConnectionErrorExitToTitlemenu::
