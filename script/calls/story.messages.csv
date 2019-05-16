@@ -269,7 +269,7 @@ Maybe we could be friends with it?<*2>",,
 Hey <&name>, think you could go buy one for me?
 Please?
 Pretty please??
-I'm counting on you!<*2>",,"Should be changed to ""Tronco."""
+I'm counting on you!<*2>",,
 0x15803a,"イーリスのむらに なんか
 ヘんなヤツがいるんだって
 なにしたいんだか
@@ -587,11 +587,11 @@ so I just had to call.
 I heard a rumor that it's a
 way bad idea to go into the
 weird house there! People
-who go in get challenged to a
-Telefang straight away!","Hey, <&name>!
+who go in get challenged to
+a Telefang straight away.","Hey, <&name>!
 I heard you were going to Paparouna Lake,
 so I just had to call.
-I heard a rumor that it's a way bad idea to go into the weird house there! People who go in get challenged to a Telefang straight away!",These strings have been manually formatted! ☆
+I heard a rumor that it's a way bad idea to go into the weird house there! People who go in get challenged to a Telefang straight away.",These strings have been manually formatted! ☆
 0x15807a,"そこにある やしきに
 こっそリ はいったヤツから
 はなしを きいたんだけどさ
@@ -605,12 +605,13 @@ who snuck into the house
 over there...
 Apparently, it's packed full
 of weird doodads and
-thingymajiggers! That's all I
-know, though.
-The guy I talked to fled as
-soon as he saw 'em.","I heard something interesting from someone who snuck into the house over there...
-Apparently, it's packed full of weird doodads and thingymajiggers! That's all I know, though.
-The guy I talked to fled as soon as he saw 'em.",
+thingymajiggers!
+That's all I know, though.
+The guy I talked skedaddled
+as soon as he saw 'em.","I heard something interesting from someone who snuck into the house over there...
+Apparently, it's packed full of weird doodads and thingymajiggers!
+That's all I know, though.
+The guy I talked skedaddled as soon as he saw 'em.",
 0x15807c,"パパルナこの そばにある
 やしきには ヘんな
 じいさんが すんでるんだって
@@ -645,13 +646,13 @@ Isn't that mad fishy?!",
 something...
 The old man there, he's doing
 some sort of research.
-My friend was too afraid to
+They were too spooked to
 check him out up close,
 though.
-It's best to stay away from
-shady people like him!","A friend of mine told me something...
+It's best to stay away
+from shady people like him!","A friend of mine told me something...
 The old man there, he's doing some sort of research.
-My friend was too afraid to check him out up close, though.
+They were too spooked to check him out up close, though.
 It's best to stay away from shady people like him!",
 0x158080,"なー<&name>
 オマエ サナエバグループって
@@ -665,8 +666,8 @@ It's best to stay away from shady people like him!",
 デンワしたんだー<*2>","Yo, <&name>!
 Have you heard of the
 ""Sanaeba Group""? The first
-bunch of humans to come to
-the Denjuu World worked
+bunch of humans to come
+to the Denjuu World worked
 there, apparently.
 Maybe you already knew
 that, but I thought
@@ -682,9 +683,9 @@ I'd tell you just in case.",
 とれないんだ
 あいつらのせいなのかな?
 <*2>","So, a friend of mine traded
-phone numbers with someone
-from the Sanaeba Group a
-while ago...
+phone numbers with
+someone from the Sanaeba
+Group a while ago...
 Since then, I haven't been
 able to reach 'em!
 Think it's related?","So, a friend of mine traded phone numbers with someone from the Sanaeba Group a while ago...
@@ -703,9 +704,9 @@ friend call and tell me
 they saw a weird shadow in
 Paparouna Lake...
 Have you seen it? If you do,
-tell me what it looked like!","Just recently, I had a friend call and tell me
+tell me what it looks like!","Just recently, I had a friend call and tell me
 they saw a weird shadow in Paparouna Lake...
-Have you seen it? If you do, tell me what it looked like!",
+Have you seen it? If you do, tell me what it looks like!",
 0x158086,"そこの やしきにすんでる
 じいさんが まんなかの
 しまにいるときに
@@ -717,16 +718,21 @@ Have you seen it? If you do, tell me what it looked like!",
 オレは こわいから
 いかないけどねー
 それじゃ ヨロシク!
-<*2>","A friend told me that you
-usually see the mysterious
-shadow in the lake when the
-old man's out on the island in
-the middle. Can you
+<*2>","I heard that you usually see
+the mysterious shadow
+in the lake when the old
+man's out on the island
+in the middle. Can you
 check if that's true?
-I'm way too scared to do it
-myself! It's up to you!","A friend told me that you usually see the mysterious shadow in the lake when the old man's out on the island in the middle. Can you
+No way I'm checking it out!
+It's way creepy!
+It's up to you.","I heard that you usually see the mysterious shadow
+in the lake when the old man's out on the island
+in the middle. Can you
 check if that's true?
-I'm way too scared to do it myself! It's up to you!",
+No way I'm checking it out!
+It's way creepy!
+It's up to you.",
 0x158088,"むかしはさー
 よくパパルナこに
 つリにいったんだよ
@@ -764,7 +770,16 @@ there's stuff in pots too! Aw, I'm jealous!",
 ちょっとしらベてくれよ
 しんぱいで よるも
 ねむれないんだ!
-たのんだよ!<*2>",/0x15808c/<*2>,"Oi, <&name>! I can't call any of my friends in Panses Village! You're there now, right? Look around a bit, won't ya? I'm so worried I can't even sleep!",
+たのんだよ!<*2>","Oi, <&name>! I can't
+call any of my friends
+in Panses Village!
+You're there now, right?
+Look around a bit, won't ya?
+I'm so worried I can't
+catch a wink of sleep.","Oi, <&name>! I can't call any of my friends
+in Panses Village!
+You're there now, right?
+Look around a bit, won't ya? I'm so worried I can't catch a wink of sleep.",
 0x15808e,"おーい <&name>
 パンセスむらで なにか
 おきてるんじゃないか?
@@ -772,7 +787,15 @@ there's stuff in pots too! Aw, I'm jealous!",
 ってデンワがかかってきて
 それっきリなんだよ
 おねがいだから みてきてくれ!
-おねがいだから...<*2>",/0x15808e/<*2>,"Hey yo, <&name>! Is something going on in Panses Village? A friend who lives there called me, said ""help meee"", and hung up! Please, find out what's happening! Please...",
+おねがいだから...<*2>","Hey yo, <&name>!
+Is something going on
+in Panses Village? A friend
+who lives there called me,
+said ""help meee"", and hung
+up! Please, find out what's
+happening! Please...","Hey yo, <&name>!
+Is something going on
+in Panses Village? A friend who lives there called me, said ""help meee"", and hung up! Please, find out what's happening! Please...",
 0x158090,"オレの トモダチから
 きいたんだけどー
 いじげんに ワープできたリ
@@ -780,7 +803,13 @@ there's stuff in pots too! Aw, I'm jealous!",
 デンジュウカイには いるんだな
 やっぱリ デンジュウカイは
 ひろいよなー
-いろいろなヤツが いるぜ<*2>",/0x158090/<*2>,"I heard from a friend that there's a Denjuu who can move between dimensions... The Denjuu World is a pretty big place, isn't it? So many types of people!",
+いろいろなヤツが いるぜ<*2>","I heard from a friend that
+there's a Denjuu who can
+move between dimensions...
+The Denjuu World is
+a fascinating place, isn't it?
+Takes all kinds, I guess!","I heard from a friend that there's a Denjuu who can move between dimensions... The Denjuu World is
+a fascinating place, isn't it? Takes all kinds, I guess!",
 0x158092,"キミさー いじげんを
 いったリきたリできるって
 はなしを きいたことある?
@@ -788,7 +817,13 @@ there's stuff in pots too! Aw, I'm jealous!",
 ことができる デンジュウが
 いるらしいよー
 きょうみがあったら さがして
-みたら??<*2>",/0x158092/<*2>,"Have you heard of a Denjuu who can go to parallel dimensions? There's a rumor that someone like that exists... If it sounds interesting, maybe look around a bit?",
+みたら??<*2>","Have you heard of a Denjuu
+who can go to parallel
+dimensions? There's a rumor
+that someone like that
+exists... If your interest is
+piqued, maybe have a look
+around?","Have you heard of a Denjuu who can go to parallel dimensions? There's a rumor that someone like that exists... If your interest is piqued, maybe have a look around?",
 0x158094,"<&name>
 サナエバグループっていう
 ヤツらが デンジュウカイの
@@ -798,13 +833,28 @@ there's stuff in pots too! Aw, I'm jealous!",
 でも あれ ほんとうに
 トモダチをふやしてるのかな?
 なんだか ちがうようなきが
-するんだけど...<*2>",/0x158094/<*2>,"<&name>! I heard the ""Sanaeba Group"" gang have been making friends here and there in the Denjuu World. But... do you really think they're ""making friends""? I feel like it might be something different...",
+するんだけど...<*2>","<&name>! I heard the
+""Sanaeba Group"" gang
+have been making friends
+here and there in the
+Denjuu World. But... do you
+really think they're
+""making friends""? I feel like
+it might be something
+different...","<&name>! I heard the ""Sanaeba Group"" gang have been making friends here and there in the Denjuu World. But... do you really think they're ""making friends""? I feel like it might be something different...",
 0x158096,"なんだか『サナエバグループ』
 っていうところのれんちゅうが
 デンジュウカイで
 みかいのとちに ニンゲンを
 おくってるんだって
-なにしてるんだろーねー?<*2>",/0x158096/<*2>,"Those ""Sanaeba Group"" people... It looks like they've been sending humans to uninhabited parts of the Denjuu World. What could they be up to?",
+なにしてるんだろーねー?<*2>","Those ""Sanaeba Group""
+people... It looks like
+they've been sending humans
+to uninhabited parts
+of the Denjuu World.
+What could they be up to?","Those ""Sanaeba Group"" people... It looks like they've been sending humans to uninhabited parts
+of the Denjuu World.
+What could they be up to?",
 0x158098,"このまえさー
 『カクザとう デラックス』
 っていう おベんとうを
@@ -812,7 +862,15 @@ there's stuff in pots too! Aw, I'm jealous!",
 これ けっこうおいしかったよ
 できるまでにジカンが
 かかるんだけどねー
-いっかいたベてみたらー?<*2>",/0x158098/<*2>,,
+いっかいたベてみたらー?<*2>","The other day I got a lunch
+to go! It was called a
+""Kakuza Party Deluxe"", I
+think. It was pretty good!
+It took a while for 'em to
+make it, though.
+You should try it if you get
+the chance!","The other day I got a lunch to go! It was called a ""Kakuza Party Deluxe"", I think. It was pretty good! It took a while for 'em to make it, though.
+You should try it if you get the chance!",
 0x15809a,"パンセスむらに
 『かくざアベニュー』っていう
 おベんとうやが
@@ -820,7 +878,13 @@ there's stuff in pots too! Aw, I'm jealous!",
 オレ いったことないんだよ
 もし いくんだったら
 つれてってくれよなー
-<*2>",/0x15809a/<*2>,,
+<*2>","Heard of this hot new
+takeout place in Panses?
+It's called ""Kakuza Avenue""!
+I haven't been yet.
+If you decide to go, lemme
+tag along!","Heard of this hot new takeout place in Panses? It's called ""Kakuza Avenue""! I haven't been yet.
+If you decide to go, lemme tag along!",
 0x15809c,"じつはさー
 パンセスむらに いじげんに
 つながるやしきがあるって
@@ -828,7 +892,14 @@ there's stuff in pots too! Aw, I'm jealous!",
 そんなの あるわけないと
 おもうんだけど
 あったらどうしよう?!
-<*2>",/0x15809c/<*2>,,
+<*2>","I heard a crazy rumor! They
+say there's a mansion
+in Panses that connects to
+a parallel dimension.
+Sounds fishy if you ask me,
+but... what if it's true?","I heard a crazy rumor! They say there's a mansion
+in Panses that connects to a parallel dimension.
+Sounds fishy if you ask me, but... what if it's true?",
 0x15809e,"オマエもしかして
 いまパンセスむらにいるのか?
 そのむらで なんかじけんが
@@ -836,7 +907,17 @@ there's stuff in pots too! Aw, I'm jealous!",
 きをつけてくれよ!
 オレは オマエのことが
 しんぱいでしょうがないよ
-<*2>",/0x15809e/<*2>,,
+<*2>","Could it perhaps maybe
+possibly be that you're
+in Panses right now?
+There's a rumor that
+something weird's going on
+there right now.
+Be careful! I can't help but
+worry for you...","Could it perhaps maybe possibly be that you're
+in Panses right now?
+There's a rumor that something weird's going on there right now.
+Be careful! I can't help but worry for you...",
 #######,Toulipa,,,
 0x1580a0,"トリパむらの はなしは
 きいたよー
@@ -845,7 +926,15 @@ there's stuff in pots too! Aw, I'm jealous!",
 オレのトモダチには
 いないけどな!
 オマエのことは しんようしてる
-から シンパイするなよ!<*2>",/0x1580a0/<*2>,,
+から シンパイするなよ!<*2>","I heard something about
+Toulipa! Apparently,
+there's a bunch of humans
+that are bad news there.
+Not among my friends,
+though, of course!
+Don't worry, I trust you
+through-and-through!","I heard something about Toulipa! Apparently, there's a bunch of humans that are bad news there. Not among my friends, though, of course!
+Don't worry, I trust you through-and-through!",
 0x1580a2,"おう <&name>
 なんで アンテナのきを
 おおきくする ひつようが
@@ -855,7 +944,19 @@ there's stuff in pots too! Aw, I'm jealous!",
 このデンジュウカイで
 なにかおきてるのか??
 もしかしてデンジュウカイは
-やばいことになってるのか?<*2>",/0x1580a2/<*2>,,
+やばいことになってるのか?<*2>","Wassup, <&name>!
+Who thought it was
+a good idea to supersize
+an Antenna Tree?
+As long as people get
+reception, it's big enough,
+right? Is something going
+down here in the Denjuu
+World? Are we in trouble?","Wassup, <&name>!
+Who thought it was
+a good idea to supersize
+an Antenna Tree?
+As long as people get reception, it's big enough, right? Is something going down here in the Denjuu World? Are we in trouble?",
 0x1580a4,"なんだかさー このさいきん
 いろんなトモダチから
 『サナエバグループ』の
@@ -865,7 +966,18 @@ there's stuff in pots too! Aw, I'm jealous!",
 なんだかイヤな よかんが
 するんだけど....
 だいじょうぶなのかな?
-<*2>",/0x1580a4/<*2>,,
+<*2>","I've been hearing a
+lot of talk about this
+""Sanaeba Group"" as of
+late. People don't have
+good things to say about
+'em, either... I have a
+bad feeling about this. Think
+things are gonna be okay?","I've been hearing a
+lot of talk about this ""Sanaeba Group"" as of
+late. People don't have
+good things to say about 'em, either... I have a
+bad feeling about this. Think things are gonna be okay?",
 0x1580a6,"よーう <&name>
 『サナエバグループ』って
 ところの ヤツらは
@@ -875,7 +987,21 @@ there's stuff in pots too! Aw, I'm jealous!",
 こんどは なにを
 もらおっかなー
 ちょっと きぶんいいから
-デンワしたんだー<*2>",/0x1580a6/<*2>,,
+デンワしたんだー<*2>","Yo, <&name>! You know
+the Sanaeba Group?
+They're the nicest guys in
+town! Such good people!
+They give me anything I
+ask for – it's amazing!
+Wonder what I should ask
+for next...
+I just called 'cause I'm in a
+good mood right now ♪","Yo, <&name>! You know the Sanaeba Group?
+They're the nicest guys in town! Such good people!
+They give me anything I
+ask for – it's amazing!
+Wonder what I should ask for next...
+I just called 'cause I'm in a good mood right now ♪",
 0x1580a8,"もしもし <&name>か?
 このさいきん ケイタイの
 ちょうしが わるいんだ
@@ -885,7 +1011,17 @@ there's stuff in pots too! Aw, I'm jealous!",
 オマエのケイタイは 
 だいじょうぶか???
 だいじょうぶなら
-いいんだけどさー<*2>",/0x1580a8/<*2>,,
+いいんだけどさー<*2>","Hey, <&name>?
+My phone's been acting up
+lately... I've been getting
+wrong number calls and had
+bad reception and stuff.
+Is your phone okay?
+Don't worry about it if
+yours is fine, I guess.","Hey, <&name>?
+My phone's been acting up lately... I've been getting wrong number calls and had bad reception and stuff.
+Is your phone okay?
+Don't worry about it if yours is fine, I guess.",
 0x1580aa,"<&name>ー
 ケイタイが なんだか
 ヘんなんだよー
@@ -893,7 +1029,14 @@ there's stuff in pots too! Aw, I'm jealous!",
 デンワがかかってきたリ
 するんだー
 どうにかしてよ ねーねー
-おねがいだよー<*2>",/0x1580aa/<*2>,,
+おねがいだよー<*2>","<&name>! My phone's
+being all weird...
+I keep getting calls from
+complete strangers!
+Do something! Anything!
+Heeeeelp!","<&name>! My phone's being all weird...
+I keep getting calls from complete strangers!
+Do something! Anything! Heeeeelp!",
 0x1580ac,"<&name>
 このあいだ しらないヒトから
 キカイを もらったんだけど
@@ -903,7 +1046,21 @@ there's stuff in pots too! Aw, I'm jealous!",
 こわくて いかなかったんだ
 あれは ついていかなくて
 セイカイだったのかな?
-<*2>",/0x1580ac/<*2>,,
+<*2>","Sup, <&name>!
+The other day,
+some stranger gave me a
+machine out of the blue.
+Is that a good thing,
+though? The guy told me
+to follow him, but he gave me
+the creeps, so I didn't go...
+I feel like I made the right
+choice, maybe. Maybe?","'Sup, <&name>!
+The other day,
+some stranger gave me a machine out of the blue.
+Is that a good thing, though? The guy told me
+to follow him, but he gave me the creeps, so I didn't go...
+I feel like I made the right choice, maybe. Maybe?",
 0x1580ae,"やっぱさー すベての
 ニンゲンを しんようするって
 やばいよなー
@@ -911,7 +1068,14 @@ there's stuff in pots too! Aw, I'm jealous!",
 ぜったいに いるもんなー
 でも オマエのことは
 しんようしてるから
-あんしんしな<*2>",/0x1580ae/<*2>,,
+あんしんしな<*2>","I tell ya, it's not a good idea
+to trust every human
+you come across. There are
+good guys, sure, but I've
+seen some bad humans too!
+I trust you, though.","I tell ya, it's not a good idea to trust every human
+you come across. There are good guys, sure, but I've seen some bad humans too!
+I trust you, though.",
 0x1580b0,"トリパむらのアンテナのきが
 きょだいかしたって
 ほんとうか?
@@ -919,13 +1083,25 @@ there's stuff in pots too! Aw, I'm jealous!",
 そんなことができちゃうなんて
 いや オマエのことを
 いったんじゃないんだよ!
-<*2>",/0x1580b0/<*2>,,
+<*2>","Is it true that humans have
+somehow supersized
+the Antenna Tree in Toulipa?
+Man, humans are scary!
+Oh, I'm not talking about
+you! You're not scary.","Is it true that humans have somehow supersized
+the Antenna Tree in Toulipa?
+Man, humans are scary!
+Oh, I'm not talking about you! You're not scary.",
 0x1580b2,"さいきん いろんなところで
 じけんが おこってるけど
 いったいだれが なんのために
 こんなことしてるんだろう..
 なんか かなしくなってきたよ
-<*2>",/0x1580b2/<*2>,,
+<*2>","There's been lots of horrible
+things going on lately...
+Who would do all of this, and
+why? I'm bummed out now...","There's been lots of horrible things going on lately...
+Who would do all of this, and why? I'm bummed out now...",
 #######,Fraoula,,,
 0x1580b4,"フラウラむらの デンジュウは
 いせきを はっくつして
@@ -938,7 +1114,17 @@ there's stuff in pots too! Aw, I'm jealous!",
 ちょっとみて みたいなー
 ってことで こんどオレを
 よんでくれよなー
-それじゃ!<*2>",/0x1580b4/<*2>,,
+それじゃ!<*2>","Fraoula is a village where
+fossils are dug up!
+Because of that, apparently
+the shop there sells things
+you won't find anywhere else.
+I'd love to go window
+shopping there sometime.
+Call me over and let's
+check it out sometime!","Fraoula is a village where fossils are dug up!
+Because of that, apparently the shop there sells things you won't find anywhere else. I'd love to go window shopping there sometime.
+Call me over and let's check it out sometime!",
 0x1580b6,"フラウラむらの
 いえのなかには はっくつした
 あなを つかって つくった
@@ -946,7 +1132,15 @@ there's stuff in pots too! Aw, I'm jealous!",
 カベとかをしらベたら なにか
 でてきたリしてなー
 まさか そんなことは
-ないか!<*2>",/0x1580b6/<*2>,,
+ないか!<*2>","Some of the houses in
+Fraoula are made from
+old excavation sites.
+Does that mean you could
+find things if you looked in
+the walls of those houses?
+Nah, I guess it's unlikely.","Some of the houses in Fraoula are made from
+old excavation sites.
+Does that mean you could find things if you looked in the walls of those houses? Nah, I guess it's unlikely.",
 0x1580b8,"デンジュウカイにも
 けっこうスゴイれきしが
 あったリするんだぜー
@@ -954,7 +1148,18 @@ there's stuff in pots too! Aw, I'm jealous!",
 じだいとかも あったリして..
 なんだか カッコよくない?
 アクマに しはいされるなんて
-ボクは ごめんだけどさー<*2>",/0x1580b8/<*2>,,
+ボクは ごめんだけどさー<*2>","The Denjuu World's got some
+seriously cool history too!
+They say that we had an
+era of being ruled over
+by the devil.
+Kinda badass, right?
+I can't say I believe in
+stuff like that, though.","The Denjuu World's got some seriously cool history too! They say that we
+had an era of being
+ruled over by the devil.
+Kinda badass, right?
+I can't say I believe in stuff like that, though.",
 0x1580ba,"この デンジュウカイの
 どこかに アクマが
 ふういんされてる ばしょが
@@ -964,7 +1169,21 @@ there's stuff in pots too! Aw, I'm jealous!",
 どこかに いるんだってさ
 どっちも みてみたいよなー
 オマエは どうだ?
-なぁ <&name><*2>",/0x1580ba/<*2>,,
+なぁ <&name><*2>","I heard there's a place
+here in the Denjuu World
+where a devil is sealed away!
+I also heard there's
+a Denjuu who watches
+over that seal. I think
+both of 'em sound cool.
+How 'bout you,
+<&name>?","I heard there's a place
+here in the Denjuu World
+where a devil is sealed away! I also heard there's
+a Denjuu who watches
+over that seal. I think
+both of 'em sound cool.
+How 'bout you, <&name>?",
 0x1580bc,"フラウラにはさー
 めずらしい アイテムが
 いっぱあるらしいんだよー
@@ -974,7 +1193,19 @@ there's stuff in pots too! Aw, I'm jealous!",
 オレも よんでくれよ
 なんとしても このめで
 みてみたいんだ
-<*2>",/0x1580bc/<*2>,,
+<*2>","So Fraoula Village, right?
+There's lots of rare stuff
+there, apparently!
+I've never had the chance
+to check it out, though...
+Hey, <&name>,
+have me over, won'tcha?
+I just gotta see it!","So Fraoula Village, right? There's lots of rare stuff there, apparently!
+I've never had the chance
+to check it out, though...
+Hey, <&name>,
+have me over, won'tcha?
+I just gotta see it!",
 0x1580be,"なぁ <&name>
 オレのために フラウラの
 めずらしい アイテムを
@@ -984,7 +1215,18 @@ there's stuff in pots too! Aw, I'm jealous!",
 オマエにかぎって そんなことは
 ないはずだよな
 なぁ <&name>?
-たのしみに してるぜ!<*2>",/0x1580be/<*2>,,
+たのしみに してるぜ!<*2>","Hey, <&name>! Buy me
+one of those rare items
+sold in Fraoula, won't you?
+I'm sure you wouldn't
+say no. That just
+wouldn't be like you!
+How 'bout it, <&name>?
+I'm looking forward to it!","Hey, <&name>! Buy me one of those rare items sold in Fraoula, won't you? I'm sure you wouldn't
+say no. That just
+wouldn't be like you!
+How 'bout it, <&name>?
+I'm looking forward to it!",
 0x1580c0,"デンジュウカイは もともと
 オレたち デンジュウの
 すんでるせかいだよなー
@@ -992,7 +1234,19 @@ there's stuff in pots too! Aw, I'm jealous!",
 せかいだと カンちがい
 してるよなー
 いっちょ ガツンと
-いってやろうか!<*2>",/0x1580c0/<*2>,,
+いってやろうか!<*2>","The Denjuu World has always
+been where we Denjuu live.
+But suddenly that
+""Sanaeba"" guy is
+tromping around like
+he owns the place!
+I'mma give him a piece of
+my mind when I see him!","The Denjuu World has always been where we Denjuu live.
+But suddenly that ""Sanaeba"" guy is
+tromping around like
+he owns the place!
+I'mma give him a piece of
+my mind when I see him!",
 0x1580c2,"サナエバグループのヒトと
 なかのいい デンジュウって
 さいきん いそがしくて

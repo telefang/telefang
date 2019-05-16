@@ -2690,7 +2690,8 @@ Is this your first time visiting this lake?",
 おっさんは ここで なにを
 してるんだ?","Yeah, I've never been here
 before!
-What are you up to, gramps?","Yeah, I've never been here before!
+What are you up to,
+gramps?","Yeah, I've never been here before!
 What are you up to, gramps?",
 0x13805a,"ワシか?
 ワシは 『クラフトはかせ』
@@ -2731,8 +2732,8 @@ the <bold>Divine Denjuu<normal>?",Have you perhaps heard of the <bold>Divine Den
 0x138064,"おっさん!
 『シンデンジュウ』ってなにか
 しってるのか??","Oh! Do you know something
-about the Divine Denjuu, old
-man?!","Oh! Do you know something about the Divine Denjuu, old man?!",
+about the <bold>Divine Denjuu<normal>,
+old man?!","Oh! Do you know something about the <bold>Divine Denjuu<normal>, old man?!",
 0x138066,"『シンデンジュウ』とは
 デンジュウカイの シンワに
 でてくる デンジュウで
@@ -2746,17 +2747,18 @@ man?!","Oh! Do you know something about the Divine Denjuu, old man?!",
 けんきゅうを しておるのだよ
 Tファンガーならば 
 みたことが あるかと
-おもったのだが....","You see, the Divine Denjuu
-appears in the legends of
-this here Denjuu World.
-It's said that it can only be
-summoned in ancient Denjuu
-rituals.
+おもったのだが....","You see, the <bold>Divine Denjuu<normal>
+appears in the legends
+of this here Denjuu World.
+It's said that it can only
+be summoned in ancient
+Denjuu rituals.
 Therefore, I am researching
 the possibility of bringing it
 forth by human hands.
 A T-Fanger like you...
-Might you have seen it?","You see, the Divine Denjuu appears in the legends of this here Denjuu World.
+Might you have seen it?","You see, the <bold>Divine Denjuu<normal> appears in the legends
+of this here Denjuu World.
 It's said that it can only be summoned in ancient Denjuu rituals.
 Therefore, I am researching the possibility of bringing it forth by human hands.
 A T-Fanger like you...
@@ -2781,13 +2783,16 @@ after all.","Oh, it's perfectly alright. Perhaps it is just a myth after all.",
 おもうのじゃが...
 みかけたら こえをかけて
 おいてくれんかの?","On a different subject...
-I'd like to ask something of
-you, boy. One of the aides at
-my laboratory seems to have
-wandered off around here...
+I'd like to ask something
+of you, boy. One of the
+aides at my laboratory
+seems to have wandered off
+around here...
 If you see him, give a holler,
 won't you?","On a different subject...
-I'd like to ask something of you, boy. One of the aides at my laboratory seems to have wandered off around here...
+I'd like to ask something of you, boy. One of the
+aides at my laboratory
+seems to have wandered off around here...
 If you see him, give a holler, won't you?",
 0x13806e,"わかった
 はかせが さがしてたって
@@ -2809,9 +2814,9 @@ The professor's been looking for you!",
 0x138076,"あぁ やっぱリ はかせからは
 にげれないのか
 もうあきらめよう..","Man... I can't escape the
-professor, huh.
+professor, can I?
 I'm at the end of my line
-here...","Man... I can't escape the professor, huh.
+here...","Man... I can't escape the professor, can I?
 I'm at the end of my line here...",
 0x138078,"にげる?
 なんで あのはかせから
@@ -2827,7 +2832,7 @@ away from the professor?",Escape? Why in the world would anyone wanna run away f
 ニンゲンだったんだ","Easy for you to say... You
 don't know who he really is!
 You see, Professor Craft
-used to be a member of the
+used to work for the
 <bold>Sanaeba Group<normal>.","Easy for you to say... You don't know who he really is! You see, Professor Craft used to work for the <bold>Sanaeba Group<normal>.",
 0x13807c,"『サナエバグループ』って
 デンジュウカイを 
@@ -2835,10 +2840,11 @@ used to be a member of the
 カイシャじゃん","Oh!
 The <bold>Sanaeba Group<normal>...
 They're the ones who
-discovered the Denjuu World,
-right?","Oh!
+discovered the
+Denjuu World, right?","Oh!
 The <bold>Sanaeba Group<normal>...
-They're the ones who discovered the Denjuu World, right?",
+They're the ones who discovered the
+Denjuu World, right?",
 0x13807e,"はかせは そこで はたらいて
 いるあいだ デンジュウたちを
 もののようにあつかって
@@ -2851,19 +2857,20 @@ They're the ones who discovered the Denjuu World, right?",
 『オクトライフル』なんだ!
 さんばしの ところに
 いってみたら はかせの 
-ほんしょうが わかるさ!","When the Professor worked
-for them... they treated
-Denjuu like objects!
-Haven't you heard of the
-mysterious creature of this
-lake?
+ほんしょうが わかるさ!","When the Professor was
+working for them,
+they treated Denjuu like
+objects! Haven't you heard
+of the mysterious creature
+that lives in this lake?
 It's a Denjuu the Professor
 created – <bold>Octorifle<normal>.
-Go to the pier. You'll
-understand his true colors.","When the Professor worked for them... they treated Denjuu like objects!
-Haven't you heard of the mysterious creature of this lake?
+Go to the pier. You'll see
+his true colors.","When the Professor was working for them,
+they treated Denjuu like objects! Haven't you heard of the mysterious creature that lives in this lake?
 It's a Denjuu the Professor created – <bold>Octorifle<normal>.
-Go to the pier. You'll understand his true colors.",
+Go to the pier. You'll see
+his true colors.",
 0x138080,"おねがいだ!
 はかせには ワタシの
 いばしょを つたえないで
@@ -2876,11 +2883,12 @@ It's time to eat, Octorifle!",
 0x138084,"どんどん おおきくつよくなれ!
 そして あの サナエバを 
 ギャフンと いわせるぞ!
-はっはっはっはっはっ!","That's it, grow big and
-strong.
-We'll knock Sanaeba's socks
-off! Wa ha ha ha!","That's it, grow big and strong.
-We'll knock Sanaeba's socks off! Wa ha ha ha!",
+はっはっはっはっはっ!","That's it, grow big
+and strong.
+Sanaeba will be lost for
+words! Wa ha ha ha!","That's it, grow big
+and strong.
+Sanaeba will be lost for words! Wa ha ha ha!",
 0x138086,"オクトライフルは まだまだ 
 かいぞうの よちがあるな
 みていろ サナエバ!
@@ -2906,18 +2914,20 @@ he's doing? I should try to
 sneak into his laboratory...",What does that old man think he's doing? I should try to sneak into his laboratory...,
 0x13808c,"あれ? はかせがいない...
 ここは けんきゅうしつじゃあ
-ないのか?","Huh? No Professor? Isn't
-this the lab?",Huh? No Professor? Isn't this the lab?,
+ないのか?","Huh? No Professor?
+Isn't this the lab?","Huh? No Professor?
+Isn't this the lab?",
 0x13808e,"<&name>くん
 けんきゅうじょヘ ようこそ
 だが やかたの あるじに
 ことわリもなく
 はいってきては ダメじゃの","Ah, <&name>!
 Welcome to my laboratory!
-But... it's not proper to
-barge in like this without so
-much as a warning.","Ah, <&name>!
-Welcome to my laboratory! But... it's not proper to barge in like this without so much as a warning.",
+It's not proper to barge in
+like this without so much
+as a warning, boy.","Ah, <&name>!
+Welcome to my laboratory! It's not proper to barge in like this without so much
+as a warning, boy.",
 0x138090,"にげた けんきゅういんが
 『はかせは デンジュウを
 もののように あつかっていた』
@@ -2937,11 +2947,12 @@ Is that true?",
 つくリだしたのだ","Wa-ha-ha! It's all true.
 With the Sanaeba Group,
 I researched how to create
-a Denjuu with power beyond
-your wildest dreams.
+a Denjuu wielding power
+beyond your wildest dreams.
 Thus, Octorifle was born.","Wa-ha-ha! It's all true.
 With the Sanaeba Group,
-I researched how to create a Denjuu with power beyond your wildest dreams.
+I researched how to create a Denjuu wielding power
+beyond your wildest dreams.
 Thus, Octorifle was born.",
 0x138094,"じゃが あのわかぞうは
 『シンデンジュウでないと
@@ -2952,15 +2963,16 @@ Thus, Octorifle was born.",
 それを キミを つかって
 しょうめいして あげよう
 こい! オクトライフル!!","But that darned brat...
-""It can't possibly be
-stronger than the Divine
+""It can't possibly
+be stronger than the Divine
 Denjuu"", he said.
 Octorifle is the strongest
 Denjuu in existence!
 I'll prove it – and you'll be
 the example.
 Come! Octorifle!","But that darned brat...
-""It can't possibly be stronger than the Divine Denjuu"", he said.
+""It can't possibly
+be stronger than the Divine Denjuu"", he said.
 Octorifle is the strongest Denjuu in existence!
 I'll prove it – and you'll be the example.
 Come! Octorifle!",Confirmed to refer to the Divine Denjuu by later dialogue.
@@ -3001,8 +3013,8 @@ Professor... Help me...",It... hurts... *clunk* Professor... Help me...,
 ゆるしてくれ!","Octorifle... I'm sorry...
 I was so, so wrong...
 I haven't been treating you
-like the irreplaceable friend
-you are.
+like the irreplaceable
+friend you are.
 Please! Forgive me!","Octorifle... I'm sorry...
 I was so, so wrong...
 I haven't been treating you like the irreplaceable friend you are.
@@ -3025,11 +3037,14 @@ I was worried sick!",
 ようすを みてきて
 ほしいのですが?","We've suddenly lost
 communication with
-<bold>Panses Village<normal>. You can go
-there via the Antenna Tree
-near you. Could you perhaps
+<bold>Panses Village<normal>.
+You can go there via
+the Antenna Tree near you.
+Could you perhaps
 investigate?","We've suddenly lost communication with
-<bold>Panses Village<normal>. You can go there via the Antenna Tree near you. Could you perhaps investigate?",
+<bold>Panses Village<normal>.
+You can go there via
+the Antenna Tree near you. Could you perhaps investigate?",
 0x1380a6,わかった いってみる,"Gotcha!
 I'll make my way there.","Gotcha!
 I'll make my way there.",
@@ -3043,29 +3058,43 @@ Tree?
 Then you need this key. Past
 the pier lies the Antenna
 Tree. From now on, use it
-anytime you like.","You're using the Antenna Tree?
+anytime you like.","You're using the
+Antenna Tree?
 Then you need this key.
 Past the pier lies the tree. From now on, use it anytime you like.",
 0x1380aa,サンキュー クラフトはかせ,"Thanks, Crafty!","Thanks, Crafty!",
 0x1380ac,"なに おれいをいうのは
 こっちのほうじゃ
 だいじなことに きづかせて
-くれて あリがとう",/0x1380ac/,"I'm the one who should say thank you.
+くれて あリがとう","I'm the one who should say
+thank you.
+You've taught me something
+very important.","I'm the one who should say thank you.
 You've taught me something very important.",
 #######,Panses Village story,,,
 0x1380ae,"あーっ ニンゲンだー!!!
 やっと ボクいがいに
 はなせるひとに あえたよー
 だれもいなくて
-さみしかったんだよー!!!",/0x1380ae/,"Wawawah, it's a human!!! Finally, someone I can talk to! There's no one around, and I've been so, so lonely!",
+さみしかったんだよー!!!","Wawawah, it's a human!!!
+Finally, someone to talk to!
+There's no one around...
+I've been so, so lonely!","Wawawah, it's a human!!! Finally, someone to talk to! There's no one around...
+I've been so, so lonely!",These lines have been formatted manually! Pam pam pam (sound of three party poppers going off)!
 0x1380b0,"どういうこと??
 このむらには オマエいがいには
-だれもいないのか?",/0x1380b0/,What are you on about? Are you the only one in this village?,
+だれもいないのか?","What are you on about?
+Are you the only one
+in this village?","What are you on about?
+Are you the only one
+in this village?",
 0x1380b2,"じつは このむらの
 デンジュウたちは ボクいがい
-いないんだ....",/0x1380b2/,Yeah... None of the other Denjuu are here...,
+いないんだ....","Yeah... None of the other
+Denjuu are here...",Yeah... None of the other Denjuu are here...,
 0x1380b4,"え? どういうことだよ?
-くわしく はなしてくれよ",/0x1380b4/,"What? What what what? Details, man!",
+くわしく はなしてくれよ","What? What what what?
+Details, man!","What? What what what? Details, man!",
 0x1380b6,"うん....えっとね...
 このむらに みたこともない
 デンジュウが いきなリ
@@ -3074,39 +3103,85 @@ You've taught me something very important.",
 デンジュウを つぎつぎに
 さらって いっちゃったんだ..
 ボクは どうしたら
-いいんだろう....",/0x1380b6/,"Ah, uh... A Denjuu I'd never seen before suddenly showed up in the village. It made off with all of the villagers, one by one... What should I do!?",
+いいんだろう....","Ah, uh... A Denjuu I'd never
+seen before suddenly
+showed up in the village.
+It made off with all of
+the villagers, one by one...
+What should I do!?","Ah, uh... A Denjuu I'd never seen before suddenly showed up in the village.
+It made off with all of
+the villagers, one by one... What should I do!?",
 0x1380b8,"よしっ オレが
 なんとか してやるよ!
 .....っていっても
 どうやったら みんなが
-いるところに いけるのかな?",/0x1380b8/,"Right! I'll fix this somehow! ...Is what I'd like to say, but how do I get to where they are?",
+いるところに いけるのかな?","Right! I'll fix this somehow!
+
+...Is what I'd like to say,
+but how do I get to
+where they are?","Right! I'll fix this somehow!
+
+...Is what I'd like to say,
+but how do I get to
+where they are?",
 0x1380ba,"アイツは むらのまんなかにある
 いけのしまに とつぜん
 あらわれたんだ!
 いってみたら なにかわかるかも
-しれないよ",/0x1380ba/,"It suddenly appeared on the island in the pond in the middle of the village! If you go there, maybe you can suss something out?",
+しれないよ","It suddenly appeared on
+the island in the pond
+in the middle of the village!
+If you go there, maybe you
+can suss something out?","It suddenly appeared on
+the island in the pond
+in the middle of the village! If you go there, maybe you can suss something out?",
 0x1380bc,"わかった とリあえず
-そこからしらベてみるよ",/0x1380bc/,"Gotcha. I'll start by checking that out, then.",
+そこからしらベてみるよ","Gotcha. I'll start by
+checking that out, then.","Gotcha. I'll start by checking that out, then.",
 0x1380be,"じゃあ ボクは かくれてるから
 みんなを たすけだしてあげて!
-おねがいだよ",/0x1380be/,"Okay! I'll be hiding here, so I'm counting on you to save everyone!",
+おねがいだよ","Okay! I'll be hiding here.
+I'm counting on you
+to save everyone!","Okay! I'll be hiding here.
+I'm counting on you
+to save everyone!",
 0x1380c0,"ふははははは!
 また いっぴき むしが 
-まいこんできたようだ",/0x1380c0/,Fwahahaha! Looks like another little fly came buzzing in!,
+まいこんできたようだ","Fwahahaha! Looks like
+another little fly
+came buzzing in!","Fwahahaha! Looks like another little fly
+came buzzing in!",
 0x1380c2,"オマエが むらのひとたちを
 どこかに つれてったんだろ
 むらのひとたちを もとに
-もどせよ!",/0x1380c2/,"You're the one who's been stealing away the villagers, aren't you? Give 'em back!",
+もどせよ!","You're the one who's
+been stealing away
+the villagers, aren't you?
+Give 'em back!","You're the one who's
+been stealing away
+the villagers, aren't you? Give 'em back!",
 0x1380c4,"ふははははは!
 なにを いいだすかと おもえば
 そんなことを いうとはな
-かえせと いわれて かえすわけないだろう",/0x1380c4/,Fwaaahaha! Of all the things you could say. You think I'll return them if you just ask?,
+かえせと いわれて かえすわけないだろう","Fwaaahaha! Of all the
+things you could say.
+You think I'll return them
+if you just ask?","Fwaaahaha! Of all the
+things you could say.
+You think I'll return them
+if you just ask?",
 0x1380c6,"かえせったら かえせよ!!
 オレと テレファングしやがれ!
 オレが かったら むらのひとを
-かえせよな",/0x1380c6/,"Give 'em back, I said! You and me – let's Telefang! If I win, the villagers go free.",
+かえせよな","Give 'em back, I said! You
+and me – let's Telefang!
+If I win, the villagers
+go free.","Give 'em back, I said! You and me – let's Telefang!
+If I win, the villagers
+go free.",
 0x1380c8,"それは のめない 
-じょうけんだな",/0x1380c8/,Those terms don't tickle my fancy...,
+じょうけんだな","Those terms don't quite
+tickle my fancy...",Those terms don't quite tickle my fancy...,
 0x1380ca,"よし ならば ゲームをしよう
 そこにある はしを つかわずに
 このしまに たってみろ
@@ -3115,7 +3190,23 @@ You've taught me something very important.",
 の じゅんばんだ
 これが できれば かんがえて
 やってもいいぞ
-ふはははははは!",/0x1380ca/,"Very well! Let us play a game. Try to reach this island without using the bridge. Your hint is this order: <bold>Fungus, Waratah, Keshi, Suguri, Crypto<normal>. Figure it out, and I'll consider returning the villagers. Fwahahaha!",
+ふはははははは!","Very well!
+Let us play a game.
+Try to reach this island
+without using the bridge.
+Your hint is the following
+sequence:
+<bold>Fungus, Waratah,
+Keshi, Suguri, Crypto<normal>.
+Figure it out, and I'll
+consider returning
+the villagers. Fwahahaha!","Very well!
+Let us play a game.
+Try to reach this island without using the bridge. Your hint is the following sequence:
+<bold>Fungus, Waratah,
+Keshi, Suguri, Crypto<normal>.
+Figure it out, and I'll consider returning
+the villagers. Fwahahaha!",
 0x1380cc,"よし ならば ゲームをしよう
 そこにある はしを つかわずに
 このしまに たってみろ
@@ -3125,110 +3216,231 @@ You've taught me something very important.",
 の じゅんばんだ
 これが できれば かんがえて
 やってもいいぞ
-ふはははははは!",/0x1380cc/,"Very well! Let us play a game. Try to reach this island without using the bridge. Your hint is this order: <bold>Gumi, Punica, Netaro, Kochia, Nejiro<normal>. Figure it out, and I'll consider returning the villagers. Fwahahaha!",
-0x1380ce,『ネジロのいえ』,/0x1380ce/,<bold>Nejiro's house<normal>,
-0x1380d0,『ネタロのいえ』,/0x1380d0/,<bold>Netaro's house<normal>,
-0x1380d2,『ワラタのいえ』,/0x1380d2/,<bold>Waratah's house<normal>,
-0x1380d4,『クリプトのいえ』,/0x1380d4/,<bold>Crypto's house<normal>,
-0x1380d6,『ファンガスのいえ』,/0x1380d6/,<bold>Fungus's house<normal>,
-0x1380d8,『プニカのいえ』,/0x1380d8/,<bold>Punica's house<normal>,
-0x1380da,『ケシのいえ』,/0x1380da/,<bold>Keshi's house<normal>,
-0x1380dc,『グミのいえ』,/0x1380dc/,<bold>Gumi's house<normal>,
-0x1380de,『スグリのいえ』,/0x1380de/,<bold>Suguri's house<normal>,
-0x1380e0,『コキアのいえ』,/0x1380e0/,<bold>Kochia's house<normal>,
+ふはははははは!","Very well!
+Let us play a game.
+Try to reach this island
+without using the bridge.
+Your hint is the following
+sequence:
+<bold>Gumi, Punica, Netaro,
+Kochia, Nejiro<normal>.
+Figure it out, and I'll
+consider returning
+the villagers. Fwahahaha!","Very well!
+Let us play a game.
+Try to reach this island without using the bridge. Your hint is the following sequence:
+<bold>Gumi, Punica, Netaro, Kochia, Nejiro<normal>.
+Figure it out, and I'll consider returning
+the villagers. Fwahahaha!",
+0x1380ce,『ネジロのいえ』,<bold>Nejiro's house<normal>,<bold>Nejiro's house<normal>,
+0x1380d0,『ネタロのいえ』,<bold>Netaro's house<normal>,<bold>Netaro's house<normal>,
+0x1380d2,『ワラタのいえ』,<bold>Waratah's house<normal>,<bold>Waratah's house<normal>,
+0x1380d4,『クリプトのいえ』,<bold>Crypto's house<normal>,<bold>Crypto's house<normal>,
+0x1380d6,『ファンガスのいえ』,<bold>Fungus's house<normal>,<bold>Fungus's house<normal>,
+0x1380d8,『プニカのいえ』,<bold>Punica's house<normal>,<bold>Punica's house<normal>,
+0x1380da,『ケシのいえ』,<bold>Keshi's house<normal>,<bold>Keshi's house<normal>,
+0x1380dc,『グミのいえ』,<bold>Gumi's house<normal>,<bold>Gumi's house<normal>,
+0x1380de,『スグリのいえ』,<bold>Suguri's house<normal>,<bold>Suguri's house<normal>,
+0x1380e0,『コキアのいえ』,<bold>Kochia's house<normal>,<bold>Kochia's house<normal>,
 0x1380e2,"ふはははは!
 まちがえたようだな
 『ファンガス』『ワラタ』『ケシ』『スグリ』『クリプト』
-の じゅんばんだぞ",/0x1380e2/,"Fwahahaaa! You seem to have taken a wrong turn. The order is <bold>Fungus, Waratah, Keshi, Suguri, Crypto<normal>, remember?",
+の じゅんばんだぞ","Fwahahaaa! You seem to
+have taken a wrong turn.
+The order I gave you is...
+
+<bold>Fungus, Waratah, Keshi,
+Suguri, Crypto<normal>!
+Remember?","Fwahahaaa! You seem to have taken a wrong turn. The order I gave you is...
+
+<bold>Fungus, Waratah, Keshi, Suguri, Crypto<normal>!
+Remember?",
 0x1380e4,"ふはははは!
 まちがえたようだな
 『グミ』『プニカ』『ネタロ』
 『コキア』『ネジロ』
-の じゅんばんだぞ",/0x1380e4/,"Fwahahaaa! You seem to have taken a wrong turn. The order is <bold>Gumi, Punica, Netaro, Kochia, Nejiro<normal>, remember?",
+の じゅんばんだぞ","Fwahahaaa! You seem to
+have taken a wrong turn.
+The order I gave you is...
+
+<bold>Gumi, Punica, Netaro,
+Kochia, Nejiro<normal>!
+Remember?","Fwahahaaa! You seem to have taken a wrong turn.
+The order I gave you is...
+
+<bold>Gumi, Punica, Netaro,
+Kochia, Nejiro<normal>!
+Remember?",
 0x1380e6,"なかなかやるな
 それでは むらのひとを....
 やはリ まだ かえすわけには
-いかんな",/0x1380e6/,"Not bad. You sleuthed out the solution. Very well, I will let the villagers... stay where they are, after all!",
+いかんな","Not bad! Very well,
+I will let the villagers...
+stay where they are,
+after all!","Not bad! Very well,
+I will let the villagers... stay where they are,
+after all!",
 0x1380e8,"やくそくが ちがうじゃないか!
-どういうことだよ!?",/0x1380e8/,What? You promised!,
+どういうことだよ!?",What? You promised!,What? You promised!,
 0x1380ea,"ふはははは
 ワタシは 『かんがえても』
 と いったはずだぞ
 オマエとは もうすこし
 あそんで みたくなった
 ワタシのやしきヘ
-しょうたいしよう",/0x1380ea/,"Fwahahaha! I promised I'd ""consider"" it, if I'm not mistaken! I'd like to play with you a bit more. You're hereby invited... to my mansion.",
+しょうたいしよう","Fwahahaha! I promised
+I'd ""consider"" it,
+if I'm not mistaken! I'd like
+to play with you a bit more.
+You're hereby invited...
+to my mansion.","Fwahahaha! I promised
+I'd ""consider"" it,
+if I'm not mistaken! I'd like to play with you a bit more. You're hereby invited...
+to my mansion.",
 0x1380ec,"よくここまできたな
-ほめてやるぞ",/0x1380ec/,"Oh, what have we here? You deserve praise for coming all this way.",
+ほめてやるぞ","Oh, what have we here?
+You deserve praise
+for coming all this way.","Oh, what have we here?
+You deserve praise
+for coming all this way.",
 0x1380ee,"えらそうな たいどは
 もういいんだよ
 さっさと むらのひとを 
-かえせよな!",/0x1380ee/,Get off your high horse! Give the villagers back already!,
+かえせよな!","Get off your high horse! Give
+the villagers back already!",Get off your high horse! Give the villagers back already!,
 0x1380f0,"ふはははは
 ニンゲンの コドモごときに
 ここまで いわれるとはな
 いいだろう あそびはここまでだ
 ワタシが ちょくせつ
 あいてを してやろう
-いくぞ テレファングだ!",/0x1380f0/,"Fwahaha! Oh, those words sound funny coming from a human child! Very well. Playtime's over. Face me head-on – let's telefang!",
+いくぞ テレファングだ!","Fwahahahaha!
+Oh, those words
+sound funny coming from a
+human child! Very well.
+Playtime's over. Face me
+head-on – let's telefang!","Fwahahahaha!
+Oh, those words
+sound funny coming from a human child! Very well.
+Playtime's over. Face me head-on – let's telefang!",
 0x1380f2,"イタイ イタイ イタイよー!
 イタイじゃないか!
-ちゃんと てかげんしろよ!",/0x1380f2/,"Ow ow ow OW! That smarts! Go easy on a guy, won't ya?!",
+ちゃんと てかげんしろよ!","Ow ow ow OW! That smarts!
+Go easy on a guy,
+won't ya?!","Ow ow ow OW! That smarts! Go easy on a guy,
+won't ya?!",
 0x1380f4,"なんだよ オマエ!
 さっきと たいどが ぜんぜん
-ちがうじゃないか!",/0x1380f4/,Wow! Someone had an attitude adjustment!,
+ちがうじゃないか!","Wow! Someone had an
+attitude adjustment!",Wow! Someone had an attitude adjustment!,
 0x1380f6,"オレは ただ たのまれた
 だけなんだ
 アンテナのきを つかえないようにして まちのひとを かくして
-くれって",/0x1380f6/,This wasn't my idea! I was told to break the Antenna Tree and hide away the villagers!,
+くれって","This wasn't my idea! I'm just
+following orders –
+""bust up the Antenna Tree
+and whisk away
+the villagers""!","This wasn't my idea! I'm just following orders –
+""bust up the Antenna Tree and whisk away
+the villagers""!",
 0x1380f8,"だれに そんなことを 
-たのまれたんだよ!",/0x1380f8/,Who told you to do that?!,
+たのまれたんだよ!","Who ordered you
+to do that?!","Who ordered you
+to do that?!",
 0x1380fa,"う...それは...
-いえない....",/0x1380fa/,Er... I... can't tell you...,
+いえない....",Er... I... can't tell you...,Er... I... can't tell you...,
 0x1380fc,"いえよ! じゃないと もっと
-イタイめに あわすぞ!",/0x1380fc/,"Out with it, or your world of hurt is about to get a parallel dimension!",
+イタイめに あわすぞ!","Out with it, or your
+world of hurt is about to get
+a parallel dimension!","Out with it, or your
+world of hurt is about to get a parallel dimension!",
 0x1380fe,"わかったよ いうよ
-『サナエバ』っていうニンゲンにたのまれたんだ",/0x1380fe/,"Alright, alright! It was some human named <bold>Sanaeba<normal>!",
+『サナエバ』っていうニンゲンにたのまれたんだ","Alright, alright! It was some
+human named <bold>Sanaeba<normal>!","Alright, alright! It was some human named <bold>Sanaeba<normal>!",
 0x138100,"『サナエバ』.....
 クラフトはかせの ところでも
-そのナマエを きいたな...",/0x138100/,"<bold>Sanaeba<normal>... I heard that name at Professor Craft's place, too.",
+そのナマエを きいたな...","<bold>Sanaeba<normal>...
+
+I heard that name at Pro-
+fessor Craft's place, too.","<bold>Sanaeba<normal>...
+
+I heard that name at Pro-fessor Craft's place, too.",
 0x138102,"オレが しゃベった ことは
-ぜったいに いわないでくれよ!",/0x138102/,Please don't tell anyone I told you!,
+ぜったいに いわないでくれよ!","Please don't tell anyone
+I told you!","Please don't tell anyone
+I told you!",
 0x138104,"わかった やくそくする
 とリあえず むらのひとは
 もとにもどせよな
 あと オレも このやしきから
-だしてくれよ",/0x138104/,"Yeah, yeah. I won't. But now, send the villagers back home! And let me out of this place while you're at it!",
+だしてくれよ","Sure, I won't. But now, send
+the villagers back home! And
+let me out of this place while
+you're at it!","Sure, I won't. But now, send the villagers back home! And let me out of this place while you're at it!",
 0x138106,"わかった
 もとに もどしておくよ
 じぶんの したことは
 よく わかってるんだ
 はんせいしてるよ
-すまなかった",/0x138106/,"Absolutely! I'll put everyone back! I see the error of my ways, I regret everything! Sorry...",
+すまなかった","Absolutely!
+I'll put everyone back!
+I see the error of my ways!
+I regret everything! Sorry...","Absolutely!
+I'll put everyone back!
+I see the error of my ways! I regret everything! Sorry...",
 0x138108,"わかれば いいよ
-じゃあ もどしてくれ",/0x138108/,"As long as you understand. Right, send me back now!",
+じゃあ もどしてくれ","As long as you get it.
+Alright, put me back now!","As long as you get it.
+Alright, put me back now!",
 0x13810a,"もしもし?
-<&name>だけど?",/0x13810a/,"Yeah, <&name> speaking?",
+<&name>だけど?","Yeah, <&name>
+speaking?","Yeah, <&name> speaking?",
 0x13810c,"あ? もしもしぃ
 たくはいピザ おねがい
-したいんだけどぉ?",/0x13810c/,"Yes, hellooo? I'd like to order a pizza, pleeease!",
+したいんだけどぉ?","Yes, hellooo? I'd like to
+order a pizza, pleeease!","Yes, hellooo? I'd like to order a pizza, pleeease!",
 0x13810e,"オレは ピザやじゃないよ
 デンワバンゴウ たしかめて
-かけろよな",/0x13810e/,...I'm not a pizza place! You've got the wrong number.,
-0x138110,もしもし?,/0x138110/,Hello?,
+かけろよな","...I'm not a pizza place!
+
+You've got the wrong
+number.","...I'm not a pizza place!
+
+You've got the wrong number.",
+0x138110,もしもし?,Hello?,Hello?,
 0x138112,"あ? もしもしぃ
 ピザやさん? ちゅうもん
-おねがいしたいんだけどぉ?",/0x138112/,"Oh, hiii. This is the pizza place, right? I'd like to place an order, pleeease!",
+おねがいしたいんだけどぉ?","Oh, hiii.
+This is Martino's, right?
+I'd like to place an order,
+pleeease!","Oh, hiii.
+This is Martino's, right?
+I'd like to place an order, pleeease!",
 0x138114,"ピザやじゃないって
 いってるじゃないか!
-デンワバンゴウ たしかめろよな",/0x138114/,"I told you, I'm not a pizza place! Check the number before you call!",
-0x138116,オレはピザやじゃねー!!,/0x138116/,I'm not a pizza plaaaaace!!!,
+デンワバンゴウ たしかめろよな","I told you, I'm not
+a pizza place!
+Check the number before you
+call!","I told you,
+I'm not a pizza place!
+Check the number
+before you call!",
+0x138116,オレはピザやじゃねー!!,I'm not a pizza plaaaaace!!!,I'm not a pizza plaaaaace!!!,
 0x138118,"び....びっくリしたぁ
 <&name>くん
-ワタシですよ マツキヨです",/0x138118/,"Oh, my poor heart, you scared me... It's me, <&name>! It's Matsukiyo!",
+ワタシですよ マツキヨです","Oh, my poor heart,
+you scared me...
+It's me, <&name>!
+It's Matsukiyo!","Oh, my poor heart,
+you scared me...
+It's me, <&name>!
+It's Matsukiyo!",
 0x13811a,"わるい わるい
 さっきから まちがいデンワが
-かかってきててさ",/0x13811a/,"Oh, sorry... Somebody's been calling me looking for someone else.",
+かかってきててさ","Oh, sorry...
+Somebody's been calling me
+looking for someone else.","Oh, sorry...
+Somebody's been calling me looking for someone else.",
 0x13811c,"そこまで デンパいじょうが
 おきてるんですね
 じつは トリパむらという
@@ -3237,27 +3449,57 @@ You've taught me something very important.",
 なっているそうなのなので
 <&name>くんに 
 ようすを みてきて
-ほしいのですが?",/0x13811c/,"Ah, so the connection troubles have gone that far... Just now, the Antenna Tree of a place called Toulipa Village started acting up. Could I perhaps leave it to you to inspect the situation, <&name>?",
+ほしいのですが?","Ah, so the connection trou-
+bles have gone that far...
+You're not the only one. Just
+now, the Antenna Tree
+in a village called Toulipa
+started acting up.
+Could I perhaps leave it to
+you to inspect the
+situation, <&name>?","Ah, so the connection trou-bles have gone that far... You're not the only one. Just now, the Antenna Tree
+in a village called Toulipa started acting up.
+Could I perhaps leave it to you to inspect the situation, <&name>?",
 0x13811e,"わかった みてくる
 トリパむらには どうやったら
-いけるんだ?",/0x13811e/,"Sure, I'll check it out! How do I get to Toulipa Village?",
+いけるんだ?","Sure, I'll check it out! How
+do I get to Toulipa Village?","Sure, I'll check it out! How do I get to Toulipa Village?",
 0x138120,"そこにある アンテナのきから
 イーリスに もどることが
 できるのです
 そして イーリスのひがしにある
 ほこらから トリパむらヘ
 いくことが できます
-それでは おねがいしますよ",/0x138120/,"Using the Antenna Tree in your vicinity, you can return to Iris. East of Iris lies a shrine, from which you can go to Toulipa Village. I'm depending on you!",Is it a shrine? Gotta check the inside of the house on the east side of Iris.
+それでは おねがいしますよ","Using the Antenna Tree
+in your vicinity,
+you can return to Iris.
+East of Iris lies a tunnel,
+through which you can go to
+Toulipa Village.
+I'm depending on you!","Using the Antenna Tree
+in your vicinity,
+you can return to Iris.
+East of Iris lies a tunnel, through which you can go to Toulipa Village.
+I'm depending on you!","It's not a shrine – it's one of those cave-looking things.
+"
 #######,Toulipa Village story,,,
 0x138122,"やっと ニンゲンにあえた!
 キミ ボクをたすけてくれよ!
 デンジュウたちに つかまって
 ここに とじこめられて
-しまったんだ!",/0x138122/,A human! At last! You have to help me. I got arrested by some Denjuu and locked up here!,
+しまったんだ!","A human! At last! You have
+to help me. I got arrested
+by some Denjuu and locked up
+here!",A human! At last! You have to help me. I got arrested by some Denjuu and locked up here!,All o' these have been manually formatted! You can count on me!
 0x138124,"つかまったのには リゆうが
 あるんだろ?
 この デンパいじょうに 
-かんけいが あるんじゃないか?",/0x138124/,"If you got arrested, there's a reason for that, right? Do you have something to do with the Antenna Tree being on the frizz?",
+かんけいが あるんじゃないか?","If you got arrested,
+there's a reason for that,
+right? Do you have
+something to do with the
+Antenna Tree being on the
+fritz?","If you got arrested, there's a reason for that, right? Do you have something to do with the Antenna Tree being on the fritz?",
 0x138126,"う.....
 ボクは ここで あるひとに
 たのまれて アンテナのきを
@@ -3271,76 +3513,149 @@ You've taught me something very important.",
 はじめたんだ
 それで こわくなって
 きから にげだしたところを
-つかまえられたのさ",/0x138126/,,
+つかまえられたのさ","Urk... I was appointed to
+study this Antenna Tree.
+I was ordered to administer
+the tree some sort of
+medicine, so I did, and...
+the tree suddenly grew to
+gargantuan proportions!
+I was really shaken, so I
+ran away, but I didn't get
+far before I was caught.","Urk... I was appointed to study this Antenna Tree.
+I was ordered to administer the tree some sort of medicine, so I did, and...
+the tree suddenly grew to gargantuan proportions!
+I was really shaken, so I ran away, but I didn't get far before I was caught.",
 0x138128,"アンテナのきが あんなふうに
 なるなんて おもって
 なかったんだ
 わかってたら やらなかったよ!
-たのまれたから やったんだ",/0x138128/,,
+たのまれたから やったんだ","I had no idea that the
+medicine would do that...
+If I'd've known, I'd never
+have administered it!
+I was just following
+orders!","I had no idea that the medicine would do that...
+If I'd've known, I'd never have administered it!
+I was just following orders!",
 0x13812a,"おっさんの いいぶんは
 わかったよ
-それで だれにたのまれたんだ?",/0x13812a/,"Alright, mister, I gotcha. Who asked you to do that?",
+それで だれにたのまれたんだ?","Alright, mister, I gotcha.
+Who were you taking
+orders from?","Alright, mister, I gotcha. Who were you taking orders from?",
 0x13812c,"クスリを とうよしろって
 めいれいしたのは
 『サナエバ』さんだよ
-あのひとに めいれいされたんだ",/0x13812c/,I was told to administer the medicine by a <bold>Mr. Sanaeba<normal>! He's the one who gave the order.,
+あのひとに めいれいされたんだ","The one who gave me the
+medicine and orders was a
+<bold>Mr. Sanaeba<normal>!",The one who gave me the medicine and orders was a <bold>Mr. Sanaeba<normal>!,
 0x13812e,"また そのナマエか....
 サナエバってヤツは なんの
-ために そんなことをするんだ?",/0x13812e/,That name again... Why would he do that?,
+ために そんなことをするんだ?","That name again...
+Why would he do that?","That name again...
+Why would he do that?",
 0x138130,"リゆうは ボクにも わからない
 でも アンテナのきを もとに
 もどす ほうほうは 
-わかっているんだ",/0x138130/,I don't know his reasons... But I do know of a way to return the Antenna Tree to normal.,
+わかっているんだ","I don't know his reasons...
+But I do know of a way
+to return the Antenna Tree
+to normal.","I don't know his reasons... But I do know of a way
+to return the Antenna Tree to normal.",
 0x138132,"この『ちゅうしゃき』に
 はいっているクスリを
 きのてっペんでつかえばいいんだ
-ボクは ここからうごけないからキミに たのんで いいかい?",/0x138132/,"This <bold>injector<normal> here needs to be used near the tree crown. I'm stuck here, so can I ask you to do it?",
+ボクは ここからうごけないからキミに たのんで いいかい?","This <bold>injector<normal> here needs
+to be applied near the tree
+crown. I'm stuck here, so
+can I ask you to do it?","This <bold>injector<normal> here needs to be applied near the tree crown. I'm stuck here, so can I ask you to do it?",
 0x138134,"おう まかしとけ!
 これを きの てっペんで 
 つかえばいいんだろ
-かんたんじゃねーか",/0x138134/,"Leave it to me! I just gotta stick this into the top of the tree, right? Piece of cake.",
+かんたんじゃねーか","Leave it to me! I just
+gotta stick this into
+the top of the tree, right?
+Piece of cake.","Leave it to me! I just
+gotta stick this into
+the top of the tree, right?
+Piece of cake.",
 0x138136,"『ちゅうしゃき』
-をてにいれた",/0x138136/,,
+をてにいれた",Got <bold>Injector<normal>!,Got <bold>Injector<normal>!,
 0x138138,"じゃあ たのんだよ
-きを もとどおリにしてくれ",/0x138138/,I'm counting on you! Return the tree to normal!,
+きを もとどおリにしてくれ","I'm counting on you!
+Return the tree to normal!","I'm counting on you!
+Return the tree to normal!",
 0x13813a,"きのなかに はいリますか?
- はい  いいえ<*A>",/0x13813a/<*A>,Enter the Antenna Tree? Yes No<*A> // Formatting,
+ はい  いいえ<*A>","Enter the Antenna Tree?
+<Q>Yes<|>No</Q><*A>","Enter the Antenna Tree?
+<Q>Yes<|>No</Q><*A>",
 0x13813c,"よっし ついた
 クスリを つかうのは 
 このあたリで いいのかな
 んじゃ いっちょブッスリと
-いっとくかぁ!",/0x13813c/,"Made it! I guess here's as good as any place to inject the medicine. Don't worry, tree, it'll just be a little prick!",
+いっとくかぁ!","I made it! I guess here's as
+good as any place to inject
+the medicine. Don't worry,
+tree, it'll just be a little
+prick!","I made it! I guess here's as good as any place to inject the medicine.
+Don't worry, tree,
+it'll just be a little prick!",
 0x13813e,"『ちゅうしゃき』
-をつかった",/0x13813e/,,
+をつかった",Used <bold>Injector<normal>.,Used <bold>Injector<normal>.,
 0x138140,"なかなかの けっかが
 でているではないか
 これで またいっぽ 
-シンデンジュウに ちかづいたな",/0x138140/,"Ah, terrific results already. That's yet another step closer to the Divine Denjuu.",
+シンデンジュウに ちかづいたな","Ah, terrific results already.
+That's yet another step
+closer to the Divine Denjuu.","Ah, terrific results already. That's yet another step closer to the Divine Denjuu.",
 0x138142,"なんだ コゾウ
 だれに ことわって ここに
 はいってきたんだ?
-さっさとでていけ!",/0x138142/,"What's this? Who told you to enter this place, boy? Leave at once!",
+さっさとでていけ!","What's this? Who told you to
+enter this place, boy?
+Leave at once!","What's this? Who told you to enter this place, boy? Leave at once!",
 0x138144,"オレは ひとにたのまれて 
 ここに きたんだ
-オマエのほうこそ なにもんだよ",/0x138144/,I'm here because someone asked me to! Who do you think you are?,
+オマエのほうこそ なにもんだよ","I came here because I was
+asked to!
+Who do you think you are?","I came here because I was asked to!
+Who do you think you are?",
 0x138146,"デンジュウカイに きている
 ニンゲンで ワタシのことを
 しらない ニンゲンが いるとはねまったくおどろきだ
-ふん しょせん コドモか...",/0x138146/,To think that there is a human in the Denjuu World who doesn't know who I am... I suppose I shouldn't expect too much of a child.,
+ふん しょせん コドモか...","To think that there is a
+human in the Denjuu World
+who doesn't know who I am...
+I suppose I shouldn't
+expect too much of a child.",To think that there is a human in the Denjuu World who doesn't know who I am... I suppose I shouldn't expect too much of a child.,
 0x138148,"コドモってなんだよ!!!
 オマエなんか ただの 
 おっさんじゃねーか!
 あったまきた!!!
 オマエ オレと 
-テレファングしやがれ!!",/0x138148/,"Who are you calling ""child""? You're just a regular old dude, aren't you?! Now I'm mad! Put 'em up and face me in a Telefang!",
+テレファングしやがれ!!","Who are you calling ""child""?
+You're just a regular
+old dude, aren't you?!
+Now I'm mad! Put 'em up
+and face me in a Telefang!","Who are you calling ""child""? You're just a regular
+old dude, aren't you?!
+Now I'm mad! Put 'em up and face me in a Telefang!",
 0x13814a,"ふふ いいだろう
 テレファングをいどんだことを
 こうかいさせてやる
-こい! テレファングだ!",/0x13814a/,"Ha! Well, well. I'll make you regret challenging me. Bring all you have! Let's telefang!",
+こい! テレファングだ!","Ha! Well, well. I'll make you
+regret challenging me.
+Bring all you have!
+Let's telefang!","Ha! Well, well. I'll make you regret challenging me. Bring all you have!
+Let's telefang!",
 0x13814c,"ふん なかなかやるな
-オマエのナマエをきいておこう",/0x13814c/,"Hm. Not too shabby. What's your name, boy?",
+オマエのナマエをきいておこう","Hm. Not too shabby.
+What's your name, boy?","Hm. Not too shabby.
+What's your name, boy?",
 0x13814e,"オレは <&name>だ
-オマエの ナマエは??",/0x13814e/,I'm <&name>! Who are you? ,
+オマエの ナマエは??","I'm <&name>!
+Who are you?","I'm <&name>!
+Who are you? ",
 0x138150,"はっはっはっはっ
 テレファングにかっただけで
 たいとうの たちばと おもうなよこんかいは てかげんしたのだ
@@ -3348,97 +3663,179 @@ You've taught me something very important.",
 なれんのでな
 もしも つぎに ジャマする
 ようなことがあれば
-そのときは てかげんしないぞ!",/0x138150/,"Ha-ha-ha! Don't think we're equals simply because you won a Telefang. My silk gloves were on – I can't fight a child in earnest. If you get in my way again, however... I won't be as kind!",
+そのときは てかげんしないぞ!","Ha-ha-ha! Don't think we're
+equals simply because
+you won a Telefang. My silk
+gloves were on – I can't
+fight a child in earnest. If
+you get in my way again,
+however... I won't be as
+kind!","Ha-ha-ha! Don't think we're equals simply because
+you won a Telefang. My silk gloves were on – I can't fight a child in earnest. If you get in my way again, however... I won't be as kind!",
 0x138152,"なんだよ アイツは!!
 あんなイヤなヤツ はじめてみた
 あー........
-イライラするーーーーーー!",/0x138152/,"Wow! That guy sucks! I've never met anyone who sucks that much!!! Aghhhh, how annoying!",
+イライラするーーーーーー!","Wow! That guy sucks!
+I've never met anyone
+who sucks that much!!!
+Aghhhh, how annoying!","Wow! That guy sucks!
+I've never met anyone
+who sucks that much!!!
+Aghhhh, how annoying!",
 0x138154,"ヤツは どこだ!
-どこにいった!?",/0x138154/,Where is he?! Where'd that guy go?!,
+どこにいった!?","Where is he?!
+Where'd that guy go?!","Where is he?!
+Where'd he go?!",
 0x138156,"あーっ!!
 パームかいの アンテナのきを
 おそってたヤツじゃねーか!
 ここになにしに きたんだよ!
 たしか『カイ』って ナマエ
-だったよな?",/0x138156/,"Oh!!! You're the guy who attacked the Antenna Tree of Palm Sea! What are you doing here? ""Kai"", was it?",
+だったよな?","Oh!!!
+You're the guy who
+attacked the Antenna Tree
+of Palm Sea!
+It's ""Kai"", right?
+What are you doing here?","Oh!!!
+You're the guy who attacked the Antenna Tree of Palm Sea!
+It's ""Kai"", right?
+What are you doing here?",
 0x138158,"うるさい!
 いまは オマエにかまっている
 ヒマはないんだ!
-ヤツはどこヘいった?",/0x138158/,Shut it! I've don't have time for you right now! Where did that guy go?,
+ヤツはどこヘいった?","Shut it! I've don't have time
+for you right now!
+Where did he go?","Shut it! I've don't have time for you right now!
+Where did he go?",
 0x13815a,"ヤツって さっきいた 
 イヤなヤツの ことか?
-オマエ ヤツとしリあいなのか?",/0x13815a/,"""That guy""? The sucky old man who was here a second ago? Are you his friend?",
+オマエ ヤツとしリあいなのか?","""He""? The sucky old man
+who was here just now?
+Are you his friend?","""He""? The sucky old man
+who was here just now?
+Are you his friend?",
 0x13815c,"しリあい?
 オマエ アイツをしらないのか?
 アイツは サナエバグループの
-しゃちょう サナエバだ!",/0x13815c/,"Friend? Don't you know who he is? That's Sanaeba, head of the Sanaeba Group!",
+しゃちょう サナエバだ!","""Friend""?
+Don't you know who he is?
+That's Sanaeba, head of
+the Sanaeba Group!","""Friend""?
+Don't you know who he is? That's Sanaeba, head of the Sanaeba Group!",
 0x13815e,"アイツが サナエバ!
-そうだったのか",/0x13815e/,So THAT'S Sanaeba! Huh!,
+そうだったのか",So THAT'S Sanaeba! Huh!,So THAT'S Sanaeba! Huh!,
 0x138160,"まぁいい
 よく ヤツを くいとめてくれた
-れいをいう",/0x138160/,"Well, good job keeping him in check. I gotta thank you for that.",
-0x138162,あっ おい まてよ!,/0x138162/,Ah! Hey! Wait up!,
+れいをいう","Good job keeping him in check,
+at least. I gotta
+thank you for that.","Good job keeping him in check, at least. I gotta
+thank you for that.",
+0x138162,あっ おい まてよ!,Ah! Hey! Wait up!,Ah! Hey! Wait up!,
 0x138164,"アイツ じつはいいヤツなのか?
 まぁいいや
-さっさと まちにもどろうかな",/0x138164/,Is he a good guy after all...? Oh well. Let's get down from here.,
+さっさと まちにもどろうかな","Is he a good guy after all...?
+Well, whatever.
+Let's get down from here.","Is he a good guy after all...?
+Well, whatever.
+Let's get down from here.",
 0x138166,"おっし!
 アンテナのきも もとどおリに
 なったことだし
 けんきゅういんの おっちゃんの
 ところヘ ほうこくに
-いこうか!",/0x138166/,,
+いこうか!","Sweet! The Antenna Tree
+is back to normal!
+I should go give the scientist
+guy the good news.","Sweet! The Antenna Tree
+is back to normal!
+I should go give the scientist guy the good news.",
+#######,Fraoula Village story,,,
 0x138168,"あぁ こまったことになった
 やっぱリ いいつたえは
-まもらないと ダメだったんだ",/0x138168/,"Oh, what a tight spot I have gotten myself in.
+まもらないと ダメだったんだ","Oh, what a tight spot I have
+gotten myself in.
+Legends exist for a reason,
+oh yes, they do!","Oh, what a tight spot I have gotten myself in.
 Legends exist for a reason, oh yes, they do!",
 0x13816a,"おい 
 このむらで いったいなにが
 おきてるんだ?
 なんだか おかしなことが
 おきてるって きいて
-ここに きたんだけど?",/0x13816a/,Hey! What's happening in this village? I'm here because I heard something fishy was going on.,
-0x13816c,あぁ こまった こまった,/0x13816c/,"Darn, this is a tight spot,
+ここに きたんだけど?","Hey! What's happening in this
+village?
+I'm here because I heard
+something fishy was going
+on.","Hey! What's happening in this village?
+I'm here because I heard something fishy was going on.",
+0x13816c,あぁ こまった こまった,"Darn, this is a tight spot,
+a tight spot indeed...","Darn, this is a tight spot,
 a tight spot indeed...",
-0x13816e,おーーーーーーーーい!,/0x13816e/,Heeeeeey! I'm talking to you!,
+0x13816e,おーーーーーーーーい!,Heeeeeey! I'm talking to you!,Heeeeeey! I'm talking to you!,
 0x138170,"うわぁっ!
-なんだ?なんだ?",/0x138170/,Hurk! What? Who? What?,
+なんだ?なんだ?",Hurk! What? Who? What?,Hurk! What? Who? What?,
 0x138172,"あ やっときづいた
 このむらで いったい
-なにがおきてるんだ?",/0x138172/,Finally you notice! What's going on in this village?,
+なにがおきてるんだ?","Finally you notice! What's
+going on in this village?",Finally you notice! What's going on in this village?,
 0x138174,"じ..じつは やまのふういんを
 といて しまったんだ
 それいらい このむらで
-ヘんなことが おきはじめたんだ",/0x138174/,"The seal! The seal of the mountain was broken!
+ヘんなことが おきはじめたんだ","The seal! The seal of the
+mountain was broken!
+Ever since then, strange
+things have been going on.
+And how strange they
+are...","The seal! The seal of the mountain was broken!
 Ever since then, strange things have been going on. And how strange they are...",
 0x138176,"やまのふういん?
-なんだよそれ?",/0x138176/,"The ""seal of the mountain""? What's that?",
+なんだよそれ?","The ""seal of the mountain""?
+What's that?","The ""seal of the mountain""?
+What's that?",
 0x138178,"このむらには
 『やまのうえにはアクマがすむ』
 っていう いいつたえが あるんだそして やまのいリぐちには
 やまを ふういんしている
 おおきな いわがあったんだ
 ボクは それを こわして
-しまって....",/0x138178/,"You see, we have an old legend in this town.
-""On top of the mountain lives a demon"", they say.
-There was a boulder, a big boulder, sealing the mountain's entrance, but...
-I went and broke it!",
+しまって....","You see, we have an old
+legend in this town.
+""On top of the mountain lives
+a devil"", they say.
+There was a boulder,
+a big boulder, sealing
+the mountain's entrance,
+but... I went and broke it!","You see, we have an old legend in this town.
+""On top of the mountain lives a devil"", they say.
+There was a boulder,
+a big boulder, sealing
+the mountain's entrance, but... I went and broke it!",
 0x13817a,"なんで そんなこと 
-したんだよ!!",/0x13817a/,"Why'd you do that, man?!",
+したんだよ!!","Why'd you do that, man?!","Why'd you do that, man?!",
 0x13817c,"あるニンゲンに
 『このキカイを あげるから
 ふういんを といてきて 
 くれないか?』
 っていわれたんだよ
 ボク そのキカイが どうしても
-ほしくって.....",/0x13817c/,"Some human said he'd give me a machine if I just broke the seal.
-Oh, it is such a pretty machine, shiny and high-tech...",
+ほしくって.....","Some human said he'd give me
+a machine if I just broke
+the seal. Oh, it is such
+a pretty machine,
+shiny and high-tech...","Some human said he'd give me a machine if I just broke the seal. Oh, it is such
+a pretty machine,
+shiny and high-tech...",
 0x13817e,"あるニンゲンって....
 スーツをきた なんだか
-やなカンジの ヤツか?",/0x13817e/,"""Some human"", you say...
+やなカンジの ヤツか?","""Some human"", you say...
+Did he wear a suit?
+And was he the worst?","""Some human"", you say...
 Did he wear a suit?
 And was he the worst?",
 0x138180,"そう そんなカンジのニンゲン!
-しリあいなの?",/0x138180/,"That sounds like the guy, yes, quite apt!
+しリあいなの?","That sounds like the one,
+yes, quite apt!
+Do you know him?","That sounds like the one, yes, quite apt!
 Do you know him?",
 0x138182,"サナエバだ....
 ヤツはいったい なにを
@@ -3448,32 +3845,59 @@ Do you know him?",
 とかいうのと かんけいが
 あるのかな?
 サナエバも そんなことを
-クチにしてたし.....",/0x138182/,"It's Sanaeba... What could he be up to?
-Could this have to do with the ""Divine Denjuu"" Professor Craft was talking about?
+クチにしてたし.....","It's Sanaeba...
+What could he be up to?
+Could this have to do with
+the ""Divine Denjuu"" that
+Professor Craft was
+talking about?
+Sanaeba mentioned it too...","It's Sanaeba...
+What could he be up to?
+Could this have to do with the ""Divine Denjuu"" that Professor Craft was
+talking about?
 Sanaeba mentioned it too...",
 0x138184,"ねぇ キミ Tファンガーだろ?
 おねがいだから やまにいって
 ようすを みてきて くれないか?このままじゃ フラウラが
-たいヘんなことになっちゃうよ",/0x138184/,"You, you're a T-Fanger, aren't you? Please,
-won't you go to the mountain and see what's up? At this rate, Flaoura is in trouble!",
+たいヘんなことになっちゃうよ","You, you're a T-Fanger,
+aren't you? Please,
+won't you go to the mountain
+and see what's up?
+At this rate, Fraoula is in
+big trouble!","You, you're a T-Fanger, aren't you? Please,
+won't you go to the mountain and see what's up?
+At this rate, Fraoula is in big trouble!",
 0x138186,"オッケー わかった
-みてきてやるよ",/0x138186/,"Sounds like an okay plan!
+みてきてやるよ","Sure, why not!
+I'll check it out!","Sure, why not!
 I'll check it out!",
 0x138188,"たのんだよ!
-ほんとうに たのんだからね!",/0x138188/,I'm counting on you! Really really counting on you!,
-0x13818a,ニンゲン なにをしにきたんだ!,/0x13818a/,You there! Human! What is your business here?,
+ほんとうに たのんだからね!","I'm counting on you! Really
+really counting on you!",I'm counting on you! Really really counting on you!,
+#######,Mt. Peperi Story,,,
+0x13818a,ニンゲン なにをしにきたんだ!,"You there! Human! What is
+your business here?",You there! Human! What is your business here?,
 0x13818c,"いや オレたちは
 フラウラむらの デンジュウに
 たのまれて このやまにきたんだ
 オマエたちは ここで なにを
-してるんだ?",/0x13818c/,The villagers of Flaoura asked us to come here! What is YOUR business here?,
+してるんだ?","The villagers of Flaoura
+asked me to come here!
+What is YOUR business
+here?",The villagers of Flaoura asked me to come here! What is YOUR business here?,
 0x13818e,"オレたちは ここで
 アクマデンジュウの ふういんが
 とけないように だいだい
-みはっていたんだ",/0x13818e/,"We're ostensibly standing guard here to make sure the seal of the Devil Denjuu isn't broken.
-Although, I suppose that doesn't mean much now...",Really gotta decide on terminology for Gypsophi.
+みはっていたんだ","We're ostensibly standing
+guard here to make sure
+the seal of the Devil Denjuu
+isn't broken.
+Although, I suppose that
+doesn't mean much now...","We're ostensibly standing guard here to make sure the seal of the Devil Denjuu isn't broken.
+Although, I suppose that doesn't mean much now...",
 0x138190,"その 『アクマデンジュウ』は
-どうなったんだ?",/0x138190/,"What's going on with that ""Devil Denjuu""?",
+どうなったんだ?","What's going on with that
+""Devil Denjuu""?","What's going on with that ""Devil Denjuu""?",
 0x138192,"ふん もう おそいぞ
 アクマデンジュウは カクセイを
 はじめている
@@ -3481,50 +3905,83 @@ Although, I suppose that doesn't mean much now...",Really gotta decide on termin
 むらにも でているだろう
 ふっかつしたものは とめようが
 ないんだ
-すベて ニンゲンのせいだぞ!",/0x138192/,"It's too late now...
+すベて ニンゲンのせいだぞ!","It's too late now...
 It's already awakening.
-I assume the village is feel-ing the effects already... Once unleashed, it cannot be stopped. This is all the humans' fault!",
+I assume the village is feel-
+ing the effects already...
+Once unleashed, it cannot be
+stopped. This is all
+the humans' fault!","It's too late now...
+It's already awakening.
+I assume the village is feel-ing the effects already... Once unleashed, it cannot be stopped. This is all
+the humans' fault!",
 0x138194,"じゃあ オレが その
 『アクマデンジュウ』を
 ふういんするぜ!
 おなじ ニンゲンの オレが
-せきにんをとればいいだろ!",/0x138194/,"I'm a human too, so what if I take responsibility?
+せきにんをとればいいだろ!","I'm a human too, so what if
+I take responsibility?
+I'll seal that Devil Denjuu
+back up!","I'm a human too, so what if I take responsibility?
 I'll seal that Devil Denjuu back up!",
 0x138196,"そこまで いうのなら
 オマエたちに そのチカラが
 あるかどうか みてやろう
-いくぞ テレファングだ!",/0x138196/,"So you would go that far... In that case,
-let's see if you have the strength necessary!
+いくぞ テレファングだ!","So you would go that far...
+In that case,
+let's see if you have the
+strength necessary.
+Let's telefang!","So you would go that far... In that case,
+let's see if you have the strength necessary.
 Let's telefang!",
 0x138198,"あっ アニキがまけた
 チクショー!
-つぎは オレがあいてだ!",/0x138198/,Bro! You lost? Dammit!!! Now you'll have to take me on!,
+つぎは オレがあいてだ!","Bro! You lost? Dammit!!! Now
+you'll have to take me on!",Bro! You lost? Dammit!!! Now you'll have to take me on!,
 0x13819a,"どうだ!
-オレたちも なかなかやるだろう",/0x13819a/,"How's that? We're no slackers, are we?",
+オレたちも なかなかやるだろう","How's that? We're no
+slackers, are we?","How's that? We're no slackers, are we?",
 0x13819c,"ふっ....
 オマエぐらいの チカラが
 あれば あのアクマデンジュウを
 とめることが できるかも
 しれないな
 アクマデンジュウは このさきを
-いったところに いるはずだ",/0x13819c/,"Heh... Someone with your power might actually
+いったところに いるはずだ","Heh... Someone with your
+power might actually
+be able to stop that unholy
+Devil Denjuu.
+You should find it if you pass
+through here.","Heh... Someone with your power might actually
 be able to stop that unholy Devil Denjuu.
 You should find it if you pass through here.",
 0x13819e,"おっしゃ!
-んじゃアクマデンジュウのヤツをふういんしてくるぜ!",/0x13819e/,"That's more like it! Alright, I'll be back when I've sealed up the Devil Denjuu!",
+んじゃアクマデンジュウのヤツをふういんしてくるぜ!","That's more like it! Alright,
+I'll be back when I've
+sealed up the Devil Denjuu!","That's more like it! Alright, I'll be back when I've sealed up the Devil Denjuu!",
 0x1381a0,"ちょっとまて
 そういえば このやまに
 オマエたちいがいの ニンゲンが
 はいってきているみたいだ
 どんなヤツかはわからないが
-きをつけることだな",/0x1381a0/,"Just one thing... I've heard there may be more humans in here. I don't know who they are, but... take care.",
+きをつけることだな","Just one thing... I've heard
+there may be more humans
+in here. I don't know who
+they are, but... take care.","Just one thing... I've heard there may be more humans in here. I don't know who they are, but... take care.",
 0x1381a2,"しんぱいしてくれてサンキュー
-きを つけるよ",/0x1381a2/,"Thanks for looking out!
+きを つけるよ","Thanks for looking out!
+I'll be careful!","Thanks for looking out!
 I'll be careful!",
 0x1381a4,"なんだ オマエは....
-みたことがない デンジュウだな",/0x1381a4/,What are... you...? I ain't ever seen a Denjuu like this before.,
+みたことがない デンジュウだな","What are... you...?
+I ain't ever seen a
+Denjuu like this before.","What are... you...?
+I ain't ever seen a
+Denjuu like this before.",
 0x1381a6,"オレは ニンゲンだ!
-<&name>だ!",/0x1381a6/,I'm a human! Call me <&name>!,
+<&name>だ!","I'm a human!
+Call me <&name>!","I'm a human!
+Call me <&name>!",
 0x1381a8,"ニンゲン? ますますもって
 わからない しゅぞくだ
 400ねんも たつと
@@ -3532,75 +3989,154 @@ I'll be careful!",
 でてくるのだな....
 ここになにを しにきたのだ
 ワタシの カクセイの ジャマを
-するな....",/0x1381a8/,,
+するな....","""Hyoo-mun""? This is the
+first I hear of this
+species. I suppose the world
+changes in 400 years.
+What is your business with
+me? You'd be wise not to
+disturb my awakening.","""Hyoo-mun""? This is the first I hear of this species. I suppose the world changes in 400 years.
+What is your business with me? You'd be wise not to disturb my awakening.",
 0x1381aa,"おめざめちゅうの ところを 
 わるいんだけど もういっかい
 ねててもらおうと おもって
-ここに きたんだ",/0x1381aa/,,
+ここに きたんだ","I feel bad for asking just as
+you're waking up, but...
+think you could roll over and
+go back to sleep?","I feel bad for asking just as you're waking up, but... think you could roll over and go back to sleep?",
 0x1381ac,"ふ...ふはははは!
 そのむかし 『いのちのき』を
 つかい デンジュウカイに
 きょうふを もたらした 
 このワタシを オマエごときが
-ふういんしようと いうのか?",/0x1381ac/,,
+ふういんしようと いうのか?","Hmph... Ha... Hahahahaaa!
+I am the one who long ago
+used the Trees of Life to
+bring terror and dread
+upon the Denjuu World.
+Do you believe that
+someone as puny as you
+could seal me up again?","Hmph... Ha... Hahahahaaa!
+I am the one who long ago used the Trees of Life to bring terror and dread upon the Denjuu World.
+Do you believe that someone as puny as you could seal me up again?",
 0x1381ae,"『いのちのき』?
-なんだよそれは...?",/0x1381ae/,,
+なんだよそれは...?","""Trees of Life""? What's
+that...?","""Trees of Life""? What's that...?",
 0x1381b0,"ふ...オマエには かんけいの
 ない はなしだ
 さて...おしゃベリはここまでだこれいじょう ワタシの
 ジャマをするならば
-ようしゃはしない!",/0x1381b0/,,
+ようしゃはしない!","Hmph. It matters not to the
+likes of you.
+The idle chatter ends here.
+If you insist on being
+in my way, I shall show you
+no mercy!","Hmph. It matters not to the likes of you.
+The idle chatter ends here. If you insist on being
+in my way, I shall show you no mercy!",
 0x1381b2,"くっ! このワタシが
-まけるとは.....",/0x1381b2/,,
+まけるとは.....","Grk! It can't be...
+Have I been defeated?","Grk! It can't be...
+Have I been defeated?",
 0x1381b4,"さっきの はなしのつづきだ!
 『いのちのき』ってのは
-なんなんだよ?",/0x1381b4/,,
+なんなんだよ?","Answer me this time! What
+are the ""Trees of Life""
+you were talking about?","Answer me this time! What are the ""Trees of Life"" you were talking about?",
 0x1381b6,"『いのちのき』とはな....
 このデンジュウカイを ささえるきょだいな き なのだ
 そのきをつかえば
 ベつのせかいさえも しはい
-できるのだ........",/0x1381b6/,,
-0x1381b8,『いのちのき』....,/0x1381b8/,,
+できるのだ........","The Trees of Life are the
+colossal trees that uphold
+this Denjuu World.
+Using their immense power...
+one could even rule over
+worlds other than our own.","The Trees of Life are the colossal trees that uphold this Denjuu World.
+Using their immense power...
+one could even rule over worlds other than our own.",
+0x1381b8,『いのちのき』....,"""Trees of Life""...","""Trees of Life""...",
 0x1381ba,"ふっ!
 せっかく めざめたのだ
 このまま だまって ふういん
 されるわけにはいかない!
 『シンデンジュウ』に ふういん
 された かリを かえさなくては
-ならないからな!",/0x1381ba/,,
-0x1381bc,あっ!しまった!,/0x1381bc/,,
+ならないからな!","Hmph! I went through the
+trouble of waking up –
+I will not let myself be sealed
+away again! Not until I've
+exacted my revenge on the
+<bold>Divine Denjuu<normal> for sealing
+me away in the first place.","Hmph! I went through the trouble of waking up –
+I will not let myself be sealed away again! Not until I've exacted my revenge on the <bold>Divine Denjuu<normal> for sealing me away in the first place.",
+0x1381bc,あっ!しまった!,Ah! Wait up!,Ah! Wait up!,
 0x1381be,"チクショー! つめが
 あまかったか....
 くやんでも しょうがない
 アクマデンジュウを 
 おいかけないと!
-とリあえず このやまを でるぞ",/0x1381be/,,
+とリあえず このやまを でるぞ","Dammit! I fell at the last
+hurdle...!
+Well, there's no use crying
+over spilled milk.
+I gotta hunt down that Devil
+Denjuu! First, let's get out
+of this mountain.","Dammit! I fell at the last hurdle...!
+Well, there's no use crying over spilled milk.
+I gotta hunt down that Devil Denjuu! First, let's get out of this mountain.",
 0x1381c0,"はっはっはっはっ!
 これで また シンデンジュウに
-いっぽちかづいたぞ!",/0x1381c0/,,
+いっぽちかづいたぞ!","Ha-ha-ha! I'm yet another
+step closer to the Divine
+Denjuu!",Ha-ha-ha! I'm yet another step closer to the Divine Denjuu!,
 0x1381c2,"まてっ サナエバ!
-オマエ なにをたくらんでる?",/0x1381c2/,,
+オマエ なにをたくらんでる?","Stop right there, Sanaeba!
+What are you scheming?","Stop right there, Sanaeba! What are you scheming?",
 0x1381c4,"ん? なんだ コゾウ
-こんなところでなにをしている?",/0x1381c4/,,
-0x1381c6,うるさいっ!しつもんしているのはこっちのほうだ!,/0x1381c6/,,
+こんなところでなにをしている?","Hm? The boy from earlier...
+What are you doing in this
+place?","Hm? You again...
+What are you doing here?",
+0x1381c6,うるさいっ!しつもんしているのはこっちのほうだ!,"Oh, stuff it! I'm the one who
+should be asking questions!","Oh, stuff it! I'm the one who should be asking questions!",
 0x1381c8,"はぁー.....
 さては アクマデンジュウを
 ふういんしようとしたのは
 オマエか?
 オマエの つめが あまいおかげでワタシは シンデンジュウヘ
 またいっぽちかづいたぞ
-れいをいおう はっはっはっ!",/0x1381c8/,,
+れいをいおう はっはっはっ!","Sigh... So you're the one
+who tried to seal away
+the Devil Denjuu again?
+Thanks to you letting your
+guard down, I'm that much
+closer to the Divine Denjuu!
+Well done, boy. Ha-ha-ha!","Sigh... So you're the one
+who tried to seal away
+the Devil Denjuu again?
+Thanks to you letting your guard down, I'm that much closer to the Divine Denjuu! Well done, boy. Ha-ha-ha!",
 0x1381ca,"アクマデンジュウを 
 どうしたんだ!?
 ヤツを ふういんしないと
-たいヘんなことに なるんだ!",/0x1381ca/,,
+たいヘんなことに なるんだ!","What have you done with the
+Devil Denjuu? If we don't
+seal it up, the Denjuu World
+is in trouble!","What have you done with the Devil Denjuu? If we don't seal it up, the Denjuu World is in trouble!",
 0x1381cc,"ワタシには かんけいのない
 はなしだな! 
 はっはっはっはっ!
 では ワタシは
 いそがしいのでな!
 きょうリょく あリがとう
-<&name>くん",/0x1381cc/,,
+<&name>くん","Oh, that doesn't concern me.
+Ha-ha-ha-ha-ha!
+I'm a busy man, so I must
+take my leave now.
+Thank you for the
+assistance, <&name>!","Oh, that doesn't concern me. Ha-ha-ha-ha-ha!
+I'm a busy man, so I must take my leave now.
+Thank you for the assistance, <&name>!",
 #######,Sanaeba's Lab story (partial),,,
 0x1381ce,"もしもし <&name>くん
 ワタシです マツキヨです
@@ -4555,24 +5091,51 @@ Good luck meeting lots of Denjuu!",,
 たよリなんだ
 きのてっペんで クスリを
 つかって きを もとどおリに
-してくれ! たのんだよ!",/0x1401b6/,,
+してくれ! たのんだよ!","As it stands, you're my
+only hope.
+Inject the medicine into the
+very top of the tree!
+Please!","As it stands, you're my
+only hope.
+Inject the medicine into the very top of the tree! Please!",
 0x1401b8,"アンテナのきが もとどおリに
 なったみたいだね
-あリがとう!!",/0x1401b8/,,
+あリがとう!!","It seems that the Antenna
+Tree is back to normal!
+Thank you!",It seems that the Antenna Tree is back to normal! Thank you!,
 0x1401ba,"なーに どうってことないよ
 これで おっさんも ここから
 でられるな!
-よかったじゃん!",/0x1401ba/,,
+よかったじゃん!","No worries, old man!
+Now you can get outta
+this place, too!","No worries, old man!
+Now you can get outta
+this place, too!",
 0x1401bc,"うん そのことなんだけどね
 ボクはトリパむらにのこって
 ここのデンジュウたちと
 アンテナのきをまもっていくよ
-それぐらいしかできないからね",/0x1401bc/,,
+それぐらいしかできないからね","Right, about that...
+
+I'm staying in Toulipa.
+I'll keep protecting
+the Antenna Tree together
+with the Denjuu here.
+That's about all I can do!","Right, about that...
+
+I'm staying in Toulipa.
+I'll keep protecting
+the Antenna Tree together with the Denjuu here.
+That's about all I can do!",
 0x1401be,"そっか アンテナのきを
 まもるか....
 きっと ここのデンジュウたちも
 おっさんのこと みなおすよ
-がんばってくれよな",/0x1401be/,,
+がんばってくれよな","Protect the tree, huh...
+I'm sure the villagers will
+come around on you before
+long, then. Good luck!","Protect the tree, huh...
+I'm sure the villagers will come around on you before long, then. Good luck!",
 0x1401c0,"<&name>くん
 ほんとうにあリがとう
 アンテナのきは つかえるように
@@ -4582,9 +5145,24 @@ Good luck meeting lots of Denjuu!",,
 なにか おかしなことが
 おきてるらしいから きをつけて
 それじゃあ がんばって
-たびをつづけてくれよ",/0x1401c0/,,
+たびをつづけてくれよ","I can't thank you enough,
+<&name>.
+I heard the Antenna Tree is
+usable once again.
+You can use it to go to a
+village called Fraoula.
+It seems that something
+strange is happening there
+too, so be careful...
+Good luck on your journeys!","I can't thank you enough, <&name>.
+I heard the Antenna Tree is usable once again.
+You can use it to go to a village called Fraoula.
+It seems that something strange is happening there too, so be careful...
+Good luck on your journeys!",
 0x1401c2,"おう それじゃーな!
-おっさんもゲンキで!",/0x1401c2/,,
+おっさんもゲンキで!","Thanks for the advice!
+See ya!","Thanks for the advice!
+See ya!",
 #######,NPC: Taka-P (Tronco),,,
 0x1401c4,"ここでは テレファングを
 すすめる ほうほうを

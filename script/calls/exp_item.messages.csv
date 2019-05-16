@@ -152,8 +152,8 @@ I heard putting a <bold>gear<normal> in it would make it an itty bit stronger!<*
 まだ みたこと なかったら
 わからないかな??
 <*2>","<D21>There's a Denjuu called Angios, right? I haven't seen one, but I hear if you fuse it with a ""flamethrower"", it'll gain experience.
-I feel like I get it... If you haven't seen one yet, maybe it's hard to understand?<*2>","<D21>There's a Denjuu called Angios, right? I haven't seen one, but I hear if you fuse it with a <bold>flamethrower<normal>, it'll gain experience.
-I feel like that makes sense... If you haven't seen one yet, maybe it's hard to understand?<*2>",
+I feel like I get it... If you haven't seen one yet, maybe it's hard to imagine?<*2>","<D21>There's a Denjuu called Angios, right? I haven't seen one, but I hear if you fuse it with a <bold>flamethrower<normal>, it'll gain experience.
+I feel like that makes sense... If you haven't seen one yet, maybe it's hard to imagine?<*2>",
 0x15c02a,"<D22>よう <&name>
 ジムノスってデンジュウは
 しってるか??
@@ -537,7 +537,7 @@ Heh. I'm smart, I know.",
 なにするモノなのー?
 こんどよんでくれたときにでも
 おしえてよねー
-<*2>",/0x15c096/<*2>,"Is it true that Angiorn is obsessed with <bold>irons<normal>? I did not expect that! Um, by the way, what are irons even for? Explain 'em for me sometime, maybe!",
+<*2>",/0x15c096/<*2>,"Is it true that Angiorn is obsessed with <bold>irons<normal>? That's a bit odd! Um, by the way, what are irons even for? Explain 'em for me sometime, maybe!",
 0x15c098,"<D77>『アンテナ』がけいけんちアップのデンジュウって けっこう
 いるんだけど ヂムレースっていうデンジュウも そうなんだー<*2>",/0x15c098/<*2>,,
 0x15c09a,"<D78>リリオンプってデンジュウは

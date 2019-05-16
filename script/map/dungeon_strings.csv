@@ -1,9 +1,9 @@
 #,Japanese,English,Draft version,German,Draft version (German),Notes
 1,トロンコむら すいげん,Tronco Village Spring,,Quelle am Strunkdorf,,The strings presented here are matched up with a mapping .csv in the Git project.
-2,オーキッドなかのしま4かい,.,Orchid Nakanoshima 4F (unused),.,,"Japanese strings presented here are for reference only,"
+2,オーキッドなかのしま4かい,x,Orchid Nakanoshima 4F (unused),.,,"Japanese strings presented here are for reference only,"
 3,クリノンむら ちか1かい,Krinon Village B1F,,Liliendorf B1F,,"they do not match the Japanese version's string table,"
 4,クリノンむら ちか2かい,Krinon Village B2F,,Liliendorf B2F,,as English and other patched versions have altered the order of these strings.
-5,クラフトけんきゅうじょ,Craft Research Center,Craft Reseach Lab ?,Craft-Forschungszentrum,,
+5,クラフトけんきゅうじょ,Craft Research Lab,,Craft-Forschungszentrum,,
 6,ディメンザのやしき,Dimenza's Mansion,,Dimenzas Villa,,TODO: Make sure these all fit on-screen.
 7,アンテナのき 1かい,Antenna Tree 1F,,Antennenbaum 1F,,
 8,アンテナのき 2かい,Antenna Tree 2F,,Antennenbaum 2F,,
@@ -11,7 +11,7 @@
 10,アンテナのき 4かい,Antenna Tree 4F,,Antennenbaum 4F,,
 11,アンテナのき 5かい,Antenna Tree 5F,,Antennenbaum 5F,,
 12,ペペリやま ふもと,Mt. Peperi (Base),,Pfefferberg (Fuß),,
-13,ペペリやま ちゅうふく,Mt. Peperi (Center),,Pfefferberg (Mitte),,
+13,ペペリやま ちゅうふく,Mt. Peperi (Slope),,Pfefferberg (Mitte),,
 16,ペペリやま さんちょう,Mt. Peperi (Summit),,Pfefferberg (Gipfel),,
 17,カクトスいせき,Cactos Ruins,,Kaktusruinen,,
 25,ブリオン 1,Bryon 1,,Bryon 1,,These should really be 1F or B1F to make the spacial arrangement of the dungeon a bit clearer.
@@ -26,6 +26,6 @@
 34,1かい,1F,,1F,,Couldn't hurt to be more specific with these too.
 35,ちか1かい,B1F,,B1F,,
 36,ちか2かい,B2F,,B2F,,
-37,みずのほこら,.,Water Shrine (unused),.,Wasserschrein (unused),These strings do not appear to be used. 
-38,もリのほこら,.,Forest Shrine (unused),.,Waldschrein (unused),"They were probably intended for the caves in Iris, Freesia, and south of Barran."
-39,すなのほこら,.,Desert Shrine (unused),.,Wüstenschrein (unused),
+37,みずのほこら,.,Water Shrine,.,Wasserschrein (unused),These strings do not appear to be used. 
+38,もリのほこら,.,Forest Shrine,.,Waldschrein (unused),"They were probably intended for the caves in Iris, Freesia, and south of Barran."
+39,すなのほこら,.,Desert Shrine,.,Wüstenschrein (unused),
