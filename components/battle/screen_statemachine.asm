@@ -67,8 +67,7 @@ Battle_SubStateInitGraphics::
     call Banked_CGBLoadObjectPalette
     ld bc, $10
     call Banked_LoadMaliasGraphics
-    ld a, $20
-    ld [W_LCDC_MetaspriteAnimationBank], a
+    M_AuxJmp Banked_Battle_ADVICE_LoadSGBFiles
     xor a
     ld [$D417], a
     ld [W_Summon_SelectedPageContact], a
@@ -1188,10 +1187,7 @@ Battle_DrawPartnerStatusEffect::
     ld a, $00
     jp Banked_RLEDecompressTMAP0
 
-REPT 13
-    nop
-ENDR
-
+SECTION "Battle Status Effect Display Update Functions 2", ROMX[$6461], BANK[$05]
 Battle_DrawOpponentStatusEffect::
     ld a, [W_Battle_OpponentDenjuuTurnOrder] ; Active Denjuu.
     call Battle_StageOpponentStats
@@ -1205,10 +1201,6 @@ Battle_DrawOpponentStatusEffect::
     ld e, $BB ; Opponent status effect tilemap.
     xor a
     jp Banked_RLEDecompressTMAP1
-
-REPT 13
-    nop
-ENDR
 
 SECTION "Clear Status Effect Graphics During Attack Hack", ROMX[$7630], BANK[$05]
     ; Part of a much larger battle system function.

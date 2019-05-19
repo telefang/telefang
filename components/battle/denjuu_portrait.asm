@@ -1,4 +1,4 @@
-INCLUDE "components/battle/denjuu_portrait.inc"
+INCLUDE "telefang.inc"
 
 SECTION "Denjuu Portrait Loader WRAM", WRAM0[$CB02]
 W_Battle_SelectedPortraitBank: ds 1
@@ -161,17 +161,18 @@ Battle_LoadDenjuuObjectPalette::
     
 SECTION "Battle Resource Loaders", ROMX[$42DF], BANK[$5]
 Battle_LoadDenjuuResourcesOpponent::
-    push af
-    ld c, 0
-    ld de, $8800
-    call Banked_Battle_LoadDenjuuPortrait
-    pop af
-    jp Battle_LoadDenjuuPaletteOpponent
+    ld e, 0
+
+.fromPartner
+    ld d, a
+    M_PrepAuxJmp Banked_Battle_ADVICE_LoadDenjuuResources
+    jp PatchUtils_AuxCodeJmp
+    nop
+    nop
+    nop
+    nop
+    nop
 
 Battle_LoadDenjuuResourcesPartner::
-    push af
-    ld c, 1
-    ld de, $8B80
-    call Banked_Battle_LoadDenjuuPortrait
-    pop af
-    jp Battle_LoadDenjuuPalettePartner
+    ld e, 1
+    jr Battle_LoadDenjuuResourcesOpponent.fromPartner

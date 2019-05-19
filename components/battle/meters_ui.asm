@@ -140,7 +140,7 @@ Battle_DrawPartnerUI::
     
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantContactID]
     ld hl, $9200
-    jp Battle_DrawSpecifiedDenjuuNickname
+    jp Battle_ADVICE_DrawPartnerName
     
 Battle_DrawOpponentUI::
     ld a, [W_Battle_OpponentDenjuuTurnOrder]
@@ -153,7 +153,7 @@ Battle_DrawOpponentUI::
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
     ld de, StringTable_denjuu_species
     ld bc, $9280
-    jp Banked_MainScript_DrawName75
+    jp Battle_ADVICE_DrawOpponentName
     
 Battle_DrawPartnerHPMeter::
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantMaxHP]
