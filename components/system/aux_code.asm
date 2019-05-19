@@ -261,6 +261,13 @@ Banked_Victory_ADVICE_LoadSGBFilesRecruitment::
 Banked_Victory_ADVICE_EvolutionLoadSGBFiles::
 	jp Victory_ADVICE_EvolutionLoadSGBFiles
 
+;components/battle/advice.asm
+Banked_Battle_ADVICE_LoadDenjuuResources::
+	jp Battle_ADVICE_LoadDenjuuResources
+
+Banked_Battle_ADVICE_LoadSGBFiles::
+	jp Battle_ADVICE_LoadSGBFiles
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

@@ -43,8 +43,8 @@ Battle_ScreenStateMachine::
     jp hl
 
 .stateTable
-    dw Battle_SubStateInitGraphics,Battle_SubStateInitTilemaps,$45F5,$463E,$4681,$4B07,$4BC6,$4C34 ;00-07
-    dw $4D1F,$4DDD,$4F81,$510A,$545C,$545F,$57FB,$59BC ;08-0F
+    dw Battle_SubStateInitGraphics,Battle_SubStateInitTilemaps,$45F5,$463E,$4681,$4B07,$4BC6,Battle_SubStateDrawAttackMenuWindow ;00-07
+    dw Battle_SubStateAttackMenuInputHandler,Battle_SubStateAttackMenuCloseAndParse,$4F81,$510A,$545C,$545F,$57FB,$59BC ;08-0F
     dw $5F2D,$5F57,$62CD,$6348,$6360,$63FE,$6416,$46E2 ;10-17
     dw $46F2,$4707,$48E9,$48FC,$4911,$464B,Battle_SubStateParticipantArrivalProcessing,Battle_SubStateDenjuuArrivalPhrase ;18-1F
     dw $5FD6,$6318,$61FB,$50F5,$53EF,$5F3D,Battle_SubStateStatusWarningPartner,$48AD ;20-27
@@ -67,8 +67,7 @@ Battle_SubStateInitGraphics::
     call Banked_CGBLoadObjectPalette
     ld bc, $10
     call Banked_LoadMaliasGraphics
-    ld a, $20
-    ld [W_LCDC_MetaspriteAnimationBank], a
+    M_AuxJmp Banked_Battle_ADVICE_LoadSGBFiles
     xor a
     ld [$D417], a
     ld [W_Summon_SelectedPageContact], a
@@ -700,6 +699,238 @@ Battle_DrawAttackNameOnMenu::
     ld de, StringTable_battle_attacks
     pop bc
     jp Banked_MainScript_DrawName75
+
+Battle_SubStateAttackMenuInputHandler::
+    call LCDC_IterateAnimationComplex
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Up
+    jr z, .upNotPressed
+    ld a, [W_Summon_SelectedPageContact]
+    cp 0
+    jr z, .loopToBottom
+    dec a
+    ld [W_Summon_SelectedPageContact], a
+    jr .changeCursorPosition
+
+.loopToBottom
+    ld a, [$D41E]
+    ld [W_Summon_SelectedPageContact], a
+    jr .changeCursorPosition
+
+.upNotPressed
+    ld a, [W_JPInput_TypematicBtns]
+    and M_JPInput_Down
+    jr z, .downNotPressed
+    ld a, [$D41E]
+    ld b, a
+    ld a, [W_Summon_SelectedPageContact]
+    cp b
+    jr z, .loopToTop
+    inc a
+    ld [W_Summon_SelectedPageContact], a
+    jr .changeCursorPosition
+
+.loopToTop
+    xor a
+    ld [W_Summon_SelectedPageContact], a
+
+.changeCursorPosition
+    ld a, 2
+    ld [W_Sound_NextSFXSelect], a
+    call $65C3
+
+.downNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_B
+    jr z, .bNotPressed
+    ld a, 4
+    ld [W_Sound_NextSFXSelect], a
+    ld bc, $909
+    ld e, $87
+    xor a
+    call Banked_RLEDecompressTMAP0
+    ld bc, $909
+    ld e, $81
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+    ld hl, W_Battle_WindowOverlap
+    ld a, $5F
+    ldi [hl], a
+    ld a, [W_ShadowREG_WX]
+    ld [hl], a
+    xor a
+    ld [W_MetaSpriteConfig1], a
+    ld [$C0C0], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    call Battle_DrawOpponentUI
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    call Battle_StagePartnerStats
+    ld a, 5
+    ld [W_Battle_SubSubState], a
+    ret
+
+.bNotPressed
+    ldh a, [H_JPInput_Changed]
+    and M_JPInput_A
+    ret z
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    cp 1
+    jr z, .isDenjuuA
+    cp 2
+    jr z, .isDenjuuB
+
+.isDenjuuC
+    ld a, [W_Summon_SelectedPageContact]
+    ld [$D49D], a
+    jr .exit
+
+.isDenjuuA
+    ld a, [W_Summon_SelectedPageContact]
+    ld [$D49E], a
+    jr .exit
+
+.isDenjuuB
+    ld a, [W_Summon_SelectedPageContact]
+    ld [$D49F], a
+
+.exit
+    ld a, 3
+    ld [W_Sound_NextSFXSelect], a
+    xor a
+    ld [W_MetaSpriteConfig1], a
+    ld [$C0C0], a
+    ld a, 1
+    ld [W_OAM_SpritesReady], a
+    jp Battle_IncrementSubSubState
+
+Battle_SubStateAttackMenuCloseAndParse::
+    ld bc, $909
+    ld e, $87
+    xor a
+    call Banked_RLEDecompressTMAP0
+    ld bc, $909
+    ld e, $81
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+    call $42AF
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    call Battle_StagePartnerStats
+    call SaveClock_EnterSRAM2
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantContactID]
+    ld hl, $A006
+    call Battle_IndexStatisticsArray
+    push hl
+    pop de
+    call Banked_SaveClock_LoadDenjuuNicknameByStatPtr
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantStatusCondition]
+    cp 4
+    jr nz, .statusAllowsAction
+    xor a
+    ld [W_Summon_SelectedPageContact], a
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld [W_Status_SelectedDenjuuSpecies], a
+    ld a, [W_Summon_SelectedPageContact]
+    call Battle_SetAttackNameArg2
+    jp .onlyOneTargetNextState
+
+.statusAllowsAction
+    ld a, [W_Summon_SelectedPageContact]
+    cp 3
+    jr nz, .notDenmaAttack
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    cp 1
+    jr z, .isDenjuuA
+    cp 2
+    jr z, .isDenjuuB
+
+.isDenjuuC
+    ld a, 5
+    ld [W_Battle_PartnerParticipants + (M_Battle_ParticipantSize * 0) + M_Battle_ParticipantLocation], a
+    jr .continue
+
+.isDenjuuA
+    ld a, 5
+    ld [W_Battle_PartnerParticipants + (M_Battle_ParticipantSize * 1) + M_Battle_ParticipantLocation], a
+    jr .continue
+
+.isDenjuuB
+    ld a, 5
+    ld [W_Battle_PartnerParticipants + (M_Battle_ParticipantSize * 2) + M_Battle_ParticipantLocation], a
+
+.continue
+    jp .targetIsOpponent
+
+.notDenmaAttack
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
+    ld [W_Status_SelectedDenjuuSpecies], a
+    ld a, [W_Summon_SelectedPageContact]
+    call Battle_SetAttackNameArg2
+    call $43DF
+    cp 1
+    jr nz, .doesntRequirePartnerTargetInput
+    ld a, [W_Battle_NumActivePartners]
+    cp 2
+    jr c, .onlyOneTarget
+    ld c, $8B
+    call Battle_QueueMessage
+    ld a, 1
+    ld [W_PauseMenu_SelectedCursorType], a
+    call $65FE
+    call LCDC_BeginAnimationComplex
+    jr .multiplePartners
+
+.onlyOneTarget
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    ld [W_Status_SelectedContactIndex], a
+    ld [$D457], a
+    ld c, $94
+    call Battle_QueueMessage
+    jr .onlyOneTargetNextState
+
+.multiplePartners
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    ld [W_Status_SelectedContactIndex], a
+    ld [$D457], a
+    ld a, $3B
+    ld [W_Battle_SubSubState], a
+    ret
+
+.doesntRequirePartnerTargetInput
+    call $4ED6
+    cp 0
+    jr z, .onlyOneTarget
+
+.targetIsOpponent
+    ld a, [W_Battle_OpponentDenjuuTurnOrder]
+    ld [W_Status_SelectedContactIndex], a
+    ld a, [W_Battle_NumActiveOpponents]
+    cp 2
+    jr c, .onlyOneOpponent
+    ld c, $95
+    call Battle_QueueMessage
+    ld a, 1
+    ld [W_PauseMenu_SelectedCursorType], a
+    call $65E8
+    call LCDC_BeginAnimationComplex
+    jr .multipleOpponentsNextState
+
+.onlyOneOpponent
+    ld c, $94
+    call Battle_QueueMessage
+    jr .onlyOneTargetNextState
+
+.multipleOpponentsNextState
+    jp Battle_IncrementSubSubState
+
+.onlyOneTargetNextState
+    ld a, [W_Battle_OpponentDenjuuTurnOrder]
+    ld [W_Status_SelectedContactIndex], a
+    xor a
+    ld [W_Battle_LoopIndex], a
+    ld a, $2C
+    ld [W_Battle_SubSubState], a
+    ret
     
 SECTION "Battle Substates - Participant Arrival Processing", ROMX[$6099], BANK[$5]
 Battle_SubStateParticipantArrivalProcessing::
@@ -956,10 +1187,7 @@ Battle_DrawPartnerStatusEffect::
     ld a, $00
     jp Banked_RLEDecompressTMAP0
 
-REPT 13
-    nop
-ENDR
-
+SECTION "Battle Status Effect Display Update Functions 2", ROMX[$6461], BANK[$05]
 Battle_DrawOpponentStatusEffect::
     ld a, [W_Battle_OpponentDenjuuTurnOrder] ; Active Denjuu.
     call Battle_StageOpponentStats
@@ -973,10 +1201,6 @@ Battle_DrawOpponentStatusEffect::
     ld e, $BB ; Opponent status effect tilemap.
     xor a
     jp Banked_RLEDecompressTMAP1
-
-REPT 13
-    nop
-ENDR
 
 SECTION "Clear Status Effect Graphics During Attack Hack", ROMX[$7630], BANK[$05]
     ; Part of a much larger battle system function.

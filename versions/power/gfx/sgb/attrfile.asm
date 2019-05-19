@@ -19,3 +19,5 @@ SGB_AttrFileData::
     INCBIN "build/components/encounter/encounter.atf" ; 10
     INCBIN "build/components/summon/summon.atf" ; 11
     INCBIN "build/gfx/menu/titlemenu_nicknames.atf" ; 12
+    INCBIN "build/components/battle/main_screen.atf" ; 13
+    INCBIN "build/components/battle/attack_menu.atf" ; 14
