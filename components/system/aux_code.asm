@@ -268,6 +268,12 @@ Banked_Battle_ADVICE_LoadDenjuuResources::
 Banked_Battle_ADVICE_LoadSGBFiles::
 	jp Battle_ADVICE_LoadSGBFiles
 
+Banked_Battle_ADVICE_AttackWindowCorrectForSGBOnOpen::
+	jp Battle_ADVICE_AttackWindowCorrectForSGBOnOpen
+
+Banked_Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
+	jp Battle_ADVICE_AttackWindowCorrectForSGBOnClose
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

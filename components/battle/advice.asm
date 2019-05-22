@@ -148,6 +148,128 @@ Battle_ADVICE_LoadSGBFiles::
 .table
     dw $233C, $7FE0, 0
 
+Battle_ADVICE_AttackWindowCorrectForSGBOnOpen::
+    M_AdviceSetup
+
+    ld a, [W_MainScript_TextStyle]
+    cp 3
+    jr nz, .return
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld de, $40
+    ld hl, $994A
+    ld bc, $2FF
+
+.maploop
+    di
+
+.wfbA
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfbA
+
+    ld [hl], c
+    add hl, de
+    ld [hl], c
+    ei
+    add hl, de
+    dec b
+    jr nz, .maploop
+
+    ld de, $37FF
+    ld hl, $996A
+    ld b, 3
+
+.maprowloop
+    ld c, 3
+
+.mapcolloop
+    di
+
+.wfbB
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfbB
+
+    ld a, e
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ei
+    dec c
+    jr nz, .mapcolloop
+
+    ld a, d
+    add l
+    ld l, a
+    dec b
+    jr nz, .maprowloop
+
+    ld c, $14
+    call Banked_SGB_ConstructATFSetPacket
+
+.return
+    ld bc, $909
+    ld e, $80
+
+    M_AdviceTeardown
+    ret
+
+Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
+    M_AdviceSetup
+
+    ld a, [W_MainScript_TextStyle]
+    cp 3
+    jr nz, .return
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld de, $16FF
+    ld hl, $99A9
+    ld b, 4
+
+.maprowloop
+    ld c, 5
+
+.mapcolloop
+    di
+
+.wfb
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+
+    ld a, e
+    ld [hli], a
+    ld [hli], a
+    ei
+    dec c
+    jr nz, .mapcolloop
+
+    ld a, d
+    add l
+    ld l, a
+
+; Cheaper than ld a, 0 / adc h / ld h, a.
+
+    jr nc, .noIncH
+    inc h
+
+.noIncH
+    dec b
+    jr nz, .maprowloop
+
+    ld c, $13
+    call Banked_SGB_ConstructATFSetPacket
+
+.return
+    ld bc, $909
+    ld e, $81
+
+    M_AdviceTeardown
+    ret
+
 SECTION "Battle Advice Code 3", ROMX[$42F0], BANK[$5]
 Battle_ADVICE_DrawOpponentName::
     call Battle_ADVICE_TemporarilyClearTextStyle

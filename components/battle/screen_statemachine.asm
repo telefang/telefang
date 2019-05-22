@@ -656,8 +656,7 @@ Battle_SubStateDrawAttackMenuWindow::
     xor a
     call Banked_RLEDecompressTMAP0
     
-    ld bc, $909
-    ld e, $80
+    M_AuxJmp Banked_Battle_ADVICE_AttackWindowCorrectForSGBOnOpen
     xor a
     call Banked_RLEDecompressAttribsTMAP0
     
@@ -749,8 +748,7 @@ Battle_SubStateAttackMenuInputHandler::
     ld e, $87
     xor a
     call Banked_RLEDecompressTMAP0
-    ld bc, $909
-    ld e, $81
+    M_AuxJmp Banked_Battle_ADVICE_AttackWindowCorrectForSGBOnClose
     xor a
     call Banked_RLEDecompressAttribsTMAP0
     ld hl, W_Battle_WindowOverlap
@@ -809,8 +807,7 @@ Battle_SubStateAttackMenuCloseAndParse::
     ld e, $87
     xor a
     call Banked_RLEDecompressTMAP0
-    ld bc, $909
-    ld e, $81
+    M_AuxJmp Banked_Battle_ADVICE_AttackWindowCorrectForSGBOnClose
     xor a
     call Banked_RLEDecompressAttribsTMAP0
     call $42AF
@@ -975,7 +972,7 @@ Battle_SubStateParticipantArrivalProcessing::
     
     ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantContactID]
     ld hl, $9200
-    call Battle_DrawSpecifiedDenjuuNickname
+    call Battle_ADVICE_DrawPartnerName
     
     ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantMaxHP]
     ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
@@ -1019,7 +1016,7 @@ Battle_SubStateParticipantArrivalProcessing::
     
     ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantContactID]
     ld hl, $9200
-    call Battle_DrawSpecifiedDenjuuNickname
+    call Battle_ADVICE_DrawPartnerName
     
     ld a, [W_Battle_PartnerParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantMaxHP]
     ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
@@ -1048,7 +1045,7 @@ Battle_SubStateParticipantArrivalProcessing::
     ld a, [W_StringTable_ROMTblIndex]
     ld de, StringTable_denjuu_species
     ld bc, $9280
-    call Banked_MainScript_DrawName75
+    call Battle_ADVICE_DrawOpponentName
     
     ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 1 + M_Battle_ParticipantMaxHP]
     ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
@@ -1093,7 +1090,7 @@ Battle_SubStateParticipantArrivalProcessing::
     ld a, [W_StringTable_ROMTblIndex]
     ld de, StringTable_denjuu_species
     ld bc, $9280
-    call Banked_MainScript_DrawName75
+    call Battle_ADVICE_DrawOpponentName
     
     ld a, [W_Battle_OpponentParticipants + M_Battle_ParticipantSize * 2 + M_Battle_ParticipantMaxHP]
     ld [W_Battle_CurrentParticipant + M_Battle_ParticipantHP], a
