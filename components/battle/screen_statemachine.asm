@@ -47,7 +47,7 @@ Battle_ScreenStateMachine::
     dw Battle_SubStateAttackMenuInputHandler,Battle_SubStateAttackMenuCloseAndParse,$4F81,$510A,$545C,$545F,$57FB,$59BC ;08-0F
     dw $5F2D,$5F57,$62CD,$6348,$6360,$63FE,$6416,$46E2 ;10-17
     dw $46F2,$4707,$48E9,$48FC,$4911,$464B,Battle_SubStateParticipantArrivalProcessing,Battle_SubStateDenjuuArrivalPhrase ;18-1F
-    dw $5FD6,$6318,$61FB,$50F5,$53EF,$5F3D,Battle_SubStateStatusWarningPartner,$48AD ;20-27
+    dw $5FD6,$6318,Battle_SubStateParticipantArrivalDisplay,$50F5,$53EF,$5F3D,Battle_SubStateStatusWarningPartner,$48AD ;20-27
     dw Battle_SubStateStatusWarningOpponent,$4AAD,$4F12,$5F79,$5428,$5489,$4AF8,$63EF ;28-2F
     dw $63E0,$5F66,$5FA1,$5FB4,$5661,$5292,$5683,$452D ;30-37
     dw $454A,$4566,$561E,$5051,$50E0,$5416,$4F32,$5810 ;38-3F
@@ -1106,8 +1106,73 @@ Battle_SubStateParticipantArrivalProcessing::
     ld a, $22
     ld [W_Battle_SubSubState], a
     ret
-    
-SECTION "Battle State - Denjuu Arrival Phrases", ROMX[$6289], BANK[$5]
+
+Battle_SubStateParticipantArrivalDisplay::
+    ld a, $10
+    ld hl, $9700
+    call MainScript_DrawEmptySpaces
+    ld de, $4525
+    ld hl, $9780
+    call $42AA
+    ld a, [W_Battle_DenjuuHasNickname]
+    cp 1
+    jr z, .isOpponent
+
+.isPartner
+    ld bc, $105
+    ld e, $92
+    xor a
+    call Banked_RLEDecompressTMAP0
+    ld bc, $20E
+    ld e, $99
+    xor a
+    call Banked_RLEDecompressTMAP0
+    ld a, $28
+    ld [$D4F4], a
+    ld a, $3C
+    ld [$D4FA], a
+    ld hl, $9160
+    ld a, 5
+    call MainScript_DrawEmptySpaces
+    jr .isEither
+
+.isOpponent
+    ld bc, $101
+    ld e, $91
+    xor a
+    call Banked_RLEDecompressTMAP1
+    ld bc, $20E
+    ld e, $9C
+    xor a
+    call Banked_RLEDecompressTMAP0
+    ld a, $78
+    ld [$D4F4], a
+    ld a, $28
+    ld [$D4FA], a
+    ld hl, $91B0
+    ld a, 5
+    call MainScript_DrawEmptySpaces
+
+.isEither
+    ld bc, $105
+    ld e, $8C
+    xor a
+    call Banked_RLEDecompressAttribsTMAP0
+    ld bc, 4
+    call Banked_CGBLoadObjectPalette
+    call $42C1
+    ld a, 4
+    ld [W_LCDC_NextMetaspriteSlot], a
+    ld hl, $8000
+    ld a, $7D
+    ld [W_LCDC_MetaspriteAnimationIndex], a
+    call LCDC_BeginMetaspriteAnimation
+    xor a
+    ld [W_Battle_LoopIndex], a
+    ld a, $1F
+    ld [W_Battle_SubSubState], a
+    ret
+
 Battle_SubStateDenjuuArrivalPhrase::
     ld a, [W_Battle_LoopIndex]
     inc a
