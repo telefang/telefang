@@ -1131,8 +1131,8 @@ Battle_SubStateParticipantArrivalDisplay::
     ld [$D4F4], a
     ld a, $3C
     ld [$D4FA], a
-    ld hl, $9160
-    ld a, 5
+    ld hl, $9180
+    ld a, 4
     call MainScript_DrawEmptySpaces
     jr .isEither
 
@@ -1149,8 +1149,8 @@ Battle_SubStateParticipantArrivalDisplay::
     ld [$D4F4], a
     ld a, $28
     ld [$D4FA], a
-    ld hl, $91B0
-    ld a, 5
+    ld hl, $91C0
+    ld a, 4
     call MainScript_DrawEmptySpaces
 
 .isEither
