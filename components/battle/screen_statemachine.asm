@@ -1131,9 +1131,7 @@ Battle_SubStateParticipantArrivalDisplay::
     ld [$D4F4], a
     ld a, $3C
     ld [$D4FA], a
-    ld hl, $9160
-    ld a, 5
-    call MainScript_DrawEmptySpaces
+    call Battle_ADVICE_ClearPartnerStatus
     jr .isEither
 
 .isOpponent
@@ -1149,9 +1147,7 @@ Battle_SubStateParticipantArrivalDisplay::
     ld [$D4F4], a
     ld a, $28
     ld [$D4FA], a
-    ld hl, $91B0
-    ld a, 5
-    call MainScript_DrawEmptySpaces
+    call Battle_ADVICE_ClearOpponentStatus
 
 .isEither
     ld bc, $105
@@ -1172,6 +1168,17 @@ Battle_SubStateParticipantArrivalDisplay::
     ld a, $1F
     ld [W_Battle_SubSubState], a
     ret
+
+Battle_ADVICE_ClearPartnerStatus::
+    ld hl, $9160
+    jr Battle_ADVICE_ClearOpponentStatus.common
+
+Battle_ADVICE_ClearOpponentStatus::
+    ld hl, $91B0
+
+.common
+    ld b, 0
+    jp Banked_MainScript_DrawStatusEffectString
 
 Battle_SubStateDenjuuArrivalPhrase::
     ld a, [W_Battle_LoopIndex]
@@ -1196,9 +1203,6 @@ Battle_SubStateDenjuuArrivalPhrase::
     call Banked_StringTable_LoadBattlePhrase
     
     ld hl, W_Battle_PhraseStagingBuffer
-    nop
-    nop
-    nop
     
     ld a, [W_Battle_DenjuuHasNickname]
     cp 1
@@ -1253,7 +1257,8 @@ Battle_DrawOpponentStatusEffect::
 SECTION "Clear Status Effect Graphics During Attack Hack", ROMX[$7630], BANK[$05]
     ; Part of a much larger battle system function.
     ; Clears both participants' status effect graphics.
-    ld hl, $9160
-    ld a, 10
-    call MainScript_DrawEmptySpaces
+    call Battle_ADVICE_ClearPartnerStatus
+    call Battle_ADVICE_ClearOpponentStatus
+    nop
+    nop
     
