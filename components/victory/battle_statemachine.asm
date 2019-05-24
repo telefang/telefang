@@ -8,7 +8,7 @@ Victory_BattleScreenStateMachine::
     jp hl
     
 .stateTable
-    dw $4291,$42C4,$42F6,$47D7
+    dw Victory_SubStateInit,$42C4,$42F6,$47D7
     dw $4827,Victory_SubStateStatWindowPalette,$4F3D,$4F80
     dw $4FC2,$4FD4,$4FE8,$449F
     dw Victory_SubStateStatWindowIdle,Victory_SubStateDrawStatWindow,$4942,Victory_SubStateCheckMoveUnlocks
@@ -35,12 +35,30 @@ Victory_BattleScreenPrivateStrings_denmaAtk::
 Victory_BattleScreenPrivateStrings_denmaDef::
     db $F, "Def"
 
-SECTION "Clear Status Effects Hack", ROMX[$4296], BANK[$1D]
-    ; Part of a much larger battle system function.
-    ; If we don't clear the status effect tilemaps, since they're extended by
-    ; one tile each, the battle end graphics will be shown in their place.
+Victory_SubStateInit::
+    ld a, $20
+    ld [W_LCDC_MetaspriteAnimationBank], a
     nop
     M_AuxJmp Banked_Battle_ADVICE_ClearStatusEffectTilemaps
+    ld bc, $14
+    call Banked_LoadMaliasGraphics
+    ld a, 0
+    ld bc, 4
+    call CGBLoadObjectPaletteBanked
+    ld a, 1
+    ld [W_CGBPaletteStagedOBP], a
+    ld a, [W_Victory_PlayerWon]
+    cp 0
+    jr z, .playerLost
+    ld a, [W_LateDenjuu_SubSubState]
+    inc a
+    ld [W_LateDenjuu_SubSubState], a
+    ret
+
+.playerLost
+    ld a, 6
+    ld [W_LateDenjuu_SubSubState], a
+    ret
 
 SECTION "Clear Status Effects Hack (Link Battles)", ROMX[$5B75], BANK[$1F]
     ; Part of a much larger battle system function.
