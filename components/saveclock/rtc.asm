@@ -9,7 +9,7 @@ W_SaveClock_RealTimeDays:: ds 2
 SECTION "SaveClock RTC ADVICE Memory", WRAM0[$C3D2]
 W_SaveClock_ADVICE_RTCCheckStatus:: ds 1
 
-SECTION "SaveClock ADVICE - RTC Functional Validation", ROMX[$4180], BANK[$1]
+SECTION "SaveClock ADVICE - RTC Functional Validation", ROMX[$41C0], BANK[$1]
 ;This exists 'cause the function right below it was originally being called
 ;directly, despite not being banksafe.
 SaveClock_ADVICE_ValidateRTCFunction::

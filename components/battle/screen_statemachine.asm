@@ -1123,10 +1123,8 @@ Battle_SubStateParticipantArrivalDisplay::
     ld e, $92
     xor a
     call Banked_RLEDecompressTMAP0
-    ld bc, $20E
     ld e, $99
-    xor a
-    call Banked_RLEDecompressTMAP0
+    M_AuxJmp Banked_Battle_ADVICE_ArrivedMessageFix
     ld a, $28
     ld [$D4F4], a
     ld a, $3C
@@ -1139,10 +1137,8 @@ Battle_SubStateParticipantArrivalDisplay::
     ld e, $91
     xor a
     call Banked_RLEDecompressTMAP1
-    ld bc, $20E
     ld e, $9C
-    xor a
-    call Banked_RLEDecompressTMAP0
+    M_AuxJmp Banked_Battle_ADVICE_ArrivedMessageFix
     ld a, $78
     ld [$D4F4], a
     ld a, $28
@@ -1168,6 +1164,11 @@ Battle_SubStateParticipantArrivalDisplay::
     ld a, $1F
     ld [W_Battle_SubSubState], a
     ret
+
+    nop
+    nop
+    nop
+    nop
 
 Battle_ADVICE_ClearPartnerStatus::
     ld hl, $9160

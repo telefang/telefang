@@ -11,6 +11,7 @@ Battle_ADVICE_ClearStatusEffectTilemaps::
     ld bc, $01
     call Banked_LoadMaliasGraphics
 
+.externalEntry
     ; And then we gotta clear the status effect tilemaps.
     ld hl, $9801 ; Partner's tiles
     ld bc, (2 << 8) | (5 / 2)
@@ -269,6 +270,141 @@ Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
 
     M_AdviceTeardown
     ret
+
+Battle_ADVICE_VictoryDrawWindowTiles::
+    M_AdviceSetup
+
+    ld a, [W_MainScript_TextStyle]
+    cp 3
+    jr nz, .noSGB
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .noSGB
+
+    ld a, BANK(MenuBattle2GfxSGB)
+    ld hl, $9000
+    ld de, MenuBattle2GfxSGB
+    ld bc, $200
+    call Banked_LCDC_LoadTiles
+    jp Battle_ADVICE_ClearStatusEffectTilemaps.externalEntry
+
+.noSGB
+    ld bc, $14
+    call Banked_LoadMaliasGraphics
+    jp Battle_ADVICE_ClearStatusEffectTilemaps.externalEntry
+
+Battle_ADVICE_ArrivedMessageFix::
+    M_AdviceSetup
+
+    ld a, [W_MainScript_TextStyle]
+    cp 3
+    jr nz, .noSGB
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .noSGB
+
+    ld a, $99
+    cp e
+    jr z, .isPartner
+    ld bc, $9280
+    ld hl, $9480
+    ld d, $40
+    call Battle_ADVICE_ArrivedMessageFix_CopyTiles
+    ld hl, $9480
+    ld b, $20
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ld c, $48
+    jr .commonSGB
+
+.isPartner
+    ld bc, $9200
+    ld hl, $9400
+    ld d, $40
+    call Battle_ADVICE_ArrivedMessageFix_CopyTiles
+    ld hl, $9400
+    ld b, $20
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ld c, $40
+
+.commonSGB
+    ld hl, $99C2
+    call Battle_ADVICE_ArrivedMessageFix_FillBySequence
+    ld hl, $99E2
+    call Battle_ADVICE_ArrivedMessageFix_FFFill
+    ld c, $78
+    ld hl, $9A02
+    call Battle_ADVICE_ArrivedMessageFix_FillBySequence
+    jr .exit
+
+.noSGB
+    xor a
+    ld bc, $20E
+    call Banked_RLEDecompressTMAP0
+
+.exit
+    M_AdviceTeardown
+    ret
+
+Battle_ADVICE_ArrivedMessageFix_CopyTiles::
+    di
+
+.wfb
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, [bc]
+    ld [hli], a
+    ld c, l
+    ld a, [bc]
+    ld [hli], a
+    ei
+    ld c, l
+    dec d
+    jr nz, Battle_ADVICE_ArrivedMessageFix_CopyTiles
+    ret
+
+Battle_ADVICE_ArrivedMessageFix_FillBySequence::
+    ld b, 4
+
+.loop
+    di
+
+.wfb
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, c
+    ld [hli], a
+    inc a
+    ld [hli], a
+    ei
+    inc a
+    ld c, a
+    dec b
+    jr nz, .loop
+    ret
+
+Battle_ADVICE_ArrivedMessageFix_FFFill::
+    ld bc, $2FF
+
+.loop
+    di
+
+.wfb
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+    ld a, c
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    jr nz, .loop
+    ret
+
+SECTION "MenuBattle2GfxSGB", ROMX[$7E00], BANK[$77]
+MenuBattle2GfxSGB::
+    INCBIN "build/gfx/menu/battle2_sgb.2bpp"
+MenuBattle2GfxSGBEnd
 
 SECTION "Battle Advice Code 3", ROMX[$42F0], BANK[$5]
 Battle_ADVICE_DrawOpponentName::
