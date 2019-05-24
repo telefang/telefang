@@ -10,83 +10,83 @@ INCLUDE "telefang.inc"
 SECTION "Patch Utilities - Auxiliary Code Trampolines", ROMX[$4000], BANK[$1]
 Banked_PatchUtils_AdviceTable::
 Banked_PatchUtils_StoreDefaultCharaName::
-	jp PatchUtils_StoreDefaultCharaName
+	dw PatchUtils_StoreDefaultCharaName
 
 Banked_PatchUtils_InitializeRelocatedCharaName::
-	jp PatchUtils_InitializeRelocatedCharaName
+	dw PatchUtils_InitializeRelocatedCharaName
 
 ;components/saveclock/rtc.asm - $4180
 Banked_SaveClock_ADVICE_ValidateRTCFunction::
-	jp SaveClock_ADVICE_ValidateRTCFunction
+	dw SaveClock_ADVICE_ValidateRTCFunction
 
 ;components/titlemenu/rtc.asm - $4240
 Banked_TitleMenu_ADVICE_LoadRTCValues::
-	jp TitleMenu_ADVICE_LoadRTCValues
+	dw TitleMenu_ADVICE_LoadRTCValues
 
 ;components/pausemenu/sms_utils.asm - $4280
 Banked_PauseMenu_ADVICE_DrawSMSFromMessages::
-	jp PauseMenu_ADVICE_DrawSMSFromMessages
+	dw PauseMenu_ADVICE_DrawSMSFromMessages
 
 ;components/titlemenu/advice.asm - $4340
 Banked_TitleMenu_ADVICE_StateLoadGraphics::
-	jp TitleMenu_ADVICE_StateLoadGraphics
+	dw TitleMenu_ADVICE_StateLoadGraphics
 
 Banked_TitleMenu_ADVICE_LoadSGBFiles::
-	jp TitleMenu_ADVICE_LoadSGBFiles
+	dw TitleMenu_ADVICE_LoadSGBFiles
 
 Banked_TitleMenu_ADVICE_LoadSGBFilesSoundTest::
-	jp TitleMenu_ADVICE_LoadSGBFilesSoundTest
+	dw TitleMenu_ADVICE_LoadSGBFilesSoundTest
 
 Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest::
-	jp TitleMenu_ADVICE_UnloadSGBFilesSoundTest
+	dw TitleMenu_ADVICE_UnloadSGBFilesSoundTest
 
 Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
-	jp TitleMenu_ADVICE_UnloadSGBFilesOverworld
+	dw TitleMenu_ADVICE_UnloadSGBFilesOverworld
 
 Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
-	jp TitleMenu_ADVICE_UnloadSGBFilesLink
+	dw TitleMenu_ADVICE_UnloadSGBFilesLink
 
 ;components/zukan/advice.asm
 Banked_Zukan_ADVICE_DrawSpeciesPageText::
-	jp Zukan_ADVICE_DrawSpeciesPageText
+	dw Zukan_ADVICE_DrawSpeciesPageText
 
 Banked_Zukan_ADVICE_InitializeNameMetaSprite::
-	jp Zukan_ADVICE_InitializeNameMetaSprite
+	dw Zukan_ADVICE_InitializeNameMetaSprite
    
 Banked_Zukan_ADVICE_DrawRightAlignedHabitatName::
-	jp Zukan_ADVICE_DrawRightAlignedHabitatName
+	dw Zukan_ADVICE_DrawRightAlignedHabitatName
    
 Banked_Zukan_ADVICE_SetupSGBScreen::
-	jp Zukan_ADVICE_SetupSGBScreen
+	dw Zukan_ADVICE_SetupSGBScreen
 
 Banked_Zukan_ADVICE_RefreshSGBScreen::
-	jp Zukan_ADVICE_RefreshSGBScreen
+	dw Zukan_ADVICE_RefreshSGBScreen
 
 Banked_Zukan_ADVICE_TeardownSGBScreenAndMetasprites::
-	jp Zukan_ADVICE_TeardownSGBScreenAndMetasprites
+	dw Zukan_ADVICE_TeardownSGBScreenAndMetasprites
 
 Banked_Zukan_ADVICE_StateInnerviewInputButtonPress::
-	jp Zukan_ADVICE_StateInnerviewInputButtonPress
+	dw Zukan_ADVICE_StateInnerviewInputButtonPress
 
 Banked_Zukan_ADVICE_StateInnerviewInputSwitchSpecies::
-	jp Zukan_ADVICE_StateInnerviewInputSwitchSpecies
+	dw Zukan_ADVICE_StateInnerviewInputSwitchSpecies
    
 ;components/mainscript/statustext.asm
 Banked_MainScript_ADVICE_CondenseTableStringShort::
-	jp MainScript_ADVICE_CondenseTableStringShort
+	dw MainScript_ADVICE_CondenseTableStringShort
    
 Banked_MainScript_ADVICE_CondenseTableStringLong::
-	jp MainScript_ADVICE_CondenseTableStringLong
+	dw MainScript_ADVICE_CondenseTableStringLong
    
 Banked_MainScript_ADVICE_CondenseStagedTableStringLong::
-	jp MainScript_ADVICE_CondenseStagedTableStringLong
+	dw MainScript_ADVICE_CondenseStagedTableStringLong
 
 ;components/battle/advice.asm
 Banked_Battle_ADVICE_ClearStatusEffectTilemaps::
-	jp Battle_ADVICE_ClearStatusEffectTilemaps
+	dw Battle_ADVICE_ClearStatusEffectTilemaps
 
 Banked_Battle_ADVICE_ExitToOverworld::
-	jp Battle_ADVICE_ExitToOverworld
+	dw Battle_ADVICE_ExitToOverworld
 
 ;components/battle/status.asm (why is this in battle, it's a MainScript sym)
 ;MainScript_ADVICE_DrawStatusEffectGfx lives around here.
@@ -95,192 +95,198 @@ Banked_Battle_ADVICE_ExitToOverworld::
    
 ;components/pausemenu/drawfuncs.asm
 Banked_PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
-	jp PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
+	dw PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname
 
 ;components/status/advice.asm
 Banked_Status_ADVICE_StateInitTilemaps::
-	jp Status_ADVICE_StateInitTilemaps
+	dw Status_ADVICE_StateInitTilemaps
 
 Banked_Status_ADVICE_StateDrawDenjuu::
-	jp Status_ADVICE_StateDrawDenjuu
+	dw Status_ADVICE_StateDrawDenjuu
 
 Banked_Status_ADVICE_StateSwitchDenjuu::
-	jp Status_ADVICE_StateSwitchDenjuu
+	dw Status_ADVICE_StateSwitchDenjuu
 
 Banked_Status_ADVICE_DrawRightAlignedHabitatName::
-	jp Status_ADVICE_DrawRightAlignedHabitatName
+	dw Status_ADVICE_DrawRightAlignedHabitatName
 
 Banked_Status_ADVICE_StateExit::
-	jp Status_ADVICE_StateExit
+	dw Status_ADVICE_StateExit
 
 ;components/battle/articles.asm
 Banked_Battle_ADVICE_BattleNoArticle::
-	jp Battle_ADVICE_BattleNoArticle
+	dw Battle_ADVICE_BattleNoArticle
 
 Banked_Battle_ADVICE_BattleArticle::
-	jp Battle_ADVICE_BattleArticle
+	dw Battle_ADVICE_BattleArticle
 
 ;components/pausemenu/sms_utils.asm
 Banked_PauseMenu_ADVICE_SMSMapTiles::
-	jp PauseMenu_ADVICE_SMSMapTiles
+	dw PauseMenu_ADVICE_SMSMapTiles
 	
 Banked_PauseMenu_ADVICE_SMSContentsCheckInput::
-	jp PauseMenu_ADVICE_SMSContentsCheckInput
+	dw PauseMenu_ADVICE_SMSContentsCheckInput
 	
 Banked_Battle_ADVICE_StatusInflictionArticle::
-	jp Battle_ADVICE_StatusInflictionArticle
+	dw Battle_ADVICE_StatusInflictionArticle
 	
 Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
-	jp FusionLabEvo_ADVICE_DrawShopNumberGfx
+	dw FusionLabEvo_ADVICE_DrawShopNumberGfx
 
 Banked_PatchUtils_CommitStagedCGBToSGB_CBE::
-	jp PatchUtils_CommitStagedCGBToSGB_CBE
+	dw PatchUtils_CommitStagedCGBToSGB_CBE
 	
 Banked_MainScript_ADVICE_AutoNarrowPhrase::
-	jp MainScript_ADVICE_AutoNarrowPhrase
+	dw MainScript_ADVICE_AutoNarrowPhrase
 
 ;components/summon/advice.asm
 Banked_Summon_ADVICE_ExitIntoSummonScreen::
-	jp Summon_ADVICE_ExitIntoSummonScreen
+	dw Summon_ADVICE_ExitIntoSummonScreen
 
 ;components/zukan/advice.asm
 Banked_Zukan_ADVICE_ClearMessageForSGB::
-	jp Zukan_ADVICE_ClearMessageForSGB
+	dw Zukan_ADVICE_ClearMessageForSGB
 
 Banked_Zukan_ADVICE_DrawDenjuuName::
-	jp Zukan_ADVICE_DrawDenjuuName
+	dw Zukan_ADVICE_DrawDenjuuName
 
 ;components/status/advice.asm
 Banked_Status_ADVICE_StateInitGraphics::
-	jp Status_ADVICE_StateInitGraphics
+	dw Status_ADVICE_StateInitGraphics
 
 ;components/pausemenu/advice.asm
 Banked_PauseMenu_ADVICE_LoadSGBFiles::
-	jp PauseMenu_ADVICE_LoadSGBFiles
+	dw PauseMenu_ADVICE_LoadSGBFiles
 
 ;components/titlemenu/advice.asm
 Banked_TitleMenu_ADVICE_LoadSGBFilesTimeInput::
-	jp TitleMenu_ADVICE_LoadSGBFilesTimeInput
+	dw TitleMenu_ADVICE_LoadSGBFilesTimeInput
 
 ;components/pausemenu/advice.asm
 Banked_PauseMenu_ADVICE_LoadSGBFilesMelody::
-	jp PauseMenu_ADVICE_LoadSGBFilesMelody
+	dw PauseMenu_ADVICE_LoadSGBFilesMelody
 
 Banked_PauseMenu_ADVICE_LoadSGBFilesInventory::
-	jp PauseMenu_ADVICE_LoadSGBFilesInventory
+	dw PauseMenu_ADVICE_LoadSGBFilesInventory
 
 Banked_PauseMenu_ADVICE_LoadSGBPalettesInventory::
-	jp PauseMenu_ADVICE_LoadSGBPalettesInventory
+	dw PauseMenu_ADVICE_LoadSGBPalettesInventory
 
 ;components/contactmenu/advice.asm
 Banked_ContactMenu_ADVICE_LoadSGBFilesOverview::
-	jp ContactMenu_ADVICE_LoadSGBFilesOverview
+	dw ContactMenu_ADVICE_LoadSGBFilesOverview
 
 ;components/zukan/advice.asm
 Banked_Zukan_ADVICE_LoadSGBFilesOverview::
-	jp Zukan_ADVICE_LoadSGBFilesOverview
+	dw Zukan_ADVICE_LoadSGBFilesOverview
 
 Banked_Zukan_ADVICE_LoadSGBPalettesOverview::
-	jp Zukan_ADVICE_LoadSGBPalettesOverview
+	dw Zukan_ADVICE_LoadSGBPalettesOverview
 
 Banked_Zukan_ADVICE_ReloadSGBPalettesOverview::
-	jp Zukan_ADVICE_ReloadSGBPalettesOverview
+	dw Zukan_ADVICE_ReloadSGBPalettesOverview
 
 ;components/pausemenu/advice.asm
 Banked_PauseMenu_ADVICE_LoadSGBFilesNumMessages::
-	jp PauseMenu_ADVICE_LoadSGBFilesNumMessages
+	dw PauseMenu_ADVICE_LoadSGBFilesNumMessages
 
 Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages::
-	jp PauseMenu_ADVICE_LoadSGBFilesListMessages
+	dw PauseMenu_ADVICE_LoadSGBFilesListMessages
 
 ;components/callsmenu/advice.asm
 Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
-	jp PauseMenu_ADVICE_LoadSGBFilesOutboundCall
+	dw PauseMenu_ADVICE_LoadSGBFilesOutboundCall
 
 Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall::
-	jp PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+	dw PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
 
 ;components/contactmenu/advice.asm
 Banked_ContactMenu_ADVICE_LoadSGBFilesActionScreen::
-	jp ContactMenu_ADVICE_LoadSGBFilesActionScreen
+	dw ContactMenu_ADVICE_LoadSGBFilesActionScreen
 
 Banked_ContactMenu_ADVICE_LoadSGBFilesRingtone::
-	jp ContactMenu_ADVICE_LoadSGBFilesRingtone
+	dw ContactMenu_ADVICE_LoadSGBFilesRingtone
 
 Banked_ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit::
-	jp ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit
+	dw ContactMenu_ADVICE_LoadSGBFilesOverview_RingtoneExit
 
 ;components/pausemenu/advice.asm
 Banked_PauseMenu_ADVICE_LoadSGBFilesPhoneIME::
-	jp PauseMenu_ADVICE_LoadSGBFilesPhoneIME
+	dw PauseMenu_ADVICE_LoadSGBFilesPhoneIME
 
 Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEdit::
-	jp PauseMenu_ADVICE_LoadSGBFilesMelodyEdit
+	dw PauseMenu_ADVICE_LoadSGBFilesMelodyEdit
 
 Banked_PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit::
-	jp PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit
+	dw PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit
 
 ;components/map/advice.asm
 Banked_Map_ADVICE_DrawScreen::
-	jp Map_ADVICE_DrawScreen
+	dw Map_ADVICE_DrawScreen
 
 Banked_Map_ADVICE_LoadSGBFiles::
-	jp Map_ADVICE_LoadSGBFiles
+	dw Map_ADVICE_LoadSGBFiles
 
 Banked_Map_ADVICE_UnloadSGBFiles::
-	jp Map_ADVICE_UnloadSGBFiles
+	dw Map_ADVICE_UnloadSGBFiles
 
 Banked_Map_ADVICE_WindowLoadSGBFiles::
-	jp Map_ADVICE_WindowLoadSGBFiles
+	dw Map_ADVICE_WindowLoadSGBFiles
 
 Banked_Map_ADVICE_WindowUnloadSGBFiles::
-	jp Map_ADVICE_WindowUnloadSGBFiles
+	dw Map_ADVICE_WindowUnloadSGBFiles
 
 ;components/encounter/advice.asm
 Banked_Encounter_ADVICE_LoadSGBFiles::
-	jp Encounter_ADVICE_LoadSGBFiles
+	dw Encounter_ADVICE_LoadSGBFiles
 
 Banked_Encounter_ADVICE_MapTFangerDenjuu::
-	jp Encounter_ADVICE_MapTFangerDenjuu
+	dw Encounter_ADVICE_MapTFangerDenjuu
 
 ;components/summon/advice.asm
 Banked_Summon_ADVICE_LoadSGBFiles::
-	jp Summon_ADVICE_LoadSGBFiles
+	dw Summon_ADVICE_LoadSGBFiles
 
 ;components/titlemenu/advice.asm
 Banked_TitleMenu_ADVICE_InitNickname::
-	jp TitleMenu_ADVICE_InitNickname
+	dw TitleMenu_ADVICE_InitNickname
 
 Banked_TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer::
-	jp TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer
+	dw TitleMenu_ADVICE_SaveDenjuuNicknameFromBuffer
 
 ;components/victory/advice.asm
 Banked_Victory_ADVICE_LoadSGBFilesRecruitment::
-	jp Victory_ADVICE_LoadSGBFilesRecruitment
+	dw Victory_ADVICE_LoadSGBFilesRecruitment
 
 Banked_Victory_ADVICE_EvolutionLoadSGBFiles::
-	jp Victory_ADVICE_EvolutionLoadSGBFiles
+	dw Victory_ADVICE_EvolutionLoadSGBFiles
 
 ;components/battle/advice.asm
 Banked_Battle_ADVICE_LoadDenjuuResources::
-	jp Battle_ADVICE_LoadDenjuuResources
+	dw Battle_ADVICE_LoadDenjuuResources
 
 Banked_Battle_ADVICE_LoadSGBFiles::
-	jp Battle_ADVICE_LoadSGBFiles
+	dw Battle_ADVICE_LoadSGBFiles
 
 Banked_Battle_ADVICE_AttackWindowCorrectForSGBOnOpen::
-	jp Battle_ADVICE_AttackWindowCorrectForSGBOnOpen
+	dw Battle_ADVICE_AttackWindowCorrectForSGBOnOpen
 
 Banked_Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
-	jp Battle_ADVICE_AttackWindowCorrectForSGBOnClose
+	dw Battle_ADVICE_AttackWindowCorrectForSGBOnClose
+
+Banked_Battle_ADVICE_VictoryDrawWindowTiles::
+	dw Battle_ADVICE_VictoryDrawWindowTiles
+
+Banked_Battle_ADVICE_ArrivedMessageFix::
+	dw Battle_ADVICE_ArrivedMessageFix
 
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 
 Banked_Battle_ADVICE_ParsePluralState::
-	jp Battle_ADVICE_ParsePluralState
+	dw Battle_ADVICE_ParsePluralState
 
-SECTION "Patch Utilities - Auxiliary Code", ROMX[$4100], BANK[$1]
+SECTION "Patch Utilities - Auxiliary Code", ROMX[$4140], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
 	M_AdviceSetup
 	

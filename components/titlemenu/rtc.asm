@@ -116,7 +116,7 @@ TitleMenu_LoadRTCValues::
 .exitSram
     jp TitleMenu_ExitSRAM
 
-SECTION "Title Menu Advice Block", ROMX[$4240], BANK[$1]
+SECTION "Title Menu Advice Block", ROMX[$4280], BANK[$1]
 TitleMenu_ADVICE_LoadRTCValues::
     M_AdviceSetup
     

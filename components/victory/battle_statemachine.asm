@@ -38,10 +38,10 @@ Victory_BattleScreenPrivateStrings_denmaDef::
 Victory_SubStateInit::
     ld a, $20
     ld [W_LCDC_MetaspriteAnimationBank], a
-    nop
-    M_AuxJmp Banked_Battle_ADVICE_ClearStatusEffectTilemaps
-    ld bc, $14
+    ld bc, 1
     call Banked_LoadMaliasGraphics
+    nop
+    M_AuxJmp Banked_Battle_ADVICE_VictoryDrawWindowTiles
     ld a, 0
     ld bc, 4
     call CGBLoadObjectPaletteBanked

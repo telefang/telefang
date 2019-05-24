@@ -28,8 +28,8 @@ PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3::
 	ret
 	
 PatchUtils_AuxCodeJmp::
-   di
-   push hl ;preserve hl. advice can get at it via M_AdviceSetup
+	di
+	push hl ;preserve hl. advice can get at it via M_AdviceSetup
 	push af
 	
 	ld a, [W_CurrentBank]
@@ -37,19 +37,20 @@ PatchUtils_AuxCodeJmp::
 	
 	ld a, BANK(Banked_PatchUtils_AdviceTable)
 	ld [REG_MBC3_ROMBANK], a
-	ld [W_CurrentBank], a
-	
-	pop af
-	ld [W_CurrentBank], a
-	
-	pop af
-
-	ld hl, PatchUtils_AuxCodeJmp_returnVec
-	push hl
-
-	ld l, a
-	ld h, $40
-	jp hl
+	jp PatchUtils_AuxCodeJmp_Ext
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 PatchUtils_AuxCodeJmp_returnVec::
 	push af
@@ -137,3 +138,23 @@ Banked_PauseMenu_ADVICE_LoadName75::
 	ret
 	
 PatchUtils_ResetGame:: ;Further execution hits the main vector of the rom header
+
+SECTION "Patch Utilities - Aux Code Logic Relocation", ROMX[$4100], BANK[$1]
+PatchUtils_AuxCodeJmp_Ext::
+	ld [W_CurrentBank], a
+
+	pop af
+	ld [W_CurrentBank], a
+	pop af
+
+	ld hl, PatchUtils_AuxCodeJmp_returnVec
+	push hl
+
+	ld l, a
+	ld h, $40
+
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	jp hl
