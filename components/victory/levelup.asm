@@ -3,7 +3,18 @@ INCLUDE "telefang.inc"
 SECTION "Victory Level-Up Memory", WRAMX[$D40A], BANK[$1]
 W_Victory_LeveledUpParticipant:: ds 1
 
-SECTION "Victory Level-Up States", ROMX[$4957], BANK[$1D]
+SECTION "Victory Level-Up States", ROMX[$4942], BANK[$1D]
+;State 08 00 00 0E
+Victory_SubStateStatMapDenjuuTiles::
+    ld bc, $105
+    ld e, $92
+    M_AuxJmp Banked_Battle_ADVICE_VictoryStatsLoadSGBFiles
+    ld a, $14
+    ld [W_Sound_NextSFXSelect], a
+    ld a, M_Victory_SubStateStatWindowPalette
+    ld [W_LateDenjuu_SubSubState], a
+    ret
+
 ;State 08 00 00 05
 Victory_SubStateStatWindowPalette::
     call Banked_MainScriptMachine

@@ -59,9 +59,3 @@ Victory_SubStateInit::
     ld a, 6
     ld [W_LateDenjuu_SubSubState], a
     ret
-
-SECTION "Clear Status Effects Hack (Link Battles)", ROMX[$5B75], BANK[$1F]
-    ; Part of a much larger battle system function.
-    ; Same as the previous section, except... duplicated for link battles.
-    nop
-    M_AuxJmp Banked_Battle_ADVICE_ClearStatusEffectTilemaps

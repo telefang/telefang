@@ -76,7 +76,11 @@ TitleMenu_ADVICE_LoadSGBFiles_externalEntry::
 	 
     call PauseMenu_ADVICE_CheckSGB
     jr z, .return
-    
+
+    ; Reset the text style in case the link menu dumps us here after an interrupted connection.
+    xor a
+    ld [W_MainScript_TextStyle], a
+
     ;Load our ATF
     ld c, 3
     call Banked_SGB_ConstructATFSetPacket
