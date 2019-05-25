@@ -8,8 +8,7 @@ SECTION "Victory Level-Up States", ROMX[$4942], BANK[$1D]
 Victory_SubStateStatMapDenjuuTiles::
     ld bc, $105
     ld e, $92
-    ld a, 0
-    call Banked_RLEDecompressTMAP0
+    M_AuxJmp Banked_Battle_ADVICE_VictoryStatsLoadSGBFiles
     ld a, $14
     ld [W_Sound_NextSFXSelect], a
     ld a, M_Victory_SubStateStatWindowPalette

@@ -107,10 +107,6 @@ Battle_ADVICE_LoadSGBFiles::
     ld a, $20
     ld [W_LCDC_MetaspriteAnimationBank], a
 
-; Skip this logic until later in development.
-    xor a
-    jr z, .return
-
     call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
@@ -152,9 +148,6 @@ Battle_ADVICE_LoadSGBFiles::
 Battle_ADVICE_AttackWindowCorrectForSGBOnOpen::
     M_AdviceSetup
 
-    ld a, [W_MainScript_TextStyle]
-    cp 3
-    jr nz, .return
     call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
@@ -220,9 +213,6 @@ Battle_ADVICE_AttackWindowCorrectForSGBOnOpen::
 Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
     M_AdviceSetup
 
-    ld a, [W_MainScript_TextStyle]
-    cp 3
-    jr nz, .return
     call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
@@ -274,9 +264,6 @@ Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
 Battle_ADVICE_VictoryDrawWindowTiles::
     M_AdviceSetup
 
-    ld a, [W_MainScript_TextStyle]
-    cp 3
-    jr nz, .noSGB
     call PauseMenu_ADVICE_CheckSGB
     jr z, .noSGB
 
@@ -294,10 +281,6 @@ Battle_ADVICE_VictoryDrawWindowTiles::
 
 Battle_ADVICE_ArrivedMessageFix::
     M_AdviceSetup
-
-    ld a, [W_MainScript_TextStyle]
-    cp 3
-    jr nz, .noSGB
 
     call PauseMenu_ADVICE_CheckSGB
     jr z, .noSGB
@@ -399,6 +382,37 @@ Battle_ADVICE_ArrivedMessageFix_FFFill::
     ld [hli], a
     ld [hli], a
     jr nz, .loop
+    ret
+
+Battle_ADVICE_VictoryStatsLoadSGBFiles::
+    M_AdviceSetup
+
+    xor a
+    call Banked_RLEDecompressTMAP0
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .noSGB
+
+    ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 5)
+    call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld bc, $505
+    call PatchUtils_CommitStagedCGBToSGB
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld bc, $605
+    call PatchUtils_CommitStagedCGBToSGB
+
+    ld c, $14
+    call Banked_SGB_ConstructATFSetPacket
+
+    ld hl, $90A0
+    ld b, 8
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+.noSGB
+    M_AdviceTeardown
     ret
 
 SECTION "MenuBattle2GfxSGB", ROMX[$7E00], BANK[$77]

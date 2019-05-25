@@ -280,6 +280,9 @@ Banked_Battle_ADVICE_VictoryDrawWindowTiles::
 Banked_Battle_ADVICE_ArrivedMessageFix::
 	dw Battle_ADVICE_ArrivedMessageFix
 
+Banked_Battle_ADVICE_VictoryStatsLoadSGBFiles::
+	dw Battle_ADVICE_VictoryStatsLoadSGBFiles
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

@@ -38,8 +38,7 @@ LinkVictory_SubStateInit::
     ld [W_LCDC_MetaspriteAnimationBank], a
     ld bc, 1
     call Banked_LoadMaliasGraphics
-    ld bc, $14
-    call Banked_LoadMaliasGraphics
+    M_AuxJmp Banked_Battle_ADVICE_VictoryDrawWindowTiles
     ld a, [W_Victory_PlayerWon]
     cp 0
     jr z, .playerLost
