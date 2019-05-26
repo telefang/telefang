@@ -117,6 +117,7 @@ Battle_ADVICE_LoadSGBFiles::
     ld b, $48
     call Zukan_ADVICE_TileLightColourReverse
 
+.extEntry
     ld hl, .table
     ld de, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 1) + (M_LCDC_CGBColorSize * 1)
 	ld b, 6
@@ -414,6 +415,21 @@ Battle_ADVICE_VictoryStatsLoadSGBFiles::
 .noSGB
     M_AdviceTeardown
     ret
+
+Battle_ADVICE_LoadSGBFilesAfterLateDenjuu::
+    M_AdviceSetup
+
+    xor a
+    call Banked_RLEDecompressAttribsTMAP1
+
+    call PauseMenu_ADVICE_CheckSGB
+    jp z, Battle_ADVICE_LoadSGBFiles.return
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld bc, $607
+    call PatchUtils_CommitStagedCGBToSGB
+
+    jp Battle_ADVICE_LoadSGBFiles.extEntry
 
 SECTION "MenuBattle2GfxSGB", ROMX[$7E00], BANK[$77]
 MenuBattle2GfxSGB::

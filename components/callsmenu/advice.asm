@@ -1,6 +1,17 @@
 INCLUDE "telefang.inc"
 
-SECTION "Calls Menu Advice Code 1", ROMX[$57F0], BANK[$1]
+SECTION "Calls Menu Advice Code 1", ROMX[$57D0], BANK[$1]
+LateDenjuu_ADVICE_LoadSGBFiles::
+    M_AdviceSetup
+
+    ld a, 1
+    call Banked_LCDC_SetupPalswapAnimation
+
+    call PauseMenu_ADVICE_CheckSGB
+    jp z, PauseMenu_ADVICE_LoadSGBFilesOutboundCall.return
+
+    jr PauseMenu_ADVICE_LoadSGBFilesOutboundCall.extEntry
+
 PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
     M_AdviceSetup
 
@@ -17,6 +28,7 @@ PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
     ld a, 3
     ld [W_MainScript_TextStyle], a
 
+.extEntry
     ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 5)
 
     ; Create this label
