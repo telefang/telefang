@@ -63,21 +63,21 @@ LateDenjuu_BuildCallScreen::
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $B
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld e, $B0
 	ld a, [W_Encounter_SceneryType]
 	add e
 	ld e, a
 	ld bc, 0
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld e, $A0
 	ld a, [W_Encounter_SceneryType]
 	add e
 	ld e, a
 	ld bc, 0
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld bc, $500
 	ld e, $AE
@@ -85,7 +85,7 @@ LateDenjuu_BuildCallScreen::
 	call Banked_RLEDecompressTMAP0
 	ld bc, $500
 	ld e, $93
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld a,[$D4CE]
 	push af
@@ -97,6 +97,7 @@ LateDenjuu_BuildCallScreen::
 	call LateDenjuu_ADVICE_NamePreparations
 	ld a, [$D43C]
 	call Status_DrawDenjuuNickname
+	call LateDenjuu_ADVICE_RestoreTextStyle
 	ld a, [$D46E]
 	cp 2
 	jr c, .jpA
@@ -113,8 +114,7 @@ LateDenjuu_BuildCallScreen::
 	call Battle_QueueMessage
 
 .jpC
-	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_LateDenjuu_ADVICE_LoadSGBFiles
 	ld a, [$CD00]
 	cp 1
 	jr z, .jpE
@@ -198,11 +198,11 @@ LateDenjuu_FadeFromScreen::
 LateDenjuu_RedrawBattleScreen::
 	ld bc, 0
 	ld e, $F
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $F
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld bc, $17
 	call Banked_CGBLoadBackgroundPalette
@@ -228,25 +228,26 @@ LateDenjuu_RedrawBattleScreen::
 	call Banked_Battle_LoadDenjuuPortrait
 	pop af
 	call Battle_LoadDenjuuPaletteOpponent
+	call LateDenjuu_ADVICE_TemporarilyClearTextStyle
 	ld hl, $9200
 	ld a, 8
 	call MainScript_DrawEmptySpaces
+	call LateDenjuu_ADVICE_RestoreTextStyle
 	ld bc, $100
 	ld e, $86
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, $100
 	ld e, $87
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld bc, 8
 	ld e, $81
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP1
 	ld bc, $108
 	ld e, $84
-	ld a, 0
-	call Banked_RLEDecompressAttribsTMAP1
+	M_AuxJmp Banked_Battle_ADVICE_LoadSGBFilesAfterLateDenjuu
 	ld a, [W_LateDenjuu_SubSubState]
 	inc a
 	ld [W_LateDenjuu_SubSubState], a
@@ -292,6 +293,7 @@ LateDenjuu_ReturnToBattleScreenStateMachine::
 	
 SECTION "Late Denjuu Advice Code", ROMX[$5A87], BANK[$1C]
 LateDenjuu_ADVICE_NamePreparations::
+	call LateDenjuu_ADVICE_TemporarilyClearTextStyle
 	push bc
 	xor a
 	ld hl, $9200
@@ -308,3 +310,16 @@ LateDenjuu_ADVICE_NamePreparations::
 	pop bc
 	ld hl, $9200
 	ret
+
+LateDenjuu_ADVICE_TemporarilyClearTextStyle::
+    ld a, [W_MainScript_TextStyle]
+    ld [W_MainScript_TextStylePreserve], a
+    xor a
+
+.setTextStyle
+    ld [W_MainScript_TextStyle], a
+    ret
+
+LateDenjuu_ADVICE_RestoreTextStyle::
+    ld a, [W_MainScript_TextStylePreserve]
+    jr LateDenjuu_ADVICE_TemporarilyClearTextStyle.setTextStyle

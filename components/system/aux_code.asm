@@ -194,6 +194,9 @@ Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages::
 	dw PauseMenu_ADVICE_LoadSGBFilesListMessages
 
 ;components/callsmenu/advice.asm
+Banked_LateDenjuu_ADVICE_LoadSGBFiles::
+	dw LateDenjuu_ADVICE_LoadSGBFiles
+
 Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
 	dw PauseMenu_ADVICE_LoadSGBFilesOutboundCall
 
@@ -282,6 +285,9 @@ Banked_Battle_ADVICE_ArrivedMessageFix::
 
 Banked_Battle_ADVICE_VictoryStatsLoadSGBFiles::
 	dw Battle_ADVICE_VictoryStatsLoadSGBFiles
+
+Banked_Battle_ADVICE_LoadSGBFilesAfterLateDenjuu::
+	dw Battle_ADVICE_LoadSGBFilesAfterLateDenjuu
 
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.

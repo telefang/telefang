@@ -250,8 +250,8 @@ Battle_SubStateStatusWarningPartner::
 
 .doneResetting
     ld hl, $9160
-    ld a, 5
-    call MainScript_DrawEmptySpaces
+    ld b, 0
+    call Banked_MainScript_DrawStatusEffectString
     
     ld a, [W_Battle_OpponentUsingLinkCable]
     cp 0
@@ -485,8 +485,8 @@ Battle_SubStateStatusWarningOpponent::
 
 .doneResetting
     ld hl, $91B0
-    ld a, 5
-    call MainScript_DrawEmptySpaces
+    ld b, 0
+    call Banked_MainScript_DrawStatusEffectString
     
     ld a, [W_Battle_OpponentUsingLinkCable]
     cp 0
