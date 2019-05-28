@@ -119,16 +119,30 @@ PhoneIME_ADVICE_CheckTimer::
     ret
 
 SECTION "Phone IME Backspace Fix", ROMX[$67C2], BANK[$4]
-TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus::
-    ld [W_PauseMenu_SelectedMenuItem], a
+TitleMenu_ADVICE_NameInputImpl_fixDoubleBackspace::
+    call PhoneIME_ADVICE_ResetTimer
+    ld de, W_PauseMenu_SelectedMenuItem
+    ld a, [de]
+    or a
+    ret z
+    call TitleMenu_ADVICE_NameInputImpl_isSpace
+    ret nz
+    ld a, [W_PhoneIME_LastPressedButton]
+    cp $FF
+    ret nz
+    ld a, [de]
+    dec a
+    ld [de], a
+    ret
+    nop
+
+SECTION "Phone IME Backspace Fix 2", ROMX[$667C], BANK[$4]
+TitleMenu_ADVICE_NameInputImpl_isSpace::
     ld hl, W_TitleMenu_NameBuffer
     add l
     ld l, a
     ld a, [hl]
     cp $20
-    ret z
-    ld a, $10
-    ld [W_PhoneIME_LastPressedButton], a
     ret
 
     ; Note: Free Space
@@ -137,4 +151,15 @@ TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus::
     nop
     nop
     nop
-    nop
+
+SECTION "Phone IME Backspace Fix 3", ROMX[$6693], BANK[$4]
+TitleMenu_ADVICE_NameInputImpl_determineBackspaceFocus::
+    ld a, [W_PauseMenu_SelectedMenuItem]
+    or a
+    ld a, $FF
+    jr z, .notFirstpos
+    ld a, $11
+
+.notFirstpos
+    ld [W_PhoneIME_LastPressedButton], a
+    ret

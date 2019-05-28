@@ -36,43 +36,12 @@ PhoneIME_PlayerNameDiacritic::
     call PhoneIME_ADVICE_NameDiacriticCommon
     call PhoneIME_SyncPlayerName
     jp PauseMenu_DrawCenteredNameBufferNoVWF
-
-	; Note: Free space.
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
     
+SECTION "Pause menu IME Diacritic stuff 2", ROMX[$668A], BANK[$4]
 PhoneIME_DenjuuNicknameDiacritic::
     call PhoneIME_ADVICE_NameDiacriticCommon
     call PhoneIME_SyncDenjuuNickname
     jp PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
-
-	; Note: Free space.
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
 
 SECTION "Pause Menu Phone Stuff", ROMX[$693B], BANK[$4]
 PhoneIME_LoadGraphicsForIME::

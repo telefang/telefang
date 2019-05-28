@@ -83,12 +83,12 @@ TitleMenu_NameInputImpl::
     call PhoneIME_SyncPlayerName
     call PauseMenu_DrawCenteredNameBufferNoVWF
     
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    and a
+    call TitleMenu_ADVICE_NameInputImpl_determineBackspaceFocus
     ret z
-    
+
+    ld a, [W_PauseMenu_SelectedMenuItem]
     dec a
-    call TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus
+    ld [W_PauseMenu_SelectedMenuItem], a
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
     ret
@@ -211,12 +211,12 @@ TitleMenu_NicknameInputImpl::
     call PhoneIME_SyncDenjuuNickname
     call PauseMenu_DrawCenteredNameBufferNoVWFWithOffset
     
-    ld a, [W_PauseMenu_SelectedMenuItem]
-    and a
+    call TitleMenu_ADVICE_NameInputImpl_determineBackspaceFocus
     ret z
-    
+
+    ld a, [W_PauseMenu_SelectedMenuItem]
     dec a
-    call TitleMenu_ADVICE_NameInputImpl_backspaceProcessingFocus
+    ld [W_PauseMenu_SelectedMenuItem], a
     ld a, 4
     ld [W_Sound_NextSFXSelect], a
     ret
@@ -321,11 +321,7 @@ TitleMenu_NicknameInputImpl::
     ret
 
 TitleMenu_NameInputImpl_backspaceProcessingCommon::
-    ld a, $FF
-    ld [W_PhoneIME_LastPressedButton], a
-    
-    call PhoneIME_ADVICE_ResetTimer
-    
+    call TitleMenu_ADVICE_NameInputImpl_fixDoubleBackspace
     ld hl, W_TitleMenu_NameBuffer
     ld a, [W_PauseMenu_SelectedMenuItem]
     ld e, a
@@ -333,6 +329,7 @@ TitleMenu_NameInputImpl_backspaceProcessingCommon::
     add hl, de
     ld [hl], $20
     ret
+    nop
 
 SECTION "Phone IME Auto Switch", ROMX[$7DAB], BANK[$4]
 
