@@ -195,7 +195,7 @@ DungeonMap_ADVICE_DrawScreen::
 
 	ld a, BANK(MapBackgroundDungeonSGBGfx)
 	ld hl, $9400
-	ld de, MapBackgroundSGBGfx
+	ld de, MapBackgroundDungeonSGBGfx
 	ld bc, $C0
 	call Banked_LCDC_LoadTiles
 	jr .exit
