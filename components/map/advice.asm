@@ -185,3 +185,74 @@ Map_ADVICE_WindowLoadSGBFiles::
 .noSGB
 	M_AdviceTeardown
 	ret
+
+SECTION "Dungeon Map Screen Advice Code", ROMX[$6290], BANK[$1]
+DungeonMap_ADVICE_DrawScreen::
+	M_AdviceSetup
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld a, BANK(MapBackgroundDungeonSGBGfx)
+	ld hl, $9400
+	ld de, MapBackgroundDungeonSGBGfx
+	ld bc, $C0
+	call Banked_LCDC_LoadTiles
+	jr .exit
+
+.noSGB
+
+	ld a, BANK(MapBackgroundGfx)
+	ld hl, $9400
+	ld de, MapBackgroundGfx
+	ld bc, $C0
+	call Banked_LCDC_LoadTiles
+
+.exit
+	M_AdviceTeardown
+	ret
+
+DungeonMap_ADVICE_LoadSGBFiles::
+	M_AdviceSetup
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7) + (M_LCDC_CGBColorSize * 0)
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	inc hl
+	ld [hld], a
+	ld a, b
+	ld [hl], a
+
+	ld hl, $8F00
+	ld b, $28
+	call Zukan_ADVICE_TileLightColourReverse
+
+	ld l, $60
+	ld b, $20
+	call Zukan_ADVICE_TileLightColourReverse
+
+	ld hl, $8E00
+	ld b, $40
+	call Zukan_ADVICE_TileLowByteBlanketFill
+
+	ld c, $15
+	call Banked_SGB_ConstructATFSetPacket
+
+	ld a, M_SGB_Pal01 << 3 + 1
+	ld bc, 1
+	call PatchUtils_CommitStagedCGBToSGB
+	
+	ld a, M_SGB_Pal23 << 3 + 1
+	ld bc, $207
+	call PatchUtils_CommitStagedCGBToSGB
+
+	ld a, 3
+	ld [W_MainScript_TextStyle], a
+
+.noSGB
+	M_AdviceTeardown
+	ret

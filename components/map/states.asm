@@ -642,11 +642,7 @@ DungeonMap_StateDrawScreen::
 	ld de, $67C4
 	ld bc, $490
 	call Banked_LCDC_LoadTiles
-	ld a, $38
-	ld hl, $9400
-	ld de, $6ED4
-	ld bc, $C0
-	call Banked_LCDC_LoadTiles
+	M_AuxJmp Banked_DungeonMap_ADVICE_DrawScreen
 	ld de, $6FA4
 	ld hl, $9800
 	ld b, $12
@@ -726,7 +722,12 @@ DungeonMap_StateDrawScreen::
 .skipPseudoAdc
 	ld a, 1
 	call CGBLoadBackgroundPaletteBanked
+	M_AuxJmp Banked_DungeonMap_ADVICE_LoadSGBFiles
 	jp System_ScheduleNextSubState
+	nop
+	nop
+	nop
+	nop
 	nop
 	nop
 	nop
@@ -898,8 +899,7 @@ DungeonMap_StateFadeToOverworld::
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
-	ld a, 0
-	ld [W_byte_C9CF], a
+	M_AuxJmp Banked_Map_ADVICE_UnloadSGBFiles
 	ld a, $A
 	ld [W_SystemSubState], a
 	ret

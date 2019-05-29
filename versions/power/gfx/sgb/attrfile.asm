@@ -21,3 +21,4 @@ SGB_AttrFileData::
     INCBIN "build/gfx/menu/titlemenu_nicknames.atf" ; 12
     INCBIN "build/components/battle/main_screen.atf" ; 13
     INCBIN "build/components/battle/attack_menu.atf" ; 14
+    INCBIN "build/components/map/dungeon.atf" ; 15
