@@ -289,6 +289,13 @@ Banked_Battle_ADVICE_VictoryStatsLoadSGBFiles::
 Banked_Battle_ADVICE_LoadSGBFilesAfterLateDenjuu::
 	dw Battle_ADVICE_LoadSGBFilesAfterLateDenjuu
 
+;components/map/advice.asm
+Banked_DungeonMap_ADVICE_DrawScreen::
+	dw DungeonMap_ADVICE_DrawScreen
+
+Banked_DungeonMap_ADVICE_LoadSGBFiles::
+	dw DungeonMap_ADVICE_LoadSGBFiles
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

@@ -37,10 +37,13 @@ MapAcreAttribmap::
 
 MapBackgroundSGBGfx::
 	INCBIN "build/components/map/background_sgbtiles.2bpp"
+	
+MapBackgroundDungeonSGBGfx::
+	INCBIN "build/components/map/background_dungeon_sgbtiles.2bpp"
 
 MapAcreGfxOld::
 	; Note: Free Space
-	REPT $990
+	REPT $8C0
 	nop
 	ENDR
 
