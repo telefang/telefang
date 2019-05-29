@@ -193,7 +193,7 @@ DungeonMap_ADVICE_DrawScreen::
 	call PauseMenu_ADVICE_CheckSGB
 	jr z, .noSGB
 
-	ld a, BANK(MapBackgroundSGBGfx)
+	ld a, BANK(MapBackgroundDungeonSGBGfx)
 	ld hl, $9400
 	ld de, MapBackgroundSGBGfx
 	ld bc, $C0
