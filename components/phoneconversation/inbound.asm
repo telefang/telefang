@@ -219,6 +219,81 @@ PhoneConversation_DrawFDOffsetValue::
     
     ret
     
+PhoneConversation_StateIncomingCallPrepareFadeIn::
+    ld bc, 0
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp System_ScheduleNextSubState
+
+PhoneConversation_StateIncomingCallFadeInAndConvoScriptProcessing::
+    ld a, 0
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    call $2CC4
+    ld a, [W_MainScript_State]
+    cp a, 9
+    jr nz, .wouldntRetNZHaveBeenBetter
+    ld a, [W_PhoneConversation_IncomingCallerFDOffset]
+    push af
+
+; Banked call from bank 29 to bank 29. Why would anyone do this?
+
+    ld a, $29
+    ld hl, $4CFD
+    call CallBankedFunction_int
+
+    call Status_ExpandNumericalTiles
+    ld a, [W_PhoneConversation_IncomingCallerFDOffset]
+    add $40
+    ld b, a
+    pop af
+    add $40
+    cp b
+    jr z, .neutralAnswer
+    jr nc, .badAnswer
+
+.goodAnswer
+    ld a, $4A
+    ld [W_Sound_NextSFXSelect], a
+    jr .neutralAnswer
+
+.badAnswer
+    ld a, $5B
+    ld [W_Sound_NextSFXSelect], a
+
+.neutralAnswer
+    call PhoneConversation_DrawFDDisplay
+    ld bc, $C3E
+    call Overworld_ResetFlag
+    ld bc, $C3F
+    call Overworld_ResetFlag
+    ld a, [W_Overworld_State]
+    cp 1
+    jr z, .noMoreMessages
+    ret
+
+.noMoreMessages
+    ld a, 0
+    ld [W_Overworld_PowerAntennaPattern], a
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+    jp System_ScheduleNextSubState
+
+.wouldntRetNZHaveBeenBetter
+    ret
+
+PhoneConversation_StateIncomingCallFadeOutAndExitToOverworld::
+    ld a, 1
+    call Banked_LCDC_PaletteFade
+    or a
+    ret z
+    ld a, 0
+    ld [W_byte_C9CF], a
+    ld a, $A
+    ld [W_SystemSubState], a
+    ret
+
 SECTION "Phone Conversation Inbound 2", ROMX[$576C], BANK[$29]
 PhoneConversation_DrawInboundCallScreen::
     push af
