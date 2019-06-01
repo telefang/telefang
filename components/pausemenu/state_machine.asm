@@ -612,7 +612,8 @@ PauseMenu_StateFadeInAndQueueContactMessage::
     ld b, 1
     
 .exit
-    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+    ld d, $C
+    call $0520
     jp System_ScheduleNextSubState
 
 ;State 0C 1C
@@ -712,7 +713,8 @@ PauseMenu_StateFadeInAndQueueSecretMessage::
     add a, $80
     ld c, a
     ld b, 1
-    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+    ld d, $C
+    call $0520
     jp System_ScheduleNextSubState
 
 ;State 0C 22

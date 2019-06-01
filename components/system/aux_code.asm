@@ -194,14 +194,14 @@ Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages::
 	dw PauseMenu_ADVICE_LoadSGBFilesListMessages
 
 ;components/callsmenu/advice.asm
+Banked_PauseMenu_ADVICE_LoadSGBFilesInboundCall::
+	dw PauseMenu_ADVICE_LoadSGBFilesInboundCall
+
 Banked_LateDenjuu_ADVICE_LoadSGBFiles::
 	dw LateDenjuu_ADVICE_LoadSGBFiles
 
 Banked_PauseMenu_ADVICE_LoadSGBFilesOutboundCall::
 	dw PauseMenu_ADVICE_LoadSGBFilesOutboundCall
-
-Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall::
-	dw PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
 
 ;components/contactmenu/advice.asm
 Banked_ContactMenu_ADVICE_LoadSGBFilesActionScreen::
