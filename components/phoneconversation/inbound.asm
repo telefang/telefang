@@ -217,8 +217,7 @@ PhoneConversation_DrawFDOffsetValue::
     
 PhoneConversation_StateIncomingCallPrepareFadeIn::
     ld bc, 0
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesInboundCall
     jp System_ScheduleNextSubState
 
 PhoneConversation_StateIncomingCallFadeInAndConvoScriptProcessing::
@@ -284,8 +283,7 @@ PhoneConversation_StateIncomingCallFadeOutAndExitToOverworld::
     call Banked_LCDC_PaletteFade
     or a
     ret z
-    ld a, 0
-    ld [W_byte_C9CF], a
+    M_AuxJmp Banked_Map_ADVICE_UnloadSGBFiles
     ld a, $A
     ld [W_SystemSubState], a
     ret

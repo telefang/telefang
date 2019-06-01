@@ -63,7 +63,8 @@ PhoneConversation_SubStateCallOutFadeScreenIn:: ;State 0C 10 0D
     
     call $70C
     
-    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+    ld d, $C
+    call $0520
     
     jp System_ScheduleNextSubSubState
 
@@ -75,7 +76,8 @@ PhoneConversation_SubStateCallOutConvoScriptProcessing:: ;State 0C 10 0E
     
     ld c, $FE
     ld b, 1
-    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+    ld d, $C
+    call $0520
     
     jp System_ScheduleNextSubSubState
 
@@ -128,7 +130,8 @@ PhoneConversation_SubStateCallOutSwitchScriptProcessing:: ;State 0C 10 0F
 
 .queueMessage
     ld b, 1
-    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+    ld d, $C
+    call $0520
     ld a, $15
     ld [W_SystemSubSubState], a
     ret

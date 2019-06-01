@@ -236,7 +236,8 @@ CallsMenu_StateFadeInOutboundCall::
     ld [W_MainScript_TileBaseIdx], a
     call $70C
     
-    M_AuxJmp Banked_PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall
+    ld d, $C
+    call $0520
     jp System_ScheduleNextSubSubState
     
 ;State 0C 16 09

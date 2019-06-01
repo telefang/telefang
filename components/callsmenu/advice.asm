@@ -1,6 +1,26 @@
 INCLUDE "telefang.inc"
 
 SECTION "Calls Menu Advice Code 1", ROMX[$57D0], BANK[$1]
+PauseMenu_ADVICE_LoadSGBFilesInboundCall::
+    M_AdviceSetup
+
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+
+    call PauseMenu_ADVICE_CheckSGB
+    jp z, PauseMenu_ADVICE_LoadSGBFilesOutboundCall.return
+
+    ld hl, $8C00
+    ld b, $C0
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ld b, $68
+    call Zukan_ADVICE_TileLightColourReverse
+
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+
+    jr PauseMenu_ADVICE_LoadSGBFilesOutboundCall.extEntry
+
 LateDenjuu_ADVICE_LoadSGBFiles::
     M_AdviceSetup
 
@@ -82,21 +102,3 @@ PauseMenu_ADVICE_FixSGBSceneryPalette::
 
 .notfield
 	ret
-
-PauseMenu_ADVICE_RedrawIndicatorsForSGBOutboundCall::
-    M_AdviceSetup
-
-    ld d, $C
-    call $520
-
-    call PauseMenu_ADVICE_CheckSGB
-    jr z, .return
-
-    ld hl, $8FC0
-    ld b, $10
-    call Zukan_ADVICE_TileLowByteBlanketFill
-
-.return
-	
-    M_AdviceTeardown
-    ret
