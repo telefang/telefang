@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "CGB Palette Management Vars", WRAM0[$CA61]
-W_CGBPaletteScheduled:: ds 8
+W_CGBPaletteScheduled:: ds 5 ; Should be 8, but changed to avoid conflict with W_Cutscene_CutsceneImageIndexBuffer
 
 SECTION "CGB Palette Management Staging", WRAM0[$CAC8]
 W_CGBPaletteStaging:: ds 1
