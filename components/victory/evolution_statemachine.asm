@@ -5,7 +5,7 @@ Victory_EvolutionStateMachine::
 	ld a, [W_LateDenjuu_SubSubState]
 	ld hl, .table
 	call System_IndexWordList
-	jp [hl]
+	jp hl
 
 .table
 	dw Victory_SubStateDrawEvolutionScreen
