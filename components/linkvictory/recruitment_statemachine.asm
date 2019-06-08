@@ -20,7 +20,7 @@ LinkVictory_RecruitmentStateMachine::
 	ld a, [W_Battle_4thOrderSubState]
 	ld hl, .table
 	call System_IndexWordList
-	jp [hl]
+	jp hl
  
 .table
 	dw LinkVictory_SubStateRecruitmentQueueConnectionMessage

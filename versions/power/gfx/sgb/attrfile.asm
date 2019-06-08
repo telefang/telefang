@@ -22,3 +22,4 @@ SGB_AttrFileData::
     INCBIN "build/components/battle/main_screen.atf" ; 13
     INCBIN "build/components/battle/attack_menu.atf" ; 14
     INCBIN "build/components/map/dungeon.atf" ; 15
+    INCBIN "build/gfx/cutscene/antenna_tree_cutscene.atf" ; 16
