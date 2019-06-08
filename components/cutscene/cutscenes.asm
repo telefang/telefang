@@ -38,7 +38,7 @@ Cutscene_StateDrawScreen::
 .parameterIsValid
 	ld a, BANK(Cutscene_StateDrawScreen)
 	ld [W_PreviousBank], a
-	ld a, 0
+	xor a
 	ld [W_Cutscene_WaitTimer], a
 	ld a, [W_Cutscene_CutsceneImageIndexBuffer]
 	cp 7
@@ -63,15 +63,16 @@ Cutscene_StateDrawScreen::
 	add e
 	ld e, a
 	ld bc, 0
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld a, [W_Cutscene_CutsceneImageIndexBuffer]
 	ld e, $C0
 	add e
 	ld e, a
 	ld bc, 0
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
+	call Cutscene_ADVICE_LoadSGBFiles_AntennaTree
 
 .skipDraw
 	ld a, 0
@@ -328,8 +329,7 @@ Cutscene_StateFadeOutAndExitToOverworld::
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
-	ld a, 0
-	ld [W_byte_C9CF], a
+	M_AuxJmp Banked_Map_ADVICE_UnloadSGBFiles
 	ld a, $A
 	ld [W_SystemSubState], a
 	ret

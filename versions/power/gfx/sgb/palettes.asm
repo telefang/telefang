@@ -2,105 +2,113 @@ INCLUDE "components/sgb/palettes.inc"
 
 SECTION "SGB Palette Table", ROMX[$6BC8], BANK[3]
 SGB_PaletteData::
-    dSGB_Palette $7FFF, $4A52, $2522, 0
+
+	;Default
+    dSGB_Palette $7FFF, $4A52, $2522, 0 ; 00
     
     ;Title Screen
-    dSGB_Palette $7FFF, $3F9F, $223E, 0
-    dSGB_Palette $7FFF, $4256, $2571, 0
-    dSGB_Palette $7FFF, $66F4, $4A0D, 0
-    dSGB_Palette $7FFF, $529F, $295F, $001F
+    dSGB_Palette $7FFF, $3F9F, $223E, 0 ; 01
+    dSGB_Palette $7FFF, $4256, $2571, 0 ; 02
+    dSGB_Palette $7FFF, $66F4, $4A0D, 0 ; 03
+    dSGB_Palette $7FFF, $529F, $295F, $001F ; 04
+
+	;Antenna Tree Cutscene
+    dSGB_Palette $7FFF, $1619, $116D, $100 ; 05
+    dSGB_Palette $7FFF, $1619, $116D, $E5 ; 06
+    dSGB_Palette $7FFF, $26E, $1E0, $100 ; 07
+    dSGB_Palette $7FFF, $26E, $1E0, $E5 ; 08
     
     ;unused?
-    dSGB_Palette $7FFF, $2FB7, $12CD, 0
-    dSGB_Palette $7FFF, $3B3F, $2617,  $69
-    dSGB_Palette $7FFF, $7EBB, $6D75, $2045
-    dSGB_Palette $7FFF, $369F, $121F,  $69
-    dSGB_Palette $7FFF, $43F6, $36FB, 0
-    dSGB_Palette $7FFF, $4A7F, $297F,  $1D
-    dSGB_Palette $7FFF, $6318, $39CE, $842
-    dSGB_Palette $7FFF, $77B2, $6729, $5AC0
-    dSGB_Palette $7FFF, $223F,  $FB, 0
-    dSGB_Palette $7FFF, $7DA6, $6CC0, 0
-    dSGB_Palette $6FFF, $7DA6, $6CC0, 0
-    dSGB_Palette $7FFF, $421F, $180,  $10
-    dSGB_Palette $7FFF, $7E4C, $180, $4040
-    dSGB_Palette $7FFF, $239F, $180, $108
-    dSGB_Palette $7FFF, $3391, $180, $160
-    dSGB_Palette $7FFF, $2E7D, $180,  $CC
-    dSGB_Palette $7FFF, $6DFB, $180, $2048
-    dSGB_Palette $7FFF, $7EE4, $180, $3CE0
-    dSGB_Palette $7FFF, $56B5, $180, $14A5
-    dSGB_Palette $7FFF, $6A7F, $180, $142A
-    dSGB_Palette $7FFF, $4AFF, $180, $10CC
-    dSGB_Palette $7FFF, $5703, $180, $1100
-    dSGB_Palette $7FFF, $31F, $180,  $C8
-    dSGB_Palette $7FFF, $121F, $180,  $8B
-    dSGB_Palette $7FFF, $56F2, $180, $1904
-    dSGB_Palette $7FFF, $5A52, $180, $20A5
-    dSGB_Palette $7FFF, $4A56, $180, $14A8
-    dSGB_Palette $7FFF, $3A78, $D72, $487
-    dSGB_Palette $7FFF, $2F18, $1231, $4C6
-    dSGB_Palette $7FFF, $46B5, $25AD, $CA5
-    dSGB_Palette $7FFF, $4276, $298E, $487
-    dSGB_Palette $7FFF, $3B52, $AA9, $103
-    dSGB_Palette $7FFF, $32D2, $1CA,  $A4
-    dSGB_Palette $7FFF, $5ACF, $39C8, $14A3
-    dSGB_Palette $7FFF, $427B, $1D77, $889
-    dSGB_Palette $7FFF, $726E, $6564, $2881
-    dSGB_Palette $7FFF, $628C, $45A0, $18A0
-    dSGB_Palette $7FFF, $4E19, $28D4, $1048
-    dSGB_Palette $7FFF, $23F, $5484, 0
-    dSGB_Palette $7FFF, $5A73, $109F, 0
-    dSGB_Palette $7FFF, $5A73, $3D6B, 0
-    dSGB_Palette $7FFF, $7E31, $5484, 0
-    dSGB_Palette $7FFF, $29F, $11F,  $52
-    dSGB_Palette $7FFF, $421F, $18D8,  $10
-    dSGB_Palette $7FFF, $7E4C, $60E4, $4040
-    dSGB_Palette $7FFF, $239F, $273, $108
-    dSGB_Palette $7FFF, $3391, $E63, $160
-    dSGB_Palette $7FFF, $2E7D, $577,  $CC
-    dSGB_Palette $7FFF, $6DFB, $40F0, $2048
-    dSGB_Palette $7FFF, $7EE4, $61C0, $3CE0
-    dSGB_Palette $7FFF, $56B5, $318C, $14A5
-    dSGB_Palette $7FFF, $6A7F, $2CD8, $142A
-    dSGB_Palette $7FFF, $4AFF, $21FF, $10CC
-    dSGB_Palette $7FFF, $5703, $29C5, $1100
-    dSGB_Palette $7FFF, $31F, $215,  $C8
-    dSGB_Palette $7FFF, $121F, $119,  $8B
-    dSGB_Palette $7FFF, $56F2, $31CA, $1904
-    dSGB_Palette $7FFF, $5A52, $354A, $20A5
-    dSGB_Palette $7FFF, $4A56, $294D, $14A8
-    dSGB_Palette $7FFF, $211F,  $12, 0
-    dSGB_Palette $7FFF, $3908, $2063, 0
-    dSGB_Palette $7FFF, $351, $1C1F, 0
-    dSGB_Palette $7FFF, $25F,  $18, 0
-    dSGB_Palette $7FFF, $6B1F, $361F, 0
-    dSGB_Palette $7FFF, $7FB4, $7E80, 0
-    dSGB_Palette $7FFF, $53FF, $339, 0
-    dSGB_Palette $7FFF, $63ED, $4B20, 0
-    dSGB_Palette $7FFF, $5B7F, $2E56, 0
-    dSGB_Palette $7FFF, $7F3C, $61B4, 0
-    dSGB_Palette $7FFF, $473F, $4A3F, 0
-    dSGB_Palette $7FFF, $5FDC, $5294, 0
-    dSGB_Palette $7FFF, $63DB, $5692, 0
-    dSGB_Palette $7FFF, $67DA, $5A90, 0
-    dSGB_Palette $7FFF, $67DA, $5E6E, 0
-    dSGB_Palette $7FFF, $6BD9, $626C, 0
-    dSGB_Palette $7FFF, $6FD9, $666A, 0
-    dSGB_Palette $7FFF, $73D8, $6A68, 0
-    dSGB_Palette $7FFF, $73D7, $6E46, 0
-    dSGB_Palette $7FFF, $77D7, $7244, 0
-    dSGB_Palette $7FFF, $7BD6, $7642, 0
-    dSGB_Palette $7FFF, $7FF6, $7A40, 0
-    dSGB_Palette $7FFF, $7BF6, $7240, 0
-    dSGB_Palette $7FFF, $77F6, $6A41, 0
-    dSGB_Palette $7FFF, $73F6, $6242, 0
-    dSGB_Palette $7FFF, $6FF6, $5A63, 0
-    dSGB_Palette $7FFF, $6FF6, $5263, 0
-    dSGB_Palette $7FFF, $6BF6, $4A64, 0
-    dSGB_Palette $7FFF, $67F6, $4265, 0
-    dSGB_Palette $7FFF, $63F6, $3A86, 0
-    dSGB_Palette $7FFF, $5FF6, $3287, 0
-    dSGB_Palette $7FFF, $35BB, $295B,  $1B
-    dSGB_Palette $7FFF, $628F, $3125, 0
-    dSGB_Palette $7FFF, $61D3, $40AB, 0
+    dSGB_Palette $7FFF, $43F6, $36FB, 0 ; 09
+    dSGB_Palette $7FFF, $4A7F, $297F,  $1D ; 0A
+    dSGB_Palette $7FFF, $6318, $39CE, $842 ; 0B
+    dSGB_Palette $7FFF, $77B2, $6729, $5AC0 ; 0C
+    dSGB_Palette $7FFF, $223F,  $FB, 0 ; 0D
+    dSGB_Palette $7FFF, $7DA6, $6CC0, 0 ; 0E
+    dSGB_Palette $6FFF, $7DA6, $6CC0, 0 ; 0F
+    dSGB_Palette $7FFF, $421F, $180,  $10 ; 10
+    dSGB_Palette $7FFF, $7E4C, $180, $4040 ; 11
+    dSGB_Palette $7FFF, $239F, $180, $108 ; 12
+    dSGB_Palette $7FFF, $3391, $180, $160 ; 13
+    dSGB_Palette $7FFF, $2E7D, $180,  $CC ; 14
+    dSGB_Palette $7FFF, $6DFB, $180, $2048 ; 15
+    dSGB_Palette $7FFF, $7EE4, $180, $3CE0 ; 16
+    dSGB_Palette $7FFF, $56B5, $180, $14A5 ; 17
+    dSGB_Palette $7FFF, $6A7F, $180, $142A ; 18
+    dSGB_Palette $7FFF, $4AFF, $180, $10CC ; 19
+    dSGB_Palette $7FFF, $5703, $180, $1100 ; 1A
+    dSGB_Palette $7FFF, $31F, $180,  $C8 ; 1B
+    dSGB_Palette $7FFF, $121F, $180,  $8B ; 1C
+    dSGB_Palette $7FFF, $56F2, $180, $1904 ; 1D
+    dSGB_Palette $7FFF, $5A52, $180, $20A5 ; 1E
+    dSGB_Palette $7FFF, $4A56, $180, $14A8 ; 1F
+    dSGB_Palette $7FFF, $3A78, $D72, $487 ; 20
+    dSGB_Palette $7FFF, $2F18, $1231, $4C6 ; 21
+    dSGB_Palette $7FFF, $46B5, $25AD, $CA5 ; 22
+    dSGB_Palette $7FFF, $4276, $298E, $487 ; 23
+    dSGB_Palette $7FFF, $3B52, $AA9, $103 ; 24
+    dSGB_Palette $7FFF, $32D2, $1CA,  $A4 ; 25
+    dSGB_Palette $7FFF, $5ACF, $39C8, $14A3 ; 26
+    dSGB_Palette $7FFF, $427B, $1D77, $889 ; 27
+    dSGB_Palette $7FFF, $726E, $6564, $2881 ; 28
+    dSGB_Palette $7FFF, $628C, $45A0, $18A0 ; 29
+    dSGB_Palette $7FFF, $4E19, $28D4, $1048 ; 2A
+    dSGB_Palette $7FFF, $23F, $5484, 0 ; 2B
+    dSGB_Palette $7FFF, $5A73, $109F, 0 ; 2C
+    dSGB_Palette $7FFF, $5A73, $3D6B, 0 ; 2D
+    dSGB_Palette $7FFF, $7E31, $5484, 0 ; 2E
+
+    ;BomBom Logo
+    dSGB_Palette $7FFF, $29F, $11F,  $52 ; 2F
+
+    ;unused?
+    dSGB_Palette $7FFF, $421F, $18D8,  $10 ; 30
+    dSGB_Palette $7FFF, $7E4C, $60E4, $4040 ; 31
+    dSGB_Palette $7FFF, $239F, $273, $108 ; 32
+    dSGB_Palette $7FFF, $3391, $E63, $160 ; 33
+    dSGB_Palette $7FFF, $2E7D, $577,  $CC ; 34
+    dSGB_Palette $7FFF, $6DFB, $40F0, $2048 ; 35
+    dSGB_Palette $7FFF, $7EE4, $61C0, $3CE0 ; 36
+    dSGB_Palette $7FFF, $56B5, $318C, $14A5 ; 37
+    dSGB_Palette $7FFF, $6A7F, $2CD8, $142A ; 38
+    dSGB_Palette $7FFF, $4AFF, $21FF, $10CC ; 39
+    dSGB_Palette $7FFF, $5703, $29C5, $1100 ; 3A
+    dSGB_Palette $7FFF, $31F, $215,  $C8 ; 3B
+    dSGB_Palette $7FFF, $121F, $119,  $8B ; 3C
+    dSGB_Palette $7FFF, $56F2, $31CA, $1904 ; 3D
+    dSGB_Palette $7FFF, $5A52, $354A, $20A5 ; 3E
+    dSGB_Palette $7FFF, $4A56, $294D, $14A8 ; 3F
+    dSGB_Palette $7FFF, $211F,  $12, 0 ; 40
+    dSGB_Palette $7FFF, $3908, $2063, 0 ; 41
+    dSGB_Palette $7FFF, $351, $1C1F, 0 ; 42
+    dSGB_Palette $7FFF, $25F,  $18, 0 ; 43
+    dSGB_Palette $7FFF, $6B1F, $361F, 0 ; 44
+    dSGB_Palette $7FFF, $7FB4, $7E80, 0 ; 45
+    dSGB_Palette $7FFF, $53FF, $339, 0 ; 46
+    dSGB_Palette $7FFF, $63ED, $4B20, 0 ; 47
+    dSGB_Palette $7FFF, $5B7F, $2E56, 0 ; 48
+    dSGB_Palette $7FFF, $7F3C, $61B4, 0 ; 49
+    dSGB_Palette $7FFF, $473F, $4A3F, 0 ; 4A
+    dSGB_Palette $7FFF, $5FDC, $5294, 0 ; 4B
+    dSGB_Palette $7FFF, $63DB, $5692, 0 ; 4C
+    dSGB_Palette $7FFF, $67DA, $5A90, 0 ; 4D
+    dSGB_Palette $7FFF, $67DA, $5E6E, 0 ; 4E
+    dSGB_Palette $7FFF, $6BD9, $626C, 0 ; 4F
+    dSGB_Palette $7FFF, $6FD9, $666A, 0 ; 50
+    dSGB_Palette $7FFF, $73D8, $6A68, 0 ; 51
+    dSGB_Palette $7FFF, $73D7, $6E46, 0 ; 52
+    dSGB_Palette $7FFF, $77D7, $7244, 0 ; 53
+    dSGB_Palette $7FFF, $7BD6, $7642, 0 ; 54
+    dSGB_Palette $7FFF, $7FF6, $7A40, 0 ; 55
+    dSGB_Palette $7FFF, $7BF6, $7240, 0 ; 56
+    dSGB_Palette $7FFF, $77F6, $6A41, 0 ; 57
+    dSGB_Palette $7FFF, $73F6, $6242, 0 ; 58
+    dSGB_Palette $7FFF, $6FF6, $5A63, 0 ; 59
+    dSGB_Palette $7FFF, $6FF6, $5263, 0 ; 5A
+    dSGB_Palette $7FFF, $6BF6, $4A64, 0 ; 5B
+    dSGB_Palette $7FFF, $67F6, $4265, 0 ; 5C
+    dSGB_Palette $7FFF, $63F6, $3A86, 0 ; 5D
+    dSGB_Palette $7FFF, $5FF6, $3287, 0 ; 5E
+    dSGB_Palette $7FFF, $35BB, $295B,  $1B ; 5F
+    dSGB_Palette $7FFF, $628F, $3125, 0 ; 60
+    dSGB_Palette $7FFF, $61D3, $40AB, 0 ; 61
