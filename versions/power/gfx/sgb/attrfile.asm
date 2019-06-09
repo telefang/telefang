@@ -23,3 +23,6 @@ SGB_AttrFileData::
     INCBIN "build/components/battle/attack_menu.atf" ; 14
     INCBIN "build/components/map/dungeon.atf" ; 15
     INCBIN "build/gfx/cutscene/antenna_tree_cutscene.atf" ; 16
+    INCBIN "build/gfx/cutscene/shigeki_connected.atf" ; 17
+    INCBIN "build/gfx/cutscene/waaaaahh.atf" ; 18
+    ; The highest attrfile number is $2C.
