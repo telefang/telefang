@@ -72,7 +72,7 @@ Cutscene_StateDrawScreen::
 	ld bc, 0
 	xor a
 	call Banked_RLEDecompressAttribsTMAP0
-	call Cutscene_ADVICE_LoadSGBFiles_AntennaTree
+	call Cutscene_ADVICE_LoadSGBFiles
 
 .skipDraw
 	ld a, 0
@@ -112,14 +112,13 @@ Cutscene_StateDrawScreen::
 	jp System_ScheduleNextSubState
 
 .weAreConnected
-	ld bc, 7
-	call Banked_LoadMaliasGraphics
-	ld bc, 8
-	call Banked_LoadMaliasGraphics
 	ld bc, 0
 	ld e, $3F
 	ld a, 0
 	call Banked_RLEDecompressTMAP0
+	call WeAreConnected_ADVICE_LoadSGBFiles
+	ld bc, 8
+	call Banked_LoadMaliasGraphics
 	ld bc, 0
 	ld e, $3F
 	ld a, 0
@@ -164,6 +163,10 @@ Cutscene_StateDrawScreen::
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
 	ret
+
+	nop
+	nop
+	nop
 
 Cutscene_StateFadeInPrepare::
 	ld bc, 0

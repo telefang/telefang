@@ -96,7 +96,7 @@ WeAreConnected_StateEarthquake::
 
 .fadeComplete
 	add sp, 2
-	ld a, 0
+	xor a
 	ld [W_ShadowREG_SCY], a
 	ld a, [W_Cutscene_SubSubState]
 	inc a
@@ -110,8 +110,7 @@ WeAreConnected_StateEarthquake::
 	ld hl, $9800
 	ld a, 1
 	call LCDC_InitAttributesSquare
-	ld b, 0
-	ld c, $98
+	ld bc, $98
 	call WeAreConnected_PrepareForTextRendering
 	ld a, BANK(WeAreConnected_StateEarthquake)
 	ld [W_PreviousBank], a
@@ -125,8 +124,8 @@ WeAreConnected_StateEarthquake::
 	call CGBLoadObjectPaletteBanked
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
-	call $5BB5
-	ret
+	call WeAreConnected_ADVICE_LoadSGBFiles_Waaaaahh
+	jp $5BB5
 
 WeAreConnected_StateWaaaaahh::
 	call $5C2B

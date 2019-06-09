@@ -18,13 +18,15 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $26E, $1E0, $100 ; 07
     dSGB_Palette $7FFF, $26E, $1E0, $E5 ; 08
     
+    ;We Are Connected Cutscene
+    dSGB_Palette $7FFF, $A45, $5A2, $2ECD ; 09
+    dSGB_Palette $7FFF, $A45, $5A2, $100 ; 0A
+    dSGB_Palette $7FFF, $A45, $5A2, 0 ; 0B
+    dSGB_Palette $7FFF, $319A, $85A, 0 ; 0C
+    dSGB_Palette $7FFF, $299F, $299F, 0 ; 0D
+    dSGB_Palette $7FFF, $7E86, $7E86, 0 ; 0E
+
     ;unused?
-    dSGB_Palette $7FFF, $43F6, $36FB, 0 ; 09
-    dSGB_Palette $7FFF, $4A7F, $297F,  $1D ; 0A
-    dSGB_Palette $7FFF, $6318, $39CE, $842 ; 0B
-    dSGB_Palette $7FFF, $77B2, $6729, $5AC0 ; 0C
-    dSGB_Palette $7FFF, $223F,  $FB, 0 ; 0D
-    dSGB_Palette $7FFF, $7DA6, $6CC0, 0 ; 0E
     dSGB_Palette $6FFF, $7DA6, $6CC0, 0 ; 0F
     dSGB_Palette $7FFF, $421F, $180,  $10 ; 10
     dSGB_Palette $7FFF, $7E4C, $180, $4040 ; 11

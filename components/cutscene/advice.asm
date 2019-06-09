@@ -35,7 +35,7 @@ Cutscene_ADVICE_TileLightColourClear::
 	ret
 
 Cutscene_ADVICE_LoadSGBFiles::
-	call Zukan_ADVICE_CheckSGB
+	call Cutscene_ADVICE_CheckSGB
 	ret z
 	ld a, [W_Cutscene_CutsceneImageIndexBuffer]
 	or a
@@ -105,7 +105,46 @@ Cutscene_ADVICE_LoadSGBFiles_AntennaTree::
 	db $4B, $4C, $4D, $4E, $4F, $50
 	db $63, $64, $65, $66, $6C, $6D
 	db $6E, $84, $85, $86, $8C, $8D
+	
+WeAreConnected_ADVICE_LoadSGBFiles::
+	call Cutscene_ADVICE_CheckSGB
+	jr nz, .isSGB
+	ld bc, 7
+	jp Banked_LoadMaliasGraphics
+
+.isSGB
+	ld a, BANK(CutsceneConnected1SGBGfx)
+	ld hl, $9000
+	ld de, CutsceneConnected1SGBGfx
+	ld bc, $800
+	call Banked_LCDC_LoadTiles
+	
+	ld hl, $9910
+	xor a
+	call vmempoke
+	
+	ld hl, $9943
+	ld a, $4F
+	call vmempoke
+	
+	ld a, $17
+	ld bc, $90A
+	ld de, $B0C
+	jp Banked_SGB_ConstructPaletteSetPacket
+	
+WeAreConnected_ADVICE_LoadSGBFiles_Waaaaahh::
+	call Cutscene_ADVICE_CheckSGB
+	ret z
+	ld a, $18
+	ld bc, $D0E
+	ld d, b
+	ld e, c
+	jp Banked_SGB_ConstructPaletteSetPacket
 
 SECTION "Cutscene - Antenna Tree SGB Overlay", ROMX[$42C0], BANK[$77]
 CutsceneAntennaTreeSGBOverlayGfx::
 	INCBIN "build/gfx/cutscene/antenna_tree_sgb_overlay.2bpp"
+
+SECTION "Cutscene - We Are Connected SGB Tiles", ROMX[$7600], BANK[$62]
+CutsceneConnected1SGBGfx::
+	INCBIN "build/gfx/cutscene/connected1_sgb.2bpp"
