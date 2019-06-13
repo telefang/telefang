@@ -26,17 +26,22 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $4F5E, $10BF, 0 ; 0D
     dSGB_Palette $7FFF, $4B1F, $7D40, 0 ; 0E
 
+    ;One Of My Soldiers Cutscene
+    dSGB_Palette $7FFF, $275E, $1E9F, $22 ; 0F
+	
+    dSGB_Palette $7FFF, $190A, $8A8, $22 ; 10
+    dSGB_Palette $7FFF, $190A, $24C3, $22 ; 11
+    dSGB_Palette $7FFF, $24C3, $1880, $22 ; 12
+	
+    dSGB_Palette $7FFF, $3214, $1150, $22 ; 13
+    dSGB_Palette $7FFF, $3214, $4986, $22 ; 14
+    dSGB_Palette $7FFF, $4986, $3100, $22 ; 15
+	
+    dSGB_Palette $7FFF, $535F, $1A18, $22 ; 16
+    dSGB_Palette $7FFF, $535F, $7649, $22 ; 17
+    dSGB_Palette $7FFF, $7649, $5180, $22 ; 18
+
     ;unused?
-    dSGB_Palette $6FFF, $7DA6, $6CC0, 0 ; 0F
-    dSGB_Palette $7FFF, $421F, $180,  $10 ; 10
-    dSGB_Palette $7FFF, $7E4C, $180, $4040 ; 11
-    dSGB_Palette $7FFF, $239F, $180, $108 ; 12
-    dSGB_Palette $7FFF, $3391, $180, $160 ; 13
-    dSGB_Palette $7FFF, $2E7D, $180,  $CC ; 14
-    dSGB_Palette $7FFF, $6DFB, $180, $2048 ; 15
-    dSGB_Palette $7FFF, $7EE4, $180, $3CE0 ; 16
-    dSGB_Palette $7FFF, $56B5, $180, $14A5 ; 17
-    dSGB_Palette $7FFF, $6A7F, $180, $142A ; 18
     dSGB_Palette $7FFF, $4AFF, $180, $10CC ; 19
     dSGB_Palette $7FFF, $5703, $180, $1100 ; 1A
     dSGB_Palette $7FFF, $31F, $180,  $C8 ; 1B
