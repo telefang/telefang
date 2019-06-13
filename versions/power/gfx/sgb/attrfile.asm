@@ -25,4 +25,5 @@ SGB_AttrFileData::
     INCBIN "build/gfx/cutscene/antenna_tree_cutscene.atf" ; 16
     INCBIN "build/gfx/cutscene/shigeki_connected.atf" ; 17
     INCBIN "build/gfx/cutscene/waaaaahh.atf" ; 18
+    INCBIN "build/gfx/cutscene/kai.atf" ; 19
     ; The highest attrfile number is $2C.

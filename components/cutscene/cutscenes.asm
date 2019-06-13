@@ -252,9 +252,10 @@ Cutscene_StateFadeInAndAnimate::
 	ld a, [W_Cutscene_ScrollAccelerator]
 	or a
 	jr nz, .stillScrolling
+	call Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers_ShowKai
+	ret nz
 
-	ld b, 0
-	ld c, $A1
+	ld bc, $A1
 	ld hl, W_MainScript_TilePtr
 	ld a, $C
 	ld [hli], a
@@ -281,8 +282,8 @@ Cutscene_StateFadeInAndAnimate::
 .stillScrolling
 	ld a, [W_MainScript_State]
 	cp 9
-	jr nz, .waitForNextFrame
-	ld a, 0
+	ret nz
+	xor a
 	ld [W_MainScript_TextStyle], a
 	jr .waitForInput
 
@@ -293,8 +294,7 @@ Cutscene_StateFadeInAndAnimate::
 	ld a, [W_MainScript_State]
 	or a
 	jr nz, .textPlz
-	ld b, 0
-	ld c, $A1
+	ld bc, $A1
 	ld a, 2
 	ld [W_MainScript_TextStyle], a
 	ld a, $D0
@@ -316,15 +316,15 @@ Cutscene_StateFadeInAndAnimate::
 	jr nc, .nextState
 	ldh a, [H_JPInput_Changed]
 	and M_JPInput_A + M_JPInput_B
-	jr z, .waitForNextFrame
+	ret z
 
 .nextState
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
 	jp System_ScheduleNextSubState
 
-.waitForNextFrame
-	ret
+	nop
+	nop
 
 SECTION "Cutscene States 2", ROMX[$5D17], BANK[$29]
 Cutscene_StateFadeOutAndExitToOverworld::

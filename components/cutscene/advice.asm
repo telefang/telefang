@@ -1,5 +1,8 @@
 INCLUDE "telefang.inc"
 
+SECTION "Cutscene Kai SGB Reveal State", WRAM0[$C7E0]
+W_Cutscene_KaiSGBRevealState:: ds 1
+
 SECTION "Cutscene SGB Colour Advice", ROMX[$7A50], BANK[$29]
 Cutscene_ADVICE_CheckSGB::
 	ld a, [W_GameboyType]
@@ -41,7 +44,7 @@ Cutscene_ADVICE_LoadSGBFiles::
 	or a
 	jr z, Cutscene_ADVICE_LoadSGBFiles_AntennaTree
 	dec a 
-	jp z, .placeholderJumpPoint
+	jp z, Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers
 	dec a 
 	jp z, .placeholderJumpPoint
 
@@ -105,7 +108,91 @@ Cutscene_ADVICE_LoadSGBFiles_AntennaTree::
 	db $4B, $4C, $4D, $4E, $4F, $50
 	db $63, $64, $65, $66, $6C, $6D
 	db $6E, $84, $85, $86, $8C, $8D
+
+Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers::
+	ld hl, $9874
+	ld de, $D14
+	ld b, $B
+
+.row
+	ld c, 3
+
+.col
+	di
+
+.wfb
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+	ld a, d
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ei
+	dec c
+	jr nz, .col
+	ld a, l
+	add e
+	ld l, a
+	dec b
+	jr nz, .row
+
+	xor a
+	ld [W_Cutscene_KaiSGBRevealState], a
+	ld bc, $F10
+	ld de, $1112
+	jp Banked_SGB_ConstructPaletteSetPacket
 	
+Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers_ShowKai::
+	call Cutscene_ADVICE_CheckSGB
+	ret z
+
+	ld a, [W_Cutscene_KaiSGBRevealState]
+	or a
+	jr z, .stageA
+	cp 4
+	jr z, .stageB
+	cp 8
+	jr z, .stageC
+	cp 9
+	jr z, .stageD
+	jr .nextStage
+
+.stageA
+	ld c, $19
+	call Banked_SGB_ConstructATFSetPacket
+	ld e, $C1
+	xor a
+	ld b, a
+	ld c, a
+	call Banked_RLEDecompressTMAP0
+	jr .nextStage
+
+.stageB
+	ld a, $19
+	ld bc, $F13
+	ld de, $1415
+	call Banked_SGB_ConstructPaletteSetPacket
+	jr .nextStage
+	
+.stageC
+	ld a, $19
+	ld bc, $F16
+	ld de, $1718
+	call Banked_SGB_ConstructPaletteSetPacket
+
+.nextStage
+	ld a, [W_Cutscene_KaiSGBRevealState]
+	inc a
+	ld [W_Cutscene_KaiSGBRevealState], a
+	or a
+	ret
+
+.stageD
+	xor a
+	ret
+
 WeAreConnected_ADVICE_LoadSGBFiles::
 	call Cutscene_ADVICE_CheckSGB
 	jr nz, .isSGB
