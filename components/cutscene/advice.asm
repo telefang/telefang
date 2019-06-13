@@ -138,6 +138,10 @@ Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers::
 	dec b
 	jr nz, .row
 
+	ld hl, $9893
+	ld a, d
+	call vmempoke
+
 	xor a
 	ld [W_Cutscene_KaiSGBRevealState], a
 	ld bc, $F10
