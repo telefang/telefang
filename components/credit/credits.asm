@@ -31,10 +31,8 @@ Credits_InitiateFirstScreen::
 	call CallBankedFunction_int
 	call Credits_ParseAndRenderText
 	call $6145
+	call Credits_ADVICE_ResetSGBColours
 	jp System_ScheduleNextSubState
-	nop
-	nop
-	nop
 	nop
 	
 Credits_ADVICE_VWFNextTile:
@@ -94,28 +92,23 @@ Credits_ParseAndRenderText::
 	ld [W_Credits_TextAddressBuffer], a
 	xor a
 	ret
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
+
+Credits_ADVICE_ResetSGBColours::
+	ld a, [W_SGB_DetectSuccess]
+	or a
+	ret z
+
+	ld a, [W_GameboyType]
+	cp M_BIOS_CPU_CGB
+	ret z
+
+	xor a
+	ld b, a
+	ld c, a
+	ld d, a
+	ld e, a
+	ld [W_MainScript_TextStyle], a
+	jp Banked_SGB_ConstructPaletteSetPacket
 
 SECTION "Credits - Draw Character", ROMX[$622D], BANK[$E]
 Credits_DrawCharacter::
