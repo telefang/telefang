@@ -63,7 +63,7 @@ Cutscene_SubStateDrawRecruitmentScreen::
 	call Banked_LoadMaliasGraphics
 	ld bc, 9
 	call Banked_LoadMaliasGraphics
-	ld bc, E
+	ld bc, $E
 	call Banked_CGBLoadBackgroundPalette
 	ld a, $28
 	call PauseMenu_CGBStageFlavorPalette
