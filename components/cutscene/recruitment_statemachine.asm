@@ -59,7 +59,7 @@ Cutscene_SubStateRecruitmentFadeOutFromOverworld::
 	ret 
 
 Cutscene_SubStateDrawRecruitmentScreen::
-	ld bc, 16
+	ld bc, $16
 	call Banked_LoadMaliasGraphics
 	ld bc, 9
 	call Banked_LoadMaliasGraphics
