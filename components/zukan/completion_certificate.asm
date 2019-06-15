@@ -12,7 +12,7 @@ Certificate_StateDrawScreen::
 	ld [$C917], a
 	call Sound_IndexMusicSetBySong
 	ld [W_Sound_NextBGMSelect], a
-	ld a, 0
+	xor a
 	ld [W_Cutscene_WaitTimer], a
 	ld a, BANK(Certificate_StateDrawScreen)
 	ld [W_PreviousBank], a
@@ -31,23 +31,24 @@ Certificate_StateDrawScreen::
 	ld a, BANK(Certificate_StateDrawScreen)
 	ld [W_PreviousBank], a
 
-	ld a, 0
+	xor a
 	ldh [REG_VBK], a
 	ld de, Zukan_CompletionCertificateTmap
 	ld hl, $9800
-	ld b, $12
-	ld c, $14
+	ld bc, $1214
 	call $3410
 
+	call Cutscene_ADVICE_CheckGBC
+	jr nz, .notGBC
 	ld a, 1
 	ldh [REG_VBK], a
 	ld de, $78EC
 	ld hl, $9800
-	ld b, $12
-	ld c, $14
+	ld bc, $1214
 	call $3410
 
-	ld a, 0
+.notGBC
+	xor a
 	ldh [REG_VBK], a
 	ld a, BANK(Certificate_StateDrawScreen)
 	ld [W_PreviousBank], a
