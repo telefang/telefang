@@ -359,7 +359,7 @@ Auf geht's! Telefang!<*2>",,
 <&0xccc0>",,
 0x11414e,"<&0xca53> の <&0xc9e1>
 から デンワが かかってきた!<*3>",Got a call from <&0xca53>'s <&0xcca3>!<*3>,,Einen Anruf von <&0xca53>s <&0xcca3>!<*3>,,
-0x114150,とびらはかたくとざされている。,The door is closed tightly.,,Die Tür ist fest verschlossen.,,
+0x114150,とびらはかたくとざされている。,The door is shut tight.,,Die Tür ist fest verschlossen.,,
 0x114152,<S10>......<S30>.<S1>いらない。,<S10>......<S30>.<S1>No thanks.,,"<S10>......<S30>.<S1>Nein, danke.",,
 0x114154,"<&0xca53> を
 <&0xc9e1> ヘプレゼントした",You gave <&0xcca3> the <&0xd6b1>.,,You gibst <&0xcca3> das <&0xd6b1>.,,

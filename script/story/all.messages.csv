@@ -2673,11 +2673,12 @@ in front of me, I guess?","I dunno! There's a huge lake in front of me, I guess?
 that vast lake there is
 <bold>Paparouna Lake<normal>.
 The lake is supposedly
-teeming with fish – perhaps
-you can indulge in
-a spot of fishing?","Aha! From what I gather, that vast lake there is <bold>Paparouna Lake<normal>.
-The lake is supposedly teeming with fish – perhaps you can indulge in
-a spot of fishing?",
+teeming with fish –
+perhaps you can indulge
+in a spot of fishing?","Aha! From what I gather, that vast lake there is <bold>Paparouna Lake<normal>.
+The lake is supposedly teeming with fish –
+perhaps you can indulge
+in a spot of fishing?",
 0x138056,"おや あまリみかけない
 かおだね
 この みずうみに くるのは
@@ -2688,10 +2689,9 @@ visiting this lake?","Oho! There's a face I haven't seen before!
 Is this your first time visiting this lake?",
 0x138058,"おう はじめてここにきたんだ
 おっさんは ここで なにを
-してるんだ?","Yeah, I've never been here
-before!
+してるんだ?","Yeah, first time!
 What are you up to,
-gramps?","Yeah, I've never been here before!
+gramps?","Yeah, first time!
 What are you up to, gramps?",
 0x13805a,"ワシか?
 ワシは 『クラフトはかせ』
@@ -3476,11 +3476,11 @@ you can return to Iris.
 East of Iris lies a tunnel,
 through which you can go to
 Toulipa Village.
-I'm depending on you!","Using the Antenna Tree
+I'm leaving it up to you!","Using the Antenna Tree
 in your vicinity,
 you can return to Iris.
 East of Iris lies a tunnel, through which you can go to Toulipa Village.
-I'm depending on you!","It's not a shrine – it's one of those cave-looking things.
+I'm leaving it up to you!","It's not a shrine – it's one of those cave-looking things.
 "
 #######,Toulipa Village story,,,
 0x138122,"やっと ニンゲンにあえた!
@@ -3764,10 +3764,9 @@ Legends exist for a reason, oh yes, they do!",
 おきてるって きいて
 ここに きたんだけど?","Hey! What's happening in this
 village?
-I'm here because I heard
-something fishy was going
-on.","Hey! What's happening in this village?
-I'm here because I heard something fishy was going on.",
+I heard something fishy was
+going on here.","Hey! What's happening in this village?
+I heard something fishy was going on here.",
 0x13816c,あぁ こまった こまった,"Darn, this is a tight spot,
 a tight spot indeed...","Darn, this is a tight spot,
 a tight spot indeed...",
@@ -3881,10 +3880,10 @@ your business here?",You there! Human! What is your business here?,
 フラウラむらの デンジュウに
 たのまれて このやまにきたんだ
 オマエたちは ここで なにを
-してるんだ?","The villagers of Flaoura
-asked me to come here!
+してるんだ?","I was asked to come here by
+the villagers of Fraoula!
 What is YOUR business
-here?",The villagers of Flaoura asked me to come here! What is YOUR business here?,
+here?",I was asked to come here by the villagers of Fraoula! What is YOUR business here?,
 0x13818e,"オレたちは ここで
 アクマデンジュウの ふういんが
 とけないように だいだい
@@ -3974,9 +3973,9 @@ I'll be careful!","Thanks for looking out!
 I'll be careful!",
 0x1381a4,"なんだ オマエは....
 みたことがない デンジュウだな","What are... you...?
-I ain't ever seen a
+I've never laid eyes on a
 Denjuu like this before.","What are... you...?
-I ain't ever seen a
+I've never laid eyes on a
 Denjuu like this before.",
 0x1381a6,"オレは ニンゲンだ!
 <&name>だ!","I'm a human!
@@ -3990,12 +3989,12 @@ Call me <&name>!",
 ここになにを しにきたのだ
 ワタシの カクセイの ジャマを
 するな....","""Hyoo-mun""? This is the
-first I hear of this
-species. I suppose the world
+first I hear of your
+kind. I suppose the world
 changes in 400 years.
 What is your business with
 me? You'd be wise not to
-disturb my awakening.","""Hyoo-mun""? This is the first I hear of this species. I suppose the world changes in 400 years.
+disturb my awakening.","""Hyoo-mun""? This is the first I hear of your kind. I suppose the world changes in 400 years.
 What is your business with me? You'd be wise not to disturb my awakening.",
 0x1381aa,"おめざめちゅうの ところを 
 わるいんだけど もういっかい
@@ -4014,25 +4013,27 @@ I am the one who long ago
 used the Trees of Life to
 bring terror and dread
 upon the Denjuu World.
-Do you believe that
+Do you truly believe that
 someone as puny as you
-could seal me up again?","Hmph... Ha... Hahahahaaa!
-I am the one who long ago used the Trees of Life to bring terror and dread upon the Denjuu World.
-Do you believe that someone as puny as you could seal me up again?",
+could seal me away again?","Hmph... Ha... Hahahahaaa!
+I am he who long ago
+used the Trees of Life to bring terror and dread upon the Denjuu World.
+Do you truly believe that someone as puny as you could seal me away again?",
 0x1381ae,"『いのちのき』?
-なんだよそれは...?","""Trees of Life""? What's
-that...?","""Trees of Life""? What's that...?",
+なんだよそれは...?","""Trees of Life""?
+What's that...?","""Trees of Life""?
+What's that...?",
 0x1381b0,"ふ...オマエには かんけいの
 ない はなしだ
 さて...おしゃベリはここまでだこれいじょう ワタシの
 ジャマをするならば
 ようしゃはしない!","Hmph. It matters not to the
 likes of you.
-The idle chatter ends here.
-If you insist on being
+This idle chatter ends here.
+If you so insist on being
 in my way, I shall show you
 no mercy!","Hmph. It matters not to the likes of you.
-The idle chatter ends here. If you insist on being
+This idle chatter ends here. If you so insist on being
 in my way, I shall show you no mercy!",
 0x1381b2,"くっ! このワタシが
 まけるとは.....","Grk! It can't be...
@@ -4040,21 +4041,26 @@ Have I been defeated?","Grk! It can't be...
 Have I been defeated?",
 0x1381b4,"さっきの はなしのつづきだ!
 『いのちのき』ってのは
-なんなんだよ?","Answer me this time! What
-are the ""Trees of Life""
-you were talking about?","Answer me this time! What are the ""Trees of Life"" you were talking about?",
+なんなんだよ?","Gimme a straight answer!
+What are the
+""Trees of Life""?","Gimme a straight answer!
+What are the
+""Trees of Life""?",
 0x1381b6,"『いのちのき』とはな....
 このデンジュウカイを ささえるきょだいな き なのだ
 そのきをつかえば
 ベつのせかいさえも しはい
-できるのだ........","The Trees of Life are the
-colossal trees that uphold
-this Denjuu World.
-Using their immense power...
-one could even rule over
-worlds other than our own.","The Trees of Life are the colossal trees that uphold this Denjuu World.
-Using their immense power...
-one could even rule over worlds other than our own.",
+できるのだ........","The Trees of Life...
+Those colossal trees that
+uphold this Denjuu World.
+Using the immense power
+that they possess, one
+could even seize rule over
+worlds beyond our own.","The Trees of Life...
+Those colossal trees that uphold this Denjuu World.
+Using the immense power that they possess, one
+could even seize rule over
+worlds beyond our own.",
 0x1381b8,『いのちのき』....,"""Trees of Life""...","""Trees of Life""...",
 0x1381ba,"ふっ!
 せっかく めざめたのだ
@@ -4064,12 +4070,14 @@ one could even rule over worlds other than our own.",
 された かリを かえさなくては
 ならないからな!","Hmph! I went through the
 trouble of waking up –
-I will not let myself be sealed
-away again! Not until I've
-exacted my revenge on the
-<bold>Divine Denjuu<normal> for sealing
-me away in the first place.","Hmph! I went through the trouble of waking up –
-I will not let myself be sealed away again! Not until I've exacted my revenge on the <bold>Divine Denjuu<normal> for sealing me away in the first place.",
+I will scarce let myself be
+sealed away anew!
+Not until I've exacted my
+revenge on the <bold>Divine
+Denjuu<normal> for sealing me away
+to begin with.","Hmph! I went through the trouble of waking up –
+I will scarce let myself be sealed away anew!
+Not before exacting my revenge on the <bold>Divine Denjuu<normal> for sealing me away to begin with.",
 0x1381bc,あっ!しまった!,Ah! Wait up!,Ah! Wait up!,
 0x1381be,"チクショー! つめが
 あまかったか....
@@ -4098,8 +4106,8 @@ What are you scheming?","Stop right there, Sanaeba! What are you scheming?",
 What are you doing in this
 place?","Hm? You again...
 What are you doing here?",
-0x1381c6,うるさいっ!しつもんしているのはこっちのほうだ!,"Oh, stuff it! I'm the one who
-should be asking questions!","Oh, stuff it! I'm the one who should be asking questions!",
+0x1381c6,うるさいっ!しつもんしているのはこっちのほうだ!,"Oh, stuff it! I should be the
+one to ask questions here!","Oh, stuff it! I should be the one to ask questions here!",
 0x1381c8,"はぁー.....
 さては アクマデンジュウを
 ふういんしようとしたのは
@@ -4129,12 +4137,12 @@ is in trouble!","What have you done with the Devil Denjuu? If we don't seal it u
 では ワタシは
 いそがしいのでな!
 きょうリょく あリがとう
-<&name>くん","Oh, that doesn't concern me.
-Ha-ha-ha-ha-ha!
+<&name>くん","Oh, that's none of my
+concern. Ha-ha-ha-ha-ha!
 I'm a busy man, so I must
 take my leave now.
 Thank you for the
-assistance, <&name>!","Oh, that doesn't concern me. Ha-ha-ha-ha-ha!
+assistance, <&name>!","Oh, that's none of my concern. Ha-ha-ha-ha-ha!
 I'm a busy man, so I must take my leave now.
 Thank you for the assistance, <&name>!",
 #######,Sanaeba's Lab story (partial),,,
@@ -4142,21 +4150,44 @@ Thank you for the assistance, <&name>!",
 ワタシです マツキヨです
 イオンとうから おかしな
 デンパがでているそうなんですよちょっと いってみて
-もらえませんか?",/0x1381ce/,,
+もらえませんか?","Hello, <&name>?
+It's me, Matsukiyo.
+We're seeing some strange
+interference radiating
+from Ion Island.
+I don't suppose you could
+check it out?","Hello, <&name>?
+It's me, Matsukiyo.
+We're seeing some strange interference radiating from Ion Island.
+I don't suppose you could
+check it out?",
 0x1381d0,"おう それはいいんだけど
 オマエ サナエバグループが
 なにをしようとしてるか 
-しってるか??",/0x1381d0/,,
+しってるか??","Sure thing! But hey... Do you
+know what those Sanaeba
+Group guys are up to?",Sure thing! But hey... Do you know what those Sanaeba Group guys are up to?,
 0x1381d2,"いま ワタシが いった
 デンパのことも どうやら
 その 『サナエバグループ』が
 からんでいるみたいなんですよ
 イオンとうに いったら
 ことの しんそうが わかるかも
-しれません",/0x1381d2/,,
-0x1381d4,わかった いまから イオンとうにいってみるよ!,/0x1381d4/,,
+しれません","Oh, in fact, it appears that
+the <bold>Sanaeba Group<normal>
+may have something to do
+with the aforementioned
+interference.
+If you go to Ion Island,
+you may be able to find out
+the truth of the situation.","Oh, in fact, it appears that the <bold>Sanaeba Group<normal>
+may have something to do with the aforementioned interference.
+If you go to Ion Island, you may be able to find out the truth of the situation.",
+0x1381d4,わかった いまから イオンとうにいってみるよ!,"Gotcha. I'm off to
+Ion Island, then!","Gotcha. I'm off to
+Ion Island, then!",
 0x1381d6,"よろしく おねがいします
-<&name>くん!",/0x1381d6/,,
+<&name>くん!","Good luck, <&name>!","Good luck, <&name>!",
 0x1381d8,"おやおや これはこれは
 <&name>くん
 こんなところで なにをしている?ここは キミの はいっていい
@@ -4772,16 +4803,21 @@ You really saved me, man!!",,
 0x14012e,"おねがいだから はかせには
 ワタシの いばしょを
 おしえないで おいてくれ!!","Please, I'm begging you!
-Don't tell the professor where I am!",,From Paparouna Lake
+Don't tell the professor
+where I am!","Please, I'm begging you!
+Don't tell the professor where I am!",From Paparouna Lake
 0x140130,"はかせの ぼうそうを
 とめてくれたんだ!
-あリがとう!!","You stopped the professor's unethical research!
-Thank you!!",,From Paparouna Lake
+あリがとう!!","You stopped the professor's
+unethical research!
+Thank you!!","You stopped the professor's unethical research!
+Thank you!!",From Paparouna Lake
 0x140132,"『あたらしいDショット』
-をてにいれた",Obtained a <bold>new D-Shot<normal>!,,Get a new D-Shot
+をてにいれた",Obtained a <bold>new D-Shot<normal>!,Obtained a <bold>new D-Shot<normal>!,Get a new D-Shot
 0x140134,"どんどん タバスコのジャマを
 したまえ!
-どんどんな どんどん!","Let's mess her plans right up, now! Right up!",,Talk to Nerikara in Northeast Cavern
+どんどんな どんどん!","Let's mess her plans right
+up, now! Right up!","Let's mess her plans right up, now! Right up!",Talk to Nerikara in Northeast Cavern
 0x140136,"この デンジュウカイの 
 ゆくすえは オマエに
 かかっておる! たのんだぞ!",/0x140136/,,

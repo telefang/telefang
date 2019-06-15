@@ -494,9 +494,10 @@ The sea is so pretty here!",,
 0x11c0bc,"ボクらは しんリんけいびたい!
 うみもだいじだけど
 もリのきも たいせつに!","We're the Forest Defence Force!
-The sea is important, but forests are precious too!",,
+The sea is important, but forests are precious too!","We're the Forest Defence Force!
+The sea is important, but forests are precious too!",
 0x11c0be,"トリパむらには このおくにある
-ほこらから いけるんだ",You can reach Toulipa Village through a shrine in the forest up ahead.,,This line is used once you reach the Toulipa chapter.
+ほこらから いけるんだ",You can reach Toulipa Village through a tunnel in the forest up ahead.,,This line is used once you reach the Toulipa chapter.
 0x11c0c0,"ボクらは しんリんけいびたい!
 うみもだいじだけど
 もリのきも たいせつに!","We're the Forest Defence Force!
@@ -2485,12 +2486,14 @@ That's about all I can do!",
 #######,36 strings   -   Fraoula Village,,,
 0x13c01c,"ここは いろいろなものが
 はっくつされるむら
-フラウラむらだよ","This is Fraoula Village! All
-manner of things are
-excavated here.",This is Fraoula Village! All manner of things are excavated here.,Oh baby! These lines have been formatted by hand!
+フラウラむらだよ","This is Fraoula Village!
+All manner of things
+are excavated here.","This is Fraoula Village!
+All manner of things
+are excavated here.",Oh baby! These lines have been formatted by hand!
 0x13c01e,"フラウラむらは きたにむかう
-いリぐちのむらなんだ","Flaoura is a village with an
-entrance to the north!",Flaoura is a village with an entrance to the north!,What is this inane line!?
+いリぐちのむらなんだ","Fraoula is a village with an
+entrance to the north!",Fraoula is a village with an entrance to the north!,What is this inane line!?
 0x13c020,"このフラウラむらからさきには
 アクマのやま『ペペリやま』
 まよいのもリ『イクソスのもリ』
@@ -2524,10 +2527,10 @@ into a house! It's not quite
 ready to enter yet.",I'm in the middle of turning this old excavation site into a house! It's not quite ready to enter yet.,
 0x13c026,"なかなか できのいい いえが
 かんせいしたよ
-はいってみたら??","This is a choice house I've
+はいってみたら??","This is one choice home I've
 built, if I do say so myself!
 How about taking a peek
-inside?","This is a choice house I've built, if I do say so myself! How about taking a peek inside?",
+inside?","This is one choice home I've built, if I do say so myself! How about taking a peek inside?",
 0x13c028,"ここのあなを ボクのいえに
 かいそうしてもらっているんだ
 たのしみだなぁー","I'm having this excavated
@@ -2699,7 +2702,7 @@ is going on?!",
 アクマデンジュウを 
 ふういんしてきてくれよ
 たのんだよ!ほんとうに
-たのんだからね!","At this rate, Flaoura is in
+たのんだからね!","At this rate, Fraoula is in
 big trouble!
 Go to the mountain and seal
 the Devil Denjuu back up

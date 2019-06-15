@@ -779,7 +779,7 @@ I'm so worried I can't
 catch a wink of sleep.","Oi, <&name>! I can't call any of my friends
 in Panses Village!
 You're there now, right?
-Look around a bit, won't ya? I'm so worried I can't catch a wink of sleep.",
+Look around a bit, won't ya? I'm so worried I can't catch a wink of sleep.",These strings have been manually formatted! ☆
 0x15808e,"おーい <&name>
 パンセスむらで なにか
 おきてるんじゃないか?
@@ -934,7 +934,7 @@ Not among my friends,
 though, of course!
 Don't worry, I trust you
 through-and-through!","I heard something about Toulipa! Apparently, there's a bunch of humans that are bad news there. Not among my friends, though, of course!
-Don't worry, I trust you through-and-through!",
+Don't worry, I trust you through-and-through!",These strings have been manually formatted! ☆
 0x1580a2,"おう <&name>
 なんで アンテナのきを
 おおきくする ひつようが
@@ -968,13 +968,13 @@ As long as people get reception, it's big enough, right? Is something going down
 だいじょうぶなのかな?
 <*2>","I've been hearing a
 lot of talk about this
-""Sanaeba Group"" as of
+""<bold>Sanaeba Group<normal>"" as of
 late. People don't have
 good things to say about
 'em, either... I have a
 bad feeling about this. Think
 things are gonna be okay?","I've been hearing a
-lot of talk about this ""Sanaeba Group"" as of
+lot of talk about this ""<bold>Sanaeba Group<normal>"" as of
 late. People don't have
 good things to say about 'em, either... I have a
 bad feeling about this. Think things are gonna be okay?",
@@ -988,7 +988,7 @@ bad feeling about this. Think things are gonna be okay?",
 もらおっかなー
 ちょっと きぶんいいから
 デンワしたんだー<*2>","Yo, <&name>! You know
-the Sanaeba Group?
+the <bold>Sanaeba Group<normal>?
 They're the nicest guys in
 town! Such good people!
 They give me anything I
@@ -996,7 +996,7 @@ ask for – it's amazing!
 Wonder what I should ask
 for next...
 I just called 'cause I'm in a
-good mood right now ♪","Yo, <&name>! You know the Sanaeba Group?
+good mood right now ♪","Yo, <&name>! You know the <bold>Sanaeba Group<normal>?
 They're the nicest guys in town! Such good people!
 They give me anything I
 ask for – it's amazing!
@@ -1046,7 +1046,7 @@ Do something! Anything! Heeeeelp!",
 こわくて いかなかったんだ
 あれは ついていかなくて
 セイカイだったのかな?
-<*2>","Sup, <&name>!
+<*2>","'Sup, <&name>!
 The other day,
 some stranger gave me a
 machine out of the blue.
@@ -1124,7 +1124,7 @@ shopping there sometime.
 Call me over and let's
 check it out sometime!","Fraoula is a village where fossils are dug up!
 Because of that, apparently the shop there sells things you won't find anywhere else. I'd love to go window shopping there sometime.
-Call me over and let's check it out sometime!",
+Call me over and let's check it out sometime!",These strings have been manually formatted! ☆
 0x1580b6,"フラウラむらの
 いえのなかには はっくつした
 あなを つかって つくった
@@ -1254,7 +1254,22 @@ my mind when I see him!",
 からだ こわさないと
 いいんだけど....
 しんぱいだなー
-<*2>",/0x1580c2/<*2>,,
+<*2>","So, I know a few Denjuu
+who are involved with
+the Sanaeba Group...
+and they've all been
+crazy busy lately!
+I haven't had the chance
+to see them at all!
+I hope they don't
+push themselves too hard...","So, I know a few Denjuu
+who are involved with
+the Sanaeba Group...
+and they've all been
+crazy busy lately!
+I haven't had the chance to see them at all!
+I hope they don't
+push themselves too hard...",
 0x1580c4,"トモダチがさ
 ペペリやまがどうの
 アクマデンジュウがどうのって
@@ -1262,7 +1277,14 @@ my mind when I see him!",
 いったいなんのことなの?
 オレにはさっぱリわからないよ
 こんど おしえてくれよな!
-<*2>",/0x1580c4/<*2>,,
+<*2>","A buddy of mine's been
+saying this and that
+about Mt. Peperi...
+What's that all about?
+Clue me in sometime!","A buddy of mine's been saying this and that
+about Mt. Peperi...
+What's that all about?
+Clue me in sometime!",
 0x1580c6,"さいきん フラウラにいる
 トモダチにデンワをかけても
 ぜんぜん つながらないんだよ!
@@ -1270,7 +1292,13 @@ my mind when I see him!",
 うっとうしくなって
 デンワにでなくなったのかな!
 オレはどうすればいいんだー!
-<*2>",/0x1580c6/<*2>,,
+<*2>","When I try to call my friends
+in Fraoula lately,
+no one ever picks up! Do ya
+think they're tired of me?
+What should I dooo?!","When I try to call my friends in Fraoula lately,
+no one ever picks up! Do ya think they're tired of me?
+What should I dooo?!",
 #######,Mt. Peperi,,,
 0x1580c8,"おっ..おい!
 アクマデンジュウが
@@ -1281,7 +1309,16 @@ my mind when I see him!",
 <&name>!
 たのむから ペペリやまの
 アクマを ふういんしてくれー
-<*2>",/0x1580c8/<*2>,,
+<*2>","H– Hello?! Is it true that
+the Devil Denjuu is coming
+back?! What's gonna happen
+to the Denjuu World, then?!
+Please! <&name>!
+Put the devil of Mt. Peperi
+back where it belongs!","H– Hello?! Is it true that the Devil Denjuu is coming back?! What's gonna happen to the Denjuu World, then?!
+Please! <&name>!
+Put the devil of Mt. Peperi
+back where it belongs!",These strings have been manually formatted! ☆
 0x1580ca,"<&name>!
 いまどこ? やまの なか??
 ペペリやまの ちょうじょうに
@@ -1293,7 +1330,23 @@ my mind when I see him!",
 やくに たったかな?
 それじゃ また デンワするよ
 やばくなったら
-デンワしてくれよ!<*2>",/0x1580ca/<*2>,,
+デンワしてくれよ!<*2>","<&name>! Where are
+you? Inside the mountain?
+I heard the summit of Mt.
+Peperi somehow connects
+to the Antenna Tree at the
+base of the mountain.
+I thought you might have
+some use for this info,
+so I called to tell you!
+Anyway, I'll call you later.
+Call to let me know if the
+intel helped!","<&name>! Where are you? Inside the mountain?
+I heard the summit of Mt. Peperi somehow connects
+to the Antenna Tree at the base of the mountain.
+I thought you might have some use for this info,
+so I called to tell you!
+Anyway, I'll call you later. Call to let me know if the intel helped!",
 0x1580cc,"<&name>!
 ついに サナエバグループが
 ほんしょうを あらわして
@@ -1303,7 +1356,20 @@ my mind when I see him!",
 やまのなかに たくさんの
 おかしな Tファンガーが
 はいっていってるらしいから
-きをつけていけよな!<*2>",/0x1580cc/<*2>,,
+きをつけていけよな!<*2>","<&name>! It looks like
+the Sanaeba Group
+have finally shown
+their true colors!
+This latest hullabaloo
+is all their doing!
+The mountain is jam-packed
+with fishy T-Fangers.
+Don't let your guard down.","<&name>! It looks like the Sanaeba Group
+have finally shown
+their true colors!
+This latest hullabaloo
+is all their doing!
+The mountain is jam-packed with fishy T-Fangers. Don't let your guard down.",
 0x1580ce,"<&name>
 オレ ニンゲンフシンに
 なっちゃいそうだよ
@@ -1311,7 +1377,18 @@ my mind when I see him!",
 オレたちの すむせかいで
 なにしようとしてるんだよ
 オマエは そんなこと
-しないよな?な?な?<*2>",/0x1580ce/<*2>,,
+しないよな?な?な?<*2>","Help me, <&name>... I'm
+losing my trust in humans!
+What do the Sanaeba Group
+think they're doing?!
+We live in this world!
+You would never do
+that sort of thing to us,
+would you? Would you?!","Help me, <&name>... I'm losing my trust in humans!
+What do the Sanaeba Group think they're doing?!
+We live in this world!
+You would never do
+that sort of thing to us, would you? Would you?!",
 0x1580d0,"ペペリやまって いったか?
 そのやまには かなリつよい
 デンジュウたちが いるって
@@ -1319,19 +1396,39 @@ my mind when I see him!",
 はいるときは じゅんびを
 ばんたんに してからのほうが
 いいとおもうぞ!
-<*2>",/0x1580d0/<*2>,,
+<*2>","Have you been to Mt. Peperi?
+They say that the Denjuu
+who live there are no joke.
+I think you should
+make sure you're prepared
+before you go in there!","Have you been to Mt. Peperi? They say that the Denjuu who live there are no joke.
+I think you should
+make sure you're prepared before you go in there!",
 0x1580d2,"まえにいちどだけ
 ペペリやまのちょうじょうまで
 いったことがあるんだ!
 え?うそだって?ばれた?
 ごめん..たいヘんなときに
-こんなうそついて..<*2>",/0x1580d2/<*2>,,
+こんなうそついて..<*2>","It was only one time, but
+I've been to the summit
+of Mt. Peperi, you know!
+Huh? You don't believe me?
+Was it that obvious? I'm
+sorry, I shouldn't tell lies
+in tough times like these...","It was only one time, but I've been to the summit
+of Mt. Peperi, you know!
+Huh? You don't believe me? Was it that obvious? I'm sorry, I shouldn't tell lies in tough times like these...",
 0x1580d4,"オレはいったことないんだけど
 ペペリやまには いろんな
 しかけがあるらしいんだ!
 どんなのか わからないってのが
 くやしいんだけどさー!
-<*2>",/0x1580d4/<*2>,,
+<*2>","I've never been myself,
+but I hear Mt. Peperi is
+full of traps! If only I knew
+what kind of traps, huh?","I've never been myself,
+but I hear Mt. Peperi is
+full of traps! If only I knew what kind of traps, huh?",
 0x1580d6,"ねーねー もしもだよ!
 もしも アクマデンジュウが
 ふっかつしたら どうなるの?
@@ -1339,7 +1436,18 @@ my mind when I see him!",
 なっちゃうのかな!
 どうしたらいいんだろう!
 なにをしたらいいんだろう!
-<*2>",/0x1580d6/<*2>,,
+<*2>","Hey, so, 100% hypothetically,
+right? Hypothetically, if
+the Devil Denjuu comes back,
+what's gonna happen?
+Do you think it's gonna
+take over the world?
+What should we do?!
+What CAN we do?!","Hey, so, I'm not saying this is gonna happen, but if –  IF the Devil Denjuu came back, what would happen?
+Do you think it's gonna
+take over the world?
+What should we do?!
+What CAN we do?!",
 0x1580d8,"ペペリやまには
 アクマデンジュウがふっかつ
 しないように みはってる
@@ -1347,7 +1455,16 @@ my mind when I see him!",
 きいたことがあるんだ!
 ペペリやまにいったら
 であうかもしれないよ!
-<*2>",/0x1580d8/<*2>,,
+<*2>","I heard that there are
+some brave Denjuu
+who stand guard at Mt.
+Peperi to make sure
+the Devil Denjuu never comes
+back. If you go there,
+you might run into them!","I heard that there are some brave Denjuu
+who stand guard at Mt. Peperi to make sure
+the Devil Denjuu never comes back. If you go there,
+you might run into them!",
 0x1580da,"フラウラむらよリもさきは
 オレたちでさえ なかなか
 いかないばしょなんだぜ!
@@ -1355,7 +1472,16 @@ my mind when I see him!",
 ドンドンにんげんたちを
 おくリこんでるなんて
 なにをかんがえてるんだ!
-<*2>",/0x1580da/<*2>,,
+<*2>","Even we Denjuu stay away
+from the outskirts
+past Fraoula Village.
+Despite that,
+that Sanaeba is sending
+humans there in droves!
+What's he thinking?","Even we Denjuu stay away from the outskirts
+past Fraoula Village.
+Despite that,
+that Sanaeba is sending humans there in droves! What's he thinking?",
 #######,Sanaeba's Lab,,,
 0x1580dc,"なぁ <&name>
 オレのトモダチが どこに
