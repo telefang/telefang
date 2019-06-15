@@ -19,12 +19,12 @@ Certificate_StateDrawScreen::
 	ld bc, $34
 	call Banked_CGBLoadBackgroundPalette
 	ld de, DiplomaGfx + $800
-	ld a, $3F
+	ld a, BANK(DiplomaGfx)
 	ld hl, $8800
 	ld bc, $6E0
 	call Banked_LCDC_LoadTiles
 	ld de, DiplomaGfx
-	ld a, $3F
+	ld a, BANK(DiplomaGfx)
 	ld hl, $9000
 	ld bc, $800
 	call Banked_LCDC_LoadTiles
