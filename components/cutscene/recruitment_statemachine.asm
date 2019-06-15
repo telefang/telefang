@@ -110,8 +110,9 @@ Cutscene_SubStateDrawRecruitmentScreen::
 	call Encounter_DrawTileDigits
 	ld bc, $20E
 	ld e, $AB
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
+	M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
 	call SaveClock_EnterSRAM2
 	ld hl, $A00A
 	ld a, [$D4A7]
@@ -126,9 +127,7 @@ Cutscene_SubStateDrawRecruitmentScreen::
 	ld b, a
 	ld a, [hl]
 	ld hl, $99C3
-	call Banked_Status_DrawPhoneNumber
-	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Cutscene_ADVICE_DrawPhoneNumberForRecruitment
 	ld a, [W_LateDenjuu_SubSubState]
 	inc a
 	ld [W_LateDenjuu_SubSubState], a
@@ -139,7 +138,7 @@ Cutscene_SubStateDrawRecruitmentScreen::
 	ret
 
 Cutscene_SubStateRecruitmentFadeIn::
-	ld a, 0
+	xor a
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
@@ -168,7 +167,7 @@ Cutscene_SubStateRecruitmentFadeOutAndExitToOverworld::
 	ret z
 	xor a
 	ld [W_LateDenjuu_SubSubState], a
-	ld [W_byte_C9CF], a
+	M_AuxJmp Banked_Map_ADVICE_UnloadSGBFiles
 	ld a, $A
 	ld [W_SystemSubState], a
 	ret

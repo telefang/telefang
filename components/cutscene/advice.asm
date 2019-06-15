@@ -197,6 +197,11 @@ Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers_ShowKai::
 	xor a
 	ret
 
+Cutscene_ADVICE_CheckGBC::
+	ld a, [W_GameboyType]
+	cp M_BIOS_CPU_CGB
+	ret
+
 WeAreConnected_ADVICE_LoadSGBFiles::
 	call Cutscene_ADVICE_CheckSGB
 	jr nz, .isSGB
@@ -231,6 +236,29 @@ WeAreConnected_ADVICE_LoadSGBFiles_Waaaaahh::
 	ld d, b
 	ld e, c
 	jp Banked_SGB_ConstructPaletteSetPacket
+
+SECTION "Cutscene - Recruitment Phone Number", ROMX[$7FDC], BANK[$E]
+Cutscene_ADVICE_DrawPhoneNumberForRecruitment::
+	push hl
+	push bc
+	push de
+	call Banked_Status_LoadPhoneDigits_NowWithSGBSupport
+	pop de
+	ld a, $FF
+	ld hl, $99C2
+	call vmempoke
+	ld l, $D1
+	call vmempoke
+	ld b, $10
+	ld hl, $9A02
+
+.loop
+	call vmempoke
+	dec b
+	jr nz, .loop
+	pop bc
+	pop hl
+	jp Banked_Status_DrawPhoneNumberForStatus
 
 SECTION "Cutscene - Antenna Tree SGB Overlay", ROMX[$42C0], BANK[$77]
 CutsceneAntennaTreeSGBOverlayGfx::
