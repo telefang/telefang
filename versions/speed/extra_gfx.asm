@@ -2,7 +2,7 @@
 ;in the other graphics file.
 
 SECTION "gfx/diploma.2bpp", ROMX[$44e9], BANK[$3f]
-DiplomaGfx:
+DiplomaGfx::
 	INCBIN "build/gfx/diploma.2bpp"
 	
 SECTION "gfx/menu/script_window.2bpp", ROMX[$719C], BANK[$38]
