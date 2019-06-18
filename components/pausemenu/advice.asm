@@ -189,3 +189,16 @@ PauseMenu_ADVICE_LoadSGBFilesMelodyEditExit::
 .return
     M_AdviceTeardown
     ret
+
+SECTION "Pause Menu Load SGB Files 5", ROMX[$6370], BANK[$1]
+PauseMenu_ADVICE_LoadSGBFilesOptions::
+    M_AdviceSetup
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    call PauseMenu_ADVICE_CGBToSGB56Shorthand
+
+.return
+    M_AdviceTeardown
+    ret

@@ -586,8 +586,7 @@ Battle_SubStateDrawAttackMenuWindow::
     call Battle_DrawAttackNameOnMenu
     
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
-    ld b, 0
-    ld c, M_Battle_SpeciesMove3Level
+    ld bc, M_Battle_SpeciesMove3Level
     call Banked_Battle_LoadSpeciesData
     
     ld a, [W_Battle_RetrSpeciesByte]
@@ -617,8 +616,7 @@ Battle_SubStateDrawAttackMenuWindow::
 
 .checkFourthAttack
     ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantSpecies]
-    ld b, 0
-    ld c, M_Battle_SpeciesMove4Level
+    ld bc, M_Battle_SpeciesMove4Level
     call Banked_Battle_LoadSpeciesData
     
     ld a, [W_Battle_RetrSpeciesByte]
@@ -705,7 +703,7 @@ Battle_SubStateAttackMenuInputHandler::
     and M_JPInput_Up
     jr z, .upNotPressed
     ld a, [W_Summon_SelectedPageContact]
-    cp 0
+    or a
     jr z, .loopToBottom
     dec a
     ld [W_Summon_SelectedPageContact], a
@@ -759,7 +757,7 @@ Battle_SubStateAttackMenuInputHandler::
     xor a
     ld [W_MetaSpriteConfig1], a
     ld [$C0C0], a
-    ld a, 1
+    inc a
     ld [W_OAM_SpritesReady], a
     call Battle_DrawOpponentUI
     ld a, [W_Battle_PartnerDenjuuTurnOrder]
@@ -798,7 +796,7 @@ Battle_SubStateAttackMenuInputHandler::
     xor a
     ld [W_MetaSpriteConfig1], a
     ld [$C0C0], a
-    ld a, 1
+    inc a
     ld [W_OAM_SpritesReady], a
     jp Battle_IncrementSubSubState
 
@@ -889,13 +887,14 @@ Battle_SubStateAttackMenuCloseAndParse::
     ld a, [W_Battle_PartnerDenjuuTurnOrder]
     ld [W_Status_SelectedContactIndex], a
     ld [$D457], a
+    call Banked_MainScriptMachine_InstantDisplayHack
     ld a, $3B
     ld [W_Battle_SubSubState], a
     ret
 
 .doesntRequirePartnerTargetInput
     call $4ED6
-    cp 0
+    or a
     jr z, .onlyOneTarget
 
 .targetIsOpponent
@@ -918,6 +917,7 @@ Battle_SubStateAttackMenuCloseAndParse::
     jr .onlyOneTargetNextState
 
 .multipleOpponentsNextState
+    call Banked_MainScriptMachine_InstantDisplayHack
     jp Battle_IncrementSubSubState
 
 .onlyOneTargetNextState
