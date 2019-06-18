@@ -17,7 +17,9 @@ SaveClock_ADVICE_ValidateRTCFunction::
     
     call SaveClock_ADVICE_ValidateRTCFunctionInternal
     
+    ld b, a
     M_AdviceTeardown
+    ld a, b
     ret
 
 ;This code is called to check if a functional RTC circuit is installed.
