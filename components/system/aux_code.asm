@@ -296,6 +296,10 @@ Banked_DungeonMap_ADVICE_DrawScreen::
 Banked_DungeonMap_ADVICE_LoadSGBFiles::
 	dw DungeonMap_ADVICE_LoadSGBFiles
 
+;components/pausemenu/advice.asm
+Banked_PauseMenu_ADVICE_LoadSGBFilesOptions::
+	dw PauseMenu_ADVICE_LoadSGBFilesOptions
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

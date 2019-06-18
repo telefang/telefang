@@ -2,8 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Options Menu Utilities", ROMX[$6D63], BANK[$4]
 OptionsMenu_PositionMenuCursors::
-    ld b, $48
-    ld c, $50
+    ld bc, $4850
     ld d, 1
     
     ld a, [W_PhoneIME_PressCount]
@@ -17,26 +16,22 @@ OptionsMenu_PositionMenuCursors::
     jr z, .position_battle_animation
     
 .position_exit
-    ld b, $88
-    ld c, $90
+    ld bc, $8890
     ld d, 0
     jr .position_manner_mode
 
 .position_battle_animation
-    ld b, $78
-    ld c, $80
+    ld bc, $7880
     ld d, 1
     jr .position_manner_mode
     
 .position_window_flavor
-    ld b, $68
-    ld c, $70
+    ld bc, $6870
     ld d, 1
     jr .position_manner_mode
     
 .position_clock_display
-    ld b, $58
-    ld c, $60
+    ld bc, $5860
     ld d, 1
     
 .position_manner_mode
@@ -54,19 +49,23 @@ OptionsMenu_PositionMenuCursors::
     add a, 2
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_YOffset], a
     
-    ld a, 1
-    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_HiAttribs], a
-    
     ld a, d
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_HiAttribs], a
     
-    ld a, 0
+    xor a
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_Bank], a
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 2 + M_LCDC_MetaSpriteConfig_Bank], a
     
-    ld a, 1
+    inc a
+    ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_HiAttribs], a
     ld [W_OAM_SpritesReady], a
     ret
+
+OptionsMenu_ADVICE_ApplyWindowFlavor::
+    call PauseMenu_CGBApplyWindowFlavor
+    M_PrepAuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesOptions
+    jp PatchUtils_AuxCodeJmp
+    nop
 
 OptionsMenu_DrawSelectedOptions::
     ld e, $19
@@ -217,7 +216,7 @@ OptionsMenu_InputHandler::
     inc a
     and M_PauseMenu_WindowFlavorMango
     ld [W_PauseMenu_WindowFlavor], a
-    call PauseMenu_CGBApplyWindowFlavor
+    call OptionsMenu_ADVICE_ApplyWindowFlavor
     ret
     
 .test_window_flavor_right
@@ -232,7 +231,7 @@ OptionsMenu_InputHandler::
     dec a
     and M_PauseMenu_WindowFlavorMango
     ld [W_PauseMenu_WindowFlavor], a
-    call PauseMenu_CGBApplyWindowFlavor
+    call OptionsMenu_ADVICE_ApplyWindowFlavor
     ret
 
 .test_battle_animation_left
