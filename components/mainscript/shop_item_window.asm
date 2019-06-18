@@ -54,12 +54,12 @@ MainScript_SetupShopWindowForItem::
 
 MainScript_LoadItemNameAsArg3::
     call PatchUtils_MainScript_ADVICE_LoadItemNameAsArg3
+    ret
     
-    REPT $1E
+    REPT $13
     nop
     ENDR
     
-    ret
 
 SECTION "Main Script Shop Item Window ADVICE 3", ROMX[$6FD0], BANK[$78]
 MainScript_ADVICE_LoadItemNameAsArg3::

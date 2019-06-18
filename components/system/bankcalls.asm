@@ -138,6 +138,14 @@ Banked_Status_LoadUIGraphics::
     rst $18
     ret
 
+SECTION "Banked Main Script Instant Display Hack", ROM0[$3DDC]
+Banked_MainScriptMachine_InstantDisplayHack::
+    ld a, BANK(MainScriptMachine_InstantDisplayHack)
+    rst $10
+    call MainScriptMachine_InstantDisplayHack
+    rst $18
+    ret
+
 SECTION "Banked Call Helpers", ROM0[$0560]
 Banked_MainScript_DrawStatusText::
     call MainScript_DrawStatusText
