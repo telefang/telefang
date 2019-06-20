@@ -41,11 +41,13 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $535F, $7649, $22 ; 17
     dSGB_Palette $7FFF, $7649, $5180, $22 ; 18
 
+    ;Game Over
+    dSGB_Palette $7FFF, $275F, $7E0B, 0 ; 19
+    dSGB_Palette $7FFF, $3E9D, $2573, 0 ; 1A
+    dSGB_Palette $7FFF, $3E9D, $22A5, 0 ; 1B
+    dSGB_Palette $7FFF, $22A5, $2573, 0 ; 1C
+
     ;unused?
-    dSGB_Palette $7FFF, $4AFF, $180, $10CC ; 19
-    dSGB_Palette $7FFF, $5703, $180, $1100 ; 1A
-    dSGB_Palette $7FFF, $31F, $180,  $C8 ; 1B
-    dSGB_Palette $7FFF, $121F, $180,  $8B ; 1C
     dSGB_Palette $7FFF, $56F2, $180, $1904 ; 1D
     dSGB_Palette $7FFF, $5A52, $180, $20A5 ; 1E
     dSGB_Palette $7FFF, $4A56, $180, $14A8 ; 1F

@@ -43,7 +43,7 @@ Battle_ScreenStateMachine::
     jp hl
 
 .stateTable
-    dw Battle_SubStateInitGraphics,Battle_SubStateInitTilemaps,$45F5,$463E,$4681,$4B07,$4BC6,Battle_SubStateDrawAttackMenuWindow ;00-07
+    dw Battle_SubStateInitGraphics,Battle_SubStateInitTilemaps,$45F5,$463E,$4681,Battle_SubStatePreAttackPersonalityCheck,$4BC6,Battle_SubStateDrawAttackMenuWindow ;00-07
     dw Battle_SubStateAttackMenuInputHandler,Battle_SubStateAttackMenuCloseAndParse,$4F81,$510A,$545C,$545F,$57FB,$59BC ;08-0F
     dw $5F2D,$5F57,$62CD,$6348,$6360,$63FE,$6416,$46E2 ;10-17
     dw $46F2,$4707,$48E9,$48FC,$4911,$464B,Battle_SubStateParticipantArrivalProcessing,Battle_SubStateDenjuuArrivalPhrase ;18-1F
@@ -92,6 +92,107 @@ Battle_SubStateInitTilemaps::
     call Banked_RLEDecompressAttribsTMAP1
     call $45D6
     call Battle_ExpandNumericalTiles
+    jp Battle_IncrementSubSubState
+
+SECTION "Battle Screen State Machine - Pre Attack Personality Check", ROMX[$4B07], BANK[$5]
+Battle_SubStatePreAttackPersonalityCheck::
+    ld a, [W_SerIO_ConnectionState]
+    cp 1
+    jr z, .dontSkipTurn
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantPersonality]
+    cp 4
+    jr z, .isStubborn
+    cp 5
+    jr nz, .dontSkipTurn
+
+.isStubborn
+    ld a, [W_Battle_CurrentParticipant + $A]
+    add $9B
+    ld b, a
+    call $0D4E
+    cp b
+    jr c, .dontSkipTurn
+    ld a, 0
+    ld [W_Summon_SelectedPageContact], a
+    ld c, $1F
+    call Battle_QueueMessage
+    ld a, $2A
+    ld [W_Battle_SubSubState], a
+    ret
+
+.dontSkipTurn
+    ld a, [W_Battle_CurrentParticipant + M_Battle_ParticipantPersonality]
+    cp 8
+    jr z, .isIrritable
+    cp 9
+    jr nz, Battle_SubStatePreAttackPersonalityCheck_skipCheck
+
+.isIrritable
+    ld a, [W_Battle_CurrentParticipant + $A]
+    sla a
+    add $37
+    ld b, a
+    call $0D4E
+    cp b
+    jr c, Battle_SubStatePreAttackPersonalityCheck_skipCheck
+    ld a, [W_Battle_PartnerDenjuuTurnOrder]
+    cp 1
+    jr z, .isSecond
+    cp 2
+    jr z, .isThird
+
+.isFirst
+    ld a, 1
+    ld [$D5CA], a
+    jr .continue
+
+.isSecond
+    ld a, 1
+    ld [$D5CB], a
+    jr .continue
+
+.isThird
+    ld a, 1
+    ld [$D5CC], a
+
+.continue
+    ld a, 0
+    ld [W_Summon_SelectedPageContact], a
+    ld a, [W_Battle_CurrentParticipant]
+    ld [W_Status_SelectedDenjuuSpecies], a
+    ld a, [W_Summon_SelectedPageContact]
+    call Battle_SetAttackNameArg2
+    ld a, [W_Battle_OpponentDenjuuTurnOrder]
+    ld [W_Status_SelectedContactIndex], a
+    xor a
+    ld [W_Battle_LoopIndex], a
+    ld a, $2C
+    ld [W_Battle_SubSubState], a
+    ret
+
+Battle_SubStatePreAttackPersonalityCheck_skipCheck::
+    ld bc, $C
+    ld e, $80
+    xor a
+    call Banked_RLEDecompressTMAP0
+    ld de, Battle_ScreenUIStrings
+    ld hl, $9600
+    call $42AA
+    ld de, $4515
+    ld hl, $9680
+    call $42AA
+    ld bc, $030E
+    ld e, $8C
+    xor a
+    call Banked_RLEDecompressTMAP0
+    xor a
+    ld [W_Summon_SelectedPageContact], a
+    xor a
+    call $42BA
+    call $659F
+    xor a
+    ld [W_PauseMenu_SelectedCursorType], a
+    call LCDC_BeginAnimationComplex
     jp Battle_IncrementSubSubState
 
 SECTION "Battle Screen State Machine - Status Warnings For Partners", ROMX[$4721], BANK[$5]
@@ -754,17 +855,13 @@ Battle_SubStateAttackMenuInputHandler::
     ldi [hl], a
     ld a, [W_ShadowREG_WX]
     ld [hl], a
-    xor a
-    ld [W_MetaSpriteConfig1], a
-    ld [$C0C0], a
-    inc a
-    ld [W_OAM_SpritesReady], a
+    call .nextStatePrep
     call Battle_DrawOpponentUI
     ld a, [W_Battle_PartnerDenjuuTurnOrder]
     call Battle_StagePartnerStats
     ld a, 5
     ld [W_Battle_SubSubState], a
-    ret
+    jp Battle_SubStatePreAttackPersonalityCheck_skipCheck
 
 .bNotPressed
     ldh a, [H_JPInput_Changed]
@@ -793,12 +890,18 @@ Battle_SubStateAttackMenuInputHandler::
 .exit
     ld a, 3
     ld [W_Sound_NextSFXSelect], a
+    call .nextStatePrep
+    jp Battle_IncrementSubSubState
+
+.nextStatePrep
     xor a
     ld [W_MetaSpriteConfig1], a
     ld [$C0C0], a
     inc a
     ld [W_OAM_SpritesReady], a
-    jp Battle_IncrementSubSubState
+	ret
+	nop
+	nop
 
 Battle_SubStateAttackMenuCloseAndParse::
     ld bc, $909

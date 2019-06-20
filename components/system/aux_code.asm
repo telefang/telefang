@@ -300,6 +300,10 @@ Banked_DungeonMap_ADVICE_LoadSGBFiles::
 Banked_PauseMenu_ADVICE_LoadSGBFilesOptions::
 	dw PauseMenu_ADVICE_LoadSGBFilesOptions
 
+;components/gameover/advice.asm
+Banked_GameOver_ADVICE_LoadSGBFiles::
+	dw GameOver_ADVICE_LoadSGBFiles
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 
