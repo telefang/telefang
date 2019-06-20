@@ -30,8 +30,7 @@ GameOver_StateDrawTiles::
 	jp System_ScheduleNextSubState
 
 GameOver_StateMapTiles::
-	ld bc, 0
-	ld e, $72
+	M_AuxJmp Banked_GameOver_ADVICE_LoadSGBFiles
 	ld a, 0
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0

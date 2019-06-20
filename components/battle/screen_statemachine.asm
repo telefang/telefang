@@ -855,17 +855,13 @@ Battle_SubStateAttackMenuInputHandler::
     ldi [hl], a
     ld a, [W_ShadowREG_WX]
     ld [hl], a
-    xor a
-    ld [W_MetaSpriteConfig1], a
-    ld [$C0C0], a
-    inc a
-    ld [W_OAM_SpritesReady], a
+    call .nextStatePrep
     call Battle_DrawOpponentUI
     ld a, [W_Battle_PartnerDenjuuTurnOrder]
     call Battle_StagePartnerStats
     ld a, 5
     ld [W_Battle_SubSubState], a
-    ret
+    jp Battle_SubStatePreAttackPersonalityCheck_skipCheck
 
 .bNotPressed
     ldh a, [H_JPInput_Changed]
@@ -894,12 +890,18 @@ Battle_SubStateAttackMenuInputHandler::
 .exit
     ld a, 3
     ld [W_Sound_NextSFXSelect], a
+    call .nextStatePrep
+    jp Battle_IncrementSubSubState
+
+.nextStatePrep
     xor a
     ld [W_MetaSpriteConfig1], a
     ld [$C0C0], a
     inc a
     ld [W_OAM_SpritesReady], a
-    jp Battle_IncrementSubSubState
+	ret
+	nop
+	nop
 
 Battle_SubStateAttackMenuCloseAndParse::
     ld bc, $909
