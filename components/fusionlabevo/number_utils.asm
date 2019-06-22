@@ -1,11 +1,5 @@
 INCLUDE "telefang.inc"
 
-SECTION "Fusion/Lab Evolution Selected Item", WRAM0[$CAE0]
-W_FusionLabEvo_SelectedItem:: ds 1
-
-SECTION "Fusion/Lab Evolution Scroll State", WRAM0[$CAEB]
-W_FusionLabEvo_ScrollState:: ds 1
-
 SECTION "Fusion/Lab Evolution Draw Item Data", ROMX[$510F], BANK[$2A]
 FusionLabEvo_DrawItemData::
 	ld a, [W_FusionLabEvo_ScrollState]
@@ -16,7 +10,7 @@ FusionLabEvo_DrawItemData::
 	ld a, [W_FusionLabEvo_SelectedItem]
 	ld b, a
 	dec b
-	ld a, [$C2B5]
+	ld a, [W_FusionLabEvo_InventoryQuantitiesAddressOffsetBuffer]
 	add b
 	ld b, a
 	ld a, BANK(MainScript_LoadItemNameAsArg3)
@@ -45,7 +39,7 @@ FusionLabEvo_DrawItemData::
 	call $2CC4
 	ld a, [W_FusionLabEvo_SelectedItem]
 	ld b, a
-	ld a, [$CAEE]
+	ld a, [W_FusionLabEvo_IsLabEvo]
 	or a
 	jr z, .jpA
 	ld a, b
