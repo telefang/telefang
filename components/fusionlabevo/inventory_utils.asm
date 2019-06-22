@@ -126,12 +126,12 @@ FusionLabEvo_CorrectInFocusItemNumber::
 	ld b, a
 	inc b
 
-.forwardItemSearchLoop
+.backwardItemSearchLoop
 	ld a, [hld]
 	or a
 	jr nz, .itemFoundBefore
 	dec b
-	jr nz, .forwardItemSearchLoop
+	jr nz, .backwardItemSearchLoop
 
 .searchForwardsForItem
 	ld a, [W_FusionLabEvo_InventoryQuantitiesAddressBuffer + 1]
