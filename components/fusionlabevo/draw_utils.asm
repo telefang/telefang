@@ -116,7 +116,7 @@ FusionLabEvo_MapTilesRectangleAlt::
 	add hl, bc
 	pop bc
 	dec b
-	jr nz, FusionLabEvo_MapTilesVerticalLine
+	jr nz, FusionLabEvo_MapTilesRectangleAlt
 	ret
 
 FusionLabEvo_MapItems::
