@@ -3,7 +3,7 @@ INCLUDE "telefang.inc"
 SECTION "Fusion/Lab Evolution Draw Item Data", ROMX[$510F], BANK[$2A]
 FusionLabEvo_DrawItemData::
 	ld a, [W_FusionLabEvo_ScrollState]
-	cp a, 1
+	cp 1
 	ret nz
 	ld a, 2
 	ld [W_FusionLabEvo_ScrollState], a
@@ -16,6 +16,8 @@ FusionLabEvo_DrawItemData::
 	ld a, BANK(MainScript_LoadItemNameAsArg3)
 	ld hl, MainScript_LoadItemNameAsArg3
 	call CallBankedFunction_int
+
+FusionLabEvo_DrawItemData_extEntry::
 	ld a, $B0
 	ld [W_MainScript_TileBaseIdx], a
 	ld a, $E0
@@ -41,12 +43,12 @@ FusionLabEvo_DrawItemData::
 	ld b, a
 	ld a, [W_FusionLabEvo_IsLabEvo]
 	or a
-	jr z, .jpA
+	jr z, .isFusionEvo
 	ld a, b
 	add a, $40
 	ld b, a
 
-.jpA
+.isFusionEvo
 	ld a, b
 	ld hl, W_PauseMenu_InventoryQuantities - 1
 	add l
