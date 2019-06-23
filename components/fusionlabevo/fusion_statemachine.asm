@@ -19,7 +19,7 @@ FusionLabEvo_FusionScreenStateMachine::
 .checkSubState00
 	ld a, [W_FusionLabEvo_ArrowAnimationState]
 	cp 0
-	jp nz, .checkState01
+	jp nz, .checkSubState01
 
 .drawScreenSubState
 	ld a, 1
