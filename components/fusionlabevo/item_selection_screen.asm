@@ -427,12 +427,12 @@ FusionLabEvo_StatePrepareForFusionScreenTransition::
 	ld [W_OAM_SpritesReady], a
 	ld a, [W_FusionLabEvo_ArrowAnimationState]
 	cp 2
-	jp c, .wait
+	jp c, FusionLabEvo_StatePrepareForFusionScreenTransition_wait
 	cp $14
-	jp c, .wait
+	jp c, FusionLabEvo_StatePrepareForFusionScreenTransition_wait
 	cp $14
 	jr nz, .cleanup
-	jp .wait
+	jp FusionLabEvo_StatePrepareForFusionScreenTransition_wait
 
 .cleanup
 	cp $15
@@ -440,7 +440,7 @@ FusionLabEvo_StatePrepareForFusionScreenTransition::
 	call FusionLabEvo_ItemSelectionScreenCleanup
 	ld a, $15
 	ld [W_FusionLabEvo_ArrowAnimationState], a
-	jp .wait
+	jp FusionLabEvo_StatePrepareForFusionScreenTransition_wait
 
 .cleanupB
 	cp $16
@@ -462,7 +462,7 @@ FusionLabEvo_StatePrepareForFusionScreenTransition::
 .thisShouldNeverFire
 	ret
 
-.wait
+FusionLabEvo_StatePrepareForFusionScreenTransition_wait::
 	ld a, [W_FusionLabEvo_ArrowAnimationState]
 	inc a
 	ld [W_FusionLabEvo_ArrowAnimationState], a
