@@ -324,7 +324,7 @@ FusionLabEvo_StateNoItems::
 	call $2CC4
 	ld a, [W_MainScript_State]
 	cp 9
-	jr nz, .exit
+	jr nz, FusionLabEvo_StateNoItems_justExitPlz.exit
 
 FusionLabEvo_StateNoItems_justExitPlz::
 	ld a, 3
