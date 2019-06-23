@@ -274,9 +274,9 @@ FusionLabEvo_TypematicButtonsLogic::
 	ld a, [W_FusionLabEvo_TypematicBtns]
 	or M_JPInput_Left
 	ld [W_FusionLabEvo_TypematicBtns], a
-	ldh a, [H_JPInput_HeldDown]
 
 .leftNotHeldLongEnough
+	ldh a, [H_JPInput_HeldDown]
 	and M_JPInput_Right
 	jr nz, .stillPressingRight
 	ld a, [W_FusionLabEvo_TypematicBtns]
