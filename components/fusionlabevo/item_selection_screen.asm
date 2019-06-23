@@ -141,35 +141,35 @@ FusionLabEvo_StateDrawScreen::
 	ld bc, $40
 	call Banked_LCDC_LoadTiles
 	ld a, $10
-	ld [$C2A1], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_Bank], a
 	ld a, $43
-	ld [$C2A2], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_Index], a
 	ld a, 0
-	ld [$C2A5], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_LoAttribs], a
 	ld a, $34
-	ld [$C2A3], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_XOffset], a
 	ld a, $44
-	ld [$C2A4], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_YOffset], a
 	ld a, $10
-	ld [$C2C1], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Bank], a
 	ld a, $42
-	ld [$C2C2], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
 	ld a, 0
-	ld [$C2C5], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_LoAttribs], a
 	ld a, $6C
-	ld [$C2C3], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_XOffset], a
 	ld a, $44
-	ld [$C2C4], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_YOffset], a
 	ld a, $10
-	ld [$C2E1], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_Bank], a
 	ld a, $44
-	ld [$C2E2], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_Index], a
 	ld a, 1
-	ld [$C2E5], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_LoAttribs], a
 	ld a, $80
-	ld [$C2E3], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_XOffset], a
 	ld a, $44
-	ld [$C2E4], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_YOffset], a
 	call FusionLabEvo_MapTopAndBottomWindows
 	ld a, $B0
 	ld [W_MainScript_TileBaseIdx], a
@@ -410,8 +410,8 @@ FusionLabEvo_StateItemSelectionConfirmation::
 	call PauseMenu_LoadItemGraphic
 	ld a, 0
 	ld [W_FusionLabEvo_ArrowAnimationState], a
-	ld [W_MetaSpriteConfig2], a
-	ld [$C2C0], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_HiAttribs], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ld a, $20
 	ld [W_SystemSubState], a
 	ld a, 3

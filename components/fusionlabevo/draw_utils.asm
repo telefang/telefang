@@ -50,9 +50,9 @@ FusionLabEvo_ItemSelectionScreenCleanup::
 	ld c, a
 	call FusionLabEvo_DrawItem
 	ld a, 0
-	ld [W_MetaSpriteConfig2], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ld a, 0
-	ld [$C2C0], a
+	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ret
 
 FusionLabEvo_MapTopAndBottomWindows::
