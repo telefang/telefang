@@ -13,8 +13,9 @@ W_FusionLabEvo_SparkleTimer:: ds 1
 SECTION "Fusion/Lab Evolution - Scroll Variance",  WRAM0[$C2F7]
 W_FusionLabEvo_ScrollVariance:: ds 1
 
+SECTION "Fusion/Lab Evolution Fusion Animation State Machine", ROMX[$53CF], BANK[$2A]
 ; This is actually a poorly structured state machine.
-FusionLabEvo_FusionScreenStateMachine:: ; 2A:53CF
+FusionLabEvo_FusionScreenStateMachine::
 .checkSubState00
 	ld a, [W_FusionLabEvo_ArrowAnimationState]
 	cp 0
