@@ -22,15 +22,10 @@ W_FusionLabEvo_ScrollPositionIndex:: ds 1
 W_FusionLabEvo_ArrowAnimationState:: ds 1
 W_FusionLabEvo_LeftButtonHoldCountdownTimer:: ds 1
 W_FusionLabEvo_RightButtonHoldCountdownTimer:: ds 1
-
-SECTION "Fusion/Lab Evolution Variables 2",  WRAM0[$CAEA]
 W_FusionLabEvo_TypematicBtns:: ds 1
 W_FusionLabEvo_ScrollState:: ds 1
-
-SECTION "Fusion/Lab Evolution - Skip Fade In",  WRAM0[$CAEC]
 W_FusionLabEvo_SkipFadeIn:: ds 1
-
-SECTION "Fusion/Lab Evolution - Is Lab Evo",  WRAM0[$CAEE]
+W_FusionLabEvo_PartnerSpecies:: ds 1
 W_FusionLabEvo_IsLabEvo:: ds 1
 
 SECTION "Fusion/Lab Evolution States", ROMX[$49DD], BANK[$2A]
@@ -47,7 +42,7 @@ FusionLabEvo_StateDrawScreen::
 	ld a, BANK(FusionLabEvo_StateDrawScreen)
 	ld [W_PreviousBank], a
 	ld a, [W_Overworld_PartnerSpecies]
-	ld [$CAED], a
+	ld [W_FusionLabEvo_PartnerSpecies], a
 	ld a, [$CDEC]
 	ld [$C908], a
 	ld a, 0
@@ -449,7 +444,7 @@ FusionLabEvo_StatePrepareForFusionScreenTransition::
 	ld hl, $98A0
 	call FusionLabEvo_DrawItem_itemGfxClearLoop
 	call FusionLabEvo_ItemSelectionScreenCleanup
-	ld a, [$CAED]
+	ld a, [W_FusionLabEvo_PartnerSpecies]
 	ld c, 0
 	ld de, $9010
 	call Banked_Battle_LoadDenjuuPortrait

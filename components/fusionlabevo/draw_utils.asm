@@ -234,7 +234,21 @@ FusionLabEvo_LoadItemPalette::
 	pop bc
 	ret
 
-SECTION "Fusion/Lab Evolution Draw Utils 4", ROMX[$4D82], BANK[$2A]
+FusionLabEvo_LoadSelectedItemObjectPalette::
+	ld a, [W_FusionLabEvo_InventoryQuantitiesAddressOffsetBuffer]
+	dec c
+	add c
+	ld c, a
+	ld d, b
+	ld b, 0
+	ld hl, $200
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld a, 1
+	call CGBLoadObjectPaletteBanked
+	ret
+
 FusionLabEvo_DrawVisibleItems::
 	call FusionLabEvo_DetermineNextAndPreviousItems
 	ld b, 0
