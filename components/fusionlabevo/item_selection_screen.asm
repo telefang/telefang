@@ -308,7 +308,7 @@ FusionLabEvo_StateItemSelectInputHandler::
 	jp z, .bNotPressed
 	ld a, 4
 	ld [W_Sound_NextSFXSelect], a
-	call FusionLabEvo_StateNoItems.justExitPlz
+	call FusionLabEvo_StateNoItems_justExitPlz
 	ld a, 0
 	ld [W_FusionLabEvo_ArrowAnimationState], a
 
@@ -326,7 +326,7 @@ FusionLabEvo_StateNoItems::
 	cp 9
 	jr nz, .exit
 
-.justExitPlz
+FusionLabEvo_StateNoItems_justExitPlz::
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld a, $2A
