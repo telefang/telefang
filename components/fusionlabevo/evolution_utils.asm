@@ -59,7 +59,7 @@ FusionLabEvo_CheckEvolutionCapability::
 	ld a, $A
 	ld [REG_MBC3_SRAMENABLE], a
 	ld a, 2
-	ld [REG_MBC3_ROMBANK], a
+	ld [REG_MBC3_SRAMBANK], a
 	ld a, [W_PauseMenu_DeletedContact]
 	ld c, a
 	ld hl, $A000
