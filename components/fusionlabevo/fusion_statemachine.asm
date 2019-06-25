@@ -122,7 +122,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	call CallBankedFunction_int
 
 .skipHalfTheTime
-	call $57AA
+	call FusionLabEvo_AnimateSprites
 	call $2CC4
 	ld a, [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + $B]
 	ld d, a
@@ -205,7 +205,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	ret
 
 .scrollingFinished
-	call $57AA
+	call FusionLabEvo_AnimateSprites
 	ld a, [W_FusionLabEvo_PostJoinTimer]
 	inc a
 	ld [W_FusionLabEvo_PostJoinTimer], a
@@ -234,7 +234,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	ret
 
 .sparkleTime
-	call $57AA
+	call FusionLabEvo_AnimateSprites
 	ld a, [W_FusionLabEvo_SparkleTimer]
 	inc a
 	ld [W_FusionLabEvo_SparkleTimer], a
@@ -247,8 +247,8 @@ FusionLabEvo_FusionScreenStateMachine::
 	jr nz, .checkSubState04
 
 .subState03
-	call $57C0
-	call $57CF
+	call FusionLabEvo_ClearSpriteConfig1
+	call FusionLabEvo_CheckEvolutionCapability
 	ld a, [W_FusionLabEvo_SelectedItem]
 	ld b, a
 	ld a, [W_FusionLabEvo_InventoryQuantitiesAddressOffsetBuffer]
@@ -348,7 +348,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	ld bc, $1DB
 	call CGBLoadBackgroundPaletteBanked
 	call Status_ExpandNumericalTiles
-	call $5858
+	call FusionLabEvo_CheckExpItemBonus
 	call $56E4
 	add $AF
 	ld c, a
