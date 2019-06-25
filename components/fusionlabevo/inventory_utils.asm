@@ -182,3 +182,81 @@ FusionLabEvo_RememberLastItemOfFocus::
 	ld a, [W_FusionLabEvo_InFocusItemNumber]
 	ld [$C90E], a
 	ret
+
+SECTION "Fusion/Lab Evolution Inventory Utils 3", ROMX[$5858], BANK[$2A]
+FusionLabEvo_CheckExpItemBonus::
+	ld hl, $5A93
+	ld a, [W_FusionLabEvo_PartnerSpecies]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	sla c
+	rl b
+	sla c
+	rl b
+	sla c
+	rl b
+	add hl, bc
+	push hl
+	ld bc, 8
+	add hl, bc
+	ld a, [hl]
+	ld b, a
+	ld a, [W_FusionLabEvo_SelectedItem]
+	dec a
+	cp b
+	jr nz, .checkOtherExpItems
+
+.largeAmountOfExp
+	pop hl
+	ld a, 3
+	or a
+	ret
+
+.checkOtherExpItems
+	pop hl
+	ld a, [W_FusionLabEvo_SelectedItem]
+	dec a
+	ld b, a
+	srl a
+	srl a
+	srl a
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, b
+	ld c, 1
+	and 7
+	jr z, .skipLoop
+
+.andMaskGenerationLoop
+	sla c
+	dec a
+	jr nz, .andMaskGenerationLoop
+
+.skipLoop
+	ld a, [hl]
+	and c
+	ret z
+	cp $12
+	jr z, .smallAmountOfExp
+	cp $1D
+	jr z, .smallAmountOfExp
+	cp $31
+	jr z, .smallAmountOfExp
+	cp $32
+	jr z, .smallAmountOfExp
+	cp $33
+	jr nz, .someExp
+
+.smallAmountOfExp
+	ld a, 1
+	or a
+	ret
+
+.someExp
+	ld a, 2
+	or a
+	ret

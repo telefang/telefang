@@ -293,3 +293,29 @@ FusionLabEvo_TypematicButtonsLogic::
 
 .rightNotHeldLongEnough
 	ret
+
+SECTION "Fusion/Lab Evolution Animation Utils 3", ROMX[$57AA], BANK[$2A]
+FusionLabEvo_AnimateSprites::
+	ld a, [W_SystemSubState]
+	push af
+	ld a, 4
+	ld [W_SystemSubState], a
+	ld a, $C
+	ld hl, $479C
+	call CallBankedFunction_int
+	pop af
+	ld [W_SystemSubState], a
+	ret
+
+FusionLabEvo_ClearSpriteConfig1::
+	ld b, M_MetaSpriteConfig1_Count
+	ld hl, W_MetaSpriteConfig1
+	ld de, M_MetaSpriteConfig_Size
+	xor a
+
+.metaSpriteClearLoop
+	ld [hl], a
+	add hl, de
+	dec b
+	jr nz, .metaSpriteClearLoop
+	ret
