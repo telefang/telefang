@@ -370,8 +370,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	ld a, BANK(FusionLabEvo_FusionScreenStateMachine)
 	ld [W_PreviousBank], a
 	ld bc, 0
-	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution
 	jp FusionLabEvo_StatePrepareForFusionScreenTransition_wait
 
 .checkSubState05

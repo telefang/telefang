@@ -45,16 +45,15 @@ FusionLabEvo_StateDrawScreen::
 	ld [W_FusionLabEvo_PartnerSpecies], a
 	ld a, [$CDEC]
 	ld [$C908], a
-	ld a, 0
-	ld [$CDEC], a
 	ld a, [$CDEE]
 	ld [$C2DD], a
-	ld a, 0
-	ld [$CDEE], a
 	ld a, [$CDE1]
 	ld [$C2FD], a
-	ld a, 0
+	xor a
+	ld [$CDEE], a
+	ld [$CDEC], a
 	ld [$CDE1], a
+	ld [W_MainScript_TextStyle], a
 	ld bc, $89
 	call Overworld_CheckFlagValue
 	jr z, .isFusionEvo
@@ -231,14 +230,15 @@ FusionLabEvo_StateDrawScreen::
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
 	jp System_ScheduleNextSubState
+	nop
+	nop
 
 SECTION "Fusion/Lab Evolution States 2", ROMX[$4E7E], BANK[$2A]
 FusionLabEvo_StateFadeInAndBranchOnNoItems::
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
 	ld bc, 0
-	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_FusionLabEvo_ADVICE_LoadSGBFilesItemSelection
 	ld a, [W_FusionLabEvo_NoApplicableItems]
 	or a
 	jp z, .haveItems
@@ -356,8 +356,7 @@ FusionLabEvo_StateFadeOutAndReturnToOverworld::
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
-	ld a, 0
-	ld [W_byte_C9CF], a
+	M_AuxJmp Banked_Map_ADVICE_UnloadSGBFiles
 	ld a, $A
 	ld [W_SystemSubState], a
 	ld a, [$C908]

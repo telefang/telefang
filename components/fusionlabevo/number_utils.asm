@@ -1,31 +1,5 @@
 INCLUDE "telefang.inc"
 
-SECTION "Shop Number Gfx Table", ROMX[$6A00], BANK[$1]
-ShopNumberGfx::
-	INCBIN "build/components/fusionlabevo/shop_numbers.1bpp"
-	
-SECTION "Draw Shop Number Gfx", ROMX[$5240], BANK[$1]
-FusionLabEvo_ADVICE_DrawShopNumberGfx::
-	M_AdviceSetup
-	
-	ld d, ShopNumberGfx >> 8
-	sla e
-	sla e
-	sla e
-	ld b, 8
-
-.numberWriteLoop
-	ld a, [de]
-	di
-	call YetAnotherWFB
-	ld [hli], a
-	ld [hli], a
-	ei
-	inc de
-	dec b
-	jr nz, .numberWriteLoop
-	jp Battle_ADVICE_BattleArticle_teardown
-
 SECTION "Fusion/Lab Evolution Draw Item Data", ROMX[$510F], BANK[$2A]
 FusionLabEvo_DrawItemData::
 	ld a, [W_FusionLabEvo_ScrollState]
