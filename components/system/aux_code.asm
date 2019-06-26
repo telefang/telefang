@@ -130,9 +130,11 @@ Banked_PauseMenu_ADVICE_SMSContentsCheckInput::
 Banked_Battle_ADVICE_StatusInflictionArticle::
 	dw Battle_ADVICE_StatusInflictionArticle
 	
+;components/fusionlabevo/advice.asm
 Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	dw FusionLabEvo_ADVICE_DrawShopNumberGfx
 
+;components/sgb/convert_colours.asm
 Banked_PatchUtils_CommitStagedCGBToSGB_CBE::
 	dw PatchUtils_CommitStagedCGBToSGB_CBE
 	
@@ -303,6 +305,13 @@ Banked_PauseMenu_ADVICE_LoadSGBFilesOptions::
 ;components/gameover/advice.asm
 Banked_GameOver_ADVICE_LoadSGBFiles::
 	dw GameOver_ADVICE_LoadSGBFiles
+
+;components/fusionlabevo/advice.asm
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution
+
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesItemSelection
 
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.

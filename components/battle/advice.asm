@@ -256,6 +256,10 @@ Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
     call Banked_SGB_ConstructATFSetPacket
 
 .return
+    ld hl, $9600
+    ld a, $20
+    call MainScript_DrawEmptySpaces
+
     ld bc, $909
     ld e, $81
 
