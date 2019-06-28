@@ -14,6 +14,10 @@ FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	sla e
 	ld b, 8
 
+	ld a, [W_MainScript_TextStyle]
+	cp 3
+	jr z, .textStyle3
+
 .numberWriteLoop
 	ld a, [de]
 	di
@@ -26,7 +30,23 @@ FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	jr nz, .numberWriteLoop
 	jp Battle_ADVICE_BattleArticle_teardown
 
-SECTION "Fusion/Lab No Evolution Advice Code", ROMX[$6440], BANK[$1]
+.textStyle3
+	ld c, $FF
+
+.numberWriteLoopTextStyle3
+	ld a, [de]
+	di
+	call YetAnotherWFB
+	ld [hl], c
+	inc hl
+	ld [hli], a
+	ei
+	inc de
+	dec b
+	jr nz, .numberWriteLoopTextStyle3
+	jp Battle_ADVICE_BattleArticle_teardown
+
+SECTION "Fusion SGB Colours", ROMX[$6520], BANK[$1]
 FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
     M_AdviceSetup
 
@@ -51,9 +71,6 @@ FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
     ld hl, $8C00
     ld b, $C0
     call Zukan_ADVICE_TileLowByteBlanketFill
-	
-    ld b, $68
-    call Zukan_ADVICE_TileLightColourReverse
 
     ld a, 3
     ld [W_MainScript_TextStyle], a
@@ -88,10 +105,10 @@ FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
     M_AdviceTeardown
     ret
 
-FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
+FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation::
 	M_AdviceSetup
 
-	ld a, 4
+	ld a, 1
 	call Banked_LCDC_SetupPalswapAnimation
 
 	call PauseMenu_ADVICE_CheckSGB
@@ -104,13 +121,93 @@ FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
 	ld e, a
 	call Banked_SGB_ConstructPaletteSetPacket
 
-	xor a
+.noSGB
+	M_AdviceTeardown
+	ret
+
+FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
+	M_AdviceSetup
+
+	ld a, 4
+	call Banked_LCDC_SetupPalswapAnimation
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld a, 3
 	ld [W_MainScript_TextStyle], a
 
-	ld a, $E0
-	ld [W_Status_NumericalTileIndex], a
-	call Status_ExpandNumericalTiles
+    ld hl, $8800
+    ld b, $30
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld hl, $8C00
+    ld b, $C0
+    call Zukan_ADVICE_TileLowByteBlanketFill
+	
+    ld b, $68
+    call Zukan_ADVICE_TileLightColourReverse
+
+    ld c, $1C
+    call Banked_SGB_ConstructATFSetPacket
+
+	call FusionLabEvo_ADVICE_SGBPaletteLayoutLogic
 
 .noSGB
 	M_AdviceTeardown
 	ret
+
+FusionLabEvo_ADVICE_SwitchSGBPaletteLayout::
+	M_AdviceSetup
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .return
+
+	call FusionLabEvo_ADVICE_SGBPaletteLayoutLogic
+
+.return
+	M_AdviceTeardown
+	ret
+
+FusionLabEvo_ADVICE_SGBPaletteLayoutLogic::
+	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 1)
+	call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
+
+	ld a, [W_FusionLabEvo_ScrollPositionIndex]
+	or a
+	jr z, .position0
+	dec a
+	jr z, .position1
+	dec a
+	jr z, .position2
+
+.position3
+	ld a, M_SGB_Pal01 << 3 + 1
+	ld bc, $103
+	call PatchUtils_CommitStagedCGBToSGB
+	ld bc, $405
+	jr .continue
+
+.position2
+	ld a, M_SGB_Pal01 << 3 + 1
+	ld bc, $106
+	call PatchUtils_CommitStagedCGBToSGB
+	ld bc, $304
+	jr .continue
+
+.position1
+	ld a, M_SGB_Pal01 << 3 + 1
+	ld bc, $105
+	call PatchUtils_CommitStagedCGBToSGB
+	ld bc, $603
+	jr .continue
+
+.position0
+	ld a, M_SGB_Pal01 << 3 + 1
+	ld bc, $104
+	call PatchUtils_CommitStagedCGBToSGB
+	ld bc, $506
+
+.continue
+	ld a, M_SGB_Pal23 << 3 + 1
+	jp PatchUtils_CommitStagedCGBToSGB

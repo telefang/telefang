@@ -28,4 +28,5 @@ SGB_AttrFileData::
     INCBIN "build/gfx/cutscene/kai.atf" ; 19
     INCBIN "build/versions/power/gfx/screen/gameover.atf" ; 1A
     INCBIN "build/components/fusionlabevo/noevolution.atf" ; 1B
+    INCBIN "build/components/fusionlabevo/itemselection.atf" ; 1C
     ; The highest attrfile number is $2C.

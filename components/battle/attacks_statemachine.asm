@@ -19,19 +19,19 @@ SECTION "Attack - Prepare For Attack Animation", ROMX[$7612], BANK[$5]
 Attack_PrepareForAttackAnimation::
 	ld bc, $100
 	ld e, $85
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 8
 	ld e, $85
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP1
 	ld bc, $C
 	ld e, $80
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
-	ld hl, $9180
-	ld a, 8
-	call MainScript_DrawEmptySpaces
+	call Battle_ADVICE_ClearPartnerStatus
+	call Battle_ADVICE_ClearOpponentStatus
+	M_AuxJmp Banked_Attack_ADVICE_PreAttackSGB
 	ld a, [W_Battle_LastAttackID]
 	cp $38
 	jr c, .attackRange0To55
@@ -85,15 +85,15 @@ Attack_PrepareForAttackAnimation::
 
 SECTION "Attack - Attack Post Animation", ROMX[$7E09], BANK[$5]
 Attack_AttackPostAnimation::
-	ld bc, 1
+	M_AuxJmp Banked_Attack_ADVICE_PostAttackSGB
 	call Banked_LoadMaliasGraphics
 	ld bc, $100
 	ld e, $86
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 8
 	ld e, $81
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP1
 	call Battle_DrawPartnerUI
 	call Battle_DrawOpponentUI
