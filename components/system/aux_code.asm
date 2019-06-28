@@ -126,7 +126,15 @@ Banked_PauseMenu_ADVICE_SMSMapTiles::
 	
 Banked_PauseMenu_ADVICE_SMSContentsCheckInput::
 	dw PauseMenu_ADVICE_SMSContentsCheckInput
+
+;components/battle/advice.asm
+Banked_Attack_ADVICE_PreAttackSGB::
+	dw Attack_ADVICE_PreAttackSGB
+
+Banked_Attack_ADVICE_PostAttackSGB::
+	dw Attack_ADVICE_PostAttackSGB
 	
+;components/battle/articles.asm
 Banked_Battle_ADVICE_StatusInflictionArticle::
 	dw Battle_ADVICE_StatusInflictionArticle
 	
@@ -310,8 +318,14 @@ Banked_GameOver_ADVICE_LoadSGBFiles::
 Banked_FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
 	dw FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution
 
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation
+
 Banked_FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
 	dw FusionLabEvo_ADVICE_LoadSGBFilesItemSelection
+
+Banked_FusionLabEvo_ADVICE_SwitchSGBPaletteLayout::
+	dw FusionLabEvo_ADVICE_SwitchSGBPaletteLayout
 
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.

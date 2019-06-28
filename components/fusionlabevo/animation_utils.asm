@@ -156,9 +156,7 @@ FusionLabEvo_ItemSelectionScrollInputHandler::
 	ld [W_FusionLabEvo_ScrollPosition], a
 	ld a, [W_FusionLabEvo_ScrollPositionIndex]
 	inc a
-	and 3
-	ld [W_FusionLabEvo_ScrollPositionIndex], a
-	ret
+	jr .setScrollPositionIndex
 
 .rightNotPressed
 	ldh a, [H_JPInput_Changed]
@@ -166,7 +164,7 @@ FusionLabEvo_ItemSelectionScrollInputHandler::
 	ld a, [W_FusionLabEvo_TypematicBtns]
 	or b
 	and M_JPInput_Left
-	jr z, .leftNotPressed
+	ret z
 	ld a, [W_FusionLabEvo_PreviousItem]
 	or a
 	ret z
@@ -189,12 +187,14 @@ FusionLabEvo_ItemSelectionScrollInputHandler::
 	ld [W_FusionLabEvo_ScrollPosition], a
 	ld a, [W_FusionLabEvo_ScrollPositionIndex]
 	dec a
+
+.setScrollPositionIndex
 	and 3
 	ld [W_FusionLabEvo_ScrollPositionIndex], a
-	ret
-
-.leftNotPressed
-	ret
+	M_PrepAuxJmp Banked_FusionLabEvo_ADVICE_SwitchSGBPaletteLayout
+	jp PatchUtils_AuxCodeJmp
+	nop
+	nop
 
 FusionLabEvo_AnimateItemScrollPosition::
 	ld a, [W_FusionLabEvo_ScrollAccelerator]

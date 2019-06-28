@@ -51,8 +51,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	ld a, 7
 	call LCDC_InitAttributesLine
 	ld bc, 0
-	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation
 	ld a, 1
 	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	call FusionLabEvo_LoadSpeciesNameEntryPointC

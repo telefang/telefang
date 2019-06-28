@@ -1357,12 +1357,4 @@ Battle_DrawOpponentStatusEffect::
     ld e, $BB ; Opponent status effect tilemap.
     xor a
     jp Banked_RLEDecompressTMAP1
-
-SECTION "Clear Status Effect Graphics During Attack Hack", ROMX[$7630], BANK[$05]
-    ; Part of a much larger battle system function.
-    ; Clears both participants' status effect graphics.
-    call Battle_ADVICE_ClearPartnerStatus
-    call Battle_ADVICE_ClearOpponentStatus
-    nop
-    nop
     

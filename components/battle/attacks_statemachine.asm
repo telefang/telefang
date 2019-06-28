@@ -10,10 +10,205 @@ Battle_AttackStateMachine::
 .table
 	dw $66A5, $6709, $6724, $68D6, $6C11, $6C6E, Attack_PartnerFell, $6F47
 	dw $6F84, $6F97, $7122, $717F, Attack_OpponentFell, $73CF, $740C, $741F
-	dw $74B9, $7521, $7589, $75CE, $7612, $7AEA, $7DF4, $7E09
+	dw $74B9, $7521, $7589, $75CE, Attack_PrepareForAttackAnimation, $7AEA, $7DF4, Attack_AttackPostAnimation
 	dw $7F13, $6E1D, Attack_PartnerFled, $72DD, Attack_OpponentFled, $7DD6, $7689, $75BD
 	dw $76B9, $6801, $747E, $7EF6, $6CBA, $7DE5, $70C5, $6AA7
 	dw $70D8, $6C7F, $6CDA, $7190
+
+SECTION "Attack - Prepare For Attack Animation", ROMX[$7612], BANK[$5]
+Attack_PrepareForAttackAnimation::
+	ld bc, $100
+	ld e, $85
+	xor a
+	call Banked_RLEDecompressTMAP0
+	ld bc, 8
+	ld e, $85
+	xor a
+	call Banked_RLEDecompressTMAP1
+	ld bc, $C
+	ld e, $80
+	xor a
+	call Banked_RLEDecompressTMAP0
+	call Battle_ADVICE_ClearPartnerStatus
+	call Battle_ADVICE_ClearOpponentStatus
+	M_AuxJmp Banked_Attack_ADVICE_PreAttackSGB
+	ld a, [W_Battle_LastAttackID]
+	cp $38
+	jr c, .attackRange0To55
+	cp $5B
+	jr c, .attackRange56To90
+	cp $6E
+	jr c, .attackRange91To109
+	jr .attackRange110Onwards
+
+.attackRange0To55
+	ld [$D4FC], a
+	jr .loadAttackGfx
+
+.attackRange56To90
+	sub $38
+	ld [$D4FC], a
+	ld a, [W_Battle_LastAttackID]
+	jr .loadAttackGfx
+
+.attackRange91To109
+	sub $5A
+	ld [$D4FC], a
+	jr .loadAttackGfx
+
+.attackRange110Onwards
+	sub $6E
+	ld [$D4FC], a
+	ld a, [W_Battle_LastAttackID]
+	sub $36
+
+.loadAttackGfx
+	call $053E
+	ld a, 1
+	ld [W_CGBPaletteStagedOBP], a
+	ld a, [W_SerIO_ConnectionState]
+	or a
+	jr nz, .isLinkBattle
+	ld a, [W_Battle_AnimationPlayback]
+	or a
+	jr z, .noAttackAnimation
+
+.isLinkBattle
+	ld a, $16
+	ld [W_Battle_4thOrderSubState], a
+	ret
+
+.noAttackAnimation
+	ld a, $17
+	ld [W_Battle_4thOrderSubState], a
+	ret
+
+SECTION "Attack - Attack Post Animation", ROMX[$7E09], BANK[$5]
+Attack_AttackPostAnimation::
+	M_AuxJmp Banked_Attack_ADVICE_PostAttackSGB
+	call Banked_LoadMaliasGraphics
+	ld bc, $100
+	ld e, $86
+	xor a
+	call Banked_RLEDecompressTMAP0
+	ld bc, 8
+	ld e, $81
+	xor a
+	call Banked_RLEDecompressTMAP1
+	call Battle_DrawPartnerUI
+	call Battle_DrawOpponentUI
+	call Battle_DrawPartnerStatusEffect
+	call Battle_DrawOpponentStatusEffect
+	xor a
+	ld [W_Battle_LoopIndex], a
+	ld [$D45B], a
+	ld a, [W_Battle_LastAttackID]
+	cp $38
+	jp c, .standardAttack
+	ld a, [W_Battle_LastAttackID]
+	cp $6E
+	jr c, .attackRange0To109MathSkipA
+	sub $36
+
+.attackRange0To109MathSkipA
+	cp $38
+	jr c, .attackRange61To109Or115To120
+	cp $3D
+	jr c, .attackRange56To60Or110To114Or121Onwards
+	cp $40
+	jr c, .attackRange61To109Or115To120
+	cp $43
+	jr nc, .attackRange61To109Or115To120
+
+.attackRange56To60Or110To114Or121Onwards
+	ld a, $15
+	ld [W_Battle_4thOrderSubState], a
+	ret
+
+.attackRange61To109Or115To120
+	ld a, [W_Battle_LastAttackID]
+	cp $6E
+	jr c, .attackRange0To109MathSkipB
+	sub $36
+
+.attackRange0To109MathSkipB
+	cp $3D
+	jr c, .attackRange64To109Or118To120
+	cp $40
+	jr nc, .attackRange64To109Or118To120
+	ld a, [W_Battle_LastAttackID]
+	call $05F7
+	ld a, [$D495]
+	ld [$D434], a
+	ld a, $18
+	ld [W_Battle_4thOrderSubState], a
+	ret
+
+.attackRange64To109Or118To120
+	ld a, [W_Battle_LastAttackID]
+	cp $56
+	jr z, .attack86
+	cp $6E
+	jr c, .attackRange0To109MathSkipC
+	sub $36
+
+.attackRange0To109MathSkipC
+	cp $43
+	jr c, .standardAttack
+	cp $54
+	jr nc, .standardAttack
+
+.attack86
+	ld c, $72
+	call Battle_QueueMessage
+	ld a, $20
+	ld [W_Battle_4thOrderSubState], a
+	ret
+
+.standardAttack
+	ld a, $A
+	ld [W_Battle_LoopIndex], a
+	ld a, 0
+	ld [$D42D], a
+	ld a, [W_Battle_CurrentParticipantTeam]
+	cp 1
+	jr z, .opponentTeam
+
+.partnerTeam
+	ld a, [W_Battle_PartnerDenjuuTurnOrder]
+	call Battle_StagePartnerStats
+	ld a, [$D58B]
+	cp a, 5
+	jr nz, .attackNotBlocked
+	call $7ACC
+	cp 1
+	jr nz, .attackNotBlocked
+	call $70E4
+	jr .common
+
+.opponentTeam
+	ld a, [W_Battle_OpponentDenjuuTurnOrder]
+	call Battle_StageOpponentStats
+	ld a, [$D58B]
+	cp 5
+	jp nz, .attackNotBlocked
+	call $7ACC
+	cp 1
+	jr nz, .attackNotBlocked
+	call $6BD3
+
+.common
+	call $7AAC
+	ld c, $22
+	call Battle_QueueMessage
+	ld a, $25
+	ld [W_Battle_4thOrderSubState], a
+	ret
+
+.attackNotBlocked
+	ld a, $23
+	ld [W_Battle_4thOrderSubState], a
+	ret
 
 SECTION "Attack - Partner Fell", ROMX[$6E82], BANK[$5]
 Attack_PartnerFell::
