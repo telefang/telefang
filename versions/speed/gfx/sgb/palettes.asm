@@ -47,11 +47,13 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $573B, $7631, 0 ; 1B
     dSGB_Palette $7FFF, $7EF6, $3EB8, 0 ; 1C
 
+    ;Zukan Completion Cert
+    dSGB_Palette $7FF9, $6B39, $421A, $10DB ; 1D
+    dSGB_Palette $7FF9, $7753, $5EC6, $4141 ; 1E
+    dSGB_Palette $7FF9, $57BB, $36CA, $4141 ; 1F
+    dSGB_Palette $7FF9, $57BB, $1EDF, $4141 ; 20
+
     ;unused?
-    dSGB_Palette $7FFF, $56F2, $180, $1904 ; 1D
-    dSGB_Palette $7FFF, $5A52, $180, $20A5 ; 1E
-    dSGB_Palette $7FFF, $4A56, $180, $14A8 ; 1F
-    dSGB_Palette $7FFF, $3A78, $D72, $487 ; 20
     dSGB_Palette $7FFF, $2F18, $1231, $4C6 ; 21
     dSGB_Palette $7FFF, $46B5, $25AD, $CA5 ; 22
     dSGB_Palette $7FFF, $4276, $298E, $487 ; 23

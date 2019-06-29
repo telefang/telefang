@@ -53,8 +53,7 @@ Certificate_StateDrawScreen::
 	ld a, BANK(Certificate_StateDrawScreen)
 	ld [W_PreviousBank], a
 	ld bc, 0
-	ld a, 4
-	call LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_Certificate_ADVICE_LoadSGBFiles
 	jp System_ScheduleNextSubState
 
 Certificate_StateFadeIn::

@@ -462,3 +462,22 @@ Zukan_ADVICE_ReloadSGBPalettesOverview::
 .return
     M_AdviceTeardown
     ret
+
+SECTION "Zukan Certificate SGB Colours", ROMX[$6430], BANK[$1]
+Certificate_ADVICE_LoadSGBFiles::
+    M_AdviceSetup
+
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld a, $1E
+    ld bc, $1D1E
+    ld de, $1F20
+    call Banked_SGB_ConstructPaletteSetPacket
+
+.return
+    M_AdviceTeardown
+    ret

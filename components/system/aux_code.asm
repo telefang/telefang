@@ -314,12 +314,19 @@ Banked_PauseMenu_ADVICE_LoadSGBFilesOptions::
 Banked_GameOver_ADVICE_LoadSGBFiles::
 	dw GameOver_ADVICE_LoadSGBFiles
 
+;components/zukan/advice.asm
+Banked_Certificate_ADVICE_LoadSGBFiles::
+	dw Certificate_ADVICE_LoadSGBFiles
+
 ;components/fusionlabevo/advice.asm
 Banked_FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
 	dw FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution
 
 Banked_FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation::
 	dw FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation
+
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesEvolution::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesEvolution
 
 Banked_FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
 	dw FusionLabEvo_ADVICE_LoadSGBFilesItemSelection

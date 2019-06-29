@@ -272,14 +272,7 @@ TitleMenu_ADVICE_InitNickname::
 	call Banked_SGB_ConstructATFSetPacket
 
 	ld hl, W_LCDC_CGBStagingOBPaletteArea + (M_LCDC_CGBStagingAreaStride * 4) + (M_LCDC_CGBColorSize * 2) + 1
-	ld a, [hld]
-	ld b, a
-	ld a, [hld]
-	ld c, a
-	ld a, b
-	ld [hld], a
-	ld a, c
-	ld [hl], a
+	call FusionLabEvo_ADVICE_FixOBPaletteForSGB
 	
 	ld a, M_SGB_Pal01 << 3 + 1
 	ld bc, $C
