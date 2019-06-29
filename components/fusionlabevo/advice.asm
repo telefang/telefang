@@ -79,14 +79,7 @@ FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
     call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
 
     ld hl, W_LCDC_CGBStagingOBPaletteArea + (M_LCDC_CGBStagingAreaStride * 1) + (M_LCDC_CGBColorSize * 2) + 1
-    ld a, [hld]
-    ld b, a
-    ld a, [hld]
-    ld c, a
-    ld a, b
-    ld [hld], a
-    ld a, c
-    ld [hl], a
+    call FusionLabEvo_ADVICE_FixOBPaletteForSGB
 
     ld c, $1B
     call Banked_SGB_ConstructATFSetPacket
@@ -105,6 +98,17 @@ FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
     M_AdviceTeardown
     ret
 
+FusionLabEvo_ADVICE_FixOBPaletteForSGB::
+    ld a, [hld]
+    ld b, a
+    ld a, [hld]
+    ld c, a
+    ld a, b
+    ld [hld], a
+    ld a, c
+    ld [hl], a
+    ret
+
 FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation::
 	M_AdviceSetup
 
@@ -114,12 +118,43 @@ FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation::
 	call PauseMenu_ADVICE_CheckSGB
 	jr z, .noSGB
 
-	xor a
-	ld b, a
-	ld c, a
-	ld d, a
-	ld e, a
-	call Banked_SGB_ConstructPaletteSetPacket
+	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 1)
+	call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
+
+    ld hl, W_LCDC_CGBStagingOBPaletteArea + (M_LCDC_CGBStagingAreaStride * 1) + (M_LCDC_CGBColorSize * 2) + 1
+    call FusionLabEvo_ADVICE_FixOBPaletteForSGB
+
+    ld c, $1D
+    call Banked_SGB_ConstructATFSetPacket
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld bc, $107
+    call PatchUtils_CommitStagedCGBToSGB
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld bc, $709
+    call PatchUtils_CommitStagedCGBToSGB
+
+.noSGB
+	M_AdviceTeardown
+	ret
+
+FusionLabEvo_ADVICE_LoadSGBFilesEvolution::
+	M_AdviceSetup
+
+	ld a, 5
+	call CGBLoadBackgroundPaletteBanked
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .noSGB
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld bc, $106
+    call PatchUtils_CommitStagedCGBToSGB
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld bc, $505
+    call PatchUtils_CommitStagedCGBToSGB
 
 .noSGB
 	M_AdviceTeardown

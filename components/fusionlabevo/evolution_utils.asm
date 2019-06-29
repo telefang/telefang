@@ -106,8 +106,7 @@ FusionLabEvo_DrawPostEvolutionScreen::
 	ld bc, $1DC
 
 .isFusionEvo
-	ld a, 5
-	call CGBLoadBackgroundPaletteBanked
+	M_AuxJmp Banked_FusionLabEvo_ADVICE_LoadSGBFilesEvolution
 	ld a, 0
 	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ld [W_ShadowREG_HBlankSecondMode], a

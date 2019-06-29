@@ -133,7 +133,7 @@ Battle_ADVICE_LoadSGBFiles::
     call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
 
     ld a, M_SGB_Pal01 << 3 + 1
-    ld bc, $105
+    ld bc, $405
     call PatchUtils_CommitStagedCGBToSGB
 
     ld c, $13
@@ -490,7 +490,7 @@ Attack_ADVICE_PostAttackSGB::
     jr z, .return
 
     ld a, M_SGB_Pal01 << 3 + 1
-    ld bc, $105
+    ld bc, $405
     call PatchUtils_CommitStagedCGBToSGB
 
 .return
