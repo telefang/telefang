@@ -240,7 +240,7 @@ def update():
 
     # Put resources into use.
     app.charmap = parse_charmap(raw_charmap)
-    app.descending_char_lengths = descending_char_lengths_of(app.charmap)
+    app.descending_char_lengths = descending_char_lengths_of(app.charmap, CONTROL_CODES)
     app.fonts = {}
     for font_name, csv, image in zip(FONTS.keys(), raw_metric_csvs, raw_images):
         app.fonts[font_name] = {
