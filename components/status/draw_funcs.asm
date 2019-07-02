@@ -76,7 +76,7 @@ Status_DrawDenjuuMoves::
 .drawUnknownMove4
     ld de, Status_TextTable_UnkMove
     ld hl, $8D00
-    ld b, 8
+    ld b, 4
     call Banked_MainScript_DrawStatusText
 
 .drawCompleted
