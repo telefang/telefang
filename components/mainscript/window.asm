@@ -397,12 +397,12 @@ MainScript_ClearOverworldWindow::
     srl a
     rr c
     ld b, a
-    jp MainScript_ClearWindowTiles
+    jp MainScript_ClearOverworldWindowTiles
 
 .extEntryA
     ld bc, 0
     ld de, $CA70
-    jp MainScript_ClearWindowTiles
+    jp MainScript_ClearOverworldWindowTiles
 
 MainScript_ClearOverworldLocationWindow::
     ld bc, $100
