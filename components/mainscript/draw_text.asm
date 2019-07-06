@@ -254,7 +254,7 @@ MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle::
 	pop bc
 	ret
 	
-SECTION "Main Script Font Selector", ROMX[$7FC0], BANK[$B]
+SECTION "Main Script Font Selector", ROMX[$7F8F], BANK[$B]
 MainScript_ADVICE_FontSelector::
 	ld a, [W_MainScript_ADVICE_FontToggle]
 	and a
@@ -277,35 +277,6 @@ MainScript_ADVICE_FontAddress::
 .useExtraFont
 	ld hl, 0
 	ret
-	
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 
 SECTION "Main Script Alternate Font Drawing Advice Bankcall", ROM0[$3DEA]
 Banked_MainScript_ADVICE_DrawNarrowLetter::

@@ -164,7 +164,7 @@ MainScript_DrawEmptyShopWindow::
     ld b, 4
     ld a, [W_MainScript_WindowLocation]
     ld c, 0
-    call MainScript_DrawWindowBorder
+    call MainScript_ADVICE_DrawEmptyShopWindow
     ret
 
 .mystery
