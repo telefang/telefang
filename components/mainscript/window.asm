@@ -379,3 +379,289 @@ MainScript_ShopWindowBorder::
     db $F4, $C0, $C1, $C2, $C3, $C4, $C5, $C6, $C7, $F6
     db $F4, $EF, $EF, $EF, $EF, $EF, $C8, $C9, $CA, $F6
     db $F7, $F8, $F8, $F8, $F8, $F8, $F8, $F8, $F8, $F9
+
+SECTION "MainScript Clear Secondary Shop Window", ROMX[$4EBB], BANK[$32]
+MainScript_ClearSecondaryShopWindow::
+    ld hl, $980C
+    ld a, [$CA76]
+    call $328D
+    ld hl, $980E
+    ld a, [$CA77]
+    call $328D
+    ld hl, $9810
+    ld a, [$CA78]
+    call $328D
+    ld hl, $9812
+    ld a, [$CA79]
+    call $328D
+    ld hl, $984C
+    ld a, [$CA80]
+    call $328D
+    ld hl, $984E
+    ld a, [$CA81]
+    call $328D
+    ld hl, $9850
+    ld a, [$CA82]
+    call $328D
+    ld hl, $9852
+    ld a, [$CA83]
+    call $328D
+    ret
+
+SECTION "MainScript Clear Overworld Window", ROM0[$2BA9]
+MainScript_ClearOverworldWindow::
+    ld a, [W_MainScript_WindowLocation]
+    srl a
+    ld c, a
+    ld e, $A
+    call System_Multiply8
+    ld hl, $CA70
+    add hl, de
+    ld d, h
+    ld e, l
+    ld a, [W_MainScript_WindowLocation]
+    ld c, 0
+    srl a
+    srl a
+    rr c
+    srl a
+    rr c
+    ld b, a
+    jp MainScript_ClearOverworldWindowTiles
+
+.extEntryA
+    ld bc, 0
+    ld de, $CA70
+    jp MainScript_ClearOverworldWindowTiles
+
+MainScript_ClearOverworldLocationWindow::
+    ld bc, $100
+    ld de, $CA98
+
+MainScript_ClearOverworldWindowTiles::
+    ld a, [W_MainScript_TilePtr]
+    ld l, a
+    ld a, [$C9FD]
+    ld h, a
+    add hl, bc
+    call VRAMTileWraparound
+    ld b, 4
+
+.acreRowMappingLoop
+    push bc
+    push hl
+    ld a, [W_CurrentBank]
+    push af
+    ld a, $32
+    rst $10
+    call $42A9
+    pop af
+    rst $10
+    pop hl
+    ld bc, $40
+    add hl, bc
+    call VRAMTileWraparound
+    pop bc
+    dec b
+    jr nz, .acreRowMappingLoop
+    ret
+
+SECTION "MainScript Animate Overworld Window", ROMX[$457D], BANK[$B]
+MainScript_AnimateOverworldWindow::
+    ld a, [W_MainScript_WaitFrames]
+    dec a
+    ld [W_MainScript_WaitFrames], a
+    jr nz, .waitUntilNextFrame
+
+.twoThirdsOpen
+    ld a, 4
+    ld [W_MainScript_WaitFrames], a
+    ld a, [W_MainScript_NumNewlines]
+    inc a
+    ld [W_MainScript_NumNewlines], a
+    cp 1
+    jr nz, .fullyOpen
+    ld a, [W_MainScript_WindowLocation]
+    dec a
+    ld [W_MainScript_WindowLocation], a
+    ld de, $507B
+    ld b, 4
+    ld c, 1
+    jp MainScript_ADVICE_DrawTwoThirdsOverworldWindow
+
+.fullyOpen
+    ld a, 1
+    ld [W_MainScript_State], a
+    ld a, 0
+    ld [W_MainScript_NumNewlines], a
+    ld a, 8
+    ld [W_MainScript_WaitFrames], a
+    ld a, [W_MainScript_WindowLocation]
+    dec a
+    ld [W_MainScript_WindowLocation], a
+    ld de, $500F
+    ld b, 6
+    ld c, 1
+    jp MainScript_ADVICE_DrawOverworldWindow
+
+.waitUntilNextFrame
+    ret
+
+SECTION "MainScript Clear Overworld Hud", ROMX[$48B1], BANK[$B]
+MainScript_ClearOverworldHud::
+    ld a, [$CD29]
+    or a
+    jr nz, .hudAtBottomOfScreen
+
+.hudAtTopOfScreen
+    call MainScript_ADVICE_TopHudSGBClear
+    ld h, a
+    ld a, [W_MainScript_TilePtr]
+    ld l, a
+    ld de, $CA70
+    call .mapAcreRow
+    ret
+
+.hudAtBottomOfScreen
+    call MainScript_ADVICE_BottomHudSGBClear
+    ld h, a
+    ld a, [W_MainScript_TilePtr]
+    ld l, a
+    ld bc, $1C0
+    add hl, bc
+    call VRAMTileWraparound
+    ld de, $CAB6
+
+.mapAcreRow
+    call .mapAcreSquare
+    call .mapAcreSquare
+    call .mapAcreSquare
+    call .mapAcreSquare
+    call .mapAcreSquare
+    call .mapAcreSquare
+    call .mapAcreSquare
+    call .mapAcreSquare
+    call .mapAcreSquare
+    jp .mapAcreSquare
+
+.mapAcreSquare
+    ld a, [de]
+    push hl
+    push de
+    call $328D
+    pop de
+    inc de
+    pop hl
+    ld c, 2
+    jp $4C32
+
+SECTION "MainScript Map Location Window", ROMX[$49A2], BANK[$B]
+MainScript_MapLocationWindow::
+    call MainScript_LoadWindowBorderTileset
+    call MainScript_ClearWindowTilesNext
+    ld de, $5127
+    ld b, 3
+    ld a, [W_MainScript_WindowLocation]
+    ld c, 1
+    call MainScript_ADVICE_MapLocationWindow
+    ld a, [W_MainScript_WindowLocation]
+    dec a
+    ld [W_MainScript_WindowLocation], a
+    ret
+
+MainScript_OverworldWindowThirdOpen::
+    call MainScript_LoadWindowBorderTileset
+    call $4CE5
+    ld de, $50C3
+    ld b, 2
+    ld a, [W_MainScript_WindowLocation]
+    ld c, 1
+    call MainScript_ADVICE_DrawOneThirdOverworldWindow
+    ret
+
+SECTION "MainScript Map Hud Window", ROMX[$49FB], BANK[$B]
+MainScript_MapOverworldHudWindow::
+    call MainScript_LoadWindowTiles
+    call $4D63
+    ld de, $CA08
+    ld b, 2
+    ld a, [W_MainScript_WindowLocation]
+    ld c, 0
+    call MainScript_ADVICE_MapOverworldHudWindow
+    ret
+
+SECTION "MainScript Map Secondary Shop Window", ROMX[$4A48], BANK[$B]
+MainScript_MapSecondaryShopWindow::
+    call MainScript_LoadWindowBorderTileset
+    call MainScript_ClearWindowTilesNext
+    ld de, $5185
+    ld b, 3
+    ld a, [W_MainScript_WindowLocation]
+    ld c, $C
+    call MainScript_ADVICE_MapSecondaryShopWindow
+    ret
+
+SECTION "MainScript Overworld SGB Window Advice", ROMX[$7FAC], BANK[$B]
+MainScript_ADVICE_DrawOverworldWindow::
+    call MainScript_DrawWindowBorder
+    ld h, 4
+
+.extEntry
+    jp Banked_SGB_ConstructATTRBLKPacket
+
+MainScript_ADVICE_DrawTwoThirdsOverworldWindow::
+    call MainScript_DrawWindowBorder
+    ld h, 5
+    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
+
+MainScript_ADVICE_DrawOneThirdOverworldWindow::
+    call MainScript_DrawWindowBorder
+    ld h, 6
+    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
+
+MainScript_ADVICE_MapOverworldHudWindow::
+    call MainScript_DrawWindowBorder
+    ld h, 8
+    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
+
+MainScript_ADVICE_MapLocationWindow::
+    call MainScript_DrawWindowBorder
+    ld h, $C
+    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
+
+MainScript_ADVICE_DrawEmptyShopWindow::
+    call MainScript_DrawWindowBorder
+    ld h, $D
+    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
+
+MainScript_ADVICE_MapSecondaryShopWindow::
+    call MainScript_DrawWindowBorder
+    ld h, $E
+    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
+
+MainScript_ADVICE_TopHudSGBClear::
+    ld h, 9
+
+.extEntry
+    call Banked_SGB_ConstructATTRBLKPacket
+    ld a, [$C9FD]
+    ret
+
+MainScript_ADVICE_BottomHudSGBClear::
+    ld h, $B
+    jr MainScript_ADVICE_TopHudSGBClear.extEntry
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
