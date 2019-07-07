@@ -378,6 +378,33 @@ MainScript_ClearSecondaryShopWindow::
     call $328D
     ret
 
+MainScript_ClearBothShopWindows::
+    ld a, 2
+    ld [$C9D8], a
+    ld b, $A
+    ld hl, $9800
+    ld de, $CA70
+    call .acreSquareMappingLoop
+    ld b, $A
+    ld hl, $9840
+    ld de, $CA7A
+
+.acreSquareMappingLoop
+    push de
+    push hl
+    push bc
+    ld a, [de]
+    call $328D
+    pop bc
+    pop hl
+    pop de
+    inc de
+    inc hl
+    inc hl
+    dec b
+    jr nz, .acreSquareMappingLoop
+    ret
+
 SECTION "MainScript Clear Overworld Window", ROM0[$2BA9]
 MainScript_ClearOverworldWindow::
     ld a, [W_MainScript_WindowLocation]
@@ -404,7 +431,7 @@ MainScript_ClearOverworldWindow::
     ld de, $CA70
     jp MainScript_ClearOverworldWindowTiles
 
-MainScript_ClearOverworldLocationWindow::
+.extEntryB
     ld bc, $100
     ld de, $CA98
 
