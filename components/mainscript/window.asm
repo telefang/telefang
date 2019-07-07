@@ -405,12 +405,12 @@ MainScript_ClearSecondaryShopWindow::
     call $328D
     ld hl, $9852
     ld a, [$CA83]
-    call $328D
+    call MainScript_ADVICE_ClearSecondaryShopWindow
     ret
 
 MainScript_ClearBothShopWindows::
     ld a, 2
-    ld [$C9D8], a
+    call MainScript_ADVICE_ClearBothShopWindows
     ld b, $A
     ld hl, $9800
     ld de, $CA70
@@ -454,7 +454,7 @@ MainScript_ClearOverworldWindow::
     srl a
     rr c
     ld b, a
-    jp MainScript_ClearOverworldWindowTiles
+    jp MainScript_ADVICE_ClearOverworldWindow
 
 .extEntryA
     ld bc, 0
@@ -692,3 +692,20 @@ MainScript_ADVICE_BottomHudSGBClear::
     nop
     nop
     nop
+
+SECTION "MainScript Clear Shop Window Advice", ROMX[$70E0], BANK[$32]
+MainScript_ADVICE_ClearSecondaryShopWindow::
+    call $328D
+    ld h, $F
+    jp Banked_SGB_ConstructATTRBLKPacket
+
+MainScript_ADVICE_ClearBothShopWindows::
+    ld [$C9D8], a
+    ld h, $A
+    jp Banked_SGB_ConstructATTRBLKPacket
+
+SECTION "Overworld Message Box Clear Advice", ROM0[$3DC7]
+MainScript_ADVICE_ClearOverworldWindow::
+    call MainScript_ClearOverworldWindowTiles
+    ld h, 7
+    jp Banked_SGB_ConstructATTRBLKPacket

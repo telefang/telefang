@@ -154,7 +154,7 @@ SGB_ConstructATTRBLKPacket_PrecomposedTable::
     db  1, $E0, $12, 6, 0 ; 07 Overworld Message Box Closed
     db  0, $E0, $14, 2, 3 ; 08 Hud Open
     db  0,   0, $14, 2, 0 ; 09 Top Hud Closed
-    db  0,  $E, $14, 2, 3 ; 0A (Unused)
+    db  0,   0, $14, 4, 0 ; 0A Both Shop Windows Closed
     db  0,  $E, $14, 2, 0 ; 0B Bottom Hud Closed
     db  1, $E0, $12, 3, 3 ; 0C Location Window Open
     db  0,   0,  $A, 4, 3 ; 0D Shop Window Open
