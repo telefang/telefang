@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 	
-SECTION "Battle Single/Plural Check", ROMX[$73A0], BANK[$1]
+SECTION "Battle Single/Plural Check", ROMX[$7C83], BANK[$1]
 Battle_ADVICE_ParsePluralState::
 	M_AdviceSetup
 	push bc

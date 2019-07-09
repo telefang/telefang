@@ -3,12 +3,12 @@ Encounter_ADVICE_ScriptedDenjuuNicknameTable::
 	INCBIN "build/script/battle/nicknames.stringtbl"
 Encounter_ADVICE_ScriptedDenjuuNicknameTable_END
 
-SECTION "StringTable_battle_singular Section", ROMX[$73f0], BANK[$1]
+SECTION "StringTable_battle_singular Section", ROMX[$7cf0], BANK[$1]
 Battle_SingularCharacterTable::
 	INCBIN "build/script/battle/singular.stringtbl"
 Battle_SingularCharacterTable_END
 
-SECTION "StringTable_battle_plural Section", ROMX[$73f8], BANK[$1]
+SECTION "StringTable_battle_plural Section", ROMX[$7cf8], BANK[$1]
 Battle_PluralCharacterTable::
 	INCBIN "build/script/battle/plural.stringtbl"
 Battle_PluralCharacterTable_END

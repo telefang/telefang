@@ -31,4 +31,5 @@ SGB_AttrFileData::
     INCBIN "build/components/fusionlabevo/itemselection.atf" ; 1C
     INCBIN "build/components/fusionlabevo/evolution.atf" ; 1D
     INCBIN "build/components/zukan/completion_certificate.atf" ; 1E
+    INCBIN "build/components/overworld/overworld.atf" ; 1F
     ; The highest attrfile number is $2C.

@@ -22,7 +22,7 @@ Overworld_PaletteLoader::
     ld [W_PreviousBank], a
     ld b, 0
     call Banked_CGBLoadBackgroundPalette
-    jp Overworld_WindowFlavourPaletteLoader
+    jp Overworld_ADVICE_PaletteLoader
 
 Overworld_WindowFlavourPaletteLoader::
     ld b, 7
