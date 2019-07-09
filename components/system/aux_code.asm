@@ -334,6 +334,10 @@ Banked_FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
 Banked_FusionLabEvo_ADVICE_SwitchSGBPaletteLayout::
 	dw FusionLabEvo_ADVICE_SwitchSGBPaletteLayout
 
+;components/overworld/advice.asm
+Banked_Overworld_ADVICE_LoadSGBFiles::
+	dw Overworld_ADVICE_LoadSGBFiles
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

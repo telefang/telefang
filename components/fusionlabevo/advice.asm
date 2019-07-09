@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Shop Number Gfx Table", ROMX[$6A00], BANK[$1]
+SECTION "Shop Number Gfx Table", ROMX[$7D00], BANK[$1]
 ShopNumberGfx::
 	INCBIN "build/components/fusionlabevo/shop_numbers.1bpp"
 	
