@@ -38,11 +38,9 @@ Overworld_ADVICE_LoadSGBFiles::
 	
 	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7)
 	call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
-	
-	ld bc, $10
-	ld de, $1402
-	ld h, 2
-	call Banked_SGB_ConstructATTRBLKPacket
+
+	ld c, $1F
+	call Banked_SGB_ConstructATFSetPacket
 	
 	ld a, M_SGB_Pal23 << 3 + 1
 	ld bc, $607
