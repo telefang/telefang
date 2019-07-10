@@ -586,8 +586,7 @@ SECTION "MainScript Map Location Window", ROMX[$49A2], BANK[$B]
 MainScript_MapLocationWindow::
     call MainScript_LoadWindowBorderTileset
     call MainScript_ClearWindowTilesNext
-    ld de, $5127
-    ld b, 3
+    M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawOverworldLocationWindow
     ld a, [W_MainScript_WindowLocation]
     ld c, 1
     call MainScript_ADVICE_MapLocationWindow
@@ -599,8 +598,7 @@ MainScript_MapLocationWindow::
 MainScript_OverworldWindowThirdOpen::
     call MainScript_LoadWindowBorderTileset
     call $4CE5
-    ld de, $50C3
-    ld b, 2
+    M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawOverworldWindow
     ld a, [W_MainScript_WindowLocation]
     ld c, 1
     call MainScript_ADVICE_DrawOneThirdOverworldWindow
@@ -610,8 +608,7 @@ SECTION "MainScript Map Hud Window", ROMX[$49FB], BANK[$B]
 MainScript_MapOverworldHudWindow::
     call MainScript_LoadWindowTiles
     call $4D63
-    ld de, $CA08
-    ld b, 2
+    M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawHud
     ld a, [W_MainScript_WindowLocation]
     ld c, 0
     call MainScript_ADVICE_MapOverworldHudWindow
@@ -704,8 +701,59 @@ MainScript_ADVICE_ClearBothShopWindows::
     ld h, $A
     jp Banked_SGB_ConstructATTRBLKPacket
 
-SECTION "Overworld Message Box Clear Advice", ROM0[$3DC7]
+SECTION "Overworld Message Box Clear Advice", ROM0[$3DC3]
 MainScript_ADVICE_ClearOverworldWindow::
     call MainScript_ClearOverworldWindowTiles
     ld h, 7
+    xor a
+    ld [W_MainScript_TextStyle], a
     jp Banked_SGB_ConstructATTRBLKPacket
+
+SECTION "MainScript Window Redraw Advice", ROMX[$6470], BANK[$1]
+MainScript_ADVICE_SGBRedrawOverworldLocationWindow::
+    M_AdviceSetup
+    call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
+    ld de, $5127
+    ld b, 3
+    M_AdviceTeardown
+    ret
+
+MainScript_ADVICE_SGBRedrawOverworldWindow::
+    M_AdviceSetup
+    call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
+    ld de, $50C3
+    ld b, 2
+    M_AdviceTeardown
+    ret
+
+MainScript_ADVICE_SGBRedrawOverworldWindow_Common::
+    call PauseMenu_ADVICE_CheckSGB
+    ret z
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+    ld hl, $8C00
+    ld b, $C0
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ld b, $50
+    call Zukan_ADVICE_TileLightColourReverse
+    ld b, $14
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ret
+
+MainScript_ADVICE_SGBRedrawHud::
+    M_AdviceSetup
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .noSGB
+
+    ld hl, $8C00
+    ld b, $B0
+    call Zukan_ADVICE_TileLightColourReverse
+    ld b, $B0
+    call Zukan_ADVICE_TileLightColourReverse
+
+.noSGB
+    ld de, $CA08
+    ld b, 2
+    M_AdviceTeardown
+    ret
