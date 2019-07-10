@@ -318,6 +318,16 @@ Banked_GameOver_ADVICE_LoadSGBFiles::
 Banked_Certificate_ADVICE_LoadSGBFiles::
 	dw Certificate_ADVICE_LoadSGBFiles
 
+;components/mainscript/window.asm
+Banked_MainScript_ADVICE_SGBRedrawOverworldLocationWindow::
+	dw MainScript_ADVICE_SGBRedrawOverworldLocationWindow
+
+Banked_MainScript_ADVICE_SGBRedrawOverworldWindow::
+	dw MainScript_ADVICE_SGBRedrawOverworldWindow
+
+Banked_MainScript_ADVICE_SGBRedrawHud::
+	dw MainScript_ADVICE_SGBRedrawHud
+
 ;components/fusionlabevo/advice.asm
 Banked_FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
 	dw FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution
