@@ -245,7 +245,6 @@ Victory_ADVICE_LoadSGBFilesRecruitment::
     M_AdviceTeardown
     ret
 
-SECTION "Victory Evolution Advice Code 1", ROMX[$5F00], BANK[$1]
 Victory_ADVICE_EvolutionLoadSGBFiles::
     M_AdviceSetup
 
