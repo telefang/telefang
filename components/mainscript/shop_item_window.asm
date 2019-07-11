@@ -209,3 +209,52 @@ MainScript_DrawQuantity::
     nop
     nop
     nop
+
+SECTION "Main Script Shop Item Window 6", ROMX[$4831], BANK[$B]
+MainScript_DrawShopWindowForChiru::
+    ld a, [W_Shop_PlayerTotalChiru]
+    ld l, a
+    ld a, [$C911]
+    ld h, a
+    ld d, 0
+    call $4883
+    call MainScript_DrawEmptyShopWindow
+    call MainScriptMachine
+    call MainScriptMachine
+    ld a, 0
+    ld [W_byte_C9CF], a
+    ret
+
+SECTION "Main Script Secondary Shop Item Window", ROM0[$2D10]
+MainScript_DrawSecondaryShopWindowForChiru::
+    ld a, [W_CurrentBank]
+    push af
+    ld a, BANK(MainScript_SetupSecondaryShopWindowForChiru)
+    rst $10
+    call MainScript_SetupSecondaryShopWindowForChiru
+    call MainScriptMachine
+    call MainScriptMachine
+    call MainScriptMachine
+    pop af
+    rst $10
+    ld a, 0
+    ld [W_byte_C9CF], a
+    ret
+
+SECTION "Main Script Secondary Shop Item Window 2", ROMX[$492E], BANK[$B]
+MainScript_SetupSecondaryShopWindowForChiru::
+    ld a, $C0
+    ld [W_MainScript_TileBaseIdx], a
+    ld a, $E0
+    ld [W_Status_NumericalTileIndex], a
+    push bc
+    push de
+    call $2D03
+    pop de
+    pop bc
+    ld a, $E6
+    ld [$CA00], a
+    call MainScript_QueueCustomWindowMessage
+    ld a, 7
+    ld [$CA65], a
+    jp MainScript_MapSecondaryShopWindow
