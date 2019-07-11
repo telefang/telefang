@@ -274,6 +274,13 @@ Banked_Victory_ADVICE_LoadSGBFilesRecruitment::
 Banked_Victory_ADVICE_EvolutionLoadSGBFiles::
 	dw Victory_ADVICE_EvolutionLoadSGBFiles
 
+;components/mainscript/window.asm
+Banked_MainScript_ADVICE_SGBRedrawShopWindow::
+	dw MainScript_ADVICE_SGBRedrawShopWindow
+
+Banked_MainScript_ADVICE_SGBRedrawSecondaryShopWindow::
+	dw MainScript_ADVICE_SGBRedrawSecondaryShopWindow
+
 ;components/battle/advice.asm
 Banked_Battle_ADVICE_LoadDenjuuResources::
 	dw Battle_ADVICE_LoadDenjuuResources

@@ -618,8 +618,7 @@ SECTION "MainScript Map Secondary Shop Window", ROMX[$4A48], BANK[$B]
 MainScript_MapSecondaryShopWindow::
     call MainScript_LoadWindowBorderTileset
     call MainScript_ClearWindowTilesNext
-    ld de, $5185
-    ld b, 3
+    M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawSecondaryShopWindow
     ld a, [W_MainScript_WindowLocation]
     ld c, $C
     call MainScript_ADVICE_MapSecondaryShopWindow
@@ -675,14 +674,12 @@ MainScript_ADVICE_BottomHudSGBClear::
     ld h, $B
     jr MainScript_ADVICE_TopHudSGBClear.extEntry
 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
+MainScript_ADVICE_ShopWindowRestoreTextStyle::
+    xor a
+    ld [W_byte_C9CF], a
+    ld [W_MainScript_TextStyle], a
+    ret
+
     nop
     nop
     nop
@@ -755,5 +752,22 @@ MainScript_ADVICE_SGBRedrawHud::
 .noSGB
     ld de, $CA08
     ld b, 2
+    M_AdviceTeardown
+    ret
+
+SECTION "MainScript Shop Window Redraw Advice", ROMX[$5F40], BANK[$1]
+MainScript_ADVICE_SGBRedrawShopWindow::
+    M_AdviceSetup
+    call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
+    ld de, MainScript_ShopWindowBorder
+    ld b, 4
+    M_AdviceTeardown
+    ret
+
+MainScript_ADVICE_SGBRedrawSecondaryShopWindow::
+    M_AdviceSetup
+    call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
+    ld de, $5185
+    ld b, 3
     M_AdviceTeardown
     ret
