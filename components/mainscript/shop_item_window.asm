@@ -16,11 +16,11 @@ MainScript_DrawShopWindowForItem::
     call MainScript_SetupShopWindowForItem
     call MainScriptMachine
     call MainScriptMachine
-    call MainScript_ADVICE_ShopWindowRestoreTextStyle
     
     pop af
     rst $10
     ld a, 0
+    ld [$C9CF], a
     ret
 
 SECTION "Main Script Shop Item Window 2", ROMX[$4711], BANK[$B]
@@ -220,11 +220,9 @@ MainScript_DrawShopWindowForChiru::
     call MainScript_DrawEmptyShopWindow
     call MainScriptMachine
     call MainScriptMachine
-    call MainScript_ADVICE_ShopWindowRestoreTextStyle
+    ld a, 0
+    ld [$C9CF], a
     ret
-
-    nop
-    nop
 
 SECTION "Main Script Secondary Shop Item Window", ROM0[$2D10]
 MainScript_DrawSecondaryShopWindowForChiru::
@@ -236,10 +234,10 @@ MainScript_DrawSecondaryShopWindowForChiru::
     call MainScriptMachine
     call MainScriptMachine
     call MainScriptMachine
-    call MainScript_ADVICE_ShopWindowRestoreTextStyle
     pop af
     rst $10
     ld a, 0
+    ld [$C9CF], a
     ret
 
 SECTION "Main Script Secondary Shop Item Window 2", ROMX[$492E], BANK[$B]

@@ -70,26 +70,6 @@ Encounter_LoadScriptedTFangerDenjuu::
 	nop
 	nop
 	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 
 SECTION "Load Scripted Denjuu Relocated", ROMX[$5510], BANK[$27]
 Encounter_LoadScriptedDenjuuRelocated::
