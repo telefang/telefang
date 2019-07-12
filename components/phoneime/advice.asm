@@ -6,12 +6,9 @@ W_PhoneIME_NextCharTimer:: ds 1
 SECTION "Phone IME Abc Mode", ROMX[$7D8C], BANK[$4]
 PhoneIME_GetIMEGraphicsID::
     cp M_PhoneIME_IMEExtendedNumerals
-    jr nz, .asIs
-    dec a
-    dec a
-
-.asIs
-    ret
+    jp PhoneIME_GetIMEID.numberFix
+    nop
+    nop
 
 PhoneIME_CheckIMEAutoSwitch::
     dec a
@@ -34,6 +31,8 @@ SECTION "Phone IME Translate ID", ROMX[$7DBD], BANK[$4]
 PhoneIME_GetIMEID::
     ld a, [W_PhoneIME_CurrentIME]
     cp M_PhoneIME_IMEExtendedLatinUpper
+
+.numberFix
     jr c, .asIs
     jr nz, .numerals
     dec a

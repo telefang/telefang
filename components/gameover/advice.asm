@@ -21,6 +21,7 @@ GameOver_ADVICE_LoadSGBFiles::
 	call Banked_SGB_ConstructPaletteSetPacket
 
 .return
+    call PauseMenu_ADVICE_SMSResetLine
     ld bc, 0
     ld e, $72
 

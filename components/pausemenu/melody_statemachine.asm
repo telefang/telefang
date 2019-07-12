@@ -281,7 +281,7 @@ MelodyMenu_MelodyEditInputHandler::
 	ld a, [W_PhoneIME_NextIME]
 	cp 0
 	jr nz, .displayNumberIME
-	ld b, 3
+	ld b, 4
 
 .displayNumberIME
 	ld a, b

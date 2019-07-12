@@ -13,7 +13,7 @@ FusionLabEvo_LoadSpeciesNameEntryPointB::
     
 FusionLabEvo_LoadSpeciesNameEntryPointC::
     ld de, W_MainScript_MessageArg3
-    ld a, [$CAED]
+    ld a, [W_FusionLabEvo_PartnerSpecies]
     
 FusionLabEvo_LoadSpeciesName::
     ld hl, StringTable_denjuu_species

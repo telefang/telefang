@@ -153,7 +153,7 @@ MainScript_DrawStatusEffectString::
     pop bc
     jp MainScript_DrawShortName
 
-SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7EC0], BANK[$B]
+SECTION "Main Script Status Text Drawing Advice 2", ROMX[$7EB1], BANK[$B]
 ;BC = text string (presumed WRAM, not bankable)
 ;D = string length (bytes)
 ;Returns E = string length (pixels)

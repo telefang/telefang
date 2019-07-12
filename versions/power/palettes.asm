@@ -3645,16 +3645,14 @@ SECTION "CGB Background Color Data Part 2", ROMX[$4D78], BANK[$0D]
     dcolor 0, 0, 0
     dcolor 0, 0, 0
 ;Palette 370
-;TODO: Restore 370 / 371 to the palettes specified in Japanese version.
-;      Requested by RacieB
     dcolor 19, 28, 31
-    dcolor 16, 21, 29
-    dcolor 14, 14, 27
-    dcolor 9, 0, 24
+    dcolor 19, 18, 20
+    dcolor 20, 9, 10
+    dcolor 21, 0, 0
 ;Palette 371
     dcolor 19, 28, 31
-    dcolor 31, 29, 2
-    dcolor 24, 20, 0
+    dcolor 12, 20, 24
+    dcolor 6, 12, 17
     dcolor 0, 4, 11
 ;Palette 372
     dcolor 19, 28, 31

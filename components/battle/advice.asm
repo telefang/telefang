@@ -133,7 +133,7 @@ Battle_ADVICE_LoadSGBFiles::
     call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
 
     ld a, M_SGB_Pal01 << 3 + 1
-    ld bc, $105
+    ld bc, $405
     call PatchUtils_CommitStagedCGBToSGB
 
     ld c, $13
@@ -256,6 +256,10 @@ Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
     call Banked_SGB_ConstructATFSetPacket
 
 .return
+    ld hl, $9600
+    ld a, $20
+    call MainScript_DrawEmptySpaces
+
     ld bc, $909
     ld e, $81
 
@@ -462,4 +466,34 @@ Battle_ADVICE_DrawPartnerName::
     ld [W_MainScript_TextStyle], a
     ret
 
-; 6487
+SECTION "Battle Attack Animation Advice Code", ROMX[$5150], BANK[$1]
+Attack_ADVICE_PreAttackSGB::
+    M_AdviceSetup
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 5)
+    call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld bc, $705
+    call PatchUtils_CommitStagedCGBToSGB
+
+.return
+    M_AdviceTeardown
+    ret
+
+Attack_ADVICE_PostAttackSGB::
+    M_AdviceSetup
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld a, M_SGB_Pal01 << 3 + 1
+    ld bc, $405
+    call PatchUtils_CommitStagedCGBToSGB
+
+.return
+    ld bc, 1
+    M_AdviceTeardown
+    ret

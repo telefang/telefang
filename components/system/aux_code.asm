@@ -126,13 +126,23 @@ Banked_PauseMenu_ADVICE_SMSMapTiles::
 	
 Banked_PauseMenu_ADVICE_SMSContentsCheckInput::
 	dw PauseMenu_ADVICE_SMSContentsCheckInput
+
+;components/battle/advice.asm
+Banked_Attack_ADVICE_PreAttackSGB::
+	dw Attack_ADVICE_PreAttackSGB
+
+Banked_Attack_ADVICE_PostAttackSGB::
+	dw Attack_ADVICE_PostAttackSGB
 	
+;components/battle/articles.asm
 Banked_Battle_ADVICE_StatusInflictionArticle::
 	dw Battle_ADVICE_StatusInflictionArticle
 	
+;components/fusionlabevo/advice.asm
 Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	dw FusionLabEvo_ADVICE_DrawShopNumberGfx
 
+;components/sgb/convert_colours.asm
 Banked_PatchUtils_CommitStagedCGBToSGB_CBE::
 	dw PatchUtils_CommitStagedCGBToSGB_CBE
 	
@@ -264,6 +274,13 @@ Banked_Victory_ADVICE_LoadSGBFilesRecruitment::
 Banked_Victory_ADVICE_EvolutionLoadSGBFiles::
 	dw Victory_ADVICE_EvolutionLoadSGBFiles
 
+;components/mainscript/window.asm
+Banked_MainScript_ADVICE_SGBRedrawShopWindow::
+	dw MainScript_ADVICE_SGBRedrawShopWindow
+
+Banked_MainScript_ADVICE_SGBRedrawSecondaryShopWindow::
+	dw MainScript_ADVICE_SGBRedrawSecondaryShopWindow
+
 ;components/battle/advice.asm
 Banked_Battle_ADVICE_LoadDenjuuResources::
 	dw Battle_ADVICE_LoadDenjuuResources
@@ -303,6 +320,40 @@ Banked_PauseMenu_ADVICE_LoadSGBFilesOptions::
 ;components/gameover/advice.asm
 Banked_GameOver_ADVICE_LoadSGBFiles::
 	dw GameOver_ADVICE_LoadSGBFiles
+
+;components/zukan/advice.asm
+Banked_Certificate_ADVICE_LoadSGBFiles::
+	dw Certificate_ADVICE_LoadSGBFiles
+
+;components/mainscript/window.asm
+Banked_MainScript_ADVICE_SGBRedrawOverworldLocationWindow::
+	dw MainScript_ADVICE_SGBRedrawOverworldLocationWindow
+
+Banked_MainScript_ADVICE_SGBRedrawOverworldWindow::
+	dw MainScript_ADVICE_SGBRedrawOverworldWindow
+
+Banked_MainScript_ADVICE_SGBRedrawHud::
+	dw MainScript_ADVICE_SGBRedrawHud
+
+;components/fusionlabevo/advice.asm
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution
+
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesFusionAnimation
+
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesEvolution::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesEvolution
+
+Banked_FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
+	dw FusionLabEvo_ADVICE_LoadSGBFilesItemSelection
+
+Banked_FusionLabEvo_ADVICE_SwitchSGBPaletteLayout::
+	dw FusionLabEvo_ADVICE_SwitchSGBPaletteLayout
+
+;components/overworld/advice.asm
+Banked_Overworld_ADVICE_LoadSGBFiles::
+	dw Overworld_ADVICE_LoadSGBFiles
 
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
