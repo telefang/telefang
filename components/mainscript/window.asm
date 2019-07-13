@@ -750,7 +750,13 @@ MainScript_ADVICE_SGBRedrawHud::
     M_AdviceSetup
 
     call PauseMenu_ADVICE_CheckSGB
-    jr z, .noSGB
+    jr z, .exit
+
+    ; Check if tiles already redrawn.
+    call WaitForBlanking
+    ld a, [$8C00]
+    cp $1F
+    jr z, .exit
 
     ld hl, $8C00
     ld b, $B0
@@ -758,7 +764,7 @@ MainScript_ADVICE_SGBRedrawHud::
     ld b, $B0
     call Zukan_ADVICE_TileLightColourReverse
 
-.noSGB
+.exit
     ld de, $CA08
     ld b, 2
     M_AdviceTeardown

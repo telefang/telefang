@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Overworld Palette SGB Advice", ROMX[$645E], BANK[$B]
+SECTION "Overworld Palette SGB Advice", ROMX[$7A8E], BANK[$B]
 Overworld_ADVICE_PaletteLoader::
 	call Overworld_WindowFlavourPaletteLoader
 	M_PrepAuxJmp Banked_Overworld_ADVICE_LoadSGBFiles
@@ -92,7 +92,7 @@ Overworld_SGBPaletteIndexTable::
 	db 0, 0, 0, 3
 	db 0, 3, 3, 3
 	db 3, 3, 3, 3
-	db 3, 3, 3, 3
+	db 2, 4, 3, 3
 	db 3, 3, 3, 3
 
 Overworld_ADVICE_GetOutdoorAcrePaletteIndex::
