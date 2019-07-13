@@ -674,12 +674,14 @@ MainScript_ADVICE_BottomHudSGBClear::
     ld h, $B
     jr MainScript_ADVICE_TopHudSGBClear.extEntry
 
-MainScript_ADVICE_ShopWindowRestoreTextStyle::
-    xor a
-    ld [W_byte_C9CF], a
-    ld [W_MainScript_TextStyle], a
-    ret
-
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     nop
     nop
     nop
@@ -698,12 +700,17 @@ MainScript_ADVICE_ClearBothShopWindows::
     ld h, $A
     jp Banked_SGB_ConstructATTRBLKPacket
 
-SECTION "Overworld Message Box Clear Advice", ROM0[$3DC3]
+SECTION "Overworld Message Box Clear Advice", ROM0[$3EA5]
 MainScript_ADVICE_ClearOverworldWindow::
     call MainScript_ClearOverworldWindowTiles
+    ld a, [W_CurrentBank]
+    push af
+    ld a, BANK(Overworld_ADVICE_SGBShopTextStyle)
+    rst $10
+    call Overworld_ADVICE_SGBShopTextStyle
+    pop af
+    rst $10
     ld h, 7
-    xor a
-    ld [W_MainScript_TextStyle], a
     jp Banked_SGB_ConstructATTRBLKPacket
 
 SECTION "MainScript Window Redraw Advice", ROMX[$6470], BANK[$1]
@@ -726,6 +733,8 @@ MainScript_ADVICE_SGBRedrawOverworldWindow::
 MainScript_ADVICE_SGBRedrawOverworldWindow_Common::
     call PauseMenu_ADVICE_CheckSGB
     ret z
+
+MainScript_ADVICE_SGBRedrawOverworldWindow_Common_skipSGBCheck::
     ld a, 3
     ld [W_MainScript_TextStyle], a
     ld hl, $8C00
@@ -741,7 +750,13 @@ MainScript_ADVICE_SGBRedrawHud::
     M_AdviceSetup
 
     call PauseMenu_ADVICE_CheckSGB
-    jr z, .noSGB
+    jr z, .exit
+
+    ; Check if tiles already redrawn.
+    call WaitForBlanking
+    ld a, [$8C00]
+    cp $1F
+    jr z, .exit
 
     ld hl, $8C00
     ld b, $B0
@@ -749,16 +764,16 @@ MainScript_ADVICE_SGBRedrawHud::
     ld b, $B0
     call Zukan_ADVICE_TileLightColourReverse
 
-.noSGB
+.exit
     ld de, $CA08
     ld b, 2
     M_AdviceTeardown
     ret
 
-SECTION "MainScript Shop Window Redraw Advice", ROMX[$5F40], BANK[$1]
+SECTION "MainScript Shop Window Redraw Advice", ROMX[$5F20], BANK[$1]
 MainScript_ADVICE_SGBRedrawShopWindow::
     M_AdviceSetup
-    call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
+    call MainScript_ADVICE_SGBRedrawSecondaryShopWindow_Common
     ld de, MainScript_ShopWindowBorder
     ld b, 4
     M_AdviceTeardown
@@ -766,8 +781,18 @@ MainScript_ADVICE_SGBRedrawShopWindow::
 
 MainScript_ADVICE_SGBRedrawSecondaryShopWindow::
     M_AdviceSetup
-    call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
+    call MainScript_ADVICE_SGBRedrawSecondaryShopWindow_Common
     ld de, $5185
     ld b, 3
     M_AdviceTeardown
+    ret
+
+MainScript_ADVICE_SGBRedrawSecondaryShopWindow_Common::
+    call PauseMenu_ADVICE_CheckSGB
+    ret z
+    ld hl, $8EF0
+    ld b, 4
+	call Zukan_ADVICE_TileLowByteBlanketFill
+    ld b, $50
+    call Zukan_ADVICE_TileLightColourReverse
     ret

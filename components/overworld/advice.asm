@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Overworld Palette SGB Advice", ROMX[$645E], BANK[$B]
+SECTION "Overworld Palette SGB Advice", ROMX[$7A8E], BANK[$B]
 Overworld_ADVICE_PaletteLoader::
 	call Overworld_WindowFlavourPaletteLoader
 	M_PrepAuxJmp Banked_Overworld_ADVICE_LoadSGBFiles
@@ -11,7 +11,7 @@ Overworld_ADVICE_LoadSGBFiles::
 	M_AdviceSetup
 
 	call PauseMenu_ADVICE_CheckSGB
-	jr z, .noSGB
+	jr z, .exit
 
 	ld hl, Overworld_SGBPaletteIndexTable
 	ld a, [$C905]
@@ -45,16 +45,54 @@ Overworld_ADVICE_LoadSGBFiles::
 	ld a, M_SGB_Pal23 << 3 + 1
 	ld bc, $607
 	call PatchUtils_CommitStagedCGBToSGB
-	
-.noSGB
+
+	call Overworld_ADVICE_IsShop
+	jr nz, .notShopScreen
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+    ld hl, $8C00
+    ld b, $C0
+    call Zukan_ADVICE_TileLowByteBlanketFill
+	ld h, $D
+	call Banked_SGB_ConstructATTRBLKPacket
+	jr .exit
+
+.notShopScreen
+	xor a
+	ld [W_MainScript_TextStyle], a
+
+.exit
 	M_AdviceTeardown
+	ret
+
+Overworld_ADVICE_SGBShopTextStyle::
+	call PauseMenu_ADVICE_CheckSGB
+	ret z
+	call Overworld_ADVICE_IsShop
+	jr nz, .notShop
+	ld a, 3
+	jr .setTextStyle
+
+.notShop
+	xor a
+
+.setTextStyle
+	ld [W_MainScript_TextStyle], a
+	ret
+
+Overworld_ADVICE_IsShop::
+	ld a, [$C905]
+	cp 6
+	ret nz
+	ld a, [$C390]
+	cp $15
 	ret
 
 Overworld_SGBPaletteIndexTable::
 	db 0, 0, 0, 3
 	db 0, 3, 3, 3
 	db 3, 3, 3, 3
-	db 3, 3, 3, 3
+	db 2, 4, 3, 3
 	db 3, 3, 3, 3
 
 Overworld_ADVICE_GetOutdoorAcrePaletteIndex::
