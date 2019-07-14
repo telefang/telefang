@@ -422,8 +422,8 @@ Map_StateMainLoop::
 	pop de
 	ld b, 0
 	ld c, $BC
-	ld a, $B
-	ld hl, $47B9
+	ld a, BANK(Map_MapLocationWindow)
+	ld hl, Map_MapLocationWindow
 	call Map_ADVICE_StateMainLoop_OpenWindow
 	ld a, [W_MainScript_WindowLocation]
 	dec a
@@ -654,8 +654,8 @@ DungeonMap_StateDrawScreen::
 	ld d, 2
 	ld b, 0
 	ld c, $BB
-	ld a, $B
-	ld hl, $47B9
+	ld a, BANK(Map_MapLocationWindow)
+	ld hl, Map_MapLocationWindow
 	call CallBankedFunction_int
 	ld a, [W_MainScript_WindowLocation]
 	dec a

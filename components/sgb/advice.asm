@@ -106,7 +106,13 @@ SGB_ConstructATTRBLKPacket::
     ld a, 1
     ld [hli], a
     inc a
+    cp d
+    jr nc, .noMiddle
+    cp e
+    jr nc, .noMiddle
     inc a
+
+.noMiddle
     ld [hli], a
     pop af
     push bc
