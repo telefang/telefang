@@ -9,4 +9,4 @@ Map_MapLocationWindow::
 	call MainScript_QueueCustomWindowMessage
 	ld a, 7
 	ld [$CA65], a
-	jp MainScript_MapLocationWindow
+	jp MainScript_ADVICE_MapLocationWindowForMap
