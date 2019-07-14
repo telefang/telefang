@@ -587,6 +587,8 @@ MainScript_MapLocationWindow::
     call MainScript_LoadWindowBorderTileset
     call MainScript_ClearWindowTilesNext
     M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawOverworldLocationWindow
+
+.extEntry
     ld a, [W_MainScript_WindowLocation]
     ld c, 1
     call MainScript_ADVICE_MapLocationWindow
@@ -674,20 +676,12 @@ MainScript_ADVICE_BottomHudSGBClear::
     ld h, $B
     jr MainScript_ADVICE_TopHudSGBClear.extEntry
 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
+MainScript_ADVICE_MapLocationWindowForMap::
+    call MainScript_LoadWindowBorderTileset
+    call MainScript_ClearWindowTilesNext
+    ld de, $5127
+    ld b, 3
+    jp MainScript_MapLocationWindow.extEntry
 
 SECTION "MainScript Clear Shop Window Advice", ROMX[$70E0], BANK[$32]
 MainScript_ADVICE_ClearSecondaryShopWindow::
