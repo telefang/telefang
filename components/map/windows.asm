@@ -1,7 +1,7 @@
 INCLUDE "telefang.inc"
 
 SECTION "Map Location Window", ROMX[$47B9], BANK[$B]
-Map_StateDrawScreen::
+Map_MapLocationWindow::
 	ld a, $D0
 	ld [W_MainScript_TileBaseIdx], a
 	ld a, $F0
