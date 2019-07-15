@@ -1,30 +1,30 @@
-Pointer,Japanese,English,English Draft,German,German Draft,Notes
+Pointer,Japanese,English,English Draft,Formatted?,German,German Draft,Notes
 0x3ad7a,«0xe2» «0xe2» «0xe2»  テレファング スタッフ«*0»,"
 
 
-<0xF2><0><0>Telefang Staff",,,,Messages used by the credits screen played at the end of the game.
+<0xF2><0><0>Telefang Staff",,0,,,Messages used by the credits screen played at the end of the game.
 0x3ad7c,«0xe2» «0xe2» «0xe2»  げんさく«0xe2» «0xe2»      きの こずえ«*0»,"
 
 
 <0xF2><0>Original Concept
 
-<0><0><0><0><0><0> Kozue KINO",,,,
+<0><0><0><0><0><0> Kozue KINO",,0,,,
 0x3ad7e,«0xe2» «0xe2» «0xe2»  でんじゅうデザイン«0xe2» «0xe2»      たかき さいこ«*0»,"
 
 
 <0xF2><0><0>Denjuu Design
 
-<0><0><0><0><0>Saiko TAKAKI",,,,
+<0><0><0><0><0>Saiko TAKAKI",,0,,,
 0x3ad80,«0xe2» «0xe2» «0xe2»  こうだんしゃ スタッフ«*0»,"
 
 
-<0xF2><0><0>Kodansha Staff",,,,
+<0xF2><0><0>Kodansha Staff",,0,,,
 0x3ad82,«0xe2» «0xe2» コミックボンボン«0xe2»  ヘんしゅうちょう«0xe2» «0xe2»    いけだ しんぱちろう«*0»,"
 
 <0xF2>Comic BomBom
 <0xF2>Editor-in-chief
 
-<0><0><0>Shinpachirou IKEDA",,,,
+<0><0><0>Shinpachirou IKEDA",,0,,,
 0x3ad84,コミックボンボン«0xe2»  ヘんしゅうぶ«0xe2» «0xe2»    かみぞの こういち«0xe2» «0xe2»    さとう かよ«0xe2» «0xe2»    よしだ もリよし«*0»,"
 <0xF2>Editorial Department
 
@@ -32,41 +32,41 @@ Pointer,Japanese,English,English Draft,German,German Draft,Notes
 
 <0><0><0> Kayo SATOU
 
-<0><0><0> Moriyoshi YOSHIDA",,,,
+<0><0><0> Moriyoshi YOSHIDA",,0,,,
 0x3ad86,«0xe2» «0xe2» «0xe2»  スマイルソフト スタッフ«*0»,"
 
 
-<0xF2><0><0>Smilesoft Staff",,,,
+<0xF2><0><0>Smilesoft Staff",,0,,,
 0x3ad88,«0xe2» «0xe2» «0xe2» エグゼクティブプロデューサー«0xe2» «0xe2»    いいだ しゅうヘい«*0»,"
 
 
 <0xF2> Executive Producer
 
-<0><0><0> Shuuhei IIDA",,,,
+<0><0><0> Shuuhei IIDA",,0,,,
 0x3ad8a,«0xe2» «0xe2» «0xe2» ディレクター«0xe2» «0xe2»     こばやし こういち«*0»,"
 
 
 <0xF2>Director
 
-<0><0><0>Kouichi KOBAYASHI",,,,
+<0><0><0>Kouichi KOBAYASHI",,0,,,
 0x3ad8c,«0xe2» «0xe2»  スペシャルサンクス«0xe2» «0xe2»      ほしの さとみ«0xe2» «0xe2»      おがわ ゆきこ«*0»,"
 
 <0xF2><0>Special Thanks
 
 <0><0><0><0>Satomi HOSHINO
 
-<0><0><0><0>Yukiko OGAWA",,,,
+<0><0><0><0>Yukiko OGAWA",,0,,,
 0x3ad8e,,"
 
 
-<0xF2><0><0>Tulunk All Staff",,,,
+<0xF2><0><0>Tulunk All Staff",,0,,,
 0x3ad90,,"
 <0xF2><0>English
 <0xF2><0>Translation
 
 <0><0><0>Kimbles
 <0><0><0><0><0><0><0><0><0>obskyr
-<0><0><0>DaVince",,,,
+<0><0><0>DaVince",,0,,,
 0x3ad92,,"<0xF2><0>Rom Hacking
 
 <0><0>Malias
@@ -74,7 +74,7 @@ Pointer,Japanese,English,English Draft,German,German Draft,Notes
 <0><0>obskyr
 <0><0><0><0><0><0> andwhyisit
 <0><0>Sanqui
-<0><0><0><0><0><0> Blaziken257",,,,
+<0><0><0><0><0><0> Blaziken257",,0,,,
 0x3ad94,,"<0xF2><0>Graphics
 
 <0><0>RacieB
@@ -83,7 +83,7 @@ Pointer,Japanese,English,English Draft,German,German Draft,Notes
 <0><0><0><0><0><0><0> Blaziken257
 <0><0>Kimbles
 <0><0><0><0><0><0><0> kmeisthax
-<0><0>obskyr",,,,
+<0><0>obskyr",,0,,,
 0x3ad96,,"<0xF2><0>Special Thanks
 
 <0><0><0><0><0><0> Normmatt
@@ -92,48 +92,48 @@ Pointer,Japanese,English,English Draft,German,German Draft,Notes
 
 <0><0><0><0><0><0> Milnivri
 
-<0><0><0><0><0><0> DeKaFu",,,,
+<0><0><0><0><0><0> DeKaFu",,0,,,
 0x3ad98,«0xe2» «0xe2» «0xe2»    ナツメ スタッフ«*0»,"
 
 
-<0xF2><0><0>Natsume Staff",,,,
+<0xF2><0><0>Natsume Staff",,0,,,
 0x3ad9a,«0xe2» «0xe2» «0xe2» エグゼクティブプロデューサー«0xe2» «0xe2»    まつもと たかし«*0»,"
 
 
 <0xF2> Executive Producer
 
-<0> Takashi MATSUMOTO",,,,
+<0> Takashi MATSUMOTO",,0,,,
 0x3ad9c,«0xe2» «0xe2» «0xe2»  スーパーバイザー«0xe2» «0xe2»      ひろた きみお«*0»,"
 
 
 <0xF2><0>Supervisor
 
-<0><0><0><0><0> Kimio HIROTA",,,,
+<0><0><0><0><0> Kimio HIROTA",,0,,,
 0x3ad9e,«0xe2» «0xe2» «0xe2»  プロデューサー«0xe2» «0xe2»      いわさ としかず«*0»,"
 
 
 <0xF2>Producer
 
-<0><0><0><0>Toshikazu IWASA",,,,
+<0><0><0><0>Toshikazu IWASA",,0,,,
 0x3ada0,«0xe2» «0xe2» «0xe2» ディレクター«0xe2» «0xe2»     たかおか しゅうや«*0»,"
 
 
 <0xF2>Director
 
-<0><0><0><0>Shuuya TAKAOKA",,,,
+<0><0><0><0>Shuuya TAKAOKA",,0,,,
 0x3ada2,プログラム«0xe2» «0xe2»     たなか ひろゆき«0xe2» «0xe2»     さいとう ひろし«0xe2» «0xe2»     いわさ としかず«*0»,"<0xF2><0>Program
 
 <0><0><0>Hiroyuki TANAKA
 
 <0><0><0>Hiroshi SAITOU
 
-<0><0><0>Toshikazu IWASA",,,,
+<0><0><0>Toshikazu IWASA",,0,,,
 0x3ada4,«0xe2» «0xe2» «0xe2» グラフィック«0xe2» «0xe2»     かじはら しゅういち«*0»,"
 
 
 <0xF2>Graphics
 
-<0><0><0>Shuuichi KAJIHARA",,,,
+<0><0><0>Shuuichi KAJIHARA",,0,,,
 0x3ada6,«0xe2»  サウンドデザイン«0xe2» «0xe2»      みずたに いく«0xe2» «0xe2»      うえだ きぬよ«0xe2» «0xe2»      みずたに ひさこ«*0»,"
 <0xF2>Sound Design
 
@@ -141,13 +141,13 @@ Pointer,Japanese,English,English Draft,German,German Draft,Notes
 
 <0><0><0><0>Kinuyo UEDA
 
-<0><0><0><0>Hisako MIZUTANI",,,,
+<0><0><0><0>Hisako MIZUTANI",,0,,,
 0x3ada8,«0xe2» «0xe2» «0xe2»  イベントデータ«0xe2» «0xe2»      ひらい せいじ«*0»,"
 
 
 <0xF2><0>Event Data
 
-<0><0><0><0><0><0>Seiji HIRAI",,,,
+<0><0><0><0><0><0>Seiji HIRAI",,0,,,
 0x3adaa,スペシャルサンクス«0xe2» «0xe2»      かなめ としあき«0xe2» «0xe2»      きたむら わたる«0xe2» «0xe2»      さがら なおみ«0xe2» «0xe2»      しらかわ てるゆき«*0»,"<0xF2>Special Thanks
 
 <0><0><0>Toshiaki KANAME
@@ -156,7 +156,7 @@ Pointer,Japanese,English,English Draft,German,German Draft,Notes
 
 <0><0><0>Naomi SAGARA
 
-<0><0><0>Teruyuki SHIRAKAWA",,,,
+<0><0><0>Teruyuki SHIRAKAWA",,0,,,
 0x3adac,«0xe2»      ひらの かな«0xe2» «0xe2»      とやま めぐみ«0xe2» «0xe2»      ピュアサウンド«0xe2» «0xe2»      いわさ しょうご«*0»,"
 <0><0><0>Kana HIRANO
 
@@ -164,13 +164,13 @@ Pointer,Japanese,English,English Draft,German,German Draft,Notes
 
 <0><0><0>Pure Sound
 
-<0><0><0>Shougo IWASA",,,,
+<0><0><0>Shougo IWASA",,0,,,
 0x3adae,«0xe2» «0xe2» «0xe2»    and you«*0»,"
 
 
-<0><0><0><0> AND YOU",,,,
+<0><0><0><0> AND YOU",,0,,,
 0x3adb0,«0xe2» «0xe2»   thank you«0xe2»      for«0xe2» your playing!«*3»,"
 
 
 <0><0><0><0>THANK YOU
-<0><0><0>FOR PLAYING!<*3>",,,,Must end in <*3> to exit credits.
+<0><0><0>FOR PLAYING!<*3>",,0,,,Must end in <*3> to exit credits.

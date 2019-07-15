@@ -1,16 +1,16 @@
-Pointer,Japanese,English,Draft version,Notes
+Pointer,Japanese,English,Draft version,Formatted?,Notes
 0x128000,"もるのが
 われらのしめい!
 いかなることでも とおること
 まかリならん!","is our duty! Whatever
-happens, no one may pass!","is our duty! Whatever happens, no one may pass!","These are unused(?) versions of lines from Barran/Freesia.
+happens, no one may pass!","is our duty! Whatever happens, no one may pass!",1,"These are unused(?) versions of lines from Barran/Freesia.
 "
 0x128002,"ヘビぐみこそは さばくのおう!
 トリぐみなんぞに まけはしない","The Snake Clan rules this
 desert!
 There's no way we'd lose to
 the likes of those Birds.","The Snake Clan rules this desert!
-There's no way we'd lose to the likes of those Birds.","Status: Translated (and manually formatted) 100%, 
+There's no way we'd lose to the likes of those Birds.",1,"Status: Translated (and manually formatted) 100%, 
 may not be necessary but WHO'S GONNA STOP ME
 "
 0x128004,"...しかし トリぐみは
@@ -24,13 +24,13 @@ with the Denjuu here.
 That's about all I can do!","I'm staying in Toulipa.
 I'll keep protecting
 the Antenna Tree together with the Denjuu here.
-That's about all I can do!",
+That's about all I can do!",1,
 0x128006,"ニンゲンがおもてで ヘんなこと
 しているよね
 なにかたのしいのかなー","The humans out there are
 doing something weird
 again. I wonder if they're
-having fun...",The humans out there are doing something weird again. I wonder if they're having fun...,
+having fun...",The humans out there are doing something weird again. I wonder if they're having fun...,1,
 0x128008,"もリのほこらに たいかいの
 ゆうしょうしゃにわたす
 めずらしい アイテムがおいて
@@ -46,7 +46,7 @@ the tournament began,
 though... No one's allowed
 in the shrine.","Supposedly they put a rare item in the forest shrine as a prize for whoever wins the tournament.
 It's been three months since the tournament began, though... No one's allowed
-in the shrine.",
+in the shrine.",1,
 0x12800a,"ほこらのまえに すごい
 Tファンガーがいるそうなんだ
 なんでも つよいデンジュウを
@@ -55,7 +55,7 @@ T-Fanger hanging around
 outside the shrine.
 They say he's searching
 for strong Denjuu...","I hear there's an amazing T-Fanger hanging around outside the shrine.
-They say he's searching for strong Denjuu...",
+They say he's searching for strong Denjuu...",1,
 0x12800c,"フリジアにはアンテナのきが
 いっぽんしかないんだ
 アンテナのきで たびしたいなら
@@ -68,7 +68,7 @@ traveling, you'll need to
 head east to Barran,
 the desert town.","There's only one Antenna Tree in Freesia.
 If you want to keep traveling, you'll need to head east to Barran,
-the desert town.",
+the desert town.",1,
 0x12800e,"Tファンガーたいかい...
 はやく おわらないかなー
 まちじゅう Tファンガーだらけ
@@ -78,4 +78,4 @@ I'm getting tired of having
 so many T-Fangers
 in town...","I hope the T-Fanger tournament ends soon...
 I'm getting tired of having so many T-Fangers
-in town...",
+in town...",1,
