@@ -51,17 +51,9 @@ Overworld_ADVICE_LoadSGBFiles::
 	add l
 	ld l, a
 
-    di
-
-.wfb
-    ldh a, [REG_STAT]
-    and 2
-    jr nz, .wfb
-
 	xor a
 	ld [hli], a
 	ld [hl], a
-    ei
 	
 	ld a, M_SGB_Pal01 << 3 + 1
 	call PatchUtils_CommitStagedCGBToSGB
@@ -129,3 +121,43 @@ Overworld_ADVICE_GetOutdoorAcrePaletteIndex::
 	; This may be expanded on later, but for now we will just use green for everything.
 	ld a, 3
 	ret
+
+Overworld_ADVICE_SGBColourByAcreTable_TopLeft::
+	db 3,1,1,1,1,1,1,1
+	db 1,1,1,1,3,1,1,1
+	db 1,1,1,1,3,1,1,1
+	db 1,1,1,1,3,1,1,1
+	db 1,1,1,3,3,3,3,3
+	db 4,4,1,3,3,0,0,3
+	db 4,4,3,3,3,3,0,0
+	db 4,4,3,3,3,3,0,0
+
+Overworld_ADVICE_SGBColourByAcreTable_BottomLeft::
+	db 4,4,3,3,3,2,2,2
+	db 3,3,3,3,3,2,2,2
+	db 3,3,3,3,3,2,3,3
+	db 3,3,3,2,2,2,3,3
+	db 3,3,3,2,3,3,3,3
+	db 3,3,3,2,3,3,3,3
+	db 3,3,3,2,3,3,3,3
+	db 3,3,3,2,3,3,3,3
+
+Overworld_ADVICE_SGBColourByAcreTable_TopRight::
+	db 1,1,1,1,1,3,3,3
+	db 1,3,3,3,3,3,3,3
+	db 1,3,3,3,3,3,3,3
+	db 1,3,3,3,3,3,3,3
+	db 3,3,3,3,3,3,3,3
+	db 3,3,3,3,3,3,3,3
+	db 0,3,3,3,3,3,3,3
+	db 0,3,0,0,0,3,3,3
+
+Overworld_ADVICE_SGBColourByAcreTable_BottomRight::
+	db 2,0,0,0,0,0,3,3
+	db 2,3,3,0,0,0,3,3
+	db 2,3,3,0,0,3,3,3
+	db 2,3,3,0,0,3,3,2
+	db 3,3,3,0,0,0,2,2
+	db 3,3,3,0,2,2,2,2
+	db 3,3,3,0,2,2,2,3
+	db 3,3,3,0,2,2,2,2
