@@ -1,29 +1,53 @@
-Pointer,Japanese,English,Draft version,Notes
+Pointer,Japanese,English,Draft version,Formatted?,Notes
 0x15c000,"<D1>なぁなぁしってるか?
 ツノナスに『でんち』を
 くっつけると いいこと
-あるんだぜ!<*2>","<D1>Yo, have you heard? If you fuse a Tsunonasu with a ""battery"", something good'll happen!<*2>","Yo, have you heard? If you put a <bold>battery<normal> in a Tsunonasu, something good happens!",
+あるんだぜ!<*2>","<D1>Yo, have you heard?
+If you put a <bold>battery<normal>
+in a Tsunonasu, something
+good happens!<*2>","Yo, have you heard?
+If you put a <bold>battery<normal>
+in a Tsunonasu, something good happens!",1,
 0x15c002,"<D2>もしもし?
 あのねー コキアに
 『アンテナ』をくっつけると
-ちょこっと つよくなるんだぜ<*2>","<D2>Hello? I just wanted to tell you...
-If you fuse a Kochia with an ""antenna"", it's gonna get a little stronger.<*2>","Hello? I just wanted to tell you...
-If you put an <bold>antenna<normal> on a Kochia, it gets a little stronger.",
+ちょこっと つよくなるんだぜ<*2>","<D2>Hello?
+I just wanted to tell you...
+If you put an <bold>antenna<normal>
+on a Kochia, it gets
+a little stronger.<*2>","Hello?
+I just wanted to tell you...
+If you put an <bold>antenna<normal>
+on a Kochia, it gets
+a little stronger.",1,
 0x15c004,"<D3>ねぇねぇ
 これきいたことある?
 オーシェっていうデンジュウに
 『クレーン』をくっつけて
 あげるとつよくなるんだってー
-<*2>","<D3>Hey, did you know? I heard if you fuse an Oshe with a ""crane"", it'll grow stronger.<*2>","Hey, did you know? I heard if you fuse an Oshe with a <bold>crane<normal>, it'll grow stronger.",
+<*2>","<D3>Hey, did you know? I heard
+if you fuse an Oshe with a
+<bold>crane<normal>, it'll grow stronger.<*2>","Hey, did you know? I heard if you fuse an Oshe with a <bold>crane<normal>, it'll grow stronger.",1,
 0x15c006,"<D4>ケシってさー
 『レンジ』をくっつけると
 なんだか つよくなるんだよね
 よわっちいカンジがするんだけどそんなこと いったら
-おこられるかな?<*2>","<D4>You know Keshi? If you fuse one with a ""microwave"", it'll grow a bit. They seem sort of weak, but... maybe they'd get mad if they heard me say that.<*2>","You know Keshi? If you give one a <bold>microwave<normal>, it'll grow a bit. They seem sort of weak, but... maybe they'd get mad if they heard me say that.",
+おこられるかな?<*2>","<D4>You know Keshi? If you
+give one a <bold>microwave<normal>,
+it'll grow a bit. Seems
+pretty wimpy to me, but...
+maybe they'd get mad if they
+heard me say that.<*2>","You know Keshi? If you
+give one a <bold>microwave<normal>, it'll grow a bit. Seems
+pretty wimpy to me, but... maybe they'd get mad if they heard me say that.",1,
 0x15c008,"<D5>クリプトって『ガン』が
 すきなんだよ
 くっつけたら すごいことに
-なるぜ!<*2>","<D5>Crypto, you know the one, likes ""guns"". If you fuse them, something cool will happen!<*2>","<D5>Crypto, you know the one, likes <bold>guns<normal>. Put 'em together and something cool will happen!<*2>",
+なるぜ!<*2>","<D5>Crypto, you know the one,
+likes <bold>guns<normal>.
+Put 'em together and
+something cool will happen!<*2>","<D5>Crypto, you know the one, likes <bold>guns<normal>.
+Put 'em together and something cool will happen!<*2>",1,
 0x15c00a,"<D6>ヘっヘー いいこときいたよ
 キミにも おしえてあげる
 モンステラって
@@ -31,31 +55,49 @@ If you put an <bold>antenna<normal> on a Kochia, it gets a little stronger.",
 おこのみらしいよ
 かいぞうで くっつけたら
 いいことあるかもね
-<*2>","<D6>Heh heh, I heard something interesting! Okay, I'll tell you.
-Monstera is a fan of ""revolvers"". Fusing them might be a good idea!<*2>","<D6>Heh heh, I heard something interesting! Alright, I'll tell you.
-Monstera is a fan of <bold>revolvers<normal>. Putting them together in augmentation might be a good idea!<*2>",
+<*2>","<D6>Heh heh, I heard something
+very interesting!
+Alright, I'll tell you.
+Monstera is a fan of
+<bold>revolvers<normal>. Putting them
+together in augmentation
+might be a good idea!<*2>","<D6>Heh heh, I heard something very interesting!
+Alright, I'll tell you.
+Monstera is a fan of <bold>revolvers<normal>. Putting them together in augmentation might be a good idea!<*2>",1,
 0x15c00c,"<D7>ファンガスに『アンテナ』って
 なんかキーワードらしいよ
 どういうことなんだろうね?
-<*2>","<D7>""Antenna"" seems to be sort of a keyword for Fungus. What do you make of that, hm?<*2>","<D7><bold>""Antenna""<normal> seems to be sort of a keyword for Fungus. What do you make of that, hm?<*2>",
+<*2>","<D7><bold>""Antenna""<normal> seems to
+be sort of a keyword
+for Fungus. What do you
+make of that, hm?<*2>","<D7><bold>""Antenna""<normal> seems to
+be sort of a keyword
+for Fungus. What do you make of that, hm?<*2>",1,
 0x15c00e,"<D8>もしもーし
 <&name>??
 キミのトモダチに ヒオウギって
 いるかな?
 かれには『スパナ』がいいカンジ
-らしいよ<*2>","<D8>Hi, is this <&name>?
-Are you friends with a Hiougi? I heard they're into ""spanners"".<*2>","<D8>Hey, <&name>?
-Are you friends with a Hiougi? I heard they're into <bold>spanners<normal>.<*2>",
+らしいよ<*2>","<D8>Hey, <&name>? Are you
+friends with a Hiougi?
+I heard they're into
+<bold>spanners<normal>.<*2>","<D8>Hey, <&name>? Are you friends with a Hiougi?
+I heard they're into <bold>spanners<normal>.<*2>",1,
 0x15c010,"<D9>ねーねー
 『バケツ』はプニカって
 なぞのことばだよね
-<*2>","<D9>Hey... The word ""bucket"" means something special to Punica, just so you know.<*2>","<D9>Hey... The word <bold>""bucket""<normal> means something special to Punica, just so you know.<*2>",
+<*2>","<D9>Hey... The word <bold>""bucket""<normal>
+means something special to
+Punica, just so you know.<*2>","Hey... The word <bold>""bucket""<normal> means something special to Punica, just so you know.",1,
 0x15c012,"<D10>やぁ <&name>
 ヒミツの じょうほうを
 ゲットしたよ
 グミには『ビデオ』が
 いけてるらしいよ
-<*2>","<D10>Yo, <&name>! I got my hands on some rare info. Get this: Gumi gets along well with ""video cameras"".<*2>","<D10>Yo, <&name>! I got my hands on some rare info. Get this: Gumi gets along well with <bold>video cameras<normal>.<*2>",
+<*2>","<D10>Yo, <&name>! I got my
+hands on some rare info.
+Get this: Gumi gets along well
+with <bold>video cameras<normal>.<*2>","Yo, <&name>! I got my hands on some rare info. Get this: Gumi gets along well with <bold>video cameras<normal>.",1,
 0x15c014,"<D11>おーう <&name>
 ゲンキにしてるか?
 あのなー スグリについての
@@ -63,41 +105,58 @@ Are you friends with a Hiougi? I heard they're into <bold>spanners<normal>.<*2>"
 きいたんだー
 あいつらって『マウス』が
 すきらしいよ
-やっぱ ネコににてるからかな?<*2>","<D11>What's up, <&name>! How are ya?
+やっぱ ネコににてるからかな?<*2>","<D11>What's up, <&name>!
+How are ya?
+A friend told me something
+about Suguri...
+Apparently, they like
+<bold>computer mice<normal>.
+I guess they're kinda like
+cats!<*2>","What's up, <&name>! How are ya?
 A friend told me something about Suguri...
-Apparently, they like ""mice"". I guess they really are similar to cats?<*2>
-","<D11>What's up, <&name>! How are ya?
-A friend told me something about Suguri...
-Apparently, they like <bold>computer mice<normal>. I guess they really are similar to cats?<*2>
-",
+Apparently, they like <bold>computer mice<normal>.
+I guess they're kinda like cats!",1,
 0x15c016,"<D12>ガンライコウって
 『フライパン』をくっつけて
 あげると けいけんちが
 あがるんだって
 なんとなく そんなふんいき
-するよねー<*2>","<D12>If you fuse a Ganraikou with a ""frying pan"", I hear it'll gain experience.
-It has that feel to it, doesn't it?<*2>","<D12>If you give a Ganraikou a <bold>frying pan<normal>, I hear it'll gain experience.
-It sorta makes sense when you look at it, right?<*2>",
+するよねー<*2>","<D12>If you give a Ganraikou
+a <bold>frying pan<normal>,
+I hear it'll gain experience.
+It sorta makes sense
+when you look at it, right?<*2>","<D12>If you give a Ganraikou
+a <bold>frying pan<normal>,
+I hear it'll gain experience.
+It sorta makes sense when you look at it, right?<*2>",1,
 0x15c018,"<D13>ビャクブってトモダチにいるー?
 いるんだったら
 『ノコギリ』をくっつけてごらん
 でも ビャクブって
 ノコギリよリもいたそうな
-キバをもってるんだよねー<*2>","<D13>Are you friends with a Byakubu?
-If you are, try fusing it with a ""saw"".
-You'd probably be hurt worse by a Byakubu than by a saw, though.
+キバをもってるんだよねー<*2>","<D13>Are you friends with a
+Byakubu?
+If you are, try fitting it
+with a <bold>saw<normal>.
+I feel like you'd be hurt
+worse by a Byakubu
+than by a saw, though.
 Those fangs look so sharp!<*2>","<D13>Are you friends with a Byakubu?
 If you are, try fitting it with a <bold>saw<normal>.
-I feel like you'd be hurt worse by a Byakubu than by a saw, though.
-Those fangs look so sharp!<*2>",
+I feel like you'd be hurt worse by a Byakubu
+than by a saw, though.
+Those fangs look so sharp!<*2>",1,
 0x15c01a,"<D14>タマゴをせなかにしょった
 デンジュウのテロペアって
 いるじゃない
 あのデンジュウって『ギア』を
 つけると ちょっとだけつよく
-なるんだってさ<*2>","<D14>There's a Denjuu with eggs on its back called Telopea, right?
-I heard fusing it with a ""gear"" would make it an itty bit stronger!<*2>","<D14>There's a Denjuu with eggs on its back called Telopea, right?
-I heard putting a <bold>gear<normal> in it would make it an itty bit stronger!<*2>",
+なるんだってさ<*2>","<D14>There's a Denjuu with eggs
+on its back called Telopea,
+right? I heard putting a
+<bold>gear<normal> in it would make it
+an itty bit stronger!<*2>","<D14>There's a Denjuu with eggs on its back called Telopea, right? I heard putting a <bold>gear<normal> in it would make it
+an itty bit stronger!<*2>",1,
 0x15c01c,"<D15>ねー<&name>
 マンテアのデンワバンゴウを
 もってる??
@@ -105,13 +164,27 @@ I heard putting a <bold>gear<normal> in it would make it an itty bit stronger!<*
 『アーチェリー』をつけると
 いいらしいよ
 ためしてみたらどう??
-<*2>","<D15>Hey, <&name>... Do you have a Mantea's number? If you do, I've heard you should fuse it with an ""archery set"". How about you give it a shot?<*2>","<D15>Hey, <&name>... Do you have a Mantea's number? If you do, I've heard you should give it an <bold>archery set<normal>. How about you give it a shot?<*2>",
+<*2>","<D15>Hey, <&name>... Do you
+have a Mantea's number?
+If you do, you should
+try augmenting it with
+an <bold>archery set<normal>. How
+about you give it a shot?<*2>","<D15>Hey, <&name>... Do you have a Mantea's number? If you do, you should
+try augmenting it with
+an <bold>archery set<normal>. How about you give it a shot?<*2>",1,
 0x15c01e,"<D16><&name>の
 トモダチのなかに イクソラって
 デンジュウはいるのかな?
 そのデンジュウ『アイロン』を
 つけると つよくなるらしいよ
-ホントかウソか しらないけどさ<*2>","<D16>Is there any chance you're friends with an Ixora, <&name>? I heard it'll grow stronger if you fuse it with an ""iron"". I don't know if it's true, though.<*2>","<D16>Are you friends with an Ixora by any chance, <&name>? I heard it'll grow stronger if you slap an <bold>iron<normal> onto it. I don't know if it's true, though.<*2>",
+ホントかウソか しらないけどさ<*2>","<D16>Are you friends with an
+Ixora by any chance,
+<&name>? I heard it'll
+grow stronger if you
+slap an <bold>iron<normal> on it.
+Dunno if it's true, though.<*2>","<D16>Are you friends with an Ixora by any chance, <&name>? I heard it'll grow stronger if you
+slap an <bold>iron<normal> on it.
+Dunno if it's true, though.<*2>",1,
 0x15c020,"<D17>ミルツスがさー
 『プロペラエンジン』を
 つけたがってるって はなしを
@@ -119,13 +192,27 @@ I heard putting a <bold>gear<normal> in it would make it an itty bit stronger!<*
 すごいモノ ほしがるよねー
 もってるんだったら
 くっつけてあげなよー
-<*2>",/0x15c020/<*2>,"<D17>I heard through the grapevine that Myrtus wants to have a <bold>propeller engine<normal> installed. Tall order, right? If you get the chance, try an augmentation!<*2>",
+<*2>","<D17>I heard through the
+grapevine that Myrtus
+wants to have a <bold>propeller
+engine<normal> installed.
+Tall order, right? But hey,
+if you get the chance,
+try an augmentation!<*2>","<D17>I heard through the grapevine that Myrtus wants to have a <bold>propeller engine<normal> installed.
+Tall order, right? But hey,
+if you get the chance,
+try an augmentation!<*2>",1,
 0x15c022,"<D18>リクニスって
 『ドリル』だいすきデンジュウ
 らしいよ
 なんで すきなのかは だれも
 しらないんだけどさー
-<*2>","<D18>I heard the Denjuu called Lychnis love ""drills"". Why they like them is anyone's guess, though...<*2>","<D18>I heard the Denjuu called Lychnis loves <bold>drills<normal>. Why they like them is anyone's guess, though...<*2>",
+<*2>","<D18>You know Lychnis?
+I hear it's into <bold>drills<normal>!
+Why it likes 'em is anyone's
+guess, though...<*2>","<D18>You know Lychnis?
+I hear it's into <bold>drills<normal>!
+Why it likes 'em is anyone's guess, though...<*2>",1,
 0x15c024,"<D19><&name>ってさ
 ラペロイジアってデンジュウを
 みたことある??
@@ -133,7 +220,12 @@ I heard putting a <bold>gear<normal> in it would make it an itty bit stronger!<*
 いう アイテムがいいんだって
 そのデンジュウから
 デンワバンゴウを もらうことが
-あったら つけてみなよー<*2>","<D19>So, <&name>, have you ever seen a Lapeirousia? They like ""mixers"", I hear. If you get one's phone number, try fusing them!<*2>","<D19>So, <&name>, have you ever seen a Lapeirousia? They like <bold>mixers<normal>, I hear. If you get one's phone number, try giving it a <bold>mixer<normal>!<*2>",
+あったら つけてみなよー<*2>","<D19>So, <&name>, have you
+ever seen a Lapeirousia?
+They like <bold>mixers<normal>, I hear.
+If you get one's number,
+try putting a <bold>mixer<normal> on it!<*2>","<D19>So, <&name>, have you ever seen a Lapeirousia? They like <bold>mixers<normal>, I hear.
+If you get one's number, try putting a <bold>mixer<normal> on it!<*2>",1,
 0x15c026,"<D20>ブバリアってデンジュウ
 『バズーカ』を つけると
 シンカはしないけど 
@@ -141,7 +233,14 @@ I heard putting a <bold>gear<normal> in it would make it an itty bit stronger!<*
 すごい こわいモノ
 ほしがるよねー
 なに かんがえてるんだろ..
-<*2>","<D20>Bubaria won't evolve if fused with a ""bazooka"", but I hear it wants one. Scary thing to want, isn't it? Wonder what that's about...<*2>","<D20>Bubaria won't evolve if augmented with a <bold>bazooka<normal>, but I hear it still wants one. Kinda scary, isn't it? Wonder what that's about...<*2>",
+<*2>","<D20>Bubaria won't evolve if aug-
+mented with a <bold>bazooka<normal>,
+but I hear it still wants one.
+That can't be healthy,
+can it? Wonder what
+that's about...<*2>","<D20>Bubaria won't evolve if aug-mented with a <bold>bazooka<normal>, but I hear it still wants one. That can't be healthy,
+can it? Wonder what
+that's about...<*2>",1,
 0x15c028,"<D21>アンジオスってデンジュウが
 いるじゃない?
 ボクはみたことが ないんだけど
@@ -151,9 +250,23 @@ I heard putting a <bold>gear<normal> in it would make it an itty bit stronger!<*
 きもするなー
 まだ みたこと なかったら
 わからないかな??
-<*2>","<D21>There's a Denjuu called Angios, right? I haven't seen one, but I hear if you fuse it with a ""flamethrower"", it'll gain experience.
-I feel like I get it... If you haven't seen one yet, maybe it's hard to imagine?<*2>","<D21>There's a Denjuu called Angios, right? I haven't seen one, but I hear if you fuse it with a <bold>flamethrower<normal>, it'll gain experience.
-I feel like that makes sense... If you haven't seen one yet, maybe it's hard to imagine?<*2>",
+<*2>","<D21>There's a Denjuu called
+Angios, right?
+I've never seen one, but
+I hear if you fuse it
+with a <bold>flamethrower<normal>, it'll
+gain experience.
+I feel like that makes sense
+somehow...
+Or, uhhh, maybe it doesn't?
+I mean, I've never
+seen one, so...<*2>","<D21>There's a Denjuu called Angios, right?
+I've never seen one, but
+I hear if you fuse it
+with a <bold>flamethrower<normal>, it'll gain experience.
+I feel like that makes sense somehow...
+Or, uhhh, maybe it doesn't? I mean, I've never
+seen one, so...<*2>",1,
 0x15c02a,"<D22>よう <&name>
 ジムノスってデンジュウは
 しってるか??
@@ -163,9 +276,18 @@ I feel like that makes sense... If you haven't seen one yet, maybe it's hard to 
 『ミサイル』つかんで
 なげれそうなぐらい ごつい
 ヤツなんだけどなー
-<*2>","<D22>Yo, <&name>! Have you heard of Gymnos? It's a real ""tough guy"" Denjuu.
-I heard it likes ""missiles"". It looks strong enough to throw one of those around!<*2>","<D22>Yo, <&name>! Have you heard of Gymnos? It's a real ""tough guy"" Denjuu.
-I heard it likes <bold>missiles<normal>. It looks like it'd be strong enough to throw one with its bare hands!<*2>",
+<*2>","<D22>Yo, <&name>! Have you
+heard of Gymnos?
+It's a real ""tough guy""
+Denjuu.
+I heard it's into <bold>missiles<normal>.
+It already looks like it'd be
+strong enough to throw a
+<bold>missile<normal> with its bare
+hands, though, doesn't it!<*2>","<D22>Yo, <&name>! Have you heard of Gymnos?
+It's a real ""tough guy"" Denjuu.
+I heard it's into <bold>missiles<normal>.
+It already looks like it'd be strong enough to throw a <bold>missile<normal> with its bare hands, though, doesn't it!<*2>",1,
 0x15c02c,"<D23>あの かわいいデンジュウ
 リリオペっているじゃん
 あのデンジュウって みために
@@ -175,7 +297,18 @@ I heard it likes <bold>missiles<normal>. It looks like it'd be strong enough to 
 よらないよなー
 やっぱリ うみのデンジュウって
 こわいのかな?
-<*2>","<D23>You know that one cute Denjuu? Liriope? It's a bit of a mismatch, but I hear you should fuse it with a ""revolver"". You really can't tell from its looks! Maybe ocean Denjuu are as scary as people say?<*2>","<D23>You know that one cute Denjuu? Liriope? It's a bit of a mismatch, but apparently it's a good idea to put a <bold>revolver<normal> on it. You really can't tell from its looks! Maybe ocean Denjuu are as scary as people say?<*2>",
+<*2>","<D23>You know that one cute
+Denjuu? Liriope?
+It's a bit of a mismatch, but
+apparently it's a good idea
+to put a <bold>revolver<normal> on it.
+You really can't tell
+from looking at it! Maybe
+ocean Denjuu really are
+as scary as people say?<*2>","<D23>You know that one cute Denjuu? Liriope?
+It's a bit of a mismatch, but apparently it's a good idea to put a <bold>revolver<normal> on it. You really can't tell
+from looking at it! Maybe ocean Denjuu really are
+as scary as people say?<*2>",1,
 0x15c02e,"<D24>イオンとうに ワラタって
 デンジュウが いるんだけどさ
 『サーベル』を くっつけると
@@ -183,13 +316,25 @@ I heard it likes <bold>missiles<normal>. It looks like it'd be strong enough to 
 うわさできいたよ
 トモダチにいるんだったら
 くっつけてあげなよー
-つよくなるかもよ?<*2>","<D24>There's a Denjuu called Waratah on Ion Island. I've heard rumors saying you should fuse it with a ""sabre"". If you become friends with one, try it! Maybe it'll grow stronger?<*2>","<D24>There's a Denjuu called Waratah on Ion Island. I've heard rumors saying you should put a <bold>sabre<normal> on it. If you become friends with one, try it! Maybe it'll grow stronger?<*2>",
+つよくなるかもよ?<*2>","<D24>There's a Denjuu called
+Waratah on Ion Island.
+I heard a rumor saying you
+should put a <bold>sabre<normal> on it.
+If you become friends with
+one, try it!
+Maybe it'll grow stronger?<*2>","<D24>There's a Denjuu called Waratah on Ion Island.
+I heard a rumor saying you should put a <bold>sabre<normal> on it. If you become friends with one, try it!
+Maybe it'll grow stronger?<*2>",1,
 0x15c030,"<D25>ソルガムってヘビみたいな
 デンジュウしってる??
 そのデンジュウ『シュリケン』が
 おこのみらしいよ
 なんだか かっこいいよねー
-<*2>","<D25>You know Sorghum, that snakey Denjuu? I hear they like ""shurikens"". Kind of cool, right?<*2>","<D25>You know Sorghum, that snakey Denjuu? I hear they like <bold>shuriken<normal>. Kind of cool, right?<*2>",
+<*2>","<D25>You know Sorghum, that
+slithery, snakey Denjuu?
+I hear they like <bold>shuriken<normal>.
+Pretty cool, right?<*2>","<D25>You know Sorghum, that slithery, snakey Denjuu?
+I hear they like <bold>shuriken<normal>. Pretty cool, right?<*2>",1,
 0x15c032,"<D26>おーっす <&name>
 みみよリな じょうほうが
 あるよー
@@ -197,19 +342,32 @@ I heard it likes <bold>missiles<normal>. It looks like it'd be strong enough to 
 いるじゃん?
 じつは『マシンガン』をつけると
 いいことあるんだってさ
-いがいだよなー<*2>","<D26>Hiya, <&name>! I've got some good news!
-There's a Natural Denjuu called Eryngo, right? I heard something good happens if you fuse it with a ""machine gun"". Surprising, right?<*2>","<D26>Hiya, <&name>! I've got some intel for ya!
-There's a Natural Denjuu called Eryngo, right? I heard good stuff happens if you stick a <bold>machine gun<normal> on it. Surprising, right?<*2>",
+いがいだよなー<*2>","<D26>Hiya, <&name>! I've
+got some intel for ya!
+There's a Natural Denjuu
+called Eryngo, right?
+I heard good stuff
+happens if you stick
+a <bold>machine gun<normal> on it.
+Betcha didn't know that!<*2>","<D26>Hiya, <&name>! I've got some intel for ya!
+There's a Natural Denjuu called Eryngo, right?
+I heard good stuff
+happens if you stick
+a <bold>machine gun<normal> on it. Betcha didn't know that!<*2>",1,
 0x15c034,"<D27>ここで もんだいです
 『ボム』をつけると いいという
 デンジュウを こたえなさい
 3.2.1....ブッブー
 こたえは ノリウツギでしたー
-おぼえておきなよー<*2>","<D27>Question: what Denjuu should be fused with a ""bomb""?
+おぼえておきなよー<*2>","<D27>Question: what Denjuu should
+you install a <bold>bomb<normal> in?
 3... 2... 1... Bzzz!
-The correct answer is Noriutsugi! Better luck next time!<*2>","<D27>Question: what Denjuu should you install a <bold>bomb<normal> in?
+The correct answer is
+Noriutsugi!
+Better luck next time!<*2>","<D27>Question: what Denjuu should you install a <bold>bomb<normal> in?
 3... 2... 1... Bzzz!
-The correct answer is Noriutsugi! Better luck next time!<*2>",
+The correct answer is Noriutsugi!
+Better luck next time!<*2>",1,
 0x15c036,"<D28>うみのデンジュウ パンパスって
 ごぞんじですか??
 かれは『ガトリング』なんて
@@ -217,34 +375,61 @@ The correct answer is Noriutsugi! Better luck next time!<*2>",
 そうです....
 ワタシには かんがえられません
 なんであんなモノを
-つけたがるんでしょう....<*2>","<D28>Are you familiar with Pampas, the ocean Denjuu?
-I hear they want to be fused with something scary: a ""gatling gun"".
-I can't imagine why you'd want to fuse with something like that...<*2>","<D28>Are you familiar with Pampas, the ocean Denjuu?
-I hear it wants to have something seriously scary installed: a <bold>gatling gun<normal>.
-I can't imagine why you'd want something like that...<*2>",
+つけたがるんでしょう....<*2>","<D28>Are you familiar with Pam-
+pas, the ocean Denjuu?
+I hear it wants something
+seriously scary installed:
+a <bold>gatling gun<normal>.
+I can't imagine why you'd
+want something like that...<*2>","<D28>Are you familiar with Pam-pas, the ocean Denjuu?
+I hear it wants something seriously scary installed:
+a <bold>gatling gun<normal>.
+I can't imagine why you'd want something like that...<*2>",1,
 0x15c038,"<D29>ローダンセってデンジュウさー
 『ミキサー』が すきなんだって
-なんだか うごきがにてるもんなーわかるきがするよ<*2>","<D29>Okay, so the Denjuu called Rhodanthe...
-I hear they like ""mixers"". I get it, I think. They both move the same way!<*2>","<D29>Okay, so the Denjuu called Rhodanthe...
-I hear they like <bold>mixers<normal>. I get it, I think. They both move the same way!<*2>",
+なんだか うごきがにてるもんなーわかるきがするよ<*2>","<D29>Okay, so the Denjuu called
+Rhodanthe...
+I hear they like <bold>mixers<normal>.
+I get it, I think. They both
+move the same way!<*2>","<D29>Okay, so the Denjuu called Rhodanthe...
+I hear they like <bold>mixers<normal>.
+I get it, I think. They both move the same way!<*2>",1,
 0x15c03a,"<D30>リコリスって『コンピュータ』を
 つけると いいんだろ?
 じつは キカイをつかわせると
 すごかったリして...
 そんなことはないかなー
-<*2>",/0x15c03a/<*2>,"<D30>It'd be a good idea to fit a Lycoris with a <bold>computer<normal>, right? It might turn out to be real cool //(""jitsu wa"" makes it sound like a contrast) if you set it up with a machine like that! Or maybe not.<*2>",
+<*2>","<D30>It'd be a good idea to fit a
+Lycoris with a <bold>computer<normal>,
+right? Who knows, it might
+turn out to be real cool
+if you set it up with a
+machine like that!
+Or maybe not.<*2>","<D30>It'd be a good idea to fit a Lycoris with a <bold>computer<normal>, right? Who knows, it might turn out to be real cool
+if you set it up with a machine like that!
+Or maybe not.<*2>",1,
 0x15c03c,"<D31>おーう <&name>
 ビバーナムがな『ビデオ』を
 つけたいって いってたぜ
 でも あいつ テレビは
 どうなんだろうな?
-<*2>","/0x15c03c/<*2>
-","<D31>Yo, <&name>! Viburnum was saying it wants to have a <bold>video camera<normal> built in.
-...Think it knows how to use a TV?<*2>",
+<*2>","<D31>Yo, <&name>! Viburnum
+was saying it wants to
+have a <bold>video camera<normal>
+built in.
+...Think it even knows
+how to use a TV?<*2>","<D31>Yo, <&name>! Viburnum was saying it wants to have a <bold>video camera<normal>
+built in.
+...Think it even knows
+how to use a TV?<*2>",1,
 0x15c03e,"<D32>ファンネルってデンジュウさぁ
 『ノコギリ』さがしてるんだって
 つけてあげたら きっと
-よろこぶよ<*2>","<D32>So, the Denjuu called Funnel... I heard it's looking for a ""saw"". I bet it'd be real happy if you fused it with one!<*2>","<D32>So, the Denjuu called Funnel... I heard it's looking for a <bold>saw<normal>. I bet it'd be real happy if you equipped it with one!<*2>",
+よろこぶよ<*2>","<D32>So, the Denjuu called Funnel...
+I heard it's looking for a
+<bold>saw<normal>. I bet it'd be real
+happy if you equipped it
+with one!<*2>","<D32>So, the Denjuu called Funnel... I heard it's looking for a <bold>saw<normal>. I bet it'd be real happy if you equipped it with one!<*2>",1,
 0x15c040,"<D33>バンダってうでのながい
 デンジュウを しってるかな?
 このデンジュウは『クレーン』を
@@ -252,7 +437,12 @@ I hear they like <bold>mixers<normal>. I get it, I think. They both move the sam
 けいけんちがアップだって!
 デンワバンゴウを 
 しってるんだったら ためしてね
-<*2>","<D33>Have you heard of Vanda, that Denjuu with the long arms? They say it'll gain experience BIG-TIME if you fuse it with a  ""crane""! Try it if you've got one's number!<*2>","<D33>Have you heard of Vanda, the Denjuu with the long arms? They say it'll gain experience BIG-TIME if you put a <bold>crane<normal> on it! Try it if you've got one's number!<*2>",
+<*2>","<D33>Ever heard of Vanda, the
+Denjuu with the long arms?
+They say it gains experience
+BIG-TIME if you put a
+<bold>crane<normal> on it! Try it if you've
+got one's number!<*2>","<D33>Ever heard of Vanda, the Denjuu with the long arms? They say it gains experience BIG-TIME if you put a <bold>crane<normal> on it! Try it if you've got one's number!<*2>",1,
 0x15c042,"<D34>『アーチェリー』を
 ほしがってるデンジュウを
 オレ しってるんだー
@@ -260,33 +450,57 @@ I hear they like <bold>mixers<normal>. I get it, I think. They both move the sam
 デンジュウなんだけどね
 <&name>の
 トモダチに いるのかな??
-<*2>","<D34>I know a Denjuu who wants an ""archery set""!♪
-It's the one called Uikyou. Are you friends with an Uikyou?<*2>","<D34>I know a Denjuu who wants an <bold>archery set<normal>!♪
-It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
+<*2>","<D34>I know a Denjuu who wants
+an <bold>archery set<normal>! ♪
+It's the one called Uikyou.
+Do you know an Uikyou?<*2>","<D34>I know a Denjuu who wants an <bold>archery set<normal>! ♪
+It's the one called Uikyou. Do you know an Uikyou?<*2>",1,
 0x15c044,"<D35>オバナってさー
 『そうじき』がいいんだって
 きれいずきなのかな?
 あの『ブィーン』っていう
 おとがすきなのかな?
-どっちにしても いがいだよなー<*2>","<D35>I heard Obana likes ""vacuums"". Is it a clean freak? Does it like the whooshy noise? Whatever the case, it's a bit odd!<*2>","<D35>I heard Obana likes <bold>vacuums<normal>. Is it a clean freak? Does it like the whooshy noise? Whatever the case, it's a bit odd!<*2>",
+どっちにしても いがいだよなー<*2>","<D35>I heard Obana likes
+<bold>vacuums<normal>.
+Is it a clean freak? Does it
+like the whooshy noise?
+Either way, it's a bit odd!<*2>","<D35>I heard Obana likes <bold>vacuums<normal>.
+Is it a clean freak? Does it like the whooshy noise? Either way, it's a bit odd!<*2>",1,
 0x15c046,"<D36>ファイアーコッコって
 『ボンベ』がけいけんちアップの
 ヒケツらしいよ
 もっと もえたいのかな??
 まさか そんなことはないよなー
-<*2>","<D36>I hear the trick to strengthening a Firekokko is to give it a ""gas tank"". Is it because it wants to burn hotter...? Probably not, huh.<*2>","<D36>I hear the trick to strengthening a Firekokko is to give it a <bold>gas tank<normal>. Is it because it wants to burn even hotter...? Probably not, huh.<*2>",
+<*2>","<D36>I heard the trick to
+strengthening a Firekokko
+is to give it a <bold>gas tank<normal>.
+Is it because it wants to
+burn even hotter...?
+Nah, there's no way.<*2>","<D36>I heard the trick to strengthening a Firekokko is to give it a <bold>gas tank<normal>.
+Is it because it wants to burn even hotter...?
+Nah, there's no way.<*2>",1,
 0x15c048,"<D37>レイゴーテンってデンジュウを
 みたことある??
 このデンジュウは『じゃぐち』が
 いいらしいんだよ
 もし トモダチになったら
-くっつけてあげたら?<*2>","<D37>Have you seen the Denjuu called Raygoten? I hear it's a fan of ""faucets"". If you happen to become friends with one, why not try a fusion?<*2>","<D37>Have you seen the Denjuu called Raygoten? I hear it's a fan of <bold>faucets<normal>. If you happen to become friends with one, why not try an augmentation?<*2>",
+くっつけてあげたら?<*2>","<D37>Have you seen the Denjuu
+called Raygoten?
+I hear it's a fan of
+<bold>faucets<normal>.
+If you become friends with
+one, try auging it up!<*2>","<D37>Have you seen the Denjuu called Raygoten?
+I hear it's a fan of <bold>faucets<normal>.
+If you become friends with one, try auging it up!<*2>",1,
 0x15c04a,"<D38>ドリアーマって
 『リボルバーガン』をあげると
 よろこぶんだってー
 『ドリル』がカラダに
 くっついてるだけじゃ
-ものたリないのかな??<*2>","<D38>I heard Drilarmor would be overjoyed to get a ""revolver"". Isn't it enough to have a huge drill?<*2>",<D38>I heard Drilarmor would be overjoyed to get a <bold>revolver<normal>. Isn't it enough to have a huge drill?<*2>,
+ものたリないのかな??<*2>","<D38>I heard Drilarmor would be
+overjoyed to get a
+<bold>revolver<normal>. Isn't it enough
+to have a huge drill?<*2>",<D38>I heard Drilarmor would be overjoyed to get a <bold>revolver<normal>. Isn't it enough to have a huge drill?<*2>,1,
 0x15c04c,"<D39>よう <&name>
 ひさびさだっけ?
 トモダチから いいこと
@@ -296,7 +510,19 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 ほしいっていってるらしいよ
 ところで オレのくっつけたい
 モノは わかってるかなー?
-しんぱいだなー....<*2>","<D39>Hey yo, <&name>, it's been a while! A friend told me something cool. Get this: Chamelan wants to be fused with a ""machine gun"". Do you know what I want to be fused with? I hope so...<*2>","<D39>Hey yo, <&name>, it's been a while! A friend told me something cool. Get this: Chamelan wants to have a <bold>machine gun<normal> installed. Do you know what I wanna have installed too? I hope so...<*2>",
+しんぱいだなー....<*2>","<D39>Hey yo, <&name>, it's
+been a while... I think!
+A friend told me something
+cool. Get this:
+Chamelan wants to have a
+<bold>machine gun<normal> installed.
+Do you know what I wanna
+have installed too?
+I hope so...<*2>","<D39>Hey yo, <&name>, it's been a while... I think!
+A friend told me something cool. Get this:
+Chamelan wants to have a <bold>machine gun<normal> installed.
+Do you know what I wanna have installed too?
+I hope so...<*2>",1,
 0x15c04e,"<D40><&name>?
 『バズーカ』をくっつけて
 けいけんちアップのデンジュウを
@@ -304,56 +530,119 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 こたえはねー....
 クリプトアームだよ
 でも トモダチに いる?
-<*2>","<D40><&name>? I know a Denjuu who would grow if you fused it with a ""bazooka"". I'm talking about Cryptoarm! Do you know one of those?<*2>",<D40><&name>? I know a Denjuu that would grow if you put a <bold>bazooka<normal> on it. I'm talking about Cryptoarm! Do you know one of those?<*2>,
+<*2>","<D40><&name>? I know a
+Denjuu that would grow
+if you put a <bold>bazooka<normal> on it.
+It's Cryptoarm!
+Do you know one of those?<*2>","<D40><&name>? I know a Denjuu that would grow
+if you put a <bold>bazooka<normal> on it. It's Cryptoarm!
+Do you know one of those?<*2>",1,
 0x15c050,"<D41>シェルステラって
 『ジェットエンジン』で
 つよくなるらしいんだよ
 あいつ...とぶきかよ..
 じつはもう とベたリして..
-<*2>",/0x15c050/<*2>,"<D41>I heard you can make Shellstera stronger using a <bold>jet engine<normal>. Does it wanna fly or something?! Maybe it can fly without one, actually...<*2>",
+<*2>","<D41>I heard you can make
+Shellstera stronger using
+a <bold>jet engine<normal>. Does it
+wanna fly or something?!
+Maybe it can fly without one,
+actually...<*2>","<D41>I heard you can make Shellstera stronger using a <bold>jet engine<normal>. Does it wanna fly or something?! Maybe it can fly without one, actually...<*2>",1,
 0x15c052,"<D42>ファンガイストって
 『ガトリング』がいいんだぜー
 これは オレしか しらないかも
 しれないけどなー
 ヘっヘっヘっ オレを
-トモダチにして よかったろ?<*2>","<D42>Y'know, Fungeist loves ""gatling guns""! I might be the only one who knows that. Heh heh heh, I bet you're glad I'm your friend!<*2>","<D42>Y'know, Fungeist loves <bold>gatling guns<normal>! I might be the only one who knows that. Heh heh heh, I bet you're glad I'm your friend!<*2>",
+トモダチにして よかったろ?<*2>","<D42>Y'know, Fungeist loves
+<bold>gatling guns<normal>!
+I might be the only one in the
+WORLD who knows that.
+Heh heh heh, I bet you're
+glad I'm your friend!<*2>","<D42>Y'know, Fungeist loves <bold>gatling guns<normal>!
+I might be the only one in the WORLD who knows that. Heh heh heh, I bet you're glad I'm your friend!<*2>",1,
 0x15c054,"<D43>ボルタマスってデンジュウなー
 『ミサイル』つけたいんだってさあんなこわいモノ つけるなって
-おもうのは オレだけなのかなー<*2>",/0x15c054/<*2>,Did you know that Balltamus wants to have a <bold>missile<normal> installed? Am I the only one who thinks that's a bad idea!?,
+おもうのは オレだけなのかなー<*2>","<D43>Didja know that Balltamus
+wants to have a <bold>missile<normal>
+installed?
+Am I the only one who
+thinks that's a bad idea!?<*2>","Didja know that Balltamus wants to have a <bold>missile<normal> installed?
+Am I the only one who thinks that's a bad idea!?",1,
 0x15c056,"<D44>ブレニカって カワイイかおして
 『ランス』をつけると ちょっと
 つよくなるんだってねー
-わかんないもんだよねー<*2>",/0x15c056/<*2>,"Even though Burenica looks all cute, it apparently gets a bit stronger if you stick a <bold>lance<normal> on it! Pretty weird, huh?",
+わかんないもんだよねー<*2>","<D44>Even though Burenica looks
+all cute, it apparently
+gets a bit stronger if you
+stick a <bold>lance<normal> on it!
+Pretty weird, huh?<*2>","Even though Burenica looks all cute, it apparently
+gets a bit stronger if you stick a <bold>lance<normal> on it!
+Pretty weird, huh?",1,
 0x15c058,"<D45>『シュリケン』をくっつけたがる
 ゲーロンって
 いったいナニモノなんだろうな?
 カラダのなかでどうなってるのかスゴイきょうみあるよ
-<*2>",/0x15c058/<*2>,Apparently Geron wants to have a <bold>shuriken<normal> installed. I wonder what that's about. What would happen inside its body!?,
+<*2>","<D45>Apparently Geron wants to
+have a <bold>shuriken<normal> put in.
+What is Geron even? How
+does its body even work
+if it wants to have a
+<bold>shuriken<normal> put inside?<*2>","Apparently Geron wants to have a <bold>shuriken<normal> put in.
+What is Geron even? How does its body even work
+if it wants to have a <bold>shuriken<normal> put inside?",1,
 0x15c05a,"<D46>『ガン』をバーゼリアに
 つけるといいっていう
 はなしを きいたんだけどー
 どうなんだろう?
 ホントかなー?
-どうなんだろうなー?<*2>",/0x15c05a/<*2>,Someone was saying it's a good idea to put a <bold>gun<normal> on a Berzelia. Do you think that's true? Mayyyybe?,
+どうなんだろうなー?<*2>","<D46>Someone was saying it's a
+good idea to put a <bold>gun<normal>
+on a Berzelia. Do you think
+that's true? Mayyyybe?<*2>","Someone was saying it's a good idea to put a <bold>gun<normal>
+on a Berzelia. Do you think that's true? Mayyyybe?",1,
 0x15c05c,"<D47>なぁなぁー
 ニゲラってデンジュウ みたことある??
 ニゲラが『アーチェリー』を
 つけると けいけんちアップって
 はなししってる??
 みためからして とがったモノを
-とばすの すきそうだもんなー<*2>",/0x15c05c/<*2>,"Hey, have you seen the Denjuu called Nigella? Did you know it gains experience if fitted with an <bold>archery set<normal>? You can tell just by looking at it that it likes shooting pointy things.",
+とばすの すきそうだもんなー<*2>","<D47>Hey, have you seen the
+Denjuu called Nigella?
+Did you know it gains
+experience if fitted with
+an <bold>archery set<normal>? You can
+tell just by looking at it
+that it likes shooting
+pointy things.<*2>","Hey, have you seen the Denjuu called Nigella?
+Did you know it gains experience if fitted with an <bold>archery set<normal>? You can tell just by looking at it that it likes shooting
+pointy things.",1,
 0x15c05e,"<D48>ちょうろうの ムサさまが
 いるじゃん
 このまえ ムサさまが
 『プロペラエンジン』を
 つけてみたいって いってたのを
-きいたよ<*2>",/0x15c05e/<*2>,"So there's an elder named Musa, right? I heard he wants to try having a <bold>propeller engine<normal> installed.",
+きいたよ<*2>","<D48>So there's an elder named
+Musa, right?
+I heard he wants to try
+having a <bold>propeller
+engine<normal> installed.<*2>","So there's an elder named Musa, right?
+I heard he wants to try having a <bold>propeller engine<normal> installed.",1,
 0x15c060,"<D49>ネタロってさー
 『サーベル』がいいんだぜー
 のんびリしてて なにも
 かんがえてなさそうだけど
 そういうモノって あるんだなー
-<*2>",/0x15c060/<*2>,"That Netaro guy wants a <bold>sabre<normal>! He seems like a really chill guy, but I guess there's another side of him.",
+<*2>","<D49>That Netaro guy
+wants a <bold>sabre<normal>!
+He seems like he'd
+be a real chill guy,
+but I guess there's
+another side of him.<*2>","That Netaro guy
+wants a <bold>sabre<normal>!
+He seems like he'd
+be a real chill guy,
+but I guess there's
+another side of him.",1,
 0x15c062,"<D50>やっほー <&name>
 ネジロがさー
 『ボム』をくっつけてほしいって
@@ -361,7 +650,17 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 あわてものの あいつに
 そんなあぶないモノ あげても
 いいものかなー?
-<*2>",/0x15c062/<*2>,"Hullo, <&name>! Nejiro was saying he wants to have a <bold>bomb<normal> put in. Think it's a good idea to give something so dangerous to someone so scatterbrained!?",
+<*2>","<D50>Hullo, <&name>!
+Nejiro was saying
+he wants to have a <bold>bomb<normal>
+put in. Do ya really think
+it's a good idea to give
+something so dangerous
+to someone so
+scatterbrained?!<*2>","Hullo, <&name>!
+Nejiro was saying
+he wants to have a <bold>bomb<normal> put in. Do ya really think it's a good idea to give something so dangerous
+to someone so scatterbrained?!",1,
 0x15c064,"<D51>デンジュウカイにね
 ゴデチアっていうデンジュウが
 いるんだけど『ドリル』が
@@ -369,12 +668,26 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 あたまの かたすみに
 おいておくと
 いいかもねー
-<*2>",/0x15c064/<*2>,"So here in the Denjuu World, there's a Denjuu called Godetia. I hear it's really eager to get ahold of a <bold>drill<normal>. Stuff that in your brain; it might come in handy!",
+<*2>","<D51>So here in the Denjuu World,
+there's a Denjuu called
+Godetia. I hear it's eager
+to get ahold of a <bold>drill<normal>.
+Stuff that in your brain;
+it might come in handy!<*2>","So here in the Denjuu World, there's a Denjuu called Godetia. I hear it's eager
+to get ahold of a <bold>drill<normal>.
+Stuff that in your brain;
+it might come in handy!",1,
 0x15c066,"<D52>オレが しってるデンジュウで
 クルクマってデンジュウが
 いるんだけどね
 こいつ『ビームガン』ずきなんだほんとに『ビームガン』が
-いいらしいんだよ<*2>",/0x15c066/<*2>,"Okay, so, I know a Denjuu called Curcuma. It's a big fan of <bold>ray guns<normal>. I'm sure it'd like having one installed!",
+いいらしいんだよ<*2>","<D52>Okay, so, I know a Denjuu
+called Curcuma.
+It's a big fan of <bold>ray guns<normal>.
+I'm sure it'd like to
+have one installed!<*2>","Okay, so, I know a Denjuu called Curcuma.
+It's a big fan of <bold>ray guns<normal>. I'm sure it'd like to
+have one installed!",1,
 0x15c068,"<D53>テッセンっていうかっこいい
 デンジュウがいるんだけど
 このデンジュウ『ガン』が
@@ -382,18 +695,35 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 アイテムらしいんだ
 やっぱ かっこいいヤツは
 あいしょうがいいアイテムも
-ちがうよなー<*2>",/0x15c068/<*2>,"There's a super cool Denjuu called Tessen. It's good with <bold>guns<normal>, I hear. Man, the coolest Denjuu are different in what items they like too, huh...",
+ちがうよなー<*2>","<D53>There's a super cool Denjuu
+called Tessen!
+It's good with <bold>guns<normal>,
+I hear.
+Man, the coolest Denjuu are
+different in what items
+they like too, huh...<*2>","There's a super cool Denjuu called Tessen!
+It's good with <bold>guns<normal>,
+I hear.
+Man, the coolest Denjuu are different in what items they like too, huh...",1,
 0x15c06a,"<D54>『プロペラエンジン』が
 すきなデンジュウで
 ヘリオプシスってのがいるんだけどいかにも キカイずきって
 カンジの ヤツなんだ
-ほんとだって!<*2>",/0x15c06a/<*2>,Heliopsis is one of those Denjuu that like <bold>propeller engines<normal>. It really does seem like the type to be into machines!,
+ほんとだって!<*2>","<D54>Heliopsis is one of those
+Denjuu that like
+<bold>propeller engines<normal>. It
+really does seem like the
+type to be into machines!<*2>",Heliopsis is one of those Denjuu that like <bold>propeller engines<normal>. It really does seem like the type to be into machines!,1,
 0x15c06c,"<D55>ハグマノキってデンジュウは
 『ビームガン』を
 こよなく あいする
 デンジュウなんだって
 どんなデンジュウか
-オレは みたことないんだけどさ<*2>",/0x15c06c/<*2>,"Hagumanoki really, really loves <bold>ray guns<normal>. What kind of Denjuu is it, ya think? I haven't seen one.",
+オレは みたことないんだけどさ<*2>","<D55>Hagumanoki really, really
+loves <bold>ray guns<normal>.
+What kind of Denjuu is it, ya
+think? I haven't seen one.<*2>","Hagumanoki really, really loves <bold>ray guns<normal>.
+What kind of Denjuu is it, ya think? I haven't seen one.",1,
 0x15c06e,"<D56>『アーミーナイフ』なんて
 ごっついモノ ほしがる
 デンジュウも いるんだなー
@@ -401,14 +731,30 @@ It's the one called Uikyou. Are you friends with an Uikyou?<*2>",
 デンジュウなんだけどな
 どんなヤツか
 みておいてくれよ
-<*2>",/0x15c06e/<*2>,"I hear there's a tough Denjuu who wants an <bold>army knife<normal>. Gilerth, I think. I wonder what kind of Denjuu it is...
-Keep an eye out for it!",
+<*2>","<D56>I hear there's a tough
+Denjuu out there who
+wants an <bold>army knife<normal>.
+Gilerth, I think.
+I wonder what kind of
+Denjuu it is...
+Keep an eye out for it!<*2>","I hear there's a tough Denjuu out there who wants an <bold>army knife<normal>. Gilerth, I think.
+I wonder what kind of Denjuu it is...
+Keep an eye out for it!",1,
 0x15c070,"<D57>レイガースってヤツ
 『コンピュータ』を くっつけて
 ほしいって いってたんだけど?
 つかえないけど ほしいって
 タイプなんじゃないかなー
-ぜったいそうだよなー<*2>",/0x15c070/<*2>,"Raygirth was saying it'd like to fuse with a <bold>computer<normal>. Seems like the type to want things it has no use for, doesn't it...",
+ぜったいそうだよなー<*2>","<D57>Raygirth was saying it'd
+like to be augmented
+with a <bold>computer<normal>.
+Seems like the type to
+always want things it has
+no use for, doesn't it...<*2>","Raygirth was saying it'd
+like to be augmented
+with a <bold>computer<normal>.
+Seems like the type to always want things it has
+no use for, doesn't it...",1,
 0x15c072,"<D58>もしもーし
 <&name>?
 アーマルってデンジュウの
@@ -418,27 +764,54 @@ Keep an eye out for it!",
 けいけんちアップのアイテムって
 はなしだったよ
 きいたはなしだから ウソかも
-しれないけどさー<*2>",/0x15c072/<*2>,"Hello, <&name>? I heard something interesting about Armaru. Apparently, its experience item is <bold>pencils<normal>. I just heard it second-hand, so I dunno if it's true.",
+しれないけどさー<*2>","<D58>Hello, <&name>?
+I heard something
+interesting about
+the Denjuu Armaru.
+Apparently, its experience
+item is <bold>pencils<normal>.
+I just heard it second-hand,
+so I dunno if it's true.<*2>","Hello, <&name>?
+I heard something interesting about
+the Denjuu Armaru. Apparently, its experience item is <bold>pencils<normal>.
+I just heard it second-hand, so I dunno if it's true.",1,
 0x15c074,"<D59>カメレイドってデンジュウがさ
 『マシンガン』をブッぱなすのがすきだって いってたんだ
 なんか こわくない??
 そうでもないのかな...
-<*2>",/0x15c074/<*2>,"So, Chameraid was saying it likes shooting <bold>machine guns<normal>. Doesn't that scare you? Maybe it doesn't...",
+<*2>","<D59>Chameraid was saying it likes
+shooting <bold>machine guns<normal>.
+Doesn't that worry you a
+bit? Maybe it doesn't...<*2>",Chameraid was saying it likes shooting <bold>machine guns<normal>. Doesn't that worry you a bit? Maybe it doesn't...,1,
 0x15c076,"<D60>クリプトライドってねー
 『モバイル』がおきにいリだって
 けっこう おしゃれな
-デンジュウだよねー<*2>",/0x15c076/<*2>,"You know Cryptoride? I heard it's into <bold>laptops<normal>. Man, that Denjuu really keeps up with the times, doesn't it?",
+デンジュウだよねー<*2>","<D60>Ya know Cryptoride? I
+heard it's into <bold>laptops<normal>.
+Man, that Denjuu really
+keeps up with the times,
+doesn't it?<*2>","Ya know Cryptoride? I heard it's into <bold>laptops<normal>. Man, that Denjuu really keeps up with the times, doesn't it?",1,
 0x15c078,"<D61>『じゃぐち』がけいけんちアップのアイテムだっていうマニアックな
 デンジュウが ワーミテララって
 いうヤツなんだ
 いえに すいどうが とおって
-いるのかなー?<*2>",/0x15c078/<*2>,"That one Denjuu, Wormiterala, is really into <bold>faucets<normal>. I wonder if its house has plumbing?",
+いるのかなー?<*2>","<D61>That one Denjuu, Wormitera-
+la, is really into <bold>faucets<normal>.
+I wonder if its house
+even has plumbing?<*2>","That one Denjuu, Wormitera-la, is really into <bold>faucets<normal>. I wonder if its house
+even has plumbing?",1,
 0x15c07a,"<D62>ファンブレードってさー
 『アーミーナイフ』が
 すきなんだってさー
 やっぱ カッコいいヤツは
 すきなモノも ちがうよなー
-<*2>",/0x15c07a/<*2>,"So, about Fungblade... I heard it likes <bold>army knives<normal>. Man, cool Denjuu even like different items than I do, huh...",
+<*2>","<D62>About Fungblade... I heard
+it likes <bold>army knives<normal>.
+Man, cool Denjuu even like
+different items than I do,
+don't they...<*2>","About Fungblade... I heard
+it likes <bold>army knives<normal>.
+Man, cool Denjuu even like different items than I do, don't they...",1,
 0x15c07c,"<D63>もしもーし
 ブルタマスって『ドライバー』が
 けいけんちアップの
@@ -446,30 +819,56 @@ Keep an eye out for it!",
 きっと これをてにいれたら
 ほかのキカイを バラバラにして
 あそんでるんだろうなー
-<*2>",/0x15c07c/<*2>,"Hey, hello! I heard a <bold>screwdriver<normal> is the key to strengthening a Bulltamus. I guess it'd use it to take apart machines?",
+<*2>","<D63>Hey! I heard the key to
+strengthening a Bulltamus
+is a <bold>screwdriver<normal>.
+I guess it'd use it
+to take apart machines?<*2>","Hey! I heard the key to strengthening a Bulltamus is a <bold>screwdriver<normal>.
+I guess it'd use it
+to take apart machines?",1,
 0x15c07e,"<D64>プニードルが『ネジ』を
 さがしてるっていう
 ハナシを トモダチから
 きいたんだ
 なにか こわれたのかなー?
-ダイジョウブかなー<*2>",/0x15c07e/<*2>,"A friend was telling me Puneedle is looking for a <bold>screw<normal>. Did something break, ya think? I hope it'll be okay...",
+ダイジョウブかなー<*2>","<D64>A friend was saying Puneedle
+is looking for a <bold>screw<normal>.
+Did something break, ya
+think? I hope it'll be okay...<*2>","A friend was saying Puneedle is looking for a <bold>screw<normal>.
+Did something break, ya think? I hope it'll be okay...",1,
 0x15c080,"<D65>ケロリンって『コンピュータ』で
 つよくなるデンジュウなんだってはなしを きいたよ
 あいつ『コンピュータ』を
 つかいこなせるのかな?
-<*2>",/0x15c080/<*2>,I heard Kerorin would grow stronger if you gave it a <bold>computer<normal>. Think it knows how to use one?,
+<*2>","<D65>I heard Kerorin would
+grow stronger if you
+put a <bold>computer<normal> in it. Think
+it knows how to use one?<*2>","I heard Kerorin would
+grow stronger if you
+put a <bold>computer<normal> in it. Think it knows how to use one?",1,
 0x15c082,"<D66>スグライってデンジュウは
 『チェーンソー』なんて
 ヤバいモノが いいんだって
 でも そんなフンイキの
 デンジュウだよねー
-<*2>",/0x15c082/<*2>,"Apparently Sugulai likes <bold>chainsaws<normal>. Bit crazy, isn't it!? I guess it seems like that sort of Denjuu, though.",
+<*2>","<D66>Apparently Sugulai likes
+<bold>chainsaws<normal>. Bit crazy,
+don'tcha think!? I guess
+it does seem like that sort
+of Denjuu, though.<*2>","Apparently Sugulai likes <bold>chainsaws<normal>. Bit crazy, don'tcha think!? I guess
+it does seem like that sort
+of Denjuu, though.",1,
 0x15c084,"<D67>『アイロン』って
 コートスってデンジュウが
 だいすきな アイテムなんだろ?
 <&name>なら
 それぐらいは しってるよなー?
-<*2>",/0x15c084/<*2>,"Cortos's favorite item is the <bold>iron<normal>, right? I'm sure you already know that much, though.",
+<*2>","<D67>Cortos's favorite item
+is the <bold>iron<normal>, right?
+I'm sure you already knew
+that much, though.<*2>","Cortos's favorite item
+is the <bold>iron<normal>, right?
+I'm sure you already knew that much, though.",1,
 0x15c086,"<D68>あの ガイウルスってデンジュウ
 『カメラ』がけいけんちアップの
 アイテムなんだって
@@ -477,7 +876,15 @@ Keep an eye out for it!",
 いいよ
 そして オレにもなにか
 プレゼントしてくれよなー
-<*2>",/0x15c086/<*2>,"Apparently <bold>cameras<normal> are Gaiurus's experience item. If you're friends with a Gaiurus, try fitting it with one! Give me a present too while you're at it, hm?",
+<*2>","<D68>Apparently <bold>cameras<normal> are
+Gaiurus's experience item.
+If you're friends
+with a Gaiurus,
+try fitting it with one! And
+give me a present too while
+you're at it, pleeease?<*2>","Apparently <bold>cameras<normal> are Gaiurus's experience item. If you're friends
+with a Gaiurus,
+try fitting it with one! And give me a present too while you're at it, pleeease?",1,
 0x15c088,"<D69>ミドートルって
 『そうじき』が あいしょうの
 いいアイテムらしいんだ
@@ -485,20 +892,41 @@ Keep an eye out for it!",
 オレも みならわないと
 いけないよなー
 ってことで オレにも
-なにか ちょうだいねー<*2>",/0x15c088/<*2>,"I hear <bold>vacuums<normal> are Midotor's favorite item. Bit of a clean freak, that Midotor! I could stand to learn from that... Anyway, give me something too!",
+なにか ちょうだいねー<*2>","<D69>I hear <bold>vacuums<normal> are
+Midotor's favorite item.
+Bit of a clean freak, that
+Midotor! I could stand to
+learn from that... Anyway,
+give me something too!<*2>","I hear <bold>vacuums<normal> are Midotor's favorite item.
+Bit of a clean freak, that Midotor! I could stand to learn from that... Anyway, give me something too!",1,
 0x15c08a,"<D70>オクトルの けいけんちが
 あがるアイテムって『クレーン』なんだろ?
 どっかの コウジゲンバで
 はたらいてるのかなー
 アイツって はたらきものっぽい
 カンジだからなー
-<*2>",/0x15c08a/<*2>,"<bold>Cranes<normal> are Octor's experience item, aren't they? I wonder if it works at a construction site. It looks like it'd be a hard worker.",
+<*2>","<D70><bold>Cranes<normal> are Octor's expe-
+rience item, aren't they?
+I wonder if it works at a
+construction site. It looks
+like it'd be a hard worker.<*2>","<bold>Cranes<normal> are Octor's expe-rience item, aren't they?
+I wonder if it works at a construction site. It looks like it'd be a hard worker.",1,
 0x15c08c,"<D71>『ゼンマイ』を くっつけると
 つよくなる ヒトデーイトって
 デンジュウは
 きっと『ゼンマイ』でうごく
 なにかを もってるんだぜ!
-きっとそうだって!<*2>",/0x15c08c/<*2>,"There's a Denjuu called Hitodeight that gets stronger if you put a <bold>winding key<normal> in it. There's gotta be something inside it that runs on wind-up power. I'm telling ya, there's gotta be!",
+きっとそうだって!<*2>","<D71>There's a Denjuu called
+Hitodeight, and it
+gets stronger if you put a
+<bold>winding key<normal> in it.
+There's gotta be something
+inside it that runs on
+wind-up power. I'm telling ya,
+there's gotta be!<*2>","There's a Denjuu called Hitodeight, and it
+gets stronger if you put a <bold>winding key<normal> in it.
+There's gotta be something inside it that runs on
+wind-up power. I'm telling ya, there's gotta be!",1,
 0x15c08e,"<D72>ゴースボアっていう ちょっと
 みためが ごっついデンジュウが
 いるんだけど こいつ
@@ -506,13 +934,32 @@ Keep an eye out for it!",
 あるんだってさ
 ごっついヤツは ごっつい
 アイテムにきょうみが
-あるんだろうねー<*2>",/0x15c08e/<*2>,"So there's a rough-'n'-tumble-looking Denjuu called Ghosboar, right? I heard it's interested in <bold>axes<normal>. I guess it makes sense that rough guys like tumbly items.",
+あるんだろうねー<*2>","<D72>So there's a rough-'n'-
+tumble-looking Denjuu
+called Ghosboar, right?
+I heard it's interested in
+<bold>axes<normal>. I guess it makes
+sense that rough guys
+like tumbly items.<*2>","So there's a rough-'n'-tumble-looking Denjuu called Ghosboar, right?
+I heard it's interested in <bold>axes<normal>. I guess it makes sense that rough guys
+like tumbly items.",1,
 0x15c090,"<D73>ラセンマイってデンジュウねー
 『ネジ』をみるのが
 すきなんだってー
 あれって ながめるモノなのかなボクは つかいかたを
-よくしらないんだけどさー<*2>",/0x15c090/<*2>,"So about the Denjuu Rasenmai...
-I heard they like looking at <bold>screws<normal>. Are those really meant for contemplation? I'm not sure how they're supposed to be used.",
+よくしらないんだけどさー<*2>","<D73>So about the Denjuu
+Rasenmai...
+I heard they like
+looking at <bold>screws<normal>.
+Are those really meant
+for contemplation?
+I'm not sure how they're
+supposed to be used.<*2>","So about the Denjuu Rasenmai...
+I heard they like
+looking at <bold>screws<normal>.
+Are those really meant
+for contemplation?
+I'm not sure how they're supposed to be used.",1,
 0x15c092,"<D74>スコーピルっていう
 デンジュウがねー
 『アンテナ』をくっつけて
@@ -520,7 +967,19 @@ I heard they like looking at <bold>screws<normal>. Are those really meant for co
 トモダチに このデンジュウが
 いたら くっつけてあげてよー
 うるさくって かなわないやー
-<*2>",/0x15c092/<*2>,"Heard of the Denjuu Scorpil? It's been chewing my ear off about wanting an <bold>antenna<normal>. If you're friends with a Scorpil, try augmenting it with one. I can't stand all the nagging!",
+<*2>","<D74>Heard of the Denjuu Scorpil?
+It's been chewing my
+ear off about wanting
+an <bold>antenna<normal>. If you're
+friends with a Scorpil,
+try augmenting it with one.
+I can't stand
+all the nagging!<*2>","Heard of the Denjuu Scorpil? It's been chewing my
+ear off about wanting
+an <bold>antenna<normal>. If you're friends with a Scorpil,
+try augmenting it with one.
+I can't stand
+all the nagging!",1,
 0x15c094,"<D75>アームクラブってデンジュウが
 『マウス』を つけたいって
 いってるらしいんだけど...
@@ -528,8 +987,20 @@ I heard they like looking at <bold>screws<normal>. Are those really meant for co
 どうするんだろうねー
 あれって『レンジ』がないと
 だめなんでしょー?
-ヘっヘー オレってものしリ!<*2>",/0x15c094/<*2>,"So, Armcrab was saying it wants to have a <bold>computer mouse<normal> installed... but how's it gonna use it? It's not like you can use a mouse without a microwave oven, right?
-Heh. I'm smart, I know.",
+ヘっヘー オレってものしリ!<*2>","<D75>So, Armcrab was saying
+it wants to have
+a <bold>computer mouse<normal>
+installed...
+but how's it gonna use it?
+It's not like you can
+use a mouse without a
+microwave oven, right?
+Heh. I'm smart, I know.<*2>","So, Armcrab was saying
+it wants to have
+a <bold>computer mouse<normal> installed...
+but how's it gonna use it? It's not like you can
+use a mouse without a microwave oven, right?
+Heh. I'm smart, I know.",1,
 0x15c096,"<D76>アンジオーンって『アイロン』に
 きょうみしんしんって ほんと?
 すっごい いがいなんだよねー
@@ -537,9 +1008,17 @@ Heh. I'm smart, I know.",
 なにするモノなのー?
 こんどよんでくれたときにでも
 おしえてよねー
-<*2>",/0x15c096/<*2>,"Is it true that Angiorn is obsessed with <bold>irons<normal>? That's a bit odd! Um, by the way, what are irons even for? Explain 'em for me sometime, maybe!",
+<*2>","<D76>Is it true that Angiorn is
+obsessed with <bold>irons<normal>?
+That's a bit odd! Um, by the
+way, what does an iron do?
+Explain 'em to me sometime!<*2>","Is it true that Angiorn is obsessed with <bold>irons<normal>? That's a bit odd! Um, by the way, what does an iron do? Explain 'em to me sometime!",1,
 0x15c098,"<D77>『アンテナ』がけいけんちアップのデンジュウって けっこう
-いるんだけど ヂムレースっていうデンジュウも そうなんだー<*2>",/0x15c098/<*2>,,
+いるんだけど ヂムレースっていうデンジュウも そうなんだー<*2>","<D77>Denjuu that get tons of ex-
+perience from <bold>antennas<normal>
+aren't rare, but you might
+be interested to know that
+Gymrace is one of 'em!<*2>","Denjuu that get tons of ex-perience from <bold>antennas<normal> aren't rare, but you might be interested to know that Gymrace is one of 'em!",1,
 0x15c09a,"<D78>リリオンプってデンジュウは
 『ドライバー』をくっつけて
 くれたら なんでもするよーって
@@ -547,7 +1026,15 @@ Heh. I'm smart, I know.",
 なにをしてくれるのか
 しらないけど なかよくは
 なれるかもねー
-<*2>",/0x15c09a/<*2>,,
+<*2>","<D78>Lirionpu's going around
+saying it'd do ANYTHING
+just to be augmented
+with a <bold>screwdriver<normal>.
+What it'd do for ya I'm not
+100% on, but I bet you
+could make it real happy!<*2>","Lirionpu's going around saying it'd do ANYTHING just to be augmented
+with a <bold>screwdriver<normal>.
+What it'd do for ya I'm not 100% on, but I bet you could make it real happy!",1,
 0x15c09c,"<D79>ねぇ <&name>
 ワイタってデンジュウを
 つよくするモノって しってる?
@@ -555,12 +1042,27 @@ Heh. I'm smart, I know.",
 ちょっと わかリにくいよねー
 でも これでわかったんだから
 わすれないでね!
-<*2>",/0x15c09c/<*2>,,
+<*2>","<D79>Hey <&name>, do you
+know what item
+makes Whitah stronger?
+Turns out, it's a <bold>bomb<normal>!
+It's not really something you
+can tell, is it... But now
+you know! Don't forget it!<*2>","Hey <&name>, do you know what item
+makes Whitah stronger?
+Turns out, it's a <bold>bomb<normal>! It's not really something you can tell, is it... But now
+you know! Don't forget it!",1,
 0x15c09e,"<D80>ポッツァルってデンジュウが
 イチバンつよくなるアイテムは
 『ドリル』なんだ
 なにか はっくつでもするのか?うーん...きになる...
-<*2>",/0x15c09e/<*2>,,
+<*2>","<D80>The item that gives Potzal
+the most experience is...
+<bold>drills<normal>! Does it wanna
+be an archaeologist
+or something? I wonder...<*2>","The item that gives Potzal the most experience is... <bold>drills<normal>! Does it wanna
+be an archaeologist
+or something? I wonder...",1,
 0x15c0a0,"<D81>ボク アラニーダが
 『ゼンマイ』をくっつけると
 つよくなるっていうのは
@@ -570,7 +1072,16 @@ Heh. I'm smart, I know.",
 それはね...アラニーダが
 『ゼンマイ』でうごいてるんじゃ
 ないかってことなんだ...
-かんがえすぎかな?<*2>",/0x15c0a0/<*2>,,
+かんがえすぎかな?<*2>","<D81>So I know that Araneida
+gets stronger if you stick
+a <bold>winding key<normal> on it, but
+that makes me wonder...
+Do you think it runs
+on wind-up power?
+Am I overthinking it?<*2>","So I know that Araneida gets stronger if you stick a <bold>winding key<normal> on it, but that makes me wonder...
+Do you think it runs
+on wind-up power?
+Am I overthinking it?",1,
 0x15c0a2,"<D82>『ビームガン』なんて
 あぶなっかしいモノを
 ほしがってるデンジュウが
@@ -580,35 +1091,35 @@ Heh. I'm smart, I know.",
 みかけたら くっつけてあげてよ
 ボクは それを かいに
 いけないからさー
-<*2>",/0x15c0a2/<*2>,,
+<*2>",/0x15c0a2/<*2>,,0,
 0x15c0a4,"<D83>クリオゲラってデンジュウさー
 『アーチェリー』なんてモノ
 ほしがってるんだぜー
 あいつ じつは スポーツマン
 なんだなー
-<*2>",/0x15c0a4/<*2>,,
+<*2>",/0x15c0a4/<*2>,,0,
 0x15c0a6,"<D84>ガストってデンジュウがね
 『ドリル』をプレゼントして
 くれ!って うるさいんだー
 きっと じぶんがドリルみたいに
 クルクルまわってるから
-きょうみあるんだろうね<*2>",/0x15c0a6/<*2>,,
+きょうみあるんだろうね<*2>",/0x15c0a6/<*2>,,0,
 0x15c0a8,"<D85>ちょっとロンゲのデンジュウ
 レイゲの イチバンほしいモノは
 『ミキサー』っていうアイテム
-らしいんだ<*2>",/0x15c0a8/<*2>,,
+らしいんだ<*2>",/0x15c0a8/<*2>,,0,
 0x15c0aa,"<D86>トゲールカが『ノコギリ』を
 ほしがってるっていうはなしを
 きいたよー
 きのなかに すんでるから
 せいかつするのに
-ひつようなのかもねー<*2>",/0x15c0aa/<*2>,,
+ひつようなのかもねー<*2>",/0x15c0aa/<*2>,,0,
 0x15c0ac,"<D87>ライガリオンってデンジュウさー
 なんとなく てさきが
 キヨウそうなんだよ
 だから『ドライバー』とかに
 きょうみが わくんだろうねー
-<*2>",/0x15c0ac/<*2>,,
+<*2>",/0x15c0ac/<*2>,,0,
 0x15c0ae,"<D88>ガドルクマって はんぶん
 キカイみたいなデンジュウが
 いるんだけど『ギア』を
@@ -618,13 +1129,13 @@ Heh. I'm smart, I know.",
 カイゾウしちゃうんだろうね!
 ...............
 ..さすがにそれはないか...
-<*2>",/0x15c0ae/<*2>,,
+<*2>",/0x15c0ae/<*2>,,0,
 0x15c0b0,"<D89>『ネジ』ずきのデンジュウで
 ゆうめいなヤツといえば
 やっぱリ アビラスでしょー
 こいつに『ネジ』をくっつけると
 けいけんちふえるんだってさ
-<*2>",/0x15c0b0/<*2>,,
+<*2>",/0x15c0b0/<*2>,,0,
 0x15c0b2,"<D90>ちょっと こわめのデンジュウで
 アルファゴスっていう
 デンジュウがいるんだけどさー
@@ -632,7 +1143,7 @@ Heh. I'm smart, I know.",
 『シュリケン』なんだって!
 やっぱリ ちょっと
 こわめなんだよねー
-<*2>",/0x15c0b2/<*2>,,
+<*2>",/0x15c0b2/<*2>,,0,
 0x15c0b4,"<D91>『でんち』ってニンゲンの
 せいかつでは けっこう
 だいじな モノだよねー
@@ -640,12 +1151,12 @@ Heh. I'm smart, I know.",
 だいすきなんだってさー
 キヨールカってデンジュウに
 とっても けっこう
-だいじなモノなのかなー?<*2>",/0x15c0b4/<*2>,,
+だいじなモノなのかなー?<*2>",/0x15c0b4/<*2>,,0,
 0x15c0b6,"<D92>ヂムガースってみためが
 ごっついんだけど
 すきなキカイも『クレーン』で
 やっぱリごっついんだー!
-デンジュウにプレゼントするときはみためで えらぶといいかもね!<*2>",/0x15c0b6/<*2>,,
+デンジュウにプレゼントするときはみためで えらぶといいかもね!<*2>",/0x15c0b6/<*2>,,0,
 0x15c0b8,"<D93>バイオンプっていう
 みずベのデンジュウが
 いるんだけどさー
@@ -655,15 +1166,15 @@ Heh. I'm smart, I know.",
 いるのかなー?
 けっこうきになってたリ
 するんだけどなー
-<*2>",/0x15c0b8/<*2>,,
+<*2>",/0x15c0b8/<*2>,,0,
 0x15c0ba,"<D94>ワルタってデンジュウ
 なんだか いろんなこと
 できそうな ふんいきがするんだよなぜかって?
 それは ヤツがすきなアイテムが
-『モバイル』だからさ!<*2>",/0x15c0ba/<*2>,,
+『モバイル』だからさ!<*2>",/0x15c0ba/<*2>,,0,
 0x15c0bc,"<D95>『アンテナ』ずきなデンジュウってかわったヤツがおおいんだよ
 ガンツァトルもかわったヤツ
-なんだけどねー<*2>",/0x15c0bc/<*2>,,
+なんだけどねー<*2>",/0x15c0bc/<*2>,,0,
 0x15c0be,"<D96>アラクイダって『カマ』が
 すきなんだぜ
 ハモノが すきなヤツって
@@ -671,7 +1182,7 @@ Heh. I'm smart, I know.",
 ああいう きけんなモノが
 すきなデンジュウって
 キケンな かおリがするよね
-あーこわい こわい<*2>",/0x15c0be/<*2>,,
+あーこわい こわい<*2>",/0x15c0be/<*2>,,0,
 0x15c0c0,"<D97>バッドホロウって デンジュウは
 きけんなんだ!
 なんでかって??
@@ -679,13 +1190,13 @@ Heh. I'm smart, I know.",
 『アーミーナイフ』なんだぜ!
 こんなキケンなモノを
 ほしがるなんて ぜったいやばい
-ヤツなんだって!<*2>",/0x15c0c0/<*2>,,
+ヤツなんだって!<*2>",/0x15c0c0/<*2>,,0,
 0x15c0c2,"<D98>ランプゲラって『レンジ』が
 パワーアップのアイテム
 なんだってー
 なんか...ヤバめのかおリが
 するよねー
-<*2>",/0x15c0c2/<*2>,,
+<*2>",/0x15c0c2/<*2>,,0,
 0x15c0c4,"<D99>『コンピュータ』って
 ニンゲンカイでも たかい
 アイテムなんだろー?
@@ -695,7 +1206,7 @@ Heh. I'm smart, I know.",
 そういえば テンペストのヤツも
 ほしいなんていってたような
 きがするなー
-<*2>",/0x15c0c4/<*2>,,
+<*2>",/0x15c0c4/<*2>,,0,
 0x15c0c6,"<D100>ズドーンってデンジュウ
 しってる??
 こいつ『ハンマー』が
@@ -705,36 +1216,36 @@ Heh. I'm smart, I know.",
 『ズドーン』とやる....
 あーっはっはっはっは....
 おもしろくなかったリしてー..
-<*2>",/0x15c0c6/<*2>,,
+<*2>",/0x15c0c6/<*2>,,0,
 0x15c0c8,"<D101>ヒユっていう そのスジでは
 ゆうめいな デンジュウが
 いるんだけどさー
 『でんち』がほしいらしいよー
 なんだかジミだよねぇ?
-<*2>",/0x15c0c8/<*2>,,
+<*2>",/0x15c0c8/<*2>,,0,
 0x15c0ca,"<D102>ビブルナムってデンジュウは
 『ビデオ』がすきなんだって
 あのなかにうつる じぶんじしんをみて うっとリしてるのかなー?
 ..そうぞうしちゃったよ...
-<*2>",/0x15c0ca/<*2>,,
+<*2>",/0x15c0ca/<*2>,,0,
 0x15c0cc,"<D103>パパウェルってデンジュウ
 『タイヤ』がすきなんだぜ
 ぜったいころがして
 あそんでるんだって!
 かけてもいいよ!
-<*2>",/0x15c0cc/<*2>,,
+<*2>",/0x15c0cc/<*2>,,0,
 0x15c0ce,"<D104>ニンゲンカイにあるモノって
 おもしろいよなー
 『バケツ』とか オレたちじゃ
 かんがえつかないぜ
 ガルムっていうデンジュウも
-おなじようなこといってたなー<*2>",/0x15c0ce/<*2>,,
+おなじようなこといってたなー<*2>",/0x15c0ce/<*2>,,0,
 0x15c0d0,"<D105>ブバルディーってデンジュウ
 『ボンベ』がだいすきなんだけど
 きっと うたとかうたって
 いきぎれしたときに
 つかってるんだろうなー
-<*2>",/0x15c0d0/<*2>,,
+<*2>",/0x15c0d0/<*2>,,0,
 0x15c0d2,"<D110>アンヂィオンって
 かっこいいデンジュウなんだよー
 オレの あこがれなんだよー
@@ -742,4 +1253,4 @@ Heh. I'm smart, I know.",
 『ランス』でカッコいいんだよー
 なんで あのデンジュウは
 あんなにかっこいいのかなー
-<*2>",/0x15c0d2/<*2>,,
+<*2>",/0x15c0d2/<*2>,,0,

@@ -13,6 +13,10 @@ Overworld_ADVICE_LoadSGBFiles::
 	call PauseMenu_ADVICE_CheckSGB
 	jr z, .exit
 
+	ld a, [$C904]
+	cp $F
+	jr z, .dementiasMansion
+
 	ld hl, Overworld_SGBPaletteIndexTable
 	ld a, [$C905]
 	add l
@@ -27,12 +31,38 @@ Overworld_ADVICE_LoadSGBFiles::
 	dec a
 	jr .setPalette
 
+.dementiasMansion
+	ld a, 2
+	jr .setPalette
+
 .inTheGreatOutdoors
 	call Overworld_ADVICE_GetOutdoorAcrePaletteIndex
 
 .setPalette
+	
 	ld b, a
 	ld c, b
+
+	; Ensure darkest colour is black
+	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBColorSize * 3)
+	add a
+	add a
+	add a
+	add l
+	ld l, a
+
+    di
+
+.wfb
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+
+	xor a
+	ld [hli], a
+	ld [hl], a
+    ei
+	
 	ld a, M_SGB_Pal01 << 3 + 1
 	call PatchUtils_CommitStagedCGBToSGB
 	
@@ -89,9 +119,9 @@ Overworld_ADVICE_IsShop::
 	ret
 
 Overworld_SGBPaletteIndexTable::
-	db 0, 0, 0, 3
-	db 0, 3, 3, 3
-	db 3, 3, 3, 3
+	db 0, 0, 0, 2
+	db 0, 3, 3, 2
+	db 1, 2, 1, 3
 	db 2, 4, 3, 3
 	db 3, 3, 3, 3
 

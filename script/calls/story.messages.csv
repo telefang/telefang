@@ -1,5 +1,5 @@
-Pointer,Japanese,English,Draft version,Notes
-#######,Tronco,,,
+Pointer,Japanese,English,Draft version,Formatted?,Notes
+#######,Tronco,,,,
 0x158000,"おっす <&name>
 オレだけど...
 オマエ ネリカラって ヤツに
@@ -9,7 +9,7 @@ Pointer,Japanese,English,Draft version,Notes
 なにかんがえてるのか
 ぜんぜんわかんないよ<*2>","Hey <&name>, it's me...
 Have you met that Nerikara guy?
-He did a speech in the plaza earlier, but I have no clue what he was talking about!<*2>",,"Random calls about current story events.
+He did a speech in the plaza earlier, but I have no clue what he was talking about!<*2>",,0,"Random calls about current story events.
 There are 10 for each area. 
 
 FYI, you will always receive them in the order seen here (useful for testing)."
@@ -21,7 +21,7 @@ FYI, you will always receive them in the order seen here (useful for testing)."
 いたんだけど オレたベたこと
 ないから わかんないんだ
 こんど たベさせてくれよなー<*2>","Hello? Hey, have you had curry?
-That Nerikara guy kept talking about ""delicious curry"", but I've never had it... Maybe you could bring me some next time?<*2>",,"Status: Translated 20%
+That Nerikara guy kept talking about ""delicious curry"", but I've never had it... Maybe you could bring me some next time?<*2>",,0,"Status: Translated 20%
 "
 0x158004,"おーい もしもしー
 『カクザとう』とかいうヤツが
@@ -30,7 +30,7 @@ That Nerikara guy kept talking about ""delicious curry"", but I've never had it.
 なにやってるか みてきたほうが
 いいんじゃないか?<*2>","Hey, what's up?
 Those ""Kakuza Party"" guys are doing something at the Tronco Village spring...
-Don't you think we should check it out?<*2>",,
+Don't you think we should check it out?<*2>",,0,
 0x158006,"<D50>なぁ <&name>
 ネジロって ほんとに
 あわてもの なんだぜ!
@@ -44,14 +44,14 @@ He's really good at Telefang though, so you'd better watch out.
 It would be cool to be friends with him though...<*2>","<D50>Hey <&name>.
 Nejiro is really hot-tempered!
 He's really good at Telefang though, so you'd better watch out.
-I bet being his friend would be a fun time.<*2>",
+I bet being his friend would be a fun time.<*2>",0,
 0x158008,"<D50>ネジロはネタロを まもる
 ために なにかを
 かくしてるらしいよ!
 なにをかくしてるかは
 よく しらないんだけどね
 <*2>","<D50>Nejiro must be hiding something in order to protect Netaro!
-I don't really know what it could be, though.<*2>",,
+I don't really know what it could be, though.<*2>",,0,
 0x15800a,"<D50>ネジロは テレファングの
 ときに そらに
 とびあがるんだ
@@ -60,34 +60,34 @@ I don't really know what it could be, though.<*2>",,
 なにか たいさくを かんがえて
 いったほうが いいよ
 <*2>","<D50>When Nejiro Telefangs, he flies up into the sky. 
-When that happens, our attacks won't be able to hit him, so maybe we should think up some kind of counter-measure!<*2>",,
+When that happens, our attacks won't be able to hit him, so maybe we should think up some kind of counter-measure!<*2>",,0,
 0x15800c,"<D49>ネタロってねー ほんとうに
 のんびリしてるんだー
 ミズはこびのしごとを
 しながら ねちゃうときも
 あるんだよー
 <*2>","<D49>Netaro is reeeally laid-back! 
-He's even fallen asleep on his way to the village before!<*2>",,
+He's even fallen asleep on his way to the village before!<*2>",,0,
 0x15800e,"<D49>ネタロって いっかいねちゃうと
 ほんとうに おきないんだ
 だから ネジロがいっつも
 みはってるんだけどねー<*2>","<D49>Once Netaro falls asleep, there's nothing you can do to wake him up. 
-That's why Nejiro is always keeping watch for him.<*2>",,
+That's why Nejiro is always keeping watch for him.<*2>",,0,
 0x158010,"<D48>ムサさまって あたまは
 よさそうだけど テレファング
 したらどうなんだろう???
 それいぜんに ムサさまの
 デンワバンゴウを おしえて
 もらえないからなー<*2>","<D48>Musa is really smart, but I wonder how he would do at Telefang??
-I hear he's never told anyone his phone number before...<*2>",,
+I hear he's never told anyone his phone number before...<*2>",,0,
 0x158012,"<D48>ムサさまは
 デンジュウカイを まとめる
 4ちょうろうの ひとリなんだ
 ボクは ほかのちょうろうに
 あったことは ないんだけどさ
 <*2>","<D48>Musa is one of the 4 elders of the Denjuu World. 
-I've never met any of the others though...<*2>",,
-#######,Krinon,,,
+I've never met any of the others though...<*2>",,0,
+#######,Krinon,,,,
 0x158014,"『カクザとう』って
 デンジュウカイの 
 だいとうリょうになって
@@ -97,14 +97,14 @@ I've never met any of the others though...<*2>",,
 わかんないよー
 <*2>","I wonder what the Kakuza Party is actually going to do if they win their election?
 They just keep talking about stuff like ""curry"" that I've never heard about!
-I don't get it!<*2>",,
+I don't get it!<*2>",,0,
 0x158016,"オレがおもうには
 アンテナのきのカギを
 かくしたのは『カクザとう』
 のヤツら なんじゃないかな!
 あいつらなら やリそうな
 きがするんだよ!<*2>","I bet it was the Kakuza Party who stole the key to the Antenna Tree!
-I dunno, they just seem like the sort of guys who would do it! <*2>",,
+I dunno, they just seem like the sort of guys who would do it! <*2>",,0,
 0x158018,"オレさー『カクザとう』
 って ヤツらに ちょっと
 きょうみあるんだー
@@ -112,14 +112,14 @@ I dunno, they just seem like the sort of guys who would do it! <*2>",,
 まちがってるかな?
 <*2>","Y'know, I'm starting to think the Kakuza Party looks pretty cool...
 Huh? They're not?
-You don't think so...?<*2>",,
+You don't think so...?<*2>",,0,
 0x15801a,"ネリカラと タバスコって
 なかがいいのかな
 わるいのかな
 ちょっと きになってたリ
 するんだけどなー
 <*2>","I wonder how well Nerikara and Tabasco get along together...
-I'm kind of curious~<*2>",,
+I'm kind of curious~<*2>",,0,
 0x15801c,"アンテナのきのカギを
 とったのって だれなんだろ?
 はんにんは デンジュウじゃ
@@ -127,21 +127,21 @@ I'm kind of curious~<*2>",,
 どうおもう??
 <*2>","Who could have stolen the key to the Antenna Tree...?
 I get the feeling a Denjuu wouldn't have done it...
-What do you think??<*2>",,
+What do you think??<*2>",,0,
 0x15801e,"『カクザとう』っていうヤツらが
 なんだか アルバイトを
 いっぱい やとってる
 みたいだよ!どうくつのなかは
 Tファンガーが おおいかも
 しれないから きをつけてね<*2>","It looks like those Kakuza Party guys are hiring a bunch of ""part-timers""!
-There might be a lot of T-Fangers inside the cave now, so you'd better be careful!<*2>",,
+There might be a lot of T-Fangers inside the cave now, so you'd better be careful!<*2>",,0,
 0x158020,"はしのうえにいる デンジュウは
 クリノンむらの あたリには
 いないデンジュウなんだ!
 <&name>
 オマエは もうあったのか?
 <*2>","That Denjuu standing on the bridge isn't from around Krinon village...
-Have you talked to them yet, <&name>?<*2>",,
+Have you talked to them yet, <&name>?<*2>",,0,
 0x158022,"クリノンむらのヤツらって
 みんなダスダスいってるだろ!
 なんかいいとおもわない?
@@ -150,7 +150,7 @@ Have you talked to them yet, <&name>?<*2>",,
 そうなんダス!とかいいよなー<*2>","The Denjuu in Krinon village keep saying ""man"" all the time!
 Don't you think it's kind of cool? 
 I think it's great, like ""That's right, man!"" or ""I dunno, man!"" 
-So cool♪<*2>",,
+So cool♪<*2>",,0,
 0x158024,"きいたぞ <&name>
 オマエ デンジュウカイで
 トモダチの おんなのこに
@@ -158,7 +158,7 @@ So cool♪<*2>",,
 どういうかんけいなんだよ?
 こんど おしえてくれよー<*2>","Hey <&name>, is it true there's a girl who you know in the Denjuu World?
 How do you guys know each other?
-Tell me about it next time, okay~?<*2>",,
+Tell me about it next time, okay~?<*2>",,0,
 0x158026,"ミヨっておんなのこと
 トモダチのデンジュウを
 オレ しってるんだー
@@ -168,8 +168,8 @@ Tファンガーなんだって!
 どうなんだろうなー?
 こんど きいておいてくれよな<*2>","I've been hearing about that girl named Miyo from her Denjuu friends, and they say she's actually a really nice T-Fanger!
 Do you know if she's like that in the Human World, too?
-Come on, I'm curious!<*2>",,
-#######,Iris,,,
+Come on, I'm curious!<*2>",,0,
+#######,Iris,,,,
 0x158028,"<&name>
 オレのトモダチで うみに
 すんでる デンジュウが
@@ -178,7 +178,7 @@ Come on, I'm curious!<*2>",,
 ちかくにいるんなら
 しらベておいてくれよ
 <*2>","A lot of my friends are Denjuu that live in the sea... 
-They sound really upset about something, so if you're nearby maybe you could check it out?<*2>",,
+They sound really upset about something, so if you're nearby maybe you could check it out?<*2>",,0,
 0x15802a,"うえーん
 うみにすんでる トモダチに
 デンワをしたら いきなリ
@@ -190,7 +190,7 @@ They sound really upset about something, so if you're nearby maybe you could che
 I tried calling one of my Denjuu friends that live in the sea, and they hung up on me!
 What's their problem!
 <&name>, could you visit the ocean and find out why they're upset?
-Pleeease?<*2>",,
+Pleeease?<*2>",,0,
 0x15802c,"うみのデンジュウに
 デンワしたら いきなリ
 おこられたんだよ
@@ -200,7 +200,7 @@ Pleeease?<*2>",,
 どういうことなんだ
 いったい?<*2>","One of my ocean Denjuu friends got really angry when I called him...
 He seemed like he was in a really bad mood, and he kept saying that we can't trust humans...
-What's happening over there...?<*2>",,
+What's happening over there...?<*2>",,0,
 0x15802e,"うみのデンジュウに
 きいたんだけど
 パームかいに はえてる
@@ -213,7 +213,7 @@ What's happening over there...?<*2>",,
 たのんだぜ!<*2>","I heard this from an ocean Denjuu, but...
 Apparently there's something bad happening to the Antenna Tree in the Palm Sea.
 Have you heard anything about it, <&name>?
-I'm so worried about it I can't even sleep!<*2>",,
+I'm so worried about it I can't even sleep!<*2>",,0,
 0x158030,"うみのデンジュウが
 おこってる リゆうって
 ひょっとして アンテナのきが
@@ -222,7 +222,7 @@ I'm so worried about it I can't even sleep!<*2>",,
 おこってないデンジュウも
 いるとおもうんだ
 さがしだして きいてみろよ<*2>","I wonder if the reason the ocean Denjuu are upset is related to the Antenna Trees?
-I don't really know what's going on, but they can't all be angry at us, can they?<*2>",,
+I don't really know what's going on, but they can't all be angry at us, can they?<*2>",,0,
 0x158032,"うみのデンジュウたちが
 パームかいの アンテナのきを
 つかえなくしてるんだって!
@@ -234,7 +234,7 @@ I don't really know what's going on, but they can't all be angry at us, can they
 さがしてみろよ
 <*2>","I heard that there's something keeping the ocean Denjuu from using the Antenna Tree in the Palm Sea!
 If that's the case, it's no wonder they're upset.
-I wonder if any of them would be willing to talk to us though...?<*2>",,
+I wonder if any of them would be willing to talk to us though...?<*2>",,0,
 0x158034,"パームかいのどこかに
 『うみのしんでん』ってのが
 あるんだって?
@@ -243,7 +243,7 @@ I wonder if any of them would be willing to talk to us though...?<*2>",,
 きいてみたら??<*2>","Have you heard?
 Supposedly there's a hidden shrine somewhere in the Palm Sea!
 I wonder if the ocean Denjuu would tell us where it is?
-I'm curious!<*2>",,
+I'm curious!<*2>",,0,
 0x158036,"<D23>イーリスのトモダチから
 きいたんだけど かいがんに
 うみのデンジュウの コドモが
@@ -255,7 +255,7 @@ I'm curious!<*2>",,
 あるかもな!
 <*2>","<D23>One of my friends in Iris said they spotted a baby ocean Denjuu on the beach!
 It sounds like everyone's too scared to go near it, though.
-Maybe we could be friends with it?<*2>",,
+Maybe we could be friends with it?<*2>",,0,
 0x158038,"オレさー トロンコむらに
 うってる『ゲームマシン』が
 ほしいんだけど
@@ -269,7 +269,7 @@ Maybe we could be friends with it?<*2>",,
 Hey <&name>, think you could go buy one for me?
 Please?
 Pretty please??
-I'm counting on you!<*2>",,
+I'm counting on you!<*2>",,0,
 0x15803a,"イーリスのむらに なんか
 ヘんなヤツがいるんだって
 なにしたいんだか
@@ -281,8 +281,8 @@ I'm counting on you!<*2>",,
 Apparently there's a really weird guy living in Iris.
 He keep saying weird stuff and nobody knows what his deal is.
 I guess there are all types of people in the world~
-Talk to you later!<*2>",,
-#######,Freesia,,,
+Talk to you later!<*2>",,0,
+#######,Freesia,,,,
 0x15803c,"なぁ いま フリジアで
 『Tファンガーたいかい』を
 やってるんだって??
@@ -290,7 +290,7 @@ Talk to you later!<*2>",,
 よんでくれよ!
 ぜったい かたせてやるから
 ぜったいよんでくれよー!
-<*2>","So I guess there's a ""T-Fanger Tournament"" in Freesia right now...? Call me over if you join! I'll make sure we win!<*2>",,
+<*2>","So I guess there's a ""T-Fanger Tournament"" in Freesia right now...? Call me over if you join! I'll make sure we win!<*2>",,0,
 0x15803e,"なぁ <&name>!
 いま フリジアでやってる
 『Tファンガーたいかい』に
@@ -301,7 +301,7 @@ Talk to you later!<*2>",,
 よゆうで かたせてやるぜ!
 だから よんでくれよな
 <*2>","Hey, <&name>!
-Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's no way you're strong enough on your own! Call me over and we'll win big time. I won't take no for an answer!<*2>",,
+Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's no way you're strong enough on your own! Call me over and we'll win big time. I won't take no for an answer!<*2>",,0,
 0x158040,"フリジアでやってる
 たいかいで なんか
 いいしょうひんが
@@ -309,7 +309,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 もしも ゆうしょうするような
 ことがあったら
 どんなモノ もらったか
-みせてくれよなー<*2>","Apparently the tournament on in Freesia right now has a real good prize... If you happen to win it or something, show me what you get, huh!<*2>","Apparently the tournament on in Freesia right now has a real good prize... If you happen to win it or something, show me what you get, huh!<*2>",
+みせてくれよなー<*2>","Apparently the tournament on in Freesia right now has a real good prize... If you happen to win it or something, show me what you get, huh!<*2>","Apparently the tournament on in Freesia right now has a real good prize... If you happen to win it or something, show me what you get, huh!<*2>",0,
 0x158042,"フリジアで
 『Tファンガーたいかい』っての
 やってるみたいだけど
@@ -319,7 +319,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 いいモノが もらえるんだったら
 そんなことは どうでもいいか!
 まぁ がんばれよ
-<*2>","Have you heard of this ""T-Fanger Tournament"" on in Freesia right now? The gang in charge of that give me kind of shady vibes. Buy hey, a prize is a prize, so I guess that doesn't matter. Good luck, huh?<*2>","Have you heard of this ""T-Fanger Tournament"" on in Freesia right now? The gang in charge of that give me kind of shady vibes. Buy hey, a prize is a prize, so I guess that doesn't matter. Good luck, huh?",
+<*2>","Have you heard of this ""T-Fanger Tournament"" on in Freesia right now? The gang in charge of that give me kind of shady vibes. Buy hey, a prize is a prize, so I guess that doesn't matter. Good luck, huh?<*2>","Have you heard of this ""T-Fanger Tournament"" on in Freesia right now? The gang in charge of that give me kind of shady vibes. Buy hey, a prize is a prize, so I guess that doesn't matter. Good luck, huh?",0,
 0x158044,"このまえさー トロンコむらの
 トモダチから ヘんなヤツらの
 うわさを きいたんだけど
@@ -331,7 +331,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 で...じっさいのとこ
 どうなんだ?
 こんどおしえてくれよなー
-<*2>","Hey, so, the other day I was talking to a friend from Tronco, and they told me about some shady gang hanging around there... Those guys and the people holding the T-Fanger Tournament in Freesia – don't you think they sound similar? Wonder what the deal is there. Lemme know if you find anything out!<*2>","Hey, so, the other day I was talking to a friend from Tronco, and they told me about some shady gang hanging around there... Those guys and the people holding the T-Fanger Tournament in Freesia – don't you think they sound similar? Wonder what the deal is there. Lemme know if you find anything out!",
+<*2>","Hey, so, the other day I was talking to a friend from Tronco, and they told me about some shady gang hanging around there... Those guys and the people holding the T-Fanger Tournament in Freesia – don't you think they sound similar? Wonder what the deal is there. Lemme know if you find anything out!<*2>","Hey, so, the other day I was talking to a friend from Tronco, and they told me about some shady gang hanging around there... Those guys and the people holding the T-Fanger Tournament in Freesia – don't you think they sound similar? Wonder what the deal is there. Lemme know if you find anything out!",0,
 0x158046,"よう <&name>
 いま フリジアにいるんだって?
 そのまちは キカイが
@@ -341,7 +341,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ばしょだぜ
 ってことで きがむいたら
 オレも よんでくれよな!
-<*2>","Yo, <&name>! You in Freesia? A bunch of different machines are sold there! If you wanna augment us Denjuu, it's the place to be! Anyway, call me over if you feel like it!<*2>","Yo, <&name>! You in Freesia? A bunch of different machines are sold there! If you wanna augment us Denjuu, it's the place to be! Anyway, call me over if you feel like it!",
+<*2>","Yo, <&name>! You in Freesia? A bunch of different machines are sold there! If you wanna augment us Denjuu, it's the place to be! Anyway, call me over if you feel like it!<*2>","Yo, <&name>! You in Freesia? A bunch of different machines are sold there! If you wanna augment us Denjuu, it's the place to be! Anyway, call me over if you feel like it!",0,
 0x158048,"なぁ <&name>
 いま オマエがいる
 『フリジア』っていうまちは
@@ -351,7 +351,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 そうすれば テレファングのとき
 もっとがんばるぜ!
 かんがえといてくれよな!
-<*2>","Hey, <&name>! They sell a lot of machines in Freesia, where you are now, right? Buy me somethin'! If you do, I'll work harder in Telefangs! Think about it!<*2>","Hey, <&name>! They sell a lot of machines in Freesia, where you are now, right? Buy me somethin'! If you do, I'll work harder in Telefangs! Think about it!",
+<*2>","Hey, <&name>! They sell a lot of machines in Freesia, where you are now, right? Buy me somethin'! If you do, I'll work harder in Telefangs! Think about it!<*2>","Hey, <&name>! They sell a lot of machines in Freesia, where you are now, right? Buy me somethin'! If you do, I'll work harder in Telefangs! Think about it!",0,
 0x15804a,"ねーねー
 『フリジア』ってとこは
 デンジュウカイで イチバン
@@ -359,7 +359,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 なんでしょー
 ボクもそこにいってみたいなー
 よんでくれよー
-おねがいだよー<*2>","Heyyy! Freesia sells the most machines of anywhere in the Denjuu World, right? I'd love to go there sometime... Call me over, pleeease!<*2>","Heyyy! Freesia sells the most machines of anywhere in the Denjuu World, right? I'd love to go there sometime... Call me over, pleeease!",
+おねがいだよー<*2>","Heyyy! Freesia sells the most machines of anywhere in the Denjuu World, right? I'd love to go there sometime... Call me over, pleeease!<*2>","Heyyy! Freesia sells the most machines of anywhere in the Denjuu World, right? I'd love to go there sometime... Call me over, pleeease!",0,
 0x15804c,"なぁなぁ <&name>
 あたらしいケイタイの
 じょうほうを しいれたから
@@ -371,7 +371,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 そしたら もっと トモダチが
 ふやせるってことだよなー
 ほしいよなー!
-<*2>","<&name>! Hey! I got ahold of some juicy cell phone info! Here, I'll tell you. Apparently, newer models can hold more contacts. That means you can make more friends! Really makes you want a new phone, huh?<*2>","<&name>! Hey! I got ahold of some juicy cell phone info! Here, I'll tell you. Apparently, newer models can hold more contacts. That means you can make more friends! Really makes you want a new phone, huh?",
+<*2>","<&name>! Hey! I got ahold of some juicy cell phone info! Here, I'll tell you. Apparently, newer models can hold more contacts. That means you can make more friends! Really makes you want a new phone, huh?<*2>","<&name>! Hey! I got ahold of some juicy cell phone info! Here, I'll tell you. Apparently, newer models can hold more contacts. That means you can make more friends! Really makes you want a new phone, huh?",0,
 0x15804e,"もしもし <&name>?
 オレさー そろそろ あたらしい
 ケイタイがほしいんだよー
@@ -379,8 +379,8 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 はなしもきいたしさー
 もし てにいれたら
 みせてくれよー
-おねがいだよ<*2>","Hello, <&name>? It's about time I get a new cell phone! A friend told me there's a new model out, too... If you get one, please show it to me!<*2>","Hello, <&name>? It's about time I get a new cell phone! A friend told me there's a new model out, too... If you get one, please show it to me!",
-#######,Barran,,,
+おねがいだよ<*2>","Hello, <&name>? It's about time I get a new cell phone! A friend told me there's a new model out, too... If you get one, please show it to me!<*2>","Hello, <&name>? It's about time I get a new cell phone! A friend told me there's a new model out, too... If you get one, please show it to me!",0,
+#######,Barran,,,,
 0x158050,"<&name>
 いまどこいるんだ??
 え?バーラン?
@@ -390,7 +390,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ハハッ オマエも
 さいなんだなー
 まぁ がんばれよ!じゃあな
-<*2>",/0x158050/<*2>,,
+<*2>",/0x158050/<*2>,,0,
 0x158052,"もしもしー
 いま バーランにいるらしいな
 トモダチから きいたよ
@@ -400,7 +400,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ふつうに はなしが
 できるとおもうぜ
 あんしんして たずねてみな
-それじゃね<*2>",/0x158052/<*2>,,
+それじゃね<*2>",/0x158052/<*2>,,0,
 0x158054,"おい <&name>
 ゲンキでやってるかー?
 バーランってまちしってるか?
@@ -410,7 +410,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 もし いくことがあれば
 あんしんして いいぜ!
 それじゃあな
-<*2>",/0x158054/<*2>,,
+<*2>",/0x158054/<*2>,,0,
 0x158056,"なぁ <&name>
 バーランにいる ヘビぐみの
 おさって しってるか?
@@ -420,7 +420,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 あいにいくときは
 カクゴしていったほうが
 いいぜ!
-<*2>",/0x158056/<*2>,,
+<*2>",/0x158056/<*2>,,0,
 0x158058,"なあ <&name>
 バーランにすんでる
 トリぐみと ヘビぐみが
@@ -430,7 +430,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 テレファングを いどんで
 くるらしいぜ
 きをつけろよな
-<*2>",/0x158058/<*2>,,
+<*2>",/0x158058/<*2>,,0,
 0x15805a,"ヘビぐみのおさって
 なにかを あつめるのが
 すきなんだってさ!
@@ -438,7 +438,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 しらないけどなー
 やくにたつじょうほうか
 どうかは わからないけど
-おしえておくよ<*2>",/0x15805a/<*2>,,
+おしえておくよ<*2>",/0x15805a/<*2>,,0,
 0x15805c,"あのさー バーランに
 いくことがあったらさ
 ガンバンオーってヤツを
@@ -446,7 +446,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 スゲエいいヤツだから
 オマエもトモダチになれると
 おもうんだ!
-<*2>",/0x15805c/<*2>,,
+<*2>",/0x15805c/<*2>,,0,
 0x15805e,"バーランのいリぐちのてまえに
 みぎがわにいけるみちが
 あるの しってるか?
@@ -454,20 +454,20 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 いっけんのいえがあって
 そこにヘんなモノを
 あつめてるおじさんが
-いるってはなしだぜ!<*2>",/0x15805e/<*2>,,
+いるってはなしだぜ!<*2>",/0x15805e/<*2>,,0,
 0x158060,"そっちょくにきくけどさ
 オマエはトリぐみは?
 それともヘビぐみは?
 オレ?オレはもちろん
 トリぐみだよ!
-だってカワイイじゃん!<*2>",/0x158060/<*2>,,
+だってカワイイじゃん!<*2>",/0x158060/<*2>,,0,
 0x158062,"ヘんなこときくけどさ
 オマエはトリぐみとヘビぐみ
 どっちがすきなんだ?
 オレてきには ヘビぐみだな!
 だってカッコいいもん!
-<*2>",/0x158062/<*2>,,
-#######,Ion Island,,,
+<*2>",/0x158062/<*2>,,0,
+#######,Ion Island,,,,
 0x158064,"おっす <&name>
 イオンとうに いるんだって?
 オマエも ものずきだよなー
@@ -475,7 +475,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ケンカしてるしまに
 いくんだもんなー
 まぁ がんばって
-テレファングしてくれよなー<*2>",/0x158064/<*2>,,
+テレファングしてくれよなー<*2>",/0x158064/<*2>,,0,
 0x158066,"ねー そこで なんか
 ケンカがおきてるってうわさ
 ほんとなのー?
@@ -483,7 +483,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 なんでか わかったら
 こんどおしえてよねー
 よろしくねー
-それじゃーねー<*2>",/0x158066/<*2>,,
+それじゃーねー<*2>",/0x158066/<*2>,,0,
 0x158068,"もしもし?
 デンジュウたちが
 テレファングのしゅぎょうを
@@ -495,7 +495,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 よんでくれよ
 そこにすんでるデンジュウと
 テレファングをしてみたいんだ
-たのむぜ!<*2>",/0x158068/<*2>,,
+たのむぜ!<*2>",/0x158068/<*2>,,0,
 0x15806a,"よう <&name>
 オレさー さいきん
 テレファングでまけてばっかリ
@@ -505,7 +505,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 してみたいんだー
 できれば こんどよんでくれよ
 たのむぜ
-<*2>",/0x15806a/<*2>,,
+<*2>",/0x15806a/<*2>,,0,
 0x15806c,"<D98>このまえ ノイジーって
 ヤツと いっしょにいたんだけど
 そいつといると デンワが
@@ -515,7 +515,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 あんな のうリょく なにかの
 やくにたったリするのかな?
 こんどあったらきいておくよ
-それじゃあな<*2>",/0x15806c/<*2>,,
+それじゃあな<*2>",/0x15806c/<*2>,,0,
 0x15806e,"<D98>このまえ イーリスで
 ヘんなデンジュウを みかけたよ
 なんだか やけどするとか
@@ -529,7 +529,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 つけたほうがいいぞ
 けっこう ちのけが おおそうな
 ヤツだったからな
-それじゃあな<*2>",/0x15806e/<*2>,,
+それじゃあな<*2>",/0x15806e/<*2>,,0,
 0x158070,"もリのなかで しゅぎょうしてる
 デンジュウたちって
 けっこう くせのあるヤツが
@@ -541,7 +541,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 オレも そいつに
 テレファングで かてるぐらい
 がんばるぜ!
-じゃあな<*2>",/0x158070/<*2>,,
+じゃあな<*2>",/0x158070/<*2>,,0,
 0x158072,"オレも イオンとうで
 しゅぎょうしてたときが
 すこしあったんだけど
@@ -551,7 +551,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 いってたけど それいじょう
 つよくなって どうするんだろう
 っておもっちゃったよ
-<*2>",/0x158072/<*2>,,
+<*2>",/0x158072/<*2>,,0,
 0x158074,"もリのなかで しゅぎょうしてる
 デンジュウのなかに いっぴき
 そそっかしいヤツがいるから
@@ -559,7 +559,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 いきなリ テレファング
 いどんでくるからな
 じゃあな
-<*2>",/0x158074/<*2>,,
+<*2>",/0x158074/<*2>,,0,
 0x158076,"うわさで きいたんだけど
 イオンとうには ヌシって
 ヤツが いるらしいな
@@ -567,8 +567,8 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 みたことあるヤツが
 あんまリいないんだ
 そういうヤツって なんとなく
-トモダチになリたいよなー<*2>",/0x158076/<*2>,,
-#######,Paparouna Lake,,,
+トモダチになリたいよなー<*2>",/0x158076/<*2>,,0,
+#######,Paparouna Lake,,,,
 0x158078,"よう <&name>
 オマエが パパルナこに
 いってるっていうはなしを
@@ -591,7 +591,7 @@ who go in get challenged to
 a Telefang straight away.","Hey, <&name>!
 I heard you were going to Paparouna Lake,
 so I just had to call.
-I heard a rumor that it's a way bad idea to go into the weird house there! People who go in get challenged to a Telefang straight away.",These strings have been manually formatted! ☆
+I heard a rumor that it's a way bad idea to go into the weird house there! People who go in get challenged to a Telefang straight away.",1,These strings have been manually formatted! ☆
 0x15807a,"そこにある やしきに
 こっそリ はいったヤツから
 はなしを きいたんだけどさ
@@ -611,7 +611,7 @@ The guy I talked skedaddled
 as soon as he saw 'em.","I heard something interesting from someone who snuck into the house over there...
 Apparently, it's packed full of weird doodads and thingymajiggers!
 That's all I know, though.
-The guy I talked skedaddled as soon as he saw 'em.",
+The guy I talked skedaddled as soon as he saw 'em.",1,
 0x15807c,"パパルナこの そばにある
 やしきには ヘんな
 じいさんが すんでるんだって
@@ -630,7 +630,7 @@ go out to the island
 in the middle of the lake.
 Isn't that mad fishy?!","Have you heard? A weird old dude lives in the house by Paparouna Lake. I don't know what he does there, but at night, you can see him go out to the island
 in the middle of the lake.
-Isn't that mad fishy?!",
+Isn't that mad fishy?!",1,
 0x15807e,"そこにいる じいさんって
 なにかの けんきゅうを
 してたんだって オレの
@@ -653,7 +653,7 @@ It's best to stay away
 from shady people like him!","A friend of mine told me something...
 The old man there, he's doing some sort of research.
 They were too spooked to check him out up close, though.
-It's best to stay away from shady people like him!",
+It's best to stay away from shady people like him!",1,
 0x158080,"なー<&name>
 オマエ サナエバグループって
 しってる??
@@ -674,7 +674,7 @@ that, but I thought
 I'd tell you just in case.","Yo, <&name>!
 Have you heard of the ""Sanaeba Group""? The first bunch of humans to come to the Denjuu World worked there, apparently.
 Maybe you already knew that, but I thought
-I'd tell you just in case.",
+I'd tell you just in case.",1,
 0x158082,"オレのトモダチがさー
 サナエバグループのヤツと
 デンワバンゴウを こうかん
@@ -690,7 +690,7 @@ Since then, I haven't been
 able to reach 'em!
 Think it's related?","So, a friend of mine traded phone numbers with someone from the Sanaeba Group a while ago...
 Since then, I haven't been able to reach 'em!
-Think it's related?",
+Think it's related?",1,
 0x158084,"このさいきん パパルナこで
 ヘんな くろいかげをみたって
 トモダチから デンワが
@@ -706,7 +706,7 @@ Paparouna Lake...
 Have you seen it? If you do,
 tell me what it looks like!","Just recently, I had a friend call and tell me
 they saw a weird shadow in Paparouna Lake...
-Have you seen it? If you do, tell me what it looks like!",
+Have you seen it? If you do, tell me what it looks like!",1,
 0x158086,"そこの やしきにすんでる
 じいさんが まんなかの
 しまにいるときに
@@ -732,7 +732,7 @@ in the middle. Can you
 check if that's true?
 No way I'm checking it out!
 It's way creepy!
-It's up to you.",
+It's up to you.",1,
 0x158088,"むかしはさー
 よくパパルナこに
 つリにいったんだよ
@@ -745,7 +745,7 @@ not even a nibble.
 Oh, won't the glory days of
 the lake come back?","Way back, I used to go fish-ing at Paparouna Lake! Nowadays, there's
 not even a nibble.
-Oh, won't the glory days of the lake come back?",
+Oh, won't the glory days of the lake come back?",1,
 0x15808a,"もしかして オマエってさ
 つぼとか きのはことか
 うごかせちゃったリする?
@@ -759,8 +759,8 @@ It's not just treasure
 chests – apparently,
 there's stuff in pots too!
 Aw, I'm jealous!","Have you been moving around pots and boxes and stuff? It's not just treasure chests – apparently,
-there's stuff in pots too! Aw, I'm jealous!",
-#######,Panses,,,
+there's stuff in pots too! Aw, I'm jealous!",1,
+#######,Panses,,,1,
 0x15808c,"おい <&name>
 パンセスむらにいる
 トモダチに れんらくが
@@ -779,7 +779,7 @@ I'm so worried I can't
 catch a wink of sleep.","Oi, <&name>! I can't call any of my friends
 in Panses Village!
 You're there now, right?
-Look around a bit, won't ya? I'm so worried I can't catch a wink of sleep.",These strings have been manually formatted! ☆
+Look around a bit, won't ya? I'm so worried I can't catch a wink of sleep.",1,These strings have been manually formatted! ☆
 0x15808e,"おーい <&name>
 パンセスむらで なにか
 おきてるんじゃないか?
@@ -795,7 +795,7 @@ said ""help meee"", and hung
 up! Please, find out what's
 happening! Please...","Hey yo, <&name>!
 Is something going on
-in Panses Village? A friend who lives there called me, said ""help meee"", and hung up! Please, find out what's happening! Please...",
+in Panses Village? A friend who lives there called me, said ""help meee"", and hung up! Please, find out what's happening! Please...",1,
 0x158090,"オレの トモダチから
 きいたんだけどー
 いじげんに ワープできたリ
@@ -809,7 +809,7 @@ move between dimensions...
 The Denjuu World is
 a fascinating place, isn't it?
 Takes all kinds, I guess!","I heard from a friend that there's a Denjuu who can move between dimensions... The Denjuu World is
-a fascinating place, isn't it? Takes all kinds, I guess!",
+a fascinating place, isn't it? Takes all kinds, I guess!",1,
 0x158092,"キミさー いじげんを
 いったリきたリできるって
 はなしを きいたことある?
@@ -823,7 +823,7 @@ dimensions? There's a rumor
 that someone like that
 exists... If your interest is
 piqued, maybe have a look
-around?","Have you heard of a Denjuu who can go to parallel dimensions? There's a rumor that someone like that exists... If your interest is piqued, maybe have a look around?",
+around?","Have you heard of a Denjuu who can go to parallel dimensions? There's a rumor that someone like that exists... If your interest is piqued, maybe have a look around?",1,
 0x158094,"<&name>
 サナエバグループっていう
 ヤツらが デンジュウカイの
@@ -841,7 +841,7 @@ Denjuu World. But... do you
 really think they're
 ""making friends""? I feel like
 it might be something
-different...","<&name>! I heard the ""Sanaeba Group"" gang have been making friends here and there in the Denjuu World. But... do you really think they're ""making friends""? I feel like it might be something different...",
+different...","<&name>! I heard the ""Sanaeba Group"" gang have been making friends here and there in the Denjuu World. But... do you really think they're ""making friends""? I feel like it might be something different...",1,
 0x158096,"なんだか『サナエバグループ』
 っていうところのれんちゅうが
 デンジュウカイで
@@ -854,7 +854,7 @@ to uninhabited parts
 of the Denjuu World.
 What could they be up to?","Those ""Sanaeba Group"" people... It looks like they've been sending humans to uninhabited parts
 of the Denjuu World.
-What could they be up to?",
+What could they be up to?",1,
 0x158098,"このまえさー
 『カクザとう デラックス』
 っていう おベんとうを
@@ -870,7 +870,7 @@ It took a while for 'em to
 make it, though.
 You should try it if you get
 the chance!","The other day I got a lunch to go! It was called a ""Kakuza Party Deluxe"", I think. It was pretty good! It took a while for 'em to make it, though.
-You should try it if you get the chance!",
+You should try it if you get the chance!",1,
 0x15809a,"パンセスむらに
 『かくざアベニュー』っていう
 おベんとうやが
@@ -884,7 +884,7 @@ It's called ""Kakuza Avenue""!
 I haven't been yet.
 If you decide to go, lemme
 tag along!","Heard of this hot new takeout place in Panses? It's called ""Kakuza Avenue""! I haven't been yet.
-If you decide to go, lemme tag along!",
+If you decide to go, lemme tag along!",1,
 0x15809c,"じつはさー
 パンセスむらに いじげんに
 つながるやしきがあるって
@@ -899,7 +899,7 @@ a parallel dimension.
 Sounds fishy if you ask me,
 but... what if it's true?","I heard a crazy rumor! They say there's a mansion
 in Panses that connects to a parallel dimension.
-Sounds fishy if you ask me, but... what if it's true?",
+Sounds fishy if you ask me, but... what if it's true?",1,
 0x15809e,"オマエもしかして
 いまパンセスむらにいるのか?
 そのむらで なんかじけんが
@@ -917,8 +917,8 @@ Be careful! I can't help but
 worry for you...","Could it perhaps maybe possibly be that you're
 in Panses right now?
 There's a rumor that something weird's going on there right now.
-Be careful! I can't help but worry for you...",
-#######,Toulipa,,,
+Be careful! I can't help but worry for you...",1,
+#######,Toulipa,,,,
 0x1580a0,"トリパむらの はなしは
 きいたよー
 わるいニンゲンも
@@ -934,7 +934,7 @@ Not among my friends,
 though, of course!
 Don't worry, I trust you
 through-and-through!","I heard something about Toulipa! Apparently, there's a bunch of humans that are bad news there. Not among my friends, though, of course!
-Don't worry, I trust you through-and-through!",These strings have been manually formatted! ☆
+Don't worry, I trust you through-and-through!",1,These strings have been manually formatted! ☆
 0x1580a2,"おう <&name>
 なんで アンテナのきを
 おおきくする ひつようが
@@ -956,7 +956,7 @@ World? Are we in trouble?","Wassup, <&name>!
 Who thought it was
 a good idea to supersize
 an Antenna Tree?
-As long as people get reception, it's big enough, right? Is something going down here in the Denjuu World? Are we in trouble?",
+As long as people get reception, it's big enough, right? Is something going down here in the Denjuu World? Are we in trouble?",1,
 0x1580a4,"なんだかさー このさいきん
 いろんなトモダチから
 『サナエバグループ』の
@@ -977,7 +977,7 @@ things are gonna be okay?","I've been hearing a
 lot of talk about this ""<bold>Sanaeba Group<normal>"" as of
 late. People don't have
 good things to say about 'em, either... I have a
-bad feeling about this. Think things are gonna be okay?",
+bad feeling about this. Think things are gonna be okay?",1,
 0x1580a6,"よーう <&name>
 『サナエバグループ』って
 ところの ヤツらは
@@ -1001,7 +1001,7 @@ They're the nicest guys in town! Such good people!
 They give me anything I
 ask for – it's amazing!
 Wonder what I should ask for next...
-I just called 'cause I'm in a good mood right now ♪",
+I just called 'cause I'm in a good mood right now ♪",1,
 0x1580a8,"もしもし <&name>か?
 このさいきん ケイタイの
 ちょうしが わるいんだ
@@ -1021,7 +1021,7 @@ Don't worry about it if
 yours is fine, I guess.","Hey, <&name>?
 My phone's been acting up lately... I've been getting wrong number calls and had bad reception and stuff.
 Is your phone okay?
-Don't worry about it if yours is fine, I guess.",
+Don't worry about it if yours is fine, I guess.",1,
 0x1580aa,"<&name>ー
 ケイタイが なんだか
 ヘんなんだよー
@@ -1036,7 +1036,7 @@ complete strangers!
 Do something! Anything!
 Heeeeelp!","<&name>! My phone's being all weird...
 I keep getting calls from complete strangers!
-Do something! Anything! Heeeeelp!",
+Do something! Anything! Heeeeelp!",1,
 0x1580ac,"<&name>
 このあいだ しらないヒトから
 キカイを もらったんだけど
@@ -1060,7 +1060,7 @@ The other day,
 some stranger gave me a machine out of the blue.
 Is that a good thing, though? The guy told me
 to follow him, but he gave me the creeps, so I didn't go...
-I feel like I made the right choice, maybe. Maybe?",
+I feel like I made the right choice, maybe. Maybe?",1,
 0x1580ae,"やっぱさー すベての
 ニンゲンを しんようするって
 やばいよなー
@@ -1075,7 +1075,7 @@ good guys, sure, but I've
 seen some bad humans too!
 I trust you, though.","I tell ya, it's not a good idea to trust every human
 you come across. There are good guys, sure, but I've seen some bad humans too!
-I trust you, though.",
+I trust you, though.",1,
 0x1580b0,"トリパむらのアンテナのきが
 きょだいかしたって
 ほんとうか?
@@ -1091,7 +1091,7 @@ Oh, I'm not talking about
 you! You're not scary.","Is it true that humans have somehow supersized
 the Antenna Tree in Toulipa?
 Man, humans are scary!
-Oh, I'm not talking about you! You're not scary.",
+Oh, I'm not talking about you! You're not scary.",1,
 0x1580b2,"さいきん いろんなところで
 じけんが おこってるけど
 いったいだれが なんのために
@@ -1101,8 +1101,8 @@ Oh, I'm not talking about you! You're not scary.",
 things going on lately...
 Who would do all of this, and
 why? I'm bummed out now...","There's been lots of horrible things going on lately...
-Who would do all of this, and why? I'm bummed out now...",
-#######,Fraoula,,,
+Who would do all of this, and why? I'm bummed out now...",1,
+#######,Fraoula,,,,
 0x1580b4,"フラウラむらの デンジュウは
 いせきを はっくつして
 くらしてる むらなんだ
@@ -1124,7 +1124,7 @@ shopping there sometime.
 Call me over and let's
 check it out sometime!","Fraoula is a village where fossils are dug up!
 Because of that, apparently the shop there sells things you won't find anywhere else. I'd love to go window shopping there sometime.
-Call me over and let's check it out sometime!",These strings have been manually formatted! ☆
+Call me over and let's check it out sometime!",1,These strings have been manually formatted! ☆
 0x1580b6,"フラウラむらの
 いえのなかには はっくつした
 あなを つかって つくった
@@ -1140,7 +1140,7 @@ find things if you looked in
 the walls of those houses?
 Nah, I guess it's unlikely.","Some of the houses in Fraoula are made from
 old excavation sites.
-Does that mean you could find things if you looked in the walls of those houses? Nah, I guess it's unlikely.",
+Does that mean you could find things if you looked in the walls of those houses? Nah, I guess it's unlikely.",1,
 0x1580b8,"デンジュウカイにも
 けっこうスゴイれきしが
 あったリするんだぜー
@@ -1159,7 +1159,7 @@ stuff like that, though.","The Denjuu World's got some seriously cool history to
 had an era of being
 ruled over by the devil.
 Kinda badass, right?
-I can't say I believe in stuff like that, though.",
+I can't say I believe in stuff like that, though.",1,
 0x1580ba,"この デンジュウカイの
 どこかに アクマが
 ふういんされてる ばしょが
@@ -1183,7 +1183,7 @@ where a devil is sealed away! I also heard there's
 a Denjuu who watches
 over that seal. I think
 both of 'em sound cool.
-How 'bout you, <&name>?",
+How 'bout you, <&name>?",1,
 0x1580bc,"フラウラにはさー
 めずらしい アイテムが
 いっぱあるらしいんだよー
@@ -1205,7 +1205,7 @@ I've never had the chance
 to check it out, though...
 Hey, <&name>,
 have me over, won'tcha?
-I just gotta see it!",
+I just gotta see it!",1,
 0x1580be,"なぁ <&name>
 オレのために フラウラの
 めずらしい アイテムを
@@ -1226,7 +1226,7 @@ I'm looking forward to it!","Hey, <&name>! Buy me one of those rare items sold i
 say no. That just
 wouldn't be like you!
 How 'bout it, <&name>?
-I'm looking forward to it!",
+I'm looking forward to it!",1,
 0x1580c0,"デンジュウカイは もともと
 オレたち デンジュウの
 すんでるせかいだよなー
@@ -1246,7 +1246,7 @@ But suddenly that ""Sanaeba"" guy is
 tromping around like
 he owns the place!
 I'mma give him a piece of
-my mind when I see him!",
+my mind when I see him!",1,
 0x1580c2,"サナエバグループのヒトと
 なかのいい デンジュウって
 さいきん いそがしくて
@@ -1269,7 +1269,7 @@ and they've all been
 crazy busy lately!
 I haven't had the chance to see them at all!
 I hope they don't
-push themselves too hard...",
+push themselves too hard...",1,
 0x1580c4,"トモダチがさ
 ペペリやまがどうの
 アクマデンジュウがどうのって
@@ -1284,7 +1284,7 @@ What's that all about?
 Clue me in sometime!","A buddy of mine's been saying this and that
 about Mt. Peperi...
 What's that all about?
-Clue me in sometime!",
+Clue me in sometime!",1,
 0x1580c6,"さいきん フラウラにいる
 トモダチにデンワをかけても
 ぜんぜん つながらないんだよ!
@@ -1298,8 +1298,8 @@ no one ever picks up! Do ya
 think they're tired of me?
 What should I dooo?!","When I try to call my friends in Fraoula lately,
 no one ever picks up! Do ya think they're tired of me?
-What should I dooo?!",
-#######,Mt. Peperi,,,
+What should I dooo?!",1,
+#######,Mt. Peperi,,,,
 0x1580c8,"おっ..おい!
 アクマデンジュウが
 ふっかつ するってはなしは
@@ -1318,7 +1318,7 @@ Put the devil of Mt. Peperi
 back where it belongs!","H– Hello?! Is it true that the Devil Denjuu is coming back?! What's gonna happen to the Denjuu World, then?!
 Please! <&name>!
 Put the devil of Mt. Peperi
-back where it belongs!",These strings have been manually formatted! ☆
+back where it belongs!",1,These strings have been manually formatted! ☆
 0x1580ca,"<&name>!
 いまどこ? やまの なか??
 ペペリやまの ちょうじょうに
@@ -1346,7 +1346,7 @@ I heard the summit of Mt. Peperi somehow connects
 to the Antenna Tree at the base of the mountain.
 I thought you might have some use for this info,
 so I called to tell you!
-Anyway, I'll call you later. Call to let me know if the intel helped!",
+Anyway, I'll call you later. Call to let me know if the intel helped!",1,
 0x1580cc,"<&name>!
 ついに サナエバグループが
 ほんしょうを あらわして
@@ -1369,7 +1369,7 @@ have finally shown
 their true colors!
 This latest hullabaloo
 is all their doing!
-The mountain is jam-packed with fishy T-Fangers. Don't let your guard down.",
+The mountain is jam-packed with fishy T-Fangers. Don't let your guard down.",1,
 0x1580ce,"<&name>
 オレ ニンゲンフシンに
 なっちゃいそうだよ
@@ -1388,7 +1388,7 @@ would you? Would you?!","Help me, <&name>... I'm losing my trust in humans!
 What do the Sanaeba Group think they're doing?!
 We live in this world!
 You would never do
-that sort of thing to us, would you? Would you?!",
+that sort of thing to us, would you? Would you?!",1,
 0x1580d0,"ペペリやまって いったか?
 そのやまには かなリつよい
 デンジュウたちが いるって
@@ -1403,7 +1403,7 @@ I think you should
 make sure you're prepared
 before you go in there!","Have you been to Mt. Peperi? They say that the Denjuu who live there are no joke.
 I think you should
-make sure you're prepared before you go in there!",
+make sure you're prepared before you go in there!",1,
 0x1580d2,"まえにいちどだけ
 ペペリやまのちょうじょうまで
 いったことがあるんだ!
@@ -1417,7 +1417,7 @@ Was it that obvious? I'm
 sorry, I shouldn't tell lies
 in tough times like these...","It was only one time, but I've been to the summit
 of Mt. Peperi, you know!
-Huh? You don't believe me? Was it that obvious? I'm sorry, I shouldn't tell lies in tough times like these...",
+Huh? You don't believe me? Was it that obvious? I'm sorry, I shouldn't tell lies in tough times like these...",1,
 0x1580d4,"オレはいったことないんだけど
 ペペリやまには いろんな
 しかけがあるらしいんだ!
@@ -1428,7 +1428,7 @@ but I hear Mt. Peperi is
 full of traps! If only I knew
 what kind of traps, huh?","I've never been myself,
 but I hear Mt. Peperi is
-full of traps! If only I knew what kind of traps, huh?",
+full of traps! If only I knew what kind of traps, huh?",1,
 0x1580d6,"ねーねー もしもだよ!
 もしも アクマデンジュウが
 ふっかつしたら どうなるの?
@@ -1447,7 +1447,7 @@ What CAN we do?!","Hey, so, I'm not saying this is gonna happen, but if –  IF 
 Do you think it's gonna
 take over the world?
 What should we do?!
-What CAN we do?!",
+What CAN we do?!",1,
 0x1580d8,"ペペリやまには
 アクマデンジュウがふっかつ
 しないように みはってる
@@ -1464,7 +1464,7 @@ back. If you go there,
 you might run into them!","I heard that there are some brave Denjuu
 who stand guard at Mt. Peperi to make sure
 the Devil Denjuu never comes back. If you go there,
-you might run into them!",
+you might run into them!",1,
 0x1580da,"フラウラむらよリもさきは
 オレたちでさえ なかなか
 いかないばしょなんだぜ!
@@ -1481,8 +1481,8 @@ humans there in droves!
 What's he thinking?","Even we Denjuu stay away from the outskirts
 past Fraoula Village.
 Despite that,
-that Sanaeba is sending humans there in droves! What's he thinking?",
-#######,Sanaeba's Lab,,,
+that Sanaeba is sending humans there in droves! What's he thinking?",1,
+#######,Sanaeba's Lab,,,,
 0x1580dc,"なぁ <&name>
 オレのトモダチが どこに
 いったか しらないか??
@@ -1496,7 +1496,7 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 つれていかれたのかも...
 あいつ いったい..
 どこにいったんだよー!
-<*2>",/0x1580dc/<*2>,,
+<*2>",/0x1580dc/<*2>,,0,
 0x1580de,"『サナエバグループ』の
 ヤツら デンジュウを
 たくさんあつめてるらしいぜ
@@ -1506,7 +1506,7 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 いるんだ!
 ケイタイの つながらない
 ところにいるのかな??
-なんだか シンパイだよー<*2>",/0x1580de/<*2>,,
+なんだか シンパイだよー<*2>",/0x1580de/<*2>,,0,
 0x1580e0,"なぁ イオンとうにある
 ほこらのはなし きいたか?
 イオンとうの ちかに
@@ -1516,7 +1516,7 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 もとの デンジュウカイを
 かえしてくれって
 カンジだよなー
-<*2>",/0x1580e0/<*2>,,
+<*2>",/0x1580e0/<*2>,,0,
 0x1580e2,"『サナエバグループ』の
 ニンゲンと トモダチのヤツに
 きいたんだけど
@@ -1524,31 +1524,31 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 はいるには カギがひつよう
 なんだってさ
 いったい どんなひみつを
-かくしてるんだろなー<*2>",/0x1580e2/<*2>,,
+かくしてるんだろなー<*2>",/0x1580e2/<*2>,,0,
 0x1580e4,"イオンとうのほこらは
 もともとは オレたちの
 モノだったっていうのに
 なんで サナエバなんかに
 とられなきゃいけないんだ!
-<*2>",/0x1580e4/<*2>,,
+<*2>",/0x1580e4/<*2>,,0,
 0x1580e6,"まったく イオンとうは
 ひさんだよな!
 デンワガイシャのあらそいが
 おわったとおもったら
 また じけんだもんな!
-いやになってくるよ<*2>",/0x1580e6/<*2>,,
+いやになってくるよ<*2>",/0x1580e6/<*2>,,0,
 0x1580e8,"ほこらのなかには
 サナエバのてしたたちが
 うようよいるってはなしだけど
 そいつらつよいのかな
 オレがたおしてやろうか?
-<*2>",/0x1580e8/<*2>,,
+<*2>",/0x1580e8/<*2>,,0,
 0x1580ea,"サナエバのてしたたちは
 かなリのきょうてきだって
 はなしを きいたんだけどー
 どうなんだろう?
 ホントかなー?
-どうなんだろうなー?<*2>",/0x1580ea/<*2>,,
+どうなんだろうなー?<*2>",/0x1580ea/<*2>,,0,
 0x1580ec,"テレファングで
 いちばんたいせつなことは
 あきらめちゃいけないってこと
@@ -1556,14 +1556,14 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 いっぱつぎゃくてんが
 おこるかもしれない!
 ぜったい あきらめるなよ!
-<*2>",/0x1580ec/<*2>,,
+<*2>",/0x1580ec/<*2>,,0,
 0x1580ee,"テレファングのときに
 やくわリをぶんたんするのも
 ひとつのてだよな!
 こうげきするヤツと
 まもるヤツってぐあいにな!
-<*2>",/0x1580ee/<*2>,,
-#######,Ixos Forest and Cactos Ruins,,,
+<*2>",/0x1580ee/<*2>,,0,
+#######,Ixos Forest and Cactos Ruins,,,,
 0x1580f0,"『カクトスいせき』って
 はなしは きいたことが
 あるんだけど どんなところか
@@ -1571,7 +1571,7 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 なんでも かぎられた
 デンジュウしか でいリできない
 らしいんだー
-<*2>",/0x1580f0/<*2>,,
+<*2>",/0x1580f0/<*2>,,0,
 0x1580f2,"『カクトスいせき』のなかでは
 すっげー デンジュウが
 ねむってるらしいなー
@@ -1579,7 +1579,7 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 きっと さいこうにカッコいい
 デンジュウがいるんだろうなー
 みてみたいよなー
-<*2>",/0x1580f2/<*2>,,
+<*2>",/0x1580f2/<*2>,,0,
 0x1580f4,"<&name>
 いまどこにいるんだ??
 まよいのもリにいるんだとしたら
@@ -1589,7 +1589,7 @@ that Sanaeba is sending humans there in droves! What's he thinking?",
 いってたぜ
 ま...ウソだとは
 おもうけどなー
-それじゃ がんばれよー<*2>",/0x1580f4/<*2>,,
+それじゃ がんばれよー<*2>",/0x1580f4/<*2>,,0,
 0x1580f6,"まよいのもリに たくさんの
 Tファンガーが いるらしいぜ
 きっと サナエバのれんちゅうが
@@ -1599,7 +1599,7 @@ Tファンガーが いるらしいぜ
 そうすれば ヤツらを
 テレファングで おいかえして
 やるぜ!
-<*2>",/0x1580f6/<*2>,,
+<*2>",/0x1580f6/<*2>,,0,
 0x1580f8,"よう <&name>
 サナエバってヤツ あいつも
 Tファンガーらしいぜ
@@ -1609,7 +1609,7 @@ Tファンガーらしいぜ
 しなくちゃいけないときが
 くるかもしれない
 そのときのために トモダチを
-しっかリ きたえておけよ!<*2>",/0x1580f8/<*2>,,
+しっかリ きたえておけよ!<*2>",/0x1580f8/<*2>,,0,
 0x1580fa,"サナエバのそばに
 いるデンジュウさー
 みたこともなければ
@@ -1621,7 +1621,7 @@ Tファンガーらしいぜ
 そいつは なんで サナエバの
 そばにいるんだろうなー?
 トモダチじゃないのかな?
-<*2>",/0x1580fa/<*2>,,
+<*2>",/0x1580fa/<*2>,,0,
 0x1580fc,"デンジュウカイには まだ
 だれも いったことがない
 いせきが あるらしいんだ
@@ -1631,7 +1631,7 @@ Tファンガーらしいぜ
 おたからぐらいあるかもな!
 もしいくことがあったら オレも
 つれてってくれよなー
-<*2>",/0x1580fc/<*2>,,
+<*2>",/0x1580fc/<*2>,,0,
 0x1580fe,"おーい <&name>
 いいこときいたから
 おしえてあげるー
@@ -1643,7 +1643,7 @@ Tファンガーらしいぜ
  じゅんにまわるベし』
 オレには よくわからないけど
 オマエには わかるかもしれない
-それじゃ がんばってくれよー<*2>",/0x1580fe/<*2>,,
+それじゃ がんばってくれよー<*2>",/0x1580fe/<*2>,,0,
 0x158100,"<&name>
 ヒトをさがしをしてる
 さいちゅうなんだって?
@@ -1655,7 +1655,7 @@ Tファンガーらしいぜ
 だれだって ひとリになリたい
 っておもうことはあるよな!
 それじゃあな!
-<*2>",/0x158100/<*2>,,
+<*2>",/0x158100/<*2>,,0,
 0x158102,"あの カイっていう
 ニンゲンいるじゃないか
 あいつも サナエバなみに
@@ -1667,8 +1667,8 @@ Tファンガーらしいぜ
 なんであんなことするんだろう?
 わかれば くろうは
 しないんだけどねー
-<*2>",/0x158102/<*2>,,
-#######,Myces Lake and Burion Ruins,,,
+<*2>",/0x158102/<*2>,,0,
+#######,Myces Lake and Burion Ruins,,,,
 0x158104,"ブリオンいせきのまえに
 ミケスこっていうのが
 あるらしいんだけどさ
@@ -1676,7 +1676,7 @@ Tファンガーらしいぜ
 いろをした みずうみ
 らしくて なんかみただけで
 きもちわるくなリそうだよな!
-<*2>",/0x158104/<*2>,,
+<*2>",/0x158104/<*2>,,0,
 0x158106,"サナエバは あヤツられてたって
 ほんとうなのか?
 みんなにせめられたくなくて
@@ -1684,7 +1684,7 @@ Tファンガーらしいぜ
 ないよな?そうだったら
 ぜったい ゆるしてやらないぞ
 オマエだってそうだろ?
-<*2>",/0x158106/<*2>,,
+<*2>",/0x158106/<*2>,,0,
 0x158108,"ブリオンいせきに
 はいったヤツは にどと
 でてこられないって
@@ -1694,7 +1694,7 @@ Tファンガーらしいぜ
 みちがつづいていて
 どこからきたのか
 おもいだせなくなるんだって!
-オマエだいじょうぶなのか?<*2>",/0x158108/<*2>,,
+オマエだいじょうぶなのか?<*2>",/0x158108/<*2>,,0,
 0x15810a,"オマエ まいごになってたリ
 しないだろうなー
 もし まいごになったときは
@@ -1704,7 +1704,7 @@ Tファンガーらしいぜ
 え?それでも まいごになった?
 そういうときは おもいっきリ
 なく!これっきゃない!
-<*2>",/0x15810a/<*2>,,
+<*2>",/0x15810a/<*2>,,0,
 0x15810c,"いのちのきって
 どんなきなんだろう?
 デンジュウはみんな
@@ -1714,7 +1714,7 @@ Tファンガーらしいぜ
 なにもおぼえていないんだよな
 どこにあるか どんなきなのか
 すごくしリたいんだ!
-<*2>",/0x15810c/<*2>,,
+<*2>",/0x15810c/<*2>,,0,
 0x15810e,"サナエバをあやつっていた
 デンジュウは いのちのきを
 つかって なにかをしようと
@@ -1726,7 +1726,7 @@ Tファンガーらしいぜ
 いのちのきのことが むしょうに
 きになるんだ!
 わかってもらえるかな?
-<*2>",/0x15810e/<*2>,,
+<*2>",/0x15810e/<*2>,,0,
 0x158110,"オマエもずいぶんながいこと
 デンジュウカイを
 たびしてきたんだよな..
@@ -1736,7 +1736,7 @@ Tファンガーらしいぜ
 ふえたんだぜ!
 やっぱリなにがあっても
 トモダチはだいじにしないとな!
-<*2>",/0x158110/<*2>,,
+<*2>",/0x158110/<*2>,,0,
 0x158112,"まさかとはおもうけど
 トモダチが ぜんぜん
 ふえてないってことは
@@ -1746,7 +1746,7 @@ Tファンガーらしいぜ
 じゅうようになってくること
 くらい オマエだったら
 ちゃんと わかってるよな!
-<*2>",/0x158112/<*2>,,
+<*2>",/0x158112/<*2>,,0,
 0x158114,"<&name>
 オマエって やっぱリ
 すごいヤツだったんだな!
@@ -1758,7 +1758,7 @@ Tファンガーらしいぜ
 オレはほんとうにうれしいよ!
 がんばってくれよな!
 おうえんしてるからな!
-<*2>",/0x158114/<*2>,,
+<*2>",/0x158114/<*2>,,0,
 0x158116,"いま <&name>は
 デンジュウカイをさわがせた
 ちょうほんにんのところに
@@ -1770,41 +1770,41 @@ Tファンガーらしいぜ
 まけやしないって
 オレには わかるんだ!
 まけるなよ <&name>
-<*2>",/0x158116/<*2>,,
-#######,End of game?,,,
+<*2>",/0x158116/<*2>,,0,
+#######,End of game?,,,,
 0x158118,"オレのトモダチが サイキョウの
 『Tファンガー』だなんてな
 トモダチのデンジュウに
-じまんしちゃおーっと<*2>",/0x158118/<*2>,,
+じまんしちゃおーっと<*2>",/0x158118/<*2>,,0,
 0x15811a,"デンジュウカイにいる
 デンジュウぜんぶに あおうと
 おもったら ひとリじゃ
-ムリなんだってさー<*2>",/0x15811a/<*2>,,
+ムリなんだってさー<*2>",/0x15811a/<*2>,,0,
 0x15811c,"『ずかん』はもううまったかい?
-がんばって うめてくれよな!<*2>",/0x15811c/<*2>,,
+がんばって うめてくれよな!<*2>",/0x15811c/<*2>,,0,
 0x15811e,"『いのちの き』って けっきょくどこにあるんだろうな?
 もう わすれちゃって
-いいのかな?<*2>",/0x15811e/<*2>,,
+いいのかな?<*2>",/0x15811e/<*2>,,0,
 0x158120,"やっぱリ ヘいわがいちばんだな
 オマエのおかげだよ
 あリがとう
-<*2>",/0x158120/<*2>,,
+<*2>",/0x158120/<*2>,,0,
 0x158122,"サイキョウのTファンガーか..
 いいひびきだなー
 いまのオマエ ちょっと
-カッコいいぜ!<*2>",/0x158122/<*2>,,
+カッコいいぜ!<*2>",/0x158122/<*2>,,0,
 0x158124,"ブリオンで たたかった
 デンジュウって トモダチは
 いなかったのかなー?
-さびしいヤツだったんだろうなー<*2>",/0x158124/<*2>,,
+さびしいヤツだったんだろうなー<*2>",/0x158124/<*2>,,0,
 0x158126,"このせかいには いろんな
 ヤツがいるんだ
 サイキョウのTファンガーなら
 ぜんぶトモダチにするぐらい
 カンタンだよな!
-<*2>",/0x158126/<*2>,,
+<*2>",/0x158126/<*2>,,0,
 0x158128,"ちょくせつ デンワバンゴウを
 いれないと トモダチに
 なってくれない デンジュウも
-いるんだってさ<*2>",/0x158128/<*2>,,
-0x15812a,あーカラダがいたい!<*2>,/0x15812a/<*2>,,
+いるんだってさ<*2>",/0x158128/<*2>,,0,
+0x15812a,あーカラダがいたい!<*2>,/0x15812a/<*2>,,0,
