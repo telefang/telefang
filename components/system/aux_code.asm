@@ -355,6 +355,9 @@ Banked_FusionLabEvo_ADVICE_SwitchSGBPaletteLayout::
 Banked_Overworld_ADVICE_LoadSGBFiles::
 	dw Overworld_ADVICE_LoadSGBFiles
 
+Banked_Overworld_ADVICE_LoadSGBPaletteByAcre::
+	dw Overworld_ADVICE_LoadSGBPaletteByAcre
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

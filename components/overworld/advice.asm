@@ -1,5 +1,8 @@
 INCLUDE "telefang.inc"
 
+SECTION "Overworld Last SGB Outdoor Acre Colour", WRAM0[$C7E1]
+W_Overworld_LastSGBOutdoorAcreColour:: ds 1
+
 SECTION "Overworld Palette SGB Advice", ROMX[$7A8E], BANK[$B]
 Overworld_ADVICE_PaletteLoader::
 	call Overworld_WindowFlavourPaletteLoader
@@ -17,15 +20,7 @@ Overworld_ADVICE_LoadSGBFiles::
 	cp $F
 	jr z, .dementiasMansion
 
-	ld hl, Overworld_SGBPaletteIndexTable
-	ld a, [$C905]
-	add l
-	ld l, a
-	jr nc, .noIncH
-	inc h
-
-.noIncH
-	ld a, [hl]
+	call Overworld_ADVICE_GetPaletteIndexFromSGBPaletteIndexTable
 	or a
 	jr z, .inTheGreatOutdoors
 	dec a
@@ -37,26 +32,11 @@ Overworld_ADVICE_LoadSGBFiles::
 
 .inTheGreatOutdoors
 	call Overworld_ADVICE_GetOutdoorAcrePaletteIndex
+	ld [W_Overworld_LastSGBOutdoorAcreColour], a
 
 .setPalette
 	
-	ld b, a
-	ld c, b
-
-	; Ensure darkest colour is black
-	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBColorSize * 3)
-	add a
-	add a
-	add a
-	add l
-	ld l, a
-
-	xor a
-	ld [hli], a
-	ld [hl], a
-	
-	ld a, M_SGB_Pal01 << 3 + 1
-	call PatchUtils_CommitStagedCGBToSGB
+	call Overworld_ADVICE_LoadSGBFiles_SetPalette
 	
 	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBStagingAreaStride * 7)
 	call Zukan_ADVICE_FixPaletteForSGB_skipHLSet
@@ -87,6 +67,54 @@ Overworld_ADVICE_LoadSGBFiles::
 	M_AdviceTeardown
 	ret
 
+Overworld_ADVICE_LoadSGBFiles_SetPalette::
+	ld b, a
+	ld c, b
+
+	; Ensure darkest colour is black
+	ld hl, W_LCDC_CGBStagingBGPaletteArea + (M_LCDC_CGBColorSize * 3)
+	add a
+	add a
+	add a
+	add l
+	ld l, a
+
+	xor a
+	ld [hli], a
+	ld [hl], a
+	
+	ld a, M_SGB_Pal01 << 3 + 1
+	call PatchUtils_CommitStagedCGBToSGB
+	ret
+
+Overworld_ADVICE_LoadSGBPaletteByAcre::
+	M_AdviceSetup
+
+	call $2B72
+
+	call PauseMenu_ADVICE_CheckSGB
+	jr z, .exit
+
+	call Overworld_ADVICE_GetPaletteIndexFromSGBPaletteIndexTable
+	or a
+	jr nz, .exit
+
+	call Overworld_ADVICE_GetOutdoorAcrePaletteIndex
+
+	; We only want to send a packet if the palette is actually changing.
+	ld b, a
+	ld a, [W_Overworld_LastSGBOutdoorAcreColour]
+	cp b
+	jr z, .exit
+
+	ld a, b
+	ld [W_Overworld_LastSGBOutdoorAcreColour], a
+	call Overworld_ADVICE_LoadSGBFiles_SetPalette
+
+.exit
+	M_AdviceTeardown
+	ret
+
 Overworld_ADVICE_SGBShopTextStyle::
 	call PauseMenu_ADVICE_CheckSGB
 	ret z
@@ -110,6 +138,18 @@ Overworld_ADVICE_IsShop::
 	cp $15
 	ret
 
+Overworld_ADVICE_GetPaletteIndexFromSGBPaletteIndexTable::
+	ld hl, Overworld_SGBPaletteIndexTable
+	ld a, [$C905]
+	add l
+	ld l, a
+	jr nc, .noIncH
+	inc h
+
+.noIncH
+	ld a, [hl]
+	ret
+
 Overworld_SGBPaletteIndexTable::
 	db 0, 0, 0, 2
 	db 0, 3, 3, 2
@@ -118,8 +158,45 @@ Overworld_SGBPaletteIndexTable::
 	db 3, 3, 3, 3
 
 Overworld_ADVICE_GetOutdoorAcrePaletteIndex::
-	; This may be expanded on later, but for now we will just use green for everything.
+	ld a, [$C904]
+	dec a
+	dec a
+	jr z, .upperLeft
+	dec a
+	jr z, .upperRight
+	dec a
+	jr z, .lowerLeft
+	dec a
+	jr z, .lowerRight
+
+.default
 	ld a, 3
+	ret
+
+.upperLeft
+	ld hl, Overworld_ADVICE_SGBColourByAcreTable_TopLeft
+	jr .getAcrePaletteIndex
+
+.upperRight
+	ld hl, Overworld_ADVICE_SGBColourByAcreTable_TopRight
+	jr .getAcrePaletteIndex
+
+.lowerLeft
+	ld hl, Overworld_ADVICE_SGBColourByAcreTable_BottomLeft
+	jr .getAcrePaletteIndex
+
+.lowerRight
+	ld hl, Overworld_ADVICE_SGBColourByAcreTable_BottomRight
+
+.getAcrePaletteIndex
+	ld a, [$C906]
+	add l
+	ld l, a
+	jr nc, .noIncH
+	inc h
+
+.noIncH
+	ld a, [hl]
 	ret
 
 Overworld_ADVICE_SGBColourByAcreTable_TopLeft::
