@@ -12,15 +12,15 @@ Overworld_AcreTransition_CommonPrep::
 	ld a, $F
 	ld [$C915], a
 	ld [$C916], a
-	ld a, 0
+	xor a
 	ld [$C980], a
-	ld a, 1
+	inc a
 	ld [$C98E], a
 	call $2793
 	ld a, $C
 	ld hl, $2B98
 	call CallBankedFunction_int
-	call $2B72
+	M_AuxJmp Banked_Overworld_ADVICE_LoadSGBPaletteByAcre
 	ld a, [$CAFE]
 	or a
 	ret nz
