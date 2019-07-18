@@ -38,9 +38,9 @@ PhoneConversation_StateDrawIncomingCallScreen::
     ld a, b
     call PhoneConversation_DrawInboundCallScreen
     
-    ld a, 0
+    xor a
     ld [W_PhoneConversation_IncomingCallerFDOffset], a
-    ld a, 0
+    ld [W_MainScript_TextStyle], a
     ld [$C20F], a
     ld a, 0
     ld [W_PhoneConversation_IncomingCallerName + 6], a
