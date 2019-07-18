@@ -747,8 +747,10 @@ MainScript_ADVICE_SGBRedrawHud::
     jr z, .exit
 
     ; Check if tiles already redrawn.
+    di
     call WaitForBlanking
     ld a, [$8C00]
+    ei
     cp $1F
     jr z, .exit
 
