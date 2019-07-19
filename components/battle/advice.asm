@@ -435,6 +435,30 @@ Battle_ADVICE_LoadSGBFilesAfterLateDenjuu::
 
     jp Battle_ADVICE_LoadSGBFiles.extEntry
 
+Battle_ADVICE_SGBPaletteOnPartnerFell::
+    ld d, 7
+    jr Battle_ADVICE_SGBPaletteOnOpponentFell.jumpFromPartnerFell
+    
+Battle_ADVICE_SGBPaletteOnOpponentFell::
+    ld d, 6
+
+.jumpFromPartnerFell
+    M_AdviceSetup
+
+    push de
+    ld b, 0
+    call Banked_MainScript_DrawStatusEffectString
+    pop de
+
+    call PauseMenu_ADVICE_CheckSGB
+    jp z, Battle_ADVICE_LoadSGBFiles.return
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, d
+    ld c, d
+    call PatchUtils_CommitStagedCGBToSGB
+    jp Battle_ADVICE_LoadSGBFiles.return
+
 SECTION "MenuBattle2GfxSGB", ROMX[$7E00], BANK[$77]
 MenuBattle2GfxSGB::
     INCBIN "build/gfx/menu/battle2_sgb.2bpp"
