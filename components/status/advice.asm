@@ -66,6 +66,9 @@ Status_ADVICE_StateDrawDenjuu::
     ld bc, 7 ; Palette 7
     call CGBLoadObjectPaletteBanked
 
+    ld a, $20
+    ld [W_LCDC_MetaspriteAnimationBank], a
+
     ;Original replaced code
     ld a, 4
     call Banked_LCDC_SetupPalswapAnimation
