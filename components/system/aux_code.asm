@@ -306,6 +306,12 @@ Banked_Battle_ADVICE_VictoryStatsLoadSGBFiles::
 Banked_Battle_ADVICE_LoadSGBFilesAfterLateDenjuu::
 	dw Battle_ADVICE_LoadSGBFilesAfterLateDenjuu
 
+Banked_Battle_ADVICE_SGBPaletteOnPartnerFell::
+	dw Battle_ADVICE_SGBPaletteOnPartnerFell
+
+Banked_Battle_ADVICE_SGBPaletteOnOpponentFell::
+	dw Battle_ADVICE_SGBPaletteOnOpponentFell
+
 ;components/map/advice.asm
 Banked_DungeonMap_ADVICE_DrawScreen::
 	dw DungeonMap_ADVICE_DrawScreen

@@ -223,8 +223,7 @@ Attack_PartnerFell::
 	ld a, 0
 	call Banked_RLEDecompressTMAP0
 	ld hl, $9160
-	ld b, 0
-	call Banked_MainScript_DrawStatusEffectString
+	M_AuxJmp Banked_Battle_ADVICE_SGBPaletteOnPartnerFell
 	ld a, [W_Battle_PartnerDenjuuTurnOrder]
 	cp a, 1
 	jr z, .jpB
@@ -325,8 +324,7 @@ Attack_OpponentFell::
 	ld a, 0
 	call Banked_RLEDecompressTMAP1
 	ld hl, $91B0
-	ld b, 0
-	call Banked_MainScript_DrawStatusEffectString
+	M_AuxJmp Banked_Battle_ADVICE_SGBPaletteOnOpponentFell
 	ld a, [W_Battle_OpponentDenjuuTurnOrder]
 	cp a, 1
 	jr z, .jpA
