@@ -515,7 +515,7 @@ VsSummon_StateInputHandler::
     ld a, [W_VsSummon_NumContactsSelected]
     inc a
     ld [W_VsSummon_NumContactsSelected], a
-    jp $4D7A
+    jp .repositionSelectorArrow
 
 .contactBOfPageSelected
     ld a, [W_Summon_ContactBOfCurrentPageSelected]
@@ -534,7 +534,7 @@ VsSummon_StateInputHandler::
     ld a, [W_VsSummon_NumContactsSelected]
     inc a
     ld [W_VsSummon_NumContactsSelected], a
-    jp $4D7A
+    jp .repositionSelectorArrow
 
 .contactCOfPageSelected
     ld a, [W_Summon_ContactCOfCurrentPageSelected]
