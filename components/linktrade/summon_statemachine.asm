@@ -403,7 +403,7 @@ LinkTrade_StateInputHandler::
 	ret
 
 .selectNotPressed
-	call Banked_MainScriptMachine
+	call Banked_MainScriptMachine_InstantDisplayHack
 	ret
 
 .queueConfirmationMessage

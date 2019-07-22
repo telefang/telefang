@@ -355,7 +355,7 @@ Summon_StateSkipToBattle::
     ret
 
 Summon_StateInputHandler::
-    call Banked_MainScriptMachine
+    call Banked_MainScriptMachine_InstantDisplayHack
     call LCDC_IterateAnimationComplex
     ld a, [W_JPInput_TypematicBtns]
     and M_JPInput_Left
