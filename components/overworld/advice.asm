@@ -168,6 +168,14 @@ Overworld_ADVICE_GetOutdoorAcrePaletteIndex::
 	jr z, .lowerLeft
 	dec a
 	jr z, .lowerRight
+	dec a
+	jr z, .upperLeft
+	dec a
+	jr z, .upperRight
+	dec a
+	jr z, .lowerLeft
+	dec a
+	jr z, .lowerRight
 
 .default
 	ld a, 3
