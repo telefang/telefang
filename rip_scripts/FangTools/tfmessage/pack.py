@@ -238,7 +238,7 @@ memory_widths[0xcccf] = 1*8
 memory_widths[0xccd1] = 1*8
 memory_widths[0xccd9] = 1*8
 
-def format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths):
+def format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths, wrap):
     """Given a tokenstream, modify it such that no line exceeds a maximum width.
 
     The metrics given must be in the form of a dict whose keys are encoded
@@ -299,6 +299,10 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
             token = encode_string(token, charmap)
         
         if type(token) == bytes:
+            if not wrap:
+                new_tokenstream.append(token)
+                continue
+
             current_word = b""
             for char in token:
                 char = bytes([char])
@@ -331,30 +335,36 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
         elif type(token) == int:
             #Literal control code
             #TODO: Detect nonstandard newline
-            current_word_ts.append(token)
+            if wrap:
+                current_word_ts.append(token)
+            else:
+                new_tokenstream.append(token)
         elif type(token) == tuple:
             #Okay, this is an actual control code.
             cctoken = token[0]
             special = token[1]
             
             if special.purpose is None:
-                token_px = 0
-                if cctoken == "&": #Memory buffer reference
-                    if token[2] in memory_widths:
-                        token_px += memory_widths[token[2]]
-                    else:
-                        token_px += 8*8
+                if wrap:
+                    token_px = 0
+                    if cctoken == "&": #Memory buffer reference
+                        if token[2] in memory_widths:
+                            token_px += memory_widths[token[2]]
+                        else:
+                            token_px += 8*8
 
-                    #This only triggers on a memory reference so that control codes
-                    #aren't inadvertently treated as spaces.
-                    #TODO: This functionality should only be triggered on space or
-                    #newline and the measure function should handle memory widths.
-                    if (line_px + token_px) > max_px:
-                        replace_emitted_space()
-                        new_tokenstream.append(encoded_newline)
-                        increment_line()
+                        #This only triggers on a memory reference so that control codes
+                        #aren't inadvertently treated as spaces.
+                        #TODO: This functionality should only be triggered on space or
+                        #newline and the measure function should handle memory widths.
+                        if (line_px + token_px) > max_px:
+                            replace_emitted_space()
+                            new_tokenstream.append(encoded_newline)
+                            increment_line()
 
-                current_word_ts.append(token)
+                    current_word_ts.append(token)
+                else:
+                    new_tokenstream.append(token)
             elif special.purpose == QUESTION_FORMATTING_WRAPPER:
                 #Questions can be formatted as a single-line or multi-line
                 #question. If the sum of both lines' widths exceeds the width of
@@ -402,7 +412,7 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
 
     return new_tokenstream
 
-def pack_text(string, known_tokens, charmap, metrics, window_width, window_height, memory_widths, do_not_terminate = False):
+def pack_text(string, known_tokens, charmap, metrics, window_width, window_height, memory_widths, wrap=True, do_not_terminate=False):
     #Sanity check: Empty strings indicate aliases.
     #TODO: Should we more explicitly notate these, instead of just specialcasing
     #them? There's precisely one table in Telefang that has about 10 messages
@@ -413,7 +423,7 @@ def pack_text(string, known_tokens, charmap, metrics, window_width, window_heigh
     tokenstream = parse_string(string, known_tokens)
     
     if metrics:
-        tokenstream = format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths)
+        tokenstream = format_tokenstream(tokenstream, charmap, metrics, window_width, window_height, memory_widths, wrap=wrap)
     
     encstream = []
     stream_is_terminated = do_not_terminate

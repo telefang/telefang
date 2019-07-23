@@ -502,8 +502,14 @@ def parse_csv(csvfile, language):
         str_col = headers.index(language)
     except ValueError:
         str_col = ptr_col
-    
-    return [(row[ptr_col], row[str_col]) for row in rows]
+
+    try:
+        formatted_col = headers.index("Formatted?")
+    except ValueError:
+        formatted_col = None
+
+    should_wrap = lambda row: True if formatted_col is None or '#' in row[ptr_col] else not int(row[formatted_col])
+    return [(row[ptr_col], row[str_col], should_wrap(row)) for row in rows]
 
 def omnibus_bank_split(rowdata, banknames):
     """Given row data from a non-bank-affiliated file, split it into banks.
@@ -575,8 +581,9 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
     
     overflow = {}
     
-    ptr_col = 0
-    str_col = 1
+    ptr_col  = 0
+    str_col  = 1
+    wrap_col = 2
     
     section_id = len(objdata.sections)
 
@@ -598,7 +605,8 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             print("WARNING: ROW {} IS MISSING IT'S TEXT!!!".format(i))
             table.append(baseaddr)
 
-            packed = pack_text("/0x{0:X}/".format(table_idx), specials, charmap[0], metrics, bank_window_width, 2, memory_widths)
+            packed = pack_text("/0x{0:X}/".format(table_idx), specials, charmap[0], metrics,
+                               bank_window_width, 2, memory_widths, wrap=row[wrap_col])
 
             baseaddr += len(packed)
             packed_strings[table_idx] = packed
@@ -619,7 +627,9 @@ def generate_table_section(bank, rows, charmap, metrics, bank_window_width):
             #aliasing at the same time, so don't.
             last_aliased_row = table_idx
         else:
-            packed = pack_text(row[str_col], specials, charmap[0], metrics, bank_window_width, 2, memory_widths, row[ptr_col] == "(No pointer)")
+            packed = pack_text(row[str_col], specials, charmap[0], metrics,
+                               bank_window_width, 2, memory_widths, wrap=row[wrap_col],
+                               do_not_terminate=row[ptr_col] == "(No pointer)")
             packed_strings[table_idx] += packed #We concat here in case of nopointer rows
 
             if row[ptr_col] != "(No pointer)":
