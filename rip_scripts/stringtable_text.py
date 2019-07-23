@@ -293,7 +293,10 @@ def make_tbl(args):
                 packed_strings.append(b"")
                 continue
             
-            packed = mainscript_text.pack_text(row[str_col], specials, charmap[0], None, args.window_width, 1, memory_widths, True)
+            packed = mainscript_text.pack_text(
+                row[str_col], specials, charmap[0], None, args.window_width,
+                1, memory_widths, wrap=False, do_not_terminate=True
+            )
             
             if "stride" in table:
                 if len(packed) > table["stride"]:
