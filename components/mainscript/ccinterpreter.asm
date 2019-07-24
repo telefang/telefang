@@ -74,7 +74,7 @@ MainScript_CCInterpreter::
 	
 .COMEFROM_StoreCurrentLetter
 	push af
-	ld a, [W_MainScript_TilesDrawn]
+	ld a, [W_MainScript_LineEntry]
 	ld [W_MainScript_SecondAnswerTile], a
 	pop af
 	
@@ -110,12 +110,14 @@ MainScript_CCInterpreter::
 	ld a, [W_MainScript_TileBaseIdx]
 	add a, b
 	call LCDC_TileIdx2Ptr
-	call MainScript_ADVICE_NewlineFixup
 	ld a, c
 	call MainScript_DrawLetter
 	pop hl
 	call MainScript_ADVICE_VWFNextTile
 	jp MainScript_ADVICE_AutomaticNewline
+	nop
+	nop
+	nop
 
 MainScript_CCInterpreter_DefaultCC::
 ; Fallback for unused control codes.
@@ -322,28 +324,35 @@ MainScript_ADVICE_StateOpcode:
 	
 	ds 2
 MainScript_ADVICE_StoreCurrentLetter:
-	ld [W_MainScript_VWFCurrentLetter], a
+	call MainScript_ADVICE_TrackLine
 	or a
 	jp nz, MainScript_CCInterpreter.readTableAndJump
 	jp MainScript_CCInterpreter.COMEFROM_StoreCurrentLetter
-	
-;Not ENTIRELY sure what this does.
-;Appears to move us back 2 tiles, then move the graphics pointer back by like
-;16 tiles.
-MainScript_ADVICE_NewlineFixup:
-	ld a, [W_MainScript_VWFMainScriptHack]
-	cp 1
-	ret nz
-	ld a, [W_MainScript_TilesDrawn]
-	dec a
-	ld a, [W_MainScript_TilesDrawn]
-	dec a
-	ld [W_MainScript_TilesDrawn], a
-	push bc
-	ld bc, $FFF0
-	add hl, bc
-	pop bc
-	ret
+
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 	
 MainScript_ADVICE_VWFNextTile:
 	ld a, [W_MainScript_VWFOldTileMode]
@@ -359,9 +368,12 @@ MainScript_ADVICE_VWFNextTile:
 	ld a, 1
 	ld [W_MainScript_VWFMainScriptHack], a
 	ld a, [W_MainScript_TilesDrawn]
-	inc a
-	ld [W_MainScript_TilesDrawn], a
 	ret
+
+	nop
+	nop
+	nop
+	nop
 	
 MainScript_CCInterpreter_VWFdisableCC::
 ; Control Code EA
@@ -463,7 +475,7 @@ MainScript_ADVICE_NewlineVWFReset::
 .countSetup
 	ld b, a
 	ld c, 2
-	ld a, [W_MainScript_TilesDrawn]
+	ld a, [W_MainScript_LineEntry]
 	
 .divLoop
 	sub b
@@ -491,7 +503,7 @@ MainScript_ADVICE_NewlineVWFReset::
 	xor a
 	
 .noOverflow
-	ld [W_MainScript_TilesDrawn], a
+	call MainScript_ADVICE_UpdateLine
 	
 	ld a, [W_MainScript_NumNewlines]
 	inc a
@@ -710,3 +722,26 @@ MainScript_CCInterpreter_EntryFontCC::
 	pop hl
 	ld a, 3
 	jp MainScript_CCInterpreter_SetFont
+
+SECTION "Main Script Auto-Newline Fix", ROMX[$4E5F], BANK[$B]
+MainScript_ADVICE_TrackLine::
+	ld [W_MainScript_VWFCurrentLetter], a
+	ld c, a
+	ld a, [W_MainScript_LineEntry]
+	ld b, a
+	ld a, [W_MainScript_TilesDrawn]
+	cp b
+	jr nc, .dontSetLineEntry
+	ld [W_MainScript_LineEntry], a
+
+.dontSetLineEntry
+	ld a, c
+	ret
+
+MainScript_ADVICE_UpdateLine::
+	ld [W_MainScript_TilesDrawn], a
+	ld [W_MainScript_LineEntry], a
+	ret
+
+	;Note: Free Space
+	ds $1C
