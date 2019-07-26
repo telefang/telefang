@@ -1137,7 +1137,7 @@ VsSummon_StateConnectionErrorExitToTitlemenu::
     ret z
     call $06BC
     xor a
-    ld [W_Battle_4thOrderSubState], a
+    call LinkVictory_ADVICE_OnExit
     ld [W_Battle_SubSubState], a
     ld [W_SystemSubState], a
     ld a, 3
