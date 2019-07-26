@@ -102,8 +102,7 @@ LinkTrade_StateDrawRecruitmentScreen::
 	ld c, 1
 	call Encounter_DrawTileDigits
 	call $60EC
-	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
 	jp SerIO_Increment4thOrderSubState
 
 LinkTrade_StateRecruitmentFadeInAndMemoryMarker::
@@ -149,7 +148,7 @@ LinkTrade_StateRecruitmentDrawNumber::
 	ld b, a
 	ld a, [hl]
 	ld hl, $99C3
-	call Banked_Status_DrawPhoneNumber
+	call LinkVictory_ADVICE_DrawPhoneNumber
 	call SaveClock_ExitSRAM
 	jp SerIO_Increment4thOrderSubState
 
@@ -199,7 +198,7 @@ LinkTrade_StateRecruitmentFadeOut::
 
 LinkTrade_StateRecruitmentExitToTitlescreen::
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkVictory_ADVICE_OnExit
 	ld [W_Battle_SubSubState], a
 	ld [W_SystemSubState], a
 	ld a, 3

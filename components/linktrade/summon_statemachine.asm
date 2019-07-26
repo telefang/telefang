@@ -46,7 +46,7 @@ LinkTrade_SummonStateMachine::
 
 LinkTrade_StateInitialiseVariables::
 	ld a, 0
-	call Banked_Status_LoadUIGraphics
+	call VsSummon_ADVICE_DrawOkIndicator
 	ld a, [W_PauseMenu_PhoneState]
 	ld e, a
 	ld d, 0
@@ -73,7 +73,7 @@ LinkTrade_StateInitialiseVariables::
 	ld [W_VsSummon_SelectionBuffer + 3], a
 	ld [W_VsSummon_SelectionBuffer + 4], a
 	ld [W_VsSummon_SelectionBuffer + 5], a
-	ld a, [W_Encounter_AlreadyInitialized]
+	call VsSummon_ADVICE_ExitStatusScreen
 	cp 1
 	jp z, .skipInitialisation
 	xor a
@@ -127,13 +127,12 @@ LinkTrade_StateFadeOutAndDrawScreen::
 	call Banked_LoadMaliasGraphics
 	ld hl, $8800
 	call $556B
-	ld hl, $9400
+	call VsSummon_ADVICE_PrepareTextStyle
 	ld a, $20
 	call MainScript_DrawEmptySpaces
 	ld bc, 0
 	ld e, $D
-	ld a, 0
-	call Banked_RLEDecompressTMAP0
+	M_AuxJmp Banked_Summon_ADVICE_LoadSGBFiles
 	ld bc, 0
 	ld e, $D
 	ld a, 0
@@ -158,7 +157,7 @@ LinkTrade_StateFadeOutAndDrawScreen::
 	ld hl, $9831
 	ld c, 1
 	call Encounter_DrawTileDigits
-	call $6CB2
+	call LinkTrade_ADVICE_DrawDenjuuIndicators
 	call $6D1C
 	call SerIO_SummonDrawNicknames
 	call $5905
@@ -177,7 +176,7 @@ LinkTrade_StateFadeOutAndDrawScreen::
 	ld de, $8B80
 	call Banked_Battle_LoadDenjuuPortrait
 	pop af
-	call Battle_LoadDenjuuPalettePartner
+	call VsSummon_ADVICE_LoadDenjuuPalette
 	call SaveClock_ExitSRAM
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
@@ -294,7 +293,7 @@ LinkTrade_StateInputHandler::
 	call MainScript_DrawEmptySpaces
 	call $555F
 	call $5602
-	call $6CB2
+	call LinkTrade_ADVICE_DrawDenjuuIndicators
 	call $6D1C
 	call SerIO_SummonDrawNicknames
 	xor a
@@ -441,7 +440,7 @@ LinkTrade_StateDrawSelectedContactPortrait::
 	ld de, $8B80
 	call Banked_Battle_LoadDenjuuPortrait
 	pop af
-	call Battle_LoadDenjuuPalettePartner
+	call VsSummon_ADVICE_LoadDenjuuPalette
 	ld a, 1
 	ld [W_CGBPaletteStagedBGP], a
 	call SaveClock_ExitSRAM
@@ -480,7 +479,7 @@ LinkTrade_StateConnectionErrorExitToTitlemenu::
 	ret z
 	call $06BC
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkVictory_ADVICE_OnExit
 	ld [W_Battle_SubSubState], a
 	ld [W_SystemSubState], a
 	ld a, 3
@@ -631,7 +630,7 @@ LinkTrade_StateParseContactForTrading::
 	call Battle_IndexStatisticsArray
 	push hl
 	ld a, [hli]
-	ld [W_Victory_DefectedContactSpecies], a
+	call LinkTrade_ADVICE_RememberDefectedSpecies
 	ld a, [hl]
 	ld [W_Victory_DefectedContactLevel], a
 	pop hl
@@ -795,7 +794,7 @@ LinkTrade_StateFadeOutAndExit::
 	or a
 	ret z
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkTrade_ADVICE_UnloadSGBFiles
 	jp Battle_IncrementSubSubState
 
 LinkTrade_StateOpenDenjuuStatusScreen::

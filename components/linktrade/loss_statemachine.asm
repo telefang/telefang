@@ -74,8 +74,7 @@ LinkTrade_SubStateInitLossScreen::
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
     
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
     
     jp SerIO_Increment4thOrderSubState
     
