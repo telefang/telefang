@@ -18,7 +18,12 @@ Alright?
 ひだリがわの カウンターで
 『じっけんシンカ』か
 『かいぞうシンカ』を
-おこなうことができます","In other shops, you can perform <bold>Augment<normal> and <bold>DNA evolution<normal> at the left counter.",,0,
+おこなうことができます","In other shops,
+you can perform
+<bold>Augment<normal> and <bold>DNA evolu-
+tion<normal> at the left counter.","In other shops,
+you can perform
+<bold>Augment<normal> and <bold>DNA evolu-tion<normal> at the left counter.",1,
 0x12000c,"アイテムは みぎのカウンターで
 おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 2
 0x12000e,"<&0xca00>チルになリます。
@@ -301,7 +306,7 @@ Well, whatever. I'm heading over there right now.
 You should go too if you start feeling lonely.
 Later then! Bye-bye!",,0,
 0x1200e0,"チクショー! なんだよアイツ!
-いきなリ からんで きやがって!","Ugh, what's with her!?
+いきなリ からんで きやがって!","Ugh, what's with her?!
 She always shows up to bug me like that!",,0,
 0x1200e2,"だまっとけば かわいい
 ヤツなのになぁ.....
@@ -556,10 +561,18 @@ Nice to meet ya!",,0,
 『ちず』は スタートボタンを
 おすとみられるぞ","Take this as well.
 It is a <bold>Map<normal> of this world.
-It is blank right now, but you can use it to view the places you have been.
-I am sure it will be of use to you.
-You can view the Map by pressing <bold>the Start Button<normal>.",,0,
-0x12013a,『ちず』を てにいれた,Got the <bold>Map<normal>!,,0,
+It is blank right now,
+but you can use it to view
+the places you have been.
+I am sure it will be of use.
+To view the Map, press the
+<bold>Start Button<normal>.","Take this as well.
+It is a <bold>Map<normal> of this world.
+It is blank right now,
+but you can use it to view the places you have been.
+I am sure it will be of use.
+To view the Map, press the <bold>Start Button<normal>.",1,
+0x12013a,『ちず』を てにいれた,Got the <bold>Map<normal>!,Got the <bold>Map<normal>!,1,
 0x12013c,"<&0xc92c>くん
 ワタシは このむらで
 もうすこし しらベたいことが
@@ -1268,7 +1281,7 @@ Here, I'll give it to you! As a present!
 No, no! It's perfectly fine!
 Just take it with you and don't say a word!
 In exchange, all I ask for is your honest vote!",,0,
-0x12c022,『どうくつのカギ』をてにいれた!,Obtained the <bold>Cavern Key<normal>!,,0,
+0x12c022,『どうくつのカギ』をてにいれた!,Obtained the <bold>Cavern Key<normal>!,,1,
 0x12c024,カギをあけた,Used the key.,,0,
 0x12c026,"たーリらリらー
 とうとうクリノンむらの
@@ -1370,9 +1383,9 @@ I don't even need this stuff anymore, take it for all I care!!",,0,
 0x12c03c,"『アンテナのきのカギ』を
 とリもどした!","Retrieved ""Antenna Tree Key""!",,0,
 0x12c03e,"『リボルバーガン』を4つ
-てにいれた!",Got <bold>4 Revolvers<normal>!,,0,
+てにいれた!",Got <bold>4 Revolvers<normal>!,,1,
 0x12c040,"『テレカ』を4まい
-てにいれた!",Got <bold>4 Phone Cards<normal>!,,0,
+てにいれた!",Got <bold>4 Phone Cards<normal>!,,1,
 0x12c042,"カクザとうも おいだしたし
 ここからでようぜ!",The Kakuza Party is gone. Let's get out of here!,,0,
 0x12c044,"もしもし?マツキヨですけど?
@@ -1616,10 +1629,20 @@ Please get out of there, now!
 オレのナマエは『カイ』
 『シンデンジュウ』のめいれいで
 デンジュウカイから すベての
-アンテナのきを けす!","...Hmm?
-So you're the T-Fanger who's been cooperating with the ocean Denjuu to try and stop me...
+アンテナのきを けす!","...Hmm? So you're the T-
+Fanger who's been teaming
+up with the ocean Denjuu
+to try and stop me...
 My name is <bold>Kai<normal>.
-I'm under orders from the Divine Denjuu to eliminate all Antenna Trees from the Denjuu World!",,0,
+I'm under orders from the
+Divine Denjuu to eliminate
+all Antenna Trees
+from the Denjuu World!","...Hmm? So you're the T-Fanger who's been teaming up with the ocean Denjuu
+to try and stop me...
+My name is <bold>Kai<normal>.
+I'm under orders from the Divine Denjuu to eliminate
+all Antenna Trees
+from the Denjuu World!",1,
 0x12c0a6,"『シンデンジュウ』?
 なんだよそれ???
 それよリも なぜ
@@ -2018,10 +2041,13 @@ Hmm, yes...",,0,
 ほしいのじゃ
 それを もってきてもらおうか
 トリぐみの おさが もっている
-はずじゃ","I've got it!
-Lately I've been wanting to own a <bold>Plush Toy<normal>.
-How about you bring one to me?
-The chief of the Bird Clan should have one.",,0,
+はずじゃ","I've got it! Lately I've been
+dying for a <bold>Plush Toy<normal>.
+How about you bring one to
+me? The chief of the
+Bird Clan should have one.","I've got it! Lately I've been dying for a <bold>Plush Toy<normal>.
+How about you bring one to me? The chief of the
+Bird Clan should have one.",1,
 0x12c130,"『ぬいぐるみ』を もってきたら
 トリぐみと なかなおリを
 するんだな
@@ -2032,8 +2058,13 @@ Alright!
 I'll go talk to the Bird Chief and bring it back here!",,0,
 0x12c132,"トリぐみのおさがもっている
 『ぬいぐるみ』をもってこないと
-なかなおリは できないぞ!","Go ask the chief of the Bird Clan for his <bold>Plush Toy<normal> and bring it back to me.
-If you do, I will agree to stop the fighting!",,0,
+なかなおリは できないぞ!","Go ask the chief of the Bird
+Clan for his <bold>Plush Toy<normal>
+and bring it back to me.
+If you do, I will agree
+to stop the fighting!","Go ask the chief of the Bird Clan for his <bold>Plush Toy<normal> and bring it back to me.
+If you do, I will agree
+to stop the fighting!",1,
 0x12c134,"どうじゃった?
 .....『ぬいぐるみ』とな?はて...どこにやったかの?","How did it go?
 ....A Plush Toy, eh?
@@ -2052,7 +2083,10 @@ Sorry to ask you this, but could you find him and ask for it back?
 Thank you! Good luck!",,0,
 0x12c13a,"フリジアで ガンバンオーを
 さがしだして 『ぬいぐるみ』を
-もってきてくれ!","Please, find Ganbanno in Freesia and bring back the <bold>Plush Toy<normal>!",,0,
+もってきてくれ!","Please, find Ganbanno in
+Freesia and bring back
+the <bold>Plush Toy<normal>!","Please, find Ganbanno in Freesia and bring back
+the <bold>Plush Toy<normal>!",1,
 0x12c13c,"あーーーーーっ!
 このまえあった ニンゲンじゃん
 わざわざたずねてきてくれたんだ!ウレシー!!","Wow! If it isn't the human that I met before!
@@ -2086,7 +2120,7 @@ Telefang me!",,0,
 0x12c14c,"アイタタ...キミ つよいね!
 はい やくそくだったね","Yowch... You're pretty strong!
 Alright, as promised, here you go!",,0,
-0x12c14e,『ぬいぐるみ』をてにいれた!,Got the <bold>Plush Toy<normal>!,,0,
+0x12c14e,『ぬいぐるみ』をてにいれた!,Got the <bold>Plush Toy<normal>!,,1,
 0x12c150,"あっ! ってことは
 オイラが まちをでたリゆうが
 なくなっちゃったんだ
@@ -2128,9 +2162,9 @@ Now all that's left is to take it over to the Snake Chief!",,0,
 First I must reward you for all you have done.
 Here, please take this.",,0,
 0x12c15e,"『かいぞうしよう2』
-をてにいれた",Got <bold>Augment Pass 2<normal>.,,0,
+をてにいれた",Got <bold>Augment Pass 2<normal>.,,1,
 0x12c160,"『じっけんしよう2』
-をてにいれた",Got <bold>Lab Pass 2<normal>.,,0,
+をてにいれた",Got <bold>Lab Pass 2<normal>.,,1,
 0x12c162,"ほんとに これくれるの?
 サンキュー! これで
 いろんなデンジュウを シンカ
@@ -2143,7 +2177,7 @@ Now I can evolve even more kinds of Denjuu!",,0,
 It's us who should be thanking you.
 Now, good luck on your final errand!",,0,
 0x12c166,『ぬいぐるみ』を わたしますか? はい  いいえ<*A>,"Hand over the <bold>Plush Toy<normal>?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x12c168,"ワ ワシに くれるんじゃ
 ないのか??","Wh-What?
 You're not going to give it to me??",,0,
@@ -4774,9 +4808,9 @@ Ion Island, then!",1,
 Thank you!!
 Please take these as a token of my thanks, man!",,0,
 0x140122,"『かいぞうしよう1』
-をてにいれた",Got <bold>Augment Pass 1<normal>.,,0,
+をてにいれた",Got <bold>Augment Pass 1<normal>.,Got <bold>Augment Pass 1<normal>.,1,
 0x140124,"『じっけんしよう1』
-をてにいれた",Got <bold>Lab Pass 1<normal>.,,0,
+をてにいれた",Got <bold>Lab Pass 1<normal>.,,1,
 0x140126,"うわっ! これって
 デンジュウを シンカさせるのに
 ぜったいいる アイテムじゃん
@@ -4813,7 +4847,7 @@ unethical research!
 Thank you!!","You stopped the professor's unethical research!
 Thank you!!",0,From Paparouna Lake
 0x140132,"『あたらしいDショット』
-をてにいれた",Obtained a <bold>new D-Shot<normal>!,Obtained a <bold>new D-Shot<normal>!,0,Get a new D-Shot
+をてにいれた",Obtained a <bold>new D-Shot<normal>!,Obtained a <bold>new D-Shot<normal>!,1,Get a new D-Shot
 0x140134,"どんどん タバスコのジャマを
 したまえ!
 どんどんな どんどん!","Let's mess her plans right
@@ -4898,7 +4932,7 @@ Are you familiar with how to use it?
 これについて ききたいか?
  はい  いいえ<*A>","First, you've got your <bold>Contacts<normal>. 
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x14015a,"これは テレファングで
 トモダチになった デンジュウと
 れんらくをとるのに
@@ -4911,7 +4945,7 @@ You can easily call and switch between Denjuu here.",,0,
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Calls<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x14015e,"『ちゃくれき』は
 どのデンジュウから デンワが
 かかってきたかを みることが
@@ -4920,14 +4954,14 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Items<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x140162,"『アイテム』は デンジュウたちのシンカにつかう アイテムを
 みることが できるんだ","Here, you can view your items or give them as gifts. If you want to augment Denjuu using your items, you need to go to a shop.",,0,
 0x140164,"つぎは『メール』だ
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Texts<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x140166,"『メール』は Dショットの
 でんげんを きっているあいだに
 かかってきた デンジュウの
@@ -4936,7 +4970,7 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Save<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x14016a,"『セーブ』は いまの
 しんこうじょうきょうを 
 ほぞんするのに つかうんだ",You can use this to record your current progress.,,0,
@@ -4944,32 +4978,42 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Options<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x14016e,"まず『マナーモード』
 これを『ON』にしておくと
 デンワがかかってきたときに
-ちゃくしんおんが ならないんだ","The first option is <bold>Silent mode<normal>.
-When it's set to ON, ringtones won't play when someone calls you.",,0,
+ちゃくしんおんが ならないんだ","The first option is <bold>Silent
+mode<normal>. When it's set to ON,
+ringtones won't play when
+someone calls you.","The first option is <bold>Silent mode<normal>. When it's set to ON, ringtones won't play when someone calls you.",1,
 0x140170,"つぎに『とけいひょうじ』
 これを『ON』にしておくと
 がめんじょうに とけいが
-ひょうじされるんだ","Then there's <bold>Clock display<normal>.
-When it's set to ON, the current time is displayed at the bottom of the screen.",,0,
+ひょうじされるんだ","Then there's <bold>Clock
+display<normal>. When set to ON,
+the current time is shown at
+the bottom of the screen.","Then there's <bold>Clock display<normal>. When set to ON, the current time is shown at the bottom of the screen.",1,
 0x140172,"つぎに『カラー』
 これはバックライトのいろが
 かわるんだ","After that is <bold>Color<normal>.
-You can change the color of the backlight with this.",,0,
+This option lets you change
+the color of your D-Shot's
+backlight.","After that is <bold>Color<normal>.
+This option lets you change the color of your D-Shot's backlight.",1,
 0x140174,"さいごに『せんとうアニメ』
 これをオフにしておくと
 テレファングちゅうの
 こうげきエフェクトを
 みなくていいんだ","Lastly, <bold>Battle anim.<normal>
-When this is turned off, attack animations won't be shown during battles.",,0,
+When this is turned off,
+attack animations won't be
+shown during battles.","Lastly, <bold>Battle anim.<normal>
+When this is turned off, attack animations won't be shown during battles.",1,
 0x140176,"つぎは『Dメロ』だ
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Melo-D<normal>. 
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x140178,"これは デンワが かかって
 きたときになる おとを
 えらんだリ つくったリ
@@ -4978,7 +5022,7 @@ Do you want an explanation?
 これについて ききたいか?
  はい  いいえ<*A>","Next is the <bold>Field Guide<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>",,1,
 0x14017c,"これは トモダチになった
 デンジュウのことが 
 かいてあるんだ
