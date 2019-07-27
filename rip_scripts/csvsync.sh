@@ -1,32 +1,49 @@
 #!/bin/bash
 
-wget --no-check-certificate -O script/story/all.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1935066788
-wget --no-check-certificate -O script/npc/all.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1435413006
-wget --no-check-certificate -O script/npc/postgame.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1999641522
-wget --no-check-certificate -O script/npc/unused.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1634712150
-wget --no-check-certificate -O script/calls/denjuu/all.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=317080452
-wget --no-check-certificate -O script/calls/story.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=2033175693
-wget --no-check-certificate -O script/calls/exp_item.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1056966167
-wget --no-check-certificate -O script/battle/messages.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1751024229
-wget --no-check-certificate -O script/battle/arrive_phrases.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1010284920
-wget --no-check-certificate -O script/battle/attack_phrases.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1274128822
-wget --no-check-certificate -O script/battle/message_unk.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1440252416
-wget --no-check-certificate -O script/battle/attacks.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=632809498
-wget --no-check-certificate -O script/battle/items.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1823319603
-wget --no-check-certificate -O script/battle/tfangers.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1306424810
-wget --no-check-certificate -O script/battle/ui_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1538855119
-wget --no-check-certificate -O script/battle/nicknames.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1784731430
-wget --no-check-certificate -O script/battle/singular.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=988937655
-wget --no-check-certificate -O script/battle/plural.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=863997244
-wget --no-check-certificate -O script/denjuu/descriptions.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=798105385
-wget --no-check-certificate -O script/denjuu/sms.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=256023144
-wget --no-check-certificate -O script/denjuu/species.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=17514423
-wget --no-check-certificate -O script/denjuu/statuses.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1545746160
-wget --no-check-certificate -O script/denjuu/personalities.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1604251478
-wget --no-check-certificate -O script/denjuu/habitats.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1012117155
-wget --no-check-certificate -O script/denjuu/nicknames.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=1018901251
-wget --no-check-certificate -O script/denjuu/article_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=642445015
-wget --no-check-certificate -O script/map/location_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=456069826
-wget --no-check-certificate -O script/map/dungeon_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=63277743
-wget --no-check-certificate -O script/map/dungeon_strings.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=63277743
-wget --no-check-certificate -O components/credit/credit.messages.csv https://docs.google.com/spreadsheet/ccc?key=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY\&output=csv\&gid=71236479
+SPREADSHEET_KEY=1itnJa1EbKQhl5-u5FNS7Ho9F6eOIX32Bwf0XIbCZbhY
+SHEETS=(
+    # CSV path, GID
+    script/story/all.messages.csv           1935066788
+    script/npc/all.messages.csv             1435413006
+    script/npc/postgame.messages.csv        1999641522
+    script/npc/unused.messages.csv          1634712150
+    script/calls/denjuu/all.messages.csv    317080452
+    script/calls/story.messages.csv         2033175693
+    script/calls/exp_item.messages.csv      1056966167
+    script/battle/messages.messages.csv     1751024229
+    script/battle/arrive_phrases.csv        1010284920
+    script/battle/attack_phrases.csv        1274128822
+    script/battle/message_unk.csv           1440252416
+    script/battle/attacks.csv               632809498
+    script/battle/items.csv                 1823319603
+    script/battle/tfangers.csv              1306424810
+    script/battle/ui_strings.csv            1538855119
+    script/battle/nicknames.csv             1784731430
+    script/battle/singular.csv              988937655
+    script/battle/plural.csv                863997244
+    script/denjuu/descriptions.messages.csv 798105385
+    script/denjuu/sms.messages.csv          256023144
+    script/denjuu/species.csv               17514423
+    script/denjuu/statuses.csv              1545746160
+    script/denjuu/personalities.csv         1604251478
+    script/denjuu/habitats.csv              1012117155
+    script/denjuu/nicknames.csv             1018901251
+    script/denjuu/article_strings.csv       642445015
+    script/map/location_strings.csv         456069826
+    script/map/dungeon_strings.csv          63277743
+    script/map/dungeon_strings.csv          63277743
+    components/credit/credit.messages.csv   71236479
+)
+
+for (( i = 0; i < ${#SHEETS[@]}; i += 2 ))
+do
+    echo "Fetching ${SHEETS[i]}..."
+    wget -q --no-check-certificate -O ${SHEETS[i]} "https://docs.google.com/spreadsheets/d/${SPREADSHEET_KEY}/export?format=csv&gid=${SHEETS[i + 1]}"
+    EXIT_CODE=$?
+    if [ $EXIT_CODE != 0 ] ; then
+        echo "Failed to fetch ${SHEETS[i]} (https://docs.google.com/spreadsheets/d/${SPREADSHEET_KEY}/export?format=csv&gid=${SHEETS[i + 1]})." >&2
+        exit ${EXIT_CODE}
+    fi
+done
+
+echo "All done!"
