@@ -18,9 +18,14 @@ VsSummon_ADVICE_DrawOkIndicator::
     ld bc, $90
     jp Banked_LCDC_LoadTiles
 
+LinkTrade_ADVICE_DrawDenjuuIndicators::
+    call $6CB2
+    jr VsSummon_ADVICE_DrawDenjuuIndicators.extEntry
+
 VsSummon_ADVICE_DrawDenjuuIndicators::
     call $5694
 
+.extEntry
     ld a, [W_SGB_DetectSuccess]
     or a
     ret z
@@ -96,8 +101,14 @@ VsSummon_ADVICE_LoadDenjuuPalette::
 
     ret
 
+LinkTrade_ADVICE_UnloadSGBFiles::
+    ld [W_Battle_4thOrderSubState], a
+    jr VsSummon_ADVICE_UnloadSGBFiles.extEntry
+
 VsSummon_ADVICE_UnloadSGBFiles::
     ld [W_SystemState], a
+
+.extEntry
     ld a, [W_SGB_DetectSuccess]
     or a
     jr z, .noSGB
@@ -123,4 +134,9 @@ VsSummon_ADVICE_ExitStatusScreen::
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 5
     call LCDC_ClearSingleMetasprite
     ld a, [W_Encounter_AlreadyInitialized]
+    ret
+
+LinkTrade_ADVICE_RememberDefectedSpecies::
+    ld [W_Victory_DefectedSpeciesForNickname], a
+    ld [W_Victory_DefectedContactSpecies], a
     ret

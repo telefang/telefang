@@ -72,6 +72,7 @@ Map_ADVICE_UnloadSGBFiles::
 	ld [W_MainScript_TextStyle], a
 
 .noSGB
+	call PauseMenu_ADVICE_SMSResetLine
 	xor a
 	ld [W_byte_C9CF], a
 

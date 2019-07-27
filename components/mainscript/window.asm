@@ -118,9 +118,6 @@ MainScript_ADVICE_ClearWindowTiles_DrawColorOneMaybe::
     jr nz, .drawColorOne
     
     ret
-	
-	;Note: Free Space
-	ds $36
 
 SECTION "Main Script Draw Window Tilemaps", ROMX[$4A5C], BANK[$B]
 MainScript_DrawWindowBorder::
@@ -613,7 +610,7 @@ MainScript_MapOverworldHudWindow::
     M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawHud
     ld a, [W_MainScript_WindowLocation]
     ld c, 0
-    call MainScript_ADVICE_MapOverworldHudWindow
+    call MainScript_DrawWindowBorder
     ret
 
 SECTION "MainScript Map Secondary Shop Window", ROMX[$4A48], BANK[$B]
@@ -642,11 +639,6 @@ MainScript_ADVICE_DrawTwoThirdsOverworldWindow::
 MainScript_ADVICE_DrawOneThirdOverworldWindow::
     call MainScript_DrawWindowBorder
     ld h, 6
-    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
-
-MainScript_ADVICE_MapOverworldHudWindow::
-    call MainScript_DrawWindowBorder
-    ld h, 8
     jr MainScript_ADVICE_DrawOverworldWindow.extEntry
 
 MainScript_ADVICE_MapLocationWindow::
@@ -683,6 +675,14 @@ MainScript_ADVICE_MapLocationWindowForMap::
     ld b, 3
     jp MainScript_MapLocationWindow.extEntry
 
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
 SECTION "MainScript Clear Shop Window Advice", ROMX[$70E0], BANK[$32]
 MainScript_ADVICE_ClearSecondaryShopWindow::
     call $328D
@@ -707,7 +707,7 @@ MainScript_ADVICE_ClearOverworldWindow::
     ld h, 7
     jp Banked_SGB_ConstructATTRBLKPacket
 
-SECTION "MainScript Window Redraw Advice", ROMX[$6470], BANK[$1]
+SECTION "MainScript Window Redraw Advice", ROMX[$6468], BANK[$1]
 MainScript_ADVICE_SGBRedrawOverworldLocationWindow::
     M_AdviceSetup
     call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
@@ -759,6 +759,8 @@ MainScript_ADVICE_SGBRedrawHud::
     call Zukan_ADVICE_TileLightColourReverse
     ld b, $B0
     call Zukan_ADVICE_TileLightColourReverse
+    ld h, 8
+    call Banked_SGB_ConstructATTRBLKPacket
 
 .exit
     ld de, $CA08

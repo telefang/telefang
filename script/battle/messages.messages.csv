@@ -370,7 +370,7 @@ Auf geht's! Telefang!<*2>",,
 0x11415a,"が...<&0xc9e1> からは
 DNAを さいしゅ することが
 できない。",But... You couldn't get any DNA from <&0xcca3>.,,0,Leider konnte aus <&0xcca3> keine DNA gewonnen werden.,,
-0x11415c,<&0xca53> をてにいれた。,Obtained <bold><&0xd6b1><normal>.,,0,<&0xd6b1> erhalten.,,
+0x11415c,<&0xca53> をてにいれた。,Obtained <bold><&0xd6b1><normal>.,,1,<&0xd6b1> erhalten.,,
 0x11415e,"かいぞうをつづけますか?
  はい  いいえ<*A>","Continue augmentation?
 <Q>Yes<|>No</Q><*A>",,0,"Weiter fusionieren?

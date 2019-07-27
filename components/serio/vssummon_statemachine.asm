@@ -514,7 +514,7 @@ VsSummon_StateInputHandler::
     ld a, [W_VsSummon_NumContactsSelected]
     inc a
     ld [W_VsSummon_NumContactsSelected], a
-    jp $4D7A
+    jp .repositionSelectorArrow
 
 .contactBOfPageSelected
     ld a, [W_Summon_ContactBOfCurrentPageSelected]
@@ -533,7 +533,7 @@ VsSummon_StateInputHandler::
     ld a, [W_VsSummon_NumContactsSelected]
     inc a
     ld [W_VsSummon_NumContactsSelected], a
-    jp $4D7A
+    jp .repositionSelectorArrow
 
 .contactCOfPageSelected
     ld a, [W_Summon_ContactCOfCurrentPageSelected]
@@ -649,7 +649,7 @@ VsSummon_StateInputHandler::
     ret
 
 .selectNotPressed
-    call Banked_MainScriptMachine
+    call Banked_MainScriptMachine_InstantDisplayHack
     ret
 
 .queueConfirmationMessage
@@ -1137,7 +1137,7 @@ VsSummon_StateConnectionErrorExitToTitlemenu::
     ret z
     call $06BC
     xor a
-    ld [W_Battle_4thOrderSubState], a
+    call LinkVictory_ADVICE_OnExit
     ld [W_Battle_SubSubState], a
     ld [W_SystemSubState], a
     ld a, 3
