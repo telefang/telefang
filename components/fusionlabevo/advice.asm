@@ -176,7 +176,10 @@ FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
     ld b, $30
     call Zukan_ADVICE_TileLowByteBlanketFill
 
-    ld hl, $8C00
+    ld hl, $8B00
+    ld b, $40
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
     ld b, $C0
     call Zukan_ADVICE_TileLowByteBlanketFill
 	
