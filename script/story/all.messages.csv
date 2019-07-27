@@ -4930,9 +4930,12 @@ Are you familiar with how to use it?
 おしえてやるよ","Okay, then I'll explain the D-Shot's features.",,0,
 0x140158,"まず 『デンワちょう』からだ
 これについて ききたいか?
- はい  いいえ<*A>","First, you've got your <bold>Contacts<normal>. 
+ はい  いいえ<*A>","First, you've got your
+<bold>Contacts<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+<Q>Yes<|>No</Q><*A>","First, you've got your <bold>Contacts<normal>.
+Do you want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x14015a,"これは テレファングで
 トモダチになった デンジュウと
 れんらくをとるのに
@@ -4944,41 +4947,51 @@ You can easily call and switch between Denjuu here.",,0,
 0x14015c,"つぎは『ちゃくれき』だ
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Calls<normal>.
-Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+Want an explanation?
+<Q>Yes<|>No</Q><*A>","Next is <bold>Calls<normal>.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x14015e,"『ちゃくれき』は
 どのデンジュウから デンワが
 かかってきたかを みることが
 できるんだ",Here you can check which Denjuu you've received calls from recently.,,0,
 0x140160,"つぎは『アイテム』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is <bold>Items<normal>.
-Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+ はい  いいえ<*A>","After that is <bold>Items<normal>.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>","After that is <bold>Items<normal>.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x140162,"『アイテム』は デンジュウたちのシンカにつかう アイテムを
 みることが できるんだ","Here, you can view your items or give them as gifts. If you want to augment Denjuu using your items, you need to go to a shop.",,0,
 0x140164,"つぎは『メール』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is <bold>Texts<normal>.
-Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+ はい  いいえ<*A>","Next is the <bold>Texts<normal> option.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>","Next is the <bold>Texts<normal> option.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x140166,"『メール』は Dショットの
 でんげんを きっているあいだに
 かかってきた デンジュウの
 メッセージが はいってるんだ",This lets you view the text messages you've received from Denjuu while the D-Shot's power was off.,,0,
 0x140168,"つぎは『セーブ』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is <bold>Save<normal>.
-Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+ はい  いいえ<*A>","Next up is <bold>Save<normal>.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>","Next up is <bold>Save<normal>.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x14016a,"『セーブ』は いまの
 しんこうじょうきょうを 
 ほぞんするのに つかうんだ",You can use this to record your current progress.,,0,
 0x14016c,"つぎは 『オプション』だ
 これについて ききたいか?
  はい  いいえ<*A>","Next is <bold>Options<normal>.
-Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+Want an explanation?
+<Q>Yes<|>No</Q><*A>","Next is <bold>Options<normal>.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x14016e,"まず『マナーモード』
 これを『ON』にしておくと
 デンワがかかってきたときに
@@ -5011,18 +5024,24 @@ shown during battles.","Lastly, <bold>Battle anim.<normal>
 When this is turned off, attack animations won't be shown during battles.",1,
 0x140176,"つぎは『Dメロ』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is <bold>Melo-D<normal>. 
-Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+ はい  いいえ<*A>","Next, <bold>Melo-D<normal>.
+Want an explanation?
+<Q>Yes<|>No</Q><*A>","Next, <bold>Melo-D<normal>. 
+Want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x140178,"これは デンワが かかって
 きたときになる おとを
 えらんだリ つくったリ
 することができるんだ",Here you can view and create ringtones that play when a Denjuu calls you.,,0,
 0x14017a,"つぎは『ずかん』だ
 これについて ききたいか?
- はい  いいえ<*A>","Next is the <bold>Field Guide<normal>.
+ はい  いいえ<*A>","Lastly, we've got the
+<bold>Field Guide<normal>.
 Do you want an explanation?
-<Q>Yes<|>No</Q><*A>",,1,
+<Q>Yes<|>No</Q><*A>","Lastly, we've got the
+<bold>Field Guide<normal>.
+Do you want an explanation?
+<Q>Yes<|>No</Q><*A>",1,
 0x14017c,"これは トモダチになった
 デンジュウのことが 
 かいてあるんだ
