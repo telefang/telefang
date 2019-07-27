@@ -588,7 +588,7 @@ I heard a rumor that it's a
 way bad idea to go into the
 weird house there! People
 who go in get challenged to
-a Telefang straight away.","Hey, <&name>!
+a Telefang straight away.<*2>","Hey, <&name>!
 I heard you were going to Paparouna Lake,
 so I just had to call.
 I heard a rumor that it's a way bad idea to go into the weird house there! People who go in get challenged to a Telefang straight away.",1,These strings have been manually formatted! ☆
@@ -608,7 +608,7 @@ of weird doodads and
 thingymajiggers!
 That's all I know, though.
 The guy I talked skedaddled
-as soon as he saw 'em.","I heard something interesting from someone who snuck into the house over there...
+as soon as he saw 'em.<*2>","I heard something interesting from someone who snuck into the house over there...
 Apparently, it's packed full of weird doodads and thingymajiggers!
 That's all I know, though.
 The guy I talked skedaddled as soon as he saw 'em.",1,
@@ -650,7 +650,7 @@ They were too spooked to
 check him out up close,
 though.
 It's best to stay away
-from shady people like him!","A friend of mine told me something...
+from shady people like him!<*2>","A friend of mine told me something...
 The old man there, he's doing some sort of research.
 They were too spooked to check him out up close, though.
 It's best to stay away from shady people like him!",1,
@@ -671,7 +671,7 @@ to the Denjuu World worked
 there, apparently.
 Maybe you already knew
 that, but I thought
-I'd tell you just in case.","Yo, <&name>!
+I'd tell you just in case.<*2>","Yo, <&name>!
 Have you heard of the ""Sanaeba Group""? The first bunch of humans to come to the Denjuu World worked there, apparently.
 Maybe you already knew that, but I thought
 I'd tell you just in case.",1,
@@ -688,7 +688,7 @@ someone from the Sanaeba
 Group a while ago...
 Since then, I haven't been
 able to reach 'em!
-Think it's related?","So, a friend of mine traded phone numbers with someone from the Sanaeba Group a while ago...
+Think it's related?<*2>","So, a friend of mine traded phone numbers with someone from the Sanaeba Group a while ago...
 Since then, I haven't been able to reach 'em!
 Think it's related?",1,
 0x158084,"このさいきん パパルナこで
@@ -704,7 +704,7 @@ friend call and tell me
 they saw a weird shadow in
 Paparouna Lake...
 Have you seen it? If you do,
-tell me what it looks like!","Just recently, I had a friend call and tell me
+tell me what it looks like!<*2>","Just recently, I had a friend call and tell me
 they saw a weird shadow in Paparouna Lake...
 Have you seen it? If you do, tell me what it looks like!",1,
 0x158086,"そこの やしきにすんでる
@@ -726,7 +726,7 @@ in the middle. Can you
 check if that's true?
 No way I'm checking it out!
 It's way creepy!
-It's up to you.","I heard that you usually see the mysterious shadow
+It's up to you.<*2>","I heard that you usually see the mysterious shadow
 in the lake when the old man's out on the island
 in the middle. Can you
 check if that's true?
@@ -743,7 +743,7 @@ ing at Paparouna Lake!
 Nowadays, there's
 not even a nibble.
 Oh, won't the glory days of
-the lake come back?","Way back, I used to go fish-ing at Paparouna Lake! Nowadays, there's
+the lake come back?<*2>","Way back, I used to go fish-ing at Paparouna Lake! Nowadays, there's
 not even a nibble.
 Oh, won't the glory days of the lake come back?",1,
 0x15808a,"もしかして オマエってさ
@@ -758,7 +758,7 @@ pots and boxes and stuff?
 It's not just treasure
 chests – apparently,
 there's stuff in pots too!
-Aw, I'm jealous!","Have you been moving around pots and boxes and stuff? It's not just treasure chests – apparently,
+Aw, I'm jealous!<*2>","Have you been moving around pots and boxes and stuff? It's not just treasure chests – apparently,
 there's stuff in pots too! Aw, I'm jealous!",1,
 #######,Panses,,,1,
 0x15808c,"おい <&name>
@@ -776,7 +776,7 @@ in Panses Village!
 You're there now, right?
 Look around a bit, won't ya?
 I'm so worried I can't
-catch a wink of sleep.","Oi, <&name>! I can't call any of my friends
+catch a wink of sleep.<*2>","Oi, <&name>! I can't call any of my friends
 in Panses Village!
 You're there now, right?
 Look around a bit, won't ya? I'm so worried I can't catch a wink of sleep.",1,These strings have been manually formatted! ☆
@@ -793,7 +793,7 @@ in Panses Village? A friend
 who lives there called me,
 said ""help meee"", and hung
 up! Please, find out what's
-happening! Please...","Hey yo, <&name>!
+happening! Please...<*2>","Hey yo, <&name>!
 Is something going on
 in Panses Village? A friend who lives there called me, said ""help meee"", and hung up! Please, find out what's happening! Please...",1,
 0x158090,"オレの トモダチから
@@ -808,7 +808,7 @@ there's a Denjuu who can
 move between dimensions...
 The Denjuu World is
 a fascinating place, isn't it?
-Takes all kinds, I guess!","I heard from a friend that there's a Denjuu who can move between dimensions... The Denjuu World is
+Takes all kinds, I guess!<*2>","I heard from a friend that there's a Denjuu who can move between dimensions... The Denjuu World is
 a fascinating place, isn't it? Takes all kinds, I guess!",1,
 0x158092,"キミさー いじげんを
 いったリきたリできるって
@@ -823,7 +823,7 @@ dimensions? There's a rumor
 that someone like that
 exists... If your interest is
 piqued, maybe have a look
-around?","Have you heard of a Denjuu who can go to parallel dimensions? There's a rumor that someone like that exists... If your interest is piqued, maybe have a look around?",1,
+around?<*2>","Have you heard of a Denjuu who can go to parallel dimensions? There's a rumor that someone like that exists... If your interest is piqued, maybe have a look around?",1,
 0x158094,"<&name>
 サナエバグループっていう
 ヤツらが デンジュウカイの
@@ -841,7 +841,7 @@ Denjuu World. But... do you
 really think they're
 ""making friends""? I feel like
 it might be something
-different...","<&name>! I heard the ""Sanaeba Group"" gang have been making friends here and there in the Denjuu World. But... do you really think they're ""making friends""? I feel like it might be something different...",1,
+different...<*2>","<&name>! I heard the ""Sanaeba Group"" gang have been making friends here and there in the Denjuu World. But... do you really think they're ""making friends""? I feel like it might be something different...",1,
 0x158096,"なんだか『サナエバグループ』
 っていうところのれんちゅうが
 デンジュウカイで
@@ -852,7 +852,7 @@ people... It looks like
 they've been sending humans
 to uninhabited parts
 of the Denjuu World.
-What could they be up to?","Those ""Sanaeba Group"" people... It looks like they've been sending humans to uninhabited parts
+What could they be up to?<*2>","Those ""Sanaeba Group"" people... It looks like they've been sending humans to uninhabited parts
 of the Denjuu World.
 What could they be up to?",1,
 0x158098,"このまえさー
@@ -869,7 +869,7 @@ think. It was pretty good!
 It took a while for 'em to
 make it, though.
 You should try it if you get
-the chance!","The other day I got a lunch to go! It was called a ""Kakuza Party Deluxe"", I think. It was pretty good! It took a while for 'em to make it, though.
+the chance!<*2>","The other day I got a lunch to go! It was called a ""Kakuza Party Deluxe"", I think. It was pretty good! It took a while for 'em to make it, though.
 You should try it if you get the chance!",1,
 0x15809a,"パンセスむらに
 『かくざアベニュー』っていう
@@ -883,7 +883,7 @@ takeout place in Panses?
 It's called ""Kakuza Avenue""!
 I haven't been yet.
 If you decide to go, lemme
-tag along!","Heard of this hot new takeout place in Panses? It's called ""Kakuza Avenue""! I haven't been yet.
+tag along!<*2>","Heard of this hot new takeout place in Panses? It's called ""Kakuza Avenue""! I haven't been yet.
 If you decide to go, lemme tag along!",1,
 0x15809c,"じつはさー
 パンセスむらに いじげんに
@@ -897,7 +897,7 @@ say there's a mansion
 in Panses that connects to
 a parallel dimension.
 Sounds fishy if you ask me,
-but... what if it's true?","I heard a crazy rumor! They say there's a mansion
+but... what if it's true?<*2>","I heard a crazy rumor! They say there's a mansion
 in Panses that connects to a parallel dimension.
 Sounds fishy if you ask me, but... what if it's true?",1,
 0x15809e,"オマエもしかして
@@ -914,7 +914,7 @@ There's a rumor that
 something weird's going on
 there right now.
 Be careful! I can't help but
-worry for you...","Could it perhaps maybe possibly be that you're
+worry for you...<*2>","Could it perhaps maybe possibly be that you're
 in Panses right now?
 There's a rumor that something weird's going on there right now.
 Be careful! I can't help but worry for you...",1,
@@ -933,7 +933,7 @@ that are bad news there.
 Not among my friends,
 though, of course!
 Don't worry, I trust you
-through-and-through!","I heard something about Toulipa! Apparently, there's a bunch of humans that are bad news there. Not among my friends, though, of course!
+through-and-through!<*2>","I heard something about Toulipa! Apparently, there's a bunch of humans that are bad news there. Not among my friends, though, of course!
 Don't worry, I trust you through-and-through!",1,These strings have been manually formatted! ☆
 0x1580a2,"おう <&name>
 なんで アンテナのきを
@@ -952,7 +952,7 @@ As long as people get
 reception, it's big enough,
 right? Is something going
 down here in the Denjuu
-World? Are we in trouble?","Wassup, <&name>!
+World? Are we in trouble?<*2>","Wassup, <&name>!
 Who thought it was
 a good idea to supersize
 an Antenna Tree?
@@ -973,7 +973,7 @@ late. People don't have
 good things to say about
 'em, either... I have a
 bad feeling about this. Think
-things are gonna be okay?","I've been hearing a
+things are gonna be okay?<*2>","I've been hearing a
 lot of talk about this ""<bold>Sanaeba Group<normal>"" as of
 late. People don't have
 good things to say about 'em, either... I have a
@@ -996,7 +996,7 @@ ask for – it's amazing!
 Wonder what I should ask
 for next...
 I just called 'cause I'm in a
-good mood right now ♪","Yo, <&name>! You know the <bold>Sanaeba Group<normal>?
+good mood right now ♪<*2>","Yo, <&name>! You know the <bold>Sanaeba Group<normal>?
 They're the nicest guys in town! Such good people!
 They give me anything I
 ask for – it's amazing!
@@ -1034,7 +1034,7 @@ being all weird...
 I keep getting calls from
 complete strangers!
 Do something! Anything!
-Heeeeelp!","<&name>! My phone's being all weird...
+Heeeeelp!<*2>","<&name>! My phone's being all weird...
 I keep getting calls from complete strangers!
 Do something! Anything! Heeeeelp!",1,
 0x1580ac,"<&name>
@@ -1055,7 +1055,7 @@ though? The guy told me
 to follow him, but he gave me
 the creeps, so I didn't go...
 I feel like I made the right
-choice, maybe. Maybe?","'Sup, <&name>!
+choice, maybe. Maybe?<*2>","'Sup, <&name>!
 The other day,
 some stranger gave me a machine out of the blue.
 Is that a good thing, though? The guy told me
@@ -1073,7 +1073,7 @@ to trust every human
 you come across. There are
 good guys, sure, but I've
 seen some bad humans too!
-I trust you, though.","I tell ya, it's not a good idea to trust every human
+I trust you, though.<*2>","I tell ya, it's not a good idea to trust every human
 you come across. There are good guys, sure, but I've seen some bad humans too!
 I trust you, though.",1,
 0x1580b0,"トリパむらのアンテナのきが
@@ -1088,7 +1088,7 @@ somehow supersized
 the Antenna Tree in Toulipa?
 Man, humans are scary!
 Oh, I'm not talking about
-you! You're not scary.","Is it true that humans have somehow supersized
+you! You're not scary.<*2>","Is it true that humans have somehow supersized
 the Antenna Tree in Toulipa?
 Man, humans are scary!
 Oh, I'm not talking about you! You're not scary.",1,
@@ -1100,7 +1100,7 @@ Oh, I'm not talking about you! You're not scary.",1,
 <*2>","There's been lots of horrible
 things going on lately...
 Who would do all of this, and
-why? I'm bummed out now...","There's been lots of horrible things going on lately...
+why? I'm bummed out now...<*2>","There's been lots of horrible things going on lately...
 Who would do all of this, and why? I'm bummed out now...",1,
 #######,Fraoula,,,,
 0x1580b4,"フラウラむらの デンジュウは
@@ -1122,7 +1122,7 @@ you won't find anywhere else.
 I'd love to go window
 shopping there sometime.
 Call me over and let's
-check it out sometime!","Fraoula is a village where fossils are dug up!
+check it out sometime!<*2>","Fraoula is a village where fossils are dug up!
 Because of that, apparently the shop there sells things you won't find anywhere else. I'd love to go window shopping there sometime.
 Call me over and let's check it out sometime!",1,These strings have been manually formatted! ☆
 0x1580b6,"フラウラむらの
@@ -1138,7 +1138,7 @@ old excavation sites.
 Does that mean you could
 find things if you looked in
 the walls of those houses?
-Nah, I guess it's unlikely.","Some of the houses in Fraoula are made from
+Nah, I guess it's unlikely.<*2>","Some of the houses in Fraoula are made from
 old excavation sites.
 Does that mean you could find things if you looked in the walls of those houses? Nah, I guess it's unlikely.",1,
 0x1580b8,"デンジュウカイにも
@@ -1155,7 +1155,7 @@ era of being ruled over
 by the devil.
 Kinda badass, right?
 I can't say I believe in
-stuff like that, though.","The Denjuu World's got some seriously cool history too! They say that we
+stuff like that, though.<*2>","The Denjuu World's got some seriously cool history too! They say that we
 had an era of being
 ruled over by the devil.
 Kinda badass, right?
@@ -1177,7 +1177,7 @@ a Denjuu who watches
 over that seal. I think
 both of 'em sound cool.
 How 'bout you,
-<&name>?","I heard there's a place
+<&name>?<*2>","I heard there's a place
 here in the Denjuu World
 where a devil is sealed away! I also heard there's
 a Denjuu who watches
@@ -1200,7 +1200,7 @@ I've never had the chance
 to check it out, though...
 Hey, <&name>,
 have me over, won'tcha?
-I just gotta see it!","So Fraoula Village, right? There's lots of rare stuff there, apparently!
+I just gotta see it!<*2>","So Fraoula Village, right? There's lots of rare stuff there, apparently!
 I've never had the chance
 to check it out, though...
 Hey, <&name>,
@@ -1222,7 +1222,7 @@ I'm sure you wouldn't
 say no. That just
 wouldn't be like you!
 How 'bout it, <&name>?
-I'm looking forward to it!","Hey, <&name>! Buy me one of those rare items sold in Fraoula, won't you? I'm sure you wouldn't
+I'm looking forward to it!<*2>","Hey, <&name>! Buy me one of those rare items sold in Fraoula, won't you? I'm sure you wouldn't
 say no. That just
 wouldn't be like you!
 How 'bout it, <&name>?
@@ -1241,7 +1241,7 @@ But suddenly that
 tromping around like
 he owns the place!
 I'mma give him a piece of
-my mind when I see him!","The Denjuu World has always been where we Denjuu live.
+my mind when I see him!<*2>","The Denjuu World has always been where we Denjuu live.
 But suddenly that ""Sanaeba"" guy is
 tromping around like
 he owns the place!
@@ -1262,7 +1262,7 @@ crazy busy lately!
 I haven't had the chance
 to see them at all!
 I hope they don't
-push themselves too hard...","So, I know a few Denjuu
+push themselves too hard...<*2>","So, I know a few Denjuu
 who are involved with
 the Sanaeba Group...
 and they've all been
@@ -1281,7 +1281,7 @@ push themselves too hard...",1,
 saying this and that
 about Mt. Peperi...
 What's that all about?
-Clue me in sometime!","A buddy of mine's been saying this and that
+Clue me in sometime!<*2>","A buddy of mine's been saying this and that
 about Mt. Peperi...
 What's that all about?
 Clue me in sometime!",1,
@@ -1296,7 +1296,7 @@ Clue me in sometime!",1,
 in Fraoula lately,
 no one ever picks up! Do ya
 think they're tired of me?
-What should I dooo?!","When I try to call my friends in Fraoula lately,
+What should I dooo?!<*2>","When I try to call my friends in Fraoula lately,
 no one ever picks up! Do ya think they're tired of me?
 What should I dooo?!",1,
 #######,Mt. Peperi,,,,
@@ -1315,7 +1315,7 @@ back?! What's gonna happen
 to the Denjuu World, then?!
 Please! <&name>!
 Put the devil of Mt. Peperi
-back where it belongs!","H– Hello?! Is it true that the Devil Denjuu is coming back?! What's gonna happen to the Denjuu World, then?!
+back where it belongs!<*2>","H– Hello?! Is it true that the Devil Denjuu is coming back?! What's gonna happen to the Denjuu World, then?!
 Please! <&name>!
 Put the devil of Mt. Peperi
 back where it belongs!",1,These strings have been manually formatted! ☆
@@ -1341,7 +1341,7 @@ some use for this info,
 so I called to tell you!
 Anyway, I'll call you later.
 Call to let me know if the
-intel helped!","<&name>! Where are you? Inside the mountain?
+intel helped!<*2>","<&name>! Where are you? Inside the mountain?
 I heard the summit of Mt. Peperi somehow connects
 to the Antenna Tree at the base of the mountain.
 I thought you might have some use for this info,
@@ -1364,7 +1364,7 @@ This latest hullabaloo
 is all their doing!
 The mountain is jam-packed
 with fishy T-Fangers.
-Don't let your guard down.","<&name>! It looks like the Sanaeba Group
+Don't let your guard down.<*2>","<&name>! It looks like the Sanaeba Group
 have finally shown
 their true colors!
 This latest hullabaloo
@@ -1384,7 +1384,7 @@ think they're doing?!
 We live in this world!
 You would never do
 that sort of thing to us,
-would you? Would you?!","Help me, <&name>... I'm losing my trust in humans!
+would you? Would you?!<*2>","Help me, <&name>... I'm losing my trust in humans!
 What do the Sanaeba Group think they're doing?!
 We live in this world!
 You would never do
@@ -1401,7 +1401,7 @@ They say that the Denjuu
 who live there are no joke.
 I think you should
 make sure you're prepared
-before you go in there!","Have you been to Mt. Peperi? They say that the Denjuu who live there are no joke.
+before you go in there!<*2>","Have you been to Mt. Peperi? They say that the Denjuu who live there are no joke.
 I think you should
 make sure you're prepared before you go in there!",1,
 0x1580d2,"まえにいちどだけ
@@ -1415,7 +1415,7 @@ of Mt. Peperi, you know!
 Huh? You don't believe me?
 Was it that obvious? I'm
 sorry, I shouldn't tell lies
-in tough times like these...","It was only one time, but I've been to the summit
+in tough times like these...<*2>","It was only one time, but I've been to the summit
 of Mt. Peperi, you know!
 Huh? You don't believe me? Was it that obvious? I'm sorry, I shouldn't tell lies in tough times like these...",1,
 0x1580d4,"オレはいったことないんだけど
@@ -1426,7 +1426,7 @@ Huh? You don't believe me? Was it that obvious? I'm sorry, I shouldn't tell lies
 <*2>","I've never been myself,
 but I hear Mt. Peperi is
 full of traps! If only I knew
-what kind of traps, huh?","I've never been myself,
+what kind of traps, huh?<*2>","I've never been myself,
 but I hear Mt. Peperi is
 full of traps! If only I knew what kind of traps, huh?",1,
 0x1580d6,"ねーねー もしもだよ!
@@ -1443,7 +1443,7 @@ what's gonna happen?
 Do you think it's gonna
 take over the world?
 What should we do?!
-What CAN we do?!","Hey, so, I'm not saying this is gonna happen, but if –  IF the Devil Denjuu came back, what would happen?
+What CAN we do?!<*2>","Hey, so, I'm not saying this is gonna happen, but if –  IF the Devil Denjuu came back, what would happen?
 Do you think it's gonna
 take over the world?
 What should we do?!
@@ -1461,7 +1461,7 @@ who stand guard at Mt.
 Peperi to make sure
 the Devil Denjuu never comes
 back. If you go there,
-you might run into them!","I heard that there are some brave Denjuu
+you might run into them!<*2>","I heard that there are some brave Denjuu
 who stand guard at Mt. Peperi to make sure
 the Devil Denjuu never comes back. If you go there,
 you might run into them!",1,
@@ -1478,7 +1478,7 @@ past Fraoula Village.
 Despite that,
 that Sanaeba is sending
 humans there in droves!
-What's he thinking?","Even we Denjuu stay away from the outskirts
+What's he thinking?<*2>","Even we Denjuu stay away from the outskirts
 past Fraoula Village.
 Despite that,
 that Sanaeba is sending humans there in droves! What's he thinking?",1,
