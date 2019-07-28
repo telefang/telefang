@@ -47,9 +47,6 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 	dw TitleMenu_ADVICE_UnloadSGBFilesLink
 
 ;components/zukan/advice.asm
-Banked_Zukan_ADVICE_DrawSpeciesPageText::
-	dw Zukan_ADVICE_DrawSpeciesPageText
-
 Banked_Zukan_ADVICE_InitializeNameMetaSprite::
 	dw Zukan_ADVICE_InitializeNameMetaSprite
    
@@ -363,6 +360,10 @@ Banked_Overworld_ADVICE_LoadSGBFiles::
 
 Banked_Overworld_ADVICE_LoadSGBPaletteByAcre::
 	dw Overworld_ADVICE_LoadSGBPaletteByAcre
+
+;components/zukan/advice.asm
+Banked_Zukan_ADVICE_DrawSpeciesPageText::
+	dw Zukan_ADVICE_DrawSpeciesPageText
 
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.

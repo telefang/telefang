@@ -419,6 +419,8 @@ PauseMenu_ADVICE_SMSDrawLine::
 	call PauseMenu_ADVICE_SMSResetLine
 	call PauseMenu_ADVICE_SMSGetDrawAddress
 	ld b, $30
+
+PauseMenu_ADVICE_SMSDrawLine_extEntry::
 	call PauseMenu_ADVICE_SMSClearTiles
 	call PauseMenu_ADVICE_SMSGetPointer
 

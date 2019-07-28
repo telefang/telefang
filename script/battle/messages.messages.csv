@@ -413,7 +413,7 @@ Es hat sich zu <&0xccc0> entwickelt.<*2>",,
 <Q>Yes<|>No</Q><*A>",,0,"Ist das richtig so?
 <0>Ja<0xF0>Nein<*A>",,
 0x114170,"しんかにひつような
-アイテムがあリません!!<*2>",You have no items needed for evolution!!<*2>,,0,"Du besitzt keine Items, die für eine Entwicklung nötig wären!<*2>",,
+アイテムがあリません!!<*2>",You have no items needed for evolution!<*2>,,0,"Du besitzt keine Items, die für eine Entwicklung nötig wären!<*2>",,
 0x114172,"<S0>どのアイテムを
 くみあわせますか?<*2>",<S0>Which item will you combine?<*2>,,0,<S0>Welche Items willst du kombinieren?<*2>,,
 0x114174,<S0><&0xca53><*4>,<S0><&0xd6b1><*4>,,0,<S0><&0xd6b1><*4>,,

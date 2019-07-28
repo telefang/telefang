@@ -5062,7 +5062,8 @@ Try to make friends with lots of Denjuu!",,0,
 ききたいの?
  はい  いいえ<*A>","Oh, hey, <&name>.
 Did you want to hear about the Denjuu World?
-<Q>Yes<|>No</Q><*A>",,0,
+<Q>Yes<|>No</Q><*A>","If it isn't <&name>! Would you like to hear about the Denjuu World?
+<Q>Yes<|>No</Q><*A>",0,
 0x140184,"あーっ <&name>
 アンタ ここにきてたんだー","Aah, <&name>!
 I didn't know you were here.",,0,
