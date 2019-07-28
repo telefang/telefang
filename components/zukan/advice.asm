@@ -1,63 +1,130 @@
 INCLUDE "telefang.inc"
 
-SECTION "Zukan Draw Advice", ROMX[$4500], BANK[$1]
+SECTION "Zukan Draw Advice", ROMX[$6980], BANK[$1]
 Zukan_ADVICE_DrawSpeciesPageText::
-    M_AdviceSetup
-    
-    ld a, 14
-    ld [W_MainScript_VWFNewlineWidth], a
-    
-    ld a, 3
-    ld [W_MainScript_VWFWindowHeight], a
-    
-    ld a, [W_MainScript_State]
-    cp 2
-    jr z, .text_idling
-    
-.text_not_running
-    ld b, $11
-    ld d, $A
-    call Banked_MainScript_InitializeMenuText
-    
-    jr .drawing_loop
-    
-.text_idling
-    ;We're in idle state. Normally, we'd just run MainScriptMachine some more,
-    ;but that will also trigger some text movement animation that won't work for
-    ;UI text in general and is broken on custom windows anyway. So we skip it.
-    ld a, M_MainScript_CCInterpreter
-    ld [W_MainScript_State], a
-    
-.drawing_loop
-    call Banked_MainScriptMachine
-    
-    ld a, [W_MainScript_State]
-    cp M_MainScript_StateTerminated
-    jr z, .text_exhausted
-    cp 5
-    jr z, .text_exhausted ;This happens if the text is only 1 or 2 lines long.
-    cp 2
-    jr z, .text_exhausted
-    cp 3
-    jr z, .force_no_scrollback
-    jr .drawing_loop
-    
-.force_no_scrollback
-    ld a, 1
-    ld [W_MainScript_State], a
-    jr .drawing_loop
-    
-.text_exhausted
-    ld a, M_MainScript_UndefinedWindowWidth
-    ld [W_MainScript_VWFNewlineWidth], a
-    
-    ld a, M_MainScript_DefaultWindowHeight
-    ld [W_MainScript_VWFWindowHeight], a
-    
-    M_AdviceTeardown
-    ret
-    
-Zukan_ADVICE_DrawSpeciesPageText_END::
+	M_AdviceSetup
+
+	ld b, $11
+	ld d, $A
+	call Banked_MainScript_InitializeMenuText
+	ld a, [W_MainScript_TextPtr]
+	ld [W_PauseMenu_SMSOriginPtr], a
+	ld a, [W_MainScript_TextPtr + 1]
+	ld [W_PauseMenu_SMSOriginPtr + 1], a
+
+	call Zukan_ADVICE_CountLines
+	call Zukan_ADVICE_MapArrow
+	call PauseMenu_ADVICE_SMSLineSetInitialCache
+	call Zukan_ADVICE_DrawThreeLines
+
+	M_AdviceTeardown
+	ret
+
+Zukan_ADVICE_NextPage::
+	ld a, [W_PauseMenu_SMSScrollMax]
+	cp 4
+	ret c
+    call Zukan_ADVICE_ClearMessageForSGB_Direct
+	ld a, [W_PauseMenu_SMSScrollMax]
+	ld b, a
+	ld a, [W_PauseMenu_SMSScrollPos]
+	cp b
+	jr c, Zukan_ADVICE_DrawThreeLines
+
+	xor a
+	ld [W_PauseMenu_SMSScrollPos], a
+	; Continues into Zukan_ADVICE_DrawThreeLines
+
+Zukan_ADVICE_DrawThreeLines::
+	ld hl, $8C00
+	call Zukan_ADVICE_NextPageDrawHelper
+	ld hl, $8CE0
+	call Zukan_ADVICE_NextPageDrawHelper
+	ld hl, $8DC0
+	call Zukan_ADVICE_NextPageDrawHelper
+	ret
+
+Zukan_ADVICE_MapArrow::
+	ld hl, $99D1
+	ld a, [W_PauseMenu_SMSScrollMax]
+	cp 4
+	ld a, 0
+	jr c, .noArrow
+	dec a
+	dec a
+
+.noArrow
+	ld b, a
+
+.wfb
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+	ld [hl], b
+	ret
+
+Zukan_ADVICE_CountLines::
+	call PauseMenu_ADVICE_SMSGetOriginPointer
+	ld b, 0
+.searchLoop
+	call MainScript_LoadFromBank
+	cp $E1
+	jr z, .exitLoop
+	cp $E2
+	jr nz, .searchLoop
+	ld a, b
+	cp $FE
+	jr z, .exitLoop
+	inc b
+	jr .searchLoop
+
+.exitLoop
+	inc b
+	ld a, b
+	ld [W_PauseMenu_SMSScrollMax], a
+	xor a
+	ld [W_PauseMenu_SMSScrollPos], a
+
+Zukan_ADVICE_FindLineForDrawing::
+	ld hl, $8C00
+	ld de, $E0
+	
+.mathLoop
+	or a
+	jr z, .exitLoop
+	add hl, de
+	dec a
+	jr .mathLoop
+
+.exitLoop
+	call PauseMenu_ADVICE_SMSSetDrawAddress
+	ret
+
+Zukan_ADVICE_DrawTextLine::
+	call PauseMenu_ADVICE_SMSResetLine
+	call PauseMenu_ADVICE_SMSGetDrawAddress
+	ld b, $70
+	jp PauseMenu_ADVICE_SMSDrawLine_extEntry
+
+Zukan_ADVICE_FirstPageDrawHelper::
+	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
+	ld a, c
+	call Zukan_ADVICE_FindLineForDrawing
+	jp Zukan_ADVICE_DrawTextLine
+
+Zukan_ADVICE_NextPageDrawHelper::
+	call PauseMenu_ADVICE_SMSSetDrawAddress
+	ld a, [W_PauseMenu_SMSScrollPos]
+	ld c, a
+	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
+	call Zukan_ADVICE_DrawTextLine
+	; Continues into Zukan_ADVICE_NextScrollPos
+
+Zukan_ADVICE_NextScrollPos::
+	ld a, [W_PauseMenu_SMSScrollPos]
+	inc a
+	ld [W_PauseMenu_SMSScrollPos], a
+	ret
 
 SECTION "Zukan State Machine Advice", ROMX[$4580], BANK[$1]
 Zukan_ADVICE_InitializeNameMetaSprite::
@@ -99,7 +166,8 @@ Zukan_ADVICE_ClearScreenTiles::
     
 Zukan_ADVICE_DrawRightAlignedHabitatName::
     M_AdviceSetup
-    
+
+    call PauseMenu_ADVICE_SMSResetLine
     ld a, [W_Zukan_SelectedSpecies]
     call Zukan_ADVICE_DrawRightAlignedHabitatName_SGBTextStyle
 
@@ -205,26 +273,30 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     and 1
     jr z, .nothing_pressed
     
-    ;Check if we've drawn more than 3 lines of text.
-    ;If we haven't then don't redraw the text since it's not multipage.
-    ld a, [W_MainScript_NumNewlines]
-    cp 3
-    jr c, .nothing_pressed
-    
-    call Zukan_ADVICE_ClearMessageForSGB_Direct
-    
-    ;Evil hack: MainScriptMachine can NEVER KNOW that we're pressing A
-    ld a, [H_JPInput_Changed]
-    and $FE
-    ld [H_JPInput_Changed], a
-    
-    ld a, BANK(Zukan_DrawSpeciesPageText)
-    ld hl, Zukan_DrawSpeciesPageText
-    call CallBankedFunction_int
+    call Zukan_ADVICE_NextPage
     
 .nothing_pressed
     M_AdviceTeardown
     ret
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     nop
     nop
     nop
