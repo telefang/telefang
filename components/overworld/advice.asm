@@ -153,7 +153,7 @@ Overworld_ADVICE_GetPaletteIndexFromSGBPaletteIndexTable::
 Overworld_SGBPaletteIndexTable::
 	db 0, 0, 0, 2
 	db 0, 3, 3, 2
-	db 1, 2, 1, 3
+	db 1, 2, 1, 1
 	db 2, 4, 3, 3
 	db 3, 3, 3, 3
 
