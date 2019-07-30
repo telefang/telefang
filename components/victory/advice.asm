@@ -46,8 +46,8 @@ Victory_ADVICE_ClearWindowTiles::
 
 Victory_ADVICE_SubStateDrawStatWindow::
     ld hl, $9400
-    ld b, 20
-    call Victory_ADVICE_ClearWindowTiles
+    ld a, $30
+    call MainScript_DrawEmptySpaces
     
     ;We need some code here to make room for our pointcut...
     ld de, Victory_ADVICE_BattleScreenPrivateStrings_speed

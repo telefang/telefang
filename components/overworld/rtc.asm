@@ -73,7 +73,7 @@ Overworld_ReadRTCTime::
 SECTION "Overworld RTC-Free IRQ Memory", WRAM0[$C7CB]
 W_Overworld_ADVICE_CurrentTimeFrames:: ds 1
 
-SECTION "Overworld RTC Advice", ROMX[$7900], BANK[$29]
+SECTION "Overworld RTC Advice", ROMX[$78FB], BANK[$29]
 ;Emulator-compatibility fix for Visual Boy Advance, whose emulated RTC counts
 ;from 1-60 instead of 0-59. Notably this breaks palette loading, causing the
 ;entire game to white out at 2400-2460 hours (a nonexistent time)
@@ -105,7 +105,10 @@ Overworld_ADVICE_PowerAntennaIRQTask::
     call Overworld_DrivePowerAntennaPattern
     
     ;Emulate RTC operation.
-    ;TODO: Is this code safe to run if an RTC is present?
+    ld a, [W_SaveClock_ADVICE_RTCCheckStatus]
+    dec a
+    ret nz
+
     ld a, [W_Overworld_ADVICE_CurrentTimeFrames]
     inc a
     ld [W_Overworld_ADVICE_CurrentTimeFrames], a
