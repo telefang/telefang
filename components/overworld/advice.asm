@@ -155,7 +155,7 @@ Overworld_SGBPaletteIndexTable::
 	db 0, 3, 3, 2
 	db 1, 2, 1, 1
 	db 2, 4, 3, 3
-	db 3, 3, 3, 3
+	db 2, 3, 3, 3
 
 Overworld_ADVICE_GetOutdoorAcrePaletteIndex::
 	ld a, [$C904]
