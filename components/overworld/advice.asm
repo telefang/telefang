@@ -118,8 +118,12 @@ Overworld_ADVICE_LoadSGBPaletteByAcre::
 Overworld_ADVICE_SGBShopTextStyle::
 	call PauseMenu_ADVICE_CheckSGB
 	ret z
+	ld h, 7
+	call Banked_SGB_ConstructATTRBLKPacket
 	call Overworld_ADVICE_IsShop
 	jr nz, .notShop
+	ld h, $D
+	call Banked_SGB_ConstructATTRBLKPacket
 	ld a, 3
 	jr .setTextStyle
 

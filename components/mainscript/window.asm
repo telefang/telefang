@@ -407,7 +407,7 @@ MainScript_ClearSecondaryShopWindow::
 
 MainScript_ClearBothShopWindows::
     ld a, 2
-    call MainScript_ADVICE_ClearBothShopWindows
+    ld [$C9D8], a
     ld b, $A
     ld hl, $9800
     ld de, $CA70
@@ -646,11 +646,6 @@ MainScript_ADVICE_MapLocationWindow::
     ld h, $C
     jr MainScript_ADVICE_DrawOverworldWindow.extEntry
 
-MainScript_ADVICE_DrawEmptyShopWindow::
-    call MainScript_DrawWindowBorder
-    ld h, $D
-    jr MainScript_ADVICE_DrawOverworldWindow.extEntry
-
 MainScript_ADVICE_MapSecondaryShopWindow::
     call MainScript_DrawWindowBorder
     ld h, $E
@@ -682,17 +677,27 @@ MainScript_ADVICE_MapLocationWindowForMap::
     nop
     nop
     nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 SECTION "MainScript Clear Shop Window Advice", ROMX[$70E0], BANK[$32]
 MainScript_ADVICE_ClearSecondaryShopWindow::
     call $328D
     ld h, $F
     jp Banked_SGB_ConstructATTRBLKPacket
-
-MainScript_ADVICE_ClearBothShopWindows::
-    ld [$C9D8], a
-    ld h, $A
-    jp Banked_SGB_ConstructATTRBLKPacket
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 SECTION "Overworld Message Box Clear Advice", ROM0[$3EA5]
 MainScript_ADVICE_ClearOverworldWindow::
@@ -704,10 +709,14 @@ MainScript_ADVICE_ClearOverworldWindow::
     call Overworld_ADVICE_SGBShopTextStyle
     pop af
     rst $10
-    ld h, 7
-    jp Banked_SGB_ConstructATTRBLKPacket
+    ret
 
-SECTION "MainScript Window Redraw Advice", ROMX[$6468], BANK[$1]
+    nop
+    nop
+    nop
+    nop
+
+SECTION "MainScript Window Redraw Advice", ROMX[$6448], BANK[$1]
 MainScript_ADVICE_SGBRedrawOverworldLocationWindow::
     M_AdviceSetup
     call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
@@ -719,6 +728,17 @@ MainScript_ADVICE_SGBRedrawOverworldLocationWindow::
 MainScript_ADVICE_SGBRedrawOverworldWindow::
     M_AdviceSetup
     call MainScript_ADVICE_SGBRedrawOverworldWindow_Common
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .exit
+    call Overworld_ADVICE_IsShop
+    jr nz, .exit
+    ld a, [W_MainScript_WindowLocation]
+    cp $C
+    jr nz, .exit
+    ld h, $A
+    call Banked_SGB_ConstructATTRBLKPacket
+
+.exit
     ld de, $50C3
     ld b, 2
     M_AdviceTeardown
