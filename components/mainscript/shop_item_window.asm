@@ -163,7 +163,7 @@ MainScript_DrawEmptyShopWindow::
     M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawShopWindow
     ld a, [W_MainScript_WindowLocation]
     ld c, 0
-    call MainScript_ADVICE_DrawEmptyShopWindow
+    call MainScript_DrawWindowBorder
     ret
 
 .mystery

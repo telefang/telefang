@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Game Over Advice Code", ROMX[$63D0], BANK[$1]
+SECTION "Game Over Advice Code", ROMX[$63C0], BANK[$1]
 GameOver_ADVICE_LoadSGBFiles::
     M_AdviceSetup
 
