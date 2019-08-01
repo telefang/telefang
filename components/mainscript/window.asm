@@ -507,33 +507,45 @@ MainScript_DetermineOverworldWindowPosition::
 
 MainScript_FireXObtainedMessage::
     call MainScript_DetermineOverworldWindowPosition
-    ld hl, StringTable_battle_items
-    ld c, b
-    ld b, 0
-    sla c
-    rl b
-    sla c
-    rl b
-    sla c
-    rl b
-    add hl, bc
-    ld b, 8
-    ld de, W_MainScript_MessageArg3
-
-.copyLoop
-    ld a, [hli]
-    ld [de], a
-    inc de
-    dec b
-    jr nz, .copyLoop
-
-    ld a, $E0
-    ld [de], a
+    call MainScript_LoadItemNameAsArg3
     xor a
     ld [W_byte_C9CF], a
-    ld b, 0
-    ld c, $BF
+    ld bc, $BF
     jp $464E
+
+; Note: Free Space
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 SECTION "MainScript Animate Overworld Window", ROMX[$457D], BANK[$B]
 MainScript_AnimateOverworldWindow::
@@ -710,16 +722,12 @@ MainScript_ADVICE_BottomHudSGBClear::
 
 MainScript_ADVICE_MapLocationWindowForMap::
     call MainScript_LoadWindowBorderTileset
+    M_AuxJmp Banked_Map_ADVICE_SGBRedrawMapLocationWindow
     call MainScript_ClearWindowTilesNext
     ld de, $5127
     ld b, 3
     jp MainScript_MapLocationWindow.extEntry
 
-    nop
-    nop
-    nop
-    nop
-    nop
     nop
     nop
     nop
