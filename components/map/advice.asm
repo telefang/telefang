@@ -171,21 +171,33 @@ Map_ADVICE_WindowLoadSGBFiles::
 .cursorOnBottomHalf
 	call Banked_SGB_ConstructATFSetPacket
 
-	ld hl, $8F00
-	ld b, $28
-	call Zukan_ADVICE_TileLightColourReverse
-
-	ld l, $60
-	ld b, $28
-	call Zukan_ADVICE_TileLightColourReverse
-
-	ld l, $C0
+	ld hl, $8FC0
 	ld b, 8
 	call Zukan_ADVICE_TileLowByteBlanketFill
 
 .noSGB
 	M_AdviceTeardown
 	ret
+
+SECTION "Map Screen Advice Code 2", ROMX[$6A70], BANK[$1]
+Map_ADVICE_SGBRedrawMapLocationWindow::
+    M_AdviceSetup
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .noSGB
+    ld a, 3
+    ld [W_MainScript_TextStyle], a
+    ld hl, $8EC0
+    ld b, $10
+    call Zukan_ADVICE_TileLowByteBlanketFill
+    ld b, $50
+    call Zukan_ADVICE_TileLightColourReverse
+    ld b, $18
+    call Zukan_ADVICE_TileLowByteBlanketFill
+
+.noSGB
+    M_AdviceTeardown
+    ret
 
 SECTION "Dungeon Map Screen Advice Code", ROMX[$6290], BANK[$1]
 DungeonMap_ADVICE_DrawScreen::
@@ -227,14 +239,6 @@ DungeonMap_ADVICE_LoadSGBFiles::
 	ld [hld], a
 	ld a, b
 	ld [hl], a
-
-	ld hl, $8F00
-	ld b, $28
-	call Zukan_ADVICE_TileLightColourReverse
-
-	ld l, $60
-	ld b, $20
-	call Zukan_ADVICE_TileLightColourReverse
 
 	ld hl, $8E00
 	ld b, $40

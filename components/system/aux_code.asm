@@ -365,6 +365,9 @@ Banked_Overworld_ADVICE_LoadSGBPaletteByAcre::
 Banked_Zukan_ADVICE_DrawSpeciesPageText::
 	dw Zukan_ADVICE_DrawSpeciesPageText
 
+Banked_Map_ADVICE_SGBRedrawMapLocationWindow::
+	dw Map_ADVICE_SGBRedrawMapLocationWindow
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

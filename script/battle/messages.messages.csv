@@ -428,7 +428,7 @@ Es hat sich zu <&0xccc0> entwickelt.<*2>",,
 0x11417a,カギをつかった。,You used the key.,,0,Du setzt den Schlüssel ein.,,
 0x11417c,カギがかかっている。,It's locked.,,0,Ist verschlossen.,,
 0x11417e,"<S15> <S1>『<&0xca53>』を
-<S0>        <S2> てにいれた。",<S1><bold><&0xca53><normal> <S2>obtained.,,0,"<S15> <S1>""<&0xca53>""
+<S0>        <S2> てにいれた。",<S1><bold><&0xd6b1><normal> <S2>obtained.,,0,"<S15> <S1>""<&0xca53>""
 <S0>        <S2> erhalten<S2>.",,
 0x114180,"あれ? <&name>?
 ほかのトモダチと

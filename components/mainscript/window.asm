@@ -490,6 +490,63 @@ MainScript_ClearOverworldWindowTiles::
     jr nz, .acreRowMappingLoop
     ret
 
+SECTION "MainScript Determine Overworld Window Position", ROMX[$46D2], BANK[$B]
+MainScript_DetermineOverworldWindowPosition::
+    ld d, $A
+    ld a, [$C484]
+    cp $48
+    jr c, .placeWindowAtBottom
+
+.placeWindowAtTop
+    ld d, 1
+
+.placeWindowAtBottom
+    ld a, d
+    ld [W_MainScript_WindowLocation], a
+    ret
+
+MainScript_FireXObtainedMessage::
+    call MainScript_DetermineOverworldWindowPosition
+    call MainScript_LoadItemNameAsArg3
+    xor a
+    ld [W_byte_C9CF], a
+    ld bc, $BF
+    jp $464E
+
+; Note: Free Space
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
 SECTION "MainScript Animate Overworld Window", ROMX[$457D], BANK[$B]
 MainScript_AnimateOverworldWindow::
     ld a, [W_MainScript_WaitFrames]
@@ -665,16 +722,12 @@ MainScript_ADVICE_BottomHudSGBClear::
 
 MainScript_ADVICE_MapLocationWindowForMap::
     call MainScript_LoadWindowBorderTileset
+    M_AuxJmp Banked_Map_ADVICE_SGBRedrawMapLocationWindow
     call MainScript_ClearWindowTilesNext
     ld de, $5127
     ld b, 3
     jp MainScript_MapLocationWindow.extEntry
 
-    nop
-    nop
-    nop
-    nop
-    nop
     nop
     nop
     nop
