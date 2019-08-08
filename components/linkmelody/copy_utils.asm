@@ -1,3 +1,5 @@
+INCLUDE "telefang.inc"
+
 SECTION "Link Melody Copy From SRAM", ROMX[$77A7], BANK[$1F]
 LinkMelody_ReadSelectedRingtone::
 	ld a, $A

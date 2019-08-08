@@ -120,10 +120,10 @@ LinkMelody_StateReceivingInputHandler::
 	ret z
 	ld a, [$CFC0]
 	cp 0
-	jr z, .jpA
+	jr z, .jpB
 	call $1BD1
 
-.jpA
+.jpB
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld c, $1E
