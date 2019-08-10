@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Link Menu Error Message Index", WRAM0[$DC4A]
+SECTION "Link Menu Error Message Index", WRAMX[$DC4A], BANK[$1]
 W_LinkMenu_ErrorMessageIndex:: ds 1
 
 SECTION "Link Menu Error Screen State Machine", ROMX[$4443], BANK[$1F]
