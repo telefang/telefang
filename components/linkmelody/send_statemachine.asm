@@ -22,7 +22,7 @@ LinkMelody_SendingStateMachine::
 	ld a, 1
 	call Banked_LCDC_SetupPalswapAnimation
 	ld a, 4
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $C
 	ld [W_Battle_4thOrderSubState], a
 
