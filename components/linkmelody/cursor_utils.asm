@@ -25,3 +25,30 @@ LinkMelody_PlaceChoiceCursor::
     call LCDC_BeginMetaspriteAnimation
     
     ret
+
+SECTION "Link Melody Arrow Position Updater", ROMX[$7757], BANK[$1F]
+LinkMelody_UpdateArrowPosition::
+	ld b, $10
+	ld a, [W_Victory_UserSelection]
+	ld c, a
+	cp 0
+	jr z, .skipMathLoop
+	ld a, b
+
+.mathLoop
+	add 8
+	ld b, a
+	dec c
+	jr nz, .mathLoop
+
+.skipMathLoop
+	ld a, b
+	ld [W_LCDC_MetaspriteAnimationYOffsets], a
+	ld a, $28
+	ld [W_LCDC_MetaspriteAnimationXOffsets], a
+	ld a, 0
+	ld [W_LCDC_NextMetaspriteSlot], a
+	ld a, $D0
+	ld [W_LCDC_MetaspriteAnimationIndex], a
+	call LCDC_BeginMetaspriteAnimation
+	ret
