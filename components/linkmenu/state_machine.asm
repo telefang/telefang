@@ -20,7 +20,7 @@ LinkMenu_StateMachine::
 	ld a, 5
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 4
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $E
 	ld [W_Battle_SubSubState], a
 
@@ -268,7 +268,7 @@ LinkMenu_StateConnectionFailed::
 	ret nz
 	xor a
 	ld [W_Battle_SubSubState], a
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, 4
 	ld [W_SystemSubState], a
 	ret

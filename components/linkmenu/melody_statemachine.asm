@@ -26,7 +26,7 @@ LinkMenu_MeloDStateMachine::
 	ld a, 5
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 4
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $A
 	ld [W_Battle_4thOrderSubState], a
 
@@ -83,7 +83,7 @@ LinkMenu_StateMeloDDrawScreen::
 	ld [W_ShadowREG_WY], a
 	call Status_ExpandNumericalTiles
 	ld c, $72
-	call LinkMenu_ClearMessageTiles
+	call LinkMenu_ClearTilesAndQueueMessage
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
 	ld a, $B
@@ -112,7 +112,7 @@ LinkMenu_StateMeloDAdvertiseCurrentScreen::
 	cp 3
 	jr z, .validConnection
 	ld a, 8
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $A
 	ld [W_Battle_4thOrderSubState], a
 	ret
@@ -122,7 +122,7 @@ LinkMenu_StateMeloDAdvertiseCurrentScreen::
 	or a
 	jr z, .hasSaveData
 	ld a, 7
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $FF
 	ld [W_SerIO_ProcessOutByte], a
 	ld a, $A
@@ -147,14 +147,14 @@ LinkMenu_StateMeloDCheckCurrentScreenResponse::
 	cp $F0
 	jp z, .validResponse
 	ld a, 8
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $A
 	ld [W_Battle_4thOrderSubState], a
 	ret
 
 .validResponse
 	ld c, $C4
-	call LinkMenu_ClearMessageTiles
+	call LinkMenu_ClearTilesAndQueueMessage
 	call $60EC
 	ld a, $20
 	ld [W_LCDC_MetaspriteAnimationBank], a
@@ -239,7 +239,7 @@ LinkMenu_StateMeloDSendReceiveInputHandler::
 	inc a
 	ld [W_SerIO_ProcessOutByte], a
 	ld c, $72
-	call LinkMenu_ClearMessageTiles
+	call LinkMenu_ClearTilesAndQueueMessage
 	jp SerIO_Increment4thOrderSubState
 
 LinkMenu_StateMeloDCheckSendReceiveSelection::
@@ -284,7 +284,7 @@ LinkMenu_StateMeloDCheckSendReceiveSelection::
 
 .selectedSameOption
 	ld a, 8
-	ld [$DC4A], a
+	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $A
 	ld [W_Battle_4thOrderSubState], a
 	ret
@@ -304,7 +304,7 @@ LinkMenu_StateMeloDBranchViaSendReceiveSelection::
 
 .selectedReceive
 	ld c, $82
-	call LinkMenu_ClearMessageTiles
+	call LinkMenu_ClearTilesAndQueueMessage
 	xor a
 	ld [W_Battle_LoopIndex], a
 	ld a, 5
@@ -313,7 +313,7 @@ LinkMenu_StateMeloDBranchViaSendReceiveSelection::
 
 .selectedSend
 	ld c, $83
-	call LinkMenu_ClearMessageTiles
+	call LinkMenu_ClearTilesAndQueueMessage
 	jp SerIO_Increment4thOrderSubState
 
 LinkMenu_StateMeloDWillNowTransferMessage::
@@ -343,7 +343,7 @@ LinkMenu_StateMeloDWaitForTransfer::
 	inc a
 	ld [W_Battle_NextSerIOByteIn], a
 	ld c, $93
-	call LinkMenu_ClearMessageTiles
+	call LinkMenu_ClearTilesAndQueueMessage
 	jp SerIO_Increment4thOrderSubState
 
 LinkMenu_StateMeloDReceive::
@@ -439,7 +439,7 @@ LinkMenu_StateMeloDReceiveSomeMore::
 	ld a, $FF
 	ld [W_SerIO_ProcessOutByte], a
 	ld c, $88
-	call LinkMenu_ClearMessageTiles
+	call LinkMenu_ClearTilesAndQueueMessage
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	xor a
@@ -477,7 +477,7 @@ LinkMenu_StateMeloDConnectionLost::
 	ld [W_SystemSubState], a
 	ret
 
-LinkMenu_ClearMessageTiles::
+LinkMenu_ClearTilesAndQueueMessage::
 	ld b, 0
 	ld d, $C
 	ld a, $80
