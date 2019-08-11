@@ -45,15 +45,15 @@ LinkMenu_StateBattleDrawScreen::
 	call Banked_CGBLoadBackgroundPalette
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld bc, $500
 	ld e, $BC
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, $500
 	ld e, $BC
@@ -66,6 +66,7 @@ LinkMenu_StateBattleDrawScreen::
 	ld [W_ShadowREG_SCY], a
 	ld [W_ShadowREG_WX], a
 	ld [W_ShadowREG_WY], a
+	call LinkMenu_ADVICE_LoadSGBFilesBattle
 	call Status_ExpandNumericalTiles
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
@@ -258,7 +259,7 @@ LinkMenu_StateBattleExit::
 	ld [W_Battle_LoopIndex], a
 	ret nz
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkMenu_ADVICE_SGBResetTextStyle
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateBattleConnectionLost::

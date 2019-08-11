@@ -470,7 +470,7 @@ So, was wollte ich dich noch gleich fragen?
 Mist, jetzt hab' ich's vergessen...<*2>",,
 0x114188,"こちらから おくリますか?
    おくる   うけとる<*4>","What will you do?
-<0>Send<0>Receive<*4>",,0,"Was willst du tun?
+<0><0><0xEE>Send<P4>Receive<*4>",,0,"Was willst du tun?
 <0>Senden<0>Empfangen<*4>",,
 0x11418a,<*0>,<*0>,,0,<*0>,,
 0x11418c,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,0,<ALIAS ROW 0xC5>,,

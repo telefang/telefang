@@ -60,15 +60,15 @@ LinkMenu_StateMeloDDrawScreen::
 	ld [$CA65], a
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld bc, $500
 	ld e, $BE
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, $500
 	ld e, $BE
@@ -81,6 +81,7 @@ LinkMenu_StateMeloDDrawScreen::
 	ld [W_ShadowREG_SCY], a
 	ld [W_ShadowREG_WX], a
 	ld [W_ShadowREG_WY], a
+	call LinkMenu_ADVICE_LoadSGBFilesConnection
 	call Status_ExpandNumericalTiles
 	ld c, $72
 	call LinkMenu_ClearTilesAndQueueMessage
@@ -331,7 +332,7 @@ LinkMenu_StateMeloDOpenSendScreen::
 	or a
 	ret z
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkMenu_ADVICE_SGBResetTextStyle
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateMeloDWaitForTransfer::
@@ -463,7 +464,7 @@ LinkMenu_StateMeloDOpenReceiveScreen::
 	or a
 	ret z
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkMenu_ADVICE_SGBResetTextStyle
 	ld a, 2
 	ld [W_Battle_SubSubState], a
 	ret
