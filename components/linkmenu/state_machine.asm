@@ -92,11 +92,11 @@ LinkMenu_StateDrawConnectionConfirmationScreen::
 	ld [$CA65], a
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld a, $C3
 	ld [W_ShadowREG_LCDC], a
@@ -105,13 +105,13 @@ LinkMenu_StateDrawConnectionConfirmationScreen::
 	ld [W_ShadowREG_SCY], a
 	ld [W_ShadowREG_WX], a
 	ld [W_ShadowREG_WY], a
-	xor a
 	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 0) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 3) + M_LCDC_MetaSpriteConfig_HiAttribs], a
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
+	call LinkMenu_ADVICE_LoadSGBFilesConnection
 	ld c, $91
 	call Battle_QueueMessage
 	ld a, 1

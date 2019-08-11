@@ -2815,8 +2815,8 @@ Were you listening to that?",1,
 なんだから...","I really do wish he'd do it
 himself.
 Mr. Sanaeba is a T-Fanger
-too, y'know!","I really do wish he'd do it himself.
-Mr. Sanaeba is a T-Fanger too, y'know!",1,(Unused)
+too, after all!","I really do wish he'd do it himself.
+Mr. Sanaeba is a T-Fanger too, after all!",1,(Unused)
 0x13c074,"いきなリ アクマデンジュウが
 でてきたらどうしょう..
 よーし いまのあいだに
@@ -2889,9 +2889,9 @@ now can we?",1,
 0x13c086,"ワタシのような ヤツは
 このさきにも いるからな
 せいぜい がんばることだ","You'll only find more people
-as strong as me past here.
+of my caliber past here.
 Don't let your guard down
-for a second!","You'll only find more people as strong as me past here.
+for a second!","You'll only find more people of my caliber past here.
 Don't let your guard down for a second!",1,(Unused)
 0x13c088,"われわれ サナエバグループの
 ニンゲンとしては
@@ -2958,58 +2958,117 @@ Mr. Sanaeba is so going to get mad at me...",1,
 ヤツがこないから ここで
 みはリかよ
 まぁ オマエみたいな ヤツが
-くるから いいんだけどな!",/0x13c096/,,0,
+くるから いいんだけどな!","Ugh, I gotta stand guard
+here while the other guys
+patrol around the statues?
+Well...
+I guess that's alright when
+punks like you show up!","Ugh, I gotta stand guard here while the other guys patrol around the statues?
+Well...
+I guess that's alright when punks like you show up!",1,
 0x13c098,"せきぞうのところのヤツ
-はやくこないかなぁ...",/0x13c098/,,0,(Unused)
+はやくこないかなぁ...","I wish the guys by the
+statues would come back
+already...",I wish the guys by the statues would come back already...,1,(Unused)
 0x13c09a,"アクマデンジュウって いったい
 なんなんだろうな?
 まぁ オレには かんけいのない
 ことか
-いわれたことを やるだけさ",/0x13c09a/,,0,
+いわれたことを やるだけさ","What in the world could a
+""Devil Denjuu"" be?
+I guess it's none of my
+business.
+I just do what I'm told.","What in the world could a ""Devil Denjuu"" be?
+Well, I suppose it
+doesn't concern me.
+I just do what I'm told.",1,
 0x13c09c,"このさきに みょうな
 デンジュウがいて さきに
-すすめないんだ!",/0x13c09c/,,0,
+すすめないんだ!","There's a strange Denjuu
+beyond here, so we can't
+go any further.","There's a strange Denjuu beyond here, so we can't go any further.",1,
 0x13c09e,"いいものみつけたから ここで
 みはリを してるんだー
-オマエには あげないぞ!",/0x13c09e/,,0,
+オマエには あげないぞ!","We're standing guard here
+'cause we found something!
+You can't have it!",We're standing guard here 'cause we found something! You can't have it!,1,
 0x13c0a0,"これは オレたちのもんだー
-あげたくないよー",/0x13c0a0/,,0,(Unused)
+あげたくないよー","It's ours! We don't wanna
+give it to you!",It's ours! We don't wanna give it to you!,1,(Unused)
 0x13c0a2,"いいものみつけたから ここで
 みはリを してるんだー
 これは オレたちのもんだ!
-だれにも あげないぞ!",/0x13c0a2/,,0,
+だれにも あげないぞ!","We're standing guard here
+'cause we found something!
+It belongs to us! We're not
+letting anyone take it!",We're standing guard here 'cause we found something! It belongs to us! We're not letting anyone take it!,1,
 0x13c0a4,"えー とられちゃうの?
-ざんねんだなぁ",/0x13c0a4/,,0,(Unused)
+ざんねんだなぁ","You're gonna take it?
+That's a shame...","You're gonna take it?
+That's a shame...",1,(Unused)
 0x13c0a6,"オレは ここで みはリ
 してるんだ
 ひとリぼっちって さみしー!
-テレファングして!",/0x13c0a6/,,0,
+テレファングして!","I'm standing guard here
+all by myself.
+I'm so lonely!
+Please, telefang with me!","I'm standing guard here
+all by myself.
+I'm so lonely!
+Please, telefang with me!",1,
 0x13c0a8,"つぎに みはリを するときは
-だれかといっしょにやらないと",/0x13c0a8/,,0,(Unused)
+だれかといっしょにやらないと","Next time I stand guard
+somewhere, I'm sticking
+close by someone else.","Next time I stand guard somewhere, I'm sticking close by someone else.",1,(Unused)
 0x13c0aa,"このやまって いがいに
 いろんなものが おちてるんだ
 こういう シゴトも けっこう
 いいかも
-ぜーんぶ オレのもんだ!",/0x13c0aa/,,0,
+ぜーんぶ オレのもんだ!","There's a surprising amount
+of stuff scattered around
+this mountain! Looking for it
+ain't too bad a pastime.
+It's all mine! Mwahaha!",There's a surprising amount of stuff scattered around this mountain! Looking for it ain't too bad a pastime. It's all mine! Mwahaha!,1,
 0x13c0ac,"やっぱ ひとリじめは 
-よくないな...",/0x13c0ac/,,0,(Unused)
+よくないな...","I guess hogging all the loot
+is pretty mean, huh...","I guess hogging all the loot is pretty mean, huh...",1,(Unused)
 0x13c0ae,"オマエも このさきヘ いくのか
 ここの ドウクツは しかけが
 おおいぞ
 きをつけていけ!
-で...キミはだれだっけ??",/0x13c0ae/,,0,
+で...キミはだれだっけ??","You're going ahead too?
+Watch your step.
+This place is riddled
+with traps.
+Wait a second...
+Who are you again?","You're going ahead too? Watch your step.
+This place is riddled
+with traps.
+Wait a second...
+Who are you again?",1,
 0x13c0b0,"ワレらが あるじの めざめを
 ジャマしてもらっては こまるな
-ここから でていってもらおう!",/0x13c0b0/,,0,
+ここから でていってもらおう!","We simply cannot have
+you interfering in
+the master's plans. I shall
+see to it that you leave.","We simply cannot have
+you interfering in
+the master's plans. I shall see to it that you leave.",1,
 0x13c0b2,"ふふふ あとすこしで あるじが
 ふっかつする
 このデンジュウカイに ふたたび
-きょうふを もたらすのだ",/0x13c0b2/,,0,
+きょうふを もたらすのだ","Hohoho. It will not be long
+before our master rises.
+He will once more bring fear
+and chaos upon this world!",Hohoho. It will not be long before our master rises. He will once more bring fear and chaos upon this world!,1,
 0x13c0b4,"ワレらが あるじは そのむかし
 デンジュウカイを きょうふに
 おとしいれたのだ
 そのきょうふを これから
-さいげんしてやる",/0x13c0b4/,,0,
+さいげんしてやる","Long ago, our master
+plunged the Denjuu World
+into terror. That terror will
+now make its grand return!","Long ago, our master plunged the Denjuu World into terror. That terror will now make its grand return!",1,
 0x13c0b6,"かいだんの まえにいた
 きょうだいのせいで そとに
 でれないが それもあとすこしだ

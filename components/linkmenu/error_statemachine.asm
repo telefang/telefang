@@ -41,15 +41,15 @@ LinkMenu_StateErrorDrawScreen::
 	ld [$CA65], a
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $61
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld bc, $500
 	ld e, $BF
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, $500
 	ld e, $BF
@@ -62,6 +62,7 @@ LinkMenu_StateErrorDrawScreen::
 	ld [W_ShadowREG_SCY], a
 	ld [W_ShadowREG_WX], a
 	ld [W_ShadowREG_WY], a
+	call LinkMenu_ADVICE_LoadSGBFilesConnection
 	call Status_ExpandNumericalTiles
 	call $3F02
 	ld a, [W_LinkMenu_ErrorMessageIndex]

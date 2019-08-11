@@ -42,13 +42,15 @@ LinkMenu_TradeStateMachine::
 LinkMenu_StateTradeDrawScreen::
 	ld bc, 2
 	call Banked_CGBLoadBackgroundPalette
-	ld bc, 0
 	ld e, $61
 	xor a
+	ld b, a
+	ld c, a
 	call Banked_RLEDecompressTMAP0
-	ld bc, 0
 	ld e, $61
 	xor a
+	ld b, a
+	ld c, a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld bc, $500
 	ld e, $BD
@@ -56,15 +58,15 @@ LinkMenu_StateTradeDrawScreen::
 	call Banked_RLEDecompressTMAP0
 	ld bc, $500
 	ld e, $BD
-	xor a
-	call Banked_RLEDecompressAttribsTMAP0
-	ld a, $C3
-	ld [W_ShadowREG_LCDC], a
 	xor a
 	ld [W_ShadowREG_SCX], a
 	ld [W_ShadowREG_SCY], a
 	ld [W_ShadowREG_WX], a
 	ld [W_ShadowREG_WY], a
+	call Banked_RLEDecompressAttribsTMAP0
+	ld a, $C3
+	ld [W_ShadowREG_LCDC], a
+	call LinkMenu_ADVICE_LoadSGBFilesTrade
 	call Status_ExpandNumericalTiles
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
@@ -261,7 +263,7 @@ LinkMenu_StateTradeExit::
 	ld [W_Battle_LoopIndex], a
 	ret nz
 	xor a
-	ld [W_Battle_4thOrderSubState], a
+	call LinkMenu_ADVICE_SGBResetTextStyle
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateTradeConnectionLost::

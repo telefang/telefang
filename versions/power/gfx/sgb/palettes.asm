@@ -53,13 +53,15 @@ SGB_PaletteData::
     dSGB_Palette $7FF9, $57BB, $36CA, $4141 ; 1F
     dSGB_Palette $7FF9, $57BB, $1EDF, $4141 ; 20
 
+    ;Link Menu
+    dSGB_Palette $7FFF, $275E, $1E9D, 0 ; 21
+    dSGB_Palette $7FFF, $7FB1, $6AA8, $3944 ; 22
+    dSGB_Palette $7FFF, $6AA8, $3944, 0 ; 23
+    dSGB_Palette $7FFF, $631F, $299E, 0 ; 24
+    dSGB_Palette $7FFF, $5795, $320,  0 ; 25
+    dSGB_Palette $7FFF, $773F, $7E7D, 0 ; 26
+
     ;unused?
-    dSGB_Palette $7FFF, $2F18, $1231, $4C6 ; 21
-    dSGB_Palette $7FFF, $46B5, $25AD, $CA5 ; 22
-    dSGB_Palette $7FFF, $4276, $298E, $487 ; 23
-    dSGB_Palette $7FFF, $3B52, $AA9, $103 ; 24
-    dSGB_Palette $7FFF, $32D2, $1CA,  $A4 ; 25
-    dSGB_Palette $7FFF, $5ACF, $39C8, $14A3 ; 26
     dSGB_Palette $7FFF, $427B, $1D77, $889 ; 27
     dSGB_Palette $7FFF, $726E, $6564, $2881 ; 28
     dSGB_Palette $7FFF, $628C, $45A0, $18A0 ; 29

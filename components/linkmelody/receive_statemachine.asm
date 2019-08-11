@@ -26,15 +26,15 @@ LinkMelody_StateDrawReceivingScreen::
 	call Banked_LoadMaliasGraphics
 	ld bc, 0
 	ld e, $79
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $79
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld a, $20
 	ld [W_LCDC_MetaspriteAnimationBank], a
-	ld a, 0
+	xor a
 	call $60E5
 	xor a
 	ld [W_Victory_UserSelection], a
@@ -42,6 +42,7 @@ LinkMelody_StateDrawReceivingScreen::
 	ld a, 0
 	ld [W_PauseMenu_SelectedCursorType], a
 	call LCDC_BeginAnimationComplex
+	call LinkMenu_ADVICE_LoadSGBFilesMelody
 	ld c, $86
 	call Battle_QueueMessage
 	ld a, $10

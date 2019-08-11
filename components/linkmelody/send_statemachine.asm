@@ -66,16 +66,18 @@ LinkMelody_StateDrawSendingScreen::
 	ld [$CA65], a
 	ld bc, 2
 	call Banked_CGBLoadBackgroundPalette
-	ld bc, 0
 	ld e, $79
-	ld a, 0
+	xor a
+	ld b, a
+	ld c, a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $79
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld a, $10
 	ld [$CF96], a
+	call LinkMenu_ADVICE_LoadSGBFilesMelody
 	ld c, $7F
 	call Battle_QueueMessage
 	ld a, 4

@@ -10,11 +10,11 @@ LinkMenu_StateDrawMenuScreen::
 	call Banked_LoadMaliasGraphics
 	ld bc, 0
 	ld e, $60
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressTMAP0
 	ld bc, 0
 	ld e, $60
-	ld a, 0
+	xor a
 	call Banked_RLEDecompressAttribsTMAP0
 	ld a, 4
 	ld [W_Battle_CurrentParticipant], a
@@ -22,7 +22,6 @@ LinkMenu_StateDrawMenuScreen::
 	ld [W_LCDC_MetaspriteAnimationIndex], a
 	ld a, 0
 	ld [W_LCDC_MetaspriteAnimationBank], a
-	ld a, 0
 	ld [W_LCDC_NextMetaspriteSlot], a
 	ld a, [W_Battle_CurrentParticipant]
 	ld b, 0
@@ -57,4 +56,5 @@ LinkMenu_StateDrawMenuScreen::
 	ld [W_Sound_NextBGMSelect], a
 	ld a, 1
 	call Banked_LCDC_SetupPalswapAnimation
+	call LinkMenu_ADVICE_LoadSGBFiles
 	jp Battle_IncrementSubSubState
