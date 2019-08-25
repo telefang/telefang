@@ -30,4 +30,4 @@ AttractMode_StateDrawScene3::
 	ld [W_OAM_SpritesReady], a
 	ld a, $A0
 	ld [W_System_CountdownTimer], a
-	jp System_ScheduleNextSubState
+	jp AttractMode_ADVICE_LoadSGBFilesScene3

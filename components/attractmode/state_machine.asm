@@ -170,7 +170,7 @@ AttractMode_StateFadeOut::
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
-	jp System_ScheduleNextSubState
+	jp AttractMode_ADVICE_UnloadSGBFiles
 
 AttractMode_StateDrawScene2::
 	call LCDC_ClearMetasprites
@@ -247,14 +247,14 @@ AttractMode_StateScene3ScrollTrees::
 	ld a, 8
 	ld [W_PauseMenu_SelectedCursorType], a
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs
-	call Banked_PauseMenu_InitializeCursor
+	call AttractMode_ADVICE_Scene3CorrectMetaspriteIndexOnInit
 	ld a, $A0
 	ld [W_System_CountdownTimer], a
 	jp System_ScheduleNextSubState
 
 AttractMode_StateScene3AnimateMouth::
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs
-	call Banked_PauseMenu_IterateCursorAnimation
+	call AttractMode_ADVICE_Scene3CorrectMetaspriteIndex
 	ld a, [W_System_CountdownTimer]
 	cp 0
 	jr z, .nextState
@@ -302,7 +302,7 @@ AttractMode_StateScene3FadeOut::
 	call Banked_LCDC_PaletteFade
 	or a
 	ret z
-	jp System_ScheduleNextSubState
+	jp AttractMode_ADVICE_UnloadSGBFiles
 
 AttractMode_StateDrawScene4::
 	call LCDC_ClearMetasprites

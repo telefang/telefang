@@ -61,11 +61,13 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $5795, $320,  0 ; 25
     dSGB_Palette $7FFF, $773F, $7E7D, 0 ; 26
 
+    ;Tree Swoosh
+    dSGB_Palette $7FFF, $4311, $1625, $86A ; 27
+    dSGB_Palette $7FFF, $4315, $1A2C, $86A ; 28
+    dSGB_Palette $7FFF, $4319, $1E33, $86A ; 29
+    dSGB_Palette $7FFF, $3F3F, $1E3C, $86A ; 2A
+
     ;unused?
-    dSGB_Palette $7FFF, $427B, $1D77, $889 ; 27
-    dSGB_Palette $7FFF, $726E, $6564, $2881 ; 28
-    dSGB_Palette $7FFF, $628C, $45A0, $18A0 ; 29
-    dSGB_Palette $7FFF, $4E19, $28D4, $1048 ; 2A
     dSGB_Palette $7FFF, $23F, $5484, 0 ; 2B
     dSGB_Palette $7FFF, $5A73, $109F, 0 ; 2C
     dSGB_Palette $7FFF, $5A73, $3D6B, 0 ; 2D
