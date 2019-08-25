@@ -94,8 +94,8 @@ MetaSprite_a::
     dw MetaSprite_a_4758
     dw MetaSprite_a_4821
     dw MetaSprite_a_4859
-    dw MetaSprite_a_4891
-    dw MetaSprite_a_4891
+    dw MetaSprite_scene3_denjuu
+    dw MetaSprite_scene3_denjuu_talk
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
@@ -338,6 +338,12 @@ MetaSprite_a_4821_END::
 MetaSprite_a_4859::
     INCBIN "build/gfx/unknown/metasprite_a/4859.sprite.bin"
 MetaSprite_a_4859_END::
+MetaSprite_scene3_denjuu::
+    INCBIN "build/versions/power/components/attractmode/scene3sgb.sprite.bin"
+MetaSprite_scene3_denjuu_END::
+MetaSprite_scene3_denjuu_talk::
+    INCBIN "build/versions/power/components/attractmode/scene3sgbtalk.sprite.bin"
+MetaSprite_scene3_denjuu_talk_END::
 MetaSprite_a_4891::
 MetaSprite_a_4891_END::
 
