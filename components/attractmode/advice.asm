@@ -52,7 +52,122 @@ AttractMode_ADVICE_UnloadSGBFiles::
 	ld e, a
 	jp Banked_SGB_ConstructPaletteSetPacket
 
-SECTION "Scene 1 SGB Gfx", ROMX[$7940], BANK[$77]
+AttractMode_ADVICE_MapUndertiles::
+	ld hl, $9914
+	ld de, $19
+	ld c, 6
+
+.loop
+	ld b, $E0
+	di
+
+.wfbA
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfbA
+	ld a, b
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ei
+	ld b, 1
+	di
+
+.wfbB
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfbB
+	ld a, b
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ei
+	add hl, de
+	dec c
+	jr nz, .loop
+	ret
+
+AttractMode_ADVICE_LoadSGBFilesScene1::
+	call AttractMode_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld a, $23
+	ld bc, $2B2C
+	ld de, $2D2E
+	call Banked_SGB_ConstructPaletteSetPacket
+	call AttractMode_ADVICE_MapUndertiles
+
+	ld a, $4A
+	jr .setMetaspriteIndex
+
+.noSGB
+	ld a, $40
+
+.setMetaspriteIndex
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	ret
+
+AttractMode_ADVICE_LoadSGBFilesScene1_loadGfx::
+	call AttractMode_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld a, BANK(Scene1SGBGfx)
+	ld hl, $8000
+	ld de, Scene1SGBGfx
+	ld bc, $440
+	call Banked_LCDC_LoadTiles
+
+	ld a, BANK(Scene1UndertileGfx)
+	ld hl, $8E00
+	ld de, Scene1UndertileGfx
+	ld bc, $10
+	jp Banked_LCDC_LoadTiles
+
+.noSGB
+	ld bc, $3A
+	jp Banked_LoadMaliasGraphics
+
+AttractMode_ADVICE_LoadSGBFilesScene1_postScroll::
+	call AttractMode_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld c, $24
+    call Banked_SGB_ConstructATFSetPacket
+	call AttractMode_ADVICE_MapUndertiles
+	
+	ld hl, $9958
+	ld de, $1E
+	
+	ld c, 3
+
+.loop
+	ld b, $E0
+	di
+
+.wfbA
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfbA
+	ld a, b
+	ld [hli], a
+	ld [hli], a
+	ei
+	add hl, de
+	dec c
+	jr nz, .loop
+	
+	ld a, $4B
+	jr .setMetaspriteIndex
+
+.noSGB
+	ld a, $41
+
+.setMetaspriteIndex
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	ret
+
+SECTION "Scene 1 SGB Gfx", ROMX[$79B0], BANK[$77]
 Scene1UndertileGfx::
 	INCBIN "build/gfx/intro/scene1_undertiles.2bpp"
 

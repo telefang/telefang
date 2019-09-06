@@ -71,8 +71,7 @@ AttractMode_StateDrawScene1::
 	call LCDC_ClearMetasprites
 	ld bc, $30
 	call AttractMode_LoadMaliasGraphicsPair
-	ld bc, $3A
-	call Banked_LoadMaliasGraphics
+	call AttractMode_ADVICE_LoadSGBFilesScene1_loadGfx
 	xor a
 	ld [$C463], a
 	ld a, 1
@@ -92,8 +91,7 @@ AttractMode_StateDrawScene1::
 	call Banked_CGBLoadObjectPalette
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
-	ld a, $40
-	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	call AttractMode_ADVICE_LoadSGBFilesScene1
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs
 	ld bc, $B068
 	call TitleScreen_PositionSprite
@@ -107,6 +105,11 @@ AttractMode_StateDrawScene1::
 	ld b, 1
 	call Banked_System_CGBToggleClockspeed
 	jp System_ScheduleNextSubState
+	nop
+	nop
+	nop
+	nop
+	nop
 
 AttractMode_StateFadeIn::
 	ld a, 2
@@ -149,11 +152,12 @@ AttractMode_StateScene1DenjuuAppearance::
 	call Banked_RLEDecompressAttribsTMAP0
 	ld a, $80
 	ld [W_System_CountdownTimer], a
-	ld a, $41
-	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	call AttractMode_ADVICE_LoadSGBFilesScene1_postScroll
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
 	jp System_ScheduleNextSubState
+	nop
+	nop
 
 AttractMode_StateScene1PreFadeDelay::
 	ld a, [W_System_CountdownTimer]
