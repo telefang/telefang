@@ -67,11 +67,11 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $4319, $1E33, $86A ; 29
     dSGB_Palette $7FFF, $3F3F, $1E3C, $86A ; 2A
 
-    ;unused?
-    dSGB_Palette $7FFF, $23F, $5484, 0 ; 2B
-    dSGB_Palette $7FFF, $5A73, $109F, 0 ; 2C
-    dSGB_Palette $7FFF, $5A73, $3D6B, 0 ; 2D
-    dSGB_Palette $7FFF, $7E31, $5484, 0 ; 2E
+    ;Shigeki Cave
+    dSGB_Palette $7FFF, $6F53, $51E5, $24C1 ; 2B
+    dSGB_Palette $7FFF, $72F2, $5164, $24C1 ; 2C
+    dSGB_Palette $7FFF, $535E, $1D3D, $24C1 ; 2D
+    dSGB_Palette $7FFF, $72F2, $1D3D, $24C1 ; 2E
 
     ;BomBom Logo
     dSGB_Palette $7FFF, $29F, $11F,  $52 ; 2F

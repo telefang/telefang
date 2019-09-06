@@ -35,4 +35,6 @@ SGB_AttrFileData::
     INCBIN "build/components/linkmenu/link_menu.atf" ; 20
     INCBIN "build/components/linkmenu/link_connection.atf" ; 21
     INCBIN "build/components/attractmode/scene3.atf" ; 22
+    INCBIN "build/components/attractmode/scene1.atf" ; 23
+    INCBIN "build/components/attractmode/scene1_postscroll.atf" ; 24
     ; The highest attrfile number is $2C.

@@ -51,3 +51,10 @@ AttractMode_ADVICE_UnloadSGBFiles::
 	ld d, a
 	ld e, a
 	jp Banked_SGB_ConstructPaletteSetPacket
+
+SECTION "Scene 1 SGB Gfx", ROMX[$7940], BANK[$77]
+Scene1UndertileGfx::
+	INCBIN "build/gfx/intro/scene1_undertiles.2bpp"
+
+Scene1SGBGfx::
+	INCBIN "build/gfx/intro/shigeki_sprites1_sgb.2bpp"
