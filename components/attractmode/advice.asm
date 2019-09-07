@@ -132,10 +132,28 @@ AttractMode_ADVICE_LoadSGBFilesScene1_postScroll::
 	call AttractMode_ADVICE_CheckSGB
 	jr z, .noSGB
 
+	call AttractMode_ADVICE_MapUndertiles
 	ld c, $24
     call Banked_SGB_ConstructATFSetPacket
-	call AttractMode_ADVICE_MapUndertiles
 	
+	ld a, $4B
+	jr .setMetaspriteIndex
+
+.noSGB
+	ld a, $41
+
+.setMetaspriteIndex
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	ret
+
+AttractMode_ADVICE_LoadSGBFilesScene1_spriteChange::
+	ld a, [W_System_CountdownTimer]
+	cp $7E
+	ret nz
+
+	call AttractMode_ADVICE_CheckSGB
+	ret z
+
 	ld hl, $9958
 	ld de, $1E
 	
@@ -149,6 +167,7 @@ AttractMode_ADVICE_LoadSGBFilesScene1_postScroll::
 	ld a, [REG_STAT]
 	and 2
 	jr nz, .wfbA
+
 	ld a, b
 	ld [hli], a
 	ld [hli], a
@@ -156,15 +175,7 @@ AttractMode_ADVICE_LoadSGBFilesScene1_postScroll::
 	add hl, de
 	dec c
 	jr nz, .loop
-	
-	ld a, $4B
-	jr .setMetaspriteIndex
-
-.noSGB
-	ld a, $41
-
-.setMetaspriteIndex
-	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	ld a, [W_System_CountdownTimer]
 	ret
 
 SECTION "Scene 1 SGB Gfx", ROMX[$79B0], BANK[$77]

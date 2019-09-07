@@ -160,7 +160,7 @@ AttractMode_StateScene1DenjuuAppearance::
 	nop
 
 AttractMode_StateScene1PreFadeDelay::
-	ld a, [W_System_CountdownTimer]
+	call AttractMode_ADVICE_LoadSGBFilesScene1_spriteChange
 	dec a
 	ld [W_System_CountdownTimer], a
 	cp 0
