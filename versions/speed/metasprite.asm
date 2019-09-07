@@ -96,8 +96,8 @@ MetaSprite_a::
     dw MetaSprite_a_4859
     dw MetaSprite_scene3_denjuu
     dw MetaSprite_scene3_denjuu_talk
-    dw MetaSprite_a_4891
-    dw MetaSprite_a_4891
+    dw MetaSprite_scene1_shigeki
+    dw MetaSprite_scene1_shigeki_2
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
@@ -344,6 +344,12 @@ MetaSprite_scene3_denjuu_END::
 MetaSprite_scene3_denjuu_talk::
     INCBIN "build/versions/speed/components/attractmode/scene3sgbtalk.sprite.bin"
 MetaSprite_scene3_denjuu_talk_END::
+MetaSprite_scene1_shigeki::
+    INCBIN "build/components/attractmode/scene1_sgb.sprite.bin"
+MetaSprite_scene1_shigeki_END::
+MetaSprite_scene1_shigeki_2::
+    INCBIN "build/components/attractmode/scene1_sgb_postscroll.sprite.bin"
+MetaSprite_scene1_shigeki_2_END::
 MetaSprite_a_4891::
 MetaSprite_a_4891_END::
 
