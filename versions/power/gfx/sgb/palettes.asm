@@ -76,11 +76,13 @@ SGB_PaletteData::
     ;BomBom Logo
     dSGB_Palette $7FFF, $29F, $11F,  $52 ; 2F
 
+    ;Corruption Screen
+    dSGB_Palette $7FFF, $2559, $2A89, 0 ; 30
+    dSGB_Palette $7FFF, $4AFE, $2559, 0 ; 31
+    dSGB_Palette $7FFF, $2559, $C8C, 0 ; 32
+    dSGB_Palette $7FFF, $63BF, $4AFE, 0 ; 33
+	
     ;unused?
-    dSGB_Palette $7FFF, $421F, $18D8,  $10 ; 30
-    dSGB_Palette $7FFF, $7E4C, $60E4, $4040 ; 31
-    dSGB_Palette $7FFF, $239F, $273, $108 ; 32
-    dSGB_Palette $7FFF, $3391, $E63, $160 ; 33
     dSGB_Palette $7FFF, $2E7D, $577,  $CC ; 34
     dSGB_Palette $7FFF, $6DFB, $40F0, $2048 ; 35
     dSGB_Palette $7FFF, $7EE4, $61C0, $3CE0 ; 36

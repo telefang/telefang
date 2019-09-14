@@ -37,4 +37,5 @@ SGB_AttrFileData::
     INCBIN "build/components/attractmode/scene3.atf" ; 22
     INCBIN "build/components/attractmode/scene1.atf" ; 23
     INCBIN "build/components/attractmode/scene1_postscroll.atf" ; 24
+    INCBIN "build/versions/speed/gfx/screen/save_deleted.atf" ; 25
     ; The highest attrfile number is $2C.
