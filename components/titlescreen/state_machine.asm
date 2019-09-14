@@ -232,9 +232,9 @@ TitleScreen_StateCorruptSaveLoadPalettes::
     
 ; State 01 0A
 TitleScreen_StateCorruptSaveLoadGraphics::
-    ld bc, $C
-    call Banked_LoadMaliasGraphics
+    M_AuxJmp Banked_TitleScreen_ADVICE_CorruptSaveLoadSGBFiles
     jp System_ScheduleNextSubState
+    nop
     
 ; State 01 0B
 TitleScreen_StateCorruptSaveLoadTilemaps::

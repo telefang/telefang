@@ -46,6 +46,10 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
 Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
 	dw TitleMenu_ADVICE_UnloadSGBFilesLink
 
+;versions/(power|speed)/components/titlescreen/advice.asm
+Banked_TitleScreen_ADVICE_CorruptSaveLoadSGBFiles::
+	dw TitleScreen_ADVICE_CorruptSaveLoadSGBFiles
+
 ;components/zukan/advice.asm
 Banked_Zukan_ADVICE_InitializeNameMetaSprite::
 	dw Zukan_ADVICE_InitializeNameMetaSprite
