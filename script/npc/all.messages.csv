@@ -2734,11 +2734,15 @@ Do you think it'll be okay?",1,
 アクマのデンジュウたちが
 おリてこないようにね","It's our duty in Fraoula
 to uphold the seal on
-the mountain. We can't have
-the Devil Denjuu coming
+the mountain. We can't
+have the Devil Denjuu
+and its followers coming
 down from there, after all.","It's our duty in Fraoula
 to uphold the seal on
-the mountain. We can't have the Devil Denjuu coming down from there, after all.",1,"電獣「たち」??? It might not be ""Devil Denjuu"" - it might be more like ""the evil Denjuu"" or ""the demonic Denjuu"" or whatever - plural, at least."
+the mountain. We can't
+have the Devil Denjuu
+and its followers coming
+down from there, after all.",1,
 0x13c062,"さいきんフラウラのようすが
 おかしいんだけど ダレかが
 ふういんをやぶったんじゃない
@@ -2755,7 +2759,7 @@ someone broke the seal?",Strange things have been happening in Fraoula lately...
 eba was talking about?
 Then I shall send you back
 whence you came!","Are you the brat Mr. Sana-eba was talking about?
-Then I shall send you back whence you came!",1,
+Then I shall send you back whence you came!",1,All these lines have been translated and manually formatted by yours truly! Wahoo!
 0x13c066,"チカラずくで やられて
 しまった....","Oh no! Now I'm the one
 who needs to go back
@@ -2805,10 +2809,10 @@ Devil Denjuu"", he says...
 How about you do it
 yourself, Mr. Sanaeba?
 Oh!
-Were you listening to that?","Mutter mutter... ""Find the Devil Denjuu"", he says...
+Were you eavesdropping?","Mutter mutter... ""Find the Devil Denjuu"", he says...
 How about you do it yourself, Mr. Sanaeba?
 Oh!
-Were you listening to that?",1,
+Were you eavesdropping?",1,
 0x13c072,"やっぱリ じぶんで やって
 ほしいなぁ
 サナエバさまも Tファンガー
@@ -2823,8 +2827,8 @@ Mr. Sanaeba is a T-Fanger too, after all!",1,(Unused)
 とっくんだ!","What do I do if the Devil
 Denjuu suddenly shows up?
 Oh hey, here's an oppor-
-tunity for field training!","What do I do if the Devil Denjuu suddenly shows up?
-Oh hey, here's an oppor-tunity for field training!",1,
+tunity to test my skills!","What do I do if the Devil Denjuu suddenly shows up?
+Oh hey, here's an oppor-tunity to test my skills!",1,
 0x13c076,"こんな ちょうしだったら
 アクマデンジュウにも すぐ
 やられちゃうな","This is no good... At this
@@ -2851,7 +2855,7 @@ about losing...",1,(Unused)
 このやまは あるけない!
 あー ストレスがたまる!!","My sense of direction is
 terrible. I'm so lost... Agh,
-I can't take the stress!!!","My sense of direction is terrible. I'm so lost... Agh, I can't take the stress!!!",1,
+it's stressing me out!!!","My sense of direction is terrible. I'm so lost... Agh, it's stressing me out!!!",1,
 0x13c07e,"ストレスかいしょうしても
 いわれたことが できなかったら
 ダメだね","I'm glad we could let off
@@ -3050,10 +3054,11 @@ Who are you again?",1,
 ジャマしてもらっては こまるな
 ここから でていってもらおう!","We simply cannot have
 you interfering in
-the master's plans. I shall
+Master's plans. I shall
 see to it that you leave.","We simply cannot have
 you interfering in
-the master's plans. I shall see to it that you leave.",1,
+Master's plans. I shall
+see to it that you leave.",1,
 0x13c0b2,"ふふふ あとすこしで あるじが
 ふっかつする
 このデンジュウカイに ふたたび
@@ -3075,77 +3080,164 @@ now make its grand return!","Long ago, our master plunged the Denjuu World into 
 もうすこしで あるじが
 カクセイするぞ!
 そうすれば あのきょうだいも
-すぐに ハイジョできるのだ",/0x13c0b6/,,0,
+すぐに ハイジョできるのだ","The two brothers blocking
+the stairs are preventing
+us from leaving, but they will
+not hinder us for long...
+Soon, our master willl
+awaken! And when he does,
+no one – let alone those
+pesky brothers –
+shall stand in our way!","The two brothers blocking the stairs are preventing us from leaving, but they will not hinder us for long... Soon, our master willl awaken! And when he does, no one – let alone those pesky brothers –
+shall stand in our way!",1,
 0x13c0b8,"ワレらが あるじは 
 シンデンジュウのヤツに
 ふういんされていたんだ
 あるじは ヤツをたおすために
 カクセイちゅうなのだ
-ジャマはするヤツは...",/0x13c0b8/,,0,
+ジャマはするヤツは...","Our master was sealed away
+by that ""Divine Denjuu"".
+Master is now awakening,
+so that he may exact
+his revenge! As for meddlers
+like you...","Our master was sealed away by that ""Divine Denjuu"". Master is now awakening,
+so that he may exact
+his revenge! As for meddlers like you...",1,
 0x13c0ba,"どこのだれが ワレらがあるじの
 ふういんを といてくれたか
 しらないが カンシャせねばな
 その おんがえしを いまから
-してやろう!",/0x13c0ba/,,0,
+してやろう!","I know not who lifted the
+seal placed upon Master,
+but such kindness
+will not go unrequited.
+Let me start repaying the
+favor now!","I know not who lifted the seal placed upon Master, but such kindness
+will not go unrequited.
+Let me start repaying the favor now!",1,
 0x13c0bc,"ここにある たからは
 わがあるじのモノだ
-だれも てをつけてはいかん!",/0x13c0bc/,,0,
+だれも てをつけてはいかん!","The treasure here belongs
+to our master! No one may
+so much as touch it!",The treasure here belongs to our master! No one may so much as touch it!,1,
 0x13c0be,"このみちを いったリきたリ
 するのも あきたぞ
 そろそろ そとにでて
 あばれたいものだ
 まずは てはじめに 
-オマエからだ!",/0x13c0be/,,0,
+オマエからだ!","I'm tired of walking up and
+down this same ol' path.
+I want to go outside and
+wreak havoc!
+Hm... How about I
+start with you?","I'm tired of walking up and down this same ol' path.
+I want to go outside and wreak havoc!
+Hm... How about I
+start with you?",1,
 0x13c0c0,"ここからは われらが
 すむ リょういき
 なんびとの しんにゅうも
-ゆるさない!",/0x13c0c0/,,0,
+ゆるさない!","Past here is our territory.
+It's the place we call home.
+Trespassers will not
+be tolerated!","Past here is our territory. It's the place we call home.
+Trespassers will not
+be tolerated!",1,
 0x13c0c2,"ひ..ひさびさに やまのそとに
 でれるぞー
-う..うでがなるー",/0x13c0c2/,,0,
+う..うでがなるー","Oh, we can f-finally get out
+of this m-mountain again!
+I'm rarin' to g-g-g-go!","Oh, we can f-finally get out of this m-mountain again! I'm rarin' to g-g-g-go!",1,
 0x13c0c4,"ここからさきは われらの
 リょういきだぞ
 ニンゲンごときが 
-はいってくるな!",/0x13c0c4/,,0,
+はいってくるな!","Beyond here is our territory.
+The likes of you humans
+have no place here!",Beyond here is our territory. The likes of you humans have no place here!,1,
 0x13c0c6,"オマエのきたみちは
 あっているのかな?
 まぁ そんなことも かんけい
-なくなるんだけどな!",/0x13c0c6/,,0,
+なくなるんだけどな!","Are you sure that you
+went the right way?
+Ha, well, not that it
+matters now anyway!","Are you sure that you
+went the right way?
+Ha, well, not that it
+matters now anyway!",1,
 0x13c0c8,"オマエのうんも ここで
 つきるのさ
 オマエが あるじにあうことは
-ないからな!",/0x13c0c8/,,0,
+ないからな!","Your streak of luck
+ends here.
+There is no future in which
+you reach our master!","Your streak of luck
+ends here.
+There is no future in which you reach our master!",1,
 0x13c0ca,"このやまに おいてあるものに
-てをふれるヤツは ゆるさない!",/0x13c0ca/,,0,
+てをふれるヤツは ゆるさない!","There is no forgiveness
+for those who lay their
+grubby hands on the things
+found in this mountain!","There is no forgiveness
+for those who lay their
+grubby hands on the things found in this mountain!",1,
 0x13c0cc,"このやまに あるものは
 すベて ワレらが あるじの
 ものだ
-てをつけるヤツは ゆるさん!",/0x13c0cc/,,0,
+てをつけるヤツは ゆるさん!","Everything within this moun-
+tain belongs to Master.
+Those who come to take it
+will be struck down!",Everything within this moun-tain belongs to Master. Those who come to take it will be struck down! ,1,
 0x13c0ce,"これいじょう さきに
 すすめるとおもうなよ
 あるじの かくせいの
-ジャマはさせない",/0x13c0ce/,,0,
+ジャマはさせない","Don't think that you can go
+any further than this.
+I won't allow you to
+interfere with
+Master's awakening!","Don't think that you can go any further than this.
+I won't allow you to interfere with
+Master's awakening!",1,
 0x13c0d0,"ワレらが あるじを ふういん
 しようなどと ムダなことを..
 あるじが ちょくせつ てを
 くだすまでもないわ
 ここで ワタシが あいてを
-してやる!",/0x13c0d0/,,0,
+してやる!","You think you can seal our
+master away again?
+How naïve... Master won't
+even have to lift a finger.
+I will personally take you on
+here and now!","You think you can seal our master away again?
+How naïve... Master won't even have to lift a finger. I will personally take you on here and now!",1,
 0x13c0d2,"ふふ...こんなコドモが
 ここまでくるとはな
 だが それもここまでだ
-いくぞ テレファングだ!",/0x13c0d2/,,0,
+いくぞ テレファングだ!","Heh heh. To think that a
+little kid like you
+would make it all this way.
+This is as far as you go,
+though! It's a Telefang!","Heh heh. To think that a little kid like you
+would make it all this way. This is as far as you go, though! It's a Telefang!",1,
 0x13c0d4,"あるじの ふういんを 
 といてくれたのは オマエの
 ナカマか??
 カンシャするぞ!
-これは そのおれいだ!",/0x13c0d4/,,0,
+これは そのおれいだ!","Was it a friend of yours who
+lifted the seal on Master?
+I must thank you! As a
+token of my gratitude,
+take THIS!","Was it a friend of yours who lifted the seal on Master? I must thank you! As a token of my gratitude, take THIS!",1,
 0x13c0d6,"あるじが ふっかつすれば
-オマエなんぞ.....",/0x13c0d6/,,0,(Unused)
+オマエなんぞ.....","When Master awakens,
+you'll all…","When Master awakens,
+you'll all…",1,(Unused)
 0x13c0d8,"ここからさきは あるかたの
-きょかがないと とおれないプニ",/0x13c0d8/,,0,
+きょかがないと とおれないプニ","You can't go through here
+without a certain
+someone's permission, puni!","You can't go through here without a certain someone's permission, puni!",1,
 #######,38 strings   -   Sanaeba's Lab,,,,
-0x13c0da,このカウンターに こうにゅうするアイテムを おいてください。,/0x13c0da/,,0,All shops use this line for the lower-right counter NPC.
+0x13c0da,このカウンターに こうにゅうするアイテムを おいてください。,"Place the items you wish to
+purchase on this counter.",Place the items you wish to purchase on this counter.,1,All shops use this line for the lower-right counter NPC.
 0x13c0dc,"な なんだなんだ
 オマエはなんなんだ??",/0x13c0dc/,,0,
 0x13c0de,"オ オマエが サナエバさまの

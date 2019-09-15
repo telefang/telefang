@@ -2,12 +2,13 @@ Pointer,Japanese,English,Draft version,Formatted?,Notes
 #######,"Story Messages 1   -   253 strings   -   Shop text, and messages from start of game to Krinon",,,,
 #######,105 strings   -   Shop text,,,,
 0x120000,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,"Status: Translated 100%
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,"Status: Translated 100%
 "
 0x120002,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ<*A>","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,Shop 1 (Tronco)
 0x120004,<S0> <&0xca00>チル<*4>,<S0> <&0xca00>Ch.<*4>,,0,
 0x120006,"<S0>
@@ -25,11 +26,12 @@ tion<normal> at the left counter.","In other shops,
 you can perform
 <bold>Augment<normal> and <bold>DNA evolu-tion<normal> at the left counter.",1,
 0x12000c,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 2
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 2
 0x12000e,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x120010,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x120012,"<S0>
@@ -37,7 +39,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x120014,チルがたリません。,Not enough chiru.,,0,
 0x120016,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x120018,"ここでは デンジュウを
 『かいぞうシンカ』させることが
 できます",You can evolve your Denjuu through Augment evolution here.,,0,
@@ -47,11 +50,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,0,
 0x12001e,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 3
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 3
 0x120020,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x120022,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x120024,"<S0>
@@ -59,7 +63,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x120026,チルがたリません。,Not enough chiru.,,0,
 0x120028,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x12002a,"ここでは デンジュウを
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,0,
@@ -69,11 +74,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,0,
 0x120030,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 4
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 4
 0x120032,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x120034,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x120036,"<S0>
@@ -81,7 +87,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x120038,チルがたリません。,Not enough chiru.,,0,
 0x12003a,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x12003c,"ここでは デンジュウを
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,0,
@@ -91,11 +98,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,0,
 0x120042,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 5 (Unused)
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 5 (Unused)
 0x120044,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,(Unused)
 0x120046,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,(Unused)
 0x120048,"<S0>
@@ -103,7 +111,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,(Unused)
 0x12004a,チルがたリません。,Not enough chiru.,,0,(Unused)
 0x12004c,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,(Unused)
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,(Unused)
 0x12004e,"ここでは デンジュウを
 『かいぞうシンカ』させることが
 できます",You can evolve your Denjuu through Augment evolution here.,,0,(Unused)
@@ -114,11 +123,12 @@ Alright?
 シンカさせることができません。",You can't evolve your current Denjuu with this permit.,,0,"(Unused)
 Says permit instead of pass."
 0x120054,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 6
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 6
 0x120056,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x120058,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x12005a,"<S0>
@@ -126,7 +136,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x12005c,チルがたリません。,Not enough chiru.,,0,
 0x12005e,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x120060,"ここでは デンジュウを
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,0,
@@ -136,11 +147,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,0,
 0x120066,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 7
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 7
 0x120068,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x12006a,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x12006c,"<S0>
@@ -148,7 +160,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x12006e,チルがたリません。,Not enough chiru.,,0,
 0x120070,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x120072,"ここでは デンジュウを
 『かいぞうシンカ』させることが
 できます",You can evolve your Denjuu through Augment evolution here.,,0,
@@ -158,11 +171,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,0,
 0x120078,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 8
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 8
 0x12007a,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x12007c,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x12007e,"<S0>
@@ -170,7 +184,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x120080,チルがたリません。,Not enough chiru.,,0,
 0x120082,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x120084,"ここでは デンジュウを
 『かいぞうシンカ』させることが
 できます",You can evolve your Denjuu through Augment evolution here.,,0,
@@ -180,11 +195,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,0,
 0x12008a,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 9
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 9
 0x12008c,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x12008e,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x120090,"<S0>
@@ -192,7 +208,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x120092,チルがたリません。,Not enough chiru.,,0,
 0x120094,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x120096,"ここでは デンジュウを
 『かいぞうシンカ』させることが
 できます",You can evolve your Denjuu through Augment evolution.,,0,
@@ -202,11 +219,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,0,
 0x12009c,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 10
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 10
 0x12009e,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x1200a0,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x1200a2,"<S0>
@@ -214,7 +232,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x1200a4,チルがたリません。,Not enough chiru.,,0,
 0x1200a6,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x1200a8,"ここでは デンジュウを
 『じっけんシンカ』させることが
 できます",You can evolve your Denjuu through DNA evolution using the laboratory here.,,0,
@@ -224,11 +243,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Lab Pass.,,0,
 0x1200ae,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 11
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 11
 0x1200b0,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x1200b2,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x1200b4,"<S0>
@@ -236,7 +256,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x1200b6,チルがたリません。,Not enough chiru.,,0,
 0x1200b8,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x1200ba,"ここでは デンジュウを
 『かいぞうシンカ』させることが
 できます",You can evolve your Denjuu through Augment evolution.,,0,
@@ -246,11 +267,12 @@ Alright?
 あなたのつれているデンジュウを
 シンカさせることができません。",You can't evolve your current Denjuu with this Augment Pass.,,0,
 0x1200c0,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,Shop 12
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,Shop 12
 0x1200c2,"<&0xca00>チルになリます。
 よろしいですか?
  はい  いいえ","That will be <&0xca00> chiru.
-Alright?
+Is that alright?
 <Q>Yes<|>No</Q><*A>",,0,
 0x1200c4,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,
 0x1200c6,"<S0>
@@ -258,7 +280,8 @@ Alright?
 <&0xca00>Ch.<*4>",,0,
 0x1200c8,チルがたリません。,Not enough chiru.,,0,
 0x1200ca,"アイテムは みぎのカウンターで
-おかいもとめ ください。",Please purchase your items at the right counter.,,0,
+おかいもとめ ください。","Please use the counter on
+the right for purchases.",Please use the counter on the right for purchases.,1,
 0x1200cc,"ここでは デンジュウを
 『かいぞうシンカ』させることが
 できます",You can evolve your Denjuu through Augment evolution.,,0,
@@ -3599,10 +3622,10 @@ to return the Antenna Tree to normal.",1,
 0x138132,"この『ちゅうしゃき』に
 はいっているクスリを
 きのてっペんでつかえばいいんだ
-ボクは ここからうごけないからキミに たのんで いいかい?","This <bold>injector<normal> here needs
+ボクは ここからうごけないからキミに たのんで いいかい?","This <bold>syringe<normal> here needs
 to be applied near the tree
 crown. I'm stuck here, so
-can I ask you to do it?","This <bold>injector<normal> here needs to be applied near the tree crown. I'm stuck here, so can I ask you to do it?",1,
+can I ask you to do it?","This <bold>syringe<normal> here needs to be applied near the tree crown. I'm stuck here, so can I ask you to do it?",1,
 0x138134,"おう まかしとけ!
 これを きの てっペんで 
 つかえばいいんだろ
@@ -3614,7 +3637,7 @@ gotta stick this into
 the top of the tree, right?
 Piece of cake.",1,
 0x138136,"『ちゅうしゃき』
-をてにいれた",Got <bold>Injector<normal>!,Got <bold>Injector<normal>!,1,
+をてにいれた",Got <bold>Syringe<normal>!,Got <bold>Syringe<normal>!,1,
 0x138138,"じゃあ たのんだよ
 きを もとどおリにしてくれ","I'm counting on you!
 Return the tree to normal!","I'm counting on you!
@@ -3635,7 +3658,7 @@ prick!","I made it! I guess here's as good as any place to inject the medicine.
 Don't worry, tree,
 it'll just be a little prick!",1,
 0x13813e,"『ちゅうしゃき』
-をつかった",Used <bold>Injector<normal>.,Used <bold>Injector<normal>.,1,
+をつかった",Used <bold>Syringe<normal>.,Used <bold>Syringe<normal>.,1,
 0x138140,"なかなかの けっかが
 でているではないか
 これで またいっぽ 
@@ -4043,7 +4066,7 @@ go back to sleep?","I feel bad for asking just as you're waking up, but... think
 きょうふを もたらした 
 このワタシを オマエごときが
 ふういんしようと いうのか?","Hmph... Ha... Hahahahaaa!
-I am the one who long ago
+I am he who long ago
 used the Trees of Life to
 bring terror and dread
 upon the Denjuu World.

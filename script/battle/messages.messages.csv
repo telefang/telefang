@@ -330,10 +330,10 @@ Lange nichts gehört! Wie geht's?<*5>",,
 0x114136,もてそうなんだけどなぁ...。,"Aw, I thought I could lift it...",,0,Viel zu schwer für mich...,,
 0x114138,"これくらいに しといてやるぜ!
 あばよ。",/0x114138/,,0,/0x114138/,,
-0x11413a,<S0><&0xca00>チル<*4>,<S0><&0xca00>Ch.<*4>,,0,<S0><&0xca00>Ch.<*4>,,
+0x11413a,<S0><&0xca00>チル<*4>,<S0><0xf5><&0xca00><0xf3>Ch.<*4>,,0,<S0><&0xca00>Ch.<*4>,,
 0x11413c,"<S0>
 <&0xca00>チル<*4>","<S0>
-<&0xca00>Ch.<*4>",,0,"<S0>
+<0xf5><&0xca00><0xf3>Ch.<*4>",,0,"<S0>
 <&0xca00>Ch.<*4>",,
 0x11413e,ちくしょー! おぼえてやがれ!,Aargh! I'll remember this!,,0,Mist! Das zahl ich dir heim!,,
 0x114140,<S3>『やっと つながったのう<S10>...』<*2>,"<S3>""Finally, we are connected<S10>...""<*2>",,0,"<S3>""Endlich sind wir verbunden<S10>...""<*2>",,
