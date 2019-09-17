@@ -152,7 +152,7 @@ AttractMode_ADVICE_LoadSGBFilesScene1_spriteChange::
 	ret nz
 
 	call AttractMode_ADVICE_CheckSGB
-	ret z
+	jr z, .noSGB
 
 	ld hl, $9958
 	ld de, $1E
@@ -175,6 +175,8 @@ AttractMode_ADVICE_LoadSGBFilesScene1_spriteChange::
 	add hl, de
 	dec c
 	jr nz, .loop
+
+.noSGB
 	ld a, [W_System_CountdownTimer]
 	ret
 
