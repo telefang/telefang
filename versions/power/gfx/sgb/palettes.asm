@@ -81,12 +81,14 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $4AFE, $2559, 0 ; 31
     dSGB_Palette $7FFF, $2559, $C8C, 0 ; 32
     dSGB_Palette $7FFF, $63BF, $4AFE, 0 ; 33
-	
+
+    ;Shigeki Talking on Phone
+    dSGB_Palette $7FFF, $6AF5, $4123, $1881 ; 34
+    dSGB_Palette $7FFF, $573E, $4123, $1881 ; 35
+    dSGB_Palette $7FFF, $573E, $1D3C, $1881 ; 36
+    dSGB_Palette $7FFF, $573E, $772E, $1881 ; 37
+
     ;unused?
-    dSGB_Palette $7FFF, $2E7D, $577,  $CC ; 34
-    dSGB_Palette $7FFF, $6DFB, $40F0, $2048 ; 35
-    dSGB_Palette $7FFF, $7EE4, $61C0, $3CE0 ; 36
-    dSGB_Palette $7FFF, $56B5, $318C, $14A5 ; 37
     dSGB_Palette $7FFF, $6A7F, $2CD8, $142A ; 38
     dSGB_Palette $7FFF, $4AFF, $21FF, $10CC ; 39
     dSGB_Palette $7FFF, $5703, $29C5, $1100 ; 3A
