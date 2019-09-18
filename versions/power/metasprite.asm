@@ -98,8 +98,8 @@ MetaSprite_a::
     dw MetaSprite_scene3_denjuu_talk
     dw MetaSprite_scene1_shigeki
     dw MetaSprite_scene1_shigeki_2
-    dw MetaSprite_a_4891
-    dw MetaSprite_a_4891
+    dw MetaSprite_scene2_shigeki
+    dw MetaSprite_scene2_shigeki_talk
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
@@ -350,6 +350,12 @@ MetaSprite_scene1_shigeki_END::
 MetaSprite_scene1_shigeki_2::
     INCBIN "build/components/attractmode/scene1_sgb_postscroll.sprite.bin"
 MetaSprite_scene1_shigeki_2_END::
+MetaSprite_scene2_shigeki::
+    INCBIN "build/components/attractmode/scene2_sgb.sprite.bin"
+MetaSprite_scene2_shigeki_END::
+MetaSprite_scene2_shigeki_talk::
+    INCBIN "build/components/attractmode/scene2_sgb_talk.sprite.bin"
+MetaSprite_scene2_shigeki_talk_END::
 MetaSprite_a_4891::
 MetaSprite_a_4891_END::
 

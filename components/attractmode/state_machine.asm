@@ -206,14 +206,14 @@ AttractMode_StateDrawScene2::
 	ld a, 6
 	ld [W_PauseMenu_SelectedCursorType], a
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs
-	call Banked_PauseMenu_InitializeCursor
+	call AttractMode_ADVICE_Scene2CorrectMetaspriteIndexOnInit
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
-	jp System_ScheduleNextSubState
+	jp AttractMode_ADVICE_LoadSGBFilesScene2
 
 AttractMode_StateScene2AnimateMouth::
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs
-	call Banked_PauseMenu_IterateCursorAnimation
+	call AttractMode_ADVICE_Scene2CorrectMetaspriteIndex
 	ld a, [W_System_CountdownTimer]
 	cp 0
 	jr z, .nextState

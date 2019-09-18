@@ -180,6 +180,36 @@ AttractMode_ADVICE_LoadSGBFilesScene1_spriteChange::
 	ld a, [W_System_CountdownTimer]
 	ret
 
+AttractMode_ADVICE_Scene2CorrectMetaspriteIndexOnInit::
+	call Banked_PauseMenu_InitializeCursor
+	jr AttractMode_ADVICE_Scene2CorrectMetaspriteIndex.skipCursorIteration
+
+AttractMode_ADVICE_Scene2CorrectMetaspriteIndex::
+	call Banked_PauseMenu_IterateCursorAnimation
+
+.skipCursorIteration
+	call AttractMode_ADVICE_CheckSGB
+	ret z
+
+.skipSGBCheck
+	ld a, [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index]
+	cp $4C
+	ret z
+	cp $4D
+	ret z
+	add $A
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	ret
+
+AttractMode_ADVICE_LoadSGBFilesScene2::
+	call System_ScheduleNextSubState
+	call AttractMode_ADVICE_CheckSGB
+	ret z
+	ld a, $26
+	ld bc, $3435
+	ld de, $3637
+	jp Banked_SGB_ConstructPaletteSetPacket
+
 SECTION "Scene 1 SGB Gfx", ROMX[$79B0], BANK[$77]
 Scene1UndertileGfx::
 	INCBIN "build/gfx/intro/scene1_undertiles.2bpp"
