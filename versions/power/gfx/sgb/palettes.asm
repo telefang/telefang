@@ -88,11 +88,13 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $573E, $1D3C, $1881 ; 36
     dSGB_Palette $7FFF, $573E, $772E, $1881 ; 37
 
+    ;Shigeki and Crypto
+    dSGB_Palette $7FFF, $72F2, $4D64, $C6B ; 38
+    dSGB_Palette $7FFF, $3B3E, $31DB, $C6B ; 39
+    dSGB_Palette $7FFF, $3B3E, $1D3C, $C6B ; 3A
+    dSGB_Palette $7FFF, $26AB, $D43, 0 ; 3B
+
     ;unused?
-    dSGB_Palette $7FFF, $6A7F, $2CD8, $142A ; 38
-    dSGB_Palette $7FFF, $4AFF, $21FF, $10CC ; 39
-    dSGB_Palette $7FFF, $5703, $29C5, $1100 ; 3A
-    dSGB_Palette $7FFF, $31F, $215,  $C8 ; 3B
     dSGB_Palette $7FFF, $121F, $119,  $8B ; 3C
     dSGB_Palette $7FFF, $56F2, $31CA, $1904 ; 3D
     dSGB_Palette $7FFF, $5A52, $354A, $20A5 ; 3E

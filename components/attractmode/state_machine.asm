@@ -310,14 +310,7 @@ AttractMode_StateScene3FadeOut::
 
 AttractMode_StateDrawScene4::
 	call LCDC_ClearMetasprites
-	ld bc, $34
-	call AttractMode_LoadMaliasGraphicsPair
-	ld bc, $3E
-	call Banked_LoadMaliasGraphics
-	ld bc, 0
-	ld e, $C
-	ld a, 1
-	call Banked_RLEDecompressTMAP0
+	call AttractMode_ADVICE_LoadSGBFilesScene4
 	ld bc, 0
 	ld e, $C
 	ld a, 1
@@ -338,14 +331,34 @@ AttractMode_StateDrawScene4::
 	ld a, 7
 	ld [W_PauseMenu_SelectedCursorType], a
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs
-	call Banked_PauseMenu_InitializeCursor
+	call AttractMode_ADVICE_Scene4CorrectMetaspriteIndexOnInit
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
 	jp System_ScheduleNextSubState
 
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+
 AttractMode_StateScene4AnimateMouth::
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs
-	call Banked_PauseMenu_IterateCursorAnimation
+	call AttractMode_ADVICE_Scene4CorrectMetaspriteIndex
 	ld a, [W_System_CountdownTimer]
 	dec a
 	ld [W_System_CountdownTimer], a

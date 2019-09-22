@@ -100,8 +100,8 @@ MetaSprite_a::
     dw MetaSprite_scene1_shigeki_2
     dw MetaSprite_scene2_shigeki
     dw MetaSprite_scene2_shigeki_talk
-    dw MetaSprite_a_4891
-    dw MetaSprite_a_4891
+    dw MetaSprite_scene4_shigeki
+    dw MetaSprite_scene4_shigeki_talk
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
     dw MetaSprite_a_4891
@@ -356,6 +356,12 @@ MetaSprite_scene2_shigeki_END::
 MetaSprite_scene2_shigeki_talk::
     INCBIN "build/components/attractmode/scene2_sgb_talk.sprite.bin"
 MetaSprite_scene2_shigeki_talk_END::
+MetaSprite_scene4_shigeki::
+    INCBIN "build/components/attractmode/scene4_sgb.sprite.bin"
+MetaSprite_scene4_shigeki_END::
+MetaSprite_scene4_shigeki_talk::
+    INCBIN "build/components/attractmode/scene4_sgb_talk.sprite.bin"
+MetaSprite_scene4_shigeki_talk_END::
 MetaSprite_a_4891::
 MetaSprite_a_4891_END::
 

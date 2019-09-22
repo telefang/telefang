@@ -1,16 +1,8 @@
 INCLUDE "telefang.inc"
 
-SECTION "Title Screen SGB Advice", ROMX[$7f00], BANK[$2]
+SECTION "Title Screen SGB Advice", ROMX[$7F50], BANK[$2]
 TitleScreen_ADVICE_LoadSGBFiles::
-    ;Do nothing if no SGB detected.
-    ld a, [W_SGB_DetectSuccess]
-    or a
-    ret z
-    
-    ;Do nothing if CGB hardware detected. This is possible if, say, we're in bgb
-    ;or someone builds a Super Game Boy Color cart
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    call AttractMode_ADVICE_CheckSGB
     ret z
     
     ;Load our ATF
@@ -23,15 +15,7 @@ TitleScreen_ADVICE_LoadSGBFiles::
     ret
     
 TitleScreen_ADVICE_RecolorVersionBand::
-    ;Do nothing if no SGB detected.
-    ld a, [W_SGB_DetectSuccess]
-    or a
-    jp z, System_ScheduleNextSubState
-    
-    ;Do nothing if CGB hardware detected. This is possible if, say, we're in bgb
-    ;or someone builds a Super Game Boy Color cart
-    ld a, [W_GameboyType]
-    cp M_BIOS_CPU_CGB
+    call AttractMode_ADVICE_CheckSGB
     jp z, System_ScheduleNextSubState
     
     ;Replace the version band sprite tiles
