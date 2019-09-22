@@ -210,6 +210,60 @@ AttractMode_ADVICE_LoadSGBFilesScene2::
 	ld de, $3637
 	jp Banked_SGB_ConstructPaletteSetPacket
 
+AttractMode_ADVICE_LoadSGBFilesScene4::
+	call AttractMode_ADVICE_CheckSGB
+	jr z, .noSGB
+
+	ld hl, $9000
+	ld de, AttractModeScene4SGBGfx1
+	ld bc, $800
+	call LCDC_LoadTiles
+	ld hl, $8800
+	ld de, AttractModeScene4SGBGfx2
+	ld bc, $150
+	call LCDC_LoadTiles
+	ld bc, $3E
+	call Banked_LoadMaliasGraphics
+	ld bc, 0
+	ld e, $11
+	ld a, 1
+	call Banked_RLEDecompressTMAP0
+	ld a, $27
+	ld bc, $3839
+	ld de, $3A3B
+	jp Banked_SGB_ConstructPaletteSetPacket
+
+.noSGB
+	ld bc, $34
+	call AttractMode_LoadMaliasGraphicsPair
+	ld bc, $3E
+	call Banked_LoadMaliasGraphics
+	ld bc, 0
+	ld e, $C
+	ld a, 1
+	jp Banked_RLEDecompressTMAP0
+
+AttractMode_ADVICE_Scene4CorrectMetaspriteIndexOnInit::
+	call Banked_PauseMenu_InitializeCursor
+	jr AttractMode_ADVICE_Scene4CorrectMetaspriteIndex.skipCursorIteration
+
+AttractMode_ADVICE_Scene4CorrectMetaspriteIndex::
+	call Banked_PauseMenu_IterateCursorAnimation
+
+.skipCursorIteration
+	call AttractMode_ADVICE_CheckSGB
+	ret z
+
+.skipSGBCheck
+	ld a, [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index]
+	cp $4E
+	ret z
+	cp $4F
+	ret z
+	add 8
+	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
+	ret
+
 SECTION "Scene 1 SGB Gfx", ROMX[$79B0], BANK[$77]
 Scene1UndertileGfx::
 	INCBIN "build/gfx/intro/scene1_undertiles.2bpp"
