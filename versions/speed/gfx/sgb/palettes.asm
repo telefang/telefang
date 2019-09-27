@@ -94,17 +94,21 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $5B5D, $1D3C, $C6B ; 3A
     dSGB_Palette $7FFF, $5B5D, $55ED, 0 ; 3B
 
+    ;Fungus (Intro Scene 6)
+    dSGB_Palette $7FFF, $4AFB, $3635, $C6B ; 3C
+    dSGB_Palette $7FFF, $4AFB, $55EB, $C6B ; 3D
+    dSGB_Palette $7FFF, $76EB, $55EB, $C6B ; 3E
+    dSGB_Palette $7FFF, $4AFB, $1919, $C6B ; 3F
+	
+    dSGB_Palette $7FFF, $4AFB, $4211, $C6B ; 40
+    dSGB_Palette $7FFF, $5A56, $4211, $C6B ; 41
+    dSGB_Palette $7FFF, $4AFB, $29B6, $C6B ; 42
+	
+    dSGB_Palette $7FFF, $4AFB, $49EE, $C6B ; 43
+    dSGB_Palette $7FFF, $6AF0, $49EE, $C6B ; 44
+    dSGB_Palette $7FFF, $4AFB, $2177, $C6B ; 45
+
     ;unused?
-    dSGB_Palette $7FFF, $121F, $119,  $8B ; 3C
-    dSGB_Palette $7FFF, $56F2, $31CA, $1904 ; 3D
-    dSGB_Palette $7FFF, $5A52, $354A, $20A5 ; 3E
-    dSGB_Palette $7FFF, $4A56, $294D, $14A8 ; 3F
-    dSGB_Palette $7FFF, $211F,  $12, 0 ; 40
-    dSGB_Palette $7FFF, $3908, $2063, 0 ; 41
-    dSGB_Palette $7FFF, $351, $1C1F, 0 ; 42
-    dSGB_Palette $7FFF, $25F,  $18, 0 ; 43
-    dSGB_Palette $7FFF, $6B1F, $361F, 0 ; 44
-    dSGB_Palette $7FFF, $7FB4, $7E80, 0 ; 45
     dSGB_Palette $7FFF, $53FF, $339, 0 ; 46
     dSGB_Palette $7FFF, $63ED, $4B20, 0 ; 47
     dSGB_Palette $7FFF, $5B7F, $2E56, 0 ; 48

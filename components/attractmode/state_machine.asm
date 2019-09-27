@@ -42,7 +42,7 @@ AttractMode_StateMachine::
 	dw AttractMode_StateDrawScene4 ; 11
 	dw AttractMode_StateFadeIn ; 12
 	dw AttractMode_StateScene4AnimateMouth ; 13
-	dw AttractMode_StateFadeOut ; 14
+	dw AttractMode_StateFadeOutAndSGBBranch ; 14
 	; Scene 5
 	dw AttractMode_StateDrawScene5 ; 15
 	dw AttractMode_StateFadeIn ; 16
@@ -60,6 +60,19 @@ AttractMode_StateMachine::
 	dw AttractMode_StatePrepareToSkip ; 20
 	dw AttractMode_StateFadeOut ; 21
 	dw AttractMode_StateExitToTitlescreen ; 22
+	; Scene 5 (SGB)
+	dw AttractMode_StateDrawScene5SGB ; 23
+	dw AttractMode_StateFadeIn ; 24
+	dw AttractMode_StatePanScene5SGB ; 25
+	dw AttractMode_StateFadeOut ; 26
+	; Scene 6 (SGB)
+	dw AttractMode_StateDrawScene6SGB ; 27
+	dw AttractMode_StateFadeIn ; 28
+	dw AttractMode_StatePanScene6SGB ; 29
+	dw AttractMode_StateScene6PreFadeDelaySGB ; 2A
+	dw AttractMode_StateFadeOut ; 2B
+	; Exit
+	dw AttractMode_StateNaturalFinish ; 2C
 
 AttractMode_NextState::
 	; This is unused as far as I can tell. Maybe a former placeholder state?
@@ -157,7 +170,6 @@ AttractMode_StateScene1DenjuuAppearance::
 	ld [W_OAM_SpritesReady], a
 	jp System_ScheduleNextSubState
 	nop
-	nop
 
 AttractMode_StateScene1PreFadeDelay::
 	call AttractMode_ADVICE_LoadSGBFilesScene1_spriteChange
@@ -228,7 +240,7 @@ AttractMode_StateScene2AnimateMouth::
 
 ; AttractMode_StateDrawScene3 is version-specific.
 
-SECTION "Attract Mode State Machine 2", ROMX[$42CD], BANK[$2]
+SECTION "Attract Mode State Machine 2", ROMX[$42E0], BANK[$2]
 AttractMode_StateScene3ScrollTrees::
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
@@ -336,25 +348,6 @@ AttractMode_StateDrawScene4::
 	ld [W_OAM_SpritesReady], a
 	jp System_ScheduleNextSubState
 
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 
 AttractMode_StateScene4AnimateMouth::
 	ld de, W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_HiAttribs

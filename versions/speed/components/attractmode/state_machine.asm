@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Attract Mode State Machine (Speed)", ROMX[$427E], BANK[$2]
+SECTION "Attract Mode State Machine (Speed)", ROMX[$4291], BANK[$2]
 AttractMode_StateDrawScene3::
 	call LCDC_ClearMetasprites
 	ld bc, $33

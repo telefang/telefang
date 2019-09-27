@@ -45,6 +45,8 @@ AttractMode_ADVICE_UnloadSGBFiles::
 	call System_ScheduleNextSubState
 	call AttractMode_ADVICE_CheckSGB
 	ret z
+
+.skipSGBCheck
 	xor a
 	ld b, a
 	ld c, a
@@ -263,6 +265,72 @@ AttractMode_ADVICE_Scene4CorrectMetaspriteIndex::
 	add 8
 	ld [W_MetaSpriteConfig1 + (M_MetaSpriteConfig_Size * 1) + M_LCDC_MetaSpriteConfig_Index], a
 	ret
+
+AttractMode_StateFadeOutAndSGBBranch::
+	ld a, 1
+	call Banked_LCDC_PaletteFade
+	or a
+	ret z
+	call AttractMode_ADVICE_CheckSGB
+	jp z, System_ScheduleNextSubState
+	ld a, $23
+	ld [W_SystemSubState], a
+	jp AttractMode_ADVICE_UnloadSGBFiles.skipSGBCheck
+
+AttractMode_StatePanScene6SGB::
+	ld a, [W_System_CountdownTimer]
+	dec a
+	ld [W_System_CountdownTimer], a
+	or a
+	ret nz
+	ld a, [W_ShadowREG_SCX]
+	and $21
+	ld a, 4
+	jr nz, .slowerPlz
+	dec a
+
+.slowerPlz
+	ld [W_System_CountdownTimer], a
+	ld a, [W_ShadowREG_SCX]
+	dec a
+	ld [W_ShadowREG_SCX], a
+	or a
+	ret nz
+	ld a, $28
+	ld bc, $3C40
+	ld de, $4142
+	call Banked_SGB_ConstructPaletteSetPacket
+	ld a, $50
+	ld [W_System_CountdownTimer], a
+	jp System_ScheduleNextSubState
+
+AttractMode_StateScene6PreFadeDelaySGB::
+	ld a, [W_System_CountdownTimer]
+	dec a
+	ld [W_System_CountdownTimer], a
+	cp $4C
+	jr z, .colourStageB
+	cp $48
+	jr z, .colourStageC
+	or a
+	ret nz
+	ld a, 4
+	call Banked_LCDC_SetupPalswapAnimation
+	ld a, $10
+	ld [$CF96], a
+	jp System_ScheduleNextSubState
+
+.colourStageB
+	ld a, $28
+	ld bc, $3C43
+	ld de, $4445
+	jp Banked_SGB_ConstructPaletteSetPacket
+
+.colourStageC
+	ld a, $28
+	ld bc, $3C3D
+	ld de, $3E3F
+	jp Banked_SGB_ConstructPaletteSetPacket
 
 SECTION "Scene 1 SGB Gfx", ROMX[$79B0], BANK[$77]
 Scene1UndertileGfx::
