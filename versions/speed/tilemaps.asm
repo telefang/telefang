@@ -864,6 +864,7 @@ Tilemap_BANK_1::
 	dw Tilemap_attractmode_scene6_fungus_tmap_END
 	dw Tilemap_titlelogo_tulunk_tmap ;$10
 	dw Tilemap_attractmode_scene4_sgb_tmap ;$11
+	dw Tilemap_attractmode_scene5_sgb_tmap ;$12
 
 Tilemap_zukan_page_tmap::
 	INCBIN "build/components/zukan/page_tmap.tmap"
@@ -904,6 +905,10 @@ Tilemap_titlelogo_tulunk_tmap_END
 Tilemap_attractmode_scene4_sgb_tmap::
 	INCBIN "build/versions/speed/components/attractmode/scene4/fungus_shigeki_sgb_tmap.tmap"
 Tilemap_attractmode_scene4_sgb_tmap_END
+
+Tilemap_attractmode_scene5_sgb_tmap::
+	INCBIN "build/versions/speed/components/attractmode/scene5/gymnos_sgb_tmap.tmap"
+Tilemap_attractmode_scene5_sgb_tmap_END
 
 SECTION "attrib Bank 0", ROMX[$4000], BANK[$8]
 Attribmap_BANK_0::

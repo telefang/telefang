@@ -108,11 +108,13 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $6AF0, $49EE, $C6B ; 44
     dSGB_Palette $7FFF, $4AFB, $2177, $C6B ; 45
 
+    ;Gymnos (Intro Scene 5)
+    dSGB_Palette $7FFF, $6EAB, $55EB, 0 ; 46
+    dSGB_Palette $7FFF, $225A, $55EB, 0 ; 47
+    dSGB_Palette $7FFF, $6EAB, $225A, 0 ; 48
+    dSGB_Palette $7FFF, $1D9C, $55EB, 0 ; 49
+
     ;unused?
-    dSGB_Palette $7FFF, $53FF, $339, 0 ; 46
-    dSGB_Palette $7FFF, $63ED, $4B20, 0 ; 47
-    dSGB_Palette $7FFF, $5B7F, $2E56, 0 ; 48
-    dSGB_Palette $7FFF, $7F3C, $61B4, 0 ; 49
     dSGB_Palette $7FFF, $473F, $4A3F, 0 ; 4A
     dSGB_Palette $7FFF, $5FDC, $5294, 0 ; 4B
     dSGB_Palette $7FFF, $63DB, $5692, 0 ; 4C
