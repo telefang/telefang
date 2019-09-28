@@ -7,7 +7,7 @@ AttractModeScene4SGBGfx1::
 AttractModeScene4SGBGfx2::
 	INCBIN "build/versions/power/gfx/intro/crypto_shigeki_sgb2.2bpp"
 
-SECTION "Intro Scene 5 and 6 Version-Specific Patch Code", ROMX[$6000], BANK[$2]
+SECTION "Intro Scene 5 and 6 Version-Specific Patch Code", ROMX[$5900], BANK[$2]
 AttractMode_VersionSpecificWarning::
 	db "VersionSpecificCodeStartsHere"
 
