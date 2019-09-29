@@ -41,4 +41,7 @@ SGB_AttrFileData::
     INCBIN "build/components/attractmode/scene2.atf" ; 26
     INCBIN "build/versions/power/components/attractmode/scene4.atf" ; 27
     INCBIN "build/versions/power/components/attractmode/scene6.atf" ; 28
+    INCBIN "build/versions/power/components/attractmode/scene5c.atf" ; 29
+    INCBIN "build/versions/power/components/attractmode/scene5b.atf" ; 2A
+    INCBIN "build/versions/power/components/attractmode/scene5a.atf" ; 2B
     ; The highest attrfile number is $2C.
