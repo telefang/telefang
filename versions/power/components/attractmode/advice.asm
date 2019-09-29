@@ -15,10 +15,34 @@ AttractMode_StateDrawScene5SGB::
 	call LCDC_ClearMetasprites
 	ld bc, $36
 	call AttractMode_LoadMaliasGraphicsPair
+	ld hl, $8C60
+	ld de, AttractModeScene5SGBGfx1
+	ld bc, $20
+	call LCDC_LoadTiles
+	ld hl, $8D40
+	ld de, AttractModeScene5SGBGfx2
+	ld bc, $10
+	call LCDC_LoadTiles
+	ld hl, $8DA0
+	ld de, AttractModeScene5SGBGfx3
+	ld bc, $20
+	call LCDC_LoadTiles
+	ld hl, $8E30
+	ld de, AttractModeScene5SGBGfx4
+	ld bc, $20
+	call LCDC_LoadTiles
+	ld hl, $8E90
+	ld de, AttractModeScene5SGBGfx4
+	ld bc, $20
+	call LCDC_LoadTiles
 	ld bc, 0
 	ld e, $D
 	ld a, 1
 	call Banked_RLEDecompressTMAP0
+	ld a, $2A
+	ld bc, $4647
+	ld de, $4849
+	call Banked_SGB_ConstructPaletteSetPacket
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
 	ld a, $FF
@@ -34,12 +58,33 @@ AttractMode_StatePanScene5SGB::
 	ld a, [$C463]
 	dec a
 	ld [$C463], a
+	jr .doNotSendPacket
 
 .doNotPanThisFrame
+	cp 7
+	jr nz, .doNotSendPacket
+	; Accelerate timer to compensate for time lost sending the packet.
 	ld a, [W_System_CountdownTimer]
 	dec a
 	ld [W_System_CountdownTimer], a
-	cp 0
+	inc a
+	rlca
+	rlca
+	and 3
+	or a
+	jr z, .noDec
+	dec a
+
+.noDec
+	add $29
+	ld c, a
+	call Banked_SGB_ConstructATFSetPacket
+
+.doNotSendPacket
+	ld a, [W_System_CountdownTimer]
+	dec a
+	ld [W_System_CountdownTimer], a
+	or a
 	ret nz
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
@@ -75,3 +120,18 @@ AttractMode_StateDrawScene6SGB::
 
 AttractModeScene6SGBGfx1::
 	INCBIN "build/versions/power/gfx/intro/crypto1sgb.2bpp"
+
+AttractModeScene5SGBGfx1::
+	INCBIN "build/versions/power/gfx/intro/angios_sgboverlay1.2bpp"
+
+AttractModeScene5SGBGfx2::
+	INCBIN "build/versions/power/gfx/intro/angios_sgboverlay2.2bpp"
+
+AttractModeScene5SGBGfx3::
+	INCBIN "build/versions/power/gfx/intro/angios_sgboverlay3.2bpp"
+
+AttractModeScene5SGBGfx4::
+	INCBIN "build/versions/power/gfx/intro/angios_sgboverlay4.2bpp"
+
+AttractModeScene5SGBGfx5::
+	INCBIN "build/versions/power/gfx/intro/angios_sgboverlay5.2bpp"
