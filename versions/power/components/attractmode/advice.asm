@@ -39,7 +39,7 @@ AttractMode_StateDrawScene5SGB::
 	ld e, $D
 	ld a, 1
 	call Banked_RLEDecompressTMAP0
-	ld a, $2A
+	ld a, $2B
 	ld bc, $4647
 	ld de, $4849
 	call Banked_SGB_ConstructPaletteSetPacket
