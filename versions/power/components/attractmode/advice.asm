@@ -32,14 +32,14 @@ AttractMode_StateDrawScene5SGB::
 	ld bc, $20
 	call LCDC_LoadTiles
 	ld hl, $8E90
-	ld de, AttractModeScene5SGBGfx4
+	ld de, AttractModeScene5SGBGfx5
 	ld bc, $20
 	call LCDC_LoadTiles
 	ld bc, 0
 	ld e, $D
 	ld a, 1
 	call Banked_RLEDecompressTMAP0
-	ld a, $2A
+	ld a, $2B
 	ld bc, $4647
 	ld de, $4849
 	call Banked_SGB_ConstructPaletteSetPacket
