@@ -32,7 +32,7 @@ AttractMode_StateDrawScene5SGB::
 	ld bc, $20
 	call LCDC_LoadTiles
 	ld hl, $8E90
-	ld de, AttractModeScene5SGBGfx4
+	ld de, AttractModeScene5SGBGfx5
 	ld bc, $20
 	call LCDC_LoadTiles
 	ld bc, 0
