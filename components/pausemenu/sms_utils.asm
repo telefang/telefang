@@ -262,7 +262,7 @@ PauseMenu_ADVICE_DrawSMSFromMessages::
 	M_AdviceTeardown
 	ret
 
-SECTION "Pause Menu SMS Utils ADVICE 2", ROMX[$4C90], BANK[$1]
+SECTION "Pause Menu SMS Utils ADVICE 2", ROMX[$4C89], BANK[$1]
 PauseMenu_ADVICE_SMSFirstDrawHelper::
 	call PauseMenu_ADVICE_SMSLocateLineRelativeToCache
 	ld a, c
@@ -810,11 +810,17 @@ PauseMenu_ADVICE_SMSArrows::
 
 PauseMenu_ADVICE_SMSClearTiles::
 	ld a, [W_MainScript_TextStyle]
+	or a
+	jr z, .gbZukan
 	cp 1
 	jr nz, .gbTiles
 	xor a
 	call vmempoke
 	ld a, $FF
+	jr .nextLine
+
+.gbZukan
+	xor a
 	call vmempoke
 	jr .nextLine
 
@@ -822,9 +828,9 @@ PauseMenu_ADVICE_SMSClearTiles::
 	ld a, $FF
 	call vmempoke
 	xor a
-	call vmempoke
 
 .nextLine
+	call vmempoke
 	dec b
 	jr nz, PauseMenu_ADVICE_SMSClearTiles
 	ret
