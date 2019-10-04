@@ -364,19 +364,24 @@ EventScript_JumpIfLTEInventoryAndContinue::
 	scf
 	ret
 
-SECTION "Event Action - Jump if Shop Item Inventory Full and Continue", ROMX[$7FDD], BANK[$F]
+SECTION "Event Action - Jump if Shop Item Inventory Full and Continue", ROMX[$7F00], BANK[$F]
 EventScript_ADVICE_JumpIfShopItemInventoryFullAndContinue::
-	ld hl, $C218
-	ld a, [hl]
-	ld hl, W_PauseMenu_InventoryQuantities
-	add l
-	ld l, a
-	ld a, 0
-	adc h
-	ld h, a
-	ld a, [hl]
-	cp 99
+	ld hl, $C1A0
+	call .checkIfCarrying
 	jr nc, .inventoryFull
+
+	ld hl, $C1C0
+	call .checkIfCarrying
+	jr nc, .inventoryFull
+
+	ld hl, $C1E0
+	call .checkIfCarrying
+	jr nc, .inventoryFull
+
+	ld hl, $C200
+	call .checkIfCarrying
+	jr nc, .inventoryFull
+
 	ld b, 2
 	call EventScript_CalculateNextOffset
 	scf
@@ -388,4 +393,26 @@ EventScript_ADVICE_JumpIfShopItemInventoryFullAndContinue::
 	ld b, a
 	call EventScript_CalculateNextOffset
 	scf
+	ret
+
+.checkIfCarrying
+	ld a, [hl]
+	or a
+	jr nz, .checkInventory
+	scf
+	ret
+
+.checkInventory
+	ld a, l
+	add $18
+	ld l, a
+	ld a, [hl]
+	ld hl, W_PauseMenu_InventoryQuantities
+	add l
+	ld l, a
+	ld a, 0
+	adc h
+	ld h, a
+	ld a, [hl]
+	cp 99
 	ret
