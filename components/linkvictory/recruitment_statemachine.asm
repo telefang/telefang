@@ -88,21 +88,26 @@ LinkVictory_SubStateRecruitmentLostConnectionExitToTitlemenu::
 LinkVictory_SubStateRecruitmentQueueConnectionMessage::
 	ld c, $72
 	call Battle_QueueMessage
+	ld a, $40
+	ld [W_SerIO_WaitForPatchExtension], a
 	ld a, $F
 	ld [W_Battle_4thOrderSubState], a
 	ret
 
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+
 LinkVictory_SubStateRecruitmentStoreDenjuu::
-	ld hl, W_SerIO_RecvBuffer
-	ld a, [W_Battle_NextSerIOByteIn]
-	add a, $16
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	cp $EE
-	jr z, .successfulCommunication
-	jp Banked_MainScriptMachine
+	call Banked_SerIO_ADVICE_WaitForTradedDenjuu
+	ld a, d
+	or a
+
+	jp z, Banked_MainScriptMachine
 
 .successfulCommunication
 	ld de, $DC60
@@ -126,11 +131,11 @@ LinkVictory_SubStateRecruitmentStoreDenjuu::
 	ld a, [W_Battle_LoopIndex]
 	inc a
 	ld [W_Battle_LoopIndex], a
-	cp $16
+	cp $22
 	jr nz, .copyloop
 
 	ld hl, $DC60
-	ld b, $16
+	ld b, $22
 
 .correctionLoop
 	ld a, [hl]
@@ -157,33 +162,11 @@ LinkVictory_SubStateRecruitmentStoreDenjuu::
 
 	ld a, b
 	ld [$D4A7], a
-	ld a, [$D4A7]
-	ld hl, S_SaveClock_StatisticsArray
-	call Battle_IndexStatisticsArray
-	ld d, h
-	ld e, l
-	ld hl, $DC60
-	ld bc, $10
-	call memcpy
-	ld a, [$D4A7]
-	ld hl, S_SaveClock_NicknameArray
-	ld de, 6
-	cp 0
-	jr z, .skiploop
 
-.addloop
-	add hl, de
-	dec a
-	jr nz, .addloop
+	call Banked_SerIO_ADVICE_SaveTradedDenjuuInfo
 
-.skiploop
-	ld d, h
-	ld e, l
-	ld hl, $DC70
-	ld bc, 6
-	call memcpy
 	ld a, [W_Battle_NextSerIOByteIn]
-	add a, $16
+	add a, $22
 	ld [W_Battle_NextSerIOByteIn], a
 	ld a, [$D4A7]
 	ld hl, S_SaveClock_StatisticsArray
@@ -213,6 +196,52 @@ LinkVictory_SubStateRecruitmentStoreDenjuu::
 	ld a, $10
 	ld [W_Battle_4thOrderSubState], a
 	ret
+
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 
 LinkVictory_SubStateDrawRecruitmentScreen::
 	ld a, 1

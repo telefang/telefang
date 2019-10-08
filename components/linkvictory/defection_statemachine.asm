@@ -136,30 +136,7 @@ LinkVictory_SubStateDrawDefectionScreen::
 	ld [W_Victory_DefectedContact], a
 
 .processContactLoss
-	call SaveClock_EnterSRAM2
-	ld   hl, S_SaveClock_StatisticsArray
-	ld   a, [W_Victory_DefectedContact]
-	call Battle_IndexStatisticsArray
-	ld de, $DC60
-	ld bc, $10
-	call memcpy
-	call SaveClock_EnterSRAM2
-	ld hl, S_SaveClock_NicknameArray
-	ld a, [W_Victory_DefectedContact]
-	ld de, 6
-	cp a, 0
-	jr z, .skipLoop
-
-.nicknameAddressCalcLoop
-	add hl, de
-	dec a
-	jr nz, .nicknameAddressCalcLoop
-
-.skipLoop
-	ld de, $DC70
-	ld bc, 6
-	call memcpy
-	
+	call Banked_SerIO_ADVICE_BufferDenjuuInfoForTrade
 	call SaveClock_EnterSRAM2
 	
 	ld hl, S_SaveClock_StatisticsArray + M_SaveClock_DenjuuSpecies
@@ -236,6 +213,54 @@ LinkVictory_SubStateDrawDefectionScreen::
 	ld [W_Battle_4thOrderSubState], a
 	ret
 
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+
 LinkVictory_DefectionTransmitDenjuuToOpponent::
 	ld hl, $DC60
 	ld a, [W_Battle_LoopIndex]
@@ -267,7 +292,7 @@ LinkVictory_DefectionTransmitDenjuuToOpponent::
 	ld a, [W_Battle_LoopIndex]
 	inc a
 	ld [W_Battle_LoopIndex], a
-	cp $16
+	cp $22
 	ret nz
 	ld a, 1
 	ld [W_Battle_4thOrderSubState], a

@@ -9,67 +9,6 @@ Encounter_LoadScriptedDenjuu::
 SECTION "Load Scripted T-Fanger Denjuu", ROM0[$3E68]
 Encounter_LoadScriptedTFangerDenjuu::
 	jp Encounter_LoadScriptedTFangerDenjuuRelocated
-	
-;NOTE: Free Space
-	
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 
 SECTION "Load Scripted Denjuu Relocated", ROMX[$5510], BANK[$27]
 Encounter_LoadScriptedDenjuuRelocated::
