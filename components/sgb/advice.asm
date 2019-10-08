@@ -187,6 +187,8 @@ Banked_SGB_ConstructATTRBLKPacket::
     ld a, BANK(SGB_ConstructATTRBLKPacket)
     rst $10
     call SGB_ConstructATTRBLKPacket
+
+Banked_SGB_ConstructATTRBLKPacket_return::
     pop af
     rst $10
     ret

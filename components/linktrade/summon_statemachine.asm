@@ -601,29 +601,7 @@ LinkTrade_StateParseContactForTrading::
 	ld d, a
 	call SerIO_IndexContactArrayByPage
 	ld [W_Victory_DefectedContact], a
-	call SaveClock_EnterSRAM2
-	ld hl, S_SaveClock_StatisticsArray
-	ld a, [W_Victory_DefectedContact]
-	call Battle_IndexStatisticsArray
-	ld de, $DC60
-	ld bc, $10
-	call memcpy
-	call SaveClock_EnterSRAM2
-	ld hl, S_SaveClock_NicknameArray
-	ld a, [W_Victory_DefectedContact]
-	ld de, 6
-	cp 0
-	jr z, .skipNicknameAddressLoop
-
-.nicknameAddressLoop
-	add hl, de
-	dec a
-	jr nz, .nicknameAddressLoop
-
-.skipNicknameAddressLoop
-	ld de, $DC70
-	ld bc, 6
-	call memcpy
+	call Banked_SerIO_ADVICE_BufferDenjuuInfoForTrade
 	call SaveClock_EnterSRAM2
 	ld hl, S_SaveClock_StatisticsArray
 	ld a, [W_Victory_DefectedContact]
@@ -680,21 +658,17 @@ LinkTrade_StatePerformExchange::
 	ld a, [W_Battle_LoopIndex]
 	inc a
 	ld [W_Battle_LoopIndex], a
-	cp $16
+	cp $22
 	ret nz
+	ld a, $40
+	ld [W_SerIO_WaitForPatchExtension], a
 	jp SerIO_Increment4thOrderSubState
 
 LinkTrade_StateParseTradedContact::
 	call Banked_MainScriptMachine
-	ld hl, W_SerIO_RecvBuffer
-	ld a, [W_Battle_NextSerIOByteIn]
-	add $16
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	cp 0
+	call Banked_SerIO_ADVICE_WaitForTradedDenjuu
+	ld a, d
+	or a
 	ret z
 	ld de, $DC60
 	ld a, 0
@@ -717,10 +691,10 @@ LinkTrade_StateParseTradedContact::
 	ld a, [W_Battle_LoopIndex]
 	inc a
 	ld [W_Battle_LoopIndex], a
-	cp $16
+	cp $22
 	jr nz, .copyLoopA
 	ld hl, $DC60
-	ld b, $16
+	ld b, $22
 
 .copyLoopB
 	ld a, [hl]
@@ -745,33 +719,9 @@ LinkTrade_StateParseTradedContact::
 	jr nz, .searchLoop
 	ld a, b
 	ld [$D4A7], a
-	ld a, [$D4A7]
-	ld hl, S_SaveClock_StatisticsArray
-	call Battle_IndexStatisticsArray
-	ld d, h
-	ld e, l
-	ld hl, $DC60
-	ld bc, $10
-	call memcpy
-	ld a, [$D4A7]
-	ld hl, S_SaveClock_NicknameArray
-	ld de, 6
-	cp 0
-	jr z, .skipNicknameAddressLoop
-
-.nicknameAddressLoop
-	add hl, de
-	dec a
-	jr nz, .nicknameAddressLoop
-
-.skipNicknameAddressLoop
-	ld d, h
-	ld e, l
-	ld hl, $DC70
-	ld bc, 6
-	call memcpy
+	call Banked_SerIO_ADVICE_SaveTradedDenjuuInfo
 	ld a, [W_Battle_NextSerIOByteIn]
-	add $16
+	add $22
 	ld [W_Battle_NextSerIOByteIn], a
 	call SaveClock_EnterSRAM2
 	ld a, [$D4A7]
@@ -787,6 +737,7 @@ LinkTrade_StateParseTradedContact::
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
 	jp SerIO_Increment4thOrderSubState
+
 
 LinkTrade_StateFadeOutAndExit::
 	ld a, 1
@@ -833,3 +784,102 @@ LinkTrade_StateOpenDenjuuStatusScreen::
 	ld a, 9
 	ld [W_SystemState], a
 	ret
+
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
