@@ -10,8 +10,12 @@ Battle_ADVICE_ClearStatusEffectTilemaps::
     ; Original replaced code.
     ld bc, $01
     call Banked_LoadMaliasGraphics
+    call Battle_ADVICE_ClearStatusEffectTilemaps_externalEntry
 
-.externalEntry
+    M_AdviceTeardown
+    ret
+
+Battle_ADVICE_ClearStatusEffectTilemaps_externalEntry::
     ; And then we gotta clear the status effect tilemaps.
     ld hl, $9801 ; Partner's tiles
     ld bc, (2 << 8) | (5 / 2)
@@ -33,8 +37,6 @@ Battle_ADVICE_ClearStatusEffectTilemaps::
     ld hl, $9D01 ; Opponent's tiles
     dec b
     jr nz, .clearLoop
-
-    M_AdviceTeardown
     ret
 
 SECTION "Direct Battle Screen Exit To Overworld Advice Code", ROMX[$5100], BANK[$1]
@@ -269,6 +271,7 @@ Battle_ADVICE_AttackWindowCorrectForSGBOnClose::
 Battle_ADVICE_VictoryDrawWindowTiles::
     M_AdviceSetup
 
+    call Battle_ADVICE_ClearStatusEffectTilemaps_externalEntry
     call PauseMenu_ADVICE_CheckSGB
     jr z, .noSGB
 
@@ -277,12 +280,15 @@ Battle_ADVICE_VictoryDrawWindowTiles::
     ld de, MenuBattle2GfxSGB
     ld bc, $200
     call Banked_LCDC_LoadTiles
-    jp Battle_ADVICE_ClearStatusEffectTilemaps.externalEntry
+    jr .exit
 
 .noSGB
     ld bc, $14
     call Banked_LoadMaliasGraphics
-    jp Battle_ADVICE_ClearStatusEffectTilemaps.externalEntry
+
+.exit
+    M_AdviceTeardown
+    ret
 
 Battle_ADVICE_ArrivedMessageFix::
     M_AdviceSetup
