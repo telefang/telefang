@@ -392,8 +392,7 @@ Attack_PartnerFled::
 	ld a, 0
 	call Banked_RLEDecompressTMAP0
 	ld hl, $9160
-	ld b, 0
-	call Banked_MainScript_DrawStatusEffectString
+	M_AuxJmp Banked_Battle_ADVICE_SGBPaletteOnPartnerFell
 	ld a, [W_Battle_PartnerDenjuuTurnOrder]
 	call Battle_StagePartnerStats
 	ld a, [W_Battle_CurrentParticipant]
@@ -430,8 +429,7 @@ Attack_OpponentFled::
 	ld a, 0
 	call Banked_RLEDecompressTMAP1
 	ld hl, $91B0
-	ld b, 0
-	call Banked_MainScript_DrawStatusEffectString
+	M_AuxJmp Banked_Battle_ADVICE_SGBPaletteOnOpponentFell
 	ld a, [W_Battle_OpponentDenjuuTurnOrder]
 	call Battle_StageOpponentStats
 	ld a, [W_Battle_CurrentParticipant]
