@@ -55,43 +55,10 @@ LCDC_PaletteFade::
     jp z, Banked_LCDC_PaletteFadeCGB
     
     ;DMB/MGB-only codepath.
-    ld a, [W_LCDC_FadeType]
-    ld d, 0
-    ld e, a
-    sla e
-    rl d
-    sla e
-    rl d
-    ld hl, LCDC_DMGPaletteFades
-    add hl, de
-    
-    ld a, [hli]
-    ld h, [hl]
-    ld l, a
-    
-    ld a, [W_LCDC_PaletteAnimFrame]
-    ld d, 0
-    ld e, a
-    add hl, de
-    
-    ld a, [hl]
-    ld [W_ShadowREG_BGP], a
-    
-    ld d, 0
-    ld e, 5
-    add hl, de
-    ld a, [hl]
-    ld [W_ShadowREG_OBP0], a
-    
-    ld d, 0
-    ld e, 5
-    add hl, de
-    ld a, [hl]
-    ld [W_ShadowREG_OBP1], a
-    
-    ld a, [W_LCDC_PaletteAnimFrame]
-    inc a
-    ld [W_LCDC_PaletteAnimFrame], a
+    ld a, BANK(LCDC_PaletteFadeDMG)
+    rst $10
+    call LCDC_PaletteFadeDMG
+    rst $18
 
 .noFade
     xor a
@@ -100,8 +67,62 @@ LCDC_PaletteFade::
 .endAnimation
     xor a
     ld [W_LCDC_PaletteAnimRunning], a
+    ld [W_SGB_FadeMethod], a
     ld a, 1
     ret
+
+; Note: Free space
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 ;Perhaps this could be better implemented as a compilable resource...
 ;Anyway, one interesting part about this table is that it's structured in rows
@@ -111,7 +132,7 @@ LCDC_PaletteFade::
 ;will pull .pal2 for OBP0 and .pal3 for OBP1, but the second fade pulls .pal3 as
 ;a BGP animation. Furthermore, one of the fades points to the end of the table,
 ;meaning that random code will be taken as OBPx palettes!
-LCDC_DMGPaletteFades:
+LCDC_DMGPaletteFades::
     dw .pal1, .pal3, .pal4, .pal6, .pal7, .pal9, .palA, .palC
     
 .pal1 db $00, $54, $A4, $E4, $FF

@@ -67,7 +67,7 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $4319, $1E33, $86A ; 29
     dSGB_Palette $7FFF, $3F3F, $1E3C, $86A ; 2A
 
-    ;Shigeki Cave
+    ;Shigeki Cave (Intro Scene 1)
     dSGB_Palette $7FFF, $6F53, $51E5, $24C1 ; 2B
     dSGB_Palette $7FFF, $72F2, $5164, $24C1 ; 2C
     dSGB_Palette $7FFF, $535E, $1D3D, $24C1 ; 2D
@@ -114,17 +114,22 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $62F3, $6A47, $28C2 ; 48
     dSGB_Palette $7FFF, $6A47, $39A9, $28C2 ; 49
 
-    ;unused?
-    dSGB_Palette $7FFF, $473F, $4A3F, 0 ; 4A
-    dSGB_Palette $7FFF, $5FDC, $5294, 0 ; 4B
-    dSGB_Palette $7FFF, $63DB, $5692, 0 ; 4C
-    dSGB_Palette $7FFF, $67DA, $5A90, 0 ; 4D
-    dSGB_Palette $7FFF, $67DA, $5E6E, 0 ; 4E
-    dSGB_Palette $7FFF, $6BD9, $626C, 0 ; 4F
-    dSGB_Palette $7FFF, $6FD9, $666A, 0 ; 50
-    dSGB_Palette $7FFF, $73D8, $6A68, 0 ; 51
-    dSGB_Palette $7FFF, $73D7, $6E46, 0 ; 52
-    dSGB_Palette $7FFF, $77D7, $7244, 0 ; 53
+    ;Fade General
+    dSGB_Palette 0, 0, 0, 0 ; 4A
+    dSGB_Palette $7FFF, $7FFF, $7FFF, $7FFF ; 4B
+
+	;Shigeki Cave (Intro Scene 1) Fade
+    dSGB_Palette $7FFF, $7BBB, $6F56, $62F5 ; 4C
+    dSGB_Palette $7FFF, $7B9B, $6F16, $62F5 ; 4D
+    dSGB_Palette $7FFF, $6FBF, $5F1E, $62F5 ; 4E
+    dSGB_Palette $7FFF, $7B9B, $5F1E, $62F5 ; 4F
+
+    dSGB_Palette $7FFF, $7397, $628E, $41CB ; 50
+    dSGB_Palette $7FFF, $7756, $624D, $41CB ; 51
+    dSGB_Palette $7FFF, $639E, $3E1E, $41CB ; 52
+    dSGB_Palette $7FFF, $7756, $3E1E, $41CB ; 53
+
+	;unused?
     dSGB_Palette $7FFF, $7BD6, $7642, 0 ; 54
     dSGB_Palette $7FFF, $7FF6, $7A40, 0 ; 55
     dSGB_Palette $7FFF, $7BF6, $7240, 0 ; 56

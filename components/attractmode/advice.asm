@@ -90,14 +90,48 @@ AttractMode_ADVICE_MapUndertiles::
 	jr nz, .loop
 	ret
 
+AttractMode_ADVICE_IdentifyFadePalettesCommon::
+	ld hl, W_SGB_FadeMethod
+	ld a, 1
+	ld [hli], a
+	ld a, $4B
+	ld [hli], a
+	ld a, b
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	ret
+
 AttractMode_ADVICE_LoadSGBFilesScene1::
 	call AttractMode_ADVICE_CheckSGB
 	jr z, .noSGB
+	
+	ld b, $4C
+	call AttractMode_ADVICE_IdentifyFadePalettesCommon
+	ld a, $2B
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
 
-	ld a, $23
-	ld bc, $2B2C
-	ld de, $2D2E
-	call Banked_SGB_ConstructPaletteSetPacket
+	ld c, $23
+	call Banked_SGB_ConstructATFSetPacket
+
 	call AttractMode_ADVICE_MapUndertiles
 
 	ld a, $4A
@@ -137,7 +171,10 @@ AttractMode_ADVICE_LoadSGBFilesScene1_postScroll::
 	call AttractMode_ADVICE_MapUndertiles
 	ld c, $24
     call Banked_SGB_ConstructATFSetPacket
-	
+
+	ld a, 1
+	ld [W_SGB_FadeMethod], a
+
 	ld a, $4B
 	jr .setMetaspriteIndex
 
