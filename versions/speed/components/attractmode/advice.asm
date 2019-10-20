@@ -27,10 +27,12 @@ AttractMode_StateDrawScene5SGB::
 	call Banked_RLEDecompressTMAP0
 	ld a, 4
 	call Banked_LCDC_SetupPalswapAnimation
-	ld a, $2C
-	ld bc, $4647
-	ld de, $4849
-	call Banked_SGB_ConstructPaletteSetPacket
+
+	ld bc, $7446
+	call AttractMode_ADVICE_IdentifyFadePalettesCommon
+	ld c, $2C
+	call Banked_SGB_ConstructATFSetPacket
+
 	ld a, $FF
 	ld [W_System_CountdownTimer], a
 	ld a, 8
@@ -68,7 +70,7 @@ AttractMode_StatePanScene5SGB::
 	or a
 	ret nz
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp System_ScheduleNextSubState
 
 AttractMode_StateDrawScene6SGB::
@@ -87,6 +89,30 @@ AttractMode_StateDrawScene6SGB::
 	ld [$C463], a
 	ld a, $40
 	ld [W_ShadowREG_SCX], a
+
+	; This is for if we skip to the titlescreen mid-pan.
+
+	ld hl, W_SGB_FadeMethod
+	xor a
+	ld [hli], a
+	ld a, $4B
+	ld [hli], a
+	ld a, $6C
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld a, $70
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld a, $3C
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+
 	ld a, $28
 	ld b, $3C
 	ld c, b

@@ -178,7 +178,7 @@ AttractMode_StateScene1PreFadeDelay::
 	cp 0
 	ret nz
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp System_ScheduleNextSubState
 
 AttractMode_StateFadeOut::
@@ -235,7 +235,7 @@ AttractMode_StateScene2AnimateMouth::
 
 .nextState
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp System_ScheduleNextSubState
 
 ; AttractMode_StateDrawScene3 is version-specific.
@@ -306,7 +306,7 @@ AttractMode_StateScene3ReverseScrollTrees::
 
 .nextState
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp System_ScheduleNextSubState
 
 AttractMode_StateScene3FadeOut::
@@ -358,7 +358,7 @@ AttractMode_StateScene4AnimateMouth::
 	cp 0
 	ret nz
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp System_ScheduleNextSubState
 
 AttractMode_StateDrawScene5::
@@ -474,7 +474,7 @@ AttractMode_StateExitToTitlescreen::
 
 AttractMode_StatePrepareToSkip::
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	ld a, $10
 	ld [$CF96], a
 	jp System_ScheduleNextSubState

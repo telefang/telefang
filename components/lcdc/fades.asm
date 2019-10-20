@@ -71,6 +71,12 @@ LCDC_PaletteFade::
     ld a, 1
     ret
 
+Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade::
+    call Banked_LCDC_SetupPalswapAnimation
+    ld a, 1
+    ld [W_SGB_FadeMethod], a
+    ret
+
 ; Note: Free space
 
     nop
@@ -107,16 +113,6 @@ LCDC_PaletteFade::
     nop
 
     nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-
     nop
     nop
     nop

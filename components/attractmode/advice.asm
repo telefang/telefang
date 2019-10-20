@@ -15,10 +15,11 @@ AttractMode_ADVICE_LoadSGBFilesScene3::
 	call AttractMode_ADVICE_CheckSGB
 	ret z
 	call AttractMode_ADVICE_Scene3CorrectMetaspriteIndex.skipSGBCheck
-	ld a, $22
-	ld bc, $2728
-	ld de, $292A
-	jp Banked_SGB_ConstructPaletteSetPacket
+	ld bc, $5427
+	call AttractMode_ADVICE_IdentifyFadePalettesCommon
+
+	ld c, $22
+	jp Banked_SGB_ConstructATFSetPacket
 
 AttractMode_ADVICE_Scene3CorrectMetaspriteIndexOnInit::
 	call Banked_PauseMenu_InitializeCursor
@@ -112,22 +113,22 @@ AttractMode_ADVICE_IdentifyFadePalettesCommon::
 	ld [hli], a
 	inc a
 	ld [hli], a
+	ld a, c
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
 	ret
 
 AttractMode_ADVICE_LoadSGBFilesScene1::
 	call AttractMode_ADVICE_CheckSGB
 	jr z, .noSGB
 	
-	ld b, $4C
+	ld bc, $4C2B
 	call AttractMode_ADVICE_IdentifyFadePalettesCommon
-	ld a, $2B
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hli], a
 
 	ld c, $23
 	call Banked_SGB_ConstructATFSetPacket
@@ -171,9 +172,6 @@ AttractMode_ADVICE_LoadSGBFilesScene1_postScroll::
 	call AttractMode_ADVICE_MapUndertiles
 	ld c, $24
     call Banked_SGB_ConstructATFSetPacket
-
-	ld a, 1
-	ld [W_SGB_FadeMethod], a
 
 	ld a, $4B
 	jr .setMetaspriteIndex
@@ -244,10 +242,12 @@ AttractMode_ADVICE_LoadSGBFilesScene2::
 	call System_ScheduleNextSubState
 	call AttractMode_ADVICE_CheckSGB
 	ret z
-	ld a, $26
-	ld bc, $3435
-	ld de, $3637
-	jp Banked_SGB_ConstructPaletteSetPacket
+	
+	ld bc, $5C34
+	call AttractMode_ADVICE_IdentifyFadePalettesCommon
+
+	ld c, $26
+	jp Banked_SGB_ConstructATFSetPacket
 
 AttractMode_ADVICE_LoadSGBFilesScene4::
 	call AttractMode_ADVICE_CheckSGB
@@ -267,10 +267,11 @@ AttractMode_ADVICE_LoadSGBFilesScene4::
 	ld e, $11
 	ld a, 1
 	call Banked_RLEDecompressTMAP0
-	ld a, $27
-	ld bc, $3839
-	ld de, $3A3B
-	jp Banked_SGB_ConstructPaletteSetPacket
+	ld bc, $6438
+	call AttractMode_ADVICE_IdentifyFadePalettesCommon
+
+	ld c, $27
+	jp Banked_SGB_ConstructATFSetPacket
 
 .noSGB
 	ld bc, $34
@@ -367,7 +368,9 @@ AttractMode_StateScene6PreFadeDelaySGB::
 	ld a, $28
 	ld bc, $3C3D
 	ld de, $3E3F
-	jp Banked_SGB_ConstructPaletteSetPacket
+	call Banked_SGB_ConstructPaletteSetPacket
+	ld bc, $6C3C
+	jp AttractMode_ADVICE_IdentifyFadePalettesCommon
 
 SECTION "Scene 1 SGB Gfx", ROMX[$79B0], BANK[$77]
 Scene1UndertileGfx::
