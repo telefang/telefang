@@ -36,12 +36,12 @@ SGB_ADVICE_SendATFPacketsWithVRAM::
     ld [W_CurrentBank], a
     jp Banked_SGB_ADVICE_SendATFPacketsWithVRAM_Exit
 
-SECTION "SGB Old Attribute Data Zerofill", ROMX[$6ED8], BANK[$3]
+SECTION "SGB Old Attribute Data Zerofill", ROMX[$73C8], BANK[$3]
 SGB_ClearOldAttrFileData::
 	
 ;NOTE: Free Space
 
-    REPT $5DD
+    REPT $ED
     nop
     ENDR
 
