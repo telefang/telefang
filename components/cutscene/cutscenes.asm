@@ -320,7 +320,7 @@ Cutscene_StateFadeInAndAnimate::
 
 .nextState
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp System_ScheduleNextSubState
 
 	nop

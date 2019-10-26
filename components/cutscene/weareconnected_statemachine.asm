@@ -48,7 +48,7 @@ WeAreConnected_StatePrintMessageAndWait::
 	inc a
 	ld [W_Cutscene_SubSubState], a
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call WeAreConnected_ADVICE_LoadSGBFiles_BeforeFadeToBlack
 	ld a, $71
 	ld [W_Sound_NextSFXSelect], a
 	ret
@@ -161,7 +161,7 @@ WeAreConnected_WaitAndExit::
 	cp $1E
 	ret c
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call WeAreConnected_ADVICE_PrepareForFade
 	jp System_ScheduleNextSubState
 	ret
 

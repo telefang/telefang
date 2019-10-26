@@ -37,6 +37,17 @@ Cutscene_ADVICE_TileLightColourClear::
 	jr nz, .loop
 	ret
 
+WeAreConnected_ADVICE_PrepareForFade::
+	call Banked_LCDC_SetupPalswapAnimation
+	call Cutscene_ADVICE_CheckSGB
+	ret z
+	xor a
+	ld b, a
+	ld c, a
+	ld d, a
+	ld e, a
+	jp Banked_SGB_ConstructPaletteSetPacket
+
 Cutscene_ADVICE_LoadSGBFiles::
 	call Cutscene_ADVICE_CheckSGB
 	ret z
@@ -49,6 +60,38 @@ Cutscene_ADVICE_LoadSGBFiles::
 	jp z, .placeholderJumpPoint
 
 .placeholderJumpPoint
+	ret
+
+Cutscene_ADVICE_IdentifyFadePalettesCommon::
+	ld hl, W_SGB_FadeMethod
+	ld a, 1
+	ld [hli], a
+	ld a, $4B
+	ld [hli], a
+	ld a, b
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	ld a, c
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
 	ret
 	
 Cutscene_ADVICE_LoadSGBFiles_AntennaTree::
@@ -97,10 +140,11 @@ Cutscene_ADVICE_LoadSGBFiles_AntennaTree::
 	dec b
 	jr nz, .loop
 
-	ld a, $16
-	ld bc, $506
-	ld de, $708
-	jp Banked_SGB_ConstructPaletteSetPacket
+	ld bc, $7C05
+	call Cutscene_ADVICE_IdentifyFadePalettesCommon
+
+	ld c, $16
+	jp  Banked_SGB_ConstructATFSetPacket
 
 .table
 	db $20, $21, $32, $33, $40, $41
@@ -142,11 +186,14 @@ Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers::
 	ld a, d
 	call vmempoke
 
+	ld bc, $9415
+	call Cutscene_ADVICE_IdentifyFadePalettesCommon
+	ld a, $F
+	ld [W_SGB_PreloadedFadeStageD], a
+
 	xor a
 	ld [W_Cutscene_KaiSGBRevealState], a
-	ld bc, $F10
-	ld de, $1112
-	jp Banked_SGB_ConstructPaletteSetPacket
+	ret
 	
 Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers_ShowKai::
 	call Cutscene_ADVICE_CheckSGB
@@ -164,8 +211,10 @@ Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers_ShowKai::
 	jr .nextStage
 
 .stageA
-	ld c, $19
-	call Banked_SGB_ConstructATFSetPacket
+	ld a, $19
+	ld bc, $F10
+	ld de, $1112
+	call Banked_SGB_ConstructPaletteSetPacket
 	ld e, $C1
 	xor a
 	ld b, a
@@ -223,10 +272,17 @@ WeAreConnected_ADVICE_LoadSGBFiles::
 	ld a, $4F
 	call vmempoke
 	
-	ld a, $17
-	ld bc, $90A
-	ld de, $B0C
-	jp Banked_SGB_ConstructPaletteSetPacket
+	ld bc, $8409
+	call Cutscene_ADVICE_IdentifyFadePalettesCommon
+
+	ld c, $17
+	jp Banked_SGB_ConstructATFSetPacket
+	
+WeAreConnected_ADVICE_LoadSGBFiles_BeforeFadeToBlack::
+	call Banked_LCDC_SetupPalswapAnimation
+	
+	ld bc, $8C09
+	jp Cutscene_ADVICE_IdentifyFadePalettesCommon
 	
 WeAreConnected_ADVICE_LoadSGBFiles_Waaaaahh::
 	call Cutscene_ADVICE_CheckSGB
