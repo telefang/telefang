@@ -4,15 +4,19 @@ SECTION "Title Screen SGB Advice", ROMX[$7F50], BANK[$2]
 TitleScreen_ADVICE_LoadSGBFiles::
     call AttractMode_ADVICE_CheckSGB
     ret z
-    
-    ;Load our ATF
-    ld a, 2
-    ld b, 1
+
+    ld bc, $A401
+    call AttractMode_ADVICE_IdentifyFadePalettesCommon
     ld c, 2
-    ld d, 3
-    ld e, 4
-    call Banked_SGB_ConstructPaletteSetPacket
-    ret
+    jp Banked_SGB_ConstructATFSetPacket
+
+TitleScreen_ADVICE_LoadSGBFadeOut::
+    call Banked_LCDC_SetupPalswapAnimation
+    call AttractMode_ADVICE_CheckSGB
+    ret z
+
+    ld bc, $9C01
+    jp AttractMode_ADVICE_IdentifyFadePalettesCommon
     
 TitleScreen_ADVICE_RecolorVersionBand::
     call AttractMode_ADVICE_CheckSGB
@@ -57,10 +61,10 @@ TitleScreen_ADVICE_RecolorVersionBand::
     
 TitleScreen_ADVICE_UnloadSGBFiles::
     ;Load a neutral ATF
-    ld a, 0
-    ld b, 0
-    ld c, 0
-    ld d, 0
-    ld e, 0
+    xor a
+    ld b, a
+    ld c, a
+    ld d, a
+    ld e, a
     call Banked_SGB_ConstructPaletteSetPacket
     jp System_ScheduleNextSubState

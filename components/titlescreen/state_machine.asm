@@ -141,7 +141,7 @@ TitleScreen_StateIdle::
     ld [W_Sound_NextSFXSelect], a
     
     ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    call TitleScreen_ADVICE_LoadSGBFadeOut
     
     ld a, $10
     ld [$CF96], a
@@ -162,7 +162,7 @@ TitleScreen_StateIdle::
     ret nz
     
     ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    call TitleScreen_ADVICE_LoadSGBFadeOut
     
     ld a, $10
     ld [$CF96], a

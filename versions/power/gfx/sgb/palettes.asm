@@ -12,7 +12,7 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $66F4, $4A0D, 0 ; 03
     dSGB_Palette $7FFF, $529F, $295F, $001F ; 04
 
-	;Antenna Tree Cutscene
+    ;Antenna Tree Cutscene
     dSGB_Palette $7FFF, $1619, $116D, $100 ; 05
     dSGB_Palette $7FFF, $1619, $116D, $E5 ; 06
     dSGB_Palette $7FFF, $26E, $1E0, $100 ; 07
@@ -184,87 +184,117 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $6B57, $72CF, $45CC ; 7A
     dSGB_Palette $7FFF, $72CF, $5270, $45CC ; 7B
 
+    ;Antenna Tree Cutscene Fade
+    dSGB_Palette $7FFF, $5B5D, $5B19, $56F5 ; 7C
+    dSGB_Palette $7FFF, $5B5D, $5B19, $56F6 ; 7D
+    dSGB_Palette $7FFF, $5779, $5755, $56F5 ; 7E
+    dSGB_Palette $7FFF, $5779, $5755, $56F6 ; 7F
+
+    dSGB_Palette $7FFF, $3ABB, $3653, $2A0A ; 80
+    dSGB_Palette $7FFF, $3ABB, $3653, $29EE ; 81
+    dSGB_Palette $7FFF, $2AF4, $2A8A, $2A0A ; 82
+    dSGB_Palette $7FFF, $2AF4, $2A8A, $29EE ; 83
+
+    ;We Are Connected Cutscene Fade In (From White)
+    dSGB_Palette $7FFF, $5776, $5735, $6399 ; 84
+    dSGB_Palette $7FFF, $5776, $5735, $56F5 ; 85
+    dSGB_Palette $7FFF, $5776, $5735, $56B5 ; 86
+    dSGB_Palette $7FFF, $673D, $56BD, $56B5 ; 87
+
+    dSGB_Palette $7FFF, $32CE, $2E6C, $4B33 ; 88
+    dSGB_Palette $7FFF, $32CE, $2E6C, $2A0A ; 89
+    dSGB_Palette $7FFF, $32CE, $2E6C, $294A ; 8A
+    dSGB_Palette $7FFF, $4A5C, $319C, $294A ; 8B
+
+    ;We Are Connected Cutscene Fade Out (To Black)
+    dSGB_Palette $294A, $4C2, $81, $10E4 ; 8C
+    dSGB_Palette $294A, $4C2, $81, $60 ; 8D
+    dSGB_Palette $294A, $4C2, $81, 0 ; 8E
+    dSGB_Palette $294A, $1089, $429, 0 ; 8F
+
+    dSGB_Palette $56B5, $583, $521, $1DE9 ; 90
+    dSGB_Palette $56B5, $583, $521, $A0 ; 91
+    dSGB_Palette $56B5, $583, $521, 0 ; 92
+    dSGB_Palette $56B5, $2111, $431, 0 ; 93
+
+    ;One Of My Soldiers Cutscene Fade
+    dSGB_Palette $7FFF, $63BF, $5F7F, $56B5 ; 94
+    dSGB_Palette $7FFF, $6FBF, $5F5D, $56B5 ; 95
+    dSGB_Palette $7FFF, $6FBF, $7B78, $56B5 ; 96
+    dSGB_Palette $7FFF, $7B78, $6F35, $56B5 ; 97
+
+    dSGB_Palette $7FFF, $439E, $3F1F, $296C ; 98
+    dSGB_Palette $7FFF, $639F, $3ABA, $296C ; 99
+    dSGB_Palette $7FFF, $639F, $7AD0, $296C ; 9A
+    dSGB_Palette $7FFF, $7AD0, $624A, $296C ; 9B
+
+    ;Title Screen Fade Out
+    dSGB_Palette $7FFF, $6BDF, $5F5F, $56B5 ; 9C
+    dSGB_Palette $7FFF, $6B7C, $631A, $56B5 ; 9D
+    dSGB_Palette $7FFF, $779B, $6F59, $56B5 ; 9E
+    dSGB_Palette $7FFF, $6F7F, $631F, $56BF ; 9F
+
+    dSGB_Palette $7FFF, $53BF, $42DE, $294A ; A0
+    dSGB_Palette $7FFF, $56D9, $4256, $294A ; A1
+    dSGB_Palette $7FFF, $6F58, $5AB3, $294A ; A2
+    dSGB_Palette $7FFF, $631F, $463F, $295F ; A3
+
+    ;Title Screen Fade In
+    dSGB_Palette $294A, $152A, $CCA, 0 ; A4
+    dSGB_Palette $294A, $14C7, $C86, 0 ; A5
+    dSGB_Palette $294A, $2107, $18A4, 0 ; A6
+    dSGB_Palette $294A, $1CEA, $C6A, $A ; A7
+
+    dSGB_Palette $56B5, $2A75, $1574, 0 ; A8
+    dSGB_Palette $56B5, $2D8F, $18EB, 0 ; A9
+    dSGB_Palette $56B5, $45ED, $3169, 0 ; AA
+    dSGB_Palette $56B5, $35B5, $1CF5, $15 ; AB
+
+    ;Game Over Fade Out
+    dSGB_Palette $7FFF, $63BF, $7F58, $56B5 ; AC
+    dSGB_Palette $7FFF, $6B7E, $631B, $56B5 ; AD
+    dSGB_Palette $7FFF, $6B7E, $5F96, $56B5 ; AE
+    dSGB_Palette $7FFF, $5F96, $631B, $56B5 ; AF
+
+    dSGB_Palette $7FFF, $439F, $7EB2, $294A ; B0
+    dSGB_Palette $7FFF, $531E, $4257, $294A ; B1
+    dSGB_Palette $7FFF, $531E, $430E, $294A ; B2
+    dSGB_Palette $7FFF, $430E, $4257, $294A ; B3
+
+    ;Game Over Fade In
+    dSGB_Palette $294A, $D2A, $28A4, 0 ; B4
+    dSGB_Palette $294A, $14EA, $C86, 0 ; B5
+    dSGB_Palette $294A, $14EA, $CE2, 0 ; B6
+    dSGB_Palette $294A, $CE2, $C86, 0 ; B7
+
+    dSGB_Palette $56B5, $1A35, $5567, 0 ; B8
+    dSGB_Palette $56B5, $29B3, $18ED, 0 ; B9
+    dSGB_Palette $56B5, $29B3, $15C3, 0 ; BA
+    dSGB_Palette $56B5, $15C3, $18ED, 0 ; BB
+
+    ;Corruption Screen Fade Out
+    dSGB_Palette $7FFF, $631D, $6378, $56B5 ; BC
+    dSGB_Palette $7FFF, $6F9F, $631D, $56B5 ; BD
+    dSGB_Palette $7FFF, $631D, $5AD9, $56B5 ; BE
+    dSGB_Palette $7FFF, $77DF, $6F9F, $56B5 ; BF
+
+    dSGB_Palette $7FFF, $423B, $4710, $294A ; C0
+    dSGB_Palette $7FFF, $5B5E, $423B, $294A ; C1
+    dSGB_Palette $7FFF, $423B, $31B2, $294A ; C2
+    dSGB_Palette $7FFF, $6BDF, $5B5E, $294A ; C3
+
+    ;Corruption Screen Fade In
+    dSGB_Palette $294A, $C68, $CE3, 0 ; C4
+    dSGB_Palette $294A, $190A, $C68, 0 ; C5
+    dSGB_Palette $294A, $C68, $424, 0 ; C6
+    dSGB_Palette $294A, $214A, $190A, 0 ; C7
+
+    dSGB_Palette $56B5, $18F1, $1DA6, 0 ; C8
+    dSGB_Palette $56B5, $31F4, $18F1, 0 ; C9
+    dSGB_Palette $56B5, $18F1, $868, 0 ; CA
+    dSGB_Palette $56B5, $4275, $31F4, 0 ; CB
+
     ;Unused
-    dSGB_Palette 0, 0, 0, 0 ; 7C
-    dSGB_Palette 0, 0, 0, 0 ; 7D
-    dSGB_Palette 0, 0, 0, 0 ; 7E
-    dSGB_Palette 0, 0, 0, 0 ; 7F
-    dSGB_Palette 0, 0, 0, 0 ; 80
-    dSGB_Palette 0, 0, 0, 0 ; 81
-    dSGB_Palette 0, 0, 0, 0 ; 82
-    dSGB_Palette 0, 0, 0, 0 ; 83
-    dSGB_Palette 0, 0, 0, 0 ; 84
-    dSGB_Palette 0, 0, 0, 0 ; 85
-    dSGB_Palette 0, 0, 0, 0 ; 86
-    dSGB_Palette 0, 0, 0, 0 ; 87
-    dSGB_Palette 0, 0, 0, 0 ; 88
-    dSGB_Palette 0, 0, 0, 0 ; 89
-    dSGB_Palette 0, 0, 0, 0 ; 8A
-    dSGB_Palette 0, 0, 0, 0 ; 8B
-    dSGB_Palette 0, 0, 0, 0 ; 8C
-    dSGB_Palette 0, 0, 0, 0 ; 8D
-    dSGB_Palette 0, 0, 0, 0 ; 8E
-    dSGB_Palette 0, 0, 0, 0 ; 8F
-    dSGB_Palette 0, 0, 0, 0 ; 90
-    dSGB_Palette 0, 0, 0, 0 ; 91
-    dSGB_Palette 0, 0, 0, 0 ; 92
-    dSGB_Palette 0, 0, 0, 0 ; 93
-    dSGB_Palette 0, 0, 0, 0 ; 94
-    dSGB_Palette 0, 0, 0, 0 ; 95
-    dSGB_Palette 0, 0, 0, 0 ; 96
-    dSGB_Palette 0, 0, 0, 0 ; 97
-    dSGB_Palette 0, 0, 0, 0 ; 98
-    dSGB_Palette 0, 0, 0, 0 ; 99
-    dSGB_Palette 0, 0, 0, 0 ; 9A
-    dSGB_Palette 0, 0, 0, 0 ; 9B
-    dSGB_Palette 0, 0, 0, 0 ; 9C
-    dSGB_Palette 0, 0, 0, 0 ; 9D
-    dSGB_Palette 0, 0, 0, 0 ; 9E
-    dSGB_Palette 0, 0, 0, 0 ; 9F
-    dSGB_Palette 0, 0, 0, 0 ; A0
-    dSGB_Palette 0, 0, 0, 0 ; A1
-    dSGB_Palette 0, 0, 0, 0 ; A2
-    dSGB_Palette 0, 0, 0, 0 ; A3
-    dSGB_Palette 0, 0, 0, 0 ; A4
-    dSGB_Palette 0, 0, 0, 0 ; A5
-    dSGB_Palette 0, 0, 0, 0 ; A6
-    dSGB_Palette 0, 0, 0, 0 ; A7
-    dSGB_Palette 0, 0, 0, 0 ; A8
-    dSGB_Palette 0, 0, 0, 0 ; A9
-    dSGB_Palette 0, 0, 0, 0 ; AA
-    dSGB_Palette 0, 0, 0, 0 ; AB
-    dSGB_Palette 0, 0, 0, 0 ; AC
-    dSGB_Palette 0, 0, 0, 0 ; AD
-    dSGB_Palette 0, 0, 0, 0 ; AE
-    dSGB_Palette 0, 0, 0, 0 ; AF
-    dSGB_Palette 0, 0, 0, 0 ; B0
-    dSGB_Palette 0, 0, 0, 0 ; B1
-    dSGB_Palette 0, 0, 0, 0 ; B2
-    dSGB_Palette 0, 0, 0, 0 ; B3
-    dSGB_Palette 0, 0, 0, 0 ; B4
-    dSGB_Palette 0, 0, 0, 0 ; B5
-    dSGB_Palette 0, 0, 0, 0 ; B6
-    dSGB_Palette 0, 0, 0, 0 ; B7
-    dSGB_Palette 0, 0, 0, 0 ; B8
-    dSGB_Palette 0, 0, 0, 0 ; B9
-    dSGB_Palette 0, 0, 0, 0 ; BA
-    dSGB_Palette 0, 0, 0, 0 ; BB
-    dSGB_Palette 0, 0, 0, 0 ; BC
-    dSGB_Palette 0, 0, 0, 0 ; BD
-    dSGB_Palette 0, 0, 0, 0 ; BE
-    dSGB_Palette 0, 0, 0, 0 ; BF
-    dSGB_Palette 0, 0, 0, 0 ; C0
-    dSGB_Palette 0, 0, 0, 0 ; C1
-    dSGB_Palette 0, 0, 0, 0 ; C2
-    dSGB_Palette 0, 0, 0, 0 ; C3
-    dSGB_Palette 0, 0, 0, 0 ; C4
-    dSGB_Palette 0, 0, 0, 0 ; C5
-    dSGB_Palette 0, 0, 0, 0 ; C6
-    dSGB_Palette 0, 0, 0, 0 ; C7
-    dSGB_Palette 0, 0, 0, 0 ; C8
-    dSGB_Palette 0, 0, 0, 0 ; C9
-    dSGB_Palette 0, 0, 0, 0 ; CA
-    dSGB_Palette 0, 0, 0, 0 ; CB
     dSGB_Palette 0, 0, 0, 0 ; CC
     dSGB_Palette 0, 0, 0, 0 ; CD
     dSGB_Palette 0, 0, 0, 0 ; CE

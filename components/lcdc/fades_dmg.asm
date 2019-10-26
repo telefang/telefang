@@ -122,7 +122,12 @@ LCDC_PredefinedPaletteFadeSGB::
 	jr .stageA
 
 .stageAOut
-	xor a
+	ld a, [W_LCDC_FadeType]
+	and 2
+	jr z, .fadeToWhite
+	ld a, $FF
+
+.fadeToWhite
 	ld [W_ShadowREG_BGP], a
 	ld [W_ShadowREG_OBP0], a
 	ld [W_ShadowREG_OBP1], a
