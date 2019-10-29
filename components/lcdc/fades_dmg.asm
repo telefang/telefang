@@ -6,6 +6,7 @@ W_SGB_PreloadedFadeStageA:: ds 1
 W_SGB_PreloadedFadeStageB:: ds 4
 W_SGB_PreloadedFadeStageC:: ds 4
 W_SGB_PreloadedFadeStageD:: ds 4
+W_SGB_PalCommandBuffer:: ds 1
 W_SGB_Colour00Buffer:: ds 2
 W_SGB_Colour01Buffer:: ds 2
 W_SGB_Colour02Buffer:: ds 2
@@ -19,6 +20,33 @@ W_SGB_Colour23Buffer:: ds 2
 W_SGB_Colour31Buffer:: ds 2
 W_SGB_Colour32Buffer:: ds 2
 W_SGB_Colour33Buffer:: ds 2
+W_SGB_Colour00Fade23Buffer:: ds 2
+W_SGB_Colour01Fade23Buffer:: ds 2
+W_SGB_Colour02Fade23Buffer:: ds 2
+W_SGB_Colour03Fade23Buffer:: ds 2
+W_SGB_Colour11Fade23Buffer:: ds 2
+W_SGB_Colour12Fade23Buffer:: ds 2
+W_SGB_Colour13Fade23Buffer:: ds 2
+W_SGB_Colour21Fade23Buffer:: ds 2
+W_SGB_Colour22Fade23Buffer:: ds 2
+W_SGB_Colour23Fade23Buffer:: ds 2
+W_SGB_Colour31Fade23Buffer:: ds 2
+W_SGB_Colour32Fade23Buffer:: ds 2
+W_SGB_Colour33Fade23Buffer:: ds 2
+W_SGB_Colour00Fade13Buffer:: ds 2
+W_SGB_Colour01Fade13Buffer:: ds 2
+W_SGB_Colour02Fade13Buffer:: ds 2
+W_SGB_Colour03Fade13Buffer:: ds 2
+W_SGB_Colour11Fade13Buffer:: ds 2
+W_SGB_Colour12Fade13Buffer:: ds 2
+W_SGB_Colour13Fade13Buffer:: ds 2
+W_SGB_Colour21Fade13Buffer:: ds 2
+W_SGB_Colour22Fade13Buffer:: ds 2
+W_SGB_Colour23Fade13Buffer:: ds 2
+W_SGB_Colour31Fade13Buffer:: ds 2
+W_SGB_Colour32Fade13Buffer:: ds 2
+W_SGB_Colour33Fade13Buffer:: ds 2
+W_SGB_FadeToBlackIndicator:: ds 1
 
 SECTION "LCDC Palette Fade DMG", ROMX[$7C2D], BANK[3]
 LCDC_PaletteFadeDMG::
