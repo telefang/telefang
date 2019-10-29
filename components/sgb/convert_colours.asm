@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "GBC Colour To SGB Colour Converter", ROMX[$7B80], BANK[$1]
+SECTION "GBC Colour To SGB Colour Converter", ROMX[$7000], BANK[$1]
 ;Takes two given staged CGB palettes, converts them to SGB colorspace, and commits
 ;them in a given set of SGB palette slots.
 ; 
@@ -11,123 +11,171 @@ SECTION "GBC Colour To SGB Colour Converter", ROMX[$7B80], BANK[$1]
 ; Returns nothing
 ; 
 PatchUtils_CommitStagedCGBToSGB::
+    call PatchUtils_CommitStagedCGBToSGBBuffer
+    jr PatchUtils_CommitSGBBufferToSGB.dontSetCommand
+
+PatchUtils_CommitSGBBufferToSGB::
+    ld [W_SGB_PalCommandBuffer], a
+
+.dontSetCommand
+    ld a, [W_SGB_PalCommandBuffer]
+    and $1F
     ld [W_SGB_SpotPalette + M_SGB_Pal01Command], a
-    
-    ld a, W_LCDC_CGBStagingBGPaletteArea & $FF
-    swap b
-    srl b
-    add a, b
-    ld l, a
-    ld a, W_LCDC_CGBStagingBGPaletteArea >> 8
-    adc a, 0
-    ld h, a
-    
-    ;Color 0 is forcibly set to white.
-    ;Setting it to any other color will demonstrably harm the SHVC side's
-    ;palette set.
+    ld de, W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0
+    ld hl, W_SGB_Colour00Buffer
+
     ld a, [hli]
+    ld [de], a
+    inc de
+
     ld a, [hli]
-    
-    ld a, $7F
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0 + 1], a
-    ld a, $FF
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0 + 0], a
-    
-    ld a, [hli]
-    ld e, a
-    ld a, [hli]
-    ld d, a
-    
-    call PatchUtils_ColourToSGB
-    
-    ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color1 + 1], a
-    ld a, e
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color1 + 0], a
-    
-    ld a, [hli]
-    ld e, a
-    ld a, [hli]
-    ld d, a
-    
-    call PatchUtils_ColourToSGB
-    
-    ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color2 + 1], a
-    ld a, e
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color2 + 0], a
-    
-    ld a, [hli]
-    ld d, [hl]
-    ld e, a
-    
-    call PatchUtils_ColourToSGB
-    
-    ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color3 + 1], a
-    ld a, e
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal0Color3 + 0], a
-    
-    ld a, c
-    swap a
-    srl a
-    add a, 2
-    add a, W_LCDC_CGBStagingBGPaletteArea & $FF
-    ld l, a
-    ld a, W_LCDC_CGBStagingBGPaletteArea >> 8
-    adc a, 0
-    ld h, a
-    
-    ld a, [hli]
-    ld e, a
-    ld a, [hli]
-    ld d, a
-    
-    call PatchUtils_ColourToSGB
-    
-    ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color1 + 1], a
-    ld a, e
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color1 + 0], a
-    
-    ld a, [hli]
-    ld e, a
-    ld a, [hli]
-    ld d, a
-    
-    call PatchUtils_ColourToSGB
-    
-    ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color2 + 1], a
-    ld a, e
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color2 + 0], a
-    
-    ld a, [hli]
-    ld d, [hl]
-    ld e, a
-    
-    call PatchUtils_ColourToSGB
-    
-    ld a, d
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color3 + 1], a
-    ld a, e
-    ld [W_SGB_SpotPalette + M_SGB_Pal01Pal1Color3 + 0], a
-    
+    ld [de], a
+    inc de
+
+    call PatchUtils_GetSGBPalBufferAddressA
+    call PatchUtils_CommitStagedCGBToSGBBuffer_CopyPalette
+
+    call PatchUtils_GetSGBPalBufferAddressB
+    call PatchUtils_CommitStagedCGBToSGBBuffer_CopyPalette
+
     xor a
-    ld [W_SGB_SpotPalette + $F], a
-    
+    ld [de], a
+
     ld a, BANK(SGB_SendConstructedPaletteSetPacket)
     ld hl, SGB_SendConstructedPaletteSetPacket
     call CallBankedFunction_int
-    
+
     di
     ld a, BANK(PatchUtils_CommitStagedCGBToSGB)
     ld [W_PreviousBank], a
     ld [W_CurrentBank], a
     ei
-    
     ret
 
+PatchUtils_CommitStagedCGBToSGBBuffer::
+    ld [W_SGB_PalCommandBuffer], a
+
+    ld a, $7F
+    ld [W_SGB_Colour00Buffer + 1], a
+    ld a, $FF
+    ld [W_SGB_Colour00Buffer + 0], a
+
+    push bc
+
+    call PatchUtils_GetSGBPalBufferAddressA
+    ld a, b
+    ld b, h
+    ld c, l
+    call PatchUtils_CommitStagedCGBToSGBBuffer_GetCGBColourAddress
+    call PatchUtils_CommitStagedCGBToSGBBuffer_ConvertAndBuffer
+    call PatchUtils_CommitStagedCGBToSGBBuffer_ConvertAndBuffer
+    call PatchUtils_CommitStagedCGBToSGBBuffer_ConvertAndBuffer
+
+    pop bc
+
+    call PatchUtils_GetSGBPalBufferAddressB
+    ld a, c
+    ld b, h
+    ld c, l
+    call PatchUtils_CommitStagedCGBToSGBBuffer_GetCGBColourAddress
+    call PatchUtils_CommitStagedCGBToSGBBuffer_ConvertAndBuffer
+    call PatchUtils_CommitStagedCGBToSGBBuffer_ConvertAndBuffer
+    call PatchUtils_CommitStagedCGBToSGBBuffer_ConvertAndBuffer
+    ret
+
+PatchUtils_GetSGBPalCommandTableIndex::
+    ld a, [W_SGB_PalCommandBuffer]
+    and $78
+    rra
+    ret
+
+PatchUtils_GetSGBPalBufferAddressA::
+    call PatchUtils_GetSGBPalCommandTableIndex
+    jr PatchUtils_GetSGBPalBufferAddressB.common
+
+PatchUtils_GetSGBPalBufferAddressB::
+    call PatchUtils_GetSGBPalCommandTableIndex
+    add 2
+
+.common
+    ld hl, .table
+    add l
+    jr nc, .noIncHL
+    inc h
+
+.noIncHL
+    ld l, a
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a
+    ret
+
+.table
+    dw W_SGB_Colour01Buffer, W_SGB_Colour11Buffer
+    dw W_SGB_Colour21Buffer, W_SGB_Colour31Buffer
+    dw W_SGB_Colour01Buffer, W_SGB_Colour31Buffer
+    dw W_SGB_Colour11Buffer, W_SGB_Colour21Buffer
+    dw W_SGB_Colour01Fade13Buffer, W_SGB_Colour11Fade13Buffer
+    dw W_SGB_Colour21Fade13Buffer, W_SGB_Colour31Fade13Buffer
+    dw W_SGB_Colour01Fade13Buffer, W_SGB_Colour31Fade13Buffer
+    dw W_SGB_Colour11Fade13Buffer, W_SGB_Colour21Fade13Buffer
+    dw W_SGB_Colour01Fade23Buffer, W_SGB_Colour11Fade23Buffer
+    dw W_SGB_Colour21Fade23Buffer, W_SGB_Colour31Fade23Buffer
+    dw W_SGB_Colour01Fade23Buffer, W_SGB_Colour31Fade23Buffer
+    dw W_SGB_Colour11Fade23Buffer, W_SGB_Colour21Fade23Buffer
+
+PatchUtils_CommitStagedCGBToSGBBuffer_GetCGBColourAddress::
+    ld hl, W_LCDC_CGBStagingBGPaletteArea
+    swap a
+    rra
+    add l
+    add 2
+    ld l, a
+    ret
+
+PatchUtils_CommitStagedCGBToSGBBuffer_ConvertAndBuffer::
+    ld a, [hli]
+    ld e, a
+    ld a, [hli]
+    ld d, a
+
+    call PatchUtils_ColourToSGB
+
+    ld a, e
+    ld [bc], a
+    inc bc
+    ld a, d
+    ld [bc], a
+    inc bc
+    ret
+
+PatchUtils_CommitStagedCGBToSGBBuffer_CopyPalette::
+    ld a, [hli]
+    ld [de], a
+    inc de
+
+    ld a, [hli]
+    ld [de], a
+    inc de
+
+    ld a, [hli]
+    ld [de], a
+    inc de
+
+    ld a, [hli]
+    ld [de], a
+    inc de
+
+    ld a, [hli]
+    ld [de], a
+    inc de
+
+    ld a, [hli]
+    ld [de], a
+    inc de
+    ret
+
+SECTION "GBC Colour To SGB Colour Converter 2", ROMX[$7C1A], BANK[$1]
 PatchUtils_ColourToSGB::
 
 	push af
