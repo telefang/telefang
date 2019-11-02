@@ -144,9 +144,16 @@ Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	dw FusionLabEvo_ADVICE_DrawShopNumberGfx
 
 ;components/sgb/convert_colours.asm
+Banked_PatchUtils_CommitStagedCGBToSGBBuffer_CBE::
+	dw PatchUtils_CommitStagedCGBToSGBBuffer_CBE
+
+Banked_PatchUtils_CommitSGBBufferToSGB_CBE::
+	dw PatchUtils_CommitSGBBufferToSGB_CBE
+
 Banked_PatchUtils_CommitStagedCGBToSGB_CBE::
 	dw PatchUtils_CommitStagedCGBToSGB_CBE
-	
+
+;components/battle/message.asm
 Banked_MainScript_ADVICE_AutoNarrowPhrase::
 	dw MainScript_ADVICE_AutoNarrowPhrase
 

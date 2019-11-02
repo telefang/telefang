@@ -4,9 +4,6 @@ SECTION "Encounter Screen Advice Code 1", ROMX[$5BB0], BANK[$1]
 Encounter_ADVICE_LoadSGBFiles::
     M_AdviceSetup
 
-    ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
-
     call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
@@ -51,6 +48,8 @@ Encounter_ADVICE_LoadSGBFiles::
     call PatchUtils_CommitStagedCGBToSGB
 
 .return
+    ld a, 4
+    call Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBBlackFade
     M_AdviceTeardown
     ret
 
