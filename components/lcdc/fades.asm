@@ -77,6 +77,19 @@ Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade::
     ld [W_SGB_FadeMethod], a
     ret
 
+Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBBlackFade::
+    ld d, 1
+    jr Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade.common
+
+Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade::
+    ld d, 0
+
+.common
+    ld a, BANK(PatchUtils_PrepareSGBFade)
+    rst $10
+    call PatchUtils_PrepareSGBFade
+    jp Banked_LCDC_SetupPalswapAnimation
+
 ; Note: Free space
 
     nop
@@ -101,22 +114,6 @@ Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade::
     nop
     nop
 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-
-    nop
-    nop
-    nop
-    nop
-    nop
     nop
     nop
 

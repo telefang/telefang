@@ -46,7 +46,6 @@ W_SGB_Colour23Fade13Buffer:: ds 2
 W_SGB_Colour31Fade13Buffer:: ds 2
 W_SGB_Colour32Fade13Buffer:: ds 2
 W_SGB_Colour33Fade13Buffer:: ds 2
-W_SGB_FadeToBlackIndicator:: ds 1
 
 SECTION "LCDC Palette Fade DMG", ROMX[$7C2D], BANK[3]
 LCDC_PaletteFadeDMG::

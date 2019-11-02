@@ -175,6 +175,139 @@ PatchUtils_CommitStagedCGBToSGBBuffer_CopyPalette::
     inc de
     ret
 
+PatchUtils_PrepareSGBFade::
+    ld a, 2
+    ld [W_SGB_FadeMethod] ,a
+    ; Continues into PatchUtils_GenerateSGBFadeColours
+
+PatchUtils_GenerateSGBFadeColours::
+    ld bc, W_SGB_Colour00Fade23Buffer
+    ld a, d
+    or a
+    jr nz, .useBlackFade
+
+.useWhiteFade
+    ld de, .white23Table
+    call .unfurledLoop
+    ld bc, W_SGB_Colour00Fade13Buffer
+    ld de, .white13Table
+    jr .unfurledLoop
+
+.useBlackFade
+    ld de, .black23Table
+    call .unfurledLoop
+    ld bc, W_SGB_Colour00Fade13Buffer
+    ld de, .black13Table
+
+.unfurledLoop
+    ld hl, W_SGB_Colour00Buffer
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    call PatchUtils_SGBFadeColour
+    jp PatchUtils_SGBFadeColour
+
+.white13Table
+    db 21,21,21,22,22,22,23,23,23,24,24,24,25,25,25,26,26,26,27,27,27,28,28,28,29,29,29,30,30,30,31,31
+
+.white23Table
+    db 10,11,12,12,13,14,14,15,16,16,17,18,18,19,20,20,21,22,22,23,24,24,25,26,26,27,28,28,29,30,30,31
+
+.black13Table
+    db  0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9,10,10,10
+
+.black23Table
+    db  0, 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9,10,11,11,12,13,13,14,15,15,16,17,17,18,19,19,20,21
+
+PatchUtils_SGBFadeColour::
+; bc = destination buffer address
+; de = table address
+; hl = source buffer address
+    ld a, [hli]
+    push hl
+    push bc
+    ld h, [hl]
+    ld l, a
+
+; Red
+    ld a, l
+    call PatchUtils_SGBFadeColour_LookupTable
+    ld c, a
+
+; Green
+    push hl
+    add hl, hl
+    add hl, hl
+    add hl, hl
+    ld a, h
+    pop hl
+    call PatchUtils_SGBFadeColour_LookupTable
+    rrca
+    rrca
+    rrca
+    ld b, a
+    and $E0
+    add c
+    ld c, a
+    ld a, b
+    and 3
+    ld b, a
+
+;Blue
+    ld a, h
+    rrca
+    rrca
+    call PatchUtils_SGBFadeColour_LookupTable
+    rlca
+    rlca
+    add b
+    ld b, a
+
+; Store faded colour.
+    pop hl
+    ld a, c
+    ld [hli], a
+    ld a, b
+    ld [hli], a
+    ld b, h
+    ld c, l
+    pop hl
+    inc hl
+    ret
+
+PatchUtils_SGBFadeColour_LookupTable::
+    push de
+    and $1F
+    add e
+    jr nc, .noIncD
+    inc d
+
+.noIncD
+    ld e, a
+    ld a, [de]
+    pop de
+    ret
+
+PatchUtils_CommitStagedCGBToSGBBuffer_CBE::
+	M_AdviceSetup
+	ld a, d
+	call PatchUtils_CommitStagedCGBToSGBBuffer
+	jp Battle_ADVICE_BattleArticle_teardown
+
+PatchUtils_CommitSGBBufferToSGB_CBE::
+	M_AdviceSetup
+	ld a, d
+	call PatchUtils_CommitSGBBufferToSGB
+	jp Battle_ADVICE_BattleArticle_teardown
+
 SECTION "GBC Colour To SGB Colour Converter 2", ROMX[$7C1A], BANK[$1]
 PatchUtils_ColourToSGB::
 
