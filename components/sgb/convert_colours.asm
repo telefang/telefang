@@ -182,6 +182,9 @@ PatchUtils_PrepareSGBFade::
 
 PatchUtils_GenerateSGBFadeColours::
     ld bc, W_SGB_Colour00Fade23Buffer
+    ld a, $4B
+    sub d
+    ld [W_SGB_PreloadedFadeStageA], a
     ld a, d
     or a
     jr nz, .useBlackFade
