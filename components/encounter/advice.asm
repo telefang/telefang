@@ -40,12 +40,12 @@ Encounter_ADVICE_LoadSGBFiles::
     ld a, M_SGB_Pal01 << 3 + 1
     ld b, 0
     ld c, 4
-    call PatchUtils_CommitStagedCGBToSGB
+    call PatchUtils_CommitStagedCGBToSGBBuffer
 
     ld a, M_SGB_Pal23 << 3 + 1
     ld b, 5
     ld c, 7
-    call PatchUtils_CommitStagedCGBToSGB
+    call PatchUtils_CommitStagedCGBToSGBBuffer
 
 .return
     ld a, 4

@@ -100,11 +100,74 @@ LCDC_PaletteFadeDMG::
 	ret
 
 LCDC_PaletteFadeSGB::
-	; I'll fill this in later.
-	jp LCDC_PaletteFadeDMG.noSGB
+	ld a, [W_LCDC_PaletteAnimWaitCounter]
+	or a
+
+; Subtract one frame from the wait counter to account for the time to send one packet to the sgb.
+; We will subtract again later if two packets are required.
+
+	jr z, .dontAdjust
+	dec a
+	ld [W_LCDC_PaletteAnimWaitCounter], a
+
+.dontAdjust
+	ld a, [W_LCDC_FadeType]
+	and 1
+	jr nz, .fadeOut
+
+.fadeIn
+	ld a, [W_LCDC_PaletteAnimFrame]
+	or a
+	jp z, LCDC_PredefinedPaletteFadeSGB.stageAIn
+	dec a
+	jr z, .stageB
+	dec a
+	jr z, .stageC
+	jr .stageD
+
+.fadeOut
+	ld a, [W_LCDC_PaletteAnimFrame]
+	or a
+	jr z, .stageD
+	dec a
+	jr z, .stageC
+	dec a
+	jr z, .stageB
+	jp LCDC_PredefinedPaletteFadeSGB.stageAOut
+
+.stageB
+	ld d, (2 << 5) + (M_SGB_Pal01 << 3) + 1
+	M_AuxJmp Banked_PatchUtils_CommitSGBBufferToSGB_CBE
+	ld d, (2 << 5) + (M_SGB_Pal23 << 3) + 1
+	jr .secondPacketAdjust
+
+.stageC
+	ld d, (1 << 5) + (M_SGB_Pal01 << 3) + 1
+	M_AuxJmp Banked_PatchUtils_CommitSGBBufferToSGB_CBE
+	ld d, (1 << 5) + (M_SGB_Pal23 << 3) + 1
+	jr .secondPacketAdjust
+
+.stageD
+	ld d, (0 << 5) + (M_SGB_Pal01 << 3) + 1
+	M_AuxJmp Banked_PatchUtils_CommitSGBBufferToSGB_CBE
+	ld d, (0 << 5) + (M_SGB_Pal23 << 3) + 1
+
+.secondPacketAdjust
+	M_AuxJmp Banked_PatchUtils_CommitSGBBufferToSGB_CBE
+	
+	ld a, [W_LCDC_PaletteAnimWaitCounter]
+	or a
+	jr z, .dontAdjustTwo
+	dec a
+	ld [W_LCDC_PaletteAnimWaitCounter], a
+
+.dontAdjustTwo
+	ld a, [W_LCDC_PaletteAnimFrame]
+	inc a
+	ld [W_LCDC_PaletteAnimFrame], a
+	ret
 
 LCDC_PredefinedPaletteFadeSGB::
-; Clear W_SGB_FadeMethod after the fade is completed.
 	ld a, [W_LCDC_PaletteAnimWaitCounter]
 	or a
 

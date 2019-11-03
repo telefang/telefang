@@ -325,7 +325,7 @@ Map_MapScreenTiles::
 Map_StateFadeIn::
 	ld bc, 0
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade
 	ld a, 9
 	ld [W_MainScript_State], a
 	jp System_ScheduleNextSubState
@@ -589,7 +589,7 @@ Map_StateMainLoop::
 	ld a, $11
 	ld [W_SystemSubState], a
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade
 
 .noExit
 	ret
