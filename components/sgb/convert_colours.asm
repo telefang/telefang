@@ -22,7 +22,7 @@ PatchUtils_CommitSGBBufferToSGB::
     and $1F
     ld [W_SGB_SpotPalette + M_SGB_Pal01Command], a
     ld de, W_SGB_SpotPalette + M_SGB_Pal01Pal0Color0
-    ld hl, W_SGB_Colour00Buffer
+    call PatchUtils_GetSGBPalBufferColour00Address
 
     ld a, [hli]
     ld [de], a
@@ -99,6 +99,8 @@ PatchUtils_GetSGBPalBufferAddressB::
 
 .common
     ld hl, .table
+
+.fromExt
     add l
     jr nc, .noIncHL
     inc h
@@ -123,6 +125,18 @@ PatchUtils_GetSGBPalBufferAddressB::
     dw W_SGB_Colour21Fade23Buffer, W_SGB_Colour31Fade23Buffer
     dw W_SGB_Colour01Fade23Buffer, W_SGB_Colour31Fade23Buffer
     dw W_SGB_Colour11Fade23Buffer, W_SGB_Colour21Fade23Buffer
+
+PatchUtils_GetSGBPalBufferColour00Address::
+    ld a, [W_SGB_PalCommandBuffer]
+    swap a
+    and 6
+    ld hl, .table
+    jr PatchUtils_GetSGBPalBufferAddressB.fromExt
+
+.table
+    dw W_SGB_Colour00Buffer
+    dw W_SGB_Colour00Fade13Buffer
+    dw W_SGB_Colour00Fade23Buffer
 
 PatchUtils_CommitStagedCGBToSGBBuffer_GetCGBColourAddress::
     ld hl, W_LCDC_CGBStagingBGPaletteArea
