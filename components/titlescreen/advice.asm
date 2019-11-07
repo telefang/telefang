@@ -7,6 +7,8 @@ TitleScreen_ADVICE_LoadSGBFiles::
 
     ld bc, $A401
     call AttractMode_ADVICE_IdentifyFadePalettesCommon
+    ld a, $4A
+    ld [W_SGB_PreloadedFadeStageA], a
     ld c, 2
     jp Banked_SGB_ConstructATFSetPacket
 
@@ -16,6 +18,13 @@ TitleScreen_ADVICE_LoadSGBFadeOut::
     ret z
 
     ld bc, $9C01
+    jp AttractMode_ADVICE_IdentifyFadePalettesCommon
+
+TitleScreen_ADVICE_CorruptionLoadSGBFadeOut::
+    call Banked_LCDC_SetupPalswapAnimation
+    call AttractMode_ADVICE_CheckSGB
+    ret z
+    ld bc, $BC30
     jp AttractMode_ADVICE_IdentifyFadePalettesCommon
     
 TitleScreen_ADVICE_RecolorVersionBand::
@@ -68,3 +77,44 @@ TitleScreen_ADVICE_UnloadSGBFiles::
     ld e, a
     call Banked_SGB_ConstructPaletteSetPacket
     jp System_ScheduleNextSubState
+
+GameOver_ADVICE_LoadSGBFadeOut::
+    call Banked_LCDC_SetupPalswapAnimation
+    call AttractMode_ADVICE_CheckSGB
+    ret z
+
+    ld bc, $AC19
+    jp AttractMode_ADVICE_IdentifyFadePalettesCommon
+
+SECTION "SGB Packet Advice 7", ROMX[$7BD0], BANK[$1]
+TitleScreen_ADVICE_IdentifyFadePalettesCommon::
+    ld hl, W_SGB_FadeMethod
+    ld a, 1
+    ld [hli], a
+    ld a, $4B
+    ld [hli], a
+    ld a, b
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    ld a, c
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    inc a
+    ld [hli], a
+    ret

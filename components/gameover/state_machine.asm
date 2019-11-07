@@ -64,7 +64,7 @@ GameOver_StatePrepareFadeOut::
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call GameOver_ADVICE_LoadSGBFadeOut
 	ld a, $10
 	ld [$CF96], a
 	jp System_ScheduleNextSubState

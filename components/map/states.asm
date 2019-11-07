@@ -857,7 +857,7 @@ DungeonMap_StatePrepareFadeIn::
 	ld [W_OAM_SpritesReady], a
 	ld bc, 0
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade
 	jp System_ScheduleNextSubState
 
 DungeonMap_StateFadeInAndIdle::
@@ -888,7 +888,7 @@ DungeonMap_StateFadeInAndIdle::
 	and M_JPInput_B + M_JPInput_Select + M_JPInput_Start
 	jr z, .buttonNotPressed
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade
 	jp System_ScheduleNextSubState
 
 .buttonNotPressed

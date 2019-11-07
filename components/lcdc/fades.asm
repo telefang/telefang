@@ -85,11 +85,11 @@ Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade::
     ld d, 0
 
 .common
-	push af
+    push af
     ld a, BANK(PatchUtils_PrepareSGBFade)
     rst $10
     call PatchUtils_PrepareSGBFade
-	pop af
+    pop af
     jp Banked_LCDC_SetupPalswapAnimation
 
 ; Note: Free space

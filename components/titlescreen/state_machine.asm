@@ -259,7 +259,7 @@ TitleScreen_StateCorruptSaveIdle::
     ret z
     
     ld a, 4
-    call Banked_LCDC_SetupPalswapAnimation
+    call TitleScreen_ADVICE_CorruptionLoadSGBFadeOut
     jp System_ScheduleNextSubState
     
 ; State 01 10
