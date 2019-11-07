@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "Game Over Advice Code", ROMX[$63C0], BANK[$1]
+SECTION "Game Over Advice Code", ROMX[$63B0], BANK[$1]
 GameOver_ADVICE_LoadSGBFiles::
     M_AdviceSetup
 
@@ -15,10 +15,12 @@ GameOver_ADVICE_LoadSGBFiles::
     ld b, $20
     call Zukan_ADVICE_TileLightColourReverse
 
-    ld a, $1A
-	ld bc, $191A
-	ld de, $1B1C
-	call Banked_SGB_ConstructPaletteSetPacket
+    ld bc, $B419
+    call TitleScreen_ADVICE_IdentifyFadePalettesCommon
+    ld a, $4A
+    ld [W_SGB_PreloadedFadeStageA], a
+    ld c, $1A
+    call Banked_SGB_ConstructATFSetPacket
 
 .return
     call PauseMenu_ADVICE_SMSResetLine
@@ -27,3 +29,4 @@ GameOver_ADVICE_LoadSGBFiles::
 
     M_AdviceTeardown
     ret
+

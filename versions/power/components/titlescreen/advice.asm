@@ -33,10 +33,12 @@ TitleScreen_ADVICE_CorruptSaveLoadSGBFiles::
 	ld bc, $40
 	call Banked_LCDC_LoadTiles
 
-	ld a, $25
-	ld bc, $3031
-	ld de, $3233
-	call Banked_SGB_ConstructPaletteSetPacket
+	ld bc, $C430
+	call TitleScreen_ADVICE_IdentifyFadePalettesCommon
+	ld a, $4A
+	ld [W_SGB_PreloadedFadeStageA], a
+	ld c, $25
+	call Banked_SGB_ConstructATFSetPacket
 
 .return
 	M_AdviceTeardown

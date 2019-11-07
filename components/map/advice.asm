@@ -249,11 +249,11 @@ DungeonMap_ADVICE_LoadSGBFiles::
 
 	ld a, M_SGB_Pal01 << 3 + 1
 	ld bc, 1
-	call PatchUtils_CommitStagedCGBToSGB
+	call PatchUtils_CommitStagedCGBToSGBBuffer
 	
 	ld a, M_SGB_Pal23 << 3 + 1
 	ld bc, $207
-	call PatchUtils_CommitStagedCGBToSGB
+	call PatchUtils_CommitStagedCGBToSGBBuffer
 
 	ld a, 3
 	ld [W_MainScript_TextStyle], a

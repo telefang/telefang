@@ -1,6 +1,6 @@
 INCLUDE "telefang.inc"
 
-SECTION "GBC Colour To SGB Colour Converter", ROMX[$7000], BANK[$1]
+SECTION "GBC Colour To SGB Colour Converter", ROMX[$7900], BANK[$1]
 ;Takes two given staged CGB palettes, converts them to SGB colorspace, and commits
 ;them in a given set of SGB palette slots.
 ; 

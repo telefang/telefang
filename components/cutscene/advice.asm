@@ -282,7 +282,10 @@ WeAreConnected_ADVICE_LoadSGBFiles_BeforeFadeToBlack::
 	call Banked_LCDC_SetupPalswapAnimation
 	
 	ld bc, $8C09
-	jp Cutscene_ADVICE_IdentifyFadePalettesCommon
+	call Cutscene_ADVICE_IdentifyFadePalettesCommon
+	ld a, $4A
+	ld [W_SGB_PreloadedFadeStageA], a
+	ret
 	
 WeAreConnected_ADVICE_LoadSGBFiles_Waaaaahh::
 	call Cutscene_ADVICE_CheckSGB
