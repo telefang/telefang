@@ -192,3 +192,10 @@ Banked_SGB_ConstructATTRBLKPacket_return::
     pop af
     rst $10
     ret
+
+SECTION "SGB Packet Advice 8", ROMX[$7DB0], BANK[$3]
+Banked_SGB_SendICONENPacket::
+    ld hl, SGB_PacketICONEN
+    call SGB_SendPackets
+    ld bc, 3
+    jp SGB_AdjustableWait
