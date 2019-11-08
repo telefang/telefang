@@ -78,13 +78,16 @@ SGB_InstallBorderAndHotpatches::
     
     ld bc, $40
     call SGB_AdjustableWait
-    
-    ld b, 0
-    ld c, 0
-    ld d, 0
-    ld e, 0
-    ld a, 0
-    jp SGB_ConstructPaletteSetPacket
+
+    xor a
+    ld b, a
+    ld c, a
+    ld d, a
+    ld e, a
+    call SGB_ConstructPaletteSetPacket
+    jp Banked_SGB_SendICONENPacket
+    nop
+    nop
     
 SGB_ReinstallBorder::
     ld hl, SGB_PacketFreezeScreen
@@ -257,3 +260,9 @@ SGB_ConstructPaletteSetPacket::
     ld [W_SGB_SpotPalette + $0E], a
     ld [W_SGB_SpotPalette + $0F], a
     jp SGB_SendConstructedPaletteSetPacket
+
+SECTION "SGB Precomposed ICON_EN for Patch", ROMX[$7DA0], BANK[$3]
+SGB_PacketICONEN::
+    db $71
+    db 1
+    db 0,0,0,0,0,0,0,0,0,0,0,0,0,0
