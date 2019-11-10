@@ -294,19 +294,22 @@ SGB_PaletteData::
     dSGB_Palette $56B5, $18F1, $868, 0 ; CA
     dSGB_Palette $56B5, $4275, $31F4, 0 ; CB
 
+    ;Link Menu Fade
+    dSGB_Palette $7FFF, $63BF, $5F7E, $56B5 ; CC
+    dSGB_Palette $7FFF, $7FDA, $7797, $6716 ; CD
+    dSGB_Palette $7FFF, $7797, $6716, $56B5 ; CE
+    dSGB_Palette $7FFF, $77BF, $633F, $56B5 ; CF
+    dSGB_Palette $7FFF, $73DC, $57B5, $56B5 ; D0
+    dSGB_Palette $7FFF, $7BBF, $7F7E, $56B7 ; D1
+
+    dSGB_Palette $7FFF, $439E, $3F1E, $294A ; D2
+    dSGB_Palette $7FFF, $7FD6, $7310, $522D ; D3
+    dSGB_Palette $7FFF, $7310, $522D, $294A ; D4
+    dSGB_Palette $7FFF, $6B5F, $465E, $294A ; D5
+    dSGB_Palette $7FFF, $63B8, $2B6A, $294A ; D6
+    dSGB_Palette $7FFF, $7B7F, $7EFE, $296E ; D7
+
     ;Unused
-    dSGB_Palette 0, 0, 0, 0 ; CC
-    dSGB_Palette 0, 0, 0, 0 ; CD
-    dSGB_Palette 0, 0, 0, 0 ; CE
-    dSGB_Palette 0, 0, 0, 0 ; CF
-    dSGB_Palette 0, 0, 0, 0 ; D0
-    dSGB_Palette 0, 0, 0, 0 ; D1
-    dSGB_Palette 0, 0, 0, 0 ; D2
-    dSGB_Palette 0, 0, 0, 0 ; D3
-    dSGB_Palette 0, 0, 0, 0 ; D4
-    dSGB_Palette 0, 0, 0, 0 ; D5
-    dSGB_Palette 0, 0, 0, 0 ; D6
-    dSGB_Palette 0, 0, 0, 0 ; D7
     dSGB_Palette 0, 0, 0, 0 ; D8
     dSGB_Palette 0, 0, 0, 0 ; D9
     dSGB_Palette 0, 0, 0, 0 ; DA

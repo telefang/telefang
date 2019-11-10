@@ -20,7 +20,7 @@ LinkMelody_SendingStateMachine::
 	ld a, 5
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	ld a, 4
 	ld [W_LinkMenu_ErrorMessageIndex], a
 	ld a, $C
@@ -379,7 +379,7 @@ LinkMelody_StateSendingCompleteMessage::
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp SerIO_Increment4thOrderSubState
 
 LinkMelody_StateSendingFadeOut::

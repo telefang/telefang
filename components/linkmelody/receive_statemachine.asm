@@ -239,7 +239,7 @@ LinkMelody_StateReceivingSaveCompleteMessage::
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp SerIO_Increment4thOrderSubState
 
 LinkMelody_StateReceivingFadeOut::

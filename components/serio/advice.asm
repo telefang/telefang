@@ -150,7 +150,7 @@ LinkMenu_ADVICE_LoadSGBFilesConnection::
     ld a, $21
     ld c, $22
     ld de, $2625
-    jp Banked_SGB_ConstructPaletteSetPacket
+    jp LinkMenu_ADVICE_ConstructPaletteSetFadeAlternative
 
 LinkMenu_ADVICE_LoadSGBFiles::
     call VsSummon_ADVICE_CheckSGB
@@ -158,7 +158,7 @@ LinkMenu_ADVICE_LoadSGBFiles::
     ld a, $20
     ld bc, $2125
     ld de, $2324
-    jp Banked_SGB_ConstructPaletteSetPacket
+    jp LinkMenu_ADVICE_ConstructPaletteSetFadeAlternative
 
 LinkMenu_ADVICE_LoadSGBFilesMelody::
     ld de, LinkWindowGfx
@@ -171,7 +171,7 @@ LinkMenu_ADVICE_LoadSGBFilesMelody::
     ld bc, $2422
     ld d, b
     ld e, b
-    jp Banked_SGB_ConstructPaletteSetPacket
+    jp LinkMenu_ADVICE_ConstructPaletteSetFadeAlternative
 
 LinkMenu_ADVICE_LoadSGBWindowTiles::
     ld a, 3
@@ -188,6 +188,54 @@ LinkMenu_ADVICE_SGBResetTextStyle::
     ld [W_Battle_4thOrderSubState], a
     ld [W_MainScript_TextStyle], a
     ret
+
+LinkMenu_ADVICE_SGBResetTextStyle_PlusRenewPredefinedSGBFade::
+    call LinkMenu_ADVICE_SGBResetTextStyle
+    jp Banked_LCDC_RenewPredefinedSGBFade
+
+LinkMenu_ADVICE_ConstructPaletteSetFadeAlternative::
+    push af
+    ld hl, W_SGB_FadeMethod
+    ld a, 1
+    ld [hli], a
+    ld a, $4B
+    ld [hli], a
+    ld a, $AB
+    add b
+    ld [hli], a
+    sub b
+    add c
+    ld [hli], a
+    sub c
+    add d
+    ld [hli], a
+    sub d
+    add e
+    ld [hli], a
+    sub e
+    add 6
+    add b
+    ld [hli], a
+    sub b
+    add c
+    ld [hli], a
+    sub c
+    add d
+    ld [hli], a
+    sub d
+    add e
+    ld [hli], a
+    ld a, b
+    ld [hli], a
+    ld a, c
+    ld [hli], a
+    ld a, d
+    ld [hli], a
+    ld a, e
+    ld [hli], a
+    pop af
+    ld c, a
+    jp Banked_SGB_ConstructATFSetPacket
 
 SECTION "Link Message Window Tiles", ROMX[$7500], BANK[$62]
 LinkWindowGfx::

@@ -20,7 +20,7 @@ LinkMenu_ErrorStateMachine::
 
 LinkMenu_StateErrorPrepareFadeOut::
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateErrorFadeOut::
@@ -151,7 +151,7 @@ LinkMenu_StateErrorPrintMessage::
 	ld a, $10
 	ld [$CF96], a
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateErrorExitToTitlemenu::

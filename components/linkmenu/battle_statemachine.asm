@@ -259,7 +259,7 @@ LinkMenu_StateBattleExit::
 	ld [W_Battle_LoopIndex], a
 	ret nz
 	xor a
-	call LinkMenu_ADVICE_SGBResetTextStyle
+	call LinkMenu_ADVICE_SGBResetTextStyle_PlusRenewPredefinedSGBFade
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateBattleConnectionLost::
