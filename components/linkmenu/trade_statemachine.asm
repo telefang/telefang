@@ -239,7 +239,7 @@ LinkMenu_StateTradeConnectionCheckContactCapacity::
 	ld c, $7C
 	call Battle_QueueMessage
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp SerIO_Increment4thOrderSubState
 
 LinkMenu_StateTradeDoNothing::
@@ -263,7 +263,7 @@ LinkMenu_StateTradeExit::
 	ld [W_Battle_LoopIndex], a
 	ret nz
 	xor a
-	call LinkMenu_ADVICE_SGBResetTextStyle
+	call LinkMenu_ADVICE_SGBResetTextStyle_PlusRenewPredefinedSGBFade
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateTradeConnectionLost::

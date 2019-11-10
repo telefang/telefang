@@ -73,6 +73,9 @@ LCDC_PaletteFade::
 
 Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade::
     call Banked_LCDC_SetupPalswapAnimation
+    ; Continues into Banked_LCDC_RenewPredefinedSGBFade
+
+Banked_LCDC_RenewPredefinedSGBFade::
     ld a, 1
     ld [W_SGB_FadeMethod], a
     ret

@@ -221,7 +221,7 @@ LinkMenu_StateConnectionConfirmationInputHandler::
 	ld a, 1
 	ld [W_OAM_SpritesReady], a
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	ld a, $F
 	ld [W_Battle_SubSubState], a
 	ret
@@ -257,7 +257,7 @@ LinkMenu_StateCheckConnectionValid::
 
 .goodConnection
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateConnectionFailed::
@@ -351,7 +351,7 @@ LinkMenu_StateMenuScreenInputHandler::
 	ld a, 1
 	ld [W_Battle_OpponentUsingLinkCable], a
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp Battle_IncrementSubSubState
 LinkMenu_StateOpenSubscreen::
 	ld a, 1
@@ -391,7 +391,7 @@ jp System_ScheduleNextSubState
 LinkMenu_StateConnectionLostFadeOutPrepare::
 ; Possibly unused state.
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp Battle_IncrementSubSubState
 
 LinkMenu_StateConnectionLostFadeOut::

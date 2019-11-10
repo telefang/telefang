@@ -323,7 +323,7 @@ LinkMenu_StateMeloDWillNowTransferMessage::
 	cp 9
 	ret nz
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp SerIO_Increment4thOrderSubState
 
 LinkMenu_StateMeloDOpenSendScreen::
@@ -455,7 +455,7 @@ LinkMenu_StateMeloDDataReceivedMessage::
 	ld a, 3
 	ld [W_Sound_NextSFXSelect], a
 	ld a, 1
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp SerIO_Increment4thOrderSubState
 
 LinkMenu_StateMeloDOpenReceiveScreen::
