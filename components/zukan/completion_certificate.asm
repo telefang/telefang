@@ -76,7 +76,7 @@ Certificate_StateDelayAndWaitForInput::
 	and M_JPInput_A + M_JPInput_B
 	ret z
 	ld a, 4
-	call Banked_LCDC_SetupPalswapAnimation
+	call Banked_LCDC_SetupPalswapAnimation_PlusRenewPredefinedSGBFade
 	jp System_ScheduleNextSubState
 
 Certificate_StateFadeOutAndExitToOverworld::
