@@ -309,15 +309,18 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $63B8, $2B6A, $294A ; D6
     dSGB_Palette $7FFF, $7B7F, $7EFE, $296E ; D7
 
+    ;Zukan Completion Cert Fades
+    dSGB_Palette $7FFD, $77BD, $6B5D, $5AFE ; D8
+    dSGB_Palette $7FFD, $7BBB, $7397, $6B15 ; D9
+    dSGB_Palette $7FFD, $73DE, $6798, $6B15 ; DA
+    dSGB_Palette $7FFD, $73DE, $5F9F, $6B15 ; DB
+
+    dSGB_Palette $7FFB, $737B, $56BC, $35DC ; DC
+    dSGB_Palette $7FFB, $7B97, $6B2E, $562B ; DD
+    dSGB_Palette $7FFB, $63DC, $4F31, $562B ; DE
+    dSGB_Palette $7FFB, $63DC, $3F3F, $562B ; DF
+
     ;Unused
-    dSGB_Palette 0, 0, 0, 0 ; D8
-    dSGB_Palette 0, 0, 0, 0 ; D9
-    dSGB_Palette 0, 0, 0, 0 ; DA
-    dSGB_Palette 0, 0, 0, 0 ; DB
-    dSGB_Palette 0, 0, 0, 0 ; DC
-    dSGB_Palette 0, 0, 0, 0 ; DD
-    dSGB_Palette 0, 0, 0, 0 ; DE
-    dSGB_Palette 0, 0, 0, 0 ; DF
     dSGB_Palette 0, 0, 0, 0 ; E0
     dSGB_Palette 0, 0, 0, 0 ; E1
     dSGB_Palette 0, 0, 0, 0 ; E2

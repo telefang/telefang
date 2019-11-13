@@ -545,10 +545,10 @@ Certificate_ADVICE_LoadSGBFiles::
     call PauseMenu_ADVICE_CheckSGB
     jr z, .return
 
-    ld a, $1E
-    ld bc, $1D1E
-    ld de, $1F20
-    call Banked_SGB_ConstructPaletteSetPacket
+    ld bc, $D81D
+    call TitleScreen_ADVICE_IdentifyFadePalettesCommon
+    ld c, $1E
+    call Banked_SGB_ConstructATFSetPacket
 
 .return
     M_AdviceTeardown
