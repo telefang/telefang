@@ -4248,76 +4248,140 @@ Ion Island, then!",1,
 0x1381d8,"おやおや これはこれは
 <&name>くん
 こんなところで なにをしている?ここは キミの はいっていい
-ばしょではないぞ?",/0x1381d8/,,0,
+ばしょではないぞ?","What have we here? If it
+isn't little <&name>!
+What are you doing here?
+This is private property,
+you know.","What have we here? If it
+isn't little <&name>!
+What are you doing here?
+This is private property, you know.",1,
 0x1381da,"うるさい!サナエバ!
 オマエは いったいなにを
-しようとしているんだ!",/0x1381da/,,0,
+しようとしているんだ!","Oh, shut it, Sanaeba! What
+are you planning here?!","Oh, shut it, Sanaeba! What are you planning here?!",1,
 0x1381dc,"フッ....
 キミみたいな コドモには
-かんけいのない はなしだな",/0x1381dc/,,0,
+かんけいのない はなしだな","Hmph... Nothing that
+pertains to kids like you.","Hmph... Nothing that
+pertains to kids like you.",1,
 0x1381de,"それよリも キミのトモダチの
 デンジュウを ワタシに
-ゆずって もらえないか?",/0x1381de/,,0,
-0x1381e0,なにをするきだよ?,/0x1381e0/,,0,
+ゆずって もらえないか?","But while you're here,
+perhaps I can trouble you
+to surrender your Denjuu
+friends over to me?","But while you're here, perhaps I can trouble you to surrender your Denjuu friends over to me?",1,
+0x1381e0,なにをするきだよ?,"Do what, now?","Do what, now?",1,
 0x1381e2,"ワタシは デンジュウたちが
 うまれたばしょを さがして
 いるんだよ
 そのためには かずおおくの
-デンジュウを けんきゅうするのがイチバンの ちかみちなのでね",/0x1381e2/,,0,
+デンジュウを けんきゅうするのがイチバンの ちかみちなのでね","I am searching for the very
+birthplace of Denjuu.
+The straightest path there
+lies within researching
+as many Denjuu as possible.","I am searching for the very birthplace of Denjuu.
+The straightest path there lies within researching
+as many Denjuu as possible.",1,
 0x1381e4,"デンジュウたちは オレのだいじなトモダチだ!
 けんきゅうするためなんかに
-わたせるわけないだろう!",/0x1381e4/,,0,
+わたせるわけないだろう!","Denjuu are my friends!
+You're crazy if you think
+I'll give them to you just for
+""research""!","Denjuu are my friends! You're crazy if you think I'll give them to you just for ""research""!",1,
 0x1381e6,"サナエバ....こういった
 れんちゅうは ことばよリも
 チカラで いうことを きかせる
 ほうがいいんだよ
-こんなふうにな!",/0x1381e6/,,0,
-0x1381e8,まさか まけるとは...,/0x1381e8/,,0,
-0x1381ea,なにっ!!!,/0x1381ea/,,0,
+こんなふうにな!","Hey, Sanaeba...
+Guys like this listen better
+to force than to reason.
+Here, like this!","Hey, Sanaeba...
+Guys like this listen better to force than to reason. Here, like this!",1,
+0x1381e8,まさか まけるとは...,I... can't believe I'd lose...,I... can't believe I'd lose...,1,
+0x1381ea,なにっ!!!,Wh- Whaaa-!,Wh- Whaaa-!,1,
 0x1381ec,"ヘヘっ オレたちのチカラが
-わかったかよ!",/0x1381ec/,,0,
+わかったかよ!","Hee hee. So you finally see
+how strong we are, huh!","Hee hee. So you finally see how strong we are, huh!",1,
 0x1381ee,"まぁいい
 キミのデンジュウがいなくても
 『いのちの き』の あリかは
-わかるからな",/0x1381ee/,,0,
+わかるからな","No matter. I'll locate the
+<bold>Tree of Life<normal> with
+or without your Denjuu.","No matter. I'll locate the <bold>Tree of Life<normal> with
+or without your Denjuu.",1,
 0x1381f0,"『いのちの き』!
 オマエも それをさがしてるのか
 それをつかって オマエは
-なにをするんだ",/0x1381f0/,,0,
+なにをするんだ","The <bold>Tree of Life<normal>...! You're
+looking for that too?
+What're you gonna
+do with it?","The <bold>Tree of Life<normal>...! You're looking for that too? What're you gonna
+do with it?",1,
 0x1381f2,"さあな!
 もう ここには ようじはない
-いくぞ!",/0x1381f2/,,0,
-0x1381f4,まてよっ!!!!!!!,/0x1381f4/,,0,
-0x1381f6,ようしゃはしない!,/0x1381f6/,,0,
+いくぞ!","Who can say?
+Right, I have no more
+business here. We're going!","Who can say?
+Right, I have no more business here. We're going!",1,
+0x1381f4,まてよっ!!!!!!!,Wait up!!!,Wait up!!!,1,
+0x1381f6,ようしゃはしない!,I won't go easy on you!,I won't go easy on you!,1,What is the context here? Who's saying this?
 #######,"Story Messages 4   -   256 strings   -   Messages from Sanaeba's Lab to end of game, other assorted events",,,,
 #######,Sanaeba's Lab story (cont'd),,,,
 0x140000,"くそう....
 『シンデンジュウ』
 『いのちの き』
-これは いったいなんなんだよ!オレには わかんねーぞ!!",/0x140000/,,0,"Status: Translated 20%
+これは いったいなんなんだよ!オレには わかんねーぞ!!","Argh... The <bold>Divine Denjuu<normal>...
+The <bold>Tree of Life<normal>...
+What's this all mean?!
+My head's swimming!","Argh... The <bold>Divine Denjuu<normal>... The <bold>Tree of Life<normal>... What's this all mean?!
+My head's swimming!",1,"Status: Translated 20%
 "
 0x140002,"<&name>くん
 マツキヨです
 ムサちょうろうが はなしがあるといっています
 いそいで トロンコむらまで
-かえってきてください!",/0x140002/,,0,
+かえってきてください!","Hi, <&name>,
+it's Matsukiyo.
+Musa says he has something
+to tell you. Come back
+to Tronco ASAP!","Hi, <&name>,
+it's Matsukiyo.
+Musa says he has something to tell you. Come back
+to Tronco ASAP!",1,
 0x140004,"なんのはなしだよ もう!
-めんどくさい!!",/0x140004/,,0,
+めんどくさい!!","Waddaya mean ""something""?
+Ughhhh, annoying!","Waddaya mean ""something""? Ughhhh, annoying!",1,
 0x140006,"なにやら『シンデンジュウ』に
 ついて はなしがあるといって
-いますが...?",/0x140006/,,0,
+いますが...?","Something about a ""Divine
+Denjuu"", apparently...?","Something about a ""Divine Denjuu"", apparently...?",1,
 0x140008,"『シンデンジュウ』!
 わかった トロンコむらまで
-かえるよ!",/0x140008/,,0,
+かえるよ!","The <bold>Divine Denjuu<normal>...! Al-
+right, I'm comin' to Tronco!","The <bold>Divine Denjuu<normal>...! Al-right, I'm comin' to Tronco!",1,
 0x14000a,"まっています
-<&name>くん",/0x14000a/,,0,
+<&name>くん","We'll be waiting for you,
+<&name>!","We'll be waiting for you, <&name>!",1,
 0x14000c,"もどってきたぜ!
-さあ シンデンジュウのはなしをきかせてくれよ!",/0x14000c/,,0,
+さあ シンデンジュウのはなしをきかせてくれよ!","I'm back in town!
+Gimme the low-down
+on that Divine Denjuu!","I'm back in town!
+Gimme the low-down
+on that Divine Denjuu!",1,
 0x14000e,"まぁ まて <&name>
 とリあえず おつかれじゃったの
 オマエのおかげで いろいろと
 たすかった
-あリがとう",/0x14000e/,,0,
+あリがとう","Let's not be hasty here,
+<&name>.
+You've earned a rest.
+You've been quite helpful
+all around, after all!
+I must thank you.","Let's not be hasty here, <&name>.
+You've earned a rest.
+You've been quite helpful all around, after all!
+I must thank you.",1,
 0x140010,"ヘヘ あらたまって おれいを
 いわれるとな...
 でも こっちは いそいでるんだ

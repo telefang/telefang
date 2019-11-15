@@ -1218,7 +1218,10 @@ It's no fair!",,0,
 0x1240b4,"ボクも もどってこれたし
 ここでしゅぎょうしていた
 デンジュウたちも このしまに
-かえってくるのかな?",/0x1240b4/,,0,This line is used in the Sanaeba's Lab chapter.
+かえってくるのかな?","I could finally return, so...
+Do you think the Denjuu
+who were training on this
+island will come back, too?","I could finally return, so... Do you think the Denjuu who were training on this island will come back, too?",1,This line is used in the Sanaeba's Lab chapter.
 0x1240b6,"そとにいる デンジュウたちが
 こわくて そとにでれないんだキ
 なんとかしてくれキー!","Those Denjuu outside are so scary, I can't even leave the house!
@@ -1258,18 +1261,35 @@ I can't let you through.",,0,
 0x1240c8,"このしま....なんだか
 すごくイヤなカンジがするよ
 いままで こんなこと
-なかったのに.......",/0x1240c8/,,0,
+なかったのに.......","Something feels really off
+about this island right now.
+It wasn't always like this!",Something feels really off about this island right now. It wasn't always like this!,1,
 0x1240ca,"これで いつもどおリに
 なったんだよね
-よかったよー",/0x1240ca/,,0,
+よかったよー","So things are back
+to normal now?
+Oh man, what a relief...","So things are back
+to normal now?
+Oh man, what a relief...",1,
 0x1240cc,"もリのなかに ほこらがあるんだ
 そこに ヘんなニンゲンが
 はいるようになって.....
-なにしてるんだろ..",/0x1240cc/,,0,
+なにしてるんだろ..","So there's this cave in the
+forest, and... recently,
+some seriously fishy humans
+have been going in there.
+What are they doing,
+ya think?","So there's this cave in the forest, and... recently, some seriously fishy humans have been going in there. What are they doing,
+ya think?",1,"IS THIS A CAVE? IS THIS A SHRINE? IS THIS A TUNNEL? GRR //
+(It's probably not a shrine. It's never a shrine in Telefang.)"
 0x1240ce,"もう しゅぎょうだけ
 してればいいね
 これいじょう なにも
-おきませんように",/0x1240ce/,,0,
+おきませんように","I can go back to focusing on
+my training, right?
+I really hope that things
+stay calm from now on.","I can go back to focusing on my training, right?
+I really hope that things stay calm from now on.",1,
 0x1240d0,"デンワガイシャのつぎは
 ヘんな デンパだよー
 なんで イオンとうが
@@ -1279,7 +1299,7 @@ I can't let you through.",,0,
 イオンとうだけは
 まきこまれませんように...
 というよリ これいじょう
-なにもおきませんように...",/0x1240d2/,don't ya think classrooms feel,0,
+なにもおきませんように...",/0x1240d2/,,0,
 0x1240d4,"このさいきん もリのおくから
 デンジュウの さけびごえが
 きこえるんだ...
@@ -3239,10 +3259,17 @@ someone's permission, puni!","You can't go through here without a certain someon
 0x13c0da,このカウンターに こうにゅうするアイテムを おいてください。,"Place the items you wish to
 purchase on this counter.",Place the items you wish to purchase on this counter.,1,All shops use this line for the lower-right counter NPC.
 0x13c0dc,"な なんだなんだ
-オマエはなんなんだ??",/0x13c0dc/,,0,
+オマエはなんなんだ??","Wh- What!!!
+What are you?!","Wh- What!!!
+What are you?!",1,
 0x13c0de,"オ オマエが サナエバさまの
 いっていた Tファンガーか?
-かくごしろ!",/0x13c0de/,,0,
+かくごしろ!","S- So you're the T-fanger
+that Mr. Sanaeba
+was talking about?
+You better brace yourself!","S- So you're the T-fanger that Mr. Sanaeba
+was talking about?
+You better brace yourself!",1,
 0x13c0e0,"ここでは サナエバグループの
 けんきゅういんが 
 『シンデンジュウ』について
