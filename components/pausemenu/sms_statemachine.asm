@@ -71,7 +71,7 @@ PauseMenu_SubStateSMSGraphicIdle::
     ld [W_Sound_NextSFXSelect], a
     
     ld a, [W_MelodyEdit_DataCount]
-    cp 0
+    or a
     jr z, .exitSMSScreen
     
     ld e, $2D
@@ -90,8 +90,6 @@ PauseMenu_SubStateSMSGraphicIdle::
 PauseMenu_SubStateSMSListingInit::
     ld bc, $1A
     
-    nop
-    nop
     call TitleMenu_ADVICE_CanUseCGBTiles
     jr z, .isCgb
     
@@ -101,17 +99,17 @@ PauseMenu_SubStateSMSListingInit::
 .isCgb
     call Banked_LoadMaliasGraphics
     
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages
+    
     ld e, $3D
     call PauseMenu_LoadMenuMap0
     ld bc, $10B
     ld e, $22
-    ld a, 0
+    xor a
     call Banked_RLEDecompressTMAP0
     
     ld a, [W_MelodyEdit_DataCurrent]
     call PauseMenu_DrawSMSListingEntry
-    
-    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -175,8 +173,6 @@ PauseMenu_SubStateSMSContentsIdle::
     ld a, b
     or a
     ret z
-    nop
-    nop
     
     ld hl, $9400
     ld b, 6
@@ -185,6 +181,7 @@ PauseMenu_SubStateSMSContentsIdle::
     ld a, 3
     ld [W_SystemSubSubState], a
     ret
+	
     
 ;State 0C 13 07
 PauseMenu_SubStateSMSExit0::
@@ -192,6 +189,11 @@ PauseMenu_SubStateSMSExit0::
     call PauseMenu_LoadMenuMap0
     call PauseMenu_ClearArrowMetasprites
     jp System_ScheduleNextSubSubState
+
+PauseMenu_ReloadSGBFilesAndScheduleNextSubSubState::
+    M_PrepAuxJmp Banked_PauseMenu_ADVICE_ReloadSGBFiles
+    jp PatchUtils_AuxCodeJmp
+    nop
 
 SECTION "Pause Menu SMS State Machine 2", ROMX[$7F47], BANK[$4]
 PauseMenu_SubStateSMSExit1::
