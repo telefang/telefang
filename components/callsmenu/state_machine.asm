@@ -103,6 +103,8 @@ CallsMenu_StateDrawHistoryEntry::
 .cgb_resource
     call Banked_LoadMaliasGraphics
     
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages
+    
     ld e, $3C
     call PauseMenu_LoadMenuMap0
     
@@ -113,8 +115,6 @@ CallsMenu_StateDrawHistoryEntry::
     
     ld a, [W_MelodyEdit_DataCurrent]
     call CallsMenu_DrawCallHistoryEntry
-    
-    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFilesListMessages
     
     ld de, W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1
     call Banked_PauseMenu_InitializeCursor
@@ -280,9 +280,7 @@ CallsMenu_StateFadeBackToEntryListing::
     call PauseMenu_ConfigureScreen
     call LCDC_DMGSetupDirectPalette
     
-    ld a, 1
-    ld [W_CGBPaletteStagedBGP], a
-    ld [W_CGBPaletteStagedOBP], a
+    M_AuxJmp Banked_PauseMenu_ADVICE_ReloadSGBFilesNumMessages
     
     ld a, $32
     call Sound_IndexMusicSetBySong
@@ -304,6 +302,10 @@ CallsMenu_StateFadeBackToEntryListing::
     
     ld a, [W_PhoneConversation_CalledDenjuu]
     jp PhoneConversation_OutboundIncrementFD
+
+    nop
+    nop
+    nop
     
 ;State 0C 16 0B
 CallsMenu_StateDie::

@@ -224,13 +224,14 @@ PauseMenu_DrawSMSFromMessages::
 SECTION "Pause Menu SMS Utils 4", ROMX[$5B21], BANK[$4]
 PauseMenu_ExitToCentralMenu::
     call PauseMenu_LoadMainGraphics
-    jp System_ScheduleNextSubSubState
+    jp PauseMenu_ReloadSGBFilesAndScheduleNextSubSubState
     
 PauseMenu_ExitToCentralMenu2::
     call PauseMenu_LoadPhoneControlHint
     call PauseMenu_DrawMenuItemsAndFrame
     
-    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
+    ld a, M_PauseMenu_StateInputHandler
+    ld [W_SystemSubState], a
     
     xor a
     ld [W_SystemSubSubState], a

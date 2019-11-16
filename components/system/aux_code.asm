@@ -379,6 +379,13 @@ Banked_Zukan_ADVICE_DrawSpeciesPageText::
 Banked_Map_ADVICE_SGBRedrawMapLocationWindow::
 	dw Map_ADVICE_SGBRedrawMapLocationWindow
 
+;components/pausemenu/advice.php
+Banked_PauseMenu_ADVICE_ReloadSGBFiles::
+	dw PauseMenu_ADVICE_ReloadSGBFiles
+
+Banked_PauseMenu_ADVICE_ReloadSGBFilesNumMessages::
+	dw PauseMenu_ADVICE_ReloadSGBFilesNumMessages
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 

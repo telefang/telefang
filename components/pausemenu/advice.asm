@@ -202,3 +202,31 @@ PauseMenu_ADVICE_LoadSGBFilesOptions::
 .return
     M_AdviceTeardown
     ret
+
+SECTION "Pause Menu Load SGB Files 6", ROMX[$6AD0], BANK[$1]
+PauseMenu_ADVICE_ReloadSGBFiles::
+    M_AdviceSetup
+    call System_ScheduleNextSubSubState
+    jp TitleMenu_ADVICE_LoadSGBFiles_externalEntry
+
+PauseMenu_ADVICE_ReloadSGBFilesNumMessages::
+    M_AdviceSetup
+
+    call PauseMenu_ADVICE_CheckSGB
+    jr z, .return
+
+    ld c, $A
+    call Banked_SGB_ConstructATFSetPacket
+
+    ld a, M_SGB_Pal23 << 3 + 1
+    ld b, 5
+    ld c, 1
+    call PatchUtils_CommitStagedCGBToSGB
+    
+.return
+    ld a, 1
+    ld [W_CGBPaletteStagedBGP], a
+    ld [W_CGBPaletteStagedOBP], a
+
+    M_AdviceTeardown
+    ret
