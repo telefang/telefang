@@ -644,6 +644,9 @@ PauseMenu_StateTransitionOutOfOutboundContactCall::
     call PauseMenu_LoadMenuResources
     call PauseMenu_LoadPhoneHalves
     call PauseMenu_CGBLoadPalettes
+    
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
+    
     call PauseMenu_ConfigureScreen
     call PauseMenu_DrawMenuItemsAndFrame
     call LCDC_DMGSetupDirectPalette
@@ -655,8 +658,6 @@ PauseMenu_StateTransitionOutOfOutboundContactCall::
     ld a, $32
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
-    
-    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
     
     xor a
     ld [W_SystemSubSubState], a
@@ -745,6 +746,9 @@ PauseMenu_StateTransitionOutOfOutboundSecretCall::
     call PauseMenu_LoadMenuResources
     call PauseMenu_LoadPhoneHalves
     call PauseMenu_CGBLoadPalettes
+    
+    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
+    
     call PauseMenu_ConfigureScreen
     call PauseMenu_DrawMenuItemsAndFrame
     call LCDC_DMGSetupDirectPalette
@@ -756,8 +760,6 @@ PauseMenu_StateTransitionOutOfOutboundSecretCall::
     ld a, $32
     call Sound_IndexMusicSetBySong
     ld [W_Sound_NextBGMSelect], a
-    
-    M_AuxJmp Banked_PauseMenu_ADVICE_LoadSGBFiles
     
     xor a
     ld [W_SystemSubSubState], a
