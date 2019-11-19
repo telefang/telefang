@@ -264,25 +264,43 @@ PauseMenu_ADVICE_CallsMenuDrawDenjuuNickname::
 
 ; Draw borders.
 
+    di
+
+.wfbB
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfbB
+
+    ld a, [$8D40]
+    and $E0
+    ld d, a
+    ld a, [$8D41]
+    ei
+    and $E0
+    ld e, a
+
     ld l, 0
-    ld de, $A0A0
     ld bc, $81F
 
     call PauseMenu_ADVICE_CallsMenuNameBorder
 
+    di
+
+.wfbC
+    ldh a, [REG_STAT]
+    and 2
+    jr nz, .wfbC
+
+    ld a, [$8D50]
+    and 7
+    ld d, a
+    ld a, [$8D51]
+    ei
+    and 7
+    ld e, a
+
     ld bc, $8F8
     ld l, $70
-    call TitleMenu_ADVICE_CanUseCGBTiles_Alt
-    jr z, .cgbGfx
-
-.dmgGfx
-    ld de, $507
-    jr .drawborderb
-
-.cgbGfx
-    ld de, $705
-
-.drawborderb
     call PauseMenu_ADVICE_CallsMenuNameBorder
 
 ; Restore border tiles to display long names.
