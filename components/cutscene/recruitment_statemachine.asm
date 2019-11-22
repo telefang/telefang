@@ -108,10 +108,7 @@ Cutscene_SubStateDrawRecruitmentScreen::
 	ld hl, $984A
 	ld c, 1
 	call Encounter_DrawTileDigits
-	ld bc, $20E
-	ld e, $AB
-	xor a
-	call Banked_RLEDecompressTMAP0
+	M_AuxJmp Banked_Victory_ADVICE_ClearMessageTextForPhoneNumber
 	M_AuxJmp Banked_Victory_ADVICE_LoadSGBFilesRecruitment
 	call SaveClock_EnterSRAM2
 	ld hl, $A00A
@@ -136,6 +133,11 @@ Cutscene_SubStateDrawRecruitmentScreen::
 	call Sound_IndexMusicSetBySong
 	ld [W_Sound_NextBGMSelect], a
 	ret
+
+	nop
+	nop
+	nop
+	nop
 
 Cutscene_SubStateRecruitmentFadeIn::
 	xor a

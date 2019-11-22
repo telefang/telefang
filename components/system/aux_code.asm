@@ -386,6 +386,10 @@ Banked_PauseMenu_ADVICE_ReloadSGBFiles::
 Banked_PauseMenu_ADVICE_ReloadSGBFilesNumMessages::
 	dw PauseMenu_ADVICE_ReloadSGBFilesNumMessages
 
+;components/victory/advice.asm
+Banked_Victory_ADVICE_ClearMessageTextForPhoneNumber::
+	dw Victory_ADVICE_ClearMessageTextForPhoneNumber
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 
