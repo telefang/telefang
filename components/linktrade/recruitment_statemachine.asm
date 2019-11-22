@@ -130,10 +130,7 @@ LinkTrade_StateRecruitmentPrintGotNumberMessage::
 	jp SerIO_Increment4thOrderSubState
 
 LinkTrade_StateRecruitmentDrawNumber::
-	ld bc, $20E
-	ld e, $AB
-	ld a, 0
-	call Banked_RLEDecompressTMAP0
+	M_AuxJmp Banked_Victory_ADVICE_ClearMessageTextForPhoneNumber
 	call SaveClock_EnterSRAM2
 	ld hl, $A00A
 	ld a, [$D4A7]
@@ -151,6 +148,12 @@ LinkTrade_StateRecruitmentDrawNumber::
 	call LinkVictory_ADVICE_DrawPhoneNumber
 	call SaveClock_ExitSRAM
 	jp SerIO_Increment4thOrderSubState
+
+	nop
+	nop
+	nop
+	nop
+	nop
 
 LinkTrade_StateRecruitmentHideNumberOnInput::
 	ldh a, [H_JPInput_Changed]

@@ -351,10 +351,7 @@ LinkVictory_DefectionPrintGotNumberMessage::
 	jp SerIO_Increment4thOrderSubState
 
 LinkVictory_SubStateRecruitmentDrawNumber::
-	ld bc, $20E
-	ld e, $AB
-	xor a
-	call Banked_RLEDecompressTMAP0
+	M_AuxJmp Banked_Victory_ADVICE_ClearMessageTextForPhoneNumber
 	ld bc, $18
 	call Banked_LoadMaliasGraphics
 	xor a
@@ -383,6 +380,11 @@ LinkVictory_SubStateRecruitmentDrawNumber::
 	ld [hl], $47
 	call SaveClock_ExitSRAM
 	jp SerIO_Increment4thOrderSubState
+
+	nop
+	nop
+	nop
+	nop
 
 LinkVictory_SubStateRecruitmentHideNumberOnInput::
 	ldh a, [H_JPInput_Changed]

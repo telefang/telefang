@@ -142,10 +142,7 @@ Victory_SubStateRecruitmentGotNumberMessage::
     ret
 
 Victory_SubStateRecruitmentCheckCapacityAndDrawNumber::
-    ld bc, $20E
-    ld e, $AB
-    ld a, 0
-    call Banked_RLEDecompressTMAP0
+    M_AuxJmp Banked_Victory_ADVICE_ClearMessageTextForPhoneNumber
     ld hl, Victory_RecruitmentPhoneMemoryTable
     ld a, [W_PauseMenu_PhoneState]
     cp 0
@@ -194,6 +191,12 @@ Victory_SubStateRecruitmentCheckCapacityAndDrawNumber::
     ld a, $A
     ld [W_LateDenjuu_SubSubState], a
     ret
+
+    nop
+    nop
+    nop
+    nop
+    nop
 
 Victory_SubStateRecruitmentPhoneMemoryFullMessage::
     call Banked_MainScriptMachine

@@ -288,3 +288,35 @@ Victory_ADVICE_EvolutionLoadSGBFiles::
 .return
     M_AdviceTeardown
     ret
+
+SECTION "Recruitment Advice Code 2", ROMX[$6B30], BANK[$1]
+Victory_ADVICE_ClearMessageTextForPhoneNumber::
+    M_AdviceSetup
+
+    ld hl, $99C2
+    ld bc, $4FF
+    call .clearloop
+    ld hl, $9A02
+    ld b, 4
+    call .clearloop
+
+    M_AdviceTeardown
+    ret
+
+.clearloop
+    di
+
+.wfb
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .wfb
+
+    ld a, c
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ld [hli], a
+    ei
+    dec b
+    jr nz, .clearloop
+    ret
