@@ -200,7 +200,8 @@ TitleMenu_StateMenuInputHandler::
     ld [W_SystemSubState], a
     ld [W_Battle_SubSubState], a
     
-    M_AuxJmp Banked_TitleMenu_ADVICE_UnloadSGBFilesLink
+    ld a, $F
+    ld [W_SystemState], a
     ret
     
 .soundTestSelected

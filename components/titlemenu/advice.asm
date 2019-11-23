@@ -125,28 +125,11 @@ TitleMenu_ADVICE_UnloadSGBFilesOverworld::
     ld [W_SystemState], a
     
     ;Load a neutral ATF
-    ld a, 0
-    ld b, 0
-    ld c, 0
-    ld d, 0
-    ld e, 0
-    call Banked_SGB_ConstructPaletteSetPacket
-    
-    M_AdviceTeardown
-    ret
-    
-TitleMenu_ADVICE_UnloadSGBFilesLink::
-    M_AdviceSetup
-    
-    ld a, $F
-    ld [W_SystemState], a
-    
-    ;Load a neutral ATF
-    ld a, 0
-    ld b, 0
-    ld c, 0
-    ld d, 0
-    ld e, 0
+    xor a
+    ld b, a
+    ld c, a
+    ld d, a
+    ld e, a
     call Banked_SGB_ConstructPaletteSetPacket
     
     M_AdviceTeardown

@@ -43,9 +43,6 @@ Banked_TitleMenu_ADVICE_UnloadSGBFilesSoundTest::
 Banked_TitleMenu_ADVICE_UnloadSGBFilesOverworld::
 	dw TitleMenu_ADVICE_UnloadSGBFilesOverworld
 
-Banked_TitleMenu_ADVICE_UnloadSGBFilesLink::
-	dw TitleMenu_ADVICE_UnloadSGBFilesLink
-
 ;versions/(power|speed)/components/titlescreen/advice.asm
 Banked_TitleScreen_ADVICE_CorruptSaveLoadSGBFiles::
 	dw TitleScreen_ADVICE_CorruptSaveLoadSGBFiles
@@ -282,13 +279,6 @@ Banked_Victory_ADVICE_LoadSGBFilesRecruitment::
 Banked_Victory_ADVICE_EvolutionLoadSGBFiles::
 	dw Victory_ADVICE_EvolutionLoadSGBFiles
 
-;components/mainscript/window.asm
-Banked_MainScript_ADVICE_SGBRedrawShopWindow::
-	dw MainScript_ADVICE_SGBRedrawShopWindow
-
-Banked_MainScript_ADVICE_SGBRedrawSecondaryShopWindow::
-	dw MainScript_ADVICE_SGBRedrawSecondaryShopWindow
-
 ;components/battle/advice.asm
 Banked_Battle_ADVICE_LoadDenjuuResources::
 	dw Battle_ADVICE_LoadDenjuuResources
@@ -389,6 +379,10 @@ Banked_PauseMenu_ADVICE_ReloadSGBFilesNumMessages::
 ;components/victory/advice.asm
 Banked_Victory_ADVICE_ClearMessageTextForPhoneNumber::
 	dw Victory_ADVICE_ClearMessageTextForPhoneNumber
+
+;components/mainscript/window.asm
+Banked_MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted::
+	dw MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted
 
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
