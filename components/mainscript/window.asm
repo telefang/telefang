@@ -672,9 +672,10 @@ MainScript_MapOverworldHudWindow::
 
 SECTION "MainScript Map Secondary Shop Window", ROMX[$4A48], BANK[$B]
 MainScript_MapSecondaryShopWindow::
-    call MainScript_LoadWindowBorderTileset
+    call MainScript_ADVICE_LoadWindowBorderTileset
     call MainScript_ClearWindowTilesNext
-    M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawSecondaryShopWindow
+    ld de, $5185
+    ld b, 3
     ld a, [W_MainScript_WindowLocation]
     ld c, $C
     call MainScript_ADVICE_MapSecondaryShopWindow
@@ -841,29 +842,91 @@ MainScript_ADVICE_SGBRedrawHud::
     M_AdviceTeardown
     ret
 
-SECTION "MainScript Shop Window Redraw Advice", ROMX[$5F20], BANK[$1]
-MainScript_ADVICE_SGBRedrawShopWindow::
+SECTION "MainScript Shop Window Redraw Advice", ROMX[$6BA0], BANK[$1]
+MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted::
     M_AdviceSetup
-    call MainScript_ADVICE_SGBRedrawSecondaryShopWindow_Common
-    ld de, MainScript_ShopWindowBorder
-    ld b, 4
+    call MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted_Common
     M_AdviceTeardown
     ret
-
-MainScript_ADVICE_SGBRedrawSecondaryShopWindow::
-    M_AdviceSetup
-    call MainScript_ADVICE_SGBRedrawSecondaryShopWindow_Common
-    ld de, $5185
-    ld b, 3
-    M_AdviceTeardown
-    ret
-
-MainScript_ADVICE_SGBRedrawSecondaryShopWindow_Common::
+	
+MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted_Common::
+    ld hl, $8F00
+    ld bc, $A0
     call PauseMenu_ADVICE_CheckSGB
-    ret z
+    jr z, .noSGB
+
+    ld de, .windowSGBBorderTiles
+    call LCDC_LoadTiles
     ld hl, $8EF0
-    ld b, 4
-	call Zukan_ADVICE_TileLowByteBlanketFill
-    ld b, $50
-    call Zukan_ADVICE_TileLightColourReverse
+    ld b, 8
+
+.color1Clear
+    di
+    
+.c1_blanking
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .c1_blanking
+
+    ld a, $FF
+    ld [hli], a
+    xor a
+    ld [hli], a
+
+    ei
+    dec b
+    jr nz, .color1Clear
     ret
+	
+.noSGB
+    ; Preserve the original behaviour of MainScript_LoadWindowBorderTileset.
+    ld de, .windowBorderTiles
+    call LCDC_LoadTiles
+
+    ;Add a blank tile to correspond to the current text style.
+    ld hl, $8EF0
+    ld b, 8
+    ld a, [W_MainScript_TextStyle]
+
+    cp 2
+    jr z, .color3Clear
+
+.color0Clear
+    di
+
+.c0_blanking
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .c0_blanking
+
+    xor a
+    ld [hli], a
+    ld [hli], a
+    ei
+    inc de
+    dec b
+    jr nz, .color0Clear
+    ret
+
+.color3Clear
+    di
+
+.c3_blanking
+    ld a, [REG_STAT]
+    and 2
+    jr nz, .c3_blanking
+
+    ld a, $FF
+    ld [hli], a
+    ld [hli], a
+    ei
+    inc de
+    dec b
+    jr nz, .color3Clear
+    ret
+    
+.windowBorderTiles
+    INCBIN "build/components/mainscript/window_border.2bpp"
+
+.windowSGBBorderTiles
+    INCBIN "build/components/mainscript/window_border_sgb.2bpp"

@@ -146,21 +146,19 @@ MainScript_QueueCustomWindowMessage::
     ld [W_MainScript_State], a
     inc a
     ld [$CADA], a
-    
-    nop
-    nop
-    nop
-    nop
-    nop
-    
     ret
+
+MainScript_ADVICE_LoadWindowBorderTileset::
+    M_PrepAuxJmp Banked_MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted
+	jp PatchUtils_AuxCodeJmp
 
 SECTION "Main Script Shop Item Window 4", ROMX[$49E6], BANK[$B]
 MainScript_DrawEmptyShopWindow::
-    call MainScript_LoadWindowBorderTileset
+    call MainScript_ADVICE_LoadWindowBorderTileset
     call MainScript_ClearTilesShopWindow
     
-    M_AuxJmp Banked_MainScript_ADVICE_SGBRedrawShopWindow
+    ld de, MainScript_ShopWindowBorder
+    ld b, 4
     ld a, [W_MainScript_WindowLocation]
     ld c, 0
     call MainScript_DrawWindowBorder
