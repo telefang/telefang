@@ -108,6 +108,26 @@ SerIO_ADVICE_BufferDenjuuInfoForTrade::
 	ld [hli], a
 
 .getSpeciesName
+	ld a, [$DC60]
+	cp $61
+	jr nz, .notNoisy
+	ld hl, $DC77
+	ld de, SerIO_ADVICE_NoisyEnglish
+	ld b, 6
+	call SerIO_ADVICE_CompareNicknames
+	jr nz, .notNoisy
+
+.isNoisy
+
+	;Special-case Noisy's nickname.
+
+	ld hl, SerIO_ADVICE_NoisyJapanese
+	ld de, $DC70
+	ld bc, 6
+	call memcpy
+	jr .extraData
+
+.notNoisy
 
 	;Load a species nickname for Japanese versions of the game to read.
 
@@ -126,6 +146,8 @@ SerIO_ADVICE_BufferDenjuuInfoForTrade::
 	ld bc, 6
 	call memcpy
 
+.extraData
+
 	;This is for fooling link battle recruitment code in the Japanese version.
 
 	ld a, $ED
@@ -136,6 +158,23 @@ SerIO_ADVICE_BufferDenjuuInfoForTrade::
 	xor a
 	ld [$DC81], a
 	jp Banked_SGB_ConstructATTRBLKPacket_return
+
+SerIO_ADVICE_CompareNicknames::
+	ld a, [de]
+	inc de
+	ld c, a
+	ld a, [hli]
+	cp c
+	ret nz
+	dec b
+	jr nz, SerIO_ADVICE_CompareNicknames
+	ret
+
+SerIO_ADVICE_NoisyEnglish::
+	db $4E,$6F,$69,$73,$79,$E0
+
+SerIO_ADVICE_NoisyJapanese::
+	db $19,$02,$73,$CD,$E0,$E0
 
 SerIO_ADVICE_WaitForTradedDenjuu::
 
@@ -247,6 +286,29 @@ SerIO_ADVICE_SaveTradedDenjuuInfo::
 	jp Banked_SGB_ConstructATTRBLKPacket_return
 
 .useDefault
+	ld a, [$DC60]
+	cp $61
+	jr nz, .notNoisy
+	ld hl, $DC70
+	ld de, SerIO_ADVICE_NoisyJapanese
+	ld b, 5
+	call SerIO_ADVICE_CompareNicknames
+	jr nz, .notNoisy
+
+.isNoisy
+
+	;Special-case Noisy's nickname.
+
+	ld a, [$D4A7]
+	call SerIO_ADVICE_GetNicknameSRAMAddress
+	ld d, h
+	ld e, l
+	ld hl, SerIO_ADVICE_NoisyEnglish
+	ld bc, 6
+	call memcpy
+	jr .useDefaultExtension
+
+.notNoisy
 
 	;Store the 6-char default nickname.
 
@@ -260,6 +322,8 @@ SerIO_ADVICE_SaveTradedDenjuuInfo::
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
+
+.useDefaultExtension
 
 	;Store an empty nickname extension.
 
