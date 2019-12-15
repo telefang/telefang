@@ -681,7 +681,7 @@ They keep going on about ""honest votes"" and ""the bright future"" and stuff.",
 I wonder if something's up.",,0,
 0x11c10c,"けっきょく たいかいを
 うんえいしてたヤツらって
-なにものだったんだろうな??",So... Who were those people running the tournament??,,0,
+なにものだったんだろうな??",So... who were those people running the tournament??,,0,
 0x11c10e,"2かいせんで いいとこまで
 いったんだけどねー
 まけちゃった
@@ -1011,7 +1011,7 @@ Leave at once!",,0,
 だと?
 ......ふーむ
 ならば とおってもよし","What? You say you're a messenger from the Bird Clan?
-.....Hmph. You may enter.",,0,
+...Hmph. You may enter.",,0,
 0x12404c,"ここは ヘビぐみの おさの
 いえだ",The chief of the Snake Clan lives here.,,0,
 0x12404e,"オマエ トリぐみのてさきだな!
@@ -1219,9 +1219,9 @@ It's no fair!",,0,
 ここでしゅぎょうしていた
 デンジュウたちも このしまに
 かえってくるのかな?","I could finally return, so...
-Do you think the Denjuu
+do you think the Denjuu
 who were training on this
-island will come back, too?","I could finally return, so... Do you think the Denjuu who were training on this island will come back, too?",1,This line is used in the Sanaeba's Lab chapter.
+island will come back, too?","I could finally return, so... do you think the Denjuu who were training on this island will come back, too?",1,This line is used in the Sanaeba's Lab chapter.
 0x1240b6,"そとにいる デンジュウたちが
 こわくて そとにでれないんだキ
 なんとかしてくれキー!","Those Denjuu outside are so scary, I can't even leave the house!
@@ -3273,71 +3273,150 @@ You better brace yourself!",1,
 0x13c0e0,"ここでは サナエバグループの
 けんきゅういんが 
 『シンデンジュウ』について
-けんきゅうしているのさ",/0x13c0e0/,,0,
+けんきゅうしているのさ","The scientists of the
+Sanaeba Group, y'see,
+use this place to research
+the <bold>Divine Denjuu<normal>.","The scientists of the Sanaeba Group, y'see,
+use this place to research the <bold>Divine Denjuu<normal>.",1,
 0x13c0e2,"おちないようにきをつけて
 みはリをしないとね
-....オ オマエは!",/0x13c0e2/,,0,
+....オ オマエは!","I really have to be
+careful not to fall
+while standing guard here.
+...Hold up? You're...!","I really have to be
+careful not to fall
+while standing guard here.
+...Hold up? You're...!",1,
 0x13c0e4,"ひょっとして サナエバさまが
 いっていた Tファンガーって
 オマエのことなの?
 こんなヤツに まけるわけ
 ないじゃないか
-かるく ひねってやるぜ!",/0x13c0e4/,,0,
+かるく ひねってやるぜ!","Oh, are you the T-Fanger
+that Mr. Sanaeba was
+talking about, perchance?
+Pfft, as if I'd lose
+to this guy! Get dunked on.","Oh, are you the T-Fanger that Mr. Sanaeba was talking about, perchance? Pfft, as if I'd lose
+to this guy! Get dunked on.",1,
 0x13c0e6,"ここは サナエバグループの
 けんきゅうじょだぞ!
 オマエみたいな ヤツが
-でいリできるばしょではないのだでていけ!",/0x13c0e6/,,0,
+でいリできるばしょではないのだでていけ!","This here lab belongs to
+the Sanaeba Group.
+It ain't a place for the likes
+of you! Get outta here!","This here lab belongs to
+the Sanaeba Group.
+It ain't a place for the likes of you! Get outta here!",1,
 0x13c0e8,"ここからさきは けんきゅうしつだけんきゅうの ジャマは
-させない!",/0x13c0e8/,,0,
+させない!","Research is being done
+past this point.
+We can't have you
+getting in the way!","Research is being done
+past this point.
+We can't have you
+getting in the way!",1,
 0x13c0ea,"こんな せまい ものおきみたいなヘヤで けんきゅうさせなくても
-いいのにねぇ",/0x13c0ea/,,0,
+いいのにねぇ","I wish they wouldn't make me
+do research in this tiny
+room... Is this a storeroom
+or something?","I wish they wouldn't make me work in this tiny room...
+Is this a storeroom or something?",1,
 0x13c0ec,"いま オマエが どこを
 あるいているのか わかって
 いるのか?
 ここは サナエバグループの
 たてものないだぞ!
-でていけ!",/0x13c0ec/,,0,
+でていけ!","Do you have any idea where
+you're stomping around
+right now? This is Sanaeba
+Group property!
+Leave at once!","Do you have any idea where you're stomping around right now? This is Sanaeba Group property!
+Leave at once!",1,
 0x13c0ee,"ボクは このデンジュウカイの
 いせきについての けんきゅうを
 しているのさ
 いろいろ わかってきたけどね
-あとすこしなんだ",/0x13c0ee/,,0,
+あとすこしなんだ","I study fossils found here in
+the Denjuu World. I've
+uncovered a wealth of
+information, but...
+I still have a bit to go!","I study fossils found here in the Denjuu World. I've uncovered a wealth of information, but...
+I still have a bit to go!",1,
 0x13c0f0,"ここは サナエバグループが
 デンジュウについてけんきゅうをおこなっているところだ
-かんけいないヤツは でていけ!",/0x13c0f0/,,0,
+かんけいないヤツは でていけ!","We of the Sanaeba Group
+perform research here.
+No trespassers allowed!","We of the Sanaeba Group perform research here.
+No trespassers allowed!",1,
 0x13c0f2,"サナエバさまの こうどうは
 なんだか ヘんなんだ
 むかしと すこし
-ちがうカンジが するんだ...",/0x13c0f2/,,0,
+ちがうカンジが するんだ...","There's something worrying
+me about Mr. Sanaeba...
+I feel like he isn't acting
+quite like he used to.","There's something worrying me about Mr. Sanaeba...
+I feel like he isn't acting quite like he used to.",1,
 0x13c0f4,"こんな はしっこのヘヤを
 しらベにくるなよ
-よけいなしごとが ふえるだろ!",/0x13c0f4/,,0,
+よけいなしごとが ふえるだろ!","Why'd ya hafta go outta yer
+way to check this room?!
+Yer just givin' me
+more work!","Why'd ya hafta go outta yer way to check this room?! Yer just givin' me
+more work!",1,Check that this is the sense this is in; that this is actually said by a guard. //
 0x13c0f6,"おくにいる けんきゅういんが
 にげないように みはってるんだ
 にがすきなら ようしゃは
-しないぞ!",/0x13c0f6/,,0,
+しないぞ!","I'm standing guard so that
+the scientist in the back
+won't escape. What, you
+want to set the guy free?
+Get ready for a pummelin',
+then!","I'm standing guard so that the scientist in the back won't escape. What, you want to set the guy free? Get ready for a pummelin', then!",1,
 0x13c0f8,"となリにいるひと
 ベつに みはってなくても
-ボクは にげないのにね",/0x13c0f8/,,0,
+ボクは にげないのにね","...I don't need to be guarded.
+I wouldn't run away!",...I don't need to be guarded. I wouldn't run away!,1,
 0x13c0fa,"しんにゅうしゃは ゆるさない!
 チカラずくで でていってもらう
-テレファングだ!",/0x13c0fa/,,0,
+テレファングだ!","I don't take trespassing
+lightly!
+I think I'll force you to
+leave. Let's telefang!","I don't take trespassing lightly!
+I think I'll force you to leave. Let's telefang!",1,
 0x13c0fc,"ちょっとまて!
 オマエ ここでは みたことない
 かおだな...
 さては けんきゅうの せいかを
 うばいにきたんだな!
-おいかえしてやる!",/0x13c0fc/,,0,
+おいかえしてやる!","Hold it! I haven't seen your
+face around here...
+Ah! You're here to steal our
+research, are you?!
+I'll send you packing!","Hold it! I haven't seen your face around here...
+Ah! You're here to steal our research, are you?!
+I'll send you packing!",1,
 0x13c0fe,"ドジなヤツみーっけ!
 ちょうどヒマしてたんだ
 オマエを たおしてやる
-テレファングだ!",/0x13c0fe/,,0,
+テレファングだ!","What kind of bumbling
+bonehead do we have here?
+I have some time to spare.
+I'll take a moment to
+trundle you in a Telefang!","What kind of bumbling bonehead do we have here? I have some time to spare.
+I'll take a moment to trundle you in a Telefang!",1,
 0x13c100,"だれかに みられながら
 なにかをするのって いやだよね
 うしろのヤツが すっごい
-きになってて....",/0x13c100/,,0,
+きになってて....","Urk, I can't stand being
+watched while working.
+I can't relax with this guy
+behind me...","Urk, I can't stand being watched while working.
+I can't relax with this guy behind me...",1,"Check that ""working"" is the correct verb. //"
 0x13c102,"けんきゅういんが サボらないようみはっているのだ!
-オマエもジャマをするな!",/0x13c102/,,0,
+オマエもジャマをするな!","I'm standing watch so the
+scientists don't slack off!
+Hey, don't even think about
+getting in the way!","I'm standing watch so the scientists don't slack off! Hey, don't even think about getting in the way!",1,
 0x13c104,"そういえば このまえ
 ヘんなデンジュウが いたな
 なんだか すごくわるそうな

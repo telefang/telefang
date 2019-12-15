@@ -941,7 +941,7 @@ Yeah, thanks. I'll be waiting...
 Alright! Let's Telefang!",,0,
 0x12019a,"あらっ!やられちゃったわ
 そういうときは にげるがかちよ","Ah!! I was beaten!
-At times like this... It's best to run away!",,0,
+At times like this... it's best to run away!",,0,
 0x12019c,"あっ!?
 タバスコさんが まけた!
 なんてことだー
@@ -1113,7 +1113,7 @@ No way, man! Not gonna happen, man!",,0,
 ダレにもしゃベっちゃ
 ダメっていわれていたダスのに!
 もうダーメーダースー!!
-キカイがもらえないダスー!!","..... Ack!
+キカイがもらえないダスー!!","...Ack!
 I talked, man!
 They said I wasn't supposed to talk to anyone, man!
 It's over, man!!
@@ -1320,7 +1320,7 @@ In exchange, all I ask for is your honest vote!",,0,
 せんきょでは たをよせつけない
 あっとうてきなひょうすうで
 いちいとうせんよー","Traa lalaa~~
-Finally, I've found it... The treasures of Krinon Village!
+Finally, I've found them... The treasures of Krinon Village!
 With this, we can buy out all of the Denjuu in this area and change ""Krinon Village"" into ""Kakuza Party Village""!
 And once we have a foothold here, we can start spreading out into other towns!
 The polling stations will be flooded with our votes!",,0,
@@ -1333,7 +1333,7 @@ The polling stations will be flooded with our votes!",,0,
 カクザとう!カクザとうで
 ございます!","And then~ I'll become~
 The first female president of the Denjuu World~!
-...Hmhm...Hmhmhmhm...
+...Hmhm... Hmhmhmhm...
 Excellent!!
 We will create a brighter future!
 Kakuza Party! We are the Kakuza Party!",,0,
@@ -1372,7 +1372,7 @@ Just you watch!",,0,
 うん そうそう どうくつのなか
 うんうん じゃぁまってるからー","Just wait a second...
 Beep...Beep beep...
-Helloo~? Oh, hey Limmy...
+Hellooo~? Oh, hey Limmy...
 Yeah, it's me, Tabasco...
 I need some help... Yeah...
 Do you think you could come?
@@ -2090,7 +2090,7 @@ If you do, I will agree
 to stop the fighting!",1,
 0x12c134,"どうじゃった?
 .....『ぬいぐるみ』とな?はて...どこにやったかの?","How did it go?
-....A Plush Toy, eh?
+...A Plush Toy, eh?
 Alright then, hmmm... Where did I leave it?",,0,
 0x12c136,"そうじゃ!
 ガンバンオーのヤツが もって
@@ -2257,7 +2257,7 @@ This island used to be such a peaceful place...",,0,
 0x12c17c,"このしまに ケイタイデンワの
 デンパが はいらなければ
 みんな このしまから でていくとおもうんだ
-でもそんなこと できっこないし","Well... If we could somehow cut off their phone signals, I'm sure a lot of them would leave the island...
+でもそんなこと できっこないし","Well... if we could somehow cut off their phone signals, I'm sure a lot of them would leave the island...
 But's that's not really possible, especially for me... ",,0,
 0x12c17e,"あきらめたら それで
 おわリじゃないか!
@@ -2539,7 +2539,7 @@ I'll give it a shot! ",,0,
 またどこかにいっちゃった
 みたいだね
 あんまリよくおぼえてないや
-ごめんね","Hmmm... Well, he was just here a while ago, but it looks like he left to go somewhere.
+ごめんね","Hmmm... Well, he was just here a while ago, but it looks like he went off somewhere.
 I don't really remember which way he went...
 Sorry!",,0,
 0x138006,"やぁ キミも このもリに
@@ -3069,12 +3069,12 @@ Professor... Help me...",It... hurts... *clunk* Professor... Help me...,1,
 あつかってしまって...
 ゆるしてくれ!","Octorifle... I'm sorry...
 I was so, so wrong...
-I haven't been treating you
+I haven't treated you
 like the irreplaceable
 friend you are.
 Please! Forgive me!","Octorifle... I'm sorry...
 I was so, so wrong...
-I haven't been treating you like the irreplaceable friend you are.
+I haven't treated you like the irreplaceable friend you are.
 Please! Forgive me!",1,
 0x1380a0,"<&name>くん
 だいじょうぶですか?
@@ -4361,8 +4361,8 @@ Denjuu"", apparently...?","Something about a ""Divine Denjuu"", apparently...?",
 かえるよ!","The <bold>Divine Denjuu<normal>...! Al-
 right, I'm comin' to Tronco!","The <bold>Divine Denjuu<normal>...! Al-right, I'm comin' to Tronco!",1,
 0x14000a,"まっています
-<&name>くん","We'll be waiting for you,
-<&name>!","We'll be waiting for you, <&name>!",1,
+<&name>くん","We're waiting for you,
+<&name>!","We're waiting for you, <&name>!",1,
 0x14000c,"もどってきたぜ!
 さあ シンデンジュウのはなしをきかせてくれよ!","I'm back in town!
 Gimme the low-down
@@ -4385,43 +4385,82 @@ I must thank you.",1,
 0x140010,"ヘヘ あらたまって おれいを
 いわれるとな...
 でも こっちは いそいでるんだ
-はやくはなしを きかせてくれよ",/0x140010/,,0,
+はやくはなしを きかせてくれよ","Hee hee, I don't mind bein'
+formally thanked!
+But... I'm kinda in a hurry
+here. Give me the deets!","Hee hee, I don't mind bein' formally thanked!
+But... I'm kinda in a hurry here. Give me the deets!",1,
 0x140012,"うむ まだ すベてがおわった
 わけではないからの
 さて 『シンデンジュウ』に
-ついて はなそうかの",/0x140012/,,0,
+ついて はなそうかの","Hm, yes... You see, there's
+trouble afoot yet.
+Let me tell you the story of
+the <bold>Divine Denjuu<normal>.","Hm, yes... You see, there's trouble afoot yet.
+Let me tell you the story of the <bold>Divine Denjuu<normal>.",1,
 0x140014,"『シンデンジュウ』とは
 この デンジュウカイで
 いちばん さいしょに うまれた
 デンジュウなのじゃ
 そして この デンジュウカイを
 まもリつづけていた 
-そんざいなのじゃ",/0x140014/,,0,
+そんざいなのじゃ","The <bold>Divine Denjuu<normal> was the
+very first Denjuu.
+Ever since its birth,
+it has been protecting
+this Denjuu World.","The <bold>Divine Denjuu<normal> was the very first Denjuu.
+Ever since its birth,
+it has been protecting
+this Denjuu World.",1,
 0x140016,"そういえば アクマデンジュウの
 ヤツも 『シンデンジュウ』に
 ふういんされたとか 
-いってたもんなぁ",/0x140016/,,0,
+いってたもんなぁ","Oh yeah... That Devil Denjuu
+dude said somethin'
+about being locked up by the
+Divine Denjuu, didn't he.","Oh yeah... That Devil Denjuu dude said somethin'
+about being locked up by the Divine Denjuu, didn't he.",1,
 0x140018,"じゃが おぬしらニンゲンが
 このせかいに はいってきたときながいねむリに ついて
-しまったのじゃ",/0x140018/,,0,
+しまったのじゃ","However... when you humans
+arrived in this world
+of ours, the Divine Denjuu
+fell into a long, deep sleep.","However... when you humans arrived in this world
+of ours, the Divine Denjuu fell into a long, deep sleep.",1,
 0x14001a,"なんで ねちゃったんだよ?
-おきてれば いいじゃん?",/0x14001a/,,0,
+おきてれば いいじゃん?","Fell asleep? Why doesn't it
+just wake up, then?","Fell asleep? Why doesn't it just wake up, then?",1,
 0x14001c,"ネムリにつくまえ
 『シンデンジュウ』は ワシに
-こういったんじゃ",/0x14001c/,,0,
+こういったんじゃ","Ah, therein lies the crux...
+Before going to sleep,
+the Divine Denjuu and I
+spoke thusly.","Ah, therein lies the crux...
+Before going to sleep,
+the Divine Denjuu and I spoke thusly.",1,
 0x14001e,"シンデンジュウ
-ワタシに ようとは いったい?",/0x14001e/,,0,
+ワタシに ようとは いったい?","""Divine Denjuu! What owes me
+your presence?""","""Divine Denjuu! What owes me your presence?""",1,
 0x140020,"ムサよ...このせかいに
 あたらしい しゅぞく
 『ニンゲン』が はいって
-きたではないか",/0x140020/,,0,
+きたではないか","""Musa, my child...
+It seems that a new race
+of creatures has entered
+this world. The 'humans'.""","""Musa, my child...
+It seems that a new race of creatures has entered this world. The 'humans'.""",1,
 0x140022,"ニンゲンが このせかいヘ
 はいってきたことによって
 このせかいは あたらしいじだいにはいるだろう
 だが このせかいの すベてを
 しる ワタシを ニンゲンが
 ほおっておいてくれるとは
-かぎらない",/0x140022/,,0,
+かぎらない","""The humans' arrival surely
+heralds a new age.
+Although... I fear they will
+not be content to leave an
+all-knowing being such as
+myself alone.""","""The humans' arrival surely heralds a new age. Although... I fear they will not be content to leave an all-knowing being such as myself alone.""",1,
 0x140024,"そこで ワタシは ここカクトスでねむリに つくことにする
 ムサよ おぬしに たのんでおく
 カクトスに だれも

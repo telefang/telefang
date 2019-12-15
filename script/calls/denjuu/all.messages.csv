@@ -1896,7 +1896,7 @@ A painful nail / A bucket",0,"Janome → pail, snake eye → painful nail"
 <Q>Yeah!<|>No idea</Q><*A>","Is there another verse...?
 Yeah! / No idea",0,
 0x110082,"ヘびのめなんかもって
-どうするの?こわいよー!<*2>",Is that some kinda weapon?! That's pretty hardcore for a nursery rhyme!<*2>,Is that some kinda weapon?! A nursery rhyme shouldn't be that scary!,0,
+どうするの?こわいよー!<*2>",Some kinda weapon?! That's pretty hardcore for a nursery rhyme!<*2>,Some kinda weapon?! That's pretty hardcore for a nursery rhyme!,0,
 0x110084,"カサのことなんだ!
 わからなかったよー!<*2>","Oh, a bucket! I had no idea!<*2>","Oh, a bucket! I had no idea!",0,
 0x110086,"あるんだ!こんどかみに
@@ -2261,8 +2261,8 @@ Obviously / Wow, really?",0,
 #######,#102,,,,
 0x110186,"おなかすいたー じつはいま
 きのみもってるんだよね!
- たベれば それで?<*A>","Man, I'm hungry... To be honest, I do have a fruit here.
-<Q>Eat it, then<|>But?</Q><*A>","Man, I'm hungry... To be honest, I do have a fruit here.
+ たベれば それで?<*A>","Man, I'm hungry... Although I do have a fruit here.
+<Q>Eat it, then<|>But?</Q><*A>","Man, I'm hungry... Although I do have a fruit here.
 <0>Eat it, then<0>But?<*A>",0,(Questions 102-200 are about random stuff)
 0x110188,"それがね!にがいきのみ
 なんだよなーこれが!!
@@ -2689,12 +2689,12 @@ Why? / Don't be childish!",0,
 たベてみたいなあ<*2>",I'd like to try candy from the Human World sometime...<*2>,I'd like to try candy from the Human World sometime...,0,
 0x1440b4,たベすぎてるとふとるぞ!<*2>,"But if you eat too much, you'll get fat!<*2>","But if you eat too much, you'll get fat!",0,
 0x1440b6,だってベロがピリピリするもん<*2>,It makes your tongue hurt!<*2>,It makes your tongue hurt!,0,
-0x1440b8,だってコドモだもん!<*2>,But... I AM a child!<*2>,But... I'm a child!,0,
+0x1440b8,だってコドモだもん!<*2>,But... I AM a child!<*2>,But... I AM a child!,0,
 #######,#124,,,,
 0x1440ba,"こっちはアツくってクーラーが
 ほしいよそっちはどう?
- アツイよー すずしいよ<*A>","It's so hot here, I wish I could cool down... What about you?
-<Q>It's hot...<|>It's cool here</Q><*A>","It's so hot here, I wish I could cool down... How are things over there?
+ アツイよー すずしいよ<*A>","It's so hot here. I wish I could cool down... What about you?
+<Q>It's hot...<|>It's cool here</Q><*A>","It's so hot here. I wish I could cool down... How are things over there?
 It's hot... / It's cool here",0,
 0x1440bc,"やっぱそっちもアツいんだ
  ちょっとね ちょーアツイ<*A>","It's hot over there too, huh? So you're sweating a lot too?
@@ -2943,8 +2943,8 @@ Why? / Late to what?",0,
 #######,#136,,,,
 0x144162,"ねぇ いつもニンゲンカイにい
 いるときはなにしてんの?
- ベんきょう あそび<*A>","So I was wondering... When you're in the Human World, what do you do?
-<Q>Study<|>Play</Q><*A>","So I was wondering... When you're in the Human World, what do you do?
+ ベんきょう あそび<*A>","So I was wondering... when you're in the Human World, what do you do?
+<Q>Study<|>Play</Q><*A>","So I was wondering... when you're in the Human World, what do you do?
 Study / Play",0,
 0x144164,ベんきょうしてんだ たのしいの? オモシロイよ ぜんぜん<*A>,"Study, huh. Is it fun?
 <Q>Yeah!<|>Not at all...</Q><*A>","Study, huh. Is it fun?
@@ -2958,13 +2958,13 @@ Video games / Football",0,
 0x14416a,"だよねー!ベんきょうなんて
 たのしくないよねー!!<*2>","Figures. There's no way studying is fun, is there!<*2>","Figures. There's no way studying is fun, is there!",0,
 0x14416c,"ゲームかいいなぁ おれもやリ
-たいなあー<*2>","Video games, huh... Nice... I'd like to try too.<*2>","Video games, huh... Nice... I'd like to try too.",0,
+たいなあー<*2>","Video games, huh... Nice... I'd like to try 'em sometime.<*2>","Video games, huh... Nice... I'd like to try 'em sometime.",0,
 0x14416e,しってるぞ!ボールをつかってやるんだよな!それしかしらないけど<*2>,"I know about that! That's the one where you use a ball! That's all I know, though.<*2>","I know about that! That's the one where you use a ball! That's all I know, though.",0,
 #######,#137,,,,
 0x144170,"オレめがわるいんだよねメガネでもかけよっかなぁ
  オマエが? いいんじゃない<*A>","My eyesight is bad... Maybe it's time to get glasses.
-<Q>You, glasses?<|>Why not</Q><*A>","My eyesight is bad... Maybe it's time to get glasses.
-You, glasses? / Why not",0,
+<Q>You? Glasses?<|>Why not</Q><*A>","My eyesight is bad... Maybe it's time to get glasses.
+You? Glasses? / Why not",0,
 0x144172,"なんだよわるいかよぉ!!
  ベつに そんなことはないけど<*A>","What! What's wrong with that?!
 <Q>Nothing...<|>Nothing!</Q><*A>","What! What's wrong with that?!
@@ -3069,7 +3069,7 @@ Really? / Oh, good!",0,
 Alright! / You can do that?",0,
 0x1441b8,"じゃあセイザをおしえてよ!
 うーん キミはツノザっぽいな
- なにそれ? ちがうよ<*A>","Then I'll try to read your star sign! Hmm... You seem like a ""Claw""!
+ なにそれ? ちがうよ<*A>","Then I'll try to read your star sign! Hmm... You seem like a ""Horn""!
 <Q>What's that?<|>Wrong!</Q><*A>","Then I'll try to read your star sign! Hmm... You seem like a ""Horn""!
 What's that? / Wrong!",0,
 0x1441ba,"しってるさ!よくアタルんだよ!
@@ -3079,9 +3079,9 @@ Cool! / ...Really?",0,
 0x1441bc,"えっつ?あそっか ニンゲンカイ
 のセイザとはちがうんだ<*2>","Eh...? Oh I see, the zodiac is different in the Human World! <*2>","Eh...? Oh I see, your the is different in the Human World! ",0,
 0x1441be,"ちがうの?あれ?おっかしいなー
-じゃあキバザかなぁ?<*2>","Huh? I was wrong? That's weird... Then maybe you're a ""Fang""?<*2>","Huh? That's weird... Then maybe you're a ""Fang""?",0,
+じゃあキバザかなぁ?<*2>","No? That's weird... Then maybe you're a ""Fang""?<*2>","No? That's weird... Then maybe you're a ""Fang""?",0,
 0x1441c0,"きょうのラッキーカラーは
-『アオムラサキ』です!!<*2>",Your lucky color today is indigo!!<*2>,Your lucky color today is indigo!!,0,
+『アオムラサキ』です!!<*2>",Your lucky color today is indigo!<*2>,Your lucky color today is indigo!,0,
 0x1441c2,"ほんとだ!オレのショクギョウは
 まほうつかいだ!!<*2>","Yes, really! I'm a magician by trade, didn't you know?!<*2>","Yes, really! I'm a magician by trade, didn't you know?!",0,
 #######,#143,,,,
@@ -3165,7 +3165,7 @@ I'd become an adult. / I'd become awesome.",0,
 うんどうでもしようかな<*2>","No? Really? I guess I should exercise, then...<*2>","No? Really? I guess I should exercise, then...",0,
 0x1441f6,"やせたいよ!さいきんおなかが
 ブヨーンとしててさぁ ハァ<*2>",Of course! My belly's been bulging a bit lately... Sigh...<*2>,Of course! My belly's been bulging a bit lately... Sigh...,0,
-0x1441f8,おぉー!オトナかすごいなぁ!<*2>,Ohhh! An adult? Cool!!<*2>,Ohhh! An adult? Cool!!,0,
+0x1441f8,おぉー!オトナかすごいなぁ!<*2>,Ohhh! An adult? Cool!!!<*2>,Ohhh! An adult? Cool!!!,0,
 0x1441fa,えっ?なになに?どうスゴイの?<*2>,Huh? Awesome? In what way?<*2>,Huh? Awesome? In what way?,0,
 #######,#147 (partial),,,,
 0x1441fc,いまじぶんでゴハンつくってんだ! エライ! なにつくってんの?<*A>,"I'm cooking right now!
@@ -3624,7 +3624,7 @@ I forgot! / I'll try to remember",0,
 いつもからかうんだよー!
 びっくリするじゃん!<*2>",Why are you always playing around with me? It's scary!<*2>,Why are you always playing around with me? It's scary!,0,
 0x160132,"えー!ボクそんなにインショウが
-うすいのー??<*2>",Huh... I leave that weak of an impression?<*2>,Huh... I leave that weak of an impression?,0,
+うすいのー??<*2>",Wha-! I'm that unmemorable?!<*2>,Wha-! I'm that unmemorable?!,0,
 0x160134,ホント?たまにはかけてね!<*2>,Promise? Call me every now and then!<*2>,Promise? Call me every now and then!,0,
 #######,#170,,,,
 0x160136,"えーん えーん!!
@@ -3719,8 +3719,8 @@ Yes / No",0,
 I'm just messing with you. / Hee hee...",0,
 0x160172,"えっ?じゃあどこでやるの??
  ゆきやま さかみち<*A>","Huh? Where do you ski, then?
-<Q>Mountains<|>Hiking trails</Q><*A>","Huh? Where do you ski, then?
-Mountains / Hiking trails",0,
+<Q>Snowy mountains<|>Hiking trails</Q><*A>","Huh? Where do you ski, then?
+Snowy mountains / Hiking trails",0,
 0x160174,あー うそつきだー<*2>,"Oh, you joker!<*2>","Oh, you joker!",0,
 0x160176,なんでわらってんの?<*2>,What are you snickering about?<*2>,What are you snickering about?,0,
 0x160178,えー!サムくていやだよー!!<*2>,Whaaaat! I can't handle the cold!<*2>,Whaaaat! I can't handle the cold!,0,
@@ -4133,7 +4133,7 @@ Yeah / REALLY big!",0,
  しらなかったの? ほしい?<*A>","What? It's not a muffin at all?
 <Q>Didn't you know?<|>Do you want one?</Q><*A>","What? It's not a muffin at all?
 Didn't you know? / Do you want one?",0,
-0x940a4,どのくらいほそいんだろ?<*2>,"Muffins are so good, so a big one has to be even better... I wonder how big it might be!<*2>","Muffins are so good, so a big one has to be even better... I wonder how big it might be!",0,
+0x940a4,どのくらいほそいんだろ?<*2>,"...Yo. Muffins are the best, so a big one's gotta be even bester!<*2>","...Yo. Muffins are the best, so a big one's gotta be even bester!",0,
 0x940a6,オモイのか?オレもてるかな?<*2>,Wow! I wonder if I could eat an entire muffler on my own?<*2>,Wow! I wonder if I could eat an entire muffler on my own?,0,
 0x940a8,はじめてしったよ!<*2>,"Man, I had no idea!<*2>","Man, I had no idea!",0,
 0x940aa,"うん はいてみたいな
