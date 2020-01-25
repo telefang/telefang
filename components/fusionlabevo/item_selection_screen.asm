@@ -86,7 +86,7 @@ FusionLabEvo_StateDrawScreen::
 	ld [W_FusionLabEvo_InventoryQuantitiesLengthBuffer], a
 	ld a, $40
 	ld [W_FusionLabEvo_InventoryQuantitiesAddressOffsetBuffer], a
-	ld de, $5288
+	ld de, LabLabelGfx
 	jr .loadTiles
 
 .useFusionEvoItems
@@ -99,10 +99,10 @@ FusionLabEvo_StateDrawScreen::
 	ld [W_FusionLabEvo_InventoryQuantitiesLengthBuffer], a
 	ld a, 0
 	ld [W_FusionLabEvo_InventoryQuantitiesAddressOffsetBuffer], a
-	ld de, $5208
+	ld de, FusionLabelGfx
 
 .loadTiles
-	ld a, $38
+	ld a, BANK(FusionLabelGfx)
 	ld hl, $8800
 	ld bc, $80
 	call Banked_LCDC_LoadTiles
