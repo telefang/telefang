@@ -56,7 +56,7 @@ FusionLabEvo_ItemSelectionScreenCleanup::
 	ret
 
 FusionLabEvo_MapTopAndBottomWindows::
-	ld de, $4C38
+	ld de, ShopTopWindowTMap
 	ld hl, $9800
 	ld b, 4
 	ld c, $14
