@@ -172,9 +172,13 @@ FusionLabEvo_ADVICE_LoadSGBFilesItemSelection::
 	ld a, 3
 	ld [W_MainScript_TextStyle], a
 
-    ld hl, $8800
-    ld b, $30
+    ld hl, $8880
+    ld b, $10
     call Zukan_ADVICE_TileLowByteBlanketFill
+
+    ld hl, $8A00
+    ld b, $70
+    call Zukan_ADVICE_TileLightColourReverse
 
     ld hl, $8B00
     ld b, $40
