@@ -57,7 +57,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	call FusionLabEvo_LoadSpeciesNameEntryPointC
 	call FusionLabEvo_DrawItemData_extEntry
 	call $2CC4
-	ld de, $4C88
+	ld de, ShopTopWindowBTMap
 	ld hl, $9820
 	ld b, 2
 	ld c, $14
