@@ -103,8 +103,8 @@ FusionLabEvo_StateDrawScreen::
 
 .loadTiles
 	ld a, BANK(FusionLabelGfx)
-	ld hl, $8800
-	ld bc, $80
+	ld hl, $8A00
+	ld bc, $E0
 	call Banked_LCDC_LoadTiles
 	ld a, 0
 	ld [W_FusionLabEvo_ScrollPosition], a
