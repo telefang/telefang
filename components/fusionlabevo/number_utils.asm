@@ -59,16 +59,16 @@ FusionLabEvo_DrawItemData_extEntry::
 	ld a, [hl]
 	call Status_DecimalizeStatValue
 	ld a, $A
-	ld hl, $8B80
+	ld hl, $8B90
 	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld a, [W_GenericRegPreserve]
 	swap a
 	and a, $F
-	ld hl, $8B90
+	ld hl, $8BA0
 	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ld a, [W_GenericRegPreserve]
 	and a, $F
-	ld hl, $8BA0
+	ld hl, $8BB0
 	call PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx
 	ret
 	
