@@ -65,7 +65,7 @@ FusionLabEvo_ADVICE_LoadSGBFilesNoEvolution::
     call Zukan_ADVICE_TileLowByteBlanketFill
 
     ld hl, $8B00
-    ld b, $20
+    ld b, $24
     call Zukan_ADVICE_TileLowByteBlanketFill
 
     ld hl, $8C00

@@ -65,13 +65,13 @@ FusionLabEvo_FusionScreenStateMachine::
 	call FusionLabEvo_MapTilesRectangle
 	call FusionLabEvo_DrawPartnerStats
 	ld a, 0
-	ld hl, $8B80
-	call Banked_MainScript_DrawLetter
-	ld a, 0
 	ld hl, $8B90
 	call Banked_MainScript_DrawLetter
 	ld a, 0
 	ld hl, $8BA0
+	call Banked_MainScript_DrawLetter
+	ld a, 0
+	ld hl, $8BB0
 	call Banked_MainScript_DrawLetter
 	ld c, $B3
 	ld a, [W_FusionLabEvo_IsLabEvo]
