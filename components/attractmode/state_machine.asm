@@ -6,8 +6,12 @@ AttractMode_StateMachine::
 	and M_JPInput_A + M_JPInput_Start
 	jr z, .doNotSkipToTitlescreen
 	ld a, [W_SystemSubState]
+	cp $23
+	jr nc, .doSkipToTitlescreen
 	cp $20
 	jr nc, .doNotSkipToTitlescreen
+
+.doSkipToTitlescreen
 	ld a, $20
 	ld [W_SystemSubState], a
 
@@ -118,10 +122,6 @@ AttractMode_StateDrawScene1::
 	ld b, 1
 	call Banked_System_CGBToggleClockspeed
 	jp System_ScheduleNextSubState
-	nop
-	nop
-	nop
-	nop
 	nop
 
 AttractMode_StateFadeIn::
