@@ -42,7 +42,7 @@ Zukan_ADVICE_DrawThreeLines::
 	call Zukan_ADVICE_NextPageDrawHelper
 	ld hl, $8DC0
 	call Zukan_ADVICE_NextPageDrawHelper
-	ret
+	jp PauseMenu_ADVICE_SMSResetLine
 
 Zukan_ADVICE_MapArrow::
 	ld hl, $99D1
