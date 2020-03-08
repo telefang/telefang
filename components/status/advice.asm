@@ -138,14 +138,6 @@ Status_ADVICE_DrawRightAlignedHabitatNameInner::
 
 Status_ADVICE_StateExit::
     M_AdviceSetup
-    
-    ;Load neutral/grayscale ATF
-    ld a, 0
-    ld b, 0
-    ld c, 0
-    ld d, 0
-    ld e, 0
-    call Banked_SGB_ConstructPaletteSetPacket
 
     ; This is called after fade-out on the status screen accessed from the
     ; pause menu, but before the fade-out when accessed from battle.

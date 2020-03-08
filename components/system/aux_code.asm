@@ -384,6 +384,10 @@ Banked_Victory_ADVICE_ClearMessageTextForPhoneNumber::
 Banked_MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted::
 	dw MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted
 
+;components/serio/advice.asm
+Banked_VsSummon_ADVICE_LoadSGBFiles::
+	dw VsSummon_ADVICE_LoadSGBFiles
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 
