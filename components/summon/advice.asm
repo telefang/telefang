@@ -34,6 +34,7 @@ Summon_ADVICE_LoadSGBFiles::
     xor a
     call Banked_RLEDecompressTMAP0
 
+Summon_ADVICE_LoadSGBFiles_SkipSetup::
     call PauseMenu_ADVICE_CheckSGB
     jp z, .return
 

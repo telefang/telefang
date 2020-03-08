@@ -1,5 +1,47 @@
 INCLUDE "telefang.inc"
 
+
+SECTION "VS Summon Screen Advice Code", ROMX[$6D90], BANK[$1]
+VsSummon_ADVICE_LoadSGBFiles::
+	M_AdviceSetup
+
+	xor a
+	call Banked_RLEDecompressTMAP0
+
+	call PauseMenu_ADVICE_CheckSGB
+	jp z, .return
+
+	ld bc, $4FF
+	ld e, $10
+	ld hl, $99A2
+
+.tilemapRowLoop
+	ld d, 8
+
+.tilemapColumnLoop
+	di
+
+.wfb
+	ldh a, [REG_STAT]
+	and 2
+	jr nz, .wfb
+
+	ld a, c
+	ld [hli], a
+	ld [hli], a
+	ei
+	dec d
+	jr nz, .tilemapColumnLoop
+	dec b
+	jr z, .return
+
+; At this stage of the loop the register d should be 0. We will abuse this fact in order to add the value in e to hl via de.
+	add hl, de
+	jr .tilemapRowLoop
+
+.return
+	jp Summon_ADVICE_LoadSGBFiles_SkipSetup
+
 SECTION "VS Summon Screen Advice Code 3", ROMX[$7A1D], BANK[$1F]
 VsSummon_ADVICE_CheckSGB::
     ld a, [W_SGB_DetectSuccess]

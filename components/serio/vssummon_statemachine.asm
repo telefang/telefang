@@ -253,7 +253,7 @@ VsSummon_StateFadeOutAndDrawScreen::
     call MainScript_DrawEmptySpaces
     ld bc, 0
     ld e, $D
-    M_AuxJmp Banked_Summon_ADVICE_LoadSGBFiles
+    M_AuxJmp Banked_VsSummon_ADVICE_LoadSGBFiles
     ld bc, 0
     ld e, $D
     ld a, 0
