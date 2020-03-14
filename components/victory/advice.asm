@@ -130,6 +130,7 @@ Victory_ADVICE_TileLowByteBlanketFill::
 	ret
 
 Victory_ADVICE_DrawPhoneNumber::
+    push af
     push hl
     push bc
     push de
@@ -149,6 +150,7 @@ Victory_ADVICE_DrawPhoneNumber::
     jr nz, .loop
     pop bc
     pop hl
+    pop af
     jp Banked_Status_DrawPhoneNumberForStatus
 
 Victory_ADVICE_LoadEvolutionIndicatorBySpecies::
