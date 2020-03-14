@@ -33,6 +33,7 @@ LinkVictory_ADVICE_TileLowByteBlanketFill::
 	ret
 
 LinkVictory_ADVICE_DrawPhoneNumber::
+	push af
 	push hl
 	push bc
 	push de
@@ -52,6 +53,7 @@ LinkVictory_ADVICE_DrawPhoneNumber::
 	jr nz, .loop
 	pop bc
 	pop hl
+	pop af
 	jp Banked_Status_DrawPhoneNumberForStatus
 
 LinkVictory_ADVICE_OnExit::

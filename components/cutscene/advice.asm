@@ -296,8 +296,9 @@ WeAreConnected_ADVICE_LoadSGBFiles_Waaaaahh::
 	ld e, c
 	jp Banked_SGB_ConstructPaletteSetPacket
 
-SECTION "Cutscene - Recruitment Phone Number", ROMX[$7FDC], BANK[$E]
+SECTION "Cutscene - Recruitment Phone Number", ROMX[$7FDA], BANK[$E]
 Cutscene_ADVICE_DrawPhoneNumberForRecruitment::
+	push af
 	push hl
 	push bc
 	push de
@@ -317,6 +318,7 @@ Cutscene_ADVICE_DrawPhoneNumberForRecruitment::
 	jr nz, .loop
 	pop bc
 	pop hl
+	pop af
 	jp Banked_Status_DrawPhoneNumberForStatus
 
 SECTION "Cutscene - Antenna Tree SGB Overlay", ROMX[$42C0], BANK[$77]

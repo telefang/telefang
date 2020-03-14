@@ -42,7 +42,7 @@ VsSummon_ADVICE_LoadSGBFiles::
 .return
 	jp Summon_ADVICE_LoadSGBFiles_SkipSetup
 
-SECTION "VS Summon Screen Advice Code 3", ROMX[$7A1D], BANK[$1F]
+SECTION "VS Summon Screen Advice Code 3", ROMX[$7A1F], BANK[$1F]
 VsSummon_ADVICE_CheckSGB::
     ld a, [W_SGB_DetectSuccess]
     or a
