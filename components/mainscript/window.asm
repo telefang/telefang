@@ -15,6 +15,11 @@ W_MainScript_SecondaryWindowClearCondition:: ds 1
 SECTION "Main Script Window Border Vars 2", WRAM0[$CA6D]
 W_MainScript_WindowType:: ds 1
 
+SECTION "Main Script Window Clear - Player Movement Tracking", WRAM0[$C7E3]
+W_MainScript_PlayerMovementTrackState:: ds 1
+W_MainScript_PlayerHorizontalPositionComparison:: ds 1
+W_MainScript_PlayerVerticalPositionComparison:: ds 1
+
 SECTION "MainScript Window Text Clear", ROMX[$4CEB], BANK[$B]
 MainScript_ClearTilesShopWindow::
     ld a, [W_MainScript_TileBaseIdx]
@@ -386,7 +391,7 @@ MainScript_ConditionallyClearSecondaryShopWindow::
     ; Check if we have talked to anyone on the top half of the screen. If so clear window.
     ld a, [W_MainScript_SecondaryWindowClearCondition]
     cp a, 2
-    jr z, .clearWindow
+    jp z, MainScript_ADVICE_ConditionallyClearSecondaryShopWindow.doClear
     ; If we are in the top half of the screen then do nothing.
     ld a, [$C484]
     cp a, $48
@@ -397,11 +402,14 @@ MainScript_ConditionallyClearSecondaryShopWindow::
     ret z
 
 .clearWindow
-    ; Reset conditional variable to 0 for next time.
-    ld a, 0
-    ld [W_MainScript_SecondaryWindowClearCondition], a
-    call $2CD1
-    jp MainScript_ClearSecondaryShopWindow
+    jp MainScript_ADVICE_ConditionallyClearSecondaryShopWindow
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
 
 MainScript_ClearSecondaryShopWindow::
     ld hl, $980C
@@ -769,14 +777,49 @@ MainScript_ADVICE_ClearSecondaryShopWindow::
     call $328D
     ld h, $F
     jp Banked_SGB_ConstructATTRBLKPacket
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
+
+MainScript_ADVICE_CheckSGB::
+    ld a, [W_GameboyType]
+    cp M_BIOS_CPU_CGB
+    ret z
+    ld a, [W_SGB_DetectSuccess]
+    or a
+    ret
+
+MainScript_ADVICE_ConditionallyClearSecondaryShopWindow::
+    call MainScript_ADVICE_CheckSGB
+    jr z, .doClear
+    ld a, [W_MainScript_PlayerMovementTrackState]
+    or a
+    jr nz, .verify
+    inc a
+    ld [W_MainScript_PlayerMovementTrackState], a
+
+.setPosition
+    ld a, [$C483]
+    ld [W_MainScript_PlayerHorizontalPositionComparison], a
+    ld a, [$C484]
+    ld [W_MainScript_PlayerVerticalPositionComparison], a
+    ret
+
+.verify
+    ld a, [W_MainScript_PlayerHorizontalPositionComparison]
+    ld b, a
+    ld a, [$C483]
+    cp b
+    jr nz, .setPosition
+    ld a, [W_MainScript_PlayerVerticalPositionComparison]
+    ld b, a
+    ld a, [$C484]
+    cp b
+    jr nz, .setPosition
+
+.doClear
+    xor a
+    ld [W_MainScript_SecondaryWindowClearCondition], a
+    ld [W_MainScript_PlayerMovementTrackState], a
+    call $2CD1
+    jp MainScript_ClearSecondaryShopWindow
 
 SECTION "Overworld Message Box Clear Advice", ROM0[$3EA5]
 MainScript_ADVICE_ClearOverworldWindow::
