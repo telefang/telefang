@@ -484,3 +484,14 @@ Mist, jetzt hab' ich's vergessen...<*2>",,
 0x11419c,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,0,<ALIAS ROW 0xC5>,,
 0x11419e,<ALIAS ROW 0xC5>,<ALIAS ROW 0xC5>,,0,<ALIAS ROW 0xC5>,,
 0x1141a0,<S0><0xea><&0xcc90><0xeb><*4>,<S0><0xf5><&0xc3a9><0xf3><*4>,,0,<S0><0xea><&0xcc90><0xeb><*4>,,
+0x1141a2,,"Continue experimenting?
+<Q>Yes<|>No</Q><*A>",,0,,,
+0x1141a4,,"Received a small amount of experience.
+Continue experimenting?
+<Q>Yes<|>No</Q><*A>",,0,,,
+0x1141a6,,"Received some experience.
+Continue experimenting?
+<Q>Yes<|>No</Q><*A>",,0,,,
+0x1141a8,,"Received a large amount of experience!!
+Continue experimenting?
+<Q>Yes<|>No</Q><*A>",,0,,,

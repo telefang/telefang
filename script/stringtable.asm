@@ -65,7 +65,7 @@ StringTable_map_dungeon_mapping_END
 
 SECTION "StringTable_map_dungeon_mapping Old Section", ROMX[$6aff], BANK[$2a]
 StringTable_map_dungeon_mapping_old::
-	REPT $6A
+	REPT $5A
 		db 0
 	ENDR
 StringTable_map_dungeon_mapping_old_END
