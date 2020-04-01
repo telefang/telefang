@@ -4,6 +4,20 @@ SECTION "Shop Number Gfx Table", ROMX[$7D00], BANK[$1]
 ShopNumberGfx::
 	INCBIN "build/components/fusionlabevo/shop_numbers.1bpp"
 	
+SECTION "Get Fusion/Lab Continue Message", ROMX[$6B59], BANK[$2A]
+FusionLabEvo_ADVICE_GetContinueMessageIndex::
+	ld d, a
+	ld bc, $89
+	call Overworld_CheckFlagValue
+	ld a, $AF
+	jr z, .isFusionEvo
+	add $22
+
+.isFusionEvo
+	add d
+	ld c, a
+	ret
+
 SECTION "Draw Shop Number Gfx", ROMX[$5240], BANK[$1]
 FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	M_AdviceSetup

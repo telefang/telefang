@@ -349,8 +349,7 @@ FusionLabEvo_FusionScreenStateMachine::
 	call Status_ExpandNumericalTiles
 	call FusionLabEvo_CheckExpItemBonus
 	call $56E4
-	add $AF
-	ld c, a
+	call FusionLabEvo_ADVICE_GetContinueMessageIndex
 	call FusionLabEvo_ClearMessageBox
 	ld a, 0
 	ld [W_MetaSpriteConfig2 + (M_MetaSpriteConfig_Size * 2) + M_LCDC_MetaSpriteConfig_HiAttribs], a
