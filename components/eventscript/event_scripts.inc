@@ -998,13 +998,13 @@ ENDM
 
 ; Event Action 76
 ; Argmap: -
-M_ES_BasicEnd_H: MACRO
+M_ES_EndIfFlagC39Unset: MACRO
 	db $76
 ENDM
 
 ; Event Action 77
 ; Argmap: -
-M_ES_BasicEnd_I: MACRO
+M_ES_EndIfMessageWindowAtBottom: MACRO
 	db $77
 ENDM
 
