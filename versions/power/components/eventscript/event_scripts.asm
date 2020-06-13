@@ -335,8 +335,8 @@ EventSystem_EventScript_0::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_1::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_1.jp1AG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp1AG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_1.jp2AG
@@ -377,8 +377,11 @@ EventSystem_EventScript_1::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_2::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_WaitXFrames 8
     M_ES_OutputMessage_A 3, 5
     M_ES_StandardEnd_B
@@ -387,8 +390,8 @@ EventSystem_EventScript_3::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_4::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_4.jp5AG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp5AG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_4.jp6AG
@@ -429,8 +432,11 @@ EventSystem_EventScript_4::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_5::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_5.jp9AG
     M_ES_StandardEnd_B
 
@@ -462,8 +468,8 @@ EventSystem_EventScript_6::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_7::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_7.jpDAG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jpDAG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_7.jpEAG
@@ -504,8 +510,11 @@ EventSystem_EventScript_7::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_8::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_8.jp11AG
     M_ES_StandardEnd_B
 
@@ -537,8 +546,8 @@ EventSystem_EventScript_9::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_A::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_A.jp15AG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp15AG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_A.jp16AG
@@ -579,8 +588,11 @@ EventSystem_EventScript_A::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_B::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_B.jp19AG
     M_ES_StandardEnd_B
 
@@ -612,8 +624,8 @@ EventSystem_EventScript_C::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_D::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_D.jp1DAG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp1DAG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_D.jp1EAG
@@ -654,8 +666,11 @@ EventSystem_EventScript_D::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_E::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_E.jp21AG
     M_ES_StandardEnd_B
 
@@ -687,8 +702,8 @@ EventSystem_EventScript_F::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_10::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_10.jp25AG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp25AG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_10.jp26AG
@@ -729,8 +744,11 @@ EventSystem_EventScript_10::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_11::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_11.jp29AG
     M_ES_StandardEnd_B
 
@@ -762,8 +780,8 @@ EventSystem_EventScript_12::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_13::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_13.jp2DAG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp2DAG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_13.jp2EAG
@@ -804,8 +822,11 @@ EventSystem_EventScript_13::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_14::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_14.jp31AG
     M_ES_StandardEnd_B
 
@@ -837,8 +858,8 @@ EventSystem_EventScript_15::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_16::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_16.jp35AG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp35AG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_16.jp36AG
@@ -879,8 +900,11 @@ EventSystem_EventScript_16::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_17::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_17.jp39AG
     M_ES_StandardEnd_B
 
@@ -912,8 +936,8 @@ EventSystem_EventScript_18::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_19::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_19.jp3DAG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp3DAG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_19.jp3EAG
@@ -954,8 +978,11 @@ EventSystem_EventScript_19::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_1A::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_1A.jp41AG
     M_ES_StandardEnd_B
 
@@ -987,8 +1014,8 @@ EventSystem_EventScript_1B::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_1C::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_1C.jp45AG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp45AG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_1C.jp46AG
@@ -1029,8 +1056,11 @@ EventSystem_EventScript_1C::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_1D::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_1D.jp49AG
     M_ES_StandardEnd_B
 
@@ -1062,8 +1092,8 @@ EventSystem_EventScript_1E::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_1F::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_1F.jp4DAG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp4DAG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_1F.jp4EAG
@@ -1104,8 +1134,11 @@ EventSystem_EventScript_1F::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_20::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_20.jp51AG
     M_ES_StandardEnd_B
 
@@ -1137,8 +1170,8 @@ EventSystem_EventScript_21::
     M_ES_PlayerFaceDirection_B 0
 
 EventSystem_EventScript_22::
-    M_ES_JumpIfFlagSet $C39, EventSystem_EventScript_22.jp55AG
-    M_ES_StandardEnd_B
+    M_ES_EndIfMessageWindowAtBottom
+    M_ES_EndIfFlagC39Unset
 
 .jp55AG
     M_ES_JumpIfFlagSet $C3A, EventSystem_EventScript_22.jp56AG
@@ -1179,8 +1212,11 @@ EventSystem_EventScript_22::
     M_ES_WaitXFrames $18
     M_ES_CurrentEventFlag800R
     M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
+    M_ES_StandardEnd_B
 
 EventSystem_EventScript_23::
+    M_ES_EndIfMessageWindowAtBottom
     M_ES_JumpIfFlagSet $1D7, EventSystem_EventScript_23.jp59AG
     M_ES_StandardEnd_B
 

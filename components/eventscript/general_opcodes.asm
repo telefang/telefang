@@ -318,3 +318,22 @@ EventScript_BasicEnd::
 	xor a
 	ld [$CD00], a
 	ret
+
+SECTION "Event Action - Shop End", ROMX[$7F49], BANK[$F]
+EventScript_EndIfFlagC39Unset::
+	ld bc, $C39
+	call Overworld_CheckFlagValue
+	jp z, EventScript_StandardEnd
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret
+
+EventScript_EndIfMessageWindowAtBottom::
+	ld a, [$C484]
+	cp $48
+	jp c, EventScript_StandardEnd
+	ld b, 1
+	call EventScript_CalculateNextOffset
+	scf
+	ret

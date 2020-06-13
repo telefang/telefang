@@ -205,7 +205,7 @@ EventScript_EventActionTable::
 	dw EventScript_BasicEnd ; 73
 	dw EventScript_BasicEnd ; 74
 	dw EventScript_BasicEnd ; 75
-	dw EventScript_BasicEnd ; 76
-	dw EventScript_BasicEnd ; 77
+	dw EventScript_EndIfFlagC39Unset ; 76
+	dw EventScript_EndIfMessageWindowAtBottom ; 77
 	dw EventScript_ADVICE_JumpIfShopItemInventoryFullAndContinue ; 78
 	
