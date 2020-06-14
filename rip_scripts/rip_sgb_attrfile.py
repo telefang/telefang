@@ -1,6 +1,5 @@
 # coding=utf-8
-import mainscript_text
-import argparse, io, os.path, csv, math, struct
+import argparse, csv
 
 def extract(args):
     csv_data = []

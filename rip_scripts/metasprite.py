@@ -1,8 +1,9 @@
 # coding=utf-8
 
-
-from mainscript_text import PTR, CHARA, flat, banked, format_hex, format_sectionaddr_rom, install_path
 import argparse, io, os.path, csv
+from FangTools.gb import PTR, CHARA, flat, banked
+from FangTools.rgbds import format_hex, format_sectionaddr_rom
+from FangTools.fs import install_path
 
 ATTRIBMODE_ENUM = {
     0x00: "ConfigAttribs",

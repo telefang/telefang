@@ -1,5 +1,6 @@
-from mainscript_text import CHARA, PTR, BE_PTR, format_sectionaddr_rom
 import argparse
+from FangTools.gb import CHARA, PTR, BE_PTR
+from FangTools.rgbds import format_sectionaddr_rom
 
 def rip_colordata(rom, offset = None, count = 1):
     """Rip color data from ROM. Returns list of palettes, which are four RGB hexcodes."""

@@ -1,8 +1,12 @@
 # coding=utf-8
 
+import argparse, os, csv, math, struct
 from FangTools.tfmessage.pack import pack_text, specials, memory_widths
-import mainscript_text
-import argparse, io, os.path, csv, math, struct
+from FangTools.tfmessage.unpack import reverse_specials
+from FangTools.tfmessage.charmap import parse_charmap
+from FangTools.gb import PTR, CHARA, flat
+from FangTools.rgbds import format_sectionaddr_rom, format_int
+from FangTools.fs import install_path
 
 def parse_tablenames(filename):
     """Parse the list of table names
@@ -92,21 +96,21 @@ def extract_string(rom, charmap, max_length = None, expected_ptrs = None):
         if reading_trash and rom.tell() in expected_ptrs:
             break
 
-        next_chara = mainscript_text.CHARA.unpack(rom.read(1))[0]
+        next_chara = CHARA.unpack(rom.read(1))[0]
         read_chara += 1
 
         if next_chara < 0xE0 and next_chara in charmap[1]: #Control codes are the E0 block
             string.append(charmap[1][next_chara])
-        elif next_chara in mainscript_text.reverse_specials:
+        elif next_chara in reverse_specials:
             #This must be the work of an 「ＥＮＥＭＹ　ＳＴＡＮＤ」
-            this_special = mainscript_text.specials[mainscript_text.reverse_specials[next_chara]]
+            this_special = specials[reverse_specials[next_chara]]
             string.append("«")
-            string.append(mainscript_text.reverse_specials[next_chara])
+            string.append(reverse_specials[next_chara])
 
             if this_special.bts:
                 fmt = "<"+("", "B", "H")[this_special.bts]
                 word = struct.unpack(fmt, rom.read(this_special.bts))[0]
-                string.append(mainscript_text.format_int(word))
+                string.append(format_int(word))
 
             string.append("»")
 
@@ -122,13 +126,13 @@ def extract_string(rom, charmap, max_length = None, expected_ptrs = None):
             
             #Literal specials
             string.append("«")
-            string.append(mainscript_text.format_int(next_chara))
+            string.append(format_int(next_chara))
             string.append("»")
 
     return "".join(string)
 
 def extract(args):
-    charmap = mainscript_text.parse_charmap(args.charmap)
+    charmap = parse_charmap(args.charmap)
     tablenames = parse_tablenames(args.tablenames)
 
     with open(args.rom, 'rb') as rom:
@@ -143,11 +147,11 @@ def extract(args):
             except KeyError:
                 all_ptrs = []
             
-            rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
+            rom.seek(flat(table["basebank"], table["baseaddr"]))
             
             for i in range(table["count"]):
-                ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
-                addr = mainscript_text.flat(table["basebank"], ptr)
+                ptr = PTR.unpack(rom.read(2))[0]
+                addr = flat(table["basebank"], ptr)
                 
                 if addr not in all_ptrs:
                     all_ptrs.append(addr)
@@ -170,7 +174,7 @@ def extract(args):
 
             csvdir = os.path.join(args.input, table["basedir"])
             csvpath = os.path.join(args.input, table["filename"])
-            mainscript_text.install_path(csvdir)
+            install_path(csvdir)
 
             with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
                 csvwriter = csv.writer(table_csvfile)
@@ -178,14 +182,14 @@ def extract(args):
 
                 if table["format"] == "table":
                     for i in range(table["count"]):
-                        rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"] + i * table["stride"]))
+                        rom.seek(flat(table["basebank"], table["baseaddr"] + i * table["stride"]))
                         reverse_entries[rom.tell()] = len(entries)
                         entries.append(rom.tell())
                         data = extract_string(rom, charmap, table["stride"], expected_ptrs).encode("utf-8")
                         idx = "{0}".format(i + 1).encode("utf-8")
                         csvwriter.writerow([idx, data])
                 elif table["format"] == "block":
-                    rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
+                    rom.seek(flat(table["basebank"], table["baseaddr"]))
                     for i in range(table["count"]):
                         reverse_entries[rom.tell()] = len(entries)
                         entries.append(rom.tell())
@@ -203,11 +207,11 @@ def extract(args):
                 continue
 
             foreign_ptrs = tablenames[table["foreign_id"]]["reverse_entries"]
-            rom.seek(mainscript_text.flat(table["basebank"], table["baseaddr"]))
+            rom.seek(flat(table["basebank"], table["baseaddr"]))
             
             csvdir = os.path.join(args.input, table["basedir"])
             csvpath = os.path.join(args.input, table["filename"])
-            mainscript_text.install_path(csvdir)
+            install_path(csvdir)
             
             with open(csvpath, "w+", encoding="utf-8") as table_csvfile:
                 csvwriter = csv.writer(table_csvfile)
@@ -216,8 +220,8 @@ def extract(args):
                 cur_row = []
 
                 for i in range(table["count"]):
-                    ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
-                    addr = mainscript_text.flat(table["basebank"], ptr)
+                    ptr = PTR.unpack(rom.read(2))[0]
+                    addr = flat(table["basebank"], ptr)
                     
                     cur_row.append("{0}".format(foreign_ptrs[addr] + 1).encode("utf-8"))
                     if len(cur_row) >= pretty_row_length:
@@ -235,18 +239,18 @@ def asm(args):
     Generated ASM will be printed to console. This portion of the script is
     intended to be piped into a file."""
 
-    charmap = mainscript_text.parse_charmap(args.charmap)
+    charmap = parse_charmap(args.charmap)
     tablenames = parse_tablenames(args.tablenames)
     
     for table in tablenames:
-        print('SECTION "' + table["symbol"] + ' Section", ' + mainscript_text.format_sectionaddr_rom(mainscript_text.flat(table["basebank"], table["baseaddr"])))
+        print('SECTION "' + table["symbol"] + ' Section", ' + format_sectionaddr_rom(flat(table["basebank"], table["baseaddr"])))
         print(table["symbol"] + '::')
         print('\tINCBIN "' + os.path.join(args.output, table["objname"]).replace("\\", "/") + '"')
         print(table["symbol"] + '_END')
         print('')
 
 def make_tbl(args):
-    charmap = mainscript_text.parse_charmap(args.charmap)
+    charmap = parse_charmap(args.charmap)
     tablenames = parse_tablenames(args.tablenames)
     
     for table in tablenames:
@@ -293,7 +297,7 @@ def make_tbl(args):
                 packed_strings.append(b"")
                 continue
             
-            packed = mainscript_text.pack_text(
+            packed = pack_text(
                 row[str_col], specials, charmap[0], None, args.window_width,
                 1, memory_widths, wrap=False, do_not_terminate=True
             )
@@ -312,8 +316,8 @@ def make_tbl(args):
             
             packed_strings.append(packed)
             
-            reverse_entries[mainscript_text.flat(table["basebank"], baseaddr)] = len(entries)
-            entries.append(mainscript_text.flat(table["basebank"], baseaddr))
+            reverse_entries[flat(table["basebank"], baseaddr)] = len(entries)
+            entries.append(flat(table["basebank"], baseaddr))
             
             baseaddr += len(packed)
         
@@ -355,7 +359,7 @@ def make_tbl(args):
             
             for row in csvreader:
                 for cell in row:
-                    packed_strings.append(mainscript_text.PTR.pack(foreign_ptrs[int(cell, 10) - 1] % 0x4000 + 0x4000))
+                    packed_strings.append(PTR.pack(foreign_ptrs[int(cell, 10) - 1] % 0x4000 + 0x4000))
         
         #Write the data out to the object files. We're done here!
         with open(os.path.join(args.output, table["objname"]), "wb") as objfile:
