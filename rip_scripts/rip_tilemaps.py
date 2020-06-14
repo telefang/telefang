@@ -1,8 +1,10 @@
 # coding=utf-8
 
-
-import mainscript_text
 import argparse, io, os.path, csv, math, struct
+from FangTools.tfmessage.charmap import parse_charmap
+from FangTools.gb import PTR, CHARA, flat, banked
+from FangTools.rgbds import format_hex, format_sectionaddr_rom
+from FangTools.fs import install_path
 
 def parse_mapnames(filename):
     """Parse the list of tilemap names.
@@ -103,13 +105,13 @@ def decompress_tilemap(rom, offset = None):
     decomp_row = []
     comp_length = 0
     
-    next_cmd = mainscript_text.CHARA.unpack(rom.read(1))[0]
+    next_cmd = CHARA.unpack(rom.read(1))[0]
     comp_length += 1
     
     if next_cmd & 0x03 == 0:
         #Uncompressed data
         while True:
-            next_cmd = mainscript_text.CHARA.unpack(rom.read(1))[0]
+            next_cmd = CHARA.unpack(rom.read(1))[0]
             comp_length += 1
             
             if next_cmd == 0xFF:
@@ -128,7 +130,7 @@ def decompress_tilemap(rom, offset = None):
     elif next_cmd != 0xFF:
         #Compressed data
         while True:
-            next_cmd = mainscript_text.CHARA.unpack(rom.read(1))[0]
+            next_cmd = CHARA.unpack(rom.read(1))[0]
             comp_length += 1
             
             if next_cmd == 0xFF:
@@ -139,21 +141,21 @@ def decompress_tilemap(rom, offset = None):
             
             if cmd == 3:
                 #DecBytes
-                dat = mainscript_text.CHARA.unpack(rom.read(1))[0]
+                dat = CHARA.unpack(rom.read(1))[0]
                 comp_length += 1
                 
                 for i in range(count + 2):
                     decomp_row.append((dat - i) % 0xFF)
             elif cmd == 2:
                 #IncBytes
-                dat = mainscript_text.CHARA.unpack(rom.read(1))[0]
+                dat = CHARA.unpack(rom.read(1))[0]
                 comp_length += 1
                 
                 for i in range(count + 2):
                     decomp_row.append((dat + i) % 0xFF)
             elif cmd == 1:
                 #RepeatBytes
-                dat = mainscript_text.CHARA.unpack(rom.read(1))[0]
+                dat = CHARA.unpack(rom.read(1))[0]
                 comp_length += 1
                 
                 for i in range(count + 2):
@@ -161,7 +163,7 @@ def decompress_tilemap(rom, offset = None):
             else:
                 #CopyBytes
                 for i in range(count + 1):
-                    dat = mainscript_text.CHARA.unpack(rom.read(1))[0]
+                    dat = CHARA.unpack(rom.read(1))[0]
                     comp_length += 1
                     
                     decomp_row.append((dat) % 0xFF)
@@ -210,11 +212,11 @@ def decompress_bank(rom, offset=None):
     first_data_ptr = 0xFFFF
     last_data_ptr = 0x0000
     last_ptr = None
-    start_ptr, this_bank = mainscript_text.banked(offset)
+    start_ptr, this_bank = banked(offset)
     
     #Extract the table first.
-    while mainscript_text.banked(rom.tell())[0] < first_data_ptr:
-        this_ptr = mainscript_text.PTR.unpack(rom.read(2))[0]
+    while banked(rom.tell())[0] < first_data_ptr:
+        this_ptr = PTR.unpack(rom.read(2))[0]
         ptr_table.append(this_ptr)
         
         if this_ptr <= first_data_ptr:
@@ -226,7 +228,7 @@ def decompress_bank(rom, offset=None):
     #Extract the data second
     this_ptr = first_data_ptr
     while this_ptr <= last_data_ptr:
-        decomp_data, decomp_len = decompress_tilemap(rom, mainscript_text.flat(this_bank, this_ptr))
+        decomp_data, decomp_len = decompress_tilemap(rom, flat(this_bank, this_ptr))
         ptr_data.append(this_ptr)
         ptr_data_org[this_ptr] = decomp_data
         
@@ -260,7 +262,7 @@ def extract_metatable(rom, length, offset=None):
     
     ret_banks = []
     for i in range(length):
-        ret_banks.append(mainscript_text.CHARA.unpack(rom.read(1))[0])
+        ret_banks.append(CHARA.unpack(rom.read(1))[0])
     
     rom.seek(last)
     return ret_banks
@@ -270,7 +272,7 @@ def extract_bank(args, rom, bank, bank_dir):
     
     for j, data in enumerate(this_bank):
         csvpath = os.path.join(args.output, "unknown", bank_dir)
-        mainscript_text.install_path(csvpath)
+        install_path(csvpath)
 
         with open(os.path.join(csvpath, "{0:x}.csv".format(j)), "w+") as csvout:
             csvwriter = csv.writer(csvout)
@@ -456,7 +458,7 @@ def asm(args):
     to that file can be mirrored into the ASM by re-running this command, or
     manually doing so."""
 
-    charmap = mainscript_text.parse_charmap(args.charmap)
+    charmap = parse_charmap(args.charmap)
     datas, datas_index, banks, bank_index = parse_mapnames(args.mapnames)
     
     with open(args.rom, 'rb') as rom:
@@ -480,10 +482,10 @@ def asm(args):
         #Generate ASM for the metatables
         for category_name, category_index in list(datas_index.items()):
             if category_name == "attrib":
-                print('SECTION "' + category_name + ' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc_attribs))
+                print('SECTION "' + category_name + ' Section", ' + format_sectionaddr_rom(args.metatable_loc_attribs))
                 print('RLEAttribmapBanks::')
             elif category_name == "tilemap":
-                print('SECTION "' + category_name + ' Section", ' + mainscript_text.format_sectionaddr_rom(args.metatable_loc))
+                print('SECTION "' + category_name + ' Section", ' + format_sectionaddr_rom(args.metatable_loc))
                 print('RLETilemapBanks::')
 
             for bank_id, bank_table_index in list(category_index.items()):
@@ -501,7 +503,7 @@ def asm(args):
                 
                 rom.seek(bank["flataddr"])
                 
-                print('SECTION "' + category_name + ' Bank {0}'.format(bank_id) + '", ' + mainscript_text.format_sectionaddr_rom(bank["flataddr"]))
+                print('SECTION "' + category_name + ' Bank {0}'.format(bank_id) + '", ' + format_sectionaddr_rom(bank["flataddr"]))
                 print(bank["symbol"] + '::')
                 
                 #Print out the table in the order we extracted it from baserom
@@ -537,7 +539,7 @@ def make_maps(args):
     """Compile the stated (or all) tilemaps into .tmap files suitable for
     inclusion within the compressed tilemap banks."""
     
-    charmap = mainscript_text.parse_charmap(args.charmap)
+    charmap = parse_charmap(args.charmap)
     
     #We Are Number One but a python script compiles everything
     #YouTube: Our Cancer Has Cancer.
