@@ -1294,20 +1294,41 @@ I really hope that things stay calm from now on.",1,
 ヘんな デンパだよー
 なんで イオンとうが
 こんなめにあわなくちゃ
-いけないんだよー",/0x1240d0/,,0,
+いけないんだよー","First the phone company,
+and now reception's
+gone all funky! What
+has Ion Island done
+to deserve this!?","First the phone company, and now reception's
+gone all funky! What
+has Ion Island done
+to deserve this!?",1,
 0x1240d2,"つぎに なにかあっても
 イオンとうだけは
 まきこまれませんように...
 というよリ これいじょう
-なにもおきませんように...",/0x1240d2/,,0,
+なにもおきませんように...","Whatever happens next, I
+hope Ion Island's
+left out of it. Or, rather... I
+hope nothing else happens!","Whatever happens next, I hope Ion Island's
+left out of it. Or, rather... I hope nothing else happens!",1,
 0x1240d4,"このさいきん もリのおくから
 デンジュウの さけびごえが
 きこえるんだ...
-なにが おきてるんだろ...",/0x1240d4/,,0,
+なにが おきてるんだろ...","Lately, you can hear
+Denjuu yelling
+from deep in the forest...
+Something's going on.","Lately, you can hear
+Denjuu yelling
+from deep in the forest... Something's going on.",1,
 0x1240d6,"ほこらで デンジュウの
 けんきゅうを してたんだ...
 でも もとどおリに
-なったんなら もういいよ",/0x1240d6/,,0,
+なったんなら もういいよ","So they were researching
+Denjuu in that cave...
+All's well that ends well,
+I guess.","So they were researching Denjuu in that cave...
+All's well that ends well,
+I guess.",1,Cave? Shrine? Pleeeeease //
 #######,22 strings   -   Craft Lab,,,,
 0x1240d8,"なんで オレだけ ちかしつの
 みはリなんだよ!
@@ -3398,11 +3419,11 @@ I'll send you packing!",1,
 0x13c0fe,"ドジなヤツみーっけ!
 ちょうどヒマしてたんだ
 オマエを たおしてやる
-テレファングだ!","What kind of bumbling
+テレファングだ!","What kind of a bumbling
 bonehead do we have here?
 I have some time to spare.
 I'll take a moment to
-trundle you in a Telefang!","What kind of bumbling bonehead do we have here? I have some time to spare.
+trundle you in a Telefang!","What kind of a bumbling bonehead do we have here? I've got some time to spare.
 I'll take a moment to trundle you in a Telefang!",1,
 0x13c100,"だれかに みられながら
 なにかをするのって いやだよね
@@ -3420,131 +3441,256 @@ getting in the way!","I'm standing watch so the scientists don't slack off! Hey,
 0x13c104,"そういえば このまえ
 ヘんなデンジュウが いたな
 なんだか すごくわるそうな
-デンジュウだったけど....",/0x13c104/,,0,
+デンジュウだったけど....","Come to think of it, there
+was a weird Denjuu here
+earlier. I'm talkin' serious
+bad vibes...","Come to think of it, there was a weird Denjuu here earlier. I'm talkin' serious bad vibes...",1,
 0x13c106,"むかし クラフトはかせっていう
 すごい けんきゅうしゃが
 いたんだ
 サナエバさんと ケンカして
 やめちゃったみたいだけど
 どこかで まだ けんきゅうして
-いるんだろうか?",/0x13c106/,,0,
+いるんだろうか?","A long time ago, there was a
+brilliant scientist here
+named Professor Craft.
+Apparently, he took off
+after a fight with Sanaeba...
+I wonder what he's up to
+these days?","A long time ago, there was a brilliant scientist here named Professor Craft. Apparently, he took off after a fight with Sanaeba... I wonder what he's up to these days?",1,
 0x13c108,"このまえ デンジュウの
 じっけんを てつだったんだけど
 あんなに つよい デンジュウを
 もっと つよくして 
-どうするんだろうね",/0x13c108/,,0,
+どうするんだろうね","I assisted in the Denjuu
+experiments here before.
+With a Denjuu that strong,
+what's the point of
+making it even stronger?","I assisted in the Denjuu experiments here before.
+With a Denjuu that strong, what's the point of
+making it even stronger?",1,
 0x13c10a,"じっさいのところ
 シンデンジュウはじんこうてきにつくリだせないと おもうんだ
-ボクは... ...",/0x13c10a/,,0,
+ボクは... ...","If you ask me, I don't
+think it's possible
+to create a Denjuu through
+artificial means...","If you ask me, I don't
+think it's possible
+to create a Denjuu through artificial means...",1,
 0x13c10c,"ずいぶんのあいだ たいようを
 みてないようなきがするよ
 やっぱリ そとにも でないと
-ダメだね",/0x13c10c/,,0,
+ダメだね","I don't think I've seen the
+sun in ages...
+I gotta get out.","I don't think I've seen the sun in ages...
+I gotta get out.",1,
 0x13c10e,"どうやって こんなところまで
 はいってきたんだ
-さっさと でていかないか!",/0x13c10e/,,0,
+さっさと でていかないか!","How'd you get in!? Be a dear
+and get out, won't ya?","How'd you get in!? Get outta here, won't ya?",1,
 0x13c110,"サナエバさまが きにしていた
 コドモってのはオマエのことだなオレなんか ナマエすら
-おぼえてもらえないのに!",/0x13c110/,,0,
+おぼえてもらえないのに!","So you're the kid who's
+always on Sanaeba's mind?
+Man, I can't even get him to
+remember my name!","So you're the kid who's always on Sanaeba's mind? Man, I can't even get him to remember my name!",1,
 0x13c112,"このさきには サナエバさまの
 ヘヤがある
 よってオマエを とおすわけには
-いかないんだよ",/0x13c112/,,0,
+いかないんだよ","Past here is Mr. Sanaeba's
+room. I can't let you pass.",Past here is Mr. Sanaeba's room. I can't let you pass.,1,
 0x13c114,"なにしにきたんだ
 うしろにおいてあるモノは
 やらないぞ
-でてけ!",/0x13c114/,,0,
+でてけ!","What do you think you're
+doing here?
+There's no way I'm givin' you
+what's behind me! Shoo!","What do you think you're doing here?
+There's no way I'm givin' you what's behind me! Shoo!",1,
 0x13c116,"オマエか!
 うえの かいのヤツから
 ほうこくはうけている
 オマエが このなかを
 うろつけるのも ここまでだ
-おいだしてやる!",/0x13c116/,,0,
+おいだしてやる!","You! My boys on the floor
+above sent word about ya.
+I'll put a stop to your nosing
+around right here!","You! My boys on the floor above sent word about ya.
+I'll put a stop to your nosing around right here!",1,
 0x13c118,"まてっ!
 オマエが このけんきゅうじょを
 さわがしてる はんにんか!
 ここでひとつ ワタシのてがらを
 ふやして しゅっせして...
-オレのために やられてくれっ!",/0x13c118/,,0,
+オレのために やられてくれっ!","Stop! So you're the one
+who's been snooping around
+the lab! Maybe if I catch
+you, I'll get a promotion...
+Please! Let me win!","Stop! So you're the one who's been snooping around the lab! Maybe if I catch you, I'll get a promotion...
+Please! Let me win!",1,
 0x13c11a,"やっとみつけた!
 オマエを たおせば
 おきゅうリょうが あがるんだ
 この けんきゅうじょから
-でていってもらおうか!",/0x13c11a/,,0,
+でていってもらおうか!","I've finally got ya!
+If I defeat you,
+I'm so getting a raise. So I
+think that's what I'll do!","I've finally got ya!
+If I defeat you,
+I'm so getting a raise. So I think that's what I'll do!",1,
 0x13c11c,"うっ...
 このうしろには なーんにも
 ないんだよ... ...
-ないって いったら ないんだ!",/0x13c11c/,,0,
+ないって いったら ないんだ!","Um... There's nothing at all
+past here...
+Hey! If I say there's
+nothing, there's nothing!","Um... There's nothing at all past here...
+Hey! If I say there's nothing, there's nothing!",1,
 0x13c11e,"ふっ
 サナエバさまから ここの
 みはリを めいじられてるワタシをたおそうなどと...
-ムダな どリょくだなっ!",/0x13c11e/,,0,
+ムダな どリょくだなっ!","Hmph. You think you can take
+me? I was personally
+appointed by Mr. Sanaeba to
+guard this place.
+You've got gumption,
+I'll give you that!","Hmph. You think you can take me? I was personally appointed by Mr. Sanaeba to guard this place.
+You've got gumption,
+I'll give you that!",1,
 0x13c120,"デンジュウたちは ワタシたちの
 けんきゅうを どうおもって
 いるんだろう... ...
 このさいきん それがきになって
-しかたがないんだ...",/0x13c120/,,0,
+しかたがないんだ...","I wonder what the Denjuu
+think of our research...
+I've been a bit worried
+about that as of late.","I wonder what the Denjuu think of our research...
+I've been a bit worried about that as of late.",1,
 0x13c122,"おい
 サナエバさまのやることに
 さからってるってのは
 オマエなんだろ?
-オレが オマエに サナエバさまのかんがえを おしえてやるよ!",/0x13c122/,,0,
+オレが オマエに サナエバさまのかんがえを おしえてやるよ!","You there! You're the
+pipsqueak making trouble
+for Mr. Sanaeba, aren't
+you? I'll show you what he
+thinks of you.","You there! You're the pipsqueak making trouble for Mr. Sanaeba, aren't you? I'll show you what he thinks of you.",1,
 0x13c124,"まてまて まてぇい!
 オマエを これいじょう
 うろつかせる わけには
 いかないんだ
 オレに まけたら ここから
-でていけよな!",/0x13c124/,,0,
+でていけよな!","Stop! Hold up! Wait, I say!
+I'm sorry, but I can't
+let you continue. If you lose,
+please leave, okay?","Stop! Hold up! Wait, I say! I'm sorry, but I can't
+let you continue. If you lose, please leave, okay?",1,
 #######,12 strings   -   Ixos Forest,,,,
 0x13c126,"サナエバさまの もくてきが
 もうすぐ たっせいされるのだ
-ジャマは しないでもらおう",/0x13c126/,,0,
+ジャマは しないでもらおう","Mr. Sanaeba's plans will soon
+bear fruit.
+You're a problem, and I
+solve problems.","Mr. Sanaeba's plans will soon bear fruit.
+You're a problem, and I solve problems.",1,
 0x13c128,"オレは ただの やとわれ
 Tファンガーだけどな
-やることは きっちリとやるんだよかくごしな!",/0x13c128/,,0,
+やることは きっちリとやるんだよかくごしな!","...I just work for the guy.
+But I am a T-Fanger!
+I do my job, so get ready.","...I just work for the guy. But I am a T-Fanger!
+I do my job, so get ready.",1,
 0x13c12a,"げっ!
 オマエに みつからないように
 かくれてたのに.....
-こうなったら しごとするか!",/0x13c12a/,,0,
+こうなったら しごとするか!","Gleh! Can't you see I'm hiding
+so you won't find me!?
+I guess I should do my job
+now that you're here...","Gleh! Can't you see I'm hiding so you won't find me!?
+I guess I should do my job now that you're here...",1,
 0x13c12c,"まよいのもリを ぬけてくるとは
 なかなかできるな...
 ずーっと まよっとけば
-よかったのにー",/0x13c12c/,,0,
+よかったのにー","Not bad, finding your way
+out of the forest maze!
+I was hoping you'd be lost
+forever...","Not bad, finding your way out of the forest maze!
+I was hoping you'd be lost forever...",1,
 0x13c12e,"オマエも かわいそうな
 ヤツだな
 ここで まよって たおれるか
 ワタシにたおされるかの
 ふたつしか ミライが
-ないのだからな!",/0x13c12e/,,0,
+ないのだからな!","Oh, I feel sorry for you.
+Your future ain't bright.
+Either you'll get lost and
+pass out from exhaustion,
+or I'll crush you right now!","Oh, I feel sorry for you.
+Your future ain't bright.
+Either you'll get lost and pass out from exhaustion, or I'll crush you right now!",1,
 0x13c130,"くさむらで みはリやってると
 のらデンジュウが いっぱい
 でてくるんだ
-でも まつのも もうおわリだな",/0x13c130/,,0,
+でも まつのも もうおわリだな","Ergh, this place is crawling
+with Field Denjuu.
+I don't like standing guard
+here. But hey, it looks like
+the wait is over!","Ergh, this place is crawling with Field Denjuu.
+I don't like standing guard here. But hey, it looks like the wait is over!",1,
 0x13c132,"ま...まよった...
 こ...こまった...
-て...テレファングだぁ!",/0x13c132/,,0,
+て...テレファングだぁ!","I'm... I'm lost...
+This... This sucks...
+Let's... Let's telefang!!!","I'm... I'm lost...
+This... This sucks...
+Let's... Let's telefang!!!",1,
 0x13c134,"シンデンジュウを どうしようと
 ワタシには カンケイない
 ワタシを やとってくれた
-サナエバさまに したがうだけだ",/0x13c134/,,0,
+サナエバさまに したがうだけだ","I don't care what happens
+with the Divine Denjuu.
+All I care about is doing my
+duty to the man who
+hired me!","I don't care what happens with the Divine Denjuu.
+All I care about is doing my duty to the man who
+hired me!",1,
 0x13c136,"てこでも ここを うごかない
 うごかない うごかない
 それが オレに かせられた
 しめいなのさ
 どいてほしかったら オレと
-テレファングだな!",/0x13c136/,,0,
+テレファングだな!","I'm not budging from this
+spot! Not budging one bit!
+Those are the orders I've
+been given! If you want me
+to move, it's Telefang time!","I'm not budging from this spot! Not budging one bit! Those are the orders I've been given! If you want me to move, it's Telefang time!",1,
 0x13c138,"そこにいるヤツが 
 みはってろっていうから
 みはってるんだ
 オレのジャマをするなら
-テレファングでしょうぶだな!",/0x13c138/,,0,
+テレファングでしょうぶだな!","The guys over there told me
+to stand watch here,
+so that's what I'm doing.
+You gonna get in the way?
+Get ready for a Telefang,
+then!","The guys over there told me to stand watch here,
+so that's what I'm doing.
+You gonna get in the way? Get ready for a Telefang, then!",1,Guy? Guys? //
 0x13c13a,"オレのしごとは...
-オマエを おいだすことだ!",/0x13c13a/,,0,
+オマエを おいだすことだ!","My job is...
+to send you packing!","My job is...
+to send you packing!",1,
 0x13c13c,"ここまでくるとは なかなかだな
 オレは ただの やとわれ
 Tファンガーとは ひとあじ
 ちがうぞ!
-テレファングだ!",/0x13c13c/,,0,
+テレファングだ!","Making it here is quite
+the feat! I'm simple
+hired security. I'm not your
+average T-Fanger!
+Let's telefang!","Making it here is quite
+the feat! I'm simple
+hired security. I'm not your average T-Fanger!
+Let's telefang!",1,
 #######,Cactos Ruins,,,,
 0x13c13e,"さっき けがをしたコドモが
 オイラの まえを あるいて
