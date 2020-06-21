@@ -1,6 +1,3 @@
-;Ugh. Why do I gotta do this??
-IMPORT StringTable_denjuu_species
-
 SECTION "String Table Bank Functions", ROM0[$0548]
 StringTable_LoadName75::
     ld a, BANK(StringTable_denjuu_species)
