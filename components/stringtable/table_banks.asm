@@ -1,6 +1,3 @@
-;Ugh. Why do I gotta do this??
-IMPORT StringTable_battle_tfangers
-
 SECTION "String Table Bank Functions", ROM0[$0548]
 StringTable_LoadName75::
     call StringTable_ADVICE_LoadName75

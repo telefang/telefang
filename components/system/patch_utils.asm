@@ -1,7 +1,5 @@
 INCLUDE "telefang.inc"
 
-IMPORT SaveClock_ADVICE_LoadDenjuuNickname.indexNicknameArray
-
 SECTION "Shorthand for Draw Shop Number Gfx Auxcode", ROM0[$3E55]
 PatchUtils_Banked_FusionLabEvo_ADVICE_DrawShopNumberGfx::
 	ld e, a
