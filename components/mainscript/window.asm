@@ -1,9 +1,5 @@
 INCLUDE "telefang.inc"
 
-;because macros
-IMPORT ScriptWindow
-IMPORT ScriptWindow_END
-
 SECTION "Main Script Window Vars", WRAM0[$C987]
 W_MainScript_WindowTileWidth:: ds 1
 W_MainScript_WindowHbyte:: ds 1
