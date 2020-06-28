@@ -112,13 +112,8 @@ Banked_LCDC_SetupPalswapAnimation_PlusSetupSGBWhiteFade::
     nop
     nop
     nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
 
+SECTION "LCDC Palette Fade Operations 2", ROM0[$12AE]
 ;Perhaps this could be better implemented as a compilable resource...
 ;Anyway, one interesting part about this table is that it's structured in rows
 ;of 5, but the fade logic consumes three rows per animation (one for BGP, OBPx).
