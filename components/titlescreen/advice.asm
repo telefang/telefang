@@ -67,6 +67,51 @@ TitleScreen_ADVICE_RecolorVersionBand::
     ld [hli], a
     
     jp System_ScheduleNextSubState
+
+TitleScreen_ADVICE_InvertVersionBand::
+    call AttractMode_ADVICE_CheckSGB
+    jp z, System_ScheduleNextSubState
+	ld hl, $9902
+	ld b, 4
+
+.clearLoop
+	di
+
+.wfbA
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfbA
+
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ei
+	dec b
+	jr nz, .clearLoop
+
+	ld hl, $8120
+	ld b, $48
+	
+.invertLoop
+	di
+
+.wfbB
+	ld a, [REG_STAT]
+	and 2
+	jr nz, .wfbB
+
+	ld a, [hl]
+	cpl
+	ld [hli], a
+	ld a, [hl]
+	cpl
+	ld [hli], a
+	ei
+	dec b
+	jr nz, .invertLoop
+    jp System_ScheduleNextSubState
     
 TitleScreen_ADVICE_UnloadSGBFiles::
     ;Load a neutral ATF

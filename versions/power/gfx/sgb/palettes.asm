@@ -7,10 +7,10 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $4A52, $2522, 0 ; 00
     
     ;Title Screen
-    dSGB_Palette $7FFF, $3F9F, $223E, 0 ; 01
-    dSGB_Palette $7FFF, $4256, $2571, 0 ; 02
-    dSGB_Palette $7FFF, $66F4, $4A0D, 0 ; 03
-    dSGB_Palette $7FFF, $529F, $295F, $001F ; 04
+    dSGB_Palette $7FFF, $335E, $223D, 0 ; 01
+    dSGB_Palette $7FFF, $4A98, $35D5, 0 ; 02
+    dSGB_Palette $7FFF, $62F3, $41EB, 0 ; 03
+    dSGB_Palette $7FFF, $42A7, $29C4, 0 ; 04
 
     ;Antenna Tree Cutscene
     dSGB_Palette $7FFF, $1619, $116D, $100 ; 05
@@ -229,26 +229,26 @@ SGB_PaletteData::
     dSGB_Palette $7FFF, $7AD0, $624A, $296C ; 9B
 
     ;Title Screen Fade Out
-    dSGB_Palette $7FFF, $6BDF, $5F5F, $56B5 ; 9C
-    dSGB_Palette $7FFF, $6B7C, $631A, $56B5 ; 9D
-    dSGB_Palette $7FFF, $779B, $6F59, $56B5 ; 9E
-    dSGB_Palette $7FFF, $6F7F, $631F, $56BF ; 9F
+    dSGB_Palette $7FFF, $67BF, $5F5E, $56B5 ; 9C
+    dSGB_Palette $7FFF, $6F7D, $673C, $56B5 ; 9D
+    dSGB_Palette $7FFF, $779B, $6B58, $56B5 ; 9E
+    dSGB_Palette $7FFF, $6B97, $6336, $56B5 ; 9F
 
-    dSGB_Palette $7FFF, $53BF, $42DE, $294A ; A0
-    dSGB_Palette $7FFF, $56D9, $4256, $294A ; A1
-    dSGB_Palette $7FFF, $6F58, $5AB3, $294A ; A2
-    dSGB_Palette $7FFF, $631F, $463F, $295F ; A3
+    dSGB_Palette $7FFF, $4B9E, $42DE, $294A ; A0
+    dSGB_Palette $7FFF, $5B1A, $4E98, $294A ; A1
+    dSGB_Palette $7FFF, $6B57, $5692, $294A ; A2
+    dSGB_Palette $7FFF, $570F, $468D, $294A ; A3
 
     ;Title Screen Fade In
-    dSGB_Palette $294A, $152A, $CCA, 0 ; A4
-    dSGB_Palette $294A, $14C7, $C86, 0 ; A5
-    dSGB_Palette $294A, $2107, $18A4, 0 ; A6
-    dSGB_Palette $294A, $1CEA, $C6A, $A ; A7
+    dSGB_Palette $294A, $112A, $CCA, 0 ; A4
+    dSGB_Palette $294A, $18E8, $10A7, 0 ; A5
+    dSGB_Palette $294A, $2106, $14A4, 0 ; A6
+    dSGB_Palette $294A, $14E2, $CA1, 0 ; A7
 
-    dSGB_Palette $56B5, $2A75, $1574, 0 ; A8
-    dSGB_Palette $56B5, $2D8F, $18EB, 0 ; A9
-    dSGB_Palette $56B5, $45ED, $3169, 0 ; AA
-    dSGB_Palette $56B5, $35B5, $1CF5, $15 ; AB
+    dSGB_Palette $56B5, $2234, $1573, 0 ; A8
+    dSGB_Palette $56B5, $31B0, $252E, 0 ; A9
+    dSGB_Palette $56B5, $41ED, $2D47, 0 ; AA
+    dSGB_Palette $56B5, $2DC5, $1D23, 0 ; AB
 
     ;Game Over Fade Out
     dSGB_Palette $7FFF, $63BF, $7F58, $56B5 ; AC
