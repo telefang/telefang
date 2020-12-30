@@ -7,7 +7,8 @@ var CharType = {
   LEADING_BREAK_CHAR: 1,
   BREAK_CHAR:         2,
   WHITESPACE:         3,
-  NEWLINE:            4
+  NEWLINE:            4,
+  EOF:                5
 };
 
 var QuestionState = {
@@ -26,8 +27,10 @@ var CONTROL_CODES = {
 
   // Ditto!
   "<Q>": {questionStart: true},
+  "\n<Q>": {questionStart: true},
   "<|>": {endFirstAnswer: true},
   "</Q>": {questionEnd: true},
+  "</Q>\n": {questionEnd: true},
 
   // This "width" approach doesn't take the font into account, but since this is the widest
   // possible for 8 tiles anyway, it doesn't matter for <&name>. The general way to handle
@@ -68,7 +71,8 @@ var SPECIAL_PRELUDES = {
   }
 };
 
-function trimPreludeAndEnvoi(text, params, row) {
+function prepareForPreview(text, params, sheet, row, column) {
+  // Trim prelude.
   if (params.prelude) {
     var prelude;
     if (SPECIAL_PRELUDES.hasOwnProperty(params.prelude)) {
@@ -81,11 +85,41 @@ function trimPreludeAndEnvoi(text, params, row) {
       text = text.slice(prelude.length);
     }
   }
-  
+
+  // Trim envoi.
   if (params.envoi && text.slice(text.length - params.envoi.length) === params.envoi) {
     text = text.slice(0, text.length - params.envoi.length);
   }
-  
+
+  // Format question draft syntax.
+  if (params.questions) {
+    if (column === 4) { // Draft column
+      var numInConvo = 0;
+      // 9 is the max distance a line can be from its number header row.
+      for (y = row; y >= row - 9; y--) {
+        numInConvo++;
+        var cells = sheet.getRange(y, 1, 1, 2);
+        var contents = cells.getValues()[0];
+        if (contents[0] === "#######" && contents[1][0] === "#") {break;}
+      }
+      // The first three lines in a conversation should contain questions.
+      if (numInConvo <= 3) {
+        // There are a couple of ways someone's formatted the draft questions,
+        // so let's just handle all of those, hahah.
+        var lines = text.split("\n");
+        var lastLine = lines.pop();
+        if (lastLine.substr(0, 3) === "<0>") {
+          lines.push("<Q>" + lastLine.substr(3).split("<0>", 1).join("<|>") + "</Q>");
+        } else if (lastLine.indexOf("/") !== -1) {
+          lines.push("<Q>" + lastLine.split(/\s*\/\s*/, 1).join("<|>") + "</Q>");
+        } else {
+          lines.push(lastLine);
+        }
+        text = lines.join("\n");
+      }
+    }
+  }
+
   return text;
 }
 
@@ -128,7 +162,7 @@ function formatSelectedRows() {
     if (pointerVal[0] === '#') {continue;}
     
     var draftText = sheet.getRange(row, 4).getValue();
-    draftText = trimPreludeAndEnvoi(draftText, params, row);
+    draftText = prepareForPreview(draftText, params, sheet, row, 4);
     
     var formatted = wrap(draftText, params.width, params.lines_per_prompt, params.font);
     formatted = addPreludeAndEnvoi(formatted, params, row);
@@ -175,7 +209,6 @@ function _push_question_lines(lines, text, width, promptPageLines, i, curLineSta
   if (Math.max(curFirstAnswer[1], curSecondAnswer[1]) <= 7 * 8) {
     // Horizontally oriented answers.
     // The line width of this shouldn't matter for anything as long as it's set to 0.
-    Logger.log(lines);
     lines.push([curFirstAnswer[0], 0, "<Q>" + curFirstAnswer[2] + "<|>" + curSecondAnswer[2] + "</Q>"]);
     return 1; // 1 line added.
   } else {
@@ -257,17 +290,7 @@ function _wrap(text, width, promptPageLines, font) {
 
         if (codeEffects.questionStart && questionState === QuestionState.NOT_IN_QUESTION) {
           questionState = QuestionState.ENTERING_QUESTION;
-          codeEffects = {width: 0};
-          if (prevCharType === CharType.NEWLINE) {
-            codeEffects.charType = CharType.LEADING_BREAK_CHAR;
-
-            lastWordStart = i + charLength;
-            curLineStart = lastWordStart;
-            curLineWidth = 0;
-            curLineStartFont = fontName;
-          } else {
-            codeEffects.charType = CharType.NEWLINE;
-          }
+          codeEffects = {charType: CharType.NEWLINE, width: 0};
         } else if (codeEffects.endFirstAnswer && curFirstAnswer === null) {
           curFirstAnswer = [fontName, curLineWidth === 0 ? 0 : curLineWidth - 1, text.slice(curLineStart, i)];
 
@@ -284,6 +307,9 @@ function _wrap(text, width, promptPageLines, font) {
           curLineStart = lastWordStart;
           curLineWidth = 0;
           curLineStartFont = fontName;
+
+          // So that an EOF after a question doesn't get processed as an ext
+          if (curLineStart === text.length) {break;}
         }
 
         if (typeof codeEffects.charType === 'undefined' || typeof codeEffects.width === 'undefined') {
@@ -314,7 +340,7 @@ function _wrap(text, width, promptPageLines, font) {
         else {curCharType = CharType.WORD;}
       }
     }
-    
+
     // Transitions that trigger a word end.
     if ((prevCharType === CharType.WORD               && curCharType === CharType.WHITESPACE) ||
         (prevCharType === CharType.LEADING_BREAK_CHAR && curCharType === CharType.WHITESPACE) ||
@@ -349,7 +375,7 @@ function _wrap(text, width, promptPageLines, font) {
     // * a word that needs to be put on the next line has been started,
     // * a newline character has been encountered, or
     // * we've reached the end of the text.
-    if ((questionState !== QuestionState.IN_QUESTION) &&
+    if ((questionState === QuestionState.NOT_IN_QUESTION || questionState === QuestionState.ENTERING_QUESTION) &&
         ((curLineWidth > curLineMaxWidth && lastWordStart >= lastWordEnd && lastWordStart !== curLineStart) ||
          (curCharType === CharType.NEWLINE) ||
          (curCharType === CharType.EOF)))
@@ -391,6 +417,7 @@ function _wrap(text, width, promptPageLines, font) {
   return lines;
 }
 
+// Leavin' this here for convenience.
 // function testWrap() {
 //   Logger.log(wrap(
 //     "This should be... yeah, liiiiiine 1 BUT this HERE should BE 2, while <bold>this line<normal> is # three; <bold>this one<normal> is soooo four! Special chars are bound-aries, so this line's 6. Toolongwordgetsanerroryo!!!!!\n<Q>Hori\nzontal<|>Fit, baby!</Q>",

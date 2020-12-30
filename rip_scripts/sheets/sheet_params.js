@@ -41,5 +41,12 @@ var SHEET_PARAMS = {
     width: 16 * 8,
     lines_per_prompt: 2,
     line_spacing: 1
+  },
+  "script/calls/denjuu/all.messages.csv": {
+    width: 16 * 8,
+    lines_per_prompt: 2,
+    line_spacing: 1,
+    envoi: '<*A>',
+    questions: true
   }
 }

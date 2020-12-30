@@ -15,9 +15,9 @@ function previewSelectedCells() {
         
         text = text.length > 0 ? text : " "; // REMOVE ONCE WEB PREVIEW HAS BEEN UPDATED
   
-        text = trimPreludeAndEnvoi(text, params, y);
+        text = prepareForPreview(text, params, sheet, y, x);
         
-        if (cell.getColumn() == 4) { // Draft column (in the currently supported sheets, at least).
+        if (cell.getColumn() === 4) { // Draft column (in the currently supported sheets, at least).
           text = wrap(text, params.width, params.lines_per_prompt);
         }
         
