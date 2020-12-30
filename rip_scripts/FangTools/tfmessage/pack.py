@@ -372,14 +372,17 @@ def format_tokenstream(tokenstream, charmap, metrics, window_width, window_heigh
                 arg1 = []
                 for subtoken in token[-2]:
                     if type(subtoken) == str:
-                        arg1.append(encode_string(subtoken, charmap))
+                        # For pleasant formatting in the sheet, questions may
+                        # sometimes contain newlines, but these shouldn't be
+                        # reproduced in the actual game. Hence, they're removed.
+                        arg1.append(encode_string(subtoken.replace('\n', ''), charmap))
                     else:
                         arg1.append(subtoken)
                 
                 arg2 = []
                 for subtoken in token[-1]:
                     if type(subtoken) == str:
-                        arg2.append(encode_string(subtoken, charmap))
+                        arg2.append(encode_string(subtoken.replace('\n', ''), charmap))
                     else:
                         arg2.append(subtoken)
                 
