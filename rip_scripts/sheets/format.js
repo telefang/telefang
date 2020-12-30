@@ -133,14 +133,31 @@ function prepareForPreview(text, params, sheet, row, column) {
 
 function _getNumInConvo(sheet, row) {
   var numInConvo = 0;
+  var previousMatchNum = null;
+  var previousMatchAt = null;
   // 9 is the max distance a line can be from its number header row.
   for (y = row - 1; y >= row - 9; y--) {
     numInConvo++;
     var cells = sheet.getRange(y, 1, 1, 2);
     var contents = cells.getValues()[0];
-    if (contents[0] === "#######" && contents[1][0] === "#") {break;}
+    if (contents[0] === "#######") {
+      var m = contents[1].match(/^#([0-9]+).*$/);
+      if (m) {
+        if (previousMatchNum === null) {
+          previousMatchNum = m[1];
+          previousMatchAt = numInConvo;
+        } else if (previousMatchNum === m[1]) {
+          numInConvo--;
+          return numInConvo;
+        } else {
+          break;
+        }
+      } else {
+        numInConvo--;
+      }
+    }
   }
-  return numInConvo;
+  return previousMatchAt;
 }
 
 function addPreludeAndEnvoi(text, params, sheet, row, column) {
