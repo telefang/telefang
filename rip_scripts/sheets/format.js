@@ -66,8 +66,14 @@ for (var i = 0; i < BREAK_CHARS_ARR.length; i++) {
 }
 
 var SPECIAL_PRELUDES = {
-  EXP_ITEM_DENJUU_NUMBER: function(text, params, row) {
+  EXP_ITEM_DENJUU_NUMBER: function(text, params, sheet, row, column) {
     return '<D' + (row - 1) + '>';
+  }
+};
+
+var SPECIAL_ENVOIS = {
+  PHONE_LINE_TERMINATOR: function(text, params, sheet, row, column) {
+    return _getNumInConvo(sheet, row) <= 3 ? '<*A>' : '<*2>';
   }
 };
 
@@ -76,7 +82,7 @@ function prepareForPreview(text, params, sheet, row, column) {
   if (params.prelude) {
     var prelude;
     if (SPECIAL_PRELUDES.hasOwnProperty(params.prelude)) {
-      prelude = SPECIAL_PRELUDES[params.prelude](text, params, row)
+      prelude = SPECIAL_PRELUDES[params.prelude](text, params, sheet, row, column)
     } else {
       prelude = params.prelude;
     }
@@ -87,21 +93,23 @@ function prepareForPreview(text, params, sheet, row, column) {
   }
 
   // Trim envoi.
-  if (params.envoi && text.slice(text.length - params.envoi.length) === params.envoi) {
-    text = text.slice(0, text.length - params.envoi.length);
+  if (params.envoi) {
+    var envoi;
+    if (SPECIAL_ENVOIS.hasOwnProperty(params.envoi)) {
+      envoi = SPECIAL_ENVOIS[params.envoi](text, params, sheet, row, column)
+    } else {
+      envoi = params.envoi;
+    }
+    
+    if (text.slice(text.length - envoi.length) === envoi) {
+      text = text.slice(0, text.length - envoi.length);
+    }
   }
 
   // Format question draft syntax.
   if (params.questions) {
     if (column === 4) { // Draft column
-      var numInConvo = 0;
-      // 9 is the max distance a line can be from its number header row.
-      for (y = row; y >= row - 9; y--) {
-        numInConvo++;
-        var cells = sheet.getRange(y, 1, 1, 2);
-        var contents = cells.getValues()[0];
-        if (contents[0] === "#######" && contents[1][0] === "#") {break;}
-      }
+      var numInConvo = _getNumInConvo(sheet, row);
       // The first three lines in a conversation should contain questions.
       if (numInConvo <= 3) {
         // There are a couple of ways someone's formatted the draft questions,
@@ -123,16 +131,51 @@ function prepareForPreview(text, params, sheet, row, column) {
   return text;
 }
 
-function addPreludeAndEnvoi(text, params, row) {
+function _getNumInConvo(sheet, row) {
+  var numInConvo = 0;
+  var previousMatchNum = null;
+  var previousMatchAt = null;
+  // 9 is the max distance a line can be from its number header row.
+  for (y = row - 1; y >= row - 9; y--) {
+    numInConvo++;
+    var cells = sheet.getRange(y, 1, 1, 2);
+    var contents = cells.getValues()[0];
+    if (contents[0] === "#######") {
+      var m = contents[1].match(/^#([0-9]+).*$/);
+      if (m) {
+        if (previousMatchNum === null) {
+          previousMatchNum = m[1];
+          previousMatchAt = numInConvo;
+        } else if (previousMatchNum === m[1]) {
+          numInConvo--;
+          return numInConvo;
+        } else {
+          break;
+        }
+      } else {
+        numInConvo--;
+      }
+    }
+  }
+  return previousMatchAt;
+}
+
+function addPreludeAndEnvoi(text, params, sheet, row, column) {
   if (params.prelude) {
     if (SPECIAL_PRELUDES.hasOwnProperty(params.prelude)) {
-      text = SPECIAL_PRELUDES[params.prelude](text, params, row) + text;
+      text = SPECIAL_PRELUDES[params.prelude](text, params, sheet, row, column) + text;
     } else {
       text = params.prelude + text;
     }
   }
-  
-  text += params.envoi || '';
+
+  if (params.envoi) {
+    if (SPECIAL_ENVOIS.hasOwnProperty(params.envoi)) {
+      text += SPECIAL_ENVOIS[params.envoi](text, params, sheet, row, column);
+    } else {
+      text += params.envoi;
+    }
+  }
   
   return text;
 }
@@ -165,7 +208,7 @@ function formatSelectedRows() {
     draftText = prepareForPreview(draftText, params, sheet, row, 4);
     
     var formatted = wrap(draftText, params.width, params.lines_per_prompt, params.font);
-    formatted = addPreludeAndEnvoi(formatted, params, row);
+    formatted = addPreludeAndEnvoi(formatted, params, sheet, row, 4);
     formatted = formatted[0] === "'" ? "'" + formatted : formatted; // A leading single quote needs to be escaped.
     
     sheet.getRange(row, 3).setValue(formatted);

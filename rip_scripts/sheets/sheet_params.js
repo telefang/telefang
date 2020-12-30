@@ -46,7 +46,7 @@ var SHEET_PARAMS = {
     width: 16 * 8,
     lines_per_prompt: 2,
     line_spacing: 1,
-    envoi: '<*A>',
+    envoi: 'PHONE_LINE_TERMINATOR',
     questions: true
   }
 }
