@@ -426,7 +426,7 @@ function _wrap(text, width, promptPageLines, font) {
 //     'normal'
 //   ));
 //   Logger.log(wrap(
-//     "This line should be broken up.\n<Q>Answers <Q> long<|>Gotta be ver<|>tical   </Q>",
+//     "One line,\ntwo line.\nThis line should be broken up.\n<Q>Answers <Q> long<|>Gotta be ver<|>tical   </Q>",
 //     16 * 8,
 //     2,
 //     'normal'
