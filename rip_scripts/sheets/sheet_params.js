@@ -12,7 +12,7 @@ var SHEET_PARAMS = {
     width: 14 * 8,
     lines_per_page: 3,
     line_spacing: 1,
-    prelude: '<S0>',
+    prelude: '',
     envoi: '<*4>'
   },
   "script/story/all.messages.csv": {
@@ -31,6 +31,13 @@ var SHEET_PARAMS = {
     line_spacing: 1
   },
   "script/calls/exp_item.messages.csv": {
+    width: 16 * 8,
+    lines_per_prompt: 2,
+    line_spacing: 1,
+    prelude: 'EXP_ITEM_DENJUU_NUMBER',
+    envoi: '<*2>'
+  },
+  "script/npc/unused.messages.csv": {
     width: 16 * 8,
     lines_per_prompt: 2,
     line_spacing: 1
