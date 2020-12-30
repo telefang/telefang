@@ -109,9 +109,9 @@ function prepareForPreview(text, params, sheet, row, column) {
         var lines = text.split("\n");
         var lastLine = lines.pop();
         if (lastLine.substr(0, 3) === "<0>") {
-          lines.push("<Q>" + lastLine.substr(3).split("<0>", 1).join("<|>") + "</Q>");
+          lines.push("<Q>" + lastLine.substr(3).split("<0>", 2).join("<|>") + "</Q>");
         } else if (lastLine.indexOf("/") !== -1) {
-          lines.push("<Q>" + lastLine.split(/\s*\/\s*/, 1).join("<|>") + "</Q>");
+          lines.push("<Q>" + lastLine.split(/\s*\/\s*/, 2).join("<|>") + "</Q>");
         } else {
           lines.push(lastLine);
         }
@@ -308,7 +308,7 @@ function _wrap(text, width, promptPageLines, font) {
           curLineWidth = 0;
           curLineStartFont = fontName;
 
-          // So that an EOF after a question doesn't get processed as an ext
+          // So that an EOF after a question doesn't get processed as an extra empty line.
           if (curLineStart === text.length) {break;}
         }
 
