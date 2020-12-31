@@ -53,6 +53,17 @@ if(isset($_REQUEST['text'])) {
 	$text=$_REQUEST['text'];
 }
 $text=str_replace(array("\r\n","\r"),"\n",$text);
+
+// Remove linebreaks from questions.
+
+$matches=array();
+preg_match_all('/\<Q\>(.*?)\<\/Q\>/s',$text,$matches,PREG_SET_ORDER);
+foreach($matches as $match) {
+	$text=str_replace($match[0],'<Q>'.str_replace("\n",'',$match[1]).'</Q>',$text);
+}
+
+// Convert linebreaks.
+
 $text=str_replace("\n",'<0xE2>',$text);
 
 // Replace all mapped non-ascii characters.
@@ -92,7 +103,6 @@ $specials=array(
 	'P' => array('<0xED>',0)
 );
 
-$matches=array();
 foreach($specials as $specialkey => $specialinfo) {
 	list($prefix,$type)=$specialinfo;
 	while(preg_match('/\<'.preg_quote($specialkey,'/').'([0-9A-Za-z]+)\>/',$text,$matches)) {
@@ -308,6 +318,10 @@ if($textwidth<=0) {
 }
 if($textwidth>160) {
 	$textwidth=160;
+}
+$textwidthsansprompt=$textwidth;
+if($perprompt>0) {
+	$textwidthsansprompt-=8;
 }
 $textwidthintiles=round($textwidth/8);
 $padding=0;
@@ -586,7 +600,7 @@ while($i<$c) {
 						$u++;
 					}
 					$horizontalwidth=((floor($answerlengths[0]/8)*8)+$answerlengths[1]+24);
-					if($horizontalwidth>$textwidth) {
+					if($horizontalwidth>$textwidthsansprompt) {
 						$islinebreak=false;
 						if($currentlinelength>=8) {
 							$islinebreak=true;
