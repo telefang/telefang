@@ -444,7 +444,7 @@ while($i<$c) {
 				}
 				$i++;
 				break;
-			case 0xE5:
+			case 0xEC:
 				// This is not something that should ever be in the spreadsheet. Throw an error.
 				error_image(true);
 				break;
@@ -468,7 +468,7 @@ while($i<$c) {
 				$textlines[$currentline].=$chr;
 				$i++;
 				break;
-			case 0xEC:
+			case 0xE5:
 				// Subtext. We will insert note characters for most addresses to a given length, because they are the longest character in every font.
 				if($argaoob) {
 					error_image(true);
