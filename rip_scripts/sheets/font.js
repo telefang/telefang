@@ -9,8 +9,8 @@ var FONT_METRIC_CSV_URLS = {
   bold: 'https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_bold.tffont.csv',
   narrow: 'https://raw.githubusercontent.com/telefang/telefang/patch/components/mainscript/font_narrow.tffont.csv'
 };
-var PREVIEW_SERVICE_URL = 'https://telefang-web-preview.fantranslation.org/preview';
-var PREVIEW_SERVICE_UPDATE_URL = 'https://telefang-web-preview.fantranslation.org/update';
+var PREVIEW_SERVICE_URL = 'https://www.bugsiteguardian.com/msgbox/telefang/preview.php';
+var PREVIEW_SERVICE_UPDATE_URL = 'https://www.bugsiteguardian.com/msgbox/telefang/update.php';
 
 function updateFontData() {
   var charmap = fetchCharmap();
