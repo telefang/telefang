@@ -138,6 +138,7 @@ function _getNumInConvo(sheet, row) {
   // 9 is the max distance a line can be from its number header row.
   for (y = row - 1; y >= row - 9; y--) {
     numInConvo++;
+    if (y < 1) {break;}
     var cells = sheet.getRange(y, 1, 1, 2);
     var contents = cells.getValues()[0];
     if (contents[0] === "#######") {
@@ -157,7 +158,7 @@ function _getNumInConvo(sheet, row) {
       }
     }
   }
-  return previousMatchAt;
+  return previousMatchAt !== null ? previousMatchAt : 1;
 }
 
 function addPreludeAndEnvoi(text, params, sheet, row, column) {
