@@ -118,7 +118,7 @@ function prepareForPreview(text, params, sheet, row, column) {
         var lastLine = lines.pop();
         if (lastLine.substr(0, 3) === "<0>") {
           lines.push("<Q>" + lastLine.substr(3).split("<0>", 2).join("<|>") + "</Q>");
-        } else if (lastLine.indexOf("/") !== -1) {
+        } else if (lastLine.indexOf("/") !== -1 && lastLine.substr(0, 3) !== "<Q>") {
           lines.push("<Q>" + lastLine.split(/\s*\/\s*/, 2).join("<|>") + "</Q>");
         } else {
           lines.push(lastLine);
@@ -249,8 +249,9 @@ function _rewrap_last_line(lines, width, promptPageLines) {
 function _push_question_lines(lines, text, width, promptPageLines, i, curLineStart, curLineWidth, curLineStartFont, curFirstAnswer) {
   curFirstAnswer = curFirstAnswer || [curLineStartFont, 0, ""];
   var curSecondAnswer = [curLineStartFont, curLineWidth === 0 ? 0 : curLineWidth - 1, text.slice(curLineStart, i)];
-  // Horizontally oriented answers can be max 7 tiles wide.
-  if (Math.max(curFirstAnswer[1], curSecondAnswer[1]) <= 7 * 8) {
+  var answersWidth = 8 * Math.floor(curFirstAnswer[1] / 8) + curSecondAnswer[1] + 3 * 8;
+  var prompts = promptPageLines > 0;
+  if (answersWidth <= (prompts ? width - 8 : width)) {
     // Horizontally oriented answers.
     // The line width of this shouldn't matter for anything as long as it's set to 0.
     lines.push([curFirstAnswer[0], 0, "<Q>" + curFirstAnswer[2] + "<|>" + curSecondAnswer[2] + "</Q>"]);
@@ -258,13 +259,12 @@ function _push_question_lines(lines, text, width, promptPageLines, i, curLineSta
   } else {
     // Vertically oriented answers.
     // Takes up an entire text box and makes any line end in a continuation symbol, necessitating a rewrap.
-    _rewrap_last_line(lines, width, promptPageLines);
     var s = "<Q>\n";
     s += curFirstAnswer[2];
-    if (curFirstAnswer[1] > 15 * 8) {s += " // Answer too wide";}
+    if (curFirstAnswer[1] > width - 8) {s += " // Answer too wide";}
     s += "\n<|>\n";
     s += curSecondAnswer[2];
-    if (curSecondAnswer[1] > 15 * 8) {s += " // Answer too wide";}
+    if (curSecondAnswer[1] > width - (prompts ? 16 : 8)) {s += " // Answer too wide";}
     s += "\n</Q>";
     lines.push([curFirstAnswer[0], 0, s]);
     return 2; // 2 lines added.
