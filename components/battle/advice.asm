@@ -468,7 +468,7 @@ Battle_ADVICE_SGBPaletteOnOpponentFell::
 SECTION "MenuBattle2GfxSGB", ROMX[$7E00], BANK[$77]
 MenuBattle2GfxSGB::
     INCBIN "build/gfx/menu/battle2_sgb.2bpp"
-MenuBattle2GfxSGBEnd
+MenuBattle2GfxSGBEnd::
 
 SECTION "Battle Advice Code 3", ROMX[$42F0], BANK[$5]
 Battle_ADVICE_DrawOpponentName::

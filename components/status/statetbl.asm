@@ -400,7 +400,7 @@ Status_StateSwitchDenjuu:
     ld de, StringTable_denjuu_personalities
     call MainScript_DrawCenteredName75
 
-Status_StateSwitchDenjuuCleanup
+Status_StateSwitchDenjuuCleanup:
     ld bc, $101
     ld e, $B9
     ld a, 0
@@ -409,7 +409,7 @@ Status_StateSwitchDenjuuCleanup
     ld [W_Status_SubState], a
     ret
 
-Status_StateExit
+Status_StateExit:
     ld a, [W_Status_CalledFromContactScreen]
     cp 0
     jr nz, .fadeOut

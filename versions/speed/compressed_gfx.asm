@@ -202,407 +202,407 @@ SECTION "Intro - Screens Compressed GFX", ROMX[$4000], BANK[$36]
 IntroScreensGfx:
 	dbw NOT_COMPRESSED, IntroScreensGfxEnd - IntroScreensGfx - 3
 	INCBIN "build/gfx/intro/screens.2bpp"
-IntroScreensGfxEnd
+IntroScreensGfxEnd:
 
 IntroBonbonGfx:
 	dbw NOT_COMPRESSED, IntroBonbonGfxEnd - IntroBonbonGfx - 3
 	INCBIN "build/gfx/intro/bonbon.2bpp"
-IntroBonbonGfxEnd
+IntroBonbonGfxEnd:
 
 MenuEncounterGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/encounter.malias"
-MenuEncounterGfxEnd
+MenuEncounterGfxEnd:
 
 MenuBattleGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/battle.malias"
-MenuBattleGfxEnd
+MenuBattleGfxEnd:
 
 TitleTitle1Gfx:
 	dbw NOT_COMPRESSED, TitleTitle1GfxEnd - TitleTitle1Gfx - 3
 	INCBIN "build/versions/speed/gfx/title/title1.2bpp"
-TitleTitle1GfxEnd
+TitleTitle1GfxEnd:
 
 TitleTitle2Gfx:
 	dbw NOT_COMPRESSED, TitleTitle2GfxEnd - TitleTitle2Gfx - 3
 	INCBIN "build/versions/speed/gfx/title/title2.2bpp"
-TitleTitle2GfxEnd
+TitleTitle2GfxEnd:
 
 TitleSpritesGfx:
 	dbw NOT_COMPRESSED, TitleSpritesGfxEnd - TitleSpritesGfx - 3
 	INCBIN "build/gfx/title/sprites.2bpp"
-TitleSpritesGfxEnd
+TitleSpritesGfxEnd:
 
 MenuStatsGfx:
 	dbw NOT_COMPRESSED, MenuStatsGfxEnd - MenuStatsGfx - 3
 	INCBIN "build/gfx/menu/stats.2bpp"
-MenuStatsGfxEnd
+MenuStatsGfxEnd:
 
 UnknownFontGfx:
 	db COMPRESSED
 	INCBIN "gfx/unknown_font.malias"
-UnknownFontGfxEnd
+UnknownFontGfxEnd:
 
 MenuBattle2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/battle2.malias"
-MenuBattle2GfxEnd
+MenuBattle2GfxEnd:
 
 MenuBattle3Gfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/battle3.malias"
-MenuBattle3GfxEnd
+MenuBattle3GfxEnd:
 
 MenuNumbersGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/numbers.malias"
-MenuNumbersGfxEnd
+MenuNumbersGfxEnd:
 
 SECTION "Menu - Misc Sprites Compressed GFX", ROMX[$4000], BANK[$3B]
 MenuMiscSpritesGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/misc_sprites.malias"
-MenuMiscSpritesGfxEnd
+MenuMiscSpritesGfxEnd:
 
 BattleMessagesGfx:
 	dbw NOT_COMPRESSED, BattleMessagesGfxEnd - BattleMessagesGfx - 3
 	INCBIN "build/gfx/battle_messages.2bpp"
-BattleMessagesGfxEnd
+BattleMessagesGfxEnd:
 
 ScreenSaveDeletedGfx:
 	dbw NOT_COMPRESSED, ScreenSaveDeletedGfxEnd - ScreenSaveDeletedGfx - 3
 	INCBIN "build/versions/speed/gfx/screen/save_deleted.2bpp"
-ScreenSaveDeletedGfxEnd
+ScreenSaveDeletedGfxEnd:
 
 CutsceneConnected1Gfx:
 	db COMPRESSED
 	INCBIN "gfx/cutscene/connected1.malias"
-CutsceneConnected1GfxEnd
+CutsceneConnected1GfxEnd:
 
 CutsceneConnected2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/cutscene/connected2.malias"
-CutsceneConnected2GfxEnd
+CutsceneConnected2GfxEnd:
 
 EvolveBgGfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg.malias"
-EvolveBgGfxEnd
+EvolveBgGfxEnd:
 
 MenuGotNumberGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/got_number.malias"
-MenuGotNumberGfxEnd
+MenuGotNumberGfxEnd:
 
 MenuDmeloGfx:
 	dbw NOT_COMPRESSED, MenuDmeloGfxEnd - MenuDmeloGfx - 3
 	INCBIN "build/gfx/menu/dmelo.2bpp"
-MenuDmeloGfxEnd
+MenuDmeloGfxEnd:
 
 MenuOptionsGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/options.malias"
-MenuOptionsGfxEnd
+MenuOptionsGfxEnd:
 
 EvolveBg2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg2.malias"
-EvolveBg2GfxEnd
+EvolveBg2GfxEnd:
 
 MenuMain1Gfx:
 	dbw NOT_COMPRESSED, MenuMain1GfxEnd - MenuMain1Gfx - 3
 	INCBIN "build/components/pausemenu/resources/text1.2bpp"
-MenuMain1GfxEnd
+MenuMain1GfxEnd:
 
 MenuMain2Gfx:
 	dbw NOT_COMPRESSED, MenuMain2GfxEnd - MenuMain2Gfx - 3
 	INCBIN "build/components/pausemenu/resources/text2.2bpp"
-MenuMain2GfxEnd
+MenuMain2GfxEnd:
 
 MenuUnkGfx:
 	dbw NOT_COMPRESSED, MenuUnkGfxEnd - MenuUnkGfx - 3
 	INCBIN "build/gfx/menu/unk.2bpp"
-MenuUnkGfxEnd
+MenuUnkGfxEnd:
 
 MenuTotalGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/total.malias"
-MenuTotalGfxEnd
+MenuTotalGfxEnd:
 
 MenuNicknameGfx:
 	dbw NOT_COMPRESSED, MenuNicknameGfxEnd - MenuNicknameGfx - 3
 	INCBIN "build/gfx/menu/nickname.2bpp"
-MenuNicknameGfxEnd
+MenuNicknameGfxEnd:
 
 MenuMetGfx:
 	db COMPRESSED
 	INCBIN "gfx/menu/met.malias"
-MenuMetGfxEnd
+MenuMetGfxEnd:
 
 SECTION "Evolve - Bg4 Compressed GFX", ROMX[$4000], BANK[$61]
 EvolveBg3Gfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg3.malias"
-EvolveBg3GfxEnd
+EvolveBg3GfxEnd:
 
 EvolveBg4Gfx:
 	db COMPRESSED
 	INCBIN "gfx/evolve/bg4.malias"
-EvolveBg4GfxEnd
+EvolveBg4GfxEnd:
 
 EvolveCannotGfx:
 	dbw NOT_COMPRESSED, EvolveCannotGfxEnd - EvolveCannotGfx - 3
 	INCBIN "build/gfx/evolve/cannot.2bpp"
-EvolveCannotGfxEnd
+EvolveCannotGfxEnd:
 
 SECTION "Tilemap - Overworld Compressed GFX", ROMX[$4000], BANK[$59]
 TilemapOverworldGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/overworld.malias"
-TilemapOverworldGfxEnd
+TilemapOverworldGfxEnd:
 
 TilemapAntennaGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/antenna.malias"
-TilemapAntennaGfxEnd
+TilemapAntennaGfxEnd:
 
 TilemapDungeonGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/dungeon.malias"
-TilemapDungeonGfxEnd
+TilemapDungeonGfxEnd:
 
 TilemapCaveGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/cave.malias"
-TilemapCaveGfxEnd
+TilemapCaveGfxEnd:
 
 TilemapHouseGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/house.malias"
-TilemapHouseGfxEnd
+TilemapHouseGfxEnd:
 
 TilemapTreeGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/tree.malias"
-TilemapTreeGfxEnd
+TilemapTreeGfxEnd:
 
 TilemapDungeon2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/dungeon2.malias"
-TilemapDungeon2GfxEnd
+TilemapDungeon2GfxEnd:
 
 TilemapDungeon3Gfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/dungeon3.malias"
-TilemapDungeon3GfxEnd
+TilemapDungeon3GfxEnd:
 
 TilemapDungeon4Gfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/dungeon4.malias"
-TilemapDungeon4GfxEnd
+TilemapDungeon4GfxEnd:
 
 TilemapHuman1Gfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/human1.malias"
-TilemapHuman1GfxEnd
+TilemapHuman1GfxEnd:
 
 TilemapHumanAntennaGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/human_antenna.malias"
-TilemapHumanAntennaGfxEnd
+TilemapHumanAntennaGfxEnd:
 
 MenuStatsHabitatGfx:
 	dbw NOT_COMPRESSED, MenuStatsHabitatGfx_END - MenuStatsHabitatGfx - 3
 	INCBIN "build/gfx/menu/stats_habitat.2bpp"
-MenuStatsHabitatGfx_END
+MenuStatsHabitatGfx_END:
 
 SECTION "Tilemap - Human2 Compressed GFX", ROMX[$6d29], BANK[$29]
 TilemapHuman2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/human2.malias"
-TilemapHuman2GfxEnd
+TilemapHuman2GfxEnd:
 
 TilemapShrineGfx:
 	db COMPRESSED
 	INCBIN "gfx/tilemap/shrine.malias"
-TilemapShrineGfxEnd
+TilemapShrineGfxEnd:
 
 SECTION "Intro - Shadow Gymnos1 Compressed GFX", ROMX[$4000], BANK[$39]
 IntroShadowGymnos1Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/shadow_gymnos1.malias"
-IntroShadowGymnos1GfxEnd
+IntroShadowGymnos1GfxEnd:
 
 IntroShadowGymnos2Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/shadow_gymnos2.malias"
-IntroShadowGymnos2GfxEnd
+IntroShadowGymnos2GfxEnd:
 
 IntroShigekiGfx:
 	db COMPRESSED
 	INCBIN "gfx/intro/shigeki.malias"
-IntroShigekiGfxEnd
+IntroShigekiGfxEnd:
 
 IntroTreesGfx:
 	db COMPRESSED
 	INCBIN "gfx/intro/trees.malias"
-IntroTreesGfxEnd
+IntroTreesGfxEnd:
 
 IntroFungusShigeki1Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/fungus_shigeki1.malias"
-IntroFungusShigeki1GfxEnd
+IntroFungusShigeki1GfxEnd:
 
 IntroFungusShigeki2Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/fungus_shigeki2.malias"
-IntroFungusShigeki2GfxEnd
+IntroFungusShigeki2GfxEnd:
 
 IntroGymnos1Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/gymnos1.malias"
-IntroGymnos1GfxEnd
+IntroGymnos1GfxEnd:
 
 IntroGymnos2Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/gymnos2.malias"
-IntroGymnos2GfxEnd
+IntroGymnos2GfxEnd:
 
 IntroFungus1Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/fungus1.malias"
-IntroFungus1GfxEnd
+IntroFungus1GfxEnd:
 
 IntroFungus2Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/fungus2.malias"
-IntroFungus2GfxEnd
+IntroFungus2GfxEnd:
 
 SECTION "Intro - Shigeki Sprites1 Compressed GFX", ROMX[$4000], BANK[$3a]
 IntroShigekiSprites1Gfx:
 	db COMPRESSED
 	INCBIN "gfx/intro/shigeki_sprites1.malias"
-IntroShigekiSprites1GfxEnd
+IntroShigekiSprites1GfxEnd:
 
 IntroShigekiSprites2Gfx:
 	db COMPRESSED
 	INCBIN "gfx/intro/shigeki_sprites2.malias"
-IntroShigekiSprites2GfxEnd
+IntroShigekiSprites2GfxEnd:
 
 IntroShigekiMouthGfx:
 	db COMPRESSED
 	INCBIN "gfx/intro/shigeki_mouth.malias"
-IntroShigekiMouthGfxEnd
+IntroShigekiMouthGfxEnd:
 
 IntroFungusCallGfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/intro/fungus_call.malias"
-IntroFungusCallGfxEnd
+IntroFungusCallGfxEnd:
 
 IntroCryptoShigekiSpritesGfx:
 	db COMPRESSED
 	INCBIN "gfx/intro/crypto_shigeki_sprites.malias"
-IntroCryptoShigekiSpritesGfxEnd
+IntroCryptoShigekiSpritesGfxEnd:
 
 UnusedClawGfx:
 	db COMPRESSED
 	INCBIN "gfx/unused_claw.malias"
-UnusedClawGfxEnd
+UnusedClawGfxEnd:
 
 MenuMultiplayerGfx:
 	dbw NOT_COMPRESSED, MenuMultiplayerGfxEnd - MenuMultiplayerGfx - 3
 	INCBIN "build/gfx/menu/multiplayer.2bpp"
-MenuMultiplayerGfxEnd
+MenuMultiplayerGfxEnd:
 
 MenuMultiplayer2Gfx:
 	dbw NOT_COMPRESSED, MenuMultiplayer2GfxEnd - MenuMultiplayer2Gfx - 3
 	INCBIN "build/gfx/menu/multiplayer2.2bpp"
-MenuMultiplayer2GfxEnd
+MenuMultiplayer2GfxEnd:
 
 ScreenGameOverGfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/screen/game_over.malias"
-ScreenGameOverGfxEnd
+ScreenGameOverGfxEnd:
 
 ScreenGameOver2Gfx:
 	db COMPRESSED
 	INCBIN "versions/speed/gfx/screen/game_over2.malias"
-ScreenGameOver2GfxEnd
+ScreenGameOver2GfxEnd:
 
 SECTION "Cutscene - Antenna Tree Compressed GFX", ROMX[$6d07], BANK[$39]
 CutsceneAntennaTreeGfx:
 	db COMPRESSED
 	INCBIN "gfx/cutscene/antenna_tree.malias"
-CutsceneAntennaTreeGfxEnd
+CutsceneAntennaTreeGfxEnd:
 
 CutsceneKaiGfx:
 	db COMPRESSED
 	INCBIN "gfx/cutscene/kai.malias"
-CutsceneKaiGfxEnd
+CutsceneKaiGfxEnd:
 
 CutsceneUnusedGfx:
 	db COMPRESSED
 	INCBIN "gfx/cutscene/unused.malias"
-CutsceneUnusedGfxEnd
+CutsceneUnusedGfxEnd:
 
 SECTION "Menu - Dmelo DMG Compressed GFX", ROMX[$4000], BANK[$35]
 MenuDmeloDMGGfx:
 	dbw NOT_COMPRESSED, MenuDmeloDMGGfxEnd - MenuDmeloDMGGfx - 3
 	INCBIN "build/gfx/menu/dmelo_dmg.2bpp"
-MenuDmeloDMGGfxEnd
+MenuDmeloDMGGfxEnd:
 
 MenuOptionsDMGGfx:
 	dbw NOT_COMPRESSED, MenuOptionsDMGGfxEnd - MenuOptionsDMGGfx - 3
 	INCBIN "build/gfx/menu/options_dmg.2bpp"
-MenuOptionsDMGGfxEnd
+MenuOptionsDMGGfxEnd:
 
 MenuMain1DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain1DMGGfxEnd - MenuMain1DMGGfx - 3
 	INCBIN "build/components/pausemenu/resources/text1_dmg.2bpp"
-MenuMain1DMGGfxEnd
+MenuMain1DMGGfxEnd:
 
 TitleMenuText1Gfx:
 	dbw NOT_COMPRESSED, TitleMenuText1GfxEnd - TitleMenuText1Gfx - 3
 	INCBIN "build/components/titlemenu/resources/text1.2bpp"
-TitleMenuText1GfxEnd
+TitleMenuText1GfxEnd:
 
 TitleMenuText1DMGGfx:
 	dbw NOT_COMPRESSED, TitleMenuText1GfxEnd - TitleMenuText1Gfx - 3
 	INCBIN "build/components/titlemenu/resources/text1_dmg.2bpp"
-TitleMenuText1DMGGfxEnd
+TitleMenuText1DMGGfxEnd:
 
 MenuMain2DMGGfx:
 	dbw NOT_COMPRESSED, MenuMain2DMGGfxEnd - MenuMain2DMGGfx - 3
 	INCBIN "build/components/pausemenu/resources/text2_dmg.2bpp"
-MenuMain2DMGGfxEnd
+MenuMain2DMGGfxEnd:
 
 MenuUnkDMGGfx:
 	dbw NOT_COMPRESSED, MenuUnkDMGGfxEnd - MenuUnkDMGGfx - 3
 	INCBIN "build/gfx/menu/unk_dmg.2bpp"
-MenuUnkDMGGfxEnd
+MenuUnkDMGGfxEnd:
 
 MenuTotalDMGGfx:
 	dbw NOT_COMPRESSED, MenuTotalDMGGfxEnd - MenuTotalDMGGfx - 3
 	INCBIN "build/gfx/menu/total_dmg.2bpp"
-MenuTotalDMGGfxEnd
+MenuTotalDMGGfxEnd:
 
 MenuNicknameDMGGfx:
 	dbw NOT_COMPRESSED, MenuNicknameDMGGfxEnd - MenuNicknameDMGGfx - 3
 	INCBIN "build/gfx/menu/nickname_dmg.2bpp"
-MenuNicknameDMGGfxEnd
+MenuNicknameDMGGfxEnd:
 
 MenuMetDMGGfx:
 	dbw NOT_COMPRESSED, MenuMetDMGGfxEnd - MenuMetDMGGfx - 3
 	INCBIN "build/gfx/menu/met_dmg.2bpp"
-MenuMetDMGGfxEnd
+MenuMetDMGGfxEnd:
 
 TitleSpritesSgbGfx:
 	dbw NOT_COMPRESSED, TitleSpritesSgbGfxEnd - TitleSpritesSgbGfx - 3
 	INCBIN "build/gfx/title/sprites_sgb.2bpp"
-TitleSpritesSgbGfxEnd
+TitleSpritesSgbGfxEnd:
 
 CmpGfx_TitleLogo_Tulunk:
     dbw NOT_COMPRESSED, CmpGfx_TitleLogo_Tulunk_END - CmpGfx_TitleLogo_Tulunk - 3
     INCBIN "build/components/titlelogo/tulunk.2bpp"
-CmpGfx_TitleLogo_Tulunk_END
+CmpGfx_TitleLogo_Tulunk_END:
