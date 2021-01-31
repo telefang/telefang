@@ -55,4 +55,4 @@ MainScriptMachine::
 	ret
 
 ;Needed because the linker screws up jr addresses across sections
-loc_MainScript_CCInterpreter
+loc_MainScript_CCInterpreter:

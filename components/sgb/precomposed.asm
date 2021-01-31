@@ -170,7 +170,7 @@ SGB_PacketFreezeScreen::
     db 1
     db 0,0,0,0,0,0,0,0,0,0,0,0,0,0
     
-SGB_PacketHotfix
+SGB_PacketHotfix::
     db $79
     dw $085D
     db 0

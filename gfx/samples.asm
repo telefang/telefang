@@ -11,4 +11,4 @@ Sound_SampleMetatable_gfx_title_voice_sample_pcm:
 SECTION "gfx/title/voice_sample.pcm", ROMX[$4000], BANK[$7C]
 Sound_gfx_title_voice_sample_pcm:
     INCBIN "build/gfx/title/voice_sample.pcm"
-Sound_gfx_title_voice_sample_pcm_END
+Sound_gfx_title_voice_sample_pcm_END:
