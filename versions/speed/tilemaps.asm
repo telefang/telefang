@@ -298,11 +298,11 @@ Tilemap_titlemenu_time_input_screen_END::
 
 Tilemap_phoneime_latin_upper_indicator_tmap::
 	INCBIN "build/components/phoneime/latin_upper_indicator_tmap.tmap"
-Tilemap_phoneime_latin_upper_indicator_tmap_END
+Tilemap_phoneime_latin_upper_indicator_tmap_END::
 
 Tilemap_phoneime_number_indicator_tmap::
 	INCBIN "build/components/phoneime/number_indicator_tmap.tmap"
-Tilemap_phoneime_number_indicator_tmap_END
+Tilemap_phoneime_number_indicator_tmap_END::
 
 Tilemap_pausemenu_resources_options_screen_tmap::
 	INCBIN "build/components/pausemenu/resources/options_screen_tmap.tmap"
@@ -322,7 +322,7 @@ Tilemap_phoneconversation_window_tmap_END::
 
 Tilemap_phoneime_latin_lower_indicator_tmap::
 	INCBIN "build/components/phoneime/latin_lower_indicator_tmap.tmap"
-Tilemap_phoneime_latin_lower_indicator_tmap_END
+Tilemap_phoneime_latin_lower_indicator_tmap_END::
 
 Tilemap_phoneconversation_monster_name_tmap::
 	INCBIN "build/gfx/phoneconversation/monster_name_tmap.tmap"
@@ -900,15 +900,15 @@ Tilemap_attractmode_scene6_fungus_tmap_END::
 
 Tilemap_titlelogo_tulunk_tmap::
 	INCBIN "build/components/titlelogo/tulunk_tmap.tmap"
-Tilemap_titlelogo_tulunk_tmap_END
+Tilemap_titlelogo_tulunk_tmap_END::
 
 Tilemap_attractmode_scene4_sgb_tmap::
 	INCBIN "build/versions/speed/components/attractmode/scene4/fungus_shigeki_sgb_tmap.tmap"
-Tilemap_attractmode_scene4_sgb_tmap_END
+Tilemap_attractmode_scene4_sgb_tmap_END::
 
 Tilemap_attractmode_scene5_sgb_tmap::
 	INCBIN "build/versions/speed/components/attractmode/scene5/gymnos_sgb_tmap.tmap"
-Tilemap_attractmode_scene5_sgb_tmap_END
+Tilemap_attractmode_scene5_sgb_tmap_END::
 
 SECTION "attrib Bank 0", ROMX[$4000], BANK[$8]
 Attribmap_BANK_0::

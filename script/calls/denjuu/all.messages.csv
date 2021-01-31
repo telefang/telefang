@@ -3810,13 +3810,13 @@ Sounds cute! / ...Pink?",1,
 in right now.
 <Q>I want one!<|>Really?</Q><*A>","I know, right? Pink is totally in right now.
 I want one! / Really?",1,
-0x144008,<&name>ピンクはキライ? キライだね キミにはにあうよ<*A>,"<Name>, you got somethin'
+0x144008,<&name>ピンクはキライ? キライだね キミにはにあうよ<*A>,"<&name>, you got somethin'
 against pink?
 <Q>
 You bet!
 <|>
 Nah, it suits you!
-</Q><*A>","<Name>, you got somethin' against pink?
+</Q><*A>","<&name>, you got somethin' against pink?
 You bet! / Nah, it suits you!",1,
 0x14400a,ほしい?でもあげなーい!<*2>,"You want it? Too bad, I'm
 not giving it to you~!<*2>","You want it? Too bad, I'm not giving it to you~!",1,
@@ -4062,7 +4062,7 @@ Sure / Is there anything to find?",0,
 0x1440ac,"<&name>ってアマイの
 とカライのどっちがスキなの?
  アマイの カライの<*A>","<&name>, do you prefer sweet or spicy food?
-<Q>Sweet<|>Spicy</Q><*A>","<Name>, do you prefer sweet or spicy food?
+<Q>Sweet<|>Spicy</Q><*A>","<&name>, do you prefer sweet or spicy food?
 Sweet / Spicy",0,
 0x1440ae,"アマイのはうまいよな!
  うん チョーすき<*A>","Yeah, sweet stuff is great!
@@ -4317,8 +4317,8 @@ To what? / Okay",0,
  オレにきくなよ ニンゲン?<*A>","Huh? Then who was I supposed to meet today…?
 <Q>How should I know?<|>Another human?</Q><*A>","Huh? Then who was I supposed to meet today…?
 How should I know? / Another human?",0,
-0x144158,『あぁそう』っておこってないの? なんで? なんのやくそく?<*A>,"“Okay”? You mean you’re not mad?
-<Q>Why?<|>Late to what?</Q><*A>","“Okay”? You mean you’re not mad?
+0x144158,『あぁそう』っておこってないの? なんで? なんのやくそく?<*A>,"""Okay""? You mean you’re not mad?
+<Q>Why?<|>Late to what?</Q><*A>","""Okay""? You mean you’re not mad?
 Why? / Late to what?",0,
 0x14415a,"ゴメンゴメン!おこんないでよ
 またかけるから じゃあね<*2>",Sorry! Sorry! Don't get mad! I'll call you later.<*2>,Sorry! Sorry! Don't get mad! I'll call you later.,0,

@@ -423,7 +423,7 @@ PhoneConversation_ADVICE_ClearInputTiles::
     jr nz, .clearLoop
     
     ret
-PhoneConversation_ADVICE_ClearInputTiles_END
+PhoneConversation_ADVICE_ClearInputTiles_END::
 
 SECTION "PhoneConversation Incoming Caller Name Draw Advice 2", ROMX[$7A00], BANK[$29]
 PhoneConversation_ADVICE_DrawIncomingCallerName_ResetVWFVariables::

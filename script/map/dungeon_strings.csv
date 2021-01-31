@@ -1,6 +1,6 @@
 #,Japanese,English,Draft version,German,Draft version (German),Notes
 1,トロンコむら すいげん,Tronco Village Spring,,Quelle am Strunkdorf,,The strings presented here are matched up with a mapping .csv in the Git project.
-2,オーキッドなかのしま4かい,x,Orchid Nakanoshima 4F (unused),.,,"Japanese strings presented here are for reference only,"
+2,オーキッドなかのしま4かい,Orchid Nakanoshima 4F,Orchid Nakanoshima 4F (unused),.,,"Japanese strings presented here are for reference only,"
 3,クリノンむら ちか1かい,Krinon Village B1F,,Liliendorf B1F,,"they do not match the Japanese version's string table,"
 4,クリノンむら ちか2かい,Krinon Village B2F,,Liliendorf B2F,,as English and other patched versions have altered the order of these strings.
 5,クラフトけんきゅうじょ,Craft Research Lab,,Craft-Forschungszentrum,,
@@ -26,6 +26,6 @@
 34,1かい,1F,,1F,,Couldn't hurt to be more specific with these too.
 35,ちか1かい,B1F,,B1F,,
 36,ちか2かい,B2F,,B2F,,
-37,みずのほこら,.,Water Shrine,.,Wasserschrein (unused),These strings do not appear to be used. 
-38,もリのほこら,.,Forest Shrine,.,Waldschrein (unused),"They were probably intended for the caves in Iris, Freesia, and south of Barran."
-39,すなのほこら,.,Desert Shrine,.,Wüstenschrein (unused),
+37,みずのほこら,Water Shrine,Water Shrine,.,Wasserschrein (unused),These strings do not appear to be used. 
+38,もリのほこら,Forest Shrine,Forest Shrine,.,Waldschrein (unused),"They were probably intended for the caves in Iris, Freesia, and south of Barran."
+39,すなのほこら,Desert Shrine,Desert Shrine,.,Wüstenschrein (unused),

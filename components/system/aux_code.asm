@@ -388,6 +388,10 @@ Banked_MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted::
 Banked_VsSummon_ADVICE_LoadSGBFiles::
 	dw VsSummon_ADVICE_LoadSGBFiles
 
+;components/system/debug.asm
+Banked_Debug_ADVICE_DrawDigitsForMapSelector::
+	dw Debug_ADVICE_DrawDigitsForMapSelector
+
 ;The next one is at the END of Bank 1 and likely not conflicting
 ;with your section.
 
