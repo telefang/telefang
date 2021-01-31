@@ -55,7 +55,7 @@ MainScriptMachine::
 	ret
 
 ;Needed because the linker screws up jr addresses across sections
-loc_MainScript_CCInterpreter
+loc_MainScript_CCInterpreter:
 
 SECTION "Main Script Instant Display Hack", ROMX[$4755], BANK[$B]
 MainScriptMachine_InstantDisplayHack::
