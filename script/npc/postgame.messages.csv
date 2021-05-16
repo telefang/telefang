@@ -1,7 +1,11 @@
 Pointer,Japanese,English,Draft version,Formatted?,Notes
 0x100000,"あそこのやしき どうやら
 ヘイサされたらしいダ
-もうはいれないんダね",/0x100000/,,0,NPC messages from after you beat the game.
+もうはいれないんダね","Looks like that house over
+there is all boarded up now.
+Guess no one's going in
+there again.","Looks like that house over there is all boarded up now. Guess no one's going in
+there again.",1,NPC messages from after you beat the game.
 0x100002,"パパルナこの さわぎの
 しんそうをきいたよ
 あるオトコのコが
@@ -116,7 +120,11 @@ Pointer,Japanese,English,Draft version,Formatted?,Notes
 0x100046,"デンジュウは うまく
 つかいこなせてるかい?
 あいしょうも かんがえて
-テレファングしないとね",/0x100046/,,0,
+テレファングしないとね","How far along are you on
+the way to Telefang
+masterdom?","Feel like you've mastered
+the art of Telefang?
+My tip: always keep habitat advantages in mind!",1,
 0x100048,"いろんなところにすんでる
 デンジュウをトモダチにして
 どんなジョウキョウにも
@@ -291,4 +299,4 @@ Tファンガーたいかいを
 いえに あそびにいったのじゃ
 こんどは トリぐみのおさを
 しょうたいせんとな",/0x1000ae/,,0,
-0x1000b0,レファングしないとね,/0x1000b0/,,0,
+0x1000b0,レファングしないとね,t advantages in mind!,t advantages in mind!,1,

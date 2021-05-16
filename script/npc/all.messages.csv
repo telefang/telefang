@@ -4,29 +4,45 @@ Pointer,Japanese,English,Draft version,Formatted?,Notes
 0x11c000,"ここはトロンコむらだプニ
 ここは ムサさまのきょかが
 ないと とおれないプニー","This is Tronco Village, puni.
-You need Musa's permission to pass through here, puni!",,0,"Status: Translated 100%
+You need Musa's permission
+to pass through here, puni!","This is Tronco Village, puni!
+You need Musa's permission to go through here, puni!",1,"Status: Translated 100%
 "
 0x11c002,"アンテナのきが つかえるように
-なって あんしんしたプニー","It's alright for you to use the Antenna Tree now, puni!",,0,
+なって あんしんしたプニー","We can use the Antenna
+Tree again, puni!
+What a relief, puni ♪","We can use the Antenna Tree again, puni!
+What a relief, puni ♪",1,
 0x11c004,"かわのミズなんて よごれてて
 のめないよ
 やっぱリ わきミズが
 いちばんおいしいよ
-はやく ミズがこないかな...","The water in the river is dirty, so we can't drink it.
-Spring water really is the tastiest!
-I hope we get more soon...",,0,
+はやく ミズがこないかな...","The water in the river is
+dirty, so we can't drink it.
+You really can't beat
+spring water!
+I hope we get more soon...","The water in the river is dirty, so we can't drink it.
+You really can't beat
+spring water!
+I hope we get more soon...",1,
 0x11c006,"ネタロが ミズを はこんで
 きてくれたんだー
 やっぱリ わきミズが
-イチバンだね!!","Netaro finally brought us water!
-Spring water really is the best!!",,0,
+イチバンだね!!","Netaro brought us all water!
+You really can't beat
+spring water!","Netaro brought us all water!
+You really can't beat spring water!",1,
 0x11c008,"キミはデンジュウカイは
 はじめてかい?
 デンジュウにも いろんなヤツが
 いるから はなしを
 きいてみるといいよ","Is this your first time in the Denjuu World?
-There are as many kinds of Denjuu as people, so you should listen to what they have to say.",,0,
-0x11c00a,トモダチはふえたかい??,Have you made any more friends??,,0,
+There are as many kinds of Denjuu as people, so you should listen to what they have to say.","Is this your first time
+in the Denjuu World?
+There are as many kinds of Denjuu as people, so you should listen to what they have to say.",0,
+0x11c00a,トモダチはふえたかい??,"So have you made any
+new friends yet?","So have you made any
+new friends yet?",1,
 0x11c00c,"デンジュウって いろいろな
 ところにすんでるんだ
 おおきくわけて 6しゅるい
@@ -493,15 +509,20 @@ The sea is so pretty here!",,0,
 しらないんだ","Supposedly there's a cave here in Iris, but no one knows where the entrance is.",,0,
 0x11c0bc,"ボクらは しんリんけいびたい!
 うみもだいじだけど
-もリのきも たいせつに!","We're the Forest Defence Force!
-The sea is important, but forests are precious too!","We're the Forest Defence Force!
-The sea is important, but forests are precious too!",0,
+もリのきも たいせつに!","We're the Forest Defense
+Force!
+The sea may be important,
+but so is the forest!","We're the Forest Defense Force!
+The sea may be important, but so is the forest!",1,
 0x11c0be,"トリパむらには このおくにある
 ほこらから いけるんだ",You can reach Toulipa Village through a tunnel in the forest up ahead.,,0,This line is used once you reach the Toulipa chapter.
 0x11c0c0,"ボクらは しんリんけいびたい!
 うみもだいじだけど
-もリのきも たいせつに!","We're the Forest Defence Force!
-The sea is important, but forests are precious too!",,0,
+もリのきも たいせつに!","We're the Forest Defense
+Force!
+The sea may be important,
+but so is the forest!","We're the Forest Defense Force!
+The sea may be important, but so is the forest!",1,
 0x11c0c2,"したのガケからも うみが
 みえるわよ",The cliff over here has a great view of the ocean.,,0,
 0x11c0c4,"さっき かいがんで
@@ -1561,10 +1582,10 @@ So I can't let you through, y'understand?",1,"These strings have all been manual
 As for this specific line: confirm that it is, in fact, treasure."
 0x124128,"これをとリにくるヤツは
 みんな てき...
-みんな てき...","People who come to take the
-treasure are all enemies...
-All... enemies...","People who come to take the treasure are all enemies...
-All... enemies...",1,- || -
+みんな てき...","Those who vye for the trea-
+sure are all my enemy...
+All... my enemy...","Those who vye for the trea-sure are all my enemy...
+All... my enemy...",1,- || -
 0x12412a,"ここはどこだー!?
 でぐちを おしえてー!","What is this place?!
 Tell me where the exit is!","What is this place?!
@@ -1988,17 +2009,17 @@ You're our one hope now!","Oh, so you're here to return things to normal. My bad
 0x12419c,"ニンゲンなんかには
 なにもやらないぞ
 ほしければ テレファングで
-しょうぶだ!","I won't give anything to a
-human!
+しょうぶだ!","Ha, like I'd let a human have
+this treasure!
 If you want it, you gotta
-beat me in a Telefang!","I won't give anything to a human!
+beat me in a Telefang!","Ha, like I'd let a human have this treasure!
 If you want it, you gotta beat me in a Telefang!",1,
 0x12419e,"きを もとにもどしにきたんだ
 やくにたつかもしれないから
 もっていってくれよ","Ohhh, you're here to fix
-things. Take this, then –
-it might be of use.","Ohhh, you're here to fix things. Take this, then –
-it might be of use.",1,"What's ""this""? //"
+things. Take it, then.
+Maybe it'll be helpful.","Ohhh, you're here to fix things. Take it, then.
+Maybe it'll be helpful.",1,A blender in a nearby chest.
 0x1241a0,"いいところにきたね
 ゆかが もろいところがおおくてあるけなかったんだ
 ニンゲンが きたら おいだして
@@ -2458,10 +2479,10 @@ bizarre state of affairs.","Since the Antenna Tree grew huge, Denjuu from all ov
 may be behind all this.
 The humans who went into
 the tree...
-Something felt off about
-they themselves, even.","I feel like something larger may be behind all this.
+They had a strange air
+about them.","I feel like something larger may be behind all this.
 The humans who went into the tree...
-Something felt off about they themselves, even.",1,"The ""なに"" at the beginning of the second sentence is a typo of ""なかに""!"
+They had a strange air about them.",1,"The ""なに"" at the beginning of the second sentence is a typo of ""なかに""!"
 0x13c012,"キミ すごいね!
 キミこそ ほんとうの
 Tファンガーだよ!!","You're amazing!
@@ -2746,8 +2767,7 @@ is going on?!",1,
 たのんだからね!","At this rate, Fraoula is in
 big trouble!
 Go to the mountain and seal
-the Devil Denjuu back up
-again.
+the Devil Denjuu back up.
 I'm counting on you! Really
 really counting on you!","At this rate, Fraoula is in
 big trouble!
@@ -3401,9 +3421,10 @@ I wouldn't run away!",...I don't need to be guarded. I wouldn't run away!,1,
 チカラずくで でていってもらう
 テレファングだ!","I don't take trespassing
 lightly!
-I think I'll force you to
-leave. Let's telefang!","I don't take trespassing lightly!
-I think I'll force you to leave. Let's telefang!",1,
+I'll have you out of here
+in a jiffy. Let's telefang!","I don't take trespassing lightly!
+I'll have you out of here
+in a jiffy. Let's telefang!",1,
 0x13c0fc,"ちょっとまて!
 オマエ ここでは みたことない
 かおだな...
@@ -3638,11 +3659,11 @@ the wait is over!","Ergh, this place is crawling with Field Denjuu.
 I don't like standing guard here. But hey, it looks like the wait is over!",1,
 0x13c132,"ま...まよった...
 こ...こまった...
-て...テレファングだぁ!","I'm... I'm lost...
-This... This sucks...
-Let's... Let's telefang!!!","I'm... I'm lost...
-This... This sucks...
-Let's... Let's telefang!!!",1,
+て...テレファングだぁ!","I– I'm lost...
+Th– This sucks...
+L– Let's telefang!!!","I– I'm lost...
+Th– This sucks...
+L– Let's telefang!!!",1,
 0x13c134,"シンデンジュウを どうしようと
 ワタシには カンケイない
 ワタシを やとってくれた
@@ -3685,290 +3706,584 @@ Tファンガーとは ひとあじ
 ちがうぞ!
 テレファングだ!","Making it here is quite
 the feat! I'm simple
-hired security. I'm not your
-average T-Fanger!
+hired security. Not like the
+T-Fangers you're used to!
 Let's telefang!","Making it here is quite
 the feat! I'm simple
-hired security. I'm not your average T-Fanger!
+hired security. Not like the T-Fangers you're used to!
 Let's telefang!",1,
 #######,Cactos Ruins,,,,
 0x13c13e,"さっき けがをしたコドモが
 オイラの まえを あるいて
-いったよ",/0x13c13e/,,0,"(Not sure where this section ends and Burion starts, I haven't checked that far yet)"
+いったよ","Some knackered kid just
+walked past here.",Some knackered kid just walked past here.,1,"(Not sure where this section ends and Burion starts, I haven't checked that far yet)"
 0x13c140,"たっ たいヘんだ
 ヘんな ニンゲンたちが
 シンデンジュウさまを さがして
-おくに はいっていってしまった",/0x13c140/,,0,
+おくに はいっていってしまった","H– Help! A buncha weird
+humans just went in to find
+the Divine Denjuu!",H– Help! A buncha weird humans just went in to find the Divine Denjuu!,1,
 0x13c142,"シンデンジュウを みつけた
 ひとには サナエバさまから
 ごほうびが でるのさ
-ジャマしないでくれよなー",/0x13c142/,,0,
+ジャマしないでくれよなー","Mr. Sanaeba has put out
+a reward to anyone
+who finds the Divine Denjuu!
+No getting in the way now,
+y'hear?","Mr. Sanaeba has put out
+a reward to anyone
+who finds the Divine Denjuu!
+No getting in the way now, y'hear?",1,
 0x13c144,"シンデンジュウなんて ボクは
 きょうみないのさ
 きょうみがあるのは
 サナエバさまから もらえる
-ごほうびだけなのさ",/0x13c144/,,0,
+ごほうびだけなのさ","I've no interest in the
+Divine Denjuu.
+What I'm interested in is Mr.
+Sanaeba's reward!","I've no interest in the
+Divine Denjuu.
+What I'm interested in is Mr. Sanaeba's reward!",1,
 0x13c146,"さっき ヘんなコドモに
 テレファングでまけたんだ
 こんどは まけないけどな
-テレファングだ!",/0x13c146/,,0,
+テレファングだ!","Some weird kid walloped me in
+a Telefang just now...
+This time, I'll be doing the
+walloping! Brace yourself!","Some weird kid walloped me in a Telefang just now...
+This time, I'll be doing the walloping! Brace yourself!",1,
 0x13c148,"ニンゲンと デンジュウのために
 サナエバさまは にちや
 がんばっておられるのだ
-そのジャマをしては いかん",/0x13c148/,,0,
+そのジャマをしては いかん","Mr. Sanaeba works around
+the clock for the sake of
+both humans and Denjuu.
+His altruism deserves
+better than your meddling!","Mr. Sanaeba works around the clock for the sake of both humans and Denjuu.
+His altruism deserves better than your meddling!",1,
 0x13c14a,"シンデンジュウやーい
 どこにいるんだよー
-でてこーい",/0x13c14a/,,0,
+でてこーい","Hello-ooo? Divine Denjuu!
+Where are you hidiiing?
+Come out, come out,
+wherever you are!","Hello-ooo? Divine Denjuu! Where are you hidiiing? Come out, come out, wherever you are!",1,
 0x13c14c,"サナエバさまって どこかかげが
 あるんだよなぁ
-ちょっと みリょく て.き!",/0x13c14c/,,0,
+ちょっと みリょく て.き!","Mr. Sanaeba has an air of
+darkness about him...
+Ah, he's so enchanting! ♪","Mr. Sanaeba has an air of darkness about him...
+Ah, he's so enchanting! ♪",1,
 0x13c14e,"ど...どっちから きたかな?
 わからなくなっちゃった
 オレ..まえも こんなことが
-あったようなきが...",/0x13c14e/,,0,
+あったようなきが...","H– How did I get here?
+I– I'm lost, man...
+H– Hold up, didn't this
+happen to me before?","H– How did I get here?
+I– I'm lost, man...
+H– Hold up, didn't this happen to me before?",1,
 0x13c150,"キミのつれている デンジュウが
 つよくなっていくように
 オレたちが つれている
 デンジュウも つよくなって
 いってるんだ!
-こんどは まけない!",/0x13c150/,,0,
+こんどは まけない!","Your gang of Denjuu's been
+getting stronger?
+Well, so have ours! You
+ain't getting away so easy
+this time!","Your gang of Denjuu's been getting stronger?
+Well, so have ours! You
+ain't getting away so easy
+this time!",1,
 0x13c152,"このいせき ひろいなぁー
 ほんとに シンデンジュウなんて
 いるのかなぁ?
-ほんとのことはサナエバさましかしらないんだよなぁ",/0x13c152/,,0,
+ほんとのことはサナエバさましかしらないんだよなぁ","Sheesh, these ruins are big...
+I'm starting to think
+there's no such thing as a
+""Divine Denjuu"". Only Mr.
+Sanaeba knows for sure...","Sheesh, these ruins are big... I'm starting to think there's no such thing as a ""Divine Denjuu"". Only Mr. Sanaeba knows for sure...",1,
 0x13c154,"たからを みはっていたいけど
 シンデンジュウも さがさないと
 いけないんだよなぁ
-こまったなぁ",/0x13c154/,,0,
+こまったなぁ","I've been guarding
+treasure, but I guess
+I gotta look for the Divine
+Denjuu... What a pickle...","I've been guarding treasure, but I guess
+I gotta look for the Divine Denjuu... What a pickle...",1,
 0x13c156,"われわれは サナエバさまを
 まもる ぎむがある
-いくぞ テレファングだぁ!",/0x13c156/,,0,
+いくぞ テレファングだぁ!","It's our duty to protect
+Mr. Sanaeba!
+You're in for a Telefang,
+kid!","It's our duty to protect
+Mr. Sanaeba!
+You're in for a Telefang, kid!",1,
 0x13c158,"いせきが ひろすぎて
 みんなバラバラだぁ
 さみしいー!
-ボクとテレファングしてぇ!",/0x13c158/,,0,
+ボクとテレファングしてぇ!","We're all spread out 'cause
+the ruins are so big...
+I'm so lonely!
+Please telefang me!","We're all spread out 'cause the ruins are so big...
+I'm so lonely!
+Please telefang me!",1,
 0x13c15a,"みんなどこいったんだろうなぁ
 オレをおいて かえってしまった
 なんてこと ないだろうなぁ
 ...オマエ ほかのヤツ
-みなかったか?",/0x13c15a/,,0,
+みなかったか?","Where is everyone?
+I'm sure they wouldn't
+leave without me...
+...
+Have you seen any others?","Where is everyone?
+I'm sure they wouldn't leave without me...
+...
+Have you seen any others?",1,
 0x13c15c,"オレは こっちがわのつうろで
 シンデンジュウを さがす
 やくめなのさ
 さぁ サナエバさまのために
 シゴトをするぞ!
-テレファングだ",/0x13c15c/,,0,
+テレファングだ","I've been appointed to
+search this passage!
+And it looks like the other
+part of my job description
+just traipsed in.","I've been appointed to search this passage!
+And it looks like the other part of my job description just traipsed in.",1,
 0x13c15e,"オレは こっちがわのつうろで
 シンデンジュウを さがして
 いるんだ
 はんたいがわの つうろにも
-いるんだけどね",/0x13c15e/,,0,
+いるんだけどね","I'm searching the passage
+on this side.
+I'm in the passage on the
+other side too, though.","I'm searching the passage on this side.
+I'm in the passage on the other side too, though.",1,// ??? I've *got* to have something wrong with this line.
 0x13c160,"いせきって いうからには
 たからものが いっぱい
 あるんだろうなぁ
-とリあえず ここのたからものはあげないぞ!",/0x13c160/,,0,
+とリあえず ここのたからものはあげないぞ!","A ruin like this is bound to
+have tons of treasure...
+But I ain't letting you
+have this one!","A ruin like this is bound to have tons of treasure... But I ain't letting you
+have this one!",1,
 0x13c162,"くっくっくっくっ...
 またあったな....
 え??おぼえてないって..
 オレは よくおぼえてるぜ!
-テレファングだ!",/0x13c162/,,0,
+テレファングだ!","Ngyah-hah-hah-hah...
+So we meet again...
+Wh– You don't remember me?
+Well... I sure remember you!
+Fight me!","Ngyah-hah-hah-hah...
+So we meet again...
+Wh– You don't remember me? Well... I sure remember you! Fight me!",1,
 0x13c164,"サナエバさまが つれてきた
 デンジュウが このいせきの
 なかに いるんだけど
 なんだか ヘんなんだ
-ボク すごく こわっくって..",/0x13c164/,,0,
+ボク すごく こわっくって..","There's this Denjuu that Mr.
+Sanaeba brought along,
+but there's something... off
+about it. I'm not going
+anywhere near that thing...","There's this Denjuu that Mr. Sanaeba brought along, but there's something... off about it. I'm not going anywhere near that thing...",1,
 0x13c166,"またあったな...
 オレみたいなヤツのことは
 おぼえてないかもしれないけどなぁオレは よくおぼえてるんだ
 われらが あるじのために
 オマエを たおす
-テレファングだ!",/0x13c166/,,0,
+テレファングだ!","We meet again... Though
+you might not remember
+a lowly goon like me.
+But I remember you.
+Your journey ends here!
+For the master!","We meet again... Though
+you might not remember
+a lowly goon like me.
+But I remember you.
+Your journey ends here!
+For the master!",1,
 0x13c168,"あそこにいる デンジュウ
 いきなリ おこったリわらったリするから すっごく こわいんだ
 あんなのといっしょだなんて
-いやだなぁ",/0x13c168/,,0,
+いやだなぁ","I'm scared...
+The Denjuu over there
+keeps flipping back and
+forth between abject rage
+and laughing maniacally...
+I don't wanna be lumped in
+with something like that!?","I'm scared...
+The Denjuu over there keeps flipping back and forth between abject rage and laughing maniacally...
+I don't wanna be lumped in with something like that!?",1,
 0x13c16a,"ボクはこのヘヤを みはる
 やくめなんだー
 ちかづかれると テレファング
 しないと ダメなんだ
-それじゃあ いくよ!",/0x13c16a/,,0,
+それじゃあ いくよ!","My duty is to guard
+this room!
+If anyone gets close to me,
+I have to telefang them.
+Oop, there you go!","My duty is to guard
+this room!
+If anyone gets close to me, I have to telefang them.
+Oop, there you go!",1,
 0x13c16c,"シンデンジュウの ねむる
 いせきなど こわしてしまえば
 いいのさ
 そうすれば ヤツのほうから
-でてくるのに...くっくっくっ",/0x13c16c/,,0,
+でてくるのに...くっくっくっ","We should just destroy
+these ruins.
+That'd drive out that Divine
+Denjuu... Heh heh heh.","We should just destroy
+these ruins.
+That'd drive out that Divine Denjuu... Heh heh heh.",1,
 0x13c16e,"い..いきどまリだ
 オマエも みちに まよって
 しまったんだろ?
 そんなときは きぶんてんかんに
-テレファングだ!",/0x13c16e/,,0,
+テレファングだ!","Another dead end?!
+You're lost too, aren't
+you.
+Fancy a spot of Telefang
+to raise our spirits?","Another dead end?!
+You're lost too, aren't you.
+Fancy a spot of Telefang to raise our spirits?",1,
 0x13c170,"いつぞやは せわになったな
-これは その おかえしだ!",/0x13c170/,,0,
+これは その おかえしだ!","Oh – thank you for last
+time. Let me repay you!",Oh – thank you for last time. Let me repay you!,1,
 0x13c172,"どこかで みたかおだな
 だれだったかな...
 まあいい わがあるじの
-ジャマはさせないぞ",/0x13c172/,,0,
+ジャマはさせないぞ","Haven't I seen you
+somewhere before...? Well,
+whatever. You're not getting
+in the master's way.","Haven't I seen you somewhere before...? Well, whatever. You're not getting in the master's way.",1,
 0x13c174,"ほぉ...さっきの ヘヤにいた
 ヤツを たおすとは
 なかなかやるな
-ここは そうはいかないけどな",/0x13c174/,,0,
+ここは そうはいかないけどな","Hwuh? So you managed
+to defeat the other guy
+back there. I've gotta give
+it to ya: well done.
+But watch out – lightning
+never strikes twice!","Hwuh? So you managed
+to defeat the other guy
+back there. I've gotta give it to ya: well done.
+But watch out – lightning never strikes twice!",1,
 0x13c176,"オ オマエは....
 ペペリやまでの おかえしだ
-いくぞ!",/0x13c176/,,0,
+いくぞ!","Y– You... This is payback
+for back at Mt. Peperi!","Y– You... This is payback
+for back at Mt. Peperi!",1,
 0x13c178,"ふん...こんなところまで
 ニンゲンが これるとは
 おもわなかったな...
 だれの さしがねかしらんが
-かえってもらおう!",/0x13c178/,,0,
+かえってもらおう!","Hmph... Never thought I'd
+see a human make it
+all the way here... I don't
+know who sent you,
+but I'll return you to 'em!","Hmph... Never thought I'd see a human make it
+all the way here... I don't know who sent you,
+but I'll return you to 'em!",1,
 0x13c17a,"オマエが シンデンジュウの
 ところまで いくことはない!
 なぜなら ワタシとの
 テレファングで だいじな
-トモダチを なくすのだからな!",/0x13c17a/,,0,
+トモダチを なくすのだからな!","You won't make it to the
+Divine Denjuu!
+Why? Because you need your
+precious friends for that,
+and you're about to lose
+those in a Telefang.","You won't make it to the Divine Denjuu!
+Why? Because you need your precious friends for that, and you're about to lose those in a Telefang.",1,
 0x13c17c,"ふん....
 うえにいたヤツら おおきな
 ことをいっておきながら 
 ぜんぜんつかえないではないか!
 まぁいい だれがやろうと
-おなじことだな....",/0x13c17c/,,0,
+おなじことだな....","Hmph... The guys up there
+talked a big game, and yet
+here you are! Worthless.
+I suppose if you
+want something done,
+you have to do it yourself.","Hmph... The guys up there talked a big game, and yet here you are! Worthless.
+I suppose if you
+want something done,
+you have to do it yourself.",1,// Check that there's actually a battle after this line.
 0x13c17e,"ものすごく こわいデンジュウに
 ここを みはっておけって
-めいれいされたんだ",/0x13c17e/,,0,
+めいれいされたんだ","This unbelievably scary
+Denjuu ordered me to
+stand guard here...",This unbelievably scary Denjuu ordered me to stand guard here...,1,
 0x13c180,"ここまで ふかいところにきても
 シンデンジュウのところまで
 つかないとは....
 シンデンジュウは どこで
-ねむっているのだ..?",/0x13c180/,,0,
+ねむっているのだ..?","I've gone this deep into the
+ruins, and still there's no
+Divine Denjuu in sight... Where
+in the world could it be?","I've gone this deep into the ruins, and still there's no Divine Denjuu in sight... Where in the world could it be?",1,
 0x13c182,"このさいきん サナエバさまが
 なかよくしているデンジュウは
 ほんとうの トモダチなんだろうかなんだか ちがうような
-きがするよ....",/0x13c182/,,0,
+きがするよ....","As of late, I'm starting to
+doubt whether that Denjuu
+Mr. Sanaeba is buddies with
+is really his friend...
+Something's fishy...","As of late, I'm starting to doubt whether that Denjuu Mr. Sanaeba is buddies with is really his friend... Something's fishy...",1,
 0x13c184,"シンデンジュウを みつけるのは
 いいんだけど いきなリ
 おそわれたリ しないだろうな?
 いまのうちに つよくなって
-おかないとな!",/0x13c184/,,0,
+おかないとな!","Looking for the Divine Denjuu
+is fine and all, but...
+you don't think it'd attack
+us, would it? ...I'd better
+train while I still can!","Looking for the Divine Denjuu is fine and all, but...
+you don't think it'd attack us, would it? ...I'd better train while I still can!",1,
 0x13c186,"ふふ よくきたな
 『いのちの き』は あらたな
 あるじを むかえいれようと
 している
 ジャマなので かえって
-いただこう",/0x13c186/,,0,
+いただこう","Heh heh.
+You've come just in time
+to see the Tree of Life meet
+its new master. Don't you
+make trouble, now!","Heh heh.
+You've come just in time
+to see the Tree of Life meet its new master. Don't you make trouble, now!",1,
 0x13c188,"ふふ よくきたな
 『いのちの き』は あらたな
 あるじを むかえいれようと
 している
-ジャマなので かえっていただこう",/0x13c188/,,0,
+ジャマなので かえっていただこう","Heh heh.
+You've come just in time
+to see the Tree of Life meet
+its new master. Don't you
+make trouble, now!","Heh heh.
+You've come just in time
+to see the Tree of Life meet its new master. Don't you make trouble, now!",1,"The same, but without a newline...?"
 0x13c18a,"ふふ よくきたな
 『いのちの き』は あらたな
 あるじを むかえいれようと
 している
-ジャマなので かえっていただこう",/0x13c18a/,,0,
+ジャマなので かえっていただこう","Heh heh.
+You've come just in time
+to see the Tree of Life meet
+its new master. Don't you
+make trouble, now!","Heh heh.
+You've come just in time
+to see the Tree of Life meet its new master. Don't you make trouble, now!",1,And AGAIN
 0x13c18c,"デンジュウカイの あらたな
 シハイシャが うまれようと
 しているのだ
 ニンゲンごときに ジャマは
-できないぞ!",/0x13c18c/,,0,
+できないぞ!","The Denjuu World's new ruler
+is about to be born.
+No mere human can stop it!","The Denjuu World's new ruler is about to be born.
+No mere human can stop it!",1,
 0x13c18e,"くくっ ニンゲンが いまさら
 なんのようだ??
-じぶんのせかいに かえるんだな",/0x13c18e/,,0,
+じぶんのせかいに かえるんだな","Gweh-heh. A human?
+What do you think you could
+possibly do at this point?
+Back to your own world
+with you.","Gweh-heh. A human?
+What do you think you could possibly do at this point? Back to your own world with you.",1,
 0x13c190,"シンデンジュウにかわる
 デンジュウカイの シハイシャが
 うまれるのだー!
 われら デンジュウのじだいが
-やってくるのだー",/0x13c190/,,0,
+やってくるのだー","A new king is about to seize
+the Divine Denjuu's throne,
+and rule this Denjuu World!
+The era of the Denjuu
+is finally upon us...","A new king is about to seize the Divine Denjuu's throne, and rule this Denjuu World! The era of the Denjuu
+is finally upon us...",1,
 0x13c192,"『いのちの き』のチカラは
 すばらしい
-オマエにもすこし みせてやろう",/0x13c192/,,0,
+オマエにもすこし みせてやろう","The power of the Tree of
+Life is splendid...
+Allow me to show you
+but a sliver of it.","The power of the Tree of Life is splendid...
+Allow me to show you
+but a sliver of it.",1,
 0x13c194,"このおくにあるものは
 あらたなシハイシャが
 うまれたときに ひつようなのだ
-いかせはしない",/0x13c194/,,0,
+いかせはしない","What lies past here
+will be necessary
+when the new king is born.
+It shan't leave here.","What lies past here
+will be necessary
+when the new king is born.
+It shan't leave here.",1,
 0x13c196,"ここブリオンは デンジュウが
 うまれる しんせいなばしょ
 ニンゲンごときが あしを
-ふみいれるな!",/0x13c196/,,0,
+ふみいれるな!","Bryon is a sacred place
+where Denjuu are born.
+No human shall enter!","Bryon is a sacred place where Denjuu are born.
+No human shall enter!",1,
 0x13c198,"くくっ オマエがどんなに
-がんばろうと『いのちの き』のチカラには かなわないのさ",/0x13c198/,,0,
+がんばろうと『いのちの き』のチカラには かなわないのさ","Keh-heh-heh. No matter how
+hard you try, you will never
+stand a chance against the
+power of the Tree of Life.","Keh-heh-heh. No matter how hard you try, you will never stand a chance against the power of the Tree of Life.",1,
 0x13c19a,"ここに ニンゲンが はいって
 くるのは はじめてだな..
 オマエが どのていどのものか
-みてやろう",/0x13c19a/,,0,
+みてやろう","No human has ever entered
+here before...
+Let me test your mettle.","No human has ever entered here before...
+Let me test your mettle.",1,
 0x13c19c,"ここまで ニンゲンが あしを
 ふみいれることは ないと
 おもっていたがな....
-まぁいい テレファングだ!",/0x13c19c/,,0,
+まぁいい テレファングだ!","I never thought a human
+would step into this place...
+Ah, well. Let's telefang!","I never thought a human would step into this place... Ah, well. Let's telefang!",1,
 0x13c19e,"ふふっ ざんねんだな
-ここはいきどまリだ",/0x13c19e/,,0,
+ここはいきどまリだ","Ha, too bad.
+This is a dead end!","Ha, too bad.
+This is a dead end!",1,
 0x13c1a0,"ワタシは ここブリオンを
 まもるもの
 あらたな シハイシャが
 どんな デンジュウで
-あろうとも ワタシには かんけいないのだ!",/0x13c1a0/,,0,
+あろうとも ワタシには かんけいないのだ!","I am a protector of Bryon.
+It matters not to me
+what kind of Denjuu the new
+ruler of this world is!","I am a protector of Bryon. It matters not to me
+what kind of Denjuu the new ruler of this world is!",1,
 0x13c1a2,"ニンゲンが このせかいに
 あしをふみいれて かなリたつが
 ここまできたヤツは はじめてだ
-そのチカラを みせてもらおう!",/0x13c1a2/,,0,
+そのチカラを みせてもらおう!","Quite some time has passed
+since humans stepped foot
+into this world, but... never
+has one made it here.
+Show me the strength that
+has brought you this far!","Quite some time has passed since humans stepped foot into this world, but... never has one made it here.
+Show me the strength that has brought you this far!",1,
 0x13c1a4,"『いのちの き』のチカラに
 はむかおうなどと ムダなことだということを ワタシがおしえて
-やろう!",/0x13c1a4/,,0,
+やろう!","Let me show you how futile
+it is to go up against
+the power of the
+Tree of Life!","Let me show you how futile
+it is to go up against
+the power of the
+Tree of Life!",1,
 0x13c1a6,"ながきにわたリ
 『いのちの き』のそんざいは
 ふうじられてきたのだ....
-だが それも きょうまでだな!",/0x13c1a6/,,0,
+だが それも きょうまでだな!","For far too long, the Tree
+of Life's very existence
+has been bound...
+But that ends today!","For far too long, the Tree of Life's very existence has been bound...
+But that ends today!",1,
 0x13c1a8,"なんのようじだ?
 こっちには なにもないぞ??
 とおリたければ チカラつくで
-とおるんだな!",/0x13c1a8/,,0,
+とおるんだな!","What is your business here?
+There's nothing over here!
+If you want to pass,
+though, you'll have to do so
+by force!","What is your business here? There's nothing over here!
+If you want to pass, though, you'll have to do so by force!",1,
 0x13c1aa,"オマエは なにを しにきたのだ
 なにをしても もう
-おそいんだよ!",/0x13c1aa/,,0,
+おそいんだよ!","Why are you even here?
+You can't change anything!","Why are you even here?
+You can't change anything!",1,
 0x13c1ac,"オマエは このさきには
 いけないんだ....
-なぜなら ここでのテレファングにまけるからな",/0x13c1ac/,,0,
+なぜなら ここでのテレファングにまけるからな","I'm afraid you can't go any
+further than this...
+Why? Because you're about
+to lose, of course.","I'm afraid you can't go any further than this...
+Why? Because you're about to lose, of course.",1,
 0x13c1ae,"ここまでくるのは かなリの
 くろうだったろう
-そろそろ らくにしてやるぞ!",/0x13c1ae/,,0,
+そろそろ らくにしてやるぞ!","You must be exhausted,
+making it this far.
+It's about time someone
+lays you to rest!","You must be exhausted, making it this far.
+It's about time someone
+lays you to rest!",1,
 0x13c1b0,"あらたな シハイシャがうまれる
 しゅんかんは ちかいぞ!
 ニンゲンなんかに ジャマできる
-ものか!",/0x13c1b0/,,0,
+ものか!","The birth of this world's new
+overlord is upon us!
+Think a human like you has
+any power to change
+things?","The birth of this world's new overlord is upon us!
+Think a human like you has any power to change things?",1,
 0x13c1b2,"このおくにあるモノには
 ゆびいっぽんふれさせないぞ!
-かえれ!",/0x13c1b2/,,0,
+かえれ!","You won't lay a single finger
+on the treasure past here!",You won't lay a single finger on the treasure past here!,1,
 0x13c1b4,"オマエが いまやろうとしている
 ことは ムダなどリょくなのだ
 さっさと じぶんのせかいヘ
-かえれ!",/0x13c1b4/,,0,
+かえれ!","Your efforts are like trying
+to sweep a dirt floor.
+Go back to your own world!","Your efforts are like trying to sweep a dirt floor.
+Go back to your own world!",1,
 0x13c1b6,"おくにいきたいのか?
 ならばオレを テレファングで
-たおしてからにしな!",/0x13c1b6/,,0,
+たおしてからにしな!","You want to go past here?
+Over my telefanged body!",You want to go past here? Over my telefanged body!,1,
 0x13c1b8,"ニンゲンと なかよくする
 デンジュウなんかに オレが
 まけるわけないな
-かかってこいよ!",/0x13c1b8/,,0,
+かかってこいよ!","Ha, as if I'd lose to a gang
+of human-fraternizin'
+Denjuu. Come at me!","Ha, as if I'd lose to a gang of human-fraternizin' Denjuu. Come at me!",1,
 0x13c1ba,"ここのおくには いいものが
 おいてあるけどな...
 オマエがそれを てにすることは
-ないな!",/0x13c1ba/,,0,
+ないな!","There are some goodies in
+the back here, but...
+there's no way you'll lay
+your filthy hands on 'em!","There are some goodies in the back here, but... there's no way you'll lay your filthy hands on 'em!",1,
 0x13c1bc,"ふっ あきらめが わるいヤツだなおとなしく じぶんの うんめいをうけいれろ
 ...これが オマエの
-うんめいだ!!!",/0x13c1bc/,,0,
+うんめいだ!!!","Some people just don't know
+when to give up, huh.
+Accept your fate already!
+...By ""fate"" I mean this!","Some people just don't know when to give up, huh. Accept your fate already! ...By ""fate"" I mean this!",1,
 0x13c1be,"オマエみたいな やからが
 いるから われらが ここに
 いるのだ!
-さっさと でていけ!",/0x13c1be/,,0,
+さっさと でていけ!","It's because of pests like
+you that we're here.
+Shoo, shoo!","It's because of pests like you that we're here.
+Shoo, shoo!",1,
 0x13c1c0,"このさきにいるかたの てを
 わずらわす ひつようはない!
 ワタシが ここで けっちゃくを
-つけてやる!",/0x13c1c0/,,0,
+つけてやる!","There's no need for you to
+trouble the esteemed
+people beyond here. Allow me
+to settle this at once!",There's no need for you to trouble the esteemed people beyond here. Allow me to settle this at once!,1,
 0x13c1c2,"なにっ ここまでくるという
 ことは したにいたヤツらを
 たおしたのか..おもしろい!
-ワタシが あいてだっ!",/0x13c1c2/,,0,
+ワタシが あいてだっ!","Wh– You being here must
+mean you defeated
+everyone below... How
+interesting! Let's spar!",Wh– You being here must mean you defeated everyone below... How interesting! Let's spar!,1,
 0x13c1c4,"ここまでくるヤツがいるとはな
-だが ここまでだっ!!!!",/0x13c1c4/,,0,
+だが ここまでだっ!!!!","So you made it this far... But
+that's as far as you go!!!",So you made it this far... But that's as far as you go!!!,1,
 0x13c1c6,"ここでは かいぞうシンカに
 ひつような アイテムを
-おうリ しています。",We sell all manner of items required for Augment evolution.,,0,
+おうリ しています。","We sell all manner of items
+for augment evolution.",We sell all manner of items for augment evolution.,1,
 #######,End,,,,

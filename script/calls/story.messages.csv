@@ -390,7 +390,18 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ハハッ オマエも
 さいなんだなー
 まぁ がんばれよ!じゃあな
-<*2>",/0x158050/<*2>,,0,
+<*2>","Hey <&name>, where
+you at? Whuh? Barran?
+Don't tell me you're getting
+mixed up in the feud
+between the Bird Clan
+and the Snake Clan!
+Hahah, guess you've got
+some stormy weather
+coming up! Laters!","Hey <&name>, where you at? Whuh? Barran?
+Don't tell me you're getting mixed up in the feud between the Bird Clan
+and the Snake Clan!
+Hahah, guess you've got some stormy weather coming up! Laters!",1,
 0x158052,"もしもしー
 いま バーランにいるらしいな
 トモダチから きいたよ
@@ -400,7 +411,16 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ふつうに はなしが
 できるとおもうぜ
 あんしんして たずねてみな
-それじゃね<*2>",/0x158052/<*2>,,0,
+それじゃね<*2>","Hellooo? I heard you're in
+Barran right now.
+Yeah, heard it from a friend!
+The Bird Clan's chief
+is supposed to be a pretty
+reasonable guy, so I think
+you should go talk to him.
+G'bye!","Hellooo? I heard you're in Barran right now.
+Yeah, heard it from a friend! The Bird Clan's chief
+is supposed to be a pretty reasonable guy, so I think you should go talk to him. G'bye!",1,
 0x158054,"おい <&name>
 ゲンキでやってるかー?
 バーランってまちしってるか?
@@ -410,7 +430,8 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 もし いくことがあれば
 あんしんして いいぜ!
 それじゃあな
-<*2>",/0x158054/<*2>,,0,
+<*2>",,"Yo <&name>! Everything good with you?
+Have you heard of this town called Barran?",1,
 0x158056,"なぁ <&name>
 バーランにいる ヘビぐみの
 おさって しってるか?
@@ -420,7 +441,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 あいにいくときは
 カクゴしていったほうが
 いいぜ!
-<*2>",/0x158056/<*2>,,0,
+<*2>",,,1,
 0x158058,"なあ <&name>
 バーランにすんでる
 トリぐみと ヘビぐみが
@@ -430,7 +451,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 テレファングを いどんで
 くるらしいぜ
 きをつけろよな
-<*2>",/0x158058/<*2>,,0,
+<*2>",,,1,
 0x15805a,"ヘビぐみのおさって
 なにかを あつめるのが
 すきなんだってさ!
@@ -438,7 +459,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 しらないけどなー
 やくにたつじょうほうか
 どうかは わからないけど
-おしえておくよ<*2>",/0x15805a/<*2>,,0,
+おしえておくよ<*2>",,,1,
 0x15805c,"あのさー バーランに
 いくことがあったらさ
 ガンバンオーってヤツを
@@ -446,7 +467,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 スゲエいいヤツだから
 オマエもトモダチになれると
 おもうんだ!
-<*2>",/0x15805c/<*2>,,0,
+<*2>",,,1,
 0x15805e,"バーランのいリぐちのてまえに
 みぎがわにいけるみちが
 あるの しってるか?
@@ -454,19 +475,19 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 いっけんのいえがあって
 そこにヘんなモノを
 あつめてるおじさんが
-いるってはなしだぜ!<*2>",/0x15805e/<*2>,,0,
+いるってはなしだぜ!<*2>",,,1,
 0x158060,"そっちょくにきくけどさ
 オマエはトリぐみは?
 それともヘビぐみは?
 オレ?オレはもちろん
 トリぐみだよ!
-だってカワイイじゃん!<*2>",/0x158060/<*2>,,0,
+だってカワイイじゃん!<*2>",,,1,
 0x158062,"ヘんなこときくけどさ
 オマエはトリぐみとヘビぐみ
 どっちがすきなんだ?
 オレてきには ヘビぐみだな!
 だってカッコいいもん!
-<*2>",/0x158062/<*2>,,0,
+<*2>",,,1,
 #######,Ion Island,,,,
 0x158064,"おっす <&name>
 イオンとうに いるんだって?
@@ -475,7 +496,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 ケンカしてるしまに
 いくんだもんなー
 まぁ がんばって
-テレファングしてくれよなー<*2>",/0x158064/<*2>,,0,
+テレファングしてくれよなー<*2>",,,1,
 0x158066,"ねー そこで なんか
 ケンカがおきてるってうわさ
 ほんとなのー?
@@ -483,7 +504,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 なんでか わかったら
 こんどおしえてよねー
 よろしくねー
-それじゃーねー<*2>",/0x158066/<*2>,,0,
+それじゃーねー<*2>",,,1,
 0x158068,"もしもし?
 デンジュウたちが
 テレファングのしゅぎょうを
@@ -495,7 +516,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 よんでくれよ
 そこにすんでるデンジュウと
 テレファングをしてみたいんだ
-たのむぜ!<*2>",/0x158068/<*2>,,0,
+たのむぜ!<*2>",,,1,
 0x15806a,"よう <&name>
 オレさー さいきん
 テレファングでまけてばっかリ
@@ -505,7 +526,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 してみたいんだー
 できれば こんどよんでくれよ
 たのむぜ
-<*2>",/0x15806a/<*2>,,0,
+<*2>",,,1,
 0x15806c,"<D98>このまえ ノイジーって
 ヤツと いっしょにいたんだけど
 そいつといると デンワが
@@ -515,7 +536,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 あんな のうリょく なにかの
 やくにたったリするのかな?
 こんどあったらきいておくよ
-それじゃあな<*2>",/0x15806c/<*2>,,0,
+それじゃあな<*2>",,,1,
 0x15806e,"<D98>このまえ イーリスで
 ヘんなデンジュウを みかけたよ
 なんだか やけどするとか
@@ -529,7 +550,7 @@ Are you in the ""T-Fanger Tournament"" that's on right now in Freesia? There's n
 つけたほうがいいぞ
 けっこう ちのけが おおそうな
 ヤツだったからな
-それじゃあな<*2>",/0x15806e/<*2>,,0,
+それじゃあな<*2>",,,1,
 0x158070,"もリのなかで しゅぎょうしてる
 デンジュウたちって
 けっこう くせのあるヤツが

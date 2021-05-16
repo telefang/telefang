@@ -979,250 +979,496 @@ What's up?",1,Timid,
 0x118100,"ホッホッホッ よくこのバンゴウが
 わかったのぉ
 これで ワシもオマエと たびを
-することができるわい<*5>","Hohoho, I am impressed you found this number...
-Now I can join you in your travels.<*5>",,0,Musa,
+することができるわい<*5>","Hohoho, I am impressed that
+you've found this number...
+Now I can join you in your
+travels.<*5>","Hohoho, I am impressed that
+you've found this number...
+Now I can join you in your travels.<*5>",1,Musa,
 0x118102,"このバンゴウをみつけるとはな
 ジジイを あまリこきつかわないでくれよ
-あー...コシが...<*5>","To think that you would find this number! Don't work an old man like me too hard, now. Agh... My back...<*5>",,0,Hiyu,
+あー...コシが...<*5>","Well now, to think that you
+would find this number!
+Don't work an old man like me
+too hard, now.
+Agh... My back...<*5>","Well now, to think that you would find this number!
+Don't work an old man like me too hard, now.
+Agh... My back...<*5>",1,Hiyu,
 0x118104,"ホェホェホェ このデンワを
 まっておったぞ
-ジジイといって あなどるでないぞこれからも たのむぞ<*5>","Hweh heh heh... I've been waiting for this call.
-Don't take me lightly just because I'm old. I'm counting on you.<*5>",,0,Zea,
+ジジイといって あなどるでないぞこれからも たのむぞ<*5>","Hweh heh heh... I've been
+waiting for this call.
+Don't underestimate me
+just because I'm old.<*5>","Hweh heh heh... I've been waiting for this call.
+Don't underestimate me
+just because I'm old.<*5>",1,Zea,
 0x118106,"なんだっ! なんで バンゴウを
 オマエがしっているのだ!
 チッ まぁいい なにかあったら
-よぶんだな!<*5>","What! How do YOU know my number?! Tch... Well, whatever. If you need me for something, feel free to call!<*5>",,0,Kaya,
+よぶんだな!<*5>","What! How do YOU know my
+number?! Tch...
+Well, whatever. If you
+need me for something,
+feel free to call!<*5>","What! How do YOU know my number?! Tch...
+Well, whatever. If you
+need me for something,
+feel free to call!<*5>",1,Kaya,
 0x118108,"よく デンワをしてきてくれたな
-オレといっしょに いろんなヤツとテレファングを していこうぜ!<*5>",So you finally call! Let's go out there together and Telefang the world!<*5>,,0,Beebalm,
+オレといっしょに いろんなヤツとテレファングを していこうぜ!<*5>","So you finally call! Let's
+go out there together
+and telefang the world!<*5>","So you finally call! Let's
+go out there together
+and telefang the world!<*5>",1,Beebalm,
 0x11810a,"このバンゴウに デンワを
 してくるとは.......
 いいだろう ワタシのチカラを
-オマエにかそう!<*5>",So you found this number... Very well. I shall lend you my power!<*5>,,0,Ruscus,
+オマエにかそう!<*5>","So you found this number...
+Very well.
+I shall lend you my power!<*5>","So you found this number... Very well.
+I shall lend you my power!<*5>",1,Ruscus,
 0x11810c,"あっ デンワが かかってきたぞ
 これから よろしくな!
 ところでキミの かいいん
-バンゴウは なんばんだい??<*5>","Oh, my phone rang! Nice to meetcha! By the way, what's your membership number?<*5>",,0,Enishida,
+バンゴウは なんばんだい??<*5>","Oh, a phone call!
+Nice to meetcha!
+By the way, what's your
+membership number?<*5>","Oh, a phone call!
+Nice to meetcha!
+By the way, what's your membership number?<*5>",1,Enishida,
 0x11810e,"あーい もしもし..?
 オラのバンゴウを しってるって
 いうことは....フフッ
-んじゃ またよんでくれよな<*5>","Yes, hello? So you know my number, huh... Heheh. Alright, call me sometime!<*5>",,0,Denfare,
+んじゃ またよんでくれよな<*5>","Yes, hello? So you know my
+number, huh... Heheh.
+Alright, call me sometime!<*5>","Yes, hello? So you know my number, huh... Heheh. Alright, call me sometime!<*5>",1,Denfare,
 0x118110,"おー デンワがかかってきたぞ!
 オマエがなんで オレのバンゴウをしってるかを オレはしってるんだこれからも よろしくな!<*5>","Oooh, a phonecall!
+I already know why you
+have my number, see!
+Nice to meet you! <*5>","Oooh, a phone call!
 I already know why you have my number, see! 
-Nice to meet you! <*5>",,0,Gaultheria,
+Nice to meet you! <*5>",1,Gaultheria,
 0x118112,"あははー みつけられちったぁ
 よくこのバンゴウが わかったね
 でも これで キミといっしょに
-いることができるよ よろしくね<*5>","Ahaha, looks like you found me!
-Good job finding this number! Now you and I can travel together!<*5>",,0,Hagumanoki,
+いることができるよ よろしくね<*5>","Ahaha, looks like you found
+me! Good job finding
+this number! Now you and I
+can travel together!<*5>","Ahaha, looks like you found me! Good job finding
+this number! Now you and I can travel together!<*5>",1,Hagumanoki,
 0x118114,"あん??なんでこのバンゴウを
 オマエが しってるんだよ?
 ...まあいい オマエのたびに
-ついていってやるよ<*5>","Eh?? How did you find my number?
-...Well, whatever. I'll join you on this journey of yours.<*5>",,0,Salal,
+ついていってやるよ<*5>","Eh??? How did you
+find my number?
+...Well, whatever. I'll join you
+on this journey of yours.<*5>","Eh??? How did you
+find my number?
+...Well, whatever. I'll join you on this journey of yours.<*5>",1,Salal,
 0x118116,"うわー このバンゴウをしっているなんて...まさかストーカー?
 あははっ ウソだよ!
-これで ボクとキミはトモダチだ<*5>","Whoa, how did you know my number? ...Could you be a stalker?
+これで ボクとキミはトモダチだ<*5>","Whoa, how did you know my
+number?
+...Could you be a stalker?
 Haha, just kidding!
-We're friends now!<*5>",,0,Gamuru,
+We're friends now!<*5>","Whoa, how did you know my number?
+...Could you be a stalker?
+Haha, just kidding!
+We're friends now!<*5>",1,Gamuru,
 0x118118,"デンワをくれて あリがとう
 このデンワを まっていたよ!
 いっしょに デンジュウカイを
-たびしよう!<*5>","Thank you for calling me. I've been waiting!
-Let's travel the Denjuu World together!<*5>",,0,Kanzou,
+たびしよう!<*5>","Thank you for calling me.
+I've been waiting!
+Let's travel the Denjuu
+World together!<*5>","Thank you for calling me. I've been waiting!
+Let's travel the Denjuu World together!<*5>",1,Kanzou,
 0x11811a,"おせーよ! もっとはやくに
 デンワくれよな!
 ずいぶんとまったぜ!
-まぁ これからも よろしくな!<*5>","You're late!! You should have called me earlier! 
-I've been waiting for ages! Well, it's nice to meet you!<*5>",,0,Ornithogalum,
+まぁ これからも よろしくな!<*5>","You're late!!! You should have
+called me earlier!
+You sure made me wait!
+Oh well, it's nice to
+meet you, man!<*5>","You're late!!! You should have called me earlier! 
+You sure made me wait!
+Oh well, it's nice to
+meet you, man!<*5>",1,Ornithogalum,
 #######,Secret Denjuu (second call),,,,,
 0x11811c,"ワシの バンゴウは もう
 もっておるじゃろうが
 
-ワシのバンゴウを なんどいれてもワシしか でないぞ<*5>","Oho! You already have my number, don't you?<*5>",,0,Musa,"In the Japanese version, these second-time-around calls are pointed to all wrong! Musa speaks his own and Hiyu's lines, Hiyu speaks Zea's and Kaya's lines, and from that point on every line is offset by 2. We fix that in the patch."
+ワシのバンゴウを なんどいれてもワシしか でないぞ<*5>","Oho! You already have my
+number, don't you?<*5>","Oho! You already have my number, don't you?<*5>",1,Musa,"In the Japanese version, these second-time-around calls are pointed to all wrong! Musa speaks his own and Hiyu's lines, Hiyu speaks Zea's and Kaya's lines, and from that point on every line is offset by 2. We fix that in the patch."
 0x11811e,"そのバンゴウは ワシしか
 でないぞえ ホェホェホェ
 
 なんだ? ひょっとして おなじ
 デンワバンゴウを いれたのか?
 そのバンゴウは ワシしか
-でないんだよ<*5>","No matter how many times you call this number, only I will answer!<*5>",,0,Hiyu,
+でないんだよ<*5>","No matter how many times
+you call this number,
+only I will answer!<*5>","No matter how many times you call this number,
+only I will answer!<*5>",1,Hiyu,
 0x118120,"なんだ?なんだ?
 ひょっとして まえにいれた
 オレのバンゴウをいれたのか?
-それには オレしか でないよ<*5>",There's no one at this number but ME! Hweh heh heh!<*5>,,0,Zea,
+それには オレしか でないよ<*5>","There's no one at this
+number but ME!
+Hweh heh heh!<*5>","There's no one at this number but ME!
+Hweh heh heh!<*5>",1,Zea,
 0x118122,"ようじが あるなら 
-デンワちょうから ダイヤルしろ<*5>","What's this, now? Did you by any chance enter the same number twice? I'm the only one here.<*5>",,0,Kaya,
+デンワちょうから ダイヤルしろ<*5>","What's this, now? Did
+you by any chance enter
+the same number twice?
+I'm the only one here.<*5>","What's this, now? Did
+you by any chance enter
+the same number twice?
+I'm the only one here.<*5>",1,Kaya,
 0x118124,"オレといっしょに たびを
 したいなら デンワちょうから
-かけてきてくれよ<*5>","Whaaat? Did you enter my number twice? I'm the only one here, y'know.<*5>",,0,Beebalm,
+かけてきてくれよ<*5>","Whaaat? Did you
+enter my number twice?
+I'm the only one here,
+y'know.<*5>","Whaaat? Did you
+enter my number twice?
+I'm the only one here, y'know.<*5>",1,Beebalm,
 0x118126,"....もしもし?きみが オラのデンワバンゴウを しってるのは
 わかったから デンワちょうから
-ダイヤルしてくれよな<*5>","If my assistance is required, call me from your contacts.<*5>",,0,Ruscus,
+ダイヤルしてくれよな<*5>","If my assistance is
+required, call me from
+your contacts.<*5>","If my assistance is required, call me from
+your contacts.<*5>",1,Ruscus,
 0x118128,"おー またデンワが かかって
 きたぞ!
 オレと たびをしたければ
-デンワちょうから かけてきて<*5>","If you wanna travel with me, call me from the contacts list!<*5>",,0,Enishida,
+デンワちょうから かけてきて<*5>","If you wanna travel with me,
+call from your contacts!<*5>","If you wanna travel with me, call from your contacts!<*5>",1,Enishida,
 0x11812a,"あははー またデンワを かけて
 きたんだねー
 こんどは デンワちょうから
-かけてきてよねー よろしくー<*5>","...Hello? I get it, you know my number. Call me from the contacts list, man!<*5>",,0,Denfare,
-0x11812c,あん??こっちからかけてくるなよデンワちょうから かけてこい!<*5>,"Oooh, another phonecall! If you want me to tag along, call me from the contacts list!<*5>",,0,Gaultheria,
+かけてきてよねー よろしくー<*5>","...Hello? I get it, you know my
+number. Call me from the
+contacts list, man!<*5>","...Hello? I get it, you know my number. Call me from the contacts list, man!<*5>",1,Denfare,
+0x11812c,あん??こっちからかけてくるなよデンワちょうから かけてこい!<*5>,"Oooh, another phonecall! If
+you want me to tag along,
+call from your contacts!<*5>","Oooh, another phonecall! If you want me to tag along, call from your contacts!<*5>",1,Gaultheria,
 0x11812e,"うわー ちょくせつダイヤルして
 くるなんて ひょっとして
 イヤガラセ???
 アハハッ!ウソだよー
-デンワちょうから かけてきてよ<*5>","Ahaha, you called me again, huh! Next time, call me from the contacts list! I'll be waiting!<*5>",,0,Hagumanoki,
+デンワちょうから かけてきてよ<*5>","Ahaha, you called me again,
+huh! Next time,
+call me from the contacts
+list! I'll be waiting!<*5>","Ahaha, you called me again, huh! Next time,
+call me from the contacts list! I'll be waiting!<*5>",1,Hagumanoki,
 0x118130,"ちょくせつダイヤルしたらダメだよデンワちょうを つかって
-かけてこないとね<*5>","...Eh? Don't call me from there. Use the contacts list, duh!<*5>",,0,Salal,
+かけてこないとね<*5>","...Eh?
+Don't call me from there.
+Use the contacts list, duh!<*5>","...Eh?
+Don't call me from there. Use the contacts list, duh!<*5>",1,Salal,
 0x118132,"なんだよ?
 ちょくせつダイヤルしても
 オレは よベないんだよ
-デンワちょうから よんでくれ<*5>","Wagh! You're calling me manually? Could this be... harassment?
-Hahah! Just kidding! Seriously, though, call me from the contacts list.<*5>",,0,Gamuru,
-0x118134,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,You can't call me directly like this! You have to use the contacts list.<*5>,,0,Kanzou,
-0x118136,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Huh? You can't call me over by calling my number directly. Use the contacts list, alright?<*5>",,0,Ornithogalum,
+デンワちょうから よんでくれ<*5>","Wagh! You're calling me
+manually? Could this be...
+harassment?
+Haha! Just kidding!
+Seriously, though, call me
+from the contacts list.<*5>","Wagh! You're calling me manually? Could this be... harassment?
+Haha! Just kidding! Seriously, though, call me from the contacts list.<*5>",1,Gamuru,
+0x118134,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"You can't call me directly
+like this! You have to use
+the contacts list.<*5>","You can't call me directly
+like this! You have to use
+the contacts list.<*5>",1,Kanzou,
+0x118136,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Huh? You can't call me over
+by calling directly.
+Use the contacts list,
+alright?<*5>","Huh? You can't call me over by calling directly.
+Use the contacts list, alright?<*5>",1,Ornithogalum,
 #######,Extra placeholders,,,,,
-0x118138,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11813a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11813c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11813e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118140,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118142,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118144,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118146,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118148,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11814a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11814c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11814e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118150,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118152,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118154,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118156,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118158,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11815a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11815c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11815e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118160,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118162,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118164,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118166,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118168,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11816a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11816c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11816e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118170,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118172,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118174,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118176,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118178,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11817a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11817c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11817e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118180,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118182,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118184,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118186,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118188,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11818a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11818c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11818e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118190,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118192,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118194,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118196,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x118198,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11819a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11819c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x11819e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181a0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181a2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181a4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181a6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181a8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181aa,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181ac,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181ae,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181b0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181b2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181b4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181b6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181b8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181ba,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181bc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181be,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181c0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181c2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181c4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181c6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181c8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181ca,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181cc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181ce,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181d0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181d2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181d4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181d6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181d8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181da,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181dc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
-0x1181de,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,Good job finding this number! Now you're my friend too.<*5>,,0,,
+0x118138,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11813a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11813c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11813e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118140,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118142,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118144,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118146,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118148,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11814a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11814c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11814e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118150,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118152,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118154,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118156,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118158,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11815a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11815c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11815e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118160,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118162,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118164,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118166,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118168,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11816a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11816c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11816e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118170,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118172,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118174,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118176,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118178,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11817a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11817c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11817e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118180,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118182,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118184,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118186,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118188,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11818a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11818c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11818e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118190,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118192,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118194,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118196,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x118198,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11819a,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11819c,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x11819e,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181a0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181a2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181a4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181a6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181a8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181aa,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181ac,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181ae,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181b0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181b2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181b4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181b6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181b8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181ba,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181bc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181be,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181c0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181c2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181c4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181c6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181c8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181ca,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181cc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181ce,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181d0,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181d2,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181d4,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181d6,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181d8,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181da,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181dc,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
+0x1181de,よくこのばんごうが わかったな!これで キミもなかまだ<*5>,"Good job finding this number!
+Now you're my friend too.<*5>",Good job finding this number! Now you're my friend too.<*5>,1,,
 #######,Denjuu calling stuff,,,,,
 0x1181e0,"よくうしろを みてみろよ!
-うしろにいるよ!<*5>",Take a look behind you! I'm right here!<*5>,,0,,
+うしろにいるよ!<*5>","Take a look behind you!
+I'm right here!<*5>","Take a look behind you!
+I'm right here!<*5>",1,,
 0x1181e2,"HPがまんたんでないと
-デンジュウをかえれないよ!<*5>",You can't switch out the Denjuu following you when its HP isn't full!,,0,,
+デンジュウをかえれないよ!<*5>","You can't switch out the
+Denjuu following you
+when its HP isn't full!<*5>","You can't switch out the Denjuu following you
+when its HP isn't full!<*5>",1,,
 0x1181e4,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181e6,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181e8,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181ea,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181ec,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181ee,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181f0,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181f2,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181f4,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181f6,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181f8,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181fa,"もう このケイタイデンワの
 デンワちょうがいっぱいです
 これいじょう おぼえられません
-<*5>",This phone's contact list is already full. You can't record any more numbers.<*5>,,0,,
+<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>","The contact list is full.
+No more numbers
+may be recorded.<*5>",1,,
 0x1181fc,"オレをよんでくれるのか?
  はい  いいえ<*A>","Are you calling me over?
-<Q>Yes<|>No</Q><*A>",,0,,
+<Q>Yes<|>No</Q><*A>","Are you calling me over?
+<Q>Yes<|>No</Q><*A>",1,,
 0x1181fe,"もしもし なんかようじ?
-ひさしぶリ! ゲンキだったか?<*5>","Hi, what's up? 
-It's been a while! How's it going?<*5>",,0,,
+ひさしぶリ! ゲンキだったか?<*5>","Hi, what's up?
+It's been a while!
+How's it going?<*5>","Hi, what's up? 
+It's been a while!
+How's it going?<*5>",1,,

@@ -40,7 +40,7 @@ compresses like an
 accordion.<*4>",Its body expands and compresses like an accordion.,1,"Changed ""paper lantern"" to ""accordion"", as that sort of paper lantern isn't very popular in the West."
 0x40010,"<S0>おなかの マークで いまの
 キモチを あらわす<*4>","The mark on its stomach
-shows its current mood.<*4>",The mark on its stomach shows its current mood.,1,
+reflects its mood.<*4>",The mark on its stomach reflects its mood.,1,
 0x40012,"<S0>ぷよぷよとした からだで
 ダメージを はんげんする<*4>","Its gelatinous body
 reduces the damage it
@@ -60,7 +60,7 @@ and fangs.",1,
 0x4001a,"<S0>せなかに たくさんのタマゴが
 あるが なかには なにが?<*4>","It carries eggs on its
 back, but what lies inside
-them?<*4>","It carries eggs on its back, but what lies inside them?",1,
+them?<*4>","It carries eggs on its back, but what might be inside?",1,
 0x4001c,"<S0>あしのうらの きゅうばんで
 どんなところも いどうできる<*4>","The suction cups on its
 feet allow it to traverse
@@ -126,8 +126,9 @@ during the day.<*4>","Being a nocturnal creature, it often hides during the day.
 underwater, it is capable
 of flight.<*4>","Although it lives underwater, it is capable of flight.",1,
 0x40038,"<S0>からだじたいを かいてんさせ
-たつまきを おこせる<*4>","By gyrating its own body,
-it can create whirlwinds.<*4>","By gyrating its own body, it can create whirlwinds.",1,
+たつまきを おこせる<*4>","By gyrating its body,
+it can create whirlwinds.<*4>","By gyrating its body,
+it can create whirlwinds.",1,
 0x4003a,"<S0>リっぱなあしと おなかにある
 なぞのポケットが とくちょう<*4>","Among its most
 distinguishing features
@@ -765,8 +766,8 @@ each other.<*4>",Its upper and lower body hover separately from each other.,1,
 the air all around it.<*4>",Draws its power from the air all around it.,1,
 #######,colspan=2 | '''True Denjuu                                      ''',,,1,
 0x40136,"<S0>きょうじんな うしろアシで
-とつげきしてくる<*4>","Assaults enemies using
-its strong hind legs.<*4>",Assaults enemies using its strong hind legs.,1,
+とつげきしてくる<*4>","Assaults its enemies
+using its strong hind legs.<*4>",Assaults its enemies using its strong hind legs.,1,
 0x40138,"<S0>3ぼんのきょうリょくなツノで
 なんでんも くしざしにする<*4>","Its three powerful horns
 can skewer anything.<*4>",Its three powerful horns can skewer anything.,1,
