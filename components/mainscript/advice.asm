@@ -11,6 +11,7 @@ W_MainScript_ADVICE_FontToggle:: ds 1
 
 SECTION "Main Script Patch Variables 2", WRAM0[$C7CE]
 W_MainScript_LineEntry:: ds 1
+W_MainScript_VWFDiscardSecondTile:: ds 1
 
 ;Actual patches exist in their own files due to RGBDS limitations.
 ;Here have some trashbytes instead

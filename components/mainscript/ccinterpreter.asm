@@ -107,14 +107,21 @@ MainScript_CCInterpreter::
 	ld [W_MainScript_WaitFrames], a
 	ld a, [W_MainScript_TilesDrawn]
 	ld b, a
-	ld a, [W_MainScript_TileBaseIdx]
-	add a, b
-	call LCDC_TileIdx2Ptr
-	ld a, c
-	call MainScript_DrawLetter
+	call MainScript_DrawLetter_WithCutoff
 	pop hl
 	call MainScript_ADVICE_VWFNextTile
 	jp MainScript_ADVICE_AutomaticNewline
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
 	nop
 	nop
 	nop
@@ -198,6 +205,30 @@ MainScript_CCInterpreter_CursorSetRelativeOffset::
 	ld [W_MainScript_ADVICE_RelativePositionOffset], a
 	jp MainScript_EndOpcode.skipNewlineCheck
 	
+SECTION "Main Script Line Cutoff", ROMX[$7A9E], BANK[$B]
+MainScript_DrawLetter_WithCutoff::
+	ld a, [W_MainScript_VWFNewlineWidth]
+	and a
+	jr nz, .dontUseDefault
+	ld a, M_MainScript_DefaultWindowWidth
+	
+.dontUseDefault
+	ld h, a
+	ld a, [W_MainScript_LineEntry]
+	add h
+	inc b
+	cp b
+	ret c
+	jr nz, .notLastTileOfLine
+	ld [W_MainScript_VWFDiscardSecondTile], a
+
+.notLastTileOfLine
+	dec b
+	ld a, [W_MainScript_TileBaseIdx]
+	add a, b
+	call LCDC_TileIdx2Ptr
+	ld a, c
+	jp MainScript_DrawLetter
 
 ;Appears to be some kind of recovery routine.
 ;Gets jumped to for nonprintable ASCII, does some weird crap
@@ -690,7 +721,7 @@ MainScript_ADVICE_ConditionalNewlineCC::
 	jp nz, MainScript_ADVICE_NewlineVWFReset
 	jp MainScript_EndOpcode.skipNewlineCheck
 
-SECTION "Main Script Patch Advice 3", ROMX[$7A81], BANK[$B]
+SECTION "Main Script Patch Advice 3", ROMX[$7A89], BANK[$B]
 MainScript_CCInterpreter_BoldFontCC::
 ; Control Code F2
 	pop hl
