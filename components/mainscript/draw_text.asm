@@ -122,13 +122,16 @@ MainScript_ADVICE_DrawLetter:
 	push hl
 	push af
 	or a
-	jr z, .skipSecondWhatevercall
+	jr z, .skipSecondTile
+	ld a, [W_MainScript_VWFDiscardSecondTile]
+	or a
+	jr nz, .skipSecondTile
 	ld hl, $10
 	add hl, de
 	ld a, c
 	call MainScript_ADVICE_ExpandGlyphWithCurrentTextStyle
 	
-.skipSecondWhatevercall
+.skipSecondTile
 	ei
 	pop af
 	pop hl
@@ -137,7 +140,8 @@ MainScript_ADVICE_DrawLetter:
 	inc de
 	dec b
 	jr nz, .tileShiftLoop
-	ld a, 0
+	xor a
+	ld [W_MainScript_VWFDiscardSecondTile], a
 	ld [W_MainScript_VWFOldTileMode], a
 	ld b, MainScript_ADVICE_DrawLetterTable >> 8
 	ld a, [W_MainScript_VWFCurrentLetter]
@@ -563,13 +567,16 @@ MainScript_ADVICE_DrawNarrowLetter::
 	push hl
 	push af
 	or a
-	jr z, .skipSecondWhatevercall
+	jr z, .skipSecondTile
+	ld a, [W_MainScript_VWFDiscardSecondTile]
+	or a
+	jr nz, .skipSecondTile
 	ld hl, $10
 	add hl, de
 	ld a, c
 	call MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle
 	
-.skipSecondWhatevercall
+.skipSecondTile
 	ei
 	pop af
 	pop hl
@@ -579,6 +586,7 @@ MainScript_ADVICE_DrawNarrowLetter::
 	dec b
 	jr nz, .tileShiftLoop
 	xor a
+	ld [W_MainScript_VWFDiscardSecondTile], a
 	ld [W_MainScript_VWFOldTileMode], a
 	ld a, [W_MainScript_VWFCurrentLetter]
 	call MainScript_ADVICE_GetCharacterWidthByFont

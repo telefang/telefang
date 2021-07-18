@@ -3,7 +3,7 @@ INCLUDE "telefang.inc"
 SECTION "Overworld Last SGB Outdoor Acre Colour", WRAM0[$C7E1]
 W_Overworld_LastSGBOutdoorAcreColour:: ds 1
 
-SECTION "Overworld Palette SGB Advice", ROMX[$7A8E], BANK[$B]
+SECTION "Overworld Palette SGB Advice", ROMX[$7A96], BANK[$B]
 Overworld_ADVICE_PaletteLoader::
 	call Overworld_WindowFlavourPaletteLoader
 	M_PrepAuxJmp Banked_Overworld_ADVICE_LoadSGBFiles

@@ -114,16 +114,15 @@ SaveClock_ADVICE_RTCExtendedValidation::
     push de
     push af
     
-    ld d, M_SaveClock_ADVICE_RTCPresent
-    
     ld a, $B
     ld [REG_MBC3_SRAMBANK], a
     ld a, [$A000]
     ld e, a
+    ld d, a
     ld a, [$A001]
     
     cp e
-    jp nz,.checkrtcdayfail
+    jr nz, .checkrtcdayfail
     
     inc a
     ld [$A000], a
@@ -132,6 +131,10 @@ SaveClock_ADVICE_RTCExtendedValidation::
     nop
     nop
     
+    xor a
+    ld [REG_MBC3_RTCLATCH], a
+    inc a
+    ld [REG_MBC3_RTCLATCH], a
     ld a, $B
     ld [REG_MBC3_SRAMBANK], a
     nop
@@ -140,11 +143,17 @@ SaveClock_ADVICE_RTCExtendedValidation::
     nop
     
     ld a, [$A000]
+    cp d
+
+    jr z, .checkrtcdayfail
+
     ld e, a
     ld a, [$A001]
     cp e
     
-    jp z, .checkrtcdaysuccess
+    ld d, M_SaveClock_ADVICE_RTCPresent
+    
+    jr z, .checkrtcdaysuccess
 
 .checkrtcdayfail
     ld d, M_SaveClock_ADVICE_RTCNotPresent
