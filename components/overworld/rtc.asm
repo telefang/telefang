@@ -168,7 +168,7 @@ Overworld_ADVICE_ReadRTCTime_paletteFix::
     
 .hoursBound
     cp 24
-    jp c, Overworld_ReadRTCTime.comefromAdvice
+    jp c, Overworld_ReadRTCTime_Unconditional.comefromAdvice
     sub 24
     jp .hoursBound
 Overworld_ADVICE_ReadRTCTime_paletteFix_END::
