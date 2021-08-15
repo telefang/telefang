@@ -430,8 +430,22 @@ is supposed to be a pretty reasonable guy, so I think you should go talk to him.
 もし いくことがあれば
 あんしんして いいぜ!
 それじゃあな
-<*2>",/0x158054/<*2>,"Yo <&name>! Everything good with you?
-Have you heard of this town called Barran?",0,
+<*2>","Yo <&name>!
+Everything good with you?
+Have you heard of this town
+called Barran?
+The chief of the Bird Clan
+there is supposed to be
+a real swell dude with a
+swell attitude, so don't
+be scared to talk to him!
+See ya!","Yo <&name>! Everything good with you?
+Have you heard of this town called Barran?
+The chief of the Bird Clan there is supposed to be
+a real swell dude with a
+swell attitude, so don't
+be scared to talk to him!
+See ya!",1,
 0x158056,"なぁ <&name>
 バーランにいる ヘビぐみの
 おさって しってるか?
@@ -441,7 +455,19 @@ Have you heard of this town called Barran?",0,
 あいにいくときは
 カクゴしていったほうが
 いいぜ!
-<*2>",/0x158056/<*2>,,0,
+<*2>","So, <&name>…
+D'you know the chief
+of Barran's Snake Clan?
+He's a bit of a hothead,
+and what's more,
+he's big into Telefang.
+If you're gonna see him,
+you better be ready!","So, <&name>…
+D'you know the chief
+of Barran's Snake Clan? He's a bit of a hothead, and what's more,
+he's big into Telefang.
+If you're gonna see him,
+you better be ready!",1,
 0x158058,"なあ <&name>
 バーランにすんでる
 トリぐみと ヘビぐみが

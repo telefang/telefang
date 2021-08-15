@@ -3944,9 +3944,10 @@ Ugh! Whatever!<*2>","What do you mean?!
 Ugh! Whatever!<*2>",1,
 #######,#105,,,,
 0x1101b0,"ねぇー ボンボンよんでる?
- もちろん! よんでない<*A>","Hey, do you read Comic
-BomBom?
-<Q>Of course!<|>No</Q><*A>","Hey, do you read Comic BomBom?
+ もちろん! よんでない<*A>","Hey, do you read
+Comic BomBom?
+<Q>Of course!<|>No</Q><*A>","Hey, do you read
+Comic BomBom?
 Of course! / No",1,
 0x1101b2,"まいつきよんでる?
  トーゼンじゃん! たまにね<*A>","Do you read it every month?

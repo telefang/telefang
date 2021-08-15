@@ -1050,7 +1050,11 @@ Come with me.",,0,
 0x1201b8,"さいきん おかしなことが
 おきるので このトビラを
 ふういんしておったのじゃが
-もうだいじょうぶじゃろう","I sealed this gate because of the strange events happening lately, but it shouldn't be a problem for you now.",,0,
+もうだいじょうぶじゃろう","I locked this gate because
+of the strange events
+happening lately, but it
+shouldn't be a problem for
+you now.","I locked this gate because of the strange events happening lately, but it shouldn't be a problem for you now.",1,// Gate? Door?
 0x1201ba,"さぁ これがデンジュウカイの
 まちやむらを つなげている
 アンテナのきじゃ
@@ -1408,18 +1412,27 @@ Well, I wasn't expecting this.
 For Limmy to lose so easily like that...
 ................
 ARGH!!",,0,
-0x12c034,くやしいー!!,This SUCKS!,,0,
-0x12c036,にくいー!!,So ANNOYING!,,0,
-0x12c038,はらたつー!!,I'M ANGRY!!,,0,
+0x12c034,くやしいー!!,This SUCKS!,This SUCKS!,1,
+0x12c036,にくいー!!,So ANNOYING!,So ANNOYING!,1,
+0x12c038,はらたつー!!,I'M ANGRY!!!,I'M ANGRY!!!,1,
 0x12c03a,"おぼえてらっしゃい!
 <&name>!!
 ワタシは だいとうリょうに
 なるのを あきらめて
 いませんからね!!
 もうこんなもの ひつようないわ
-アナタのすきにしなさい!!","Remember this, <&name>!!
-I'm not going to give up on becoming president!! 
-I don't even need this stuff anymore, take it for all I care!!",,0,
+アナタのすきにしなさい!!","Listen up, <&name>!
+You'll rue this day!
+I'm not going to give up
+on becoming president!
+I don't even need this stuff
+anymore. You can take it
+for all I care!!!","Listen up, <&name>!
+You'll rue this day!
+I'm not going to give up
+on becoming president! 
+I don't even need this stuff anymore. You can take it
+for all I care!!!",1,
 0x12c03c,"『アンテナのきのカギ』を
 とリもどした!","Retrieved ""Antenna Tree Key""!",,0,
 0x12c03e,"『リボルバーガン』を4つ
@@ -1841,8 +1854,11 @@ Prepare yourself!!",,0,
 0x12c0e4,"うわっ!
 オレたちの たいせつな
 デンジュウが! くそー!
-おぼえてろ!","Waah!
-Our poor Denjuu... Darn it, we'll remember this!",,0,
+おぼえてろ!","Wahhh!
+Our poor Denjuu... Darn it!
+You'll regret this!","Wahhh!
+Our poor Denjuu... Darn it!
+You'll regret this!",1,
 0x12c0e6,"...ん?
 なんだ オマエは?
 なんで ここまでこれたんだ?
@@ -4110,10 +4126,10 @@ bring terror and dread
 upon the Denjuu World.
 Do you truly believe that
 someone as puny as you
-could seal me away again?","Hmph... Ha... Hahahahaaa!
+could banish me again?","Hmph... Ha... Hahahahaaa!
 I am he who long ago
 used the Tree of Life to bring terror and dread upon the Denjuu World.
-Do you truly believe that someone as puny as you could seal me away again?",1,
+Do you truly believe that someone as puny as you could banish me again?",1,
 0x1381ae,"『いのちのき』?
 なんだよそれは...?","""Tree of Life""?
 What's that...?","""Tree of Life""?
@@ -4179,14 +4195,15 @@ Not before exacting my revenge on the <bold>Divine Denjuu<normal> for sealing me
 くやんでも しょうがない
 アクマデンジュウを 
 おいかけないと!
-とリあえず このやまを でるぞ","Dammit! I fell at the last
-hurdle...!
-Well, there's no use crying
-over spilled milk.
+とリあえず このやまを でるぞ","Dammit!
+I was so close...!
+Well, no use crying over
+spilled milk.
 I gotta hunt down that Devil
 Denjuu! First, let's get out
-of this mountain.","Dammit! I fell at the last hurdle...!
-Well, there's no use crying over spilled milk.
+of this mountain.","Dammit!
+I was so close...!
+Well, no use crying over spilled milk.
 I gotta hunt down that Devil Denjuu! First, let's get out of this mountain.",1,
 0x1381c0,"はっはっはっはっ!
 これで また シンデンジュウに

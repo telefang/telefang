@@ -1220,7 +1220,15 @@ LOOK scary! ",1,
 だいすきなんだってさー
 キヨールカってデンジュウに
 とっても けっこう
-だいじなモノなのかなー?<*2>",/0x15c0b4/<*2>,,0,
+だいじなモノなのかなー?<*2>","<D91>You humans use <bold>batteries<normal>
+a lot, am I right?
+Kiyoruka, like, LOVES
+those things! Do you think
+that means Kiyoruka
+uses <bold>batteries<normal> too?<*2>","You humans use <bold>batteries<normal> a lot, am I right? Kiyoruka, like, LOVES
+those things! Do you think
+that means Kiyoruka
+uses <bold>batteries<normal> too?",1,
 0x15c0b6,"<D92>ヂムガースってみためが
 ごっついんだけど
 すきなキカイも『クレーン』で
@@ -1307,10 +1315,21 @@ bad feeling about this...",1,
 『ズドーン』とやる....
 あーっはっはっはっは....
 おもしろくなかったリしてー..
-<*2>",/0x15c0c6/<*2>,"Hey! Have you heard of the Denjuu Zudoon?
-So apparently, it
-likes <bold>hammers<normal>!
-Isn't that funny? Zudoon likes hammers... which it can go all ""zudoooon"" with... Ahhhhahahahaha! Don't tell me that isn't funny...",0,nö
+<*2>","<D100>Hey! Have you heard of
+the Denjuu Zudoon?
+If you're ever shopping for
+a gift for a Zudoon,
+a <bold>hammer<normal>'s bound to be
+a smash hit!
+Get it? SMASH hit???
+Ahhhhahahahaha!
+C'mon... That's funny...<*2>","Hey! Have you heard of
+the Denjuu Zudoon?
+If you're ever shopping for a gift for a Zudoon,
+a <bold>hammer<normal>'s bound to be
+a smash hit!
+Get it? SMASH hit??? Ahhhhahahahaha!
+C'mon... That's funny...",1,"The ""go all 'zudoooooon' with a hammer"" joke don't really work in English."
 0x15c0c8,"<D101>ヒユっていう そのスジでは
 ゆうめいな デンジュウが
 いるんだけどさー
