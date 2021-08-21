@@ -238,7 +238,7 @@ PauseMenu_ExitToCentralMenu2::
     
     ret
 
-SECTION "Pause Menu SMS Utils ADVICE", ROMX[$42E0], BANK[$1]
+SECTION "Pause Menu SMS Utils ADVICE", ROMX[$42F0], BANK[$1]
 PauseMenu_ADVICE_DrawSMSFromMessages::
 	M_AdviceSetup
 	

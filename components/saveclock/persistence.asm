@@ -12,6 +12,11 @@ SaveClock_StoreWorkingStateToSaveData::
     ld de, $A010
     ld bc, $80
     call memcpy
+	
+    ld hl, W_Overworld_HoursOnLoad
+    ld de, $A090
+    ld c, 3
+    call memcpy
     
     ld hl, $CD00
     ld de, $A110
@@ -22,15 +27,7 @@ SaveClock_StoreWorkingStateToSaveData::
     ld de, $A210
     ld bc, $200
     call memcpy
-    
-    ld hl, $A000
-    ld de, $A410
-    ld bc, $1900
-    ld a, 2
-    ld [Malias_CmpSrcBank], a
-    
-    xor a
-    ld [Malias_DeCmpDst], a
+	
     call SaveClock_ADVICE_StoreWorkingStateToSaveData
     call SaveClock_SignSaveDataAsValid
     
@@ -40,6 +37,15 @@ SaveClock_StoreWorkingStateToSaveData::
     xor a
     ld [REG_MBC3_SRAMENABLE], a
     ret
+    
+    nop
+    nop
+    nop
+    nop
+    nop
+    
+    nop
+    nop
     
 SaveClock_RetrieveWorkingStateFromSaveData::
     ld a, $A
@@ -52,6 +58,11 @@ SaveClock_RetrieveWorkingStateFromSaveData::
     ld de, W_Overworld_State
     ld bc, $80
     call memcpy
+	
+    ld hl, $A090
+    ld de, W_Overworld_HoursOnLoad
+    ld c, 3
+    call memcpy
     
     ld hl, $A110
     ld de, $CD00
@@ -63,14 +74,6 @@ SaveClock_RetrieveWorkingStateFromSaveData::
     ld bc, $200
     call memcpy
     
-    ld hl, $A410
-    ld de, $A000
-    ld bc, $1900
-    xor a
-    ld [Malias_CmpSrcBank], a
-    
-    ld a, 2
-    ld [Malias_DeCmpDst], a
     call SaveClock_ADVICE_RetrieveWorkingStateFromSaveData
     
     xor a
@@ -88,6 +91,15 @@ SaveClock_RetrieveWorkingStateFromSaveData::
     ld a, [$C929]
     ld [$C902], a
     ret
+    
+    nop
+    nop
+    nop
+    nop
+    nop
+    
+    nop
+    nop
     
 SaveClock_SRAMCopy::
     ld a, [Malias_CmpSrcBank]
@@ -110,25 +122,21 @@ SaveClock_SRAMCopy::
     jr nz, SaveClock_SRAMCopy
     ret
 
-SECTION "Save Clock Store/Retrieve Patchutils", ROMX[$7C03], BANK[$3]
+SECTION "Save Clock Store Patchutils", ROMX[$7C03], BANK[$3]
 SaveClock_ADVICE_StoreWorkingStateToSaveData::
-    call SaveClock_ADVICE_ExtensionPreCopy
-
+    ld hl, $A000
+    ld de, $A410
+    ld bc, $1900
     ld a, 2
     ld [Malias_CmpSrcBank], a
-
-    inc a
+    
+    xor a
     ld [Malias_DeCmpDst], a
-    jp SaveClock_SRAMCopy
-
-SaveClock_ADVICE_RetrieveWorkingStateFromSaveData::
+	
     call SaveClock_ADVICE_ExtensionPreCopy
 
-    ld a, 2
+    ld a, 3
     ld [Malias_DeCmpDst], a
-
-    inc a
-    ld [Malias_CmpSrcBank], a
     jp SaveClock_SRAMCopy
 
 SaveClock_ADVICE_ExtensionPreCopy::
@@ -139,3 +147,21 @@ SaveClock_ADVICE_ExtensionPreCopy::
     ld c, e
     ld b, 5
     ret
+    nop
+
+SECTION "Save Clock Retrieve Patchutils", ROMX[$7D70], BANK[$3]
+SaveClock_ADVICE_RetrieveWorkingStateFromSaveData::
+    ld hl, $A410
+    ld de, $A000
+    ld bc, $1900
+    xor a
+    ld [Malias_CmpSrcBank], a
+    
+    ld a, 2
+    ld [Malias_DeCmpDst], a
+	
+    call SaveClock_ADVICE_ExtensionPreCopy
+
+    ld a, 3
+    ld [Malias_CmpSrcBank], a
+    jp SaveClock_SRAMCopy

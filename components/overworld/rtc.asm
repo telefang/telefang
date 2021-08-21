@@ -1,5 +1,9 @@
 INCLUDE "telefang.inc"
 
+SECTION "RTC Time On Save Load Tracking", WRAM0[$C7D0]
+W_Overworld_HoursOnLoad:: ds 2
+W_Overworld_MinutesOnLoad:: ds 1
+
 SECTION "Overworld RTC Memory", WRAM0[$C939]
 W_Overworld_CurrentTimeSeconds:: ds 1
 W_Overworld_CurrentTimeMinutes:: ds 1
@@ -12,7 +16,7 @@ Overworld_ReadRTCTime::
     ld a, [W_FrameCounter]
     and 3
     ret nz
-	; Continues into Overworld_ReadRTCTime_Unconditional
+    ; Continues into Overworld_ReadRTCTime_Unconditional
     
 Overworld_ReadRTCTime_Unconditional::
     M_AuxJmp Banked_SaveClock_ADVICE_ValidateRTCFunction
@@ -74,29 +78,7 @@ Overworld_ReadRTCTime_Unconditional::
 
 SECTION "Calculate New Messages Via RTC", ROMX[$53AE], BANK[$29]
 Overworld_CalculateNumNewMessages::
-    ld a, [W_Overworld_CurrentTimeDays + 1]
-    ld b, a
-    ld a, [W_Overworld_CurrentTimeDays]
-    ld c, a
-    ld de, 24
-    call System_Multiply16
-    ld a, [W_Overworld_CurrentTimeHours]
-    ld l, a
-    ld h, 0
-    add hl, de
-    push hl
-    call Overworld_ReadRTCTime_Unconditional
-    ld a, [W_Overworld_CurrentTimeDays + 1]
-    ld b, a
-    ld a, [W_Overworld_CurrentTimeDays]
-    ld c, a
-    ld de, 24
-    call System_Multiply16
-    ld a, [W_Overworld_CurrentTimeHours]
-    ld l, a
-    ld h, 0
-    add hl, de
-    pop bc
+    call Overworld_ADVICE_GetRTCHoursForNewMessages
     ld a, b
     cpl
     ld b, a
@@ -141,6 +123,50 @@ Overworld_CalculateNumNewMessages::
 
 .limitNotExceeded
     ret
+
+; Note: Free space.
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     
 SECTION "Overworld RTC-Free IRQ Memory", WRAM0[$C7CB]
 W_Overworld_ADVICE_CurrentTimeFrames:: ds 1
@@ -233,3 +259,88 @@ Overworld_ADVICE_PowerAntennaIRQTask::
     
     ret
 Overworld_ADVICE_PowerAntennaIRQTask_END::
+
+SECTION "Overworld RTC Advice 2", ROMX[$7C13], BANK[$29]
+Overworld_ADVICE_GetRTCHoursForNewMessages::
+    ld a, [W_Overworld_CurrentTimeDays + 1]
+    ld b, a
+    ld a, [W_Overworld_CurrentTimeDays]
+    ld c, a
+    ld de, 24
+    call System_Multiply16
+    ld a, [W_Overworld_CurrentTimeHours]
+    ld l, a
+    ld h, 0
+    add hl, de
+    push hl
+    call Overworld_ReadRTCTime_Unconditional
+    ld a, [W_Overworld_CurrentTimeDays + 1]
+    ld b, a
+    ld a, [W_Overworld_CurrentTimeDays]
+    ld c, a
+    ld de, 24
+    call System_Multiply16
+    ld a, [W_Overworld_CurrentTimeHours]
+    ld l, a
+    ld h, 0
+    add hl, de
+    ld de, W_Overworld_HoursOnLoad
+
+    ld a, [W_SaveClock_ADVICE_RTCCheckStatus]
+    dec a
+    jr z, .nortc
+
+.rtc
+    ld a, l
+    ld [de], a
+    inc de
+    ld a, h
+    ld [de], a
+    inc de
+    ld a, [W_Overworld_CurrentTimeMinutes]
+    ld [de], a
+    pop bc
+    ret
+
+.nortc
+    ; Instead of measuring hours since the game was last saved we will measure the number of minutes of the last play session divided by approximately 4.
+
+    ld a, [de]
+    ld c, a
+    ld a, l
+    ld [de], a
+    inc de
+    ld a, [de]
+    ld b, a
+    ld a, h
+    ld [de], a
+    inc de
+    ld a, [de]
+    ld h, a
+    ld a, [W_Overworld_CurrentTimeMinutes]
+    ld [de], a
+    ld d, 0
+    ld e, h
+    srl e
+    srl e
+    ld h, b
+    ld l, c
+    add hl, hl
+    add hl, hl
+    add hl, hl
+    add hl, hl
+    add hl, de
+    ld b, h
+    ld c, l
+    pop hl
+    ld a, [W_Overworld_CurrentTimeMinutes]
+    ld d, 0
+    ld e, a
+    srl e
+    srl e
+    add hl, hl
+    add hl, hl
+    add hl, hl
+    add hl, hl
+    add hl, de
+    ret
