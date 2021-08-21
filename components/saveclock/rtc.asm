@@ -109,7 +109,7 @@ SaveClock_ADVICE_ValidateRTCFunctionInternal::
 
 SaveClock_ADVICE_ValidateRTCFunctionInternal_END::
 
-;CAUTION: This increments the day counter.
+;CAUTION: This increments the day counter and then later decrements it after the check. There is an infinitesimally small risk that the day might tick over during the check, leading to a lost day.
 SaveClock_ADVICE_RTCExtendedValidation::
     push de
     push af
@@ -159,6 +159,13 @@ SaveClock_ADVICE_RTCExtendedValidation::
     ld d, M_SaveClock_ADVICE_RTCNotPresent
 
 .checkrtcdaysuccess
+	ld a, e
+    dec a
+	ld [$A000], a
+    xor a
+    ld [REG_MBC3_RTCLATCH], a
+    inc a
+    ld [REG_MBC3_RTCLATCH], a
     pop af
     ld a, d
     pop de
