@@ -23,18 +23,8 @@ TitleMenu_ResetRTC::
 TitleMenu_StoreRTCValues::
     M_AuxJmp Banked_SaveClock_ADVICE_ValidateRTCFunction
     
-    cp 0
-    jr nz, .writeRTC
-    
-    jr .exitSram
-	 
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
+    or a
+    jr z, .exitSram
     
 .writeRTC
     ld a, 8
@@ -69,7 +59,7 @@ TitleMenu_StoreRTCValues::
     
     ld a, $B
     ld [REG_MBC3_SRAMBANK], a
-    ld a, [W_SaveClock_RealTimeDays]
+    xor a
     ld [$A000], a
     
     nop
@@ -79,42 +69,64 @@ TitleMenu_StoreRTCValues::
     
     ld a, $C
     ld [REG_MBC3_SRAMBANK], a
-    ld a, [W_SaveClock_RealTimeDays + 1]
+    xor a
     ld [$A000], a
     
 .exitSram
-    jp TitleMenu_ExitSRAM
+    jr TitleMenu_ADVICE_CopyNewlySetTime
+	
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+
+    nop
+    nop
+    nop
     
 TitleMenu_LoadRTCValues::
     M_AuxJmp Banked_TitleMenu_ADVICE_LoadRTCValues
     jp TitleMenu_ExitSRAM
     
-    ;TODO: Free space for the rest of this symbol!
-    nop
-    
+TitleMenu_ADVICE_CopyNewlySetTime::
     xor a
-    ld [REG_MBC3_RTCLATCH], a
-    ld a, 1
-    ld [REG_MBC3_RTCLATCH], a
-    
-.readRTC
-    ld a, 8
-    ld [REG_MBC3_SRAMBANK], a
-    ld a, [$A000]
-    ld [W_SaveClock_RealTimeSeconds], a
-    
-    ld a, 9
-    ld [REG_MBC3_SRAMBANK], a
-    ld a, [$A000]
-    ld [W_SaveClock_RealTimeMinutes], a
-    
-    ld a, $A
-    ld [REG_MBC3_SRAMBANK], a
-    ld a, [$A000]
-    ld [W_SaveClock_RealTimeHours], a
-    
-.exitSram
+    ld [W_Overworld_CurrentTimeSeconds], a
+    ld [W_Overworld_CurrentTimeDays], a
+    ld [W_Overworld_CurrentTimeDays + 1], a
+    ld a, [W_SaveClock_RealTimeMinutes]
+    ld [W_Overworld_MinutesOnLoad], a
+    ld [W_Overworld_CurrentTimeMinutes], a
+    ld a, [W_SaveClock_RealTimeHours]
+    ld [W_Overworld_HoursOnLoad], a
+    ld [W_Overworld_CurrentTimeHours], a
     jp TitleMenu_ExitSRAM
+
+    ;Note: Free space.
+    nop
+    nop
+    nop
+    nop
+    nop
+
+    nop
+    nop
+    nop
+    nop
+    nop
+
+    nop
+    nop
+    nop
+    nop
+    nop
 
 SECTION "Title Menu Advice Block", ROMX[$4290], BANK[$1]
 TitleMenu_ADVICE_LoadRTCValues::
