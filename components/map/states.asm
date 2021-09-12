@@ -95,21 +95,13 @@ Map_ADVICE_StateMainLoop_CloseWindow::
 	M_AuxJmp Banked_Map_ADVICE_WindowUnloadSGBFiles
 	ret
 
+Map_StateDrawScreen_RTCDebugHelper::
+	ld a, [W_Overworld_RTCDebug]
+	add $E0
+	ld hl, $9A20
+	call vmempoke
+	jp System_ScheduleNextSubState
 	; Note: Free Space
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 	nop
 	nop
 	nop
