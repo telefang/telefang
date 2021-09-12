@@ -3,6 +3,7 @@ INCLUDE "telefang.inc"
 SECTION "RTC Time On Save Load Tracking", WRAM0[$C7D0]
 W_Overworld_HoursOnLoad:: ds 2
 W_Overworld_MinutesOnLoad:: ds 1
+W_Overworld_RTCDebug:: ds 1
 
 SECTION "Overworld RTC Memory", WRAM0[$C939]
 W_Overworld_CurrentTimeSeconds:: ds 1
