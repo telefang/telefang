@@ -33,7 +33,6 @@ SaveClock_ADVICE_ValidateRTCFunction::
 ;W_Overworld_RTCDebug = 2 if the day writing test resulted in mismatched bytes.
 ;W_Overworld_RTCDebug = 3 if the day writing test was successful and the rtc was confirmed.
 ;W_Overworld_RTCDebug = 4 if the day writing test failed and the 1 second waiting test timed out.
-;W_Overworld_RTCDebug = 5 if the 1 second waiting test was successful, but the first two bytes of the seconds register didn't match.
 ;W_Overworld_RTCDebug = 6 if the 1 second waiting test was successful and the rtc was confirmed.
 
 SaveClock_ADVICE_ValidateRTCFunctionInternal::
@@ -139,10 +138,10 @@ SaveClock_ADVICE_RTCExtendedValidation::
     ld hl, W_Overworld_RTCDebug
     inc [hl] ; 1
     push de
-    ld d, M_SaveClock_ADVICE_RTCNotPresent
     call SaveClock_ADVICE_RTCValidation_LatchDays
     ld a, [$A000]
     ld e, a
+    ld d, a
     ld a, [$A001]
     cp e
     jr nz, .checkrtcfail
@@ -162,7 +161,7 @@ SaveClock_ADVICE_RTCExtendedValidation::
     jr nz, .fixdays
     
     inc [hl] ; 4
-    ld bc, $6400
+    ld bc, $6700
     call SaveClock_ADVICE_RTCValidation_LatchSeconds
     ld a, [$A000]
     ld e, a
@@ -179,25 +178,18 @@ SaveClock_ADVICE_RTCExtendedValidation::
     jr .checkrtcfail
 
 .exitloop
-    inc [hl] ; 5
-    ld c, a
-    ld a, [$A001]
-    cp c
-    jr nz, .checkrtcfail
-    
+    inc [hl]
     inc [hl] ; 6
 
 .fixdays
     call SaveClock_ADVICE_RTCValidation_LatchDays
-    ld a, [$A000]
-    dec a
-    nop
-    nop
-    nop
+    ld a, d
     ld [$A000], a
-    ld d, M_SaveClock_ADVICE_RTCPresent
+    ld a, M_SaveClock_ADVICE_RTCPresent
+    pop de
+    ret
 
 .checkrtcfail
-    ld a, d
+    ld a, M_SaveClock_ADVICE_RTCNotPresent
     pop de
     ret
