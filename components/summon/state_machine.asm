@@ -67,7 +67,7 @@ Summon_PrivateStrings::
     
 ;$4B4B
 .page
-    db "Pg.", 0, 0
+    db "Page", 0
     
 ;$4B50
 .outOf
@@ -257,9 +257,9 @@ Summon_StateEnter::
     ld e, $83
     ld a, 0
     call Banked_RLEDecompressTMAP0
-    ld de, $4B43
+    ld de, Summon_PrivateStrings_Extended_NoDenjuu
     ld hl, $9180
-    ld b, 8
+    ld b, $E
     call Banked_MainScript_DrawStatusText
     ld a, [W_Victory_ContactsPresent]
     cp 1
@@ -952,3 +952,7 @@ Summon_StateEnterBattle::
     xor a
     ld [W_Battle_SubSubState], a
     jp Encounter_ADVICE_UnloadSGBFiles
+
+SECTION "Summon Screen Extended Strings", ROMX[$5E90], BANK[$1C]
+Summon_PrivateStrings_Extended_NoDenjuu::
+    db "No one to call"
