@@ -58,7 +58,7 @@ SerIO_VsSummonStateMachine::
 
 SerIO_VsSummonPrivateString_Page::
 ;"Pg." - $493F
-    db "Pg.", 0, 0
+    db "Page", 0
     
 SerIO_VsSummonPrivateString_Separator::
 ;" /" - $4944

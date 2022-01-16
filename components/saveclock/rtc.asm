@@ -29,11 +29,9 @@ SaveClock_ADVICE_ValidateRTCFunction::
 ;Sets a = 1 if RTC functionality does validate.
 
 ;W_Overworld_RTCDebug = 0 if sram bank 8 is unavailable.
-;W_Overworld_RTCDebug = 1 if the first two bytes of the day register don't match.
-;W_Overworld_RTCDebug = 2 if the day writing test resulted in mismatched bytes.
-;W_Overworld_RTCDebug = 3 if the day writing test was successful and the rtc was confirmed.
-;W_Overworld_RTCDebug = 4 if the day writing test failed and the 1 second waiting test timed out.
-;W_Overworld_RTCDebug = 6 if the 1 second waiting test was successful and the rtc was confirmed.
+;W_Overworld_RTCDebug = 1 if the day writing test was successful and the rtc was confirmed.
+;W_Overworld_RTCDebug = 2 if the day writing test failed and the 1 second waiting test timed out.
+;W_Overworld_RTCDebug = 3 if the 1 second waiting test was successful and the rtc was confirmed.
 
 SaveClock_ADVICE_ValidateRTCFunctionInternal::
     push hl
@@ -144,9 +142,8 @@ SaveClock_ADVICE_RTCExtendedValidation::
     ld d, a
     ld a, [$A001]
     cp e
-    jr nz, .checkrtcfail
+    jr nz, .checkseconds
     
-    inc [hl] ; 2
     inc a
     ld [$A000], a
     call SaveClock_ADVICE_RTCValidation_LatchDays
@@ -154,13 +151,13 @@ SaveClock_ADVICE_RTCExtendedValidation::
     ld b, a
     ld a, [$A000]
     cp b
-    jr nz, .checkrtcfail
+    jr nz, .checkseconds
     
-    inc [hl] ; 3
     cp e
     jr nz, .fixdays
     
-    inc [hl] ; 4
+.checkseconds
+    inc [hl] ; 2
     ld bc, $6700
     call SaveClock_ADVICE_RTCValidation_LatchSeconds
     ld a, [$A000]
@@ -178,8 +175,7 @@ SaveClock_ADVICE_RTCExtendedValidation::
     jr .checkrtcfail
 
 .exitloop
-    inc [hl]
-    inc [hl] ; 6
+    inc [hl] ; 3
 
 .fixdays
     call SaveClock_ADVICE_RTCValidation_LatchDays
