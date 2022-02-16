@@ -1,128 +1,228 @@
 Pointer,Japanese,English,Draft version,Formatted?,Notes
 0x100000,"あそこのやしき どうやら
 ヘイサされたらしいダ
-もうはいれないんダね","Looks like that house over
-there is all boarded up now.
-Guess no one's going in
-there again.","Looks like that house over there is all boarded up now. Guess no one's going in
-there again.",1,NPC messages from after you beat the game.
+もうはいれないんダね","House over there's all
+boarded up now, huh?
+Guess you're outta luck if
+you wanna check it out.","House over there's all boarded up now, huh? Guess you're outta luck if you wanna check it out.",1,NPC messages from after you beat the game.
 0x100002,"パパルナこの さわぎの
 しんそうをきいたよ
 あるオトコのコが
 オクトライフルっていう
 デンジュウを たおしたらしいよ
-どんなオトコのコなんだろうね",/0x100002/,,0,"Status: Translated 0%
+どんなオトコのコなんだろうね","I heard what really hap-
+pened at Lake Paparouna!
+A Denjuu called Octorifle was
+causing a stir, and a boy
+came along and gave it what
+for. What kind of a boy
+could do that, you think?","I heard what really hap-pened at Lake Paparouna! A Denjuu called Octorifle was causing a stir, and a boy came along and gave it what for. What kind of a boy could do that, you think?",1,"Status: Translated 0%
 "
 0x100004,"デンジュウカイのサワギが
 おさまったら パパルナこに
 ヒトがこなくなってしまったダー
-ちょっと さびしいダね",/0x100004/,,0,
+ちょっと さびしいダね","Pretty empty around here
+now that things are
+back to normal.
+Not gonna lie…
+it gets a bit lonely.","Pretty empty around here now that things are
+back to normal.
+Not gonna lie…
+it gets a bit lonely.",1,
 0x100006,"むらの いろんなところに
 いろんなアイテムが
 おいてあるんだ
 てにいれた のうリょくを
-つかえば とれるんじゃないか?",/0x100006/,,0,
+つかえば とれるんじゃないか?","The village is littered with
+items! Do you think you
+could get them using the
+abilities you've picked up?",The village is littered with items! Do you think you could get them using the abilities you've picked up?,1,
 0x100008,"どうだい?
 デンジュウたちの せいかくは
-もうつかんだかい?",/0x100008/,,0,
+もうつかんだかい?","How's it going? Got a grip on
+Denjuu's personalities yet?",How's it going? Got a grip on Denjuu's personalities yet?,1,
 0x10000a,"このデンジュウカイには
 こたいすうが すくない
 デンジュウも いるんだよ
-このちかくにも いたリして..",/0x10000a/,,0,
+このちかくにも いたリして..","Some Denjuu are rarer
+than others!
+Maybe there are even some
+rare ones around here…?","Some Denjuu are rarer
+than others!
+Maybe there are even some rare ones around here…?",1,
 0x10000c,"デンジュウカイも やっと
 おちつきを とリもどしたね
-よかったよ",/0x10000c/,,0,
+よかったよ","The Denjuu World finally gets
+a break…
+Phew.","The Denjuu World finally gets a break…
+Phew.",1,
 0x10000e,"くろいかげのような ジケンが
 ないと こんなヘんきょうには
-だれもこないダねぇ...",/0x10000e/,,0,
+だれもこないダねぇ...","Maaan, that creepy shadow
+in the lake was just
+what we needed to get
+people to a backwoods
+place like this.","Maaan, that creepy shadow in the lake was just
+what we needed to get people to a backwoods place like this.",1,
 0x100010,"パパルナこは やっぱリ
-しずかなところダねぇ...",/0x100010/,,0,
+しずかなところダねぇ...","Doesn't get more peaceful
+than Lake Paparouna…",Doesn't get more peaceful than Lake Paparouna…,1,
 0x100012,"このデンジュウカイをすくった
 キミこそが ほんとうの
-『Tファンガー』だよ!!!",/0x100012/,,0,
+『Tファンガー』だよ!!!","You saved the whole Denjuu
+World! You, my friend,
+are a true T-Fanger!","You saved the whole Denjuu World! You, my friend,
+are a true T-Fanger!",1,
 0x100014,"あーっ!
 サイキョウTファンガーの
 『<&name>くん』だよね
-サインちょうだい サイン!!",/0x100014/,,0,
+サインちょうだい サイン!!","Whoa! You're <&name>,
+right? The world's most
+famous T-Fanger?! Can I
+get your signature?!","Whoa! You're <&name>, right? The world's most famous T-Fanger?! Can I get your signature?!",1,
 0x100016,"『ペペリやま』で
 はっくつさぎょうが
 おこなえるようになったよ
 キミのおかげなんだよね
-あリがとう!",/0x100016/,,0,
+あリがとう!","We can finally continue
+excavating Mt. Peperi –
+and it's all thanks to you!",We can finally continue excavating Mt. Peperi – and it's all thanks to you!,1,
 0x100018,"あー キミは
 アンテナのきを もとに
 もどしてくれた ニンゲンじゃ
 ないかー
-きてくれたんだね",/0x100018/,,0,
+きてくれたんだね","Hey, aren't you the human
+who saved our Antenna
+Tree? What a nice
+surprise!","Hey, aren't you the human who saved our Antenna Tree? What a nice surprise!",1,
 0x10001a,"デンジュウカイが やっと
 もとにもどったよ
 これからも なかよくやって
-いこうね",/0x10001a/,,0,
+いこうね","The Denjuu World is back to
+normal! I hope we can all
+be friends now.",The Denjuu World is back to normal! I hope we can all be friends now.,1,
 0x10001c,"トロンコむらだけじゃなくて
 デンジュウカイをすくって
 くれたんだね
-あリがとう",/0x10001c/,,0,
+あリがとう","Not only did you save
+Tronco, but the whole
+Denjuu World?
+I can't thank you enough.","Not only did you save Tronco, but the whole Denjuu World?
+I can't thank you enough.",1,
 0x10001e,"デンジュウカイさいきょうの
-『Tファンガー』ってキミだろ?",/0x10001e/,,0,
+『Tファンガー』ってキミだろ?","You're the world's best
+T-Fanger, ain'tcha?","You're the world's best
+T-Fanger, ain'tcha?",1,
 0x100020,"ネジロとネタロは ゲンキに
-やってるかな?",/0x100020/,,0,
+やってるかな?","I wonder if Nejiro and
+Netaro are doing alright…",I wonder if Nejiro and Netaro are doing alright…,1,
 0x100022,"まちがいデンワも
 かかってこなくなったし
 アクマデンジュウはしずかに
-なったし いうことはないね",/0x100022/,,0,
+なったし いうことはないね","Calls aren't being rerouted
+anymore, and things are
+quiet around here again…
+I've got no complaints.","Calls aren't being rerouted anymore, and things are quiet around here again… I've got no complaints.",1,
 0x100024,"やっぱリ ケイタイがないと
 せいかつできないよねー
-もしもーし!?",/0x100024/,,0,
+もしもーし!?","You really can't live without
+a cell phone.
+Yes, hello?!","You really can't live without a cell phone.
+Yes, hello?!",1,
 0x100026,"ケイタイのしゅるいって
 けっこうあるらしいんだよ
-どんなモノなのか みたいよね",/0x100026/,,0,
+どんなモノなのか みたいよね","There's a lotta different
+cell phone models
+out there… I want to
+see what they're like!","There's a lotta different cell phone models
+out there… I want to
+see what they're like!",1,
 0x100028,"ヘビぐみのデンジュウって
 いがいに いいヤツだったリ
-するんだよー",/0x100028/,,0,
+するんだよー","There are some alright guys
+in the Snake Clan after all.",There are some alright guys in the Snake Clan after all.,1,
 0x10002a,"アンテナのきは すごく
 ちょうしがいいよ
-これも キミのおかげだね",/0x10002a/,,0,
+これも キミのおかげだね","The Antenna Tree is perkier
+than ever!
+We're so thankful to you.","The Antenna Tree is perkier than ever!
+We're so thankful to you.",1,
 0x10002c,"あー <&name>くん
-きてくれたんだー",/0x10002c/,,0,
+きてくれたんだー","Oh, <&name>!
+Glad to see you here!","Oh, <&name>!
+Glad to see you here!",1,
 0x10002e,"ボクと おなじデンジュウは
-もうトモダチにしてるかい?",/0x10002e/,,0,
+もうトモダチにしてるかい?","Have you made friends with
+any Denjuu like me?",Have you made friends with any Denjuu like me?,1,
 0x100030,"バーランは ヘビぐみと
 トリぐみが なかよく
-くらすところなのさ",/0x100030/,,0,
+くらすところなのさ","Barran's Snake and
+Bird Clans are finally
+getting along. Aw yeah.","Barran's Snake and
+Bird Clans are finally
+getting along. Aw yeah.",1,
 0x100032,"なかなおリして すぐは
 ギクシャクしてたけど
-いまじゃ すっかリなかよしさ",/0x100032/,,0,
+いまじゃ すっかリなかよしさ","Things were awkward at
+first, but now they're
+getting along like milk
+and honey.","Things were awkward at first, but now they're getting along like milk
+and honey.",1,"// Check if this is ""they"" or ""we""."
 0x100034,"さばくのデンジュウは
-すベてトモダチにしたかい?",/0x100034/,,0,
-0x100036,わきミズは おいしいよね,/0x100036/,,0,
+すベてトモダチにしたかい?","So, have you made friends
+with all the Desert Denjuu?","So, have you made friends with all the Desert Denjuu?",1,
+0x100036,わきミズは おいしいよね,"There's nothing like a cool
+drink of spring water.",There's nothing like a cool drink of spring water.,1,
 0x100038,"トロンコむらのデンジュウは
-すベてトモダチにした?",/0x100038/,,0,
+すベてトモダチにした?","Are you friends with all the
+Denjuu in Tronco yet?",Are you friends with all the Denjuu in Tronco yet?,1,
 0x10003a,"トリぐみ ヘビぐみの
 なかのよさは
-デンジュウカイでもユウメイさ",/0x10003a/,,0,
+デンジュウカイでもユウメイさ","The Snake Clan and Bird
+Clan are famous across
+the whole Denjuu World for
+how well they get along!",The Snake Clan and Bird Clan are famous across the whole Denjuu World for how well they get along!,1,
 0x10003c,"トリぐみのヤツって
 いいヤツが おおいんだよ
-なかなおリできて よかった",/0x10003c/,,0,
+なかなおリできて よかった","The Bird Clan's full of
+stand-up dudes.
+Glad we could bury
+the hatchet.","The Bird Clan's full of stand-up dudes.
+Glad we could bury
+the hatchet.",1,
 0x10003e,"ヘビぐみとは ミズを
-わけあって くらしてるよ",/0x10003e/,,0,
+わけあって くらしてるよ","We're sharing the water with
+the Snake Clan and
+everything's peachy!",We're sharing the water with the Snake Clan and everything's peachy!,1,
 0x100040,"トリぐみと ヘビぐみが
 なかよくなっても
 オレは ここにたって
-みんなを みてるのさ",/0x100040/,,0,
+みんなを みてるのさ","The Bird and Snake clans
+might be on good terms
+now, but I'm standing watch
+here all the same.","The Bird and Snake clans might be on good terms now, but I'm standing watch here all the same.",1,
 0x100042,"デンジュウカイは やっぱリ
 あんしんして あるけないとね
 これから ボクもトモダチを
-ふやすぞー!",/0x100042/,,0,
+ふやすぞー!","It's such a relief to be able
+to travel the Denjuu World
+without worries. I'm gonna
+make so many friends!",It's such a relief to be able to travel the Denjuu World without worries. I'm gonna make so many friends!,1,
 0x100044,"うみのデンジュウって
 おおきいけど そんなにこわく
 ないんだってね
-ゴカイしてたよ",/0x100044/,,0,
+ゴカイしてたよ","Ocean Denjuu are big, but
+they're not that scary
+after all! I had that
+all wrong.","Ocean Denjuu are big, but they're not that scary after all! I had that
+all wrong.",1,
 0x100046,"デンジュウは うまく
 つかいこなせてるかい?
 あいしょうも かんがえて
-テレファングしないとね","How far along are you on
-the way to Telefang
-masterdom?","Feel like you've mastered
+テレファングしないとね","Feel like you've mastered
+the art of Telefang?
+My tip: always keep habitat
+advantages in mind!","Feel like you've mastered
 the art of Telefang?
 My tip: always keep habitat advantages in mind!",1,
 0x100048,"いろんなところにすんでる
@@ -130,66 +230,119 @@ My tip: always keep habitat advantages in mind!",1,
 どんなジョウキョウにも
 たいおうできるようにしないと
 シンの『Tファンガー』とは
-よベないかもね",/0x100048/,,0,
-0x10004a,ここは『トロンコむら』だプニ,/0x10004a/,,0,
+よベないかもね","If you don't make friends
+with Denjuu from all over,
+you aren't a true T-Fanger!
+A true T-Fanger must be
+able to adapt to any
+situation.","If you don't make friends with Denjuu from all over, you aren't a true T-Fanger! A true T-Fanger must be able to adapt to any situation.",1,
+0x10004a,ここは『トロンコむら』だプニ,"This is Tronco Village, puni!","This is Tronco Village, puni!",1,From the first NPC line.
 0x10004c,"トリぐみのおさも
 ヘビぐみのおさも すごいよ
-もちろん キミもね!",/0x10004c/,,0,
+もちろん キミもね!","The chiefs of both the Bird
+and Snake clans
+are incredible guys! And so
+are you, of course!","The chiefs of both the Bird and Snake clans
+are incredible guys! And so are you, of course!",1,
 0x10004e,"イーリスにいるデンジュウは
-トモダチにしたかい?",/0x10004e/,,0,
+トモダチにしたかい?","Have you made friends with
+all the Denjuu of Iris?",Have you made friends with all the Denjuu of Iris?,1,
 0x100050,"イーリスヘようこそ!
-ここのうみはキレイですよ!",/0x100050/,,0,
+ここのうみはキレイですよ!","Welcome to Iris! The sea
+here is breathtaking!",Welcome to Iris! The sea here is breathtaking!,1,Same as 0x11c0b6.
 0x100052,"キミのウワサは きいてるよ
 すごいTファンガーなんだってね
-ボクのもくひょうだよ",/0x100052/,,0,
+ボクのもくひょうだよ","I've heard of you… They say
+you're the best T-Fanger
+around. I wanna be like you
+one day.",I've heard of you… They say you're the best T-Fanger around. I wanna be like you one day.,1,
 0x100054,"デンジュウカイのサワギが
 おさまったから
 いろんなところヘ いけるように
-なったダスよー",/0x100054/,,0,
+なったダスよー","Now that all the trouble is
+over, we can go anywhere,
+man!","Now that all the trouble is over, we can go anywhere, man!",1,
 0x100056,"アナタが サイキョウの
 Tファンガーだなんて
-なんだか ウソくさーい",/0x100056/,,0,
+なんだか ウソくさーい","So you're supposed to be the
+#1 T-Fanger, hm?
+Sounds like pish to me!","So you're supposed to be the #1 T-Fanger, hm?
+Sounds like pish to me!",1,
 0x100058,"クリノンむらにいる
 デンジュウたちとは もう
-トモダチに なったダスか?",/0x100058/,,0,
+トモダチに なったダスか?","Are you friends with all the
+Denjuu here in Krinon,
+man?","Are you friends with all the Denjuu here in Krinon, man?",1,
 0x10005a,"ニンゲンとデンジュウ
 これからも なかよく
-やっていくダスよー",/0x10005a/,,0,
+やっていくダスよー","Humans and Denjuu are
+gonna get along swimmingly
+now, man!","Humans and Denjuu are gonna get along swimmingly now, man!",1,
 0x10005c,"キミが デンジュウカイの
 すくった ヒトなんだね!
 Tファンガーたいかいで
 ゆうしょうしたときから
-すごいヒトだとおもってたんだ",/0x10005c/,,0,
+すごいヒトだとおもってたんだ","So you're the one who saved
+the Denjuu World!
+I knew you were something
+special ever since
+I saw you win that T-
+Fanger tournament.","So you're the one who saved the Denjuu World!
+I knew you were something special ever since
+I saw you win that T-Fanger tournament.",1,
 0x10005e,"ここをとおると
 ヘビぐみと トリぐみが
-くらすまち バーランに
-いけます",/0x10005e/,,0,
+ バーランに
+いけます","Go this way and you will find
+yourself in Barran, where
+the Snake Clan and the Bird
+Clan live.","Go this way and you will find yourself in Barran, where the Snake Clan and the Bird Clan live.",1,
 0x100060,"ここをとおると
 ヘビぐみと トリぐみが
 くらすまち バーランに
-いけます",/0x100060/,,0,
+いけます","Go this way and you will find
+yourself in Barran, where
+the Snake Clan and the Bird
+Clan live.","Go this way and you will find yourself in Barran, where the Snake Clan and the Bird Clan live.",1,
 0x100062,"うみのデンジュウのトモダチが
 だいぶふえたよ
-ガンバってそだてるぞー!",/0x100062/,,0,
+ガンバってそだてるぞー!","I've made a ton of ocean
+Denjuu friends! I'm gonna
+raise them so good…!",I've made a ton of ocean Denjuu friends! I'm gonna raise them so good…!,1,
 0x100064,"ボクも どんどん
 テレファングしてつよくなるんだ
 デンジュウカイに イヘンが
-おきたときのためにね!",/0x100064/,,0,
+おきたときのためにね!","I'm gonna Telefang up a
+storm and grow stronger!
+Just in case anything ever
+happens here again,
+you know?","I'm gonna Telefang up a storm and grow stronger! Just in case anything ever happens here again,
+you know?",1,
 0x100066,"きみ...ずいぶんまえに
 ガケの したにいなかった??
-きのせいかな.....",/0x100066/,,0,
+きのせいかな.....","Hey… Didn't I see you below
+the cliff a long time ago?
+Maybe I'm imaging things…",Hey… Didn't I see you below the cliff a long time ago? Maybe I'm imaging things…,1,
 0x100068,"キミが Tファンガーたいかいで
 ゆうしょうできたリゆうが
 なんとなくわかるよ
-やっぱリ すごいヒトだったんだ",/0x100068/,,0,
+やっぱリ すごいヒトだったんだ","I think I see why you won
+the tournament now.
+No one stood a chance!","I think I see why you won the tournament now.
+No one stood a chance!",1,
 0x10006a,"フリジアに すんでいる
 デンジュウたちは もう
-トモダチにしたのかな?",/0x10006a/,,0,
+トモダチにしたのかな?","Have you befriended all the
+Denjuu in Freesia yet?",Have you befriended all the Denjuu in Freesia yet?,1,
 0x10006c,"あー...もう1かい
 Tファンガーたいかいを
 やらないのかなー...
 こんどは ぜったい
-ゆうしょうするぞ!",/0x10006c/,,0,
+ゆうしょうするぞ!","Man, I wish they'd put
+on another T-Fanger
+tournament… I'd definitely
+win, no doubt!","Man, I wish they'd put
+on another T-Fanger tournament… I'd definitely win, no doubt!",1,
 0x10006e,"リリオペは ゲンキで
 やってるかい?",/0x10006e/,,0,
 0x100070,"アンテナのきも ぶじ!

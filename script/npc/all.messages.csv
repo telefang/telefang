@@ -495,8 +495,8 @@ I'm glad the ocean Denjuu are all back to normal.",,0,(Unused)
 あるってもんだね!","Finally, we can start fishing again!
 It's what Iris is known for!",,0,
 0x11c0b6,"イーリスヘようこそ!
-ここのうみはキレイですよ!","Welcome to Iris! 
-The sea is so pretty here!",,0,
+ここのうみはキレイですよ!","Welcome to Iris! The sea
+here is breathtaking!",Welcome to Iris! The sea here is breathtaking!,1,
 (No pointer),"でもいまはうみのデンジュウが
 おこっているので
 パームかいをわたることが
@@ -1440,130 +1440,119 @@ He used to treat Denjuu with more respect...",,0,
 0x124104,"あそこのやしきは なにかの
 けんきゅうじょみたいダ
 よく はくいの ひとたちが
-でいリしてるダ","It looks like they're using
-this building for some kind
-of research.
-You see folks in lab coats
-going in and out all the time.
-","It looks like they're using this building for some kind of research. 
-You see folks in lab coats going in and out all the time.
-",1,These strings have all been manually formatted!
+でいリしてるダ","See that big ol' building
+over there?
+It seems to be some sorta
+lab. Dudes in white coats
+are pourin' in and out daily.","See that big ol' building
+over there?
+It seems to be some sorta lab. Dudes in white coats are pourin' in and out daily.",1,These strings have all been manually formatted!
 0x124106,"あそこのやしきでは いったい
 なにをけんきゅうしてるダか?
 なんだか みんな ヘんな
 ふんいきの ひとばかリダ","I wonder what kind of
 research they're doing?
 Those scientists all have an
-odd air about them...","I wonder what kind of research they're doing? 
-Those scientists all have an odd air about them...",1,
+odd air about them...","Wonder what they're studyin' in there…
+The scientists in there smell mighty fishy if ya ask me.",1,
 0x124108,"なんだか あのやしきに
 でいリするひとの ふんいきが
-かわったダ","The people going in and out
-of that place...
-They somehow seem
-different from before.","The people going in and out of that place...
-They somehow seem different from before.",1,
+かわったダ","Something's off about the
+peeps up in that place,
+I tell ya.","Something's off about the peeps up in that place,
+I tell ya.",1,
 0x12410a,"きたのほうに はくいを 
 きたひとが はしっていったけど
-どうしたんダ?","I saw a guy in a lab coat
-running for his life
-just north of here.
-I wonder what happened?","I saw a guy in a lab coat running for his life
-just north of here.
-I wonder what happened?",1,
+どうしたんダ?","I saw some bozo in a lab
+coat hauling hiney like his
+life depended on it just up
+north. What's the rush?",I saw some bozo in a lab coat hauling hiney like his life depended on it just up north. What's the rush?,1,
 0x12410c,"うえのほうに はしっていったひとひどく おびえていたみたい
-だったダけど?","The guy hobbling along up
+だったダけど?","The dude hobbling along up
 ahead looked like he was
-scared of something...",The guy hobbling along up ahead looked like he was scared of something...,1,
+scared of something...",The dude hobbling along up ahead looked like he was scared of something...,1,
 0x12410e,"みずうみの さわぎが おさまったみたいダね
 いったいなんだったんダ?
-また だれかに きいてみよっと","The brouhaha about the lake
-seems to have calmed down.
-What was that even about?
-I should ask someone.","The brouhaha about the lake seems to have calmed down. What was that about?
+また だれかに きいてみよっと","The whole lake brouhaha
+seems to have chilled out.
+What was that about?
+I should ask someone.","The whole lake brouhaha seems to have chilled out. What was that about?
 I should ask someone.",1,
 0x124110,"このみずうみに ちかづいたら
 きけんダ
 なにか ヘんな いきものが
-いるダよ","It’s dangerous to approach
-the lake.
-It seems there’s some kind
-of strange creature
-living in it.","It’s dangerous to approach the lake. 
-It seems there’s some kind of strange creature
-living in it. ",1,(Unused)
+いるダよ","You gotta keep away from
+the lake, man.
+There's some sorta freaky
+creature in there.","You gotta keep away from the lake, man.
+There's some sorta freaky creature in there.",1,(Unused)
 0x124112,"ちかづいたら くろいかげに
 たベられて しまうダよ
-ちかづいたらダメダ","If you get too close, that
-big shadow in the water
-might try to eat you!
-I wouldn’t risk it
-if I were you.","If you get too close, that big shadow in the water might try to eat you!
-I wouldn’t risk it
-if I were you.",1,(Unused)
+ちかづいたらダメダ","Get too close, and a dark
+shadow will pop outta the
+water and gobble you up!
+Don't get close!
+Don't do it!!!","Get too close, and a dark shadow will pop outta the water and gobble you up! Don't get close!
+Don't do it!!!",1,(Unused)
 0x124114,"みずうみが しずかになったダ
-きけんは さったダかね?","The lake has been calmer
-lately.
-Has the danger passed?","The lake has been calmer lately.
-Has the danger passed?",1,(Unused)
+きけんは さったダかね?","The lake's lookin' mad
+peaceful. Are we good?
+No more danger?","The lake's lookin' mad peaceful. Are we good?
+No more danger?",1,(Unused)
 0x124116,"このみずうみで おおきな
 くろいかげを みたダ!
 アレは キョウリュウに
-ちがいないダ!","I saw a big shadow moving
-around in the lake!
-It's gotta be a dinosaur!
-I just know it!","I saw a big shadow moving around in the lake!
-It's gotta be a dinosaur!
-I just know it!",1,
+ちがいないダ!","I saw a big shadow swimmin'
+around the lake!
+Listen… it's gotta be a
+dinosaur. I can feel it.","I saw a big shadow swimmin' around the lake!
+Listen… it's gotta be a dinosaur. I can feel it.",1,
 0x124118,"デンジュウカイに キョウリュウがいるんダか?
-うーん......","Are there dinosaurs in the
-Denjuu World?
-Hmmm...","Are there dinosaurs in the Denjuu World?
-Hmmm...",1,
+うーん......","Are there dinos in the Denjuu
+World, ya ask?
+Erm... Hmm...","Are there dinos in the Denjuu World, ya ask?
+Erm... Hmm...",1,
 0x12411a,"あのくろいかげの しょうたいは
 デンジュウだったダね
-なんだか ユメがないダねぇ","In the end, the shadow
-swimming around in the lake
-was just another Denjuu.
-How boring...","In the end, the shadow swimming around in the lake was just another Denjuu. 
-How boring...",1,
+なんだか ユメがないダねぇ","Turns out, that shadow in
+the lake was just another
+Denjuu. Reality's really
+harshing my mellow.","Turns out, that shadow in the lake was just another Denjuu. Reality's really harshing my mellow.",1,
 0x12411c,"みずうみに ヘんな いきものが
 いるダ
 これはスクープになるダ
-テレビきょくを よぶダよー","There's a mysterious
-creature living in the lake...
-This'll be a huge scoop!
-Call the TV stations!","There's a mysterious creature living in the lake...
-This'll be a huge scoop!
-Call the TV stations!",1,
+テレビきょくを よぶダよー","Dude. There's a freaky
+creature in the lake.
+Scoop of the century!
+Get a TV crew over here!!!","Dude. There's a freaky creature in the lake.
+Scoop of the century!
+Get a TV crew over here!!!",1,
 0x12411e,"ヘんな いきものを しゅざいしにテレビきょくがきたら
-このイナカにも ひとが たくさんくるようになるダー","I bet this place would get
-a lot more visitors
-if a TV show came to cover
-a real lake monster!","I bet this place would get
-a lot more visitors
-if a TV show came to cover a real lake monster!",1,
+このイナカにも ひとが たくさんくるようになるダー","As soon as our true-blue
+lake monster gets on TV,
+our li'l corner of the woods
+is gonna be jumpin'!","As soon as our true-blue lake monster gets on TV,
+our li'l corner of the woods is gonna be jumpin'!",1,
 0x124120,"ヘんな いきものが
 デンジュウだなんて
 スクープじゃなくなったダよー
 まぁ しずかなままでも
-いいダけどね","The monster in the lake was
-just a Denjuu…
-So much for our 15 seconds
-of fame!
-Oh well. Can’t say I mind the
-peace and quiet.","The monster in the lake was just a Denjuu… 
-So much for our 15 seconds of fame!
-Oh well. Can’t say I mind the peace and quiet.",1,
+いいダけどね","The lake monster was just
+a Denjuu?
+That ain't a scoop at all…
+Oh well. Guess I don't mind
+the peace and quiet.","The lake monster was just
+a Denjuu?
+That ain't a scoop at all… Oh well. Guess I don't mind the peace and quiet.",1,
 0x124122,"ひっ!
 な なにかようじ?
 ようじがなければ あっちヘ
 いってくれよ!","...Eek!
 W-What do you want?
-If it's nothing, then please
-leave me alone!","...Eek!
+Nothing? Then leave me
+alone!","...Eek!
 W-What do you want?
-If it's nothing, then please leave me alone!",1,
+Nothing? Then leave me alone!",1,
 0x124124,"ここは デンジュウカイいち
 おおきい みずうみ
 『パパルナこ』 があるんだよ","Up ahead is <bold>Paparouna

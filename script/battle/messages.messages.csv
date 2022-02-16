@@ -223,8 +223,8 @@ Denma-Power!<*5>",,
 0x1140d2,"てきのなかまは
 おくれているようだ!<*4>",The enemy's ally is late to battle!<*4>,,0,Mitstreiter vom Herausforderer verspätet sich!<*4>,,
 0x1140d4,"<&0xd448>ひきまで よベます
-SELECTで ステータス<*4>","Call up to <&0xd448>! 
-SELECT: Status<*4>",,0,"Rufe bis zu <&0xd448> Mitstreiter an! 
+SELECTで ステータス<*4>","You can call up to <&0xd448> Denjuu.
+SELECT: Status<*4>",,1,"Rufe bis zu <&0xd448> Mitstreiter an! 
 SELECT: Status<*4>",,
 0x1140d6,"デンパの
 とどかないじょうたいです!<*5>",There's no reception!<*5>,,0,Es gibt keinen Empfang!<*5>,,
