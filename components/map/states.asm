@@ -83,7 +83,18 @@ Map_StateDrawScreen::
 	ld bc, $10
 	call Banked_CGBLoadObjectPalette
 	M_AuxJmp Banked_Map_ADVICE_LoadSGBFiles
-	jp System_ScheduleNextSubState
+	call System_ScheduleNextSubState
+	; Continues into Map_StateDrawScreen_RTCDebugHelper
+
+Map_StateDrawScreen_RTCDebugHelper::
+	ret ; Change to nop to debug the rtc. This allows rtc debugging to be enabled by editing just one byte or instruction. To enable rtc debugging with a hex editor change 0xA80D9 from $C9 to $00.
+	ld a, $E0
+	ld [W_Status_NumericalTileIndex], a
+	call Status_ExpandNumericalTiles
+	ld a, [W_Overworld_RTCDebug]
+	add $E0
+	ld hl, $9A20
+	jp vmempoke
 
 Map_ADVICE_StateMainLoop_OpenWindow::
 	call CallBankedFunction_int
@@ -94,20 +105,7 @@ Map_ADVICE_StateMainLoop_CloseWindow::
 	call $44C5
 	M_AuxJmp Banked_Map_ADVICE_WindowUnloadSGBFiles
 	ret
-
-Map_StateDrawScreen_RTCDebugHelper::
-	ld a, [W_Overworld_RTCDebug]
-	add $E0
-	ld hl, $9A20
-	call vmempoke
-	jp System_ScheduleNextSubState
 	; Note: Free Space
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
 	nop
 	nop
 	nop
