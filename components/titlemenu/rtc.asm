@@ -27,67 +27,66 @@ TitleMenu_StoreRTCValues::
     jr z, .exitSram
     
 .writeRTC
-    ld a, 8
-    ld [REG_MBC3_SRAMBANK], a
+    ld b, $C
+    ld a, $40 ; Halt flag.
+    call .writeToRTCCommon
+
+    ld b, 8
     xor a
-    ld [$A000], a
+    call .writeToRTCCommon
     
-    nop
-    nop
-    nop
-    nop
-    
-    ld a, 9
-    ld [REG_MBC3_SRAMBANK], a
+    inc b
     ld a, [W_SaveClock_RealTimeMinutes]
-    ld [$A000], a
+    call .writeToRTCCommon
     
-    nop
-    nop
-    nop
-    nop
-    
-    ld a, $A
-    ld [REG_MBC3_SRAMBANK], a
+    inc b
     ld a, [W_SaveClock_RealTimeHours]
-    ld [$A000], a
+    call .writeToRTCCommon
     
-    nop
-    nop
-    nop
-    nop
-    
-    ld a, $B
-    ld [REG_MBC3_SRAMBANK], a
+    inc b
     xor a
-    ld [$A000], a
+    call .writeToRTCCommon
     
-    nop
-    nop
-    nop
-    nop
+    inc b
+    call .writeToRTCCommon
     
-    ld a, $C
-    ld [REG_MBC3_SRAMBANK], a
-    xor a
-    ld [$A000], a
+    ld b, 0
+    call .writeToRTCCommon
+    
+    inc b
+    call .writeToRTCCommon
+    
+    inc b
+    call .writeToRTCCommon
+    
+    inc b
+    call .writeToRTCCommon
     
 .exitSram
     jr TitleMenu_ADVICE_CopyNewlySetTime
-	
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
-    nop
 
+.writeToRTCCommon
+    nop
+    ld c, a
+    ld a, b
+    ld [REG_MBC3_SRAMBANK], a
+    nop
+    nop
+    nop
+    nop
+    ld a, c
+    ld [$B000], a
+    ret
+
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
+    nop
     nop
     nop
     nop
