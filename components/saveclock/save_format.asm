@@ -13,7 +13,8 @@ S_SaveClock_NicknameArray::
 	ENDR
 	
 SECTION "Active Save File 2B", SRAM[$B900], BANK[2]
-S_SaveClock_NicknameExtensionArray:: REPT M_SaveClock_MaxDenjuuContacts
+S_SaveClock_NicknameExtensionArray::
+	REPT M_SaveClock_MaxDenjuuContacts
 	ds M_SaveClock_DenjuuNicknameExtensionSize
 	ENDR
 	
