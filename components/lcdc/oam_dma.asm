@@ -24,7 +24,7 @@ InstallODMADriver:: ld c, $80
 ;Is instead copied into HRAM where it is safe to run.
 ODMADriver:
 	ld a, $C0
-	ld [REG_DMA], a
+	ldh [REG_DMA], a
 	ld a, $28
 .spinLock
 	dec a

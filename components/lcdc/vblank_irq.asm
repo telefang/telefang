@@ -15,7 +15,7 @@ VBlankingIRQ::
 	push de
 	push hl
 	call SyncShadowRegs
-	ld a, [H_VBlankCompleted]
+	ldh a, [H_VBlankCompleted]
 	or a
 	jr nz, .setCompletedFlag
 	ld a, [W_OAM_DMAReady]
@@ -29,7 +29,7 @@ VBlankingIRQ::
 
 .setCompletedFlag:
 	ld a, 1
-	ld [H_VBlankCompleted], a
+	ldh [H_VBlankCompleted], a
 	ei
 	call $464
 	call $3442

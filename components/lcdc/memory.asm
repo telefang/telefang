@@ -59,7 +59,7 @@ YetAnotherWFB::
 	push af
 	
 .loop
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .loop
 	pop af
@@ -70,7 +70,7 @@ vmempoke::
 	push af
 	
 .wfb
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfb
 	pop af
@@ -92,7 +92,7 @@ ClearGBCTileMap0::
 	ld bc, M_VRAM_TMAPSIZE
 	ld hl, VRAM_TMAP0
 	ld a, 1
-	ld [REG_VBK], a
+	ldh [REG_VBK], a
 	
 .bank1
 	xor a
@@ -102,7 +102,7 @@ ClearGBCTileMap0::
 	or c
 	jr nz, .bank1
 	xor a
-	ld [REG_VBK], a
+	ldh [REG_VBK], a
 	ret
 	
 ClearGBCTileMap1::
@@ -119,7 +119,7 @@ ClearGBCTileMap1::
 	ld bc, M_VRAM_TMAPSIZE
 	ld hl, VRAM_TMAP1
 	ld a, 1
-	ld [REG_VBK], a
+	ldh [REG_VBK], a
 	
 .bank1
 	xor a
@@ -129,12 +129,12 @@ ClearGBCTileMap1::
 	or c
 	jr nz, .bank1
 	xor a
-	ld [REG_VBK], a
+	ldh [REG_VBK], a
 	ret
 
 SECTION "Wait For Blanking, Again", ROM0[$1F79]
 WaitForBlanking::
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, WaitForBlanking
     

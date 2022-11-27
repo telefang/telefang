@@ -151,7 +151,7 @@ PauseMenu_SubStateInventoryListingIdle::
     ret
     
 .checkButtonB
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_B ;Button B
     jr z, .checkButtonA
     
@@ -168,7 +168,7 @@ PauseMenu_SubStateInventoryListingIdle::
     ret
     
 .checkButtonA
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A ;Button A
     ret z
     
@@ -196,7 +196,7 @@ PauseMenu_SubStateInventoryListingIdle::
     
 ;State 0C 12 04
 PauseMenu_SubStateInventoryEmptyIdle::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A + M_JPInput_B
     ret z
     

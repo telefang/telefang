@@ -66,7 +66,7 @@ CallsMenu_StateDrawNoMessageIndicator::
     
 ;State 0C 16 02
 CallsMenu_StateNoMessageIndicatorIdle::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jr z, .test_a_pressed
     
@@ -76,7 +76,7 @@ CallsMenu_StateNoMessageIndicatorIdle::
     jp .exit
 
 .test_a_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     ret z
     

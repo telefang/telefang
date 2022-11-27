@@ -62,7 +62,7 @@ SerIO_SwitchToInternalClock::
 	and a
 	ret nz
 	ld a, $81
-	ld [REG_SC], a
+	ldh [REG_SC], a
 	ret
 	
 SerIO_IRQ::
@@ -75,7 +75,7 @@ SerIO_IRQ::
 	ld a, [W_SerIO_State]
 	cp 2
 	jr z, .packetXfrMode
-	ld a, [REG_SB]
+	ldh a, [REG_SB]
 	cp M_SerIO_ConnectByte
 	jr z, .gotConnectPacket
 	cp M_SerIO_MysteryByte
@@ -83,9 +83,9 @@ SerIO_IRQ::
 	xor a
 	ld [W_SerIO_PacketType], a
 	ld a, M_SerIO_PresenceByte
-	ld [REG_SB], a
+	ldh [REG_SB], a
 	ld a, $80
-	ld [REG_SC], a
+	ldh [REG_SC], a
 	jp .return
 	
 .gotConnectPacket
@@ -103,22 +103,22 @@ SerIO_IRQ::
 	
 .sendNull
 	xor a
-	ld [REG_SB], a
+	ldh [REG_SB], a
 	ld a, $80
-	ld [REG_SC], a
+	ldh [REG_SC], a
 	jp .return
 	
 .packetXfrMode
 	ld a, 1
 	ld [W_SerIO_DoingXfer], a
-	ld a, [REG_SB]
+	ldh a, [REG_SB]
 	ld [W_SerIO_DriverInByte], a
 	ld a, [W_SerIO_DriverOutByte]
-	ld [REG_SB], a
+	ldh [REG_SB], a
 	ld bc, $20
 	call SerIO_Wait
 	ld a, $80
-	ld [REG_SC], a
+	ldh [REG_SC], a
 	xor a
 	ld [W_SerIO_DoingXfer], a
 	call SerIO_RecvBufferPush
@@ -136,19 +136,19 @@ SerIO_ResetConnection::
 	ld bc, $300 ;TODO: Calculate actual size of SerIO area
 	call memclr
 	ld a, M_SerIO_PresenceByte
-	ld [REG_SB], a
+	ldh [REG_SB], a
 	ld [W_ShadowREG_SB], a
 	ld a, $80
-	ld [REG_SC], a
+	ldh [REG_SC], a
 	ret
 	
 SerIO_SendMysteryPacket:
 	ld a, 1
 	ld [W_SerIO_SentMysteryPacket], a
 	ld a, M_SerIO_MysteryByte
-	ld [REG_SB], a
+	ldh [REG_SB], a
 	ld a, $81
-	ld [REG_SC], a
+	ldh [REG_SC], a
 	ret
 	
 SerIO_SendConnectPacket::
@@ -156,10 +156,10 @@ SerIO_SendConnectPacket::
 	and a
 	ret nz
 	ld a, M_SerIO_ConnectByte
-	ld [REG_SB], a
+	ldh [REG_SB], a
 	ld [W_ShadowREG_SB], a
 	ld a, $80
-	ld [REG_SC], a
+	ldh [REG_SC], a
 	ret
 	
 SerIO_Wait:

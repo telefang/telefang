@@ -66,7 +66,7 @@ Status_DrawTopOfDigits::
     di
     
 .wfbLoop
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfbLoop
     
@@ -90,7 +90,7 @@ Status_DrawBottomOfDigits::
     di
     
 .wfbLoop
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfbLoop
     

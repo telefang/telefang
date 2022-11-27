@@ -48,13 +48,13 @@ CGBCommitPalettesBGP:
 	ld hl, W_LCDC_CGBStagingBGPaletteArea
 	ld b, M_LCDC_CGBStagingAreaSize
 	ld a, $80
-	ld [REG_BGPI], a
+	ldh [REG_BGPI], a
 	
 .loop
 	ld a, [hli]
 	di
 	call YetAnotherWFB
-	ld [REG_BGPD], a
+	ldh [REG_BGPD], a
 	ei
 	dec b
 	jr nz, .loop
@@ -172,13 +172,13 @@ CGBCommitPalettesOBP::
 	ld hl, W_LCDC_CGBStagingOBPaletteArea
 	ld b, M_LCDC_CGBStagingAreaSize
 	ld a, $80
-	ld [REG_OBPI], a
+	ldh [REG_OBPI], a
 	
 .oloop
 	ld a, [hli]
 	di
 	call YetAnotherWFB
-	ld [REG_OBPD], a
+	ldh [REG_OBPD], a
 	ei
 	dec b
 	jr nz, .oloop
@@ -379,7 +379,7 @@ copyCGBPalette:
 	di
 
 .vramUnlock
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .vramUnlock
 	ld a, [hli]

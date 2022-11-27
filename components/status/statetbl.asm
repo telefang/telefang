@@ -288,7 +288,7 @@ Status_StateUserJPInput:
     ld a, [W_Status_CalledFromContactScreen]
     cp 0
     jp z, .statusScreenExit
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A
     jr z, .statusScreenExit
     ld a, 2
@@ -299,7 +299,7 @@ Status_StateUserJPInput:
     ld a, [W_Status_CalledFromContactScreen]
     cp 0
     jp z, .unchangedScreen
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_B
     jr z, .unchangedScreen
     ld a, 4
@@ -307,7 +307,7 @@ Status_StateUserJPInput:
     jr .gotoContactScreen
     
 .unchangedScreen
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A + M_JPInput_B
     ret z
     
