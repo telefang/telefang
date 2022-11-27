@@ -109,7 +109,7 @@ OptionsMenu_DrawSelectedOptions::
     jp Banked_RLEDecompressTMAP0
     
 OptionsMenu_InputHandler::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jp nz, .b_button_pressed
     
@@ -256,7 +256,7 @@ OptionsMenu_InputHandler::
     jp OptionsMenu_DrawSelectedOptions
 
 .test_menu_exit_confirm
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     ret z
     

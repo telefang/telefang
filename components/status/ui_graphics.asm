@@ -40,7 +40,7 @@ Status_ExpandNumericalTiles::
     jr z, .waitForBlankingInverted
     
 .waitForBlanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .waitForBlanking
     
@@ -58,7 +58,7 @@ Status_ExpandNumericalTiles::
     ret
     
 .waitForBlankingInverted
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .waitForBlankingInverted
     

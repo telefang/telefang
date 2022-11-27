@@ -38,18 +38,18 @@ LCDCIRQ::
 	ld a, [hli]
 	sub 4
 	ld b, a
-	ld a, [REG_LY]
+	ldh a, [REG_LY]
 	cp b
 	jr nc, .notAtDesiredLine
 	ld a, [W_HBlank_State]
 	or a
 	jr nz, .ret_pop3
 	ld a, [hli]
-	ld [REG_WX], a
+	ldh [REG_WX], a
 	ld a, [hl]
-	ld [REG_WY], a
+	ldh [REG_WY], a
 	ld a, b
-	ld [REG_LYC], a
+	ldh [REG_LYC], a
 	ld a, 1
 	ld [W_HBlank_State], a
 	jr .ret_pop3
@@ -60,22 +60,22 @@ LCDCIRQ::
 	ld b, a
 
 .waitUntilLineReady
-	ld a, [REG_LY]
+	ldh a, [REG_LY]
 	cp b
 	jr c, .waitUntilLineReady
 
 .clearScroll
 	xor a
-	ld [REG_SCX], a
-	ld [REG_SCY], a
+	ldh [REG_SCX], a
+	ldh [REG_SCY], a
 
 .setupScreen
 	ld [W_HBlank_State], a
 	ld a, 0
-	ld [REG_LYC], a
+	ldh [REG_LYC], a
 	ld [W_ShadowREG_LYC], a
 	ld a, %10000011 ; Enable LCD, BG, and OBJ (and no others)
-	ld [REG_LCDC], a
+	ldh [REG_LCDC], a
 
 .ret_pop3
 	pop hl
@@ -88,7 +88,7 @@ LCDCIRQ::
 	cp 4
 	jr z, .letterboxEffect
 	ld hl, $C467
-	ld a, [REG_LY]
+	ldh a, [REG_LY]
 	cp $5F ; '_'
 	jr nc, .clearScroll
 	ld a, [W_HBlank_State]
@@ -97,25 +97,25 @@ LCDCIRQ::
 	cp 0
 	jr nz, .ret_pop3
 	xor a
-	ld [REG_SCX], a
-	ld [REG_SCY], a
+	ldh [REG_SCX], a
+	ldh [REG_SCY], a
 	ld a, $27 ; '''
-	ld [REG_LYC], a
+	ldh [REG_LYC], a
 	ld a, 1
 	ld [W_HBlank_State], a
 	jr .ret_pop3
 
 .loc_3AE
 	ld a, [hl]
-	ld [REG_SCX], a
+	ldh [REG_SCX], a
 	ld a, $5F ; '_'
-	ld [REG_LYC], a
+	ldh [REG_LYC], a
 	ld a, 2
 	ld [W_HBlank_State], a
 	jr .ret_pop3
 
 .letterboxEffect
-	ld a, [REG_LY]
+	ldh a, [REG_LY]
 	cp $6C ; 'l'
 	jr nc, .insertBottomLetterbox
 	ld a, [W_HBlank_State]
@@ -124,33 +124,33 @@ LCDCIRQ::
 	cp 0
 	jr nz, .ret_pop3
 	ld a, $7F ; ''
-	ld [REG_SCY], a
+	ldh [REG_SCY], a
 	ld a, $14
-	ld [REG_LYC], a
+	ldh [REG_LYC], a
 	ld a, 1
 	ld [W_HBlank_State], a
 	jr .ret_pop3
 
 .insertMiddleSection
-	ld a, [REG_LY]
+	ldh a, [REG_LY]
 	cp $18
 	jr c, .insertMiddleSection
 	ld a, [W_HBlank_Scanline24Pos]
-	ld [REG_SCY], a
+	ldh [REG_SCY], a
 	ld a, $6C ; 'l'
-	ld [REG_LYC], a
+	ldh [REG_LYC], a
 	ld a, 2
 	ld [W_HBlank_State], a
 	jr .ret_pop3
 
 .insertBottomLetterbox
-	ld a, [REG_LY]
+	ldh a, [REG_LY]
 	cp $70 ; 'p'
 	jr c, .insertBottomLetterbox
 	ld a, $10
-	ld [REG_SCY], a
+	ldh [REG_SCY], a
 	xor a
-	ld [REG_SCX], a
+	ldh [REG_SCX], a
 	jp .setupScreen
 
 .doHblankSCY
@@ -169,7 +169,7 @@ LCDCIRQ::
 	adc a, h
 	ld h, a
 	ld a, [hl]
-	ld [REG_SCY], a
+	ldh [REG_SCY], a
 	ld a, [W_HBlank_SCYIndexAndMode]
 	inc a
 	ld [W_HBlank_SCYIndexAndMode], a

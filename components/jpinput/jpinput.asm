@@ -16,7 +16,7 @@ SECTION "JoyPad INPUT", ROM0[$0737]
 ;directional inputs after 16 frames.
 ;Used by: most menus
 JPInput_TypematicDPad:
-	ld a, [H_JPInput_Changed]
+	ldh a, [H_JPInput_Changed]
 	ld [W_JPInput_TypematicBtns], a
 	and $F0
 	jr z, .noButtonWasChanged
@@ -24,7 +24,7 @@ JPInput_TypematicDPad:
 	ld [W_JPInput_TypematicTimeout], a
 	
 .noButtonWasChanged
-	ld a, [H_JPInput_HeldDown]
+	ldh a, [H_JPInput_HeldDown]
 	and $F0
 	ret z
 	ld a, [W_JPInput_TypematicTimeout]
@@ -37,42 +37,42 @@ JPInput_TypematicDPad:
 .setActiveButtons
 	ld a, M_JPInput_TypematicRepeat
 	ld [W_JPInput_TypematicTimeout], a
-	ld a, [H_JPInput_HeldDown]
+	ldh a, [H_JPInput_HeldDown]
 	and $F0
 	ld b, a
-	ld a, [H_JPInput_Changed]
+	ldh a, [H_JPInput_Changed]
 	or b
 	ld [W_JPInput_TypematicBtns], a
 	ret
 	
 JPInput_SampleJoypad::
 	ld a, $20
-	ld [REG_JOYP], a
-	ld a, [REG_JOYP]
-	ld a, [REG_JOYP]
+	ldh [REG_JOYP], a
+	ldh a, [REG_JOYP]
+	ldh a, [REG_JOYP]
 	cpl
 	and $F
 	swap a
 	ld b, a
 	ld a, $10
-	ld [REG_JOYP], a
-	ld a, [REG_JOYP]
-	ld a, [REG_JOYP]
-	ld a, [REG_JOYP]
-	ld a, [REG_JOYP]
-	ld a, [REG_JOYP]
-	ld a, [REG_JOYP]
+	ldh [REG_JOYP], a
+	ldh a, [REG_JOYP]
+	ldh a, [REG_JOYP]
+	ldh a, [REG_JOYP]
+	ldh a, [REG_JOYP]
+	ldh a, [REG_JOYP]
+	ldh a, [REG_JOYP]
 	cpl
 	and $F
 	or b
 	ld c, a
-	ld a, [H_JPInput_HeldDown]
+	ldh a, [H_JPInput_HeldDown]
 	xor c
 	and c
-	ld [H_JPInput_Changed], a
+	ldh [H_JPInput_Changed], a
 	ld a, c
-	ld [H_JPInput_HeldDown], a
+	ldh [H_JPInput_HeldDown], a
 	ld a, $30
-	ld [REG_JOYP], a
+	ldh [REG_JOYP], a
 	call JPInput_TypematicDPad
 	ret

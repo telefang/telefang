@@ -41,7 +41,7 @@ MainScript_ClearWindowTiles::
     di
 
 .dcz_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .dcz_blanking
     
@@ -59,7 +59,7 @@ MainScript_ClearWindowTiles::
     di
     
 .dct_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .dct_blanking
     
@@ -78,7 +78,7 @@ MainScript_ClearWindowTiles::
     di
     
 .dcth_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .dcth_blanking
     
@@ -189,7 +189,7 @@ MainScript_DrawWindowBorderLine:
     di
     
 .waitForBlanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .waitForBlanking
     
@@ -243,13 +243,13 @@ MainScript_DrawWindowBorderAttribLine::
     ld a, h
     ld e, a
     ld a, 1
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     
 .loop
     di
     
 .waitForBlanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .waitForBlanking
     
@@ -270,7 +270,7 @@ MainScript_DrawWindowBorderAttribLine::
     jr nz, .loop
     
     xor a
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     pop de
     ret
 
@@ -293,7 +293,7 @@ MainScript_LoadWindowBorderTileset::
     di
     
 .c0_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .c0_blanking
     
@@ -313,7 +313,7 @@ MainScript_LoadWindowBorderTileset::
     di
     
 .c3_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .c3_blanking
     

@@ -9,7 +9,7 @@ LCDC_SetTileAttribsSquare::
     ret nz
     
     ld a, 1
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     
     ld a, b
     ld [Malias_CmpSrcBank], a
@@ -35,6 +35,6 @@ LCDC_SetTileAttribsSquare::
     jr nz, .colloop
     
     xor a
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     
     ret

@@ -46,7 +46,7 @@ MainScript_DrawLetter::
 .textColor0Loop
 	di
 .wfbTC0
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbTC0
 	ld a, [de]
@@ -66,7 +66,7 @@ MainScript_DrawLetter::
 .textColor1Loop
 	di
 .wfbTC1
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbTC1
 	ld a, [de]
@@ -87,7 +87,7 @@ MainScript_DrawLetter::
 .textColor2Loop
 	di
 .wfbTC2
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbTC2
 	ld a, [de]
@@ -108,7 +108,7 @@ MainScript_DrawLetter::
 .textColor3Loop
 	di
 .wfbTC3
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbTC3
 	ld a, $FF

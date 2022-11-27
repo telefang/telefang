@@ -31,7 +31,7 @@ Victory_SubStateNaturalEvoInput::
     call Banked_MainScriptMachine
     
 .checkLeft
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_Left
     jr z, .checkRight
     
@@ -44,7 +44,7 @@ Victory_SubStateNaturalEvoInput::
     jr .repositionCursor
     
 .checkRight
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_Right
     jr z, .checkBButton
     
@@ -61,7 +61,7 @@ Victory_SubStateNaturalEvoInput::
     jp Victory_PlaceChoiceCursor
 
 .checkBButton
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_B
     jr z, .checkAButton
     
@@ -70,7 +70,7 @@ Victory_SubStateNaturalEvoInput::
     jr .evolveCancelled
     
 .checkAButton
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A
     ret z
     
