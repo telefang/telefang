@@ -7,12 +7,12 @@ W_TitleMenu_SoundMenuOption:: ds 1
 
 SECTION "Sound Test Utilities", ROMX[$6BBC], BANK[$4]
 TitleMenu_SoundTestInputHandler::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jp nz, .b_button_pressed
     
 .test_up_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and $40
     jr z, .test_down_pressed
     
@@ -37,7 +37,7 @@ TitleMenu_SoundTestInputHandler::
     jp TitleMenu_DrawSoundTestNumbersAndCursors
 
 .test_down_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and $80
     jr z, .test_menu_option
     
@@ -112,7 +112,7 @@ TitleMenu_SoundTestInputHandler::
     jp TitleMenu_DrawSoundTestNumbersAndCursors
 
 .test_a_pressed_on_bgm
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .no_button_pressed_on_bgm
     
@@ -169,7 +169,7 @@ TitleMenu_SoundTestInputHandler::
     jp TitleMenu_DrawSoundTestNumbersAndCursors
 
 .test_a_pressed_on_sfx
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .test_b_pressed_on_sfx
     
@@ -180,7 +180,7 @@ TitleMenu_SoundTestInputHandler::
     ret
     
 .test_b_pressed_on_sfx
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jr z, .no_button_pressed_on_sfx
     
@@ -192,7 +192,7 @@ TitleMenu_SoundTestInputHandler::
     ret
     
 .exit_option_handler
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .no_button_pressed_on_exit
     

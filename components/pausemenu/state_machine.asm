@@ -148,7 +148,7 @@ PauseMenu_StateInputHandler::
     ret
     
 .test_a_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .test_b_pressed
     
@@ -203,7 +203,7 @@ PauseMenu_StateInputHandler::
     ret
     
 .test_b_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jr z, .test_select_pressed
     
@@ -220,7 +220,7 @@ PauseMenu_StateInputHandler::
     ret
     
 .test_select_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 4
     jr z, .nothing_pressed
     
@@ -261,7 +261,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     cp 0
     call z, PauseMenu_DrawClockSprites
     
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 4
     jr z, .test_ime_input
     
@@ -291,7 +291,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     
 .test_ime_input
     call PhoneIME_InputProcessing
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .test_b_pressed
     
@@ -330,7 +330,7 @@ PauseMenu_StatePhoneIMEInputHandler::
     jp PhoneIME_StoreNumber
     
 .test_b_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jr z, .nothing_pressed
     

@@ -2,7 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Calls Menu History Listing Utils", ROMX[$6F59], BANK[$4]
 CallsMenu_EntryListingInputHandler::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .test_b_pressed
     
@@ -24,7 +24,7 @@ CallsMenu_EntryListingInputHandler::
     jp System_ScheduleNextSubSubState
     
 .test_b_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jr z, .test_can_scroll_listing
     

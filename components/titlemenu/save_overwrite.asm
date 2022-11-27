@@ -2,7 +2,7 @@ INCLUDE "telefang.inc"
 
 SECTION "Save Overwrite Subscreen Utils", ROMX[$7C8F], BANK[$4]
 TitleMenu_SaveOverwriteInputHandler::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .test_b_pressed
     
@@ -24,7 +24,7 @@ TitleMenu_SaveOverwriteInputHandler::
     jp System_ScheduleNextSubState
     
 .test_b_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jr z, .test_up_pressed
     

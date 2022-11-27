@@ -132,7 +132,7 @@ TitleScreen_StateIdle::
     ld [W_MetaSpriteConfig1 + M_MetaSpriteConfig_Size * 1 + M_LCDC_MetaSpriteConfig_HiAttribs], a
     
 .dontBlinkSprite
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A + M_JPInput_Start
     jr z, .checkAttractCountdown
     
@@ -254,7 +254,7 @@ TitleScreen_StateCorruptSaveLoadTilemaps::
     
 ; State 01 0E
 TitleScreen_StateCorruptSaveIdle::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A + M_JPInput_Start
     ret z
     

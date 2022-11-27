@@ -24,9 +24,9 @@ Overworld_ResetPowerAntenna::
     ret z
     
     ld a, 0
-    ld [REG_SB], a
+    ldh [REG_SB], a
     ld a, $81
-    ld [REG_SC], a
+    ldh [REG_SC], a
     ret
     
 Overworld_DrivePowerAntennaPattern::
@@ -68,9 +68,9 @@ Overworld_DrivePowerAntennaPattern::
     
 .setLedState
     ld a, b
-    ld [REG_SB], a
+    ldh [REG_SB], a
     ld a, $81
-    ld [REG_SC], a
+    ldh [REG_SC], a
     ret
 
 SECTION "Overworld Power Antenna IRQ Task", ROM0[$1F08]

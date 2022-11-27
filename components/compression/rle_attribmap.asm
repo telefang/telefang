@@ -41,7 +41,7 @@ RLEDecompressAttribsTMAP1::
 ;		NOTE: The wrapper functions fill this in for you.
 RLEDecompressAttribs::
 	ld a, 1
-	ld [REG_VBK], a
+	ldh [REG_VBK], a
 	pop af
 	push hl
 	push de
@@ -226,5 +226,5 @@ RLEEarlyExit:
 	
 .cleanUpAndExit
 	xor a
-	ld [REG_VBK], a
+	ldh [REG_VBK], a
 	ret

@@ -32,8 +32,8 @@ Main::
 	di
 	call LCDC_DisableLCD
 	xor a
-	ld [REG_IF], a
-	ld [REG_IE], a ;Turn off all the interrupts
+	ldh [REG_IF], a
+	ldh [REG_IE], a ;Turn off all the interrupts
 	ld sp, $DFFF
 	ld a, $A
 	ld [REG_MBC3_SRAMENABLE], a
@@ -47,9 +47,9 @@ Main::
 	call ClearTilePatternTables
 	call ClearShadowOAM
 	xor a
-	ld [REG_VBK], a
-	ld [REG_SVBK], a
-	ld [REG_RP], a
+	ldh [REG_VBK], a
+	ldh [REG_SVBK], a
+	ldh [REG_RP], a
 	ld hl, $FE00
 	ld c, 0
 .clearOAMLoop
@@ -74,15 +74,15 @@ Main::
 	call LCDC_ClearDMGPaletteShadow
 	ld a, $83
 	ld [W_ShadowREG_LCDC], a
-	ld [REG_LCDC], a ;Enable LCD display, OBJ, and BG layers.
+	ldh [REG_LCDC], a ;Enable LCD display, OBJ, and BG layers.
 	ei
 	call SerIO_ResetConnection
 	ld a, $40
-	ld [REG_STAT], a
+	ldh [REG_STAT], a
 	xor a
-	ld [REG_IF], a
+	ldh [REG_IF], a
 	ld a, $B
-	ld [REG_IE], a ;Only accept VBlank, LCD, and SIO interrupts
+	ldh [REG_IE], a ;Only accept VBlank, LCD, and SIO interrupts
 	xor a
 	ld [W_SerIO_ConnectionState], a
 	ld a, 1
@@ -127,11 +127,11 @@ Main::
 	ld a, 1
 	ld [W_FrameCompleted], a
 .waitForNextFrame
-	ld a, [H_VBlankCompleted]
+	ldh a, [H_VBlankCompleted]
 	and a
 	jr z, .waitForNextFrame ; WTF: Not using the HALT opcode?
 	xor a
-	ld [H_VBlankCompleted], a
+	ldh [H_VBlankCompleted], a
 	ld [W_FrameCompleted], a
 	jp .gameLoop
 ;Main never returns.

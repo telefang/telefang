@@ -7,7 +7,7 @@ SECTION "Title Menu Time Entry", ROMX[$57EF], BANK[$4]
 TitleMenu_TimeEntryProcessing::
     call TitleMenu_DrawSelectedTimeFieldBlinking
     
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A
     jr z, .checkBButton
     
@@ -35,7 +35,7 @@ TitleMenu_TimeEntryProcessing::
     jp TitleMenu_DrawSelectedTimeFieldSolid
     
 .checkBButton
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_B
     jr z, .checkUpButton
     

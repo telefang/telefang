@@ -45,13 +45,13 @@ If you're on Windows 10 or higher, you'll first of all have to [install and use 
 The following needs to be installed in order to build:
 
 * Python (on Linux or Windows with the Linux subsystem, it'll most likely already be installed)
-* [RGBDS](https://github.com/rednex/rgbds#2-building-rgbds-from-source) version 0.3.6 or newer (follow the instructions in the readme on the GitHub page to install)
+* [RGBDS](https://github.com/rednex/rgbds#2-building-rgbds-from-source) version 0.5.0 or newer (follow the instructions in the readme on the GitHub page to install)
 
 #### Windows 8 and Lower
 
 [Download and install Cygwin](http://cygwin.com/install.html) with `make`, `git`, `gcc-core` and `python3`.
 
-[Download the Windows release of RGBDS](https://github.com/rednex/rgbds/releases/) (0.3.6 or newer) and copy the exe and dll files into `C:\cygwin64\usr\local\bin`.
+[Download the Windows release of RGBDS](https://github.com/rednex/rgbds/releases/) (0.5.0 or newer) and copy the exe and dll files into `C:\cygwin64\usr\local\bin`.
 
 #### Build
 

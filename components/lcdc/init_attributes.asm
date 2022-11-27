@@ -29,11 +29,11 @@ LCDC_InitAttributesLine::
     
     ld d, a
     ld a, 1
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     call .setAttrs
     
     ld a, 0
-    ld [REG_VBK], a
+    ldh [REG_VBK], a
     
     pop bc
     pop hl
@@ -49,7 +49,7 @@ LCDC_InitAttributesLine::
     di
     
 .singleByteWait
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .singleByteWait
     
@@ -73,7 +73,7 @@ LCDC_InitAttributesLine::
     di
     
 .doubleByteWait
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .doubleByteWait
     
