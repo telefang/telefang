@@ -116,7 +116,7 @@ Zukan_StateOverviewInput::
     ret
     
 .check_b_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_B
     jr z, .check_a_pressed
     
@@ -133,7 +133,7 @@ Zukan_StateOverviewInput::
     ret
     
 .check_a_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A
     jr z, .nothing_pressed
     
@@ -342,7 +342,7 @@ Zukan_StateInnerviewInput::
     jr .valid_decrement_search
     
 .check_button_press
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A + M_JPInput_B
     jr z, .nothing_pressed
     

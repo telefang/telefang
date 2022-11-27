@@ -33,23 +33,23 @@ SyncShadowRegs::
 
 .uselessJmp
 	ld a, [W_ShadowREG_SCX]
-	ld [REG_SCX], a
+	ldh [REG_SCX], a
 	ld a, [W_ShadowREG_SCY]
-	ld [REG_SCY], a
+	ldh [REG_SCY], a
 	ld a, [W_ShadowREG_WX]
-	ld [REG_WX], a
+	ldh [REG_WX], a
 	ld a, [W_ShadowREG_WY]
-	ld [REG_WY], a
+	ldh [REG_WY], a
 	ld a, [W_ShadowREG_BGP]
-	ld [REG_BGP], a
+	ldh [REG_BGP], a
 	ld a, [W_ShadowREG_OBP0]
-	ld [REG_OBP0], a
+	ldh [REG_OBP0], a
 	ld a, [W_ShadowREG_OBP1]
-	ld [REG_OBP1], a
+	ldh [REG_OBP1], a
 	ld a, [W_ShadowREG_LCDC]
-	ld [REG_LCDC], a
+	ldh [REG_LCDC], a
 	ld a, [W_ShadowREG_LYC]
-	ld [REG_LYC], a
+	ldh [REG_LYC], a
 	ld b, 0
 	ld hl, $C464
 	ld de, $C460

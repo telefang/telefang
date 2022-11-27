@@ -98,7 +98,7 @@ Status_LoadDenjuuEvolutionIndicatorOffloadZukan_NowWithSGBSupport_DrawLoop::
     di
 
 .wfb
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfb
     ld a, [hli]

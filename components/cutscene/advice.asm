@@ -21,7 +21,7 @@ Cutscene_ADVICE_TileLightColourClear::
 	di
 
 .wfb
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfb
 
@@ -129,7 +129,7 @@ Cutscene_ADVICE_LoadSGBFiles_AntennaTree::
 	di
 
 .wfb
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfb
 	ld e, [hl]
@@ -165,7 +165,7 @@ Cutscene_ADVICE_LoadSGBFiles_OneOfMySoldiers::
 	di
 
 .wfb
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfb
 	ld a, d

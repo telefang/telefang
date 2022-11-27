@@ -166,7 +166,7 @@ TitleMenu_StateMenuInputHandler::
     ret
     
 .checkAPress
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A
     jp z, .noInputToProcess
     

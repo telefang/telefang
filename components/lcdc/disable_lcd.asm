@@ -7,21 +7,21 @@ SECTION "LCDC Disable LCD", ROM0[$07DF]
 ;wait for the next Vblank period before doing so. Not doing so constititues a
 ;killer poke. (Apparantly. I haven't tried this myself.)
 LCDC_DisableLCD::
-    ld a, [REG_IE]
-    ld [$FF93], a
+    ldh a, [REG_IE]
+    ldh [$FF93], a
     res 0, a        ;KNOWN BUG: Does not actually disable Vblank IRQ
     
 .waitForVblank
-    ld a, [REG_LY]
+    ldh a, [REG_LY]
     cp $91
     jr nz, .waitForVblank
     
     ld a, [W_ShadowREG_LCDC]
     and $7F
-    ld [REG_LCDC], a
+    ldh [REG_LCDC], a
     
-    ld a, [$FF93]
-    ld [REG_IE], a
+    ldh a, [$FF93]
+    ldh [REG_IE], a
     ret
     
 ;Enable the LCD.
@@ -29,7 +29,7 @@ LCDC_DisableLCD::
 ;Since it's already disabled, we don't have to worry about waiting for VBlank to
 ;avoid hardware damage.
 LCDC_EnableLCD::
-    ld a, [REG_LCDC]
+    ldh a, [REG_LCDC]
     or $80
-    ld [REG_LCDC], a
+    ldh [REG_LCDC], a
     ret

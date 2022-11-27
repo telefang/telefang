@@ -1,13 +1,13 @@
-M_PrepAuxJmp: MACRO
+MACRO M_PrepAuxJmp
     ld a, \1 & $FF
 ENDM
 
-M_AuxJmp: MACRO
+MACRO M_AuxJmp
     ld a, \1 & $FF
     call PatchUtils_AuxCodeJmp
 ENDM
 
-M_AdviceSetup: MACRO
+MACRO M_AdviceSetup
     ld a, [W_PreviousBank]
     push af
     ld a, [W_CurrentBank]
@@ -26,7 +26,7 @@ M_AdviceSetup: MACRO
     ld l, a
 ENDM
 
-M_AdviceTeardown: MACRO
+MACRO M_AdviceTeardown
     di
     pop af
     ld [W_CurrentBank], a

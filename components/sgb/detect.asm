@@ -9,37 +9,37 @@ SGB_DetectICDPresence::
     call SGB_SendPackets
     call SGB_FrameWait
     
-    ld a, [REG_JOYP]
+    ldh a, [REG_JOYP]
     and 3
     cp 3
     jr nz, .sgbNotDetected
     
 .secondarySgbCheck
     ld a, $20
-    ld [REG_JOYP], a
+    ldh [REG_JOYP], a
     
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
     
     ld a, $30
-    ld [REG_JOYP], a
+    ldh [REG_JOYP], a
     ld a, $10
-    ld [REG_JOYP], a
+    ldh [REG_JOYP], a
     
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
     
     ld a, $30
-    ld [REG_JOYP], a
+    ldh [REG_JOYP], a
     
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
-    ld a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
+    ldh a, [REG_JOYP]
     
     and 3
     cp 3

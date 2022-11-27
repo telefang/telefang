@@ -65,7 +65,7 @@ AttractMode_ADVICE_MapUndertiles::
 	di
 
 .wfbA
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbA
 	ld a, b
@@ -78,7 +78,7 @@ AttractMode_ADVICE_MapUndertiles::
 	di
 
 .wfbB
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbB
 	ld a, b
@@ -201,7 +201,7 @@ AttractMode_ADVICE_LoadSGBFilesScene1_spriteChange::
 	di
 
 .wfbA
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbA
 

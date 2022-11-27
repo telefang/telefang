@@ -57,7 +57,7 @@ Zukan_ADVICE_MapArrow::
 	ld b, a
 
 .wfb
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfb
 	ld [hl], b
@@ -252,7 +252,7 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     M_AdviceSetup
     
 .check_b_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 2
     jr z, .check_a_pressed
     
@@ -269,7 +269,7 @@ Zukan_ADVICE_StateInnerviewInputButtonPress::
     jr .nothing_pressed
     
 .check_a_pressed
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and 1
     jr z, .nothing_pressed
     
@@ -334,7 +334,7 @@ Zukan_ADVICE_TileLightColourReverse::
     di
 
 .wfb
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfb
     ld a, [hli]
@@ -357,7 +357,7 @@ Zukan_ADVICE_TileLowByteBlanketFill::
     di
 
 .wfb
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfb
     ld a, c
@@ -447,7 +447,7 @@ Zukan_ADVICE_ClearMessageForSGB_Direct::
     di
 
 .wfb
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfb
     ld a, e

@@ -360,7 +360,7 @@ Victory_SubStateStatWindowIdle::
     call Victory_UpdateStatIconAnimation
     
 .inputCheck
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A
     ret z
     

@@ -24,7 +24,7 @@ LCDC_LoadTiles::
 	di
 	
 .oddCopyWait
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .oddCopyWait
 	ld a, [de]
@@ -45,7 +45,7 @@ LCDC_LoadTiles::
 	di
 	
 .evenCopyWait
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .evenCopyWait
 	ld a, [de]

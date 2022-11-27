@@ -245,7 +245,7 @@ Status_LoadPhoneDigits_NowWithSGBSupport::
     di
 
 .wfb
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfb
     ld a, [hli]
@@ -274,7 +274,7 @@ Status_ADVICE_ExpandNumericalTiles::
     di
 
 .waitForBlankingNormal
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .waitForBlankingNormal
 
@@ -292,7 +292,7 @@ Status_ADVICE_ExpandNumericalTiles::
     di
 
 .waitForBlankingInverted
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .waitForBlankingInverted
 
@@ -311,7 +311,7 @@ Status_ADVICE_ExpandNumericalTiles::
     di
 
 .waitForBlankingLightBg
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .waitForBlankingLightBg
 

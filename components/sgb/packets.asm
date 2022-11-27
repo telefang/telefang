@@ -89,7 +89,7 @@ SGB_SendPacketsWithVRAM::
     push de
     call LCDC_DisableLCD
     ld a, $E4
-    ld [REG_BGP], a
+    ldh [REG_BGP], a
     
     ld de, $8800
     ld bc, $1000
@@ -115,7 +115,7 @@ SGB_SendPacketsWithVRAM_externalEntry::
     jr nz, .drawLine
     
     ld a, $81
-    ld [REG_LCDC], a
+    ldh [REG_LCDC], a
     
     ld bc, 5
     call SGB_AdjustableWait

@@ -52,7 +52,7 @@ PauseMenu_SubStateSMSGraphicInit::
     
 ;State 0C 13 02
 PauseMenu_SubStateSMSGraphicIdle::
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_B
     jr z, .noBBtn
     
@@ -62,7 +62,7 @@ PauseMenu_SubStateSMSGraphicIdle::
     jp .exitSMSScreen
     
 .noBBtn
-    ld a, [H_JPInput_Changed]
+    ldh a, [H_JPInput_Changed]
     and M_JPInput_A
     ret z
     
