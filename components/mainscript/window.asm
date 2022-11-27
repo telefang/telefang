@@ -109,7 +109,7 @@ MainScript_ADVICE_ClearWindowTiles_DrawColorOneMaybe::
     di
     
 .dct_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .dct_blanking
     
@@ -928,7 +928,7 @@ MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted_Common::
     di
     
 .c1_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .c1_blanking
 
@@ -959,7 +959,7 @@ MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted_Common::
     di
 
 .c0_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .c0_blanking
 
@@ -976,7 +976,7 @@ MainScript_ADVICE_LoadWindowBorderTilesetSGBAdjusted_Common::
     di
 
 .c3_blanking
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .c3_blanking
 

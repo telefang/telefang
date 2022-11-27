@@ -998,19 +998,19 @@ ENDM
 
 ; Event Action 76
 ; Argmap: -
-M_ES_EndIfFlagC39Unset: MACRO
+MACRO M_ES_EndIfFlagC39Unset
 	db $76
 ENDM
 
 ; Event Action 77
 ; Argmap: -
-M_ES_EndIfMessageWindowAtBottom: MACRO
+MACRO M_ES_EndIfMessageWindowAtBottom
 	db $77
 ENDM
 
 ; Event Action 78
 ; Argmap: w
-M_ES_JumpIfShopItemInventoryFull: MACRO
+MACRO M_ES_JumpIfShopItemInventoryFull
 	db $78
 .ea78JumpOrigin\@
 	db ((\1)-(.ea78JumpOrigin\@)) & $FF

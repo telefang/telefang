@@ -43,7 +43,7 @@ TitleScreen_ADVICE_RecolorVersionBand::
     ld hl, $9902
     
 .wfbLoopNewTile
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfbLoopNewTile
     
@@ -56,7 +56,7 @@ TitleScreen_ADVICE_RecolorVersionBand::
     ld hl, $990E
     
 .wfbLoopNewTile2
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfbLoopNewTile2
     
@@ -78,7 +78,7 @@ TitleScreen_ADVICE_InvertVersionBand::
 	di
 
 .wfbA
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbA
 
@@ -98,7 +98,7 @@ TitleScreen_ADVICE_InvertVersionBand::
 	di
 
 .wfbB
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .wfbB
 

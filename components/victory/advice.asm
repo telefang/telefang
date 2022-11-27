@@ -309,7 +309,7 @@ Victory_ADVICE_ClearMessageTextForPhoneNumber::
     di
 
 .wfb
-    ld a, [REG_STAT]
+    ldh a, [REG_STAT]
     and 2
     jr nz, .wfb
 

@@ -19,7 +19,7 @@ SGB_ADVICE_SendATFPacketsWithVRAM::
     di
     call LCDC_DisableLCD
     ld a, $E4
-    ld [REG_BGP], a
+    ldh [REG_BGP], a
     ld de, $8800
     ld bc, $1000
 

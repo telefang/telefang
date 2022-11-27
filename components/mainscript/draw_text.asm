@@ -389,7 +389,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	jr z, .mode1
 	
 .mode3
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .mode3
 	
@@ -400,7 +400,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	jr .end
 	
 .mode0
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .mode0
 	
@@ -410,7 +410,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	jr .end
 	
 .mode1
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .mode1
 	
@@ -426,7 +426,7 @@ MainScript_ADVICE_ExpandNarrowGlyphWithCurrentTextStyle::
 	ld b, a
 	
 .mode2Loop
-	ld a, [REG_STAT]
+	ldh a, [REG_STAT]
 	and 2
 	jr nz, .mode2Loop
 	
