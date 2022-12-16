@@ -6308,118 +6308,190 @@ completing the Field Guide,
 オマエ こんなところで
 なにしてるんだよ!
 オレが たおした はずじゃ
-なかったのか!?",/0x10c01e/,,0,
+なかったのか!?","Yeaaargh! What're you doing
+here?!
+I thought I beat you!","Yeaaargh! What're you doing here?!
+I thought I beat you!",1,
 0x10c020,"キミは??
 ボクは まだ うまれたばかリで
 ボクがダレなのかも ここが
 どこかも しらないんだ
 キミはボクのことを
-しっているの??",/0x10c020/,,0,
+しっているの??","…Who are you?
+I'm just a newborn baby!
+I dunno who I am, or where
+here is…
+Do you know who I am?","…Who are you?
+I'm just a newborn baby!
+I dunno who I am, or where here is…
+Do you know who I am?",1,
 0x10c022,"ヘっ??
 うまれたばかリってことは
-ひょっとして...",/0x10c022/,,0,
+ひょっとして...","Hwuh? You were just
+<bold>born?</normal>
+Does that mean…?",Hwuh? You were just <bold>born?<normal> Does that mean–,1,
 0x10c024,"ここにはえている きが
 シンデンジュウのいっていた
 デンジュウが うまれる き
-『いのちの き』なのか?",/0x10c024/,,0,
+『いのちの き』なのか?","Is this tree the one the
+Divine Denjuu mentioned…
+The one where Denjuu are
+born… The <bold>Tree of Life?<normal>",Is this tree the one the Divine Denjuu mentioned… The one where Denjuu are born… The <bold>Tree of Life?<normal>,1,
 0x10c026,"ねーねー ボクのこと
-しってるのー?",/0x10c026/,,0,
+しってるのー?","Pleasepleaseplease tell me
+who I am pleeease?",Pleasepleaseplease tell me who I am pleeease?,1,
 0x10c028,"まえに おれたちと
 テレファングしたことは
 おぼえてないってことか...
 そうだよな...
 さいしょから あんなふうに
 わるいことを してたわけじゃ
-なかったんだろうな...",/0x10c028/,,0,
+なかったんだろうな...","He's totally forgotten our
+Telefang…
+I guess that makes sense.
+He wouldn't have been
+mega-evil from <bold>birth.<normal>","He's totally forgotten our Telefang…
+I guess that makes sense. He wouldn't have been mega-evil from <bold>birth.<normal>",1,
 0x10c02a,"ねーってば!!!
-こっちむいてよー!!",/0x10c02a/,,0,
+こっちむいてよー!!",Hey! Would you answer me?!,Would you answer me?!,1,
 0x10c02c,"わるいわるい
 オレたちは トモダチを
 たくさん つくるために
 たびを してるんだ
 よければ オレのトモダチに
-なってくれないか?",/0x10c02c/,,0,
+なってくれないか?","Sorry about that!
+Hey, so, actually…
+We're going all over the world
+trying to make as many
+friends as possible. Do you
+wanna be friends, maybe?","Sorry about that!
+Hey, so, actually…
+We're going all over the world trying to make as many friends as possible. Do you wanna be friends, maybe?",1,
 0x10c02e,"うん!ボクひとリで
 すっごい さびしかったんだ!
-ボクと トモダチになってよ",/0x10c02e/,,0,
+ボクと トモダチになってよ","Yes please! I've been <bold>so<normal>
+lonely! Be my friend, please.","Yes please! I've been <bold>so<normal> lonely! Be my friend, please.",1,
 0x10c030,"オマエ Dショットは
-もってるのか?",/0x10c030/,,0,
+もってるのか?",You got a D-Shot?,You got a D-Shot?,1,
 0x10c032,"うーん ボクが
 もっているものっていえば
 ここに おちてたこれしか
-ないんだよ",/0x10c032/,,0,
+ないんだよ","Hmm…
+All I have is this thing
+that was on the ground
+here…","Hmm…
+All I have is this thing that was on the ground here…",1,
 0x10c034,"それだよ それが
 Dショットって いうんだ
 それじゃあ オレのバンゴウを
 おしえておいてやるよ
-また デンワしてくれよな",/0x10c034/,,0,
+また デンワしてくれよな","That's it!
+That's called a D-Shot.
+Here, I'll give you my number.
+Call me sometime.","That's it!
+That's called a D-Shot.
+Here, I'll give you my number. Call me sometime.",1,
 0x10c036,"うん!ぜったいにデンワする!
-まっててよね",/0x10c036/,,0,
+まっててよね",Uh-huh! I will!,Uh-huh! I will!,1,
 0x10c038,"ヤロウのデンワバンゴウを
-てにいれた",/0x10c038/,,0,
+てにいれた",Got Yarrow's phone number!,Got Yarrow's phone number!,1,
 0x10c03a,"よーし! ボクも いっぱい
 トモダチを つくるんだ!
 そして そとを いろいろと
-みてまわるんだ!",/0x10c03a/,,0,
+みてまわるんだ!","I'm gonna make so many
+friends too!
+And also see the world!","I'm gonna make so many friends too!
+And also see the world!",1,
 0x10c03c,"オマエなら たくさんの
 トモダチを つくれるよ
-がんばれよな!",/0x10c03c/,,0,
+がんばれよな!","You're gonna have no
+problem. Best of luck!",You're gonna have no problem. Best of luck!,1,
 0x10c03e,"あリがとう!がんばるよ!
 それじゃ ボクはもう
-いくから!",/0x10c03e/,,0,
+いくから!","Thanks! Okay, I'll go now!","Thanks! Okay, I'll go now!",1,
 0x10c040,"おう! ゲンキでな
-またデンワするからな!",/0x10c040/,,0,
-0x10c042,じゃあね バイバイ!,/0x10c042/,,0,
+またデンワするからな!","Sure! Be careful out there.
+I might call ya!",Sure! Be careful out there. I might call ya!,1,
+0x10c042,じゃあね バイバイ!,Mhm! Byebye!,Mhm! Byebye!,1,
 0x10c044,"こんどは みちを
 まちがえるんじゃないぞ..
-さぁ オレたちもいくか!",/0x10c044/,,0,
+さぁ オレたちもいくか!","Don't walk down the wrong
+path this time…
+Alright, I should get going.","Don't walk down the wrong path this time…
+Alright, I should get going.",1,
 #######,Encounter with Gypsophi (postgame),,,,
-0x10c046,よう!ゲンキにしてるか?,/0x10c046/,,0,
+0x10c046,よう!ゲンキにしてるか?,Hey! How you doin'?,Hey! How you doin'?,1,
 0x10c048,"ん...?
 オマエは シンデンジュウの
 ところであった コドモでは
 ないか......
 たしかナマエは...
 『<&name>』と
-いったかな?",/0x10c048/,,0,
+いったかな?","Hm…? Who stands before me
+if not the child who impeded
+my way to the Divine Denjuu?
+…<&name>, was it?","Hm…? Who stands before me if not the child who impeded my way to the Divine Denjuu? …<&name>, was it?",1,
 0x10c04a,"おーっ!?
 オレのナマエ おぼえてて
 くれてたんだ
-オレもなかなかの もんだな",/0x10c04a/,,0,
+オレもなかなかの もんだな","Look at that! You
+remembered my name!
+Guess I made an impression,
+huh?","Look at that! You remembered my name! Guess I made an impression, huh?",1,
 0x10c04c,"うぬぼれるなよ....
 ところで ここに
-なにをしにきたのだ?",/0x10c04c/,,0,
+なにをしにきたのだ?","Do not let it inflate your ego
+any further.
+Regardless… What is it that
+you seek here?","Do not let it inflate your ego any further.
+Regardless… What is it that you seek here?",1,
 0x10c04e,"ん? あーそうそう
 オマエの デンワバンゴウを
 おしえてもらいに
-きたんだよ",/0x10c04e/,,0,
+きたんだよ","Hm? Oh yeah. I'm here to
+get your phone number!",Hm? Oh yeah. I'm here to get your phone number!,1,
 0x10c050,"ワタシの デンワバンゴウを
 ききにきたのか...
 ならば このせかいの
-ルールにしたがうのだな",/0x10c050/,,0,
+ルールにしたがうのだな","You wish to wrest <bold>my<normal>
+telephone number from me?
+You know the law of the
+land, child.","You wish to wrest <bold>my<normal> telephone number from me?
+You know the law of the land, child.",1,
 0x10c052,"おう!
-かかってこい!",/0x10c052/,,0,
-0x10c054,いくぞ! テレファングだ!,/0x10c054/,,0,
+かかってこい!","Of course I do.
+Bring it on!","Of course I do.
+Bring it on!",1,
+0x10c054,いくぞ! テレファングだ!,A Telefang it is!,A Telefang it is!,1,
 0x10c056,"ふふ..やはリ
 オマエのつれている
 デンジュウのほうが
-つよいみたいだな",/0x10c056/,,0,
+つよいみたいだな","Ha… Your Denjuu retinue has
+again proven its mettle.",Ha… Your Denjuu retinue has again proven its mettle.,1,
 0x10c058,"ヘっヘー
 んじゃ デンワバンゴウを
-コウカンしようぜ!",/0x10c058/,,0,
+コウカンしようぜ!","Heh heh! Alright, cough up
+the phone number!","Heh heh! Alright, cough up the phone number!",1,
 0x10c05a,"ギプソフィーのデンワバンゴウを
-てにいれた",/0x10c05a/,,0,
+てにいれた",Got Gypsophi's phone number!,Got Gypsophi's phone number!,1,
 0x10c05c,"ケイタイをもって はじめて
 バンゴウを コウカンしたのが
-オマエとはな..",/0x10c05c/,,0,
+オマエとはな..","The irony… For <bold>yours<normal> to be
+the first number I receive
+in trade.",The irony… For <bold>yours<normal> to be the first number I receive in trade.,1,
 0x10c05e,"お? ってことは
 オレが はじめての
-トモダチってことだな!",/0x10c05e/,,0,
+トモダチってことだな!","Really?! Then I guess you've
+made your first friend!",Really?! Then I guess you've made your first friend!,1,
 0x10c060,"ふん...なにかあったら
 よんでくれ
-ワタシは ねるぞ....",/0x10c060/,,0,
+ワタシは ねるぞ....","Hmph… Well, summon me if the
+need should present itself.
+Till then, I slumber.","Hmph… Well, summon me if the need should present itself. Till then, I slumber.",1,
 0x10c062,"おう! ゆっくリねてくれよ!
-それじゃーな!",/0x10c062/,,0,
+それじゃーな!","You got it! Sleep well.
+See ya later!","You got it! Sleep well.
+See ya later!",1,
 #######,Encounter with Dendel (postgame),,,,
 0x10c064,んー!?,/0x10c064/,,0,
 0x10c066,"ニンゲンだ! ニンゲンだ!

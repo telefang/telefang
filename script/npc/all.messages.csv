@@ -358,7 +358,7 @@ You've got to bring back that key!",,0,
 アンテナのきのカギも
 あげるダス!","Thank you so much for returning the key, man!
 As thanks, you can keep the treasure you found in the cave and use the Antenna Tree key whenever you want, man!",,0,
-0x11c07e,ほんとうにあリがとうダス!,"Really, thanks man!",,0,
+0x11c07e,ほんとうにあリがとうダス!,"Major thanks, man!","Major thanks, man!",1,
 #######,14 strings   -   Northeast Cavern,,,,
 0x11c080,"あっ!なんだね!キミたちは!
 ここは たちいリキンシだぞ!
@@ -1200,7 +1200,9 @@ I'm going home!",,0,
 イオンとうの ヌシがいるんだ",The forest up ahead is home to Ion Island's Master.,,0,
 0x124098,"ボク あのけんきゅうじょに
 つれさられてたんだキ
-すごくこわかったキー",/0x124098/,,0,This line is used in the Sanaeba's Lab chapter.
+すごくこわかったキー","I was abducted to that lab!
+I was so scaaared!",I was abducted to that lab! I was so scaaared!,1,"This line is used in the Sanaeba's Lab chapter.
+TODO: Figure out who speaks this line. It might be worth reproducing an equivalent of the キ speech quirk. //"
 0x12409a,"また ほかのカイシャの ヤツか
 いいかげんうんざリだな
 さっさとでていけよ!","I'm fed up with these punks from the other phone companies!
