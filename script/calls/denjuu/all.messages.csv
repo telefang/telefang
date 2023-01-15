@@ -1684,8 +1684,8 @@ I just can't win!
 much I worry, that's just
 the way it is!<*2>","You're right... No matter how much I worry, that's just the way it is!<*2>",1,
 0x134070,"スゲエかな?
-オマエがいうと じしんでるぜ!<*2>","Am I? When you say it, I
-feel much more confident!<*2>","Am I? When you say it, I feel much more confident!",1,
+オマエがいうと じしんでるぜ!<*2>","Am I? If you think so, it's
+gotta be true!<*2>","Am I? If <bold>you<normal> think so, it's gotta be true!",1,
 0x134072,"わかってる!
 オマエっていいやつだよな...<*2>","You're right! You really
 are a good guy...<*2>","You're right! You really
@@ -2756,8 +2756,8 @@ They're sweet!
 </Q><*A>","It's not? How about the snacks on the side, then?
 <0>They're great!<0>They're sweet!<*A>",1,
 0x1341da,"おちゃとわさびと どういう
-かんけがあるのかな?<*2>","You put kerosene in the
-tea...?<*2>",Are you sure it's safe to drink tea with kerosene...?<*2>,1,
+かんけがあるのかな?<*2>","Are you sure it's safe to
+drink tea with kerosene...?<*2>",Are you sure it's safe to drink tea with kerosene...?<*2>,1,
 0x1341dc,"そっか!いろいろあリがとう
 またデンワするよ!<*2>","Well, thanks anyway.
 Talk again soon!<*2>","Well, thanks anyway.
@@ -2767,8 +2767,7 @@ Talk again soon!<*2>",1,
 ceremonies are just in it
 for the snacks.<*2>",I bet people who do tea ceremonies are just in it for the snacks.<*2>,1,
 0x1341e0,"あんまリあまいのは
-すきじゃないんだよな<*2>","I don't really like sweet
-things...<*2>",I don't really like sweet things...<*2>,1,
+すきじゃないんだよな<*2>",I don't really like sweets...<*2>,I don't really like sweets...<*2>,1,
 #######,#072,,,,
 0x1341e2,"『かどう』について
 すこしおしえてほしいんだけど
@@ -2782,16 +2781,16 @@ You give them life.
 Don't ask me!
 </Q><*A>","I heard about this thing called ""ikebana""... The ""art of flower arrangement"".
 What's that about?
-<0>You give them life.<0>Don't ask me!<*A>",1,
+<0>You make them come alive.<0>Don't ask me!<*A>",1,
 0x1341e4,"はなは わかるとして
 いけるっていうのはなんだ?
- うえる むずかしい<*A>","Give them what now? Aren't
-flowers already alive?
+ うえる むずかしい<*A>","Come alive? Aren't flowers
+already alive?
 <Q>
 You plant them.
 <|>
 Hard to explain...
-</Q><*A>","Give them what now? Aren't flowers already alive?
+</Q><*A>","Come alive? Aren't flowers already alive?
 <0>You plant them.<0>Hard to explain...<*A>",1,
 0x1341e6,"やはリ そうとうむずかしいもの
 なんだね?かどうというのは..
@@ -2957,8 +2956,11 @@ anywhere?
 <Q>Anywhere!<|>Well, mostly</Q><*A>","So you're saying there could be a school of fish anywhere?
 Anywhere! / Well, mostly",1,
 0x11003c,"そうだよ!こんどオマエも
-さがしてみろよ!<*2>","Right! Help me look for it
-sometime, hm?<*2>","Right! Help me look for it sometime, hm?",1,
+さがしてみろよ!<*2>","Right! They've got to learn
+somewhere!
+Help me look for it sometime,
+hm?<*2>","Right! They've got to learn somewhere!
+Help me look for it sometime, hm?",1,
 0x11003e,"いや!オレはあきらめないぞ!
 みたってやつをさがしてやる!<*2>","No way! I'm not giving up!
 There's gotta be someone
@@ -2973,19 +2975,19 @@ gotcha!<*2>",Only in clean waters? I gotcha!,1,
 #######,#079,,,,
 0x110044,"なんかさ クリスマスのうたって
 すきなんだよねー
- なんで? そうかな<*A>","I gotta say, Christmas
-music is pretty darn good.
-<Q>Why?<|>I guess</Q><*A>","I gotta say, Christmas music is pretty darn good.
+ なんで? そうかな<*A>","Listen… Christmas music.
+It's the bee's knees.
+<Q>Why?<|>I guess</Q><*A>","Listen… Christmas music. It's the bee's knees.
 Why? / I guess",1,
 0x110046,"なんか ワクワクするっていうか
 ドキドキするっていうか...
  わかるよ それはね<*A>","It's, you know... exciting!
-Gets you all fired up!
+Gets you in the spirit!
 <Q>
 Oh yeah!
 <|>
 That's because...
-</Q><*A>","It's, you know... exciting! Gets you all fired up!
+</Q><*A>","It's, you know... exciting! Gets you in the spirit!
 Oh yeah! / That's because...",1,
 0x110048,"クリスマスのうたきらい?
 オレはだいすきなんだけどな!
@@ -3001,11 +3003,11 @@ Do you even know Santa? / I'm not into it.",1,
 いったいどうしてなんだろうな?<*2>","Yeah, you get me! There's
 just something about it.<*2>","Yeah, you get me! There's just something about it.",1,
 0x11004c,"サンタさん?いいこにしてれば
-プレゼントもらえるのか!!<*2>","Santa? Hold up, good kids
-get presents?!<*2>","Santa? Hold up, good kids get presents?!",1,
+プレゼントもらえるのか!!<*2>","Santa? Wait a second, good
+kids get presents?!<*2>","Santa? Wait a second, good kids get presents?!",1,
 0x11004e,"サンタさん?どんなひと?
-ふだんはなにしてるひとなの?<*2>","Santa? Who? What does this
-""Santa"" do?<*2>","Santa? Who? What does this ""Santa"" do?",1,
+ふだんはなにしてるひとなの?<*2>","San-tuh? Who? What does
+this ""Santa"" do?<*2>","San-tuh? Who? What does this ""Santa"" do?",1,
 0x110050,"なんで!なんかいやな
 おもいででもあるのか?<*2>","What! Why? Do you have bad
 Christmas memories?<*2>",What! Why? Do you have bad Christmas memories?,1,
@@ -3730,21 +3732,28 @@ know about your FACE!<*2>","Yeah, well, I don't– I don't know about your FACE!
  しってる しらない<*A>","""The apple doesn't fall far
 from the tree""...
 Do you get that expression?
-<Q>Yes<|>No</Q><*A>","""The apple doesn't fall far from the tree""...
+<Q>Totally<|>Nah</Q><*A>","""The apple doesn't fall far from the tree""...
 Do you get that expression?
-<0>Yes<0>No<*A>",1,
+<0>Totally<0>Nope…<*A>",1,
 0x110150,"なるほど...こどもはおやと
 そっくリにそだつか...
  そうだよ なんで?<*A>","I see. Children grow up to be
 like their parents, huh.
-<Q>Exactly!<|>Do they?</Q><*A>","I see. Children grow up to be like their parents, huh.
-<0>Exactly!<0>Do they?<*A>",1,
+<Q>
+Exactly!
+<|>
+Why do you ask?
+</Q><*A>","I see. Children grow up to be like their parents, huh.
+<0>Exactly!<0>Why do you ask?<*A>",1,
 0x110152,"かえるはかえるにしか
 ならないってことか?
- そうだよ! わかんない<*A>","Does it means apples are like
-cats? They won't get beat
-up even if they fall?
-<Q>Exactly!<|>No, they will.</Q><*A>","Does it means apples are like cats? They won't get beat up even if they fall?
+ そうだよ! わかんない<*A>","Does it mean…
+apples are like cats?
+They won't get beat up even
+if they fall?
+<Q>Exactly!<|>No, they will.</Q><*A>","Does it mean…
+apples are like cats?
+They won't get beat up even if they fall?
 <0>Exactly!<0>No, they will.<*A>",1,
 0x110154,"そういうものなのか...
 あリがとな!おしえてくれて<*2>","So that's it! Thanks for
@@ -3763,35 +3772,78 @@ height of the tree...?<*2>",Wouldn't that depend on the height of the tree...?<*
 #######,#099,,,,
 0x11015c,"オマエは『うそもほうベん』
 って どうおもう?
- どういうこと あリじゃん<*A>",/0x11015c/<*A>,,0,
+ どういうこと あリじゃん<*A>","Has anyone ever told you ""all
+roads lead to Rome""?
+Is that true?
+<Q>Sure is<|>Not even almost</Q><*A>","Has anyone ever told you ""all roads lead to Rome""?
+Is that true?
+<0>Sure is<0>Not even almost<*A>",1,Made up out of whole cloth.
 0x11015e,"うそもつきかたしだいって
 いみらしいよ!
- ダメだよ むずかしい<*A>",/0x11015e/<*A>,,0,
+ ダメだよ むずかしい<*A>","Well, I've been walking for
+<bold>thirteen hours<normal> now
+and I'm getting <bold>nowhere!<normal>
+<Q>
+Sucks to be you
+<|>
+Is it a circular road?
+</Q><*A>","Well, I've been walking for <bold>thirteen hours<normal> now
+and I'm getting <bold>nowhere!<normal>
+<0>You're walking backwards<0>Is it a circular road?",1,
 0x110160,"そうかな?いいうそも
 なかには あるかな?
- ある ない<*A>",/0x110160/<*A>,,0,
+ ある ない<*A>","Why not?
+<Q>
+Rome is in the human world
+<|>
+Some lead to Nebraska
+</Q><*A>","Why not?
+<0>Rome is in the human world<0>Some lead to Nebraska",1,
 0x110162,"どんなリゆうがあっても
-うそはダメってことか!<*2>",/0x110162/<*2>,,0,
+うそはダメってことか!<*2>","Oh, okay. So Rome's actually
+the way I came?
+Back I go…<*2>","Oh, okay. So Rome's actually the way I came?
+Back I go…",1,
 0x110164,"まあね どのヘんまでが
-ゆるされるかだよね!<*2>",/0x110164/<*2>,,0,
+ゆるされるかだよね!<*2>","Hold on…
+Let me look at my map…
+…
+
+Oh.<*2>","Hold on…
+Let me look at my map…
+…
+
+Oh.",1,
 0x110166,"だれかをまもるためなら
-いいうそだよね!<*2>",/0x110166/<*2>,,0,
+いいうそだよね!<*2>","Ohhhhh! That explains it.
+Thanks.
+You've saved me from
+another thirteen hours.<*2>","Ohhhhh! That explains it. Thanks.
+You've saved me from another thirteen hours.",1,
 0x110168,"そうかな?オレは
-あるとおもうけどな...<*2>",/0x110168/<*2>,,0,
+あるとおもうけどな...<*2>",Oh. I don't wanna go there.<*2>,Oh. I don't wanna go there.,1,
 #######,#100,,,,
 0x11016a,"きいてくれよ!オレさ
 『みっかぼうず』っていわれた!
- どういうこと なんで?<*A>",/0x11016a/<*A>,,0,
+ どういうこと なんで?<*A>","Listen! Somebody called me a
+""goody two-shoes""!
+<Q>A what?<|>Why?</Q><*A>","Listen! Somebody called me a ""goody two-shoes""!
+<0>A what?<0>Why?",1,Made up out of whole cloth.
 0x11016c,"なんでもみっかと
 つづかないってこと!
- そうなの? がんばれよ<*A>",/0x11016c/<*A>,,0,
+ そうなの? がんばれよ<*A>","I dunno. I guess it means I
+wear shoes of high quality.
+<Q>Nice<|>…Do you?</Q><*A>","I dunno. I guess it means I wear shoes of high quality.
+<0>Nice<0>…Do you?",1,
 0x11016e,"オレが すぐそうじを
 さぼるからってさ...
  しょうがない ダメじゃん<*A>",/0x11016e/<*A>,,0,
 0x110170,"うん...がんばろうとは
-してるんだけどね...<*2>",/0x110170/<*2>,,0,
+してるんだけどね...<*2>","The problem is… I don't wear
+shoes…<*2>",The problem is… I don't wear shoes…,1,
 0x110172,"そうだね!そういわれない
-ためにがんばることにするよ!<*2>",/0x110172/<*2>,,0,
+ためにがんばることにするよ!<*2>","Nope! I guess I just give off
+that kind of aura!<*2>",Nope! I guess I just give off that kind of aura!,1,
 0x110174,"オレがさぼらなければ
 いいことなんだけどね...<*2>",/0x110174/<*2>,,0,
 0x110176,"いわれてもしかたがないけど

@@ -6493,66 +6493,99 @@ Till then, I slumber.","Hmph… Well, summon me if the need should present itsel
 See ya later!","You got it! Sleep well.
 See ya later!",1,
 #######,Encounter with Dendel (postgame),,,,
-0x10c064,んー!?,/0x10c064/,,0,
+0x10c064,んー!?,Hmmmm?!,Hmmmm?!,1,
 0x10c066,"ニンゲンだ! ニンゲンだ!
-はじめてみたー!",/0x10c066/,,0,
-0x10c068,なんだよっ! オマエは!?,/0x10c068/,,0,
+はじめてみたー!","A human! A human!!!
+I've never seen one
+before!","A human! A human!!!
+I've never seen one before!",1,
+0x10c068,なんだよっ! オマエは!?,Huh? Who are you?!,Huh? Who are you?!,1,
 0x10c06a,"その あたまに かぶってる
-ものは なにー?",/0x10c06a/,,0,
+ものは なにー?","You have a thing on your
+head and, um, what is it?","You have a thing on your head and, um, what is it?",1,
 0x10c06c,"その みにつけてるものは
-なんなのー?",/0x10c06c/,,0,
-0x10c06e,ねーねー おしえてよー!!,/0x10c06e/,,0,
-0x10c070,だーっ!うっとおしい!,/0x10c070/,,0,
-0x10c072,ねーねー! おしえてよー!,/0x10c072/,,0,
+なんなのー?","What are you wearing what's
+it called?",What are you wearing what's it called?,1,
+0x10c06e,ねーねー おしえてよー!!,"I wanna know I wanna know
+I wanna know!!!",I wanna know I wanna know I wanna know!!!,1,
+0x10c070,だーっ!うっとおしい!,"Gah! Take it easy, wouldja?!","Gah! Take it easy, wouldja?!",1,
+0x10c072,ねーねー! おしえてよー!,Tell me tell me tell meee!!!,Tell me tell me tell meee!!!,1,
 0x10c074,"おちつけよっ!
 オマエは いったいなにもの
-なんだ!?",/0x10c074/,,0,
+なんだ!?","Cool it! What are you,
+anyway?!","Cool it! What are you, anyway?!",1,
 0x10c076,"そういえば じこしょうかいが
 まだだったね!
 はじめまして
 デンデルといいます
-よろしく!!",/0x10c076/,,0,
+よろしく!!","Oh yeah! I hafta say hi! I
+forgot.
+Hello! I'm Dendel!
+Nice to hello!","Oh yeah! I hafta say hi! I forgot.
+Hello! I'm Dendel!
+Nice to hello!",1,
 0x10c078,"ふぅ やっとおちついた
 オレは <&name>って
 いうんだ
-よろしくな",/0x10c078/,,0,
+よろしくな","Phew. Finally you're talking
+some sense.
+I'm <&name>. Nice to
+meet you too.","Phew. Finally you're talking some sense.
+I'm <&name>. Nice to meet you too.",1,
 0x10c07a,"ボク ニンゲンのトモダチは
 ひとリもいないんだ
 ねぇ ボクとトモダチに
-なってくれない?",/0x10c07a/,,0,
+なってくれない?","I don't have any human
+friends at all!
+Not even one!
+Would you be my friend?","I don't have any human friends at all!
+Not even one!
+Would you be my friend?",1,
 0x10c07c,"おう いいぜ
 デンワバンゴウを
-おしえてくれよ",/0x10c07c/,,0,
+おしえてくれよ","Oh! Sure! Just gimme your
+phone number.",Oh! Sure! Just gimme your phone number.,1,
 0x10c07e,"デンデルのデンワバンゴウを
-てにれた",/0x10c07e/,,0,
+てにれた",Got Dendel's phone number!,Got Dendel's phone number!,1,
 0x10c080,"うわーい!
 なにかあったときには
 ゼッタイにボクをよんでよね
-ゼッタイだよ!",/0x10c080/,,0,
+ゼッタイだよ!","Yaaay! Yaaay! Promise you'll
+call me if you need me,
+okay? Promise!","Yaaay! Yaaay! Promise you'll call me if you need me, okay? Promise!",1,
 0x10c082,"わかった わかった
-よぶから しんぱいするなよ",/0x10c082/,,0,
+よぶから しんぱいするなよ","Yeah, yeah. Don't worry.","Yeah, yeah. Don't worry.",1,
 0x10c084,"うん!
 キミからの デンワまってる
 それじゃあ ボクは あそびに
 いってくるよ
-じゃあね!",/0x10c084/,,0,
+じゃあね!","Okay! You can call me
+anytime!
+I'm gonna go play now. Bye-
+bye!","Okay! You can call me anytime!
+I'm gonna go play now. Bye-bye!",1,
 #######,Encounter with Teletel (postgame),,,,
-0x10c086,ひゃっ!,/0x10c086/,,0,
-0x10c088,ん?,/0x10c088/,,0,
-0x10c08a,ひっ!,/0x10c08a/,,0,
+0x10c086,ひゃっ!,Eyagh!,Eyagh!,1,
+0x10c088,ん?,Huh?,Huh?,1,
+0x10c08a,ひっ!,Eek!,Eek!,1,
 0x10c08c,"なにを こわがってるんだよ
-オレは なにもしないって",/0x10c08c/,,0,
+オレは なにもしないって","What are you scared for? I
+don't bite.",What are you scared for? I don't bite.,1,
 0x10c08e,"オレのナマエは
 <&name>って
 いうんだ
 オマエのナマエ おしえて
-くれよ!",/0x10c08e/,,0,
+くれよ!","My name's <&name>.
+What's yours?",My name's <&name>. What's yours?,1,
 0x10c090,"............
-....レ..ル...",/0x10c090/,,0,
+....レ..ル...","…………………………………………………
+………………………………Te……tel…","…………………………………………………
+………………………………Te……tel…",1,
 0x10c092,"ごめん よくきこえないんだ
 もういっかい
-おしえてくれないか?",/0x10c092/,,0,
-0x10c094,テレテル!!!!!,/0x10c094/,,0,
+おしえてくれないか?","Sorry, what was that?
+Could you say that again?","Sorry, what was that? Could you say that again?",1,
+0x10c094,テレテル!!!!!,Teletel!!!,Teletel!!!,1,
 0x10c096,"おっきいこえが
 だせるんじゃないか
 そうか テレテルっていう
@@ -6560,23 +6593,38 @@ See ya later!",1,
 オレ トモダチいっぱい
 つくリたいんだ!
 オレと トモダチになって
-くれないか?",/0x10c096/,,0,
+くれないか?","See? That wasn't so hard!
+So you're Teletel, huh?
+Y'know, I'm trying to make
+friends right now! Do you
+wanna be my friend?","See? That wasn't so hard! So you're Teletel, huh? Y'know, I'm trying to make friends right now! Do you wanna be my friend?",1,Pocket no Denjuu… sore to you wanna be my friend???
 0x10c098,"うん!キミとなら
 トモダチになれそうだよ
-これ ボクのデンワバンゴウ",/0x10c098/,,0,
+これ ボクのデンワバンゴウ","Mhm! You're probably a good
+guy. We could be friends.
+Here's my number!",Mhm! You're probably a good guy. We could be friends. Here's my number!,1,
 0x10c09a,"テレテルのデンワバンゴウを
-てにいれた",/0x10c09a/,,0,
+てにいれた",Got Teletel's phone number!,Got Teletel's phone number!,1,
 0x10c09c,"はじめて ニンゲンと
 デンワバンゴウの
 こうかんを したよ
-これからも よろしくね",/0x10c09c/,,0,
+これからも よろしくね","That's the first time I've
+ever traded numbers with
+a human.",That's the first time I've ever traded numbers with a human.,1,
 0x10c09e,"おう! こっちこそ
-よろしくな!",/0x10c09e/,,0,
+よろしくな!","No kidding! Well,
+nice to meetcha!","No kidding! Well,
+nice to meetcha!",1,
 0x10c0a0,"なんだか てれくさいな..
 ちょっとそとに
 いってくる...
-じゃあ またデンワしてね",/0x10c0a0/,,0,
-0x10c0a2,おう! じゃあな!,/0x10c0a2/,,0,
+じゃあ またデンワしてね","I'm getting a bit antsy…
+I'm gonna go…
+But call me sometime,
+please!","I'm getting a bit antsy…
+I'm gonna go…
+But call me sometime, please!",1,
+0x10c0a2,おう! じゃあな!,Totally! See ya!,Totally! See ya!,1,
 #######,Encounter with Kai (postgame),,,,
 0x10c0a4,"カイじゃないか!
 アクマデンジュウにやられた
