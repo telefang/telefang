@@ -5263,32 +5263,58 @@ how much are you planning to make the Denjuu suffer?!",1,
 <&name>くん
 ワタシの リソウを
 リかいするには まだまだ
-コドモなのだ",/0x1400ec/,,0,
+コドモなのだ","The number matters not!
+<&name>, you are
+still too much of a child to
+understand my ideals.","The number matters not!
+<&name>, you are still too much of a child to understand my ideals.",1,
 0x1400ee,"オレは むずかしいことは
 よくわからないけど
 オマエの かんがえが
 まちがっているってのはわかる!
 オマエの やろうとしている
 ことを だまってみすごすことは
-できない!",/0x1400ee/,,0,
+できない!","I may not understand
+difficult things, but I
+know that what you're
+doing is wrong!
+I can't just sit by idly and
+watch your actions!","I may not understand difficult things, but I know that what you're doing is wrong!
+I can't just sit by idly and watch your actions!",1,
 0x1400f0,"いいだろう!
 あくまでワタシに さからうと
 いうのだな
 ならば じつリょくで
 だまらせてやるっ!
-テレファングだ!!!!",/0x1400f0/,,0,
+テレファングだ!!!!","Very well!
+
+If you wish to defy me
+until the very end, then
+I'll silence you with my
+true strength!
+Let's Telefang!!!!","Very well!
+If you wish to defy me until the very end, then I'll silence you with my true strength!
+Let's Telefang!!!!",1,
 0x1400f2,"こ...こんなヤツに ワタシの
-ユメが こわされるなんて...",/0x1400f2/,,0,
+ユメが こわされるなんて...","T-to think that my dream
+was destroyed by you...",T-to think that my dream was destroyed by you...,1,
 0x1400f4,"ヘっ!オマエの やぼうも
-ここで おわリだな!",/0x1400f4/,,0,
+ここで おわリだな!","Heh! Your ambitions will end
+here too.",Heh! Your ambitions will end here too.,1,
 0x1400f6,"サナエバ...オマエのやくめは
 ここまでだ
-ごくろうだったな",/0x1400f6/,,0,
+ごくろうだったな","Sanaeba... The role you've
+held up until now is over.
+You've worked hard.",Sanaeba... The role you've held up until now is over. You've worked hard.,1,
 0x1400f8,"ワタシの やくめが
-ここまでというのは....",/0x1400f8/,,0,
+ここまでというのは....","The role I've held up until
+now, you say...","The role I've held up until now, you say...",1,
 0x1400fa,"うっ..なにをするのですか
 ワタシは アナタの のぞむ
-ままにしたではないですか!",/0x1400fa/,,0,
+ままにしたではないですか!","Uuw.. What is this?
+
+Haven't I done as you
+wished up until now?",Uuw.. What is this? Haven't I done as you wished up until now?,1,
 0x1400fc,"ワタシからの おれいだよ
 たかが ニンゲンふぜいが
 なかなか よいはたらきを
@@ -5296,19 +5322,45 @@ how much are you planning to make the Denjuu suffer?!",1,
 ここまでくれば ワタシひとリでも『いのちの き』を てにいれる
 ことができる
 『いのちの き』を つかい
-ニンゲンカイと デンジュウカイをしはいしてやる",/0x1400fc/,,0,
+ニンゲンカイと デンジュウカイをしはいしてやる","This is my thanks to you.
+
+For the likes of a human,
+you did a pretty good job.
+Now that we've come this
+far, I can obtain the Tree
+of Life for myself.
+I will use the Tree of Life to
+rule over the human world
+and the Denjuu world!","This is my thanks to you. 
+For the likes of a human, you did a pretty good job.
+Now that we've come this far, I can obtain the Tree of Life for myself.
+I will use the Tree of Life to rule over the human world and the Denjuu world!",1,
 0x1400fe,"サナエバ! アイツは
-なにものなんだ!",/0x1400fe/,,0,
+なにものなんだ!",Sanaeba! What's with him?,Sanaeba! What's with him?,1,
 0x140100,"アイツのことは
 くわしくは よくしらないんだ
 ニンゲンカイとデンジュウカイを
 シハイしようだなんて...
-まさか そんなことを かんがえていたとは...",/0x140100/,,0,
+まさか そんなことを かんがえていたとは...","There isn't much that I
+know about him.
+To think that he intended to
+rule the human world and
+Denjuu world...
+
+I never imagined he was
+thinking of such things...","There isn't much that I know about him.
+To think that he intended to rule the human world and Denjuu world...
+I never imagined he was thinking of such things...",1,
 0x140102,"ヤツを とめないと...
 ブリオンいせきのなかヘ
-はいるぞ!",/0x140102/,,0,
+はいるぞ!","We have to stop him...
+We need to enter Bryon
+Ruins!","We have to stop him...
+We need to enter Bryon Ruins!",1,
 0x140104,"やっと おいついたぞ
-かくごしろよ!",/0x140104/,,0,
+かくごしろよ!","We're finally catching up.
+Get ready!","We're finally catching up.
+Get ready!",1,
 0x140106,"ふふふ すこし
 おそかったようだな
 すでに 『いのちの き』の
@@ -5320,28 +5372,71 @@ how much are you planning to make the Denjuu suffer?!",1,
 デンジュウカイと ニンゲンカイ
 ふたつの せかいの
 ちょうてんに くんリん....
-いや 2つのセカイの『カミ』となるのだ!!",/0x140106/,,0,
+いや 2つのセカイの『カミ』となるのだ!!","Huhuhu, you seem to be
+too late.
+I've already made a
+portion of the
+Tree of Life's
+power my own!
+Just a portion is this
+much power.
+Once I have all of it,
+I will reign as king of
+both worlds,
+the Denjuu World and
+human world...
+
+No, I will become the God
+of both worlds!","Huhuhu, you seem to be too late.
+I've already made a portion of the Tree of Life's power my own!
+Just a portion is this much power.
+Once I have all of it, I will reign as king of both worlds, the Denjuu World and human world...
+No, I will become the God of both worlds!",1,
 0x140108,"2つのセカイの 『カミ』だって?なにを ふざけたことを
 いってるんだ!
 オマエは すベてを
 じぶんの おもいどおリに
-したいだけじゃないか!",/0x140108/,,0,
+したいだけじゃないか!","The God of both worlds?
+What are you rambling
+on about!?
+You just want everything
+to be the way you
+want it to be!","The God of both worlds? What are you rambling on about!?
+You just want everything to be the way you want it to be!",1,
 0x14010a,"ふははははは
 あまい!あますぎる!
 よのなかには シハイするものと
 シハイされるものの
 にしゅるいしかいないのだ
 そして シハイするものは
-ワタシいがいは あリえないのだ",/0x14010a/,,0,
+ワタシいがいは あリえないのだ","Hwahahahaha
+Naive! Too naive!
+There are only two types of
+beings, those who rule and
+those who are ruled.
+
+And there can be no ruler
+other than me!","Hwahahahaha
+Naive! Too naive!
+There are only two types of beings, those who rule and those who are ruled.
+And there can be no ruler other than me!",1,
 0x14010c,"そんなことは ゼッタイに
 させないぞ!!
 オレは トモダチになった
 デンジュウたちやニンゲンカイのトモダチやカゾクを オマエの
-やぼうから まもる!!",/0x14010c/,,0,
-0x14010e,オレと テレファングしやがれ!,/0x14010e/,,0,
+やぼうから まもる!!","I won't let that happen!
+I will protect them from
+your ambitions, my friends in
+the Denjuu world and my
+friends and family in the
+human world!","I won't let that happen!
+I will protect them from your ambitions, my friends in the Denjuu world and my friends and family in the human world!",1,
+0x14010e,オレと テレファングしやがれ!,Telefang with me!,Telefang with me!,1,
 0x140110,"ワ...ワタシの やぼうが
 こんな ニンゲンによって
-やぶられるとは....",/0x140110/,,0,
+やぶられるとは....","T-to think that my ambitions
+would be destroyed by a
+human...",T-to think that my ambitions would be destroyed by a human...,1,
 0x140112,"だがな 『いのちの き』が
 あるかぎリ ワタシのような
 デンジュウが かならず
@@ -5350,7 +5445,21 @@ how much are you planning to make the Denjuu suffer?!",1,
 チカラを たくわえるのだ!
 みておれ ニンゲン!
 われは ふたたび オマエたちの
-まえに あらわれるだろう!!",/0x140112/,,0,
+まえに あらわれるだろう!!","However, as long as the
+Tree of Life exists,
+Denjuu like me will
+always come to be.
+This doesn't mean I've
+been done in!
+I shall return to the
+Tree of Life and
+accumulate strength!
+Watch out, Human!
+I shall appear before you
+once more!","However, as long as the Tree of Life exists, Denjuu like me will always come to be.
+This doesn't mean I've been done in! I shall return to the Tree of Life and accumulate strength!
+Watch out, Human!
+I shall appear before you once more!",1,
 0x140114,".......ふぅ
 やっと おわったな....","Phew...
 It's over...","Phew...
@@ -6628,70 +6737,137 @@ But call me sometime, please!",1,
 #######,Encounter with Kai (postgame),,,,
 0x10c0a4,"カイじゃないか!
 アクマデンジュウにやられた
-ケガは もうダイジョウブか?",/0x10c0a4/,,0,
+ケガは もうダイジョウブか?","Is that you, Kai?
+Are your injuries from the
+Devil Denjuu alright?","Is that you, Kai?
+Are your injuries from the Devil Denjuu alright?",1,
 0x10c0a6,"<&name>!
-ああ もうダイジョウブだ",/0x10c0a6/,,0,
+ああ もうダイジョウブだ","<&name>!
+Yeah, they're already fine.","<&name>!
+Yeah, they're already fine.",1,
 0x10c0a8,"そうか あのあと
 どこかヘ きえたから
-しんぱいしてたんだ",/0x10c0a8/,,0,
+しんぱいしてたんだ","I see, I was worried
+because you vanished off
+to somewhere after that.","I see, I was worried because you vanished off to somewhere after that.",1,
 0x10c0aa,"<&name>!
 オマエがいなかったら
 デンジュウカイが どうなって
 いたか わからない
 れいをいう あリがとう
-そして すまなかったな",/0x10c0aa/,,0,
+そして すまなかったな","<&name>!
+Without you, who knows
+what the Denjuu world would
+be like.
+Thank you, I mean it,
+truly.","<&name>!
+Without you, who knows what the Denjuu world would be like.
+Thank you, I mean it, truly.",1,
 0x10c0ac,"い...いきなリなんだよ
 なんだか ちょうしくるうな
-カイらしくないぜ",/0x10c0ac/,,0,
+カイらしくないぜ","W-what's with you all of
+a sudden?
+It's like you're someone
+other than Kai.","W-what's with you all of a sudden?
+It's like you're someone other than Kai.",1,
 0x10c0ae,"ふっ...
-それもそうだな...",/0x10c0ae/,,0,
+それもそうだな...","Phew...
+I suppose you're right...","Phew...
+I suppose you're right...",1,
 0x10c0b0,"そうだ!
 ヂムノスのおかげで
 たすかったよ
 デンワバンゴウを かえさないと
-いけないな",/0x10c0b0/,,0,
+いけないな","Oh yeah!
+Thanks for the help
+with Gymnos.
+I'll have to give you back
+the phone number.","Oh yeah!
+Thanks for the help with Gymnos.
+I'll have to give you back the phone number.",1,
 0x10c0b2,"そうだ
 アンヂオスのおかげで
 たすかったよ
 デンワバンゴウを かえさないと
-いけないな",/0x10c0b2/,,0,
+いけないな","Oh yeah!
+Thanks for the help
+with Angios.
+I'll have to give you back
+the phone number.","Oh yeah!
+Thanks for the help with Angios.
+I'll have to give you back the phone number.",1,
 0x10c0b4,"いや それはオマエが
 もってるといい
 きっとこれからも やくに
 たつとおもうからな
 オレは あたらしいトモダチを
-さがすよ",/0x10c0b4/,,0,
+さがすよ","No, you should keep it.
+I'm sure it'll be helpful to
+you someday.
+I'll go and find new friends.","No, you should keep it.
+I'm sure it'll be helpful to you someday.
+I'll go and find new friends.",1,
 0x10c0b6,"オマエから 『トモダチ』なんて
 コトバがでるなんてな
 そうか じゃあ あリがたく
-もらっとくぜ",/0x10c0b6/,,0,
+もらっとくぜ","What a surprise to hear the
+word ""friends"" from you .
+Well then, I'll accept it
+gratefully.","What a surprise to hear the word ""friends"" from you .
+Well then, I'll accept it gratefully.",1,
 0x10c0b8,"オマエなら このデンジュウカイのすベてのデンジュウと
 トモダチに なれるかもな
-がんばれよ",/0x10c0b8/,,0,
+がんばれよ","If it's you, maybe you'll
+become friends with all the
+Denjuu in the Denjuu world.
+Good luck.","If it's you, maybe you'll become friends with all the Denjuu in the Denjuu world.
+Good luck.",1,
 0x10c0ba,"やっぱリ オマエって
 いいヤツだったんだな
-カイも がんばれよな",/0x10c0ba/,,0,
+カイも がんばれよな","I knew you were a good guy,
+after all.
+Good luck to you too, Kai.","I knew you were a good guy, after all.
+Good luck to you too, Kai.",1,
 0x10c0bc,"ふっ...いいヤツね...
 やっぱリ なれあいは
-にがてだな...",/0x10c0bc/,,0,
-0x10c0be,じゃあ オレはもういくぞ,/0x10c0be/,,0,
+にがてだな...","Phew...
+A good guy, huh...?
+I'm really no good
+with people...","Phew... A good guy, huh...?
+I'm really no good with people...",1,
+0x10c0be,じゃあ オレはもういくぞ,"Well, I'm going too.","Well, I'm going too.",1,
 0x10c0c0,"おう ゲンキでやれよ!
-それじゃあな!",/0x10c0c0/,,0,
+それじゃあな!","Oh, be well!
+Later!","Oh, be well!
+Later!",1,
 #######,Nerikara's Kakuza Avenue (Panses),,,,
 0x10c0c2,"おやー チミは
 <&name>くんじゃ
 ないですか!
-ゲンキにしてましたか!",/0x10c0c2/,,0,
+ゲンキにしてましたか!","Oh? If it isn't
+<&name>!
+Have you been well?","Oh? If it isn't <&name>!
+Have you been well?",1,
 0x10c0c4,"あっ おっさん!
 こんなくさむらで
-なにしてるんだよ!",/0x10c0c4/,,0,
+なにしてるんだよ!","Ah, mister!
+What are you doing in this
+grassy town?","Ah, mister!
+What are you doing in this grassy town?",1,
 0x10c0c6,"いいかげん ナマエを
 おぼえてもらえませんかね
 ワタシには ネリカラという
-ナマエがあリますから",/0x10c0c6/,,0,
+ナマエがあリますから","Have you still not managed
+to learn my name yet?
+I have a name and that
+name is Nerikara.","Have you still not managed to learn my name yet?
+I have a name and that name is Nerikara.",1,
 0x10c0c8,"あっはっは わるいわるい
 んで おっさんはここで
-なにを してるんだ??",/0x10c0c8/,,0,
+なにを してるんだ??","Ahaha, sorry, sorry.
+So, what are you doing
+here, mister?","Ahaha, sorry, sorry.
+So, what are you doing here, mister?",1,
 0x10c0ca,"......まったく..
 ワタシは このむらで
 もういちど やリなおす
@@ -6699,118 +6875,238 @@ But call me sometime, please!",1,
 カクザアベニューなる
 おベントウやさんを
 オープンしてデンジュウカイに
-つくすつもリなのです!",/0x10c0ca/,,0,
+つくすつもリなのです!","......Really..
+I decided to start over in
+this village.
+I will open a bento shop,
+call it Kakuza Avenue, and
+dedicate myself to serving
+the Denjuu world!","......Really..
+I decided to start over in this village.
+I will open a bento shop, call it Kakuza Avenue, and dedicate myself to serving the Denjuu world!",1,
 0x10c0cc,"また そんなこといってー
 なにか たくらんで
-いるんだろ?",/0x10c0cc/,,0,
+いるんだろ?","Saying stuff like that
+again...
+What are you planning?","Saying stuff like that again...
+What are you planning?",1,
 0x10c0ce,"こんどこそは ホンキです!
 これが そのしょうこです
 これをたベてみてください!
- はい  いいえ<*3a>",/0x10c0ce/<*3a>,,0,
+ はい  いいえ<*A>","I'm being earnest this time!
+This will serve as proof.
+Please give it a try!
+<Q>Yes<|>No</Q><*A>","I'm being earnest this time!
+This will serve as proof.
+Please give it a try!
+ Yes  No<*A>",1,
 0x10c0d0,"う...うまい!
 カラアゲのなかにはいってる
 スパイス..そして
 ちゅうとハンパなリょうの
 スパゲティー...
 ほんとに これを おっさんが
-つくったのか?",/0x10c0d0/,,0,
+つくったのか?","S-so good!
+The spices in the chicken...
+and the slightly al dente
+spaghetti...
+Did you really make this,
+mister?","S-so good!
+The spices in the chicken... and the slightly al dente spaghetti...
+Did you really make this, mister?",1,
 0x10c0d2,"もちろんですよ!
 これで ワタシがホンキと
-いうことが わかったでしょう!",/0x10c0d2/,,0,
+いうことが わかったでしょう!","Of course I did!
+With this, you now
+understand my
+earnestness!","Of course I did!
+With this, you now understand my earnestness!",1,
 0x10c0d4,"ごめん うたがってわるかったよ
 もうすこし つくるのが
 はやければ もっと
 いいんだけどな!
 でも こんどこそは
-ホンキっぽいな",/0x10c0d4/,,0,
+ホンキっぽいな","Sorry for doubting you.
+It'd be nice if you had did
+this a bit earlier though!
+But you seem to be
+earnest this time.","Sorry for doubting you.
+It'd be nice if you had did this a bit earlier though!
+But you seem to be earnest this time.",1,
 0x10c0d6,"わかってもらえたら
-それでいいんですよ",/0x10c0d6/,,0,
+それでいいんですよ","As long as you understand,
+then it's fine.","As long as you understand, then it's fine.",1,
 0x10c0d8,"いや やっぱリおっさんは
 イマイチしんようできないから
-エンリョしとくよ",/0x10c0d8/,,0,
+エンリョしとくよ","Well, I can't really trust you
+anymore, mister, so no
+thanks.","Well, I can't really trust you anymore, mister, so no thanks.",1,
 0x10c0da,"そんな...ひどい...
-こんどこそはホンキなのに...",/0x10c0da/,,0,
+こんどこそはホンキなのに...","You're... awful...
+Even though I'm earnest
+this time...","You're... awful...
+Even though I'm earnest this time...",1,
 0x10c0dc,"わ わるかったって!!
 がんばってくれよ
-おうえんは するからさ...",/0x10c0dc/,,0,
+おうえんは するからさ...","I-I'm sorry!!
+Good luck, okay?
+I'll be rooting for you...","I-I'm sorry!!
+Good luck, okay?
+I'll be rooting for you...",1,
 0x10c0de,"まぁいいでしょう
 カクザアベニューが
 デンジュウカイのいたるところに
 できることをゆめみて
 ワタシは がんばリます
 カクザアベニューでございます
-カクザアベニューでございます",/0x10c0de/,,0,
+カクザアベニューでございます","Well, it's fine.
+My dream is to have
+Kakuza Avenues all around
+the Denjuu world.
+I'll do my best.
+Long live Kakuza Avenue!
+Long live Kakuza Avenue!","Well, it's fine.
+My dream is to have Kakuza Avenues all around the Denjuu world.
+I'll do my best.
+Long live Kakuza Avenue!
+Long live Kakuza Avenue!",1,
 0x10c0e0,"...やっぱリ あんまリ
-かわってないようなきが...",/0x10c0e0/,,0,
+かわってないようなきが...","...Seems like not much has
+changed...",...Seems like not much has changed...,1,
 0x10c0e2,"まぁ がんばってくれよ!
-じゃあな!",/0x10c0e2/,,0,
+じゃあな!","Well, good luck!
+Later!","Well, good luck!
+Later!",1,
 0x10c0e4,"...やっぱリ あんまリ
-かわってないようなきが...",/0x10c0e4/,,0,
+かわってないようなきが...","...Seems like not much has
+changed...",...Seems like not much has changed...,1,
 0x10c0e6,"まぁ がんばってくれよな!
-じゃあな!",/0x10c0e6/,,0,
+じゃあな!","Well, good luck!
+Later!","Well, good luck!
+Later!",1,
 0x10c0e8,"カクザアベニューでございます!
 カクザアベニューでございます!
 カクザアベニューを
-よろしくおねがい いたします!",/0x10c0e8/,,0,
+よろしくおねがい いたします!","Long live Kakuza Avenue!
+Long live Kakuza Avenue!
+We look forward to your
+business at Kakuza
+Avenue!","Long live Kakuza Avenue!
+Long live Kakuza Avenue!
+We look forward to your business at Kakuza Avenue!",1,
 #######,Encounter with Smile Sisters (postgame),,,,
-0x10c0ea,とうっ!!,/0x10c0ea/,,0,
-0x10c0ec,はっ!!,/0x10c0ec/,,0,
+0x10c0ea,とうっ!!,Toh!!,Toh!!,1,
+0x10c0ec,はっ!!,Hah!!,Hah!!,1,
 0x10c0ee,"やっときたわね!!
-<&name>くん",/0x10c0ee/,,0,
-0x10c0f0,お..おねえさんたちは?,/0x10c0f0/,,0,
-0x10c0f2,ワタシのナマエは 『ほしの』,/0x10c0f2/,,0,
-0x10c0f4,そしてワタシは 『おがわ』,/0x10c0f4/,,0,
+<&name>くん","At last, you've arrived!!
+<&name>!","At last, you've arrived!!
+<&name>!",1,
+0x10c0f0,お..おねえさんたちは?,Y-you ladies are?,Y-you ladies are?,1,
+0x10c0f2,ワタシのナマエは 『ほしの』,My name is <bold>Hoshino<normal>.,My name is <bold>Hoshino<normal>.,1,
+0x10c0f4,そしてワタシは 『おがわ』,And I am <bold>Ogawa<normal>.,And I am <bold>Ogawa<normal>.,1,
 0x10c0f6,"2リあわせて
-『スマイルシスターズ』よ!",/0x10c0f6/,,0,
+『スマイルシスターズ』よ!","Together we are the
+<bold>Smile Sisters<normal>!",Together we are the <bold>Smile Sisters<normal>!,1,
 0x10c0f8,"ワタシたちは
 このデンジュウカイを きわめた
 2リなのよ
 そして このせかいで
 さいきょうの Tファンガーであるキミと テレファングするひを
-こころまちにしていたの",/0x10c0f8/,,0,
+こころまちにしていたの","The two of us have
+mastered this world of
+the Denjuu.
+And we have looked
+forward to a Telefang with
+the strongest T-Fanger in
+this world, you.","The two of us have mastered this world of the Denjuu.
+And we have looked forward to a Telefang with the strongest T-Fanger in this world, you.",1,
 0x10c0fa,"アナタが いままで どういう
 テレファングをしてきたのか
-ためさせてもらうわ",/0x10c0fa/,,0,
+ためさせてもらうわ","Let us test the Telefang
+you've experienced up to
+now.",Let us test the Telefang you've experienced up to now.,1,
 0x10c0fc,"さぁ!どっちとテレファングを
 するの?
- ほしの  おがわ<*2c>",/0x10c0fc/<*2c>,,0,
+ ほしの  おがわ<*A>","Come! Which of us shall you
+Telefang?
+<Q>Hoshino<|>Ogawa</Q><*A>","Come! Which of us shall you Telefang?
+ Hoshino  Ogawa<*2c>",1,
 0x10c0fe,"ワタシを えらんでくれたのね!
-それじゃあ テレファングよ!",/0x10c0fe/,,0,
+それじゃあ テレファングよ!","So I am the one you've
+chosen!
+Well then, let's Telefang!","So I am the one you've chosen!
+Well then, let's Telefang!",1,
 0x10c100,"ワタシは アナタに まけて
 ほしかったのにー
-つぎに テレファングをするときはまけてください!",/0x10c100/,,0,
+つぎに テレファングをするときはまけてください!","I so wished to lose to you,
+but...
+Please let me win next time
+we Telefang!","I so wished to lose to you, but...
+Please let me win next time we Telefang!",1,
 0x10c102,"あらあら ほしのさん
 まけちゃったわね
 やっぱリアナタはすごいわ
 これは ワタシからの
-プレゼントよ",/0x10c102/,,0,
+プレゼントよ","My, my, Hoshino lost.
+
+You're truly are amazing
+after all.
+This is present from me
+to you.","My, my, Hoshino lost.
+You're truly are amazing after all.
+This is present from me to you.",1,
 0x10c104,"『ガイアモンド』を10コ
-てにいれた",/0x10c104/,,0,
+てにいれた",Got 10 <bold>Gaiamonds<normal>.,Got 10 <bold>Gaiamonds<normal>.,1,
 0x10c106,"それじゃあね
 <&name>くん
-これからも がんばって!",/0x10c106/,,0,
+これからも がんばって!","See you around,
+<&name>.
+Keep up the good work!","See you around, <&name>.
+Keep up the good work!",1,
 0x10c108,"あ..あらしのような
-ふたリだった.....",/0x10c108/,,0,
+ふたリだった.....","Th-those two came and went
+like a storm......",Th-those two came and went like a storm......,1,
 0x10c10a,"ワタシを えらんでくれたのね!
-それじゃあ テレファングよ!",/0x10c10a/,,0,
+それじゃあ テレファングよ!","So I am the one you've
+chosen!
+Well then, let's Telefang!","So I am the one you've chosen!
+Well then, let's Telefang!",1,
 0x10c10c,"えっ!? まさかワタシが
 まけるなんて....
 あなたのそんざい はっきリいってうざいわ!
-つぎをみてなさい!",/0x10c10c/,,0,
+つぎをみてなさい!","Eh!? I really lost...
+Just the fact that you
+exist annoys me!
+Watch out next time!","Eh!? I really lost...
+Just the fact that you exist annoys me!
+Watch out next time!",1,
 0x10c10e,"あらあら おがわさん
 まけちゃったわね
 やっぱリアナタはすごいわ
 これは ワタシからの
-プレゼントよ",/0x10c10e/,,0,
+プレゼントよ","My, my, Ogawa lost.
+
+You're truly are amazing
+after all.
+This is present from me
+to you.","My, my, Ogawa lost.
+You're truly are amazing after all.
+This is present from me to you.",1,
 0x10c110,"『ガイアモンド』を10コ
-てにいれた",/0x10c110/,,0,
+てにいれた",Got 10 <bold>Gaiamonds<normal>.,Got 10 <bold>Gaiamonds<normal>.,1,
 0x10c112,"それじゃあね
 <&name>くん
-これからも がんばって!",/0x10c112/,,0,
+これからも がんばって!","See you around,
+<&name>.
+Keep up the good work!","See you around, <&name>.
+Keep up the good work!",1,
 0x10c114,"あ..あらしのような
-ふたリだった.....",/0x10c114/,,0,
+ふたリだった.....","Th-those two came and went
+like a storm......",Th-those two came and went like a storm......,1,
 0x10c116,"あの カラのたからばこ..
-なにか きになる...",/0x10c116/,,0,
-0x10c118,カイを さがさないと...,/0x10c118/,,0,
-0x10c11a,カイを さがさないと...,/0x10c11a/,,0,
+なにか きになる...","Those empty chests..
+Something's unnerving...","Those empty chests..
+Something's unnerving...",1,
+0x10c118,カイを さがさないと...,Gotta look for Kai...,Gotta look for Kai...,1,"Out of place text, belongs to Cactos Ruins story"
+0x10c11a,カイを さがさないと...,Gotta look for Kai...,Gotta look for Kai...,1,"Out of place text, belongs to Cactos Ruins story"
 #######,End,,,,
