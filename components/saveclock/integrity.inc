@@ -1,1 +1,1 @@
-S_SaveClock_ClaimedChecksum EQU $BFFE
+DEF S_SaveClock_ClaimedChecksum EQU $BFFE

@@ -1,1 +1,1 @@
-M_SGB_PacketSize EQU $10
+DEF M_SGB_PacketSize EQU $10

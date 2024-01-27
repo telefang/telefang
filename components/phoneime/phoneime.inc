@@ -1,27 +1,27 @@
-M_PhoneIME_IMELatinUpper EQU 0
-M_PhoneIME_IMELatinLower EQU 1
-M_PhoneIME_IMENumerals EQU 2
-M_PhoneIME_IMEEND EQU 3
+DEF M_PhoneIME_IMELatinUpper EQU 0
+DEF M_PhoneIME_IMELatinLower EQU 1
+DEF M_PhoneIME_IMENumerals EQU 2
+DEF M_PhoneIME_IMEEND EQU 3
 
-M_PhoneIME_IMEExtendedLatinUpperLower EQU 0
-M_PhoneIME_IMEExtendedLatinLower EQU 1
-M_PhoneIME_IMEExtendedLatinUpper EQU 2
-M_PhoneIME_IMEExtendedNumerals EQU 3
-M_PhoneIME_IMEExtendedEND EQU 4
+DEF M_PhoneIME_IMEExtendedLatinUpperLower EQU 0
+DEF M_PhoneIME_IMEExtendedLatinLower EQU 1
+DEF M_PhoneIME_IMEExtendedLatinUpper EQU 2
+DEF M_PhoneIME_IMEExtendedNumerals EQU 3
+DEF M_PhoneIME_IMEExtendedEND EQU 4
 
-M_PhoneIME_ButtonNote EQU 0
-M_PhoneIME_ButtonLeft EQU 1
-M_PhoneIME_ButtonRight EQU 2
-M_PhoneIME_ButtonConfirm EQU 3
-M_PhoneIME_Button1 EQU 4
-M_PhoneIME_Button2 EQU 5
-M_PhoneIME_Button3 EQU 6
-M_PhoneIME_Button4 EQU 7
-M_PhoneIME_Button5 EQU 8
-M_PhoneIME_Button6 EQU 9
-M_PhoneIME_Button7 EQU 10
-M_PhoneIME_Button8 EQU 11
-M_PhoneIME_Button9 EQU 12
-M_PhoneIME_ButtonStar EQU 13
-M_PhoneIME_Button0 EQU 14
-M_PhoneIME_ButtonPound EQU 15
+DEF M_PhoneIME_ButtonNote EQU 0
+DEF M_PhoneIME_ButtonLeft EQU 1
+DEF M_PhoneIME_ButtonRight EQU 2
+DEF M_PhoneIME_ButtonConfirm EQU 3
+DEF M_PhoneIME_Button1 EQU 4
+DEF M_PhoneIME_Button2 EQU 5
+DEF M_PhoneIME_Button3 EQU 6
+DEF M_PhoneIME_Button4 EQU 7
+DEF M_PhoneIME_Button5 EQU 8
+DEF M_PhoneIME_Button6 EQU 9
+DEF M_PhoneIME_Button7 EQU 10
+DEF M_PhoneIME_Button8 EQU 11
+DEF M_PhoneIME_Button9 EQU 12
+DEF M_PhoneIME_ButtonStar EQU 13
+DEF M_PhoneIME_Button0 EQU 14
+DEF M_PhoneIME_ButtonPound EQU 15
