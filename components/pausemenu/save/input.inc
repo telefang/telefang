@@ -1,1 +1,1 @@
-M_PauseMenu_SaveAnimationDelay EQU $40
+DEF M_PauseMenu_SaveAnimationDelay EQU $40

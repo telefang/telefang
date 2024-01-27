@@ -1,1 +1,1 @@
-M_Malias_menu_encounter EQU $0F
+DEF M_Malias_menu_encounter EQU $0F

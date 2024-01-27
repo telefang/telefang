@@ -1,5 +1,5 @@
-M_Battle_SubStateDrawAttackMenuWindow EQU $07
-M_Battle_SubStateParticipantArrivalProcessing EQU $1E
-M_Battle_SubStateDenjuuArrivalPhrase EQU $1F
-M_Battle_SubStateStatusWarningPartner EQU $26
-M_Battle_SubStateStatusWarningOpponent EQU $28
+DEF M_Battle_SubStateDrawAttackMenuWindow EQU $07
+DEF M_Battle_SubStateParticipantArrivalProcessing EQU $1E
+DEF M_Battle_SubStateDenjuuArrivalPhrase EQU $1F
+DEF M_Battle_SubStateStatusWarningPartner EQU $26
+DEF M_Battle_SubStateStatusWarningOpponent EQU $28

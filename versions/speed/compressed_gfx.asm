@@ -195,8 +195,8 @@ SECTION "Compressed gfx pointer table 2", ROM0[$1DE1]
 	dw $0000 ; $5d
 	dw $0000 ; $5e
 	dw $0000 ; $5f
-NOT_COMPRESSED EQU 0
-COMPRESSED EQU 1
+DEF NOT_COMPRESSED EQU 0
+DEF COMPRESSED EQU 1
 
 SECTION "Battle Messages Compressed GFX", ROMX[$41ee], BANK[$37]
 BattleMessagesGfx:

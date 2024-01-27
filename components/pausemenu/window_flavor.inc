@@ -1,4 +1,4 @@
-M_PauseMenu_WindowFlavorPlain EQU 0
-M_PauseMenu_WindowFlavorMint EQU 1
-M_PauseMenu_WindowFlavorStrawberry EQU 2
-M_PauseMenu_WindowFlavorMango EQU 3
+DEF M_PauseMenu_WindowFlavorPlain EQU 0
+DEF M_PauseMenu_WindowFlavorMint EQU 1
+DEF M_PauseMenu_WindowFlavorStrawberry EQU 2
+DEF M_PauseMenu_WindowFlavorMango EQU 3

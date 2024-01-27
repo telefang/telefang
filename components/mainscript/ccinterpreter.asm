@@ -7,7 +7,7 @@ INCLUDE "telefang.inc"
 ;E5: Jump to new location (farptr follows)
 
 
-MainScript_StateOpcode EQU $45C8
+DEF MainScript_StateOpcode EQU $45C8
 
 SECTION "Main Script Control Code Interpreter", ROMX[$413C], BANK[$B]
 MainScript_CCInterpreter::

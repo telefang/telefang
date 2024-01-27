@@ -6,12 +6,12 @@ INCLUDE "components/lcdc/vblank_irq.inc"
 
 ;These are dummy labels for functions not yet imported into the disassembly.
 ;We should do those soon.
-SerIOActivityCheck EQU $0234
-SoftResetCheck EQU $02D0
-InitializeSGB EQU $4000 ;Bank 3, flat address 0xC000
-SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
-InitializeSoundEngine EQU $0439
-ClearTilemap0 EQU $0807
+DEF SerIOActivityCheck EQU $0234
+DEF SoftResetCheck EQU $02D0
+DEF InitializeSGB EQU $4000 ;Bank 3, flat address 0xC000
+DEF SGBDetect EQU $41AF ;Bank 3, flat address 0xC1AF
+DEF InitializeSoundEngine EQU $0439
+DEF ClearTilemap0 EQU $0807
 
 ;This stores the bootrom argument to determine what GB model we're on.
 SECTION "System WRAM", WRAM0[$C3E8]

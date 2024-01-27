@@ -1,2 +1,2 @@
-M_PhoneIME_DisplayedSpriteCount EQU $C
-M_PhoneIME_DisplayedNumberSize EQU $D
+DEF M_PhoneIME_DisplayedSpriteCount EQU $C
+DEF M_PhoneIME_DisplayedNumberSize EQU $D
