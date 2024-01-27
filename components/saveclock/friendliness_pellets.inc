@@ -1,1 +1,1 @@
-W_SaveClock_SelectedDenjuu EQU $CAFD
+DEF W_SaveClock_SelectedDenjuu EQU $CAFD

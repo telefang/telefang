@@ -1,13 +1,13 @@
-M_PhoneIME_IMELatinUpper EQU 0
-M_PhoneIME_IMELatinLower EQU 1
-M_PhoneIME_IMENumerals EQU 2
-M_PhoneIME_IMEEND EQU 3
+DEF M_PhoneIME_IMELatinUpper EQU 0
+DEF M_PhoneIME_IMELatinLower EQU 1
+DEF M_PhoneIME_IMENumerals EQU 2
+DEF M_PhoneIME_IMEEND EQU 3
 
-M_PhoneIME_IMEExtendedLatinUpperLower EQU 0
-M_PhoneIME_IMEExtendedLatinLower EQU 1
-M_PhoneIME_IMEExtendedLatinUpper EQU 2
-M_PhoneIME_IMEExtendedNumerals EQU 3
-M_PhoneIME_IMEExtendedEND EQU 4
+DEF M_PhoneIME_IMEExtendedLatinUpperLower EQU 0
+DEF M_PhoneIME_IMEExtendedLatinLower EQU 1
+DEF M_PhoneIME_IMEExtendedLatinUpper EQU 2
+DEF M_PhoneIME_IMEExtendedNumerals EQU 3
+DEF M_PhoneIME_IMEExtendedEND EQU 4
 
 DEF M_PhoneIME_ButtonNote EQU 0
 DEF M_PhoneIME_ButtonLeft EQU 1

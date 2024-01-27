@@ -6,8 +6,8 @@ DEF M_SaveClock_MaxDenjuuContacts EQU $FE
 ;Changing these values will break code.
 DEF M_SaveClock_DenjuuStatSize EQU $10
 DEF M_SaveClock_DenjuuNicknameSize EQU 6
-M_SaveClock_DenjuuNicknameEntrySize EQU $A
-M_SaveClock_DenjuuNicknameExtensionSize EQU 4
+DEF M_SaveClock_DenjuuNicknameEntrySize EQU $A
+DEF M_SaveClock_DenjuuNicknameExtensionSize EQU 4
 
 ;Size of various staging areas.
 DEF M_SaveClock_DenjuuNicknameStagingSize EQU M_StringTable_Load8AreaSize + 1
