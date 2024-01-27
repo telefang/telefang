@@ -1,1 +1,1 @@
-H_VBlankCompleted EQU $FF92
+DEF H_VBlankCompleted EQU $FF92

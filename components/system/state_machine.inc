@@ -1,11 +1,11 @@
-M_System_GameStateIntro EQU $00
-M_System_GameStateTitleScreen EQU $01
-M_System_GameStateTitleMenu EQU $03
-M_System_GameStateAttractScreen EQU $04
-M_System_GameStateOverworld EQU $05
-M_System_GameStateEncounter EQU $06
-M_System_GameStateBattle EQU $07
-M_System_GameStateVictory EQU $08
-M_System_GameStateStatus EQU $09
-M_System_GameStatePause EQU $0C
-M_System_GameStateLink EQU $0F
+DEF M_System_GameStateIntro EQU $00
+DEF M_System_GameStateTitleScreen EQU $01
+DEF M_System_GameStateTitleMenu EQU $03
+DEF M_System_GameStateAttractScreen EQU $04
+DEF M_System_GameStateOverworld EQU $05
+DEF M_System_GameStateEncounter EQU $06
+DEF M_System_GameStateBattle EQU $07
+DEF M_System_GameStateVictory EQU $08
+DEF M_System_GameStateStatus EQU $09
+DEF M_System_GameStatePause EQU $0C
+DEF M_System_GameStateLink EQU $0F

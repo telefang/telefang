@@ -1,2 +1,2 @@
-M_CallsMenu_DialToneBufferCount EQU $E
-M_CallsMenu_DialToneBufferLogicalCount EQU $C
+DEF M_CallsMenu_DialToneBufferCount EQU $E
+DEF M_CallsMenu_DialToneBufferLogicalCount EQU $C

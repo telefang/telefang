@@ -1,3 +1,3 @@
-M_StringTable_BattlePhraseAreaSize EQU $F
-M_StringTable_Load8AreaSize EQU 8
-M_StringTable_Load4AreaSize EQU 4
+DEF M_StringTable_BattlePhraseAreaSize EQU $F
+DEF M_StringTable_Load8AreaSize EQU 8
+DEF M_StringTable_Load4AreaSize EQU 4

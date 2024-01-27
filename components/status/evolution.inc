@@ -1,13 +1,13 @@
-M_Status_NaturalDenjuuIcon EQU 0
-M_Status_CultivatedDenjuuIcon EQU 1
-M_Status_BigDenjuuIcon EQU 2
-M_Status_BurstDenjuuIcon EQU 3
-M_Status_TechnoDenjuuIcon EQU 4
-M_Status_ExplosionDenjuuIcon EQU 5
-M_Status_SuperDenjuuIcon EQU 6
-M_Status_DemonDenjuuIcon EQU 7
-M_Status_SuperMachineDenjuuIcon EQU 8
-M_Status_DarkSpaceDenjuuIcon EQU 9
-M_Status_TrueDenjuuIcon EQU $A
-M_Status_GodDenjuuIcon EQU $B
-M_Status_DevilDenjuuIcon EQU $C
+DEF M_Status_NaturalDenjuuIcon EQU 0
+DEF M_Status_CultivatedDenjuuIcon EQU 1
+DEF M_Status_BigDenjuuIcon EQU 2
+DEF M_Status_BurstDenjuuIcon EQU 3
+DEF M_Status_TechnoDenjuuIcon EQU 4
+DEF M_Status_ExplosionDenjuuIcon EQU 5
+DEF M_Status_SuperDenjuuIcon EQU 6
+DEF M_Status_DemonDenjuuIcon EQU 7
+DEF M_Status_SuperMachineDenjuuIcon EQU 8
+DEF M_Status_DarkSpaceDenjuuIcon EQU 9
+DEF M_Status_TrueDenjuuIcon EQU $A
+DEF M_Status_GodDenjuuIcon EQU $B
+DEF M_Status_DevilDenjuuIcon EQU $C
