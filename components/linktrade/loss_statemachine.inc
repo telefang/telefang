@@ -1,4 +1,4 @@
-M_LinkTrade_SubStateInitLossScreen EQU 0
-M_LinkTrade_SubStateFadeInLossScreen EQU 1
-M_LinkTrade_SubStateLossScreenMessage EQU 2
-M_LinkTrade_SubStateFadeOutLossScreen EQU 3
+DEF M_LinkTrade_SubStateInitLossScreen EQU 0
+DEF M_LinkTrade_SubStateFadeInLossScreen EQU 1
+DEF M_LinkTrade_SubStateLossScreenMessage EQU 2
+DEF M_LinkTrade_SubStateFadeOutLossScreen EQU 3

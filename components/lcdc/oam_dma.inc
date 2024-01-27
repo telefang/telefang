@@ -1,2 +1,2 @@
-M_OAMShadowLength EQU $A0
-H_ExecuteOAMDMA EQU $FF80
+DEF M_OAMShadowLength EQU $A0
+DEF H_ExecuteOAMDMA EQU $FF80

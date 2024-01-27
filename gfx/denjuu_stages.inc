@@ -2,4 +2,4 @@
 ;You will need to modify other code too.
 M_Status_DenjuuStageGfx_NumTiles EQU 12
 M_Zukan_DenjuuStageGfx_NumTiles EQU 9 * 2
-M_DenjuuTypeGfx_Stride EQU $40
+DEF M_DenjuuTypeGfx_Stride EQU $40

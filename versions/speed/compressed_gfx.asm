@@ -195,8 +195,8 @@ SECTION "Compressed gfx pointer table 2", ROM0[$1DE1]
 	dw TitleMenuText1Gfx ; $5d (repurposed)
 	dw TitleMenuText1DMGGfx ; $5e (repurposed)
 	dw TitleSpritesSgbGfx ; $5f (repurposed)
-NOT_COMPRESSED EQU 0
-COMPRESSED EQU 1
+DEF NOT_COMPRESSED EQU 0
+DEF COMPRESSED EQU 1
 
 SECTION "Intro - Screens Compressed GFX", ROMX[$4000], BANK[$36]
 IntroScreensGfx:

@@ -1,2 +1,2 @@
-M_MainScript_MessageArg1Size EQU M_StringTable_Load8AreaSize + 1
-M_MainScript_MessageArg2Size EQU $11
+DEF M_MainScript_MessageArg1Size EQU M_StringTable_Load8AreaSize + 1
+DEF M_MainScript_MessageArg2Size EQU $11

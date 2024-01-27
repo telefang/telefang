@@ -1,10 +1,10 @@
-M_PauseMenu_SubStateSMSInit EQU $0
-M_PauseMenu_SubStateSMSGraphicInit EQU $1
-M_PauseMenu_SubStateSMSGraphicIdle EQU $2
-M_PauseMenu_SubStateSMSListingInit EQU $3
-M_PauseMenu_SubStateSMSListingIdle EQU $4
-M_PauseMenu_SubStateSMSContentsInit EQU $5
-M_PauseMenu_SubStateSMSContentsIdle EQU $6
-M_PauseMenu_SubStateSMSExit0 EQU $7
-M_PauseMenu_SubStateSMSExit1 EQU $8
-M_PauseMenu_SubStateSMSExit2 EQU $9
+DEF M_PauseMenu_SubStateSMSInit EQU $0
+DEF M_PauseMenu_SubStateSMSGraphicInit EQU $1
+DEF M_PauseMenu_SubStateSMSGraphicIdle EQU $2
+DEF M_PauseMenu_SubStateSMSListingInit EQU $3
+DEF M_PauseMenu_SubStateSMSListingIdle EQU $4
+DEF M_PauseMenu_SubStateSMSContentsInit EQU $5
+DEF M_PauseMenu_SubStateSMSContentsIdle EQU $6
+DEF M_PauseMenu_SubStateSMSExit0 EQU $7
+DEF M_PauseMenu_SubStateSMSExit1 EQU $8
+DEF M_PauseMenu_SubStateSMSExit2 EQU $9

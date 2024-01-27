@@ -1,1 +1,1 @@
-M_MainScript_PlayerNameSize EQU 8
+DEF M_MainScript_PlayerNameSize EQU 8

@@ -113,10 +113,10 @@ Battle_LoadDenjuuPortrait::
     
 SECTION "Denjuu Portrait Loader Ptr Lookup Table", ROM0[$1732]
 Battle_DenjuuPortraitLookupTable::
-Vi = 0
+DEF Vi = 0
 REPT M_Battle_DenjuuPortraitStride
     dw $4000 + Vi
-Vi = Vi + M_Battle_DenjuuPortraitSize
+DEF Vi = Vi + M_Battle_DenjuuPortraitSize
 ENDR
 
 ;todo: What palettes live at $1B0?

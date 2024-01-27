@@ -17,7 +17,7 @@ INCLUDE "telefang.inc"
 ;F4: Switches the font to narrow or normal based on the rendered length of the currently loaded battle phrase.
 
 
-MainScript_StateOpcode EQU $45C8
+DEF MainScript_StateOpcode EQU $45C8
 
 SECTION "Main Script Relative Positioning Offset", WRAM0[$C7CC]
 W_MainScript_ADVICE_RelativePositionOffset:: ds 1
