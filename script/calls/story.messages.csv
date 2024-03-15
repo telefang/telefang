@@ -477,7 +477,18 @@ you better be ready!",1,
 テレファングを いどんで
 くるらしいぜ
 きをつけろよな
-<*2>",/0x158058/<*2>,,0,
+<*2>","Hey, <&name>.
+Do you know about the
+fight in Barran between the
+Bird Clan and Snake Clan?
+I've heard that the Snake
+Clan is challenging anyone
+to Telefangs regardless of
+who they are.
+Keep an eye out.","Hey, <&name>.
+Do you know about the fight in Barran between the Bird Clan and Snake Clan?
+I've heard that the Snake Clan is challenging anyone to Telefangs regardless of who they are.
+Keep an eye out.",1,
 0x15805a,"ヘビぐみのおさって
 なにかを あつめるのが
 すきなんだってさ!
@@ -485,7 +496,16 @@ you better be ready!",1,
 しらないけどなー
 やくにたつじょうほうか
 どうかは わからないけど
-おしえておくよ<*2>",/0x15805a/<*2>,,0,
+おしえておくよ<*2>","I've heard that the chief of
+the Snake Clan likes to
+collect things!
+But I don't know what it is
+that he collects...
+I don't know if the
+information will be useful,
+but I thought I'd tell you.","I've heard that the chief of the Snake Clan likes to collect things!
+But I don't know what it is that he collects...
+I don't know if the information will be useful, but I thought I'd tell you.",1,
 0x15805c,"あのさー バーランに
 いくことがあったらさ
 ガンバンオーってヤツを
@@ -493,7 +513,14 @@ you better be ready!",1,
 スゲエいいヤツだから
 オマエもトモダチになれると
 おもうんだ!
-<*2>",/0x15805c/<*2>,,0,
+<*2>","You know, if you ever go to
+Barran, you should visit a
+guy called ""Ganbanno.""
+He's a pretty good guy.
+I think you guys could be
+friends!","You know, if you ever go to Barran, you should visit a guy called ""Ganbanno.""
+He's a pretty good guy.
+I think you guys could be friends!",1,
 0x15805e,"バーランのいリぐちのてまえに
 みぎがわにいけるみちが
 あるの しってるか?
@@ -501,19 +528,42 @@ you better be ready!",1,
 いっけんのいえがあって
 そこにヘんなモノを
 あつめてるおじさんが
-いるってはなしだぜ!<*2>",/0x15805e/<*2>,,0,
+いるってはなしだぜ!<*2>","Did you know that there's a
+path to the right just
+before the entrance to
+Barran?
+If you walk down that way,
+there'll be a house with an
+old man that collects weird
+things!","Did you know that there's a path to the right just before the entrance to Barran?
+If you walk down that way, there'll be a house with an old man that collects weird things!",1,
 0x158060,"そっちょくにきくけどさ
 オマエはトリぐみは?
 それともヘビぐみは?
 オレ?オレはもちろん
 トリぐみだよ!
-だってカワイイじゃん!<*2>",/0x158060/<*2>,,0,
+だってカワイイじゃん!<*2>","Let me ask you frankly, are
+you for the Bird Clan?
+Or the Snake Clan?
+Me? I'm for the Bird Clan!
+They're so cute, after all!","Let me ask you frankly, are you for the Bird Clan?
+Or the Snake Clan?
+Me? I'm for the Bird Clan!
+They're so cute, after all!",1,
 0x158062,"ヘんなこときくけどさ
 オマエはトリぐみとヘビぐみ
 どっちがすきなんだ?
 オレてきには ヘビぐみだな!
 だってカッコいいもん!
-<*2>",/0x158062/<*2>,,0,
+<*2>","I've got a random
+question for you,
+do you like the Bird Clan
+or the Snake Clan?
+It's the Snake Clan
+for me!
+Because they're so cool!","I've got a random question for you, do you like the Bird Clan or the Snake Clan?
+It's the Snake Clan for me!
+Because they're so cool!",1,
 #######,Ion Island,,,,
 0x158064,"おっす <&name>
 イオンとうに いるんだって?
