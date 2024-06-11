@@ -36,11 +36,10 @@ power: $(ROMS_POWER) compare_power
 speed: $(ROMS_SPEED) compare_speed
 
 # Assemble source files into objects.
-# Use rgbasm -h to use halts without nops.
 $(OBJS_RGBASM:%.o=${BUILD_DIR}/%.o): $(BUILD_DIR)/%.o : %.asm
 	@echo "Assembling" $<
 	@mkdir -p $(dir $@)
-	@rgbasm -h -o $@ $<
+	@rgbasm -o $@ $<
 
 $(ROMS_POWER): $(OBJS:%.o=${BUILD_DIR}/%.o) $(OBJS_POWER:%.o=${BUILD_DIR}/%.o)  $(OBJS_MESSAGE) 
 	rgblink -n $(ROMS_POWER:.gbc=.sym) -m $(ROMS_POWER:.gbc=.map) -O $(BASEROM_POWER) -o $@ $^
@@ -101,7 +100,7 @@ $(BUILD_DIR)/%.pcm: %.wav
 $(OBJS_MESSAGE): $(SRC_MESSAGE)
 	@rm -f $@
 	$(PYTHON) rip_scripts/mainscript_text.py make_tbl --window_width=128 $(BASEROM_POWER) $(INT_MESSAGE)
-	@rgbasm -h -o $@ $(INT_MESSAGE)
+	@rgbasm -o $@ $(INT_MESSAGE)
 
 $(BUILD_DIR)/%.stringtbl: %.csv
 	@rm -f $@
