@@ -1253,15 +1253,34 @@ a Denjuu a present, I think it's good to judge the book by its cover, so to spea
 いるのかなー?
 けっこうきになってたリ
 するんだけどなー
-<*2>",/0x15c0b8/<*2>,,0,
+<*2>","<D93>There’s a Water Denjuu
+called Baionpu that likes
+<bold>lances<normal>.
+Are there people in the
+human world that like that
+sort of thing?
+I’ve been really curious
+about it.<*2>","<D93>There’s a Water Denjuu called Baionpu that likes <bold>lances<normal>.
+Are there people in the human world that like that sort of thing?
+I’ve been really curious about it.<*2>",1,
 0x15c0ba,"<D94>ワルタってデンジュウ
 なんだか いろんなこと
 できそうな ふんいきがするんだよなぜかって?
 それは ヤツがすきなアイテムが
-『モバイル』だからさ!<*2>",/0x15c0ba/<*2>,,0,
+『モバイル』だからさ!<*2>","<D94>The denjuu Warutah seems
+like they're able to do
+all sorts of things.
+You know why that is?
+It's because their favorite
+item is a <bold>laptop<normal>!<*2>","<D94>The denjuu Warutah seems like they're able to do all sorts of things. You know why that is?
+It's because their favorite item is a <bold>laptop<normal>!<*2>",1,
 0x15c0bc,"<D95>『アンテナ』ずきなデンジュウってかわったヤツがおおいんだよ
 ガンツァトルもかわったヤツ
-なんだけどねー<*2>",/0x15c0bc/<*2>,,0,
+なんだけどねー<*2>","<D95>Denjuu that like
+<bold>antennae<normal>
+are oddballs. Actually,
+Gunzatl is a weird
+fellow too.<*2>","<D95>Denjuu that like <bold>antennae<normal> are oddballs. Actually, Gunzatl is a weird fellow too.<*2>",1,
 0x15c0be,"<D96>アラクイダって『カマ』が
 すきなんだぜ
 ハモノが すきなヤツって
@@ -1269,7 +1288,17 @@ a Denjuu a present, I think it's good to judge the book by its cover, so to spea
 ああいう きけんなモノが
 すきなデンジュウって
 キケンな かおリがするよね
-あーこわい こわい<*2>",/0x15c0be/<*2>,,0,
+あーこわい こわい<*2>","<D96>Arachida likes <bold>sickles<normal>.
+
+I wonder if a lot of people
+like things with blades...
+Denjuu that like dangerous
+things like that give off
+dangerous vibes, don't
+they?
+Aah, scary, so scary.<*2>","<D96>Arachida likes <bold>sickles<normal>. I wonder if a lot of people like things with blades...
+Denjuu that like dangerous things like that give off dangerous vibes, don't they?
+Aah, scary, so scary.<*2>",1,
 0x15c0c0,"<D97>バッドホロウって デンジュウは
 きけんなんだ!
 なんでかって??
@@ -1305,7 +1334,15 @@ bad feeling about this...",1,
 そういえば テンペストのヤツも
 ほしいなんていってたような
 きがするなー
-<*2>",/0x15c0c4/<*2>,,0,
+<*2>","<D99><bold>Computer<normal>'s are expensive
+in the human world, right?
+Even in the Denjuu world only
+a few people have one.
+Come to mention them, I'm
+pretty sure Tempest said
+he wanted one.<*2>","<bold>Computer<normal>'s are expensive in the human world, right?
+Even in the Denjuu world only a few people have one.
+Come to mention them, I'm pretty sure Tempest said he wanted one.<*2>",1,
 0x15c0c6,"<D100>ズドーンってデンジュウ
 しってる??
 こいつ『ハンマー』が
@@ -1335,7 +1372,13 @@ C'mon... That's funny...",1,"The ""go all 'zudoooooon' with a hammer"" joke don'
 いるんだけどさー
 『でんち』がほしいらしいよー
 なんだかジミだよねぇ?
-<*2>",/0x15c0c8/<*2>,,0,
+<*2>","<D101>You know that famed know-
+it-all Denjuu, Hiyu?
+It seems he wants a
+<bold>battery<normal>!
+Isn't that kinda boring?<*2>","You know that famed know-it-all Denjuu, Hiyu?
+It seems he wants a <bold>battery<normal>!
+Isn't that kinda boring?<*2>",1,
 0x15c0ca,"<D102>ビブルナムってデンジュウは
 『ビデオ』がすきなんだって
 あのなかにうつる じぶんじしんをみて うっとリしてるのかなー?

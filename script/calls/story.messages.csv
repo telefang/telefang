@@ -572,7 +572,11 @@ Because they're so cool!",1,
 ケンカしてるしまに
 いくんだもんなー
 まぁ がんばって
-テレファングしてくれよなー<*2>",/0x158064/<*2>,,0,
+テレファングしてくれよなー<*2>",/0x158064/<*2>,"Sup <&name>
+Is it true you're in Ion?
+You've sure got some weird tastes.
+I mean, you went somewhere the phone companies are duking it out.
+Anyway, good luck Telefanging.",0,
 0x158066,"ねー そこで なんか
 ケンカがおきてるってうわさ
 ほんとなのー?
@@ -580,7 +584,10 @@ Because they're so cool!",1,
 なんでか わかったら
 こんどおしえてよねー
 よろしくねー
-それじゃーねー<*2>",/0x158066/<*2>,,0,
+それじゃーねー<*2>",/0x158066/<*2>,"Hey, I heard a rumor there's some sort of fight happening over there.
+Is that for real? If so, why is it going on?
+Let me know if you find out, okay?
+Please don't forgot. Well, see you!",0,
 0x158068,"もしもし?
 デンジュウたちが
 テレファングのしゅぎょうを
@@ -592,7 +599,10 @@ Because they're so cool!",1,
 よんでくれよ
 そこにすんでるデンジュウと
 テレファングをしてみたいんだ
-たのむぜ!<*2>",/0x158068/<*2>,,0,
+たのむぜ!<*2>",/0x158068/<*2>,"Hello?
+I heard about this island that Denjuu train, say... Aren't you over there now?
+If you are, give me a call, I wanna Telefang the Denjuu over there.
+Please do it!",0,
 0x15806a,"よう <&name>
 オレさー さいきん
 テレファングでまけてばっかリ

@@ -2860,23 +2860,39 @@ It's a really fun song!<*2>",You don't want to hear it? It's a really fun song!<
 #######,#074 (partial),,,,
 0x1341fe,"このあいだ『アイアイ』っていう
 おもしろいうたをきいたんだ!
- どんな? しってるよ<*A>",/0x1341fe/<*A>,,0,
+ どんな? しってるよ<*A>","The other day I heard an
+interesting song called
+""AiAi""!
+<Q>What's it about?<|>I know that one.</Q><*A>","The other day I heard an interesting song called ""AiAi""!
+<Q>What's it about?<|>I know that one.</Q><*A>",1,
 #######,Phone Questions 3  -  #074-110,,,,
 #######,#074 (partial),,,,
 0x110000,"みなみのしまにすんでる
 おサルさんのうただよ!
- うたって! ふーん<*A>",/0x110000/<*A>,,0,Questions 074 (partial) to 110 (partial).
+ うたって! ふーん<*A>","It's a song about a monkey
+living on a southern island!
+<Q>Sing it!<|>Hm...</Q><*A>","It's a song about a monkey living on a southern island!
+<Q>Sing it!<|>Hm...</Q><*A>",1,Questions 074 (partial) to 110 (partial).
 0x110002,"なんだしってるのか!
 つまんないのー!!
- うたうか? そんなー<*A>",/0x110002/<*A>,,0,
+ うたうか? そんなー<*A>","What? You already knew it?
+How boring!!
+<Q>Wanna sing it?<|>Sorry...</Q><*A>","What? You already knew it? How boring!!
+<Q>Wanna sing it?<|>Sorry...</Q><*A>",1,
 0x110004,"はずかしいよ このうたは
-けっこう ゆうきがいるもん!<*2>",/0x110004/<*2>,,0,
+けっこう ゆうきがいるもん!<*2>","I'm too embarassed. It's a
+song that takes plenty of
+courage to sing!<*2>",I'm too embarassed. It's a song that takes plenty of courage to sing!<*2>,1,
 0x110006,"なんだよきゅうに そっけないな
-もしかしてうたヘタなのか?<*2>",/0x110006/<*2>,,0,
+もしかしてうたヘタなのか?<*2>","Why are you suddenly
+clamming up?
+Are you a bad singer?<*2>",Why are you suddenly clamming up? Are you a bad singer?<*2>,1,
 0x110008,"よーし!...あれ?
-さいしょのでだしなんだっけ?<*2>",/0x110008/<*2>,,0,
+さいしょのでだしなんだっけ?<*2>","Let's do this! ...Huh? How did
+it go again?<*2>",Let's do this! ...Huh? How did it go again?<*2>,1,
 0x11000a,"うそだよ!もしかして
-しらないかとおもってさ!<*2>",/0x11000a/<*2>,,0,
+しらないかとおもってさ!<*2>","Just kidding! I just thought
+you might not know it!<*2>",Just kidding! I just thought you might not know it!<*2>,1,
 #######,#075,,,,
 0x11000c,"オレがいちばんすきなうたは!
 『おおきなのっぽのふるどけい』
