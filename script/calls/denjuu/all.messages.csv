@@ -2896,56 +2896,127 @@ you might not know it!<*2>",Just kidding! I just thought you might not know it!<
 #######,#075,,,,
 0x11000c,"オレがいちばんすきなうたは!
 『おおきなのっぽのふるどけい』
- オレもすき そうなの?<*A>",/0x11000c/<*A>,,0,
+ オレもすき そうなの?<*A>","I really like the song ""My
+Grandfather's Clock""!
+<Q>I like it too.<|>Really?</Q><*A>","I really like the song ""My Grandfather's Clock""!
+<Q>I like it too.<|>Really?</Q><*A>",1,
 0x11000e,"とけいは おじいさんと
 ずっといっしょだったんだよな!
- そうだね ずっと?<*A>",/0x11000e/<*A>,,0,
+ そうだね ずっと?<*A>","The clock kept running for
+the grandfather's
+entiire life!
+<Q>
+That's right.
+<|>
+Entire life?
+</Q><*A>","The clock kept running for the grandfather's entiire life!
+<Q>That's right.<|>Entire life?</Q><*A>",1,
 0x110010,"オマエ きいたことないのか?
 だったらきいたほうがいいぞ!
- わかった えー<*A>",/0x110010/<*A>,,0,
+ わかった えー<*A>","You haven't heard it?
+You should give it a listen!
+<Q>I will.<|>Well...</Q><*A>","You haven't heard it?
+You should give it a listen!
+<Q>I will.<|>Well...</Q><*A>",1,
 0x110012,"なんどきいても
-いいんだよなー これが!<*2>",/0x110012/<*2>,,0,
+いいんだよなー これが!<*2>","It never gets old, no matter
+how much I listen to it!<*2>","It never gets old, no matter how much I listen to it!<*2>",1,
 0x110014,"そうだよ!おじいさんが
-うまれてからずっとだぜ!<*2>",/0x110014/<*2>,,0,
+うまれてからずっとだぜ!<*2>","That's right, it ran since
+the grandfather was born!<*2>","That's right, it ran since the grandfather was born!<*2>",1,
 0x110016,"かんそうをきかせてくれよ!
-ぜったいかんどうするぜ!<*2>",/0x110016/<*2>,,0,
+ぜったいかんどうするぜ!<*2>","Let me know what you think!
+It's really moving!<*2>","Let me know what you think!
+It's really moving!<*2>",1,
 0x110018,"オマエ..このうたをしらないと
-そんするぞ!ほんとだぞ!<*2>",/0x110018/<*2>,,0,
+そんするぞ!ほんとだぞ!<*2>","You... really should hear this
+song! Really!<*2>",You... really should hear this song! Really!<*2>,1,
 #######,#076,,,,
 0x11001a,"さあ みなさんごいっしょに!
 『おおきなくリのきのしたで』
- きゅうだな なにそれ?<*A>",/0x11001a/<*A>,,0,
+ きゅうだな なにそれ?<*A>","Alright, let's sing ""Under the
+Spreading Chestnut Tree""
+together!
+<Q>
+Isn't this a bit sudden?
+<|>
+What's that?
+</Q><*A>","Alright, let's sing ""Under the Spreading Chestnut Tree"" together!
+<Q>Isn't this a bit sudden?<|>What's that?</Q><*A>",1,
 0x11001c,"きゅうでもなんでも
 やるったらやるの!!
- わかった わからない<*A>",/0x11001c/<*A>,,0,
+ わかった わからない<*A>","Just do it, even if it is
+sudden!
+<Q>Fine.<|>I don't know it.</Q><*A>","Just do it, even if it is sudden!
+<Q>Fine.<|>I don't know it.</Q><*A>",1,
 0x11001e,"しらないのか!ちいさいころ
 みんな おしえてもらうんだろ?
- わすれた そんなことない<*A>",/0x11001e/<*A>,,0,
+ わすれた そんなことない<*A>","You don't know it? Doesn't
+everyone learn it as a kid?
+<Q>
+I forgot it.
+<|>
+That's not true.
+</Q><*A>","You don't know it? Doesn't everyone learn it as a kid?
+<Q>I forgot it.<|>That's not true.</Q><*A>",1,
 0x110020,"せーの!お~おきなくリの~
-きのしたで~ ちゃんとできた?<*2>",/0x110020/<*2>,,0,
+きのしたで~ ちゃんとできた?<*2>","All together now!
+U~nderneath the
+sprea~ding chestnut tree♪
+You're doing it, right?<*2>","All together now! U~nderneath the sprea~ding chestnut tree~
+You're doing it, right?<*2>",1,
 0x110022,"ふリがわからない?
-デンワじゃおしえられないよ!<*2>",/0x110022/<*2>,,0,
+デンワじゃおしえられないよ!<*2>","You don't know it?
+I can't teach you it over
+the phone!<*2>","You don't know it?
+I can't teach you it over the phone!<*2>",1,
 0x110024,"おもいだして!おもいださないと
-ダメだよ!!<*2>",/0x110024/<*2>,,0,
+ダメだよ!!<*2>","Remember it! You can't have
+forgotten it!<*2>",Remember it! You can't have forgotten it!<*2>,1,
 0x110026,"おしえてもらってないのか?
-じゃあ しょうがないね<*2>",/0x110026/<*2>,,0,
+じゃあ しょうがないね<*2>","You were never taught it?
+Well, that's a shame.<*2>","You were never taught it? Well, that's a shame.<*2>",1,
 #######,#077,,,,
 0x110028,"おしえてほしいんだけど
 『はるがきた』ってしってる?
- しってる ちょっと<*A>",/0x110028/<*A>,,0,
+ しってる ちょっと<*A>","I want someone to help with
+something, but do you know
+""Spring Has Come""?
+<Q>I know it.<|>A bit.</Q><*A>","I want someone to help with something, but do you know ""Spring Has Come""?
+<Q>I know it.<|>A bit.</Q><*A>",1,Should replace this song with one that exists in English.
 0x11002a,"やまにきた さとにきたのあと
 なににきたんだっけ?
- のにもきた いにもきた<*A>",/0x11002a/<*A>,,0,
+ のにもきた いにもきた<*A>","It came to the mountains,
+then it came to the
+villages, where did it come
+after that?
+<Q>
+To the fields.
+<|>
+To the wells
+</Q><*A>","It came to the mountains, then it came to the villages, where did it come after that?
+<Q>To the fields.<|>To the wells</Q><*A>",1,
 0x11002c,"なんかこのうたをきくと
 ほんわかしたきぶんになるよね
- そうだね そうでもない<*A>",/0x11002c/<*A>,,0,
+ そうだね そうでもない<*A>","Listening to this song makes
+you feel cozy, doesn't it?
+<Q>
+It sure does.
+<|>
+Not really.
+</Q><*A>","Listening to this song makes you feel cozy, doesn't it?
+<Q>It sure does.<|>Not really.</Q><*A>",1,
 0x11002e,"そうか...いろんなところに
-はるがやってきたんだね!<*2>",/0x11002e/<*2>,,0,
-0x110030,いに はるがくる?どういうこと?ちょうしがいいってこと?<*2>,/0x110030/<*2>,,0,
+はるがやってきたんだね!<*2>","That's right... Spring comes
+to so many places!<*2>",That's right... Spring comes to so many places!<*2>,1,
+0x110030,いに はるがくる?どういうこと?ちょうしがいいってこと?<*2>,"How does spring come to a
+well? Does that mean it
+has good flowing?<*2>",How does spring come to a well? Does that mean it has good flowing?<*2>,1,
 0x110032,"やっぱリこのメロディーが
-いいんだとおもうんだよね!<*2>",/0x110032/<*2>,,0,
+いいんだとおもうんだよね!<*2>",The melody really is so good!<*2>,The melody really is so good!<*2>,1,
 0x110034,"なんで?オレがもういちど
-うたってやろうか?<*2>",/0x110034/<*2>,,0,
+うたってやろうか?<*2>","What? Maybe I should try
+singing some of it?<*2>",What? Maybe I should try singing some of it?<*2>,1,
 #######,#078,,,,
 0x110036,"『めだかのがっこう』だけどさ
 あれはどこにあるの?
@@ -3727,21 +3798,42 @@ know about your FACE!<*2>","Yeah, well, I don't– I don't know about your FACE!
 #######,#097,,,,
 0x110140,"あのさ 『いのなかのかわず』
 って どういういみ?
- えっとね しらない<*A>",/0x110140/<*A>,,0,(Questions 097-102 are about Japanese idioms)
+ えっとね しらない<*A>","Say, do you know what ""a big
+fish in a small pond""
+means?
+<Q>Well...<|>I don't know.</Q><*A>","Say, do you know what ""a big fish in a small pond"" means?
+<Q>Well...<|>I don't know.</Q><*A>",1,(Questions 097-102 are about Japanese idioms)
 0x110142,"そとのせかいをしらない?
 そういういみなんだ...
- どうして? そうだよ<*A>",/0x110142/<*A>,,0,
+ どうして? そうだよ<*A>","Not knowing the
+greater world?
+So that's what it means...
+<Q>Why?<|>That's right.</Q><*A>","Not knowing the greater world?
+So that's what it means...
+<Q>Why?<|>That's right.</Q><*A>",1,
 0x110144,"そうか...ごめんね
 ヘんなこときいちゃって!
- トモダチだろ どうしたの?<*A>",/0x110144/<*A>,,0,
+ トモダチだろ どうしたの?<*A>","I see... Sorry for asking
+something weird!
+<Q>
+What are friends for?
+<|>
+What happened?
+</Q><*A>","I see... Sorry for asking something weird!
+<Q>What are friends for?<|>What happened?</Q><*A>",1,
 0x110146,"ともだちとケンカしたら
-そういわれたんだ...<*2>",/0x110146/<*2>,,0,
+そういわれたんだ...<*2>","A friend said it after we got
+in a fight...<*2>",A friend said it after we got in a fight...<*2>,1,
 0x110148,"なるほど...ことわざは
-むずかしいな!<*2>",/0x110148/<*2>,,0,
+むずかしいな!<*2>",I see... sayings can be hard!<*2>,I see... sayings can be hard!<*2>,1,
 0x11014a,"いつもやさしいよな
-<&name>は...<*2>",/0x11014a/<*2>,,0,
+<&name>は...<*2>","You're always so nice,
+<&name>...<*2>","You're always so nice, <&name>...",1,
 0x11014c,"ううん!ただ いみが
-しリたかったんだ あリがとう<*2>",/0x11014c/<*2>,,0,
+しリたかったんだ あリがとう<*2>","Umm! I just wanted to know
+what it meant.
+Thank you!<*2>","Umm! I just wanted to know what it meant.
+Thank you!<*2>",1,
 #######,#098,,,,
 0x11014e,"『かえるのこはかえる』
 のいみをしってるか?
@@ -3841,29 +3933,56 @@ You've saved me from another thirteen hours.",1,
 #######,#100,,,,
 0x11016a,"きいてくれよ!オレさ
 『みっかぼうず』っていわれた!
- どういうこと なんで?<*A>","Listen! Somebody called me a
+ どういうこと なんで?<*A>","Listen to this! I got called
+""wishy-washy""!
+<Q>
+What does that mean?
+<|>
+Why?
+</Q><*A>","Listen to this! I got called ""wishy-washy""!
+<Q>What does that mean?<|>Why?</Q><*A>",1,"Made up out of whole cloth.
+
+=Old tl=
+Listen! Somebody called me a
 ""goody two-shoes""!
-<Q>A what?<|>Why?</Q><*A>","Listen! Somebody called me a ""goody two-shoes""!
-<0>A what?<0>Why?",1,Made up out of whole cloth.
+<Q>A what?<|>Why?</Q><*A>"
 0x11016c,"なんでもみっかと
 つづかないってこと!
- そうなの? がんばれよ<*A>","I dunno. I guess it means I
+ そうなの? がんばれよ<*A>","It means that I have no
+follow through!
+<Q>
+Is that so?
+<|>
+That's rough.
+</Q><*A>","It means that I have no follow through!
+<Q>Is that so?<|>That's rough.</Q><*A>",1,"I dunno. I guess it means I
 wear shoes of high quality.
-<Q>Nice<|>…Do you?</Q><*A>","I dunno. I guess it means I wear shoes of high quality.
-<0>Nice<0>…Do you?",1,
+<Q>Nice<|>…Do you?</Q><*A>"
 0x11016e,"オレが すぐそうじを
 さぼるからってさ...
- しょうがない ダメじゃん<*A>",/0x11016e/<*A>,,0,
+ しょうがない ダメじゃん<*A>","Because I always flake on
+cleaning...
+<Q>
+It can't be helped then.
+<|>
+That's not good.
+</Q><*A>","Because I always flake on cleaning...
+<Q>It can't be helped then.<|>That's not good.</Q><*A>",1,
 0x110170,"うん...がんばろうとは
-してるんだけどね...<*2>","The problem is… I don't wear
-shoes…<*2>",The problem is… I don't wear shoes…,1,
+してるんだけどね...<*2>","Yeah... I'm doing my best
+though...<*2>",Yeah... I'm doing my best though...<*2>,1,"The problem is… I don't wear
+shoes…<*2>"
 0x110172,"そうだね!そういわれない
-ためにがんばることにするよ!<*2>","Nope! I guess I just give off
-that kind of aura!<*2>",Nope! I guess I just give off that kind of aura!,1,
+ためにがんばることにするよ!<*2>","Yeah! I'll try harder so I
+won't be called it
+anymore!<*2>",Yeah! I'll try harder so I won't be called it anymore!<*2>,1,"Nope! I guess I just give off
+that kind of aura!<*2>"
 0x110174,"オレがさぼらなければ
-いいことなんだけどね...<*2>",/0x110174/<*2>,,0,
+いいことなんだけどね...<*2>",It'll be fine if I don't flake...<*2>,It'll be fine if I don't flake...<*2>,1,
 0x110176,"いわれてもしかたがないけど
-やっぱリくやしいじゃん!<*2>",/0x110176/<*2>,,0,
+やっぱリくやしいじゃん!<*2>","I know that even without
+you saying it, it's so
+frustrating!<*2>","I know that even without you saying it, it's so frustrating!<*2>",1,
 #######,#101,,,,
 0x110178,"さいきんアイテムのかいすぎで
 『びんぼうひまなし』なんだ

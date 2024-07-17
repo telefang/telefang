@@ -572,11 +572,19 @@ Because they're so cool!",1,
 ケンカしてるしまに
 いくんだもんなー
 まぁ がんばって
-テレファングしてくれよなー<*2>",/0x158064/<*2>,"Sup <&name>
+テレファングしてくれよなー<*2>","Sup <&name>
+Is it true you're in Ion?
+You've sure got some weird
+tastes.
+I mean, you went somewhere
+the phone companies are
+duking it out.
+Anyway, good luck
+Telefanging.<*2>","Sup <&name>
 Is it true you're in Ion?
 You've sure got some weird tastes.
 I mean, you went somewhere the phone companies are duking it out.
-Anyway, good luck Telefanging.",0,
+Anyway, good luck Telefanging.<*2>",1,
 0x158066,"ねー そこで なんか
 ケンカがおきてるってうわさ
 ほんとなのー?
@@ -584,10 +592,19 @@ Anyway, good luck Telefanging.",0,
 なんでか わかったら
 こんどおしえてよねー
 よろしくねー
-それじゃーねー<*2>",/0x158066/<*2>,"Hey, I heard a rumor there's some sort of fight happening over there.
+それじゃーねー<*2>","Hey, I heard a rumor
+there's some sort of fight
+happening over there.
+
+Is that for real? If so,
+why is it going on?
+Let me know if you find
+out, okay?
+Please don't forgot. Well,
+see you!<*2>","Hey, I heard a rumor there's some sort of fight happening over there.
 Is that for real? If so, why is it going on?
 Let me know if you find out, okay?
-Please don't forgot. Well, see you!",0,
+Please don't forgot. Well, see you!<*2>",1,
 0x158068,"もしもし?
 デンジュウたちが
 テレファングのしゅぎょうを
@@ -599,10 +616,19 @@ Please don't forgot. Well, see you!",0,
 よんでくれよ
 そこにすんでるデンジュウと
 テレファングをしてみたいんだ
-たのむぜ!<*2>",/0x158068/<*2>,"Hello?
+たのむぜ!<*2>","Hello?
+
+I heard about this island
+that Denjuu train, say...
+Aren't you over
+there now?
+If you are, give me a call,
+I wanna Telefang the
+Denjuu over there.
+Please do it!<*2>","Hello?
 I heard about this island that Denjuu train, say... Aren't you over there now?
 If you are, give me a call, I wanna Telefang the Denjuu over there.
-Please do it!",0,
+Please do it!<*2>",1,
 0x15806a,"よう <&name>
 オレさー さいきん
 テレファングでまけてばっかリ
@@ -612,7 +638,19 @@ Please do it!",0,
 してみたいんだー
 できれば こんどよんでくれよ
 たのむぜ
-<*2>",/0x15806a/<*2>,,0,
+<*2>","Yo, <&name>.
+I've been losing my
+Telefangs lately.
+So, I want to do some
+Telefang training on Ion
+Island.
+If you can, call me over
+sometime.
+I'm counting on you!<*2>","Yo, <&name>.
+I've been losing my Telefangs lately.
+So, I want to do some Telefang training on Ion Island.
+If you can, call me over sometime.
+I'm counting on you!<*2>",1,
 0x15806c,"<D98>このまえ ノイジーって
 ヤツと いっしょにいたんだけど
 そいつといると デンワが
@@ -622,7 +660,23 @@ Please do it!",0,
 あんな のうリょく なにかの
 やくにたったリするのかな?
 こんどあったらきいておくよ
-それじゃあな<*2>",/0x15806c/<*2>,,0,
+それじゃあな<*2>","<D98>The other day, I was
+with this guy named Noisy
+and was having him around
+made it hard to use the
+phone.
+Maybe he was emitting
+some sort of weird signal or
+something.
+Could an ability like that be
+useful for something?
+I'll ask him next time I see
+him.
+Well, see ya!<*2>","<D98>The other day, I was with this guy named Noisy and was having him around made it hard to use the phone.
+Maybe he was emitting some sort of weird signal or something.
+Could an ability like that be useful for something?
+I'll ask him next time I see him.
+Well, see ya!<*2>",1,
 0x15806e,"<D98>このまえ イーリスで
 ヘんなデンジュウを みかけたよ
 なんだか やけどするとか
@@ -636,7 +690,23 @@ Please do it!",0,
 つけたほうがいいぞ
 けっこう ちのけが おおそうな
 ヤツだったからな
-それじゃあな<*2>",/0x15806e/<*2>,,0,
+それじゃあな<*2>","<D98>I saw a strange
+Denjuu over at Iris.
+It was going on about
+staying away if I didn't
+wanna get burnt, or
+something like that.
+When I was around him, it
+was hard to get a signal
+on my cell phone...
+Watch out if you happen to
+run into him, he seemed like a
+real hot-head.
+Well, see ya!<*2>","<D98>I saw a strange Denjuu over at Iris.
+It was going on about staying away if I didn't wanna get burnt, or something like that.
+When I was around him, it was hard to get a signal on my cell phone...
+Watch out if you happen to run into him, he seemed like a real hot-head.
+Well, see ya!<*2>",1,
 0x158070,"もリのなかで しゅぎょうしてる
 デンジュウたちって
 けっこう くせのあるヤツが
@@ -648,7 +718,21 @@ Please do it!",0,
 オレも そいつに
 テレファングで かてるぐらい
 がんばるぜ!
-じゃあな<*2>",/0x158070/<*2>,,0,
+じゃあな<*2>","The Denjuu training in the
+forest are a bit quirky.
+There's this one I know that
+gets super-focused on
+things to the point it doesn't
+notice it's surroundings.
+Apparently that makes them
+fairly strong.
+I'll work hard so that I can
+beat them in a Telefang!
+See ya.<*2>","The Denjuu training in the forest are a bit quirky.
+There's this one I know that gets super-focused on things to the point it doesn't notice it's surroundings.
+Apparently that makes them fairly strong.
+I'll work hard so that I can beat them in a Telefang!
+See ya.<*2>",1,
 0x158072,"オレも イオンとうで
 しゅぎょうしてたときが
 すこしあったんだけど
@@ -658,7 +742,15 @@ Please do it!",0,
 いってたけど それいじょう
 つよくなって どうするんだろう
 っておもっちゃったよ
-<*2>",/0x158072/<*2>,,0,
+<*2>","I ran into this really strong
+Denjuu on Ion Island while
+I was training.
+
+It was still in the middle of
+training, but I can't help
+but what will happen when
+it gets even stronger.<*2>","I ran into this really strong Denjuu on Ion Island while I was training.
+It was still in the middle of training, but I can't help but what will happen when it gets even stronger.<*2>",1,
 0x158074,"もリのなかで しゅぎょうしてる
 デンジュウのなかに いっぴき
 そそっかしいヤツがいるから
@@ -666,7 +758,12 @@ Please do it!",0,
 いきなリ テレファング
 いどんでくるからな
 じゃあな
-<*2>",/0x158074/<*2>,,0,
+<*2>","Be careful in the forest,
+there's this one rash
+Denjuu that might challenge
+you out of the blue.
+See ya.<*2>","Be careful in the forest, there's this one rash Denjuu that might challenge you out of the blue.
+See ya.<*2>",1,
 0x158076,"うわさで きいたんだけど
 イオンとうには ヌシって
 ヤツが いるらしいな
@@ -674,7 +771,17 @@ Please do it!",0,
 みたことあるヤツが
 あんまリいないんだ
 そういうヤツって なんとなく
-トモダチになリたいよなー<*2>",/0x158076/<*2>,,0,
+トモダチになリたいよなー<*2>","I heard a rumor that
+there's a guardian
+living in the forest.
+
+Not many people have
+met them before.
+I'd like to become friends
+with someone like that
+somehow.<*2>","I heard a rumor that there's a guardian living in the forest.
+Not many people have met them before.
+I'd like to become friends with someone like that somehow.<*2>",1,
 #######,Paparouna Lake,,,,
 0x158078,"よう <&name>
 オマエが パパルナこに
@@ -1603,7 +1710,22 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 つれていかれたのかも...
 あいつ いったい..
 どこにいったんだよー!
-<*2>",/0x1580dc/<*2>,,0,
+<*2>","Hey, <&name>.
+
+Do you know where my
+friend went?
+I can't get ahold of him
+at all.
+They gave their number to
+a guy from the <bold>Sanaeba
+Group<normal>, maybe they led my
+friend somewhere...
+Where in the world... could
+they have gone!?<*2>","Hey, <&name>.
+Do you know where my friend went?
+I can't get ahold of him at all.
+They gave their number to a guy from the 'Sanaeba Group', maybe they led my friend somewhere...
+Where in the world... could they have gone!?<*2>",1,
 0x1580de,"『サナエバグループ』の
 ヤツら デンジュウを
 たくさんあつめてるらしいぜ
@@ -1613,7 +1735,21 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 いるんだ!
 ケイタイの つながらない
 ところにいるのかな??
-なんだか シンパイだよー<*2>",/0x1580de/<*2>,,0,
+なんだか シンパイだよー<*2>","I heard those guys at the
+<bold>Sanaeba Group<normal>
+have been gathering
+a bunch of Denjuu.
+What's more, most of the
+Denjuu that got close with
+them aren't reachable
+anymore!
+Are they somewhere with
+no cell service??
+I'm starting to get
+worried...<*2>","I heard those guys at the 'Sanaeba Group' have been gathering a bunch of Denjuu.
+What's more, most of the Denjuu that got close with them aren't reachable anymore!
+Are they somewhere with no cell service??
+I'm starting to get worried...<*2>",1,
 0x1580e0,"なぁ イオンとうにある
 ほこらのはなし きいたか?
 イオンとうの ちかに
@@ -1623,7 +1759,16 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 もとの デンジュウカイを
 かえしてくれって
 カンジだよなー
-<*2>",/0x1580e0/<*2>,,0,
+<*2>","Hey, have you heard about
+the cave on Ion Island?
+Why would they build an
+underground lab at Ion?
+It's unbelievable! I just
+want the Denjuu World
+back the way it was, you
+know?<*2>","Hey, have you heard about the cave on Ion Island?
+Why would they build an underground lab at Ion?
+It's unbelievable! I just want the Denjuu World back the way it was, you know?<*2>",1,
 0x1580e2,"『サナエバグループ』の
 ニンゲンと トモダチのヤツに
 きいたんだけど
@@ -1631,31 +1776,61 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 はいるには カギがひつよう
 なんだってさ
 いったい どんなひみつを
-かくしてるんだろなー<*2>",/0x1580e2/<*2>,,0,
+かくしてるんだろなー<*2>","I heard from this human guy
+a friend of mine knows
+from the <bold>Sanaeba Group<normal>
+that you need a key to
+get into their president's
+room there.
+I wonder what secrets
+they're hiding...<*2>","I heard from this human guy a friend of mine knows from the 'Sanaeba Group' that you need a key to get into their president's room there.
+I wonder what secrets they're hiding...<*2>",1,
 0x1580e4,"イオンとうのほこらは
 もともとは オレたちの
 モノだったっていうのに
 なんで サナエバなんかに
 とられなきゃいけないんだ!
-<*2>",/0x1580e4/<*2>,,0,
+<*2>","The cave on Ion Island was
+ours. Why do we have to let
+Sanaeba have it!?<*2>",The cave on Ion Island was ours. Why do we have to let Sanaeba have it!?<*2>,1,
 0x1580e6,"まったく イオンとうは
 ひさんだよな!
 デンワガイシャのあらそいが
 おわったとおもったら
 また じけんだもんな!
-いやになってくるよ<*2>",/0x1580e6/<*2>,,0,
+いやになってくるよ<*2>","Ion Island is a complete
+mess!
+Just when it seems like their
+issues with the phone
+companies are cleared up,
+something else is going on!
+I'm getting fed up with it!<*2>","Ion Island is a complete mess!
+Just when it seems like their issues with the phone companies are cleared up, something else is going on!
+I'm getting fed up with it!<*2>",1,
 0x1580e8,"ほこらのなかには
 サナエバのてしたたちが
 うようよいるってはなしだけど
 そいつらつよいのかな
 オレがたおしてやろうか?
-<*2>",/0x1580e8/<*2>,,0,
+<*2>","I heard that the cave is
+crawling with Sanaeba's
+henchmen.
+
+I wonder if they're strong?
+Should I go beat them all?<*2>","I heard that the cave is crawling with Sanaeba's henchmen. I wonder if they're strong?
+Should I go beat them all?<*2>",1,
 0x1580ea,"サナエバのてしたたちは
 かなリのきょうてきだって
 はなしを きいたんだけどー
 どうなんだろう?
 ホントかなー?
-どうなんだろうなー?<*2>",/0x1580ea/<*2>,,0,
+どうなんだろうなー?<*2>","I heard that Sanaeba's
+henchmen are really tough.
+Is that really true?
+I wonder if it is...
+What do you think?<*2>","I heard that Sanaeba's henchmen are really tough.
+Is that really true? I wonder if it is...
+What do you think?<*2>",1,
 0x1580ec,"テレファングで
 いちばんたいせつなことは
 あきらめちゃいけないってこと
@@ -1663,13 +1838,25 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 いっぱつぎゃくてんが
 おこるかもしれない!
 ぜったい あきらめるなよ!
-<*2>",/0x1580ec/<*2>,,0,
+<*2>","The most important thing
+when Telefanging is never
+giving up.
+No matter how bleak, a
+comeback could happen any
+moment!
+Never give up!<*2>","The most important thing when Telefanging is never giving up.
+No matter how bleak, a comeback could happen any moment!
+Never give up!<*2>",1,
 0x1580ee,"テレファングのときに
 やくわリをぶんたんするのも
 ひとつのてだよな!
 こうげきするヤツと
 まもるヤツってぐあいにな!
-<*2>",/0x1580ee/<*2>,,0,
+<*2>","It's important to break into
+roles when Telefanging!
+Attackers, defenders,
+things like that!","It's important to break into roles when Telefanging!
+Attackers, defenders, things like that!",1,
 #######,Ixos Forest and Cactos Ruins,,,,
 0x1580f0,"『カクトスいせき』って
 はなしは きいたことが
@@ -1678,7 +1865,14 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 なんでも かぎられた
 デンジュウしか でいリできない
 らしいんだー
-<*2>",/0x1580f0/<*2>,,0,
+<*2>","I've heard of this place
+called <bold>Cactos Ruins<normal>, but
+I'm not really sure what
+sort of place it is.
+Apparently only certain
+Denjuu are allowed to come
+and go from there.<*2>","I've heard of this place called ""Cactos Ruins,"" but I'm not really sure what sort of place it is.
+Apparently only certain Denjuu are allowed to come and go from there.<*2>",1,
 0x1580f2,"『カクトスいせき』のなかでは
 すっげー デンジュウが
 ねむってるらしいなー
@@ -1686,7 +1880,18 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 きっと さいこうにカッコいい
 デンジュウがいるんだろうなー
 みてみたいよなー
-<*2>",/0x1580f2/<*2>,,0,
+<*2>","I heard about an incredible
+Denjuu that's slumbering
+within <bold>Cactos Ruins<normal>.
+What kind of Denjuu do you
+think it is?
+It has to be the coolest
+Denjuu there is, don't
+you think?
+I'd love a chance to see it!<*2>","I heard about an incredible Denjuu that's slumbering within ""Cactos Ruins.""
+What kind of Denjuu do you think it is?
+It has to be the coolest Denjuu there is, don't you think?
+I'd love a chance to see it!<*2>",1,
 0x1580f4,"<&name>
 いまどこにいるんだ??
 まよいのもリにいるんだとしたら
@@ -1696,7 +1901,18 @@ that Sanaeba is sending humans there in droves! What's he thinking?",1,
 いってたぜ
 ま...ウソだとは
 おもうけどなー
-それじゃ がんばれよー<*2>",/0x1580f4/<*2>,,0,
+それじゃ がんばれよー<*2>","Where are you at,
+<&name>?
+If you're in the forest
+maze, I've heard someone
+suspicious is by the pond in
+the center.
+Well... I think it was just a
+rumor though.
+Anyway, good luck!<*2>","Where are you at, <&name>?
+If you're in the forest maze, I've heard someone suspicious is by the pond in the center.
+Well... I think it was just a rumor though.
+Anyway, good luck!<*2>",1,
 0x1580f6,"まよいのもリに たくさんの
 Tファンガーが いるらしいぜ
 きっと サナエバのれんちゅうが
@@ -1706,7 +1922,18 @@ Tファンガーが いるらしいぜ
 そうすれば ヤツらを
 テレファングで おいかえして
 やるぜ!
-<*2>",/0x1580f6/<*2>,,0,
+<*2>","It seems there are a lot
+of T-Fangers in the
+forest maze.
+They're probably
+Sanaeba's goons,
+up to no good!
+Call me over,
+<&name>,
+and I'll send them away
+with a Telefang!<*2>","It seems there are a lot of T-Fangers in the forest maze.
+They're probably Sanaeba's goons, up to no good!
+Call me over, <&name>, and I'll send them away with a Telefang!<*2>",1,
 0x1580f8,"よう <&name>
 サナエバってヤツ あいつも
 Tファンガーらしいぜ
@@ -1716,7 +1943,19 @@ Tファンガーらしいぜ
 しなくちゃいけないときが
 くるかもしれない
 そのときのために トモダチを
-しっかリ きたえておけよ!<*2>",/0x1580f8/<*2>,,0,
+しっかリ きたえておけよ!<*2>","Yo, <&name>.
+Have you heard?
+Apparently that Sanaeba
+guy is a T-Fanger, it
+seems like he's pretty
+strong too.
+You might have to Telefang
+him someday, so make sure
+to train with your friends
+and temper yourselves for
+when it happens!<*2>","Yo, <&name>.
+Have you heard? Apparently that Sanaeba guy is a T-Fanger, it seems like he's pretty strong too.
+You might have to Telefang him someday, so make sure to train with your friends and temper yourselves for when it happens!<*2>",1,
 0x1580fa,"サナエバのそばに
 いるデンジュウさー
 みたこともなければ
@@ -1728,7 +1967,18 @@ Tファンガーらしいぜ
 そいつは なんで サナエバの
 そばにいるんだろうなー?
 トモダチじゃないのかな?
-<*2>",/0x1580fa/<*2>,,0,
+<*2>","You know that Denjuu that's
+at Sanaeba's side?
+Did you know that no one has
+ever seen or even heard
+of it before?
+
+And it never joins when
+Sanaeba Telefangs,
+so why is it even with him?
+Are they friends?<*2>","You know that Denjuu that's at Sanaeba's side?
+Did you know that no one has ever seen or even heard of it before?
+And it never joins when Sanaeba Telefangs, so why is it even with him? Are they friends?<*2>",1,
 0x1580fc,"デンジュウカイには まだ
 だれも いったことがない
 いせきが あるらしいんだ
@@ -1738,7 +1988,19 @@ Tファンガーらしいぜ
 おたからぐらいあるかもな!
 もしいくことがあったら オレも
 つれてってくれよなー
-<*2>",/0x1580fc/<*2>,,0,
+<*2>","I've heard that the Denjuu
+World has ruins that no
+one has ever explored.
+
+One of them is called
+<bold>Cactos Ruins<normal>...
+There could be some rare
+treasures in there!
+If you ever go,
+invite me along!<*2>","I've heard that the Denjuu World has ruins that no one has ever explored.
+One of them is called ""Cactos Ruins""...
+There could be some rare treasures in there!
+If you ever go, invite me along!<*2>",1,
 0x1580fe,"おーい <&name>
 いいこときいたから
 おしえてあげるー
@@ -1750,7 +2012,23 @@ Tファンガーらしいぜ
  じゅんにまわるベし』
 オレには よくわからないけど
 オマエには わかるかもしれない
-それじゃ がんばってくれよー<*2>",/0x1580fe/<*2>,,0,
+それじゃ がんばってくれよー<*2>","Hey, <&name>.
+I heard something nice, so
+I'm passing it on,
+""When the way is lost in the
+forest maze, follow these
+steps, those following the
+path of power go west,
+south, north; those
+following the path of speed
+go south, west, north.""
+I don't really get it, but it
+might be helpful to you.
+Well, good luck.<*2>","Hey, <&name>.
+I heard something nice, so I'm passing it on,
+""When the way is lost in the forest maze, follow these steps, those following the path of power go west, south, north; those following the path of speed go south, west, north.""
+I don't really get it, but it might be helpful to you.
+Well, good luck.<*2>",1,
 0x158100,"<&name>
 ヒトをさがしをしてる
 さいちゅうなんだって?
@@ -1762,7 +2040,22 @@ Tファンガーらしいぜ
 だれだって ひとリになリたい
 っておもうことはあるよな!
 それじゃあな!
-<*2>",/0x158100/<*2>,,0,
+<*2>","You're looking for someone,
+aren't you,
+<&name>?
+Hmm, let's see...
+If I were you, I'd try going
+somewhere there isn't
+really anyone around.
+Do you think that'll help?
+Everyone wants to be alone
+sometimes, after all!
+See ya!<*2>","You're looking for someone, aren't you, <&name>?
+Hmm, let's see...
+If I were you, I'd try going somewhere there isn't really anyone around.
+Do you think that'll help?
+Everyone wants to be alone sometimes, after all!
+See ya!<*2>",1,
 0x158102,"あの カイっていう
 ニンゲンいるじゃないか
 あいつも サナエバなみに
@@ -1774,7 +2067,22 @@ Tファンガーらしいぜ
 なんであんなことするんだろう?
 わかれば くろうは
 しないんだけどねー
-<*2>",/0x158102/<*2>,,0,
+<*2>","You know that guy Kai?
+
+I know about as little about
+him as I do Sanaeba.
+What he's doing isn't
+exactly praiseworthy,
+but I don't feel like he's
+a bad guy.
+Why does he do what
+he does?
+If I knew, it wouldn't
+bother me so much...<*2>","You know that guy Kai?
+I know about as little about him as I do Sanaeba.
+What he's doing isn't exactly praiseworthy, but I don't feel like he's a bad guy.
+Why does he do what he does?
+If I knew, it wouldn't bother me so much...<*2>",1,
 #######,Myces Lake and Burion Ruins,,,,
 0x158104,"ブリオンいせきのまえに
 ミケスこっていうのが
@@ -1783,7 +2091,14 @@ Tファンガーらしいぜ
 いろをした みずうみ
 らしくて なんかみただけで
 きもちわるくなリそうだよな!
-<*2>",/0x158104/<*2>,,0,
+<*2>","It seems like there's a lake
+called Myces Lake on the
+way to Bryon Ruins.
+I've heard that it's got a
+poisonous-looking color. Just
+looking at it can be enough
+to make you nauseous!<*2>","It seems like there's a lake called Myces Lake on the way to Bryon Ruins.
+I've heard that it's got a poisonous-looking color. Just looking at it can be enough to make you nauseous!<*2>",1,
 0x158106,"サナエバは あヤツられてたって
 ほんとうなのか?
 みんなにせめられたくなくて
@@ -1791,7 +2106,16 @@ Tファンガーらしいぜ
 ないよな?そうだったら
 ぜったい ゆるしてやらないぞ
 オマエだってそうだろ?
-<*2>",/0x158106/<*2>,,0,
+<*2>","Was Sanaeba really being
+manipulated?
+They'd better not be lying
+to avoid getting beat up
+by everyone.
+If he is, there's no way
+I'll forgive him! You won't
+either, right?<*2>","Was Sanaeba really being manipulated?
+They'd better not be lying to avoid getting beat up by everyone.
+If he is, there's no way I'll forgive him! You won't either, right?<*2>",1,
 0x158108,"ブリオンいせきに
 はいったヤツは にどと
 でてこられないって
@@ -1801,7 +2125,17 @@ Tファンガーらしいぜ
 みちがつづいていて
 どこからきたのか
 おもいだせなくなるんだって!
-オマエだいじょうぶなのか?<*2>",/0x158108/<*2>,,0,
+オマエだいじょうぶなのか?<*2>","They say once you enter
+Bryon Ruins, you'll never
+be able to leave!
+Apparently, it's like a
+labyrinth in there. With
+paths going every which
+way, you'll never remember
+which way you came from!
+You're okay, right?<*2>","They say once you enter Bryon Ruins, you'll never be able to leave!
+Apparently, it's like a labyrinth in there,. With paths going every which way, you'll never remember which way you came from!
+You're okay, right?<*2>",1,
 0x15810a,"オマエ まいごになってたリ
 しないだろうなー
 もし まいごになったときは
@@ -1811,7 +2145,23 @@ Tファンガーらしいぜ
 え?それでも まいごになった?
 そういうときは おもいっきリ
 なく!これっきゃない!
-<*2>",/0x15810a/<*2>,,0,
+<*2>","Make sure not to get lost,
+okay?
+If you do get lost, don't
+stray too far from where
+you are!
+
+That's an unbreakable
+rule!
+Huh?
+You'd still be lost then?
+Then you can only cry out
+for your life! There's
+nothing else to do!<*2>","Make sure not to get lost, okay?
+If you do get lost, don't stray too far from where you are!
+That's an unbreakable rule!
+Huh? You'd still be lost then?
+Then you can only cry out for your life! There's be nothing else to do!<*2>",1,
 0x15810c,"いのちのきって
 どんなきなんだろう?
 デンジュウはみんな
@@ -1821,7 +2171,18 @@ Tファンガーらしいぜ
 なにもおぼえていないんだよな
 どこにあるか どんなきなのか
 すごくしリたいんだ!
-<*2>",/0x15810c/<*2>,,0,
+<*2>","What sorts of dangers are
+in the Tree of Life?
+They say that all Denjuu are
+born from the Tree of
+Life, but none of us
+remember anything about
+that tree.
+I'd really like to know
+where it is and what kind of
+tree it is!<*2>","What sorts of dangers are in the Tree of Life?
+They say that all Denjuu are born from the Tree of Life, but none of us remember anything about that tree.
+I'd really like to know where it is and what kind of tree it is!<*2>",1,
 0x15810e,"サナエバをあやつっていた
 デンジュウは いのちのきを
 つかって なにかをしようと
@@ -1833,7 +2194,22 @@ Tファンガーらしいぜ
 いのちのきのことが むしょうに
 きになるんだ!
 わかってもらえるかな?
-<*2>",/0x15810e/<*2>,,0,
+<*2>","The Denjuu that was
+manipulating Sanaeba has
+gotta be plotting something
+with the Tree of Life,
+right?
+
+What could they be
+planning?
+I can't remember anything
+about the Tree of Life,
+but I'm really
+worried about it!
+Do you get how I feel?<*2>","The Denjuu that was manipulating Sanaeba has gotta be plotting something with the Tree of Life, right?
+What could they be planning?
+I can't remember anything about the Tree of Life, but I'm really worried about it!
+Do you get how I feel?<*2>",1,
 0x158110,"オマエもずいぶんながいこと
 デンジュウカイを
 たびしてきたんだよな..
@@ -1843,7 +2219,20 @@ Tファンガーらしいぜ
 ふえたんだぜ!
 やっぱリなにがあっても
 トモダチはだいじにしないとな!
-<*2>",/0x158110/<*2>,,0,
+<*2>","You've been travelling
+around the Denjuu world
+for quite a while...
+You must've made lots of
+friends along the way,
+right?
+I've gotten a lot more
+friends too!
+No matter what, you've
+gotta remember to cherish
+your friends!<*2>","You've been travelling around the Denjuu world for quite a while...
+You must've made lots of friends along the way, right?
+I've gotten a lot more friends too!
+No matter what, you've gotta remember to cherish your friends!<*2>",1,
 0x158112,"まさかとはおもうけど
 トモダチが ぜんぜん
 ふえてないってことは
@@ -1853,7 +2242,15 @@ Tファンガーらしいぜ
 じゅうようになってくること
 くらい オマエだったら
 ちゃんと わかってるよな!
-<*2>",/0x158112/<*2>,,0,
+<*2>","I hope you don't tell me that
+you haven't made any more
+friends at all!
+The more dangerous the
+enemies you face, the more
+important it is for you
+have a lot of friends. You
+understand, right?<*2>","I hope you don't tell me that you haven't made any more friends at all!
+The more dangerous the enemies you face, the more important it is for you have a lot of friends. You understand, right?<*2>",1,
 0x158114,"<&name>
 オマエって やっぱリ
 すごいヤツだったんだな!
@@ -1865,7 +2262,20 @@ Tファンガーらしいぜ
 オレはほんとうにうれしいよ!
 がんばってくれよな!
 おうえんしてるからな!
-<*2>",/0x158114/<*2>,,0,
+<*2>","You're really amazing,
+<&name>!
+You're at Byron Ruins,
+right?
+No ordinary T-Fanger can
+make it there!
+I'm really happy that we
+became friends!
+Keep at it! I'll be cheering
+you on!<*2>","You're really amazing, <&name>!
+You're at Byron Ruins, right?
+No ordinary T-Fanger can make it there!
+I'm really happy that we became friends!
+Keep at it! I'll be cheering you on!<*2>",1,
 0x158116,"いま <&name>は
 デンジュウカイをさわがせた
 ちょうほんにんのところに
@@ -1877,41 +2287,90 @@ Tファンガーらしいぜ
 まけやしないって
 オレには わかるんだ!
 まけるなよ <&name>
-<*2>",/0x158116/<*2>,,0,
+<*2>","You're heading to confront
+the ringleader behind all
+the trouble in the Denjuu
+World, aren't you?
+In that case, I just want
+to say one thing:
+I believe in you! I know you
+won't lose!
+You can't lose this,
+<&name>!<*2>","You're heading to confront the ringleader behind all the trouble in the Denjuu World, aren't you?
+In that case, I just want to say one thing:
+I believe in you! I know you won't lose!
+You can't lose this, <&name>!<*2>",1,
 #######,End of game?,,,,
 0x158118,"オレのトモダチが サイキョウの
 『Tファンガー』だなんてな
 トモダチのデンジュウに
-じまんしちゃおーっと<*2>",/0x158118/<*2>,,0,
+じまんしちゃおーっと<*2>","To think, my friend is the
+strongest <bold>T-Fanger<normal>, I'm
+going to brag about it to all
+my Denjuu friends!<*2>","To think, my friend is the strongest ""T-Fanger,"" I'm going to brag about it to all my Denjuu friends!<*2>",1,
 0x15811a,"デンジュウカイにいる
 デンジュウぜんぶに あおうと
 おもったら ひとリじゃ
-ムリなんだってさー<*2>",/0x15811a/<*2>,,0,
+ムリなんだってさー<*2>","I've heard that no one can
+meet every Denjuu in the
+Denjuu world by themself...<*2>",I've heard that no one can meet every Denjuu in the Denjuu world by themself...<*2>,1,
 0x15811c,"『ずかん』はもううまったかい?
-がんばって うめてくれよな!<*2>",/0x15811c/<*2>,,0,
+がんばって うめてくれよな!<*2>","Is your <bold>Field Guide<normal>
+complete yet?
+Keep at it and fill it up!<*2>","Is your ""Field Guide"" complete yet?
+Keep at it and fill it up!<*2>",1,
 0x15811e,"『いのちの き』って けっきょくどこにあるんだろうな?
 もう わすれちゃって
-いいのかな?<*2>",/0x15811e/<*2>,,0,
+いいのかな?<*2>","In the end, what kind of
+place was the
+<bold>Tree of Life<normal>?
+Is okay to just forget
+about it again?<*2>","In the end, what kind of place was the ""Tree of Life""?
+Is okay to just forget about it again?<*2>",1,
 0x158120,"やっぱリ ヘいわがいちばんだな
 オマエのおかげだよ
 あリがとう
-<*2>",/0x158120/<*2>,,0,
+<*2>","Peace really is the best.
+It's all because of you,
+thank you.<*2>","Peace really is the best.
+It's all because of you, thank you.<*2>",1,
 0x158122,"サイキョウのTファンガーか..
 いいひびきだなー
 いまのオマエ ちょっと
-カッコいいぜ!<*2>",/0x158122/<*2>,,0,
+カッコいいぜ!<*2>","So, the strongest
+T-Fanger...
+That has a nice ring to it.
+You're getting kinda cool!<*2>","So, the strongest T-Fanger...
+That has a nice ring to it.
+You're getting kinda cool!<*2>",1,
 0x158124,"ブリオンで たたかった
 デンジュウって トモダチは
 いなかったのかなー?
-さびしいヤツだったんだろうなー<*2>",/0x158124/<*2>,,0,
+さびしいヤツだったんだろうなー<*2>","Do you think the Denjuu you
+fought in Byron had
+any friends?
+They seemed lonely.<*2>","Do you think the Denjuu you fought in Byron had any friends?
+They seemed lonely.<*2>",1,
 0x158126,"このせかいには いろんな
 ヤツがいるんだ
 サイキョウのTファンガーなら
 ぜんぶトモダチにするぐらい
 カンタンだよな!
-<*2>",/0x158126/<*2>,,0,
+<*2>","There are all sorts of
+Denjuu in the world.
+If you're the strongest
+T-Fanger, making friends
+with all of them should
+be easy!<*2>
+","There are all sorts of Denjuu in the world.
+If you're the strongest T-Fanger, making friends with all of them should be easy!<*2>
+",1,
 0x158128,"ちょくせつ デンワバンゴウを
 いれないと トモダチに
 なってくれない デンジュウも
-いるんだってさ<*2>",/0x158128/<*2>,,0,
+いるんだってさ<*2>","I've heard there are some
+Denjuu you can't become
+friends with unless you
+directly input their phone
+number.<*2>",I've heard there are some Denjuu you can't become friends with unless you directly input their phone number.<*2>,1,
 0x15812a,あーカラダがいたい!<*2>,"Ow, I'm sore all over!","Ow, I'm sore all over!",1,
