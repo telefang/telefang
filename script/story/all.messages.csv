@@ -375,9 +375,17 @@ Y'know, you really should play baseball with us some time.",,0,
 せいぶつ 『デンジュウ』
 ワタシは たくさんの
 デンジュウと トモダチに
-なリたいのです!!","Aren't you a little bit interested in the Denjuu World, <&0xc92c>?
-They say it's a world hidden behind a curtain of darkness, full of living creatures known as ""Denjuu""...
-I'd like to become friends with as many of them as possible!",,0,
+なリたいのです!!","Aren't you a little bit
+interested in the Denjuu
+World, <&0xc92c>?
+They say it's a world
+hidden behind a curtain of
+darkness, full of living
+creatures known as
+<bold>Denjuu<normal>...
+I'd like to become friends
+with as many of them as
+possible!",,1,
 0x1200f0,"でも オレたち
 Dショット もってないじゃん
 Dショットが なかったら
@@ -501,8 +509,14 @@ Now then, are you familiar with the Denjuu World?
 わけられておる
 しかしニンゲンのかがくしゃが
 『やみのカーテン』をすリぬける
-ほうほうを みつけだしたのじゃ","The Human World and the Denjuu World...
-The two worlds have always been separated by a ""curtain of darkness"", but human scientists have discovered a way to pass through it.",,0,
+ほうほうを みつけだしたのじゃ","The Human World and the
+Denjuu World...
+The two worlds have always
+been separated by a
+<bold>curtain of darkness<normal>, but
+human scientists have
+discovered a way to pass
+through it.",,1,
 0x12011c,"しかしこのデンジュウカイと
 いうばしょは いきるには
 たいヘんなせかいでな...
@@ -513,7 +527,12 @@ Which is why the humans began to befriend us Denjuu.",,0,
 0x12011e,"そのときに ニンゲンは
 ゆうこうのあかしに
 どこでもれんらくをとれる
-ケイタイデンワ『Dショット』をワシらに くれたんじゃ","As a sign of the friendship between us, the humans gave us the ""D-Shot"" mobile phones so that we could always contact each other.",,0,
+ケイタイデンワ『Dショット』をワシらに くれたんじゃ","As a sign of the friendship
+between us, the humans
+gave us the <bold>D-Shot<normal> mobile
+phones so that we could
+always contact each
+other.",,1,
 0x120120,"おぬしが きのしたで ひろった
 ケイタイが それじゃ",That is the type of phone you found underneath the tree.,,0,
 0x120122,"ワシらも いきていくために
@@ -533,9 +552,18 @@ Because of this, it has become customary to exchange phone numbers with any frie
 なれるか しょうぶするんじゃ
 デンジュウどうしのたたかい
 それを『テレファング』と
-よぶのじゃ","However, among us Denjuu there are many who believe that strength is key, and refuse to see those weaker than them as their friends.
-In these cases, one must battle if they truly wish to befriend the other.
-These fights between Denjuu are known as ""Telefang"".",,0,
+よぶのじゃ","However, among us Denjuu
+there are many who believe
+that strength is key, and
+refuse to see those
+weaker than them as their
+friends.
+In these cases, one must
+battle if they truly wish to
+befriend the other.
+These fights between
+Denjuu are known as
+<bold>Telefang<normal>.",,1,
 0x120126,"どうじゃ?
 わかったかな?
  はい  いいえ<*A>","So?
@@ -1434,7 +1462,7 @@ on becoming president!
 I don't even need this stuff anymore. You can take it
 for all I care!!!",1,
 0x12c03c,"『アンテナのきのカギ』を
-とリもどした!","Retrieved ""Antenna Tree Key""!",,0,
+とリもどした!",Retrieved <bold>Antenna Tree Key<normal>!,,0,
 0x12c03e,"『リボルバーガン』を4つ
 てにいれた!",Got <bold>4 Revolvers<normal>!,,1,
 0x12c040,"『テレカ』を4まい
@@ -1497,9 +1525,10 @@ They must not be home.",,0,
 They must not be home.",,0,
 0x12c062,"『たかピーのいえ 
  テレファングについて
- おしえるよ!』","<bold>Taka-P's House
-I'll teach you
-all about Telefang!<normal>","<bold>Taka-P's House
+ おしえるよ!』","""Taka-P's House""
+
+""I'll teach you
+all about Telefang!""","<bold>Taka-P's House
 I'll teach you
 all about Telefang!<normal>",1,These two lines are for when you approach Taka-P's house in Tronco.
 0x12c064,"ふーん....
@@ -1529,9 +1558,22 @@ Are you sure it's okay?",,0,
 だれかに たのもうと おもっペもイーリスのデンジュウは
 ここにちかづかないし...
 ニンゲンは ボクをみると
-キミみたいに にげだしちゃうし","You see, well, everyone in the ocean's been saying to stay away from Iris, but I just really wanted a ""Game Machine"", so I came here-ope...
+キミみたいに にげだしちゃうし","You see, well, everyone in the
+ocean's been saying to
+stay away from Iris, but I
+just really wanted a
+<bold>Game Machine<normal>,
+so I came here-ope...
+But it turns out there's
+nowhere in Iris that sells
+Game Machines-ope...
+I thought I could ask
+someone for help, but all of
+the Denjuu here stay away
+from me, and the humans
+just run away like you did...","You see, well, everyone in the ocean's been saying to stay away from Iris, but I just really wanted a <bold>Game Machine<normal>, so I came here-ope...
 But it turns out there's nowhere in Iris that sells Game Machines-ope...
-I thought I could ask someone for help, but all of the Denjuu here stay away from me, and the humans just run away like you did...",,0,
+I thought I could ask someone for help, but all of the Denjuu here stay away from me, and the humans just run away like you did...",1,
 0x12c072,"おねがいだっペ!
 『ゲームマシン』を もってきて
 くれないっペ?
@@ -1543,7 +1585,8 @@ If you bring me one, I can make it so you can enter the sea if you want-ope!",,0
 くれっペ!
 おねがいだっペ!",Please find me a Game Machine-ope!,,0,
 0x12c076,"『ゲームマシン』をあげますか?
- はい  いいえ<*A>","Hand over the ""Game Machine""?
+ はい  いいえ<*A>","Hand over the
+<bold>Game Machine<normal>?
 <Q>Yes<|>No</Q><*A>",,0,
 0x12c078,"『ゲームマシン』だっペー!!
 あリがとうだっペ!
@@ -1648,10 +1691,20 @@ Password accepted, please enter.",,0,
 イーリスにもどってくることが
 できます
 では いってらっしゃい...","Welcome, welcome.
-This hidden passageway leads to the ""Ocean Cavern"", a shrine to the ocean Denjuu's guardian spirit.
-I see our friends have deemed you worthy to enter...
-I will guide you there. When you wish to leave, simply stand in the center of the small island, and you will be returned to Iris.
-I wish you a safe trip...",,0,
+This hidden passageway
+leads to the
+<bold>Ocean Cavern<normal>, a shrine
+to the ocean Denjuu's
+guardian spirit.
+I see our friends have
+deemed you worthy to
+enter...
+I will guide you there. When
+you wish to leave, simply
+stand in the center of the
+small island, and you will be
+returned to Iris.
+I wish you a safe trip...",,1,
 0x12c09a,"アンテナのきにつづく
 とびらをひらいた",Opened the gate to the Antenna Tree.,,0,
 0x12c09c,"もしもし?マツキヨですけど?
@@ -5852,10 +5905,19 @@ Do you want me to tell you more about it?
 いききできるんだけど
 オトナは おカネを はらって
 このデンジュウカイに くるのよ","Then I'll explain.
-The Denjuu World is owned by the ""Sanaeba Group"", who were the first people to discover it.
-Kids like us are allowed to go to the Denjuu World whenever we want, but adults have to pay money to come here.",,0,
+
+The Denjuu World is owned
+by the <bold>Sanaeba Group<normal>,
+who were the first people
+to discover it.
+Kids like us are allowed to
+go to the Denjuu World
+whenever we want, but
+adults have to pay money to
+come here.",,1,
 0x140190,"その『サナエバグループ』って
-なんなんだ?","So what exactly is the ""Sanaeba Group""...?",,0,
+なんなんだ?","So what exactly is the
+<bold>Sanaeba Group<normal>...?",,1,
 0x140192,"もともとは セイヤクガイシャを
 やってたみたいなんだけど
 デンジュウカイをみつけてから
@@ -5910,8 +5972,12 @@ What do you mean??",,0,
 できるんだ
 このシンカは
 『しぜんデンジュウ』しか
-おこなうことができないんだ","Natural evolution can happen when a Denjuu gains enough experience points from battling.
-This type only happens with ""Natural Denjuu"", though.",,0,
+おこなうことができないんだ","Natural evolution can
+happen when a Denjuu
+gains enough experience
+points from battling.
+This type only happens with
+<bold>Natural Denjuu<normal>, though.",,1,
 0x1401aa,"『かいぞうシンカ』について
 ききたいか?
  はい  いいえ<*A>","Do you wanna hear about <bold>augment evolution<normal>?
