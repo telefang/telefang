@@ -249,7 +249,8 @@ unsure of yourself?
 <Q>No<|>I just don't wanna</Q><*A>","What's the matter? Feeling unsure of yourself?
 No / I just don't wanna",1,
 0x13005a,"ちゃんとはなしを
-きいてたんだね!えらい!<*2>",<*2>,So you've been paying attention! Well done!,1,
+きいてたんだね!えらい!<*2>","So you've been paying
+attention! Well done!<*2>",So you've been paying attention! Well done!,1,
 0x13005c,"しっかリきいておかないと
 ダメだよ!<*2>","C'mon, you gotta pay
 attention to what people

@@ -398,7 +398,7 @@ between the Bird Clan
 and the Snake Clan!
 Hahah, guess you've got
 some stormy weather
-coming up! Laters!","Hey <&name>, where you at? Whuh? Barran?
+coming up! Laters!<*2>","Hey <&name>, where you at? Whuh? Barran?
 Don't tell me you're getting mixed up in the feud between the Bird Clan
 and the Snake Clan!
 Hahah, guess you've got some stormy weather coming up! Laters!",1,
@@ -418,7 +418,7 @@ The Bird Clan's chief
 is supposed to be a pretty
 reasonable guy, so I think
 you should go talk to him.
-G'bye!","Hellooo? I heard you're in Barran right now.
+G'bye!<*2>","Hellooo? I heard you're in Barran right now.
 Yeah, heard it from a friend! The Bird Clan's chief
 is supposed to be a pretty reasonable guy, so I think you should go talk to him. G'bye!",1,
 0x158054,"おい <&name>
@@ -439,7 +439,7 @@ there is supposed to be
 a real swell dude with a
 swell attitude, so don't
 be scared to talk to him!
-See ya!","Yo <&name>! Everything good with you?
+See ya!<*2>","Yo <&name>! Everything good with you?
 Have you heard of this town called Barran?
 The chief of the Bird Clan there is supposed to be
 a real swell dude with a
@@ -462,7 +462,7 @@ He's a bit of a hothead,
 and what's more,
 he's big into Telefang.
 If you're gonna see him,
-you better be ready!","So, <&name>…
+you better be ready!<*2>","So, <&name>…
 D'you know the chief
 of Barran's Snake Clan? He's a bit of a hothead, and what's more,
 he's big into Telefang.
@@ -485,7 +485,7 @@ I've heard that the Snake
 Clan is challenging anyone
 to Telefangs regardless of
 who they are.
-Keep an eye out.","Hey, <&name>.
+Keep an eye out.<*2>","Hey, <&name>.
 Do you know about the fight in Barran between the Bird Clan and Snake Clan?
 I've heard that the Snake Clan is challenging anyone to Telefangs regardless of who they are.
 Keep an eye out.",1,
@@ -503,7 +503,7 @@ But I don't know what it is
 that he collects...
 I don't know if the
 information will be useful,
-but I thought I'd tell you.","I've heard that the chief of the Snake Clan likes to collect things!
+but I thought I'd tell you.<*2>","I've heard that the chief of the Snake Clan likes to collect things!
 But I don't know what it is that he collects...
 I don't know if the information will be useful, but I thought I'd tell you.",1,
 0x15805c,"あのさー バーランに
@@ -518,7 +518,7 @@ Barran, you should visit a
 guy called ""Ganbanno.""
 He's a pretty good guy.
 I think you guys could be
-friends!","You know, if you ever go to Barran, you should visit a guy called ""Ganbanno.""
+friends!<*2>","You know, if you ever go to Barran, you should visit a guy called ""Ganbanno.""
 He's a pretty good guy.
 I think you guys could be friends!",1,
 0x15805e,"バーランのいリぐちのてまえに
@@ -535,7 +535,7 @@ Barran?
 If you walk down that way,
 there'll be a house with an
 old man that collects weird
-things!","Did you know that there's a path to the right just before the entrance to Barran?
+things!<*2>","Did you know that there's a path to the right just before the entrance to Barran?
 If you walk down that way, there'll be a house with an old man that collects weird things!",1,
 0x158060,"そっちょくにきくけどさ
 オマエはトリぐみは?
@@ -546,7 +546,7 @@ If you walk down that way, there'll be a house with an old man that collects wei
 you for the Bird Clan?
 Or the Snake Clan?
 Me? I'm for the Bird Clan!
-They're so cute, after all!","Let me ask you frankly, are you for the Bird Clan?
+They're so cute, after all!<*2>","Let me ask you frankly, are you for the Bird Clan?
 Or the Snake Clan?
 Me? I'm for the Bird Clan!
 They're so cute, after all!",1,
@@ -561,7 +561,7 @@ do you like the Bird Clan
 or the Snake Clan?
 It's the Snake Clan
 for me!
-Because they're so cool!","I've got a random question for you, do you like the Bird Clan or the Snake Clan?
+Because they're so cool!<*2>","I've got a random question for you, do you like the Bird Clan or the Snake Clan?
 It's the Snake Clan for me!
 Because they're so cool!",1,
 #######,Ion Island,,,,
@@ -600,7 +600,7 @@ Is that for real? If so,
 why is it going on?
 Let me know if you find
 out, okay?
-Please don't forgot. Well,
+Please don't forget. Well,
 see you!<*2>","Hey, I heard a rumor there's some sort of fight happening over there.
 Is that for real? If so, why is it going on?
 Let me know if you find out, okay?
@@ -842,7 +842,7 @@ know what he does there,
 but at night, you can see him
 go out to the island
 in the middle of the lake.
-Isn't that mad fishy?!","Have you heard? A weird old dude lives in the house by Paparouna Lake. I don't know what he does there, but at night, you can see him go out to the island
+Isn't that mad fishy?!<*2>","Have you heard? A weird old dude lives in the house by Paparouna Lake. I don't know what he does there, but at night, you can see him go out to the island
 in the middle of the lake.
 Isn't that mad fishy?!",1,
 0x15807e,"そこにいる じいさんって
@@ -1232,7 +1232,7 @@ wrong number calls and had
 bad reception and stuff.
 Is your phone okay?
 Don't worry about it if
-yours is fine, I guess.","Hey, <&name>?
+yours is fine, I guess.<*2>","Hey, <&name>?
 My phone's been acting up lately... I've been getting wrong number calls and had bad reception and stuff.
 Is your phone okay?
 Don't worry about it if yours is fine, I guess.",1,
@@ -1855,7 +1855,7 @@ Never give up!<*2>",1,
 <*2>","It's important to break into
 roles when Telefanging!
 Attackers, defenders,
-things like that!","It's important to break into roles when Telefanging!
+things like that!<*2>","It's important to break into roles when Telefanging!
 Attackers, defenders, things like that!",1,
 #######,Ixos Forest and Cactos Ruins,,,,
 0x1580f0,"『カクトスいせき』って
@@ -2324,9 +2324,9 @@ Keep at it and fill it up!<*2>",1,
 いいのかな?<*2>","In the end, what kind of
 place was the
 <bold>Tree of Life<normal>?
-Is okay to just forget
+Is it okay to just forget
 about it again?<*2>","In the end, what kind of place was the ""Tree of Life""?
-Is okay to just forget about it again?<*2>",1,
+Is it okay to just forget about it again?<*2>",1,
 0x158120,"やっぱリ ヘいわがいちばんだな
 オマエのおかげだよ
 あリがとう
@@ -2373,4 +2373,4 @@ Denjuu you can't become
 friends with unless you
 directly input their phone
 number.<*2>",I've heard there are some Denjuu you can't become friends with unless you directly input their phone number.<*2>,1,
-0x15812a,あーカラダがいたい!<*2>,"Ow, I'm sore all over!","Ow, I'm sore all over!",1,
+0x15812a,あーカラダがいたい!<*2>,"Ow, I'm sore all over!<*2>","Ow, I'm sore all over!",1,
