@@ -155,7 +155,7 @@ SerIO_ADVICE_BufferDenjuuInfoForTrade::
 
 	;Reserve 1 byte for possible future use, such as maybe tracking language variations of the patch.
 
-	xor a
+	ld a, M_Trade_Charset
 	ld [$DC81], a
 	jp Banked_SGB_ConstructATTRBLKPacket_return
 
@@ -262,6 +262,12 @@ SerIO_ADVICE_SaveTradedDenjuuInfo::
 	jr z, .useDefault
 
 .copyNickname
+
+	;Use the default name instead if the charset doesn't match.
+
+	ld a, [$DC81]
+	cp M_Trade_Charset
+	jr nz, .notNoisy
 
 	;Store the 6-char nickname.
 

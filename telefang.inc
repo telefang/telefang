@@ -1,4 +1,5 @@
 INCLUDE "registers.inc"
+INCLUDE "charmap.inc"
 INCLUDE "components/stringtable/load.inc"
 INCLUDE "components/battle/denjuu_portrait.inc"
 INCLUDE "components/battle/species.inc"
