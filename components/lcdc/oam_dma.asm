@@ -14,7 +14,7 @@ InstallODMADriver:: ld c, $80
 	;macrolanguage but I can't be arsed
 	ld hl, ODMADriver
 .copyLoop ld a, [hli]
-	ld [c], a
+	ldh [c], a
 	inc c
 	dec b
 	jr nz, .copyLoop
