@@ -402,19 +402,19 @@ SECTION "Patch Utilities - Auxiliary Code", ROMX[$4140], BANK[$1]
 PatchUtils_StoreDefaultCharaName:
 	M_AdviceSetup
 	
-	ld a, "S"
+	ld a, 'S'
 	ld [$C3A9], a
-	ld a, "h"
+	ld a, 'h'
 	ld [$C3AA], a
-	ld a, "i"
+	ld a, 'i'
 	ld [$C3AB], a
-	ld a, "g"
+	ld a, 'g'
 	ld [$C3AC], a
-	ld a, "e"
+	ld a, 'e'
 	ld [$C3AD], a
-	ld a, "k"
+	ld a, 'k'
 	ld [$C3AE], a
-	ld a, "i"
+	ld a, 'i'
 	ld [$C3AF], a
 	
 	M_AdviceTeardown
